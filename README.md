@@ -12,7 +12,7 @@ The goals of this repo are:
 2. Provide brand consistency across the ecosystem
 3. Move towards a decentralised model
 
-> **Developers**: If you're looking to utilise these assets in your application, use the [@talisman/chaindata-js](https://github.com/talismansociety/chaindata-js) lib for a much smoother experience
+> **Developers**: If you're looking to utilise these assets in your application, use the [@talismn/chaindata-js](https://github.com/talismansociety/chaindata-js) lib for a much smoother experience
 
 ----
 
