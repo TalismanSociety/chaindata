@@ -4,9 +4,14 @@ const util = require('util')
 const fs = require('fs/promises')
 const { readFileSync, writeFileSync } = require('fs')
 const exec = util.promisify(require('child_process').exec)
-const parachainDetails = require('./parachainDetails')
+const parachainDetails = Object.fromEntries(
+  require('./parachainDetails').map((parachain) => [parachain.id, parachain])
+)
 
 // Polkadot.js.org input format:
+//
+// e.g. from https://github.com/polkadot-js/apps/blob/545d1e2f4d1b1187787a9764148f3640d0cc9d79/packages/apps-config/src/endpoints/productionRelayKusama.ts
+//
 // {
 //   "paraId": 1000,
 //   "text": "Statemine"
@@ -24,7 +29,7 @@ const parachainDetails = require('./parachainDetails')
 //   ]
 // }
 //
-const endpoints = JSON.parse(readFileSync('./endpoints.json'))
+const endpoints = [JSON.parse(readFileSync('./endpoints.json'))]
   .flatMap((endpoint) => [endpoint, ...(endpoint.linked || [])])
   .filter((endpoint) => typeof endpoint.paraId !== 'undefined')
   .filter((endpoint) => Object.values(endpoint.providers).length > 0)
