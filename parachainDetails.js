@@ -1,5 +1,5 @@
-module.exports = {
-  2000: {
+module.exports = [
+  {
     id: 2000,
     name: 'Karura',
     slug: 'karura',
@@ -14,7 +14,7 @@ module.exports = {
       Github: 'https://github.com/AcalaNetwork',
     },
   },
-  2001: {
+  {
     id: 2001,
     name: 'Bifrost',
     slug: 'bifrost',
@@ -31,12 +31,13 @@ module.exports = {
       Github: 'https://github.com/bifrost-finance',
     },
   },
-  2004: {
+  {
     id: 2004,
     name: 'Khala Network',
     slug: 'khala-network',
     token: 'PHA',
-    subtitle: 'Khala Network is the Phala pre-mainnet on Kusama, as published on the roadmap last year.',
+    subtitle:
+      'Khala Network is the Phala pre-mainnet on Kusama, as published on the roadmap last year.',
     info: `Phala will implement its mainnet on Polkadot, as the parachain to serve enterprise-scale blockchains and DeFi service.\n\nKhala will implement its mainnet on Kusama, as the parachain to serve creative and growth blockchains and DeFi service.`,
     links: {
       Website: 'https://crowdloan.phala.network/en/',
@@ -47,29 +48,31 @@ module.exports = {
       Discord: 'https://discord.gg/myBmQu5',
     },
   },
-  2006: {
-    id: 2006,
-    name: 'Darwinia Crab Redirect',
-    slug: 'darwinia-crab-redirect',
-    token: 'CRING',
-    subtitle:
-      'Crab is the canary network of Darwinia, and is the first blockchain in the Kusama ecosystem to natively support cross-chain as well as smart contract and NFT.',
-    info: `Crab Network intends to participate in the Kusama Parachain Slot Auctions.\n\nThe Crab network is a network with long-term value. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.\n\nThe economic model parameters of the Crab network are the same as those of the Darwinia Mainnet, and use the same staking and inflation models.`,
-    links: {
-      Website: 'https://crab.network/',
-      Twitter: 'https://twitter.com/DarwiniaNetwork',
-      Telegram: 'https://t.me/DarwiniaNetwork',
-      Medium: 'https://darwinianetwork.medium.com/',
-      Github: 'https://github.com/darwinia-network/darwinia/tree/master/runtime/crab',
-    },
-  },
-  2007: {
+  // {
+  //   id: 2006,
+  //   name: 'Darwinia Crab Redirect',
+  //   slug: 'darwinia-crab-redirect',
+  //   token: 'CRING',
+  //   subtitle:
+  //     'Crab is the canary network of Darwinia, and is the first blockchain in the Kusama ecosystem to natively support cross-chain as well as smart contract and NFT.',
+  //   info: `Crab Network intends to participate in the Kusama Parachain Slot Auctions.\n\nThe Crab network is a network with long-term value. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.\n\nThe economic model parameters of the Crab network are the same as those of the Darwinia Mainnet, and use the same staking and inflation models.`,
+  //   links: {
+  //     Website: 'https://crab.network/',
+  //     Twitter: 'https://twitter.com/DarwiniaNetwork',
+  //     Telegram: 'https://t.me/DarwiniaNetwork',
+  //     Medium: 'https://darwinianetwork.medium.com/',
+  //     Github: 'https://github.com/darwinia-network/darwinia/tree/master/runtime/crab',
+  //   },
+  // },
+  {
     id: 2007,
     name: 'Shiden',
     slug: 'shiden',
     token: 'SDN',
-    subtitle: 'Shiden Network is a multi-chain decentralized application layer on Kusama Network. ',
-    info: 'Kusama Relaychain does not support smart contract functionality by design - Kusama Network needs a smart contract layer. This is where Shiden Network comes in. Shiden supports Ethereum Virtual Machine, WebAssembly, and Layer2 solutions from day one. The platform supports various applications like DeFi, NFTs and more.',
+    subtitle:
+      'Shiden Network is a multi-chain decentralized application layer on Kusama Network. ',
+    info:
+      'Kusama Relaychain does not support smart contract functionality by design - Kusama Network needs a smart contract layer. This is where Shiden Network comes in. Shiden supports Ethereum Virtual Machine, WebAssembly, and Layer2 solutions from day one. The platform supports various applications like DeFi, NFTs and more.',
     links: {
       Website: 'https://crowdloan.plasmnet.io/',
       Twitter: 'https://twitter.com/ShidenNetwork',
@@ -77,12 +80,13 @@ module.exports = {
       Discord: 'https://discord.com/invite/Dnfn5eT',
     },
   },
-  2008: {
+  {
     id: 2008,
     name: 'Mars',
     slug: 'mars',
     token: 'ARES',
-    subtitle: 'Ares is an on-chain verifying oracle protocol powered by Polkadot.',
+    subtitle:
+      'Ares is an on-chain verifying oracle protocol powered by Polkadot.',
     info: ` It provides reliable off-chain data efficiently and in a trustless manner. Ares is built on Substrate and constructed as a parachain to link to Polkadot's ecology and share its security consensus. It is a scalable oracle network that provides decentralized data services to the Polkadot ecosystem and its parachains.`,
     links: {
       Website: 'https://www.aresprotocol.io/',
@@ -93,7 +97,7 @@ module.exports = {
       Discord: 'https://discord.gg/EsaFRr7xmc',
     },
   },
-  2009: {
+  {
     id: 2009,
     name: 'PolkaSmith by PolkaFoundry',
     slug: 'polkasmith-by-polkafoundry',
@@ -101,7 +105,6 @@ module.exports = {
     subtitle:
       'Implemented on Kusama Network, PolkaSmith is a canary chain of PolkaFoundry, a one-stop production hub creating borderless and frictionless DeFi & NFT applications.',
     info: `PolkaSmith will be a reliable platform for early-stage startups to unleash their creativity, experiment with bold new ideas, and hack the growth.\n\nPKS is the native token of PolkaSmith. There is no pegging or mapping between PKS and PKF (PolkaFoundry’s native token).`,
-    M: '?',
     links: {
       Website: 'https://polkasmith.polkafoundry.com/',
       Twitter: 'https://twitter.com/PolkaFoundry',
@@ -109,13 +112,15 @@ module.exports = {
       Medium: 'https://medium.com/@polkafoundry',
     },
   },
-  2012: {
+  {
     id: 2012,
     name: 'Crust Shadow',
     slug: 'crust-shadow',
     token: 'CSM',
-    subtitle: 'CRUST provides a decentralized storage network of Web3.0 ecosystem.',
-    info: 'It supports multiple storage layer protocols such as IPFS, and exposes storage interfaces to application layer. Crust’s technical stack is also capable of supporting a decentralized computing layer. It is designed to build a decentralized cloud ecosystem that values data privacy and ownership.',
+    subtitle:
+      'CRUST provides a decentralized storage network of Web3.0 ecosystem.',
+    info:
+      'It supports multiple storage layer protocols such as IPFS, and exposes storage interfaces to application layer. Crust’s technical stack is also capable of supporting a decentralized computing layer. It is designed to build a decentralized cloud ecosystem that values data privacy and ownership.',
     links: {
       Website: 'https://crust.network/',
       Twitter: 'https://twitter.com/CommunityCrust',
@@ -125,7 +130,42 @@ module.exports = {
       Discord: 'https://discord.com/invite/Jbw2PAUSCR',
     },
   },
-  2016: {
+  {
+    id: 2013,
+    name: 'SherpaX',
+    slug: 'sherpax',
+    token: 'KSX',
+    subtitle:
+      'SherpaX is the canary network of ChainX and will serve as a testbed for new developments in Bitcoin Layer 2 technology.',
+    info:
+      'As the canary network of ChainX, SherpaX will participate in the auction of the Kusama slot and access Kusama as a parachain. SherpaX will share the security of the entire Kusama network and can communicate with other parachains through the XCMP protocol to truly realize multi-chain and cross-chain.\n\nKusama parachains connect to the network by leasing a slot on the Relay Chain via permissionless auction. Kusama is rolling out the second batch of parachain auctions as we speak. In order to have the community support us in winning a slot, we’ve opened a crowdloan.',
+    links: {
+      Website: 'https://chainx.org/en/',
+      Twitter: 'https://twitter.com/chainx_org',
+      Telegram: 'https://t.me/chainx_org',
+      Medium: 'https://chainx-org.medium.com/',
+      Github: 'https://github.com/chainx-org/ChainX',
+    },
+  },
+  {
+    id: 2015,
+    name: 'Integritee Network',
+    slug: 'integritee-network',
+    token: 'TEER',
+    subtitle:
+      'Integritee Network enables developers and firms to process sensitive data, without compromising on privacy.',
+    info:
+      'Our platform combines the trust of blockchain with the confidentiality of off-chain, trusted execution environments (TEEs). This enables developers and firms to create decentralized data-driven apps and services that can securely process sensitive data, without revealing it on chain.\n\nThe Integritee ecosystem, across all instances on Kusama, Polkadot and elsewhere, will be powered by our native token, TEER. Backers who support our parachain bids by temporarily locking in KSM will be rewarded in TEER.',
+    links: {
+      Website: 'https://www.integritee.network/',
+      Twitter: 'https://twitter.com/integri_t_e_e',
+      Telegram: 'https://t.me/Integritee_Official',
+      Medium: 'https://medium.com/integritee',
+      Github: 'https://github.com/integritee-network',
+      Subsocial: 'https://app.subsocial.network/4638',
+    },
+  },
+  {
     id: 2016,
     name: 'Sakura',
     slug: 'sakura',
@@ -141,12 +181,13 @@ module.exports = {
       //Discord: 'https://discord.com/invite/z2egJBsBWx/'
     },
   },
-  2018: {
+  {
     id: 2018,
     name: 'SubGame Gamma',
     slug: 'subgame-gamma',
     token: 'GSGB',
-    subtitle: 'SubGame is a public chain development team based on the Polkadot Para chain.',
+    subtitle:
+      'SubGame is a public chain development team based on the Polkadot Parachain.',
     info: `It hopes to build a public chain with cross-chain interoperability. In addition to creating game applications, it can also build various types of application scenarios to create a common cross-chain industry. The blockchain infrastructure provides unlimited possibilities for distributed mobile applications.`,
     links: {
       Website: 'https://www.subgame.org',
@@ -154,14 +195,47 @@ module.exports = {
       Telegram: 'https://t.me/subgamenetwork',
     },
   },
-  2023: {
+  {
+    id: 2019,
+    name: 'Kpron',
+    slug: 'kpron',
+    token: 'KPN',
+    subtitle:
+      'Kpron Network is the testnet that Apron Network deployed on the Kusama Network.',
+    info: `The Kpron Network’s token: KPN, is the APN on Kusama.\n\nKPN was issued on Kpron Network as a portion of the tokens allocated by Apron Network and can be swapped with APN at a 1:1 rate (1KPN=1APN). There is no change on Apron’s tokenomics, and the total amount of APN remains the same.`,
+    links: {
+      Website: 'http://apron.network/',
+      Twitter: 'https://twitter.com/apronofficial1',
+      Telegram: 'https://t.me/apronnetwork',
+      Medium: 'https://apron-network.medium.com/',
+      Github: 'https://github.com/Apron-Network/',
+      Discord: 'https://discord.gg/Bu6HzJP2YY',
+    },
+  },
+  // {
+  //   id: 2021,
+  //   name: 'Altair',
+  //   slug: 'altair',
+  //   token: 'AIR',
+  //   subtitle:
+  //     'Altair combines the industry-leading infrastructure built by Centrifuge to finance real-world assets (RWA) on Centrifuge Chain, with the newest experimental features — before they go live on Centrifuge Chain.',
+  //   info: `Altair is built using Substrate, and will have nearly the same codebase as Centrifuge Chain (just like Kusama is to Polkadot!). It is an experimental network for users who want to test the bounds of asset financing. From art NFTs to undiscovered assets — Altair enables users to tokenize their most experimental assets and finance them. It is the next step for anyone looking to unlock financing for their assets.\n\nInteroperability is the key to increasing liquidity in DeFi. Altair will bridge across the Kusama, Polkadot, and Ethereum ecosystems to allow assets to access financing wherever it is available. In the future, Altair can connect more and more projects across these ecosystems — using Kusama to allow anyone to access DeFi liquidity. The more connected chains, protocols, and Dapps are — the greater the flow of liquidity will be.`,
+  //   links: {
+  //     Website: 'https://centrifuge.io/altair/',
+  //     Twitter: 'https://twitter.com/centrifuge',
+  //     Telegram: 'https://t.me/centrifuge_chat',
+  //     Medium: 'https://medium.com/centrifuge',
+  //     Github: 'https://github.com/centrifuge/',
+  //     Discord: 'https://centrifuge.io/discord',
+  //   },
+  // },
+  {
     id: 2023,
     name: 'Moonriver',
     slug: 'moonriver',
     token: 'MOVR',
-    subtitle:
-      'Moonriver will initially serve as the experimental “canary net” of Moonbeam, where new code will ship first to be verified under real economic conditions.',
-    info: `Over time, the network is expected to evolve and grow to support use cases that may differ from those on Moonbeam.`,
+    subtitle: 'A Community-Led Sister Parachain on Kusama',
+    info: `Like Moonbeam, Moonriver is a complete Ethereum-like environment and works with industry-standard Ethereum tools, DApps, and protocols. Moonriver is a companion network to Moonbeam and provides a permanently incentivized canary network. New code ships to Moonriver first, where it can be tested and verified under real economic conditions. Once proven, the same code ships to Moonbeam on Polkadot. The Moonriver network is currently launching to Kusama. Track the launch status here: https://moonbeam.network/networks/moonriver/launch/`,
     links: {
       Website: 'https://moonbeam.network/networks/moonriver/',
       Twitter: 'https://twitter.com/moonbeamnetwork',
@@ -171,21 +245,21 @@ module.exports = {
       Discord: 'https://discord.gg/PfpUATX',
     },
   },
-  2024: {
-    id: 2024,
-    name: 'Genshiro',
-    slug: 'genshiro',
-    token: 'GENS',
-    subtitle: 'Genshiro is a canary network of equilibrium that shares the experimental spirit of Kusama.',
-    info: `Genshiro is EquilibriumDeFi's DeFi one-stop shop on Kusama that can do all things that existing DeFi primitives do, but with less risk and cross-chain.`,
-    links: {
-      Website: 'https://genshiro.equilibrium.io/en',
-      Twitter: 'https://twitter.com/GenshiroDeFi',
-      Telegram: 'https://t.me/genshiro_official',
-      Github: 'https://github.com/equilibrium-eosdt',
-    },
-  },
-  2077: {
+  // {
+  //   id: 2024,
+  //   name: 'Genshiro',
+  //   slug: 'genshiro',
+  //   token: 'GENS',
+  //   subtitle: 'Genshiro is a canary network of equilibrium that shares the experimental spirit of Kusama.',
+  //   info: `Genshiro is EquilibriumDeFi's DeFi one-stop shop on Kusama that can do all things that existing DeFi primitives do, but with less risk and cross-chain.`,
+  //   links: {
+  //     Website: 'https://genshiro.equilibrium.io/en',
+  //     Twitter: 'https://twitter.com/GenshiroDeFi',
+  //     Telegram: 'https://t.me/genshiro_official',
+  //     Github: 'https://github.com/equilibrium-eosdt',
+  //   },
+  // },
+  {
     id: 2077,
     name: 'Robonomics',
     slug: 'robonomics',
@@ -201,55 +275,7 @@ module.exports = {
       Github: 'https://github.com/airalab',
     },
   },
-  2019: {
-    id: 2019,
-    name: 'Kpron',
-    slug: 'kpron',
-    token: 'KPN',
-    subtitle: 'Kpron Network is the testnet that Apron Network deployed on the Kusama Network.',
-    info: `The Kpron Network’s token: KPN, is the APN on Kusama.\n\nKPN was issued on Kpron Network as a portion of the tokens allocated by Apron Network and can be swapped with APN at a 1:1 rate (1KPN=1APN). There is no change on Apron’s tokenomics, and the total amount of APN remains the same.`,
-    links: {
-      Website: 'http://apron.network/',
-      Twitter: 'https://twitter.com/apronofficial1',
-      Telegram: 'https://t.me/apronnetwork',
-      Medium: 'https://apron-network.medium.com/',
-      Github: 'https://github.com/Apron-Network/',
-      Discord: 'https://discord.gg/Bu6HzJP2YY',
-    },
-  },
-  2021: {
-    id: 2021,
-    name: 'Altair',
-    slug: 'altair',
-    token: 'AIR',
-    subtitle:
-      'Altair combines the industry-leading infrastructure built by Centrifuge to finance real-world assets (RWA) on Centrifuge Chain, with the newest experimental features — before they go live on Centrifuge Chain.',
-    info: `Altair is built using Substrate, and will have nearly the same codebase as Centrifuge Chain (just like Kusama is to Polkadot!). It is an experimental network for users who want to test the bounds of asset financing. From art NFTs to undiscovered assets — Altair enables users to tokenize their most experimental assets and finance them. It is the next step for anyone looking to unlock financing for their assets.\n\nInteroperability is the key to increasing liquidity in DeFi. Altair will bridge across the Kusama, Polkadot, and Ethereum ecosystems to allow assets to access financing wherever it is available. In the future, Altair can connect more and more projects across these ecosystems — using Kusama to allow anyone to access DeFi liquidity. The more connected chains, protocols, and Dapps are — the greater the flow of liquidity will be.`,
-    links: {
-      Website: 'https://centrifuge.io/altair/',
-      Twitter: 'https://twitter.com/centrifuge',
-      Telegram: 'https://t.me/centrifuge_chat',
-      Medium: 'https://medium.com/centrifuge',
-      Github: 'https://github.com/centrifuge/',
-      Discord: 'https://centrifuge.io/discord',
-    },
-  },
-  2082: {
-    id: 2082,
-    name: 'Basilisk',
-    slug: 'basilisk',
-    token: 'BSX',
-    subtitle: 'Supporting The Long Tail Of Cryptoassets And Experimenting With Financial Applications And Governance.',
-    info: `We imagine that Basilisk will attract builders that would like to experiment with exotic DeFi applications, testing their ideas in the real world.\n\nIn time, HydraDX and Basilisk will become interoperable allowing a smooth transition between liquidity pools on which applications are built.`,
-    links: {
-      Website: 'https://bsx.fi/',
-      Twitter: 'https://twitter.com/bsx_finance',
-      Telegram: 'https://t.me/bsx_fi',
-      Github: 'https://github.com/galacticcouncil',
-      Discord: 'https://discord.gg/S8YZj5aXR6',
-    },
-  },
-  2080: {
+  {
     id: 2080,
     name: 'Loom Network',
     slug: 'loom-network',
@@ -266,4 +292,136 @@ module.exports = {
       Medium: 'https://medium.com/loom-network',
     },
   },
-}
+  {
+    id: 2084,
+    name: 'Calamari',
+    slug: 'calamari',
+    token: 'KMA',
+    subtitle: `Calamari, Manta Network's canary-net, is the plug-and-play privacy-preservation parachain built to service the Kusama DeFi world.`,
+    info: `It combines Kusama and zkSNARKs to bring on-chain privacy to transactions and swaps.`,
+    links: {
+      Website: 'https://www.calamari.network/',
+      Twitter: 'https://twitter.com/CalamariNetwork',
+      Telegram: 'https://t.me/mantanetworkofficial',
+      Medium: 'https://medium.com/@mantanetwork',
+      Github: 'https://github.com/Manta-Network',
+    },
+  },
+  {
+    id: 2085,
+    name: 'Parallel Heiko',
+    slug: 'parallel-heiko',
+    token: 'HKO',
+    subtitle: `Parallel Finance is a decentralized money market protocol that offers lending, staking, and borrowing in the Polkadot ecosystem.`,
+    info: `Similar to the relationship between Polkadot and its “canary network” Kusama, Heiko Finance is the sister network to Parallel, and the parachain that we hope to launch on the Kusama blockchain. We are building for a decentralized future that empowers the community to increase capital efficiency, security, and accessibility through our leverage staking and auction lending platform.`,
+    links: {
+      Website: 'https://parallel.fi/',
+      Twitter: 'https://twitter.com/ParallelFi',
+      Telegram: 'https://t.me/parallelfi_community',
+      Medium: 'https://parallelfinance.medium.com/',
+      Github: 'https://github.com/parallel-finance/',
+      Discord: 'https://t.co/Ev6c7lI9U4',
+    },
+  },
+  {
+    id: 2086,
+    name: 'KILT Spiritnet',
+    slug: 'kilt-spiritnet',
+    token: 'KILT',
+    subtitle: `KILT is a blockchain protocol for issuing self-sovereign verifiable, revocable, anonymous credentials and enabling trust market business models in the Web 3.0.`,
+    info: `KILT is an open-source fat blockchain protocol for issuing claim-based verifiable, revocable, and anonymous credentials in the Web 3.0. It allows end users to claim arbitrary attributes about themselves, get them attested by trusted entities, and store the claims as self-sovereign credentials (certificates). As trusted entities can issue credentials in return for money, KILT aims to foster new business models for anyone who owns trust or wants to build up trust. KILT Protocol comes with a simple JavaScript SDK where useful applications can be built without requiring any blockchain development skills.`,
+    links: {
+      Website: 'https://www.kilt.io/',
+      Twitter: 'https://twitter.com/Kiltprotocol',
+      Telegram: 'https://t.me/KILTProtocolChat',
+      Medium: 'https://kilt-protocol.medium.com/',
+      Github: 'https://github.com/KILTprotocol',
+      Element: 'https://riot.im/app/#/group/+kilt-community:matrix.org',
+      Youtube: 'https://www.youtube.com/channel/UC5ihHD8UyGGx0oLZt78429w',
+      Reddit: 'https://www.reddit.com/r/KiltProtocol/',
+      Linkedin: 'https://www.linkedin.com/company/kilt-protocol/',
+    },
+  },
+  {
+    id: 2087,
+    name: 'Picasso',
+    slug: 'picasso',
+    token: 'PICA',
+    subtitle: `Picasso is an experimental ecosystem to birth new financial primitives and build applications that communicate natively, in a composed manner.`,
+    info: `Composable Finance is pleased to announce the Picasso token (PICA), which will be the native token of the Picasso Network Kusama parachain. PICA token will have a multitude of important use cases on our upcoming Picasso parachain, including key governance decisions.`,
+    links: {
+      Website: 'https://picasso.composable.finance/',
+      Twitter: 'https://twitter.com/ComposableFin',
+      Telegram: 'https://t.me/joinchat/uAGCJk_Cjc9iYTky',
+      Medium: 'https://composablefi.medium.com',
+      Github: 'https://github.com/ComposableFi',
+      Discord: 'https://discord.gg/pFZn2GCn65',
+      Linkedin: 'https://www.linkedin.com/company/composable-finance/',
+    },
+  },
+  {
+    id: 2088,
+    name: 'Altair',
+    slug: 'altair',
+    token: 'AIR',
+    subtitle:
+      'Altair combines the industry-leading infrastructure built by Centrifuge to finance real-world assets (RWA) on Centrifuge Chain, with the newest experimental features — before they go live on Centrifuge Chain.',
+    info: `Altair is built using Substrate, and will have nearly the same codebase as Centrifuge Chain (just like Kusama is to Polkadot!). It is an experimental network for users who want to test the bounds of asset financing. From art NFTs to undiscovered assets — Altair enables users to tokenize their most experimental assets and finance them. It is the next step for anyone looking to unlock financing for their assets.\n\nInteroperability is the key to increasing liquidity in DeFi. Altair will bridge across the Kusama, Polkadot, and Ethereum ecosystems to allow assets to access financing wherever it is available. In the future, Altair can connect more and more projects across these ecosystems — using Kusama to allow anyone to access DeFi liquidity. The more connected chains, protocols, and Dapps are — the greater the flow of liquidity will be.`,
+    links: {
+      Website: 'https://centrifuge.io/altair',
+      Twitter: 'https://twitter.com/centrifuge',
+      Telegram: 'https://t.me/centrifuge_chat',
+      Medium: 'https://medium.com/centrifuge',
+      Github: 'https://github.com/centrifuge/',
+      Discord: 'https://centrifuge.io/discord',
+    },
+  },
+  {
+    id: 2089,
+    name: 'Genshiro',
+    slug: 'genshiro',
+    token: 'GENS',
+    subtitle:
+      'Genshiro is a canary network of equilibrium that shares the experimental spirit of Kusama.',
+    info: `Genshiro is EquilibriumDeFi's DeFi one-stop shop on Kusama that can do all things that existing DeFi primitives do, but with less risk and cross-chain.`,
+    links: {
+      Website: 'https://genshiro.equilibrium.io/',
+      Twitter: 'https://twitter.com/GenshiroDeFi',
+      Telegram: 'https://t.me/genshiro_official',
+      Medium: 'https://medium.com/equilibrium-eosdt',
+      Github: 'https://github.com/equilibrium-eosdt',
+    },
+  },
+  {
+    id: 2090,
+    name: 'Basilisk',
+    slug: 'basilisk',
+    token: 'BSX',
+    subtitle:
+      'Basilisk is a liquidity bootstrapping protocol designed to operate as a parachain in Kusama, the Substrate canary network from the Polkadot family.',
+    info: `Basilisk is a natural stepping stone on our journey of building the liquidity infrastructure of the future. This plan will eventually culminate in the HydraDX Omnipool which is intended to operate as a Polkadot parachain in order to enable frictionless liquidity for any asset on any chain.\n\nTogether, Basilisk and HydraDX create a synergy which caters to the varying needs of cryptoassets throughout their entire life cycle. Bootstrap liquidity in the early stages using Basilisk, then move over to the HydraDX Omnipool to unlock unprecedented liquidity in an ocean of assets.`,
+    links: {
+      Website: 'https://bsx.fi/',
+      Twitter: 'https://twitter.com/bsx_finance',
+      Telegram: 'https://t.me/bsx_fi',
+      Github: 'https://github.com/galacticcouncil',
+      Discord: 'https://discord.gg/S8YZj5aXR6',
+    },
+  },
+  {
+    id: 2092,
+    name: 'Kintsugi BTC',
+    slug: 'kintsugi-btc',
+    token: 'KINT',
+    subtitle: `Kintsugi’s kBTC brings radically open Bitcoin to Kusama to kickstart liquidity for parachains like Karura, Shiden and Moonriver.`,
+    info: `Kintsugi is interBTC’s canary network, developed by Interlay — an R&D company focused on blockchain interoperability. Founded by ex-Imperial College CS PhDs — Alexei Zamyatin and Dominik Harz, Interlay’s mission is to make Bitcoin interoperable in a fully trustless and decentralized way.\n\nThe non-profit Kintsugi Lab will be responsible for Kintsugi’s launch and further — support the development and growth of the decentralized network.\n\nInspired by the ancient Japanese tradition of embracing the flawed and imperfect, Kintsugi accepts the nascent DeFi ecosystem on Kusama as chaotic while constantly being perfected by golden streaks of its community.`,
+    links: {
+      Website: 'https://kintsugi.interlay.io/',
+      Twitter: 'https://twitter.com/kintsugi_btc',
+      Telegram: 'https://t.me/interlay_community',
+      Medium: 'https://medium.com/interlay/',
+      Github: 'https://github.com/interlay',
+      Discord: 'http://discord.gg/KgCYK3MKS',
+    },
+  },
+]
