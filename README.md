@@ -113,7 +113,7 @@ With your nominated account you can create pull requests, or signal the validity
 Although developers can use the raw URLs as above, it's recommended to use one of the following when building applications:
 
 1. [Chaindata JS lib](https://github.com/talismansociety/chaindata-js) (js library)
-2. [Chaindata react hooks](https://github.com/talismansociety/chainspec-react-hooks) (react wrapper around the js lib)
+2. [Chaindata react hooks](https://github.com/TalismanSociety/api-react-hooks) (react wrapper around the js lib)
 
 ----
 
