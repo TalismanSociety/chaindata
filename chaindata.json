@@ -241,8 +241,8 @@
     "decimals": 12,
     "account": "*25519",
     "rpcs": [
-      "wss://kusama-statemine-rpc.paritytech.net",
       "wss://statemine.api.onfinality.io/public-ws",
+      "wss://statemine-rpc.polkadot.io",
       "wss://pub.elara.patract.io/statemine"
     ],
     "relay": {
@@ -325,8 +325,8 @@
     "decimals": 18,
     "account": "*25519",
     "rpcs": [
-      "wss://rpc.shiden.plasmnet.io",
       "wss://shiden.api.onfinality.io/public-ws",
+      "wss://rpc.shiden.astar.network",
       "wss://rpc.pinknode.io/shiden/explorer"
     ],
     "relay": {
@@ -602,7 +602,10 @@
     "token": "KINT",
     "decimals": null,
     "account": "*25519",
-    "rpcs": ["wss://api-kin.interlay.io/parachain"],
+    "rpcs": [
+      "wss://kintsugi.api.onfinality.io/public-ws",
+      "wss://api-kusama.interlay.io/parachain"
+    ],
     "relay": {
       "id": "kusama",
       "paraId": 2092
