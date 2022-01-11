@@ -1,6 +1,338 @@
 module.exports = [
   {
-    id: 2000,
+    id: '0-2000',
+    name: 'Acala',
+    slug: 'acala',
+    token: 'ACA',
+    subtitle: 'Acala is the DeFi and Liquidity Hub of Polkadot',
+    info: `Acala is an Ethereum-compatible smart contract platform optimized for DeFi and scaling DApps to Polkadot. The blockchain has built-in DeFi protocols for application developers to leverage, including a decentralized stablecoin (Acala Dollar - aUSD), a trustless staking derivatives (liquid DOT - LDOT), and a decentralized exchange.`,
+    links: {
+      Website: 'https://acala.network',
+      Twitter: 'https://twitter.com/AcalaNetwork',
+      Telegram: 'https://t.me/acalaofficial',
+      Discord: 'https://discord.com/invite/6QHVY4X',
+      Github: 'https://github.com/AcalaNetwork',
+    },
+  },
+  {
+    id: '0-2002',
+    name: 'Clover',
+    slug: 'clover',
+    token: 'CLV',
+    subtitle: 'A foundational layer for cross-chain compatibility.',
+    info: `Clover describes itself as a blockchain operating system. It contains a storage layer, smart contract layer, Defi protocol layer, and eApp layer that work in unison to accomplish the goal of blockchain interoperability.`,
+    links: {
+      Website: 'https://clover.finance/',
+      Twitter: 'https://twitter.com/clover_finance/',
+      Telegram: 'https://t.me/clover_en/',
+      Medium: 'https://projectclover.medium.com/',
+      Github: 'https://github.com/clover-network',
+      Discord: 'https://discord.com/invite/7EFqBwZ3aw',
+    },
+  },
+  {
+    id: '0-2003',
+    name: 'Darwinia',
+    slug: 'darwinia',
+    token: 'RING',
+    subtitle:
+      'Darwinia Network is a decentralized cross-chain bridge network building on Substrate.',
+    info: `Darwinia Network provides an entrance to the Polkadot ecology for projects that have been deployed on public blockchains such as Ethereum and BSC.`,
+    links: {
+      Website: 'https://darwinia.network/',
+      Twitter: 'https://twitter.com/DarwiniaNetwork/',
+      Telegram: 'http://t.me/DarwiniaNetwork',
+      Medium: 'https://darwinianetwork.medium.com/',
+      Github: 'https://github.com/darwinia-network',
+    },
+  },
+  {
+    id: '0-2004',
+    name: 'Moonbeam',
+    slug: 'moonbeam',
+    token: 'GLMR',
+    subtitle: 'An Ethereum-compatible smart contract parachain on Polkadot.',
+    info: `Moonbeam is a full Ethereum-like environment and works with industry-standard Ethereum tools, DApps, and protocols.`,
+    links: {
+      Website: 'https://moonbeam.network/networks/moonbeam/',
+      Twitter: 'https://twitter.com/moonbeamnetwork',
+      Telegram: 'https://t.me/Moonbeam_Official',
+      Medium: 'https://medium.com/moonbeam-network',
+      Github: 'https://github.com/PureStake/moonbeam',
+      Discord: 'https://discord.gg/PfpUATX',
+    },
+  },
+  {
+    id: '0-2006',
+    name: 'Astar',
+    slug: 'astar',
+    token: 'ASTR',
+    subtitle:
+      'Astar is the Polkadot-native dApp hub supporting Ethereum, WebAssembly, dApp Staking, and Layer2 solutions.',
+    info: `Astar Network (previously known as Plasm) is a dApp hub on Polkadot that supports Ethereum, WebAssembly, and layer 2 solutions like ZK Rollups. Astar aims to be a multi-chain smart contract platform that will support multiple blockchains and virtual machines.`,
+    links: {
+      Website: 'https://astar.network/',
+      Twitter: 'https://twitter.com/AstarNetwork',
+      Telegram: 'https://t.me/PlasmOfficial',
+      Medium: 'https://medium.com/astar-network',
+      Github: 'https://github.com/PlasmNetwork/Plasm',
+      Discord: 'https://discord.gg/Z3nC9U4',
+    },
+  },
+  {
+    id: '0-2008',
+    name: 'Crust',
+    slug: 'crust',
+    token: 'CRU',
+    subtitle:
+      'Crust implements the incentive layer protocol for decentralized storage.',
+    info: `It is adaptable to multiple storage layer protocols such as IPFS, and provides support for the application layer. Crust’s architecture also has the capability of supporting a decentralized computing layer and building a decentralized cloud ecosystem. Crust's decentralized storage layer provides a distributed file system. At the same time, Crust encapsulates some standard interfaces such as Amazon S3-like. Any application scenarios involving data storage, such as cloud services, edge computing, and decentralized applications, are the scenarios that Crust can adapt. Worth mentioning is that in edge computing scenarios, compared to centralized cloud storage, Crust's decentralized storage is closer to the edge, which can achieve relatively low cost and high performance.`,
+    links: {
+      Website: 'https://crust.network/',
+      Twitter: 'https://twitter.com/crustnetwork',
+      Telegram: 'https://t.me/CrustNetwork',
+      Medium: 'https://crustnetwork.medium.com/',
+      Github: 'https://github.com/crustio/crust',
+      Discord: 'https://discord.gg/Jbw2PAUSCR',
+    },
+  },
+  {
+    id: '0-2011',
+    name: 'Equilibrium',
+    slug: 'equilibrium',
+    token: 'EQ',
+    subtitle:
+      'The functionality of all key DeFi apps on one platform, with advanced bailout mechanism for system security.',
+    info: `Users can: Lend - All main crypto assets, EQ tokens Borrow - All main crypto assets, decentralized stablecoins, synthetics Trade - All main crypto assets, decentralized stablecoins, synthetics, EQ tokens Stake - PoS & DPoS crypto assets, EQ tokens Solves cross-chain interoperability, unlocking $311 Bln of total remaining DeFi market potential.`,
+    links: {
+      Website: 'https://equilibrium.io/',
+      Twitter: 'https://twitter.com/EquilibriumDeFi',
+      Telegram: 'https://t.me/equilibrium_eosdt_official',
+      Medium: 'https://medium.com/equilibrium-eosdt',
+      Github:
+        'https://github.com/equilibrium-eosdt/equilibrium-substrate-chain',
+    },
+  },
+  {
+    id: '0-2012',
+    name: 'Parallel',
+    slug: 'parallel',
+    token: 'PARA',
+    subtitle:
+      'Parallel Finance is a decentralized money market protocol that offers lending, staking, and borrowing in the Polkadot ecosystem.',
+    info: `Parallel's mission is to innovate and bring DeFi to the next level. We are creating the most secure and easy-to-use decentralized platform to empower everyone access to financial services.`,
+    links: {
+      Website: 'https://parallel.fi/',
+      Twitter: 'https://twitter.com/ParallelFi',
+      Telegram: 'https://t.me/parallelfi_community',
+      Medium: 'https://parallelfinance.medium.com/',
+      Github: 'https://github.com/parallel-finance',
+      Discord: 'https://discord.gg/buKKx4dySW',
+    },
+  },
+  {
+    id: '0-2013',
+    name: 'Litentry',
+    slug: 'litentry',
+    token: 'LIT',
+    subtitle:
+      'Litentry is a Decentralized Identity Aggregation protocol across multiple networks, it features a DID indexing mechanism and a Substrate-based credit computation network.',
+    info: `The protocol provides a decentralized, interoperable identity aggregation service that mitigates the difficulty of resolving agnostic DID mechanisms. Litentry provides a secure vehicle through which users manage their identities and dApps obtain the real-time credit/reputation of an identity owner across different blockchains.`,
+    links: {
+      Website: 'https://www.litentry.com/',
+      Twitter: 'https://twitter.com/litentry',
+      Telegram: 'https://t.me/litentry',
+      Medium: 'https://litentry.medium.com/',
+      Github: 'https://github.com/litentry/',
+      Linkedin: 'https://www.linkedin.com/company/litentry/about',
+    },
+  },
+  {
+    id: '0-2015',
+    name: 'Manta',
+    slug: 'manta',
+    token: 'MANTA',
+    subtitle: 'The Privacy Preservation Layer on Polkadot.',
+    info:
+      'Manta Network is a private layer built for the entire Polkadot ecosystem. Built on the Substrate framework, Manta Network is natively compatible with other projects and parachain assets including wrapped major cryptoassets.',
+    links: {
+      Website: 'https://manta.network/',
+      Twitter: 'https://twitter.com/mantanetwork',
+      Telegram: 'https://t.me/mantanetworkofficial',
+      Medium: 'https://medium.com/@mantanetwork',
+      Github: 'https://github.com/Manta-Network',
+    },
+  },
+  {
+    id: '0-2017',
+    name: 'SubGame Network',
+    slug: 'subgame-network',
+    token: 'SGB',
+    subtitle:
+      'SubGame is a public chain development team based on the Polkadot Parachain.',
+    info:
+      'It hopes to build a public chain with cross-chain interoperability. In addition to creating game applications, it can also build various types of application scenarios to create a common cross-chain industry. The blockchain infrastructure provides unlimited possibilities for distributed mobile applications.',
+    links: {
+      Website: 'https://www.subgame.org/',
+      Twitter: 'https://twitter.com/SubGame_Network',
+      Telegram: 'https://t.me/subgame_network',
+      Medium: 'https://medium.com/@subgame_network',
+      Github: 'https://github.com/SubGame-Network',
+    },
+  },
+  {
+    id: '0-2019',
+    name: 'Composable Finance',
+    slug: 'composable-finance',
+    token: 'LAYR',
+    subtitle:
+      'Composable’s parachain is going to be able to run multiple bytecodes together in the same place, in order to run smart contracts together in a manner that allows them to communicate and collaborate.',
+    info:
+      'As a result, protocols using different smart contract languages (i.e. those on different chains, especially) will be able to unite via our parachain, facilitating cross-chain asset swaps and other functionalities.',
+    links: {
+      Website: 'https://www.composable.finance/',
+      Twitter: 'https://twitter.com/ComposableFin',
+      Telegram: 'https://t.me/ComposableFinanceAnnouncements',
+      Medium: 'https://composablefi.medium.com/',
+      Github: 'https://github.com/ComposableFi/',
+    },
+  },
+  {
+    id: '0-2021',
+    name: 'Efinity',
+    slug: 'efinity',
+    token: 'EFI',
+    subtitle:
+      'Enjin is developing Efinity, a next-generation blockchain for digital assets, built on Polkadot.',
+    info:
+      'Businesses and developers seriously need a platform that can deliver a modern, mainstream and developer-friendly NFT experience. Since the release of Ethereum, there have been attempts to build infrastructure and tokenization around this general-purpose computing blockchain, but there’s an ever-growing thirst for a better solution.\n\nCreators are forced to work with crippling fees, inflexible smart contracts and disjointed interoperability. Adoption of today’s NFTs is still limited to die-hard crypto enthusiasts.\n\nThe blockchains that non-fungible tokens live on give actual users no incentives (other than the prices rising), because miners are given the full share of generated tokens. Prices rise, infrastructure companies create silos and paywalls, and it becomes difficult to make real progress in this industry - unless we can unify the community and think a bit differently.\n\nEfinity is built to solve these problems.',
+    links: {
+      Website: 'https://enjin.io/products/efinity',
+      Twitter: 'https://twitter.com/efinityio',
+      Blog: 'https://enjin.io/blog-tags/efinity',
+      GitHub: 'https://github.com/enjin',
+    },
+  },
+  {
+    id: '0-2026',
+    name: 'Nodle',
+    slug: 'nodle',
+    token: 'NODL',
+    subtitle:
+      "Nodle's mission is to connect the next trillion things to the Internet.",
+    info:
+      "Nodle leverages Bluetooth Low Energy (BLE) via millions of smartphones and routers to allow enterprises and smart cities to connect IoT devices to the Internet at a low-cost while maintaining privacy and security. Nodle's decentralized wireless network is currently comprised of 5M daily active smartphones with 30 million IoT devices discovered daily in over 100 countries, moving approximately 100 GB of data.",
+    links: {
+      Website: 'https://nodle.com/',
+      Twitter: 'https://twitter.com/NodleNetwork',
+      Medium: 'https://medium.com/nodle-io',
+      GitHub: 'https://github.com/NodleCode/chain',
+      Reddit: 'https://www.reddit.com/r/Nodle/',
+      Discord: 'https://discord.gg/N5nTUt8RWJ',
+      Telegram: 'https://t.me/nodlecommunity',
+    },
+  },
+  {
+    id: '0-2027',
+    name: 'Coinversation',
+    slug: 'coinversation',
+    token: 'CTO',
+    subtitle:
+      'Coinversation Protocol is a synthetic asset issuance protocol and decentralised contract trading exchange based on the Polkadot contract chain.',
+    info:
+      'It uses the token CTO issued by Coinversation Protocol and Polkadot(DOT) as collateral, and synthesizes any cryptocurrencies or stocks, bonds, gold and any other off-chain assets through smart contracts and oracles.',
+    links: {
+      Website: 'https://www.coinversation.io/',
+      Twitter: 'https://twitter.com/Coinversation_',
+      Medium: 'https://coinversationofficial.medium.com/',
+      GitHub: 'https://github.com/Coinversation/coinpro',
+      Telegram: 'https://t.me/coinversationofficial',
+    },
+  },
+  {
+    id: '0-2028',
+    name: 'Ares Protocol',
+    slug: 'ares-protocol',
+    token: 'ARES',
+    subtitle:
+      'Ares is an on-chain verifying oracle protocol powered by Polkadot.',
+    info: `It provides reliable off-chain data efficiently and in a trustless manner. Ares is built on Substrate and constructed as a parachain to link to Polkadot's ecology and share its security consensus. It is a scalable oracle network that provides decentralized data services to the Polkadot ecosystem and its parachains.`,
+    links: {
+      Website: 'https://www.aresprotocol.io/',
+      Twitter: 'https://twitter.com/AresProtocolLab',
+      Telegram: 'https://t.me/aresprotocol',
+      Medium: 'https://aresprotocollab.medium.com/',
+      Github: 'https://github.com/aresprotocols',
+      Discord: 'https://discord.gg/EsaFRr7xmc',
+    },
+  },
+  {
+    id: '0-2031',
+    name: 'Centrifuge',
+    slug: 'centrifuge',
+    token: 'CFG',
+    subtitle:
+      'Centrifuge Chain is the gateway for real-world assets to the Blockchain Multiverse.',
+    info: `We built Centrifuge Chain on Parity Substrate with an initial bridge to Ethereum. This allows us to move faster and use a consistent approach for certain features. We envision a larger ecosystem of many, connected blockchains- where Dapps on Ethereum could use data from other chains, value could move freely, and Centrifuge Chain can enable off-chain assets to access financing through DeFi.`,
+    links: {
+      Website: 'https://centrifuge.io/',
+      Twitter: 'https://twitter.com/centrifuge',
+      Telegram: 'https://t.me/centrifuge_chat',
+      Medium: 'https://medium.com/centrifuge',
+      Github: 'https://github.com/centrifuge/centrifuge-chain/',
+      Discord: 'https://centrifuge.io/discord',
+    },
+  },
+  {
+    id: '0-2032',
+    name: 'Interlay',
+    slug: 'interlay',
+    token: 'INTR',
+    subtitle:
+      'Interlay is a decentralized network dedicated to connecting crypto-currencies like Bitcoin with DeFi platforms like Polkadot and Ethereum.',
+    info: `The Interlay network is hosted as a Polkadot parachain and will be connected to Cosmos, Ethereum, and other major DeFi networks. Read more about Interlay’s vision of blockchain interoperability. interBTC, Interlay’s flagship product, is Bitcoin on any blockchain. A 1:1 Bitcoin-backed asset, fully collateralized, interoperable, and censorship-resistant.`,
+    links: {
+      Website: 'https://interlay.io/',
+      Twitter: 'https://twitter.com/interlayHQ',
+      Telegram: 'https://t.me/interlay_community',
+      Medium: 'https://medium.com/interlay',
+      Github: 'https://github.com/interlay/interbtc',
+      Discord: 'https://discord.com/invite/interlay',
+    },
+  },
+  {
+    id: '0-2034',
+    name: 'HydraDX',
+    slug: 'hydradx',
+    token: 'HDX',
+    subtitle: 'Cross-chain liquidity protocol built on Substrate',
+    info: `HydraDX is the creator of the Omnipool. Driven by the ambition to put an end to liquidity fragmentation, we have challenged the misconception that AMMs should be limited to pairs of assets. The Omnipool allows users to submerge any cryptoasset in an ocean of liquidity. One trading pool - many assets. Empowering native liquidity for the Polkadot ecosystem, and beyond.`,
+    links: {
+      Website: 'https://hydradx.io/',
+      Twitter: 'https://twitter.com/hydra_dx',
+      Medium: 'https://hydradx.substack.com/archive',
+      Github: 'https://github.com/galacticcouncil?tab=repositories',
+      Discord: 'https://discord.com/invite/xtVnQgq',
+    },
+  },
+  {
+    id: '0-2035',
+    name: 'Phala Network',
+    slug: 'phala-network',
+    token: 'PHA',
+    subtitle: 'Phala Network as a confidentiality layer for Web3.0 developers',
+    info: `Phala is a Polkadot parachain, and developers can invoke and interact with confidential contracts on other Polkadot parachains.`,
+    links: {
+      Website: 'https://phala.network',
+      Twitter: 'https://twitter.com/PhalaNetwork',
+      Telegram: 'https://t.me/phalanetwork',
+      Medium: 'https://medium.com/phala-network',
+      Github: 'https://github.com/Phala-Network',
+      Discord: 'https://discord.gg/phala',
+    },
+  },
+  {
+    id: '2-2000',
     name: 'Karura',
     slug: 'karura',
     token: 'KAR',
@@ -15,7 +347,7 @@ module.exports = [
     },
   },
   {
-    id: 2001,
+    id: '2-2001',
     name: 'Bifrost',
     slug: 'bifrost',
     token: 'BNC',
@@ -32,7 +364,7 @@ module.exports = [
     },
   },
   {
-    id: 2004,
+    id: '2-2004',
     name: 'Khala Network',
     slug: 'khala-network',
     token: 'PHA',
@@ -49,7 +381,7 @@ module.exports = [
     },
   },
   // {
-  //   id: 2006,
+  //   id: '2-2006',
   //   name: 'Darwinia Crab Redirect',
   //   slug: 'darwinia-crab-redirect',
   //   token: 'CRING',
@@ -65,7 +397,7 @@ module.exports = [
   //   },
   // },
   {
-    id: 2007,
+    id: '2-2007',
     name: 'Shiden',
     slug: 'shiden',
     token: 'SDN',
@@ -81,10 +413,10 @@ module.exports = [
     },
   },
   {
-    id: 2008,
+    id: '2-2008',
     name: 'Mars',
     slug: 'mars',
-    token: 'ARES',
+    token: 'MARS',
     subtitle:
       'Ares is an on-chain verifying oracle protocol powered by Polkadot.',
     info: ` It provides reliable off-chain data efficiently and in a trustless manner. Ares is built on Substrate and constructed as a parachain to link to Polkadot's ecology and share its security consensus. It is a scalable oracle network that provides decentralized data services to the Polkadot ecosystem and its parachains.`,
@@ -98,7 +430,7 @@ module.exports = [
     },
   },
   {
-    id: 2009,
+    id: '2-2009',
     name: 'PolkaSmith by PolkaFoundry',
     slug: 'polkasmith-by-polkafoundry',
     token: 'PKS',
@@ -113,7 +445,7 @@ module.exports = [
     },
   },
   {
-    id: 2012,
+    id: '2-2012',
     name: 'Crust Shadow',
     slug: 'crust-shadow',
     token: 'CSM',
@@ -131,7 +463,7 @@ module.exports = [
     },
   },
   {
-    id: 2013,
+    id: '2-2013',
     name: 'SherpaX',
     slug: 'sherpax',
     token: 'KSX',
@@ -148,7 +480,7 @@ module.exports = [
     },
   },
   {
-    id: 2015,
+    id: '2-2015',
     name: 'Integritee Network',
     slug: 'integritee-network',
     token: 'TEER',
@@ -166,7 +498,7 @@ module.exports = [
     },
   },
   {
-    id: 2016,
+    id: '2-2016',
     name: 'Sakura',
     slug: 'sakura',
     token: 'SKU',
@@ -182,7 +514,7 @@ module.exports = [
     },
   },
   {
-    id: 2018,
+    id: '2-2018',
     name: 'SubGame Gamma',
     slug: 'subgame-gamma',
     token: 'GSGB',
@@ -196,7 +528,7 @@ module.exports = [
     },
   },
   {
-    id: 2019,
+    id: '2-2019',
     name: 'Kpron',
     slug: 'kpron',
     token: 'KPN',
@@ -213,7 +545,7 @@ module.exports = [
     },
   },
   // {
-  //   id: 2021,
+  //   id: '2-2021',
   //   name: 'Altair',
   //   slug: 'altair',
   //   token: 'AIR',
@@ -230,7 +562,7 @@ module.exports = [
   //   },
   // },
   {
-    id: 2023,
+    id: '2-2023',
     name: 'Moonriver',
     slug: 'moonriver',
     token: 'MOVR',
@@ -246,7 +578,7 @@ module.exports = [
     },
   },
   {
-    id: 2024,
+    id: '2-2024',
     name: 'Genshiro',
     slug: 'genshiro',
     token: 'GENS',
@@ -262,7 +594,7 @@ module.exports = [
     },
   },
   {
-    id: 2077,
+    id: '2-2048',
     name: 'Robonomics',
     slug: 'robonomics',
     token: 'XRT',
@@ -278,7 +610,7 @@ module.exports = [
     },
   },
   {
-    id: 2080,
+    id: '2-2080',
     name: 'Loom Network',
     slug: 'loom-network',
     token: 'LOOM',
@@ -295,7 +627,7 @@ module.exports = [
     },
   },
   {
-    id: 2084,
+    id: '2-2084',
     name: 'Calamari',
     slug: 'calamari',
     token: 'KMA',
@@ -310,7 +642,7 @@ module.exports = [
     },
   },
   {
-    id: 2085,
+    id: '2-2085',
     name: 'Parallel Heiko',
     slug: 'parallel-heiko',
     token: 'HKO',
@@ -326,7 +658,7 @@ module.exports = [
     },
   },
   {
-    id: 2086,
+    id: '2-2086',
     name: 'KILT Spiritnet',
     slug: 'kilt-spiritnet',
     token: 'KILT',
@@ -345,7 +677,7 @@ module.exports = [
     },
   },
   {
-    id: 2087,
+    id: '2-2087',
     name: 'Picasso',
     slug: 'picasso',
     token: 'PICA',
@@ -362,7 +694,7 @@ module.exports = [
     },
   },
   {
-    id: 2088,
+    id: '2-2088',
     name: 'Altair',
     slug: 'altair',
     token: 'AIR',
@@ -379,7 +711,7 @@ module.exports = [
     },
   },
   // {
-  //   id: 2089,
+  //   id: '2-2089',
   //   name: 'Genshiro',
   //   slug: 'genshiro',
   //   token: 'GENS',
@@ -394,7 +726,7 @@ module.exports = [
   //   },
   // },
   {
-    id: 2090,
+    id: '2-2090',
     name: 'Basilisk',
     slug: 'basilisk',
     token: 'BSX',
@@ -410,7 +742,7 @@ module.exports = [
     },
   },
   {
-    id: 2092,
+    id: '2-2092',
     name: 'Kintsugi BTC',
     slug: 'kintsugi-btc',
     token: 'KINT',
@@ -422,14 +754,14 @@ module.exports = [
       Telegram: 'https://t.me/interlay_community',
       Medium: 'https://medium.com/interlay/',
       Github: 'https://github.com/interlay',
-      Discord: 'http://discord.gg/KgCYK3MKS',
+      Discord: 'https://discord.gg/KgCYK3MKSf',
     },
   },
   {
-    id: 2095,
+    id: '2-2095',
     name: 'Quartz',
     slug: 'quartz',
-    token: 'NEER',
+    token: 'QTZ',
     subtitle: `Quartz gives the Kusama community the essential and advanced NFT tools to unleash innovation.`,
     info: `Quartz gives you easy access to test extreme innovation in NFTs and build for the next generation. Built on Substrate, Quartz gives you the most versatile options for discovery and democratization of the NFT ecosystem and marketplaces (with very low barriers for entry).\nAdvanced features like Flexible Economic Models, Scheduled Transactions, Re-fungiblity, and Nested NFTs will all be available via Quartz, allowing users to own UX/UI for your fans and customers.Quartz parachain on Kusama will allow you to build with interoperability between different blockchains, and give developers and engineers the access to the shared security of the entire network.`,
     links: {
@@ -440,7 +772,7 @@ module.exports = [
     },
   },
   {
-    id: 2096,
+    id: '2-2096',
     name: 'Bit.Country Pioneer',
     slug: 'bit-country-pioneer',
     token: 'NEER',
@@ -453,6 +785,55 @@ module.exports = [
       Medium: 'https://bitcountry.medium.com/',
       Github: 'https://github.com/bit-country',
       Discord: 'https://discord.com/invite/PaMAXZZ59N',
+    },
+  },
+  {
+    id: '2-2100',
+    name: 'Subsocial',
+    slug: 'subsocial',
+    token: 'SUB',
+    subtitle: 'Subsocial - Decentralized social network on Polkadot & IPFS',
+    info: `Subsocial is a Polkadot ecosystem project supported by Web3 Foundation. Subsocial follows SoFi (social finance) principles to bring DeFi features to social networking.`,
+    links: {
+      Website: 'https://subsocial.network',
+      Twitter: 'https://twitter.com/SubsocialChain',
+      Telegram: 'https://t.me/Subsocial',
+      Discord: 'https://discord.com/invite/w2Rqy2M',
+      Github: 'https://github.com/dappforce',
+    },
+  },
+  {
+    id: '2-2101',
+    name: 'Zeitgeist',
+    slug: 'zeitgeist',
+    token: 'ZTG',
+    subtitle:
+      'Zeitgeist is an evolving blockchain for prediction markets and futarchy.',
+    info: `Zeitgeist is a decentralized network for prediction markets. Zeitgeist is an evolving network that will change and adapt over time. It does this through a sophisticated on-chain governance process.`,
+    links: {
+      Website: 'https://zeitgeist.pm/',
+      Twitter: 'https://twitter.com/ZeitgeistPM',
+      Telegram: 'https://t.me/zeitgeist_official',
+      Discord: 'https://discord.gg/xv8HuA4s8v',
+      Github: 'https://github.com/ZeitgeistPM',
+      Medium: 'https://blog.zeitgeist.pm/#subscribe',
+    },
+  },
+  {
+    id: '2-2102',
+    name: 'Pichiu',
+    slug: 'pichiu',
+    token: 'PCHU',
+    subtitle:
+      'Pichiu aims to build a cross-chain platform powering the data economy on Kusama.',
+    info: `It will be the data infrastructure for the future DeFi and Web 3.0 powered by Kusama. Pichiu will provide valid, reliable, secure, cost-effective, and easily-coordinated data sources and data analytics.`,
+    links: {
+      Website: 'https://kylin.network/',
+      Twitter: 'https://twitter.com/Kylin_Network',
+      Telegram: 'https://t.me/KylinOfficial',
+      Discord: 'https://discord.com/invite/PwYCssr',
+      Github: 'https://github.com/Kylin-Network/kylin-collator',
+      Medium: 'https://kylinnetwork.medium.com/',
     },
   },
 ]

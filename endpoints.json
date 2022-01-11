@@ -1,276 +1,585 @@
-{
-  "dnslink": "kusama",
-  "genesisHash": "0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe",
-  "info": "kusama",
-  "text": "Kusama",
-  "providers": {
-    "Parity": "wss://kusama-rpc.polkadot.io",
-    "OnFinality": "wss://kusama.api.onfinality.io/public-ws",
-    "Patract Elara": "wss://pub.elara.patract.io/kusama",
-    "light client": "light://substrate-connect/kusama"
-  },
-  "teleport": [
-    1000
-  ],
-  "linked": [
-    {
-      "info": "statemine",
-      "paraId": 1000,
-      "text": "Statemine",
-      "providers": {
-        "Parity": "wss://kusama-statemine-rpc.paritytech.net",
-        "OnFinality": "wss://statemine.api.onfinality.io/public-ws",
-        "Patract Elara": "wss://pub.elara.patract.io/statemine"
+[
+  {
+    "dnslink": "polkadot",
+    "genesisHash": "0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3",
+    "info": "polkadot",
+    "text": "Polkadot",
+    "providers": {
+      "Parity": "wss://rpc.polkadot.io",
+      "OnFinality": "wss://polkadot.api.onfinality.io/public-ws",
+      "Dwellir": "wss://polkadot-rpc.dwellir.com",
+      "light client": "light://substrate-connect/polkadot"
+    },
+    "linked": [
+      {
+        "info": "statemint",
+        "paraId": 1000,
+        "text": "Statemint",
+        "providers": {
+          "Parity": "wss://statemint-rpc.polkadot.io",
+          "OnFinality": "wss://statemint.api.onfinality.io/public-ws"
+        }
       },
-      "teleport": [
-        -1
-      ]
-    },
-    {
-      "info": "altair",
-      "homepage": "https://centrifuge.io/altair",
-      "paraId": 2088,
-      "text": "Altair",
-      "providers": {
-        "Centrifuge": "wss://fullnode.altair.centrifuge.io"
+      {
+        "info": "acala",
+        "homepage": "https://acala.network/",
+        "paraId": 2000,
+        "text": "Acala",
+        "providers": {
+          "Acala Foundation 0": "wss://acala-rpc-0.aca-api.network",
+          "Acala Foundation 1": "wss://acala-rpc-1.aca-api.network",
+          "Acala Foundation 2": "wss://acala-rpc-2.aca-api.network/ws",
+          "Acala Foundation 3": "wss://acala-rpc-3.aca-api.network/ws",
+          "Polkawallet 0": "wss://acala.polkawallet.io",
+          "OnFinality": "wss://acala-polkadot.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "odyssey",
+        "homepage": "https://www.aresprotocol.io/",
+        "paraId": 2028,
+        "text": "Ares Odyssey",
+        "providers": {
+          "AresProtocol": "wss://wss.odyssey.aresprotocol.io"
+        }
+      },
+      {
+        "info": "astar",
+        "homepage": "https://astar.network",
+        "paraId": 2006,
+        "text": "Astar",
+        "providers": {
+          "Astar": "wss://rpc.astar.network",
+          "OnFinality": "wss://astar.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "bifrost",
+        "homepage": "https://dot.bifrost.app/?ref=polkadotjs",
+        "paraId": 2001,
+        "isUnreachable": true,
+        "text": "Bifrost",
+        "providers": {
+          "Liebi": "wss://bifrost-dot.liebi.com/ws"
+        }
+      },
+      {
+        "info": "centrifuge",
+        "homepage": "https://centrifuge.io",
+        "paraId": 2031,
+        "isUnreachable": true,
+        "text": "Centrifuge",
+        "providers": {
+          "Centrifuge": "wss://fullnode.parachain.centrifuge.io"
+        }
+      },
+      {
+        "info": "clover",
+        "homepage": "https://clover.finance",
+        "paraId": 2002,
+        "text": "Clover",
+        "providers": {
+          "Clover": "wss://rpc-para.clover.finance",
+          "OnFinality": "wss://clover.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "coinversation",
+        "isUnreachable": true,
+        "homepage": "http://www.coinversation.io/",
+        "paraId": 2027,
+        "text": "Coinversation",
+        "providers": {
+          "Coinversation": "wss://rpc.coinversation.io/"
+        }
+      },
+      {
+        "info": "composableFinance",
+        "isUnreachable": true,
+        "homepage": "https://composable.finance/",
+        "paraId": 2019,
+        "text": "Composable Finance",
+        "providers": {
+          "Composable": "wss://rpc.composable.finance"
+        }
+      },
+      {
+        "info": "crustParachain",
+        "homepage": "https://crust.network",
+        "paraId": 2008,
+        "isUnreachable": true,
+        "text": "Crust",
+        "providers": {
+          "Crust": "wss://rpc.crust.network"
+        }
+      },
+      {
+        "info": "darwinia",
+        "isUnreachable": true,
+        "homepage": "https://darwinia.network/",
+        "paraId": 2003,
+        "text": "Darwinia",
+        "providers": {
+          "Darwinia": "wss://parachain-rpc.darwinia.network"
+        }
+      },
+      {
+        "info": "efinity",
+        "homepage": "https://efinity.io",
+        "paraId": 2021,
+        "text": "Efinity",
+        "providers": {
+          "Efinity": "wss://rpc.efinity.io"
+        }
+      },
+      {
+        "info": "equilibrium",
+        "isUnreachable": true,
+        "homepage": "https://equilibrium.io/",
+        "paraId": 2011,
+        "text": "Equilibrium",
+        "providers": {
+          "Equilibrium": "wss://node.equilibrium.io"
+        }
+      },
+      {
+        "info": "hydra",
+        "homepage": "https://hydradx.io/",
+        "paraId": 2034,
+        "isUnreachable": true,
+        "text": "HydraDX",
+        "providers": {
+          "Galactic Council": "wss://rpc-01.hydradx.io"
+        }
+      },
+      {
+        "info": "interlay",
+        "homepage": "https://interlay.io/",
+        "paraId": 2032,
+        "text": "Interlay",
+        "providers": {
+          "Kintsugi Labs": "wss://api.interlay.io/parachain"
+        }
+      },
+      {
+        "info": "litentry",
+        "homepage": "https://crowdloan.litentry.com",
+        "paraId": 2013,
+        "isUnreachable": true,
+        "text": "Litentry",
+        "providers": {
+          "Litentry": "wss://parachain.litentry.io"
+        }
+      },
+      {
+        "info": "manta",
+        "homepage": "https://manta.network",
+        "paraId": 2015,
+        "text": "Manta",
+        "providers": {
+          "Manta Kuhlii": "wss://kuhlii.manta.systems",
+          "Manta Munkiana": "wss://munkiana.manta.systems",
+          "Manta Pectinata": "wss://pectinata.manta.systems"
+        }
+      },
+      {
+        "info": "moonbeam",
+        "homepage": "https://moonbeam.network/networks/moonbeam/",
+        "paraId": 2004,
+        "text": "Moonbeam",
+        "providers": {
+          "Moonbeam Foundation": "wss://wss.api.moonbeam.network",
+          "OnFinality": "wss://moonbeam.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "nodle",
+        "homepage": "https://nodle.com",
+        "isUnreachable": true,
+        "paraId": 2026,
+        "text": "Nodle",
+        "providers": {
+          "Nodle": "wss://rpc.nodle.com"
+        }
+      },
+      {
+        "info": "parallel",
+        "homepage": "https://parallel.fi",
+        "paraId": 2012,
+        "text": "Parallel",
+        "providers": {
+          "Parallel": "wss://rpc.parallel.fi",
+          "OnFinality": "wss://parallel.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "phala",
+        "homepage": "https://phala.network",
+        "isUnreachable": true,
+        "paraId": 2035,
+        "text": "Phala Network",
+        "providers": {
+          "Phala": "wss://api.phala.network/ws"
+        }
+      },
+      {
+        "info": "subdao",
+        "homepage": "https://subdao.network/",
+        "paraId": 2018,
+        "isUnreachable": true,
+        "text": "SubDAO",
+        "providers": {
+          "SubDAO": "wss://parachain-rpc.subdao.org"
+        }
+      },
+      {
+        "info": "subgame",
+        "homepage": "http://subgame.org/",
+        "isUnreachable": true,
+        "paraId": 2017,
+        "text": "SubGame Gamma",
+        "providers": {
+          "SubGame": "wss://gamma.subgame.org/"
+        }
       }
+    ]
+  },
+  {
+    "dnslink": "kusama",
+    "genesisHash": "0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe",
+    "info": "kusama",
+    "text": "Kusama",
+    "providers": {
+      "Parity": "wss://kusama-rpc.polkadot.io",
+      "OnFinality": "wss://kusama.api.onfinality.io/public-ws",
+      "Dwellir": "wss://kusama-rpc.dwellir.com",
+      "light client": "light://substrate-connect/kusama"
     },
-    {
-      "info": "basilisk",
-      "homepage": "https://bsx.fi",
-      "paraId": 2090,
-      "text": "Basilisk",
-      "providers": {
-        "HydraDX": "wss://rpc-01.basilisk.hydradx.io"
+    "teleport": [
+      1000
+    ],
+    "linked": [
+      {
+        "info": "statemine",
+        "paraId": 1000,
+        "text": "Statemine",
+        "providers": {
+          "Parity": "wss://statemine-rpc.polkadot.io",
+          "OnFinality": "wss://statemine.api.onfinality.io/public-ws"
+        },
+        "teleport": [
+          -1
+        ]
+      },
+      {
+        "info": "altair",
+        "homepage": "https://centrifuge.io/altair",
+        "paraId": 2088,
+        "text": "Altair",
+        "providers": {
+          "Centrifuge": "wss://fullnode.altair.centrifuge.io",
+          "OnFinality": "wss://altair.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "basilisk",
+        "homepage": "https://bsx.fi",
+        "paraId": 2090,
+        "text": "Basilisk",
+        "providers": {
+          "HydraDX": "wss://rpc-01.basilisk.hydradx.io",
+          "OnFinality": "wss://basilisk.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "bifrost",
+        "homepage": "https://ksm.vtoken.io/?ref=polkadotjs",
+        "paraId": 2001,
+        "text": "Bifrost (Kusama)",
+        "providers": {
+          "Liebi": "wss://bifrost-rpc.liebi.com/ws",
+          "OnFinality": "wss://bifrost-parachain.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "bitcountryPioneer",
+        "homepage": "https://bit.country/?ref=polkadotjs",
+        "paraId": 2096,
+        "text": "Bit.Country Pioneer",
+        "providers": {
+          "Bit.Country": "wss://pioneer-1-rpc.bit.country",
+          "OnFinality": "wss://pioneer.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "calamari",
+        "homepage": "https://www.calamari.network/",
+        "paraId": 2084,
+        "text": "Calamari",
+        "providers": {
+          "Calamari Falafel": "wss://falafel.calamari.systems/",
+          "Calamari Fritti": "wss://fritti.calamari.systems/",
+          "Calamari Pasta": "wss://pasta.calamari.systems/",
+          "Calamari Smoothie": "wss://smoothie.calamari.systems/",
+          "OnFinality": "wss://calamari.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "shadow",
+        "homepage": "https://crust.network/",
+        "paraId": 2012,
+        "text": "Crust Shadow",
+        "providers": {
+          "Crust": "wss://rpc-shadow.crust.network/"
+        }
+      },
+      {
+        "info": "crab",
+        "homepage": "https://crab.network",
+        "isUnreachable": true,
+        "paraId": 2105,
+        "text": "Darwinia Crab",
+        "providers": {
+          "Crab": "wss://crab-parachain-rpc.darwinia.network/"
+        }
+      },
+      {
+        "info": "encointer",
+        "homepage": "https://encointer.org/",
+        "paraId": 1001,
+        "text": "Encointer Network",
+        "providers": {
+          "Encointer Association": "wss://api.kusama.encointer.org"
+        }
+      },
+      {
+        "info": "genshiro",
+        "homepage": "https://genshiro.equilibrium.io",
+        "isUnreachable": true,
+        "paraId": 2024,
+        "text": "Genshiro",
+        "providers": {
+          "Equilibrium": "wss://node.genshiro.io"
+        }
+      },
+      {
+        "info": "integritee",
+        "homepage": "https://integritee.network",
+        "paraId": 2015,
+        "text": "Integritee Network",
+        "providers": {
+          "Integritee": "wss://kusama.api.integritee.network"
+        }
+      },
+      {
+        "info": "karura",
+        "homepage": "https://acala.network/karura/join-karura",
+        "paraId": 2000,
+        "text": "Karura",
+        "providers": {
+          "Acala Foundation 0": "wss://karura-rpc-0.aca-api.network",
+          "Acala Foundation 1": "wss://karura-rpc-1.aca-api.network",
+          "Acala Foundation 2": "wss://karura-rpc-2.aca-api.network/ws",
+          "Acala Foundation 3": "wss://karura-rpc-3.aca-api.network/ws",
+          "Polkawallet 0": "wss://karura.polkawallet.io",
+          "OnFinality": "wss://karura.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "khala",
+        "homepage": "https://phala.network/",
+        "paraId": 2004,
+        "text": "Khala Network",
+        "providers": {
+          "Phala": "wss://khala-api.phala.network/ws",
+          "OnFinality": "wss://khala.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "kilt",
+        "homepage": "https://www.kilt.io/",
+        "paraId": 2086,
+        "text": "KILT Spiritnet",
+        "providers": {
+          "KILT Protocol": "wss://spiritnet.kilt.io/",
+          "OnFinality": "wss://spiritnet.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "kintsugi",
+        "homepage": "https://kintsugi.interlay.io/",
+        "paraId": 2092,
+        "text": "Kintsugi BTC",
+        "providers": {
+          "Kintsugi Labs": "wss://api-kusama.interlay.io/parachain",
+          "OnFinality": "wss://kintsugi.api.onfinality.io/public-ws"
+        }
+      },
+      {
+        "info": "kpron",
+        "homepage": "http://apron.network/",
+        "isUnreachable": true,
+        "paraId": 2019,
+        "text": "Kpron",
+        "providers": {
+          "Kpron": "wss://kusama-kpron-rpc.apron.network/"
+        }
+      },
+      {
+        "info": "loomNetwork",
+        "isUnreachable": true,
+        "homepage": "https://loomx.io/",
+        "paraId": 2080,
+        "text": "Loom Network",
+        "providers": {
+          "LoomNetwork": "wss://kusama.dappchains.com"
+        }
+      },
+      {
+        "info": "mars",
+        "homepage": "https://www.aresprotocol.io/mars",
+        "paraId": 2008,
+        "text": "Mars",
+        "providers": {
+          "AresProtocol": "wss://wss.mars.aresprotocol.io"
+        }
+      },
+      {
+        "info": "moonriver",
+        "homepage": "https://moonbeam.foundation/moonriver-crowdloan/",
+        "paraId": 2023,
+        "text": "Moonriver",
+        "providers": {
+          "PureStake": "wss://wss.moonriver.moonbeam.network",
+          "OnFinality": "wss://moonriver.api.onfinality.io/public-ws",
+          "Pinknode": "wss://rpc.pinknode.io/moonriver/explorer"
+        }
+      },
+      {
+        "info": "heiko",
+        "homepage": "https://parallel.fi",
+        "paraId": 2085,
+        "text": "Parallel Heiko",
+        "providers": {
+          "OnFinality": "wss://parallel-heiko.api.onfinality.io/public-ws",
+          "Parallel": "wss://heiko-rpc.parallel.fi"
+        }
+      },
+      {
+        "info": "picasso",
+        "homepage": "https://picasso.composable.finance/",
+        "paraId": 2087,
+        "text": "Picasso",
+        "providers": {
+          "Composable": "wss://picasso-rpc.composable.finance"
+        }
+      },
+      {
+        "info": "pichiu",
+        "homepage": "https://kylin.network/",
+        "paraId": 2102,
+        "text": "Pichiu",
+        "providers": {
+          "Kylin Network": "wss://kusama.kylin-node.co.uk"
+        }
+      },
+      {
+        "info": "polkasmith",
+        "isUnreachable": true,
+        "homepage": "https://polkasmith.polkafoundry.com/",
+        "paraId": 2009,
+        "text": "PolkaSmith by PolkaFoundry",
+        "providers": {
+          "PolkaSmith": "wss://wss-polkasmith.polkafoundry.com"
+        }
+      },
+      {
+        "info": "quartz",
+        "homepage": "https://unique.network/",
+        "paraId": 2095,
+        "text": "QUARTZ by UNIQUE",
+        "providers": {
+          "Unique": "wss://quartz.unique.network",
+          "Unique Europe": "wss://eu-ws-quartz.unique.network",
+          "Unique US": "wss://us-ws-quartz.unique.network"
+        }
+      },
+      {
+        "info": "robonomics",
+        "homepage": "http://robonomics.network/",
+        "paraId": 2048,
+        "text": "Robonomics",
+        "providers": {
+          "Airalab": "wss://kusama.rpc.robonomics.network/"
+        }
+      },
+      {
+        "info": "trustbase",
+        "isUnreachable": true,
+        "homepage": "https://trustbase.network/",
+        "paraId": 2078,
+        "text": "TrustBase",
+        "providers": {}
+      },
+      {
+        "info": "sakura",
+        "homepage": "https://clover.finance/",
+        "isUnreachable": true,
+        "paraId": 2016,
+        "text": "Sakura",
+        "providers": {
+          "Clover": "wss://api-sakura.clover.finance"
+        }
+      },
+      {
+        "info": "shiden",
+        "homepage": "https://shiden.plasmnet.io/",
+        "paraId": 2007,
+        "text": "Shiden",
+        "providers": {
+          "StakeTechnologies": "wss://rpc.shiden.astar.network",
+          "OnFinality": "wss://shiden.api.onfinality.io/public-ws",
+          "Pinknode": "wss://rpc.pinknode.io/shiden/explorer"
+        }
+      },
+      {
+        "info": "subgame",
+        "homepage": "http://subgame.org/",
+        "paraId": 2018,
+        "text": "SubGame Gamma",
+        "providers": {
+          "SubGame": "wss://gamma.subgame.org/"
+        }
+      },
+      {
+        "info": "subsocial",
+        "isUnreachable": true,
+        "homepage": "https://subsocial.network/",
+        "paraId": 2100,
+        "text": "Subsocial",
+        "providers": {
+          "Dappforce": "wss://para.subsocial.network"
+        }
+      },
+      {
+        "info": "unorthodox",
+        "homepage": "https://standard.tech/",
+        "paraId": 2094,
+        "text": "Unorthodox",
+        "providers": {
+          "Standard Protocol": "wss://rpc.kusama.standard.tech"
+        }
+      },
+      {
+        "info": "zeitgeist",
+        "isUnreachable": true,
+        "homepage": "https://zeitgeist.pm",
+        "paraId": 2101,
+        "text": "Zeitgeist",
+        "providers": {
+          "ZeitgeistPM": "wss://rpc-0.zeitgeist.pm"
+        }
       }
-    },
-    {
-      "info": "bifrost",
-      "homepage": "https://ksm.vtoken.io/?ref=polkadotjs",
-      "paraId": 2001,
-      "text": "Bifrost",
-      "providers": {
-        "Liebi": "wss://bifrost-rpc.liebi.com/ws",
-        "OnFinality": "wss://bifrost-parachain.api.onfinality.io/public-ws",
-        "Patract Elara": "wss://pub.elara.patract.io/bifrost"
-      }
-    },
-    {
-      "info": "calamari",
-      "homepage": "https://www.calamari.network/",
-      "paraId": 2084,
-      "text": "Calamari",
-      "providers": {
-        "Manta": "wss://falafel.calamari.systems/"
-      }
-    },
-    {
-      "info": "shadow",
-      "homepage": "https://crust.network/",
-      "paraId": 2012,
-      "text": "Crust Shadow",
-      "providers": {
-        "Crust": "wss://shadow.crust.network/"
-      }
-    },
-    {
-      "info": "encointer_canary",
-      "homepage": "https://encointer.org/",
-      "isUnreachable": true,
-      "paraId": 2014,
-      "text": "Encointer Canary",
-      "providers": {
-        "Encointer": "wss://canary.encointer.org"
-      }
-    },
-    {
-      "info": "genshiro",
-      "isUnreachable": true,
-      "homepage": "https://genshiro.equilibrium.io",
-      "paraId": 2089,
-      "text": "Genshiro",
-      "providers": {
-        "Equilibrium": "wss://gens-mainnet.equilibrium.io"
-      }
-    },
-    {
-      "info": "integritee",
-      "homepage": "https://integritee.network",
-      "paraId": 2015,
-      "text": "Integritee Network",
-      "providers": {
-        "Integritee": "wss://kusama.api.integritee.network"
-      }
-    },
-    {
-      "info": "karura",
-      "homepage": "https://acala.network/karura/join-karura",
-      "paraId": 2000,
-      "text": "Karura",
-      "providers": {
-        "Acala Foundation 0": "wss://karura-rpc-0.aca-api.network",
-        "Acala Foundation 1": "wss://karura-rpc-1.aca-api.network",
-        "Acala Foundation 2": "wss://karura-rpc-2.aca-api.network/ws",
-        "Acala Foundation 3": "wss://karura-rpc-3.aca-api.network/ws",
-        "Polkawallet 0": "wss://karura.polkawallet.io",
-        "OnFinality": "wss://karura.api.onfinality.io/public-ws",
-        "Patract Elara": "wss://pub.elara.patract.io/karura"
-      }
-    },
-    {
-      "info": "khala",
-      "homepage": "https://phala.network/",
-      "paraId": 2004,
-      "text": "Khala Network",
-      "providers": {
-        "Phala": "wss://khala-api.phala.network/ws",
-        "OnFinality": "wss://khala.api.onfinality.io/public-ws"
-      }
-    },
-    {
-      "info": "kilt",
-      "homepage": "https://www.kilt.io/",
-      "paraId": 2086,
-      "text": "KILT Spiritnet",
-      "providers": {
-        "KILT Protocol": "wss://spiritnet.kilt.io/",
-        "OnFinality": "wss://spiritnet.api.onfinality.io/public-ws"
-      }
-    },
-    {
-      "info": "kintsugi",
-      "homepage": "https://kintsugi.interlay.io/",
-      "paraId": 2092,
-      "text": "Kintsugi BTC",
-      "providers": {
-        "Kintsugi Labs": "wss://api-kin.interlay.io/parachain"
-      }
-    },
-    {
-      "info": "kpron",
-      "homepage": "http://apron.network/",
-      "isUnreachable": true,
-      "paraId": 2019,
-      "text": "Kpron",
-      "providers": {
-        "Kpron": "wss://kusama-kpron-rpc.apron.network/"
-      }
-    },
-    {
-      "info": "loomNetwork",
-      "isUnreachable": true,
-      "homepage": "https://loomx.io/",
-      "paraId": 2080,
-      "text": "Loom Network",
-      "providers": {
-        "LoomNetwork": "wss://kusama.dappchains.com"
-      }
-    },
-    {
-      "info": "mars",
-      "homepage": "https://www.aresprotocol.io/",
-      "paraId": 2008,
-      "text": "Mars",
-      "providers": {
-        "AresProtocol": "wss://wss.mars.aresprotocol.io"
-      }
-    },
-    {
-      "info": "moonriver",
-      "homepage": "https://moonbeam.foundation/moonriver-crowdloan/",
-      "paraId": 2023,
-      "text": "Moonriver",
-      "providers": {
-        "PureStake": "wss://wss.moonriver.moonbeam.network",
-        "OnFinality": "wss://moonriver.api.onfinality.io/public-ws",
-        "Pinknode": "wss://rpc.pinknode.io/moonriver/explorer",
-        "Patract Elara": "wss://pub.elara.patract.io/moonriver"
-      }
-    },
-    {
-      "info": "heiko",
-      "homepage": "https://parallel.fi",
-      "paraId": 2085,
-      "text": "Parallel Heiko",
-      "providers": {
-        "OnFinality": "wss://parallel-heiko.api.onfinality.io/public-ws",
-        "Parallel": "wss://heiko-rpc.parallel.fi"
-      }
-    },
-    {
-      "info": "picasso",
-      "homepage": "https://picasso.composable.finance/",
-      "paraId": 2087,
-      "text": "Picasso",
-      "providers": {
-        "Composable": "wss://picasso-rpc.composable.finance"
-      }
-    },
-    {
-      "info": "polkasmith",
-      "homepage": "https://polkasmith.polkafoundry.com/",
-      "paraId": 2009,
-      "text": "PolkaSmith by PolkaFoundry",
-      "providers": {
-        "PolkaSmith": "wss://wss-polkasmith.polkafoundry.com"
-      }
-    },
-    {
-      "info": "robonomics",
-      "homepage": "http://robonomics.network/",
-      "paraId": 2077,
-      "text": "Robonomics",
-      "providers": {
-        "Airalab": "wss://kusama.rpc.robonomics.network/"
-      }
-    },
-    {
-      "info": "trustbase",
-      "isUnreachable": true,
-      "homepage": "https://trustbase.network/",
-      "paraId": 2078,
-      "text": "TrustBase",
-      "providers": {}
-    },
-    {
-      "info": "sakura",
-      "homepage": "https://clover.finance/",
-      "isUnreachable": true,
-      "paraId": 2016,
-      "text": "Sakura",
-      "providers": {
-        "Clover": "wss://api-sakura.clover.finance"
-      }
-    },
-    {
-      "info": "sherpax",
-      "homepage": "https://chainx.org/",
-      "isUnreachable": true,
-      "paraId": 2013,
-      "text": "SherpaX",
-      "providers": {
-        "ChainX": "wss://sherpax.chainx.org"
-      }
-    },
-    {
-      "info": "shiden",
-      "homepage": "https://shiden.plasmnet.io/",
-      "paraId": 2007,
-      "text": "Shiden",
-      "providers": {
-        "StakeTechnologies": "wss://rpc.shiden.plasmnet.io",
-        "OnFinality": "wss://shiden.api.onfinality.io/public-ws",
-        "Pinknode": "wss://rpc.pinknode.io/shiden/explorer"
-      }
-    },
-    {
-      "info": "subgame",
-      "homepage": "http://subgame.org/",
-      "paraId": 2018,
-      "text": "SubGame Gamma",
-      "providers": {
-        "SubGame": "wss://gamma.subgame.org/"
-      }
-    }
-  ]
-}
+    ]
+  }
+]
