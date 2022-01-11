@@ -101,6 +101,16 @@ const endpoints = JSON.parse(readFileSync('./endpoints.json'))
     if (parachainDetails[id]) {
       const details = parachainDetails[id]
 
+      if (details.name && manifest.name !== details.name) {
+        console.log(
+          `Updating manifest name for ${id}\nfrom:\t${manifest.name}\nto:\t${details.name}`
+        )
+
+        manifest.name = details.name
+
+        writeFileSync(manifestFilename, JSON.stringify(manifest, null, 2))
+      }
+
       if (details.subtitle && manifest.description !== details.subtitle) {
         console.log(
           `Updating manifest description for ${id}\nfrom:\t${manifest.description}\nto:\t${details.subtitle}`
