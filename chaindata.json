@@ -11,17 +11,27 @@
     "parathreads": [
       { "id": "statemint", "paraId": 1000 },
       { "id": "acala", "paraId": 2000 },
+      { "id": "bifrost-dot", "paraId": 2001 },
       { "id": "clover", "paraId": 2002 },
       { "id": "darwinia", "paraId": 2003 },
       { "id": "moonbeam", "paraId": 2004 },
       { "id": "astar", "paraId": 2006 },
+      { "id": "crust", "paraId": 2008 },
+      { "id": "equilibrium", "paraId": 2011 },
       { "id": "parallel", "paraId": 2012 },
       { "id": "litentry", "paraId": 2013 },
       { "id": "manta", "paraId": 2015 },
       { "id": "subgame", "paraId": 2017 },
       { "id": "subdao", "paraId": 2018 },
+      { "id": "composable-finance", "paraId": 2019 },
       { "id": "efinity", "paraId": 2021 },
-      { "id": "ares", "paraId": 2028 }
+      { "id": "nodle", "paraId": 2026 },
+      { "id": "coinversation", "paraId": 2027 },
+      { "id": "ares", "paraId": 2028 },
+      { "id": "centrifuge", "paraId": 2031 },
+      { "id": "interlay", "paraId": 2032 },
+      { "id": "hydradx", "paraId": 2034 },
+      { "id": "phala", "paraId": 2035 }
     ]
   },
   {
@@ -32,7 +42,10 @@
     "decimals": 10,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": [
+      "wss://statemint-rpc.polkadot.io",
+      "wss://statemint.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 1000
@@ -46,10 +59,31 @@
     "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": [
+      "wss://acala-rpc-0.aca-api.network",
+      "wss://acala-rpc-1.aca-api.network",
+      "wss://acala-rpc-2.aca-api.network/ws",
+      "wss://acala-rpc-3.aca-api.network/ws",
+      "wss://acala.polkawallet.io",
+      "wss://acala-polkadot.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 2000
+    }
+  },
+  {
+    "id": "bifrost-dot",
+    "prefix": null,
+    "name": "Bifrost (DOT)",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://bifrost-dot.liebi.com/ws"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2001
     }
   },
   {
@@ -57,10 +91,13 @@
     "prefix": 128,
     "name": "Clover",
     "token": "CLV",
-    "decimals": null,
+    "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": [
+      "wss://rpc-para.clover.finance",
+      "wss://clover.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 2002
@@ -71,10 +108,10 @@
     "prefix": 18,
     "name": "Darwinia",
     "token": "RING",
-    "decimals": null,
+    "decimals": 9,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://parachain-rpc.darwinia.network"],
     "relay": {
       "id": "polkadot",
       "paraId": 2003
@@ -88,7 +125,10 @@
     "decimals": 18,
     "existentialDeposit": null,
     "account": "secp256k1",
-    "rpcs": [],
+    "rpcs": [
+      "wss://wss.api.moonbeam.network",
+      "wss://moonbeam.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 2004
@@ -96,16 +136,47 @@
   },
   {
     "id": "astar",
-    "prefix": null,
+    "prefix": 5,
     "name": "Astar",
     "token": "ASTR",
     "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": [
+      "wss://rpc.astar.network",
+      "wss://astar.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 2006
+    }
+  },
+  {
+    "id": "crust",
+    "prefix": 66,
+    "name": "Crust",
+    "token": "CRU",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://rpc.crust.network"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2008
+    }
+  },
+  {
+    "id": "equilibrium",
+    "prefix": 68,
+    "name": "Equilibrium",
+    "token": "EQ",
+    "decimals": 9,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://node.equilibrium.io"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2011
     }
   },
   {
@@ -116,7 +187,10 @@
     "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": [
+      "wss://rpc.parallel.fi",
+      "wss://parallel.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 2012
@@ -130,7 +204,7 @@
     "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://parachain.litentry.io"],
     "relay": {
       "id": "polkadot",
       "paraId": 2013
@@ -141,10 +215,14 @@
     "prefix": 77,
     "name": "Manta",
     "token": "MANTA",
-    "decimals": 1,
+    "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": [
+      "wss://kuhlii.manta.systems",
+      "wss://munkiana.manta.systems",
+      "wss://pectinata.manta.systems"
+    ],
     "relay": {
       "id": "polkadot",
       "paraId": 2015
@@ -158,7 +236,7 @@
     "decimals": 1,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://gamma.subgame.org/"],
     "relay": {
       "id": "polkadot",
       "paraId": 2017
@@ -172,10 +250,24 @@
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://parachain-rpc.subdao.org"],
     "relay": {
       "id": "polkadot",
       "paraId": 2018
+    }
+  },
+  {
+    "id": "composable-finance",
+    "prefix": null,
+    "name": "Composable Finance",
+    "token": "LAYR",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://rpc.composable.finance"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2019
     }
   },
   {
@@ -186,10 +278,38 @@
     "decimals": 18,
     "existentialDeposit": null,
     "account": "Sr25519",
-    "rpcs": [],
+    "rpcs": ["wss://rpc.efinity.io"],
     "relay": {
       "id": "polkadot",
       "paraId": 2021
+    }
+  },
+  {
+    "id": "nodle",
+    "prefix": 37,
+    "name": "Nodle",
+    "token": "NODL",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://rpc.nodle.com"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2026
+    }
+  },
+  {
+    "id": "coinversation",
+    "prefix": null,
+    "name": "Coinversation",
+    "token": "CTO",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://rpc.coinversation.io/"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2027
     }
   },
   {
@@ -197,13 +317,69 @@
     "prefix": 34,
     "name": "Ares Protocol",
     "token": "ARES",
-    "decimals": null,
+    "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://wss.odyssey.aresprotocol.io"],
     "relay": {
       "id": "polkadot",
       "paraId": 2028
+    }
+  },
+  {
+    "id": "centrifuge",
+    "prefix": 36,
+    "name": "Centrifuge",
+    "token": "CFG",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://fullnode.parachain.centrifuge.io"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2031
+    }
+  },
+  {
+    "id": "interlay",
+    "prefix": 2032,
+    "name": "Interlay",
+    "token": "INTR",
+    "decimals": 10,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://api.interlay.io/parachain"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2032
+    }
+  },
+  {
+    "id": "hydradx",
+    "prefix": 63,
+    "name": "HydraDX",
+    "token": "HDX",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://rpc-01.hydradx.io"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2034
+    }
+  },
+  {
+    "id": "phala",
+    "prefix": 30,
+    "name": "Phala Network",
+    "token": "PHA",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://api.phala.network/ws"],
+    "relay": {
+      "id": "polkadot",
+      "paraId": 2035
     }
   },
   {
@@ -217,8 +393,9 @@
     "rpcs": ["wss://kusama-rpc.polkadot.io"],
     "parathreads": [
       { "id": "statemine", "paraId": 1000 },
+      { "id": "encointer", "paraId": 1001 },
       { "id": "karura", "paraId": 2000 },
-      { "id": "bifrost", "paraId": 2001 },
+      { "id": "bifrost-ksm", "paraId": 2001 },
       { "id": "khala", "paraId": 2004 },
       { "id": "darwinia-crab-redirect", "paraId": 2006 },
       { "id": "shiden", "paraId": 2007 },
@@ -233,19 +410,22 @@
       { "id": "kpron", "paraId": 2019 },
       { "id": "moonriver", "paraId": 2023 },
       { "id": "genshiro", "paraId": 2024 },
-      { "id": "robonomics", "paraId": 2077 },
-      { "id": "loom-network", "paraId": 2080 },
+      { "id": "robonomics", "paraId": 2048 },
+      { "id": "loom", "paraId": 2080 },
       { "id": "calamari", "paraId": 2084 },
-      { "id": "heiko", "paraId": 2085 },
+      { "id": "parallel-heiko", "paraId": 2085 },
       { "id": "kilt-spiritnet", "paraId": 2086 },
       { "id": "picasso", "paraId": 2087 },
       { "id": "altair", "paraId": 2088 },
       { "id": "basilisk", "paraId": 2090 },
       { "id": "kintsugi-btc", "paraId": 2092 },
+      { "id": "unorthodox", "paraId": 2094 },
       { "id": "quartz", "paraId": 2095 },
-      { "id": "pioneer_network", "paraId": 2096 },
+      { "id": "bit-country-pioneer", "paraId": 2096 },
       { "id": "subsocial", "paraId": 2100 },
-      { "id": "zeitgeist", "paraId": 2101 }
+      { "id": "zeitgeist", "paraId": 2101 },
+      { "id": "pichiu", "paraId": 2102 },
+      { "id": "darwinia-crab", "paraId": 2105 }
     ]
   },
   {
@@ -257,13 +437,26 @@
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://statemine.api.onfinality.io/public-ws",
       "wss://statemine-rpc.polkadot.io",
-      "wss://pub.elara.patract.io/statemine"
+      "wss://statemine.api.onfinality.io/public-ws"
     ],
     "relay": {
       "id": "kusama",
       "paraId": 1000
+    }
+  },
+  {
+    "id": "encointer",
+    "prefix": null,
+    "name": "Encointer Network",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://api.kusama.encointer.org"],
+    "relay": {
+      "id": "kusama",
+      "paraId": 1001
     }
   },
   {
@@ -275,13 +468,12 @@
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://karura.api.onfinality.io/public-ws",
       "wss://karura-rpc-0.aca-api.network",
       "wss://karura-rpc-1.aca-api.network",
       "wss://karura-rpc-2.aca-api.network/ws",
       "wss://karura-rpc-3.aca-api.network/ws",
       "wss://karura.polkawallet.io",
-      "wss://pub.elara.patract.io/karura"
+      "wss://karura.api.onfinality.io/public-ws"
     ],
     "relay": {
       "id": "kusama",
@@ -289,17 +481,16 @@
     }
   },
   {
-    "id": "bifrost",
+    "id": "bifrost-ksm",
     "prefix": 6,
-    "name": "Bifrost",
+    "name": "Bifrost (KSM)",
     "token": "BNC",
     "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
       "wss://bifrost-rpc.liebi.com/ws",
-      "wss://bifrost-parachain.api.onfinality.io/public-ws",
-      "wss://pub.elara.patract.io/bifrost"
+      "wss://bifrost-parachain.api.onfinality.io/public-ws"
     ],
     "relay": {
       "id": "kusama",
@@ -346,8 +537,8 @@
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://shiden.api.onfinality.io/public-ws",
       "wss://rpc.shiden.astar.network",
+      "wss://shiden.api.onfinality.io/public-ws",
       "wss://rpc.pinknode.io/shiden/explorer"
     ],
     "relay": {
@@ -391,7 +582,7 @@
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://shadow.crust.network/"],
+    "rpcs": ["wss://rpc-shadow.crust.network/"],
     "relay": {
       "id": "kusama",
       "paraId": 2012
@@ -415,7 +606,7 @@
     "id": "encointer-canary",
     "prefix": null,
     "name": "Encointer Canary",
-    "token": "",
+    "token": null,
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
@@ -430,7 +621,7 @@
     "prefix": 13,
     "name": "Integritee Network",
     "token": "TEER",
-    "decimals": null,
+    "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": ["wss://kusama.api.integritee.network"],
@@ -492,8 +683,7 @@
     "rpcs": [
       "wss://wss.moonriver.moonbeam.network",
       "wss://moonriver.api.onfinality.io/public-ws",
-      "wss://rpc.pinknode.io/moonriver/explorer",
-      "wss://pub.elara.patract.io/moonriver"
+      "wss://rpc.pinknode.io/moonriver/explorer"
     ],
     "relay": {
       "id": "kusama",
@@ -505,10 +695,10 @@
     "prefix": 67,
     "name": "Genshiro",
     "token": "GENS",
-    "decimals": null,
+    "decimals": 9,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://gens-mainnet.equilibrium.io"],
+    "rpcs": ["wss://node.genshiro.io"],
     "relay": {
       "id": "kusama",
       "paraId": 2024
@@ -525,11 +715,11 @@
     "rpcs": ["wss://kusama.rpc.robonomics.network/"],
     "relay": {
       "id": "kusama",
-      "paraId": 2077
+      "paraId": 2048
     }
   },
   {
-    "id": "loom-network",
+    "id": "loom",
     "prefix": null,
     "name": "Loom Network",
     "token": "LOOM",
@@ -550,18 +740,24 @@
     "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://falafel.calamari.systems/"],
+    "rpcs": [
+      "wss://falafel.calamari.systems/",
+      "wss://fritti.calamari.systems/",
+      "wss://pasta.calamari.systems/",
+      "wss://smoothie.calamari.systems/",
+      "wss://calamari.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "kusama",
       "paraId": 2084
     }
   },
   {
-    "id": "heiko",
+    "id": "parallel-heiko",
     "prefix": 110,
     "name": "Parallel Heiko",
     "token": "HKO",
-    "decimals": null,
+    "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
@@ -595,7 +791,7 @@
     "prefix": 49,
     "name": "Picasso",
     "token": "PICA",
-    "decimals": null,
+    "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": ["wss://picasso-rpc.composable.finance"],
@@ -612,7 +808,10 @@
     "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://fullnode.altair.centrifuge.io"],
+    "rpcs": [
+      "wss://fullnode.altair.centrifuge.io",
+      "wss://altair.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "kusama",
       "paraId": 2088
@@ -627,8 +826,8 @@
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://basilisk.api.onfinality.io/public-ws",
-      "wss://rpc-01.basilisk.hydradx.io"
+      "wss://rpc-01.basilisk.hydradx.io",
+      "wss://basilisk.api.onfinality.io/public-ws"
     ],
     "relay": {
       "id": "kusama",
@@ -637,15 +836,15 @@
   },
   {
     "id": "kintsugi-btc",
-    "prefix": null,
+    "prefix": 2092,
     "name": "Kintsugi BTC",
     "token": "KINT",
-    "decimals": null,
+    "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://kintsugi.api.onfinality.io/public-ws",
-      "wss://api-kusama.interlay.io/parachain"
+      "wss://api-kusama.interlay.io/parachain",
+      "wss://kintsugi.api.onfinality.io/public-ws"
     ],
     "relay": {
       "id": "kusama",
@@ -653,28 +852,49 @@
     }
   },
   {
-    "id": "quartz",
+    "id": "unorthodox",
     "prefix": null,
-    "name": "Quartz",
-    "token": "QTZ",
+    "name": "Unorthodox",
+    "token": null,
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://quartz.unique.network"],
+    "rpcs": ["wss://rpc.kusama.standard.tech"],
+    "relay": {
+      "id": "kusama",
+      "paraId": 2094
+    }
+  },
+  {
+    "id": "quartz",
+    "prefix": 255,
+    "name": "Quartz",
+    "token": "QTZ",
+    "decimals": 15,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://quartz.unique.network",
+      "wss://eu-ws-quartz.unique.network",
+      "wss://us-ws-quartz.unique.network"
+    ],
     "relay": {
       "id": "kusama",
       "paraId": 2095
     }
   },
   {
-    "id": "pioneer_network",
+    "id": "bit-country-pioneer",
     "prefix": 268,
     "name": "Bit.Country Pioneer",
     "token": "NEER",
-    "decimals": null,
+    "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://pioneer-1-rpc.bit.country"],
+    "rpcs": [
+      "wss://pioneer-1-rpc.bit.country",
+      "wss://pioneer.api.onfinality.io/public-ws"
+    ],
     "relay": {
       "id": "kusama",
       "paraId": 2096
@@ -688,7 +908,7 @@
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://para.subsocial.network"],
     "relay": {
       "id": "kusama",
       "paraId": 2100
@@ -699,13 +919,42 @@
     "prefix": 73,
     "name": "Zeitgeist",
     "token": "ZTG",
-    "decimals": null,
+    "decimals": 10,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://rpc-0.zeitgeist.pm"],
     "relay": {
       "id": "kusama",
       "paraId": 2101
     }
+  },
+  {
+    "id": "pichiu",
+    "prefix": null,
+    "name": "Pichiu",
+    "token": "PCHU",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://kusama.kylin-node.co.uk"],
+    "relay": {
+      "id": "kusama",
+      "paraId": 2102
+    }
+  },
+  {
+    "id": "darwinia-crab",
+    "prefix": null,
+    "name": "Darwinia Crab",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": ["wss://crab-parachain-rpc.darwinia.network/"],
+    "relay": {
+      "id": "kusama",
+      "paraId": 2105
+    }
   }
 ]
+
