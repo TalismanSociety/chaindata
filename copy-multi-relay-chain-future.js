@@ -65,69 +65,61 @@ const ss58IdOverrides = {
 
     let chain = chaindata.find((chain) => {
       if (isNaN(paraId)) return chain.id === relayId
-      return chain.relay?.id === relayId && chain.relay?.paraId === paraId
+      return chain.relay?.id === relayId && chain.paraId === paraId
     })
 
     if (!chain) {
       console.log(`Adding ${id} to chaindata`)
-      chaindata.push({
-        id,
-        prefix: null,
-        name: oldChain.name,
-        token: oldChain.nativeToken,
-        decimals: oldChain.tokenDecimals,
-        existentialDeposit: null,
-        account: '*25519',
-        rpcs: oldChain.rpcs,
-        relay: { id: relayId, paraId },
-      })
-
-      const relayChain = chaindata.find((chain) => chain.id === relayId)
-      if (!relayChain) throw new Error(`relayChain not found ${relayId}`)
-      if (
-        relayChain &&
-        !relayChain.parathreads.some(
-          (parathread) => parathread.paraId === paraId
-        )
-      ) {
-        relayChain.parathreads.push({ id, paraId })
-        relayChain.parathreads.sort((a, b) => a.paraId - b.paraId)
-      }
+      chaindata.push(
+        isNaN(paraId)
+          ? {
+              id,
+              prefix: null,
+              name: oldChain.name,
+              token: oldChain.nativeToken,
+              decimals: oldChain.tokenDecimals,
+              account: '*25519',
+              rpcs: oldChain.rpcs,
+            }
+          : {
+              id,
+              prefix: null,
+              name: oldChain.name,
+              token: oldChain.nativeToken,
+              decimals: oldChain.tokenDecimals,
+              account: '*25519',
+              rpcs: oldChain.rpcs,
+              paraId,
+              relay: { id: relayId },
+            }
+      )
     }
 
     chain = chaindata.find((chain) => {
       if (isNaN(paraId)) return chain.id === relayId
-      return chain.relay?.id === relayId && chain.relay?.paraId === paraId
+      return chain.relay?.id === relayId && chain.paraId === paraId
     })
 
     if (chain.id !== id) {
       console.log(`Updating chain id for ${id} from ${chain.id} to ${id}`)
       chain.id = id
-      const relayChain = chaindata.find((chain) => chain.id === relayId)
-      if (!relayChain) throw new Error(`relayChain not found ${relayId}`)
-      const parathread = relayChain.parathreads.find(
-        (parathread) => parathread.paraId === paraId
-      )
-      if (!relayChain)
-        throw new Error(`parathread not found ${relayId} ${paraId}`)
-      parathread.id = id
     }
 
-    if (chain.name !== oldChain.name) {
+    if (oldChain.name && chain.name !== oldChain.name) {
       console.log(
         `Updating chain name for ${id} from ${chain.name} to ${oldChain.name}`
       )
       chain.name = oldChain.name
     }
 
-    if (chain.token !== oldChain.nativeToken) {
+    if (oldChain.nativeToken && chain.token !== oldChain.nativeToken) {
       console.log(
         `Updating chain token for ${id} from ${chain.token} to ${oldChain.nativeToken}`
       )
       chain.token = oldChain.nativeToken
     }
 
-    if (chain.decimals !== oldChain.tokenDecimals) {
+    if (oldChain.tokenDecimals && chain.decimals !== oldChain.tokenDecimals) {
       console.log(
         `Updating chain decimals for ${id} from ${chain.decimals} to ${oldChain.tokenDecimals}`
       )
@@ -161,22 +153,18 @@ const ss58IdOverrides = {
       chain.prefix = network.prefix
     }
 
-    if (chain.token !== network.symbols[0] || null) {
+    if (network.symbols[0] && chain.token !== network.symbols[0]) {
       console.log(
-        `Updating chain token for ${id} from ${chain.token} to ${
-          network.symbols[0] || null
-        }`
+        `Updating chain token for ${id} from ${chain.token} to ${network.symbols[0]}`
       )
-      chain.token = network.symbols[0] || null
+      chain.token = network.symbols[0]
     }
 
-    if (chain.decimals !== network.decimals[0] || null) {
+    if (network.decimals[0] && chain.decimals !== network.decimals[0]) {
       console.log(
-        `Updating chain decimals for ${id} from ${chain.decimals} to ${
-          network.decimals[0] || null
-        }`
+        `Updating chain decimals for ${id} from ${chain.decimals} to ${network.decimals[0]}`
       )
-      chain.decimals = network.decimals[0] || null
+      chain.decimals = network.decimals[0]
     }
 
     if (chain.account !== network.standardAccount) {
@@ -192,25 +180,12 @@ const ss58IdOverrides = {
   //
 
   chaindata.sort((a, b) => {
+    if (a.id === b.id) return 0
     if (a.id === 'polkadot') return -1
     if (b.id === 'polkadot') return 1
-
-    if (a.relay?.id === 'polkadot' && b.relay?.id !== 'polkadot') return -1
-    if (b.relay?.id === 'polkadot' && a.relay?.id !== 'polkadot') return 1
-
-    if (a.relay?.id === 'polkadot' && b.relay?.id === 'polkadot')
-      return a.relay?.paraId - b.relay?.paraId
-
     if (a.id === 'kusama') return -1
     if (b.id === 'kusama') return 1
-
-    if (a.relay?.id === 'kusama' && b.relay?.id !== 'kusama') return -1
-    if (b.relay?.id === 'kusama' && a.relay?.id !== 'kusama') return 1
-
-    if (a.relay?.id === 'kusama' && b.relay?.id === 'kusama')
-      return a.relay?.paraId - b.relay?.paraId
-
-    return 0
+    return a.id.localeCompare(b.id)
   })
   fs.writeFileSync('./chaindata.json', JSON.stringify(chaindata, null, 2))
 
@@ -227,7 +202,7 @@ const ss58IdOverrides = {
     if (chain.relay === undefined) continue
     const id = chain.id
     const relayPrefix = chain.relay.id === 'polkadot' ? 0 : 2
-    const paraId = chain.relay.paraId
+    const paraId = chain.paraId
 
     try {
       await exec(`mkdir -p "assets/${chain.id}"`)
