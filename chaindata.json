@@ -7,24 +7,21 @@
     "decimals": 10,
     "existentialDeposit": "10000000000",
     "account": "*25519",
-    "rpcs": ["wss://rpc.polkadot.io"]
+    "rpcs": [
+      "wss://rpc.polkadot.io"
+    ]
   },
   {
-    "id": "statemint",
-    "prefix": null,
-    "name": "Statemint",
-    "token": "DOT",
-    "decimals": 10,
-    "existentialDeposit": null,
+    "id": "kusama",
+    "prefix": 2,
+    "name": "Kusama",
+    "token": "KSM",
+    "decimals": 12,
+    "existentialDeposit": "33333333",
     "account": "*25519",
     "rpcs": [
-      "wss://statemint-rpc.polkadot.io",
-      "wss://statemint.api.onfinality.io/public-ws"
-    ],
-    "paraId": 1000,
-    "relay": {
-      "id": "polkadot"
-    }
+      "wss://kusama-rpc.polkadot.io"
+    ]
   },
   {
     "id": "acala",
@@ -48,63 +45,34 @@
     }
   },
   {
-    "id": "bifrost-dot",
-    "prefix": null,
-    "name": "Bifrost (DOT)",
-    "token": null,
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://bifrost-dot.liebi.com/ws"],
-    "paraId": 2001,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "clover",
-    "prefix": 128,
-    "name": "Clover",
-    "token": "CLV",
+    "id": "altair",
+    "prefix": 136,
+    "name": "Altair",
+    "token": "AIR",
     "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://rpc-para.clover.finance",
-      "wss://clover.api.onfinality.io/public-ws"
+      "wss://fullnode.altair.centrifuge.io",
+      "wss://altair.api.onfinality.io/public-ws"
     ],
-    "paraId": 2002,
+    "paraId": 2088,
     "relay": {
-      "id": "polkadot"
+      "id": "kusama"
     }
   },
   {
-    "id": "darwinia",
-    "prefix": 18,
-    "name": "Darwinia",
-    "token": "RING",
-    "decimals": 9,
+    "id": "ares",
+    "prefix": 34,
+    "name": "Ares Protocol",
+    "token": "ARES",
+    "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://parachain-rpc.darwinia.network"],
-    "paraId": 2003,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "moonbeam",
-    "prefix": 1284,
-    "name": "Moonbeam",
-    "token": "GLMR",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "secp256k1",
     "rpcs": [
-      "wss://wss.api.moonbeam.network",
-      "wss://moonbeam.api.onfinality.io/public-ws"
+      "wss://wss.odyssey.aresprotocol.io"
     ],
-    "paraId": 2004,
+    "paraId": 2028,
     "relay": {
       "id": "polkadot"
     }
@@ -127,296 +95,36 @@
     }
   },
   {
-    "id": "crust",
-    "prefix": 66,
-    "name": "Crust",
-    "token": "CRU",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://rpc.crust.network"],
-    "paraId": 2008,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "equilibrium",
-    "prefix": 68,
-    "name": "Equilibrium",
-    "token": "EQ",
-    "decimals": 9,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://node.equilibrium.io"],
-    "paraId": 2011,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "parallel",
-    "prefix": 172,
-    "name": "Parallel",
-    "token": "PARA",
+    "id": "basilisk",
+    "prefix": 10041,
+    "name": "Basilisk",
+    "token": "BSX",
     "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://rpc.parallel.fi",
-      "wss://parallel.api.onfinality.io/public-ws"
+      "wss://rpc-01.basilisk.hydradx.io",
+      "wss://basilisk.api.onfinality.io/public-ws"
     ],
-    "paraId": 2012,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "litentry",
-    "prefix": 31,
-    "name": "Litentry",
-    "token": "LIT",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://parachain.litentry.io"],
-    "paraId": 2013,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "manta",
-    "prefix": 77,
-    "name": "Manta",
-    "token": "MANTA",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": [
-      "wss://kuhlii.manta.systems",
-      "wss://munkiana.manta.systems",
-      "wss://pectinata.manta.systems"
-    ],
-    "paraId": 2015,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "subgame",
-    "prefix": null,
-    "name": "SubGame Network",
-    "token": "SGB",
-    "decimals": 1,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://gamma.subgame.org/"],
-    "paraId": 2017,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "subdao",
-    "prefix": null,
-    "name": "SubDAO",
-    "token": "GOV",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://parachain-rpc.subdao.org"],
-    "paraId": 2018,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "composable-finance",
-    "prefix": null,
-    "name": "Composable Finance",
-    "token": "LAYR",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://rpc.composable.finance"],
-    "paraId": 2019,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "efinity",
-    "prefix": 1110,
-    "name": "Efinity",
-    "token": "EFI",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "Sr25519",
-    "rpcs": ["wss://rpc.efinity.io"],
-    "paraId": 2021,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "nodle",
-    "prefix": 37,
-    "name": "Nodle",
-    "token": "NODL",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://rpc.nodle.com"],
-    "paraId": 2026,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "coinversation",
-    "prefix": null,
-    "name": "Coinversation",
-    "token": "CTO",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://rpc.coinversation.io/"],
-    "paraId": 2027,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "ares",
-    "prefix": 34,
-    "name": "Ares Protocol",
-    "token": "ARES",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://wss.odyssey.aresprotocol.io"],
-    "paraId": 2028,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "centrifuge",
-    "prefix": 36,
-    "name": "Centrifuge",
-    "token": "CFG",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://fullnode.parachain.centrifuge.io"],
-    "paraId": 2031,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "interlay",
-    "prefix": 2032,
-    "name": "Interlay",
-    "token": "INTR",
-    "decimals": 10,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://api.interlay.io/parachain"],
-    "paraId": 2032,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "hydradx",
-    "prefix": 63,
-    "name": "HydraDX",
-    "token": "HDX",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://rpc-01.hydradx.io"],
-    "paraId": 2034,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "phala",
-    "prefix": 30,
-    "name": "Phala Network",
-    "token": "PHA",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://api.phala.network/ws"],
-    "paraId": 2035,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "kusama",
-    "prefix": 2,
-    "name": "Kusama",
-    "token": "KSM",
-    "decimals": 12,
-    "existentialDeposit": "33333333",
-    "account": "*25519",
-    "rpcs": ["wss://kusama-rpc.polkadot.io"]
-  },
-  {
-    "id": "statemine",
-    "prefix": null,
-    "name": "Statemine",
-    "token": "KSM",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": [
-      "wss://statemine-rpc.polkadot.io",
-      "wss://statemine.api.onfinality.io/public-ws"
-    ],
-    "paraId": 1000,
+    "paraId": 2090,
     "relay": {
       "id": "kusama"
     }
   },
   {
-    "id": "encointer",
+    "id": "bifrost-dot",
     "prefix": null,
-    "name": "Encointer Network",
+    "name": "Bifrost (DOT)",
     "token": null,
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://api.kusama.encointer.org"],
-    "paraId": 1001,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "karura",
-    "prefix": 8,
-    "name": "Karura",
-    "token": "KAR",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
     "rpcs": [
-      "wss://karura-rpc-0.aca-api.network",
-      "wss://karura-rpc-1.aca-api.network",
-      "wss://karura-rpc-2.aca-api.network/ws",
-      "wss://karura-rpc-3.aca-api.network/ws",
-      "wss://karura.polkawallet.io",
-      "wss://karura.api.onfinality.io/public-ws"
+      "wss://bifrost-dot.liebi.com/ws"
     ],
-    "paraId": 2000,
+    "paraId": 2001,
     "relay": {
-      "id": "kusama"
+      "id": "polkadot"
     }
   },
   {
@@ -437,236 +145,18 @@
     }
   },
   {
-    "id": "khala",
-    "prefix": 30,
-    "name": "Khala Network",
-    "token": "PHA",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": [
-      "wss://khala-api.phala.network/ws",
-      "wss://khala.api.onfinality.io/public-ws"
-    ],
-    "paraId": 2004,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "darwinia-crab-redirect",
-    "prefix": null,
-    "name": "Darwinia Crab Redirect",
-    "token": "CRING",
-    "decimals": 9,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://crab-redirect-rpc.darwinia.network/"],
-    "paraId": 2006,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "shiden",
-    "prefix": 5,
-    "name": "Shiden",
-    "token": "SDN",
+    "id": "bit-country-pioneer",
+    "prefix": 268,
+    "name": "Bit.Country Pioneer",
+    "token": "NEER",
     "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://rpc.shiden.astar.network",
-      "wss://shiden.api.onfinality.io/public-ws",
-      "wss://rpc.pinknode.io/shiden/explorer"
+      "wss://pioneer-1-rpc.bit.country",
+      "wss://pioneer.api.onfinality.io/public-ws"
     ],
-    "paraId": 2007,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "mars",
-    "prefix": null,
-    "name": "Mars",
-    "token": "MARS",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://wss.mars.aresprotocol.io"],
-    "paraId": 2008,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "polkasmith",
-    "prefix": 98,
-    "name": "PolkaSmith by PolkaFoundry",
-    "token": "PKS",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://wss-polkasmith.polkafoundry.com"],
-    "paraId": 2009,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "crust-shadow",
-    "prefix": null,
-    "name": "Crust Shadow",
-    "token": "CSM",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://rpc-shadow.crust.network/"],
-    "paraId": 2012,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "sherpax",
-    "prefix": null,
-    "name": "SherpaX",
-    "token": "KSX",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://sherpax.chainx.org"],
-    "paraId": 2013,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "encointer-canary",
-    "prefix": null,
-    "name": "Encointer Canary",
-    "token": null,
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://canary.encointer.org"],
-    "paraId": 2014,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "integritee",
-    "prefix": 13,
-    "name": "Integritee Network",
-    "token": "TEER",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://kusama.api.integritee.network"],
-    "paraId": 2015,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "sakura",
-    "prefix": null,
-    "name": "Sakura",
-    "token": "SKU",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://api-sakura.clover.finance"],
-    "paraId": 2016,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "subgame-gamma",
-    "prefix": null,
-    "name": "SubGame Gamma",
-    "token": "GSGB",
-    "decimals": 10,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://gamma.subgame.org/"],
-    "paraId": 2018,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "kpron",
-    "prefix": null,
-    "name": "Kpron",
-    "token": "KPN",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://kusama-kpron-rpc.apron.network/"],
-    "paraId": 2019,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "moonriver",
-    "prefix": 1285,
-    "name": "Moonriver",
-    "token": "MOVR",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "secp256k1",
-    "rpcs": [
-      "wss://wss.moonriver.moonbeam.network",
-      "wss://moonriver.api.onfinality.io/public-ws",
-      "wss://rpc.pinknode.io/moonriver/explorer"
-    ],
-    "paraId": 2023,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "genshiro",
-    "prefix": 67,
-    "name": "Genshiro",
-    "token": "GENS",
-    "decimals": 9,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://node.genshiro.io"],
-    "paraId": 2024,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "robonomics",
-    "prefix": 32,
-    "name": "Robonomics",
-    "token": "XRT",
-    "decimals": 9,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://kusama.rpc.robonomics.network/"],
-    "paraId": 2048,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "loom",
-    "prefix": null,
-    "name": "Loom Network",
-    "token": "LOOM",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://kusama.dappchains.com"],
-    "paraId": 2080,
+    "paraId": 2096,
     "relay": {
       "id": "kusama"
     }
@@ -692,18 +182,312 @@
     }
   },
   {
-    "id": "parallel-heiko",
-    "prefix": 110,
-    "name": "Parallel Heiko",
-    "token": "HKO",
+    "id": "centrifuge",
+    "prefix": 36,
+    "name": "Centrifuge",
+    "token": "CFG",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://fullnode.parachain.centrifuge.io"
+    ],
+    "paraId": 2031,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "clover",
+    "prefix": 128,
+    "name": "Clover",
+    "token": "CLV",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc-para.clover.finance",
+      "wss://clover.api.onfinality.io/public-ws"
+    ],
+    "paraId": 2002,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "coinversation",
+    "prefix": null,
+    "name": "Coinversation",
+    "token": "CTO",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.coinversation.io/"
+    ],
+    "paraId": 2027,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "composable-finance",
+    "prefix": null,
+    "name": "Composable Finance",
+    "token": "LAYR",
     "decimals": 12,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://parallel-heiko.api.onfinality.io/public-ws",
-      "wss://heiko-rpc.parallel.fi"
+      "wss://rpc.composable.finance"
     ],
-    "paraId": 2085,
+    "paraId": 2019,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "crust",
+    "prefix": 66,
+    "name": "Crust",
+    "token": "CRU",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.crust.network"
+    ],
+    "paraId": 2008,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "crust-shadow",
+    "prefix": null,
+    "name": "Crust Shadow",
+    "token": "CSM",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc-shadow.crust.network/"
+    ],
+    "paraId": 2012,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "darwinia",
+    "prefix": 18,
+    "name": "Darwinia",
+    "token": "RING",
+    "decimals": 9,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://parachain-rpc.darwinia.network"
+    ],
+    "paraId": 2003,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "darwinia-crab",
+    "prefix": null,
+    "name": "Darwinia Crab",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://crab-parachain-rpc.darwinia.network/"
+    ],
+    "paraId": 2105,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "darwinia-crab-redirect",
+    "prefix": null,
+    "name": "Darwinia Crab Redirect",
+    "token": "CRING",
+    "decimals": 9,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://crab-redirect-rpc.darwinia.network/"
+    ],
+    "paraId": 2006,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "efinity",
+    "prefix": 1110,
+    "name": "Efinity",
+    "token": "EFI",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "Sr25519",
+    "rpcs": [
+      "wss://rpc.efinity.io"
+    ],
+    "paraId": 2021,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "encointer",
+    "prefix": null,
+    "name": "Encointer Network",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://api.kusama.encointer.org"
+    ],
+    "paraId": 1001,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "encointer-canary",
+    "prefix": null,
+    "name": "Encointer Canary",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://canary.encointer.org"
+    ],
+    "paraId": 2014,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "equilibrium",
+    "prefix": 68,
+    "name": "Equilibrium",
+    "token": "EQ",
+    "decimals": 9,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://node.equilibrium.io"
+    ],
+    "paraId": 2011,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "genshiro",
+    "prefix": 67,
+    "name": "Genshiro",
+    "token": "GENS",
+    "decimals": 9,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://node.genshiro.io"
+    ],
+    "paraId": 2024,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "hydradx",
+    "prefix": 63,
+    "name": "HydraDX",
+    "token": "HDX",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc-01.hydradx.io"
+    ],
+    "paraId": 2034,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "integritee",
+    "prefix": 13,
+    "name": "Integritee Network",
+    "token": "TEER",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://kusama.api.integritee.network"
+    ],
+    "paraId": 2015,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "interlay",
+    "prefix": 2032,
+    "name": "Interlay",
+    "token": "INTR",
+    "decimals": 10,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://api.interlay.io/parachain"
+    ],
+    "paraId": 2032,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "karura",
+    "prefix": 8,
+    "name": "Karura",
+    "token": "KAR",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://karura-rpc-0.aca-api.network",
+      "wss://karura-rpc-1.aca-api.network",
+      "wss://karura-rpc-2.aca-api.network/ws",
+      "wss://karura-rpc-3.aca-api.network/ws",
+      "wss://karura.polkawallet.io",
+      "wss://karura.api.onfinality.io/public-ws"
+    ],
+    "paraId": 2000,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "khala",
+    "prefix": 30,
+    "name": "Khala Network",
+    "token": "PHA",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://khala-api.phala.network/ws",
+      "wss://khala.api.onfinality.io/public-ws"
+    ],
+    "paraId": 2004,
     "relay": {
       "id": "kusama"
     }
@@ -726,54 +510,6 @@
     }
   },
   {
-    "id": "picasso",
-    "prefix": 49,
-    "name": "Picasso",
-    "token": "PICA",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://picasso-rpc.composable.finance"],
-    "paraId": 2087,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "altair",
-    "prefix": 136,
-    "name": "Altair",
-    "token": "AIR",
-    "decimals": 18,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": [
-      "wss://fullnode.altair.centrifuge.io",
-      "wss://altair.api.onfinality.io/public-ws"
-    ],
-    "paraId": 2088,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "basilisk",
-    "prefix": 10041,
-    "name": "Basilisk",
-    "token": "BSX",
-    "decimals": 12,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": [
-      "wss://rpc-01.basilisk.hydradx.io",
-      "wss://basilisk.api.onfinality.io/public-ws"
-    ],
-    "paraId": 2090,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
     "id": "kintsugi-btc",
     "prefix": 2092,
     "name": "Kintsugi BTC",
@@ -791,15 +527,232 @@
     }
   },
   {
-    "id": "unorthodox",
+    "id": "kpron",
     "prefix": null,
-    "name": "Unorthodox",
-    "token": null,
+    "name": "Kpron",
+    "token": "KPN",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://kusama-kpron-rpc.apron.network/"
+    ],
+    "paraId": 2019,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "litentry",
+    "prefix": 31,
+    "name": "Litentry",
+    "token": "LIT",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://parachain.litentry.io"
+    ],
+    "paraId": 2013,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "loom",
+    "prefix": null,
+    "name": "Loom Network",
+    "token": "LOOM",
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://rpc.kusama.standard.tech"],
-    "paraId": 2094,
+    "rpcs": [
+      "wss://kusama.dappchains.com"
+    ],
+    "paraId": 2080,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "manta",
+    "prefix": 77,
+    "name": "Manta",
+    "token": "MANTA",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://kuhlii.manta.systems",
+      "wss://munkiana.manta.systems",
+      "wss://pectinata.manta.systems"
+    ],
+    "paraId": 2015,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "mars",
+    "prefix": null,
+    "name": "Mars",
+    "token": "MARS",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://wss.mars.aresprotocol.io"
+    ],
+    "paraId": 2008,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "moonbeam",
+    "prefix": 1284,
+    "name": "Moonbeam",
+    "token": "GLMR",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "secp256k1",
+    "rpcs": [
+      "wss://wss.api.moonbeam.network",
+      "wss://moonbeam.api.onfinality.io/public-ws"
+    ],
+    "paraId": 2004,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "moonriver",
+    "prefix": 1285,
+    "name": "Moonriver",
+    "token": "MOVR",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "secp256k1",
+    "rpcs": [
+      "wss://wss.moonriver.moonbeam.network",
+      "wss://moonriver.api.onfinality.io/public-ws",
+      "wss://rpc.pinknode.io/moonriver/explorer"
+    ],
+    "paraId": 2023,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "nodle",
+    "prefix": 37,
+    "name": "Nodle",
+    "token": "NODL",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.nodle.com"
+    ],
+    "paraId": 2026,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "parallel",
+    "prefix": 172,
+    "name": "Parallel",
+    "token": "PARA",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.parallel.fi",
+      "wss://parallel.api.onfinality.io/public-ws"
+    ],
+    "paraId": 2012,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "parallel-heiko",
+    "prefix": 110,
+    "name": "Parallel Heiko",
+    "token": "HKO",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://parallel-heiko.api.onfinality.io/public-ws",
+      "wss://heiko-rpc.parallel.fi"
+    ],
+    "paraId": 2085,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "phala",
+    "prefix": 30,
+    "name": "Phala Network",
+    "token": "PHA",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://api.phala.network/ws"
+    ],
+    "paraId": 2035,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "picasso",
+    "prefix": 49,
+    "name": "Picasso",
+    "token": "PICA",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://picasso-rpc.composable.finance"
+    ],
+    "paraId": 2087,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "pichiu",
+    "prefix": null,
+    "name": "Pichiu",
+    "token": "PCHU",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://kusama.kylin-node.co.uk"
+    ],
+    "paraId": 2102,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "polkasmith",
+    "prefix": 98,
+    "name": "PolkaSmith by PolkaFoundry",
+    "token": "PKS",
+    "decimals": 18,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://wss-polkasmith.polkafoundry.com"
+    ],
+    "paraId": 2009,
     "relay": {
       "id": "kusama"
     }
@@ -823,18 +776,149 @@
     }
   },
   {
-    "id": "bit-country-pioneer",
-    "prefix": 268,
-    "name": "Bit.Country Pioneer",
-    "token": "NEER",
+    "id": "robonomics",
+    "prefix": 32,
+    "name": "Robonomics",
+    "token": "XRT",
+    "decimals": 9,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://kusama.rpc.robonomics.network/"
+    ],
+    "paraId": 2048,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "sakura",
+    "prefix": null,
+    "name": "Sakura",
+    "token": "SKU",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://api-sakura.clover.finance"
+    ],
+    "paraId": 2016,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "sherpax",
+    "prefix": null,
+    "name": "SherpaX",
+    "token": "KSX",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://sherpax.chainx.org"
+    ],
+    "paraId": 2013,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "shiden",
+    "prefix": 5,
+    "name": "Shiden",
+    "token": "SDN",
     "decimals": 18,
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://pioneer-1-rpc.bit.country",
-      "wss://pioneer.api.onfinality.io/public-ws"
+      "wss://rpc.shiden.astar.network",
+      "wss://shiden.api.onfinality.io/public-ws",
+      "wss://rpc.pinknode.io/shiden/explorer"
     ],
-    "paraId": 2096,
+    "paraId": 2007,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "statemine",
+    "prefix": null,
+    "name": "Statemine",
+    "token": "KSM",
+    "decimals": 12,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://statemine-rpc.polkadot.io",
+      "wss://statemine.api.onfinality.io/public-ws"
+    ],
+    "paraId": 1000,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "statemint",
+    "prefix": null,
+    "name": "Statemint",
+    "token": "DOT",
+    "decimals": 10,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://statemint-rpc.polkadot.io",
+      "wss://statemint.api.onfinality.io/public-ws"
+    ],
+    "paraId": 1000,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "subdao",
+    "prefix": null,
+    "name": "SubDAO",
+    "token": "GOV",
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://parachain-rpc.subdao.org"
+    ],
+    "paraId": 2018,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "subgame",
+    "prefix": null,
+    "name": "SubGame Network",
+    "token": "SGB",
+    "decimals": 1,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://gamma.subgame.org/"
+    ],
+    "paraId": 2017,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "subgame-gamma",
+    "prefix": null,
+    "name": "SubGame Gamma",
+    "token": "GSGB",
+    "decimals": 10,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://gamma.subgame.org/"
+    ],
+    "paraId": 2018,
     "relay": {
       "id": "kusama"
     }
@@ -847,8 +931,26 @@
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://para.subsocial.network"],
+    "rpcs": [
+      "wss://para.subsocial.network"
+    ],
     "paraId": 2100,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "unorthodox",
+    "prefix": null,
+    "name": "Unorthodox",
+    "token": null,
+    "decimals": null,
+    "existentialDeposit": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.kusama.standard.tech"
+    ],
+    "paraId": 2094,
     "relay": {
       "id": "kusama"
     }
@@ -861,36 +963,10 @@
     "decimals": 10,
     "existentialDeposit": null,
     "account": "*25519",
-    "rpcs": ["wss://rpc-0.zeitgeist.pm"],
+    "rpcs": [
+      "wss://rpc-0.zeitgeist.pm"
+    ],
     "paraId": 2101,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "pichiu",
-    "prefix": null,
-    "name": "Pichiu",
-    "token": "PCHU",
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://kusama.kylin-node.co.uk"],
-    "paraId": 2102,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "darwinia-crab",
-    "prefix": null,
-    "name": "Darwinia Crab",
-    "token": null,
-    "decimals": null,
-    "existentialDeposit": null,
-    "account": "*25519",
-    "rpcs": ["wss://crab-parachain-rpc.darwinia.network/"],
-    "paraId": 2105,
     "relay": {
       "id": "kusama"
     }
