@@ -199,19 +199,36 @@ const ss58IdOverrides = {
   //
 
   for (const chain of chaindata) {
-    if (chain.relay === undefined) continue
-    const id = chain.id
-    const relayPrefix = chain.relay.id === 'polkadot' ? 0 : 2
-    const paraId = chain.paraId
+    if (chain.relay === undefined) {
+      // relay chain
+      const id = chain.id
+      const prefix = chain.id === 'polkadot' ? 0 : 2
 
-    try {
-      await exec(`mkdir -p "assets/${chain.id}"`)
-      await exec(
-        `rsync -avhP "../chaindata/${relayPrefix}/parathreads/${paraId}/assets/" "assets/${chain.id}"`
-      )
-    } catch (error) {
-      console.error('error copying assets', error)
-      continue
+      try {
+        await exec(`mkdir -p "assets/${chain.id}"`)
+        await exec(
+          `rsync -avhP "../chaindata/${prefix}/assets/" "assets/${chain.id}"`
+        )
+      } catch (error) {
+        console.error('error copying assets', error)
+        continue
+      }
+    } else {
+      // parachain
+
+      const id = chain.id
+      const relayPrefix = chain.relay.id === 'polkadot' ? 0 : 2
+      const paraId = chain.paraId
+
+      try {
+        await exec(`mkdir -p "assets/${chain.id}"`)
+        await exec(
+          `rsync -avhP "../chaindata/${relayPrefix}/parathreads/${paraId}/assets/" "assets/${chain.id}"`
+        )
+      } catch (error) {
+        console.error('error copying assets', error)
+        continue
+      }
     }
   }
 })()
