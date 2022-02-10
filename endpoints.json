@@ -177,8 +177,6 @@
         "paraId": 2015,
         "text": "Manta",
         "providers": {
-          "Manta Kuhlii": "wss://kuhlii.manta.systems",
-          "Manta Munkiana": "wss://munkiana.manta.systems",
           "Manta Pectinata": "wss://pectinata.manta.systems"
         }
       },
@@ -208,8 +206,8 @@
         "paraId": 2012,
         "text": "Parallel",
         "providers": {
-          "Parallel": "wss://rpc.parallel.fi",
-          "OnFinality": "wss://parallel.api.onfinality.io/public-ws"
+          "OnFinality": "wss://parallel.api.onfinality.io/public-ws",
+          "Parallel": "wss://rpc.parallel.fi"
         }
       },
       {
@@ -220,6 +218,15 @@
         "text": "Phala Network",
         "providers": {
           "Phala": "wss://api.phala.network/ws"
+        }
+      },
+      {
+        "info": "polkadex",
+        "homepage": "https://polkadex.trade/",
+        "paraId": 2036,
+        "text": "Polkadex",
+        "providers": {
+          "Polkadex Team": "wss://mainnet.polkadex.trade/"
         }
       },
       {
@@ -297,7 +304,9 @@
         "paraId": 2001,
         "text": "Bifrost (Kusama)",
         "providers": {
-          "Liebi": "wss://bifrost-rpc.liebi.com/ws",
+          "Liebi 0": "wss://bifrost-rpc.liebi.com/ws",
+          "Liebi 1": "wss://us.bifrost-rpc.liebi.com/ws",
+          "Liebi 2": "wss://eu.bifrost-rpc.liebi.com/ws",
           "OnFinality": "wss://bifrost-parachain.api.onfinality.io/public-ws"
         }
       },
@@ -396,13 +405,24 @@
         }
       },
       {
+        "info": "kico",
+        "homepage": "https://dico.io/",
+        "paraId": 2107,
+        "text": "KICO",
+        "providers": {
+          "DICO FOUNDATION": "wss://rpc.kico.dico.io",
+          "OnFinality": "wss://rpc.api.kico.dico.io"
+        }
+      },
+      {
         "info": "kilt",
         "homepage": "https://www.kilt.io/",
         "paraId": 2086,
         "text": "KILT Spiritnet",
         "providers": {
           "KILT Protocol": "wss://spiritnet.kilt.io/",
-          "OnFinality": "wss://spiritnet.api.onfinality.io/public-ws"
+          "OnFinality": "wss://spiritnet.api.onfinality.io/public-ws",
+          "Dwellir": "wss://kilt-rpc.dwellir.com"
         }
       },
       {
@@ -423,6 +443,16 @@
         "text": "Kpron",
         "providers": {
           "Kpron": "wss://kusama-kpron-rpc.apron.network/"
+        }
+      },
+      {
+        "info": "litmus",
+        "homepage": "https://kusama-crowdloan.litentry.com",
+        "paraId": 2106,
+        "isUnreachable": false,
+        "text": "Litmus",
+        "providers": {
+          "Litentry": "wss://rpc.litmus-parachain.litentry.io"
         }
       },
       {
@@ -450,7 +480,7 @@
         "paraId": 2023,
         "text": "Moonriver",
         "providers": {
-          "PureStake": "wss://wss.moonriver.moonbeam.network",
+          "Moonbeam Foundation": "wss://wss.moonriver.moonbeam.network",
           "OnFinality": "wss://moonriver.api.onfinality.io/public-ws",
           "Pinknode": "wss://rpc.pinknode.io/moonriver/explorer"
         }
@@ -500,6 +530,7 @@
         "text": "QUARTZ by UNIQUE",
         "providers": {
           "Unique": "wss://quartz.unique.network",
+          "OnFinality": "wss://quartz.api.onfinality.io/public-ws",
           "Unique Europe": "wss://eu-ws-quartz.unique.network",
           "Unique US": "wss://us-ws-quartz.unique.network"
         }
@@ -543,6 +574,15 @@
         }
       },
       {
+        "info": "sora_ksm",
+        "homepage": "https://sora.org/",
+        "paraId": 2011,
+        "text": "SORA Kusama Parachain",
+        "providers": {
+          "Soramitsu": "wss://ws.parachain-collator-1.c1.sora2.soramitsu.co.jp"
+        }
+      },
+      {
         "info": "subgame",
         "homepage": "http://subgame.org/",
         "paraId": 2018,
@@ -553,7 +593,6 @@
       },
       {
         "info": "subsocial",
-        "isUnreachable": true,
         "homepage": "https://subsocial.network/",
         "paraId": 2100,
         "text": "Subsocial",
@@ -572,7 +611,6 @@
       },
       {
         "info": "zeitgeist",
-        "isUnreachable": true,
         "homepage": "https://zeitgeist.pm",
         "paraId": 2101,
         "text": "Zeitgeist",

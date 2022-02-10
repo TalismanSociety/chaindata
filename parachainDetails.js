@@ -332,6 +332,22 @@ module.exports = [
     },
   },
   {
+    id: '0-2036',
+    name: 'Polkadex',
+    slug: 'polkadex',
+    token: 'PDEX',
+    subtitle: 'The trading engine for Web3 and DeFi',
+    info: `Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate.`,
+    links: {
+      Website: 'https://www.polkadex.trade/',
+      Twitter: 'https://twitter.com/polkadex',
+      Telegram: 'https://t.me/Polkadex',
+      Medium: 'https://polkadex.medium.com/',
+      Github: 'https://github.com/Polkadex-Substrate/Polkadex',
+      Discord: 'https://discord.com/invite/qubycwPtSd',
+    },
+  },
+  {
     id: '2-2000',
     name: 'Karura',
     slug: 'karura',
@@ -380,22 +396,6 @@ module.exports = [
       Discord: 'https://discord.gg/myBmQu5',
     },
   },
-  // {
-  //   id: '2-2006',
-  //   name: 'Darwinia Crab Redirect',
-  //   slug: 'darwinia-crab-redirect',
-  //   token: 'CRING',
-  //   subtitle:
-  //     'Crab is the canary network of Darwinia, and is the first blockchain in the Kusama ecosystem to natively support cross-chain as well as smart contract and NFT.',
-  //   info: `Crab Network intends to participate in the Kusama Parachain Slot Auctions.\n\nThe Crab network is a network with long-term value. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.\n\nThe economic model parameters of the Crab network are the same as those of the Darwinia Mainnet, and use the same staking and inflation models.`,
-  //   links: {
-  //     Website: 'https://crab.network/',
-  //     Twitter: 'https://twitter.com/DarwiniaNetwork',
-  //     Telegram: 'https://t.me/DarwiniaNetwork',
-  //     Medium: 'https://darwinianetwork.medium.com/',
-  //     Github: 'https://github.com/darwinia-network/darwinia/tree/master/runtime/crab',
-  //   },
-  // },
   {
     id: '2-2007',
     name: 'Shiden',
@@ -442,6 +442,23 @@ module.exports = [
       Twitter: 'https://twitter.com/PolkaFoundry',
       Telegram: 'https://t.me/polkafoundry',
       Medium: 'https://medium.com/@polkafoundry',
+    },
+  },
+  {
+    id: '2-2011',
+    name: 'Sora Kusama',
+    slug: 'sora-kusama',
+    token: 'XOR',
+    subtitle:
+      'The SORA Network provides tools for decentralized applications that use digital assets.',
+    info:
+      ' The SORA Network excels at providing tools for decentralized applications that use digital assets, such as atomic token swaps, bridging tokens to other chains, and creating programmatic rules involving digital assets.',
+    links: {
+      Website: 'https://sora.org/',
+      Twitter: 'https://twitter.com/sora_xor',
+      Telegram: 'https://t.me/sora_xor',
+      Medium: 'https://sora-xor.medium.com/',
+      Github: 'https://github.com/sora-xor',
     },
   },
   {
@@ -834,6 +851,55 @@ module.exports = [
       Discord: 'https://discord.com/invite/PwYCssr',
       Github: 'https://github.com/Kylin-Network/kylin-collator',
       Medium: 'https://kylinnetwork.medium.com/',
+    },
+  },
+  {
+    id: '2-2105',
+    name: 'Darwinia Crab',
+    slug: 'darwinia-crab',
+    token: 'CRAB',
+    subtitle:
+      'Crab is the canary network of Darwinia, and is the first blockchain in the Kusama ecosystem to natively support cross-chain as well as smart contract and NFT.',
+    info: `Crab Network intends to participate in the Kusama Parachain Slot Auctions.\n\nThe Crab network is a network with long-term value. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.\n\nThe economic model parameters of the Crab network are the same as those of the Darwinia Mainnet, and use the same staking and inflation models.`,
+    links: {
+      Website: 'https://crab.network/',
+      Twitter: 'https://twitter.com/DarwiniaNetwork',
+      Telegram: 'https://t.me/DarwiniaNetwork',
+      Medium: 'https://darwinianetwork.medium.com/',
+      Github:
+        'https://github.com/darwinia-network/darwinia/tree/master/runtime/crab',
+    },
+  },
+  {
+    id: '2-2106',
+    name: 'Litmus',
+    slug: 'litmus',
+    token: 'LIT',
+    subtitle: 'A Web3 identity hub on Kusama.',
+    info: `Litmus is the aptly named canary network for Litentry, a decentralised identity aggregation protocol for DotSama. The protocol provides a decentralized, interoperable identity aggregation service that mitigates the difficulty of resolving agnostic DID mechanisms. Litentry provides a secure vehicle through which users manage their identities and dApps obtain the real-time credit/reputation of an identity owner across different blockchains.`,
+    links: {
+      Website: 'https://kusama-crowdloan.litentry.com/',
+      Twitter: 'https://twitter.com/litentry',
+      Telegram: 'https://t.me/litentry',
+      Medium: 'https://litentry.medium.com//',
+      Github: 'https://github.com/litentry',
+      Discord: 'https://discord.gg/M7T4y4skVD',
+    },
+  },
+  {
+    id: '2-2107',
+    name: 'Kico',
+    slug: 'Kico',
+    token: 'KICO',
+    subtitle: 'KICO is the canary network for DICO.',
+    info: `The DICO chain creates a decentralized and governable ICO platform for the Polkadot environment. We provide a decentralized platform, which heavily supports its projects.`,
+    links: {
+      Website: 'https://dico.io/',
+      Twitter: 'https://twitter.com/DICO03279704',
+      Telegram: 'https://t.me/dicochain',
+      Medium: 'https://medium.com/@DearICO/',
+      Github: 'https://github.com/DICO-TEAM',
+      Discord: 'https://discord.com/invite/V2MASPX3Ra',
     },
   },
 ]
