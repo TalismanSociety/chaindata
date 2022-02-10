@@ -137,6 +137,8 @@
     "account": "*25519",
     "rpcs": [
       "wss://bifrost-rpc.liebi.com/ws",
+      "wss://us.bifrost-rpc.liebi.com/ws",
+      "wss://eu.bifrost-rpc.liebi.com/ws",
       "wss://bifrost-parachain.api.onfinality.io/public-ws"
     ],
     "paraId": 2001,
@@ -298,7 +300,7 @@
     "id": "darwinia-crab",
     "prefix": null,
     "name": "Darwinia Crab",
-    "token": null,
+    "token": "CRAB",
     "decimals": null,
     "existentialDeposit": null,
     "account": "*25519",
@@ -493,6 +495,22 @@
     }
   },
   {
+    "id": "kico",
+    "prefix": null,
+    "name": "Kico",
+    "token": "KICO",
+    "decimals": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.kico.dico.io",
+      "wss://rpc.api.kico.dico.io"
+    ],
+    "paraId": 2107,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "kilt-spiritnet",
     "prefix": 38,
     "name": "KILT Spiritnet",
@@ -502,7 +520,8 @@
     "account": "*25519",
     "rpcs": [
       "wss://spiritnet.kilt.io/",
-      "wss://spiritnet.api.onfinality.io/public-ws"
+      "wss://spiritnet.api.onfinality.io/public-ws",
+      "wss://kilt-rpc.dwellir.com"
     ],
     "paraId": 2086,
     "relay": {
@@ -559,6 +578,21 @@
     }
   },
   {
+    "id": "litmus",
+    "prefix": 131,
+    "name": "Litmus",
+    "token": "LIT",
+    "decimals": 12,
+    "account": "*25519",
+    "rpcs": [
+      "wss://rpc.litmus-parachain.litentry.io"
+    ],
+    "paraId": 2106,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "loom",
     "prefix": null,
     "name": "Loom Network",
@@ -583,8 +617,6 @@
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://kuhlii.manta.systems",
-      "wss://munkiana.manta.systems",
       "wss://pectinata.manta.systems"
     ],
     "paraId": 2015,
@@ -668,8 +700,8 @@
     "existentialDeposit": null,
     "account": "*25519",
     "rpcs": [
-      "wss://rpc.parallel.fi",
-      "wss://parallel.api.onfinality.io/public-ws"
+      "wss://parallel.api.onfinality.io/public-ws",
+      "wss://rpc.parallel.fi"
     ],
     "paraId": 2012,
     "relay": {
@@ -742,6 +774,21 @@
     }
   },
   {
+    "id": "polkadex",
+    "prefix": 88,
+    "name": "Polkadex",
+    "token": "PDEX",
+    "decimals": 12,
+    "account": "*25519",
+    "rpcs": [
+      "wss://mainnet.polkadex.trade/"
+    ],
+    "paraId": 2036,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
     "id": "polkasmith",
     "prefix": 98,
     "name": "PolkaSmith by PolkaFoundry",
@@ -767,6 +814,7 @@
     "account": "*25519",
     "rpcs": [
       "wss://quartz.unique.network",
+      "wss://quartz.api.onfinality.io/public-ws",
       "wss://eu-ws-quartz.unique.network",
       "wss://us-ws-quartz.unique.network"
     ],
@@ -837,6 +885,21 @@
       "wss://rpc.pinknode.io/shiden/explorer"
     ],
     "paraId": 2007,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "sora-kusama",
+    "prefix": null,
+    "name": "Sora Kusama",
+    "token": "XOR",
+    "decimals": null,
+    "account": "*25519",
+    "rpcs": [
+      "wss://ws.parachain-collator-1.c1.sora2.soramitsu.co.jp"
+    ],
+    "paraId": 2011,
     "relay": {
       "id": "kusama"
     }
