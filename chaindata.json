@@ -30,7 +30,8 @@
     "name": "Acala",
     "token": "ACA",
     "tokensCoingeckoIds": {
-      "DOT": "polkadot"
+      "DOT": "polkadot",
+      "AUSD": "ausd"
     },
     "decimals": 12,
     "account": "*25519",
@@ -53,6 +54,7 @@
     "prefix": 136,
     "name": "Altair",
     "token": "AIR",
+    "coingeckoId": "altair",
     "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://altair.subscan.io/",
@@ -130,6 +132,11 @@
     "prefix": 6,
     "name": "Bifrost (Kusama)",
     "token": "BNC",
+    "coingeckoId": "bifrost-native-coin",
+    "tokensCoingeckoIds": {
+      "DOT": "polkadot",
+      "KUSD": null
+    },
     "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://bifrost.subscan.io/",
@@ -257,6 +264,7 @@
     "id": "crust-shadow",
     "name": "Crust Shadow",
     "token": "CSM",
+    "coingeckoId": "crust-storage-market",
     "account": "*25519",
     "subscanUrl": "https://shadow.subscan.io/",
     "rpcs": [
@@ -272,6 +280,7 @@
     "prefix": 18,
     "name": "Darwinia",
     "token": "RING",
+    "coingeckoId": "darwinia-network-native-token",
     "decimals": 9,
     "account": "*25519",
     "subscanUrl": "https://darwinia.subscan.io/",
@@ -318,6 +327,7 @@
     "prefix": 1110,
     "name": "Efinity",
     "token": "EFI",
+    "coingeckoId": "efinity",
     "decimals": 18,
     "account": "Sr25519",
     "rpcs": [
@@ -373,6 +383,7 @@
     "prefix": 67,
     "name": "Genshiro",
     "token": "GENS",
+    "coingeckoId": "genshiro",
     "decimals": 9,
     "account": "*25519",
     "rpcs": [
@@ -419,6 +430,9 @@
     "prefix": 2032,
     "name": "Interlay",
     "token": "INTR",
+    "tokensCoingeckoIds": {
+      "DOT": "polkadot"
+    },
     "decimals": 10,
     "account": "*25519",
     "rpcs": [
@@ -435,7 +449,8 @@
     "name": "Karura",
     "token": "KAR",
     "tokensCoingeckoIds": {
-      "KSM": "kusama"
+      "KSM": "kusama",
+      "KUSD": null
     },
     "decimals": 12,
     "account": "*25519",
@@ -507,6 +522,9 @@
     "prefix": 2092,
     "name": "Kintsugi",
     "token": "KINT",
+    "tokensCoingeckoIds": {
+      "DOT": "polkadot"
+    },
     "decimals": 12,
     "account": "*25519",
     "rpcs": [
@@ -537,6 +555,7 @@
     "prefix": 31,
     "name": "Litentry",
     "token": "LIT",
+    "coingeckoId": "litentry",
     "decimals": 12,
     "account": "*25519",
     "rpcs": [
@@ -552,6 +571,7 @@
     "prefix": 131,
     "name": "Litmus",
     "token": "LIT",
+    "coingeckoId": null,
     "decimals": 12,
     "account": "*25519",
     "rpcs": [
@@ -594,6 +614,7 @@
     "id": "mars",
     "name": "Mars",
     "token": "MARS",
+    "coingeckoId": "mars",
     "account": "*25519",
     "rpcs": [
       "wss://wss.mars.aresprotocol.io"
@@ -658,6 +679,7 @@
     "prefix": 172,
     "name": "Parallel",
     "token": "PARA",
+    "coingeckoId": null,
     "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://parallel.subscan.io/",
@@ -875,6 +897,9 @@
     "id": "statemint",
     "name": "Statemint",
     "token": "DOT",
+    "tokensCoingeckoIds": {
+      "DOT": "polkadot"
+    },
     "decimals": 10,
     "account": "*25519",
     "rpcs": [
@@ -890,6 +915,7 @@
     "id": "subdao",
     "name": "SubDAO",
     "token": "GOV",
+    "coingeckoId": null,
     "account": "*25519",
     "rpcs": [
       "wss://parachain-rpc.subdao.org"
@@ -933,6 +959,7 @@
     "prefix": 28,
     "name": "SubsocialX",
     "token": "SUB",
+    "coingeckoId": null,
     "decimals": 11,
     "account": "*25519",
     "rpcs": [
@@ -948,6 +975,7 @@
     "prefix": 28,
     "name": "Subsocial",
     "token": "SUB",
+    "coingeckoId": null,
     "decimals": 11,
     "account": "*25519",
     "rpcs": [
@@ -958,6 +986,7 @@
     "id": "unorthodox",
     "name": "Unorthodox",
     "account": "*25519",
+    "coingeckoId": null,
     "rpcs": [
       "wss://rpc.kusama.standard.tech"
     ],
