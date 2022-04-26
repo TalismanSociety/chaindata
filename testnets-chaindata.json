@@ -17,7 +17,8 @@
     "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://acala-testnet.subscan.io/",
-    "rpcs": ["wss://mandala.polkawallet.io"]
+    "rpcs": ["wss://mandala.polkawallet.io"],
+    "ethereumRpcs": ["https://tc7-eth.aca-dev.network"]
   },
   {
     "id": "moonbase",
@@ -27,7 +28,11 @@
     "decimals": 18,
     "account": "secp256k1",
     "subscanUrl": "https://moonbase.subscan.io/",
-    "rpcs": ["wss://moonbeam-alpha.api.onfinality.io/public-ws"]
+    "rpcs": ["wss://moonbeam-alpha.api.onfinality.io/public-ws"],
+    "ethereumRpcs": [
+      "https://rpc.api.moonbase.moonbeam.network",
+      "https://moonbeam-alpha.api.onfinality.io/public-ws"
+    ]
   },
   {
     "id": "dolphin",
@@ -38,6 +43,17 @@
     "account": "*25519",
     "subscanUrl": "https://dolphin.subscan.io/",
     "rpcs": ["wss://trillian.dolphin.red/"]
+  },
+  {
+    "id": "shibuya",
+    "prefix": 5,
+    "name": "Shibuya Testnet",
+    "token": "SBY",
+    "decimals": 18,
+    "account": "*25519",
+    "subscanUrl": "https://shibuya.subscan.io/",
+    "rpcs": ["wss://rpc.shibuya.astar.network"],
+    "ethereumRpcs": ["https://evm.shibuya.astar.network"]
   },
   {
     "id": "zero-io",
