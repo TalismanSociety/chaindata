@@ -2,8 +2,13 @@
 
 const util = require('util')
 const fs = require('fs')
+const path = require('path')
+const { chdir } = require('process')
 const { readFileSync, writeFileSync } = require('fs')
 const exec = util.promisify(require('child_process').exec)
+
+// set working directory to directory above this script
+chdir(path.resolve(__dirname, '../'))
 
 // overrides used when looking up via default id (name to lowercase with hyphens) to instead use the network specified at https://raw.githubusercontent.com/paritytech/ss58-registry/main/ss58-registry.json
 const ss58IdOverrides = {
@@ -17,7 +22,7 @@ const ss58IdOverrides = {
 ;(async () => {
   const oldManifest = JSON.parse(fs.readFileSync('../chaindata/manifest.json'))
 
-  const chaindata = JSON.parse(fs.readFileSync('./chaindata.json'))
+  const chaindata = JSON.parse(fs.readFileSync('chaindata.json'))
   const ss58Registry = JSON.parse(
     (
       await exec(
@@ -187,7 +192,7 @@ const ss58IdOverrides = {
     if (b.id === 'kusama') return 1
     return a.id.localeCompare(b.id)
   })
-  fs.writeFileSync('./chaindata.json', JSON.stringify(chaindata, null, 2))
+  fs.writeFileSync('chaindata.json', `${JSON.stringify(chaindata, null, 2)}\n`)
 
   for (const chain of chaindata) {
     if (chaindata.filter((innerChain) => chain.id === innerChain.id).length > 1)
