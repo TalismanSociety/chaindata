@@ -1,41 +1,21 @@
 [
   {
     "id": "polkadot",
-    "prefix": 0,
     "name": "Polkadot",
-    "token": "DOT",
-    "coingeckoId": "polkadot",
-    "decimals": 10,
     "account": "*25519",
     "subscanUrl": "https://polkadot.subscan.io/",
-    "rpcs": [
-      "wss://rpc.polkadot.io",
-      "wss://polkadot-rpc.dwellir.com"
-    ]
+    "rpcs": ["wss://rpc.polkadot.io", "wss://polkadot-rpc.dwellir.com"]
   },
   {
     "id": "kusama",
-    "prefix": 2,
     "name": "Kusama",
-    "token": "KSM",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://kusama.subscan.io/",
-    "rpcs": [
-      "wss://kusama-rpc.polkadot.io",
-      "wss://kusama-rpc.dwellir.com"
-    ]
+    "rpcs": ["wss://kusama-rpc.polkadot.io", "wss://kusama-rpc.dwellir.com"]
   },
   {
     "id": "acala",
-    "prefix": 10,
     "name": "Acala",
-    "token": "ACA",
-    "tokensCoingeckoIds": {
-      "DOT": "polkadot",
-      "AUSD": null
-    },
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://acala.subscan.io/",
     "rpcs": [
@@ -54,11 +34,7 @@
   },
   {
     "id": "altair",
-    "prefix": 136,
     "name": "Altair",
-    "token": "AIR",
-    "coingeckoId": "altair",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://altair.subscan.io/",
     "rpcs": [
@@ -72,14 +48,9 @@
   },
   {
     "id": "ares",
-    "prefix": 34,
     "name": "Ares",
-    "token": "ARES",
-    "decimals": 12,
     "account": "*25519",
-    "rpcs": [
-      "wss://wss.odyssey.aresprotocol.io"
-    ],
+    "rpcs": ["wss://wss.odyssey.aresprotocol.io"],
     "paraId": 2028,
     "relay": {
       "id": "polkadot"
@@ -87,22 +58,13 @@
   },
   {
     "id": "astar",
-    "prefix": 5,
     "name": "Astar",
-    "token": "ASTR",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://astar.subscan.io/",
     "rpcs": [
       "wss://rpc.astar.network",
       "wss://astar.api.onfinality.io/public-ws",
       "wss://astar-rpc.dwellir.com"
-    ],
-    "ethereumExplorerUrl": "https://blockscout.com/astar",
-    "ethereumRpcs": [
-      "https://evm.astar.network",
-      "https://astar.api.onfinality.io/public-ws",
-      "https://astar-rpc.dwellir.com"
     ],
     "paraId": 2006,
     "relay": {
@@ -111,10 +73,7 @@
   },
   {
     "id": "basilisk",
-    "prefix": 10041,
     "name": "Basilisk",
-    "token": "BSX",
-    "decimals": 12,
     "account": "*25519",
     "rpcs": [
       "wss://rpc-01.basilisk.hydradx.io",
@@ -130,9 +89,7 @@
     "id": "bifrost-dot",
     "name": "Bifrost",
     "account": "*25519",
-    "rpcs": [
-      "wss://bifrost-dot.liebi.com/ws"
-    ],
+    "rpcs": ["wss://bifrost-dot.liebi.com/ws"],
     "paraId": 2001,
     "relay": {
       "id": "polkadot"
@@ -140,15 +97,7 @@
   },
   {
     "id": "bifrost-ksm",
-    "prefix": 6,
     "name": "Bifrost",
-    "token": "BNC",
-    "coingeckoId": "bifrost-native-coin",
-    "tokensCoingeckoIds": {
-      "DOT": "polkadot",
-      "KUSD": null
-    },
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://bifrost.subscan.io/",
     "rpcs": [
@@ -165,10 +114,7 @@
   },
   {
     "id": "bit-country-pioneer",
-    "prefix": 268,
     "name": "Bit.Country Pioneer",
-    "token": "NEER",
-    "decimals": 18,
     "account": "*25519",
     "rpcs": [
       "wss://pioneer-1-rpc.bit.country",
@@ -181,10 +127,7 @@
   },
   {
     "id": "calamari",
-    "prefix": 78,
     "name": "Calamari",
-    "token": "KMA",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://calamari.subscan.io/",
     "rpcs": [
@@ -199,15 +142,10 @@
   },
   {
     "id": "centrifuge",
-    "prefix": 36,
     "name": "Centrifuge",
-    "token": "CFG",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://centrifuge.subscan.io/",
-    "rpcs": [
-      "wss://fullnode.parachain.centrifuge.io"
-    ],
+    "rpcs": ["wss://fullnode.parachain.centrifuge.io"],
     "paraId": 2031,
     "relay": {
       "id": "polkadot"
@@ -215,10 +153,7 @@
   },
   {
     "id": "clover",
-    "prefix": 128,
     "name": "Clover",
-    "token": "CLV",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://clover.subscan.io/",
     "rpcs": [
@@ -233,11 +168,8 @@
   {
     "id": "coinversation",
     "name": "Coinversation",
-    "token": "CTO",
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc.coinversation.io/"
-    ],
+    "rpcs": ["wss://rpc.coinversation.io/"],
     "paraId": 2027,
     "relay": {
       "id": "polkadot"
@@ -246,8 +178,6 @@
   {
     "id": "composable-finance",
     "name": "Composable Finance",
-    "token": "LAYR",
-    "decimals": 12,
     "account": "*25519",
     "rpcs": [
       "wss://rpc.composable.finance",
@@ -260,15 +190,10 @@
   },
   {
     "id": "crust",
-    "prefix": 66,
     "name": "Crust",
-    "token": "CRU",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://crust.subscan.io/",
-    "rpcs": [
-      "wss://rpc.crust.network"
-    ],
+    "rpcs": ["wss://rpc.crust.network"],
     "paraId": 2008,
     "relay": {
       "id": "polkadot"
@@ -277,13 +202,9 @@
   {
     "id": "crust-shadow",
     "name": "Crust Shadow",
-    "token": "CSM",
-    "coingeckoId": "crust-storage-market",
     "account": "*25519",
     "subscanUrl": "https://shadow.subscan.io/",
-    "rpcs": [
-      "wss://rpc-shadow.crust.network/"
-    ],
+    "rpcs": ["wss://rpc-shadow.crust.network/"],
     "paraId": 2012,
     "relay": {
       "id": "kusama"
@@ -291,17 +212,10 @@
   },
   {
     "id": "darwinia",
-    "prefix": 18,
     "name": "Darwinia",
-    "token": "RING",
-    "coingeckoId": "darwinia-network-native-token",
-    "decimals": 9,
     "account": "*25519",
     "subscanUrl": "https://darwinia.subscan.io/",
-    "rpcs": [
-      "wss://rpc.darwinia.network",
-      "wss://darwinia-rpc.dwellir.com"
-    ],
+    "rpcs": ["wss://rpc.darwinia.network", "wss://darwinia-rpc.dwellir.com"],
     "paraId": 2003,
     "relay": {
       "id": "polkadot"
@@ -310,7 +224,6 @@
   {
     "id": "darwinia-crab",
     "name": "Darwinia Crab",
-    "token": "CRAB",
     "account": "*25519",
     "subscanUrl": "https://crab.subscan.io/",
     "rpcs": [
@@ -326,12 +239,8 @@
   {
     "id": "darwinia-crab-redirect",
     "name": "Darwinia Crab Redirect",
-    "token": "CRING",
-    "decimals": 9,
     "account": "*25519",
-    "rpcs": [
-      "wss://crab-redirect-rpc.darwinia.network/"
-    ],
+    "rpcs": ["wss://crab-redirect-rpc.darwinia.network/"],
     "paraId": 2006,
     "relay": {
       "id": "kusama"
@@ -339,15 +248,9 @@
   },
   {
     "id": "efinity",
-    "prefix": 1110,
     "name": "Efinity",
-    "token": "EFI",
-    "coingeckoId": "efinity",
-    "decimals": 18,
     "account": "Sr25519",
-    "rpcs": [
-      "wss://rpc.efinity.io"
-    ],
+    "rpcs": ["wss://rpc.efinity.io"],
     "paraId": 2021,
     "relay": {
       "id": "polkadot"
@@ -357,9 +260,7 @@
     "id": "encointer",
     "name": "Encointer",
     "account": "*25519",
-    "rpcs": [
-      "wss://api.kusama.encointer.org"
-    ],
+    "rpcs": ["wss://api.kusama.encointer.org"],
     "paraId": 1001,
     "relay": {
       "id": "kusama"
@@ -369,9 +270,7 @@
     "id": "encointer-canary",
     "name": "Encointer Canary",
     "account": "*25519",
-    "rpcs": [
-      "wss://canary.encointer.org"
-    ],
+    "rpcs": ["wss://canary.encointer.org"],
     "paraId": 2014,
     "relay": {
       "id": "kusama"
@@ -379,15 +278,10 @@
   },
   {
     "id": "equilibrium",
-    "prefix": 68,
     "name": "Equilibrium",
-    "token": "EQ",
-    "decimals": 9,
     "account": "*25519",
     "subscanUrl": "https://equilibrium.subscan.io/",
-    "rpcs": [
-      "wss://node.equilibrium.io"
-    ],
+    "rpcs": ["wss://node.equilibrium.io"],
     "paraId": 2011,
     "relay": {
       "id": "polkadot"
@@ -395,15 +289,9 @@
   },
   {
     "id": "genshiro",
-    "prefix": 67,
     "name": "Genshiro",
-    "token": "GENS",
-    "coingeckoId": "genshiro",
-    "decimals": 9,
     "account": "*25519",
-    "rpcs": [
-      "wss://node.genshiro.io"
-    ],
+    "rpcs": ["wss://node.genshiro.io"],
     "paraId": 2024,
     "relay": {
       "id": "kusama"
@@ -411,14 +299,10 @@
   },
   {
     "id": "hydradx",
-    "prefix": 63,
     "name": "HydraDX",
-    "token": "HDX",
-    "decimals": 12,
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc-01.hydradx.io"
-    ],
+    "rpcs": ["wss://rpc-01.hydradx.io"],
+
     "paraId": 2034,
     "relay": {
       "id": "polkadot"
@@ -426,15 +310,10 @@
   },
   {
     "id": "integritee",
-    "prefix": 13,
     "name": "Integritee",
-    "token": "TEER",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://integritee.subscan.io/",
-    "rpcs": [
-      "wss://kusama.api.integritee.network"
-    ],
+    "rpcs": ["wss://kusama.api.integritee.network"],
     "paraId": 2015,
     "relay": {
       "id": "kusama"
@@ -442,17 +321,9 @@
   },
   {
     "id": "interlay",
-    "prefix": 2032,
     "name": "Interlay",
-    "token": "INTR",
-    "tokensCoingeckoIds": {
-      "DOT": "polkadot"
-    },
-    "decimals": 10,
     "account": "*25519",
-    "rpcs": [
-      "wss://api.interlay.io/parachain"
-    ],
+    "rpcs": ["wss://api.interlay.io/parachain"],
     "paraId": 2032,
     "relay": {
       "id": "polkadot"
@@ -460,14 +331,7 @@
   },
   {
     "id": "karura",
-    "prefix": 8,
     "name": "Karura",
-    "token": "KAR",
-    "tokensCoingeckoIds": {
-      "KSM": "kusama",
-      "KUSD": null
-    },
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://karura.subscan.io/",
     "rpcs": [
@@ -486,10 +350,7 @@
   },
   {
     "id": "khala",
-    "prefix": 30,
     "name": "Khala",
-    "token": "PHA",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://khala.subscan.io/",
     "rpcs": [
@@ -505,12 +366,8 @@
   {
     "id": "kico",
     "name": "Kico",
-    "token": "KICO",
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc.kico.dico.io",
-      "wss://rpc.api.kico.dico.io"
-    ],
+    "rpcs": ["wss://rpc.kico.dico.io", "wss://rpc.api.kico.dico.io"],
     "paraId": 2107,
     "relay": {
       "id": "kusama"
@@ -518,10 +375,7 @@
   },
   {
     "id": "kilt-spiritnet",
-    "prefix": 38,
     "name": "KILT Spiritnet",
-    "token": "KILT",
-    "decimals": 15,
     "account": "*25519",
     "subscanUrl": "https://spiritnet.subscan.io/",
     "rpcs": [
@@ -536,13 +390,7 @@
   },
   {
     "id": "kintsugi-btc",
-    "prefix": 2092,
     "name": "Kintsugi",
-    "token": "KINT",
-    "tokensCoingeckoIds": {
-      "DOT": "polkadot"
-    },
-    "decimals": 12,
     "account": "*25519",
     "rpcs": [
       "wss://api-kusama.interlay.io/parachain",
@@ -557,12 +405,8 @@
   {
     "id": "kpron",
     "name": "Kpron",
-    "token": "KPN",
-    "decimals": 12,
     "account": "*25519",
-    "rpcs": [
-      "wss://kusama-kpron-rpc.apron.network/"
-    ],
+    "rpcs": ["wss://kusama-kpron-rpc.apron.network/"],
     "paraId": 2019,
     "relay": {
       "id": "kusama"
@@ -570,15 +414,9 @@
   },
   {
     "id": "litentry",
-    "prefix": 31,
     "name": "Litentry",
-    "token": "LIT",
-    "coingeckoId": "litentry",
-    "decimals": 12,
     "account": "*25519",
-    "rpcs": [
-      "wss://parachain.litentry.io"
-    ],
+    "rpcs": ["wss://parachain.litentry.io"],
     "paraId": 2013,
     "relay": {
       "id": "polkadot"
@@ -586,15 +424,9 @@
   },
   {
     "id": "litmus",
-    "prefix": 131,
     "name": "Litmus",
-    "token": "LIT",
-    "coingeckoId": null,
-    "decimals": 12,
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc.litmus-parachain.litentry.io"
-    ],
+    "rpcs": ["wss://rpc.litmus-parachain.litentry.io"],
     "paraId": 2106,
     "relay": {
       "id": "kusama"
@@ -603,11 +435,8 @@
   {
     "id": "loom",
     "name": "Loom",
-    "token": "LOOM",
     "account": "*25519",
-    "rpcs": [
-      "wss://kusama.dappchains.com"
-    ],
+    "rpcs": ["wss://kusama.dappchains.com"],
     "paraId": 2080,
     "relay": {
       "id": "kusama"
@@ -615,14 +444,9 @@
   },
   {
     "id": "manta",
-    "prefix": 77,
     "name": "Manta",
-    "token": "MANTA",
-    "decimals": 18,
     "account": "*25519",
-    "rpcs": [
-      "wss://pectinata.manta.systems"
-    ],
+    "rpcs": ["wss://pectinata.manta.systems"],
     "paraId": 2015,
     "relay": {
       "id": "polkadot"
@@ -631,12 +455,8 @@
   {
     "id": "mars",
     "name": "Mars",
-    "token": "MARS",
-    "coingeckoId": "mars",
     "account": "*25519",
-    "rpcs": [
-      "wss://wss.mars.aresprotocol.io"
-    ],
+    "rpcs": ["wss://wss.mars.aresprotocol.io"],
     "paraId": 2008,
     "relay": {
       "id": "kusama"
@@ -644,22 +464,13 @@
   },
   {
     "id": "moonbeam",
-    "prefix": 1284,
     "name": "Moonbeam",
-    "token": "GLMR",
-    "decimals": 18,
     "account": "secp256k1",
     "subscanUrl": "https://moonbeam.subscan.io/",
     "rpcs": [
       "wss://wss.api.moonbeam.network",
       "wss://moonbeam.api.onfinality.io/public-ws",
       "wss://moonbeam-rpc.dwellir.com"
-    ],
-    "ethereumExplorerUrl": "https://moonbeam.moonscan.io/",
-    "ethereumRpcs": [
-      "https://rpc.api.moonbeam.network",
-      "https://moonbeam.api.onfinality.io/public-ws",
-      "https://moonbeam-rpc.dwellir.com"
     ],
     "paraId": 2004,
     "relay": {
@@ -668,10 +479,7 @@
   },
   {
     "id": "moonriver",
-    "prefix": 1285,
     "name": "Moonriver",
-    "token": "MOVR",
-    "decimals": 18,
     "account": "secp256k1",
     "subscanUrl": "https://moonriver.subscan.io/",
     "rpcs": [
@@ -680,12 +488,6 @@
       "wss://rpc.pinknode.io/moonriver/explorer",
       "wss://moonriver-rpc.dwellir.com"
     ],
-    "ethereumExplorerUrl": "https://moonriver.moonscan.io/",
-    "ethereumRpcs": [
-      "https://rpc.api.moonriver.moonbeam.network",
-      "https://moonriver.api.onfinality.io/public-ws",
-      "https://moonriver-rpc.dwellir.com"
-    ],
     "paraId": 2023,
     "relay": {
       "id": "kusama"
@@ -693,10 +495,7 @@
   },
   {
     "id": "nodle",
-    "prefix": 37,
     "name": "Nodle",
-    "token": "NODL",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://nodle.subscan.io/",
     "rpcs": [
@@ -710,11 +509,7 @@
   },
   {
     "id": "parallel",
-    "prefix": 172,
     "name": "Parallel",
-    "token": "PARA",
-    "coingeckoId": null,
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://parallel.subscan.io/",
     "rpcs": [
@@ -728,10 +523,7 @@
   },
   {
     "id": "parallel-heiko",
-    "prefix": 110,
     "name": "Parallel Heiko",
-    "token": "HKO",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://parallel-heiko.subscan.io/",
     "rpcs": [
@@ -745,14 +537,9 @@
   },
   {
     "id": "phala",
-    "prefix": 30,
     "name": "Phala",
-    "token": "PHA",
-    "decimals": 12,
     "account": "*25519",
-    "rpcs": [
-      "wss://api.phala.network/ws"
-    ],
+    "rpcs": ["wss://api.phala.network/ws"],
     "paraId": 2035,
     "relay": {
       "id": "polkadot"
@@ -760,10 +547,7 @@
   },
   {
     "id": "picasso",
-    "prefix": 49,
     "name": "Picasso",
-    "token": "PICA",
-    "decimals": 12,
     "account": "*25519",
     "rpcs": [
       "wss://picasso-rpc.composable.finance",
@@ -777,11 +561,8 @@
   {
     "id": "pichiu",
     "name": "Pichiu",
-    "token": "PCHU",
     "account": "*25519",
-    "rpcs": [
-      "wss://kusama.kylin-node.co.uk"
-    ],
+    "rpcs": ["wss://kusama.kylin-node.co.uk"],
     "paraId": 2102,
     "relay": {
       "id": "kusama"
@@ -789,15 +570,10 @@
   },
   {
     "id": "polkadex",
-    "prefix": 88,
     "name": "Polkadex",
-    "token": "PDEX",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://polkadex.subscan.io/",
-    "rpcs": [
-      "wss://mainnet.polkadex.trade/"
-    ],
+    "rpcs": ["wss://mainnet.polkadex.trade/"],
     "paraId": 2040,
     "relay": {
       "id": "polkadot"
@@ -805,14 +581,9 @@
   },
   {
     "id": "polkasmith",
-    "prefix": 98,
     "name": "PolkaSmith",
-    "token": "PKS",
-    "decimals": 18,
     "account": "*25519",
-    "rpcs": [
-      "wss://wss-polkasmith.polkafoundry.com"
-    ],
+    "rpcs": ["wss://wss-polkasmith.polkafoundry.com"],
     "paraId": 2009,
     "relay": {
       "id": "kusama"
@@ -820,10 +591,7 @@
   },
   {
     "id": "quartz",
-    "prefix": 255,
     "name": "Quartz",
-    "token": "QTZ",
-    "decimals": 15,
     "account": "*25519",
     "subscanUrl": "https://quartz.subscan.io/",
     "rpcs": [
@@ -839,15 +607,10 @@
   },
   {
     "id": "robonomics",
-    "prefix": 32,
     "name": "Robonomics",
-    "token": "XRT",
-    "decimals": 9,
     "account": "*25519",
     "subscanUrl": "https://robonomics.subscan.io/",
-    "rpcs": [
-      "wss://kusama.rpc.robonomics.network/"
-    ],
+    "rpcs": ["wss://kusama.rpc.robonomics.network/"],
     "paraId": 2048,
     "relay": {
       "id": "kusama"
@@ -856,12 +619,9 @@
   {
     "id": "sakura",
     "name": "Sakura",
-    "token": "SKU",
     "account": "*25519",
     "subscanUrl": "https://sakura.subscan.io/",
-    "rpcs": [
-      "wss://api-sakura.clover.finance"
-    ],
+    "rpcs": ["wss://api-sakura.clover.finance"],
     "paraId": 2016,
     "relay": {
       "id": "kusama"
@@ -870,11 +630,8 @@
   {
     "id": "sherpax",
     "name": "SherpaX",
-    "token": "KSX",
     "account": "*25519",
-    "rpcs": [
-      "wss://sherpax.chainx.org"
-    ],
+    "rpcs": ["wss://sherpax.chainx.org"],
     "paraId": 2013,
     "relay": {
       "id": "kusama"
@@ -882,10 +639,7 @@
   },
   {
     "id": "shiden",
-    "prefix": 5,
     "name": "Shiden",
-    "token": "SDN",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://shiden.subscan.io/",
     "rpcs": [
@@ -893,12 +647,6 @@
       "wss://shiden.api.onfinality.io/public-ws",
       "wss://rpc.pinknode.io/shiden/explorer",
       "wss://shiden-rpc.dwellir.com"
-    ],
-    "ethereumExplorerUrl": "https://blockscout.com/shiden",
-    "ethereumRpcs": [
-      "https://evm.shiden.astar.network",
-      "https://shiden.api.onfinality.io/public-ws",
-      "https://shiden-rpc.dwellir.com"
     ],
     "paraId": 2007,
     "relay": {
@@ -908,13 +656,9 @@
   {
     "id": "sora-kusama",
     "name": "Sora Kusama",
-    "token": "XOR",
-    "coingeckoId": null,
     "account": "*25519",
     "subscanUrl": "https://sora.subscan.io/",
-    "rpcs": [
-      "wss://ws.parachain-collator-1.c1.sora2.soramitsu.co.jp"
-    ],
+    "rpcs": ["wss://ws.parachain-collator-1.c1.sora2.soramitsu.co.jp"],
     "paraId": 2011,
     "relay": {
       "id": "kusama"
@@ -923,8 +667,6 @@
   {
     "id": "statemine",
     "name": "Statemine",
-    "token": "KSM",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://statemine.subscan.io/",
     "rpcs": [
@@ -940,9 +682,6 @@
   {
     "id": "statemint",
     "name": "Statemint",
-    "token": "DOT",
-    "coingeckoId": "polkadot",
-    "decimals": 10,
     "account": "*25519",
     "rpcs": [
       "wss://statemint-rpc.polkadot.io",
@@ -957,12 +696,8 @@
   {
     "id": "subdao",
     "name": "SubDAO",
-    "token": "GOV",
-    "coingeckoId": null,
     "account": "*25519",
-    "rpcs": [
-      "wss://parachain-rpc.subdao.org"
-    ],
+    "rpcs": ["wss://parachain-rpc.subdao.org"],
     "paraId": 2018,
     "relay": {
       "id": "polkadot"
@@ -971,13 +706,9 @@
   {
     "id": "subgame",
     "name": "SubGame",
-    "token": "SGB",
-    "decimals": 10,
     "account": "*25519",
     "subscanUrl": "https://subgame.subscan.io/",
-    "rpcs": [
-      "wss://mainnet.subgame.org/"
-    ],
+    "rpcs": ["wss://mainnet.subgame.org/"],
     "paraId": 2017,
     "relay": {
       "id": "polkadot"
@@ -986,12 +717,8 @@
   {
     "id": "subgame-gamma",
     "name": "SubGame Gamma",
-    "token": "GSGB",
-    "decimals": 10,
     "account": "*25519",
-    "rpcs": [
-      "wss://gamma.subgame.org/"
-    ],
+    "rpcs": ["wss://gamma.subgame.org/"],
     "paraId": 2018,
     "relay": {
       "id": "kusama"
@@ -999,15 +726,9 @@
   },
   {
     "id": "subsocialx",
-    "prefix": 28,
     "name": "SubsocialX",
-    "token": "SUB",
-    "coingeckoId": null,
-    "decimals": 11,
     "account": "*25519",
-    "rpcs": [
-      "wss://para.subsocial.network"
-    ],
+    "rpcs": ["wss://para.subsocial.network"],
     "paraId": 2100,
     "relay": {
       "id": "kusama"
@@ -1015,24 +736,15 @@
   },
   {
     "id": "subsocial",
-    "prefix": 28,
     "name": "Subsocial",
-    "token": "SUB",
-    "coingeckoId": null,
-    "decimals": 11,
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc.subsocial.network"
-    ]
+    "rpcs": ["wss://rpc.subsocial.network"]
   },
   {
     "id": "unorthodox",
     "name": "Unorthodox",
     "account": "*25519",
-    "coingeckoId": null,
-    "rpcs": [
-      "wss://rpc.kusama.standard.tech"
-    ],
+    "rpcs": ["wss://rpc.kusama.standard.tech"],
     "paraId": 2094,
     "relay": {
       "id": "kusama"
@@ -1040,15 +752,9 @@
   },
   {
     "id": "zeitgeist",
-    "prefix": 73,
     "name": "Zeitgeist",
-    "token": "ZTG",
-    "decimals": 10,
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc-0.zeitgeist.pm",
-      "wss://zeitgeist-rpc.dwellir.com"
-    ],
+    "rpcs": ["wss://rpc-0.zeitgeist.pm", "wss://zeitgeist-rpc.dwellir.com"],
     "paraId": 2101,
     "relay": {
       "id": "kusama"
@@ -1056,11 +762,7 @@
   },
   {
     "id": "turing",
-    "prefix": 51,
     "name": "Turing",
-    "token": "TUR",
-    "coingeckoId": null,
-    "decimals": 10,
     "account": "*25519",
     "rpcs": [
       "wss://rpc.turing.oak.tech",
@@ -1073,21 +775,15 @@
   },
   {
     "id": "aleph-zero",
-    "prefix": 42,
     "name": "Aleph Zero",
-    "token": "TZERO",
     "coingeckoId": "aleph-zero",
-    "decimals": 12,
     "account": "*25519",
     "rpcs": ["wss://ws.azero.dev"]
   },
   {
     "id": "mangata",
-    "prefix": 42,
     "name": "MangataX",
-    "token": "MGX",
     "coingeckoId": null,
-    "decimals": 18,
     "account": "*25519",
     "rpcs": [
       "wss://prod-kusama-collator-01.mangatafinance.cloud",

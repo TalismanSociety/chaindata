@@ -1,89 +1,57 @@
 [
   {
     "id": "westend",
-    "prefix": 42,
     "name": "Westend",
-    "token": "WND",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://westend.subscan.io/",
     "rpcs": ["wss://westend-rpc.polkadot.io"]
   },
   {
     "id": "mandala",
-    "prefix": 42,
     "name": "Mandala",
-    "token": "ACA",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://acala-testnet.subscan.io/",
     "rpcs": [
       "wss://mandala.polkawallet.io",
       "wss://acala-mandala.api.onfinality.io/public-ws"
-    ],
-    "ethereumRpcs": ["https://tc7-eth.aca-dev.network"]
-  },
-  {
-    "id": "moonbase",
-    "prefix": 1287,
-    "name": "Moonbase Alpha",
-    "token": "DEV",
-    "decimals": 18,
-    "account": "secp256k1",
-    "subscanUrl": "https://moonbase.subscan.io/",
-    "rpcs": ["wss://moonbeam-alpha.api.onfinality.io/public-ws"],
-    "ethereumExplorerUrl": "https://moonbase.moonscan.io/",
-    "ethereumRpcs": [
-      "https://rpc.api.moonbase.moonbeam.network",
-      "https://moonbeam-alpha.api.onfinality.io/public-ws"
     ]
   },
   {
+    "id": "moonbase",
+    "name": "Moonbase Alpha",
+    "account": "secp256k1",
+    "subscanUrl": "https://moonbase.subscan.io/",
+    "rpcs": ["wss://moonbeam-alpha.api.onfinality.io/public-ws"]
+  },
+  {
     "id": "dolphin",
-    "prefix": 42,
     "name": "Dolphin Testnet",
-    "token": "DOL",
-    "decimals": 12,
     "account": "*25519",
     "subscanUrl": "https://dolphin.subscan.io/",
     "rpcs": ["wss://trillian.dolphin.red/"]
   },
   {
     "id": "shibuya",
-    "prefix": 5,
     "name": "Shibuya Testnet",
-    "token": "SBY",
-    "decimals": 18,
     "account": "*25519",
     "subscanUrl": "https://shibuya.subscan.io/",
-    "rpcs": ["wss://rpc.shibuya.astar.network"],
-    "ethereumExplorerUrl": "https://blockscout.com/shibuya",
-    "ethereumRpcs": ["https://evm.shibuya.astar.network"]
+    "rpcs": ["wss://rpc.shibuya.astar.network"]
   },
   {
     "id": "zero-io",
-    "prefix": 25,
     "name": "Zero.io",
-    "token": "ZERO",
-    "decimals": 18,
     "account": "*25519",
     "rpcs": ["wss://alphaville.zero.io/"]
   },
   {
     "id": "mangata-testnet",
-    "prefix": 42,
     "name": "Mangata Testnet",
-    "token": "MGAT",
-    "decimals": 18,
     "account": "*25519",
     "rpcs": ["wss://v4-prod-collator-01.mangatafinance.cloud"]
   },
   {
     "id": "neumann",
-    "prefix": 51,
     "name": "Neumann",
-    "token": "NEU",
-    "decimals": 10,
     "account": "*25519",
     "rpcs": [
       "wss://neumann.api.onfinality.io/public-ws",
@@ -92,19 +60,13 @@
   },
   {
     "id": "aleph-zero-testnet",
-    "prefix": 42,
     "name": "Aleph Zero Testnet",
-    "token": "TZERO",
-    "decimals": 12,
     "account": "*25519",
     "rpcs": ["wss://ws.test.azero.dev"]
   },
   {
     "id": "gm-rococo",
-    "prefix": 42,
     "name": "GM Parachain Rococo",
-    "token": "FREN",
-    "decimals": 12,
     "account": "*25519",
     "rpcs": ["wss://rococo.gmordie.com"]
   }
