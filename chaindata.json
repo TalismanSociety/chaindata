@@ -700,14 +700,25 @@
     "account": "*25519",
     "subscanUrl": "https://nodle.subscan.io/",
     "rpcs": [
-      "wss://eden-rpc.dwellir.com",
       "wss://nodle-parachain.api.onfinality.io/public-ws",
-      "wss://rpc.nodle.com"
+      "wss://eden-rpc.dwellir.com"
     ],
     "paraId": 2026,
     "relay": {
       "id": "polkadot"
     }
+  },
+  {
+    "id": "nodle-network",
+    "prefix": 37,
+    "name": "Nodle Chain Network",
+    "token": "NODL",
+    "decimals": 18,
+    "account": "*25519",
+    "rpcs": [
+      "wss://main3.nodleprotocol.io",
+      "wss://nodle.api.onfinality.io/public-ws"
+    ]
   },
   {
     "id": "parallel",
