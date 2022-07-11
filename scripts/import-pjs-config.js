@@ -45,8 +45,10 @@ const trimName = (text) =>
     // specific name overrides
     .replace(/^KICO$/, 'Kico')
     .replace(/^Kintsugi BTC$/, 'Kintsugi')
+    .replace(/^Mangata$/, 'MangataX')
     .replace(/^PolkaSmith by PolkaFoundry$/, 'PolkaSmith')
     .replace(/^QUARTZ by UNIQUE$/, 'Quartz')
+    .replace(/^SORA Kusama$/, 'Sora Kusama')
     .replace(/^SORA$/, 'Sora')
     .replace(/^Shiden Crowdloan 2$/, 'Shiden')
 
