@@ -8,6 +8,7 @@ import {
   prodParasKusamaCommon,
 } from '@polkadot/apps-config/endpoints/production'
 import { allNetworks } from '@polkadot/networks'
+import path from 'path'
 import fs from 'fs'
 import prettier from 'prettier'
 import kebabCase from 'lodash/kebabCase.js'
@@ -170,3 +171,10 @@ Object.entries(kusamaChainsByParaId)
       `Conflicting kusama paraId ${conflict[0]}: ${conflict[1].join(', ')}`
     )
   })
+
+chaindata.forEach((chain) => {
+  const hasLogo = fs.existsSync(path.join('assets', chain.id, 'logo.svg'))
+  if (hasLogo) return
+
+  console.log(`Missing logo for chain ${chain.id}`)
+})
