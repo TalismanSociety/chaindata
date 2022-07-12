@@ -141,12 +141,12 @@ testChains.forEach(addParaToMap(null, true))
 
 // derive westend parachains
 ;[...testParasWestend, ...testParasWestendCommon].forEach(
-  addParaToMap({ id: 'westend' }, true)
+  addParaToMap({ id: 'westend-testnet' }, true)
 )
 
 // derive rococo parachains
 ;[...testParasRococo, ...testParasRococoCommon].forEach(
-  addParaToMap({ id: 'rococo' }, true)
+  addParaToMap({ id: 'rococo-testnet' }, true)
 )
 
 // sort chaindata
@@ -162,10 +162,10 @@ const chaindata = Object.values(chaindataMap).sort((a, b) => {
 // sort testnets chaindata
 const testnetsChaindata = Object.values(testnetsChaindataMap).sort((a, b) => {
   if (a.id === b.id) return 0
-  if (a.id === 'westend') return -1
-  if (b.id === 'westend') return 1
-  if (a.id === 'rococo') return -1
-  if (b.id === 'rococo') return 1
+  if (a.id === 'westend-testnet') return -1
+  if (b.id === 'westend-testnet') return 1
+  if (a.id === 'rococo-testnet') return -1
+  if (b.id === 'rococo-testnet') return 1
   return a.id.localeCompare(b.id)
 })
 
