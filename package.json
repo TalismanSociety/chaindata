@@ -12,6 +12,9 @@
   },
   "homepage": "https://talisman.community",
   "scripts": {
+    "update": "yarn update-pjs && yarn update-pjs-recursive && yarn import-pjs-rpcs",
+    "update-pjs": "yarn up '@polkadot/*'",
+    "update-pjs-recursive": "yarn up -R '@polkadot/*'",
     "import-pjs-rpcs": "node scripts/import-pjs-config.js"
   },
   "devDependencies": {
