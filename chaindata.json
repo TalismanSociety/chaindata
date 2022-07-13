@@ -7,7 +7,9 @@
     "rpcs": [
       "wss://rpc.polkadot.io",
       "wss://polkadot.api.onfinality.io/public-ws",
-      "wss://polkadot-rpc.dwellir.com"
+      "wss://polkadot-rpc.dwellir.com",
+      "wss://public-rpc.pinknode.io/polkadot",
+      "wss://polkadot.public.curie.radiumblock.io/ws"
     ]
   },
   {
@@ -19,7 +21,8 @@
       "wss://kusama-rpc.polkadot.io",
       "wss://kusama.api.onfinality.io/public-ws",
       "wss://kusama-rpc.dwellir.com",
-      "wss://kusama.public.curie.radiumblock.co/ws"
+      "wss://kusama.public.curie.radiumblock.xyz/ws",
+      "wss://public-rpc.pinknode.io/kusama"
     ]
   },
   {
@@ -63,6 +66,16 @@
     }
   },
   {
+    "id": "amplitude",
+    "name": "Amplitude",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2124,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "ares",
     "name": "Ares Odyssey",
     "account": "*25519",
@@ -80,7 +93,8 @@
     "rpcs": [
       "wss://rpc.astar.network",
       "wss://astar.api.onfinality.io/public-ws",
-      "wss://astar-rpc.dwellir.com"
+      "wss://astar-rpc.dwellir.com",
+      "wss://public-rpc.pinknode.io/astar"
     ],
     "paraId": 2006,
     "relay": {
@@ -170,8 +184,7 @@
     "subscanUrl": "https://calamari.subscan.io/",
     "rpcs": [
       "wss://ws.calamari.systems/",
-      "wss://calamari.api.onfinality.io/public-ws",
-      "wss://calamari-rpc.dwellir.com"
+      "wss://calamari.api.onfinality.io/public-ws"
     ],
     "paraId": 2084,
     "relay": {
@@ -185,8 +198,7 @@
     "subscanUrl": "https://centrifuge.subscan.io/",
     "rpcs": [
       "wss://fullnode.parachain.centrifuge.io",
-      "wss://centrifuge-parachain.api.onfinality.io/public-ws",
-      "wss://centrifuge-rpc.dwellir.com"
+      "wss://centrifuge-parachain.api.onfinality.io/public-ws"
     ],
     "paraId": 2031,
     "relay": {
@@ -280,7 +292,7 @@
   },
   {
     "id": "darwinia",
-    "name": "Darwinia",
+    "name": "Darwinia Para Backup",
     "account": "*25519",
     "subscanUrl": "https://darwinia.subscan.io/",
     "rpcs": ["wss://parachain-rpc.darwinia.network"],
@@ -335,7 +347,8 @@
     "subscanUrl": "https://edgeware.subscan.io/",
     "rpcs": [
       "wss://mainnet.edgewa.re",
-      "wss://edgeware.api.onfinality.io/public-ws"
+      "wss://edgeware.api.onfinality.io/public-ws",
+      "wss://edgeware-rpc.dwellir.com"
     ]
   },
   {
@@ -405,6 +418,16 @@
     }
   },
   {
+    "id": "gm",
+    "name": "GM",
+    "account": "*25519",
+    "rpcs": ["wss://kusama.gmordie.com"],
+    "paraId": 2123,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "hanonycash",
     "name": "Hanonycash",
     "account": "*25519",
@@ -415,7 +438,7 @@
     "name": "HydraDX",
     "account": "*25519",
     "subscanUrl": "https://hydradx.subscan.io/",
-    "rpcs": ["wss://rpc-01.hydradx.io"],
+    "rpcs": ["wss://rpc-01.hydradx.io", "wss://hydradx-rpc.dwellir.com"],
     "paraId": 2034,
     "relay": {
       "id": "polkadot"
@@ -506,7 +529,8 @@
     "rpcs": [
       "wss://khala-api.phala.network/ws",
       "wss://khala.api.onfinality.io/public-ws",
-      "wss://khala-rpc.dwellir.com"
+      "wss://khala-rpc.dwellir.com",
+      "wss://public-rpc.pinknode.io/khala"
     ],
     "paraId": 2004,
     "relay": {
@@ -590,7 +614,10 @@
     "id": "litentry",
     "name": "Litentry",
     "account": "*25519",
-    "rpcs": ["wss://rpc.litentry-parachain.litentry.io"],
+    "rpcs": [
+      "wss://rpc.litentry-parachain.litentry.io",
+      "wss://litentry-rpc.dwellir.com"
+    ],
     "paraId": 2013,
     "relay": {
       "id": "polkadot"
@@ -606,6 +633,12 @@
     "relay": {
       "id": "kusama"
     }
+  },
+  {
+    "id": "logion",
+    "name": "logion Standalone",
+    "account": "*25519",
+    "rpcs": ["wss://rpc01.logion.network"]
   },
   {
     "id": "loom",
@@ -676,7 +709,8 @@
       "wss://wss.api.moonbeam.network",
       "wss://moonbeam.public.blastapi.io",
       "wss://moonbeam-rpc.dwellir.com",
-      "wss://moonbeam.api.onfinality.io/public-ws"
+      "wss://moonbeam.api.onfinality.io/public-ws",
+      "wss://public-rpc.pinknode.io/moonbeam"
     ],
     "paraId": 2004,
     "relay": {
@@ -692,12 +726,19 @@
       "wss://wss.api.moonriver.moonbeam.network",
       "wss://moonriver.public.blastapi.io",
       "wss://moonriver-rpc.dwellir.com",
-      "wss://moonriver.api.onfinality.io/public-ws"
+      "wss://moonriver.api.onfinality.io/public-ws",
+      "wss://public-rpc.pinknode.io/moonriver"
     ],
     "paraId": 2023,
     "relay": {
       "id": "kusama"
     }
+  },
+  {
+    "id": "myriad",
+    "name": "Myriad",
+    "account": "*25519",
+    "rpcs": ["wss://ws-rpc.myriad.social"]
   },
   {
     "id": "neatcoin",
@@ -718,9 +759,20 @@
     "subscanUrl": "https://nodle.subscan.io/",
     "rpcs": [
       "wss://nodle-parachain.api.onfinality.io/public-ws",
-      "wss://eden-rpc.dwellir.com"
+      "wss://eden-rpc.dwellir.com",
+      "wss://public-rpc.pinknode.io/nodle"
     ],
     "paraId": 2026,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "omnibtc",
+    "name": "OmniBTC",
+    "account": "*25519",
+    "rpcs": ["wss://omnibtc.io/ws"],
+    "paraId": 2053,
     "relay": {
       "id": "polkadot"
     }
@@ -742,8 +794,7 @@
     "subscanUrl": "https://parallel.subscan.io/",
     "rpcs": [
       "wss://parallel.api.onfinality.io/public-ws",
-      "wss://rpc.parallel.fi",
-      "wss://parallel-rpc.dwellir.com"
+      "wss://rpc.parallel.fi"
     ],
     "paraId": 2012,
     "relay": {
@@ -752,15 +803,11 @@
   },
   {
     "id": "parallel-heiko",
-    "name": "Parallel Heiko",
+    "name": "Parallel Heiko 2",
     "account": "*25519",
     "subscanUrl": "https://parallel-heiko.subscan.io/",
-    "rpcs": [
-      "wss://parallel-heiko.api.onfinality.io/public-ws",
-      "wss://heiko-rpc.parallel.fi",
-      "wss://heiko-rpc.dwellir.com"
-    ],
-    "paraId": 2085,
+    "rpcs": [],
+    "paraId": 2126,
     "relay": {
       "id": "kusama"
     }
@@ -840,7 +887,7 @@
     "account": "*25519",
     "subscanUrl": "https://quartz.subscan.io/",
     "rpcs": [
-      "wss://quartz.api.onfinality.io%2Fpublic-ws",
+      "wss://quartz.api.onfinality.io/public-ws",
       "wss://us-ws-quartz.unique.network",
       "wss://asia-ws-quartz.unique.network",
       "wss://eu-ws-quartz.unique.network"
@@ -927,7 +974,6 @@
       "wss://mof2.sora.org",
       "wss://ws.mof.sora.org",
       "wss://mof3.sora.org",
-      "wss://ws.alb.sora.org",
       "wss://sora.api.onfinality.io/public-ws"
     ]
   },
@@ -952,7 +998,8 @@
     "rpcs": [
       "wss://statemine-rpc.polkadot.io",
       "wss://statemine.api.onfinality.io/public-ws",
-      "wss://statemine-rpc.dwellir.com"
+      "wss://statemine-rpc.dwellir.com",
+      "wss://public-rpc.pinknode.io/statemine"
     ],
     "paraId": 1000,
     "relay": {
@@ -967,7 +1014,8 @@
     "rpcs": [
       "wss://statemint-rpc.polkadot.io",
       "wss://statemint.api.onfinality.io/public-ws",
-      "wss://statemint-rpc.dwellir.com"
+      "wss://statemint-rpc.dwellir.com",
+      "wss://public-rpc.pinknode.io/statemint"
     ],
     "paraId": 1000,
     "relay": {
@@ -1041,10 +1089,26 @@
     }
   },
   {
+    "id": "ternoa",
+    "name": "Ternoa",
+    "account": "*25519",
+    "rpcs": ["wss://mainnet.ternoa.network"]
+  },
+  {
     "id": "ternoa-mainnet",
     "name": "Ternoa",
     "account": "*25519",
     "rpcs": ["wss://mainnet.ternoa.network"]
+  },
+  {
+    "id": "tinker",
+    "name": "InvArch Tinkernet",
+    "account": "*25519",
+    "rpcs": ["wss://tinker.invarch.network"],
+    "paraId": 2125,
+    "relay": {
+      "id": "kusama"
+    }
   },
   {
     "id": "trustbase",
