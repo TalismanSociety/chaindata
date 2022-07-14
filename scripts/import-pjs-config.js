@@ -1,26 +1,27 @@
 import {
   prodChains,
-  prodRelayPolkadot,
+  prodParasKusama,
+  prodParasKusamaCommon,
   prodParasPolkadot,
   prodParasPolkadotCommon,
   prodRelayKusama,
-  prodParasKusama,
-  prodParasKusamaCommon,
+  prodRelayPolkadot,
 } from '@polkadot/apps-config/endpoints/production'
 import {
   testChains,
-  testRelayWestend,
+  testParasRococo,
+  testParasRococoCommon,
   testParasWestend,
   testParasWestendCommon,
   testRelayRococo,
-  testParasRococo,
-  testParasRococoCommon,
+  testRelayWestend,
 } from '@polkadot/apps-config/endpoints/testing'
+
 // import { allNetworks } from '@polkadot/networks'
-import path from 'path'
 import fs from 'fs'
-import prettier from 'prettier'
 import kebabCase from 'lodash/kebabCase.js'
+import path from 'path'
+import prettier from 'prettier'
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
@@ -62,6 +63,7 @@ const trimName = (text) =>
     .replace(/ parachain$/i, '')
     .replace(/ polkadot$/i, '')
     .replace(/ protocol$/i, '')
+    .replace(/ rococo$/i, '')
 
     // specific name overrides
     .replace(/^KICO$/, 'Kico')
@@ -92,6 +94,9 @@ const testnetsChaindataMap = Object.fromEntries(
   ])
 )
 
+// keep track of updated chain ids
+const updatedChainIds = []
+
 // derive talisman chain from pjs chain and add to chaindata
 const addParaToMap =
   (relay, isTestnet = false) =>
@@ -115,6 +120,7 @@ const addParaToMap =
     }
 
     map[chain.id] = chain
+    updatedChainIds.push(chain.id)
   }
 
 // derive solo chains
@@ -169,6 +175,15 @@ const testnetsChaindata = Object.values(testnetsChaindataMap).sort((a, b) => {
   return a.id.localeCompare(b.id)
 })
 
+// check for testnet <-> mainnet name conflicts and append ` Testnet` to conflicting testnet names
+const chaindataNames = Object.fromEntries(
+  chaindata.map((chain) => [chain.name, true])
+)
+testnetsChaindata.forEach((chain) => {
+  if (!chaindataNames[chain.name]) return
+  chain.name = `${chain.name} Testnet`
+})
+
 // write updated files
 fs.writeFileSync(
   'chaindata.json',
@@ -219,3 +234,15 @@ for (const id of Object.keys(chaindataMap)) {
   if (!testnetsChaindataMap[id]) continue
   console.log(`Testnet id ${id} conflicts with production`)
 }
+
+// print existing chains which aren't listed in pjs repo
+const chainIds = Object.fromEntries([
+  ...chaindata.map(({ id }) => [id, true]),
+  ...testnetsChaindata.map(({ id }) => [id, true]),
+])
+updatedChainIds.forEach((id) => delete chainIds[id])
+Object.keys(chainIds).forEach((id) =>
+  console.log(
+    `Note: chain ${id} exists in chaindata but not in @polkadot/apps-config`
+  )
+)
