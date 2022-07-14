@@ -25,21 +25,27 @@
     "rpcs": ["wss://rpc-test.ajuna.network"]
   },
   {
-    "id": "aleph-zero-testnet",
+    "id": "aleph-testnet",
     "name": "Aleph Zero Testnet",
     "account": "*25519",
     "rpcs": ["wss://ws.test.azero.dev"]
   },
   {
-    "id": "arctic-testnet",
+    "id": "arctic-testnet-rococo",
     "name": "Arctic",
     "account": "*25519",
-    "subscanUrl": "https://arctic.subscan.io/",
     "rpcs": ["wss://arctic-rococo-rpc.icenetwork.io"],
     "paraId": 3015,
     "relay": {
       "id": "rococo-testnet"
     }
+  },
+  {
+    "id": "arctic-testnet-standalone",
+    "name": "Arctic",
+    "account": "*25519",
+    "subscanUrl": "https://arctic.subscan.io/",
+    "rpcs": ["wss://arctic-rpc.icenetwork.io:9944"]
   },
   {
     "id": "ares-gladios-testnet",
@@ -106,7 +112,7 @@
     "id": "coinversation-testnet",
     "name": "Coinversation Testnet",
     "account": "*25519",
-    "rpcs": ["wss://rpc.coinversation.io/"]
+    "rpcs": []
   },
   {
     "id": "creditcoin-testnet-testnet",
@@ -124,7 +130,7 @@
     "id": "datahighway-testnet",
     "name": "Spreehafen",
     "account": "*25519",
-    "rpcs": ["wss://spreehafen.datahighway.com"]
+    "rpcs": []
   },
   {
     "id": "dock-testnet-testnet",
@@ -152,7 +158,7 @@
     "rpcs": ["wss://beresheet.edgewa.re"]
   },
   {
-    "id": "encointer-testnet",
+    "id": "encointer-testnet-rococo",
     "name": "Encointer Lietaer",
     "account": "*25519",
     "rpcs": ["wss://rococo.api.encointer.org"],
@@ -160,6 +166,12 @@
     "relay": {
       "id": "rococo-testnet"
     }
+  },
+  {
+    "id": "encointer-testnet-standalone",
+    "name": "Encointer Gesell",
+    "account": "*25519",
+    "rpcs": ["wss://gesell.encointer.org"]
   },
   {
     "id": "equilibrium-testnet",
@@ -287,10 +299,22 @@
     "rpcs": ["wss://pc-test-3.phala.network/khala/ws"]
   },
   {
-    "id": "kilt-testnet",
-    "name": "Wilt",
+    "id": "kilt-testnet-standalone",
+    "name": "KILT Mashnet",
+    "account": "*25519",
+    "rpcs": ["wss://full-nodes.kilt.io:9944/"]
+  },
+  {
+    "id": "kilt-testnet-standalone-2",
+    "name": "KILT Peregrine",
     "account": "*25519",
     "subscanUrl": "https://kilt-testnet.subscan.io/",
+    "rpcs": ["wss://peregrine.kilt.io/parachain-public-ws/"]
+  },
+  {
+    "id": "kilt-testnet-westend",
+    "name": "Wilt",
+    "account": "*25519",
     "rpcs": ["wss://westend.kilt.io:9977"],
     "paraId": 2085,
     "relay": {
@@ -322,7 +346,13 @@
     "rpcs": ["wss://testnet.litentry.io"]
   },
   {
-    "id": "logion-testnet",
+    "id": "logion-testnet-standalone",
+    "name": "Logion Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://chimay.logion.network"]
+  },
+  {
+    "id": "logion-testnet-standalone-2",
     "name": "Logion Testnet",
     "account": "*25519",
     "rpcs": ["wss://test-rpc01.logion.network"]
@@ -378,15 +408,6 @@
     "rpcs": ["wss://mybank.network/substrate"]
   },
   {
-    "id": "neumann-testnet",
-    "name": "Neumann",
-    "account": "*25519",
-    "rpcs": [
-      "wss://rpc.testnet.oak.tech",
-      "wss://neumann.api.onfinality.io/public-ws"
-    ]
-  },
-  {
     "id": "nftmart-testnet",
     "name": "NFTMart Testnet",
     "account": "*25519",
@@ -423,10 +444,16 @@
     "rpcs": ["wss://pangolin-rpc.darwinia.network"]
   },
   {
-    "id": "pangoro-testnet",
+    "id": "pangoro-testnet-standalone",
     "name": "Pangoro",
     "account": "*25519",
     "subscanUrl": "https://pangoro.subscan.io/",
+    "rpcs": ["wss://pangoro-rpc.darwinia.network"]
+  },
+  {
+    "id": "pangoro-testnet-westend",
+    "name": "Pangoro",
+    "account": "*25519",
     "rpcs": ["wss://pangoro-parachain-rpc.darwinia.network"],
     "paraId": 2102,
     "relay": {
@@ -449,7 +476,7 @@
     "id": "pichiu-testnet",
     "name": "Pichiu Testnet",
     "account": "*25519",
-    "rpcs": ["wss://westend.kylin-node.co.uk"]
+    "rpcs": []
   },
   {
     "id": "polkadex-testnet",
@@ -468,7 +495,7 @@
     "id": "pontem-testnet",
     "name": "Pontem",
     "account": "*25519",
-    "rpcs": ["wss://pontem-testnet.api.onfinality.io/public-ws"]
+    "rpcs": []
   },
   {
     "id": "prism-testnet",
@@ -586,16 +613,6 @@
     "account": "*25519",
     "rpcs": ["wss://parachain-testnet.equilab.io/rococo/collator/node1/wss"],
     "paraId": 2024,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
-    "id": "rococo-gm-testnet",
-    "name": "GM Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://rococo.gmordie.com"],
-    "paraId": 3019,
     "relay": {
       "id": "rococo-testnet"
     }

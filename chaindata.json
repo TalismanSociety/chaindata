@@ -44,7 +44,7 @@
     }
   },
   {
-    "id": "aleph-zero",
+    "id": "aleph",
     "name": "Aleph Zero",
     "coingeckoId": "aleph-zero",
     "account": "*25519",
@@ -73,16 +73,6 @@
     "paraId": 2124,
     "relay": {
       "id": "kusama"
-    }
-  },
-  {
-    "id": "ares",
-    "name": "Ares Odyssey",
-    "account": "*25519",
-    "rpcs": ["wss://wss.odyssey.aresprotocol.io"],
-    "paraId": 2028,
-    "relay": {
-      "id": "polkadot"
     }
   },
   {
@@ -142,18 +132,7 @@
     }
   },
   {
-    "id": "bifrost-dot",
-    "name": "Bifrost",
-    "account": "*25519",
-    "subscanUrl": "https://bifrost.subscan.io/",
-    "rpcs": ["wss://bifrost-dot.liebi.com/ws"],
-    "paraId": 2001,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "bifrost-ksm",
+    "id": "bifrost-kusama",
     "name": "Bifrost Kusama",
     "account": "*25519",
     "subscanUrl": "https://bifrost-kusama.subscan.io/",
@@ -170,7 +149,18 @@
     }
   },
   {
-    "id": "bit-country-pioneer",
+    "id": "bifrost-polkadot",
+    "name": "Bifrost",
+    "account": "*25519",
+    "subscanUrl": "https://bifrost.subscan.io/",
+    "rpcs": ["wss://hk.p.bifrost-rpc.liebi.com/ws"],
+    "paraId": 2030,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "bitcountry-pioneer",
     "name": "Bit.Country Pioneer",
     "account": "*25519",
     "subscanUrl": "https://pioneer.subscan.io/",
@@ -198,7 +188,7 @@
     }
   },
   {
-    "id": "centrifuge",
+    "id": "centrifuge-polkadot",
     "name": "Centrifuge",
     "account": "*25519",
     "subscanUrl": "https://centrifuge.subscan.io/",
@@ -210,6 +200,12 @@
     "relay": {
       "id": "polkadot"
     }
+  },
+  {
+    "id": "centrifuge-standalone",
+    "name": "Centrifuge Standalone [Archived]",
+    "account": "*25519",
+    "rpcs": ["wss://fullnode.centrifuge.io"]
   },
   {
     "id": "chainx",
@@ -263,6 +259,28 @@
     }
   },
   {
+    "id": "crab-kusama",
+    "name": "Darwinia Crab Kusama",
+    "account": "*25519",
+    "subscanUrl": "https://crab-parachain.subscan.io/",
+    "rpcs": ["wss://crab-parachain-rpc.darwinia.network/"],
+    "paraId": 2105,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "crab-standalone",
+    "name": "Darwinia Crab",
+    "account": "*25519",
+    "subscanUrl": "https://crab.subscan.io/",
+    "rpcs": [
+      "wss://crab-rpc.darwinia.network",
+      "wss://darwiniacrab-rpc.dwellir.com",
+      "wss://darwinia-crab.api.onfinality.io/public-ws"
+    ]
+  },
+  {
     "id": "creditcoin",
     "name": "Creditcoin",
     "account": "*25519",
@@ -276,9 +294,15 @@
   },
   {
     "id": "crust",
-    "name": "Crust",
+    "name": "Crust Standalone",
     "account": "*25519",
     "subscanUrl": "https://crust.subscan.io/",
+    "rpcs": ["wss://crust.api.onfinality.io/public-ws"]
+  },
+  {
+    "id": "crust-parachain",
+    "name": "Crust",
+    "account": "*25519",
     "rpcs": ["wss://rpc.crust.network"],
     "paraId": 2008,
     "relay": {
@@ -286,48 +310,31 @@
     }
   },
   {
-    "id": "crust-shadow",
-    "name": "Crust Shadow",
-    "account": "*25519",
-    "subscanUrl": "https://shadow.subscan.io/",
-    "rpcs": ["wss://rpc-shadow.crust.network/"],
-    "paraId": 2012,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "darwinia",
-    "name": "Darwinia Para Backup",
+    "id": "darwinia-polkadot",
+    "name": "Darwinia",
     "account": "*25519",
     "subscanUrl": "https://darwinia.subscan.io/",
     "rpcs": ["wss://parachain-rpc.darwinia.network"],
+    "paraId": 2046,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "darwinia-polkadot-2",
+    "name": "Darwinia Para Backup",
+    "account": "*25519",
+    "rpcs": [],
     "paraId": 2003,
     "relay": {
       "id": "polkadot"
     }
   },
   {
-    "id": "darwinia-crab",
-    "name": "Darwinia Crab",
+    "id": "darwinia-standalone",
+    "name": "Darwinia Standalone",
     "account": "*25519",
-    "subscanUrl": "https://crab-parachain.subscan.io/",
-    "rpcs": ["wss://crab-parachain-rpc.darwinia.network/"],
-    "paraId": 2105,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "darwinia-crab-redirect",
-    "name": "Darwinia Crab Redirect",
-    "account": "*25519",
-    "subscanUrl": "https://crab.subscan.io/",
-    "rpcs": ["wss://crab-redirect-rpc.darwinia.network/"],
-    "paraId": 2006,
-    "relay": {
-      "id": "kusama"
-    }
+    "rpcs": ["wss://rpc.darwinia.network", "wss://darwinia-rpc.dwellir.com"]
   },
   {
     "id": "dock-pos-mainnet",
@@ -358,7 +365,7 @@
     ]
   },
   {
-    "id": "efinity",
+    "id": "efinity-polkadot",
     "name": "Efinity",
     "account": "Sr25519",
     "subscanUrl": "https://efinity.subscan.io/",
@@ -367,6 +374,12 @@
     "relay": {
       "id": "polkadot"
     }
+  },
+  {
+    "id": "efinity-standalone",
+    "name": "Efinity Standalone",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "encointer",
@@ -383,17 +396,7 @@
     }
   },
   {
-    "id": "encointer-canary",
-    "name": "Encointer Canary",
-    "account": "*25519",
-    "rpcs": ["wss://canary.encointer.org"],
-    "paraId": 2014,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
-    "id": "equilibrium",
+    "id": "equilibrium-polkadot",
     "name": "Equilibrium",
     "account": "*25519",
     "subscanUrl": "https://equilibrium.subscan.io/",
@@ -402,6 +405,12 @@
     "relay": {
       "id": "polkadot"
     }
+  },
+  {
+    "id": "equilibrium-standalone",
+    "name": "Equilibrium Standalone",
+    "account": "*25519",
+    "rpcs": ["wss://node.equilibrium.io"]
   },
   {
     "id": "geminis",
@@ -414,14 +423,20 @@
     }
   },
   {
-    "id": "genshiro",
-    "name": "Genshiro",
+    "id": "genshiro-kusama",
+    "name": "Genshiro Kusama",
     "account": "*25519",
     "rpcs": ["wss://node.genshiro.io"],
     "paraId": 2024,
     "relay": {
       "id": "kusama"
     }
+  },
+  {
+    "id": "genshiro-standalone",
+    "name": "Genshiro",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "gm",
@@ -440,7 +455,31 @@
     "rpcs": ["wss://rpc.hanonycash.com"]
   },
   {
-    "id": "hydradx",
+    "id": "heiko-kusama",
+    "name": "Parallel Heiko",
+    "account": "*25519",
+    "subscanUrl": "https://parallel-heiko.subscan.io/",
+    "rpcs": [
+      "wss://parallel-heiko.api.onfinality.io/public-ws",
+      "wss://heiko-rpc.parallel.fi"
+    ],
+    "paraId": 2085,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "heiko-kusama-2",
+    "name": "Parallel Heiko",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2126,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "hydra",
     "name": "HydraDX",
     "account": "*25519",
     "subscanUrl": "https://hydradx.subscan.io/",
@@ -461,7 +500,7 @@
     }
   },
   {
-    "id": "integritee",
+    "id": "integritee-kusama",
     "name": "Integritee",
     "account": "*25519",
     "subscanUrl": "https://integritee.subscan.io/",
@@ -472,6 +511,16 @@
     "paraId": 2015,
     "relay": {
       "id": "kusama"
+    }
+  },
+  {
+    "id": "integritee-polkadot",
+    "name": "Integritee Shell",
+    "account": "*25519",
+    "rpcs": ["wss://polkadot.api.integritee.network"],
+    "paraId": 2039,
+    "relay": {
+      "id": "polkadot"
     }
   },
   {
@@ -554,7 +603,7 @@
     }
   },
   {
-    "id": "kilt-spiritnet",
+    "id": "kilt",
     "name": "KILT Spiritnet",
     "account": "*25519",
     "subscanUrl": "https://spiritnet.subscan.io/",
@@ -569,7 +618,7 @@
     }
   },
   {
-    "id": "kintsugi-btc",
+    "id": "kintsugi",
     "name": "Kintsugi",
     "account": "*25519",
     "subscanUrl": "https://kintsugi.subscan.io/",
@@ -647,7 +696,7 @@
     "rpcs": ["wss://rpc01.logion.network"]
   },
   {
-    "id": "loom",
+    "id": "loom-network",
     "name": "Loom",
     "account": "*25519",
     "rpcs": ["wss://kusama.dappchains.com"],
@@ -675,7 +724,7 @@
     "id": "manta",
     "name": "Manta",
     "account": "*25519",
-    "rpcs": ["wss://pectinata.manta.systems"],
+    "rpcs": [],
     "paraId": 2015,
     "relay": {
       "id": "polkadot"
@@ -759,7 +808,7 @@
     "rpcs": ["wss://mainnet.nftmart.io/rpc/ws"]
   },
   {
-    "id": "nodle",
+    "id": "nodle-polkadot",
     "name": "Nodle",
     "account": "*25519",
     "subscanUrl": "https://nodle.subscan.io/",
@@ -769,6 +818,22 @@
       "wss://public-rpc.pinknode.io/nodle"
     ],
     "paraId": 2026,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "nodle-standalone",
+    "name": "Nodle Standalone",
+    "account": "*25519",
+    "rpcs": ["wss://nodle.api.onfinality.io/public-ws"]
+  },
+  {
+    "id": "odyssey",
+    "name": "Ares Odyssey",
+    "account": "*25519",
+    "rpcs": ["wss://wss.odyssey.aresprotocol.io"],
+    "paraId": 2028,
     "relay": {
       "id": "polkadot"
     }
@@ -808,17 +873,6 @@
     }
   },
   {
-    "id": "parallel-heiko",
-    "name": "Parallel Heiko",
-    "account": "*25519",
-    "subscanUrl": "https://parallel-heiko.subscan.io/",
-    "rpcs": [],
-    "paraId": 2126,
-    "relay": {
-      "id": "kusama"
-    }
-  },
-  {
     "id": "phala",
     "name": "Phala",
     "account": "*25519",
@@ -854,21 +908,24 @@
     }
   },
   {
-    "id": "plasm",
-    "name": "Plasm",
-    "account": "*25519",
-    "rpcs": ["wss://rpc.plasmnet.io/"]
-  },
-  {
-    "id": "polkadex",
+    "id": "polkadex-polkadot",
     "name": "Polkadex",
     "account": "*25519",
-    "subscanUrl": "https://polkadex.subscan.io/",
-    "rpcs": ["wss://mainnet.polkadex.trade/"],
+    "rpcs": [],
     "paraId": 2040,
     "relay": {
       "id": "polkadot"
     }
+  },
+  {
+    "id": "polkadex-standalone",
+    "name": "Polkadex Standalone",
+    "account": "*25519",
+    "subscanUrl": "https://polkadex.subscan.io/",
+    "rpcs": [
+      "wss://mainnet.polkadex.trade",
+      "wss://polkadex.api.onfinality.io/public-ws"
+    ]
   },
   {
     "id": "polkasmith",
@@ -910,8 +967,8 @@
     "rpcs": ["wss://node.v1.riochain.io"]
   },
   {
-    "id": "robonomics",
-    "name": "Robonomics",
+    "id": "robonomics-kusama",
+    "name": "Robonomics Kusama",
     "account": "*25519",
     "subscanUrl": "https://robonomics.subscan.io/",
     "rpcs": [
@@ -922,6 +979,12 @@
     "relay": {
       "id": "kusama"
     }
+  },
+  {
+    "id": "robonomics-standalone",
+    "name": "Robonomics",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "sakura",
@@ -935,34 +998,50 @@
     }
   },
   {
+    "id": "shadow",
+    "name": "Crust Shadow",
+    "account": "*25519",
+    "subscanUrl": "https://shadow.subscan.io/",
+    "rpcs": ["wss://rpc-shadow.crust.network/"],
+    "paraId": 2012,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "sherpax",
     "name": "SherpaX",
     "account": "*25519",
     "rpcs": ["wss://mainnet.sherpax.io"]
   },
   {
-    "id": "shiden",
+    "id": "shiden-kusama",
     "name": "Shiden",
     "account": "*25519",
     "subscanUrl": "https://shiden.subscan.io/",
-    "rpcs": ["wss://rpc.shiden.astar.network"],
+    "rpcs": [
+      "wss://rpc.shiden.astar.network",
+      "wss://shiden.api.onfinality.io/public-ws",
+      "wss://public-rpc.pinknode.io/shiden",
+      "wss://shiden-rpc.dwellir.com"
+    ],
+    "paraId": 2007,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "shiden-kusama-2",
+    "name": "Shiden",
+    "account": "*25519",
+    "rpcs": [],
     "paraId": 2120,
     "relay": {
       "id": "kusama"
     }
   },
   {
-    "id": "snakenet",
-    "name": "HydraDX Standalone",
-    "account": "*25519",
-    "rpcs": [
-      "wss://rpc-01.snakenet.hydradx.io",
-      "wss://rpc-02.snakenet.hydradx.io",
-      "wss://archive.snakenet.hydradx.io"
-    ]
-  },
-  {
-    "id": "sora-kusama",
+    "id": "sora-ksm",
     "name": "Sora Kusama",
     "account": "*25519",
     "rpcs": ["wss://ws.parachain-collator-1.c1.sora2.soramitsu.co.jp"],
@@ -1039,25 +1118,31 @@
     }
   },
   {
-    "id": "subgame",
-    "name": "SubGame",
+    "id": "subgame-kusama",
+    "name": "SubGame Gamma Kusama",
     "account": "*25519",
-    "subscanUrl": "https://subgame.subscan.io/",
-    "rpcs": ["wss://mainnet.subgame.org/"],
+    "rpcs": [],
+    "paraId": 2018,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "subgame-polkadot",
+    "name": "SubGame Gamma",
+    "account": "*25519",
+    "rpcs": ["wss://gamma.subgame.org/"],
     "paraId": 2017,
     "relay": {
       "id": "polkadot"
     }
   },
   {
-    "id": "subgame-gamma",
-    "name": "SubGame Gamma",
+    "id": "subgame-standalone",
+    "name": "SubGame",
     "account": "*25519",
-    "rpcs": ["wss://gamma.subgame.org/"],
-    "paraId": 2018,
-    "relay": {
-      "id": "kusama"
-    }
+    "subscanUrl": "https://subgame.subscan.io/",
+    "rpcs": ["wss://mainnet.subgame.org/"]
   },
   {
     "id": "subsocial",
@@ -1067,7 +1152,7 @@
     "rpcs": ["wss://rpc.subsocial.network"]
   },
   {
-    "id": "subsocialx",
+    "id": "subsocial-x",
     "name": "SubsocialX",
     "coingeckoId": null,
     "account": "*25519",

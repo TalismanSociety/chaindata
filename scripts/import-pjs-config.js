@@ -25,30 +25,17 @@ import prettier from 'prettier'
 import startCase from 'lodash/startCase.js'
 
 // a map of pjs ids to their talisman chaindata equivalents
-const customChainIds = {
-  aleph: 'aleph-zero',
-  bifrost: 'bifrost-ksm',
-  bitcountryPioneer: 'bit-country-pioneer',
-  crab: 'darwinia-crab',
-  crustParachain: 'crust',
-  heiko: 'parallel-heiko',
-  hydra: 'hydradx',
-  kilt: 'kilt-spiritnet',
-  kintsugi: 'kintsugi-btc',
-  loomNetwork: 'loom',
-  odyssey: 'ares',
-  shadow: 'crust-shadow',
-  sora_ksm: 'sora-kusama',
-  subgame: 'subgame-gamma',
-  subsocialX: 'subsocialx',
-}
+const customChainIds = {}
 // a map of testnet pjs ids to their talisman chaindata equivalents
 const customTestnetChainIds = {
   acala: 'mandala-testnet',
-  aleph: 'aleph-zero-testnet',
 }
 
 // derive talisman id from pjs id
+const idConflicts = {}
+const idConflictNums = {}
+const idConflictsTestnets = {}
+const idConflictNumsTestnets = {}
 const deriveId = (info) => customChainIds[info] || kebabCase(info).toLowerCase()
 const deriveTestnetId = (info) =>
   customTestnetChainIds[info] || `${kebabCase(info).toLowerCase()}-testnet`
@@ -121,20 +108,31 @@ const testnetsChaindataMap = Object.fromEntries(
 // keep track of updated chain ids
 const updatedChainIds = []
 
+// keep track of duplicate rpcs
+const seenRpcs = {}
+
 // derive talisman chain from pjs chain and add to chaindata
 const addParaToMap =
-  (relay, isTestnet = false) =>
+  (relay, idConflictSuffix, isTestnet = false) =>
   (para) => {
     const map = isTestnet ? testnetsChaindataMap : chaindataMap
 
-    const id = isTestnet ? deriveTestnetId(para.info) : deriveId(para.info)
+    let id = isTestnet ? deriveTestnetId(para.info) : deriveId(para.info)
+    const conflicts = isTestnet ? idConflictsTestnets : idConflicts
+    const conflictNums = isTestnet ? idConflictNumsTestnets : idConflictNums
+    if (conflicts[id] > 1) {
+      id = `${id}-${idConflictSuffix}`
+      conflictNums[id] = conflictNums[id] ? conflictNums[id] + 1 : 1
+      if (conflictNums[id] > 1) id = `${id}-${conflictNums[id]}`
+    }
+
     const chain = map[id] || { id }
 
     chain.name = trimName(para.text)
     if (!chain.account) chain.account = '*25519'
-    chain.rpcs = Object.values(para.providers).filter((url) =>
-      url.startsWith('wss://')
-    )
+    chain.rpcs = Object.values(para.providers)
+      .filter((url) => url.startsWith('wss://'))
+      .filter((rpc) => (seenRpcs[rpc] ? false : (seenRpcs[rpc] = true)))
     if (relay) {
       chain.paraId = para.paraId
       chain.relay = relay
@@ -147,37 +145,64 @@ const addParaToMap =
     updatedChainIds.push(chain.id)
   }
 
-// derive solo chains
-prodChains.forEach(addParaToMap(null))
+;[
+  prodRelayPolkadot,
+  prodRelayKusama,
+  ...prodParasPolkadot,
+  ...prodParasPolkadotCommon,
+  ...prodParasKusama,
+  ...prodParasKusamaCommon,
+  ...prodChains,
+].forEach(({ info }) => {
+  let id = deriveId(info)
+  idConflicts[id] = idConflicts[id] ? idConflicts[id] + 1 : 1
+})
+;[
+  testRelayWestend,
+  testRelayRococo,
+  ...testParasWestend,
+  ...testParasWestendCommon,
+  ...testParasRococo,
+  ...testParasRococoCommon,
+  ...testChains,
+].forEach(({ info }) => {
+  let id = deriveTestnetId(info)
+  idConflictsTestnets[id] = idConflictsTestnets[id]
+    ? idConflictsTestnets[id] + 1
+    : 1
+})
 
 // derive relay chains
-;[prodRelayPolkadot, prodRelayKusama].forEach(addParaToMap(null))
+;[prodRelayPolkadot, prodRelayKusama].forEach(addParaToMap(null, 'relay'))
 
 // derive polkadot parachains
 ;[...prodParasPolkadot, ...prodParasPolkadotCommon].forEach(
-  addParaToMap({ id: 'polkadot' })
+  addParaToMap({ id: 'polkadot' }, 'polkadot')
 )
 
 // derive kusama parachains
 ;[...prodParasKusama, ...prodParasKusamaCommon].forEach(
-  addParaToMap({ id: 'kusama' })
+  addParaToMap({ id: 'kusama' }, 'kusama')
 )
 
-// derive solo (testnets) chains
-testChains.forEach(addParaToMap(null, true))
+// derive solo chains
+prodChains.forEach(addParaToMap(null, 'standalone'))
 
 // derive relay (testnets) chains
-;[testRelayWestend, testRelayRococo].forEach(addParaToMap(null, true))
+;[testRelayWestend, testRelayRococo].forEach(addParaToMap(null, 'relay', true))
 
 // derive westend parachains
 ;[...testParasWestend, ...testParasWestendCommon].forEach(
-  addParaToMap({ id: 'westend-testnet' }, true)
+  addParaToMap({ id: 'westend-testnet' }, 'westend', true)
 )
 
 // derive rococo parachains
 ;[...testParasRococo, ...testParasRococoCommon].forEach(
-  addParaToMap({ id: 'rococo-testnet' }, true)
+  addParaToMap({ id: 'rococo-testnet' }, 'rococo', true)
 )
+
+// derive solo (testnets) chains
+testChains.forEach(addParaToMap(null, 'standalone', true))
 
 // sort chaindata
 const chaindata = Object.values(chaindataMap).sort((a, b) => {
