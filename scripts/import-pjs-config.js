@@ -22,6 +22,7 @@ import fs from 'fs'
 import kebabCase from 'lodash/kebabCase.js'
 import path from 'path'
 import prettier from 'prettier'
+import startCase from 'lodash/startCase.js'
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
@@ -56,25 +57,48 @@ const deriveTestnetId = (info) =>
 const trimName = (text) =>
   text
     // general suffixes which look ugly
-    .replace(/ \(kusama\)$/i, '')
-    .replace(/ kusama$/i, '')
-    .replace(/ mainnet$/i, '')
-    .replace(/ network$/i, '')
-    .replace(/ parachain$/i, '')
-    .replace(/ polkadot$/i, '')
-    .replace(/ protocol$/i, '')
-    .replace(/ rococo$/i, '')
+    .replace(/[ -][0-9]+$/i, '')
+
+    .replace(/[ -]\(?network\)?$/i, '')
+    .replace(/[ -]\(?protocol\)?$/i, '')
+
+    .replace(/[ -]\(?mainnet\)?$/i, '')
+    .replace(/[ -]\(?stage\)?$/i, '')
+    .replace(/[ -]\(?staging\)?$/i, '')
+    .replace(/[ -]\(?testnet\)?$/i, '')
+
+    .replace(/[ -]\(?network\)?$/i, '')
+    .replace(/[ -]\(?protocol\)?$/i, '')
+
+    .replace(/[ -]\(?parachain\)?$/i, '')
+    .replace(/[ -]\(?crowdloan\)?$/i, '')
+
+    .replace(/[ -]\(?kusama\)?$/i, '')
+    .replace(/[ -]\(?polkadot\)?$/i, '')
+    .replace(/[ -]\(?rococo\)?$/i, '')
+    .replace(/[ -]\(?standalone\)?$/i, '')
+
+    .replace(/ by unique$/i, '')
+    .replace(/ by polkafoundry$/i, '')
+    .replace(/ metaverse$/i, '')
+
+    // remove trailing bracketed stuffs
+    .replace(/ \([A-Za-z0-9 ]+\)$/i, '')
+
+    // remove leading/trailing non-alphabeticals
+    .replace(/ [^A-Za-z]+$/i, '')
+    .replace(/^[^A-Za-z]+ /i, '')
+
+    // turn single-word ALLCAPS names into Startcase names
+    .replace(/^[A-Z]+$/, (name) => startCase(name.toLowerCase()))
+
+    // turn single-word alllowercase names into Startcase names
+    .replace(/^[a-z]+$/, (name) => startCase(name.toLowerCase()))
 
     // specific name overrides
-    .replace(/^KICO$/, 'Kico')
+    .replace(/^Gm$/, 'GM')
     .replace(/^Kintsugi BTC$/, 'Kintsugi')
     .replace(/^Mangata$/, 'MangataX')
-    .replace(/^PolkaSmith by PolkaFoundry$/, 'PolkaSmith')
-    .replace(/^QUARTZ by UNIQUE$/, 'Quartz')
-    .replace(/^SORA Kusama$/, 'Sora Kusama')
-    .replace(/^SORA$/, 'Sora')
-    .replace(/^Shiden Crowdloan 2$/, 'Shiden')
-    .replace(/^Zero$/, 'Zero Alphaville')
 
     // trim leading/trailing spaces
     .trim()
@@ -177,11 +201,33 @@ const testnetsChaindata = Object.values(testnetsChaindataMap).sort((a, b) => {
 
 // check for testnet <-> mainnet name conflicts and append ` Testnet` to conflicting testnet names
 const chaindataNames = Object.fromEntries(
-  chaindata.map((chain) => [chain.name, true])
+  chaindata.map(({ name }) => [name, true])
 )
 testnetsChaindata.forEach((chain) => {
   if (!chaindataNames[chain.name]) return
   chain.name = `${chain.name} Testnet`
+})
+
+// check for kusama <-> polkadot <-> solochain name conflicts and append to conflicting kusama/solochain names
+const [soloNames, polkadotNames] = chaindata.reduce(
+  ([solo, polka], chain) => {
+    if (['polkadot', 'kusama'].includes(chain.id)) return [solo, polka]
+
+    if (!chain.relay) return [[...solo, chain.name], polka]
+    if (chain.relay.id === 'polkadot') return [solo, [...polka, chain.name]]
+
+    return [solo, polka]
+  },
+  [[], []]
+)
+chaindata.forEach((chain) => {
+  if (chain.relay?.id === 'kusama')
+    if ([...polkadotNames, ...soloNames].includes(chain.name))
+      chain.name = `${chain.name} Kusama`
+
+  if (!chain.relay)
+    if ([...polkadotNames].includes(chain.name))
+      chain.name = `${chain.name} Standalone`
 })
 
 // write updated files
