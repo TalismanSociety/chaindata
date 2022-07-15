@@ -25,7 +25,9 @@ import prettier from 'prettier'
 import startCase from 'lodash/startCase.js'
 
 // a map of pjs ids to their talisman chaindata equivalents
-const customChainIds = {}
+const customChainIds = {
+  kilt: 'kilt-spiritnet',
+}
 // a map of testnet pjs ids to their talisman chaindata equivalents
 const customTestnetChainIds = {
   acala: 'mandala-testnet',
