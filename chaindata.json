@@ -88,8 +88,9 @@
     "subscanUrl": "https://astar.subscan.io/",
     "rpcs": [
       "wss://rpc.astar.network",
-      "wss://astar.api.onfinality.io/public-ws",
+      "wss://astar.public.blastapi.io",
       "wss://astar-rpc.dwellir.com",
+      "wss://astar.api.onfinality.io/public-ws",
       "wss://public-rpc.pinknode.io/astar"
     ],
     "paraId": 2006,
@@ -110,7 +111,10 @@
     "id": "bajun",
     "name": "Bajun",
     "account": "*25519",
-    "rpcs": ["wss://rpc-parachain.bajun.network"],
+    "rpcs": [
+      "wss://rpc-parachain.bajun.network",
+      "wss://bajun-rpc.dwellir.com"
+    ],
     "paraId": 2119,
     "relay": {
       "id": "kusama"
@@ -121,12 +125,7 @@
     "name": "Basilisk",
     "account": "*25519",
     "subscanUrl": "https://basilisk.subscan.io/",
-    "rpcs": [
-      "wss://rpc.basilisk.cloud",
-      "wss://rpc-01.basilisk.hydradx.io",
-      "wss://basilisk.api.onfinality.io/public-ws",
-      "wss://basilisk-rpc.dwellir.com"
-    ],
+    "rpcs": ["wss://rpc.basilisk.cloud", "wss://basilisk-rpc.dwellir.com"],
     "paraId": 2090,
     "relay": {
       "id": "kusama"
@@ -165,10 +164,7 @@
     "name": "Bit.Country Pioneer",
     "account": "*25519",
     "subscanUrl": "https://pioneer.subscan.io/",
-    "rpcs": [
-      "wss://pioneer-1-rpc.bit.country",
-      "wss://pioneer.api.onfinality.io/public-ws"
-    ],
+    "rpcs": ["wss://pioneer.api.onfinality.io/public-ws"],
     "paraId": 2096,
     "relay": {
       "id": "kusama"
@@ -285,7 +281,7 @@
     "id": "creditcoin",
     "name": "Creditcoin",
     "account": "*25519",
-    "rpcs": ["wss://mainnet.creditcoin.network"]
+    "rpcs": ["wss://rpc.mainnet.creditcoin.network/ws"]
   },
   {
     "id": "crown-sterling",
@@ -370,7 +366,7 @@
     "name": "Efinity",
     "account": "Sr25519",
     "subscanUrl": "https://efinity.subscan.io/",
-    "rpcs": ["wss://rpc.efinity.io"],
+    "rpcs": ["wss://rpc.efinity.io", "wss://efinity-rpc.dwellir.com"],
     "paraId": 2021,
     "relay": {
       "id": "polkadot"
@@ -664,7 +660,10 @@
     "id": "kylin",
     "name": "Kylin",
     "account": "*25519",
-    "rpcs": ["wss://polkadot.kylin-node.co.uk"],
+    "rpcs": [
+      "wss://polkadot.kylin-node.co.uk",
+      "wss://pichiu.api.onfinality.io/public-ws"
+    ],
     "paraId": 2052,
     "relay": {
       "id": "polkadot"
@@ -1030,9 +1029,10 @@
     "subscanUrl": "https://shiden.subscan.io/",
     "rpcs": [
       "wss://rpc.shiden.astar.network",
+      "wss://shiden.public.blastapi.io",
+      "wss://shiden-rpc.dwellir.com",
       "wss://shiden.api.onfinality.io/public-ws",
-      "wss://public-rpc.pinknode.io/shiden",
-      "wss://shiden-rpc.dwellir.com"
+      "wss://public-rpc.pinknode.io/shiden"
     ],
     "paraId": 2007,
     "relay": {

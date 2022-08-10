@@ -92,6 +92,12 @@
     "rpcs": ["wss://brainstorm.invarch.network/"]
   },
   {
+    "id": "cess-testnet",
+    "name": "Cess",
+    "account": "*25519",
+    "rpcs": ["wss://testnet-rpc0.cess.cloud/ws/"]
+  },
+  {
     "id": "chainoli-testnet",
     "name": "Oli",
     "account": "*25519",
@@ -128,7 +134,7 @@
     "id": "creditcoin-testnet-testnet",
     "name": "Creditcoin Testnet",
     "account": "*25519",
-    "rpcs": ["wss://testnet.creditcoin.network"]
+    "rpcs": ["wss://rpc.testnet.creditcoin.network/ws"]
   },
   {
     "id": "crust-maxwell-testnet",
@@ -166,6 +172,16 @@
     "name": "Beresheet",
     "account": "*25519",
     "rpcs": ["wss://beresheet.edgewa.re"]
+  },
+  {
+    "id": "eggnet-testnet",
+    "name": "Eggnet",
+    "account": "*25519",
+    "rpcs": ["wss://rococo1.webb.tools"],
+    "paraId": 4006,
+    "relay": {
+      "id": "rococo-testnet"
+    }
   },
   {
     "id": "encointer-testnet-rococo",
@@ -265,6 +281,12 @@
     }
   },
   {
+    "id": "interlay-testnet",
+    "name": "Interlay Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://api-testnet.interlay.io/parachain/"]
+  },
+  {
     "id": "ipse-testnet",
     "name": "Ipse",
     "account": "*25519",
@@ -330,6 +352,12 @@
     "relay": {
       "id": "westend-testnet"
     }
+  },
+  {
+    "id": "kintsugi-testnet",
+    "name": "Kintsugi Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://api-dev-kintsugi.interlay.io/parachain"]
   },
   {
     "id": "klugdossier-testnet",
@@ -566,6 +594,16 @@
     }
   },
   {
+    "id": "rococo-bifrost-testnet",
+    "name": "Bifrost Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://bifrost-rpc.rococo.liebi.com/ws"],
+    "paraId": 2001,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
     "id": "rococo-bitgreen-testnet",
     "name": "Bitgreen",
     "account": "*25519",
@@ -591,6 +629,16 @@
     "account": "*25519",
     "rpcs": ["wss://rococo-contracts-rpc.polkadot.io"],
     "paraId": 1002,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
+    "id": "rococo-crust-testnet",
+    "name": "Crust Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://rococo-csm.crustcode.com/"],
+    "paraId": 2012,
     "relay": {
       "id": "rococo-testnet"
     }
@@ -760,6 +808,16 @@
     }
   },
   {
+    "id": "rococo-subzero-testnet",
+    "name": "Subzero",
+    "account": "*25519",
+    "rpcs": ["wss://staging.para.sub.zero.io"],
+    "paraId": 4040,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
     "id": "rococo-turing-testnet",
     "name": "Turing Testnet",
     "account": "*25519",
@@ -924,7 +982,11 @@
     "id": "web-3-games-testnet",
     "name": "Web3Games",
     "account": "*25519",
-    "rpcs": ["wss://testnet.web3games.org"]
+    "rpcs": [
+      "wss://testnet-rpc-0.web3games.org",
+      "wss://testnet-rpc-1.web3games.org",
+      "wss://testnet-rpc-2.web3games.org"
+    ]
   },
   {
     "id": "westend-collectives-testnet",
