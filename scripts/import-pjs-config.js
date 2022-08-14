@@ -40,7 +40,8 @@ const idConflictsTestnets = {}
 const idConflictNumsTestnets = {}
 const deriveId = (info) => customChainIds[info] || kebabCase(info).toLowerCase()
 const deriveTestnetId = (info) =>
-  customTestnetChainIds[info] || `${kebabCase(info).toLowerCase()}-testnet`
+  customTestnetChainIds[info] || appendTestnet(kebabCase(info).toLowerCase())
+const appendTestnet = (id) => (id.endsWith('-testnet') ? id : `${id}-testnet`)
 
 // fix up pjs chain names to match talisman
 const trimName = (text) =>
