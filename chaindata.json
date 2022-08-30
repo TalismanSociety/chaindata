@@ -35,7 +35,8 @@
       "wss://acala-rpc-1.aca-api.network",
       "wss://acala-rpc-3.aca-api.network/ws",
       "wss://acala.polkawallet.io",
-      "wss://acala-polkadot.api.onfinality.io/public-ws"
+      "wss://acala-polkadot.api.onfinality.io/public-ws",
+      "wss://acala-rpc.dwellir.com"
     ],
     "paraId": 2000,
     "relay": {
@@ -68,7 +69,7 @@
     "id": "amplitude",
     "name": "Amplitude",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://pencol-kus-01.pendulumchain.tech"],
     "paraId": 2124,
     "relay": {
       "id": "kusama"
@@ -174,10 +175,7 @@
     "name": "Calamari",
     "account": "*25519",
     "subscanUrl": "https://calamari.subscan.io/",
-    "rpcs": [
-      "wss://ws.calamari.systems/",
-      "wss://calamari.api.onfinality.io/public-ws"
-    ],
+    "rpcs": ["wss://ws.calamari.systems/"],
     "paraId": 2084,
     "relay": {
       "id": "kusama"
@@ -318,7 +316,7 @@
   },
   {
     "id": "darwinia-polkadot-2",
-    "name": "Darwinia Para Backup",
+    "name": "Darwinia Backup",
     "account": "*25519",
     "rpcs": [],
     "paraId": 2003,
@@ -365,7 +363,11 @@
     "name": "Efinity",
     "account": "Sr25519",
     "subscanUrl": "https://efinity.subscan.io/",
-    "rpcs": ["wss://rpc.efinity.io", "wss://efinity-rpc.dwellir.com"],
+    "rpcs": [
+      "wss://rpc.efinity.io",
+      "wss://efinity-rpc.dwellir.com",
+      "wss://efinity.api.onfinality.io/public-ws"
+    ],
     "paraId": 2021,
     "relay": {
       "id": "polkadot"
@@ -438,7 +440,11 @@
     "id": "gm",
     "name": "GM",
     "account": "*25519",
-    "rpcs": ["wss://kusama.gmordie.com"],
+    "rpcs": [
+      "wss://kusama.gmordie.com",
+      "wss://ws.gm.bldnodes.org",
+      "wss://ws-node-gm.terrabiodao.org"
+    ],
     "paraId": 2123,
     "relay": {
       "id": "kusama"
@@ -568,7 +574,8 @@
       "wss://karura-rpc-2.aca-api.network/ws",
       "wss://karura-rpc-3.aca-api.network/ws",
       "wss://karura.polkawallet.io",
-      "wss://karura.api.onfinality.io/public-ws"
+      "wss://karura.api.onfinality.io/public-ws",
+      "wss://karura-rpc.dwellir.com"
     ],
     "paraId": 2000,
     "relay": {
@@ -1048,6 +1055,16 @@
     }
   },
   {
+    "id": "snow",
+    "name": "Snow",
+    "account": "*25519",
+    "rpcs": ["wss://snow-rpc.icenetwork.io"],
+    "paraId": 2129,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "sora-ksm",
     "name": "Sora Kusama",
     "account": "*25519",
@@ -1091,7 +1108,8 @@
       "wss://statemine-rpc.polkadot.io",
       "wss://statemine.api.onfinality.io/public-ws",
       "wss://statemine-rpc.dwellir.com",
-      "wss://public-rpc.pinknode.io/statemine"
+      "wss://public-rpc.pinknode.io/statemine",
+      "wss://statemine.public.curie.radiumblock.xyz/ws"
     ],
     "paraId": 1000,
     "relay": {
@@ -1218,11 +1236,7 @@
     "account": "*25519",
     "subscanUrl": "https://turing.subscan.io/",
     "coingeckoId": null,
-    "rpcs": [
-      "wss://rpc.turing.oak.tech",
-      "wss://turing.api.onfinality.io/public-ws",
-      "wss://turing-rpc.dwellir.com"
-    ],
+    "rpcs": ["wss://rpc.turing.oak.tech", "wss://turing-rpc.dwellir.com"],
     "paraId": 2114,
     "relay": {
       "id": "kusama"
@@ -1272,7 +1286,6 @@
     "account": "*25519",
     "subscanUrl": "https://zeitgeist.subscan.io/",
     "rpcs": [
-      "wss://rpc-0.zeitgeist.pm",
       "wss://zeitgeist-rpc.dwellir.com",
       "wss://zeitgeist.api.onfinality.io/public-ws"
     ],
