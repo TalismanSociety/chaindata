@@ -114,6 +114,10 @@
       "https://astar-rpc.dwellir.com"
     ],
     "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "ASTR",
+        "decimals": 18
+      },
       "evm-erc20": {
         "tokens": [
           {
@@ -199,6 +203,10 @@
       "https://moonbeam-rpc.dwellir.com"
     ],
     "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "GLMR",
+        "decimals": 18
+      },
       "evm-erc20": {
         "tokens": [
           {
@@ -224,6 +232,10 @@
       "https://moonriver-rpc.dwellir.com"
     ],
     "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "MOVR",
+        "decimals": 18
+      },
       "evm-erc20": {
         "tokens": [
           {
@@ -242,7 +254,13 @@
       "https://evm.shiden.astar.network",
       "https://shiden.api.onfinality.io/public-ws",
       "https://shiden-rpc.dwellir.com"
-    ]
+    ],
+    "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "SDN",
+        "decimals": 18
+      }
+    }
   },
   {
     "substrateChainId": "mandala-testnet",
@@ -256,12 +274,24 @@
     "rpcs": [
       "https://rpc.api.moonbase.moonbeam.network",
       "https://moonbeam-alpha.api.onfinality.io/public-ws"
-    ]
+    ],
+    "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "DEV",
+        "decimals": 18
+      }
+    }
   },
   {
     "substrateChainId": "shibuya-testnet",
     "isTestnet": true,
     "explorerUrl": "https://blockscout.com/shibuya",
-    "rpcs": ["https://evm.shibuya.astar.network"]
+    "rpcs": ["https://evm.shibuya.astar.network"],
+    "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "SBY",
+        "decimals": 18
+      }
+    }
   }
 ]
