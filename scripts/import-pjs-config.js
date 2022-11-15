@@ -250,8 +250,10 @@ const [soloNames, polkadotNames] = chaindata.reduce(
 )
 chaindata.forEach((chain) => {
   if (chain.relay?.id === 'kusama')
-    if ([...polkadotNames, ...soloNames].includes(chain.name))
-      chain.name = `${chain.name} Kusama`
+    if ([...polkadotNames, ...soloNames].includes(chain.name)) {
+      // do nothing
+      // chain.name = `${chain.name} Kusama`
+    }
 
   if (!chain.relay)
     if ([...polkadotNames].includes(chain.name))
