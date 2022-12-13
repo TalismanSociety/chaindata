@@ -2,7 +2,11 @@
   {
     "name": "Ethereum",
     "explorerUrl": "https://etherscan.io",
-    "rpcs": ["https://rpc.ankr.com/eth"],
+    "rpcs": [
+      "https://talisman.1rpc.io/eth",
+      "https://eth.api.onfinality.io/rpc?apikey=b1999e08-df5b-4c78-b236-fe242673ec17",
+      "https://rpc.ankr.com/eth"
+    ],
     "balanceModuleConfigs": {
       "evm-erc20": {
         "tokens": [
@@ -61,7 +65,11 @@
   {
     "name": "Gnosis",
     "explorerUrl": "https://blockscout.com/xdai/mainnet/",
-    "rpcs": ["https://rpc.gnosischain.com/"],
+    "rpcs": [
+      "https://rpc.gnosischain.com/",
+      "https://rpc.ankr.com/gnosis",
+      "https://gnosis-mainnet.public.blastapi.io"
+    ],
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "xDAI",
@@ -72,7 +80,11 @@
   {
     "name": "Polygon",
     "explorerUrl": "https://polygonscan.com/",
-    "rpcs": ["https://polygon-rpc.com/"],
+    "rpcs": [
+      "https://polygon-rpc.com/",
+      "https://rpc.ankr.com/polygon",
+      "https://polygon-mainnet.public.blastapi.io"
+    ],
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "MATIC",
@@ -105,7 +117,13 @@
   {
     "name": "Binance Smart Chain",
     "explorerUrl": "https://bscscan.com",
-    "rpcs": ["https://bsc-dataseed.binance.org/"],
+    "rpcs": [
+      "https://bsc-dataseed.binance.org/",
+      "https://rpc.ankr.com/bsc",
+      "https://bsc-dataseed2.binance.org",
+      "https://bsc-dataseed3.binance.org",
+      "https://bsc-dataseed4.binance.org"
+    ],
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "BNB",
