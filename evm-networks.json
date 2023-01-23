@@ -57,7 +57,7 @@
     "rpcs": [
       "https://rpc.ankr.com/gnosis",
       "https://gnosis-mainnet.public.blastapi.io",
-       "https://rpc.gnosischain.com/"
+      "https://rpc.gnosischain.com/"
     ],
     "balanceModuleConfigs": {
       "evm-native": {
@@ -350,6 +350,18 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "SBY",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "substrateChainId": "rococo-watr-testnet",
+    "isTestnet": true,
+    "explorerUrl": "https://explorer.watr.org/",
+    "rpcs": ["wss://rpc.dev.watr.org"],
+    "balanceModuleConfigs": {
+      "evm-native": {
+        "symbol": "WATRD",
         "decimals": 18
       }
     }
