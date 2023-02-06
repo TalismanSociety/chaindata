@@ -763,13 +763,17 @@
     "name": "Crust Standalone",
     "account": "*25519",
     "subscanUrl": "https://crust.subscan.io/",
-    "rpcs": ["wss://crust.api.onfinality.io/public-ws"]
+    "rpcs": [
+      "wss://rpc.crust.network",
+      "wss://crust.api.onfinality.io/public-ws",
+      "wss://rpc-crust-mainnet.decoo.io"
+    ]
   },
   {
     "id": "crust-parachain",
     "name": "Crust",
     "account": "*25519",
-    "rpcs": ["wss://rpc.crust.network"],
+    "rpcs": ["wss://crust-parachain.crustapps.net"],
     "paraId": 2008,
     "relay": {
       "id": "polkadot"
@@ -1976,7 +1980,10 @@
     "name": "Crust Shadow",
     "account": "*25519",
     "subscanUrl": "https://shadow.subscan.io/",
-    "rpcs": ["wss://rpc-shadow.crust.network/"],
+    "rpcs": [
+      "wss://rpc-shadow.crust.network/",
+      "wss://rpc2-shadow.crust.network"
+    ],
     "paraId": 2012,
     "relay": {
       "id": "kusama"
