@@ -26,10 +26,15 @@ import startCase from 'lodash/startCase.js'
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
+  'sora-substrate': 'sora-standalone',
+  aleph: 'aleph-zero',
+  composable: 'composable-finance',
   kilt: 'kilt-spiritnet',
 }
 // a map of testnet pjs ids to their talisman chaindata equivalents
 const customTestnetChainIds = {
+  'aleph-testnet': 'aleph-zero-testnet',
+  'myriad-tesnet': 'myriad-testnet',
   acala: 'mandala-testnet',
 }
 
@@ -62,11 +67,18 @@ const trimName = (text) =>
 
     .replace(/[ -]\(?parachain\)?$/i, '')
     .replace(/[ -]\(?crowdloan\)?$/i, '')
+    .replace(/[ -]\(?para\)?$/i, '')
 
     .replace(/[ -]\(?kusama\)?$/i, '')
     .replace(/[ -]\(?polkadot\)?$/i, '')
     .replace(/[ -]\(?rococo\)?$/i, '')
+    .replace(/[ -]\(?foucoco\)?$/i, '')
     .replace(/[ -]\(?standalone\)?$/i, '')
+
+    .replace(/[ -]\(?mainnet\)?$/i, '')
+    .replace(/[ -]\(?stage\)?$/i, '')
+    .replace(/[ -]\(?staging\)?$/i, '')
+    .replace(/[ -]\(?testnet\)?$/i, '')
 
     .replace(/ by unique$/i, '')
     .replace(/ by polkafoundry$/i, '')
@@ -89,6 +101,8 @@ const trimName = (text) =>
     .replace(/^Gm$/, 'GM')
     .replace(/^Kintsugi BTC$/, 'Kintsugi')
     .replace(/^Mangata$/, 'MangataX')
+    .replace(/^Crab2$/, 'Darwinia Crab')
+    .replace(/^Darwinia2$/, 'Darwinia')
 
     // trim leading/trailing spaces
     .trim()
@@ -132,6 +146,8 @@ const addParaToMap =
     const chain = map[id] || { id }
 
     chain.name = trimName(para.text)
+    if (chain.name !== para.text)
+      console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
     if (!chain.account) chain.account = '*25519'
     chain.rpcs = Object.values(para.providers)
       .filter((url) => url.startsWith('wss://'))
@@ -276,7 +292,9 @@ console.log('Import complete!')
 
 // check for missing chain logos
 ;[...chaindata, ...testnetsChaindata].forEach((chain) => {
-  const hasLogo = fs.existsSync(path.join('assets', chain.id, 'logo.svg'))
+  const hasLogo = fs.existsSync(
+    path.join('assets', 'chains', `${chain.id}.svg`)
+  )
   if (hasLogo) return
 
   console.log(`Missing logo for chain ${chain.id}`)
