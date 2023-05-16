@@ -851,27 +851,21 @@
     }
   },
   {
-    "id": "crab-kusama",
+    "id": "crab",
     "name": "Darwinia Crab",
     "account": "*25519",
-    "subscanUrl": "https://crab-parachain.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/crab%20parachain_specs.png",
-    "rpcs": ["wss://crab-parachain-rpc.darwinia.network/"],
+    "subscanUrl": "https://crab.subscan.io/",
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/crab2_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crab2_metadata_latest.apng",
+    "rpcs": [
+      "wss://crab-rpc.darwinia.network/",
+      "wss://darwiniacrab-rpc.dwellir.com",
+      "wss://crab.api.onfinality.io/public-ws"
+    ],
     "paraId": 2105,
     "relay": {
       "id": "kusama"
     }
-  },
-  {
-    "id": "crab-standalone",
-    "name": "Darwinia Crab Standalone",
-    "account": "*25519",
-    "subscanUrl": "https://crab.subscan.io/",
-    "rpcs": [
-      "wss://crab-rpc.darwinia.network",
-      "wss://darwiniacrab-rpc.dwellir.com",
-      "wss://crab.api.onfinality.io/public-ws"
-    ]
   },
   {
     "id": "creditcoin",
@@ -907,33 +901,15 @@
     }
   },
   {
-    "id": "darwinia-polkadot",
+    "id": "darwinia",
     "name": "Darwinia",
     "account": "*25519",
     "subscanUrl": "https://darwinia.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/darwinia%20parachain_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/darwinia%20parachain_metadata_latest.apng",
-    "rpcs": ["wss://parachain-rpc.darwinia.network"],
+    "rpcs": ["wss://rpc.darwinia.network", "wss://darwinia-rpc.dwellir.com"],
     "paraId": 2046,
     "relay": {
       "id": "polkadot"
     }
-  },
-  {
-    "id": "darwinia-polkadot-2",
-    "name": "Darwinia Backup",
-    "account": "*25519",
-    "rpcs": [],
-    "paraId": 2003,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
-    "id": "darwinia-standalone",
-    "name": "Darwinia Standalone",
-    "account": "*25519",
-    "rpcs": ["wss://rpc.darwinia.network", "wss://darwinia-rpc.dwellir.com"]
   },
   {
     "id": "debio",
