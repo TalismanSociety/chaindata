@@ -2,9 +2,10 @@ name: Talisman Chaindata CI
 
 on:
   push:
-    branches: ['v3', 'main']
+    branches: [v3, main]
   pull_request:
     types: [opened, synchronize]
+    branches: [v3, main]
 
 concurrency:
   # only run 1 job per branch/pr/etc at a time
@@ -12,8 +13,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate_json:
-    name: 'Validate JSON files'
+  validate:
+    name: 'Validate chaindata JSON format & schema'
     timeout-minutes: 15
     runs-on: ubuntu-latest
 
@@ -27,6 +28,7 @@ jobs:
           cache: yarn
       - name: Install dependencies
         run: yarn --immutable
-      - name: Validate JSON
-        # prettier will exit with a non-zero status code if the JSON is not valid
-        run: yarn run prettier --write *.json
+      - name: Validate JSON format & schema
+        # prettier will exit with a non-zero status code if the JSON format is not valid
+        # ajv will exit with a non-zero status code if the JSON schema is not valid
+        run: yarn validate
