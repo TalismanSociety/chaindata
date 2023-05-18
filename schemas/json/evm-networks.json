@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "isTestnet": { "type": "boolean" },
+      "explorerUrl": { "type": "string", "pattern": "^https://" },
+      "rpcs": {
+        "type": "array",
+        "items": { "type": "string", "pattern": "^https://" }
+      },
+      "balanceModuleConfigs": {
+        "type": "object",
+        "properties": {
+          "evm-native": {
+            "type": "object",
+            "properties": {
+              "symbol": { "type": "string" },
+              "decimals": { "type": "integer", "minimum": 0 }
+            },
+            "required": ["symbol", "decimals"],
+            "additionalProperties": false
+          },
+          "evm-erc20": {
+            "type": "object",
+            "properties": {
+              "tokens": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "symbol": { "type": "string" },
+                    "contractAddress": {
+                      "type": "string",
+                      "pattern": "^0x[0-9a-fA-F]{40}$"
+                    },
+                    "coingeckoId": { "type": "string" }
+                  },
+                  "required": ["symbol", "contractAddress"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["tokens"],
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "substrateChainId": { "type": "string" }
+    },
+    "additionalProperties": false,
+    "oneOf": [{ "required": ["name"] }, { "required": ["substrateChainId"] }]
+  }
+}
