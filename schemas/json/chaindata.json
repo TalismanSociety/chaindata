@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "name": { "type": "string" },
+      "account": {
+        "type": "string",
+        "pattern": "^((Sr|Ed|\\*)25519|secp256k1)$"
+      },
+      "subscanUrl": {
+        "type": "string",
+        "pattern": "^https://.+\\.subscan\\.io/$"
+      },
+      "coingeckoId": { "type": ["string", "null"] },
+      "chainspecQrUrl": { "type": "string" },
+      "latestMetadataQrUrl": { "type": "string" },
+      "overrideNativeTokenId": { "type": "string" },
+      "rpcs": {
+        "type": "array",
+        "items": { "type": "string", "pattern": "^wss?://" },
+        "minimum": 1
+      },
+      "paraId": { "type": "integer" },
+      "relay": {
+        "type": "object",
+        "properties": { "id": { "type": "string" } },
+        "required": ["id"],
+        "additionalProperties": false
+      },
+      "balanceModuleConfigs": {
+        "type": "object",
+        "properties": {
+          "substrate-assets": { "$ref": "#/$defs/asset" },
+          "substrate-equilibrium": { "$ref": "#/$defs/asset" },
+          "substrate-native": { "$ref": "#/$defs/asset" },
+          "substrate-orml": { "$ref": "#/$defs/asset" },
+          "substrate-tokens": { "$ref": "#/$defs/asset" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required": ["id", "name", "account", "rpcs"],
+    "dependentRequired": { "paraId": ["relay"], "relay": ["paraId"] },
+    "additionalProperties": false
+  },
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "properties": {
+        "disable": { "type": "boolean" },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "assetId": { "type": ["integer", "string"] },
+              "symbol": { "type": "string" },
+              "decimals": { "type": "integer" },
+              "ed": { "type": "string", "pattern": "[0-9]" },
+              "onChainId": { "type": ["integer", "string"] },
+              "coingeckoId": { "type": "string" }
+            },
+            "required": ["symbol"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
