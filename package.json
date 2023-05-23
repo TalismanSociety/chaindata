@@ -19,7 +19,7 @@
     "validate-schema-tokens-buyable": "yarn ajv --spec=draft2020 -s schemas/json/ids.json -d tokens-buyable.json",
     "validate-schema": "yarn validate-schema-chains && yarn validate-schema-evm-networks && yarn validate-schema-tokens && yarn validate-schema-tokens-buyable",
     "validate": "yarn validate-json && yarn validate-schema",
-    "update": "yarn update-pjs && yarn update-pjs-recursive && yarn import-pjs-rpcs",
+    "update": "yarn update-pjs && yarn update-pjs-recursive && yarn dedupe && yarn import-pjs-rpcs",
     "update-pjs": "yarn up '@polkadot/*'",
     "update-pjs-recursive": "yarn up -R '@polkadot/*'",
     "import-pjs-rpcs": "node scripts/import-pjs-config.js"
