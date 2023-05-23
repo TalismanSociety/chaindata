@@ -10,7 +10,7 @@ on:
 concurrency:
   # only run 1 job per branch/pr/etc at a time
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   validate:
