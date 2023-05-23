@@ -24,6 +24,42 @@ import path from 'path'
 import prettier from 'prettier'
 import startCase from 'lodash/startCase.js'
 
+// prioritise rpcs we love (good connections, good limits)
+// deprioritise rpcs we don't love (poor connections or poor limits, but otherwise good)
+// remove pjs rpcs we don't like (the ones our users have had regular issues connecting to)
+//
+// make sure these are a list of regexes, i.e. Regex[]
+const goodRpcProviders = [
+  // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
+  /onfinality\.io\/public-ws\/?$/i,
+]
+const badRpcProviders = [
+  // test if rpc ends with `1rpc.io/[a-z]+` or `1rpc.io/[a-z]+/`
+  /1rpc\.io\/[a-z]+\/?$/i,
+]
+const uglyRpcProviders = [
+  // test if rpc ends with `public.blastapi.io` or `public.blastapi.io/`
+  /public\.blastapi\.io\/?$/i,
+]
+
+const sortGoodFirst = (a, b) => {
+  const aIsGood = goodRpcProviders.some((regex) => regex.test(a))
+  const bIsGood = goodRpcProviders.some((regex) => regex.test(b))
+
+  if (aIsGood && !bIsGood) return -1
+  if (bIsGood && !aIsGood) return 1
+  return 0
+}
+const sortBadLast = (a, b) => {
+  const aIsBad = badRpcProviders.some((regex) => regex.test(a))
+  const bIsBad = badRpcProviders.some((regex) => regex.test(b))
+
+  if (aIsBad && !bIsBad) return 1
+  if (bIsBad && !aIsBad) return -1
+  return 0
+}
+const filterUgly = (url) => !uglyRpcProviders.some((regex) => regex.test(url))
+
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
   'sora-substrate': 'sora-standalone',
@@ -151,6 +187,9 @@ const addParaToMap =
     if (!chain.account) chain.account = '*25519'
     chain.rpcs = Object.values(para.providers)
       .filter((url) => url.startsWith('wss://'))
+      .sort(sortGoodFirst)
+      .sort(sortBadLast)
+      .filter(filterUgly)
       .filter((rpc) => (seenRpcs[rpc] ? false : (seenRpcs[rpc] = true)))
     if (relay) {
       chain.paraId = para.paraId
