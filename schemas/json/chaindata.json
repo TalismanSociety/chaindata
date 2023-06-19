@@ -38,6 +38,7 @@
           "substrate-equilibrium": { "$ref": "#/$defs/asset" },
           "substrate-native": { "$ref": "#/$defs/asset" },
           "substrate-orml": { "$ref": "#/$defs/asset" },
+          "substrate-psp22": { "$ref": "#/$defs/asset" },
           "substrate-tokens": { "$ref": "#/$defs/asset" }
         },
         "additionalProperties": false
@@ -58,6 +59,7 @@
             "type": "object",
             "properties": {
               "assetId": { "type": ["integer", "string"] },
+              "contractAddress": { "type": "string" },
               "symbol": { "type": "string" },
               "decimals": { "type": "integer" },
               "ed": { "type": "string", "pattern": "[0-9]" },
