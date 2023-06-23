@@ -1375,6 +1375,44 @@
     "paraId": 2032,
     "relay": {
       "id": "polkadot"
+    },
+    "balanceModuleConfigs": {
+      "substrate-tokens": {
+        "tokens": [
+          {
+            "symbol": "LDOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":1}",
+            "coingeckoId": "liquid-staking-dot"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":2}",
+            "coingeckoId": "tether"
+          },
+          {
+            "symbol": "lp iBTC-DOT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"IBTC\"},{\"Token\":\"DOT\"}]}"
+          },
+          {
+            "symbol": "lp iBTC-USDT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"IBTC\"},{\"ForeignAsset\":2}]}"
+          },
+          {
+            "symbol": "lp DOT-INTR",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"DOT\"},{\"Token\":\"INTR\"}]}"
+          }
+        ]
+      }
     }
   },
   {
@@ -1855,6 +1893,51 @@
     "paraId": 2092,
     "relay": {
       "id": "kusama"
+    },
+    "balanceModuleConfigs": {
+      "substrate-tokens": {
+        "tokens": [
+          {
+            "symbol": "aUSD",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":1}",
+            "coingeckoId": "acala-dollar"
+          },
+          {
+            "symbol": "LKSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":2}",
+            "coingeckoId": "liquid-ksm"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":3}",
+            "coingeckoId": "tether"
+          },
+          {
+            "symbol": "lp kBTC-KSM",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"KBTC\"},{\"Token\":\"KSM\"}]}"
+          },
+          {
+            "symbol": "lp kBTC-USDT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"KBTC\"},{\"ForeignAsset\":3}]}"
+          },
+          {
+            "symbol": "lp KSM-KINT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"KSM\"},{\"Token\":\"KINT\"}]}"
+          }
+        ]
+      }
     }
   },
   {
