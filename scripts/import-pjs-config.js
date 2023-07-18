@@ -33,10 +33,7 @@ const goodRpcProviders = [
   // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
   /onfinality\.io\/public-ws\/?$/i,
 ]
-const badRpcProviders = [
-  // test if rpc ends with `1rpc.io/[a-z]+` or `1rpc.io/[a-z]+/`
-  /1rpc\.io\/[a-z]+\/?$/i,
-]
+const badRpcProviders = []
 const uglyRpcProviders = [
   // test if rpc ends with `public.blastapi.io` or `public.blastapi.io/`
   /public\.blastapi\.io\/?$/i,
