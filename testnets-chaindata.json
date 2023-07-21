@@ -30,7 +30,7 @@
     "id": "3-dpass-testnet",
     "name": "3DPass Testnet",
     "account": "*25519",
-    "rpcs": ["wss://test-rpc.3dpass.org"]
+    "rpcs": []
   },
   {
     "id": "ajuna-testnet",
@@ -227,13 +227,13 @@
     "id": "ferrum-testnet",
     "name": "Ferrum",
     "account": "*25519",
-    "rpcs": []
+    "rpcs": ["wss://testnet.dev.svcs.ferrumnetwork.io"]
   },
   {
     "id": "fragnova-testnet",
     "name": "Fragnova Testnet",
     "account": "*25519",
-    "rpcs": ["wss://ws-test.fragnova.network"]
+    "rpcs": []
   },
   {
     "id": "galital-testnet",
@@ -332,6 +332,18 @@
     "name": "Jupiter",
     "account": "*25519",
     "rpcs": []
+  },
+  {
+    "id": "jur-testnet",
+    "name": "Jur Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://testnet.jur.io"]
+  },
+  {
+    "id": "karmachain-testnet",
+    "name": "Karmachain",
+    "account": "*25519",
+    "rpcs": ["wss://testnet.karmaco.in/testnet/ws"]
   },
   {
     "id": "karura-testnet",
@@ -603,6 +615,16 @@
     }
   },
   {
+    "id": "rococo-asset-hub-testnet",
+    "name": "AssetHub Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://rococo-asset-hub-rpc.polkadot.io"],
+    "paraId": 1000,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
     "id": "rococo-aventus-testnet",
     "name": "Aventus Testnet",
     "account": "*25519",
@@ -636,7 +658,7 @@
     "id": "rococo-bifrost-testnet",
     "name": "Bifrost Testnet",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://bifrost-rpc.rococo.liebi.com/ws"],
     "paraId": 2030,
     "relay": {
       "id": "rococo-testnet"
@@ -727,7 +749,10 @@
     "id": "rococo-frequency-testnet",
     "name": "Frequency Testnet",
     "account": "*25519",
-    "rpcs": ["wss://rpc.rococo.frequency.xyz"],
+    "rpcs": [
+      "wss://frequency-rococo-rpc.dwellir.com",
+      "wss://rpc.rococo.frequency.xyz"
+    ],
     "paraId": 4044,
     "relay": {
       "id": "rococo-testnet"
@@ -858,7 +883,7 @@
     "id": "rococo-nodle-testnet",
     "name": "Nodle Testnet",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://nodle-paradis.api.onfinality.io/public-ws"],
     "paraId": 2026,
     "relay": {
       "id": "rococo-testnet"
@@ -886,11 +911,31 @@
     }
   },
   {
+    "id": "rococo-phala-testnet",
+    "name": "Rhala",
+    "account": "*25519",
+    "rpcs": ["wss://rhala-node.phala.network/ws"],
+    "paraId": 2004,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
     "id": "rococo-picasso-testnet",
     "name": "Picasso Testnet",
     "account": "*25519",
     "rpcs": ["wss://picasso-rococo-rpc-lb.composablenodes.tech"],
     "paraId": 2087,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
+    "id": "rococo-societal-testnet",
+    "name": "Societal",
+    "account": "*25519",
+    "rpcs": ["wss://node-ws-rococo.testnet.sctl.link"],
+    "paraId": 4253,
     "relay": {
       "id": "rococo-testnet"
     }
@@ -909,7 +954,7 @@
     "id": "rococo-spreehafen-testnet",
     "name": "Spreehafen",
     "account": "*25519",
-    "rpcs": ["wss://spreehafen.datahighway.com"],
+    "rpcs": [],
     "paraId": 2116,
     "relay": {
       "id": "rococo-testnet"
@@ -939,7 +984,7 @@
     "id": "rococo-subzero-testnet",
     "name": "Subzero Testnet",
     "account": "*25519",
-    "rpcs": ["wss://staging.para.sub.zero.io"],
+    "rpcs": [],
     "paraId": 4040,
     "relay": {
       "id": "rococo-testnet"
@@ -1145,7 +1190,7 @@
     "id": "ternoa-testnet",
     "name": "Ternoa Testnet",
     "account": "*25519",
-    "rpcs": ["wss://testnet.ternoa.com/"]
+    "rpcs": []
   },
   {
     "id": "thebifrost-testnet",
@@ -1185,6 +1230,23 @@
     "name": "Web3Games",
     "account": "*25519",
     "rpcs": ["wss://devnet.web3games.org"]
+  },
+  {
+    "id": "westend-asset-hub-testnet",
+    "name": "AssetHub Testnet",
+    "account": "*25519",
+    "rpcs": [
+      "wss://westmint-rpc.dwellir.com",
+      "wss://westmint-rpc-tn.dwellir.com",
+      "wss://sys.ibp.network/westmint",
+      "wss://sys.dotters.network/westmint",
+      "wss://westend-asset-hub-rpc.polkadot.io",
+      "wss://wnd-rpc.stakeworld.io/westmint"
+    ],
+    "paraId": 1000,
+    "relay": {
+      "id": "westend-testnet"
+    }
   },
   {
     "id": "westend-bridge-hub-testnet",
@@ -1254,6 +1316,12 @@
     "relay": {
       "id": "westend-testnet"
     }
+  },
+  {
+    "id": "xsocial-testnet",
+    "name": "xSocial",
+    "account": "*25519",
+    "rpcs": ["wss://xsocial.subsocial.network"]
   },
   {
     "id": "z-cloak-testnet",
