@@ -2055,6 +2055,9 @@
     "id": "kusama-asset-hub",
     "name": "AssetHub",
     "account": "*25519",
+    "subscanUrl": "https://assethub-kusama.subscan.io/",
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/statemine_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/statemine_metadata_latest.apng",
     "rpcs": [
       "wss://sys.ibp.network/statemine",
       "wss://sys.dotters.network/statemine",
@@ -2069,6 +2072,26 @@
     "paraId": 1000,
     "relay": {
       "id": "kusama"
+    },
+    "balanceModuleConfigs": {
+      "substrate-assets": {
+        "tokens": [
+          {
+            "assetId": 8,
+            "symbol": "RMRK",
+            "coingeckoId": "rmrk"
+          },
+          {
+            "assetId": 16,
+            "symbol": "ARIS"
+          },
+          {
+            "assetId": 1984,
+            "symbol": "USDT",
+            "coingeckoId": "tether"
+          }
+        ]
+      }
     }
   },
   {
@@ -2533,6 +2556,9 @@
     "id": "polkadot-asset-hub",
     "name": "AssetHub",
     "account": "*25519",
+    "subscanUrl": "https://assethub-polkadot.subscan.io/",
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/statemint_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/statemint_metadata_latest.apng",
     "rpcs": [
       "wss://sys.ibp.network/statemint",
       "wss://sys.dotters.network/statemint",
@@ -2546,6 +2572,17 @@
     "paraId": 1000,
     "relay": {
       "id": "polkadot"
+    },
+    "balanceModuleConfigs": {
+      "substrate-assets": {
+        "tokens": [
+          {
+            "assetId": 1984,
+            "symbol": "USDT",
+            "coingeckoId": "tether"
+          }
+        ]
+      }
     }
   },
   {
@@ -2755,80 +2792,6 @@
     "account": "*25519",
     "subscanUrl": "https://stafi.subscan.io/",
     "rpcs": []
-  },
-  {
-    "id": "statemine",
-    "name": "Statemine",
-    "account": "*25519",
-    "subscanUrl": "https://statemine.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/statemine_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/statemine_metadata_latest.apng",
-    "rpcs": [
-      "wss://sys.ibp.network/statemine",
-      "wss://sys.dotters.network/statemine",
-      "wss://statemine.api.onfinality.io/public-ws",
-      "wss://statemine-rpc.dwellir.com",
-      "wss://statemine-rpc-tn.dwellir.com",
-      "wss://rpc-statemine.luckyfriday.io",
-      "wss://statemine-rpc.polkadot.io",
-      "wss://statemine.public.curie.radiumblock.co/ws"
-    ],
-    "paraId": 1000,
-    "relay": {
-      "id": "kusama"
-    },
-    "balanceModuleConfigs": {
-      "substrate-assets": {
-        "tokens": [
-          {
-            "assetId": 8,
-            "symbol": "RMRK",
-            "coingeckoId": "rmrk"
-          },
-          {
-            "assetId": 16,
-            "symbol": "ARIS"
-          },
-          {
-            "assetId": 1984,
-            "symbol": "USDT",
-            "coingeckoId": "tether"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "statemint",
-    "name": "Statemint",
-    "account": "*25519",
-    "subscanUrl": "https://statemint.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/statemint_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/statemint_metadata_latest.apng",
-    "rpcs": [
-      "wss://sys.ibp.network/statemint",
-      "wss://sys.dotters.network/statemint",
-      "wss://statemint.api.onfinality.io/public-ws",
-      "wss://statemint-rpc.dwellir.com",
-      "wss://statemint-rpc-tn.dwellir.com",
-      "wss://statemint-rpc.polkadot.io",
-      "wss://statemint.public.curie.radiumblock.co/ws"
-    ],
-    "paraId": 1000,
-    "relay": {
-      "id": "polkadot"
-    },
-    "balanceModuleConfigs": {
-      "substrate-assets": {
-        "tokens": [
-          {
-            "assetId": 1984,
-            "symbol": "USDT",
-            "coingeckoId": "tether"
-          }
-        ]
-      }
-    }
   },
   {
     "id": "subdao",

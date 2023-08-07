@@ -47,7 +47,8 @@ const sortGoodFirst = (a, b) => {
   return 0
 }
 
-const filterUnreliable = (url) => !unreliableRpcProviders.some((regex) => regex.test(url))
+const filterUnreliable = (url) =>
+  !unreliableRpcProviders.some((regex) => regex.test(url))
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
