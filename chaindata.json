@@ -1074,10 +1074,10 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/encointer-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/encointer-parachain_metadata_latest.apng",
     "rpcs": [
-      "wss://encointer.api.onfinality.io/public-ws",
-      "wss://kusama.api.encointer.org",
       "wss://sys.ibp.network/encointer-kusama",
-      "wss://sys.dotters.network/encointer-kusama"
+      "wss://sys.dotters.network/encointer-kusama",
+      "wss://encointer.api.onfinality.io/public-ws",
+      "wss://kusama.api.encointer.org"
     ],
     "paraId": 1001,
     "relay": {
@@ -2096,7 +2096,7 @@
   },
   {
     "id": "kusama-bridge-hub",
-    "name": "BridgeHub",
+    "name": "Kusama Bridge Hub",
     "account": "*25519",
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-kusama",
@@ -2737,7 +2737,7 @@
   },
   {
     "id": "polkadot-bridge-hub",
-    "name": "BridgeHub",
+    "name": "Polkadot Bridge Hub",
     "account": "*25519",
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-polkadot",
@@ -2957,7 +2957,7 @@
     "id": "subgame-kusama",
     "name": "SubGame Gamma Kusama",
     "account": "*25519",
-    "rpcs": ["wss://gamma.subgame.org/"],
+    "rpcs": [],
     "paraId": 2018,
     "relay": {
       "id": "kusama"

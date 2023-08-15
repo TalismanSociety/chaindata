@@ -29,6 +29,12 @@ import startCase from 'lodash/startCase.js'
 //
 // make sure these are a list of regexes, i.e. Regex[]
 const goodRpcProviders = [
+  // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network`
+  /^wss:\/\/(?:rpc|sys)\.ibp\.network/i,
+
+  // test if rpc begins with `wss://rpc.dotters.network` or `wss://sys.dotters.network`
+  /^wss:\/\/(?:rpc|sys)\.dotters\.network/i,
+
   // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
   /onfinality\.io\/public-ws\/?$/i,
 ]
@@ -64,6 +70,28 @@ const customTestnetChainIds = {
   acala: 'mandala-testnet',
 }
 
+// a map of ids to talisman names
+const customNames = {
+  'polkadot-asset-hub': 'Polkadot Asset Hub',
+  'polkadot-bridge-hub': 'Polkadot Bridge Hub',
+  'bifrost-polkadot': 'Bifrost Polkadot',
+  'subgame-polkadot': 'SubGame Gamma Polkadot',
+
+  'kusama-asset-hub': 'Kusama Asset Hub',
+  'kusama-bridge-hub': 'Kusama Bridge Hub',
+  'bifrost-kusama': 'Bifrost Kusama',
+  'subgame-kusama': 'SubGame Gamma Kusama',
+
+  'bifrost-testnet': 'Bifrost Testnet',
+  'rococo-bifrost-testnet': 'Bifrost Testnet',
+
+  'rococo-asset-hub-testnet': 'Rococo Asset Hub',
+  'rococo-bridge-hub-testnet': 'Rococo Bridge Hub',
+
+  'westend-asset-hub-testnet': 'Westend Asset Hub',
+  'westend-bridge-hub-testnet': 'Westend Bridge Hub',
+}
+
 // derive talisman id from pjs id
 const idConflicts = {}
 const idConflictNums = {}
@@ -75,7 +103,8 @@ const deriveTestnetId = (info) =>
 const appendTestnet = (id) => (id.endsWith('-testnet') ? id : `${id}-testnet`)
 
 // fix up pjs chain names to match talisman
-const trimName = (text) =>
+const trimName = (text, id) =>
+  customNames[id] ??
   text
     // general suffixes which look ugly
     .replace(/[ -][0-9]+$/i, '')
@@ -171,7 +200,7 @@ const addParaToMap =
 
     const chain = map[id] || { id }
 
-    chain.name = trimName(para.text)
+    chain.name = trimName(para.text, id)
     if (chain.name !== para.text)
       console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
     if (!chain.account) chain.account = '*25519'

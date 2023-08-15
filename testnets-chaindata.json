@@ -7,12 +7,12 @@
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend_metadata_latest.apng",
     "rpcs": [
+      "wss://rpc.ibp.network/westend",
+      "wss://rpc.dotters.network/westend",
       "wss://westend.api.onfinality.io/public-ws",
       "wss://westend-rpc.blockops.network/ws",
       "wss://westend-rpc.dwellir.com",
       "wss://westend-rpc-tn.dwellir.com",
-      "wss://rpc.ibp.network/westend",
-      "wss://rpc.dotters.network/westend",
       "wss://rpc-westend.luckyfriday.io",
       "wss://westend-rpc.polkadot.io",
       "wss://westend.public.curie.radiumblock.co/ws",
@@ -961,16 +961,6 @@
     }
   },
   {
-    "id": "rococo-statemint-testnet",
-    "name": "Rockmine",
-    "account": "*25519",
-    "rpcs": ["wss://rococo-rockmine-rpc.polkadot.io"],
-    "paraId": 1000,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "rococo-subsocial-testnet",
     "name": "SoonsocialX",
     "account": "*25519",
@@ -1236,10 +1226,10 @@
     "name": "Westend Asset Hub",
     "account": "*25519",
     "rpcs": [
-      "wss://westmint-rpc.dwellir.com",
-      "wss://westmint-rpc-tn.dwellir.com",
       "wss://sys.ibp.network/westmint",
       "wss://sys.dotters.network/westmint",
+      "wss://westmint-rpc.dwellir.com",
+      "wss://westmint-rpc-tn.dwellir.com",
       "wss://westend-asset-hub-rpc.polkadot.io",
       "wss://wnd-rpc.stakeworld.io/westmint"
     ],
@@ -1250,7 +1240,7 @@
   },
   {
     "id": "westend-bridge-hub-testnet",
-    "name": "BridgeHub Testnet",
+    "name": "Westend Bridge Hub",
     "account": "*25519",
     "rpcs": [],
     "paraId": 1002,
