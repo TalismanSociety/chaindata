@@ -67,6 +67,7 @@ const customChainIds = {
 const customTestnetChainIds = {
   'aleph-testnet': 'aleph-zero-testnet',
   'myriad-tesnet': 'myriad-testnet',
+  rococoBridgehub: 'rococo-bridge-hub-testnet',
   acala: 'mandala-testnet',
 }
 
