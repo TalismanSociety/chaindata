@@ -12,24 +12,28 @@
   },
   "homepage": "https://talisman.community",
   "scripts": {
-    "validate-json": "yarn run prettier --write *.json",
-    "validate-schema-chains": "yarn ajv --spec=draft2020 -s schemas/json/chaindata.json -d chaindata.json -d testnets-chaindata.json",
-    "validate-schema-evm-networks": "yarn ajv --spec=draft2020 -s schemas/json/evm-networks.json -d evm-networks.json",
-    "validate-schema-tokens": "yarn ajv --spec=draft2020 -s schemas/json/tokens.json -d tokens.json",
-    "validate-schema-tokens-buyable": "yarn ajv --spec=draft2020 -s schemas/json/ids.json -d tokens-buyable.json",
-    "validate-schema": "yarn validate-schema-chains && yarn validate-schema-evm-networks && yarn validate-schema-tokens && yarn validate-schema-tokens-buyable",
-    "validate": "yarn validate-json && yarn validate-schema",
-    "update": "yarn update-pjs && yarn update-pjs-recursive && yarn dedupe && yarn import-pjs-config",
-    "update-pjs": "yarn up '@polkadot/*'",
-    "update-pjs-recursive": "yarn up -R '@polkadot/*'",
-    "import-pjs-config": "node scripts/import-pjs-config.js"
+    "validate-json": "bun run prettier --write *.json",
+    "validate-schema-chains": "bun run ajv --spec=draft2020 -s schemas/json/chaindata.json -d chaindata.json -d testnets-chaindata.json",
+    "validate-schema-evm-networks": "bun run ajv --spec=draft2020 -s schemas/json/evm-networks.json -d evm-networks.json",
+    "validate-schema-tokens": "bun run ajv --spec=draft2020 -s schemas/json/tokens.json -d tokens.json",
+    "validate-schema-tokens-buyable": "bun run ajv --spec=draft2020 -s schemas/json/ids.json -d tokens-buyable.json",
+    "validate-schema": "bun run validate-schema-chains && bun run validate-schema-evm-networks && bun run validate-schema-tokens && bun run validate-schema-tokens-buyable",
+    "validate": "bun run validate-json && bun run validate-schema",
+    "update-pjs": "bun update",
+    "import-pjs-config": "bun run scripts/import-pjs-config.js",
+    "update": "bun run update-pjs && bun run import-pjs-config",
+    "build": "bun run scripts/build.ts",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "@polkadot/apps-config": "^0.132.1",
-    "@polkadot/networks": "^12.5.1",
+    "@polkadot/apps-config": "*",
+    "@polkadot/networks": "*",
     "ajv-cli": "^5.0.0",
     "lodash": "^4.17.21",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "bun-types": "latest"
   },
-  "packageManager": "yarn@3.5.1"
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
