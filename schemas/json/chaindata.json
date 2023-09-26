@@ -6,6 +6,7 @@
     "properties": {
       "id": { "type": "string" },
       "name": { "type": "string" },
+      "themeColor": { "type": "string" },
       "account": {
         "type": "string",
         "pattern": "^((Sr|Ed|\\*)25519|secp256k1)$"
@@ -14,11 +15,10 @@
         "type": "string",
         "pattern": "^https://.+\\.subscan\\.io/$"
       },
-      "coingeckoId": { "type": ["string", "null"] },
       "chainspecQrUrl": { "type": "string" },
       "latestMetadataQrUrl": { "type": "string" },
-      "isUnknownFeeToken": { "type": "boolean" },
       "overrideNativeTokenId": { "type": "string" },
+      "isUnknownFeeToken": { "type": "boolean" },
       "rpcs": {
         "type": "array",
         "items": { "type": "string", "pattern": "^wss?://" },
@@ -34,6 +34,8 @@
       "balanceModuleConfigs": {
         "type": "object",
         "properties": {
+          "evm-native": { "$ref": "#/$defs/asset" },
+          "evm-erc20": { "$ref": "#/$defs/asset" },
           "substrate-assets": { "$ref": "#/$defs/asset" },
           "substrate-equilibrium": { "$ref": "#/$defs/asset" },
           "substrate-native": { "$ref": "#/$defs/asset" },
@@ -64,7 +66,10 @@
               "decimals": { "type": "integer" },
               "ed": { "type": "string", "pattern": "[0-9]" },
               "onChainId": { "type": ["integer", "string"] },
-              "coingeckoId": { "type": "string" }
+              "coingeckoId": { "type": "string" },
+              "mirrorOf": { "type": "string" },
+              "dcentName": { "type": "string" },
+              "themeColor": { "type": "string" }
             },
             "required": ["symbol"],
             "additionalProperties": false

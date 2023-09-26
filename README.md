@@ -23,9 +23,7 @@ The published files can be browsed at this URL: https://talismansociety.github.i
 As an example, you could make this request to get the names, [genesisHashes](## 'the hash of the first block on the chain') and [address type prefixes](https://wiki.polkadot.network/docs/learn-account-advanced#address-format) for all chains:
 
 ```ts
-const chains = await(
-  await fetch(`https://talismansociety.github.io/chaindata/chains.json`)
-).json()
+const chains = await(await fetch(`https://talismansociety.github.io/chaindata/chains.json`)).json()
 ```
 
 For an example of a more advanced use-case, you can check out the [Talisman wallet](https://github.com/TalismanSociety/talisman) source code.  
@@ -60,5 +58,6 @@ To make a contribution, please fork this repo and make your changes in your fork
    `git clone git@github.com:TalismanSociety/chaindata.git`
 1. Install the deps via  
    `bun install`
+1. Copy `.env.sample` to `.env` and fill in the variables
 1. Run the build via  
    `bun run build`

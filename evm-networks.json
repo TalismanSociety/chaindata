@@ -8,6 +8,10 @@
       "https://eth.llamarpc.com"
     ],
     "balanceModuleConfigs": {
+      "evm-native": {
+        "coingeckoId": "ethereum",
+        "dcentName": "ETHEREUM"
+      },
       "evm-erc20": {
         "tokens": [
           {
@@ -43,7 +47,12 @@
     "name": "Goerli",
     "isTestnet": true,
     "explorerUrl": "https://goerli.etherscan.io",
-    "rpcs": ["https://rpc.ankr.com/eth_goerli"]
+    "rpcs": ["https://rpc.ankr.com/eth_goerli"],
+    "balanceModuleConfigs": {
+      "evm-native": {
+        "coingeckoId": "goerli-eth"
+      }
+    }
   },
   {
     "name": "Sepolia",
@@ -62,7 +71,8 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "xDAI",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "xdai"
       }
     }
   },
@@ -77,7 +87,9 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "MATIC",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "matic-network",
+        "dcentName": "POLYGON"
       },
       "evm-erc20": {
         "tokens": [
@@ -103,7 +115,13 @@
   {
     "name": "Arbitrum",
     "explorerUrl": "https://arbiscan.io/",
-    "rpcs": ["https://arb1.arbitrum.io/rpc", "https://rpc.ankr.com/arbitrum"]
+    "rpcs": ["https://arb1.arbitrum.io/rpc", "https://rpc.ankr.com/arbitrum"],
+    "balanceModuleConfigs": {
+      "evm-native": {
+        "coingeckoId": "ethereum",
+        "dcentName": "ARBITRUM"
+      }
+    }
   },
   {
     "name": "Binance Smart Chain",
@@ -117,7 +135,9 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "BNB",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "binancecoin",
+        "dcentName": "BSC"
       }
     }
   },
@@ -132,7 +152,9 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "ACA",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "acala",
+        "mirrorOf": "acala-substrate-native-aca"
       }
     }
   },
@@ -147,7 +169,8 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "ASTR",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "astar"
       },
       "evm-erc20": {
         "tokens": [
@@ -231,7 +254,9 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "RING",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "darwinia-network-native-token",
+        "mirrorOf": "darwinia-substrate-native-ring"
       }
     }
   },
@@ -248,7 +273,8 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "EDG",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "edgeware"
       }
     }
   },
@@ -263,7 +289,9 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "GLMR",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "moonbeam",
+        "mirrorOf": "moonbeam-substrate-native-glmr"
       },
       "evm-erc20": {
         "tokens": [
@@ -312,7 +340,9 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "MOVR",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "moonriver",
+        "mirrorOf": "moonriver-substrate-native-movr"
       },
       "evm-erc20": {
         "tokens": [
@@ -346,7 +376,8 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "SDN",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "shiden"
       }
     }
   },
@@ -366,7 +397,8 @@
     "balanceModuleConfigs": {
       "evm-native": {
         "symbol": "DEV",
-        "decimals": 18
+        "decimals": 18,
+        "mirrorOf": "moonbase-alpha-testnet-substrate-native-dev"
       }
     }
   },

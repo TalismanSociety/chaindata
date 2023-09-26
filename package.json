@@ -25,15 +25,33 @@
     "build": "bun run scripts/build.ts",
     "clean": "rm -rf dist"
   },
+  "dependencies": {
+    "@polkadot/api": "*",
+    "@supercharge/promise-pool": "^3.1.0",
+    "@talismn/chaindata-provider": "0.0.0-pr1088-20230922075915",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "extract-colors": "^2.0.6",
+    "lodash": "^4.17.21",
+    "sharp": "^0.32.6",
+    "tinycolor2": "^1.6.0"
+  },
   "devDependencies": {
     "@polkadot/apps-config": "*",
     "@polkadot/networks": "*",
+    "@types/lodash": "^4.14.191",
+    "@types/sharp": "^0.32.0",
+    "@types/tinycolor2": "^1.4.3",
     "ajv-cli": "^5.0.0",
-    "lodash": "^4.17.21",
-    "prettier": "^2.7.1",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prettier": "^2.8.8"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
   }
 }

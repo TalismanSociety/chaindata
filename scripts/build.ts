@@ -1,49 +1,40 @@
-import {
-  FILE_CHAINDATA,
-  FILE_EVM_NETWORKS,
-  FILE_TESTNETS_CHAINDATA,
-} from './build/constants'
-import { html, cleanupOutputDir, getFileList, writeFile } from './build/util'
-
-const chaindata = await Bun.file(FILE_CHAINDATA).json()
-const testnetsChaindata = await Bun.file(FILE_TESTNETS_CHAINDATA).json()
-const evmNetworks = await Bun.file(FILE_EVM_NETWORKS).json()
+import startCase from 'lodash/startCase'
+import { FILE_CHAINDATA, FILE_EVM_NETWORKS, FILE_TESTNETS_CHAINDATA } from './build/constants'
+import { addThemeColors } from './build/steps/addThemeColors'
+import { applyNativeTokenOverrides } from './build/steps/applyNativeTokenOverrides'
+import { fetchChainsExtras } from './build/steps/fetchChainsExtras'
+import { loadConfig } from './build/steps/loadConfig'
+import { setInvalidChainLogosToUnknownLogo } from './build/steps/setInvalidChainLogosToUnknownLogo'
+import { addChains } from './build/steps/addChains'
+import { addEvmNetworks } from './build/steps/addEvmNetworks'
+import { updateSortIndexes } from './build/steps/updateSortIndexes'
+import { writeChaindataIndex } from './build/steps/writeChaindataIndex'
+import { cleanupOutputDir } from './build/util'
 
 await cleanupOutputDir()
 
-await writeFile('chaindata.json', JSON.stringify(chaindata, null, 2))
+const steps: Array<() => Promise<void>> = [
+  loadConfig,
 
-for (const chain of chaindata) {
-  if (!Array.isArray(chain.rpcs) || chain.rpcs.length < 1) continue
-  if (typeof chain.id !== 'string') continue
+  addChains,
+  fetchChainsExtras,
 
-  await writeFile(
-    `chains/byId/${chain.id}.json`,
-    JSON.stringify(chain, null, 2)
-  )
+  // addEvmNetworks,
+
+  updateSortIndexes,
+
+  applyNativeTokenOverrides,
+  setInvalidChainLogosToUnknownLogo,
+  // addThemeColors,
+
+  writeChaindataIndex,
+]
+
+for (const [index, executeStep] of steps.entries()) {
+  console.log(`Executing step ${index + 1}: ${startCase(executeStep.name)}`)
+  await executeStep()
 }
 
-await writeFile(
-  'index.html',
-  html`<html>
-    <head>
-      <meta name="color-scheme" content="light dark" />
-      <style>
-        html {
-          font-family: sans-serif;
-        }
-        a {
-          text-decoration: none;
-        }
-      </style>
-    </head>
-    <body>
-      <pre style="word-wrap: break-word; white-space: pre-wrap;">
-<h3>Chaindata</h3>
-${getFileList()
-        .map((file) => html`<a href="${file}">${file}</a>`)
-        .join('\n')}
-      </pre>
-    </body>
-  </html>`
-)
+// WsProvider keeps the thread open (╯°□°)╯︵ ┻━┻
+// as a workaround, force kill it (with a successful exit status) when we're done building
+process.exit(0)
