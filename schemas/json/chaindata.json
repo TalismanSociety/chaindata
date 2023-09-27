@@ -34,11 +34,46 @@
       "balanceModuleConfigs": {
         "type": "object",
         "properties": {
-          "evm-native": { "$ref": "#/$defs/asset" },
-          "evm-erc20": { "$ref": "#/$defs/asset" },
           "substrate-assets": { "$ref": "#/$defs/asset" },
-          "substrate-equilibrium": { "$ref": "#/$defs/asset" },
-          "substrate-native": { "$ref": "#/$defs/asset" },
+          "substrate-equilibrium": {
+            "type": "object",
+            "properties": {
+              "disable": { "type": "boolean" },
+              "tokens": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "assetId": { "type": ["integer", "string"] },
+                    "symbol": { "type": "string" },
+                    "decimals": { "type": "integer" },
+                    "ed": { "type": "string", "pattern": "[0-9]" },
+                    "coingeckoId": { "type": ["string", "null"] },
+                    "mirrorOf": { "type": "string" },
+                    "dcentName": { "type": "string" },
+                    "themeColor": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["assetId"]
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "substrate-native": {
+            "type": "object",
+            "properties": {
+              "disable": { "type": "boolean" },
+              "symbol": { "type": "string" },
+              "decimals": { "type": "integer" },
+              "ed": { "type": "string", "pattern": "[0-9]" },
+              "coingeckoId": { "type": ["string", "null"] },
+              "mirrorOf": { "type": "string" },
+              "dcentName": { "type": "string" },
+              "themeColor": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
           "substrate-orml": { "$ref": "#/$defs/asset" },
           "substrate-psp22": { "$ref": "#/$defs/asset" },
           "substrate-tokens": { "$ref": "#/$defs/asset" }
@@ -55,28 +90,30 @@
       "type": "object",
       "properties": {
         "disable": { "type": "boolean" },
-        "tokens": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "assetId": { "type": ["integer", "string"] },
-              "contractAddress": { "type": "string" },
-              "symbol": { "type": "string" },
-              "decimals": { "type": "integer" },
-              "ed": { "type": "string", "pattern": "[0-9]" },
-              "onChainId": { "type": ["integer", "string"] },
-              "coingeckoId": { "type": "string" },
-              "mirrorOf": { "type": "string" },
-              "dcentName": { "type": "string" },
-              "themeColor": { "type": "string" }
-            },
-            "required": ["symbol"],
-            "additionalProperties": false
-          }
-        }
+        "tokens": { "$ref": "#/$defs/tokens" }
       },
       "additionalProperties": false
+    },
+    "tokens": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/token" }
+    },
+    "token": {
+      "type": "object",
+      "properties": {
+        "assetId": { "type": ["integer", "string"] },
+        "contractAddress": { "type": "string" },
+        "symbol": { "type": "string" },
+        "decimals": { "type": "integer" },
+        "ed": { "type": "string", "pattern": "[0-9]" },
+        "onChainId": { "type": ["integer", "string"] },
+        "coingeckoId": { "type": "string" },
+        "mirrorOf": { "type": "string" },
+        "dcentName": { "type": "string" },
+        "themeColor": { "type": "string" }
+      },
+      "additionalProperties": false,
+      "required": ["symbol"]
     }
   }
 }
