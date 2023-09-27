@@ -9,9 +9,6 @@ export const addChains = async () => {
 
     const chain: Partial<Chain> = { id: configChain.id }
 
-    // const chain = await getOrCreate(store, Chain, configChain.id)
-    // const relay = configChain.relay?.id ? await store.findOne(Chain, { where: { id: configChain.relay.id } }) : null
-
     // set values
     chain.isTestnet = configChain.isTestnet || false
     chain.name = configChain.name ?? null
@@ -22,17 +19,20 @@ export const addChains = async () => {
     chain.latestMetadataQrUrl = configChain.latestMetadataQrUrl
     chain.isUnknownFeeToken = configChain.isUnknownFeeToken || false
     chain.rpcs = (configChain.rpcs || []).map((url) => ({ url, isHealthy: true }))
-    if (!chain.balanceMetadata)
-      chain.balanceMetadata = []
 
-      // TODO: Add this back again
-      // only set relay and paraId if both exist on configChain
-      // TODO: Figure out parachains automatically
-      // chain.paraId = relay !== null && configChain.paraId ? configChain.paraId : null
-      // chain.relay = relay !== null && configChain.paraId ? relay : null
+    // only set relay and paraId if both exist on configChain
+    // TODO: Figure out parachains automatically
+    const hasRelay = Boolean(
+      configChain.relay?.id && sharedData.chainsConfig.some((chain) => chain.id === configChain.relay!.id)
+    )
+    chain.paraId = hasRelay && configChain.paraId ? configChain.paraId : null
+    chain.relay = hasRelay && configChain.paraId ? { id: configChain.relay!.id } : null
+
+    if (!(chain as any).balancesMetadata)
+      (chain as any).balancesMetadata = []
 
       //
-    ;(chain as any).balanceModuleConfigs = Object.entries(configChain.balanceModuleConfigs ?? {}).map(
+    ;(chain as any).balancesConfig = Object.entries(configChain.balancesConfig ?? {}).map(
       ([moduleType, moduleConfig]) => ({ moduleType, moduleConfig })
     )
 

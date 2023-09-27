@@ -16,7 +16,7 @@ export type ConfigChain = {
   rpcs?: string[]
   paraId?: number
   relay?: { id: string }
-  balanceModuleConfigs?: Record<string, Record<string, unknown>>
+  balancesConfig?: Record<string, Record<string, unknown>>
 }
 
 /** Represents an EvmNetwork from `evm-networks.json` */
@@ -27,7 +27,7 @@ export type ConfigEvmNetwork = {
   isTestnet?: true
   explorerUrl?: string
   rpcs?: string[]
-  balanceModuleConfigs?: Record<string, Record<string, unknown>>
+  balancesConfig?: Record<string, Record<string, unknown>>
 }
 
 // Some handy types from https://www.typescriptlang.org/docs/handbook/advanced-types.html#distributive-conditional-types

@@ -63,11 +63,12 @@ export const addEvmNetworks = async () => {
         evmNetwork.logo = evmNetwork.id ? githubChainLogoUrl(evmNetwork.id) : undefined // TODO: Copy chain & token assets into GH Pages output
         evmNetwork.explorerUrl = configEvmNetwork.explorerUrl
         evmNetwork.rpcs = (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true }))
-        if (!(evmNetwork as any).balanceMetadata)
-          (evmNetwork as any).balanceMetadata = []
+
+        if (!(evmNetwork as any).balancesMetadata)
+          (evmNetwork as any).balancesMetadata = []
 
           //
-        ;(evmNetwork as any).balanceModuleConfigs = Object.entries(configEvmNetwork.balanceModuleConfigs ?? {}).map(
+        ;(evmNetwork as any).balancesConfig = Object.entries(configEvmNetwork.balancesConfig ?? {}).map(
           ([moduleType, moduleConfig]) => ({ moduleType, moduleConfig })
         )
 
@@ -92,11 +93,12 @@ export const addEvmNetworks = async () => {
         evmNetwork.logo = evmNetwork.id ? githubChainLogoUrl(evmNetwork.id) : undefined // TODO: Copy chain & token assets into GH Pages output
         evmNetwork.explorerUrl = configEvmNetwork.explorerUrl
         evmNetwork.rpcs = (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true }))
-        if (!(evmNetwork as any).balanceMetadata)
-          (evmNetwork as any).balanceMetadata = []
+
+        if (!(evmNetwork as any).balancesMetadata)
+          (evmNetwork as any).balancesMetadata = []
 
           //
-        ;(evmNetwork as any).balanceModuleConfigs = Object.entries(configEvmNetwork.balanceModuleConfigs ?? {}).map(
+        ;(evmNetwork as any).balancesConfig = Object.entries(configEvmNetwork.balancesConfig ?? {}).map(
           ([moduleType, moduleConfig]) => ({ moduleType, moduleConfig })
         )
 

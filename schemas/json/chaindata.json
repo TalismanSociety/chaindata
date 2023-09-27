@@ -21,8 +21,7 @@
       "isUnknownFeeToken": { "type": "boolean" },
       "rpcs": {
         "type": "array",
-        "items": { "type": "string", "pattern": "^wss?://" },
-        "minimum": 1
+        "items": { "type": "string", "pattern": "^wss?://" }
       },
       "paraId": { "type": "integer" },
       "relay": {
@@ -31,7 +30,7 @@
         "required": ["id"],
         "additionalProperties": false
       },
-      "balanceModuleConfigs": {
+      "balancesConfig": {
         "type": "object",
         "properties": {
           "substrate-assets": { "$ref": "#/$defs/asset" },

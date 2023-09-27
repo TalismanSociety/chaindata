@@ -1,5 +1,5 @@
 import { PromisePool } from '@supercharge/promise-pool'
-import { githubChainLogoUrl, githubTokenLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
+import { githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
 import axios from 'axios'
 import { extractColors } from 'extract-colors'
 import sharp from 'sharp'
@@ -53,12 +53,6 @@ export const addThemeColors = async () => {
 
 const extractDominantLogoColor = async (entityType: string, entityId: string, logoUrl: string) => {
   if (logoUrl === githubUnknownTokenLogoUrl) return '#505050'
-  if (
-    logoUrl === githubChainLogoUrl('karura') ||
-    logoUrl === githubChainLogoUrl('karura-testnet') ||
-    logoUrl === githubTokenLogoUrl('kar')
-  )
-    return '#f93d43'
 
   try {
     const resp = await axios.get(logoUrl, {
