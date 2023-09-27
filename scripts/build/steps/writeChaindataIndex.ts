@@ -3,6 +3,7 @@ import { sharedData } from './_sharedData'
 
 export const writeChaindataIndex = async () => {
   await writeChains()
+  await writeEvmNetworks()
 
   await writeChaindataFile(
     'index.html',
@@ -22,6 +23,8 @@ export const writeChaindataIndex = async () => {
         <pre style="word-wrap: break-word; white-space: pre-wrap;">
 <h3>Chaindata</h3>
 ${getFileList()
+          .slice()
+          .sort()
           .map((file) => html`<a href="${file}">${file}</a>`)
           .join('\n')}
       </pre>
@@ -61,5 +64,31 @@ const writeChains = async () => {
 
     if (typeof chain.genesisHash !== 'string') continue
     await writeChaindataFile(`chains/byGenesisHash/${chain.genesisHash}.json`, JSON.stringify(chain, null, 2))
+  }
+}
+
+const writeEvmNetworks = async () => {
+  await writeChaindataFile(`evmNetworks/all.json`, JSON.stringify(sharedData.evmNetworks, null, 2))
+  await writeChaindataFile(
+    `evmNetworks/summary.json`,
+    JSON.stringify(
+      sharedData.evmNetworks.map(({ id, isTestnet, sortIndex, name, themeColor, logo }) => ({
+        id,
+        isTestnet,
+        sortIndex,
+        name,
+        themeColor,
+        logo,
+      })),
+      null,
+      2
+    )
+  )
+
+  for (const evmNetwork of sharedData.evmNetworks) {
+    if (typeof evmNetwork.id !== 'string') continue
+    if (!Array.isArray(evmNetwork.rpcs) || evmNetwork.rpcs.length < 1) continue
+
+    await writeChaindataFile(`evmNetworks/byId/${evmNetwork.id}.json`, JSON.stringify(evmNetwork, null, 2))
   }
 }

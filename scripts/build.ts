@@ -1,13 +1,12 @@
 import startCase from 'lodash/startCase'
 
-import { FILE_CHAINDATA, FILE_EVM_NETWORKS, FILE_TESTNETS_CHAINDATA } from './build/constants'
 import { addChains } from './build/steps/addChains'
 import { addEvmNetworks } from './build/steps/addEvmNetworks'
 import { addThemeColors } from './build/steps/addThemeColors'
 import { applyNativeTokenOverrides } from './build/steps/applyNativeTokenOverrides'
 import { fetchChainsExtras } from './build/steps/fetchChainsExtras'
 import { loadConfig } from './build/steps/loadConfig'
-import { setInvalidChainLogosToUnknownLogo } from './build/steps/setInvalidChainLogosToUnknownLogo'
+import { setInvalidChainAndEvmNetworkLogosToUnknownLogo } from './build/steps/setInvalidChainAndEvmNetworkLogosToUnknownLogo'
 import { updateSortIndexes } from './build/steps/updateSortIndexes'
 import { writeChaindataIndex } from './build/steps/writeChaindataIndex'
 import { cleanupOutputDir } from './build/util'
@@ -20,12 +19,12 @@ const steps: Array<() => Promise<void>> = [
   addChains,
   fetchChainsExtras,
 
-  // addEvmNetworks,
+  addEvmNetworks,
 
   updateSortIndexes,
 
   applyNativeTokenOverrides,
-  setInvalidChainLogosToUnknownLogo,
+  setInvalidChainAndEvmNetworkLogosToUnknownLogo,
   // addThemeColors,
 
   writeChaindataIndex,

@@ -5,8 +5,8 @@ import { DIR_ASSETS_CHAINS, GITHUB_API, GITHUB_ORG, GITHUB_REPO, GITHUB_TOKEN, P
 import { gql } from '../util'
 import { sharedData } from './_sharedData'
 
-export const setInvalidChainLogosToUnknownLogo = async () => {
-  const { chains } = sharedData
+export const setInvalidChainAndEvmNetworkLogosToUnknownLogo = async () => {
+  const { chains, evmNetworks } = sharedData
 
   const availableChainLogoFilenames = (
     await (
@@ -34,11 +34,11 @@ export const setInvalidChainLogosToUnknownLogo = async () => {
   )?.data?.repository?.ChainAssets?.entries?.map?.((entry: any) => entry?.name)
 
   await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
-    .for(chains)
-    .process(async (chain) => {
-      chain.logo = availableChainLogoFilenames.includes(`${chain.id}.svg`)
+    .for([...chains, ...evmNetworks])
+    .process(async (chainOrNetwork) => {
+      chainOrNetwork.logo = availableChainLogoFilenames.includes(`${chainOrNetwork.id}.svg`)
         ? // use `githubChainLogoUrl(chain.id)` if logo exists in github
-          githubChainLogoUrl(chain.id)
+          githubChainLogoUrl(chainOrNetwork.id)
         : // fall back to unknown logo if not
           githubUnknownChainLogoUrl
     })

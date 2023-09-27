@@ -15,7 +15,7 @@ export const addChains = async () => {
     // set values
     chain.isTestnet = configChain.isTestnet || false
     chain.name = configChain.name ?? null
-    chain.logo = githubChainLogoUrl(configChain.id)
+    chain.logo = githubChainLogoUrl(configChain.id) // TODO: Copy chain & token assets into GH Pages output
     chain.account = configChain.account
     chain.subscanUrl = configChain.subscanUrl
     chain.chainspecQrUrl = configChain.chainspecQrUrl
