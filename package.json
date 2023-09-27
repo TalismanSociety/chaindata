@@ -11,6 +11,10 @@
     "url": "https://github.com/TalismanSociety/chaindata/issues"
   },
   "homepage": "https://talisman.community",
+  "packageManager": "^pnpm@8.8.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "validate-json": "prettier --write *.json",
     "validate-schema-chains": "ajv --spec=draft2020 -s schemas/json/chaindata.json -d chaindata.json -d testnets-chaindata.json",
