@@ -1,3 +1,7 @@
+// import { allNetworks } from '@polkadot/networks'
+import fs from 'fs'
+import path from 'path'
+
 import {
   prodChains,
   prodParasKusama,
@@ -16,13 +20,9 @@ import {
   testRelayRococo,
   testRelayWestend,
 } from '@polkadot/apps-config/endpoints/testing'
-
-// import { allNetworks } from '@polkadot/networks'
-import fs from 'fs'
 import kebabCase from 'lodash/kebabCase.js'
-import path from 'path'
-import prettier from 'prettier'
 import startCase from 'lodash/startCase.js'
+import prettier from 'prettier'
 
 // prioritise rpcs we love (good connections, good limits)
 // remove pjs rpcs we don't like (the ones our users have had regular issues connecting to)
@@ -53,8 +53,7 @@ const sortGoodFirst = (a, b) => {
   return 0
 }
 
-const filterUnreliable = (url) =>
-  !unreliableRpcProviders.some((regex) => regex.test(url))
+const filterUnreliable = (url) => !unreliableRpcProviders.some((regex) => regex.test(url))
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
@@ -99,8 +98,7 @@ const idConflictNums = {}
 const idConflictsTestnets = {}
 const idConflictNumsTestnets = {}
 const deriveId = (info) => customChainIds[info] || kebabCase(info).toLowerCase()
-const deriveTestnetId = (info) =>
-  customTestnetChainIds[info] || appendTestnet(kebabCase(info).toLowerCase())
+const deriveTestnetId = (info) => customTestnetChainIds[info] || appendTestnet(kebabCase(info).toLowerCase())
 const appendTestnet = (id) => (id.endsWith('-testnet') ? id : `${id}-testnet`)
 
 // fix up pjs chain names to match talisman
@@ -164,18 +162,10 @@ const trimName = (text, id) =>
     .trim()
 
 // import existing chaindata
-const chaindataMap = Object.fromEntries(
-  JSON.parse(fs.readFileSync('chaindata.json')).map((chain) => [
-    chain.id,
-    chain,
-  ])
-)
+const chaindataMap = Object.fromEntries(JSON.parse(fs.readFileSync('chaindata.json')).map((chain) => [chain.id, chain]))
 // import existing testnets chaindata
 const testnetsChaindataMap = Object.fromEntries(
-  JSON.parse(fs.readFileSync('testnets-chaindata.json')).map((chain) => [
-    chain.id,
-    chain,
-  ])
+  JSON.parse(fs.readFileSync('testnets-chaindata.json')).map((chain) => [chain.id, chain])
 )
 
 // keep track of updated chain ids
@@ -202,8 +192,7 @@ const addParaToMap =
     const chain = map[id] || { id }
 
     chain.name = trimName(para.text, id)
-    if (chain.name !== para.text)
-      console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
+    if (chain.name !== para.text) console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
     if (!chain.account) chain.account = '*25519'
     chain.rpcs = Object.values(para.providers)
       .filter((url) => url.startsWith('wss://'))
@@ -244,23 +233,17 @@ const addParaToMap =
   ...testChains,
 ].forEach(({ info }) => {
   let id = deriveTestnetId(info)
-  idConflictsTestnets[id] = idConflictsTestnets[id]
-    ? idConflictsTestnets[id] + 1
-    : 1
+  idConflictsTestnets[id] = idConflictsTestnets[id] ? idConflictsTestnets[id] + 1 : 1
 })
 
 // derive relay chains
 ;[prodRelayPolkadot, prodRelayKusama].forEach(addParaToMap(null, 'relay'))
 
 // derive polkadot parachains
-;[...prodParasPolkadot, ...prodParasPolkadotCommon].forEach(
-  addParaToMap({ id: 'polkadot' }, 'polkadot')
-)
+;[...prodParasPolkadot, ...prodParasPolkadotCommon].forEach(addParaToMap({ id: 'polkadot' }, 'polkadot'))
 
 // derive kusama parachains
-;[...prodParasKusama, ...prodParasKusamaCommon].forEach(
-  addParaToMap({ id: 'kusama' }, 'kusama')
-)
+;[...prodParasKusama, ...prodParasKusamaCommon].forEach(addParaToMap({ id: 'kusama' }, 'kusama'))
 
 // derive solo chains
 prodChains.forEach(addParaToMap(null, 'standalone'))
@@ -269,14 +252,10 @@ prodChains.forEach(addParaToMap(null, 'standalone'))
 ;[testRelayWestend, testRelayRococo].forEach(addParaToMap(null, 'relay', true))
 
 // derive westend parachains
-;[...testParasWestend, ...testParasWestendCommon].forEach(
-  addParaToMap({ id: 'westend-testnet' }, 'westend', true)
-)
+;[...testParasWestend, ...testParasWestendCommon].forEach(addParaToMap({ id: 'westend-testnet' }, 'westend', true))
 
 // derive rococo parachains
-;[...testParasRococo, ...testParasRococoCommon].forEach(
-  addParaToMap({ id: 'rococo-testnet' }, 'rococo', true)
-)
+;[...testParasRococo, ...testParasRococoCommon].forEach(addParaToMap({ id: 'rococo-testnet' }, 'rococo', true))
 
 // derive solo (testnets) chains
 testChains.forEach(addParaToMap(null, 'standalone', true))
@@ -302,9 +281,7 @@ const testnetsChaindata = Object.values(testnetsChaindataMap).sort((a, b) => {
 })
 
 // check for testnet <-> mainnet name conflicts and append ` Testnet` to conflicting testnet names
-const chaindataNames = Object.fromEntries(
-  chaindata.map(({ name }) => [name, true])
-)
+const chaindataNames = Object.fromEntries(chaindata.map(({ name }) => [name, true]))
 testnetsChaindata.forEach((chain) => {
   if (!chaindataNames[chain.name]) return
   chain.name = `${chain.name} Testnet`
@@ -329,16 +306,11 @@ chaindata.forEach((chain) => {
       // chain.name = `${chain.name} Kusama`
     }
 
-  if (!chain.relay)
-    if ([...polkadotNames].includes(chain.name))
-      chain.name = `${chain.name} Standalone`
+  if (!chain.relay) if ([...polkadotNames].includes(chain.name)) chain.name = `${chain.name} Standalone`
 })
 
 // write updated files
-fs.writeFileSync(
-  'chaindata.json',
-  prettier.format(JSON.stringify(chaindata, null, 2), { parser: 'json' })
-)
+fs.writeFileSync('chaindata.json', prettier.format(JSON.stringify(chaindata, null, 2), { parser: 'json' }))
 fs.writeFileSync(
   'testnets-chaindata.json',
   prettier.format(JSON.stringify(testnetsChaindata, null, 2), {
@@ -350,9 +322,7 @@ console.log('Import complete!')
 
 // check for missing chain logos
 ;[...chaindata, ...testnetsChaindata].forEach((chain) => {
-  const hasLogo = fs.existsSync(
-    path.join('assets', 'chains', `${chain.id}.svg`)
-  )
+  const hasLogo = fs.existsSync(path.join('assets', 'chains', `${chain.id}.svg`))
   if (hasLogo) return
 
   console.log(`Missing logo for chain ${chain.id}`)
@@ -362,10 +332,8 @@ console.log('Import complete!')
 const relayChainsByParaId = {}
 ;[...chaindata, ...testnetsChaindata].forEach((chain) => {
   if (typeof chain.relay?.id !== 'string') return
-  relayChainsByParaId[chain.relay?.id] =
-    relayChainsByParaId[chain.relay?.id] || {}
-  relayChainsByParaId[chain.relay?.id][chain.paraId] =
-    relayChainsByParaId[chain.relay?.id][chain.paraId] || []
+  relayChainsByParaId[chain.relay?.id] = relayChainsByParaId[chain.relay?.id] || {}
+  relayChainsByParaId[chain.relay?.id][chain.paraId] = relayChainsByParaId[chain.relay?.id][chain.paraId] || []
   relayChainsByParaId[chain.relay?.id][chain.paraId].push(chain.id)
 })
 
@@ -373,11 +341,7 @@ Object.entries(relayChainsByParaId).forEach(([relayId, chains]) => {
   Object.entries(chains)
     .filter(([, chainIds]) => chainIds.length > 1)
     .forEach((conflict) => {
-      console.log(
-        `Conflicting ${relayId} paraId ${conflict[0]}: ${conflict[1].join(
-          ', '
-        )}`
-      )
+      console.log(`Conflicting ${relayId} paraId ${conflict[0]}: ${conflict[1].join(', ')}`)
     })
 })
 
@@ -394,7 +358,5 @@ const chainIds = Object.fromEntries([
 ])
 updatedChainIds.forEach((id) => delete chainIds[id])
 Object.keys(chainIds).forEach((id) =>
-  console.log(
-    `Note: chain ${id} exists in chaindata but not in @polkadot/apps-config`
-  )
+  console.log(`Note: chain ${id} exists in chaindata but not in @polkadot/apps-config`)
 )

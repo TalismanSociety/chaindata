@@ -1,8 +1,11 @@
-import { exists, mkdir, rm } from 'node:fs/promises'
+import { PathLike } from 'node:fs'
+import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
-import { DIR_OUTPUT } from './constants'
-import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
+
 import { WsProvider } from '@polkadot/api'
+import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
+
+import { DIR_OUTPUT } from './constants'
 
 // Can be used for nicer vscode syntax highlighting & auto formatting
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#raw_strings
@@ -15,19 +18,24 @@ export const gql = (strings: readonly string[], ...substitutions: any[]) =>
 
 export const cleanupOutputDir = async () => await rm(DIR_OUTPUT, { recursive: true, force: true })
 
+export const exists = async (path: PathLike) =>
+  await access(path)
+    .then(() => true)
+    .catch(() => false)
+
 // keep track of written files, so we can provide links from an index page
 const fileList: string[] = []
 export const getFileList = () => fileList.slice() // return a copy
 
 // write file (first ensures file directory exists, and also adds file path to `fileList`)
-export const writeFile = async (destination: string, content: string) => {
+export const writeChaindataFile = async (destination: string, content: string) => {
   const fullDestination = join(DIR_OUTPUT, destination)
 
   const directory = dirname(fullDestination)
   await mkdirRecursive(directory)
 
   fileList.push(destination)
-  await Bun.write(fullDestination, content)
+  await writeFile(fullDestination, content)
 }
 
 // TODO: Replace `mkdirRecursive` with `mkdir(path, { recursive: true })` after this is fixed:

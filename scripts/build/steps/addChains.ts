@@ -1,4 +1,5 @@
 import { Chain, githubChainLogoUrl } from '@talismn/chaindata-provider'
+
 import { sharedData } from './_sharedData'
 
 export const addChains = async () => {

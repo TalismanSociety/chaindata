@@ -53,11 +53,11 @@ To make a contribution, please fork this repo and make your changes in your fork
 
 ### To build the github pages endpoint locally:
 
-1. Install [bun](bun.sh)
+1. Install [pnpm](pnpm.io)
 1. Clone the repo via  
    `git clone git@github.com:TalismanSociety/chaindata.git`
 1. Install the deps via  
-   `bun install`
+   `pnpm install`
 1. Copy `.env.sample` to `.env` and fill in the variables
 1. Run the build via  
-   `bun run build`
+   `pnpm build`

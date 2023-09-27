@@ -1,4 +1,4 @@
-import { getFileList, html, writeFile } from '../util'
+import { getFileList, html, writeChaindataFile } from '../util'
 import { sharedData } from './_sharedData'
 
 export const writeChaindataIndex = async () => {
@@ -6,13 +6,13 @@ export const writeChaindataIndex = async () => {
     if (typeof chain.id !== 'string') continue
     if (!Array.isArray(chain.rpcs) || chain.rpcs.length < 1) continue
 
-    await writeFile(`chains/byId/${chain.id}.json`, JSON.stringify(chain, null, 2))
+    await writeChaindataFile(`chains/byId/${chain.id}.json`, JSON.stringify(chain, null, 2))
 
     if (typeof chain.genesisHash !== 'string') continue
-    await writeFile(`chains/byGenesisHash/${chain.genesisHash}.json`, JSON.stringify(chain, null, 2))
+    await writeChaindataFile(`chains/byGenesisHash/${chain.genesisHash}.json`, JSON.stringify(chain, null, 2))
   }
 
-  await writeFile(
+  await writeChaindataFile(
     'index.html',
     html`<html>
       <head>

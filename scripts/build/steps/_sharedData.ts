@@ -1,4 +1,5 @@
 import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
+
 import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../types'
 
 export const sharedData: {

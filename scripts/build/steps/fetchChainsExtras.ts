@@ -1,6 +1,7 @@
 import { Metadata, TypeRegistry } from '@polkadot/types'
 import { PromisePool } from '@supercharge/promise-pool'
 import { Chain, ChainId } from '@talismn/chaindata-provider'
+
 import { PROCESS_CONCURRENCY, RPC_REQUEST_TIMEOUT } from '../constants'
 import { sendWithTimeout } from '../util'
 import { sharedData } from './_sharedData'

@@ -12,21 +12,23 @@
   },
   "homepage": "https://talisman.community",
   "scripts": {
-    "validate-json": "bun run prettier --write *.json",
-    "validate-schema-chains": "bun run ajv --spec=draft2020 -s schemas/json/chaindata.json -d chaindata.json -d testnets-chaindata.json",
-    "validate-schema-evm-networks": "bun run ajv --spec=draft2020 -s schemas/json/evm-networks.json -d evm-networks.json",
-    "validate-schema-tokens": "bun run ajv --spec=draft2020 -s schemas/json/tokens.json -d tokens.json",
-    "validate-schema-tokens-buyable": "bun run ajv --spec=draft2020 -s schemas/json/ids.json -d tokens-buyable.json",
-    "validate-schema": "bun run validate-schema-chains && bun run validate-schema-evm-networks && bun run validate-schema-tokens && bun run validate-schema-tokens-buyable",
-    "validate": "bun run validate-json && bun run validate-schema",
-    "update-pjs": "bun update",
-    "import-pjs-config": "bun run scripts/import-pjs-config.js",
-    "update": "bun run update-pjs && bun run import-pjs-config",
-    "build": "bun run scripts/build.ts",
+    "validate-json": "prettier --write *.json",
+    "validate-schema-chains": "ajv --spec=draft2020 -s schemas/json/chaindata.json -d chaindata.json -d testnets-chaindata.json",
+    "validate-schema-evm-networks": "ajv --spec=draft2020 -s schemas/json/evm-networks.json -d evm-networks.json",
+    "validate-schema-tokens": "ajv --spec=draft2020 -s schemas/json/tokens.json -d tokens.json",
+    "validate-schema-tokens-buyable": "ajv --spec=draft2020 -s schemas/json/ids.json -d tokens-buyable.json",
+    "validate-schema": "pnpm run validate-schema-chains && pnpm run validate-schema-evm-networks && pnpm run validate-schema-tokens && pnpm run validate-schema-tokens-buyable",
+    "validate": "pnpm run validate-json && pnpm run validate-schema",
+    "update-pjs": "pnpm update -L '@polkadot/*'",
+    "import-pjs-config": "node scripts/import-pjs-config.js",
+    "update": "pnpm run update-pjs && pnpm run import-pjs-config",
+    "typecheck": "tsc --noEmit",
+    "build": "tsx scripts/build.ts",
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@polkadot/api": "*",
+    "@polkadot/api": "^10.9.1",
+    "@polkadot/types": "^10.9.1",
     "@supercharge/promise-pool": "^3.1.0",
     "@talismn/chaindata-provider": "0.0.0-pr1088-20230922075915",
     "axios": "^1.5.0",
@@ -37,21 +39,37 @@
     "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
-    "@polkadot/apps-config": "*",
-    "@polkadot/networks": "*",
+    "@polkadot/apps-config": "^0.132.1",
+    "@polkadot/networks": "^12.5.1",
     "@types/lodash": "^4.14.191",
-    "@types/sharp": "^0.32.0",
+    "@types/node": "^20.7.0",
     "@types/tinycolor2": "^1.4.3",
     "ajv-cli": "^5.0.0",
-    "bun-types": "latest",
-    "prettier": "^2.8.8"
+    "import-sort-style-module": "^6.0.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-import-sort": "^0.0.7",
+    "tsx": "^3.13.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "importSort": {
+    ".ts": {
+      "style": "module"
+    },
+    ".tsx": {
+      "style": "module"
+    },
+    ".js": {
+      "style": "module"
+    }
+  },
   "prettier": {
     "printWidth": 120,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "plugins": [
+      "prettier-plugin-import-sort"
+    ]
   }
 }
