@@ -41,7 +41,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version-file: 'package.json'
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
