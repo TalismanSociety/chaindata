@@ -34,32 +34,30 @@ ${getFileList()
 }
 
 const writeChains = async () => {
-  await writeChaindataFile(`chains/all.json`, JSON.stringify(sharedData.chains, null, 2))
+  const allChains = sharedData.chains.filter((chain) => Array.isArray(chain.rpcs) && chain.rpcs.length > 0)
+
+  await writeChaindataFile(`chains/all.json`, JSON.stringify(allChains, null, 2))
   await writeChaindataFile(
     `chains/summary.json`,
     JSON.stringify(
-      sharedData.chains.map(
-        ({ id, isTestnet, sortIndex, genesisHash, name, themeColor, logo, specName, specVersion }) => ({
-          id,
-          isTestnet,
-          sortIndex,
-          genesisHash,
-          name,
-          themeColor,
-          logo,
-          specName,
-          specVersion,
-        })
-      ),
+      allChains.map(({ id, isTestnet, sortIndex, genesisHash, name, themeColor, logo, specName, specVersion }) => ({
+        id,
+        isTestnet,
+        sortIndex,
+        genesisHash,
+        name,
+        themeColor,
+        logo,
+        specName,
+        specVersion,
+      })),
       null,
       2
     )
   )
 
-  for (const chain of sharedData.chains) {
+  for (const chain of allChains) {
     if (typeof chain.id !== 'string') continue
-    if (!Array.isArray(chain.rpcs) || chain.rpcs.length < 1) continue
-
     await writeChaindataFile(`chains/byId/${chain.id}.json`, JSON.stringify(chain, null, 2))
 
     if (typeof chain.genesisHash !== 'string') continue
@@ -68,11 +66,15 @@ const writeChains = async () => {
 }
 
 const writeEvmNetworks = async () => {
-  await writeChaindataFile(`evmNetworks/all.json`, JSON.stringify(sharedData.evmNetworks, null, 2))
+  const allEvmNetworks = sharedData.evmNetworks.filter(
+    (evmNetwork) => Array.isArray(evmNetwork.rpcs) && evmNetwork.rpcs.length > 0
+  )
+
+  await writeChaindataFile(`evmNetworks/all.json`, JSON.stringify(allEvmNetworks, null, 2))
   await writeChaindataFile(
     `evmNetworks/summary.json`,
     JSON.stringify(
-      sharedData.evmNetworks.map(({ id, isTestnet, sortIndex, name, themeColor, logo }) => ({
+      allEvmNetworks.map(({ id, isTestnet, sortIndex, name, themeColor, logo }) => ({
         id,
         isTestnet,
         sortIndex,
@@ -85,10 +87,8 @@ const writeEvmNetworks = async () => {
     )
   )
 
-  for (const evmNetwork of sharedData.evmNetworks) {
+  for (const evmNetwork of allEvmNetworks) {
     if (typeof evmNetwork.id !== 'string') continue
-    if (!Array.isArray(evmNetwork.rpcs) || evmNetwork.rpcs.length < 1) continue
-
     await writeChaindataFile(`evmNetworks/byId/${evmNetwork.id}.json`, JSON.stringify(evmNetwork, null, 2))
   }
 }
