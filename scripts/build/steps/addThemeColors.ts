@@ -1,67 +1,57 @@
-import { Logger } from '@subsquid/logger'
-import { BlockHandlerContext } from '@subsquid/substrate-processor'
+import { PromisePool } from '@supercharge/promise-pool'
+import { githubChainLogoUrl, githubTokenLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
 import axios from 'axios'
 import { extractColors } from 'extract-colors'
 import sharp from 'sharp'
 import tinycolor from 'tinycolor2'
-import { EntityManager } from 'typeorm'
 
-import { Chain, EvmNetwork, Token } from '../model'
-import { githubChainLogoUrl, githubTokenLogoUrl, githubUnknownTokenLogoUrl } from './_constants'
-import { processorSharedData } from './_sharedData'
+import { PROCESS_CONCURRENCY } from '../constants'
+import { sharedData } from './_sharedData'
 
-export const addThemeColors = async ({ store, log }: BlockHandlerContext<EntityManager>) => {
-  const { userDefinedThemeColors } = processorSharedData
+export const addThemeColors = async () => {
+  const { chains, evmNetworks, userDefinedThemeColors } = sharedData
 
-  const chains = await store.find(Chain, {
-    loadRelationIds: { disableMixedMap: true },
-  })
-  const evmNetworks = await store.find(EvmNetwork, {
-    loadRelationIds: { disableMixedMap: true },
-  })
-  const tokens = await store.find(Token, {
-    loadRelationIds: { disableMixedMap: true },
-  })
+  await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
+    .for(chains)
+    .process(async (chain, index) => {
+      chain.themeColor = chain.themeColor ?? '#000000'
 
-  for (const chain of chains) {
-    let themeColor = chain.themeColor ?? '#000000'
-    let userDefined = userDefinedThemeColors.chains.get(chain.id)
+      const userDefined = userDefinedThemeColors.chains.get(chain.id)
+      if (typeof userDefined === 'string') {
+        chain.themeColor = userDefined
+        return
+      }
 
-    if (typeof userDefined === 'string') themeColor = userDefined
-    else if (typeof chain.logo === 'string')
-      themeColor = (await extractDominantLogoColor(log, 'chain', chain.id, chain.logo)) ?? themeColor
+      if (typeof chain.logo === 'string') {
+        console.log(`Extracting theme color from logo for chain ${index + 1} of ${chains.length} (${chain.id})`)
+        chain.themeColor = (await extractDominantLogoColor('chain', chain.id, chain.logo)) ?? chain.themeColor
+        return
+      }
+    })
 
-    await store.update(Chain, { id: chain.id }, { themeColor })
-  }
+  await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
+    .for(evmNetworks)
+    .process(async (evmNetwork, index) => {
+      evmNetwork.themeColor = evmNetwork.themeColor ?? '#000000'
 
-  for (const evmNetwork of evmNetworks) {
-    let themeColor = evmNetwork.themeColor ?? '#000000'
-    let userDefined = userDefinedThemeColors.evmNetworks.get(evmNetwork.id)
+      const userDefined = userDefinedThemeColors.evmNetworks.get(evmNetwork.id)
+      if (typeof userDefined === 'string') {
+        evmNetwork.themeColor = userDefined
+        return
+      }
 
-    if (typeof userDefined === 'string') themeColor = userDefined
-    else if (typeof evmNetwork.logo === 'string')
-      themeColor = (await extractDominantLogoColor(log, 'evmNetwork', evmNetwork.id, evmNetwork.logo)) ?? themeColor
-
-    await store.update(EvmNetwork, { id: evmNetwork.id }, { themeColor })
-  }
-
-  for (const token of tokens) {
-    const data = token.data as { logo?: string; themeColor?: string }
-
-    let themeColor = data.themeColor ?? '#000000'
-    let userDefined = userDefinedThemeColors.tokens.get(token.id)
-
-    if (typeof userDefined === 'string') themeColor = userDefined
-    else if (typeof data.logo === 'string')
-      themeColor = (await extractDominantLogoColor(log, 'token', token.id, data.logo)) ?? themeColor
-
-    data.themeColor = themeColor
-
-    await store.update(Token, { id: token.id }, { data })
-  }
+      if (typeof evmNetwork.logo === 'string') {
+        console.log(
+          `Extracting theme color from logo for evmNetwork ${index + 1} of ${evmNetworks.length} (${evmNetwork.name})`
+        )
+        evmNetwork.themeColor =
+          (await extractDominantLogoColor('evmNetwork', evmNetwork.id, evmNetwork.logo)) ?? evmNetwork.themeColor
+        return
+      }
+    })
 }
 
-const extractDominantLogoColor = async (log: Logger, entityType: string, entityId: string, logoUrl: string) => {
+const extractDominantLogoColor = async (entityType: string, entityId: string, logoUrl: string) => {
   if (logoUrl === githubUnknownTokenLogoUrl) return '#505050'
   if (
     logoUrl === githubChainLogoUrl('karura') ||
@@ -116,6 +106,6 @@ const extractDominantLogoColor = async (log: Logger, entityType: string, entityI
     }
   } catch (cause) {
     const error = new Error(`Failed to extract themeColor from ${entityType} ${entityId} logo (${logoUrl})`)
-    log.warn(error, String(cause))
+    console.warn(error, String(cause))
   }
 }

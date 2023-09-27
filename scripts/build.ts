@@ -25,7 +25,7 @@ const steps: Array<() => Promise<void>> = [
 
   applyNativeTokenOverrides,
   setInvalidChainAndEvmNetworkLogosToUnknownLogo,
-  // addThemeColors,
+  addThemeColors,
 
   writeChaindataIndex,
 ]
