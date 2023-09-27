@@ -2,15 +2,7 @@ import { getFileList, html, writeChaindataFile } from '../util'
 import { sharedData } from './_sharedData'
 
 export const writeChaindataIndex = async () => {
-  for (const chain of sharedData.chains) {
-    if (typeof chain.id !== 'string') continue
-    if (!Array.isArray(chain.rpcs) || chain.rpcs.length < 1) continue
-
-    await writeChaindataFile(`chains/byId/${chain.id}.json`, JSON.stringify(chain, null, 2))
-
-    if (typeof chain.genesisHash !== 'string') continue
-    await writeChaindataFile(`chains/byGenesisHash/${chain.genesisHash}.json`, JSON.stringify(chain, null, 2))
-  }
+  await writeChains()
 
   await writeChaindataFile(
     'index.html',
@@ -36,4 +28,38 @@ ${getFileList()
       </body>
     </html>`
   )
+}
+
+const writeChains = async () => {
+  await writeChaindataFile(`chains/all.json`, JSON.stringify(sharedData.chains, null, 2))
+  await writeChaindataFile(
+    `chains/summary.json`,
+    JSON.stringify(
+      sharedData.chains.map(
+        ({ id, isTestnet, sortIndex, genesisHash, name, themeColor, logo, specName, specVersion }) => ({
+          id,
+          isTestnet,
+          sortIndex,
+          genesisHash,
+          name,
+          themeColor,
+          logo,
+          specName,
+          specVersion,
+        })
+      ),
+      null,
+      2
+    )
+  )
+
+  for (const chain of sharedData.chains) {
+    if (typeof chain.id !== 'string') continue
+    if (!Array.isArray(chain.rpcs) || chain.rpcs.length < 1) continue
+
+    await writeChaindataFile(`chains/byId/${chain.id}.json`, JSON.stringify(chain, null, 2))
+
+    if (typeof chain.genesisHash !== 'string') continue
+    await writeChaindataFile(`chains/byGenesisHash/${chain.genesisHash}.json`, JSON.stringify(chain, null, 2))
+  }
 }
