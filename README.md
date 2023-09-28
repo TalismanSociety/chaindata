@@ -20,10 +20,11 @@ The files in this repo, `chaindata.json`, `testnets-chaindata.json` and `evm-net
 
 The published files can be browsed at this URL: https://talismansociety.github.io/chaindata
 
-As an example, you could make this request to get the names, [genesisHashes](## 'the hash of the first block on the chain') and [address type prefixes](https://wiki.polkadot.network/docs/learn-account-advanced#address-format) for all chains:
+As an example, you could use this request to get a summary of all chains including the the names, logos, [genesisHashes](## 'the hash of the first block on the chain') and [address type prefixes](https://wiki.polkadot.network/docs/learn-account-advanced#address-format):
 
 ```ts
-const chains = await(await fetch(`https://talismansociety.github.io/chaindata/chains/summary.json`)).json()
+const chainsSummaryUrl = "https://talismansociety.github.io/chaindata/chains/summary.json"
+const summary = await fetch(chainsSummaryUrl).then(result => result.json())
 ```
 
 For an example of a more advanced use-case, you can check out the [Talisman wallet](https://github.com/TalismanSociety/talisman) source code.  
