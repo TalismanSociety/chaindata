@@ -23,7 +23,7 @@ The published files can be browsed at this URL: https://talismansociety.github.i
 As an example, you could make this request to get the names, [genesisHashes](## 'the hash of the first block on the chain') and [address type prefixes](https://wiki.polkadot.network/docs/learn-account-advanced#address-format) for all chains:
 
 ```ts
-const chains = await(await fetch(`https://talismansociety.github.io/chaindata/chains.json`)).json()
+const chains = await(await fetch(`https://talismansociety.github.io/chaindata/chains/summary.json`)).json()
 ```
 
 For an example of a more advanced use-case, you can check out the [Talisman wallet](https://github.com/TalismanSociety/talisman) source code.  
