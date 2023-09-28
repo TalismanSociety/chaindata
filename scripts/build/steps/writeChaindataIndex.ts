@@ -34,7 +34,9 @@ ${getFileList()
 }
 
 const writeChains = async () => {
-  const allChains = sharedData.chains.filter((chain) => Array.isArray(chain.rpcs) && chain.rpcs.length > 0)
+  const allChains = sharedData.chains
+    .filter((chain) => Array.isArray(chain.rpcs) && chain.rpcs.length > 0)
+    .sort((a, b) => (a.sortIndex ?? Number.MAX_SAFE_INTEGER) - (b.sortIndex ?? Number.MAX_SAFE_INTEGER))
 
   await writeChaindataFile(`chains/all.json`, JSON.stringify(allChains, null, 2))
   await writeChaindataFile(
@@ -66,9 +68,9 @@ const writeChains = async () => {
 }
 
 const writeEvmNetworks = async () => {
-  const allEvmNetworks = sharedData.evmNetworks.filter(
-    (evmNetwork) => Array.isArray(evmNetwork.rpcs) && evmNetwork.rpcs.length > 0
-  )
+  const allEvmNetworks = sharedData.evmNetworks
+    .filter((evmNetwork) => Array.isArray(evmNetwork.rpcs) && evmNetwork.rpcs.length > 0)
+    .sort((a, b) => (a.sortIndex ?? Number.MAX_SAFE_INTEGER) - (b.sortIndex ?? Number.MAX_SAFE_INTEGER))
 
   await writeChaindataFile(`evmNetworks/all.json`, JSON.stringify(allEvmNetworks, null, 2))
   await writeChaindataFile(
