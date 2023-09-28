@@ -1,5 +1,5 @@
 import { PromisePool } from '@supercharge/promise-pool'
-import { EvmNetwork as UpstreamEvmNetwork, githubChainLogoUrl } from '@talismn/chaindata-provider'
+import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork, githubChainLogoUrl } from '@talismn/chaindata-provider'
 import axios from 'axios'
 
 import { PROCESS_CONCURRENCY } from '../constants'
@@ -7,7 +7,9 @@ import { ConfigEvmNetwork } from '../types'
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`
-type EvmNetwork = UpstreamEvmNetwork & {
+type EvmNetwork = Omit<UpstreamEvmNetwork, 'rpcs' | 'isHealthy'> & {
+  rpcs: Array<Pick<EthereumRpc, 'url'>> | null
+
   balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
   balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
 }
@@ -67,8 +69,7 @@ export const addEvmNetworks = async () => {
           nativeToken: null,
           tokens: [],
           explorerUrl: configEvmNetwork.explorerUrl ?? null,
-          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true })),
-          isHealthy: true,
+          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url })),
           substrateChain: null,
 
           balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
@@ -103,8 +104,7 @@ export const addEvmNetworks = async () => {
           nativeToken: null,
           tokens: [],
           explorerUrl: configEvmNetwork.explorerUrl ?? null,
-          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true })),
-          isHealthy: true,
+          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url })),
           substrateChain: { id: substrateChain.id },
 
           balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
@@ -209,5 +209,5 @@ export const addEvmNetworks = async () => {
       })
   ).results.filter(<T>(evmNetwork: T): evmNetwork is NonNullable<T> => !!evmNetwork)
 
-  sharedData.evmNetworks.push(...allEvmNetworks)
+  sharedData.evmNetworks.push(...(allEvmNetworks as unknown[] as UpstreamEvmNetwork[]))
 }

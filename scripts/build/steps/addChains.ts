@@ -1,9 +1,11 @@
-import { Chain as UpstreamChain, githubChainLogoUrl } from '@talismn/chaindata-provider'
+import { SubstrateRpc, Chain as UpstreamChain, githubChainLogoUrl } from '@talismn/chaindata-provider'
 
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`
-type Chain = Omit<UpstreamChain, 'balanceMetadata'> & {
+type Chain = Omit<UpstreamChain, 'rpcs' | 'isHealthy' | 'balanceMetadata'> & {
+  rpcs: Array<Pick<SubstrateRpc, 'url'>> | null
+
   balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
   balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
 }
@@ -41,8 +43,7 @@ export const addChains = async () => {
       chainspecQrUrl: configChain.chainspecQrUrl ?? null,
       latestMetadataQrUrl: configChain.latestMetadataQrUrl ?? null,
       isUnknownFeeToken: configChain.isUnknownFeeToken || false,
-      rpcs: (configChain.rpcs || []).map((url) => ({ url, isHealthy: true })),
-      isHealthy: true,
+      rpcs: (configChain.rpcs || []).map((url) => ({ url })),
       evmNetworks: [],
 
       parathreads: null,
