@@ -88,7 +88,7 @@ const attemptToFetchChainExtras = async (
     chain.chainName = chainName
     chain.implName = implName
     chain.specName = specName
-    chain.specVersion = specVersion
+    chain.specVersion = String(specVersion)
     // chain.nativeToken = await getOrCreate(store, Token, nativeToken.id)
 
     // chain was successfully updated!
