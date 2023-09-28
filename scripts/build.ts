@@ -5,6 +5,7 @@ import { addEvmNetworks } from './build/steps/addEvmNetworks'
 import { addThemeColors } from './build/steps/addThemeColors'
 import { applyNativeTokenOverrides } from './build/steps/applyNativeTokenOverrides'
 import { fetchChainsExtras } from './build/steps/fetchChainsExtras'
+import { fixChainEvmNetworkRelations } from './build/steps/fixChainsEvmNetworkRelations'
 import { loadConfig } from './build/steps/loadConfig'
 import { setInvalidChainAndEvmNetworkLogosToUnknownLogo } from './build/steps/setInvalidChainAndEvmNetworkLogosToUnknownLogo'
 import { updateSortIndexes } from './build/steps/updateSortIndexes'
@@ -20,6 +21,7 @@ const steps: Array<() => Promise<void>> = [
   fetchChainsExtras,
 
   addEvmNetworks,
+  fixChainEvmNetworkRelations,
 
   updateSortIndexes,
 

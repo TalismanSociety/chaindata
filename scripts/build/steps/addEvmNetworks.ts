@@ -1,10 +1,16 @@
 import { PromisePool } from '@supercharge/promise-pool'
-import { EvmNetwork, githubChainLogoUrl } from '@talismn/chaindata-provider'
+import { EvmNetwork as UpstreamEvmNetwork, githubChainLogoUrl } from '@talismn/chaindata-provider'
 import axios from 'axios'
 
 import { PROCESS_CONCURRENCY } from '../constants'
 import { ConfigEvmNetwork } from '../types'
 import { sharedData } from './_sharedData'
+
+// TODO: Switch to the updated type in `@talismn/chaindata`
+type EvmNetwork = UpstreamEvmNetwork & {
+  balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
+  balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
+}
 
 export const addEvmNetworks = async () => {
   const isStandaloneEvmNetwork = (evmNetwork: EvmNetwork | ConfigEvmNetwork) =>
@@ -16,11 +22,6 @@ export const addEvmNetworks = async () => {
     'substrateChain' in evmNetwork
       ? typeof evmNetwork.substrateChain?.id === 'string'
       : typeof evmNetwork.substrateChainId !== 'undefined'
-
-  const isInvalidEvmNetwork = (evmNetwork: EvmNetwork | ConfigEvmNetwork) =>
-    !isStandaloneEvmNetwork(evmNetwork) && !isSubstrateEvmNetwork(evmNetwork)
-
-  const { evmNetworks, evmNetworksConfig } = sharedData
 
   // we don't know most evm network ids until the second step where we look it up on-chain
   //
@@ -50,29 +51,32 @@ export const addEvmNetworks = async () => {
 
   const standaloneEvmNetworks = (
     await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
-      .for(evmNetworksConfig)
+      .for(sharedData.evmNetworksConfig)
       .process(async (configEvmNetwork, configIndex) => {
         if (!isStandaloneEvmNetwork(configEvmNetwork)) return undefined
         standaloneIndex++
         configsByIndex.standalone.set(standaloneIndex, configIndex)
 
-        const evmNetwork: Partial<EvmNetwork> = { name: configEvmNetwork.name }
+        const evmNetwork: Omit<EvmNetwork, 'id'> & { id: string | null } = {
+          id: null,
+          isTestnet: configEvmNetwork.isTestnet || false,
+          sortIndex: null,
+          name: configEvmNetwork.name ?? null,
+          themeColor: null,
+          logo: null, // the logo is set later, after we determine the chain id
+          nativeToken: null,
+          tokens: [],
+          explorerUrl: configEvmNetwork.explorerUrl ?? null,
+          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true })),
+          isHealthy: true,
+          substrateChain: null,
 
-        evmNetwork.isTestnet = configEvmNetwork.isTestnet || false
-        evmNetwork.name = configEvmNetwork.name
-        evmNetwork.logo = evmNetwork.id ? githubChainLogoUrl(evmNetwork.id) : undefined // TODO: Copy chain & token assets into GH Pages output
-        evmNetwork.explorerUrl = configEvmNetwork.explorerUrl
-        evmNetwork.rpcs = (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true }))
-
-        if (!(evmNetwork as any).balancesMetadata)
-          (evmNetwork as any).balancesMetadata = []
-
-          //
-        ;(evmNetwork as any).balancesConfig = Object.entries(configEvmNetwork.balancesConfig ?? {}).map(
-          ([moduleType, moduleConfig]) => ({ moduleType, moduleConfig })
-        )
-
-        evmNetwork.substrateChain = null
+          balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
+            moduleType,
+            moduleConfig,
+          })),
+          balancesMetadata: [],
+        }
 
         return evmNetwork
       })
@@ -80,34 +84,35 @@ export const addEvmNetworks = async () => {
 
   const substrateEvmNetworks = (
     await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
-      .for(evmNetworksConfig)
+      .for(sharedData.evmNetworksConfig)
       .process(async (configEvmNetwork, configIndex) => {
         if (!isSubstrateEvmNetwork(configEvmNetwork)) return
         substrateIndex++
         configsByIndex.substrate.set(substrateIndex, configIndex)
 
-        const evmNetwork: Partial<EvmNetwork> = { substrateChain: { id: configEvmNetwork.substrateChainId as string } }
-
-        evmNetwork.isTestnet = configEvmNetwork.isTestnet || false
-        evmNetwork.name = configEvmNetwork.name
-        evmNetwork.logo = evmNetwork.id ? githubChainLogoUrl(evmNetwork.id) : undefined // TODO: Copy chain & token assets into GH Pages output
-        evmNetwork.explorerUrl = configEvmNetwork.explorerUrl
-        evmNetwork.rpcs = (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true }))
-
-        if (!(evmNetwork as any).balancesMetadata)
-          (evmNetwork as any).balancesMetadata = []
-
-          //
-        ;(evmNetwork as any).balancesConfig = Object.entries(configEvmNetwork.balancesConfig ?? {}).map(
-          ([moduleType, moduleConfig]) => ({ moduleType, moduleConfig })
-        )
-
         const substrateChain = sharedData.chains.find((chain) => chain.id === configEvmNetwork.substrateChainId)
         if (!substrateChain) return
-        evmNetwork.substrateChain = { id: substrateChain.id }
-        evmNetwork.isTestnet = substrateChain.isTestnet
-        evmNetwork.name = configEvmNetwork.name || substrateChain.name
-        evmNetwork.logo = substrateChain.logo // TODO: Copy chain & token assets into GH Pages output
+
+        const evmNetwork: Omit<EvmNetwork, 'id'> & { id: string | null } = {
+          id: null,
+          isTestnet: substrateChain.isTestnet || configEvmNetwork.isTestnet || false,
+          sortIndex: null,
+          name: configEvmNetwork.name ?? substrateChain.name ?? null,
+          themeColor: null,
+          logo: substrateChain.logo ?? null, // TODO: Copy chain & token assets into GH Pages output
+          nativeToken: null,
+          tokens: [],
+          explorerUrl: configEvmNetwork.explorerUrl ?? null,
+          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url, isHealthy: true })),
+          isHealthy: true,
+          substrateChain: { id: substrateChain.id },
+
+          balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
+            moduleType,
+            moduleConfig,
+          })),
+          balancesMetadata: [],
+        }
 
         return evmNetwork
       })
@@ -195,7 +200,7 @@ export const addEvmNetworks = async () => {
         // used to override the auto-calculated theme color
         const configEvmNetworkIndex = configsByIndex.all.get(allIndex)
         const configEvmNetwork =
-          typeof configEvmNetworkIndex === 'number' ? evmNetworksConfig[configEvmNetworkIndex] : undefined
+          typeof configEvmNetworkIndex === 'number' ? sharedData.evmNetworksConfig[configEvmNetworkIndex] : undefined
         if (typeof configEvmNetwork?.themeColor === 'string')
           sharedData.userDefinedThemeColors.evmNetworks.set(evmNetwork.id, configEvmNetwork.themeColor)
 
