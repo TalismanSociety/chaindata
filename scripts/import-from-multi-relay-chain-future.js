@@ -24,11 +24,7 @@ const ss58IdOverrides = {
 
   const chaindata = JSON.parse(fs.readFileSync('chaindata.json'))
   const ss58Registry = JSON.parse(
-    (
-      await exec(
-        'curl -sL https://raw.githubusercontent.com/paritytech/ss58-registry/main/ss58-registry.json'
-      )
-    ).stdout
+    (await exec('curl -sL https://raw.githubusercontent.com/paritytech/ss58-registry/main/ss58-registry.json')).stdout
   ).registry
 
   //
@@ -42,8 +38,7 @@ const ss58IdOverrides = {
     const relayOldId = oldChainId.split('-')[0]
     const paraId = parseInt(oldChainId.split('-')[1])
 
-    const relayId =
-      relayOldId === '0' ? 'polkadot' : relayOldId === '2' ? 'kusama' : null
+    const relayId = relayOldId === '0' ? 'polkadot' : relayOldId === '2' ? 'kusama' : null
 
     const oldChain = JSON.parse(
       fs.readFileSync(
@@ -54,8 +49,7 @@ const ss58IdOverrides = {
     )
 
     if (oldChain.name === undefined) oldChain.name = null
-    if (oldChain.nativeToken === undefined || oldChain.nativeToken === '')
-      oldChain.nativeToken = null
+    if (oldChain.nativeToken === undefined || oldChain.nativeToken === '') oldChain.nativeToken = null
     if (oldChain.tokenDecimals === undefined) oldChain.tokenDecimals = null
 
     const id = oldChain.name
@@ -111,31 +105,23 @@ const ss58IdOverrides = {
     }
 
     if (oldChain.name && chain.name !== oldChain.name) {
-      console.log(
-        `Updating chain name for ${id} from ${chain.name} to ${oldChain.name}`
-      )
+      console.log(`Updating chain name for ${id} from ${chain.name} to ${oldChain.name}`)
       chain.name = oldChain.name
     }
 
     if (oldChain.nativeToken && chain.token !== oldChain.nativeToken) {
-      console.log(
-        `Updating chain token for ${id} from ${chain.token} to ${oldChain.nativeToken}`
-      )
+      console.log(`Updating chain token for ${id} from ${chain.token} to ${oldChain.nativeToken}`)
       chain.token = oldChain.nativeToken
     }
 
     if (oldChain.tokenDecimals && chain.decimals !== oldChain.tokenDecimals) {
-      console.log(
-        `Updating chain decimals for ${id} from ${chain.decimals} to ${oldChain.tokenDecimals}`
-      )
+      console.log(`Updating chain decimals for ${id} from ${chain.decimals} to ${oldChain.tokenDecimals}`)
       chain.decimals = oldChain.tokenDecimals
     }
 
     if (JSON.stringify(chain.rpcs) !== JSON.stringify(oldChain.rpcs)) {
       console.log(
-        `Updating chain rpcs for ${id} from ${JSON.stringify(
-          chain.rpcs
-        )} to ${JSON.stringify(oldChain.rpcs)}`
+        `Updating chain rpcs for ${id} from ${JSON.stringify(chain.rpcs)} to ${JSON.stringify(oldChain.rpcs)}`
       )
       chain.rpcs = oldChain.rpcs
     }
@@ -152,30 +138,22 @@ const ss58IdOverrides = {
     }
 
     if (chain.prefix !== network.prefix) {
-      console.log(
-        `Updating chain prefix for ${id} from ${chain.prefix} to ${network.prefix}`
-      )
+      console.log(`Updating chain prefix for ${id} from ${chain.prefix} to ${network.prefix}`)
       chain.prefix = network.prefix
     }
 
     if (network.symbols[0] && chain.token !== network.symbols[0]) {
-      console.log(
-        `Updating chain token for ${id} from ${chain.token} to ${network.symbols[0]}`
-      )
+      console.log(`Updating chain token for ${id} from ${chain.token} to ${network.symbols[0]}`)
       chain.token = network.symbols[0]
     }
 
     if (network.decimals[0] && chain.decimals !== network.decimals[0]) {
-      console.log(
-        `Updating chain decimals for ${id} from ${chain.decimals} to ${network.decimals[0]}`
-      )
+      console.log(`Updating chain decimals for ${id} from ${chain.decimals} to ${network.decimals[0]}`)
       chain.decimals = network.decimals[0]
     }
 
     if (chain.account !== network.standardAccount) {
-      console.log(
-        `Updating chain account for ${id} from ${chain.account} to ${network.standardAccount}`
-      )
+      console.log(`Updating chain account for ${id} from ${chain.account} to ${network.standardAccount}`)
       chain.account = network.standardAccount
     }
   }
@@ -211,9 +189,7 @@ const ss58IdOverrides = {
 
       try {
         await exec(`mkdir -p "assets/${chain.id}"`)
-        await exec(
-          `rsync -avhP "../chaindata/${prefix}/assets/" "assets/${chain.id}"`
-        )
+        await exec(`rsync -avhP "../chaindata/${prefix}/assets/" "assets/${chain.id}"`)
       } catch (error) {
         console.error('error copying assets', error)
         continue
@@ -227,9 +203,7 @@ const ss58IdOverrides = {
 
       try {
         await exec(`mkdir -p "assets/${chain.id}"`)
-        await exec(
-          `rsync -avhP "../chaindata/${relayPrefix}/parathreads/${paraId}/assets/" "assets/${chain.id}"`
-        )
+        await exec(`rsync -avhP "../chaindata/${relayPrefix}/parathreads/${paraId}/assets/" "assets/${chain.id}"`)
       } catch (error) {
         console.error('error copying assets', error)
         continue

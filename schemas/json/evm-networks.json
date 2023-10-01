@@ -11,16 +11,21 @@
         "type": "array",
         "items": { "type": "string", "pattern": "^https://" }
       },
-      "balanceModuleConfigs": {
+      "balancesConfig": {
         "type": "object",
         "properties": {
           "evm-native": {
             "type": "object",
             "properties": {
+              "disable": { "type": "boolean" },
               "symbol": { "type": "string" },
-              "decimals": { "type": "integer", "minimum": 0 }
+              "decimals": { "type": "integer" },
+              "ed": { "type": "string", "pattern": "[0-9]" },
+              "coingeckoId": { "type": ["string", "null"] },
+              "mirrorOf": { "type": "string" },
+              "dcentName": { "type": "string" },
+              "themeColor": { "type": "string" }
             },
-            "required": ["symbol", "decimals"],
             "additionalProperties": false
           },
           "evm-erc20": {

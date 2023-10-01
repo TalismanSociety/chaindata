@@ -18,7 +18,13 @@
       "wss://rpc.polkadot.io",
       "wss://polkadot.public.curie.radiumblock.co/ws",
       "wss://dot-rpc.stakeworld.io"
-    ]
+    ],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadot",
+        "dcentName": "POLKADOT"
+      }
+    }
   },
   {
     "id": "kusama",
@@ -39,7 +45,12 @@
       "wss://kusama-rpc.polkadot.io",
       "wss://kusama.public.curie.radiumblock.co/ws",
       "wss://ksm-rpc.stakeworld.io"
-    ]
+    ],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kusama"
+      }
+    }
   },
   {
     "id": "3-dpass",
@@ -76,7 +87,10 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "acala"
+      },
       "substrate-orml": {
         "disable": true
       },
@@ -264,11 +278,7 @@
     "id": "ajuna",
     "name": "Ajuna",
     "account": "*25519",
-    "rpcs": [
-      "wss://ajuna.api.onfinality.io/public-ws",
-      "wss://rpc-parachain.ajuna.network",
-      "wss://ajuna.public.curie.radiumblock.co/ws"
-    ],
+    "rpcs": ["wss://rpc-parachain.ajuna.network", "wss://ajuna.public.curie.radiumblock.co/ws"],
     "paraId": 2051,
     "relay": {
       "id": "polkadot"
@@ -277,13 +287,15 @@
   {
     "id": "aleph-zero",
     "name": "Aleph Zero",
-    "coingeckoId": "aleph-zero",
     "account": "*25519",
     "subscanUrl": "https://alephzero.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
     "rpcs": ["wss://ws.azero.dev"],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "aleph-zero"
+      },
       "substrate-psp22": {
         "tokens": [
           {
@@ -326,13 +338,15 @@
     "subscanUrl": "https://altair.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/altair_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/altair_metadata_latest.apng",
-    "rpcs": [
-      "wss://altair.api.onfinality.io/public-ws",
-      "wss://fullnode.altair.centrifuge.io"
-    ],
+    "rpcs": ["wss://altair.api.onfinality.io/public-ws", "wss://fullnode.altair.centrifuge.io"],
     "paraId": 2088,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "altair"
+      }
     }
   },
   {
@@ -341,15 +355,12 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/amplitude_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/amplitude_metadata_latest.apng",
-    "rpcs": [
-      "wss://amplitude-rpc.dwellir.com",
-      "wss://rpc-amplitude.pendulumchain.tech"
-    ],
+    "rpcs": ["wss://amplitude-rpc.dwellir.com", "wss://rpc-amplitude.pendulumchain.tech"],
     "paraId": 2124,
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "substrate-tokens": {
         "tokens": [
           {
@@ -374,7 +385,12 @@
     "id": "ares-odyssey",
     "name": "Ares Odyssey Standalone",
     "account": "*25519",
-    "rpcs": ["wss://odyssey.aresprotocol.io"]
+    "rpcs": ["wss://odyssey.aresprotocol.io"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "ares-protocol"
+      }
+    }
   },
   {
     "id": "astar",
@@ -394,7 +410,10 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "astar"
+      },
       "substrate-assets": {
         "tokens": [
           {
@@ -481,10 +500,12 @@
     "id": "automata",
     "name": "Automata",
     "account": "*25519",
-    "rpcs": [
-      "wss://automata.api.onfinality.io/public-ws",
-      "wss://api.ata.network"
-    ]
+    "rpcs": ["wss://automata.api.onfinality.io/public-ws", "wss://api.ata.network"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "automata"
+      }
+    }
   },
   {
     "id": "aventus",
@@ -509,6 +530,11 @@
     "paraId": 2119,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "ajuna-network"
+      }
     }
   },
   {
@@ -523,7 +549,10 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "basilisk"
+      },
       "substrate-tokens": {
         "tokens": [
           {
@@ -607,9 +636,77 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "bifrost-native-coin"
+      },
+      "substrate-orml": {
+        "disable": true
+      },
       "substrate-tokens": {
         "tokens": [
+          {
+            "symbol": "BNC",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"BNC\"}",
+            "coingeckoId": "bifrost-native-coin"
+          },
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"DOT\"}",
+            "coingeckoId": "polkadot"
+          },
+          {
+            "symbol": "KAR",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KAR\"}",
+            "coingeckoId": "karura"
+          },
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KSM\"}",
+            "coingeckoId": "kusama"
+          },
+          {
+            "symbol": "aSEED",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KUSD\"}",
+            "coingeckoId": "acala-dollar"
+          },
+          {
+            "symbol": "MOVR",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"MOVR\"}",
+            "coingeckoId": "moonriver"
+          },
+          {
+            "symbol": "PHA",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"PHA\"}",
+            "coingeckoId": "pha"
+          },
+          {
+            "symbol": "RMRK",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"RMRK\"}",
+            "coingeckoId": "rmrk"
+          },
+          {
+            "symbol": "ZLK",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"ZLK\"}"
+          },
           {
             "symbol": "aSEED",
             "decimals": 12,
@@ -653,17 +750,27 @@
     "subscanUrl": "https://bifrost.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/bifrost_polkadot_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/bifrost_polkadot_metadata_latest.apng",
-    "rpcs": [
-      "wss://bifrost-polkadot.api.onfinality.io/public-ws",
-      "wss://hk.p.bifrost-rpc.liebi.com/ws"
-    ],
+    "rpcs": ["wss://bifrost-polkadot.api.onfinality.io/public-ws", "wss://hk.p.bifrost-rpc.liebi.com/ws"],
     "paraId": 2030,
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "bifrost-native-coin"
+      },
+      "substrate-orml": {
+        "disable": true
+      },
       "substrate-tokens": {
         "tokens": [
+          {
+            "symbol": "BNC",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"BNC\"}",
+            "coingeckoId": "bifrost-native-coin"
+          },
           {
             "symbol": "DOT",
             "decimals": 10,
@@ -713,7 +820,10 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "metaverse-network-pioneer"
+      },
       "substrate-tokens": {
         "tokens": [
           {
@@ -752,10 +862,7 @@
     "id": "bitgreen",
     "name": "Bitgreen",
     "account": "*25519",
-    "rpcs": [
-      "wss://mainnet.bitgreen.org",
-      "wss://bitgreen.api.onfinality.io/public-ws"
-    ],
+    "rpcs": ["wss://mainnet.bitgreen.org"],
     "paraId": 2048,
     "relay": {
       "id": "polkadot"
@@ -765,7 +872,12 @@
     "id": "bittensor",
     "name": "Bittensor",
     "account": "*25519",
-    "rpcs": ["wss://entrypoint-finney.opentensor.ai"]
+    "rpcs": ["wss://entrypoint-finney.opentensor.ai:443"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "bittensor"
+      }
+    }
   },
   {
     "id": "calamari",
@@ -778,6 +890,11 @@
     "paraId": 2084,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "calamari-network"
+      }
     }
   },
   {
@@ -787,30 +904,45 @@
     "subscanUrl": "https://centrifuge.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/centrifuge_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/centrifuge_metadata_latest.apng",
-    "rpcs": [
-      "wss://centrifuge-parachain.api.onfinality.io/public-ws",
-      "wss://fullnode.centrifuge.io"
-    ],
+    "rpcs": ["wss://centrifuge-parachain.api.onfinality.io/public-ws", "wss://fullnode.centrifuge.io"],
     "paraId": 2031,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "centrifuge"
+      }
+    }
+  },
+  {
+    "id": "centrifuge-standalone",
+    "name": "Centrifuge Standalone [Archived]",
+    "account": "*25519",
+    "rpcs": [],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "centrifuge"
+      }
     }
   },
   {
     "id": "cere",
     "name": "Cere",
     "account": "*25519",
-    "rpcs": [
-      "wss://archive.mainnet.cere.network/ws",
-      "wss://mainnet.cere-archive.republiccrypto-runtime.com:444"
-    ]
+    "rpcs": ["wss://archive.mainnet.cere.network/ws", "wss://mainnet.cere-archive.republiccrypto-runtime.com:444"]
   },
   {
     "id": "chainx",
     "name": "ChainX",
     "account": "*25519",
     "subscanUrl": "https://chainx.subscan.io/",
-    "rpcs": ["wss://mainnet.chainx.org/ws"]
+    "rpcs": ["wss://mainnet.chainx.org/ws"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "chainx"
+      }
+    }
   },
   {
     "id": "clover",
@@ -819,13 +951,15 @@
     "subscanUrl": "https://clover.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/clover-mainnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/clover-mainnet_metadata_latest.apng",
-    "rpcs": [
-      "wss://clover.api.onfinality.io/public-ws",
-      "wss://rpc-para.clover.finance"
-    ],
+    "rpcs": ["wss://clover.api.onfinality.io/public-ws", "wss://rpc-para.clover.finance"],
     "paraId": 2002,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "clover-finance"
+      }
     }
   },
   {
@@ -858,7 +992,10 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "composable-finance-layr"
+      },
       "substrate-orml": {
         "disable": true
       },
@@ -960,6 +1097,11 @@
     "paraId": 2105,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "darwinia-crab-network"
+      }
     }
   },
   {
@@ -979,22 +1121,26 @@
     "name": "Crust Standalone",
     "account": "*25519",
     "subscanUrl": "https://crust.subscan.io/",
-    "rpcs": [
-      "wss://crust.api.onfinality.io/public-ws",
-      "wss://rpc.crust.network"
-    ]
+    "rpcs": ["wss://crust.api.onfinality.io/public-ws", "wss://rpc.crust.network"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "crust-network"
+      }
+    }
   },
   {
     "id": "crust-parachain",
     "name": "Crust",
     "account": "*25519",
-    "rpcs": [
-      "wss://crust-polkadot.api.onfinality.io/public-ws",
-      "wss://crust-parachain.crustapps.net"
-    ],
+    "rpcs": ["wss://crust-parachain.crustapps.net"],
     "paraId": 2008,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "crust-network"
+      }
     }
   },
   {
@@ -1003,7 +1149,6 @@
     "account": "secp256k1",
     "subscanUrl": "https://darwinia.subscan.io/",
     "rpcs": [
-      "wss://darwinia2.api.onfinality.io/public-ws",
       "wss://rpc.darwinia.network",
       "wss://darwinia-rpc.darwiniacommunitydao.xyz",
       "wss://darwinia-rpc.dwellir.com"
@@ -1011,6 +1156,11 @@
     "paraId": 2046,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "darwinia-network-native-token"
+      }
     }
   },
   {
@@ -1024,10 +1174,15 @@
     "name": "Dock",
     "account": "*25519",
     "subscanUrl": "https://dock.subscan.io/",
-    "rpcs": ["wss://mainnet-node.dock.io"]
+    "rpcs": ["wss://mainnet-node.dock.io"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "dock"
+      }
+    }
   },
   {
-    "id": "dorafactory",
+    "id": "dora-factory",
     "name": "Dora Factory",
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng",
@@ -1036,6 +1191,11 @@
     "paraId": 2115,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "dora-factory"
+      }
     }
   },
   {
@@ -1045,11 +1205,12 @@
     "subscanUrl": "https://edgeware.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/edgeware_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/edgeware_metadata_latest.apng",
-    "rpcs": [
-      "wss://edgeware.api.onfinality.io/public-ws",
-      "wss://mainnet2.edgewa.re",
-      "wss://edgeware.jelliedowl.net"
-    ]
+    "rpcs": ["wss://edgeware.api.onfinality.io/public-ws", "wss://mainnet2.edgewa.re", "wss://edgeware.jelliedowl.net"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "edgeware"
+      }
+    }
   },
   {
     "id": "efinity-polkadot",
@@ -1058,14 +1219,15 @@
     "subscanUrl": "https://efinity.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/efinity_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/efinity_metadata_latest.apng",
-    "rpcs": [
-      "wss://efinity.api.onfinality.io/public-ws",
-      "wss://efinity-rpc.dwellir.com",
-      "wss://rpc.efinity.io"
-    ],
+    "rpcs": [],
     "paraId": 2021,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "efinity"
+      }
     }
   },
   {
@@ -1090,16 +1252,18 @@
     "paraId": 1001,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kusama"
+      }
     }
   },
   {
     "id": "enjin-matrixchain",
     "name": "Enjin Matrixchain",
     "account": "*25519",
-    "rpcs": [
-      "wss://rpc.matrix.blockchain.enjin.io",
-      "wss://enjin-matrix-rpc-1.dwellir.com"
-    ],
+    "rpcs": ["wss://rpc.matrix.blockchain.enjin.io", "wss://enjin-matrix-rpc-1.dwellir.com"],
     "paraId": 1000,
     "relay": {
       "id": "enjin-relay"
@@ -1117,22 +1281,46 @@
     "account": "*25519",
     "subscanUrl": "https://equilibrium.subscan.io/",
     "overrideNativeTokenId": "equilibrium-polkadot-substrate-equilibrium-eq",
-    "rpcs": [
-      "wss://equilibrium-rpc.dwellir.com",
-      "wss://node.pol.equilibrium.io/"
-    ],
+    "rpcs": ["wss://equilibrium-rpc.dwellir.com", "wss://node.pol.equilibrium.io/"],
     "paraId": 2011,
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "substrate-native": {
         "disable": true
       },
       "substrate-equilibrium": {
-        "disable": false
+        "disable": false,
+        "tokens": [
+          {
+            "assetId": "6382433",
+            "coingeckoId": "acala"
+          },
+          { "assetId": "1634956402", "coingeckoId": "astar" },
+          { "assetId": "6450786", "coingeckoId": "binancecoin" },
+          { "assetId": "1651864420", "coingeckoId": "binance-usd" },
+          { "assetId": "6517365", "coingeckoId": "crust-network" },
+          { "assetId": "6582132", "coingeckoId": "polkadot" },
+          { "assetId": "25969", "coingeckoId": "equilibrium-token" },
+          { "assetId": "1735159154", "coingeckoId": "moonbeam" },
+          {
+            "assetId": "1768060003",
+            "coingeckoId": "interbtc",
+            "symbol": "iBTC"
+          },
+          { "assetId": "1768846450", "coingeckoId": "interlay" },
+          { "assetId": "1885434465", "coingeckoId": "parallel-finance" },
+          { "assetId": "1970496628", "coingeckoId": "tether" }
+        ]
       }
     }
+  },
+  {
+    "id": "equilibrium-standalone",
+    "name": "Equilibrium Standalone",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "fragnova",
@@ -1144,12 +1332,7 @@
     "id": "frequency",
     "name": "Frequency",
     "account": "*25519",
-    "rpcs": [
-      "wss://frequency-polkadot.api.onfinality.io/public-ws",
-      "wss://frequency-rpc.dwellir.com",
-      "wss://0.rpc.frequency.xyz",
-      "wss://1.rpc.frequency.xyz"
-    ],
+    "rpcs": ["wss://frequency-rpc.dwellir.com", "wss://0.rpc.frequency.xyz", "wss://1.rpc.frequency.xyz"],
     "paraId": 2091,
     "relay": {
       "id": "polkadot"
@@ -1174,7 +1357,7 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "substrate-native": {
         "disable": true
       },
@@ -1182,6 +1365,22 @@
         "disable": false
       }
     }
+  },
+  {
+    "id": "genshiro-kusama-2",
+    "name": "Genshiro",
+    "account": "*25519",
+    "rpcs": ["wss://node.genshiro.io"],
+    "paraId": 2226,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "genshiro-standalone",
+    "name": "Genshiro",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "gm",
@@ -1194,7 +1393,7 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "substrate-tokens": {
         "tokens": [
           {
@@ -1223,11 +1422,7 @@
     "id": "hashed",
     "name": "Hashed",
     "account": "*25519",
-    "rpcs": [
-      "wss://c1.hashed.live",
-      "wss://c3.hashed.live",
-      "wss://c2.hashed.network"
-    ],
+    "rpcs": ["wss://c2.hashed.network"],
     "paraId": 2093,
     "relay": {
       "id": "polkadot"
@@ -1240,11 +1435,18 @@
     "subscanUrl": "https://parallel-heiko.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/heiko_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/heiko_metadata_latest.apng",
-    "rpcs": [
-      "wss://parallel-heiko.api.onfinality.io/public-ws",
-      "wss://heiko-rpc.parallel.fi"
-    ],
+    "rpcs": ["wss://parallel-heiko.api.onfinality.io/public-ws", "wss://heiko-rpc.parallel.fi"],
     "paraId": 2085,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "heiko-kusama-2",
+    "name": "Parallel Heiko",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2126,
     "relay": {
       "id": "kusama"
     }
@@ -1273,7 +1475,10 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "hydradx"
+      },
       "substrate-tokens": {
         "tokens": [
           {
@@ -1390,10 +1595,15 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/imbue_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/imbue_metadata_latest.apng",
-    "rpcs": ["wss://collator.production.imbue.network"],
+    "rpcs": [],
     "paraId": 2121,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "imbue-network"
+      }
     }
   },
   {
@@ -1403,27 +1613,30 @@
     "subscanUrl": "https://integritee.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/integritee-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/integritee-parachain_metadata_latest.apng",
-    "rpcs": [
-      "wss://integritee-kusama.api.onfinality.io/public-ws",
-      "wss://kusama.api.integritee.network"
-    ],
+    "rpcs": ["wss://integritee-kusama.api.onfinality.io/public-ws", "wss://kusama.api.integritee.network"],
     "paraId": 2015,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "integritee"
+      }
     }
   },
   {
     "id": "integritee-polkadot",
     "name": "Integritee Shell",
     "account": "*25519",
-    "rpcs": [
-      "wss://integritee-parachain.api.onfinality.io/public-ws",
-      "wss://integritee-rpc.dwellir.com",
-      "wss://polkadot.api.integritee.network"
-    ],
+    "rpcs": ["wss://integritee-rpc.dwellir.com", "wss://polkadot.api.integritee.network"],
     "paraId": 2039,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "integritee"
+      }
     }
   },
   {
@@ -1433,7 +1646,7 @@
     "subscanUrl": "https://interlay.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/interlay-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/interlay-parachain_metadata_latest.apng",
-    "overrideNativeTokenId": "interlay-substrate-orml-intr",
+    "overrideNativeTokenId": "interlay-substrate-tokens-intr",
     "rpcs": [
       "wss://interlay.api.onfinality.io/public-ws",
       "wss://interlay-rpc.dwellir.com",
@@ -1443,9 +1656,57 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "interlay"
+      },
+      "substrate-orml": {
+        "disable": true
+      },
       "substrate-tokens": {
         "tokens": [
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"DOT\"}",
+            "coingeckoId": "polkadot"
+          },
+          {
+            "symbol": "iBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"IBTC\"}",
+            "coingeckoId": "interbtc"
+          },
+          {
+            "symbol": "INTR",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"INTR\"}",
+            "coingeckoId": "interlay"
+          },
+          {
+            "symbol": "kBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KBTC\"}",
+            "coingeckoId": "kintsugi-btc"
+          },
+          {
+            "symbol": "KINT",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KINT\"}",
+            "coingeckoId": "kintsugi"
+          },
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KSM\"}",
+            "coingeckoId": "kusama"
+          },
           {
             "symbol": "LDOT",
             "decimals": 10,
@@ -1525,9 +1786,13 @@
   {
     "id": "joystream",
     "name": "Joystream",
-    "coingeckoId": "joystream",
     "account": "*25519",
-    "rpcs": ["wss://rpc.joystream.org"]
+    "rpcs": ["wss://rpc.joystream.org"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "joystream"
+      }
+    }
   },
   {
     "id": "jur",
@@ -1556,11 +1821,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/totem-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/totem-parachain_metadata_latest.apng",
-    "rpcs": [
-      "wss://kapex-parachain.api.onfinality.io/public-ws",
-      "wss://kapex-rpc.dwellir.com",
-      "wss://k-ui.kapex.network"
-    ],
+    "rpcs": ["wss://kapex-rpc.dwellir.com", "wss://k-ui.kapex.network"],
     "paraId": 2007,
     "relay": {
       "id": "polkadot"
@@ -1569,6 +1830,7 @@
   {
     "id": "karura",
     "name": "Karura",
+    "themeColor": "#f93d43",
     "account": "*25519",
     "subscanUrl": "https://karura.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/karura_specs.png",
@@ -1585,7 +1847,10 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "karura"
+      },
       "substrate-orml": {
         "disable": true
       },
@@ -1647,7 +1912,7 @@
             "coingeckoId": "ausd-seed-karura"
           },
           {
-            "symbol": "KBTC",
+            "symbol": "kBTC",
             "decimals": 8,
             "ed": "66",
             "onChainId": "{\"Token\":\"KBTC\"}",
@@ -1948,6 +2213,11 @@
     "paraId": 2004,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "pha"
+      }
     }
   },
   {
@@ -1961,20 +2231,31 @@
     }
   },
   {
+    "id": "kico-2",
+    "name": "Kico",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2235,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "kilt-spiritnet",
     "name": "KILT Spiritnet",
     "account": "*25519",
     "subscanUrl": "https://spiritnet.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/kilt-spiritnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kilt-spiritnet_metadata_latest.apng",
-    "rpcs": [
-      "wss://spiritnet.api.onfinality.io/public-ws",
-      "wss://kilt-rpc.dwellir.com",
-      "wss://spiritnet.kilt.io/"
-    ],
+    "rpcs": ["wss://spiritnet.api.onfinality.io/public-ws", "wss://kilt-rpc.dwellir.com", "wss://spiritnet.kilt.io/"],
     "paraId": 2086,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kilt-protocol"
+      }
     }
   },
   {
@@ -1984,18 +2265,63 @@
     "subscanUrl": "https://kintsugi.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/kintsugi-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kintsugi-parachain_metadata_latest.apng",
-    "overrideNativeTokenId": "kintsugi-substrate-orml-kint",
-    "rpcs": [
-      "wss://kintsugi.api.onfinality.io/public-ws",
-      "wss://api-kusama.interlay.io/parachain"
-    ],
+    "overrideNativeTokenId": "kintsugi-substrate-tokens-kint",
+    "rpcs": ["wss://kintsugi.api.onfinality.io/public-ws", "wss://api-kusama.interlay.io/parachain"],
     "paraId": 2092,
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kintsugi"
+      },
+      "substrate-orml": {
+        "disable": true
+      },
       "substrate-tokens": {
         "tokens": [
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"DOT\"}",
+            "coingeckoId": "polkadot"
+          },
+          {
+            "symbol": "iBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"IBTC\"}",
+            "coingeckoId": "interbtc"
+          },
+          {
+            "symbol": "INTR",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"INTR\"}",
+            "coingeckoId": "interlay"
+          },
+          {
+            "symbol": "kBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KBTC\"}",
+            "coingeckoId": "kintsugi-btc"
+          },
+          {
+            "symbol": "KINT",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KINT\"}",
+            "coingeckoId": "kintsugi"
+          },
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KSM\"}",
+            "coingeckoId": "kusama"
+          },
           {
             "symbol": "aSEED",
             "decimals": 12,
@@ -2075,6 +2401,11 @@
     "paraId": 2241,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "krest"
+      }
     }
   },
   {
@@ -2106,7 +2437,10 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kusama"
+      },
       "substrate-assets": {
         "tokens": [
           {
@@ -2132,7 +2466,6 @@
     "name": "Kusama Bridge Hub",
     "account": "*25519",
     "rpcs": [
-      "wss://bridgehub-kusama.api.onfinality.io/public-ws",
       "wss://sys.ibp.network/bridgehub-kusama",
       "wss://sys.dotters.network/bridgehub-kusama",
       "wss://kusama-bridge-hub-rpc.polkadot.io",
@@ -2177,14 +2510,15 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/litentry-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/litentry-parachain_metadata_latest.apng",
-    "rpcs": [
-      "wss://litentry.api.onfinality.io/public-ws",
-      "wss://litentry-rpc.dwellir.com",
-      "wss://rpc.litentry-parachain.litentry.io"
-    ],
+    "rpcs": ["wss://litentry-rpc.dwellir.com", "wss://rpc.litentry-parachain.litentry.io"],
     "paraId": 2013,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "litentry"
+      }
     }
   },
   {
@@ -2219,21 +2553,17 @@
   {
     "id": "mangata",
     "name": "MangataX",
-    "coingeckoId": null,
     "account": "*25519",
     "subscanUrl": "https://mangatax.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/mangata-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/mangata-parachain_metadata_latest.apng",
     "overrideNativeTokenId": "mangata-substrate-tokens-mgx",
-    "rpcs": [
-      "wss://kusama-archive.mangata.online",
-      "wss://kusama-rpc.mangata.online"
-    ],
+    "rpcs": ["wss://kusama-archive.mangata.online", "wss://kusama-rpc.mangata.online"],
     "paraId": 2110,
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "substrate-tokens": {
         "tokens": [
           {
@@ -2250,10 +2580,7 @@
     "id": "manta",
     "name": "Manta",
     "account": "*25519",
-    "rpcs": [
-      "wss://manta.api.onfinality.io/public-ws",
-      "wss://ws.manta.systems"
-    ],
+    "rpcs": ["wss://ws.manta.systems"],
     "paraId": 2104,
     "relay": {
       "id": "polkadot"
@@ -2296,6 +2623,11 @@
     "paraId": 2004,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "moonbeam"
+      }
     }
   },
   {
@@ -2312,6 +2644,11 @@
     "paraId": 2023,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "moonriver"
+      }
     }
   },
   {
@@ -2320,7 +2657,12 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/appchain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/appchain_metadata_latest.apng",
     "account": "*25519",
-    "rpcs": ["wss://ws-rpc.myriad.social"]
+    "rpcs": ["wss://ws-rpc.myriad.social"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "myriad-social"
+      }
+    }
   },
   {
     "id": "neatcoin",
@@ -2332,7 +2674,12 @@
     "id": "nftmart",
     "name": "NFTMart",
     "account": "*25519",
-    "rpcs": ["wss://mainnet.nftmart.io/rpc/ws"]
+    "rpcs": ["wss://mainnet.nftmart.io/rpc/ws"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "nftmart-token"
+      }
+    }
   },
   {
     "id": "nodle-polkadot",
@@ -2341,14 +2688,23 @@
     "subscanUrl": "https://nodle.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/nodle-para_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/nodle-para_metadata_latest.apng",
-    "rpcs": [
-      "wss://nodle-parachain.api.onfinality.io/public-ws",
-      "wss://eden-rpc.dwellir.com"
-    ],
+    "rpcs": ["wss://nodle-parachain.api.onfinality.io/public-ws", "wss://eden-rpc.dwellir.com"],
     "paraId": 2026,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "nodle-network",
+        "themeColor": "#41a175"
+      }
     }
+  },
+  {
+    "id": "nodle-standalone",
+    "name": "Nodle Standalone",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "oak",
@@ -2386,10 +2742,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_metadata_latest.apng",
-    "rpcs": [
-      "wss://origintrail.api.onfinality.io/public-ws",
-      "wss://parachain-rpc.origin-trail.network"
-    ],
+    "rpcs": ["wss://parachain-rpc.origin-trail.network"],
     "paraId": 2043,
     "relay": {
       "id": "polkadot"
@@ -2402,10 +2755,7 @@
     "subscanUrl": "https://parallel.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/parallel_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/parallel_metadata_latest.apng",
-    "rpcs": [
-      "wss://parallel.api.onfinality.io/public-ws",
-      "wss://rpc.parallel.fi"
-    ],
+    "rpcs": ["wss://rpc.parallel.fi"],
     "paraId": 2012,
     "relay": {
       "id": "polkadot"
@@ -2430,7 +2780,10 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "pendulum-chain"
+      },
       "substrate-tokens": {
         "tokens": [
           {
@@ -2458,14 +2811,15 @@
     "subscanUrl": "https://phala.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/phala_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/phala_metadata_latest.apng",
-    "rpcs": [
-      "wss://phala.api.onfinality.io/public-ws",
-      "wss://phala-rpc.dwellir.com",
-      "wss://api.phala.network/ws"
-    ],
+    "rpcs": ["wss://phala.api.onfinality.io/public-ws", "wss://phala-rpc.dwellir.com", "wss://api.phala.network/ws"],
     "paraId": 2035,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "pha"
+      }
     }
   },
   {
@@ -2479,7 +2833,11 @@
     "relay": {
       "id": "kusama"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "picasso",
+        "themeColor": "#ef8211"
+      },
       "substrate-orml": {
         "disable": true
       },
@@ -2721,7 +3079,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/pichiu_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/pichiu_metadata_latest.apng",
-    "rpcs": ["wss://kusama.kylin-node.co.uk"],
+    "rpcs": [],
     "paraId": 2102,
     "relay": {
       "id": "kusama"
@@ -2731,10 +3089,15 @@
     "id": "polkadex-polkadot",
     "name": "Polkadex",
     "account": "*25519",
-    "rpcs": ["wss://polkadex-parachain.api.onfinality.io/public-ws"],
+    "rpcs": ["wss://polkadex.api.onfinality.io/public-ws"],
     "paraId": 2040,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadex"
+      }
     }
   },
   {
@@ -2744,10 +3107,12 @@
     "subscanUrl": "https://polkadex.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/node_metadata_latest.apng",
-    "rpcs": [
-      "wss://polkadex.api.onfinality.io/public-ws",
-      "wss://mainnet.polkadex.trade"
-    ]
+    "rpcs": ["wss://mainnet.polkadex.trade"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadex"
+      }
+    }
   },
   {
     "id": "polkadot-asset-hub",
@@ -2770,7 +3135,10 @@
     "relay": {
       "id": "polkadot"
     },
-    "balanceModuleConfigs": {
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadot"
+      },
       "substrate-assets": {
         "tokens": [
           {
@@ -2791,13 +3159,7 @@
     "id": "polkadot-bridge-hub",
     "name": "Polkadot Bridge Hub",
     "account": "*25519",
-    "rpcs": [
-      "wss://bridgehub-polkadot.api.onfinality.io/public-ws",
-      "wss://sys.ibp.network/bridgehub-polkadot",
-      "wss://sys.dotters.network/bridgehub-polkadot",
-      "wss://polkadot-bridge-hub-rpc.polkadot.io",
-      "wss://dot-rpc.stakeworld.io/bridgehub"
-    ],
+    "rpcs": ["wss://polkadot-bridge-hub-rpc.polkadot.io", "wss://dot-rpc.stakeworld.io/bridgehub"],
     "paraId": 1002,
     "relay": {
       "id": "polkadot"
@@ -2837,7 +3199,12 @@
     "subscanUrl": "https://polymesh.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/polymesh_mainnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polymesh_mainnet_metadata_latest.apng",
-    "rpcs": ["wss://mainnet-rpc.polymesh.network"]
+    "rpcs": ["wss://mainnet-rpc.polymesh.network"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polymesh"
+      }
+    }
   },
   {
     "id": "quartz",
@@ -2856,6 +3223,11 @@
     "paraId": 2095,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "quartz"
+      }
     }
   },
   {
@@ -2890,7 +3262,28 @@
     "paraId": 2048,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "robonomics-network"
+      }
     }
+  },
+  {
+    "id": "robonomics-kusama-2",
+    "name": "Robonomics",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2240,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "robonomics-standalone",
+    "name": "Robonomics",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "sakura",
@@ -2912,6 +3305,21 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crust-collator_metadata_latest.apng",
     "rpcs": ["wss://rpc-shadow.crust.network/"],
     "paraId": 2012,
+    "relay": {
+      "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "crust-storage-market"
+      }
+    }
+  },
+  {
+    "id": "shadow-kusama-2",
+    "name": "Crust Shadow",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2225,
     "relay": {
       "id": "kusama"
     }
@@ -2937,6 +3345,21 @@
     "paraId": 2007,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "shiden"
+      }
+    }
+  },
+  {
+    "id": "shiden-kusama-2",
+    "name": "Shiden",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2120,
+    "relay": {
+      "id": "kusama"
     }
   },
   {
@@ -2959,6 +3382,11 @@
     "paraId": 2011,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "sora"
+      }
     }
   },
   {
@@ -2969,6 +3397,11 @@
     "paraId": 2025,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "sora"
+      }
     }
   },
   {
@@ -2981,7 +3414,12 @@
       "wss://ws.mof.sora.org",
       "wss://mof2.sora.org",
       "wss://mof3.sora.org"
-    ]
+    ],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "sora"
+      }
+    }
   },
   {
     "id": "spanner",
@@ -2994,7 +3432,12 @@
     "name": "Stafi",
     "account": "*25519",
     "subscanUrl": "https://stafi.subscan.io/",
-    "rpcs": []
+    "rpcs": [],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "stafi"
+      }
+    }
   },
   {
     "id": "subdao",
@@ -3031,16 +3474,18 @@
     "name": "SubGame",
     "account": "*25519",
     "subscanUrl": "https://subgame.subscan.io/",
-    "rpcs": []
+    "rpcs": [],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "subgame"
+      }
+    }
   },
   {
     "id": "subsocial-polkadot",
     "name": "Subsocial",
     "account": "*25519",
-    "rpcs": [
-      "wss://subsocial-polkadot.api.onfinality.io/public-ws",
-      "wss://para.subsocial.network"
-    ],
+    "rpcs": ["wss://para.subsocial.network"],
     "paraId": 2101,
     "relay": {
       "id": "polkadot"
@@ -3055,7 +3500,6 @@
   {
     "id": "subsocial-x",
     "name": "SubsocialX",
-    "coingeckoId": null,
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/subsocial-parachain_specs.png",
     "rpcs": [],
@@ -3068,7 +3512,12 @@
     "id": "swapdex",
     "name": "Swapdex",
     "account": "*25519",
-    "rpcs": ["wss://ws.swapdex.network"]
+    "rpcs": ["wss://ws.swapdex.network"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "swapdex"
+      }
+    }
   },
   {
     "id": "t-3-rn",
@@ -3103,10 +3552,7 @@
     "id": "thebifrost-mainnet",
     "name": "The Bifrost",
     "account": "*25519",
-    "rpcs": [
-      "wss://public-01.mainnet.thebifrost.io/wss",
-      "wss://public-02.mainnet.thebifrost.io/wss"
-    ]
+    "rpcs": ["wss://public-01.mainnet.thebifrost.io/wss", "wss://public-02.mainnet.thebifrost.io/wss"]
   },
   {
     "id": "tinker",
@@ -3137,7 +3583,6 @@
     "subscanUrl": "https://turing.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/turing_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/turing_metadata_latest.apng",
-    "coingeckoId": null,
     "rpcs": ["wss://turing-rpc.dwellir.com", "wss://rpc.turing.oak.tech"],
     "paraId": 2114,
     "relay": {
@@ -3159,7 +3604,6 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/unique_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/unique_metadata_latest.apng",
     "rpcs": [
-      "wss://unique.api.onfinality.io/public-ws",
       "wss://ws.unique.network",
       "wss://us-ws.unique.network",
       "wss://asia-ws.unique.network",
@@ -3168,6 +3612,11 @@
     "paraId": 2037,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "unique-network"
+      }
     }
   },
   {
@@ -3223,6 +3672,11 @@
     "paraId": 2092,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "zeitgeist"
+      }
     }
   },
   {

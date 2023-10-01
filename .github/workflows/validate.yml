@@ -1,4 +1,4 @@
-name: Talisman Chaindata CI
+name: Chaindata Validate
 
 on:
   push:
@@ -21,14 +21,16 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Setup Node.js environment
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: yarn
+          node-version-file: 'package.json'
+          cache: pnpm
       - name: Install dependencies
-        run: yarn --immutable
+        run: pnpm install --frozen-lockfile
       - name: Validate JSON format & schema
         # prettier will exit with a non-zero status code if the JSON format is not valid
         # ajv will exit with a non-zero status code if the JSON schema is not valid
-        run: yarn validate
+        run: pnpm validate

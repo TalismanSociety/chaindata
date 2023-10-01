@@ -2,12 +2,12 @@
   {
     "name": "Ethereum Mainnet",
     "explorerUrl": "https://etherscan.io",
-    "rpcs": [
-      "https://rpc.ankr.com/eth",
-      "https://eth.api.onfinality.io/public",
-      "https://eth.llamarpc.com"
-    ],
-    "balanceModuleConfigs": {
+    "rpcs": ["https://rpc.ankr.com/eth", "https://eth.api.onfinality.io/public", "https://eth.llamarpc.com"],
+    "balancesConfig": {
+      "evm-native": {
+        "coingeckoId": "ethereum",
+        "dcentName": "ETHEREUM"
+      },
       "evm-erc20": {
         "tokens": [
           {
@@ -43,7 +43,12 @@
     "name": "Goerli",
     "isTestnet": true,
     "explorerUrl": "https://goerli.etherscan.io",
-    "rpcs": ["https://rpc.ankr.com/eth_goerli"]
+    "rpcs": ["https://rpc.ankr.com/eth_goerli"],
+    "balancesConfig": {
+      "evm-native": {
+        "coingeckoId": "goerli-eth"
+      }
+    }
   },
   {
     "name": "Sepolia",
@@ -59,25 +64,24 @@
       "https://gnosis-mainnet.public.blastapi.io",
       "https://rpc.gnosischain.com/"
     ],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "xDAI",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "xdai"
       }
     }
   },
   {
     "name": "Polygon",
     "explorerUrl": "https://polygonscan.com/",
-    "rpcs": [
-      "https://polygon-rpc.com/",
-      "https://rpc.ankr.com/polygon",
-      "https://polygon-mainnet.public.blastapi.io"
-    ],
-    "balanceModuleConfigs": {
+    "rpcs": ["https://polygon-rpc.com/", "https://rpc.ankr.com/polygon", "https://polygon-mainnet.public.blastapi.io"],
+    "balancesConfig": {
       "evm-native": {
         "symbol": "MATIC",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "matic-network",
+        "dcentName": "POLYGON"
       },
       "evm-erc20": {
         "tokens": [
@@ -103,7 +107,13 @@
   {
     "name": "Arbitrum",
     "explorerUrl": "https://arbiscan.io/",
-    "rpcs": ["https://arb1.arbitrum.io/rpc", "https://rpc.ankr.com/arbitrum"]
+    "rpcs": ["https://arb1.arbitrum.io/rpc", "https://rpc.ankr.com/arbitrum"],
+    "balancesConfig": {
+      "evm-native": {
+        "coingeckoId": "ethereum",
+        "dcentName": "ARBITRUM"
+      }
+    }
   },
   {
     "name": "Binance Smart Chain",
@@ -114,10 +124,12 @@
       "https://bsc-dataseed3.binance.org",
       "https://bsc-dataseed4.binance.org"
     ],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "BNB",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "binancecoin",
+        "dcentName": "BSC"
       }
     }
   },
@@ -125,29 +137,25 @@
   {
     "substrateChainId": "acala",
     "explorerUrl": "https://blockscout.acala.network",
-    "rpcs": [
-      "https://eth-rpc-acala.aca-api.network",
-      "https://rpc.evm.acala.network"
-    ],
-    "balanceModuleConfigs": {
+    "rpcs": ["https://eth-rpc-acala.aca-api.network", "https://rpc.evm.acala.network"],
+    "balancesConfig": {
       "evm-native": {
         "symbol": "ACA",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "acala",
+        "mirrorOf": "acala-substrate-native-aca"
       }
     }
   },
   {
     "substrateChainId": "astar",
     "explorerUrl": "https://blockscout.com/astar",
-    "rpcs": [
-      "https://evm.astar.network",
-      "https://astar-rpc.dwellir.com",
-      "https://astar.api.onfinality.io/public"
-    ],
-    "balanceModuleConfigs": {
+    "rpcs": ["https://evm.astar.network", "https://astar-rpc.dwellir.com", "https://astar.api.onfinality.io/public"],
+    "balancesConfig": {
       "evm-native": {
         "symbol": "ASTR",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "astar"
       },
       "evm-erc20": {
         "tokens": [
@@ -228,10 +236,12 @@
     "substrateChainId": "darwinia",
     "explorerUrl": "https://darwinia.subview.xyz",
     "rpcs": ["https://rpc.darwinia.network"],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "RING",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "darwinia-network-native-token",
+        "mirrorOf": "darwinia-substrate-native-ring"
       }
     }
   },
@@ -245,10 +255,11 @@
       "https://mainnet4.edgewa.re/evm",
       "https://mainnet5.edgewa.re/evm"
     ],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "EDG",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "edgeware"
       }
     }
   },
@@ -260,10 +271,12 @@
       "https://moonbeam.api.onfinality.io/public",
       "https://moonbeam-rpc.dwellir.com"
     ],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "GLMR",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "moonbeam",
+        "mirrorOf": "moonbeam-substrate-native-glmr"
       },
       "evm-erc20": {
         "tokens": [
@@ -309,10 +322,12 @@
       "https://moonriver.api.onfinality.io/public",
       "https://moonriver-rpc.dwellir.com"
     ],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "MOVR",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "moonriver",
+        "mirrorOf": "moonriver-substrate-native-movr"
       },
       "evm-erc20": {
         "tokens": [
@@ -343,10 +358,11 @@
       "https://shiden.api.onfinality.io/public",
       "https://shiden-rpc.dwellir.com"
     ],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "SDN",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "shiden"
       }
     }
   },
@@ -359,14 +375,12 @@
     "substrateChainId": "moonbase-alpha-testnet",
     "isTestnet": true,
     "explorerUrl": "https://moonbase.moonscan.io/",
-    "rpcs": [
-      "https://rpc.api.moonbase.moonbeam.network",
-      "https://moonbeam-alpha.api.onfinality.io/public"
-    ],
-    "balanceModuleConfigs": {
+    "rpcs": ["https://rpc.api.moonbase.moonbeam.network", "https://moonbeam-alpha.api.onfinality.io/public"],
+    "balancesConfig": {
       "evm-native": {
         "symbol": "DEV",
-        "decimals": 18
+        "decimals": 18,
+        "mirrorOf": "moonbase-alpha-testnet-substrate-native-dev"
       }
     }
   },
@@ -375,7 +389,7 @@
     "isTestnet": true,
     "explorerUrl": "https://blockscout.com/shibuya",
     "rpcs": ["https://evm.shibuya.astar.network"],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "SBY",
         "decimals": 18
@@ -387,7 +401,7 @@
     "isTestnet": true,
     "explorerUrl": "https://explorer.watr.org/",
     "rpcs": ["https://rpc.dev.watr.org"],
-    "balanceModuleConfigs": {
+    "balancesConfig": {
       "evm-native": {
         "symbol": "WATRD",
         "decimals": 18
