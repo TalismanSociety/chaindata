@@ -13,6 +13,7 @@ export type ConfigChain = {
   latestMetadataQrUrl?: string
   overrideNativeTokenId?: string
   isUnknownFeeToken?: boolean
+  feeToken?: string
   rpcs?: string[]
   paraId?: number
   relay?: { id: string }
