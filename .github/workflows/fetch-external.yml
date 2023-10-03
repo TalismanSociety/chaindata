@@ -45,6 +45,8 @@ jobs:
           git remote set-url origin https://x-access-token:${CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN}@github.com/TalismanSociety/chaindata
           git config user.name "chaindata-ci-superuser[bot]"
           git config user.email "146698419+chaindata-ci-superuser[bot]@users.noreply.github.com"
-          git add .
-          git commit -m 'updated externals'
-          git push
+          if [[ "$(git status --porcelain=v2)" != "" ]]; then
+            git add .
+            git commit -m 'updated externals'
+            git push
+          fi
