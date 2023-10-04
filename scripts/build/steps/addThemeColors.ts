@@ -42,7 +42,7 @@ export const addThemeColors = async () => {
 
       if (typeof evmNetwork.logo === 'string') {
         console.log(
-          `Extracting theme color from logo for evmNetwork ${index + 1} of ${evmNetworks.length} (${evmNetwork.name})`
+          `Extracting theme color from logo for evmNetwork ${index + 1} of ${evmNetworks.length} (${evmNetwork.name})`,
         )
         evmNetwork.themeColor =
           (await extractDominantLogoColor('evmNetwork', evmNetwork.id, evmNetwork.logo)) ?? evmNetwork.themeColor
@@ -73,7 +73,7 @@ const extractDominantLogoColor = async (entityType: string, entityId: string, lo
           .toBuffer((error, data, info) => {
             if (error) return reject(error)
             resolve([new Uint8ClampedArray(data.buffer), info])
-          })
+          }),
       )
 
       const colors = await extractColors(
@@ -85,7 +85,7 @@ const extractDominantLogoColor = async (entityType: string, entityId: string, lo
           hueDistance: 0.083333333,
           saturationDistance: 0.2,
           lightnessDistance: 0.2,
-        }
+        },
       )
 
       const mostReadable =

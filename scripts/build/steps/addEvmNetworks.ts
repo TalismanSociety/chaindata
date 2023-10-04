@@ -156,7 +156,7 @@ export const addEvmNetworks = async () => {
                     // for those that reject, we want the chaindata CI requests to also reject
                     Origin: 'chrome-extension://abpofhpcakjhnpklgodncneklaobppdc',
                   },
-                }
+                },
               )
 
               // check response status
@@ -171,7 +171,7 @@ export const addEvmNetworks = async () => {
             } catch (error) {
               return null
             }
-          }) ?? []
+          }) ?? [],
         )
 
         // set id

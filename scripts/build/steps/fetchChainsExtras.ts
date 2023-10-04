@@ -55,7 +55,7 @@ const attemptToFetchChainExtras = async (
   chain: Chain,
   rpcUrl: string,
   attempt: number,
-  maxAttempts: number
+  maxAttempts: number,
 ): Promise<boolean> => {
   try {
     // fetch rpc data
@@ -70,7 +70,7 @@ const attemptToFetchChainExtras = async (
         // // TODO: Get parachainId from storage
         // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
       ],
-      RPC_REQUEST_TIMEOUT
+      RPC_REQUEST_TIMEOUT,
     )
 
     // deconstruct rpc data
@@ -98,7 +98,7 @@ const attemptToFetchChainExtras = async (
     console.warn(
       `Fetching extras for chain ${chain.id}: attempt ${attempt} of ${maxAttempts} failed: ${
         (error as Error)?.message ?? error
-      } (${rpcUrl})`
+      } (${rpcUrl})`,
     )
   }
 

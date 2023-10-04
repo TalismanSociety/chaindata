@@ -12,6 +12,6 @@ export const doSomeThings = async () => {
         fill-rule="evenodd"
       />
       <path d="M46.949 55.005a6.003 6.003 0 1 1-12.006 0 6.003 6.003 0 0 1 12.006 0z" fill="#fd4848" />
-    </svg>`
+    </svg>`,
   )
 }
