@@ -55,7 +55,7 @@ export const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(r
 export const sendWithTimeout = async (
   url: string,
   requests: Array<[string, any?]>,
-  timeout: number = 10_000
+  timeout: number = 10_000,
 ): Promise<any[]> => {
   const autoConnectMs = 0
   const ws = new WsProvider(
@@ -69,7 +69,7 @@ export const sendWithTimeout = async (
     },
     // doesn't matter what this is as long as it's a bit larger than `timeout`
     // if it's not set then `new WsProvider` will throw an uncatchable error after 60s
-    timeout * 99
+    timeout * 99,
   )
 
   return await (async () => {

@@ -29,7 +29,7 @@ ${getFileList()
           .join('\n')}
       </pre>
       </body>
-    </html>`
+    </html>`,
   )
 }
 
@@ -54,8 +54,8 @@ const writeChains = async () => {
         specVersion,
       })),
       null,
-      2
-    )
+      2,
+    ),
   )
 
   for (const chain of allChains) {
@@ -85,8 +85,8 @@ const writeEvmNetworks = async () => {
         logo,
       })),
       null,
-      2
-    )
+      2,
+    ),
   )
 
   for (const evmNetwork of allEvmNetworks) {

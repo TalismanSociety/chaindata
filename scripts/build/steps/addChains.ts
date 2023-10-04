@@ -19,7 +19,7 @@ export const addChains = async () => {
     // only set relay and paraId if both exist on configChain
     // TODO: Figure out parachains automatically
     const hasRelay = Boolean(
-      configChain.relay?.id && sharedData.chainsConfig.some((chain) => chain.id === configChain.relay!.id)
+      configChain.relay?.id && sharedData.chainsConfig.some((chain) => chain.id === configChain.relay!.id),
     )
 
     const chain: Chain = {
