@@ -40,6 +40,15 @@ jobs:
         uses: pnpm/action-setup@v2
       - name: Setup Node
         uses: actions/setup-node@v3
+        env:
+          # Workaround for `Setup Node` action causing the workflow to timeout
+          # Source: https://github.com/actions/setup-node/issues/733#issuecomment-1489952874
+          #
+          # https://github.com/actions/cache/blob/04f198bf0b2a39f7230a4304bf07747a0bddf146/tips-and-workarounds.md#cache-segment-restore-timeout
+          # -- note that actions/setup-node@3 [uses actions/cache@3.0.4](https://github.com/actions/setup-node/blob/a4fcaaf314b117a40d694a35ee36461f8ff3c6e6/package-lock.json#L41)
+          #    which has a [default timeout of 60 minutes](https://github.com/actions/toolkit/blob/457303960f03375db6f033e214b9f90d79c3fe5c/packages/cache/RELEASES.md#304),
+          #    not 10 minutes! Let's reduce it further.
+          SEGMENT_DOWNLOAD_TIMEOUT_MINS: 2
         with:
           node-version-file: 'package.json'
           cache: pnpm
