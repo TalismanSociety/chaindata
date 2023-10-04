@@ -24,7 +24,7 @@ const ss58IdOverrides = {
 
   const chaindata = JSON.parse(fs.readFileSync('chaindata.json'))
   const ss58Registry = JSON.parse(
-    (await exec('curl -sL https://raw.githubusercontent.com/paritytech/ss58-registry/main/ss58-registry.json')).stdout
+    (await exec('curl -sL https://raw.githubusercontent.com/paritytech/ss58-registry/main/ss58-registry.json')).stdout,
   ).registry
 
   //
@@ -44,8 +44,8 @@ const ss58IdOverrides = {
       fs.readFileSync(
         isNaN(paraId)
           ? `../chaindata/${relayOldId}/manifest.json`
-          : `../chaindata/${relayOldId}/parathreads/${paraId}/manifest.json`
-      )
+          : `../chaindata/${relayOldId}/parathreads/${paraId}/manifest.json`,
+      ),
     )
 
     if (oldChain.name === undefined) oldChain.name = null
@@ -90,7 +90,7 @@ const ss58IdOverrides = {
               rpcs: oldChain.rpcs,
               paraId,
               relay: { id: relayId },
-            }
+            },
       )
     }
 
@@ -121,7 +121,7 @@ const ss58IdOverrides = {
 
     if (JSON.stringify(chain.rpcs) !== JSON.stringify(oldChain.rpcs)) {
       console.log(
-        `Updating chain rpcs for ${id} from ${JSON.stringify(chain.rpcs)} to ${JSON.stringify(oldChain.rpcs)}`
+        `Updating chain rpcs for ${id} from ${JSON.stringify(chain.rpcs)} to ${JSON.stringify(oldChain.rpcs)}`,
       )
       chain.rpcs = oldChain.rpcs
     }
