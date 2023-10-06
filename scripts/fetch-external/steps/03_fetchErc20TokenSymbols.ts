@@ -5,13 +5,13 @@ import { BaseError, TimeoutError, getContract } from 'viem'
 
 import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
-import { CachedErc20Token, TalismanEvmNetwork } from '../types'
+import { Erc20TokenCache, TalismanEvmNetwork } from '../types'
 
-const isCached = (tokenCache: CachedErc20Token[], chainId: number, contractAddress: string) =>
+const isCached = (tokenCache: Erc20TokenCache[], chainId: number, contractAddress: string) =>
   tokenCache.some((t) => t.chainId === chainId && t.contractAddress === contractAddress)
 
 const updateTokenCache = async (
-  tokenCache: CachedErc20Token[],
+  tokenCache: Erc20TokenCache[],
   evmNetwork: TalismanEvmNetwork,
   contractAddress: string,
 ) => {
@@ -50,7 +50,7 @@ const updateTokenCache = async (
 
 export const fetchErc20TokenSymbols = async () => {
   const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
-  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as CachedErc20Token[]
+  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
 
   const promises = knownEvmNetworks
     .filter((network) => network.balancesConfig?.['evm-erc20']?.tokens.length)

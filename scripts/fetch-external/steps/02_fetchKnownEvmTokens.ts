@@ -3,60 +3,8 @@ import { readFile, writeFile } from 'node:fs/promises'
 import prettier from 'prettier'
 
 import { COINGECKO_API_KEY } from '../../build/constants'
+import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
 import { TalismanEvmNetwork } from '../types'
-
-type CoingeckoAssetPlatform = {
-  id: string
-  chain_identifier: number | null
-  name: string
-  shortname: string
-}
-
-type CoingeckoCoin = {
-  id: string
-  symbol: string
-  name: string
-  platforms: Record<string, string>
-}
-
-// docs mentions api key can be set in header, but if there is a query string then header are ignored
-// => always specify api key in query string
-const DEFAULT_URL_PARAMS = COINGECKO_API_KEY ? { 'x-cg-demo-api-key': COINGECKO_API_KEY } : undefined
-
-const fetchAssetPlatforms = async () => {
-  const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
-
-  const resAssetPlatforms = await fetch('https://api.coingecko.com/api/v3/asset_platforms?' + urlParams.toString())
-  const assetPlatforms = (await resAssetPlatforms.json()) as CoingeckoAssetPlatform[]
-
-  // TODO for debugging only, remove when ready
-  await writeFile(
-    'dist/assetPlatforms.json',
-    await prettier.format(JSON.stringify(assetPlatforms, null, 2), {
-      parser: 'json',
-    }),
-  )
-
-  return assetPlatforms
-}
-
-const fetchCoins = async () => {
-  const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
-  urlParams.set('include_platform', 'true')
-
-  const resCoins = await fetch('https://api.coingecko.com/api/v3/coins/list?' + urlParams)
-  const coins = (await resCoins.json()) as CoingeckoCoin[]
-
-  // TODO for debugging only, remove when ready
-  await writeFile(
-    'dist/coins.json',
-    await prettier.format(JSON.stringify(coins, null, 2), {
-      parser: 'json',
-    }),
-  )
-
-  return coins
-}
 
 export const fetchKnownEvmTokens = async () => {
   const assetPlatforms = await fetchAssetPlatforms()

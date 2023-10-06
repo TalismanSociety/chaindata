@@ -2,11 +2,11 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { CachedErc20Token, TalismanEvmNetwork } from '../types'
+import { Erc20TokenCache, TalismanEvmNetwork } from '../types'
 
 export const updateKnownEvmTokensFromCache = async () => {
   const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
-  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as CachedErc20Token[]
+  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
 
   for (const network of knownEvmNetworks) {
     const chainId = Number(network.id)

@@ -8,6 +8,7 @@ export type EthereumListsChain = {
   infoURL: string
   status?: 'active' | 'incubating' | 'deprecated'
   explorers?: Array<{ name: string; url: string; standard?: string }>
+  icon?: string
 }
 
 export type TalismanEvmNativeToken = {
@@ -39,11 +40,42 @@ export type TalismanEvmNetwork = {
   explorerUrl?: string
   substrateChainId?: string
   isTestNet?: boolean
+
+  // TMP fields
+  icon?: string
 }
 
-export type CachedErc20Token = {
+export type Erc20TokenCache = {
   chainId: number
   contractAddress: string
   symbol: string
   decimals: number
+}
+
+export type EvmNetworkIconCache = {
+  icon: string
+  etag: string
+  path: string
+}
+
+export type CoingeckoAssetPlatform = {
+  id: string
+  chain_identifier: number | null
+  name: string
+  shortname: string
+}
+
+export type CoingeckoCoin = {
+  id: string
+  symbol: string
+  name: string
+  platforms: Record<string, string>
+}
+
+export type CoingeckoCoinDetails = CoingeckoCoin & {
+  id: string
+  symbol: string
+  name: string
+  platforms: Record<string, string>
+  image: Record<'thumb' | 'small' | 'large', string>
 }
