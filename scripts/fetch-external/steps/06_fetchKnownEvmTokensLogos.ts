@@ -8,6 +8,20 @@ import sharp from 'sharp'
 import { fetchCoinDetails } from '../coingecko'
 import { TalismanEvmNetwork } from '../types'
 
+const INVALID_IMAGE_COINGECKO_IDS = [
+  'baoeth-eth-stablepool',
+  'baousd-lusd-stablepool',
+  'bifinance-exchange',
+  'cellframe',
+  'diva-staking',
+  'epiko',
+  'fake-market-cap',
+  'fight-out',
+  'future-t-i-m-e-dividend',
+  'g',
+  'hiveterminal',
+]
+
 const getAllCoingeckoIds = (knownEvmNetworks: TalismanEvmNetwork[]) => {
   const coingeckoIds = new Set<string>()
 
@@ -29,6 +43,8 @@ export const fetchKnownEvmTokensLogos = async () => {
   // expect each of these to have a logo in ./assets/tokens/known
   // download only if missing
   for (const coingeckoId of coingeckoIds) {
+    if (INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId)) continue
+
     try {
       const filepathWebp = path.resolve('./assets/tokens/coingecko', `${coingeckoId}.webp`)
 
