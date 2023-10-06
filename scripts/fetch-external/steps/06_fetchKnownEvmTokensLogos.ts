@@ -37,6 +37,11 @@ export const fetchKnownEvmTokensLogos = async () => {
       const coin = await fetchCoinDetails(coingeckoId, true)
       console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
+      if (coin.image.large.includes('missing')) {
+        console.warn('missing image, skipping...', coin.image)
+        continue
+      }
+
       const responseImg = await fetch(coin.image.large)
       let buffer = await responseImg.arrayBuffer()
 
@@ -48,8 +53,6 @@ export const fetchKnownEvmTokensLogos = async () => {
       await writeFile(filepathWebp, Buffer.from(buffer))
     } catch (err) {
       console.log('Failed to download coingecko image for %s', coingeckoId, err)
-      // error is most likely a rate limit problem, stop there and finish next time
-      break
     }
   }
 }
