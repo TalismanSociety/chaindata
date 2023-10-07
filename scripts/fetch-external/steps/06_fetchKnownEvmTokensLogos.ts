@@ -21,6 +21,27 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'g',
   'hiveterminal',
   'nobi',
+  'style-protocol',
+  'taxa-token',
+  'the-real-calcium',
+  'vmpx-erc20',
+  'yieldeth-sommelier',
+  'baby-yooshiape',
+  'bovineverse-bvt',
+  'crypto-news-flash-ai',
+  'dungeon-token',
+  'football-at-alphaverse',
+  'helper-coin',
+  'pink-vote',
+  'rambox',
+  'to-the-moon-token',
+  'wagmi-token',
+  'heco-peg-bnb',
+  'heco-peg-xrp',
+  'pacman-native-token',
+  'firepot-finance',
+  'bridged-sommelier-axelar',
+  'adv3nture-xyz-gemstone',
 ]
 
 const getAllCoingeckoIds = (knownEvmNetworks: TalismanEvmNetwork[]) => {
@@ -54,7 +75,7 @@ export const fetchKnownEvmTokensLogos = async () => {
       const coin = await fetchCoinDetails(coingeckoId, true)
       console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
-      if (coin.image.large.includes('missing')) {
+      if (!coin.image.large.startsWith('https://')) {
         console.warn('missing image, skipping...', coin.image)
         continue
       }
