@@ -20,6 +20,7 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'future-t-i-m-e-dividend',
   'g',
   'hiveterminal',
+  'nobi',
 ]
 
 const getAllCoingeckoIds = (knownEvmNetworks: TalismanEvmNetwork[]) => {
