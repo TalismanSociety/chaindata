@@ -8,11 +8,11 @@ import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/05_fetchKnown
 import { fetchKnownEvmTokensLogos } from './fetch-external/steps/06_fetchKnownEvmTokensLogos'
 
 const steps: Array<() => Promise<void>> = [
-  // fetchKnownEvmNetworks,
-  // fetchKnownEvmTokens,
-  // fetchErc20TokenSymbols,
-  // updateKnownEvmTokensFromCache,
-  // fetchKnownEvmNetworksLogos,
+  fetchKnownEvmNetworks,
+  fetchKnownEvmTokens,
+  fetchErc20TokenSymbols,
+  updateKnownEvmTokensFromCache,
+  fetchKnownEvmNetworksLogos,
   fetchKnownEvmTokensLogos,
 ]
 
