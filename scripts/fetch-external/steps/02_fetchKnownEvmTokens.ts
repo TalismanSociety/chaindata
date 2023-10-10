@@ -2,7 +2,6 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { COINGECKO_API_KEY } from '../../build/constants'
 import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
 import { TalismanEvmNetwork } from '../types'
 

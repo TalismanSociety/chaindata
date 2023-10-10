@@ -14,5 +14,3 @@ export const FILE_EVM_NETWORKS = 'evm-networks.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds
-
-export const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY ?? ''

@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { COINGECKO_API_KEY } from '../build/constants'
+import { COINGECKO_API_KEY } from './constants'
 import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from './types'
 
 // docs mentions api key can be set in header, but if there is a query string then header are ignored

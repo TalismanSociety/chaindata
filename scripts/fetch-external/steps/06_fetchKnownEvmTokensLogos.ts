@@ -6,6 +6,7 @@ import prettier from 'prettier'
 import sharp from 'sharp'
 
 import { fetchCoinDetails } from '../coingecko'
+import { COINGECKO_LOGO_DOWNLOAD_LIMIT } from '../constants'
 import { TalismanEvmNetwork } from '../types'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
@@ -64,7 +65,8 @@ export const fetchKnownEvmTokensLogos = async () => {
 
   // expect each of these to have a logo in ./assets/tokens/known
   // download only if missing
-  for (const coingeckoId of coingeckoIds) {
+  // max 100 per run to prevent github action timeout
+  for (const coingeckoId of coingeckoIds.slice(0, COINGECKO_LOGO_DOWNLOAD_LIMIT)) {
     if (INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId)) continue
 
     try {
@@ -84,7 +86,7 @@ export const fetchKnownEvmTokensLogos = async () => {
       let buffer = await responseImg.arrayBuffer()
 
       const img = sharp(buffer)
-      const { width, height, format } = await img.metadata()
+      const { width, height } = await img.metadata()
       if (!width || !height || width > 256 || height > 256) img.resize(256, 256, { fit: 'contain' })
       buffer = await img.webp().toBuffer()
 

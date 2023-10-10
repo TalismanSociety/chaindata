@@ -30,6 +30,7 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmbkCVC5vZpVAfq8SuPXR9PhpTRS2m8w6LGqBkhXAvmie6',
   'Qmf3GYbPXmTDpSP6t7Ug2j5HjEwrY5oGhBDP7d4TQHvGnG',
   'QmUVJ7MLCEAfq3pHVPFLscqRMiyAY5biVgTkeDQCmAhHNS',
+  'QmQbUVcaxFwY8gqMq1Jeup4NEyivo12QYhbLvVRvgXRBFb',
 ]
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
