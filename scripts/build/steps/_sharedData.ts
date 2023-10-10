@@ -8,6 +8,8 @@ export const sharedData: {
 
   chainsConfig: ConfigChain[]
   evmNetworksConfig: ConfigEvmNetwork[]
+  knownEvmNetworksConfig: ConfigEvmNetwork[]
+  knownEvmNetworksOverridesConfig: ConfigEvmNetwork[]
 
   userDefinedThemeColors: {
     chains: Map<ChainId, string>
@@ -19,6 +21,8 @@ export const sharedData: {
 
   chainsConfig: [],
   evmNetworksConfig: [],
+  knownEvmNetworksConfig: [],
+  knownEvmNetworksOverridesConfig: [],
 
   userDefinedThemeColors: {
     chains: new Map(),

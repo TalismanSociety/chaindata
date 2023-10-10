@@ -22,6 +22,7 @@ export type ConfigChain = {
 
 /** Represents an EvmNetwork from `evm-networks.json` */
 export type ConfigEvmNetwork = {
+  id: string
   substrateChainId?: string
   name?: string
   themeColor?: string
@@ -29,6 +30,7 @@ export type ConfigEvmNetwork = {
   explorerUrl?: string
   rpcs?: string[]
   balancesConfig?: Record<string, Record<string, unknown>>
+  icon?: string
 }
 
 // Some handy types from https://www.typescriptlang.org/docs/handbook/advanced-types.html#distributive-conditional-types

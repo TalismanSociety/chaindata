@@ -25,6 +25,7 @@ export type TalismanEvmErc20Token = {
   decimals?: number
   coingeckoId?: string
   dcentName?: string
+  isDefault?: boolean
 }
 
 export type TalismanEvmNetwork = {

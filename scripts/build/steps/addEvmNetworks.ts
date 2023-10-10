@@ -1,9 +1,17 @@
+import { existsSync } from 'node:fs'
+import { writeFile } from 'node:fs/promises'
+import path from 'node:path'
+
 import { PromisePool } from '@supercharge/promise-pool'
 import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork, githubChainLogoUrl } from '@talismn/chaindata-provider'
 import axios from 'axios'
+import mergeWith from 'lodash/mergeWith'
+import prettier from 'prettier'
 
+import { TalismanEvmErc20Token, TalismanEvmNativeToken, TalismanEvmNetwork } from '../../fetch-external/types'
 import { PROCESS_CONCURRENCY } from '../constants'
 import { ConfigEvmNetwork } from '../types'
+import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../util'
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`
@@ -12,6 +20,26 @@ type EvmNetwork = Omit<UpstreamEvmNetwork, 'rpcs' | 'isHealthy'> & {
 
   balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
   balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
+  isDefault: boolean
+}
+
+const mergeCustomizer = (objValue: any, srcValue: any, key: string, object: any, source: any): any => {
+  // override everything except balanceConfig."evm-erc20".tokens, which must be added one by one
+  if (Array.isArray(objValue)) {
+    return objValue.concat(srcValue)
+  }
+}
+
+type EvmToken = TalismanEvmNativeToken | TalismanEvmErc20Token
+
+const updateToken = (defaultToken: EvmToken, knownToken: EvmToken) => {
+  if (defaultToken?.coingeckoId === undefined && knownToken.coingeckoId)
+    defaultToken.coingeckoId = knownToken.coingeckoId
+  if (defaultToken?.symbol === undefined && knownToken.symbol) defaultToken.symbol = knownToken.symbol
+  if (defaultToken?.decimals === undefined && knownToken.decimals !== undefined)
+    defaultToken.decimals = knownToken.decimals
+  if (defaultToken?.dcentName === undefined && knownToken.dcentName !== undefined)
+    defaultToken.dcentName = knownToken.dcentName
 }
 
 export const addEvmNetworks = async () => {
@@ -48,77 +76,149 @@ export const addEvmNetworks = async () => {
     all: new Map<number, number>(),
   }
 
-  let standaloneIndex = -1
   let substrateIndex = -1
 
-  const standaloneEvmNetworks = (
+  let allEvmNetworks = (
     await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
       .for(sharedData.evmNetworksConfig)
       .process(async (configEvmNetwork, configIndex) => {
-        if (!isStandaloneEvmNetwork(configEvmNetwork)) return undefined
-        standaloneIndex++
-        configsByIndex.standalone.set(standaloneIndex, configIndex)
-
-        const evmNetwork: Omit<EvmNetwork, 'id'> & { id: string | null } = {
-          id: null,
-          isTestnet: configEvmNetwork.isTestnet || false,
-          sortIndex: null,
-          name: configEvmNetwork.name ?? null,
-          themeColor: null,
-          logo: null, // the logo is set later, after we determine the chain id
-          nativeToken: null,
-          tokens: [],
-          explorerUrl: configEvmNetwork.explorerUrl ?? null,
-          rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url })),
-          substrateChain: null,
-
-          balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
-            moduleType,
-            moduleConfig,
-          })),
-          balancesMetadata: [],
+        if (isSubstrateEvmNetwork(configEvmNetwork)) {
+          substrateIndex++
+          configsByIndex.substrate.set(substrateIndex, configIndex)
         }
-
-        return evmNetwork
-      })
-  ).results.filter((network): network is EvmNetwork => network !== undefined)
-
-  const substrateEvmNetworks = (
-    await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
-      .for(sharedData.evmNetworksConfig)
-      .process(async (configEvmNetwork, configIndex) => {
-        if (!isSubstrateEvmNetwork(configEvmNetwork)) return
-        substrateIndex++
-        configsByIndex.substrate.set(substrateIndex, configIndex)
 
         const substrateChain = sharedData.chains.find((chain) => chain.id === configEvmNetwork.substrateChainId)
-        if (!substrateChain) return
 
-        const evmNetwork: Omit<EvmNetwork, 'id'> & { id: string | null } = {
-          id: null,
-          isTestnet: substrateChain.isTestnet || configEvmNetwork.isTestnet || false,
+        // mark all ERC20 tokens with isDefault true
+        if (configEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
+          for (const token of configEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
+            token.isDefault = true
+          }
+        }
+
+        const evmNetwork: EvmNetwork = {
+          id: configEvmNetwork.id,
+          isTestnet: substrateChain?.isTestnet || configEvmNetwork.isTestnet || false,
           sortIndex: null,
-          name: configEvmNetwork.name ?? substrateChain.name ?? null,
-          themeColor: null,
-          logo: substrateChain.logo ?? null, // TODO: Copy chain & token assets into GH Pages output
+          name: configEvmNetwork.name ?? substrateChain?.name ?? null,
+          themeColor: configEvmNetwork.themeColor ?? substrateChain?.themeColor ?? null,
+          logo: substrateChain?.logo ?? null, // TODO: Copy chain & token assets into GH Pages output
           nativeToken: null,
           tokens: [],
           explorerUrl: configEvmNetwork.explorerUrl ?? null,
           rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url })),
-          substrateChain: { id: substrateChain.id },
+          substrateChain: substrateChain ? { id: substrateChain.id } : null,
 
           balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
             moduleType,
             moduleConfig,
           })),
           balancesMetadata: [],
+          isDefault: true,
         }
 
         return evmNetwork
       })
   ).results.filter((network): network is EvmNetwork => network !== undefined)
 
-  let allEvmNetworks = [...standaloneEvmNetworks, ...substrateEvmNetworks]
+  // merge known evm network overrides
+  const knownEvmNetworks = sharedData.knownEvmNetworksConfig.map((knownEvmNetwork) => {
+    const overrides = sharedData.knownEvmNetworksOverridesConfig.find((ov) => ov.id === knownEvmNetwork.id)
+    return overrides ? mergeWith(knownEvmNetwork, overrides, mergeCustomizer) : knownEvmNetwork
+  })
+
+  for (const knownEvmNetwork of knownEvmNetworks) {
+    // mark all ERC20 tokens with isDefault false
+    if (knownEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
+      for (const token of knownEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
+        token.isDefault = false
+      }
+    }
+
+    // update tokens (don't override default values, only fill what's missing)
+    const existingNetwork = allEvmNetworks.find((n) => n.id === knownEvmNetwork.id)
+    if (existingNetwork) {
+      if (knownEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens)
+        for (const knownToken of knownEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
+          // create erc20 module if missing
+          if (!existingNetwork.balancesConfig.some((c) => c.moduleType === 'evm-erc20')) {
+            existingNetwork.balancesConfig.push({
+              moduleType: 'evm-erc20',
+              moduleConfig: {
+                tokens: [],
+              },
+            })
+          }
+          const erc20Module = existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-erc20')
+          const erc20ModuleConfig = erc20Module?.moduleConfig as { tokens: TalismanEvmErc20Token[] }
+
+          const existingToken = erc20ModuleConfig.tokens.find((t) => t.contractAddress === knownToken.contractAddress)
+          if (existingToken) {
+            updateToken(existingToken, knownToken)
+          } else {
+            erc20ModuleConfig.tokens.push(knownToken)
+          }
+        }
+
+      const knownNativeToken = knownEvmNetwork?.balancesConfig?.['evm-native'] as TalismanEvmNativeToken
+      if (knownNativeToken) {
+        // create native module if missing
+        if (!existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-native')) {
+          existingNetwork.balancesConfig.push({
+            moduleType: 'evm-native',
+            moduleConfig: {},
+          })
+        }
+
+        const nativeModule = existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-native')
+        const nativeModuleConfig = nativeModule!.moduleConfig as TalismanEvmNativeToken
+        updateToken(nativeModuleConfig, knownNativeToken)
+      }
+
+      // skip the rest of the processing for this network
+      continue
+    }
+
+    const evmNetwork: EvmNetwork = {
+      id: knownEvmNetwork.id,
+      isTestnet: knownEvmNetwork.isTestnet ?? false,
+      sortIndex: null,
+      name: knownEvmNetwork.name ?? null,
+      themeColor: null,
+      logo: null,
+      nativeToken: null,
+      tokens: [],
+      explorerUrl: knownEvmNetwork.explorerUrl ?? null,
+      rpcs: (knownEvmNetwork.rpcs || []).map((url) => ({ url })),
+      substrateChain: null,
+
+      balancesConfig: Object.entries(knownEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
+        moduleType,
+        moduleConfig,
+      })),
+      balancesMetadata: [],
+      isDefault: false,
+    }
+
+    if (!evmNetwork.logo && knownEvmNetwork.icon) {
+      const svgRelativePath = `./assets/chains/known/${knownEvmNetwork.icon}.svg`
+      const webpRelativePath = `./assets/chains/known/${knownEvmNetwork.icon}.webp`
+      if (existsSync(svgRelativePath)) evmNetwork.logo = getAssetUrlFromPath(svgRelativePath)
+      else if (existsSync(webpRelativePath)) evmNetwork.logo = getAssetUrlFromPath(webpRelativePath)
+    }
+
+    allEvmNetworks.push(evmNetwork)
+  }
+
+  // default logos
+  for (const network of allEvmNetworks) {
+    if (!network.logo) {
+      const chainLogoPath = `./assets/chains/${network.id}.svg`
+      if (existsSync(chainLogoPath)) network.logo = getAssetUrlFromPath(chainLogoPath)
+      else network.logo = UNKNOWN_NETWORK_LOGO_URL
+    }
+  }
+
   for (const [standaloneIndex, configIndex] of configsByIndex.standalone.entries()) {
     const allIndex = standaloneIndex
     configsByIndex.all.set(allIndex, configIndex)
@@ -128,74 +228,11 @@ export const addEvmNetworks = async () => {
     configsByIndex.all.set(allIndex, configIndex)
   }
 
-  // get network ids
+  // TODO : understand what's remaining in this block
   allEvmNetworks = (
     await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
       .for(allEvmNetworks)
       .process(async (evmNetwork, allIndex) => {
-        const debugName = evmNetwork.name ?? evmNetwork.substrateChain?.id ?? 'NO NAME OR SUBSTRATE CHAIN ID'
-        console.log(`Fetching extras for evmNetwork ${allIndex + 1} of ${allEvmNetworks.length} (${debugName})`)
-
-        const ethereumIds: Array<string | null> = await Promise.all(
-          evmNetwork.rpcs?.map?.(async (rpc) => {
-            // try to connect to rpc
-            try {
-              const response = await axios.post(
-                rpc.url,
-                JSON.stringify({
-                  method: 'eth_chainId',
-                  params: [],
-                  id: 1,
-                  jsonrpc: '2.0',
-                }),
-                {
-                  headers: {
-                    'Content-Type': 'application/json',
-                    // our extension will send this header with every request
-                    // some RPCs reject this header
-                    // for those that reject, we want the chaindata CI requests to also reject
-                    Origin: 'chrome-extension://abpofhpcakjhnpklgodncneklaobppdc',
-                  },
-                },
-              )
-
-              // check response status
-              if (response.status !== 200)
-                throw new Error(`Non-200 response status (${response.status}) from ethereum rpc`)
-
-              const ethereumId = parseInt(response.data.result)
-              if (Number.isNaN(ethereumId))
-                throw new Error(`NaN response to eth_chainId: ${JSON.stringify(response.data)}`)
-
-              return ethereumId.toString(10)
-            } catch (error) {
-              return null
-            }
-          }) ?? [],
-        )
-
-        // set id
-        if (ethereumIds.filter((id): id is string => id !== null).length > 0) {
-          // set id to the first healthy rpc's ethereumId
-          evmNetwork.id = ethereumIds.filter((id): id is string => id !== null)[0]
-
-          // remove any rpcs with a different ethereumId
-          const deleteRpcs = ethereumIds
-            .map((id, rpcIndex) => ({ id, rpcIndex }))
-            .filter(({ id }) => {
-              if (id === evmNetwork.id) return false
-              return true
-            })
-            .map(({ rpcIndex }) => rpcIndex)
-
-          evmNetwork.rpcs = evmNetwork.rpcs?.filter?.((_, rpcIndex) => !deleteRpcs.includes(rpcIndex)) ?? []
-        }
-
-        if (typeof evmNetwork.id !== 'string') return null
-
-        // if standalone, update the logo (which is based on the id)
-        if (isStandaloneEvmNetwork(evmNetwork)) evmNetwork.logo = githubChainLogoUrl(evmNetwork.id) // TODO: Copy chain & token assets into GH Pages output
-
         // set the user-defined theme color (if it exists)
         // used to override the auto-calculated theme color
         const configEvmNetworkIndex = configsByIndex.all.get(allIndex)
@@ -204,7 +241,6 @@ export const addEvmNetworks = async () => {
         if (typeof configEvmNetwork?.themeColor === 'string')
           sharedData.userDefinedThemeColors.evmNetworks.set(evmNetwork.id, configEvmNetwork.themeColor)
 
-        console.log(`Fetching extras succeeded for evmNetwork ${debugName}`)
         return evmNetwork
       })
   ).results.filter(<T>(evmNetwork: T): evmNetwork is NonNullable<T> => !!evmNetwork)

@@ -5,7 +5,7 @@ import { dirname, join, sep } from 'node:path'
 import { WsProvider } from '@polkadot/api'
 import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
 
-import { DIR_OUTPUT } from './constants'
+import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO } from './constants'
 
 // Can be used for nicer vscode syntax highlighting & auto formatting
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#raw_strings
@@ -126,3 +126,18 @@ export const sortChainsAndNetworks = (chains: Chain[], evmNetworks: EvmNetwork[]
       return chainOrNetwork
     })
 }
+
+export const getAssetUrlFromPath = (path: string) => {
+  const safePath = path.replace(/^.\//, '')
+  return `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/${GITHUB_BRANCH}/${safePath}`
+}
+
+export const getAssetPathFromUrl = (url: string) => {
+  const prefix = getAssetUrlFromPath('')
+  if (!url.startsWith(prefix)) throw new Error(`Invalid asset url: ${url}`)
+  return `./${url.substring(prefix.length)}`
+}
+
+export const UNKNOWN_TOKEN_LOGO_URL = getAssetUrlFromPath('assets/tokens/unknown.svg')
+
+export const UNKNOWN_NETWORK_LOGO_URL = getAssetUrlFromPath('assets/chains/unknown.svg')

@@ -1,5 +1,8 @@
+import { existsSync } from 'node:fs'
+
 import { SubstrateRpc, Chain as UpstreamChain, githubChainLogoUrl } from '@talismn/chaindata-provider'
 
+import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../util'
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`
@@ -32,7 +35,7 @@ export const addChains = async () => {
       prefix: null,
       name: configChain.name ?? null,
       themeColor: null,
-      logo: githubChainLogoUrl(configChain.id), // TODO: Copy chain & token assets into GH Pages output
+      logo: null,
       chainName: null,
       implName: null,
       specName: null,
@@ -58,6 +61,12 @@ export const addChains = async () => {
         moduleConfig,
       })),
       balancesMetadata: [],
+    }
+
+    if (!chain.logo) {
+      const chainLogoUrl = `./assets/chains/${chain.id}.svg`
+      if (existsSync(chainLogoUrl)) chain.logo = getAssetUrlFromPath(chainLogoUrl)
+      else chain.logo = UNKNOWN_NETWORK_LOGO_URL
     }
 
     // used to override the auto-calculated theme color

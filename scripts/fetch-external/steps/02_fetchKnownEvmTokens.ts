@@ -45,7 +45,7 @@ export const fetchKnownEvmTokens = async () => {
   }
 
   await writeFile(
-    'known-evm-networks.json',
+    'dist/known-evm-networks.json',
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
       parser: 'json',
     }),
