@@ -18,3 +18,6 @@ export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'known-evm-networks-overrides.j
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds
+
+export const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY ?? ''
+export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_API_KEY ? Number(process.env.COINGECKO_API_KEY) : 100

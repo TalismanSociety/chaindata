@@ -1,17 +1,12 @@
 import { existsSync } from 'node:fs'
-import { writeFile } from 'node:fs/promises'
-import path from 'node:path'
 
 import { PromisePool } from '@supercharge/promise-pool'
-import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork, githubChainLogoUrl } from '@talismn/chaindata-provider'
-import axios from 'axios'
+import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
-import prettier from 'prettier'
 
-import { TalismanEvmErc20Token, TalismanEvmNativeToken, TalismanEvmNetwork } from '../../fetch-external/types'
-import { PROCESS_CONCURRENCY } from '../constants'
-import { ConfigEvmNetwork } from '../types'
-import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../util'
+import { PROCESS_CONCURRENCY } from '../../shared/constants'
+import { ConfigEvmNetwork, TalismanEvmErc20Token, TalismanEvmNativeToken } from '../../shared/types'
+import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`

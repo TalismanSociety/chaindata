@@ -53,7 +53,7 @@ export const mkdirRecursive = async (path: string) => {
 export const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms))
 
 export const sendWithTimeout = async (
-  url: string,
+  url: string | string[],
   requests: Array<[string, any?]>,
   timeout: number = 10_000,
 ): Promise<any[]> => {

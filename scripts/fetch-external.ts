@@ -6,6 +6,7 @@ import { fetchErc20TokenSymbols } from './fetch-external/steps/04_fetchErc20Toke
 import { updateKnownEvmTokensFromCache } from './fetch-external/steps/05_updateKnownEvmTokensFromCache'
 import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/06_fetchKnownEvmNetworksLogos'
 import { fetchCoingeckoTokensLogos } from './fetch-external/steps/07_fetchCoingeckoTokensLogos'
+import { updateChainsExtrasCache } from './fetch-external/steps/08_updateChainsExtrasCache'
 
 const steps: Array<() => Promise<void>> = [
   fetchKnownEvmNetworks,
@@ -14,6 +15,7 @@ const steps: Array<() => Promise<void>> = [
   updateKnownEvmTokensFromCache,
   fetchKnownEvmNetworksLogos,
   fetchCoingeckoTokensLogos,
+  updateChainsExtrasCache,
 ]
 
 for (const [index, executeStep] of steps.entries()) {

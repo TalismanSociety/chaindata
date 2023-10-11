@@ -2,8 +2,8 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
+import { TalismanEvmNetwork } from '../../shared/types'
 import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
-import { TalismanEvmNetwork } from '../types'
 
 export const fetchKnownEvmTokens = async () => {
   const assetPlatforms = await fetchAssetPlatforms()

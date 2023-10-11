@@ -1,15 +1,12 @@
 import fs from 'node:fs'
-import { readFile, stat, writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import prettier from 'prettier'
 import sharp from 'sharp'
-import { ChainConfig } from 'viem/_types/types/chain'
 
-import { ConfigChain, ConfigEvmNetwork } from '../../build/types'
+import { COINGECKO_LOGO_DOWNLOAD_LIMIT } from '../../shared/constants'
+import { ConfigChain, ConfigEvmNetwork } from '../../shared/types'
 import { fetchCoinDetails } from '../coingecko'
-import { COINGECKO_LOGO_DOWNLOAD_LIMIT } from '../constants'
-import { TalismanEvmNetwork } from '../types'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
   'baoeth-eth-stablepool',

@@ -11,7 +11,7 @@ import { setInvalidChainAndEvmNetworkLogosToUnknownLogo } from './build/steps/se
 import { setTokenLogos } from './build/steps/setTokenLogos'
 import { updateSortIndexes } from './build/steps/updateSortIndexes'
 import { writeChaindataIndex } from './build/steps/writeChaindataIndex'
-import { cleanupOutputDir } from './build/util'
+import { cleanupOutputDir } from './shared/util'
 
 await cleanupOutputDir()
 

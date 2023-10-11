@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { EthereumListsChain, TalismanEvmNetwork } from '../types'
+import { EthereumListsChain, TalismanEvmNetwork } from '../../shared/types'
 
 const isValidRpc = (rpc: string) => rpc.startsWith('https://') && !rpc.includes('${')
 const isActiveChain = (chain: EthereumListsChain) => !chain.status || chain.status !== 'deprecated'

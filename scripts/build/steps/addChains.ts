@@ -1,8 +1,8 @@
 import { existsSync } from 'node:fs'
 
-import { SubstrateRpc, Chain as UpstreamChain, githubChainLogoUrl } from '@talismn/chaindata-provider'
+import { SubstrateRpc, Chain as UpstreamChain } from '@talismn/chaindata-provider'
 
-import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../util'
+import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`

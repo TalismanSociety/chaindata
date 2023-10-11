@@ -2,8 +2,8 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import { mergeWith } from 'lodash'
 
-import { networkMergeCustomizer } from '../../build/util'
-import { TalismanEvmNetwork } from '../types'
+import { TalismanEvmNetwork } from '../../shared/types'
+import { networkMergeCustomizer } from '../../shared/util'
 
 export const mergeKnownEvmNetworksOverrides = async () => {
   const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]

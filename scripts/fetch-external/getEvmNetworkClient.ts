@@ -1,7 +1,7 @@
 import { Chain, Client, PublicClient, createPublicClient, defineChain, fallback, http } from 'viem'
 import * as chains from 'viem/chains'
 
-import { TalismanEvmNetwork } from './types'
+import { TalismanEvmNetwork } from '../shared/types'
 
 // initialize with viem chains, to benefit from multicall config
 const ALL_CHAINS = Object.keys(chains).reduce(

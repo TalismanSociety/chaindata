@@ -3,9 +3,9 @@ import { readFile, writeFile } from 'node:fs/promises'
 import prettier from 'prettier'
 import { BaseError, TimeoutError, getContract } from 'viem'
 
+import { Erc20TokenCache, TalismanEvmNetwork } from '../../shared/types'
 import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
-import { Erc20TokenCache, TalismanEvmNetwork } from '../types'
 
 const IGNORED_TOKENS = [
   { chainId: 1, contractAddress: '0x0d88ed6e74bbfd96b831231638b66c05571e824f' },

@@ -1,13 +1,10 @@
-import { createWriteStream } from 'node:fs'
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
-import { Readable } from 'node:stream'
-import { finished } from 'node:stream/promises'
 
 import prettier from 'prettier'
 import sharp from 'sharp'
 
-import { EvmNetworkIconCache, TalismanEvmNetwork } from '../types'
+import { EvmNetworkIconCache, TalismanEvmNetwork } from '../../shared/types'
 
 // Dead IPFS hashes, not worth trying to download these
 const KNOWN_UNAVAILABLE_IPFS_HASHES = [

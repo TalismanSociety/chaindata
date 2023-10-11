@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs'
 
 import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
 
-import { UNKNOWN_TOKEN_LOGO_URL, getAssetUrlFromPath } from '../util'
+import { UNKNOWN_TOKEN_LOGO_URL, getAssetUrlFromPath } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 type TokenDef = {

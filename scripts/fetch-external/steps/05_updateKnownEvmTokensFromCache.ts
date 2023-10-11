@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { Erc20TokenCache, TalismanEvmNetwork } from '../types'
+import { Erc20TokenCache, TalismanEvmNetwork } from '../../shared/types'
 
 export const updateKnownEvmTokensFromCache = async () => {
   const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]

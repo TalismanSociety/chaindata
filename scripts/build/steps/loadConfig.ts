@@ -6,8 +6,8 @@ import {
   FILE_KNOWN_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
   FILE_TESTNETS_CHAINDATA,
-} from '../constants'
-import { ConfigChain } from '../types'
+} from '../../shared/constants'
+import { ConfigChain } from '../../shared/types'
 import { sharedData } from './_sharedData'
 
 export const loadConfig = async () => {
