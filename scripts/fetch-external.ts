@@ -2,18 +2,18 @@ import startCase from 'lodash/startCase'
 
 import { fetchKnownEvmNetworks } from './fetch-external/steps/01_fetchKnownEvmNetworks'
 import { fetchKnownEvmTokens } from './fetch-external/steps/02_fetchKnownEvmTokens'
-import { fetchErc20TokenSymbols } from './fetch-external/steps/03_fetchErc20TokenSymbols'
-import { updateKnownEvmTokensFromCache } from './fetch-external/steps/04_updateKnownEvmTokensFromCache'
-import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/05_fetchKnownEvmNetworksLogos'
-import { fetchKnownEvmTokensLogos } from './fetch-external/steps/06_fetchKnownEvmTokensLogos'
+import { fetchErc20TokenSymbols } from './fetch-external/steps/04_fetchErc20TokenSymbols'
+import { updateKnownEvmTokensFromCache } from './fetch-external/steps/05_updateKnownEvmTokensFromCache'
+import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/06_fetchKnownEvmNetworksLogos'
+import { fetchKnownEvmTokensLogos } from './fetch-external/steps/07_fetchKnownEvmTokensLogos'
 
 const steps: Array<() => Promise<void>> = [
-  // fetchKnownEvmNetworks,
-  // fetchKnownEvmTokens,
-  // fetchErc20TokenSymbols,
-  // updateKnownEvmTokensFromCache,
-  // fetchKnownEvmNetworksLogos,
-  // fetchKnownEvmTokensLogos,
+  fetchKnownEvmNetworks,
+  fetchKnownEvmTokens,
+  fetchErc20TokenSymbols,
+  updateKnownEvmTokensFromCache,
+  fetchKnownEvmNetworksLogos,
+  fetchKnownEvmTokensLogos,
 ]
 
 for (const [index, executeStep] of steps.entries()) {

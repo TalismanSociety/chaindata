@@ -36,6 +36,7 @@ export const fetchKnownEvmTokens = async () => {
             const existingIdx = evmNetwork.balancesConfig['evm-erc20'].tokens.findIndex(
               (t) => t.contractAddress === contractAddress,
             )
+
             if (existingIdx !== -1) evmNetwork.balancesConfig['evm-erc20'].tokens[existingIdx] = token
             else evmNetwork.balancesConfig['evm-erc20'].tokens.push(token)
           }
@@ -45,7 +46,7 @@ export const fetchKnownEvmTokens = async () => {
   }
 
   await writeFile(
-    'dist/known-evm-networks.json',
+    'known-evm-networks.json',
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
       parser: 'json',
     }),

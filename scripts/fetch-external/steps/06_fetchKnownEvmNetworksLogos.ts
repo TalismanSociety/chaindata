@@ -52,9 +52,15 @@ export const fetchKnownEvmNetworksLogos = async () => {
     await readFile('known-evm-networks-icons-cache.json', 'utf-8'),
   ) as EvmNetworkIconCache[]
 
+  const processedIcons = new Set<string>()
+
   for (const evmNetwork of knownEvmNetworks.filter((n) => n.icon)) {
+    if (processedIcons.has(evmNetwork.icon!)) continue
+
     try {
       const icon = evmNetwork.icon as string
+      processedIcons.add(icon)
+
       const cache = evmNetworksIconsCache.find((c) => c.icon === icon) ?? ({ icon } as EvmNetworkIconCache)
 
       // Download icon definition (json with url and size)

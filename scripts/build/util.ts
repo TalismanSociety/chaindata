@@ -141,3 +141,11 @@ export const getAssetPathFromUrl = (url: string) => {
 export const UNKNOWN_TOKEN_LOGO_URL = getAssetUrlFromPath('assets/tokens/unknown.svg')
 
 export const UNKNOWN_NETWORK_LOGO_URL = getAssetUrlFromPath('assets/chains/unknown.svg')
+
+export const networkMergeCustomizer = (objValue: any, srcValue: any, key: string, object: any, source: any): any => {
+  // override everything except balanceConfig["evm-erc20"].tokens, which must be added one by one
+  if (Array.isArray(objValue)) {
+    // TODO support overriding properties on array items, such as forcing a coingeckoId for one token
+    return objValue.concat(srcValue)
+  }
+}

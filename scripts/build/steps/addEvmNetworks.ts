@@ -11,7 +11,7 @@ import prettier from 'prettier'
 import { TalismanEvmErc20Token, TalismanEvmNativeToken, TalismanEvmNetwork } from '../../fetch-external/types'
 import { PROCESS_CONCURRENCY } from '../constants'
 import { ConfigEvmNetwork } from '../types'
-import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../util'
+import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../util'
 import { sharedData } from './_sharedData'
 
 // TODO: Switch to the updated type in `@talismn/chaindata`
@@ -21,13 +21,6 @@ type EvmNetwork = Omit<UpstreamEvmNetwork, 'rpcs' | 'isHealthy'> & {
   balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
   balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
   isDefault: boolean
-}
-
-const mergeCustomizer = (objValue: any, srcValue: any, key: string, object: any, source: any): any => {
-  // override everything except balanceConfig."evm-erc20".tokens, which must be added one by one
-  if (Array.isArray(objValue)) {
-    return objValue.concat(srcValue)
-  }
 }
 
 type EvmToken = TalismanEvmNativeToken | TalismanEvmErc20Token
@@ -124,7 +117,7 @@ export const addEvmNetworks = async () => {
   // merge known evm network overrides
   const knownEvmNetworks = sharedData.knownEvmNetworksConfig.map((knownEvmNetwork) => {
     const overrides = sharedData.knownEvmNetworksOverridesConfig.find((ov) => ov.id === knownEvmNetwork.id)
-    return overrides ? mergeWith(knownEvmNetwork, overrides, mergeCustomizer) : knownEvmNetwork
+    return overrides ? mergeWith(knownEvmNetwork, overrides, networkMergeCustomizer) : knownEvmNetwork
   })
 
   for (const knownEvmNetwork of knownEvmNetworks) {

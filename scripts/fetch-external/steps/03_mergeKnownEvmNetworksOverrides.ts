@@ -1,5 +1,8 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
+import { mergeWith } from 'lodash'
+
+import { networkMergeCustomizer } from '../../build/util'
 import { TalismanEvmNetwork } from '../types'
 
 export const mergeKnownEvmNetworksOverrides = async () => {
@@ -11,10 +14,7 @@ export const mergeKnownEvmNetworksOverrides = async () => {
 
     if (!override) return network
 
-    return {
-      ...network,
-      ...override,
-    }
+    return mergeWith(network, override, networkMergeCustomizer)
   })
 
   await writeFile('known-evm-networks.json', JSON.stringify(merged, null, 2))

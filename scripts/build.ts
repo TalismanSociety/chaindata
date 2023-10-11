@@ -19,7 +19,7 @@ const steps: Array<() => Promise<void>> = [
   loadConfig,
 
   addChains,
-  // fetchChainsExtras,
+  fetchChainsExtras,
 
   addEvmNetworks,
 
