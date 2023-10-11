@@ -24,32 +24,40 @@ type EvmNetworkWithBalancesConfig = EvmNetwork & {
 }
 
 export const setTokenLogos = async () => {
-  const allBalanceConfigs = [
-    ...sharedData.chains.flatMap((chain) => (chain as ChainWithBalancesConfig).balancesConfig),
-    ...sharedData.evmNetworks.flatMap((network) => (network as EvmNetworkWithBalancesConfig).balancesConfig),
+  const networks = [
+    ...(sharedData.chains as ChainWithBalancesConfig[]),
+    ...(sharedData.evmNetworks as EvmNetworkWithBalancesConfig[]),
   ]
+  for (const network of networks) {
+    for (const mod of network.balancesConfig) {
+      const tokens = [] as TokenDef[]
+      if ('tokens' in mod.moduleConfig) tokens.push(...mod.moduleConfig.tokens)
+      else tokens.push(mod.moduleConfig)
 
-  const tokens = [] as TokenDef[]
+      for (const token of tokens) {
+        // resolve hardcoded logo path
+        if (token.logo && !token.logo.startsWith('https://') && existsSync(token.logo))
+          token.logo = getAssetUrlFromPath(token.logo)
 
-  for (const mod of allBalanceConfigs) {
-    if ('tokens' in mod.moduleConfig) tokens.push(...mod.moduleConfig.tokens)
-    else tokens.push(mod.moduleConfig)
-  }
+        // for substrate native, ignore symbol, prefer chain's logo or coingecko id
+        if (mod.moduleType === 'substrate-native') {
+          const logoPath = `./assets/chains/${network.id}.svg`
+          if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
+        }
+        // for others resolve by symbol (unsafe - ex. should ETH on testnets use the official ETH icon?)
+        else if (!token.logo?.startsWith('https://') && token.symbol) {
+          const logoPath = `./assets/tokens/${token.symbol.toLocaleLowerCase()}.svg`
+          if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
+        }
 
-  for (const token of tokens) {
-    if (token.logo && !token.logo.startsWith('http') && existsSync(token.logo))
-      token.logo = getAssetUrlFromPath(token.logo)
+        // resolve by coingecko id
+        if (!token.logo?.startsWith('https://') && token.coingeckoId) {
+          const logoPath = `./assets/tokens/coingecko/${token.coingeckoId}.webp`
+          if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
+        }
 
-    if (!token.logo && token.symbol) {
-      const logoPath = `./assets/tokens/${token.symbol}.svg`
-      if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
+        if (!token.logo?.startsWith('https://')) token.logo = UNKNOWN_TOKEN_LOGO_URL
+      }
     }
-
-    if (!token.logo && token.coingeckoId) {
-      const logoPath = `./assets/tokens/coingecko/${token.coingeckoId}.webp`
-      if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
-    }
-
-    if (!token.logo) token.logo = UNKNOWN_TOKEN_LOGO_URL
   }
 }
