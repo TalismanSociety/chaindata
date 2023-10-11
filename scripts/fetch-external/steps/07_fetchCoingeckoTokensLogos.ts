@@ -4,7 +4,9 @@ import path from 'node:path'
 
 import prettier from 'prettier'
 import sharp from 'sharp'
+import { ChainConfig } from 'viem/_types/types/chain'
 
+import { ConfigChain, ConfigEvmNetwork } from '../../build/types'
 import { fetchCoinDetails } from '../coingecko'
 import { COINGECKO_LOGO_DOWNLOAD_LIMIT } from '../constants'
 import { TalismanEvmNetwork } from '../types'
@@ -43,25 +45,52 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'firepot-finance',
   'bridged-sommelier-axelar',
   'adv3nture-xyz-gemstone',
+  'tapio-protocol',
+  'liquid-crowdloan-dot',
+  'acala-dollar',
+  'bit',
+  'composable-finance-layr',
+  'darwinia-crab-network',
+  'imbue-network',
+  'taiga',
+  'neutron',
+  'subgame',
 ]
 
-const getAllCoingeckoIds = (knownEvmNetworks: TalismanEvmNetwork[]) => {
+type BalanceModuleConfig = {
+  coingeckoId?: string
+  tokens?: { coingeckoId?: string }[]
+}
+
+const getAllCoingeckoIds = (
+  chains: ConfigChain[],
+  knownEvmNetworks: ConfigEvmNetwork[],
+  knownEvmNetworksOverrides: ConfigEvmNetwork[],
+) => {
   const coingeckoIds = new Set<string>()
 
-  for (const evmNetwork of knownEvmNetworks) {
-    if (evmNetwork.balancesConfig?.['evm-native']?.coingeckoId)
-      coingeckoIds.add(evmNetwork.balancesConfig['evm-native'].coingeckoId)
-    for (const token of evmNetwork.balancesConfig?.['evm-erc20']?.tokens ?? [])
-      if (token.coingeckoId) coingeckoIds.add(token.coingeckoId)
+  for (const chain of [...chains, ...knownEvmNetworks, ...knownEvmNetworksOverrides]) {
+    if (!chain.balancesConfig) continue
+
+    for (const moduleKey in chain.balancesConfig) {
+      const moduleConfig = chain.balancesConfig[moduleKey] as BalanceModuleConfig
+      if (moduleConfig.coingeckoId) coingeckoIds.add(moduleConfig.coingeckoId)
+      if (moduleConfig.tokens)
+        for (const token of moduleConfig.tokens) if (token.coingeckoId) coingeckoIds.add(token.coingeckoId)
+    }
   }
 
   return [...coingeckoIds]
 }
 
-export const fetchKnownEvmTokensLogos = async () => {
-  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
+export const fetchCoingeckoTokensLogos = async () => {
+  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as ConfigEvmNetwork[]
+  const knownEvmNetworksOverrides = JSON.parse(
+    await readFile('known-evm-networks-overrides.json', 'utf-8'),
+  ) as ConfigEvmNetwork[]
+  const chains = JSON.parse(await readFile('chaindata.json', 'utf-8')) as ConfigChain[]
 
-  const coingeckoIds = getAllCoingeckoIds(knownEvmNetworks)
+  const coingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides)
 
   // expect each of these to have a logo in ./assets/tokens/known
   // download only if missing
