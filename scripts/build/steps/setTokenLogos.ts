@@ -6,6 +6,7 @@ import { UNKNOWN_TOKEN_LOGO_URL, getAssetUrlFromPath } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 type TokenDef = {
+  symbol?: string
   coingeckoId?: string
   logo?: string
 }
@@ -36,10 +37,19 @@ export const setTokenLogos = async () => {
   }
 
   for (const token of tokens) {
+    if (token.logo && !token.logo.startsWith('http') && existsSync(token.logo))
+      token.logo = getAssetUrlFromPath(token.logo)
+
+    if (!token.logo && token.symbol) {
+      const logoPath = `./assets/tokens/${token.symbol}.svg`
+      if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
+    }
+
     if (!token.logo && token.coingeckoId) {
       const logoPath = `./assets/tokens/coingecko/${token.coingeckoId}.webp`
       if (existsSync(logoPath)) token.logo = getAssetUrlFromPath(logoPath)
     }
+
     if (!token.logo) token.logo = UNKNOWN_TOKEN_LOGO_URL
   }
 }
