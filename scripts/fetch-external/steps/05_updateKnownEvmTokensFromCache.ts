@@ -14,7 +14,10 @@ export const updateKnownEvmTokensFromCache = async () => {
 
     if (network.balancesConfig?.['evm-erc20']?.tokens)
       for (const token of network.balancesConfig?.['evm-erc20']?.tokens) {
-        const cached = cachedTokens.find((t) => t.chainId === chainId && t.contractAddress === token.contractAddress)
+        const cached = cachedTokens.find(
+          (t) => t.chainId === chainId && t.contractAddress.toLowerCase() === token.contractAddress.toLocaleLowerCase(),
+        )
+        if (token.symbol === 'BEANS') console.log({ token, cached })
         if (cached) {
           token.symbol = cached.symbol
           token.decimals = cached.decimals

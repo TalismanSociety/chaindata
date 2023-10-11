@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import prettier from 'prettier'
 import { BaseError, TimeoutError, getContract } from 'viem'
 
-import { Erc20TokenCache, TalismanEvmNetwork } from '../../shared/types'
+import { Erc20TokenCache, TalismanEvmErc20Token, TalismanEvmNetwork } from '../../shared/types'
 import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 
@@ -34,7 +34,7 @@ const IGNORED_TOKENS = [
 ]
 
 const isCached = (tokenCache: Erc20TokenCache[], chainId: number, contractAddress: string) =>
-  tokenCache.some((t) => t.chainId === chainId && t.contractAddress === contractAddress)
+  tokenCache.some((t) => t.chainId === chainId && t.contractAddress.toLowerCase() === contractAddress.toLowerCase())
 
 const updateTokenCache = async (
   tokenCache: Erc20TokenCache[],
@@ -43,7 +43,12 @@ const updateTokenCache = async (
 ) => {
   const chainId = Number(evmNetwork.id)
 
-  if (IGNORED_TOKENS.some((t) => t.chainId === chainId && t.contractAddress === contractAddress)) return
+  if (
+    IGNORED_TOKENS.some(
+      (t) => t.chainId === chainId && t.contractAddress.toLowerCase() === contractAddress.toLowerCase(),
+    )
+  )
+    return
 
   if (isCached(tokenCache, chainId, contractAddress)) return
 
@@ -58,7 +63,7 @@ const updateTokenCache = async (
 
     tokenCache.push({
       chainId,
-      contractAddress,
+      contractAddress: contractAddress.toLowerCase(),
       symbol,
       decimals,
     })
@@ -76,18 +81,47 @@ const updateTokenCache = async (
   }
 }
 
+// // Duplicates are bad
+// const removeDuplicates = (tokensCache: Erc20TokenCache[]) => {
+//   const duplicates = tokensCache.filter((token) => {
+//     return tokensCache.some(
+//       (t) =>
+//         t !== token &&
+//         t.chainId === token.chainId &&
+//         t.contractAddress.toLowerCase() === token.contractAddress.toLowerCase(),
+//     )
+//   })
+
+//   if (duplicates.length) console.log('removing %d duplicates', duplicates.length)
+
+//   for (const duplicate of duplicates) {
+//     const index = tokensCache.indexOf(duplicate)
+//     if (index >= 0) tokensCache.splice(index, 1)
+//   }
+// }
+
 export const fetchErc20TokenSymbols = async () => {
+  const evmNetworks = JSON.parse(await readFile('evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
   const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
   const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
 
-  const promises = knownEvmNetworks
-    .filter((network) => network.balancesConfig?.['evm-erc20']?.tokens.length)
-    .flatMap(
-      (network) =>
-        network.balancesConfig?.['evm-erc20']?.tokens
-          .filter((token) => !isCached(tokensCache, Number(network.id), token.contractAddress))
-          .map((token) => updateTokenCache(tokensCache, network, token.contractAddress)) ?? [],
-    )
+  const allNetworks = knownEvmNetworks.concat(evmNetworks)
+  const networksById = Object.fromEntries(allNetworks.map((n) => [n.id, n]))
+
+  // need to dedupe tokens that are registered in both knownEvmTokens and evmTokens
+  const tokenDefs = new Set<string>()
+  for (const network of allNetworks) {
+    const tokens = (network.balancesConfig?.['evm-erc20']?.tokens ?? []) as TalismanEvmErc20Token[]
+    for (const token of tokens) tokenDefs.add(`${network.id}||${token.contractAddress.toLowerCase()}`)
+  }
+
+  const promises = Array.from(tokenDefs)
+    .map((td) => {
+      const [chainId, contractAddress] = td.split('||')
+      const network = networksById[chainId] as TalismanEvmNetwork
+      return [network, contractAddress] as const
+    })
+    .map(([network, contractAddress]) => updateTokenCache(tokensCache, network, contractAddress))
 
   await Promise.all(promises)
 

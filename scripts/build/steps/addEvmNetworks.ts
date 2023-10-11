@@ -1,11 +1,12 @@
 import { existsSync } from 'node:fs'
+import { readFile } from 'node:fs/promises'
 
 import { PromisePool } from '@supercharge/promise-pool'
 import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
 
 import { PROCESS_CONCURRENCY } from '../../shared/constants'
-import { ConfigEvmNetwork, TalismanEvmErc20Token, TalismanEvmNativeToken } from '../../shared/types'
+import { ConfigEvmNetwork, Erc20TokenCache, TalismanEvmErc20Token, TalismanEvmNativeToken } from '../../shared/types'
 import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
@@ -40,6 +41,8 @@ export const addEvmNetworks = async () => {
     'substrateChain' in evmNetwork
       ? typeof evmNetwork.substrateChain?.id === 'string'
       : typeof evmNetwork.substrateChainId !== 'undefined'
+
+  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
 
   // we don't know most evm network ids until the second step where we look it up on-chain
   //
@@ -81,6 +84,17 @@ export const addEvmNetworks = async () => {
         if (configEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
           for (const token of configEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
             token.isDefault = true
+
+            // fill in missing token info from cache
+            const tokenInfo = tokensCache.find(
+              (ti) =>
+                ti.chainId === Number(configEvmNetwork.id) &&
+                ti.contractAddress.toLowerCase() === token.contractAddress.toLowerCase(),
+            )
+            if (tokenInfo) {
+              token.symbol = tokenInfo.symbol
+              token.decimals = tokenInfo.decimals
+            }
           }
         }
 
@@ -140,7 +154,9 @@ export const addEvmNetworks = async () => {
           const erc20Module = existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-erc20')
           const erc20ModuleConfig = erc20Module?.moduleConfig as { tokens: TalismanEvmErc20Token[] }
 
-          const existingToken = erc20ModuleConfig.tokens.find((t) => t.contractAddress === knownToken.contractAddress)
+          const existingToken = erc20ModuleConfig.tokens.find(
+            (t) => t.contractAddress.toLocaleLowerCase() === knownToken.contractAddress.toLowerCase(),
+          )
           if (existingToken) {
             updateToken(existingToken, knownToken)
           } else {
