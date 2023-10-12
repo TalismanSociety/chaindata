@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
+import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { TalismanEvmNetwork } from '../../shared/types'
 import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
 
@@ -9,7 +10,7 @@ export const fetchKnownEvmTokens = async () => {
   const assetPlatforms = await fetchAssetPlatforms()
   const coins = await fetchCoins()
 
-  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
+  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
 
   for (const coin of coins) {
     if (coin.platforms) {
@@ -28,7 +29,7 @@ export const fetchKnownEvmTokens = async () => {
             }
 
             const token = {
-              symbol: coin.symbol, // most symbols are inacurate, but are fixed in step 3
+              symbol: coin.symbol, // most symbols are inacurate, but are fixed in step fetchErc20TokensSymbols
               coingeckoId: coin.id,
               contractAddress,
             }
@@ -46,7 +47,7 @@ export const fetchKnownEvmTokens = async () => {
   }
 
   await writeFile(
-    'known-evm-networks.json',
+    FILE_KNOWN_EVM_NETWORKS,
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
       parser: 'json',
     }),

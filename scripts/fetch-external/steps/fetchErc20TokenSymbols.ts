@@ -3,6 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import prettier from 'prettier'
 import { BaseError, TimeoutError, getContract } from 'viem'
 
+import { FILE_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE } from '../../shared/constants'
 import { Erc20TokenCache, TalismanEvmErc20Token, TalismanEvmNetwork } from '../../shared/types'
 import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
@@ -81,29 +82,10 @@ const updateTokenCache = async (
   }
 }
 
-// // Duplicates are bad
-// const removeDuplicates = (tokensCache: Erc20TokenCache[]) => {
-//   const duplicates = tokensCache.filter((token) => {
-//     return tokensCache.some(
-//       (t) =>
-//         t !== token &&
-//         t.chainId === token.chainId &&
-//         t.contractAddress.toLowerCase() === token.contractAddress.toLowerCase(),
-//     )
-//   })
-
-//   if (duplicates.length) console.log('removing %d duplicates', duplicates.length)
-
-//   for (const duplicate of duplicates) {
-//     const index = tokensCache.indexOf(duplicate)
-//     if (index >= 0) tokensCache.splice(index, 1)
-//   }
-// }
-
 export const fetchErc20TokenSymbols = async () => {
-  const evmNetworks = JSON.parse(await readFile('evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
-  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
-  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
+  const evmNetworks = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
+  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
+  const tokensCache = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8')) as Erc20TokenCache[]
 
   const allNetworks = knownEvmNetworks.concat(evmNetworks)
   const networksById = Object.fromEntries(allNetworks.map((n) => [n.id, n]))
@@ -132,7 +114,7 @@ export const fetchErc20TokenSymbols = async () => {
   })
 
   await writeFile(
-    'known-evm-tokens-cache.json',
+    FILE_KNOWN_EVM_TOKENS_CACHE,
     await prettier.format(JSON.stringify(tokensCache, null, 2), {
       parser: 'json',
     }),

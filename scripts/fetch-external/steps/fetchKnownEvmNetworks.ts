@@ -2,6 +2,7 @@ import { writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
+import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { EthereumListsChain, TalismanEvmNetwork } from '../../shared/types'
 
 const isValidRpc = (rpc: string) => rpc.startsWith('https://') && !rpc.includes('${')
@@ -11,16 +12,8 @@ export const fetchKnownEvmNetworks = async () => {
   const response = await fetch('https://chainid.network/chains.json')
   const chainsList = (await response.json()) as Array<EthereumListsChain>
 
-  // TODO for debugging only, remove when ready
-  await writeFile(
-    'dist/chains.json',
-    await prettier.format(JSON.stringify(chainsList, null, 2), {
-      parser: 'json',
-    }),
-  )
-
   const knownEvmNetworks = chainsList
-    .filter((chain) => chain.chainId)
+    .filter((chain) => !!chain.chainId)
     .filter(isActiveChain)
     .filter((chain) => chain.rpc.filter(isValidRpc).length)
     .map((chain) => {
@@ -43,13 +36,18 @@ export const fetchKnownEvmNetworks = async () => {
         }
       }
 
-      if (chain.faucets.length || chain.name.toLocaleLowerCase().includes('testnet')) evmNetwork.isTestNet = true
+      if (
+        chain.faucets.length ||
+        chain.name.toLocaleLowerCase().includes('testnet') ||
+        chain.rpc.some((rpc) => rpc.includes('testnet'))
+      )
+        evmNetwork.isTestNet = true
 
       return evmNetwork
     })
 
   await writeFile(
-    'known-evm-networks.json',
+    FILE_KNOWN_EVM_NETWORKS,
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
       parser: 'json',
     }),

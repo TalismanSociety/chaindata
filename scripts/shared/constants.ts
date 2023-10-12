@@ -12,9 +12,13 @@ export const DIR_OUTPUT = 'dist'
 
 export const FILE_CHAINDATA = 'chaindata.json'
 export const FILE_TESTNETS_CHAINDATA = 'testnets-chaindata.json'
+export const FILE_CHAINS_EXTRAS_CACHE = 'chains-extras-cache.json'
+
 export const FILE_EVM_NETWORKS = 'evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'known-evm-networks-overrides.json'
+export const FILE_KNOWN_EVM_TOKENS_CACHE = 'known-evm-tokens-cache.json'
+export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'known-evm-networks-icons-cache.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

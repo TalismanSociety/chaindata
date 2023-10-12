@@ -5,14 +5,20 @@ import { PromisePool } from '@supercharge/promise-pool'
 import { ChainId } from '@talismn/chaindata-provider'
 import prettier from 'prettier'
 
-import { PROCESS_CONCURRENCY, RPC_REQUEST_TIMEOUT } from '../../shared/constants'
+import {
+  FILE_CHAINDATA,
+  FILE_CHAINS_EXTRAS_CACHE,
+  FILE_TESTNETS_CHAINDATA,
+  PROCESS_CONCURRENCY,
+  RPC_REQUEST_TIMEOUT,
+} from '../../shared/constants'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { sendWithTimeout } from '../../shared/util'
 
 export const updateChainsExtrasCache = async () => {
-  const mainnets = JSON.parse(await readFile('chaindata.json', 'utf-8')) as ConfigChain[]
-  const testnets = JSON.parse(await readFile('testnets-chaindata.json', 'utf-8')) as ConfigChain[]
-  const chainsExtrasCache = JSON.parse(await readFile('chains-extras-cache.json', 'utf-8')) as ChainExtrasCache[]
+  const mainnets = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
+  const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
+  const chainsExtrasCache = JSON.parse(await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8')) as ChainExtrasCache[]
 
   const chains = [...mainnets, ...testnets]
   const fetchDataForChain = createDataFetcher({ chains, chainsExtrasCache })
@@ -24,7 +30,7 @@ export const updateChainsExtrasCache = async () => {
     .process(fetchDataForChain)
 
   await writeFile(
-    'chains-extras-cache.json',
+    FILE_CHAINS_EXTRAS_CACHE,
     await prettier.format(JSON.stringify(chainsExtrasCache, null, 2), {
       parser: 'json',
     }),

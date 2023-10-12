@@ -1,12 +1,12 @@
 import startCase from 'lodash/startCase'
 
-import { fetchKnownEvmNetworks } from './fetch-external/steps/01_fetchKnownEvmNetworks'
-import { fetchKnownEvmTokens } from './fetch-external/steps/02_fetchKnownEvmTokens'
-import { fetchErc20TokenSymbols } from './fetch-external/steps/04_fetchErc20TokenSymbols'
-import { updateKnownEvmTokensFromCache } from './fetch-external/steps/05_updateKnownEvmTokensFromCache'
-import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/06_fetchKnownEvmNetworksLogos'
-import { fetchCoingeckoTokensLogos } from './fetch-external/steps/07_fetchCoingeckoTokensLogos'
-import { updateChainsExtrasCache } from './fetch-external/steps/08_updateChainsExtrasCache'
+import { fetchCoingeckoTokensLogos } from './fetch-external/steps/fetchCoingeckoTokensLogos'
+import { fetchErc20TokenSymbols } from './fetch-external/steps/fetchErc20TokenSymbols'
+import { fetchKnownEvmNetworks } from './fetch-external/steps/fetchKnownEvmNetworks'
+import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/fetchKnownEvmNetworksLogos'
+import { fetchKnownEvmTokens } from './fetch-external/steps/fetchKnownEvmTokens'
+import { updateChainsExtrasCache } from './fetch-external/steps/updateChainsExtrasCache'
+import { updateKnownEvmTokensFromCache } from './fetch-external/steps/updateKnownEvmTokensFromCache'
 
 const steps: Array<() => Promise<void>> = [
   fetchKnownEvmNetworks,

@@ -5,7 +5,7 @@ import { PromisePool } from '@supercharge/promise-pool'
 import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
 
-import { PROCESS_CONCURRENCY } from '../../shared/constants'
+import { FILE_KNOWN_EVM_TOKENS_CACHE, PROCESS_CONCURRENCY } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache, TalismanEvmErc20Token, TalismanEvmNativeToken } from '../../shared/types'
 import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../../shared/util'
 import { sharedData } from './_sharedData'
@@ -42,7 +42,7 @@ export const addEvmNetworks = async () => {
       ? typeof evmNetwork.substrateChain?.id === 'string'
       : typeof evmNetwork.substrateChainId !== 'undefined'
 
-  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
+  const tokensCache = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8')) as Erc20TokenCache[]
 
   // we don't know most evm network ids until the second step where we look it up on-chain
   //

@@ -2,11 +2,12 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE } from '../../shared/constants'
 import { Erc20TokenCache, TalismanEvmNetwork } from '../../shared/types'
 
 export const updateKnownEvmTokensFromCache = async () => {
-  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
-  const tokensCache = JSON.parse(await readFile('known-evm-tokens-cache.json', 'utf-8')) as Erc20TokenCache[]
+  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
+  const tokensCache = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8')) as Erc20TokenCache[]
 
   for (const network of knownEvmNetworks) {
     const chainId = Number(network.id)
@@ -26,7 +27,7 @@ export const updateKnownEvmTokensFromCache = async () => {
   }
 
   await writeFile(
-    'known-evm-networks.json',
+    FILE_KNOWN_EVM_NETWORKS,
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
       parser: 'json',
     }),

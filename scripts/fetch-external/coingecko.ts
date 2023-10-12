@@ -15,13 +15,13 @@ export const fetchAssetPlatforms = async () => {
   const resAssetPlatforms = await fetch('https://api.coingecko.com/api/v3/asset_platforms?' + urlParams.toString())
   const assetPlatforms = (await resAssetPlatforms.json()) as CoingeckoAssetPlatform[]
 
-  // TODO for debugging only, remove when ready
-  await writeFile(
-    'dist/assetPlatforms.json',
-    await prettier.format(JSON.stringify(assetPlatforms, null, 2), {
-      parser: 'json',
-    }),
-  )
+  // // TODO for debugging only, remove when ready
+  // await writeFile(
+  //   'dist/assetPlatforms.json',
+  //   await prettier.format(JSON.stringify(assetPlatforms, null, 2), {
+  //     parser: 'json',
+  //   }),
+  // )
 
   return assetPlatforms
 }
@@ -33,13 +33,13 @@ export const fetchCoins = async () => {
   const resCoins = await fetch('https://api.coingecko.com/api/v3/coins/list?' + urlParams)
   const coins = (await resCoins.json()) as CoingeckoCoin[]
 
-  // TODO for debugging only, remove when ready
-  await writeFile(
-    'dist/coins.json',
-    await prettier.format(JSON.stringify(coins, null, 2), {
-      parser: 'json',
-    }),
-  )
+  // // TODO for debugging only, remove when ready
+  // await writeFile(
+  //   'dist/coins.json',
+  //   await prettier.format(JSON.stringify(coins, null, 2), {
+  //     parser: 'json',
+  //   }),
+  // )
 
   return coins
 }

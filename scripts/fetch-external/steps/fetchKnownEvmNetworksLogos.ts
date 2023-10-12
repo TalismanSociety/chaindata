@@ -4,6 +4,7 @@ import path from 'node:path'
 import prettier from 'prettier'
 import sharp from 'sharp'
 
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
 import { EvmNetworkIconCache, TalismanEvmNetwork } from '../../shared/types'
 
 // Dead IPFS hashes, not worth trying to download these
@@ -44,9 +45,9 @@ async function fetchWithTimeout(resource: string, options: RequestInit = {}, tim
 }
 
 export const fetchKnownEvmNetworksLogos = async () => {
-  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as TalismanEvmNetwork[]
+  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
   const evmNetworksIconsCache = JSON.parse(
-    await readFile('known-evm-networks-icons-cache.json', 'utf-8'),
+    await readFile(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, 'utf-8'),
   ) as EvmNetworkIconCache[]
 
   const processedIcons = new Set<string>()
@@ -60,7 +61,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
 
       const cache = evmNetworksIconsCache.find((c) => c.icon === icon) ?? ({ icon } as EvmNetworkIconCache)
 
-      // Download icon definition (json with url and size)
+      // Download icon definition (json with ipfs url and size)
       const responseIconJson = await fetch(
         `https://raw.githubusercontent.com/ethereum-lists/chains/master/_data/icons/${evmNetwork.icon}.json`,
         // return 304 if etag is the same, so we don't download the same file again
@@ -96,7 +97,9 @@ export const fetchKnownEvmNetworksLogos = async () => {
           downloadUrl =
             'https://ipfs.io/ipfs/bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae/logo-128px.png'
 
+        // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
         console.log('downloading', downloadUrl)
+
         const responseIconImage = await fetchWithTimeout(downloadUrl, undefined, 10_000)
         if (!responseIconImage.ok || !responseIconImage.body) {
           console.warn(
@@ -130,7 +133,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
       // Save cache to disk
       evmNetworksIconsCache.sort((a, b) => a.icon.localeCompare(b.icon))
       await writeFile(
-        'known-evm-networks-icons-cache.json',
+        FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
         await prettier.format(JSON.stringify(evmNetworksIconsCache, null, 2), {
           parser: 'json',
         }),

@@ -4,7 +4,12 @@ import path from 'node:path'
 
 import sharp from 'sharp'
 
-import { COINGECKO_LOGO_DOWNLOAD_LIMIT } from '../../shared/constants'
+import {
+  COINGECKO_LOGO_DOWNLOAD_LIMIT,
+  FILE_CHAINDATA,
+  FILE_KNOWN_EVM_NETWORKS,
+  FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
+} from '../../shared/constants'
 import { ConfigChain, ConfigEvmNetwork } from '../../shared/types'
 import { fetchCoinDetails } from '../coingecko'
 
@@ -81,11 +86,11 @@ const getAllCoingeckoIds = (
 }
 
 export const fetchCoingeckoTokensLogos = async () => {
-  const knownEvmNetworks = JSON.parse(await readFile('known-evm-networks.json', 'utf-8')) as ConfigEvmNetwork[]
+  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
   const knownEvmNetworksOverrides = JSON.parse(
-    await readFile('known-evm-networks-overrides.json', 'utf-8'),
+    await readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES, 'utf-8'),
   ) as ConfigEvmNetwork[]
-  const chains = JSON.parse(await readFile('chaindata.json', 'utf-8')) as ConfigChain[]
+  const chains = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
 
   const coingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides)
 
