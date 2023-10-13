@@ -5,7 +5,7 @@ export const GITHUB_API = 'https://api.github.com/graphql'
 export const GITHUB_CDN = 'https://raw.githubusercontent.com'
 export const GITHUB_ORG = 'TalismanSociety'
 export const GITHUB_REPO = 'chaindata'
-export const GITHUB_BRANCH = 'feat/known-evm-networks-and-tokens-2' // TODO main
+export const GITHUB_BRANCH = 'main'
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
 export const DIR_OUTPUT = 'dist'
