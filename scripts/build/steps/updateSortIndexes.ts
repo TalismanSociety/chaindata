@@ -1,4 +1,4 @@
-import { sortChainsAndNetworks } from '../util'
+import { sortChainsAndNetworks } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 export const updateSortIndexes = async () => {

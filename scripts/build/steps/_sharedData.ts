@@ -1,6 +1,6 @@
 import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
 
-import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../types'
+import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../../shared/types'
 
 export const sharedData: {
   chains: Chain[]
@@ -8,6 +8,8 @@ export const sharedData: {
 
   chainsConfig: ConfigChain[]
   evmNetworksConfig: ConfigEvmNetwork[]
+  knownEvmNetworksConfig: ConfigEvmNetwork[]
+  knownEvmNetworksOverridesConfig: ConfigEvmNetwork[]
 
   userDefinedThemeColors: {
     chains: Map<ChainId, string>
@@ -19,6 +21,8 @@ export const sharedData: {
 
   chainsConfig: [],
   evmNetworksConfig: [],
+  knownEvmNetworksConfig: [],
+  knownEvmNetworksOverridesConfig: [],
 
   userDefinedThemeColors: {
     chains: new Map(),

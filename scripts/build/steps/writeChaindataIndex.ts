@@ -1,4 +1,4 @@
-import { getFileList, html, writeChaindataFile } from '../util'
+import { getFileList, html, writeChaindataFile } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 export const writeChaindataIndex = async () => {

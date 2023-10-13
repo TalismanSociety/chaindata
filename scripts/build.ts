@@ -4,13 +4,13 @@ import { addChains } from './build/steps/addChains'
 import { addEvmNetworks } from './build/steps/addEvmNetworks'
 import { addThemeColors } from './build/steps/addThemeColors'
 import { applyNativeTokenOverrides } from './build/steps/applyNativeTokenOverrides'
-import { fetchChainsExtras } from './build/steps/fetchChainsExtras'
 import { fixChainEvmNetworkRelations } from './build/steps/fixChainsEvmNetworkRelations'
 import { loadConfig } from './build/steps/loadConfig'
-import { setInvalidChainAndEvmNetworkLogosToUnknownLogo } from './build/steps/setInvalidChainAndEvmNetworkLogosToUnknownLogo'
+import { mergeChainsExtras } from './build/steps/mergeChainsExtras'
+import { setTokenLogos } from './build/steps/setTokenLogos'
 import { updateSortIndexes } from './build/steps/updateSortIndexes'
 import { writeChaindataIndex } from './build/steps/writeChaindataIndex'
-import { cleanupOutputDir } from './build/util'
+import { cleanupOutputDir } from './shared/util'
 
 await cleanupOutputDir()
 
@@ -18,15 +18,16 @@ const steps: Array<() => Promise<void>> = [
   loadConfig,
 
   addChains,
-  fetchChainsExtras,
+  mergeChainsExtras,
 
   addEvmNetworks,
+
   fixChainEvmNetworkRelations,
 
   updateSortIndexes,
 
   applyNativeTokenOverrides,
-  setInvalidChainAndEvmNetworkLogosToUnknownLogo,
+  setTokenLogos,
   addThemeColors,
 
   writeChaindataIndex,
