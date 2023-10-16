@@ -8,6 +8,7 @@ import { sharedData } from './_sharedData'
 // TODO: Switch to the updated type in `@talismn/chaindata`
 type Chain = Omit<UpstreamChain, 'feeToken' | 'rpcs' | 'isHealthy' | 'balanceMetadata'> & {
   feeToken: string | null
+  isDefault: boolean
   rpcs: Array<Pick<SubstrateRpc, 'url'>> | null
 
   balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
@@ -30,6 +31,7 @@ export const addChains = async () => {
 
       // set values
       isTestnet: configChain.isTestnet || false,
+      isDefault: configChain.isDefault ?? true,
       sortIndex: null,
       genesisHash: null,
       prefix: null,

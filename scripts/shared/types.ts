@@ -5,6 +5,7 @@ export type EvmNetworkId = string
 export type ConfigChain = {
   id: string
   isTestnet?: true
+  isDefault?: boolean
   name?: string
   themeColor?: string
   account?: string
