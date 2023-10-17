@@ -35,8 +35,11 @@ export const setTokenLogos = async () => {
       else tokens.push(mod.moduleConfig)
 
       for (const token of tokens) {
-        // resolve hardcoded logo path
+        // reset if unknown
+        if (token.logo === UNKNOWN_TOKEN_LOGO_URL) delete token.logo
+
         if (token.logo && !token.logo.startsWith('https://') && existsSync(token.logo))
+          // resolve hardcoded logo path
           token.logo = getAssetUrlFromPath(token.logo)
 
         // for substrate native, ignore symbol, prefer chain's logo or coingecko id

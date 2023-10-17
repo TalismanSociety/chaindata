@@ -7,6 +7,7 @@ import sharp from 'sharp'
 import {
   COINGECKO_LOGO_DOWNLOAD_LIMIT,
   FILE_CHAINDATA,
+  FILE_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
 } from '../../shared/constants'
@@ -68,10 +69,11 @@ const getAllCoingeckoIds = (
   chains: ConfigChain[],
   knownEvmNetworks: ConfigEvmNetwork[],
   knownEvmNetworksOverrides: ConfigEvmNetwork[],
+  defaultEvmNetworks: ConfigEvmNetwork[],
 ) => {
   const coingeckoIds = new Set<string>()
 
-  for (const chain of [...chains, ...knownEvmNetworks, ...knownEvmNetworksOverrides]) {
+  for (const chain of [...chains, ...knownEvmNetworks, ...knownEvmNetworksOverrides, ...defaultEvmNetworks]) {
     if (!chain.balancesConfig) continue
 
     for (const moduleKey in chain.balancesConfig) {
@@ -82,22 +84,27 @@ const getAllCoingeckoIds = (
     }
   }
 
-  return [...coingeckoIds]
+  return [...coingeckoIds].sort()
 }
 
 export const fetchCoingeckoTokensLogos = async () => {
+  const defaultEvmNetworks = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
   const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
   const knownEvmNetworksOverrides = JSON.parse(
     await readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES, 'utf-8'),
   ) as ConfigEvmNetwork[]
   const chains = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
 
-  const coingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides)
+  const coingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides, defaultEvmNetworks)
+
+  let downloads = 0
 
   // expect each of these to have a logo in ./assets/tokens/known
   // download only if missing
-  // max 100 per run to prevent github action timeout
-  for (const coingeckoId of coingeckoIds.slice(0, COINGECKO_LOGO_DOWNLOAD_LIMIT)) {
+  for (const coingeckoId of coingeckoIds) {
+    // max 100 per run to prevent github action timeout
+    if (downloads > COINGECKO_LOGO_DOWNLOAD_LIMIT) break
+
     if (INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId)) continue
 
     try {
@@ -125,5 +132,7 @@ export const fetchCoingeckoTokensLogos = async () => {
     } catch (err) {
       console.log('Failed to download coingecko image for %s', coingeckoId, err)
     }
+
+    downloads++
   }
 }
