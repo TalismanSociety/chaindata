@@ -92,8 +92,8 @@ export const addEvmNetworks = async () => {
                 ti.contractAddress.toLowerCase() === token.contractAddress.toLowerCase(),
             )
             if (tokenInfo) {
-              token.symbol = tokenInfo.symbol
-              token.decimals = tokenInfo.decimals
+              if (!token.symbol) token.symbol = tokenInfo.symbol
+              if (!token.decimals) token.decimals = tokenInfo.decimals
             }
           }
         }
