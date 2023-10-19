@@ -65,7 +65,7 @@ const updateTokenCache = async (
     tokenCache.push({
       chainId,
       contractAddress: contractAddress.toLowerCase(),
-      symbol,
+      symbol: symbol.trim(),
       decimals,
     })
   } catch (err) {
