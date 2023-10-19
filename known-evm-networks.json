@@ -1225,12 +1225,6 @@
             "decimals": 18
           },
           {
-            "symbol": "ALLUO",
-            "coingeckoId": "alluo",
-            "contractAddress": "0x1e5193ccc53f25638aa22a940af899b692e10b09",
-            "decimals": 18
-          },
-          {
             "symbol": "ALY",
             "coingeckoId": "ally",
             "contractAddress": "0xf2cdf38e24738ba379ffa38d47bc88a941df5627",
@@ -19191,6 +19185,12 @@
             "decimals": 6
           },
           {
+            "symbol": "$REKT",
+            "coingeckoId": "rekt-3",
+            "contractAddress": "0x4f8b986ecffe7bed5dbeb2b49310fb00ca85a539",
+            "decimals": 18
+          },
+          {
             "symbol": "REKT",
             "coingeckoId": "rektskulls",
             "contractAddress": "0x8a7664e782860e856031d6c31eb3bde721bc362b",
@@ -20277,12 +20277,6 @@
             "symbol": "SNS",
             "coingeckoId": "shibarium-name-service",
             "contractAddress": "0xea4a2327e75252517535fd013b7c6706609819db",
-            "decimals": 18
-          },
-          {
-            "symbol": "$SHIBP",
-            "coingeckoId": "shibarium-pad",
-            "contractAddress": "0xc90906d45046059221e908de5cc8fcfaca859235",
             "decimals": 18
           },
           {
@@ -40900,12 +40894,6 @@
             "decimals": 18
           },
           {
-            "symbol": "PTT",
-            "coingeckoId": "potent-coin",
-            "contractAddress": "0x057aff3e314e1ca15bed75510df81a20098ce456",
-            "decimals": 18
-          },
-          {
             "symbol": "PTF",
             "coingeckoId": "potfolio",
             "contractAddress": "0x2bb06b3f1953f3579dda3bc6cbbd9c78d7ff1340",
@@ -41606,6 +41594,12 @@
             "coingeckoId": "rejuve-ai",
             "contractAddress": "0x1135883a1bc6776bf90c97845adc491922106dfb",
             "decimals": 6
+          },
+          {
+            "symbol": "$REKT",
+            "coingeckoId": "rekt-3",
+            "contractAddress": "0x4f8b986ecffe7bed5dbeb2b49310fb00ca85a539",
+            "decimals": 18
           },
           {
             "symbol": "RELAY",
@@ -45421,12 +45415,6 @@
             "symbol": "WAIF",
             "coingeckoId": "waifer",
             "contractAddress": "0x72ef0cf8dc02fe91150a2472cc551de929e22fac",
-            "decimals": 18
-          },
-          {
-            "symbol": "WAIFU",
-            "coingeckoId": "waifu",
-            "contractAddress": "0x8f74eb8c63f000fb546df9bb8c3b0193e8d30536",
             "decimals": 18
           },
           {
@@ -54640,12 +54628,6 @@
             "decimals": 18
           },
           {
-            "symbol": "VRJAM",
-            "coingeckoId": "vrjam",
-            "contractAddress": "0xde75b08765d6b9a5d02f7ec709955644a52abb5d",
-            "decimals": 18
-          },
-          {
             "symbol": "PYR",
             "coingeckoId": "vulcan-forged",
             "contractAddress": "0x430ef9263e76dae63c84292c3409d61c598e9682",
@@ -55539,8 +55521,11 @@
     "name": "opBNB Mainnet",
     "rpcs": [
       "https://opbnb-mainnet-rpc.bnbchain.org",
+      "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
       "https://opbnb.publicnode.com"
     ],
+    "icon": "bnbchain",
     "explorerUrl": "https://mainnet.opbnbscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -64032,7 +64017,12 @@
   {
     "id": "5611",
     "name": "opBNB Testnet",
-    "rpcs": ["https://opbnb-testnet-rpc.bnbchain.org"],
+    "rpcs": [
+      "https://opbnb-testnet-rpc.bnbchain.org",
+      "https://opbnb-testnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5"
+    ],
+    "icon": "bnbchain",
     "explorerUrl": "https://opbnb-testnet.bscscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -64341,7 +64331,7 @@
     "explorerUrl": "https://athens3.explorer.zetachain.com",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "aZETA",
+        "symbol": "ZETA",
         "decimals": 18
       }
     },
@@ -65207,6 +65197,12 @@
             "decimals": 18
           },
           {
+            "symbol": "eUSD",
+            "coingeckoId": "electronic-usd",
+            "contractAddress": "0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4",
+            "decimals": 18
+          },
+          {
             "symbol": "SCALE",
             "coingeckoId": "equalizer-base",
             "contractAddress": "0x54016a4848a38f257b6e96331f7404073fd9c32c",
@@ -65856,7 +65852,10 @@
   {
     "id": "9000",
     "name": "Evmos Testnet",
-    "rpcs": ["https://eth.bd.evmos.dev:8545"],
+    "rpcs": [
+      "https://evmos-testnet.lava.build",
+      "https://eth.bd.evmos.dev:8545"
+    ],
     "icon": "evmos",
     "explorerUrl": "https://testnet.escan.live",
     "balancesConfig": {
@@ -65870,7 +65869,7 @@
   {
     "id": "9001",
     "name": "Evmos",
-    "rpcs": ["https://evmos-evm.publicnode.com"],
+    "rpcs": ["https://evmos.lava.build", "https://evmos-evm.publicnode.com"],
     "icon": "evmos",
     "explorerUrl": "https://escan.live",
     "balancesConfig": {
@@ -70063,12 +70062,6 @@
             "symbol": "pBTC",
             "coingeckoId": "ptokens-btc-2",
             "contractAddress": "0x115d8bf0a53e751f8a472f88d587944ec1c8ca6d",
-            "decimals": 18
-          },
-          {
-            "symbol": "PUF",
-            "coingeckoId": "pufdao",
-            "contractAddress": "0x3a0a3f724094407ac332f98ddb405a11afe609d2",
             "decimals": 18
           },
           {
