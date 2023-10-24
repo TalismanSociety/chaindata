@@ -1923,12 +1923,6 @@
             "decimals": 18
           },
           {
-            "symbol": "eEUR",
-            "coingeckoId": "aryze-eeur",
-            "contractAddress": "0x735fa792e731a2e8f83f32eb539841b7b72e6d8f",
-            "decimals": 18
-          },
-          {
             "symbol": "eUSD",
             "coingeckoId": "aryze-eusd",
             "contractAddress": "0xa4335da338ec4c07c391fc1a9bf75f306adadc08",
@@ -29030,12 +29024,6 @@
             "decimals": 9
           },
           {
-            "symbol": "eEUR",
-            "coingeckoId": "aryze-eeur",
-            "contractAddress": "0x735fa792e731a2e8f83f32eb539841b7b72e6d8f",
-            "decimals": 18
-          },
-          {
             "symbol": "eUSD",
             "coingeckoId": "aryze-eusd",
             "contractAddress": "0xa4335da338ec4c07c391fc1a9bf75f306adadc08",
@@ -49785,12 +49773,6 @@
             "decimals": 18
           },
           {
-            "symbol": "eEUR",
-            "coingeckoId": "aryze-eeur",
-            "contractAddress": "0x735fa792e731a2e8f83f32eb539841b7b72e6d8f",
-            "decimals": 18
-          },
-          {
             "symbol": "eUSD",
             "coingeckoId": "aryze-eusd",
             "contractAddress": "0xa4335da338ec4c07c391fc1a9bf75f306adadc08",
@@ -55281,6 +55263,12 @@
       },
       "evm-erc20": {
         "tokens": [
+          {
+            "symbol": "sETH",
+            "coingeckoId": "bridged-wrapped-ether-im-bridge",
+            "contractAddress": "0xa158a39d00c79019a01a6e86c56e96c461334eb0",
+            "decimals": 18
+          },
           {
             "symbol": "SMR",
             "coingeckoId": "shimmer",
@@ -63794,6 +63782,16 @@
       "evm-native": {
         "symbol": "MC",
         "decimals": 18
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "RST",
+            "coingeckoId": "raini-studios-token",
+            "contractAddress": "0xe338aa35d844d5c1a4e052380dbfa939e0cce13f",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -65751,10 +65749,10 @@
             "decimals": 18
           },
           {
-            "symbol": "USD+crvUSD-f",
+            "symbol": "USD+",
             "coingeckoId": "usd",
-            "contractAddress": "0xda3de145054ed30ee937865d31b500505c4bdfe7",
-            "decimals": 18
+            "contractAddress": "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
+            "decimals": 6
           },
           {
             "symbol": "USDC",
@@ -73840,16 +73838,16 @@
   },
   {
     "id": "51178",
-    "name": "Opside Testnet Pre-Alpha",
+    "name": "Lumoz Testnet Alpha",
     "rpcs": [
-      "https://pre-alpha-us-http-geth.opside.network",
-      "https://pre-alpha-hk-http-geth.opside.network"
+      "https://alpha-us-http-geth.lumoz.org",
+      "https://alpha-hk-http-geth.lumoz.org"
     ],
     "icon": "opside-new",
-    "explorerUrl": "https://pre-alpha.opside.info",
+    "explorerUrl": "https://lumoz.info",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "IDE",
+        "symbol": "MOZ",
         "decimals": 18
       }
     },
@@ -75834,7 +75832,12 @@
   {
     "id": "534352",
     "name": "Scroll",
-    "rpcs": ["https://rpc.scroll.io", "https://rpc-scroll.icecreamswap.com"],
+    "rpcs": [
+      "https://rpc.scroll.io",
+      "https://rpc-scroll.icecreamswap.com",
+      "https://rpc.ankr.com/scroll",
+      "https://scroll-mainnet.chainstacklabs.com"
+    ],
     "explorerUrl": "https://blockscout.scroll.io",
     "balancesConfig": {
       "evm-native": {
@@ -76125,6 +76128,22 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ELV",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1261120",
+    "name": "zKatana",
+    "rpcs": [
+      "https://rpc.zkatana.gelato.digital",
+      "https://rpc.startale.com/zkatana"
+    ],
+    "icon": "astarzk",
+    "explorerUrl": "https://zkatana.blockscout.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
         "decimals": 18
       }
     }
