@@ -918,7 +918,7 @@
     "subscanUrl": "https://pioneer.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/pioneer-runtime_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/pioneer-runtime_metadata_latest.apng",
-    "rpcs": ["wss://pioneer.api.onfinality.io/public-ws"],
+    "rpcs": ["wss://pioneer-rpc-3.bit.country/wss"],
     "paraId": 2096,
     "relay": {
       "id": "kusama"
@@ -1054,7 +1054,7 @@
     "subscanUrl": "https://clover.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/clover-mainnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/clover-mainnet_metadata_latest.apng",
-    "rpcs": ["wss://clover.api.onfinality.io/public-ws", "wss://rpc-para.clover.finance"],
+    "rpcs": ["wss://rpc-para.clover.finance"],
     "paraId": 2002,
     "relay": {
       "id": "polkadot"
@@ -1086,11 +1086,7 @@
     "name": "Composable Finance",
     "account": "*25519",
     "subscanUrl": "https://composable.subscan.io/",
-    "rpcs": [
-      "wss://composable.api.onfinality.io/public-ws",
-      "wss://rpc.composable.finance",
-      "wss://composable-rpc.dwellir.com"
-    ],
+    "rpcs": ["wss://rpc.composable.finance", "wss://composable-rpc.dwellir.com"],
     "paraId": 2019,
     "relay": {
       "id": "polkadot"
@@ -1189,7 +1185,6 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/crab2_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crab2_metadata_latest.apng",
     "rpcs": [
-      "wss://crab.api.onfinality.io/public-ws",
       "wss://crab-rpc.darwinia.network/",
       "wss://crab-rpc.darwiniacommunitydao.xyz",
       "wss://darwiniacrab-rpc.dwellir.com"
@@ -1346,7 +1341,6 @@
     "rpcs": [
       "wss://sys.ibp.network/encointer-kusama",
       "wss://sys.dotters.network/encointer-kusama",
-      "wss://encointer.api.onfinality.io/public-ws",
       "wss://kusama.api.encointer.org"
     ],
     "paraId": 1001,
@@ -1536,7 +1530,7 @@
     "subscanUrl": "https://parallel-heiko.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/heiko_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/heiko_metadata_latest.apng",
-    "rpcs": ["wss://parallel-heiko.api.onfinality.io/public-ws", "wss://heiko-rpc.parallel.fi"],
+    "rpcs": ["wss://heiko-rpc.parallel.fi"],
     "paraId": 2085,
     "relay": {
       "id": "kusama"
@@ -1567,7 +1561,6 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/hydradx_metadata_latest.apng",
     "isUnknownFeeToken": true,
     "rpcs": [
-      "wss://hydradx.api.onfinality.io/public-ws",
       "wss://hydradx-rpc.dwellir.com",
       "wss://rpc.hydradx.cloud",
       "wss://rpc-lb.data6.zp-labs.net:8443/hydradx/ws/?token=2ZGuGivPJJAxXiT1hR1Yg2MXGjMrhEBYFjgbdPi"
@@ -1714,7 +1707,7 @@
     "subscanUrl": "https://integritee.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/integritee-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/integritee-parachain_metadata_latest.apng",
-    "rpcs": ["wss://integritee-kusama.api.onfinality.io/public-ws", "wss://kusama.api.integritee.network"],
+    "rpcs": ["wss://kusama.api.integritee.network"],
     "paraId": 2015,
     "relay": {
       "id": "kusama"
@@ -1749,11 +1742,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/interlay-parachain_metadata_latest.apng",
     "overrideNativeTokenId": "interlay-substrate-tokens-intr",
     "feeToken": "interlay-substrate-tokens-intr",
-    "rpcs": [
-      "wss://interlay.api.onfinality.io/public-ws",
-      "wss://interlay-rpc.dwellir.com",
-      "wss://api.interlay.io/parachain"
-    ],
+    "rpcs": ["wss://interlay-rpc.dwellir.com", "wss://api.interlay.io/parachain"],
     "paraId": 2032,
     "relay": {
       "id": "polkadot"
@@ -2710,11 +2699,11 @@
     "account": "secp256k1",
     "subscanUrl": "https://moonbeam.subscan.io/",
     "rpcs": [
-      "wss://moonbeam.api.onfinality.io/public-ws",
       "wss://1rpc.io/glmr",
       "wss://moonbeam-rpc.dwellir.com",
       "wss://wss.api.moonbeam.network",
-      "wss://moonbeam.unitedbloc.com"
+      "wss://moonbeam.unitedbloc.com",
+      "wss://moonbeam.api.onfinality.io/public-ws"
     ],
     "paraId": 2004,
     "relay": {
@@ -2732,10 +2721,10 @@
     "account": "secp256k1",
     "subscanUrl": "https://moonriver.subscan.io/",
     "rpcs": [
-      "wss://moonriver.api.onfinality.io/public-ws",
       "wss://moonriver-rpc.dwellir.com",
       "wss://wss.api.moonriver.moonbeam.network",
-      "wss://moonriver.unitedbloc.com"
+      "wss://moonriver.unitedbloc.com",
+      "wss://moonriver.api.onfinality.io/public-ws"
     ],
     "paraId": 2023,
     "relay": {
@@ -3307,7 +3296,6 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/quartz_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/quartz_metadata_latest.apng",
     "rpcs": [
-      "wss://quartz.api.onfinality.io/public-ws",
       "wss://ws-quartz.unique.network",
       "wss://us-ws-quartz.unique.network",
       "wss://asia-ws-quartz.unique.network",
@@ -3653,7 +3641,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/tinkernet_node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/tinkernet_node_metadata_latest.apng",
-    "rpcs": ["wss://invarch-tinkernet.api.onfinality.io/public-ws"],
+    "rpcs": ["wss://tinkernet-rpc.dwellir.com"],
     "paraId": 2125,
     "relay": {
       "id": "kusama"
