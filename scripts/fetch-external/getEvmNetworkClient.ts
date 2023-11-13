@@ -1,7 +1,7 @@
-import { Chain, Client, PublicClient, createPublicClient, defineChain, fallback, http } from 'viem'
+import { Chain, PublicClient, createPublicClient, defineChain, fallback, http } from 'viem'
 import * as chains from 'viem/chains'
 
-import { TalismanEvmNetwork } from '../shared/types'
+import { ConfigEvmNetwork } from '../shared/types'
 
 // initialize with viem chains, to benefit from multicall config
 const ALL_CHAINS = Object.keys(chains).reduce(
@@ -16,7 +16,7 @@ const ALL_CHAINS = Object.keys(chains).reduce(
 // create clients as needed, to prevent unnecessary health checks
 const CLIENT_CACHE: Record<number, PublicClient> = {}
 
-export const getEvmNetworkClient = (evmNetwork: TalismanEvmNetwork): PublicClient => {
+export const getEvmNetworkClient = (evmNetwork: ConfigEvmNetwork): PublicClient => {
   const chainId = Number(evmNetwork.id)
 
   if (CLIENT_CACHE[chainId]) return CLIENT_CACHE[chainId]
@@ -28,11 +28,11 @@ export const getEvmNetworkClient = (evmNetwork: TalismanEvmNetwork): PublicClien
 
     ALL_CHAINS[chainId] = defineChain({
       id: chainId,
-      name: evmNetwork.name,
-      network: evmNetwork.name,
+      name: evmNetwork.name ?? '',
+      network: evmNetwork.name ?? '',
       rpcUrls: {
-        public: { http: evmNetwork.rpcs },
-        default: { http: evmNetwork.rpcs },
+        public: { http: evmNetwork.rpcs ?? [] },
+        default: { http: evmNetwork.rpcs ?? [] },
       },
       nativeCurrency: {
         symbol,
@@ -47,7 +47,7 @@ export const getEvmNetworkClient = (evmNetwork: TalismanEvmNetwork): PublicClien
   if (!CLIENT_CACHE[chainId]) {
     const transport = chain.contracts?.multicall3
       ? http()
-      : fallback(evmNetwork.rpcs.map((rpc) => http(rpc, { batch: { wait: 25 } })))
+      : fallback((evmNetwork.rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
     const batch = chain.contracts?.multicall3 ? { multicall: { wait: 25 } } : undefined
 
     CLIENT_CACHE[chainId] = createPublicClient({ chain, transport, batch })

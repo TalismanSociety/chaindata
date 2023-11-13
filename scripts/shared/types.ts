@@ -1,3 +1,7 @@
+import type { MiniMetadata } from '@talismn/balances'
+import type { EvmErc20ModuleConfig, EvmNativeModuleConfig } from '@talismn/balances'
+import { Token } from '@talismn/chaindata-provider'
+
 export type ChainId = string
 export type EvmNetworkId = string
 
@@ -30,11 +34,16 @@ export type ConfigEvmNetwork = {
   isTestnet?: true
   explorerUrl?: string
   rpcs?: string[]
-  balancesConfig?: Record<string, Record<string, unknown>>
+  balancesConfig?: Record<string, Record<string, unknown>> & {
+    // TODO: Remove the `Omit` and the `{ symbol?: string }` parts once we're on the latest version of @talismn/balances
+    'evm-native'?: Omit<EvmNativeModuleConfig, 'symbol'> & { symbol?: string }
+    'evm-erc20'?: EvmErc20ModuleConfig
+  }
   icon?: string
 }
 
 export type ChainExtrasCache = {
+  // These are all copied directly into each chain
   id: string
   genesisHash: string
   prefix: number
@@ -42,7 +51,12 @@ export type ChainExtrasCache = {
   implName: string
   specName: string
   specVersion: string
+
+  // These are separated into their own build files, `tokens/all.json` and `miniMetadatas/all.json`
+  miniMetadatas: Record<string, MiniMetadata>
+  tokens: Record<string, Token>
 }
+
 export type EthereumListsChain = {
   name: string
   chainId: number
@@ -53,41 +67,6 @@ export type EthereumListsChain = {
   infoURL: string
   status?: 'active' | 'incubating' | 'deprecated'
   explorers?: Array<{ name: string; url: string; standard?: string }>
-  icon?: string
-}
-
-export type TalismanEvmNativeToken = {
-  symbol: string
-  coingeckoId?: string
-  dcentName?: string
-  decimals?: number
-  mirrorOf?: string
-}
-
-export type TalismanEvmErc20Token = {
-  symbol: string
-  contractAddress: string
-  decimals?: number
-  coingeckoId?: string
-  dcentName?: string
-  isDefault?: boolean
-}
-
-export type TalismanEvmNetwork = {
-  id: string
-  name: string
-  rpcs: Array<string>
-  balancesConfig?: {
-    'evm-native'?: TalismanEvmNativeToken
-    'evm-erc20'?: {
-      tokens: Array<TalismanEvmErc20Token>
-    }
-  }
-  explorerUrl?: string
-  substrateChainId?: string
-  isTestNet?: boolean
-
-  // TMP fields
   icon?: string
 }
 

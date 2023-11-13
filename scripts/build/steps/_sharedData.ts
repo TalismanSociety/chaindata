@@ -1,10 +1,13 @@
-import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
+import type { MiniMetadata } from '@talismn/balances'
+import { Chain, EvmNetwork, Token } from '@talismn/chaindata-provider'
 
 import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../../shared/types'
 
 export const sharedData: {
   chains: Chain[]
   evmNetworks: EvmNetwork[]
+  tokens: Token[]
+  miniMetadatas: MiniMetadata[]
 
   chainsConfig: ConfigChain[]
   evmNetworksConfig: ConfigEvmNetwork[]
@@ -18,6 +21,8 @@ export const sharedData: {
 } = {
   chains: [],
   evmNetworks: [],
+  tokens: [],
+  miniMetadatas: [],
 
   chainsConfig: [],
   evmNetworksConfig: [],

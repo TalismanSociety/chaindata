@@ -1,8 +1,12 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
+import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
 import { Metadata, TypeRegistry } from '@polkadot/types'
 import { PromisePool } from '@supercharge/promise-pool'
-import { ChainId } from '@talismn/chaindata-provider'
+import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
+import { ChainConnector } from '@talismn/chain-connector'
+import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
+import { Chain, ChainId, ChaindataProvider } from '@talismn/chaindata-provider'
 import prettier from 'prettier'
 
 import {
@@ -118,11 +122,24 @@ const attemptToFetchChainExtras = async (
 
     const ss58Prefix = metadata.registry.chainSS58
 
-    const chainExtrasCache =
-      chainsExtrasCache.find((cc) => cc.id === chain.id) ??
-      ({
-        id: chain.id,
-      } as ChainExtrasCache)
+    const chainExtrasCache: ChainExtrasCache = chainsExtrasCache.find((cc) => cc.id === chain.id) ?? {
+      id: chain.id,
+      genesisHash,
+      prefix: 42,
+      chainName,
+      implName,
+      specName,
+      specVersion: '0', // use `'0'` to force metadata update when chain is first created
+      miniMetadatas: {},
+      tokens: {},
+    }
+
+    const specChanged =
+      chainExtrasCache.genesisHash !== genesisHash ||
+      chainExtrasCache.chainName !== chainName ||
+      chainExtrasCache.implName !== implName ||
+      chainExtrasCache.specName !== specName ||
+      chainExtrasCache.specVersion !== String(specVersion)
 
     // set values
     chainExtrasCache.genesisHash = genesisHash
@@ -132,6 +149,55 @@ const attemptToFetchChainExtras = async (
     chainExtrasCache.implName = implName
     chainExtrasCache.specName = specName
     chainExtrasCache.specVersion = String(specVersion)
+
+    if (specChanged) {
+      console.log(`Updating metadata for chain ${chain.id}`)
+
+      // Clear any old data
+      chainExtrasCache.miniMetadatas = {}
+      chainExtrasCache.tokens = {}
+
+      // TODO: Remove this hack
+      //
+      // We don't actually have the derived `Chain` at this point, only the `ConfigChain`.
+      // But the module only needs access to the `isTestnet` value of the `Chain`, which we do already have.
+      //
+      // So, we will provide the `isTestnet` value using a hacked together `ChaindataProvider` interface.
+      //
+      // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
+      // implementation, it will throw an error. This is fine.
+      const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(chain, rpcUrl)
+      for (const mod of defaultBalanceModules.map((mod) =>
+        mod({ chainConnectors, chaindataProvider: stubChaindataProvider }),
+      )) {
+        const moduleConfig = chain.balancesConfig?.[mod.type]
+        const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig, metadataRpc)
+        const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig)
+
+        const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
+        const miniMetadata: MiniMetadata = {
+          id: deriveMiniMetadataId({
+            source: mod.type,
+            chainId: chain.id,
+            specName,
+            specVersion,
+            balancesConfig: JSON.stringify(moduleConfig),
+          }),
+          source: mod.type,
+          chainId: chain.id,
+          specName,
+          specVersion,
+          balancesConfig: JSON.stringify(moduleConfig),
+          // TODO: Standardise return value from `fetchSubstrateChainMeta`
+          version,
+          data,
+          extra: JSON.stringify(extra),
+        }
+
+        chainExtrasCache.miniMetadatas[miniMetadata.id] = miniMetadata
+        chainExtrasCache.tokens = { ...chainExtrasCache.tokens, ...tokens }
+      }
+    }
 
     if (!chainsExtrasCache.includes(chainExtrasCache)) chainsExtrasCache.push(chainExtrasCache)
 
@@ -146,4 +212,56 @@ const attemptToFetchChainExtras = async (
 
   // update was unsuccessful
   return false
+}
+
+const getHackedBalanceModuleDeps = (chain: ConfigChain, rpcUrl: string) => {
+  const stubChaindataProvider: ChaindataProvider = {
+    chainIds: () => Promise.resolve([chain.id]),
+    chains: () => Promise.resolve({ [chain.id]: chain as unknown as Chain }),
+    getChain: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as Chain) : null),
+
+    evmNetworkIds: () => Promise.resolve([]),
+    evmNetworks: () => Promise.resolve({}),
+    getEvmNetwork: () => Promise.resolve(null),
+
+    tokenIds: () => Promise.resolve([]),
+    tokens: () => Promise.resolve({}),
+    getToken: () => Promise.resolve(null),
+  }
+  const stubChainConnector = {
+    asProvider(chainId: ChainId): ProviderInterface {
+      throw new Error('asProvider method not supported by stubChainConnector')
+    },
+
+    async send<T = any>(
+      chainId: ChainId,
+      method: string,
+      params: unknown[],
+      isCacheable?: boolean | undefined,
+    ): Promise<T> {
+      if (chainId !== chain.id) throw new Error(`Chain ${chainId} not supported by stub connector`)
+
+      return (await sendWithTimeout(rpcUrl, [[method, params]]))[0]
+    },
+
+    async subscribe(
+      chainId: ChainId,
+      subscribeMethod: string,
+      responseMethod: string,
+      params: unknown[],
+      callback: ProviderInterfaceCallback,
+      timeout: number | false = 30_000, // 30 seconds in milliseconds
+    ): Promise<(unsubscribeMethod: string) => void> {
+      if (chainId !== chain.id) throw new Error(`subscribe method not supported by stubChainConnector`)
+
+      return () => {}
+    },
+  }
+  const stubChainConnectorEvm = new ChainConnectorEvm({} as any)
+  const chainConnectors = {
+    substrate: stubChainConnector as ChainConnector,
+    evm: stubChainConnectorEvm,
+  }
+
+  return { chainConnectors, stubChaindataProvider }
 }

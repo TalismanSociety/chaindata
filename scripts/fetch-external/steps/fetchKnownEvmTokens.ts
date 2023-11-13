@@ -1,16 +1,17 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
+import type { EvmErc20Token } from '@talismn/balances'
 import prettier from 'prettier'
 
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { TalismanEvmNetwork } from '../../shared/types'
+import { ConfigEvmNetwork } from '../../shared/types'
 import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
 
 export const fetchKnownEvmTokens = async () => {
   const assetPlatforms = await fetchAssetPlatforms()
   const coins = await fetchCoins()
 
-  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
+  const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
 
   for (const coin of coins) {
     if (coin.platforms) {
@@ -34,12 +35,13 @@ export const fetchKnownEvmTokens = async () => {
               contractAddress,
             }
 
-            const existingIdx = evmNetwork.balancesConfig['evm-erc20'].tokens.findIndex(
-              (t) => t.contractAddress === contractAddress,
-            )
+            const existingIdx =
+              evmNetwork.balancesConfig['evm-erc20'].tokens?.findIndex((t) => t.contractAddress === contractAddress) ??
+              -1
 
-            if (existingIdx !== -1) evmNetwork.balancesConfig['evm-erc20'].tokens[existingIdx] = token
-            else evmNetwork.balancesConfig['evm-erc20'].tokens.push(token)
+            if (evmNetwork.balancesConfig['evm-erc20'].tokens && existingIdx !== -1)
+              evmNetwork.balancesConfig['evm-erc20'].tokens[existingIdx] = token
+            else evmNetwork.balancesConfig['evm-erc20'].tokens?.push(token)
           }
         }
       }

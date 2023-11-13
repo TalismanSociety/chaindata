@@ -1,9 +1,10 @@
 import { writeFile } from 'node:fs/promises'
 
+import { EvmNativeModuleConfig } from '@talismn/balances'
 import prettier from 'prettier'
 
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { EthereumListsChain, TalismanEvmNetwork } from '../../shared/types'
+import { ConfigEvmNetwork, EthereumListsChain } from '../../shared/types'
 
 const isValidRpc = (rpc: string) => rpc.startsWith('https://') && !rpc.includes('${')
 const isActiveChain = (chain: EthereumListsChain) => !chain.status || chain.status !== 'deprecated'
@@ -17,7 +18,7 @@ export const fetchKnownEvmNetworks = async () => {
     .filter(isActiveChain)
     .filter((chain) => chain.rpc.filter(isValidRpc).length)
     .map((chain) => {
-      const evmNetwork: TalismanEvmNetwork = {
+      const evmNetwork: ConfigEvmNetwork = {
         id: chain.chainId.toString(),
         name: chain.name,
         rpcs: chain.rpc.filter(isValidRpc),
@@ -41,7 +42,7 @@ export const fetchKnownEvmNetworks = async () => {
         chain.name.toLocaleLowerCase().includes('testnet') ||
         chain.rpc.some((rpc) => rpc.includes('testnet'))
       )
-        evmNetwork.isTestNet = true
+        evmNetwork.isTestnet = true
 
       return evmNetwork
     })

@@ -4,6 +4,8 @@ import { sharedData } from './_sharedData'
 export const writeChaindataIndex = async () => {
   await writeChains()
   await writeEvmNetworks()
+  await writeTokens()
+  await writeMiniMetadatas()
 
   await writeChaindataFile(
     'index.html',
@@ -92,5 +94,58 @@ const writeEvmNetworks = async () => {
   for (const evmNetwork of allEvmNetworks) {
     if (typeof evmNetwork.id !== 'string') continue
     await writeChaindataFile(`evmNetworks/byId/${evmNetwork.id}.json`, JSON.stringify(evmNetwork, null, 2))
+  }
+}
+
+const writeTokens = async () => {
+  const allTokens = sharedData.tokens.sort((a, b) => a.id.localeCompare(b.id))
+
+  await writeChaindataFile(`tokens/all.json`, JSON.stringify(allTokens, null, 2))
+  await writeChaindataFile(
+    `tokens/summary.json`,
+    JSON.stringify(
+      allTokens.map(({ id, isTestnet, type, symbol, decimals, logo }) => ({
+        id,
+        isTestnet,
+        type,
+        symbol,
+        decimals,
+        logo,
+      })),
+      null,
+      2,
+    ),
+  )
+
+  for (const token of allTokens) {
+    if (typeof token.id !== 'string') continue
+    await writeChaindataFile(`tokens/byId/${token.id}.json`, JSON.stringify(token, null, 2))
+  }
+}
+
+const writeMiniMetadatas = async () => {
+  const allMiniMetadatas = sharedData.miniMetadatas.sort((a, b) => a.chainId.localeCompare(b.chainId))
+
+  await writeChaindataFile(`miniMetadatas/all.json`, JSON.stringify(allMiniMetadatas, null, 2))
+  await writeChaindataFile(
+    `miniMetadatas/summary.json`,
+    JSON.stringify(
+      allMiniMetadatas.map(({ id, chainId, source, version, specName, specVersion, balancesConfig }) => ({
+        id,
+        chainId,
+        source,
+        version,
+        specName,
+        specVersion,
+        balancesConfig,
+      })),
+      null,
+      2,
+    ),
+  )
+
+  for (const miniMetadata of allMiniMetadatas) {
+    if (typeof miniMetadata.id !== 'string') continue
+    await writeChaindataFile(`miniMetadatas/byId/${miniMetadata.id}.json`, JSON.stringify(miniMetadata, null, 2))
   }
 }

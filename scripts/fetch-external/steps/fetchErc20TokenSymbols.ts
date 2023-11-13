@@ -1,10 +1,11 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
+import type { EvmErc20Token } from '@talismn/balances'
 import prettier from 'prettier'
 import { BaseError, TimeoutError, getContract } from 'viem'
 
 import { FILE_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE } from '../../shared/constants'
-import { Erc20TokenCache, TalismanEvmErc20Token, TalismanEvmNetwork } from '../../shared/types'
+import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
 import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 
@@ -39,7 +40,7 @@ const isCached = (tokenCache: Erc20TokenCache[], chainId: number, contractAddres
 
 const updateTokenCache = async (
   tokenCache: Erc20TokenCache[],
-  evmNetwork: TalismanEvmNetwork,
+  evmNetwork: ConfigEvmNetwork,
   contractAddress: string,
 ) => {
   const chainId = Number(evmNetwork.id)
@@ -83,9 +84,9 @@ const updateTokenCache = async (
 }
 
 export const fetchErc20TokenSymbols = async () => {
-  const evmNetworks = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
-  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
-  const tokensCache = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8')) as Erc20TokenCache[]
+  const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
+  const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
+  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8'))
 
   const allNetworks = knownEvmNetworks.concat(evmNetworks)
   const networksById = Object.fromEntries(allNetworks.map((n) => [n.id, n]))
@@ -93,14 +94,14 @@ export const fetchErc20TokenSymbols = async () => {
   // need to dedupe tokens that are registered in both knownEvmTokens and evmTokens
   const tokenDefs = new Set<string>()
   for (const network of allNetworks) {
-    const tokens = (network.balancesConfig?.['evm-erc20']?.tokens ?? []) as TalismanEvmErc20Token[]
+    const tokens = (network.balancesConfig?.['evm-erc20']?.tokens as EvmErc20Token[]) ?? []
     for (const token of tokens) tokenDefs.add(`${network.id}||${token.contractAddress.toLowerCase()}`)
   }
 
   const promises = Array.from(tokenDefs)
     .map((td) => {
       const [chainId, contractAddress] = td.split('||')
-      const network = networksById[chainId] as TalismanEvmNetwork
+      const network = networksById[chainId]
       return [network, contractAddress] as const
     })
     .map(([network, contractAddress]) => updateTokenCache(tokensCache, network, contractAddress))

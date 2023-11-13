@@ -24,4 +24,6 @@ export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds
 
 export const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY ?? ''
-export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_API_KEY ? Number(process.env.COINGECKO_API_KEY) : 100
+export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT
+  ? Number(process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT)
+  : 100

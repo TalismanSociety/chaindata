@@ -2,34 +2,14 @@ import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 
 import { PromisePool } from '@supercharge/promise-pool'
-import { EthereumRpc, EvmNetwork as UpstreamEvmNetwork } from '@talismn/chaindata-provider'
+import type { EvmErc20Token, EvmNativeToken } from '@talismn/balances'
+import { EvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
 
 import { FILE_KNOWN_EVM_TOKENS_CACHE, PROCESS_CONCURRENCY } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache, TalismanEvmErc20Token, TalismanEvmNativeToken } from '../../shared/types'
+import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
 import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../../shared/util'
 import { sharedData } from './_sharedData'
-
-// TODO: Switch to the updated type in `@talismn/chaindata`
-type EvmNetwork = Omit<UpstreamEvmNetwork, 'rpcs' | 'isHealthy'> & {
-  rpcs: Array<Pick<EthereumRpc, 'url'>> | null
-
-  balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
-  balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
-  isDefault: boolean
-}
-
-type EvmToken = TalismanEvmNativeToken | TalismanEvmErc20Token
-
-const updateToken = (defaultToken: EvmToken, knownToken: EvmToken) => {
-  if (defaultToken?.coingeckoId === undefined && knownToken.coingeckoId)
-    defaultToken.coingeckoId = knownToken.coingeckoId
-  if (defaultToken?.symbol === undefined && knownToken.symbol) defaultToken.symbol = knownToken.symbol
-  if (defaultToken?.decimals === undefined && knownToken.decimals !== undefined)
-    defaultToken.decimals = knownToken.decimals
-  if (defaultToken?.dcentName === undefined && knownToken.dcentName !== undefined)
-    defaultToken.dcentName = knownToken.dcentName
-}
 
 export const addEvmNetworks = async () => {
   const isStandaloneEvmNetwork = (evmNetwork: EvmNetwork | ConfigEvmNetwork) =>
@@ -42,7 +22,7 @@ export const addEvmNetworks = async () => {
       ? typeof evmNetwork.substrateChain?.id === 'string'
       : typeof evmNetwork.substrateChainId !== 'undefined'
 
-  const tokensCache = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8')) as Erc20TokenCache[]
+  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8'))
 
   // we don't know most evm network ids until the second step where we look it up on-chain
   //
@@ -82,7 +62,7 @@ export const addEvmNetworks = async () => {
 
         // mark all ERC20 tokens with isDefault true
         if (configEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
-          for (const token of configEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
+          for (const token of configEvmNetwork.balancesConfig['evm-erc20'].tokens as EvmErc20Token[]) {
             token.isDefault = true
 
             // fill in missing token info from cache
@@ -132,7 +112,7 @@ export const addEvmNetworks = async () => {
   for (const knownEvmNetwork of knownEvmNetworks) {
     // mark all ERC20 tokens with isDefault false
     if (knownEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
-      for (const token of knownEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
+      for (const token of knownEvmNetwork.balancesConfig['evm-erc20'].tokens as EvmErc20Token[]) {
         token.isDefault = false
       }
     }
@@ -141,7 +121,7 @@ export const addEvmNetworks = async () => {
     const existingNetwork = allEvmNetworks.find((n) => n.id === knownEvmNetwork.id)
     if (existingNetwork) {
       if (knownEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens)
-        for (const knownToken of knownEvmNetwork.balancesConfig['evm-erc20'].tokens as TalismanEvmErc20Token[]) {
+        for (const knownToken of knownEvmNetwork.balancesConfig['evm-erc20'].tokens as EvmErc20Token[]) {
           // create erc20 module if missing
           if (!existingNetwork.balancesConfig.some((c) => c.moduleType === 'evm-erc20')) {
             existingNetwork.balancesConfig.push({
@@ -152,7 +132,7 @@ export const addEvmNetworks = async () => {
             })
           }
           const erc20Module = existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-erc20')
-          const erc20ModuleConfig = erc20Module?.moduleConfig as { tokens: TalismanEvmErc20Token[] }
+          const erc20ModuleConfig = erc20Module?.moduleConfig as { tokens: EvmErc20Token[] }
 
           const existingToken = erc20ModuleConfig.tokens.find(
             (t) => t.contractAddress.toLocaleLowerCase() === knownToken.contractAddress.toLowerCase(),
@@ -164,7 +144,7 @@ export const addEvmNetworks = async () => {
           }
         }
 
-      const knownNativeToken = knownEvmNetwork?.balancesConfig?.['evm-native'] as TalismanEvmNativeToken
+      const knownNativeToken = knownEvmNetwork?.balancesConfig?.['evm-native'] as EvmNativeToken
       if (knownNativeToken) {
         // create native module if missing
         if (!existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-native')) {
@@ -175,7 +155,7 @@ export const addEvmNetworks = async () => {
         }
 
         const nativeModule = existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-native')
-        const nativeModuleConfig = nativeModule!.moduleConfig as TalismanEvmNativeToken
+        const nativeModuleConfig = nativeModule!.moduleConfig as EvmNativeToken
         updateToken(nativeModuleConfig, knownNativeToken)
       }
 
@@ -249,5 +229,18 @@ export const addEvmNetworks = async () => {
       })
   ).results.filter(<T>(evmNetwork: T): evmNetwork is NonNullable<T> => !!evmNetwork)
 
-  sharedData.evmNetworks.push(...(allEvmNetworks as unknown[] as UpstreamEvmNetwork[]))
+  sharedData.evmNetworks.push(...allEvmNetworks)
+}
+
+/**
+ * Sets any missing values of `defaultToken` to the values contained in `knownToken`.
+ */
+const updateToken = (defaultToken: EvmNativeToken | EvmErc20Token, knownToken: EvmNativeToken | EvmErc20Token) => {
+  if (defaultToken?.coingeckoId === undefined && knownToken.coingeckoId)
+    defaultToken.coingeckoId = knownToken.coingeckoId
+  if (defaultToken?.symbol === undefined && knownToken.symbol) defaultToken.symbol = knownToken.symbol
+  if (defaultToken?.decimals === undefined && knownToken.decimals !== undefined)
+    defaultToken.decimals = knownToken.decimals
+  if (defaultToken?.dcentName === undefined && knownToken.dcentName !== undefined)
+    defaultToken.dcentName = knownToken.dcentName
 }

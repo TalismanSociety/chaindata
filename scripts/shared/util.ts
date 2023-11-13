@@ -3,7 +3,7 @@ import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
 
 import { WsProvider } from '@polkadot/api'
-import { Chain, EvmNetwork } from '@talismn/chaindata-provider'
+import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
 
 import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO } from './constants'
 
@@ -127,20 +127,21 @@ export const sortChainsAndNetworks = (chains: Chain[], evmNetworks: EvmNetwork[]
     })
 }
 
+export const assetUrlPrefix = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/${GITHUB_BRANCH}/`
+export const assetPathPrefix = './'
+
 export const getAssetUrlFromPath = (path: string) => {
-  const safePath = path.replace(/^.\//, '')
-  return `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/${GITHUB_BRANCH}/${safePath}`
+  if (!path.startsWith(assetPathPrefix)) throw new Error(`Invalid asset path: ${path}`)
+  return `${assetUrlPrefix}${path.slice(assetPathPrefix.length)}`
 }
 
 export const getAssetPathFromUrl = (url: string) => {
-  const prefix = getAssetUrlFromPath('')
-  if (!url.startsWith(prefix)) throw new Error(`Invalid asset url: ${url}`)
-  return `./${url.substring(prefix.length)}`
+  if (!url.startsWith(assetUrlPrefix)) throw new Error(`Invalid asset url: ${url}`)
+  return `${assetPathPrefix}${url.slice(assetUrlPrefix.length)}`
 }
 
-export const UNKNOWN_TOKEN_LOGO_URL = getAssetUrlFromPath('assets/tokens/unknown.svg')
-
-export const UNKNOWN_NETWORK_LOGO_URL = getAssetUrlFromPath('assets/chains/unknown.svg')
+export const UNKNOWN_TOKEN_LOGO_URL = githubUnknownTokenLogoUrl
+export const UNKNOWN_NETWORK_LOGO_URL = githubUnknownChainLogoUrl
 
 export const networkMergeCustomizer = (objValue: any, srcValue: any, key: string, object: any, source: any): any => {
   // override everything except balanceConfig["evm-erc20"].tokens, which must be added one by one

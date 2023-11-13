@@ -5,7 +5,7 @@ import prettier from 'prettier'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
-import { EvmNetworkIconCache, TalismanEvmNetwork } from '../../shared/types'
+import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types'
 
 // Dead IPFS hashes, not worth trying to download these
 const KNOWN_UNAVAILABLE_IPFS_HASHES = [
@@ -46,7 +46,7 @@ async function fetchWithTimeout(resource: string, options: RequestInit = {}, tim
 }
 
 export const fetchKnownEvmNetworksLogos = async () => {
-  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as TalismanEvmNetwork[]
+  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
   const evmNetworksIconsCache = JSON.parse(
     await readFile(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, 'utf-8'),
   ) as EvmNetworkIconCache[]

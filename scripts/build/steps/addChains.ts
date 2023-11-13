@@ -1,19 +1,9 @@
 import { existsSync } from 'node:fs'
 
-import { SubstrateRpc, Chain as UpstreamChain } from '@talismn/chaindata-provider'
+import { Chain } from '@talismn/chaindata-provider'
 
 import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../../shared/util'
 import { sharedData } from './_sharedData'
-
-// TODO: Switch to the updated type in `@talismn/chaindata`
-type Chain = Omit<UpstreamChain, 'feeToken' | 'rpcs' | 'isHealthy' | 'balanceMetadata'> & {
-  feeToken: string | null
-  isDefault: boolean
-  rpcs: Array<Pick<SubstrateRpc, 'url'>> | null
-
-  balancesConfig: Array<{ moduleType: string; moduleConfig: unknown }>
-  balancesMetadata: Array<{ moduleType: string; metadata: unknown }>
-}
 
 export const addChains = async () => {
   // add chains (from the config) to the db
@@ -76,6 +66,6 @@ export const addChains = async () => {
       sharedData.userDefinedThemeColors.chains.set(configChain.id, configChain.themeColor)
 
     // save
-    sharedData.chains.push(chain as unknown as UpstreamChain)
+    sharedData.chains.push(chain)
   }
 }
