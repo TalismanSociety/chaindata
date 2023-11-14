@@ -114,7 +114,8 @@ const attemptToFetchChainExtras = async (
     )
 
     // deconstruct rpc data
-    const { specName, specVersion, implName } = runtimeVersion
+    const { specName, implName } = runtimeVersion
+    const specVersion = String(runtimeVersion.specVersion)
     const { ss58Format } = chainProperties
 
     const metadata: Metadata = new Metadata(new TypeRegistry(), metadataRpc)
@@ -139,7 +140,7 @@ const attemptToFetchChainExtras = async (
       chainExtrasCache.chainName !== chainName ||
       chainExtrasCache.implName !== implName ||
       chainExtrasCache.specName !== specName ||
-      chainExtrasCache.specVersion !== String(specVersion)
+      chainExtrasCache.specVersion !== specVersion
 
     // set values
     chainExtrasCache.genesisHash = genesisHash
@@ -148,7 +149,7 @@ const attemptToFetchChainExtras = async (
     chainExtrasCache.chainName = chainName
     chainExtrasCache.implName = implName
     chainExtrasCache.specName = specName
-    chainExtrasCache.specVersion = String(specVersion)
+    chainExtrasCache.specVersion = specVersion
 
     if (specChanged) {
       console.log(`Updating metadata for chain ${chain.id}`)
