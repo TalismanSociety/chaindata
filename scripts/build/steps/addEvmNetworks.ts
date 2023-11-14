@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 
 import { PromisePool } from '@supercharge/promise-pool'
-import type { EvmErc20Token, EvmNativeToken } from '@talismn/balances'
+import type { EvmErc20Token, EvmNativeModuleConfig, EvmNativeToken } from '@talismn/balances'
 import { EvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
 
@@ -144,18 +144,14 @@ export const addEvmNetworks = async () => {
           }
         }
 
-      const knownNativeToken = knownEvmNetwork?.balancesConfig?.['evm-native'] as EvmNativeToken
+      const knownNativeToken = knownEvmNetwork?.balancesConfig?.['evm-native']
       if (knownNativeToken) {
         // create native module if missing
-        if (!existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-native')) {
-          existingNetwork.balancesConfig.push({
-            moduleType: 'evm-native',
-            moduleConfig: {},
-          })
-        }
+        const hasNativeModuleConfig = existingNetwork.balancesConfig.some(({ moduleType: t }) => t === 'evm-native')
+        if (!hasNativeModuleConfig) existingNetwork.balancesConfig.push({ moduleType: 'evm-native', moduleConfig: {} })
 
-        const nativeModule = existingNetwork.balancesConfig.find((c) => c.moduleType === 'evm-native')
-        const nativeModuleConfig = nativeModule!.moduleConfig as EvmNativeToken
+        const nativeModule = existingNetwork.balancesConfig.find(({ moduleType: t }) => t === 'evm-native')
+        const nativeModuleConfig = nativeModule?.moduleConfig as EvmNativeModuleConfig
         updateToken(nativeModuleConfig, knownNativeToken)
       }
 
@@ -232,10 +228,15 @@ export const addEvmNetworks = async () => {
   sharedData.evmNetworks.push(...allEvmNetworks)
 }
 
+type UpdateTokenProps = Pick<
+  Partial<EvmNativeToken | EvmErc20Token>,
+  'coingeckoId' | 'symbol' | 'decimals' | 'dcentName'
+>
+
 /**
  * Sets any missing values of `defaultToken` to the values contained in `knownToken`.
  */
-const updateToken = (defaultToken: EvmNativeToken | EvmErc20Token, knownToken: EvmNativeToken | EvmErc20Token) => {
+const updateToken = (defaultToken: UpdateTokenProps, knownToken: UpdateTokenProps) => {
   if (defaultToken?.coingeckoId === undefined && knownToken.coingeckoId)
     defaultToken.coingeckoId = knownToken.coingeckoId
   if (defaultToken?.symbol === undefined && knownToken.symbol) defaultToken.symbol = knownToken.symbol
