@@ -35,8 +35,7 @@ export type ConfigEvmNetwork = {
   explorerUrl?: string
   rpcs?: string[]
   balancesConfig?: Record<string, Record<string, unknown>> & {
-    // TODO: Remove the `Omit` and the `{ symbol?: string }` parts once we're on the latest version of @talismn/balances
-    'evm-native'?: Omit<EvmNativeModuleConfig, 'symbol'> & { symbol?: string }
+    'evm-native'?: EvmNativeModuleConfig
     'evm-erc20'?: EvmErc20ModuleConfig
   }
   icon?: string
