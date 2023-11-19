@@ -16,6 +16,7 @@ import {
   PROCESS_CONCURRENCY,
   RPC_REQUEST_TIMEOUT,
 } from '../../shared/constants'
+import { TokenDef, setTokenLogo } from '../../shared/setTokenLogo'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { sendWithTimeout } from '../../shared/util'
 
@@ -174,6 +175,18 @@ const attemptToFetchChainExtras = async (
         mod({ chainConnectors, chaindataProvider: stubChaindataProvider }),
       )) {
         const moduleConfig = chain.balancesConfig?.[mod.type]
+
+        // update logos in balancesConfig
+        // TODO: Refactor so we don't need to do this here
+        const configTokens: TokenDef[] = []
+        if (moduleConfig !== undefined) {
+          if ('tokens' in moduleConfig && Array.isArray(moduleConfig.tokens)) configTokens.push(...moduleConfig.tokens)
+          else configTokens.push(moduleConfig)
+          for (const token of configTokens) {
+            setTokenLogo(token, chain.id, mod.type)
+          }
+        }
+
         const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig, metadataRpc)
         const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig)
 
