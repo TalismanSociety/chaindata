@@ -24,7 +24,7 @@ export const updateChainsExtrasCache = async () => {
   const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
   const chainsExtrasCache = JSON.parse(await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8')) as ChainExtrasCache[]
 
-  const chains = [...mainnets, ...testnets]
+  const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
   const fetchDataForChain = createDataFetcher({ chains, chainsExtrasCache })
 
   // PromisePool lets us run `fetchChainExtras` on all of the chains in parallel,

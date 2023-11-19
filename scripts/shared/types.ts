@@ -8,7 +8,7 @@ export type EvmNetworkId = string
 /** Represents a Chain from `chaindata.json` or `testnets-chaindata.json` */
 export type ConfigChain = {
   id: string
-  isTestnet?: true
+  isTestnet?: boolean
   isDefault?: boolean
   name?: string
   themeColor?: string
@@ -31,7 +31,7 @@ export type ConfigEvmNetwork = {
   substrateChainId?: string
   name?: string
   themeColor?: string
-  isTestnet?: true
+  isTestnet?: boolean
   explorerUrl?: string
   rpcs?: string[]
   balancesConfig?: Record<string, Record<string, unknown>> & {
