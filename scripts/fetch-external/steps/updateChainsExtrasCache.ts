@@ -171,9 +171,9 @@ const attemptToFetchChainExtras = async (
       // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
       // implementation, it will throw an error. This is fine.
       const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(chain, rpcUrl)
-      for (const mod of defaultBalanceModules.map((mod) =>
-        mod({ chainConnectors, chaindataProvider: stubChaindataProvider }),
-      )) {
+      for (const mod of defaultBalanceModules
+        .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider }))
+        .filter((mod) => mod.type.startsWith('substrate-'))) {
         const moduleConfig = chain.balancesConfig?.[mod.type]
 
         // update logos in balancesConfig
@@ -182,13 +182,14 @@ const attemptToFetchChainExtras = async (
         if (moduleConfig !== undefined) {
           if ('tokens' in moduleConfig && Array.isArray(moduleConfig.tokens)) configTokens.push(...moduleConfig.tokens)
           else configTokens.push(moduleConfig)
+
           for (const token of configTokens) {
             setTokenLogo(token, chain.id, mod.type)
           }
         }
 
-        const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig, metadataRpc)
-        const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig)
+        const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig ?? {}, metadataRpc)
+        const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig ?? {})
 
         const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
         const miniMetadata: MiniMetadata = {
@@ -197,13 +198,13 @@ const attemptToFetchChainExtras = async (
             chainId: chain.id,
             specName,
             specVersion,
-            balancesConfig: JSON.stringify(moduleConfig),
+            balancesConfig: JSON.stringify(moduleConfig ?? {}),
           }),
           source: mod.type,
           chainId: chain.id,
           specName,
           specVersion,
-          balancesConfig: JSON.stringify(moduleConfig),
+          balancesConfig: JSON.stringify(moduleConfig ?? {}),
           // TODO: Standardise return value from `fetchSubstrateChainMeta`
           version,
           data,
