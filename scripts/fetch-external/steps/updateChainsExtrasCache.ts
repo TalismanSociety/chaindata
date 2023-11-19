@@ -33,6 +33,8 @@ export const updateChainsExtrasCache = async () => {
     .for(chains.map((chain) => chain.id))
     .process(fetchDataForChain)
 
+  chainsExtrasCache.sort((a, b) => a.id.localeCompare(b.id))
+
   await writeFile(
     FILE_CHAINS_EXTRAS_CACHE,
     await prettier.format(JSON.stringify(chainsExtrasCache, null, 2), {
