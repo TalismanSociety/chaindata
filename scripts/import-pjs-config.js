@@ -35,13 +35,16 @@ const goodRpcProviders = [
   // test if rpc begins with `wss://rpc.dotters.network` or `wss://sys.dotters.network`
   /^wss:\/\/(?:rpc|sys)\.dotters\.network/i,
 
-  // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
-  /onfinality\.io\/public-ws\/?$/i,
+  // test if rpc ends with `dwellier.com` or `dwellier.com/`
+  /dwellir\.com\/?$/i,
 ]
 
 const unreliableRpcProviders = [
   // test if rpc ends with `public.blastapi.io` or `public.blastapi.io/`
   /public\.blastapi\.io\/?$/i,
+
+  // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
+  /onfinality\.io\/public-ws\/?$/i,
 ]
 
 const sortGoodFirst = (a, b) => {
@@ -58,10 +61,13 @@ const filterUnreliable = (url) =>
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
+  'goldberg-testnet': 'avail-goldberg-testnet',
+  'kate-testnet': 'avail-kate-testnet',
   'sora-substrate': 'sora-standalone',
   aleph: 'aleph-zero',
   composable: 'composable-finance',
   kilt: 'kilt-spiritnet',
+  pioneer: 'bitcountry-pioneer',
 }
 // a map of testnet pjs ids to their talisman chaindata equivalents
 const customTestnetChainIds = {
