@@ -10,6 +10,9 @@ export const addChains = async () => {
   for (const configChain of sharedData.chainsConfig) {
     if (typeof configChain?.id !== 'string') continue
 
+    // don't include chains with no RPCs
+    if (!configChain.rpcs?.length) continue
+
     // only set relay and paraId if both exist on configChain
     // TODO: Figure out parachains automatically
     const hasRelay = Boolean(
