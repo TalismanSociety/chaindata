@@ -2,16 +2,16 @@ import { cryptoWaitReady } from '@polkadot/util-crypto'
 import { watCryptoWaitReady } from '@talismn/scale'
 import startCase from 'lodash/startCase'
 
-import { buildSteps } from './build/steps'
 import { fetchExternalSteps } from './fetch-external/steps'
 
-const steps: Array<() => Promise<void>> = [
-  // update local data
-  ...fetchExternalSteps,
+// import { buildSteps } from './build/steps'
+// const steps: Array<() => Promise<void>> = [
+//   // update local data
+//   ...fetchExternalSteps,
 
-  // update dist folder (use only for local testing, on github this will be run by the build script)
-  // ...buildSteps
-]
+//   // update dist folder (use only for local testing, on github this will be run by the build script)
+//   ...buildSteps
+// ]
 
 await Promise.all([
   // wait for `@polkadot/util-crypto` to be ready (it needs to load some wasm)
@@ -20,7 +20,7 @@ await Promise.all([
   watCryptoWaitReady(),
 ])
 
-for (const [index, executeStep] of steps.entries()) {
+for (const [index, executeStep] of fetchExternalSteps.entries()) {
   console.log(`Executing step ${index + 1} - ${startCase(executeStep.name)}`)
   const start = process.hrtime()
   await executeStep()

@@ -1,4 +1,4 @@
-name: Build
+name: Chaindata Build
 
 on:
   # runs after each push to current branch
@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   publish:
-    name: 'Update data in dist folder'
+    name: 'Build & publish chaindata to dist folder'
     timeout-minutes: 15
     runs-on: ubuntu-latest
 
@@ -43,7 +43,7 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Fetch external
+      - name: Build chaindata
         run: pnpm build
       - name: Commit changes
         env:
