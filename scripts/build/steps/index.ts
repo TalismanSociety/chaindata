@@ -6,6 +6,7 @@ import { applyNativeTokenOverrides } from './applyNativeTokenOverrides'
 import { fixChainEvmNetworkRelations } from './fixChainsEvmNetworkRelations'
 import { loadConfig } from './loadConfig'
 import { mergeChainsExtras } from './mergeChainsExtras'
+import { removeInvalidErc20Tokens } from './removeInvalidErc20Tokens'
 import { setTokenLogos } from './setTokenLogos'
 import { updateSortIndexes } from './updateSortIndexes'
 import { writeChaindataIndex } from './writeChaindataIndex'
@@ -18,7 +19,7 @@ export const buildSteps: Array<() => Promise<void>> = [
   mergeChainsExtras,
 
   addEvmNetworks,
-
+  removeInvalidErc20Tokens,
   fixChainEvmNetworkRelations,
 
   updateSortIndexes,
