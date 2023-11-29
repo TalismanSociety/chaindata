@@ -2,17 +2,15 @@ import { cryptoWaitReady } from '@polkadot/util-crypto'
 import { watCryptoWaitReady } from '@talismn/scale'
 import startCase from 'lodash/startCase'
 
-import { fetchExternalSteps } from './fetch-external/steps'
 import { buildSteps } from './build/steps'
+import { fetchExternalSteps } from './fetch-external/steps'
 
 const steps: Array<() => Promise<void>> = [
-
   // update local data
   ...fetchExternalSteps,
 
-  // update dist folder
-  ...buildSteps
-
+  // update dist folder (use only for local testing, on github this will be run by the build script)
+  // ...buildSteps
 ]
 
 await Promise.all([
