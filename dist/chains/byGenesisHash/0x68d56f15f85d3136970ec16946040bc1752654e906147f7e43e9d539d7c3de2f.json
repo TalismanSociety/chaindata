@@ -1,0 +1,96 @@
+{
+  "id": "polkadot-asset-hub",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 495,
+  "genesisHash": "0x68d56f15f85d3136970ec16946040bc1752654e906147f7e43e9d539d7c3de2f",
+  "prefix": 0,
+  "name": "Polkadot Asset Hub",
+  "themeColor": "#321d47",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/polkadot-asset-hub.svg",
+  "chainName": "Polkadot Asset Hub",
+  "implName": "statemint",
+  "specName": "statemint",
+  "specVersion": "9430",
+  "nativeToken": {
+    "id": "polkadot-asset-hub-substrate-native-dot"
+  },
+  "tokens": [
+    {
+      "id": "polkadot-asset-hub-substrate-assets-1337-usdc"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-assets-1984-usdt"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-native-dot"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://assethub-polkadot.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/statemint_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/statemint_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://sys.ibp.network/statemint"
+    },
+    {
+      "url": "wss://sys.dotters.network/statemint"
+    },
+    {
+      "url": "wss://statemint.api.onfinality.io/public-ws"
+    },
+    {
+      "url": "wss://statemint-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://statemint-rpc-tn.dwellir.com"
+    },
+    {
+      "url": "wss://polkadot-asset-hub-rpc.polkadot.io"
+    },
+    {
+      "url": "wss://statemint.public.curie.radiumblock.co/ws"
+    },
+    {
+      "url": "wss://dot-rpc.stakeworld.io/statemint"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 1000,
+  "relay": {
+    "id": "polkadot"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "polkadot",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/polkadot-asset-hub.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-assets",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "assetId": 1337,
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
+          },
+          {
+            "assetId": 1984,
+            "symbol": "USDT",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

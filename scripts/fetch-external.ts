@@ -2,22 +2,17 @@ import { cryptoWaitReady } from '@polkadot/util-crypto'
 import { watCryptoWaitReady } from '@talismn/scale'
 import startCase from 'lodash/startCase'
 
-import { fetchCoingeckoTokensLogos } from './fetch-external/steps/fetchCoingeckoTokensLogos'
-import { fetchErc20TokenSymbols } from './fetch-external/steps/fetchErc20TokenSymbols'
-import { fetchKnownEvmNetworks } from './fetch-external/steps/fetchKnownEvmNetworks'
-import { fetchKnownEvmNetworksLogos } from './fetch-external/steps/fetchKnownEvmNetworksLogos'
-import { fetchKnownEvmTokens } from './fetch-external/steps/fetchKnownEvmTokens'
-import { updateChainsExtrasCache } from './fetch-external/steps/updateChainsExtrasCache'
-import { updateKnownEvmTokensFromCache } from './fetch-external/steps/updateKnownEvmTokensFromCache'
+import { fetchExternalSteps } from './fetch-external/steps'
+import { buildSteps } from './build/steps'
 
 const steps: Array<() => Promise<void>> = [
-  fetchKnownEvmNetworks,
-  fetchKnownEvmTokens,
-  fetchErc20TokenSymbols,
-  updateKnownEvmTokensFromCache,
-  fetchKnownEvmNetworksLogos,
-  fetchCoingeckoTokensLogos,
-  updateChainsExtrasCache,
+
+  // update local data
+  ...fetchExternalSteps,
+
+  // update dist folder
+  ...buildSteps
+
 ]
 
 await Promise.all([

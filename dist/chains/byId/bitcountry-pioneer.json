@@ -1,0 +1,101 @@
+{
+  "id": "bitcountry-pioneer",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 73,
+  "genesisHash": "0xf22b7850cdd5a7657bbfd90ac86441275bbc57ace3d2698a740c7b0ec4de5ec3",
+  "prefix": 268,
+  "name": "Bit.Country Pioneer",
+  "themeColor": "#f8fcfc",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/bitcountry-pioneer.svg",
+  "chainName": "Pioneer Network",
+  "implName": "pioneer-runtime",
+  "specName": "pioneer-runtime",
+  "specVersion": "19",
+  "nativeToken": {
+    "id": "bitcountry-pioneer-substrate-native-neer"
+  },
+  "tokens": [
+    {
+      "id": "bitcountry-pioneer-substrate-native-neer"
+    },
+    {
+      "id": "bitcountry-pioneer-substrate-tokens-ksm"
+    },
+    {
+      "id": "bitcountry-pioneer-substrate-tokens-kar"
+    },
+    {
+      "id": "bitcountry-pioneer-substrate-tokens-aseed"
+    },
+    {
+      "id": "bitcountry-pioneer-substrate-tokens-bit"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://pioneer.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/pioneer-runtime_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/pioneer-runtime_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://pioneer-rpc-3.bit.country/wss"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2096,
+  "relay": {
+    "id": "kusama"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "metaverse-network-pioneer",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/bitcountry-pioneer.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"NativeToken\":1}",
+            "coingeckoId": "kusama",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+          },
+          {
+            "symbol": "KAR",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"NativeToken\":2}",
+            "coingeckoId": "karura",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/kar.svg"
+          },
+          {
+            "symbol": "aSEED",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Stable\":0}",
+            "coingeckoId": "ausd-seed-karura",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/aseed.svg"
+          },
+          {
+            "symbol": "BIT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"MiningResource\":0}",
+            "coingeckoId": "bit",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

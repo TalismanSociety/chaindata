@@ -1,0 +1,83 @@
+{
+  "id": "14",
+  "isTestnet": false,
+  "sortIndex": 239,
+  "name": "Flare Mainnet",
+  "themeColor": "#e71e59",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/flare.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://flare-explorer.flare.network",
+  "rpcs": [
+    {
+      "url": "https://flare-api.flare.network/ext/C/rpc"
+    },
+    {
+      "url": "https://flare.public-rpc.com"
+    },
+    {
+      "url": "https://rpc.ftso.au/flare"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "FLR",
+        "decimals": 18,
+        "coingeckoId": "flare-networks",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/flare-networks.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "APS",
+            "coingeckoId": "apsis",
+            "contractAddress": "0xff56eb5b1a7faa972291117e5e9565da29bc808d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/apsis.webp"
+          },
+          {
+            "symbol": "HLN",
+            "coingeckoId": "enosys",
+            "contractAddress": "0x140d8d3649ec605cf69018c627fb44ccc76ec89f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/enosys.webp"
+          },
+          {
+            "symbol": "eUSDT",
+            "coingeckoId": "enosys-usdt",
+            "contractAddress": "0x96b41289d90444b8add57e6f265db5ae8651df29",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/enosys-usdt.webp"
+          },
+          {
+            "symbol": "PFL",
+            "coingeckoId": "pangolin-flare",
+            "contractAddress": "0xb5010d5eb31aa8776b52c7394b76d6d627501c73",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pangolin-flare.webp"
+          },
+          {
+            "symbol": "WFLR",
+            "coingeckoId": "wrapped-flare",
+            "contractAddress": "0x1d80c49bbbcd1c0911346656b529df9e5c2f783d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-flare.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}

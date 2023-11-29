@@ -1,0 +1,53 @@
+{
+  "id": "530",
+  "isTestnet": false,
+  "sortIndex": 230,
+  "name": "F(x)Core Mainnet Network",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/fxcore.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://fx-evm.functionx.io",
+  "rpcs": [
+    {
+      "url": "https://fx-json-web3.functionx.io:8545"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "FX",
+        "decimals": 18,
+        "coingeckoId": "fx-coin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fx-coin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "PURSE",
+            "coingeckoId": "pundi-x-purse",
+            "contractAddress": "0x5fd55a1b9fc24967c4db09c513c3ba0dfa7ff687",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pundi-x-purse.webp"
+          },
+          {
+            "symbol": "StFX",
+            "coingeckoId": "staked-fx",
+            "contractAddress": "0x5c24b402b4b4550cf94227813f3547b94774c1cb",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/staked-fx.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}

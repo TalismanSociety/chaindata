@@ -1,0 +1,75 @@
+{
+  "id": "amplitude",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 31,
+  "genesisHash": "0xcceae7f3b9947cdb67369c026ef78efa5f34a08fe5808d373c04421ecf4f1aaf",
+  "prefix": 57,
+  "name": "Amplitude",
+  "themeColor": "#5defa7",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/amplitude.svg",
+  "chainName": "Amplitude",
+  "implName": "amplitude",
+  "specName": "amplitude",
+  "specVersion": "11",
+  "nativeToken": {
+    "id": "amplitude-substrate-native-ampe"
+  },
+  "tokens": [
+    {
+      "id": "amplitude-substrate-native-ampe"
+    },
+    {
+      "id": "amplitude-substrate-tokens-ksm"
+    },
+    {
+      "id": "amplitude-substrate-tokens-usdt"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": null,
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/amplitude_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/amplitude_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://amplitude-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://rpc-amplitude.pendulumchain.tech"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2124,
+  "relay": {
+    "id": "kusama"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"XCM\":0}",
+            "coingeckoId": "kusama",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "0",
+            "onChainId": "{\"XCM\":1}",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

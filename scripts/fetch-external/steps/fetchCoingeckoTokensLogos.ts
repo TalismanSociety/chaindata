@@ -58,6 +58,30 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'taiga',
   'neutron',
   'subgame',
+  "aicore",
+  "aventis-metaverse",
+  "balancer-usdc-usdbc-axlusdc",
+  "basepal",
+  "bridged-binance-peg-ethereum-opbnb",
+  "dollar-on-chain",
+  "earntv",
+  "gmlp",
+  "gold-utility-token",
+  "goofy-inu",
+  "hermionegrangerclintonamberamyrose9inu",
+  "horizon-protocol-zbnb",
+  "hottel",
+  "hygt",
+  "karen-pepe",
+  "larace",
+  "rand",
+  "strix",
+  "sword-and-magic-world",
+  "thunderhead-staked-flip",
+  "titanx",
+  "trumatic-matic-stable-pool",
+  "wrapped-eeth",
+  "zhaodavinci",
 ]
 
 type BalanceModuleConfig = {
@@ -121,7 +145,7 @@ export const fetchCoingeckoTokensLogos = async () => {
       }
 
       const responseImg = await fetch(coin.image.large)
-      let buffer = await responseImg.arrayBuffer()
+      let buffer:any = await responseImg.arrayBuffer()
 
       const img = sharp(buffer)
       const { width, height } = await img.metadata()

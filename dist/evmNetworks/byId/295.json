@@ -1,0 +1,51 @@
+{
+  "id": "295",
+  "isTestnet": false,
+  "sortIndex": 285,
+  "name": "Hedera Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/hedera.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://hashscan.io/mainnet",
+  "rpcs": [
+    {
+      "url": "https://mainnet.hashio.io/api"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "HBAR",
+        "decimals": 18,
+        "coingeckoId": "hedera-hashgraph",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hedera-hashgraph.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "pbar",
+            "coingeckoId": "pangolin-hedera",
+            "contractAddress": "0x00000000000000000000000000000000001a88b2",
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pangolin-hedera.webp"
+          },
+          {
+            "symbol": "usdc",
+            "coingeckoId": "usd-coin",
+            "contractAddress": "0x000000000000000000000000000000000006f89a",
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}
