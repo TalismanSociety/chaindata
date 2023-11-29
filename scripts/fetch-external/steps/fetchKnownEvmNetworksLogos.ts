@@ -30,6 +30,7 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmUVJ7MLCEAfq3pHVPFLscqRMiyAY5biVgTkeDQCmAhHNS',
   'QmQbUVcaxFwY8gqMq1Jeup4NEyivo12QYhbLvVRvgXRBFb',
   'QmdW7XfRgeyoaHXEvXp8MaVteonankR32CxhL3K5Yc2uQM',
+  'QmVgFqXA3kkCrVYGcWFF7Mhx8JUSe9vSCauNamuKWSvCym',
 ]
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
@@ -81,7 +82,8 @@ export const fetchKnownEvmNetworksLogos = async () => {
       if (!etag) continue
       cache.etag = etag
 
-      const fileDesc = iconJson[0] as { url: string; width: number; height: number; format: string }
+      const fileDesc =
+        Array.isArray(iconJson) && (iconJson[0] as { url: string; width: number; height: number; format: string })
       if (!fileDesc) continue
 
       if (!fileDesc.url.startsWith('ipfs://')) throw new Error('URL is not the expected format : ' + fileDesc.url)
@@ -97,6 +99,8 @@ export const fetchKnownEvmNetworksLogos = async () => {
         if (downloadUrl === 'https://ipfs.io/ipfs/bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae')
           downloadUrl =
             'https://ipfs.io/ipfs/bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae/logo-128px.png'
+        if (downloadUrl === 'https://ipfs.io/ipfs/bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie')
+          downloadUrl = 'https://ipfs.io/ipfs/bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie/bnb-icon2.png'
 
         // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
         console.log('downloading', downloadUrl)
@@ -111,7 +115,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
           continue
         }
 
-        let buffer = await responseIconImage.arrayBuffer()
+        let buffer: any = await responseIconImage.arrayBuffer()
 
         if (fileDesc.format !== 'svg') {
           const img = sharp(buffer)

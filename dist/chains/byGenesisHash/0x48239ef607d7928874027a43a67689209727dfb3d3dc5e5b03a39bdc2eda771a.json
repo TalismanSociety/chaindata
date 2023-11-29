@@ -1,0 +1,107 @@
+{
+  "id": "kusama-asset-hub",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 350,
+  "genesisHash": "0x48239ef607d7928874027a43a67689209727dfb3d3dc5e5b03a39bdc2eda771a",
+  "prefix": 2,
+  "name": "Kusama Asset Hub",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/kusama-asset-hub.svg",
+  "chainName": "Kusama Asset Hub",
+  "implName": "statemine",
+  "specName": "statemine",
+  "specVersion": "1000000",
+  "nativeToken": {
+    "id": "kusama-asset-hub-substrate-native-ksm"
+  },
+  "tokens": [
+    {
+      "id": "kusama-asset-hub-substrate-assets-8-rmrk"
+    },
+    {
+      "id": "kusama-asset-hub-substrate-assets-16-aris"
+    },
+    {
+      "id": "kusama-asset-hub-substrate-assets-1984-usdt"
+    },
+    {
+      "id": "kusama-asset-hub-substrate-native-ksm"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://assethub-kusama.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/statemine_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/statemine_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://sys.ibp.network/statemine"
+    },
+    {
+      "url": "wss://sys.dotters.network/statemine"
+    },
+    {
+      "url": "wss://statemine.api.onfinality.io/public-ws"
+    },
+    {
+      "url": "wss://statemine-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://statemine-rpc-tn.dwellir.com"
+    },
+    {
+      "url": "wss://rpc-statemine.luckyfriday.io"
+    },
+    {
+      "url": "wss://kusama-asset-hub-rpc.polkadot.io"
+    },
+    {
+      "url": "wss://statemine.public.curie.radiumblock.co/ws"
+    },
+    {
+      "url": "wss://ksm-rpc.stakeworld.io/statemine"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 1000,
+  "relay": {
+    "id": "kusama"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "kusama",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/kusama-asset-hub.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-assets",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "assetId": 8,
+            "symbol": "RMRK",
+            "coingeckoId": "rmrk",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/rmrk.svg"
+          },
+          {
+            "assetId": 16,
+            "symbol": "ARIS",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/aris.svg"
+          },
+          {
+            "assetId": 1984,
+            "symbol": "USDT",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

@@ -1,0 +1,115 @@
+{
+  "id": "aleph-zero",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 20,
+  "genesisHash": "0x70255b4d28de0fc4e1a193d7e175ad1ccef431598211c55538f1018651a0344e",
+  "prefix": 42,
+  "name": "Aleph Zero",
+  "themeColor": "#91979c",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/aleph-zero.svg",
+  "chainName": "Aleph Zero",
+  "implName": "aleph-node",
+  "specName": "aleph-node",
+  "specVersion": "65",
+  "nativeToken": {
+    "id": "aleph-zero-substrate-native-azero"
+  },
+  "tokens": [
+    {
+      "id": "aleph-zero-substrate-native-azero"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-panx"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-ainu"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-iou"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-inw"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-pete"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-degen"
+    },
+    {
+      "id": "aleph-zero-substrate-psp22-ahero"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://alephzero.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://ws.azero.dev"
+    },
+    {
+      "url": "wss://aleph-zero-rpc.dwellir.com"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": null,
+  "relay": null,
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "aleph-zero",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/aleph-zero.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-psp22",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "contractAddress": "5GSGAcvqpF5SuH2MhJ1YUdbLAbssCjeqCn2miMUCWUjnr5DQ",
+            "symbol": "PANX",
+            "coingeckoId": "panorama-swap-token",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/panorama-swap-token.webp"
+          },
+          {
+            "contractAddress": "5CSAAAbQpPeY1ieqRS7LynmuMHVJdthq8nxt2S4L6qBGcdnF",
+            "symbol": "AINU",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "contractAddress": "5GYgJ1xBPtyUwbPVnDfbg9uRGWdGrcaM6y1TaftUMoxUHQh5",
+            "symbol": "IOU",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "contractAddress": "5H4aCwLKUpVpct6XGJzDGPPXFockNKQU2JUVNgUw6BXEPzST",
+            "symbol": "INW",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "contractAddress": "5FyVkDZi86awxJsXnJa2a1TeXwnMdhXmcQ2pmKLNmUgYRNM7",
+            "symbol": "PETE",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "contractAddress": "5E3xgSL2kLA56Z7ykNwoGB4a9sdaYRbCBxRF4cDLQYhZU8bv",
+            "symbol": "DEGEN",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "contractAddress": "5DDvG1bTGhWk8P9fZDcdp47TykhwGV46eKjr54SPcX1yTaRg",
+            "symbol": "AHERO",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

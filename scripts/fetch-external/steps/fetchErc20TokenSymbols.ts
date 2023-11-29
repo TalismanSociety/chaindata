@@ -28,10 +28,14 @@ const IGNORED_TOKENS = [
   { chainId: 56, contractAddress: '0x3e3b357061103dc040759ac7dceeaba9901043ad' },
   { chainId: 137, contractAddress: '0x8af78f0c818302164f73b2365fe152c2d1fe80e1' },
   { chainId: 137, contractAddress: '0xf4bb0ed25ac7bcc9c327b88bac5ca288a08ec41e' },
+  { chainId: 137, contractAddress: '0xeb99748e91afca94a6289db3b02e7ef4a8f0a22d' },
   { chainId: 295, contractAddress: '0x00000000000000000000000000000000001a88b2' },
   { chainId: 295, contractAddress: '0x000000000000000000000000000000000006f89a' },
   { chainId: 324, contractAddress: '0x47EF4A5641992A72CFd57b9406c9D9cefEE8e0C4/token-transfers' },
+  { chainId: 324, contractAddress: '0x14acccd04393f26ba155e5402aa6fddbb8e2254a for zksync erc-20 tokens' },
+  { chainId: 1101, contractAddress: '0x3b6564b5da73a41d3a66e6558a98fd0e9e1e77ad' },
   { chainId: 42161, contractAddress: '0xafa5676a6ef790f08290dd4a45e0ec2a5cc5cdab' },
+  { chainId: 42161, contractAddress: '0xedd6ca8a4202d4a36611e2fff109648c4863ae19' },
   { chainId: 3693, contractAddress: '0xc84d8d03aa41ef941721a4d77b24bb44d7c7ac55' },
 ]
 

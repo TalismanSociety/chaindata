@@ -1,0 +1,45 @@
+{
+  "id": "52",
+  "isTestnet": false,
+  "sortIndex": 129,
+  "name": "CoinEx Smart Chain Mainnet",
+  "themeColor": "#505050",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://www.coinex.net",
+  "rpcs": [
+    {
+      "url": "https://rpc.coinex.net"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "cet",
+        "decimals": 18,
+        "coingeckoId": "coinex-token",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/coinex-token.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "FRF",
+            "coingeckoId": "france-rev-finance",
+            "contractAddress": "0x99083d1b9c6744c71d0cf70b8965faca37684527",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/france-rev-finance.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}

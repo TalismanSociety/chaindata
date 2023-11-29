@@ -1,0 +1,158 @@
+{
+  "id": "basilisk",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 63,
+  "genesisHash": "0xa85cfb9b9fd4d622a5b28289a02347af987d8f73fa3108450e2b4a11c1ce5755",
+  "prefix": 10041,
+  "name": "Basilisk",
+  "themeColor": "#4cffaf",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/basilisk.svg",
+  "chainName": "Basilisk",
+  "implName": "basilisk",
+  "specName": "basilisk",
+  "specVersion": "105",
+  "nativeToken": {
+    "id": "basilisk-substrate-native-bsx"
+  },
+  "tokens": [
+    {
+      "id": "basilisk-substrate-native-bsx"
+    },
+    {
+      "id": "basilisk-substrate-tokens-ksm"
+    },
+    {
+      "id": "basilisk-substrate-tokens-aseed"
+    },
+    {
+      "id": "basilisk-substrate-tokens-tnkr"
+    },
+    {
+      "id": "basilisk-substrate-tokens-usdcet"
+    },
+    {
+      "id": "basilisk-substrate-tokens-weth"
+    },
+    {
+      "id": "basilisk-substrate-tokens-wbtc"
+    },
+    {
+      "id": "basilisk-substrate-tokens-wusdt"
+    },
+    {
+      "id": "basilisk-substrate-tokens-dai"
+    },
+    {
+      "id": "basilisk-substrate-tokens-usdt"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://basilisk.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/basilisk_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/basilisk_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://rpc.basilisk.cloud"
+    },
+    {
+      "url": "wss://basilisk-rpc.dwellir.com"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2090,
+  "relay": {
+    "id": "kusama"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "basilisk",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/basilisk.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "100000000",
+            "onChainId": 1,
+            "coingeckoId": "kusama",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+          },
+          {
+            "symbol": "aSEED",
+            "decimals": 12,
+            "ed": "10000000000",
+            "onChainId": 2,
+            "coingeckoId": "ausd-seed-acala",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/aseed.svg"
+          },
+          {
+            "symbol": "TNKR",
+            "decimals": 12,
+            "ed": "1000000000",
+            "onChainId": 6,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "USDCet",
+            "decimals": 6,
+            "ed": "10000",
+            "onChainId": 9,
+            "coingeckoId": "usd-coin-wormhole-from-ethereum",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin-wormhole-from-ethereum.webp"
+          },
+          {
+            "symbol": "wETH",
+            "decimals": 18,
+            "ed": "10000000",
+            "onChainId": 10,
+            "coingeckoId": "ethereum",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ethereum.webp"
+          },
+          {
+            "symbol": "wBTC",
+            "decimals": 8,
+            "ed": "1000000",
+            "onChainId": 11,
+            "coingeckoId": "bitcoin",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin.webp"
+          },
+          {
+            "symbol": "wUSDT",
+            "decimals": 6,
+            "ed": "10000000000",
+            "onChainId": 12,
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tether.webp"
+          },
+          {
+            "symbol": "DAI",
+            "decimals": 18,
+            "ed": "10000000000",
+            "onChainId": 13,
+            "coingeckoId": "dai",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "10000",
+            "onChainId": 14,
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

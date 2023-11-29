@@ -1,0 +1,79 @@
+{
+  "id": "pendulum",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 471,
+  "genesisHash": "0x5d3c298622d5634ed019bf61ea4b71655030015bde9beb0d6a24743714462c86",
+  "prefix": 56,
+  "name": "Pendulum",
+  "themeColor": "#dae9eb",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/pendulum.svg",
+  "chainName": "Pendulum",
+  "implName": "pendulum",
+  "specName": "pendulum",
+  "specVersion": "8",
+  "nativeToken": {
+    "id": "pendulum-substrate-native-pen"
+  },
+  "tokens": [
+    {
+      "id": "pendulum-substrate-native-pen"
+    },
+    {
+      "id": "pendulum-substrate-tokens-dot"
+    },
+    {
+      "id": "pendulum-substrate-tokens-usdt"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": null,
+  "chainspecQrUrl": null,
+  "latestMetadataQrUrl": null,
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://rpc-pendulum.prd.pendulumchain.tech"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2094,
+  "relay": {
+    "id": "polkadot"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "pendulum-chain",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/pendulum.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"XCM\":0}",
+            "coingeckoId": "polkadot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "0",
+            "onChainId": "{\"XCM\":1}",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

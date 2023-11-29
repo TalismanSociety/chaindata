@@ -58,6 +58,30 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'taiga',
   'neutron',
   'subgame',
+  'aicore',
+  'aventis-metaverse',
+  'balancer-usdc-usdbc-axlusdc',
+  'basepal',
+  'bridged-binance-peg-ethereum-opbnb',
+  'dollar-on-chain',
+  'earntv',
+  'gmlp',
+  'gold-utility-token',
+  'goofy-inu',
+  'hermionegrangerclintonamberamyrose9inu',
+  'horizon-protocol-zbnb',
+  'hottel',
+  'hygt',
+  'karen-pepe',
+  'larace',
+  'rand',
+  'strix',
+  'sword-and-magic-world',
+  'thunderhead-staked-flip',
+  'titanx',
+  'trumatic-matic-stable-pool',
+  'wrapped-eeth',
+  'zhaodavinci',
 ]
 
 type BalanceModuleConfig = {
@@ -121,14 +145,14 @@ export const fetchCoingeckoTokensLogos = async () => {
       }
 
       const responseImg = await fetch(coin.image.large)
-      let buffer = await responseImg.arrayBuffer()
+      const responseBuffer = await responseImg.arrayBuffer()
 
-      const img = sharp(buffer)
+      const img = sharp(responseBuffer)
       const { width, height } = await img.metadata()
       if (!width || !height || width > 256 || height > 256) img.resize(256, 256, { fit: 'contain' })
-      buffer = await img.webp().toBuffer()
+      const webpBuffer = await img.webp().toBuffer()
 
-      await writeFile(filepathWebp, Buffer.from(buffer))
+      await writeFile(filepathWebp, Buffer.from(webpBuffer))
     } catch (err) {
       console.log('Failed to download coingecko image for %s', coingeckoId, err)
     }
