@@ -82,6 +82,9 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'trumatic-matic-stable-pool',
   'wrapped-eeth',
   'zhaodavinci',
+  'ivendpay',
+  'metahub-finance',
+  'polkaex',
 ]
 
 type BalanceModuleConfig = {
