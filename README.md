@@ -69,14 +69,13 @@ Some files are edited manually, some other are generated automatically as part o
 
 The table below describes the purpose of each file and how it is edited.
 
-| File name                             | Edit Type | Purpose                                                                                       |
-| ------------------------------------- | --------- | --------------------------------------------------------------------------------------------- |
-| `chaindata.json`                      | manual    | A list of all parachains and relay chains in the Polkadot ecosystem                           |
-| `testnets-chaindata.json`             | manual    | A list of all parachains and relay chains in the Polkadot ecosystem                           |
-| `chains-extras-cache.json`            | automatic | Caches static data for each substrate chain                                                   |
-| `evm-networks.json`                   | manual    | List of EVM chains supported by default in Talisman                                           |
-| `known-evm-networks.json`             | automatic | List of EVM networks, generated from [ethereum-lists](https://github.com/ethereum-lists)      |
-| `known-evm-networks-overrides.json`   | manual    | Overrides to `known-evm-networks.json`, matched by chain id                                   |
-| `known-evm-networks-icons-cache.json` | automatic | Caches images for each network defined in [ethereum-lists](https://github.com/ethereum-lists) |
-| `known-evm-tokens-cache.json`         | automatic | Caches static data for ERC20 tokens                                                           |
-| `tokens-buyable.json`                 | manual    | List of tokens displayed in Talisman's Buy Tokens form                                        |
+| File name                                        | Edit Type | Purpose                                                                                       |
+| ------------------------------------------------ | --------- | --------------------------------------------------------------------------------------------- |
+| `data/chaindata.json`                            | manual    | A list of all parachains and relay chains in the Polkadot ecosystem                           |
+| `data/testnets-chaindata.json`                   | manual    | A list of all parachains and relay chains in the Polkadot ecosystem                           |
+| `data/generated/chains-extras-cache.json`        | automatic | Caches static data for each substrate chain                                                   |
+| `data/evm-networks.json`                         | manual    | List of EVM chains supported by default in Talisman                                           |
+| `data/generated/known-evm-networks.json`         | automatic | List of EVM networks, generated from [ethereum-lists](https://github.com/ethereum-lists)      |
+| `data/known-evm-networks-overrides.json`         | manual    | Overrides to `known-evm-networks.json`, matched by chain id                                   |
+| `data/cache/known-evm-networks-icons-cache.json` | automatic | Caches images for each network defined in [ethereum-lists](https://github.com/ethereum-lists) |
+| `data/cache/known-evm-tokens-cache.json`         | automatic | Caches static data for ERC20 tokens                                                           |
