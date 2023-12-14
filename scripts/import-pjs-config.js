@@ -46,8 +46,8 @@ const unreliableRpcProviders = [
   // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
   /onfinality\.io\/public-ws\/?$/i,
 
-  // test if rpc ends with `rpc.polkadot.io` or `kusama-rpc.polkadot.io`
-  /(?:kusama-)?rpc\.polkadot\.io\/?$/i,
+  // test if rpc is `rpc.polkadot.io` or `kusama-rpc.polkadot.io`
+  /^wss:\/\/(?:kusama-)?rpc\.polkadot\.io\/?$/i,
 ]
 
 const sortGoodFirst = (a, b) => {
@@ -63,6 +63,7 @@ const filterUnreliable = (url) => !unreliableRpcProviders.some((regex) => regex.
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
+  dorafactory: 'dora-factory',
   'goldberg-testnet': 'avail-goldberg-testnet',
   'kate-testnet': 'avail-kate-testnet',
   'sora-substrate': 'sora-standalone',
@@ -75,8 +76,8 @@ const customChainIds = {
 const customTestnetChainIds = {
   'aleph-testnet': 'aleph-zero-testnet',
   'myriad-tesnet': 'myriad-testnet',
-  rococoBridgehub: 'rococo-bridge-hub-testnet',
   acala: 'mandala-testnet',
+  rococoBridgehub: 'rococo-bridge-hub-testnet',
 }
 
 // a map of ids to talisman names
@@ -85,6 +86,9 @@ const customNames = {
   'polkadot-bridge-hub': 'Polkadot Bridge Hub',
   'bifrost-polkadot': 'Bifrost Polkadot',
   'subgame-polkadot': 'SubGame Gamma Polkadot',
+  'thebifrost-mainnet': 'The Bifrost',
+  crab: 'Darwinia Crab',
+  kreivo: 'Kreivo',
 
   'kusama-asset-hub': 'Kusama Asset Hub',
   'kusama-bridge-hub': 'Kusama Bridge Hub',
@@ -93,6 +97,8 @@ const customNames = {
 
   'bifrost-testnet': 'Bifrost Testnet',
   'rococo-bifrost-testnet': 'Bifrost Testnet',
+
+  'thebifrost-testnet': 'The Bifrost Testnet',
 
   'rococo-asset-hub-testnet': 'Rococo Asset Hub',
   'rococo-bridge-hub-testnet': 'Rococo Bridge Hub',
