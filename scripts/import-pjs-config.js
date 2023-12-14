@@ -45,6 +45,9 @@ const unreliableRpcProviders = [
 
   // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
   /onfinality\.io\/public-ws\/?$/i,
+
+  // test if rpc ends with `rpc.polkadot.io` or `kusama-rpc.polkadot.io`
+  /(?:kusama-)?rpc\.polkadot\.io\/?$/i,
 ]
 
 const sortGoodFirst = (a, b) => {
