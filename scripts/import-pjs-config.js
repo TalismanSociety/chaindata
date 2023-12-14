@@ -35,13 +35,19 @@ const goodRpcProviders = [
   // test if rpc begins with `wss://rpc.dotters.network` or `wss://sys.dotters.network`
   /^wss:\/\/(?:rpc|sys)\.dotters\.network/i,
 
-  // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
-  /onfinality\.io\/public-ws\/?$/i,
+  // test if rpc ends with `dwellier.com` or `dwellier.com/`
+  /dwellir\.com\/?$/i,
 ]
 
 const unreliableRpcProviders = [
   // test if rpc ends with `public.blastapi.io` or `public.blastapi.io/`
   /public\.blastapi\.io\/?$/i,
+
+  // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
+  /onfinality\.io\/public-ws\/?$/i,
+
+  // test if rpc ends with `rpc.polkadot.io` or `kusama-rpc.polkadot.io`
+  /(?:kusama-)?rpc\.polkadot\.io\/?$/i,
 ]
 
 const sortGoodFirst = (a, b) => {
@@ -57,10 +63,13 @@ const filterUnreliable = (url) => !unreliableRpcProviders.some((regex) => regex.
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
+  'goldberg-testnet': 'avail-goldberg-testnet',
+  'kate-testnet': 'avail-kate-testnet',
   'sora-substrate': 'sora-standalone',
   aleph: 'aleph-zero',
   composable: 'composable-finance',
   kilt: 'kilt-spiritnet',
+  pioneer: 'bitcountry-pioneer',
 }
 // a map of testnet pjs ids to their talisman chaindata equivalents
 const customTestnetChainIds = {
@@ -324,12 +333,12 @@ const main = async () => {
   console.log('Import complete!')
 
   // check for missing chain logos
-  ;[...chaindata, ...testnetsChaindata].forEach((chain) => {
-    const hasLogo = exists(path.join('assets', 'chains', `${chain.id}.svg`))
+  for (const chain of [...chaindata, ...testnetsChaindata]) {
+    const hasLogo = await exists(path.join('assets', 'chains', `${chain.id}.svg`))
     if (hasLogo) return
 
     console.log(`Missing logo for chain ${chain.id}`)
-  })
+  }
 
   // check for paraId conflicts on each relay chain
   const relayChainsByParaId = {}
