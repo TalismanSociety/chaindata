@@ -23,7 +23,7 @@
     "validate": "pnpm run validate-json && pnpm run validate-schema",
     "update-pjs": "pnpm update -L '@polkadot/*'",
     "import-pjs-config": "node scripts/import-pjs-config.js",
-    "update": "pnpm run update-pjs && pnpm run import-pjs-config",
+    "update-rpcs": "pnpm run update-pjs && pnpm run import-pjs-config",
     "typecheck": "tsc --noEmit",
     "fetch-external": "tsx scripts/fetch-external.ts",
     "build": "tsx scripts/build.ts",

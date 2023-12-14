@@ -1,5 +1,5 @@
 // import { allNetworks } from '@polkadot/networks'
-import { exists, readFile, writeFile } from 'node:fs/promises'
+import { access, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 import {
@@ -173,11 +173,11 @@ const trimName = (text, id) =>
 const main = async () => {
   // import existing chaindata
   const chaindataMap = Object.fromEntries(
-    JSON.parse(await readFile('chaindata.json')).map((chain) => [chain.id, chain]),
+    JSON.parse(await readFile('data/chaindata.json')).map((chain) => [chain.id, chain]),
   )
   // import existing testnets chaindata
   const testnetsChaindataMap = Object.fromEntries(
-    JSON.parse(await readFile('testnets-chaindata.json')).map((chain) => [chain.id, chain]),
+    JSON.parse(await readFile('data/testnets-chaindata.json')).map((chain) => [chain.id, chain]),
   )
 
   // keep track of updated chain ids
@@ -322,9 +322,9 @@ const main = async () => {
   })
 
   // write updated files
-  await writeFile('chaindata.json', await prettier.format(JSON.stringify(chaindata, null, 2), { parser: 'json' }))
+  await writeFile('data/chaindata.json', await prettier.format(JSON.stringify(chaindata, null, 2), { parser: 'json' }))
   await writeFile(
-    'testnets-chaindata.json',
+    'data/testnets-chaindata.json',
     await prettier.format(JSON.stringify(testnetsChaindata, null, 2), {
       parser: 'json',
     }),
@@ -334,10 +334,11 @@ const main = async () => {
 
   // check for missing chain logos
   for (const chain of [...chaindata, ...testnetsChaindata]) {
-    const hasLogo = await exists(path.join('assets', 'chains', `${chain.id}.svg`))
-    if (hasLogo) return
-
-    console.log(`Missing logo for chain ${chain.id}`)
+    try {
+      await access(path.join('assets', 'chains', `${chain.id}.svg`))
+    } catch {
+      console.log(`Missing logo for chain ${chain.id}`)
+    }
   }
 
   // check for paraId conflicts on each relay chain
