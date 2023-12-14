@@ -84,7 +84,7 @@ export const addEvmNetworks = async () => {
           sortIndex: null,
           name: configEvmNetwork.name ?? substrateChain?.name ?? null,
           themeColor: configEvmNetwork.themeColor ?? substrateChain?.themeColor ?? null,
-          logo: substrateChain?.logo ?? null, // TODO: Copy chain & token assets into GH Pages output
+          logo: substrateChain?.logo ?? null, // TODO: Copy chain & token assets into dist output
           nativeToken: null,
           tokens: [],
           explorerUrl: configEvmNetwork.explorerUrl ?? null,

@@ -2,7 +2,7 @@
 
 <img src="assets/talisman.svg" alt="Talisman" width="15%" align="right" />
 
-[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Ftalismansociety.github.io%2Fchaindata)](https://talismansociety.github.io/chaindata)
+[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fdist%2Findex.txt)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/dist/index.txt)
 [![discord-link](https://img.shields.io/discord/858891448271634473?logo=discord&logoColor=white&style=flat-square)](https://discord.gg/talisman)
 
 A **community controlled** repository of [relay](https://wiki.polkadot.network/docs/learn-architecture#relay-chain) and [parachain](https://wiki.polkadot.network/docs/learn-architecture#parachain-and-parathread-slots) information in the [Polkadot ecosystem](https://polkadot.network/).
@@ -16,14 +16,14 @@ The goals of this repo are:
 
 ## Usage
 
-The files in this repo, `chaindata.json`, `testnets-chaindata.json` and `evm-networks.json` are used to configure a GitHub workflow which scrapes information from each chain and publishes it as a collection of JSON files on GitHub Pages.
+The files in this repo, `chaindata.json`, `testnets-chaindata.json` and `evm-networks.json` are used to configure a GitHub workflow which scrapes information from each chain and publishes it as a collection of JSON files in the `dist` directory of this repo.
 
-The published files can be browsed at this URL: https://talismansociety.github.io/chaindata
+The published files can be browsed at this URL: https://raw.githubusercontent.com/TalismanSociety/chaindata/main/dist/index.txt
 
 As an example, you could use this request to get a summary of all chains including the the names, logos, [genesisHashes](## 'the hash of the first block on the chain') and [address type prefixes](https://wiki.polkadot.network/docs/learn-account-advanced#address-format):
 
 ```ts
-const chainsSummaryUrl = "https://talismansociety.github.io/chaindata/chains/summary.json"
+const chainsSummaryUrl = "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/dist/chains/summary.json"
 const summary = await fetch(chainsSummaryUrl).then(result => result.json())
 ```
 
@@ -52,7 +52,7 @@ To make a contribution, please fork this repo and make your changes in your fork
 1. Identify the token symbol (e.g. `KSM`)
 1. Add your logo (in `svg` format) to `assets/tokens/${symbol}.svg`
 
-### To build the github pages endpoint locally:
+### To build the dist directory locally:
 
 1. Install [pnpm](pnpm.io)
 1. Clone the repo via  

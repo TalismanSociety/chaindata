@@ -1,4 +1,4 @@
-import { getFileList, html, writeChaindataFile } from '../../shared/util'
+import { getFileList, writeChaindataFile } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 export const writeChaindataIndex = async () => {
@@ -7,32 +7,7 @@ export const writeChaindataIndex = async () => {
   await writeTokens()
   await writeMiniMetadatas()
 
-  await writeChaindataFile(
-    'index.html',
-    html`<html>
-      <head>
-        <meta name="color-scheme" content="light dark" />
-        <style>
-          html {
-            font-family: sans-serif;
-          }
-          a {
-            text-decoration: none;
-          }
-        </style>
-      </head>
-      <body>
-        <pre style="word-wrap: break-word; white-space: pre-wrap;">
-<h3>Chaindata</h3>
-${getFileList()
-          .slice()
-          .sort()
-          .map((file) => html`<a href="${file}">${file}</a>`)
-          .join('\n')}
-      </pre>
-      </body>
-    </html>`,
-  )
+  await writeChaindataFile('index.txt', `Chaindata\n#########\n\n${getFileList().slice().sort().join('\n')}\n`)
 }
 
 const writeChains = async () => {
