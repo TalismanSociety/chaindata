@@ -23716,6 +23716,12 @@
             "decimals": 18
           },
           {
+            "symbol": "kETH",
+            "coingeckoId": "stakehouse-keth",
+            "contractAddress": "0xe0c28a5a2da3920946e8bf821f61f7bea311048b",
+            "decimals": 18
+          },
+          {
             "symbol": "SDL",
             "coingeckoId": "stake-link",
             "contractAddress": "0xa95c5ebb86e0de73b4fb8c47a45b792cfea28c23",
@@ -31343,6 +31349,12 @@
             "coingeckoId": "a-i-genesis",
             "contractAddress": "0xaf271839f2e37965a255945dcb8249d5f6a0b2d3",
             "decimals": 18
+          },
+          {
+            "symbol": "ALY",
+            "coingeckoId": "ailayer",
+            "contractAddress": "0xc1ab96aa2f623279bbe31cd0315746bd44a4560f",
+            "decimals": 9
           },
           {
             "symbol": "AIT",
@@ -50618,14 +50630,19 @@
   },
   {
     "id": "61",
-    "name": "Ethereum Classic Mainnet",
+    "name": "Ethereum Classic",
     "rpcs": [
       "https://etc.rivet.link",
+      "https://besu-at.etc-network.info",
+      "https://besu-de.etc-network.info",
+      "https://geth-at.etc-network.info",
+      "https://geth-de.etc-network.info",
       "https://etc.etcdesktop.com",
+      "https://rpc.etcinscribe.com",
       "https://etc.mytokenpocket.vip"
     ],
     "icon": "ethereumclassic",
-    "explorerUrl": "https://blockscout.com/etc/mainnet",
+    "explorerUrl": "https://etc.blockscout.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETC",
@@ -62151,9 +62168,24 @@
             "contractAddress": "0x00000000000000000000000000000000001a88b2"
           },
           {
+            "symbol": "sauce",
+            "coingeckoId": "saucerswap",
+            "contractAddress": "0x00000000000000000000000000000000000b2ad5"
+          },
+          {
             "symbol": "usdc",
             "coingeckoId": "usd-coin",
             "contractAddress": "0x000000000000000000000000000000000006f89a"
+          },
+          {
+            "symbol": "whbar",
+            "coingeckoId": "wrapped-hbar",
+            "contractAddress": "0x0000000000000000000000000000000000163b5a"
+          },
+          {
+            "symbol": "xsauce",
+            "coingeckoId": "xsauce",
+            "contractAddress": "0x00000000000000000000000000000000001647e8"
           }
         ]
       }
@@ -64192,6 +64224,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "957",
+    "name": "Lyra Chain",
+    "rpcs": ["https://rpc.lyra.finance"],
+    "icon": "lyra",
+    "explorerUrl": "https://explorer.lyra.finance",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "963",
@@ -81786,6 +81831,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "POSI",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "912559",
+    "name": "Astria EVM Dusknet",
+    "rpcs": ["https://rpc.evm.dusk-2.devnet.astria.org"],
+    "icon": "astria",
+    "explorerUrl": "https://explorer.evm.dusk-2.devnet.astria.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "RIA",
         "decimals": 18
       }
     },
