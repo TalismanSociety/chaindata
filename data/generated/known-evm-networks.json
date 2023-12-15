@@ -44068,6 +44068,12 @@
             "decimals": 18
           },
           {
+            "symbol": "PXT",
+            "coingeckoId": "pixer-eternity",
+            "contractAddress": "0xeb79c85c6d633ae81c97be71e1691ee7dc6e132d",
+            "decimals": 18
+          },
+          {
             "symbol": "PLACE",
             "coingeckoId": "place-war",
             "contractAddress": "0x07728696ee70a28c9c032926577af1d524df30f9",
@@ -62435,7 +62441,11 @@
   {
     "id": "520",
     "name": "XT Smart Chain Mainnet",
-    "rpcs": ["https://datarpc1.xsc.pub", "https://datarpc3.xsc.pub"],
+    "rpcs": [
+      "https://datarpc1.xsc.pub",
+      "https://datarpc2.xsc.pub",
+      "https://datarpc3.xsc.pub"
+    ],
     "icon": "xsc",
     "explorerUrl": "https://xscscan.pub",
     "balancesConfig": {
@@ -62447,6 +62457,35 @@
     "isTestnet": true
   },
   {
+    "id": "530",
+    "name": "F(x)Core Mainnet Network",
+    "rpcs": ["https://fx-json-web3.functionx.io:8545"],
+    "icon": "fxcore",
+    "explorerUrl": "https://fx-evm.functionx.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FX",
+        "decimals": 18
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "PURSE",
+            "coingeckoId": "pundi-x-purse",
+            "contractAddress": "0x5fd55a1b9fc24967c4db09c513c3ba0dfa7ff687",
+            "decimals": 18
+          },
+          {
+            "symbol": "StFX",
+            "coingeckoId": "staked-fx",
+            "contractAddress": "0x5c24b402b4b4550cf94227813f3547b94774c1cb",
+            "decimals": 18
+          }
+        ]
+      }
+    }
+  },
+  {
     "id": "534",
     "name": "Candle",
     "rpcs": ["https://rpc.cndlchain.com"],
@@ -62454,6 +62493,184 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "CNDL",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "568",
+    "name": "Dogechain Testnet",
+    "rpcs": ["https://rpc-testnet.dogechain.dog"],
+    "icon": "dogechain",
+    "explorerUrl": "https://explorer-testnet.dogechain.dog",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "DOGE",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "570",
+    "name": "Rollux Mainnet",
+    "rpcs": ["https://rpc.rollux.com"],
+    "explorerUrl": "https://explorer.rollux.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SYS",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "595",
+    "name": "Acala Mandala Testnet TC9",
+    "rpcs": ["https://eth-rpc-tc9.aca-staging.network"],
+    "explorerUrl": "https://blockscout.mandala.aca-staging.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "mACA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "596",
+    "name": "Karura Network Testnet",
+    "rpcs": ["https://eth-rpc-karura-testnet.aca-staging.network"],
+    "explorerUrl": "https://blockscout.karura-testnet.aca-staging.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "KAR",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "597",
+    "name": "Acala Network Testnet",
+    "rpcs": ["https://eth-rpc-acala-testnet.aca-staging.network"],
+    "explorerUrl": "https://blockscout.acala-dev.aca-dev.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ACA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "599",
+    "name": "Metis Goerli Testnet",
+    "rpcs": ["https://goerli.gateway.metisdevops.link"],
+    "explorerUrl": "https://goerli.explorer.metisdevops.link",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "METIS",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "614",
+    "name": "Graphlinq Blockchain Mainnet",
+    "rpcs": ["https://glq-dataseed.graphlinq.io"],
+    "explorerUrl": "https://explorer.graphlinq.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "GLQ",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "634",
+    "name": "Avocado",
+    "rpcs": ["https://rpc.avocado.instadapp.io"],
+    "icon": "avocado",
+    "explorerUrl": "https://avoscan.co",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "USDC",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "647",
+    "name": "SX Network Testnet",
+    "rpcs": ["https://rpc.toronto.sx.technology"],
+    "icon": "SX",
+    "explorerUrl": "https://explorer.toronto.sx.technology",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "648",
+    "name": "Endurance Smart Chain Mainnet",
+    "rpcs": ["https://rpc-endurance.fusionist.io/"],
+    "explorerUrl": "https://explorer.endurance.fusionist.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ACE",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "653",
+    "name": "Kalichain Mainnet",
+    "rpcs": ["https://rpc.kalichain.com"],
+    "explorerUrl": "https://explorer.kalichain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "KALIS",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "666",
+    "name": "Pixie Chain Testnet",
+    "rpcs": ["https://http-testnet.chain.pixie.xyz"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "PCTT",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "668",
+    "name": "JuncaChain",
+    "rpcs": ["https://rpc.juncachain.com"],
+    "explorerUrl": "https://scan.juncachain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "JGC",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "686",
+    "name": "Karura Network",
+    "rpcs": ["https://eth-rpc-karura.aca-api.network"],
+    "explorerUrl": "https://blockscout.karura.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "KAR",
         "decimals": 18
       }
     }
