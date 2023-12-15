@@ -19,6 +19,7 @@ export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'data/known-evm-networks-overrides.json'
 export const FILE_KNOWN_EVM_TOKENS_CACHE = 'data/cache/known-evm-tokens-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
+export const FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE = 'data/cache/known-evm-networks-rpcs-cache.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

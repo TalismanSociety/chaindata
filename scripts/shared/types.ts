@@ -56,6 +56,13 @@ export type ChainExtrasCache = {
   tokens: Record<string, Token>
 }
 
+export type EvmNetworkRpcCache = {
+  chainId: string
+  rpcUrl: string
+  isValid: boolean
+  timestamp: number
+}
+
 export type EthereumListsChain = {
   name: string
   chainId: number

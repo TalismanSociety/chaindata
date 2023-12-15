@@ -85,6 +85,17 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'ivendpay',
   'metahub-finance',
   'polkaex',
+
+  '3space-art',
+  'bitstable-finance',
+  'bridged-wrapped-ether-voltage-finance',
+  'game-tournament-trophy',
+  'grok-x-ai',
+  'holy-spirit',
+  'logic',
+  'mantle-usd',
+  'mini-grok',
+  'wrapped-fuse',
 ]
 
 type BalanceModuleConfig = {
