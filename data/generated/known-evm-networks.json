@@ -258,6 +258,12 @@
             "decimals": 18
           },
           {
+            "symbol": "4096",
+            "coingeckoId": "4096",
+            "contractAddress": "0x4096fc7119040175589387656f7c6073265f4096",
+            "decimals": 0
+          },
+          {
             "symbol": "4Art",
             "coingeckoId": "4artechnologies",
             "contractAddress": "0xff44b5719f0b77a9951636fc5e69d3a1fc9e7d73",
@@ -4360,6 +4366,12 @@
             "coingeckoId": "bonk",
             "contractAddress": "0x1151cb3d861920e07a38e03eead12c32178567f6",
             "decimals": 5
+          },
+          {
+            "symbol": "BONK2.0",
+            "coingeckoId": "bonk2-0",
+            "contractAddress": "0x043312456f73d8014d9b84f4337de54995cd2a5b",
+            "decimals": 9
           },
           {
             "symbol": "BONKI",
@@ -9194,6 +9206,12 @@
             "symbol": "AIEPK",
             "coingeckoId": "epik-protocol",
             "contractAddress": "0xac5b038058bcd0424c9c252c6487c25f032e5ddc",
+            "decimals": 18
+          },
+          {
+            "symbol": "EPOCH",
+            "coingeckoId": "epoch-island",
+            "contractAddress": "0x97d0cfeb4fde54b430307c9482d6f79c761fe9b6",
             "decimals": 18
           },
           {
@@ -36580,6 +36598,12 @@
             "decimals": 9
           },
           {
+            "symbol": "PGT",
+            "coingeckoId": "elemental-story",
+            "contractAddress": "0x2d230f311f1f663eb5d0aafd58800cf6f2097c85",
+            "decimals": 18
+          },
+          {
             "symbol": "ELEPHANT",
             "coingeckoId": "elephant-money",
             "contractAddress": "0xe283d0e3b8c102badf5e8166b73e02d96d92f688",
@@ -61460,6 +61484,11 @@
       "evm-erc20": {
         "tokens": [
           {
+            "symbol": "grelf",
+            "coingeckoId": "grelf",
+            "contractAddress": "0x000000000000000000000000000000000011afa2"
+          },
+          {
             "symbol": "usdc[hts]",
             "coingeckoId": "heliswap-bridged-usdc-hts",
             "contractAddress": "0x0000000000000000000000000000000000101ae3"
@@ -64489,6 +64518,60 @@
     }
   },
   {
+    "id": "1440",
+    "name": "Living Assets Mainnet",
+    "rpcs": [
+      "https://beta.mainnet.livingassets.io/rpc",
+      "https://gamma.mainnet.livingassets.io/rpc"
+    ],
+    "icon": "livingassets",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "LAS",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1442",
+    "name": "Polygon zkEVM Testnet",
+    "rpcs": ["https://rpc.public.zkevm-test.net"],
+    "explorerUrl": "https://explorer.public.zkevm-test.net",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "1452",
+    "name": "GIL Testnet",
+    "rpcs": ["https://rpc.giltestnet.com"],
+    "icon": "gauss",
+    "explorerUrl": "https://explorer.giltestnet.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "GANG",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "1501",
+    "name": "BEVM",
+    "rpcs": ["https://rpc-1.bevm.io/", "https://rpc-2.bevm.io/"],
+    "explorerUrl": "https://scan.bevm.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTC",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "1559",
     "name": "Tenet",
     "rpcs": ["https://rpc.tenet.org", "https://tenet-evm.publicnode.com"],
@@ -64536,6 +64619,44 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "LUDAN",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1707",
+    "name": "TBSI Mainnet",
+    "rpcs": ["https://rpc.blockchain.or.th"],
+    "explorerUrl": "https://exp.blockchain.or.th",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "JINDA",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1708",
+    "name": "TBSI Testnet",
+    "rpcs": ["https://rpc.testnet.blockchain.or.th"],
+    "explorerUrl": "https://exp.testnet.blockchain.or.th",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "JINDA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "1718",
+    "name": "Palette Chain Mainnet",
+    "rpcs": ["https://palette-rpc.com:22000"],
+    "icon": "PLT",
+    "explorerUrl": "https://palettescan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "PLT",
         "decimals": 18
       }
     }
