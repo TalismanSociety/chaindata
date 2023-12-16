@@ -1158,6 +1158,12 @@
             "decimals": 18
           },
           {
+            "symbol": "AIAT",
+            "coingeckoId": "ai-analysis-token",
+            "contractAddress": "0x0501b9188436e35bb10f35998c40adc079003866",
+            "decimals": 18
+          },
+          {
             "symbol": "AIBOT",
             "coingeckoId": "aibot",
             "contractAddress": "0xf1fb4cf949277adc3f89c0d6091100789033b7b5",
@@ -1257,6 +1263,12 @@
             "symbol": "ATOR",
             "coingeckoId": "airtor-protocol",
             "contractAddress": "0x0f7b3f5a8fed821c5eb60049538a548db2d479ce",
+            "decimals": 18
+          },
+          {
+            "symbol": "aisig",
+            "coingeckoId": "aisignal",
+            "contractAddress": "0x508b27902c6c14972a10a4e413b9cfa449e9cedb",
             "decimals": 18
           },
           {
@@ -1870,6 +1882,12 @@
             "coingeckoId": "anon-web3",
             "contractAddress": "0xcc09f34accdb36ee3ed98358a3b8a6ae5c29ea07",
             "decimals": 18
+          },
+          {
+            "symbol": "ANC",
+            "coingeckoId": "anonym-chain",
+            "contractAddress": "0xde3ae6f3458db211d298da97fdcf13b6c1c8c87f",
+            "decimals": 9
           },
           {
             "symbol": "AZK",
@@ -9296,6 +9314,12 @@
             "symbol": "ETHC",
             "coingeckoId": "eth-coin-mori-finance",
             "contractAddress": "0x3c37577f1de12046aea6975862559a50d8f50158",
+            "decimals": 18
+          },
+          {
+            "symbol": "sUSDe",
+            "coingeckoId": "ethena-staked-usde",
+            "contractAddress": "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
             "decimals": 18
           },
           {
@@ -19874,6 +19898,12 @@
             "symbol": "PXP",
             "coingeckoId": "pointpay",
             "contractAddress": "0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f",
+            "decimals": 18
+          },
+          {
+            "symbol": "POINTS",
+            "coingeckoId": "points",
+            "contractAddress": "0xd7c1eb0fe4a30d3b2a846c04aa6300888f087a5f",
             "decimals": 18
           },
           {
@@ -32042,6 +32072,12 @@
             "symbol": "WAVAX",
             "coingeckoId": "avalanche-wormhole",
             "contractAddress": "0x96412902aa9aff61e13f085e70d3152c6ef2a817",
+            "decimals": 18
+          },
+          {
+            "symbol": "AXT",
+            "coingeckoId": "avante",
+            "contractAddress": "0x6a67b5d14b19828f36db5c128da2a1826d2618de",
             "decimals": 18
           },
           {
@@ -57402,6 +57438,12 @@
             "decimals": 18
           },
           {
+            "symbol": "oRETRO",
+            "coingeckoId": "retro-finance-oretro",
+            "contractAddress": "0x3a29cab2e124919d14a6f735b6033a3aad2b260f",
+            "decimals": 18
+          },
+          {
             "symbol": "RVLT",
             "coingeckoId": "revolt-2-earn",
             "contractAddress": "0x5d301750cc9719f00872e33ee81f9c37aba242f4",
@@ -62886,6 +62928,51 @@
     }
   },
   {
+    "id": "919",
+    "name": "Mode Testnet",
+    "rpcs": ["https://sepolia.mode.network"],
+    "icon": "modeTestnet",
+    "explorerUrl": "https://sepolia.explorer.mode.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "927",
+    "name": "Yidark Chain Mainnet",
+    "rpcs": ["https://rpc.yidark.io"],
+    "icon": "ydk",
+    "explorerUrl": "https://yidarkscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "YDK",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "943",
+    "name": "PulseChain Testnet v4",
+    "rpcs": [
+      "https://rpc.v4.testnet.pulsechain.com",
+      "https://pulsechain-testnet.publicnode.com",
+      "https://rpc-testnet-pulsechain.g4mm4.io"
+    ],
+    "icon": "pulsechain",
+    "explorerUrl": "https://scan.v4.testnet.pulsechain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "tPLS",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "957",
     "name": "Lyra Chain",
     "rpcs": ["https://rpc.lyra.finance"],
@@ -62966,6 +63053,20 @@
     "isTestnet": true
   },
   {
+    "id": "997",
+    "name": "5ireChain Thunder",
+    "rpcs": ["https://rpc-testnet.5ire.network"],
+    "icon": "5ireChain",
+    "explorerUrl": "https://explorer.5ire.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "5ire",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "999",
     "name": "Wanchain Testnet",
     "rpcs": ["https://gwan-ssl.wandevs.org:46891/"],
@@ -63040,23 +63141,23 @@
     "isTestnet": true
   },
   {
-    "id": "1010",
-    "name": "Evrice Network",
-    "rpcs": ["https://meta.evrice.com"],
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "EVC",
-        "decimals": 18
-      }
-    }
-  },
-  {
     "id": "1012",
     "name": "Newton",
     "rpcs": ["https://global.rpc.mainnet.newtonproject.org"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "NEW",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1024",
+    "name": "CLV Parachain",
+    "rpcs": ["https://api-para.clover.finance"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CLV",
         "decimals": 18
       }
     }
