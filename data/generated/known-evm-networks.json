@@ -4980,12 +4980,6 @@
             "decimals": 18
           },
           {
-            "symbol": "CARR",
-            "coingeckoId": "carnomaly",
-            "contractAddress": "0x884ddbb5dc6c2cef77d3e74c6ccca315797d655b",
-            "decimals": 18
-          },
-          {
             "symbol": "HER",
             "coingeckoId": "caroline",
             "contractAddress": "0x5c2975269e74cb3a8514e5b800a1e66c694d4df8",
@@ -21873,6 +21867,12 @@
             "coingeckoId": "saintbot",
             "contractAddress": "0x3d5fa1cf7d356474f72c8cb24f7a6117b40f8c40",
             "decimals": 18
+          },
+          {
+            "symbol": "STC",
+            "coingeckoId": "saitachain-coin-2",
+            "contractAddress": "0x19ae49b9f38dd836317363839a5f6bfbfa7e319a",
+            "decimals": 9
           },
           {
             "symbol": "SAITAMA",
@@ -45736,6 +45736,12 @@
             "decimals": 5
           },
           {
+            "symbol": "STC",
+            "coingeckoId": "saitachain-coin-2",
+            "contractAddress": "0x19ae49b9f38dd836317363839a5f6bfbfa7e319a",
+            "decimals": 9
+          },
+          {
             "symbol": "SAITO",
             "coingeckoId": "saito",
             "contractAddress": "0x3c6dad0475d3a1696b359dc04c99fd401be134da",
@@ -53787,6 +53793,12 @@
             "decimals": 18
           },
           {
+            "symbol": "CARR",
+            "coingeckoId": "carnomaly",
+            "contractAddress": "0x9b765735c82bb00085e9dbf194f20e3fa754258e",
+            "decimals": 18
+          },
+          {
             "symbol": "CVTX",
             "coingeckoId": "carrieverse",
             "contractAddress": "0x40f97ec376ac1c503e755433bf57f21e3a49f440",
@@ -61370,6 +61382,11 @@
       "evm-erc20": {
         "tokens": [
           {
+            "symbol": "usdc[hts]",
+            "coingeckoId": "heliswap-bridged-usdc-hts",
+            "contractAddress": "0x0000000000000000000000000000000000101ae3"
+          },
+          {
             "symbol": "pbar",
             "coingeckoId": "pangolin-hedera",
             "contractAddress": "0x00000000000000000000000000000000001a88b2"
@@ -62676,6 +62693,56 @@
     }
   },
   {
+    "id": "710",
+    "name": "Highbury",
+    "rpcs": ["https://highbury.furya.io"],
+    "icon": "highbury",
+    "explorerUrl": "https://explorer.furya.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FURY",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "719",
+    "name": "Shibarium Beta",
+    "rpcs": ["https://puppynet.shibrpc.com"],
+    "icon": "shibarium",
+    "explorerUrl": "https://puppyscan.shib.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BONE",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "727",
+    "name": "Blucrates",
+    "rpcs": ["https://data.bluchain.pro"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BLU",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "742",
+    "name": "Script Testnet",
+    "rpcs": ["https://testeth-rpc-api.script.tv/rpc"],
+    "explorerUrl": "https://explorer.script.tv",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SPAY",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "786",
     "name": "MAAL Chain",
     "rpcs": [
@@ -62749,6 +62816,71 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "MEER",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "820",
+    "name": "Callisto Mainnet",
+    "rpcs": ["https://rpc.callisto.network/"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CLO",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "841",
+    "name": "Taraxa Mainnet",
+    "rpcs": ["https://rpc.mainnet.taraxa.io/"],
+    "icon": "taraxa",
+    "explorerUrl": "https://explorer.mainnet.taraxa.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TARA",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "842",
+    "name": "Taraxa Testnet",
+    "rpcs": ["https://rpc.testnet.taraxa.io/"],
+    "icon": "taraxa",
+    "explorerUrl": "https://explorer.testnet.taraxa.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TARA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "868",
+    "name": "Fantasia Chain Mainnet",
+    "rpcs": [
+      "https://mainnet-data1.fantasiachain.com/",
+      "https://mainnet-data2.fantasiachain.com/",
+      "https://mainnet-data3.fantasiachain.com/"
+    ],
+    "explorerUrl": "https://explorer.fantasiachain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FST",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "888",
+    "name": "Wanchain",
+    "rpcs": ["https://gwan-ssl.wandevs.org:56891/"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "WAN",
         "decimals": 18
       }
     }
@@ -63862,6 +63994,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "EDX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "1998",
+    "name": "Kyoto Testnet",
+    "rpcs": ["https://rpc.testnet.kyotoprotocol.io:8545"],
+    "explorerUrl": "https://testnet.kyotoscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "KYOTO",
         "decimals": 18
       }
     },
