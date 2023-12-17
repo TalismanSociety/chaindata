@@ -4128,12 +4128,6 @@
             "decimals": 18
           },
           {
-            "symbol": "BSN",
-            "coingeckoId": "blockswap-network-2",
-            "contractAddress": "0x534d1f5e617e0f72a6b06a04aa599839af776a5e",
-            "decimals": 18
-          },
-          {
             "symbol": "TOOLS",
             "coingeckoId": "blocktools",
             "contractAddress": "0xc14b4d4ca66f40f352d7a50fd230ef8b2fb3b8d4",
@@ -10535,6 +10529,12 @@
             "decimals": 18
           },
           {
+            "symbol": "foox",
+            "coingeckoId": "foox-ordinals",
+            "contractAddress": "0x20fcefa41045080764c48c2b9429e44c644e5dea",
+            "decimals": 18
+          },
+          {
             "symbol": "FRC",
             "coingeckoId": "force-2",
             "contractAddress": "0x58083b54013631bacc0bbb6d4efa543fee1d9ce0",
@@ -11523,12 +11523,6 @@
             "coingeckoId": "go-fu-k-yourself",
             "contractAddress": "0x2d9d7c64f6c00e16c28595ec4ebe4065ef3a250b",
             "decimals": 9
-          },
-          {
-            "symbol": "GOGO",
-            "coingeckoId": "gogo-finance",
-            "contractAddress": "0x9a96e767bfcce8e80370be00821ed5ba283d4a17",
-            "decimals": 18
           },
           {
             "symbol": "GOL",
@@ -19484,6 +19478,12 @@
             "symbol": "PEPE",
             "coingeckoId": "pepe-token",
             "contractAddress": "0xbe042e9d09cb588331ff911c2b46fd833a3e5bd6",
+            "decimals": 18
+          },
+          {
+            "symbol": "CUTE",
+            "coingeckoId": "pepe-uwu",
+            "contractAddress": "0x2cb5d9fd89d48c516f11904117c57e3934f39524",
             "decimals": 18
           },
           {
@@ -53493,12 +53493,6 @@
             "decimals": 18
           },
           {
-            "symbol": "MaticX-bb-a-WMATIC-BPT",
-            "coingeckoId": "balancer-maticx-boosted-aave-wmatic",
-            "contractAddress": "0xe78b25c06db117fdf8f98583cdaaa6c92b79e917",
-            "decimals": 18
-          },
-          {
             "symbol": "BALL",
             "coingeckoId": "ball-token",
             "contractAddress": "0x883abe4168705d2e5da925d28538b7a6aa9d8419",
@@ -56866,6 +56860,12 @@
             "symbol": "PAR",
             "coingeckoId": "par-stablecoin",
             "contractAddress": "0xe2aa7db6da1dae97c5f5c6914d285fbfcc32a128",
+            "decimals": 18
+          },
+          {
+            "symbol": "PPY",
+            "coingeckoId": "patriot-pay",
+            "contractAddress": "0xfd55e4a6767ff7ffc0b8105262a8cdaabe7fbf3f",
             "decimals": 18
           },
           {
@@ -64893,6 +64893,18 @@
     }
   },
   {
+    "id": "1972",
+    "name": "RedeCoin",
+    "rpcs": ["https://rpc2.redecoin.eu"],
+    "explorerUrl": "https://explorer3.redecoin.eu",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "REDEV2",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "1975",
     "name": "ONUS Chain Mainnet",
     "rpcs": ["https://rpc.onuschain.io"],
@@ -65706,6 +65718,19 @@
     }
   },
   {
+    "id": "3011",
+    "name": "PLAYA3ULL GAMES",
+    "rpcs": ["https://api.mainnet.playa3ull.games"],
+    "icon": "playa3ull",
+    "explorerUrl": "https://3011.routescan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "3ULL",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "3068",
     "name": "Bifrost Mainnet",
     "rpcs": [
@@ -65816,6 +65841,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "3434",
+    "name": "SecureChain Testnet",
+    "rpcs": ["https://testnet-rpc.securechain.ai"],
+    "icon": "scaiIcon",
+    "explorerUrl": "https://testnet.securechain.ai",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SCAI",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "3500",
@@ -66028,6 +66067,77 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "4002",
+    "name": "Fantom Testnet",
+    "rpcs": [
+      "https://rpc.testnet.fantom.network",
+      "https://fantom-testnet.publicnode.com"
+    ],
+    "icon": "fantom",
+    "explorerUrl": "https://testnet.ftmscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FTM",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "4003",
+    "name": "X1 Fastnet",
+    "rpcs": ["https://x1-fastnet.xen.network"],
+    "explorerUrl": "https://explorer.x1-fastnet.xen.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "XN",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "4090",
+    "name": "Fastex Chain (Bahamut) Oasis Testnet",
+    "rpcs": ["https://rpc1.oasis.bahamutchain.com"],
+    "icon": "bahamut",
+    "explorerUrl": "https://oasis.ftnscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FTN",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "4102",
+    "name": "AIOZ Network Testnet",
+    "rpcs": ["https://eth-ds.testnet.aioz.network"],
+    "icon": "aioz",
+    "explorerUrl": "https://testnet.explorer.aioz.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "AIOZ",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "4141",
+    "name": "Tipboxcoin Testnet",
+    "rpcs": ["https://testnet-rpc.tipboxcoin.net"],
+    "icon": "tipboxcoinIcon",
+    "explorerUrl": "https://testnet.tipboxcoin.net",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TPBX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "4759",
@@ -69187,6 +69297,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "tREAP",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "224422",
+    "name": "CONET Sebolia Testnet",
+    "rpcs": ["https://rpc1.conet.network"],
+    "icon": "conet",
+    "explorerUrl": "https://scan.conet.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CONET",
         "decimals": 18
       }
     },
