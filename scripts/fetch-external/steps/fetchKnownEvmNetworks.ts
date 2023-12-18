@@ -9,12 +9,19 @@ import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpc
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 
+const DEBUG = false
+const DEBUG_LIST: string[] = [
+  // put rpc urls that you want to debug here (cache will be ignored)
+  // works only if DEBUG = true
+]
+
 const isValidRpc = (rpc: string) => {
   if (rpc.includes('${')) return false // contains keys that need to be replaced
 
   try {
     const url = new URL(rpc)
     if (url.protocol !== 'https:') return false
+    if (url.hostname === '127.0.0.1') return false
     if (url.username || url.password) return false // contains credentials
     return true
   } catch {
@@ -36,7 +43,7 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
   // if it doesn't respond, consider VALID - it's probably blocking requests from github action runner
   // if it responds, consider valid if the chainId matches
 
-  // use fetch instead of viem to ensure we get proper HTTP error codes
+  // use fetch instead of viem to ensure we get proper HTTP errors
   try {
     const request = await fetch(rpcUrl, {
       method: 'POST',
@@ -51,8 +58,12 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
       switch (request.status) {
         case 526: // unreachable (DNS or SSL error)
         case 523: // unreachable (DNS or SSL error)
-        case 400: // bad request - (verified that this is not client specific)
+        case 400: {
+          // bad request - (verified that this is not client specific)
+          if (DEBUG)
+            console.warn(`[invalid] HTTP error ${chainId} ${rpcUrl} : ${request.status} - "${request.statusText}"`)
           return 'invalid'
+        }
 
         case 403: // access denied, probably blocking github
         case 522: // timeout, maybe the RPC is ignoring requests from our IP
@@ -61,8 +72,12 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
         case 503: // service unavailable, consider host is blocking github or temporary downtime
         case 429: // too many requests
         case 404: // service unavailable, consider host is blocking github or temporary downtime
-        case 405: // not allowed
+        case 405: {
+          // not allowed
+          if (DEBUG)
+            console.warn(`[unknown] HTTP error ${chainId} ${rpcUrl} : ${request.status} - "${request.statusText}"`)
           return 'unknown'
+        }
 
         default: // unexpected, consider valid - might be worth investigating
           console.warn(`Unknown HTTP error ${chainId} ${rpcUrl} : ${request.status} - "${request.statusText}"`)
@@ -83,6 +98,7 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
   } catch (err) {
     if (err instanceof DOMException) {
       if (err.name === 'AbortError') {
+        if (DEBUG) console.warn(`timeout ${chainId} ${rpcUrl}`)
         return 'unknown' // timeout, might be ignoring github action host requests
       }
 
@@ -99,14 +115,18 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
           case 'ERR_TLS_CERT_ALTNAME_INVALID':
           case 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR':
           case 'UNABLE_TO_VERIFY_LEAF_SIGNATURE':
-          case 'SELF_SIGNED_CERT_IN_CHAIN':
+          case 'SELF_SIGNED_CERT_IN_CHAIN': {
+            if (DEBUG) console.warn(`[invalid] invalid certificate ${chainId} ${rpcUrl} - ${cause.code}`)
             return 'invalid'
+          }
 
           // might just be blocking github action host
           case 'ECONNREFUSED':
           case 'UND_ERR_CONNECT_TIMEOUT':
-          case 'ECONNRESET':
+          case 'ECONNRESET': {
+            if (DEBUG) console.warn(`[unknown] connection failed ${chainId} ${rpcUrl} - ${cause.code}`)
             return 'unknown'
+          }
 
           // unexpected, might be worth investigating
           default: {
@@ -166,15 +186,22 @@ export const fetchKnownEvmNetworks = async () => {
 
   // yeet the 50 oldest entries in cache to force them to be retested
   knownEvmNetworksRpcsCache.sort((a, b) => a.timestamp - b.timestamp)
-  knownEvmNetworksRpcsCache.splice(0, 50)
+  if (DEBUG) {
+    const itemsToDelete = knownEvmNetworksRpcsCache.filter((c) => DEBUG_LIST.includes(c.rpcUrl))
+    for (const item of itemsToDelete) {
+      const index = knownEvmNetworksRpcsCache.indexOf(item)
+      if (index !== -1) {
+        console.log('deleting', item)
+        knownEvmNetworksRpcsCache.splice(index, 1)
+      }
+    }
+  } else knownEvmNetworksRpcsCache.splice(0, 50)
 
   // test RPCs to exclude invalid ones, and prioritize the ones that are confirmed valid
   await PromisePool.withConcurrency(4)
     .for(knownEvmNetworks)
     .process(async (network): Promise<void> => {
       if (!network.rpcs) return
-
-      let checked = false
 
       const statuses: Record<string, EvmNetworkRpcStatus> = Object.fromEntries(
         await Promise.all(
