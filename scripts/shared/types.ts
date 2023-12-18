@@ -56,10 +56,12 @@ export type ChainExtrasCache = {
   tokens: Record<string, Token>
 }
 
+export type EvmNetworkRpcStatus = 'unknown' | 'valid' | 'invalid'
+
 export type EvmNetworkRpcCache = {
   chainId: string
   rpcUrl: string
-  isValid: boolean
+  status: EvmNetworkRpcStatus
   timestamp: number
 }
 
@@ -109,6 +111,8 @@ export type CoingeckoCoinDetails = CoingeckoCoin & {
   name: string
   platforms: Record<string, string>
   image: Record<'thumb' | 'small' | 'large', string>
+  last_updated: string | null
+  market_cap_rank: number | null
 }
 
 // Some handy types from https://www.typescriptlang.org/docs/handbook/advanced-types.html#distributive-conditional-types

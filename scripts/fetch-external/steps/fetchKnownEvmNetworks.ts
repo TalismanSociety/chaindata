@@ -2,13 +2,125 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import { PromisePool } from '@supercharge/promise-pool'
 import prettier from 'prettier'
-import { createClient, hexToNumber, http } from 'viem'
+import { Hex, hexToNumber } from 'viem'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE } from '../../shared/constants'
-import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache } from '../../shared/types'
+import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpcStatus } from '../../shared/types'
 
-const isValidRpc = (rpc: string) => rpc.startsWith('https://') && !rpc.includes('${')
+const RPC_TIMEOUT = 4_000 // 4 seconds
+
+const isValidRpc = (rpc: string) => {
+  if (rpc.includes('${')) return false // contains keys that need to be replaced
+
+  try {
+    const url = new URL(rpc)
+    if (url.protocol !== 'https:') return false
+    if (url.username || url.password) return false // contains credentials
+    return true
+  } catch {
+    // can't parse
+    return false
+  }
+}
 const isActiveChain = (chain: EthereumListsChain) => !chain.status || chain.status !== 'deprecated'
+
+const getTimeoutSignal = (ms: number) => {
+  const controller = new AbortController()
+  setTimeout(() => controller.abort(), ms)
+  return controller.signal
+}
+
+const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetworkRpcStatus> => {
+  // here we want to validate the RPC exists
+  // if unreachable (DNS or SSL error), consider invalid
+  // if it doesn't respond, consider VALID - it's probably blocking requests from github action runner
+  // if it responds, consider valid if the chainId matches
+
+  // use fetch instead of viem to ensure we get proper HTTP error codes
+  try {
+    const request = await fetch(rpcUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ id: 0, jsonrpc: '2.0', method: 'eth_chainId' }),
+      signal: getTimeoutSignal(RPC_TIMEOUT),
+    })
+    if (!request.ok) {
+      switch (request.status) {
+        case 526: // unreachable (DNS or SSL error)
+        case 523: // unreachable (DNS or SSL error)
+        case 400: // bad request - (verified that this is not client specific)
+          return 'invalid'
+
+        case 403: // access denied, probably blocking github
+        case 522: // timeout, maybe the RPC is ignoring requests from our IP
+        case 521: // web server down, maybe temporary downtime
+        case 502: // bad gateway, consider host is blocking github
+        case 503: // service unavailable, consider host is blocking github or temporary downtime
+        case 429: // too many requests
+        case 404: // service unavailable, consider host is blocking github or temporary downtime
+        case 405: // not allowed
+          return 'unknown'
+
+        default: // unexpected, consider valid - might be worth investigating
+          console.warn(`Unknown HTTP error ${chainId} ${rpcUrl} : ${request.status} - "${request.statusText}"`)
+          return 'unknown'
+      }
+    }
+
+    try {
+      const response = (await request.json()) as { id: number; jsonrpc: '2.0'; result: Hex }
+      const resChainId = String(hexToNumber(response.result))
+      const isValid = Number(chainId) === Number(resChainId)
+      if (!isValid) console.log('chainId mismatch', chainId, rpcUrl, resChainId)
+
+      return isValid ? 'valid' : 'invalid'
+    } catch {
+      return 'invalid' // parse error
+    }
+  } catch (err) {
+    if (err instanceof DOMException) {
+      if (err.name === 'AbortError') {
+        return 'unknown' // timeout, might be ignoring github action host requests
+      }
+
+      console.warn('unexpected DOMException', chainId, rpcUrl, err)
+      return 'unknown'
+    } else if (err instanceof Error) {
+      if (err.cause) {
+        const cause = err.cause as any
+        switch (cause.code ?? '') {
+          // unreachable or certificate errors
+          case 'ENOTFOUND':
+          case 'DEPTH_ZERO_SELF_SIGNED_CERT':
+          case 'CERT_HAS_EXPIRED':
+          case 'ERR_TLS_CERT_ALTNAME_INVALID':
+          case 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR':
+          case 'UNABLE_TO_VERIFY_LEAF_SIGNATURE':
+          case 'SELF_SIGNED_CERT_IN_CHAIN':
+            return 'invalid'
+
+          // might just be blocking github action host
+          case 'ECONNREFUSED':
+          case 'UND_ERR_CONNECT_TIMEOUT':
+          case 'ECONNRESET':
+            return 'unknown'
+
+          // unexpected, might be worth investigating
+          default: {
+            if (cause.code) console.warn('unexpected cause error code', chainId, rpcUrl, cause.code)
+            else console.warn('unexpected error', chainId, rpcUrl, err)
+            break
+          }
+        }
+      }
+    } else console.warn('unexpected error', chainId, rpcUrl, err)
+
+    return 'unknown'
+  }
+}
 
 export const fetchKnownEvmNetworks = async () => {
   const response = await fetch('https://chainid.network/chains.json')
@@ -56,40 +168,35 @@ export const fetchKnownEvmNetworks = async () => {
   knownEvmNetworksRpcsCache.sort((a, b) => a.timestamp - b.timestamp)
   knownEvmNetworksRpcsCache.splice(0, 50)
 
-  // test RPCs : some have invalid SSL certificates, unresovable DNS, or don't exist anymore
+  // test RPCs to exclude invalid ones, and prioritize the ones that are confirmed valid
   await PromisePool.withConcurrency(4)
     .for(knownEvmNetworks)
     .process(async (network): Promise<void> => {
       if (!network.rpcs) return
 
-      const checkedRpcs = await Promise.all(
-        network.rpcs.map(async (rpcUrl) => {
-          const cached = knownEvmNetworksRpcsCache.find((c) => c.chainId === network.id && c.rpcUrl === rpcUrl)
-          if (cached) return cached.isValid ? rpcUrl : null
+      let checked = false
 
-          try {
-            const client = createClient({ transport: http(rpcUrl, { retryCount: 0 }) })
-            const hexChainId = await client.request({ method: 'eth_chainId' })
-            const evmNetworkId = String(hexToNumber(hexChainId))
-            const isValid = network.id === evmNetworkId
-            knownEvmNetworksRpcsCache.push({ chainId: network.id, rpcUrl, isValid, timestamp: Date.now() })
-            return isValid ? rpcUrl : null
-          } catch (err) {
-            // const anyError = err as any
-            // console.log(
-            //   "Invalid RPC for network '%s' : %s",
-            //   network.name,
-            //   rpcUrl,
-            //   anyError?.shortMessage ?? anyError?.message ?? 'unknown error',
-            // )
-            knownEvmNetworksRpcsCache.push({ chainId: network.id, rpcUrl, isValid: false, timestamp: Date.now() })
-            // ignore, consider invalid
-            return null
-          }
-        }),
+      const statuses: Record<string, EvmNetworkRpcStatus> = Object.fromEntries(
+        await Promise.all(
+          network.rpcs.map(async (rpcUrl) => {
+            const cached = knownEvmNetworksRpcsCache.find((c) => c.chainId === network.id && c.rpcUrl === rpcUrl)
+            if (cached) return [rpcUrl, cached.status]
+
+            const status = await getRpcStatus(rpcUrl, network.id)
+            knownEvmNetworksRpcsCache.push({ chainId: network.id, rpcUrl, status, timestamp: Date.now() })
+
+            return [rpcUrl, status]
+          }),
+        ),
       )
 
-      network.rpcs = checkedRpcs.filter(Boolean) as string[]
+      // prioritize valid RPCs over the ones we're not sure about the status
+      // and exclude the ones that are invalid for sure
+      const arStatuses = Object.entries(statuses)
+      network.rpcs = [
+        ...arStatuses.filter(([_, status]) => status === 'valid').map(([url]) => url),
+        ...arStatuses.filter(([_, status]) => status === 'unknown').map(([url]) => url),
+      ]
     })
 
   // sort by network then by rpc url
@@ -104,9 +211,9 @@ export const fetchKnownEvmNetworks = async () => {
     }),
   )
 
-  const validNetworks = knownEvmNetworks
-    .filter((network) => network.rpcs?.length)
-    .sort((a, b) => Number(a.id) - Number(b.id))
+  // sort but don't filter out networks without RPCs
+  // wallet needs their names, icons etc.
+  const validNetworks = knownEvmNetworks.sort((a, b) => Number(a.id) - Number(b.id))
 
   await writeFile(
     FILE_KNOWN_EVM_NETWORKS,
