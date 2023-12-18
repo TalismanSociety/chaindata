@@ -85,7 +85,6 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'ivendpay',
   'metahub-finance',
   'polkaex',
-
   '3space-art',
   'bitstable-finance',
   'bridged-wrapped-ether-voltage-finance',
@@ -96,6 +95,9 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'mantle-usd',
   'mini-grok',
   'wrapped-fuse',
+  'fortunafi-tokenized-short-term-u-s-treasury-bills-for-non-us-residents',
+  'patriot-pay',
+  'vibingcattoken',
 ]
 
 type BalanceModuleConfig = {

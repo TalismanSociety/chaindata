@@ -31,6 +31,7 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmQbUVcaxFwY8gqMq1Jeup4NEyivo12QYhbLvVRvgXRBFb',
   'QmdW7XfRgeyoaHXEvXp8MaVteonankR32CxhL3K5Yc2uQM',
   'QmVgFqXA3kkCrVYGcWFF7Mhx8JUSe9vSCauNamuKWSvCym',
+  'QmawMDPsaj3kBTZErCYQ3tshv5RrMAN3smWNs72m943Fyj',
 ]
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
@@ -101,6 +102,8 @@ export const fetchKnownEvmNetworksLogos = async () => {
             'https://ipfs.io/ipfs/bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae/logo-128px.png'
         if (downloadUrl === 'https://ipfs.io/ipfs/bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie')
           downloadUrl = 'https://ipfs.io/ipfs/bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie/bnb-icon2.png'
+        if (downloadUrl === 'https://ipfs.io/ipfs/QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw')
+          downloadUrl = 'https://ipfs.io/ipfs/QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw/zkfair.jpg'
 
         // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
         console.log('downloading', downloadUrl)

@@ -65,5 +65,5 @@ export const fetchCoinDetails = async (coingeckoId: string, retryAfter30s?: bool
 
   if (!resCoins.ok) throw new Error(resCoins.statusText)
 
-  return await resCoins.json()
+  return (await resCoins.json()) as CoingeckoCoinDetails
 }
