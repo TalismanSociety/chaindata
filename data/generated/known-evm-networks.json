@@ -14622,12 +14622,6 @@
             "decimals": 18
           },
           {
-            "symbol": "KYL",
-            "coingeckoId": "kylin-network",
-            "contractAddress": "0x5d07f52ae5f779422447c2a32f58c93a15e7d6f2",
-            "decimals": 18
-          },
-          {
             "symbol": "KYOKO",
             "coingeckoId": "kyoko",
             "contractAddress": "0x14a32f050facf226ec60882398a9bf36d91dbac2",
@@ -28861,7 +28855,7 @@
   {
     "id": "7",
     "name": "ThaiChain",
-    "rpcs": ["https://rpc.dome.cloud"],
+    "rpcs": ["https://rpc.dome.cloud", "https://rpc.thaichain.org"],
     "explorerUrl": "https://exp.thaichain.org",
     "balancesConfig": {
       "evm-native": {
@@ -30087,8 +30081,7 @@
     "rpcs": [
       "https://songbird-api.flare.network/ext/C/rpc",
       "https://sgb.ftso.com.au/ext/bc/C/rpc",
-      "https://rpc.ftso.au/songbird",
-      "https://sgb-rpc.ftso.eu"
+      "https://rpc.ftso.au/songbird"
     ],
     "icon": "songbird",
     "explorerUrl": "https://songbird-explorer.flare.network",
@@ -30801,7 +30794,7 @@
   {
     "id": "32",
     "name": "GoodData Testnet",
-    "rpcs": ["https://test2.goodata.io"],
+    "rpcs": [],
     "balancesConfig": {
       "evm-native": {
         "symbol": "GooD",
@@ -30813,7 +30806,7 @@
   {
     "id": "33",
     "name": "GoodData Mainnet",
-    "rpcs": [],
+    "rpcs": ["https://rpc.goodata.io"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "GooD",
@@ -30838,7 +30831,7 @@
   {
     "id": "35",
     "name": "TBWG Chain",
-    "rpcs": ["https://rpc.tbwg.io"],
+    "rpcs": [],
     "balancesConfig": {
       "evm-native": {
         "symbol": "TBG",
@@ -30849,7 +30842,7 @@
   {
     "id": "36",
     "name": "Dxchain Mainnet",
-    "rpcs": ["https://mainnet.dxchain.com"],
+    "rpcs": [],
     "icon": "dx",
     "explorerUrl": "https://dxscan.io",
     "balancesConfig": {
@@ -31767,12 +31760,6 @@
             "coingeckoId": "ampleforth",
             "contractAddress": "0xdb021b1b247fe2f1fa57e0a87c748cc1e321f07f",
             "decimals": 9
-          },
-          {
-            "symbol": "AMPLE",
-            "coingeckoId": "ampleswap",
-            "contractAddress": "0x19857937848c02afbde8b526610f0f2f89e9960d",
-            "decimals": 18
           },
           {
             "symbol": "AHA",
@@ -41059,12 +41046,6 @@
             "symbol": "LOVELY",
             "coingeckoId": "lovely-inu-finance",
             "contractAddress": "0x9e24415d1e549ebc626a13a482bb117a2b43e9cf",
-            "decimals": 8
-          },
-          {
-            "symbol": "LST",
-            "coingeckoId": "lovely-swap-token",
-            "contractAddress": "0x019992270e95b800671d3bc1d763e07e489687b2",
             "decimals": 8
           },
           {
@@ -50818,8 +50799,8 @@
     "rpcs": [
       "https://dappnode1.ont.io:10339",
       "https://dappnode2.ont.io:10339",
-      "https://dappnode3.ont.io:10339",
-      "https://dappnode4.ont.io:10339"
+      "https://dappnode4.ont.io:10339",
+      "https://dappnode3.ont.io:10339"
     ],
     "icon": "ontology",
     "explorerUrl": "https://explorer.ont.io",
@@ -60039,7 +60020,7 @@
   {
     "id": "188",
     "name": "BMC Mainnet",
-    "rpcs": ["https://mainnet.bmcchain.com/"],
+    "rpcs": [],
     "explorerUrl": "https://bmc.blockmeta.com",
     "balancesConfig": {
       "evm-native": {
@@ -63154,9 +63135,9 @@
     "id": "336",
     "name": "Shiden",
     "rpcs": [
-      "https://shiden.api.onfinality.io/public",
       "https://shiden-rpc.dwellir.com",
-      "https://shiden.public.blastapi.io"
+      "https://shiden.public.blastapi.io",
+      "https://shiden.api.onfinality.io/public"
     ],
     "icon": "shiden",
     "explorerUrl": "https://shiden.subscan.io",
@@ -63593,8 +63574,8 @@
     "name": "XT Smart Chain Mainnet",
     "rpcs": [
       "https://datarpc1.xsc.pub",
-      "https://datarpc2.xsc.pub",
-      "https://datarpc3.xsc.pub"
+      "https://datarpc3.xsc.pub",
+      "https://datarpc2.xsc.pub"
     ],
     "icon": "xsc",
     "explorerUrl": "https://xscscan.pub",
@@ -63650,7 +63631,7 @@
   {
     "id": "534",
     "name": "Candle",
-    "rpcs": ["https://candle-rpc.com/", "https://rpc.cndlchain.com"],
+    "rpcs": ["https://rpc.cndlchain.com", "https://candle-rpc.com/"],
     "explorerUrl": "https://candleexplorer.com",
     "balancesConfig": {
       "evm-native": {
@@ -63675,7 +63656,7 @@
   {
     "id": "555",
     "name": "Vela1 Chain Mainnet",
-    "rpcs": ["https://rpc.velaverse.io"],
+    "rpcs": [],
     "explorerUrl": "https://exp.velaverse.io",
     "balancesConfig": {
       "evm-native": {
@@ -63916,7 +63897,7 @@
   {
     "id": "700",
     "name": "Star Social Testnet",
-    "rpcs": ["https://avastar.cc/ext/bc/C/rpc"],
+    "rpcs": [],
     "explorerUrl": "https://avastar.info",
     "balancesConfig": {
       "evm-native": {
@@ -63929,7 +63910,7 @@
   {
     "id": "707",
     "name": "BlockChain Station Mainnet",
-    "rpcs": ["https://rpc-mainnet.bcsdev.io"],
+    "rpcs": [],
     "explorerUrl": "https://explorer.bcsdev.io",
     "balancesConfig": {
       "evm-native": {
@@ -63941,7 +63922,7 @@
   {
     "id": "708",
     "name": "BlockChain Station Testnet",
-    "rpcs": ["https://rpc-testnet.bcsdev.io"],
+    "rpcs": [],
     "explorerUrl": "https://testnet.bcsdev.io",
     "balancesConfig": {
       "evm-native": {
@@ -64031,7 +64012,7 @@
   {
     "id": "766",
     "name": "QL1",
-    "rpcs": ["https://rpc.qom.one"],
+    "rpcs": [],
     "icon": "qom",
     "explorerUrl": "https://mainnet.qom.one",
     "balancesConfig": {
@@ -64084,7 +64065,7 @@
   {
     "id": "788",
     "name": "Aerochain Testnet",
-    "rpcs": ["https://testnet-rpc.aerochain.id/"],
+    "rpcs": [],
     "explorerUrl": "https://testnet.aeroscan.id",
     "balancesConfig": {
       "evm-native": {
@@ -64182,14 +64163,7 @@
   {
     "id": "818",
     "name": "BeOne Chain Mainnet",
-    "rpcs": [
-      "https://dataseed1.beonechain.com",
-      "https://dataseed2.beonechain.com",
-      "https://dataseed-us1.beonechain.com",
-      "https://dataseed-us2.beonechain.com",
-      "https://dataseed-uk1.beonechain.com",
-      "https://dataseed-uk2.beonechain.com"
-    ],
+    "rpcs": [],
     "icon": "beonechain",
     "explorerUrl": "https://beonescan.com",
     "balancesConfig": {
@@ -64281,7 +64255,7 @@
   {
     "id": "877",
     "name": "Dexit Network",
-    "rpcs": ["https://dxt.dexit.network"],
+    "rpcs": [],
     "explorerUrl": "https://dxtscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -64562,7 +64536,7 @@
   {
     "id": "998",
     "name": "Lucky Network",
-    "rpcs": [],
+    "rpcs": ["https://rpc.luckynetwork.org"],
     "icon": "lucky",
     "explorerUrl": "https://explorer.luckynetwork.org",
     "balancesConfig": {
@@ -66048,10 +66022,7 @@
   {
     "id": "1294",
     "name": "Bobabeam",
-    "rpcs": [
-      "https://bobabeam.boba.network",
-      "https://replica.bobabeam.boba.network"
-    ],
+    "rpcs": [],
     "explorerUrl": "https://blockexplorer.bobabeam.boba.network",
     "balancesConfig": {
       "evm-native": {
@@ -66063,10 +66034,7 @@
   {
     "id": "1297",
     "name": "Bobabase Testnet",
-    "rpcs": [
-      "https://bobabase.boba.network",
-      "https://replica.bobabase.boba.network"
-    ],
+    "rpcs": [],
     "explorerUrl": "https://blockexplorer.bobabase.boba.network",
     "balancesConfig": {
       "evm-native": {
@@ -66415,8 +66383,8 @@
     "id": "1663",
     "name": "Horizen Gobi Testnet",
     "rpcs": [
-      "https://gobi-rpc.horizenlabs.io/ethv1",
-      "https://rpc.ankr.com/horizen_gobi_testnet"
+      "https://rpc.ankr.com/horizen_gobi_testnet",
+      "https://gobi-rpc.horizenlabs.io/ethv1"
     ],
     "icon": "eon",
     "explorerUrl": "https://gobi-explorer.horizen.io",
@@ -66443,7 +66411,7 @@
   {
     "id": "1701",
     "name": "Anytype EVM Chain",
-    "rpcs": ["https://geth.anytype.io"],
+    "rpcs": [],
     "icon": "any",
     "explorerUrl": "https://explorer.anytype.io",
     "balancesConfig": {
@@ -66495,7 +66463,7 @@
   {
     "id": "1773",
     "name": "PartyChain",
-    "rpcs": ["https://tea.mining4people.com/rpc"],
+    "rpcs": [],
     "icon": "grams",
     "explorerUrl": "https://partyexplorer.co",
     "balancesConfig": {
@@ -66535,7 +66503,7 @@
   {
     "id": "1807",
     "name": "Rabbit Analog Testnet Chain",
-    "rpcs": ["https://rabbit.analog-rpc.com"],
+    "rpcs": [],
     "icon": "rabbit",
     "explorerUrl": "https://rabbit.analogscan.com",
     "balancesConfig": {
@@ -68466,10 +68434,7 @@
   {
     "id": "4051",
     "name": "Bobaopera Testnet",
-    "rpcs": [
-      "https://testnet.bobaopera.boba.network",
-      "https://replica.testnet.bobaopera.boba.network"
-    ],
+    "rpcs": [],
     "explorerUrl": "https://blockexplorer.testnet.bobaopera.boba.network",
     "balancesConfig": {
       "evm-native": {
@@ -68510,7 +68475,7 @@
   {
     "id": "4096",
     "name": "Bitindi Testnet",
-    "rpcs": ["https://testnet-rpc.bitindi.org"],
+    "rpcs": [],
     "icon": "bitindiTestnet",
     "explorerUrl": "https://testnet.bitindiscan.com",
     "balancesConfig": {
@@ -68524,7 +68489,7 @@
   {
     "id": "4099",
     "name": "Bitindi Mainnet",
-    "rpcs": ["https://mainnet-rpc.bitindi.org"],
+    "rpcs": [],
     "icon": "bitindi",
     "explorerUrl": "https://bitindiscan.com",
     "balancesConfig": {
@@ -68606,11 +68571,7 @@
   {
     "id": "4242",
     "name": "Nexi Mainnet",
-    "rpcs": [
-      "https://rpc.chain.nexi.technology/",
-      "https://chain.nexilix.com",
-      "https://chain.nexi.evmnode.online"
-    ],
+    "rpcs": ["https://rpc.chain.nexi.technology/", "https://chain.nexilix.com"],
     "icon": "nexi",
     "explorerUrl": "https://www.nexiscan.com",
     "balancesConfig": {
@@ -68819,9 +68780,9 @@
     "name": "BlackFort Exchange Network",
     "rpcs": [
       "https://mainnet.blackfort.network/rpc",
-      "https://mainnet-1.blackfort.network/rpc",
       "https://mainnet-2.blackfort.network/rpc",
-      "https://mainnet-3.blackfort.network/rpc"
+      "https://mainnet-3.blackfort.network/rpc",
+      "https://mainnet-1.blackfort.network/rpc"
     ],
     "icon": "bxn",
     "explorerUrl": "https://explorer.blackfort.network",
@@ -69246,24 +69207,12 @@
     "isTestnet": true
   },
   {
-    "id": "5777",
-    "name": "Ganache",
-    "rpcs": ["https://127.0.0.1:7545"],
-    "icon": "ganache",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "ETH",
-        "decimals": 18
-      }
-    }
-  },
-  {
     "id": "5851",
     "name": "Ontology Testnet",
     "rpcs": [
       "https://polaris1.ont.io:10339",
-      "https://polaris3.ont.io:10339",
       "https://polaris2.ont.io:10339",
+      "https://polaris3.ont.io:10339",
       "https://polaris4.ont.io:10339"
     ],
     "icon": "ontology",
@@ -69427,8 +69376,8 @@
     "id": "6688",
     "name": "IRIShub",
     "rpcs": [
-      "https://iris-evm.publicnode.com",
-      "https://evmrpc.irishub-1.irisnet.org"
+      "https://evmrpc.irishub-1.irisnet.org",
+      "https://iris-evm.publicnode.com"
     ],
     "icon": "irishub",
     "explorerUrl": "https://irishub.iobscan.io",
@@ -69565,8 +69514,8 @@
     "id": "7332",
     "name": "Horizen EON Mainnet",
     "rpcs": [
-      "https://rpc.ankr.com/horizen_eon",
-      "https://eon-rpc.horizenlabs.io/ethv1"
+      "https://eon-rpc.horizenlabs.io/ethv1",
+      "https://rpc.ankr.com/horizen_eon"
     ],
     "icon": "eon",
     "explorerUrl": "https://eon-explorer.horizenlabs.io",
@@ -69672,10 +69621,10 @@
     "id": "7700",
     "name": "Canto",
     "rpcs": [
-      "https://canto.slingshot.finance",
       "https://mainnode.plexnode.org:8545",
       "https://canto.gravitychain.io/",
       "https://jsonrpc.canto.nodestake.top/",
+      "https://canto.slingshot.finance",
       "https://canto.neobase.one"
     ],
     "explorerUrl": "https://evm.explorer.canto.io",
@@ -69879,7 +69828,7 @@
   {
     "id": "7878",
     "name": "Hazlor Testnet",
-    "rpcs": ["https://hatlas.rpc.hazlor.com:8545"],
+    "rpcs": [],
     "explorerUrl": "https://explorer.hazlor.com",
     "balancesConfig": {
       "evm-native": {
@@ -69919,7 +69868,7 @@
   {
     "id": "8000",
     "name": "Teleport",
-    "rpcs": ["https://evm-rpc.teleport.network"],
+    "rpcs": [],
     "icon": "teleport",
     "explorerUrl": "https://evm-explorer.teleport.network",
     "balancesConfig": {
@@ -69946,7 +69895,7 @@
   {
     "id": "8029",
     "name": "MDGL Testnet",
-    "rpcs": ["https://testnet.mdgl.io"],
+    "rpcs": [],
     "balancesConfig": {
       "evm-native": {
         "symbol": "MDGLT",
@@ -69958,7 +69907,7 @@
   {
     "id": "8080",
     "name": "Shardeum Liberty 1.X",
-    "rpcs": ["https://liberty10.shardeum.org/"],
+    "rpcs": [],
     "icon": "shardeum",
     "explorerUrl": "https://explorer-liberty10.shardeum.org",
     "balancesConfig": {
@@ -69972,7 +69921,7 @@
   {
     "id": "8081",
     "name": "Shardeum Liberty 2.X",
-    "rpcs": ["https://liberty20.shardeum.org/"],
+    "rpcs": [],
     "icon": "shardeum",
     "explorerUrl": "https://explorer-liberty20.shardeum.org",
     "balancesConfig": {
@@ -70029,7 +69978,7 @@
   {
     "id": "8181",
     "name": "Testnet BeOne Chain",
-    "rpcs": ["https://pre-boc1.beonechain.com"],
+    "rpcs": [],
     "icon": "beonechain",
     "explorerUrl": "https://testnet.beonescan.com",
     "balancesConfig": {
@@ -71049,7 +70998,7 @@
   {
     "id": "8723",
     "name": "TOOL Global Mainnet",
-    "rpcs": ["https://mainnet-web3.wolot.io"],
+    "rpcs": [],
     "explorerUrl": "https://www.olo.network",
     "balancesConfig": {
       "evm-native": {
@@ -71168,10 +71117,10 @@
     "id": "8883",
     "name": "Sapphire by Unique",
     "rpcs": [
-      "https://rpc-sapphire.unique.network",
       "https://us-rpc-sapphire.unique.network",
       "https://eu-rpc-sapphire.unique.network",
-      "https://asia-rpc-sapphire.unique.network"
+      "https://asia-rpc-sapphire.unique.network",
+      "https://rpc-sapphire.unique.network"
     ],
     "icon": "sapphire",
     "explorerUrl": "https://uniquescan.io/sapphire",
@@ -71468,7 +71417,7 @@
   {
     "id": "9100",
     "name": "Genesis Coin",
-    "rpcs": ["https://genesis-gn.com"],
+    "rpcs": [],
     "balancesConfig": {
       "evm-native": {
         "symbol": "GNC",
@@ -71492,7 +71441,7 @@
   {
     "id": "9339",
     "name": "Dogcoin Testnet",
-    "rpcs": ["https://testnet-rpc.dogcoin.me"],
+    "rpcs": [],
     "icon": "dogs",
     "explorerUrl": "https://testnet.dogcoin.network",
     "balancesConfig": {
@@ -71734,9 +71683,8 @@
     "id": "10000",
     "name": "Smart Bitcoin Cash",
     "rpcs": [
-      "https://smartbch.fountainhead.cash/mainnet",
       "https://smartbch.greyh.at",
-      "https://smartbch.devops.cash/mainnet"
+      "https://smartbch.fountainhead.cash/mainnet"
     ],
     "balancesConfig": {
       "evm-native": {
@@ -71819,9 +71767,9 @@
     "id": "10024",
     "name": "Gon Chain",
     "rpcs": [
-      "https://node1.testnet.gaiaopen.network",
       "https://node1.mainnet.gon.network",
       "https://node2.mainnet.gon.network",
+      "https://node1.testnet.gaiaopen.network",
       "https://node3.mainnet.gon.network",
       "https://node4.mainnet.gon.network"
     ],
@@ -71919,7 +71867,7 @@
   {
     "id": "10248",
     "name": "0XTade",
-    "rpcs": ["https://node.0xtchain.com"],
+    "rpcs": [],
     "explorerUrl": "https://www.0xtscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -72165,7 +72113,8 @@
       "https://node2.fibo-api.asia",
       "https://node1.fibo-rpc.asia",
       "https://node2.fibo-rpc.asia",
-      "https://node3.fibo-rpc.asia"
+      "https://node3.fibo-rpc.asia",
+      "https://node4.fibo-rpc.asia"
     ],
     "icon": "fibonacci",
     "explorerUrl": "https://scan.fibochain.org",
@@ -72381,7 +72330,7 @@
   {
     "id": "15555",
     "name": "Trust EVM Testnet",
-    "rpcs": [],
+    "rpcs": ["https://api.testnet-dev.trust.one"],
     "explorerUrl": "https://trustscan.one",
     "balancesConfig": {
       "evm-native": {
@@ -72885,7 +72834,7 @@
   {
     "id": "26600",
     "name": "Hertz Network Mainnet",
-    "rpcs": ["https://mainnet-rpc.hertzscan.com"],
+    "rpcs": [],
     "icon": "hertz-network",
     "explorerUrl": "https://hertzscan.com",
     "balancesConfig": {
@@ -72945,7 +72894,7 @@
   {
     "id": "30067",
     "name": "Piece testnet",
-    "rpcs": ["https://testnet-rpc0.piecenetwork.com"],
+    "rpcs": [],
     "icon": "piecechain",
     "explorerUrl": "https://testnet-scan.piecenetwork.com",
     "balancesConfig": {
@@ -73251,7 +73200,7 @@
   {
     "id": "41500",
     "name": "Opulent-X BETA",
-    "rpcs": ["https://connect.opulent-x.com"],
+    "rpcs": [],
     "explorerUrl": "https://explorer.opulent-x.com",
     "balancesConfig": {
       "evm-native": {
@@ -79517,7 +79466,7 @@
   {
     "id": "43288",
     "name": "Boba Avax",
-    "rpcs": ["https://avax.boba.network", "https://replica.avax.boba.network"],
+    "rpcs": [],
     "explorerUrl": "https://blockexplorer.avax.boba.network",
     "balancesConfig": {
       "evm-native": {
@@ -79543,7 +79492,7 @@
   {
     "id": "44444",
     "name": "Frenchain",
-    "rpcs": ["https://rpc-02.frenscan.io"],
+    "rpcs": [],
     "icon": "fren",
     "explorerUrl": "https://frenscan.io",
     "balancesConfig": {
@@ -80349,8 +80298,8 @@
     "id": "71111",
     "name": "GuapcoinX",
     "rpcs": [
-      "https://rpc-mainnet.guapcoinx.com/",
       "https://rpc-mainnet-1.guapcoinx.com/",
+      "https://rpc-mainnet.guapcoinx.com/",
       "https://rpc-mainnet-2.guapcoinx.com/"
     ],
     "icon": "guapcoinx",
@@ -80365,7 +80314,7 @@
   {
     "id": "71393",
     "name": "Polyjuice Testnet",
-    "rpcs": ["https://godwoken-testnet-web3-rpc.ckbapp.dev"],
+    "rpcs": [],
     "icon": "polyjuice",
     "balancesConfig": {
       "evm-native": {
@@ -80556,8 +80505,8 @@
     "name": "Mumbai",
     "rpcs": [
       "https://rpc-mumbai.maticvigil.com",
-      "https://polygon-mumbai-bor.publicnode.com",
-      "https://polygon-mumbai.gateway.tenderly.co"
+      "https://polygon-mumbai.gateway.tenderly.co",
+      "https://polygon-mumbai-bor.publicnode.com"
     ],
     "icon": "polygon",
     "explorerUrl": "https://mumbai.polygonscan.com",
@@ -80656,7 +80605,7 @@
   {
     "id": "88880",
     "name": "Chiliz Scoville Testnet",
-    "rpcs": ["https://scoville-rpc.chiliz.com"],
+    "rpcs": [],
     "icon": "chiliz",
     "explorerUrl": "https://scoville-explorer.chiliz.com",
     "balancesConfig": {
@@ -80684,7 +80633,7 @@
   {
     "id": "90210",
     "name": "Beverly Hills",
-    "rpcs": ["https://rpc.beverlyhills.ethdevops.io:8545"],
+    "rpcs": [],
     "explorerUrl": "https://explorer.beverlyhills.ethdevops.io",
     "balancesConfig": {
       "evm-native": {
@@ -80697,7 +80646,7 @@
   {
     "id": "91002",
     "name": "Nautilus Trition Chain",
-    "rpcs": ["https://triton.api.nautchain.xyz"],
+    "rpcs": [],
     "icon": "nautilus",
     "explorerUrl": "https://triton.nautscan.com",
     "balancesConfig": {
@@ -81025,8 +80974,8 @@
     "id": "111111",
     "name": "Siberium Network",
     "rpcs": [
-      "https://rpc.main.siberium.net",
-      "https://rpc.main.siberium.net.ru"
+      "https://rpc.main.siberium.net.ru",
+      "https://rpc.main.siberium.net"
     ],
     "icon": "siberium",
     "explorerUrl": "https://explorer.main.siberium.net",
@@ -81171,7 +81120,7 @@
   {
     "id": "200202",
     "name": "Milkomeda A1 Testnet",
-    "rpcs": [],
+    "rpcs": ["https://rpc-devnet-algorand-rollup.a1.milkomeda.com"],
     "icon": "milkomeda",
     "explorerUrl": "https://explorer-devnet-algorand-rollup.a1.milkomeda.com",
     "balancesConfig": {
@@ -81567,7 +81516,7 @@
   {
     "id": "333999",
     "name": "Polis Mainnet",
-    "rpcs": ["https://rpc.polis.tech"],
+    "rpcs": [],
     "icon": "polis",
     "balancesConfig": {
       "evm-native": {
@@ -81889,7 +81838,7 @@
   {
     "id": "534849",
     "name": "Shinarium Beta",
-    "rpcs": ["https://rpc.shinarium.org"],
+    "rpcs": [],
     "icon": "shinarium",
     "explorerUrl": "https://shinascan.shinarium.org",
     "balancesConfig": {
@@ -82283,7 +82232,7 @@
   {
     "id": "1337803",
     "name": "Zhejiang",
-    "rpcs": [],
+    "rpcs": ["https://rpc.zhejiang.ethpandaops.io"],
     "icon": "ethereum",
     "explorerUrl": "https://zhejiang.beaconcha.in",
     "balancesConfig": {
@@ -82674,9 +82623,9 @@
     "name": "quarkblockchain",
     "rpcs": [
       "https://hz.rpc.qkiscan.cn",
+      "https://rpc1.qkiscan.io",
       "https://rpc2.qkiscan.io",
-      "https://rpc3.qkiscan.io",
-      "https://rpc1.qkiscan.io"
+      "https://rpc3.qkiscan.io"
     ],
     "explorerUrl": "https://qkiscan.io",
     "balancesConfig": {
@@ -82758,7 +82707,7 @@
   {
     "id": "29032022",
     "name": "Flachain Mainnet",
-    "rpcs": ["https://flachain.flaexchange.top/"],
+    "rpcs": [],
     "icon": "flacoin",
     "explorerUrl": "https://explorer.flaexchange.top",
     "balancesConfig": {

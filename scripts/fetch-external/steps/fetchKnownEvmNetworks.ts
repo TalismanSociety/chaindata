@@ -195,27 +195,27 @@ export const fetchKnownEvmNetworks = async () => {
         knownEvmNetworksRpcsCache.splice(index, 1)
       }
     }
-  } else knownEvmNetworksRpcsCache.splice(0, 50)
+  } else knownEvmNetworksRpcsCache.splice(0, 30)
 
   // test RPCs to exclude invalid ones, and prioritize the ones that are confirmed valid
-  await PromisePool.withConcurrency(4)
+  // don't parallelise more, it would lead to fake timeouts
+  await PromisePool.withConcurrency(2)
     .for(knownEvmNetworks)
     .process(async (network): Promise<void> => {
       if (!network.rpcs) return
 
-      const statuses: Record<string, EvmNetworkRpcStatus> = Object.fromEntries(
-        await Promise.all(
-          network.rpcs.map(async (rpcUrl) => {
-            const cached = knownEvmNetworksRpcsCache.find((c) => c.chainId === network.id && c.rpcUrl === rpcUrl)
-            if (cached) return [rpcUrl, cached.status]
+      const statuses: Record<string, EvmNetworkRpcStatus> = {}
+      for (const rpcUrl of network.rpcs) {
+        const cached = knownEvmNetworksRpcsCache.find((c) => c.chainId === network.id && c.rpcUrl === rpcUrl)
+        if (cached) {
+          statuses[rpcUrl] = cached.status
+          continue
+        }
 
-            const status = await getRpcStatus(rpcUrl, network.id)
-            knownEvmNetworksRpcsCache.push({ chainId: network.id, rpcUrl, status, timestamp: Date.now() })
-
-            return [rpcUrl, status]
-          }),
-        ),
-      )
+        const status = await getRpcStatus(rpcUrl, network.id)
+        knownEvmNetworksRpcsCache.push({ chainId: network.id, rpcUrl, status, timestamp: Date.now() })
+        statuses[rpcUrl] = status
+      }
 
       // prioritize valid RPCs over the ones we're not sure about the status
       // and exclude the ones that are invalid for sure
