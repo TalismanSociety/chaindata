@@ -4986,12 +4986,6 @@
             "decimals": 18
           },
           {
-            "symbol": "CARDS",
-            "coingeckoId": "cardstarter",
-            "contractAddress": "0x3d6f0dea3ac3c607b3998e6ce14b6350721752d9",
-            "decimals": 18
-          },
-          {
             "symbol": "CARE",
             "coingeckoId": "carecoin",
             "contractAddress": "0x329cf160f30d21006bcd24b67eade561e54cde4c",
@@ -14621,6 +14615,12 @@
             "decimals": 18
           },
           {
+            "symbol": "KYL",
+            "coingeckoId": "kylin-network",
+            "contractAddress": "0x5d07f52ae5f779422447c2a32f58c93a15e7d6f2",
+            "decimals": 18
+          },
+          {
             "symbol": "KYOKO",
             "coingeckoId": "kyoko",
             "contractAddress": "0x14a32f050facf226ec60882398a9bf36d91dbac2",
@@ -21417,6 +21417,12 @@
             "coingeckoId": "rentberry",
             "contractAddress": "0x6aeb95f06cda84ca345c2de0f3b7f96923a44f4c",
             "decimals": 14
+          },
+          {
+            "symbol": "RNB",
+            "coingeckoId": "rentible",
+            "contractAddress": "0x20a62aca58526836165ca53fe67dd884288c8abf",
+            "decimals": 18
           },
           {
             "symbol": "BART",
@@ -45358,6 +45364,12 @@
             "decimals": 9
           },
           {
+            "symbol": "RNB",
+            "coingeckoId": "rentible",
+            "contractAddress": "0xadec335a2e3881303a9b0203eb99de12202280df",
+            "decimals": 18
+          },
+          {
             "symbol": "SOURCE",
             "coingeckoId": "resource-protocol",
             "contractAddress": "0xea136fc555e695ba96d22e10b7e2151c4c6b2a20",
@@ -67000,7 +67012,12 @@
   {
     "id": "7700",
     "name": "Canto",
-    "rpcs": ["https://canto.gravitychain.io/"],
+    "rpcs": [
+      "https://canto.slingshot.finance",
+      "https://mainnode.plexnode.org:8545",
+      "https://canto.gravitychain.io/",
+      "https://jsonrpc.canto.nodestake.top/"
+    ],
     "explorerUrl": "https://evm.explorer.canto.io",
     "balancesConfig": {
       "evm-native": {
@@ -67138,6 +67155,138 @@
         ]
       }
     }
+  },
+  {
+    "id": "7701",
+    "name": "Canto Tesnet",
+    "rpcs": ["https://testnet-archive.plexnode.wtf"],
+    "explorerUrl": "https://testnet.tuber.build",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CANTO",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "7771",
+    "name": "Bitrock Testnet",
+    "rpcs": ["https://testnet.bit-rock.io"],
+    "icon": "bitrock",
+    "explorerUrl": "https://testnetscan.bit-rock.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BROCK",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "7777",
+    "name": "Rise of the Warbots Testnet",
+    "rpcs": [
+      "https://testnet1.riseofthewarbots.com",
+      "https://testnet2.riseofthewarbots.com",
+      "https://testnet3.riseofthewarbots.com",
+      "https://testnet4.riseofthewarbots.com",
+      "https://testnet5.riseofthewarbots.com"
+    ],
+    "explorerUrl": "https://testnet.avascan.info/blockchain/2mZ9doojfwHzXN3VXDQELKnKyZYxv7833U8Yq5eTfFx3hxJtiy",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "NMAC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "7860",
+    "name": "MaalChain Testnet",
+    "rpcs": ["https://node1.maalscan.io/", "https://rpc-bntest.maalscan.io/"],
+    "icon": "maal-test",
+    "explorerUrl": "https://testnet.maalscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MAAL",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "7979",
+    "name": "DOS Chain",
+    "rpcs": ["https://main.doschain.com"],
+    "icon": "doschain",
+    "explorerUrl": "https://doscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "DOS",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "8082",
+    "name": "Shardeum Sphinx 1.X",
+    "rpcs": ["https://sphinx.shardeum.org/"],
+    "icon": "shardeum",
+    "explorerUrl": "https://explorer-sphinx.shardeum.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SHM",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "8131",
+    "name": "Qitmeer Network Testnet",
+    "rpcs": [
+      "https://testnet-qng.rpc.qitmeer.io",
+      "https://testnet.meerlabs.com",
+      "https://meer.testnet.meerfans.club"
+    ],
+    "icon": "meer",
+    "explorerUrl": "https://qng-testnet.meerscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MEER-T",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "8192",
+    "name": "Torus Mainnet",
+    "rpcs": ["https://rpc.toruschain.com"],
+    "icon": "torus",
+    "explorerUrl": "https://toruscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TQF",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "8194",
+    "name": "Torus Testnet",
+    "rpcs": ["https://rpc.testnet.toruschain.com"],
+    "icon": "torus",
+    "explorerUrl": "https://testnet.toruscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TTQF",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "8453",
@@ -68028,6 +68177,19 @@
             "decimals": 18
           }
         ]
+      }
+    }
+  },
+  {
+    "id": "8668",
+    "name": "Hela Official Runtime Mainnet",
+    "rpcs": ["https://mainnet-rpc.helachain.com"],
+    "icon": "hela",
+    "explorerUrl": "https://mainnet-blockexplorer.helachain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "HLUSD",
+        "decimals": 18
       }
     }
   },
