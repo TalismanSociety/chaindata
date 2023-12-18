@@ -13955,6 +13955,12 @@
             "decimals": 18
           },
           {
+            "symbol": "JRNY",
+            "coingeckoId": "journey-ai",
+            "contractAddress": "0x94dd57da120c7c564d9aa438773068705e828781",
+            "decimals": 18
+          },
+          {
             "symbol": "JOVJOU",
             "coingeckoId": "jovjou",
             "contractAddress": "0x7e5981c2e072f53a0323d3d80baca3e31fb1550c",
@@ -19268,6 +19274,12 @@
             "symbol": "NUX",
             "coingeckoId": "peanut",
             "contractAddress": "0x89bd2e7e388fab44ae88bef4e1ad12b4f1e0911c",
+            "decimals": 18
+          },
+          {
+            "symbol": "PEAS",
+            "coingeckoId": "peapods-finance",
+            "contractAddress": "0x02f92800f57bcd74066f5709f1daa1a4302df875",
             "decimals": 18
           },
           {
@@ -31969,7 +31981,7 @@
           {
             "symbol": "ASSA",
             "coingeckoId": "assaplay",
-            "contractAddress": "0xa25d074d5300f9f997a76994840a3266a72f77e4",
+            "contractAddress": "0x7d29e5fffd1b207158aa5dbfa6d039e8bffc6a79",
             "decimals": 18
           },
           {
@@ -38530,6 +38542,18 @@
             "decimals": 9
           },
           {
+            "symbol": "GrokGirl",
+            "coingeckoId": "grok-girl",
+            "contractAddress": "0x6d57f5c286e04850c2c085350f2e60aaa7b7c15b",
+            "decimals": 9
+          },
+          {
+            "symbol": "GrokKing",
+            "coingeckoId": "grokking",
+            "contractAddress": "0x010b0293d810cde17a4d31d027b1c1797fabeed0",
+            "decimals": 9
+          },
+          {
             "symbol": "GROKKY",
             "coingeckoId": "grokky",
             "contractAddress": "0xaddc5ce5cb80ea434e85c71589159716ab00b53c",
@@ -43412,6 +43436,12 @@
             "coingeckoId": "optimus-inu",
             "contractAddress": "0x674aa28ac436834051fff3fc7b6e59d6f9c57a1c",
             "decimals": 18
+          },
+          {
+            "symbol": "OPX",
+            "coingeckoId": "optimus-x",
+            "contractAddress": "0x6ec9a568881755c9698384cc6b5b13bf4064e12b",
+            "decimals": 9
           },
           {
             "symbol": "OPA",
@@ -49016,6 +49046,12 @@
             "coingeckoId": "vetter-token",
             "contractAddress": "0x6169b3b23e57de79a6146a2170980ceb1f83b9e0",
             "decimals": 9
+          },
+          {
+            "symbol": "VEVE",
+            "coingeckoId": "veve",
+            "contractAddress": "0x73cb8ea6d2331eb9892583e6f7a6ac733b932550",
+            "decimals": 18
           },
           {
             "symbol": "VFOX",
@@ -66649,9 +66685,54 @@
     "isTestnet": true
   },
   {
+    "id": "5851",
+    "name": "Ontology Testnet",
+    "rpcs": [
+      "https://polaris1.ont.io:10339",
+      "https://polaris2.ont.io:10339",
+      "https://polaris3.ont.io:10339",
+      "https://polaris4.ont.io:10339"
+    ],
+    "icon": "ontology",
+    "explorerUrl": "https://explorer.ont.io/testnet",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ONG",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "5869",
+    "name": "Wegochain Rubidium Mainnet",
+    "rpcs": ["https://proxy.wegochain.io"],
+    "explorerUrl": "https://scan2.wegochain.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "RBD",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "6065",
+    "name": "Tres Testnet",
+    "rpcs": ["https://rpc-test.tresleches.finance/"],
+    "icon": "tresleches",
+    "explorerUrl": "https://explorer-test.tresleches.finance",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TRES",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "6066",
     "name": "Tres Mainnet",
-    "rpcs": ["https://rpc.treschain.io/"],
+    "rpcs": ["https://rpc.tresleches.finance/", "https://rpc.treschain.io/"],
     "icon": "tresleches",
     "explorerUrl": "https://explorer.tresleches.finance",
     "balancesConfig": {
@@ -66825,13 +66906,236 @@
   {
     "id": "7332",
     "name": "Horizen EON Mainnet",
-    "rpcs": ["https://rpc.ankr.com/horizen_eon"],
+    "rpcs": [
+      "https://eon-rpc.horizenlabs.io/ethv1",
+      "https://rpc.ankr.com/horizen_eon"
+    ],
     "icon": "eon",
     "explorerUrl": "https://eon-explorer.horizenlabs.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ZEN",
         "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7341",
+    "name": "Shyft Mainnet",
+    "rpcs": ["https://rpc.shyft.network/"],
+    "icon": "shyft",
+    "explorerUrl": "https://bx.shyft.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SHYFT",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7518",
+    "name": "MEVerse Chain Mainnet",
+    "rpcs": ["https://rpc.meversemainnet.io"],
+    "icon": "meverse",
+    "explorerUrl": "https://www.meversescan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MEV",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7575",
+    "name": "ADIL Testnet",
+    "rpcs": ["https://testnet.adilchain-rpc.io"],
+    "icon": "adil",
+    "explorerUrl": "https://testnet.adilchain-scan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ADIL",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "7576",
+    "name": "Adil Chain V2 Mainnet",
+    "rpcs": ["https://adilchain-rpc.io"],
+    "icon": "adil",
+    "explorerUrl": "https://adilchain-scan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ADIL",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7668",
+    "name": "The Root Network - Mainnet",
+    "rpcs": ["https://root.rootnet.live/archive"],
+    "explorerUrl": "https://explorer.rootnet.live",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "XRP",
+        "decimals": 6
+      }
+    }
+  },
+  {
+    "id": "7672",
+    "name": "The Root Network - Porcini Testnet",
+    "rpcs": ["https://porcini.rootnet.app/archive"],
+    "explorerUrl": "https://explorer.rootnet.cloud",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "XRP",
+        "decimals": 6
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "7700",
+    "name": "Canto",
+    "rpcs": ["https://canto.gravitychain.io/"],
+    "explorerUrl": "https://evm.explorer.canto.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CANTO",
+        "decimals": 18
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "WCANTO",
+            "coingeckoId": "canto",
+            "contractAddress": "0x826551890dc65655a0aceca109ab11abdbd7a07b",
+            "decimals": 18
+          },
+          {
+            "symbol": "BELIEVE",
+            "coingeckoId": "cantobelieve",
+            "contractAddress": "0xc5b47a30f3e52aee781e5c6dcdf13de456814592",
+            "decimals": 18
+          },
+          {
+            "symbol": "CRAB",
+            "coingeckoId": "canto-crabs-chip",
+            "contractAddress": "0xf567ce29547a97c9f5ca3daf693f7e900877fff4",
+            "decimals": 18
+          },
+          {
+            "symbol": "cOHM",
+            "coingeckoId": "cantohm",
+            "contractAddress": "0x533c0f08be45eaac821392b85e67fb0c7dc2cab7",
+            "decimals": 9
+          },
+          {
+            "symbol": "cINU",
+            "coingeckoId": "canto-inu",
+            "contractAddress": "0x7264610a66eca758a8ce95cf11ff5741e1fd0455",
+            "decimals": 18
+          },
+          {
+            "symbol": "CPP",
+            "coingeckoId": "cantosino-com-profit-pass",
+            "contractAddress": "0x09888c3a374ae99e271e1d8e7d9bb63738bffc87",
+            "decimals": 18
+          },
+          {
+            "symbol": "ATOM",
+            "coingeckoId": "cosmos",
+            "contractAddress": "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
+            "decimals": 6
+          },
+          {
+            "symbol": "fBOMB",
+            "coingeckoId": "fbomb",
+            "contractAddress": "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979",
+            "decimals": 18
+          },
+          {
+            "symbol": "ifBILL",
+            "coingeckoId": "fortunafi-tokenized-short-term-u-s-treasury-bills-for-non-us-residents",
+            "contractAddress": "0x45bafad5a6a531bc18cf6ce5b02c58ea4d20589b",
+            "decimals": 18
+          },
+          {
+            "symbol": "IBEX",
+            "coingeckoId": "impermax-2",
+            "contractAddress": "0xfbdd194376de19a88118e84e279b977f165d01b8",
+            "decimals": 18
+          },
+          {
+            "symbol": "LEET",
+            "coingeckoId": "leetswap-canto",
+            "contractAddress": "0x9aeff862435cc243d12cee915e7129629c6a8d5d",
+            "decimals": 18
+          },
+          {
+            "symbol": "sCANTO",
+            "coingeckoId": "liquid-staked-canto",
+            "contractAddress": "0x9f823d534954fc119e31257b3ddba0db9e2ff4ed",
+            "decimals": 18
+          },
+          {
+            "symbol": "Matrix",
+            "coingeckoId": "matrix-533ba916-8d8a-4979-b5d5-34483cdee5b1",
+            "contractAddress": "0x8b6e422f7ef6c5dcc0ad0c3dea66efacbb2b78e3",
+            "decimals": 18
+          },
+          {
+            "symbol": "multiBTC",
+            "coingeckoId": "multibtc",
+            "contractAddress": "0x80a16016cc4a2e6a2caca8a4a498b1699ff0f844",
+            "decimals": 8
+          },
+          {
+            "symbol": "NOTE",
+            "coingeckoId": "note",
+            "contractAddress": "0x4e71a2e537b7f9d9413d3991d37958c0b5e1e503",
+            "decimals": 18
+          },
+          {
+            "symbol": "SINO",
+            "coingeckoId": "sino",
+            "contractAddress": "0xf2399c47d8631703b8f001caac936325181f892d",
+            "decimals": 18
+          },
+          {
+            "symbol": "TAROT",
+            "coingeckoId": "tarot-2",
+            "contractAddress": "0xcac45583c6990b6d0981f4707f00eb6a00214617",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "tether",
+            "contractAddress": "0xd567b3d7b8fe3c79a1ad8da978812cfc4fa05e75",
+            "decimals": 6
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin",
+            "contractAddress": "0x80b5a32e4f032b2a058b4f29ec95eefeeb87adcd",
+            "decimals": 6
+          },
+          {
+            "symbol": "FLOW",
+            "coingeckoId": "velocimeter-flow",
+            "contractAddress": "0xb5b060055f0d1ef5174329913ef861bc3addf029",
+            "decimals": 18
+          },
+          {
+            "symbol": "ETH",
+            "coingeckoId": "weth",
+            "contractAddress": "0x5fd55a1b9fc24967c4db09c513c3ba0dfa7ff687",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
