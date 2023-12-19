@@ -56,6 +56,47 @@
       }
     }
   },
+
+  {
+    "id": "10",
+    "name": "OP Mainnet",
+    "explorerUrl": "https://optimistic.etherscan.io",
+    "rpcs": ["https://mainnet.optimism.io", "https://optimism.publicnode.com", "https://optimism.gateway.tenderly.co"],
+    "balancesConfig": {
+      "evm-native": {
+        "coingeckoId": "ethereum"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "USDbC",
+            "coingeckoId": "bridged-usd-coin-optimism",
+            "contractAddress": "0x7f5c764cbc14f9669b88837ca1490cca17c31607"
+          },
+          {
+            "symbol": "DAI",
+            "coingeckoId": "dai",
+            "contractAddress": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1"
+          },
+          {
+            "symbol": "OP",
+            "coingeckoId": "optimism",
+            "contractAddress": "0x4200000000000000000000000000000000000042"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "tether",
+            "contractAddress": "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin",
+            "contractAddress": "0x0b2c639c533813f4aa9d7837caf62653d097ff85"
+          }
+        ]
+      }
+    }
+  },
   {
     "id": "11155111",
     "name": "Sepolia",
@@ -66,6 +107,7 @@
   {
     "id": "100",
     "name": "Gnosis",
+    "isDefault": false,
     "explorerUrl": "https://blockscout.com/xdai/mainnet/",
     "rpcs": [
       "https://rpc.ankr.com/gnosis",
@@ -155,6 +197,7 @@
   {
     "id": "787",
     "substrateChainId": "acala",
+    "isDefault": false,
     "explorerUrl": "https://blockscout.acala.network",
     "rpcs": ["https://eth-rpc-acala.aca-api.network", "https://rpc.evm.acala.network"],
     "balancesConfig": {
@@ -255,6 +298,7 @@
   {
     "id": "46",
     "substrateChainId": "darwinia",
+    "isDefault": false,
     "explorerUrl": "https://darwinia.subview.xyz",
     "rpcs": ["https://rpc.darwinia.network"],
     "balancesConfig": {
@@ -269,6 +313,7 @@
   {
     "id": "2021",
     "substrateChainId": "edgeware",
+    "isDefault": false,
     "explorerUrl": "https://edgscan.live",
     "rpcs": [
       "https://mainnet2.edgewa.re/evm",
@@ -345,6 +390,7 @@
   {
     "id": "1285",
     "substrateChainId": "moonriver",
+    "isDefault": false,
     "explorerUrl": "https://moonriver.moonscan.io/",
     "rpcs": [
       "https://rpc.api.moonriver.moonbeam.network",
@@ -382,6 +428,7 @@
   {
     "id": "336",
     "substrateChainId": "shiden-kusama",
+    "isDefault": false,
     "explorerUrl": "https://blockscout.com/shiden",
     "rpcs": [
       "https://evm.shiden.astar.network",
@@ -439,6 +486,41 @@
       "evm-native": {
         "symbol": "WATRD",
         "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "8453",
+    "name": "Base",
+    "explorerUrl": "https://basescan.org",
+    "rpcs": [
+      "https://mainnet.base.org/",
+      "https://base.gateway.tenderly.co",
+      "https://base.publicnode.com",
+      "https://developer-access-mainnet.base.org/"
+    ],
+    "balancesConfig": {
+      "evm-native": {
+        "coingeckoId": "ethereum"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "USDbC",
+            "coingeckoId": "bridged-usd-coin-base",
+            "contractAddress": "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca"
+          },
+          {
+            "symbol": "DAI",
+            "coingeckoId": "dai",
+            "contractAddress": "0x50c5725949a6f0c72e6c4a641f24049a917db0cb"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin",
+            "contractAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+          }
+        ]
       }
     }
   }
