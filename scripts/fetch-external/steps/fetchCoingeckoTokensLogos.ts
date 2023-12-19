@@ -98,6 +98,7 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'fortunafi-tokenized-short-term-u-s-treasury-bills-for-non-us-residents',
   'patriot-pay',
   'vibingcattoken',
+  'basic-dog-meme',
 ]
 
 type BalanceModuleConfig = {

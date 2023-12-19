@@ -22,7 +22,7 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://rpcurl.mainnet.plgchain.com',
   'https://mainnet.hashio.io/api',
   'https://arrakis.gorengine.com/own',
-  'https://node.cheapeth.org',
+  'https://node.cheapeth.org/rpc',
   'https://rpc.zkevm.thefirechain.com',
   'https://mainnet.rpc1.thefirechain.com',
   'https://rpc.softnote.com',
@@ -66,6 +66,33 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://wallrpc.pirl.io',
   'https://rpc2.phi.network',
   'https://proxy.thinkiumrpc.net/',
+  'https://node.sirius.lightstreams.io',
+  'https://node.atoshi.io',
+  'https://rpc.testnet.dogechain.dog',
+  'https://layer1test.decentrabone.com',
+  'https://subnets.avax.network/portal-fantasy/testnet/rpc',
+  'https://rpc.atheios.org',
+  'https://bombchain-testnet.ankr.com/bas_full_rpc_1',
+  'https://ngeth.testnet.n3.nahmii.io',
+  'https://node-api.alp.uptn.io/v1/ext/rpc',
+  'https://evm-rpc.testnet.teleport.network',
+  'https://evm.klyntarscan.org',
+  'https://mainnet.berylbit.io',
+  'https://data-aws-testnet.imperiumchain.com',
+  'https://data-aws-mainnet.imperiumchain.com',
+  'https://betaenv.singularity.gold:18545',
+  'https://gateway.opn.network/node/ext/bc/2VsZe5DstWw2bfgdx3YbjKcMsJnNDjni95sZorBEdk9L9Qr9Fr/rpc',
+  'https://api.testnet-dev.trust.one',
+  'https://rpc.condrieu.ethdevops.io',
+  'https://testnet.rpc.uschain.network/',
+  'https://rpc-devnet-algorand-rollup.a1.milkomeda.com/',
+  'https://sparta-rpc.polis.tech/',
+  'https://testnet.kekchain.com/',
+  'https://rpc.testnet.fastexchain.com/',
+  'https://weelinknode1c.gw002.oneitfarm.com/',
+  'https://rpc.zhejiang.ethpandaops.io/',
+  'https://testnet-rpc.exlscan.com/',
+  'https://toys.joys.cash/',
 ]
 
 const DEBUG = false
@@ -74,11 +101,14 @@ const IGNORE_CACHE_LIST: string[] = [
   // @dev: put rpc urls that you want to debug below
 ]
 
-const isValidRpc = (rpc: string) => {
-  if (rpc.includes('${')) return false // contains keys that need to be replaced
+const isKnownInvalidRpcUrl = (url: string) => KNOWN_INVALID_RPC_URLS.some((invalidUrl) => invalidUrl.includes(url))
+
+const isValidRpcUrl = (rpcUrl: string) => {
+  if (rpcUrl.includes('${')) return false // contains keys that need to be replaced
+  if (isKnownInvalidRpcUrl(rpcUrl)) return false
 
   try {
-    const url = new URL(rpc)
+    const url = new URL(rpcUrl)
     if (url.protocol !== 'https:') return false
     if (url.hostname === '127.0.0.1') return false
     if (url.username || url.password) return false // contains credentials
@@ -104,7 +134,7 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
 
   // use fetch instead of viem to ensure we get proper HTTP errors
   try {
-    if (KNOWN_INVALID_RPC_URLS.some((url) => rpcUrl.includes(url))) return 'invalid' // known bad
+    if (isKnownInvalidRpcUrl(rpcUrl)) return 'invalid' // known bad
 
     const request = await fetch(rpcUrl, {
       method: 'POST',
@@ -210,12 +240,12 @@ export const fetchKnownEvmNetworks = async () => {
   const knownEvmNetworks = chainsList
     .filter((chain) => !!chain.chainId)
     .filter(isActiveChain)
-    .filter((chain) => chain.rpc.filter(isValidRpc).length)
+    .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
     .map((chain) => {
       const evmNetwork: ConfigEvmNetwork = {
         id: chain.chainId.toString(),
         name: chain.name,
-        rpcs: chain.rpc.filter(isValidRpc),
+        rpcs: chain.rpc.filter(isValidRpcUrl),
         icon: chain.icon,
       }
 
@@ -246,7 +276,8 @@ export const fetchKnownEvmNetworks = async () => {
   ) as EvmNetworkRpcCache[]
 
   if (IGNORE_CACHE_LIST.length) {
-    const itemsToDelete = knownEvmNetworksRpcsCache.filter((c) => IGNORE_CACHE_LIST.includes(c.rpcUrl))
+    const itemsToDelete = knownEvmNetworksRpcsCache.filter((c) => isKnownInvalidRpcUrl(c.rpcUrl))
+
     for (const item of itemsToDelete) {
       const index = knownEvmNetworksRpcsCache.indexOf(item)
       if (index !== -1) knownEvmNetworksRpcsCache.splice(index, 1)
