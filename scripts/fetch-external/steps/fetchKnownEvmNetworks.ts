@@ -9,10 +9,65 @@ import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpc
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 
-const DEBUG = false
-const DEBUG_LIST: string[] = [
-  // put rpc urls that you want to debug here (cache will be ignored)
-  // works only if DEBUG = true
+// RPCs that are not to be fail both from github and browser
+const KNOWN_INVALID_RPC_URLS = [
+  'https://mainnet.openpiece.io',
+  'https://rpc2.mix-blockchain.org',
+  'https://mainnet.openpiece.io/ ',
+  'https://core.poa.network ',
+  'https://devnet.web3games.org',
+  'https://rpc.public-0138.defi-oracle.io',
+  'https://node.mainnet.lightstreams.io',
+  'https://rpc.swapdex.network',
+  'https://rpcurl.mainnet.plgchain.com',
+  'https://mainnet.hashio.io',
+  'https://arrakis.gorengine.com',
+  'https://node.cheapeth.org',
+  'https://rpc.zkevm.thefirechain.com',
+  'https://rpc.softnote.com',
+  'https://rpc.luckynetwork.org',
+  'https://test.dostchain.com',
+  'https://mainnet.zakumi.io',
+  'https://rpc.atheios.org',
+  'https://rpc.rikscan.com',
+  'https://dataseed1.btachain.com',
+  'https://rpc.dev.publicmint.io:8545',
+  'https://market.bigsb.io',
+  'https://prod-forge.prod.findora.org:8545',
+  'https://rpc.empirenetwork.io',
+  'https://rpc1.phi.network',
+  'https://rpc.chain.nexi.technology',
+  'https://chain.nexilix.com',
+  'https://node-api.uptn.io/v1/ext/rpc',
+  'https://rpc-mainnet.pepenetwork.io',
+  'https://rpcpc1-ga.agung.peag.network',
+  'https://rpc.astranaut.io',
+  'https://rpc1.astranaut.io',
+  'https://sanrchain-node.santiment.net',
+  'https://gateway.opn.network/node/ext/bc/2VsZe',
+  'https:/mainnet-rpc.satoshichain.io',
+  'https://rpc.autobahn.network',
+  'https://api.electroneum.com',
+  'https://mainnet.genesyscode.io',
+  'https://proxy.thinkiumrpc.net',
+  'https://rpc.test.taiko.xyz',
+  'https://rpc.l3test.taiko.xyz',
+  'https://jellie-rpc.twala.io',
+  'https://mainnet.kekchain.com',
+  'https://chain.deptofgood.com',
+  'https://net.iolite.io',
+  'https://rpc.auxilium.global',
+  'https://devnet.gather.network',
+  'https://rpc.raptorchain.io/web3',
+  'https://23.92.21.121:8545',
+  'https://mainnet.ipdc.io',
+  'https://wallrpc.pirl.io',
+]
+
+const DEBUG = true
+const IGNORE_CACHE_LIST: string[] = [
+  ...KNOWN_INVALID_RPC_URLS, // helps making sure new entries are marked as invalid right away
+  // @dev: put rpc urls that you want to debug below
 ]
 
 const isValidRpc = (rpc: string) => {
@@ -38,13 +93,15 @@ const getTimeoutSignal = (ms: number) => {
 }
 
 const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetworkRpcStatus> => {
-  // here we want to validate the RPC exists
+  // here we want to validate that the RPC may work
   // if unreachable (DNS or SSL error), consider invalid
-  // if it doesn't respond, consider VALID - it's probably blocking requests from github action runner
-  // if it responds, consider valid if the chainId matches
+  // if it doesn't respond, consider unknown as it might be blocking requests from github action runner
+  // if it responds, consider valid only if the chainId matches
 
   // use fetch instead of viem to ensure we get proper HTTP errors
   try {
+    if (KNOWN_INVALID_RPC_URLS.some((url) => rpcUrl.includes(url))) return 'invalid' // known bad
+
     const request = await fetch(rpcUrl, {
       method: 'POST',
       headers: {
@@ -79,7 +136,7 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
           return 'unknown'
         }
 
-        default: // unexpected, consider valid - might be worth investigating
+        default: // unexpected - might be worth investigating
           console.warn(`Unknown HTTP error ${chainId} ${rpcUrl} : ${request.status} - "${request.statusText}"`)
           return 'unknown'
       }
@@ -184,18 +241,19 @@ export const fetchKnownEvmNetworks = async () => {
     await readFile(FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, 'utf-8'),
   ) as EvmNetworkRpcCache[]
 
-  // yeet the 50 oldest entries in cache to force them to be retested
-  knownEvmNetworksRpcsCache.sort((a, b) => a.timestamp - b.timestamp)
-  if (DEBUG) {
-    const itemsToDelete = knownEvmNetworksRpcsCache.filter((c) => DEBUG_LIST.includes(c.rpcUrl))
+  if (IGNORE_CACHE_LIST.length) {
+    const itemsToDelete = knownEvmNetworksRpcsCache.filter((c) => IGNORE_CACHE_LIST.includes(c.rpcUrl))
     for (const item of itemsToDelete) {
       const index = knownEvmNetworksRpcsCache.indexOf(item)
-      if (index !== -1) {
-        console.log('deleting', item)
-        knownEvmNetworksRpcsCache.splice(index, 1)
-      }
+      if (index !== -1) knownEvmNetworksRpcsCache.splice(index, 1)
     }
-  } else knownEvmNetworksRpcsCache.splice(0, 30)
+  }
+
+  if (!DEBUG) {
+    // yeet the 30 oldest entries in cache to force them to be retested
+    knownEvmNetworksRpcsCache.sort((a, b) => a.timestamp - b.timestamp)
+    knownEvmNetworksRpcsCache.splice(0, 30)
+  }
 
   // test RPCs to exclude invalid ones, and prioritize the ones that are confirmed valid
   // don't parallelise more, it would lead to fake timeouts
