@@ -12,18 +12,19 @@ const RPC_TIMEOUT = 4_000 // 4 seconds
 // RPCs that are not to be fail both from github and browser
 const KNOWN_INVALID_RPC_URLS = [
   'https://mainnet.openpiece.io',
-  'https://rpc2.mix-blockchain.org',
+  'https://rpc2.mix-blockchain.org:8647',
   'https://mainnet.openpiece.io/ ',
-  'https://core.poa.network ',
-  'https://devnet.web3games.org',
+  'https://core.poa.network',
+  'https://devnet.web3games.org/evm',
   'https://rpc.public-0138.defi-oracle.io',
   'https://node.mainnet.lightstreams.io',
   'https://rpc.swapdex.network',
   'https://rpcurl.mainnet.plgchain.com',
-  'https://mainnet.hashio.io',
-  'https://arrakis.gorengine.com',
+  'https://mainnet.hashio.io/api',
+  'https://arrakis.gorengine.com/own',
   'https://node.cheapeth.org',
   'https://rpc.zkevm.thefirechain.com',
+  'https://mainnet.rpc1.thefirechain.com',
   'https://rpc.softnote.com',
   'https://rpc.luckynetwork.org',
   'https://test.dostchain.com',
@@ -37,6 +38,7 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://rpc.empirenetwork.io',
   'https://rpc1.phi.network',
   'https://rpc.chain.nexi.technology',
+  'https://rpcurl.mainnet.plgchain.plinga.technology',
   'https://chain.nexilix.com',
   'https://node-api.uptn.io/v1/ext/rpc',
   'https://rpc-mainnet.pepenetwork.io',
@@ -45,7 +47,7 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://rpc1.astranaut.io',
   'https://sanrchain-node.santiment.net',
   'https://gateway.opn.network/node/ext/bc/2VsZe',
-  'https:/mainnet-rpc.satoshichain.io',
+  'https://mainnet-rpc.satoshichain.io',
   'https://rpc.autobahn.network',
   'https://api.electroneum.com',
   'https://mainnet.genesyscode.io',
@@ -62,9 +64,11 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://23.92.21.121:8545',
   'https://mainnet.ipdc.io',
   'https://wallrpc.pirl.io',
+  'https://rpc2.phi.network',
+  'https://proxy.thinkiumrpc.net/',
 ]
 
-const DEBUG = true
+const DEBUG = false
 const IGNORE_CACHE_LIST: string[] = [
   ...KNOWN_INVALID_RPC_URLS, // helps making sure new entries are marked as invalid right away
   // @dev: put rpc urls that you want to debug below
