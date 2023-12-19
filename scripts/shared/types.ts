@@ -30,6 +30,8 @@ export type ConfigEvmNetwork = {
   id: string
   substrateChainId?: string
   name?: string
+  logo?: string
+  isDefault?: boolean
   themeColor?: string
   isTestnet?: boolean
   explorerUrl?: string

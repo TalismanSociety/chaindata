@@ -84,7 +84,7 @@ export const addEvmNetworks = async () => {
           sortIndex: null,
           name: configEvmNetwork.name ?? substrateChain?.name ?? null,
           themeColor: configEvmNetwork.themeColor ?? substrateChain?.themeColor ?? null,
-          logo: substrateChain?.logo ?? null, // TODO: Copy chain & token assets into dist output
+          logo: substrateChain?.logo ?? configEvmNetwork.logo ?? null, // TODO: Copy chain & token assets into dist output
           nativeToken: null,
           tokens: [],
           explorerUrl: configEvmNetwork.explorerUrl ?? null,
@@ -96,7 +96,7 @@ export const addEvmNetworks = async () => {
             moduleConfig,
           })),
           balancesMetadata: [],
-          isDefault: true,
+          isDefault: configEvmNetwork.isDefault ?? true, // if not specified, it's default
         }
 
         return evmNetwork
