@@ -29,7 +29,6 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://rpc.luckynetwork.org',
   'https://test.dostchain.com',
   'https://mainnet.zakumi.io',
-  'https://rpc.atheios.org',
   'https://rpc.rikscan.com',
   'https://dataseed1.btachain.com',
   'https://rpc.dev.publicmint.io:8545',
@@ -77,9 +76,14 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://node-api.alp.uptn.io/v1/ext/rpc',
   'https://evm-rpc.testnet.teleport.network',
   'https://evm.klyntarscan.org',
+  'https://evm.klyntar.org',
+  'https://blocktonscan.com',
   'https://mainnet.berylbit.io',
   'https://data-aws-testnet.imperiumchain.com',
   'https://data-aws-mainnet.imperiumchain.com',
+  'https://data-aws2-testnet.imperiumchain.com',
+  'https://data-aws2-mainnet.imperiumchain.com',
+  'https://smartbch.devops.cash',
   'https://betaenv.singularity.gold:18545',
   'https://gateway.opn.network/node/ext/bc/2VsZe5DstWw2bfgdx3YbjKcMsJnNDjni95sZorBEdk9L9Qr9Fr/rpc',
   'https://api.testnet-dev.trust.one',
@@ -93,7 +97,9 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://rpc.zhejiang.ethpandaops.io/',
   'https://testnet-rpc.exlscan.com/',
   'https://toys.joys.cash/',
-]
+  'https://test.doschain.com/jsonrpc',
+  'https://rpc.dexilla.com',
+].map((url) => url.replace(/\/$/, ''))
 
 const DEBUG = false
 const IGNORE_CACHE_LIST: string[] = [
