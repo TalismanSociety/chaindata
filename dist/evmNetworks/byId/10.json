@@ -24,9 +24,9 @@
     {
       "moduleType": "evm-native",
       "moduleConfig": {
+        "coingeckoId": "ethereum",
         "symbol": "ETH",
         "decimals": 18,
-        "coingeckoId": "ethereum",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
       }
     },
@@ -34,6 +34,46 @@
       "moduleType": "evm-erc20",
       "moduleConfig": {
         "tokens": [
+          {
+            "symbol": "USDbC",
+            "coingeckoId": "bridged-usd-coin-optimism",
+            "contractAddress": "0x7f5c764cbc14f9669b88837ca1490cca17c31607",
+            "isDefault": true,
+            "decimals": 6,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-usd-coin-optimism.webp"
+          },
+          {
+            "symbol": "DAI",
+            "coingeckoId": "dai",
+            "contractAddress": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
+            "isDefault": true,
+            "decimals": 18,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
+          },
+          {
+            "symbol": "OP",
+            "coingeckoId": "optimism",
+            "contractAddress": "0x4200000000000000000000000000000000000042",
+            "isDefault": true,
+            "decimals": 18,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/optimism.webp"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "tether",
+            "contractAddress": "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58",
+            "isDefault": true,
+            "decimals": 6,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin",
+            "contractAddress": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+            "isDefault": true,
+            "decimals": 6,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
+          },
           {
             "symbol": "AAVE",
             "coingeckoId": "aave",
@@ -395,14 +435,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-trueusd.webp"
           },
           {
-            "symbol": "USDC",
-            "coingeckoId": "bridged-usd-coin-optimism",
-            "contractAddress": "0x7f5c764cbc14f9669b88837ca1490cca17c31607",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-usd-coin-optimism.webp"
-          },
-          {
             "symbol": "axl-wstETH",
             "coingeckoId": "bridged-wrapped-steth-axelar",
             "contractAddress": "0x9cfb13e6c11054ac9fcb92ba89644f30775436e4",
@@ -489,14 +521,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cyberconnect.webp"
-          },
-          {
-            "symbol": "DAI",
-            "coingeckoId": "dai",
-            "contractAddress": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
           },
           {
             "symbol": "DUSD",
@@ -931,14 +955,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openxswap-gov-token.webp"
           },
           {
-            "symbol": "OP",
-            "coingeckoId": "optimism",
-            "contractAddress": "0x4200000000000000000000000000000000000042",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/optimism.webp"
-          },
-          {
             "symbol": "OPX",
             "coingeckoId": "opx-finance",
             "contractAddress": "0xcdb4bb51801a1f399d4402c61bc098a72c382e65",
@@ -1251,14 +1267,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tempest.webp"
           },
           {
-            "symbol": "USDT",
-            "coingeckoId": "tether",
-            "contractAddress": "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
-          },
-          {
             "symbol": "THALES",
             "coingeckoId": "thales",
             "contractAddress": "0x217d47011b23bb961eb6d93ca9945b7501a5bb11",
@@ -1313,14 +1321,6 @@
             "decimals": 6,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd.webp"
-          },
-          {
-            "symbol": "USDC",
-            "coingeckoId": "usd-coin",
-            "contractAddress": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
           },
           {
             "symbol": "VELO",
@@ -1439,5 +1439,5 @@
     }
   ],
   "balancesMetadata": [],
-  "isDefault": false
+  "isDefault": true
 }

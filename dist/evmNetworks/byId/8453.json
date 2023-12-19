@@ -3,8 +3,8 @@
   "isTestnet": false,
   "sortIndex": 58,
   "name": "Base",
-  "themeColor": "#0051fe",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/base.webp",
+  "themeColor": "#505050",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://basescan.org",
@@ -13,13 +13,13 @@
       "url": "https://mainnet.base.org/"
     },
     {
-      "url": "https://developer-access-mainnet.base.org/"
-    },
-    {
       "url": "https://base.gateway.tenderly.co"
     },
     {
       "url": "https://base.publicnode.com"
+    },
+    {
+      "url": "https://developer-access-mainnet.base.org/"
     }
   ],
   "substrateChain": null,
@@ -27,9 +27,9 @@
     {
       "moduleType": "evm-native",
       "moduleConfig": {
+        "coingeckoId": "ethereum",
         "symbol": "ETH",
         "decimals": 18,
-        "coingeckoId": "ethereum",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
       }
     },
@@ -37,6 +37,30 @@
       "moduleType": "evm-erc20",
       "moduleConfig": {
         "tokens": [
+          {
+            "symbol": "USDbC",
+            "coingeckoId": "bridged-usd-coin-base",
+            "contractAddress": "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+            "isDefault": true,
+            "decimals": 6,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-usd-coin-base.webp"
+          },
+          {
+            "symbol": "DAI",
+            "coingeckoId": "dai",
+            "contractAddress": "0x50c5725949a6f0c72e6c4a641f24049a917db0cb",
+            "isDefault": true,
+            "decimals": 18,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin",
+            "contractAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "isDefault": true,
+            "decimals": 6,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
+          },
           {
             "symbol": "aBascbETH",
             "coingeckoId": "aave-v3-cbeth",
@@ -326,14 +350,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bmx.webp"
           },
           {
-            "symbol": "USDbC",
-            "coingeckoId": "bridged-usd-coin-base",
-            "contractAddress": "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-usd-coin-base.webp"
-          },
-          {
             "symbol": "CAROL",
             "coingeckoId": "caroltoken",
             "contractAddress": "0x4a0a76645941d8c7ba059940b3446228f0db8972",
@@ -412,14 +428,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dackieswap.webp"
-          },
-          {
-            "symbol": "DAI",
-            "coingeckoId": "dai",
-            "contractAddress": "0x50c5725949a6f0c72e6c4a641f24049a917db0cb",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
           },
           {
             "symbol": "DERP",
@@ -1110,14 +1118,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd.webp"
           },
           {
-            "symbol": "USDC",
-            "coingeckoId": "usd-coin",
-            "contractAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
-          },
-          {
             "symbol": "USDEBT",
             "coingeckoId": "usdebt",
             "contractAddress": "0xa23dd9379f2e12d9ce76ec738b9f5e520d1d861c",
@@ -1218,5 +1218,5 @@
     }
   ],
   "balancesMetadata": [],
-  "isDefault": false
+  "isDefault": true
 }
