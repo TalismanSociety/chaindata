@@ -29,11 +29,8 @@ import prettier from 'prettier'
 //
 // make sure these are a list of regexes, i.e. Regex[]
 const goodRpcProviders = [
-  // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network`
-  /^wss:\/\/(?:rpc|sys)\.ibp\.network/i,
-
-  // test if rpc begins with `wss://rpc.dotters.network` or `wss://sys.dotters.network`
-  /^wss:\/\/(?:rpc|sys)\.dotters\.network/i,
+  // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network` or `wss://rpc.dotters.network` or `wss://sys.dotters.network`
+  /^wss:\/\/(?:rpc|sys)\.(?:ibp|dotters)\.network/i,
 
   // test if rpc ends with `dwellier.com` or `dwellier.com/`
   /dwellir\.com\/?$/i,
@@ -51,12 +48,12 @@ const unreliableRpcProviders = [
 ]
 
 const sortGoodFirst = (a, b) => {
-  const aIsGood = goodRpcProviders.some((regex) => regex.test(a))
-  const bIsGood = goodRpcProviders.some((regex) => regex.test(b))
+  const aIsGoodIndex = goodRpcProviders.findIndex((regex) => regex.test(a))
+  const bIsGoodIndex = goodRpcProviders.findIndex((regex) => regex.test(b))
 
-  if (aIsGood && !bIsGood) return -1
-  if (bIsGood && !aIsGood) return 1
-  return 0
+  if (aIsGoodIndex !== -1 && bIsGoodIndex === -1) return -1
+  if (bIsGoodIndex !== -1 && aIsGoodIndex === -1) return 1
+  return aIsGoodIndex - bIsGoodIndex
 }
 
 const filterUnreliable = (url) => !unreliableRpcProviders.some((regex) => regex.test(url))
