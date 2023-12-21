@@ -22319,9 +22319,9 @@
             "decimals": 18
           },
           {
-            "symbol": "Kitty Dinger",
+            "symbol": "Meow",
             "coingeckoId": "schrodinger",
-            "contractAddress": "0x2c33b28527a63cdf13c0b24ce4cf5bf9c9fb3bc6",
+            "contractAddress": "0x74d2d73b455540b037298c0e0925bc702aedbe4a",
             "decimals": 9
           },
           {
@@ -45830,12 +45830,6 @@
             "decimals": 9
           },
           {
-            "symbol": "RNB",
-            "coingeckoId": "rentible",
-            "contractAddress": "0xadec335a2e3881303a9b0203eb99de12202280df",
-            "decimals": 18
-          },
-          {
             "symbol": "SOURCE",
             "coingeckoId": "resource-protocol",
             "contractAddress": "0xea136fc555e695ba96d22e10b7e2151c4c6b2a20",
@@ -46517,6 +46511,12 @@
             "symbol": "SCRATS",
             "coingeckoId": "scratch-meme-coin",
             "contractAddress": "0x31fda9ddc2352516a2901a2e4bf569d2cb6bb623",
+            "decimals": 18
+          },
+          {
+            "symbol": "SCPT",
+            "coingeckoId": "script-network",
+            "contractAddress": "0xeb880acb83c63ea3eab4baae9693dc5dd9d324a3",
             "decimals": 18
           },
           {
@@ -55584,6 +55584,12 @@
           },
           {
             "symbol": "dQUICK",
+            "coingeckoId": "dragon-s-quick",
+            "contractAddress": "0x958d208cdf087843e9ad98d23823d32e17d723a1",
+            "decimals": 18
+          },
+          {
+            "symbol": "dQUICK",
             "coingeckoId": "dragons-quick",
             "contractAddress": "0xf28164a485b0b2c90639e47b0f377b4a438a16b1",
             "decimals": 18
@@ -60774,6 +60780,19 @@
     "isTestnet": true
   },
   {
+    "id": "238",
+    "name": "Blast Mainnet",
+    "rpcs": ["https://rpc.blastblockchain.com"],
+    "icon": "blastIcon",
+    "explorerUrl": "https://scan.blastblockchain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BLAST",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "242",
     "name": "Plinga Mainnet",
     "rpcs": [],
@@ -65428,9 +65447,12 @@
   },
   {
     "id": "1133",
-    "name": "DeFiMetaChain",
-    "rpcs": ["https://testnet-dmc.mydefichain.com:20551"],
-    "icon": "changi",
+    "name": "DeFiMetaChain Changi Testnet",
+    "rpcs": [
+      "https://dmc.mydefichain.com/changi",
+      "https://testnet-dmc.mydefichain.com:20551"
+    ],
+    "icon": "defichain-network",
     "explorerUrl": "https://meta.defiscan.live",
     "balancesConfig": {
       "evm-native": {
@@ -68557,6 +68579,19 @@
     "isTestnet": true
   },
   {
+    "id": "4078",
+    "name": "Muster Mainnet",
+    "rpcs": ["https://muster.alt.technology"],
+    "icon": "muster",
+    "explorerUrl": "https://muster-explorer.alt.technology",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "4090",
     "name": "Fastex Chain (Bahamut) Oasis Testnet",
     "rpcs": ["https://rpc1.oasis.bahamutchain.com"],
@@ -69437,6 +69472,33 @@
     }
   },
   {
+    "id": "6661",
+    "name": "Cybria Mainnet",
+    "rpcs": ["https://rpc-mainnet.cybria.io"],
+    "icon": "cybria",
+    "explorerUrl": "https://cybascan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CYBA",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "6666",
+    "name": "Cybria Testnet",
+    "rpcs": ["https://l2-rpc.cybascan.io"],
+    "icon": "cybria",
+    "explorerUrl": "https://explorer.cybascan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CYBA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "6688",
     "name": "IRIShub",
     "rpcs": [
@@ -69542,6 +69604,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "PLQ",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7100",
+    "name": "Nume",
+    "rpcs": ["https://rpc.numecrypto.com"],
+    "icon": "nume",
+    "explorerUrl": "https://explorer.numecrypto.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "DAI",
         "decimals": 18
       }
     }
@@ -81702,6 +81777,7 @@
       "https://rpc.hypra.network",
       "https://rpc.rethereum.org",
       "https://rpc.rthcentral.org",
+      "https://hypra.rpc.thirdweb.com",
       "https://rethereum.rpc.restratagem.com"
     ],
     "icon": "rethereum",
