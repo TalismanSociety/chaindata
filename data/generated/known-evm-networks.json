@@ -18186,6 +18186,12 @@
             "decimals": 18
           },
           {
+            "symbol": "NOTHING",
+            "coingeckoId": "nothing-2",
+            "contractAddress": "0x7ab7d54f8cb054141142f04ba0b3d41ac4c4d61c",
+            "decimals": 18
+          },
+          {
             "symbol": "thing",
             "coingeckoId": "nothing-token",
             "contractAddress": "0xffd822149fa6749176c7a1424e71a417f26189c8",
@@ -23833,6 +23839,12 @@
             "symbol": "STA",
             "coingeckoId": "stable-asset",
             "contractAddress": "0xd7d05bda4bf5876ba1254b3eaaf8b47d2f5676eb",
+            "decimals": 18
+          },
+          {
+            "symbol": "SCOMP",
+            "coingeckoId": "stablecomp",
+            "contractAddress": "0xd94a8f9caed25e63ecc90edfefaf3635ea1e182a",
             "decimals": 18
           },
           {
@@ -58855,6 +58867,12 @@
             "decimals": 18
           },
           {
+            "symbol": "SCOMP",
+            "coingeckoId": "stablecomp",
+            "contractAddress": "0xd94a8f9caed25e63ecc90edfefaf3635ea1e182a",
+            "decimals": 18
+          },
+          {
             "symbol": "CASH",
             "coingeckoId": "stabl-fi",
             "contractAddress": "0x5d066d022ede10efa2717ed3d79f22f949f8c175",
@@ -66884,10 +66902,7 @@
   {
     "id": "1890",
     "name": "Lightlink Phoenix Mainnet",
-    "rpcs": [
-      "https://replicator-01.phoenix.lightlink.io/rpc/v1",
-      "https://replicator-02.phoenix.lightlink.io/rpc/v1"
-    ],
+    "rpcs": ["https://replicator.phoenix.lightlink.io/rpc/v1"],
     "icon": "lightlink",
     "explorerUrl": "https://phoenix.lightlink.io",
     "balancesConfig": {
@@ -66952,10 +66967,7 @@
   {
     "id": "1891",
     "name": "Lightlink Pegasus Testnet",
-    "rpcs": [
-      "https://replicator-01.pegasus.lightlink.io/rpc/v1",
-      "https://replicator-02.pegasus.lightlink.io/rpc/v1"
-    ],
+    "rpcs": ["https://replicator.pegasus.lightlink.io/rpc/v1"],
     "icon": "lightlink",
     "explorerUrl": "https://pegasus.lightlink.io",
     "balancesConfig": {
@@ -71351,10 +71363,10 @@
     "id": "8883",
     "name": "Sapphire by Unique",
     "rpcs": [
+      "https://rpc-sapphire.unique.network",
       "https://us-rpc-sapphire.unique.network",
       "https://eu-rpc-sapphire.unique.network",
-      "https://asia-rpc-sapphire.unique.network",
-      "https://rpc-sapphire.unique.network"
+      "https://asia-rpc-sapphire.unique.network"
     ],
     "icon": "sapphire",
     "explorerUrl": "https://uniquescan.io/sapphire",
@@ -71815,7 +71827,8 @@
     "rpcs": [
       "https://rpc-msc.mindchain.info/",
       "https://seednode.mindchain.info",
-      "https://archive.mindchain.info/"
+      "https://archive.mindchain.info/",
+      "https://mind-smart-chain.rpc.thirdweb.com"
     ],
     "icon": "mindchain",
     "explorerUrl": "https://mainnet.mindscan.info",
@@ -81374,6 +81387,19 @@
     "isTestnet": true
   },
   {
+    "id": "224433",
+    "name": "CONET Holesky",
+    "rpcs": ["https://holeskyrpc1.conet.network"],
+    "icon": "conet",
+    "explorerUrl": "https://scan.conet.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CONET",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "230315",
     "name": "HashKey Chain Testnet",
     "rpcs": [],
@@ -81766,6 +81792,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "473861",
+    "name": "Ultra Pro Mainnet",
+    "rpcs": ["https://mainnet-rpc.ultraproscan.io"],
+    "icon": "ultrapro",
+    "explorerUrl": "https://ultraproscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "UPRO",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "474142",
