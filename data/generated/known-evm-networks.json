@@ -8400,12 +8400,6 @@
             "decimals": 18
           },
           {
-            "symbol": "DONK",
-            "coingeckoId": "donkey",
-            "contractAddress": "0xe4f6d46c244bb7cf3e218cdfb5c35cf9a4d9c920",
-            "decimals": 18
-          },
-          {
             "symbol": "DON",
             "coingeckoId": "don-key",
             "contractAddress": "0x217ddead61a42369a266f1fb754eb5d3ebadc88a",
@@ -19244,7 +19238,7 @@
           {
             "symbol": "PALM",
             "coingeckoId": "palm-ai",
-            "contractAddress": "0xa0a2e18784633eb47dbafe7c36c4594b3edaaef6",
+            "contractAddress": "0xf1df7305e4bab3885cab5b1e4dfc338452a67891",
             "decimals": 9
           },
           {
@@ -34241,7 +34235,7 @@
           {
             "symbol": "BRICS",
             "coingeckoId": "brics-chain",
-            "contractAddress": "0xfafd608a60dffc5b948737cd750102b66df2bd8b",
+            "contractAddress": "0xec9742f992acc615c4252060d896c845ca8fc086",
             "decimals": 18
           },
           {
@@ -36846,6 +36840,12 @@
             "coingeckoId": "donaswap",
             "contractAddress": "0x229c32460c6beac113e720ac4a7495b57f53f7cf",
             "decimals": 9
+          },
+          {
+            "symbol": "DONK",
+            "coingeckoId": "donkey",
+            "contractAddress": "0x8f9f2c61730932c99fae229a7265851aaaf9d59e",
+            "decimals": 18
           },
           {
             "symbol": "DON",
@@ -43580,6 +43580,12 @@
             "decimals": 18
           },
           {
+            "symbol": "NFP",
+            "coingeckoId": "nfprompt-token",
+            "contractAddress": "0x75e8ddb518bb757b4282cd5b83bb70d4101d12fb",
+            "decimals": 18
+          },
+          {
             "symbol": "NFT11",
             "coingeckoId": "nft11",
             "contractAddress": "0x73f67ae7f934ff15beabf55a28c2da1eeb9b56ec",
@@ -45689,6 +45695,12 @@
             "symbol": "QBT",
             "coingeckoId": "qubit",
             "contractAddress": "0x17b7163cf1dbd286e262ddc68b553d899b93f526",
+            "decimals": 18
+          },
+          {
+            "symbol": "QUBE",
+            "coingeckoId": "queenbee-2",
+            "contractAddress": "0xf4d834a2b5f9fd7b37c5388255a21691406b87fb",
             "decimals": 18
           },
           {
@@ -70526,6 +70538,17 @@
     }
   },
   {
+    "id": "8087",
+    "name": "E-Dollar",
+    "rpcs": ["https://rpc.e-dollar.org"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "USD",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "8131",
     "name": "Qitmeer Network Testnet",
     "rpcs": [
@@ -71780,13 +71803,15 @@
     "id": "8899",
     "name": "JIBCHAIN L1",
     "rpcs": ["https://rpc-l1.jibchain.net", "https://jib-rpc.inan.in.th"],
+    "icon": "jbc",
     "explorerUrl": "https://exp-l1.jibchain.net",
     "balancesConfig": {
       "evm-native": {
         "symbol": "JBC",
         "decimals": 18
       }
-    }
+    },
+    "isTestnet": true
   },
   {
     "id": "8989",
@@ -81248,6 +81273,20 @@
     "isTestnet": true
   },
   {
+    "id": "91715",
+    "name": "Combo Testnet",
+    "rpcs": ["https://test-rpc.combonetwork.io"],
+    "icon": "combo",
+    "explorerUrl": "https://combotrace-testnet.nodereal.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "tcBNB",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "92001",
     "name": "Lambda Testnet",
     "rpcs": ["https://evm.lambda.top/"],
@@ -82336,7 +82375,7 @@
   {
     "id": "534849",
     "name": "Shinarium Beta",
-    "rpcs": [],
+    "rpcs": ["https://rpc.shinarium.org"],
     "icon": "shinarium",
     "explorerUrl": "https://shinascan.shinarium.org",
     "balancesConfig": {
