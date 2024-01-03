@@ -59,6 +59,7 @@ export const addEvmNetworks = async () => {
         }
 
         const substrateChain = sharedData.chains.find((chain) => chain.id === configEvmNetwork.substrateChainId)
+        const substrateConfig = sharedData.chainsConfig.find((chain) => chain.id === configEvmNetwork.substrateChainId)
 
         // mark all ERC20 tokens with isDefault true
         if (configEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
@@ -80,10 +81,10 @@ export const addEvmNetworks = async () => {
 
         const evmNetwork: EvmNetwork = {
           id: configEvmNetwork.id,
-          isTestnet: substrateChain?.isTestnet || configEvmNetwork.isTestnet || false,
+          isTestnet: substrateChain?.isTestnet || substrateConfig?.isTestnet || configEvmNetwork.isTestnet || false,
           sortIndex: null,
-          name: configEvmNetwork.name ?? substrateChain?.name ?? null,
-          themeColor: configEvmNetwork.themeColor ?? substrateChain?.themeColor ?? null,
+          name: configEvmNetwork.name ?? substrateChain?.name ?? substrateConfig?.name ?? null,
+          themeColor: configEvmNetwork.themeColor ?? substrateChain?.themeColor ?? substrateChain?.themeColor ?? null,
           logo: substrateChain?.logo ?? configEvmNetwork.logo ?? null, // TODO: Copy chain & token assets into dist output
           nativeToken: null,
           tokens: [],
