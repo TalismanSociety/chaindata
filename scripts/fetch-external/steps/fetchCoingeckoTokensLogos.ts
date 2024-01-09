@@ -153,7 +153,7 @@ export const fetchCoingeckoTokensLogos = async () => {
 
       if (fs.existsSync(filepathWebp)) continue
 
-      const coin = await fetchCoinDetails(coingeckoId, true)
+      const coin = await fetchCoinDetails(coingeckoId, { retryAfter30s: true })
       console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
       if (!coin.image.large.startsWith('https://')) {

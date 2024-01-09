@@ -40,7 +40,10 @@ export const fetchCoins = async () => {
   return coins
 }
 
-export const fetchCoinDetails = async (coingeckoId: string, retryAfter30s?: boolean): Promise<CoingeckoCoinDetails> => {
+export const fetchCoinDetails = async (
+  coingeckoId: string,
+  { retryAfter30s }: { retryAfter30s?: boolean } = {},
+): Promise<CoingeckoCoinDetails> => {
   const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
   urlParams.set('localization', 'false')
   urlParams.set('market_data', 'false')
@@ -56,7 +59,7 @@ export const fetchCoinDetails = async (coingeckoId: string, retryAfter30s?: bool
     const timeout = retryAfter ? parseInt(retryAfter) * 1000 : 60_000
     console.log('429 - Too many requests - waiting %d seconds', Math.round(timeout / 1000))
     await new Promise((resolve) => setTimeout(resolve, 60_000))
-    return fetchCoinDetails(coingeckoId, retryAfter30s)
+    return fetchCoinDetails(coingeckoId)
   }
 
   if (!resCoins.ok) throw new Error(resCoins.statusText)
