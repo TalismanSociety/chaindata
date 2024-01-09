@@ -1,6 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
-import type { EvmErc20Token } from '@talismn/balances'
 import prettier from 'prettier'
 
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'

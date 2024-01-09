@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import type { EvmErc20Token } from '@talismn/balances'
 import prettier from 'prettier'
-import { BaseError, ContractFunctionExecutionError, Hex, TimeoutError, getContract, hexToString, parseAbi } from 'viem'
+import { BaseError, ContractFunctionExecutionError, TimeoutError, getContract, hexToString, parseAbi } from 'viem'
 
 import { cleanupString } from '../../shared/cleanupString'
 import { FILE_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE } from '../../shared/constants'

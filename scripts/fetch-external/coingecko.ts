@@ -1,7 +1,3 @@
-import { writeFile } from 'node:fs/promises'
-
-import prettier from 'prettier'
-
 import { COINGECKO_API_KEY } from '../shared/constants'
 import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from '../shared/types'
 

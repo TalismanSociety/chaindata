@@ -1,5 +1,4 @@
-import type { MiniMetadata } from '@talismn/balances'
-import type { EvmErc20ModuleConfig, EvmNativeModuleConfig } from '@talismn/balances'
+import type { EvmErc20ModuleConfig, EvmNativeModuleConfig, MiniMetadata } from '@talismn/balances'
 import { Token } from '@talismn/chaindata-provider'
 
 export type ChainId = string
