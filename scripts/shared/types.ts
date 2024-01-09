@@ -1,5 +1,5 @@
 import type { EvmErc20ModuleConfig, EvmNativeModuleConfig, MiniMetadata } from '@talismn/balances'
-import { Token } from '@talismn/chaindata-provider'
+import { Chain, Token } from '@talismn/chaindata-provider'
 
 export type ChainId = string
 export type EvmNetworkId = string
@@ -48,7 +48,7 @@ export type ChainExtrasCache = {
   genesisHash: string
   prefix: number
   chainName: string
-  chainType: string
+  chainType: Chain['chainType']
   implName: string
   specName: string
   specVersion: string

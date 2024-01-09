@@ -7,6 +7,7 @@ import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@tali
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
 import { Chain, ChainId, ChaindataProvider } from '@talismn/chaindata-provider'
+import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
 
 import {
@@ -117,7 +118,7 @@ const attemptToFetchChainExtras = async (
       !existingCache ||
       existingCache.genesisHash !== genesisHash ||
       existingCache.chainName !== chainName ||
-      existingCache.chainType !== chainType ||
+      !isEqual(existingCache.chainType, chainType) ||
       existingCache.implName !== implName ||
       existingCache.specName !== specName ||
       existingCache.specVersion !== specVersion
