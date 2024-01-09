@@ -49,6 +49,7 @@ export type ChainExtrasCache = {
   genesisHash: string
   prefix: number
   chainName: string
+  chainType: string
   implName: string
   specName: string
   specVersion: string

@@ -32,6 +32,7 @@ export const addChains = async () => {
       themeColor: null,
       logo: null,
       chainName: null,
+      chainType: null,
       implName: null,
       specName: null,
       specVersion: null,

@@ -102,13 +102,14 @@ const attemptToFetchChainExtras = async (
 ): Promise<boolean> => {
   try {
     // fetch rpc data
-    const [genesisHash, runtimeVersion, metadataRpc, chainName, chainProperties] = await sendWithTimeout(
+    const [genesisHash, runtimeVersion, metadataRpc, chainName, chainType, chainProperties] = await sendWithTimeout(
       rpcUrl,
       [
         ['chain_getBlockHash', [0]],
         ['state_getRuntimeVersion', []],
         ['state_getMetadata', []],
         ['system_chain', []],
+        ['system_chainType', []],
         ['system_properties', []],
         // // TODO: Get parachainId from storage
         // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
@@ -131,6 +132,7 @@ const attemptToFetchChainExtras = async (
       genesisHash,
       prefix: 42,
       chainName,
+      chainType,
       implName,
       specName,
       specVersion: '0', // use `'0'` to force metadata update when chain is first created
@@ -141,6 +143,7 @@ const attemptToFetchChainExtras = async (
     const specChanged =
       chainExtrasCache.genesisHash !== genesisHash ||
       chainExtrasCache.chainName !== chainName ||
+      chainExtrasCache.chainType !== chainType ||
       chainExtrasCache.implName !== implName ||
       chainExtrasCache.specName !== specName ||
       chainExtrasCache.specVersion !== specVersion
@@ -150,6 +153,7 @@ const attemptToFetchChainExtras = async (
     chainExtrasCache.prefix =
       typeof ss58Prefix === 'number' ? ss58Prefix : typeof ss58Format === 'number' ? ss58Format : 42
     chainExtrasCache.chainName = chainName
+    chainExtrasCache.chainType = chainType
     chainExtrasCache.implName = implName
     chainExtrasCache.specName = specName
     chainExtrasCache.specVersion = specVersion
