@@ -60,20 +60,19 @@ const filterUnreliable = (url) => !unreliableRpcProviders.some((regex) => regex.
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds = {
-  dorafactory: 'dora-factory',
-  'goldberg-testnet': 'avail-goldberg-testnet',
-  'kate-testnet': 'avail-kate-testnet',
-  'sora-substrate': 'sora-standalone',
   aleph: 'aleph-zero',
   composable: 'composable-finance',
+  dorafactory: 'dora-factory',
   kilt: 'kilt-spiritnet',
   pioneer: 'bitcountry-pioneer',
+  'sora-substrate': 'sora-standalone',
 }
 // a map of testnet pjs ids to their talisman chaindata equivalents
 const customTestnetChainIds = {
-  'aleph-testnet': 'aleph-zero-testnet',
-  'myriad-tesnet': 'myriad-testnet',
   acala: 'mandala-testnet',
+  'aleph-testnet': 'aleph-zero-testnet',
+  'goldberg-testnet': 'avail-goldberg-testnet',
+  'myriad-tesnet': 'myriad-testnet',
   rococoBridgehub: 'rococo-bridge-hub-testnet',
 }
 
@@ -96,6 +95,7 @@ const customNames = {
   'rococo-bifrost-testnet': 'Bifrost Testnet',
 
   'thebifrost-testnet': 'The Bifrost Testnet',
+  'avail-goldberg-testnet': 'Avail Goldberg Testnet',
 
   'rococo-asset-hub-testnet': 'Rococo Asset Hub',
   'rococo-bridge-hub-testnet': 'Rococo Bridge Hub',
