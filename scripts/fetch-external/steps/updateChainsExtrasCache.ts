@@ -26,6 +26,7 @@ export const updateChainsExtrasCache = async () => {
   const chainsExtrasCache = JSON.parse(await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8')) as ChainExtrasCache[]
 
   const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
+  const chainIdExists = Object.fromEntries(chains.map((chain) => [chain.id, true] as const))
   const fetchDataForChain = createDataFetcher({ chains, chainsExtrasCache })
 
   // PromisePool lets us run `fetchChainExtras` on all of the chains in parallel,
@@ -38,16 +39,23 @@ export const updateChainsExtrasCache = async () => {
 
   await writeFile(
     FILE_CHAINS_EXTRAS_CACHE,
-    await prettier.format(JSON.stringify(chainsExtrasCache, null, 2), {
-      parser: 'json',
-    }),
+    await prettier.format(
+      JSON.stringify(
+        chainsExtrasCache.filter((chain) => chainIdExists[chain.id]),
+        null,
+        2,
+      ),
+      {
+        parser: 'json',
+      },
+    ),
   )
 }
 
 const createDataFetcher =
   ({ chains, chainsExtrasCache }: { chains: ConfigChain[]; chainsExtrasCache: ChainExtrasCache[] }) =>
   async (chainId: ChainId, index: number): Promise<void> => {
-    console.log(`Updating extras for chain ${index + 1} of ${chains.length} (${chainId})`)
+    console.log(`Checking for extras updates for chain ${index + 1} of ${chains.length} (${chainId})`)
 
     // fetch extras for chain
     // makes use of the chain rpcs
@@ -56,23 +64,10 @@ const createDataFetcher =
 
 const fetchChainExtras = async (chainId: ChainId, chains: ConfigChain[], chainsExtrasCache: ChainExtrasCache[]) => {
   const chain = chains.find((chain) => chain.id === chainId)
-  if (!chain?.rpcs) return
+  const rpcs = chain?.rpcs
+  if (!rpcs) return
 
-  const chainExtrasCache = chainsExtrasCache.find((cc) => cc.id === chainId)
-  if (chainExtrasCache) {
-    try {
-      // if specVersion hasn't changed, no need to update
-      const [runtimeVersion] = await sendWithTimeout(chain.rpcs, [['state_getRuntimeVersion', []]], RPC_REQUEST_TIMEOUT)
-      if (String(runtimeVersion.specVersion) === chainExtrasCache.specVersion) return
-    } catch (err) {
-      console.log('Failed to fetch runtime version for %s', chainId, (err as any).message ?? 'unknown error')
-      return
-    }
-  }
-
-  const rpcs = chain.rpcs ?? []
   const maxAttempts = rpcs.length * 2 // attempt each rpc twice, at most
-
   if (maxAttempts === 0) return
 
   let success = false
@@ -101,18 +96,14 @@ const attemptToFetchChainExtras = async (
   chainsExtrasCache: ChainExtrasCache[],
 ): Promise<boolean> => {
   try {
-    // fetch rpc data
-    const [genesisHash, runtimeVersion, metadataRpc, chainName, chainType, chainProperties] = await sendWithTimeout(
+    // fetch initial rpc data
+    const [genesisHash, runtimeVersion, chainName, chainType] = await sendWithTimeout(
       rpcUrl,
       [
         ['chain_getBlockHash', [0]],
         ['state_getRuntimeVersion', []],
-        ['state_getMetadata', []],
         ['system_chain', []],
         ['system_chainType', []],
-        ['system_properties', []],
-        // // TODO: Get parachainId from storage
-        // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
       ],
       RPC_REQUEST_TIMEOUT,
     )
@@ -120,107 +111,113 @@ const attemptToFetchChainExtras = async (
     // deconstruct rpc data
     const { specName, implName } = runtimeVersion
     const specVersion = String(runtimeVersion.specVersion)
-    const { ss58Format } = chainProperties
+
+    const existingCache = chainsExtrasCache.find((cc) => cc.id === chain.id) ?? null
+    const specChanged =
+      !existingCache ||
+      existingCache.genesisHash !== genesisHash ||
+      existingCache.chainName !== chainName ||
+      existingCache.chainType !== chainType ||
+      existingCache.implName !== implName ||
+      existingCache.specName !== specName ||
+      existingCache.specVersion !== specVersion
+
+    // no need to do anything else if this chain's extras are already cached
+    if (!specChanged) return true
+
+    console.log(`Updating extras for chain ${chain.id}`)
+
+    // fetch extra rpc data
+    const [metadataRpc, chainProperties] = await sendWithTimeout(
+      rpcUrl,
+      [
+        ['state_getMetadata', []],
+        ['system_properties', []],
+        // // TODO: Get parachainId from storage
+        // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
+      ],
+      RPC_REQUEST_TIMEOUT,
+    )
 
     const metadata: Metadata = new Metadata(new TypeRegistry(), metadataRpc)
     metadata.registry.setMetadata(metadata)
 
+    const { ss58Format } = chainProperties
     const ss58Prefix = metadata.registry.chainSS58
+    const prefix = typeof ss58Prefix === 'number' ? ss58Prefix : typeof ss58Format === 'number' ? ss58Format : 42
 
-    const chainExtrasCache: ChainExtrasCache = chainsExtrasCache.find((cc) => cc.id === chain.id) ?? {
+    const chainExtrasCache: ChainExtrasCache = {
       id: chain.id,
       genesisHash,
-      prefix: 42,
+      prefix,
       chainName,
       chainType,
       implName,
       specName,
-      specVersion: '0', // use `'0'` to force metadata update when chain is first created
+      specVersion,
+
+      // Note: These should always be cleared back to an empty `{}` when they need to be updated.
+      // i.e. when an update is needed, don't persist the previous cached miniMetadatas/tokens under any circumstances.
       miniMetadatas: {},
       tokens: {},
     }
 
-    const specChanged =
-      chainExtrasCache.genesisHash !== genesisHash ||
-      chainExtrasCache.chainName !== chainName ||
-      chainExtrasCache.chainType !== chainType ||
-      chainExtrasCache.implName !== implName ||
-      chainExtrasCache.specName !== specName ||
-      chainExtrasCache.specVersion !== specVersion
+    // TODO: Remove this hack
+    //
+    // We don't actually have the derived `Chain` at this point, only the `ConfigChain`.
+    // But the module only needs access to the `isTestnet` value of the `Chain`, which we do already have.
+    //
+    // So, we will provide the `isTestnet` value using a hacked together `ChaindataProvider` interface.
+    //
+    // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
+    // implementation, it will throw an error. This is fine.
+    const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(chain, rpcUrl)
+    for (const mod of defaultBalanceModules
+      .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider }))
+      .filter((mod) => mod.type.startsWith('substrate-'))) {
+      const moduleConfig = chain.balancesConfig?.[mod.type]
 
-    // set values
-    chainExtrasCache.genesisHash = genesisHash
-    chainExtrasCache.prefix =
-      typeof ss58Prefix === 'number' ? ss58Prefix : typeof ss58Format === 'number' ? ss58Format : 42
-    chainExtrasCache.chainName = chainName
-    chainExtrasCache.chainType = chainType
-    chainExtrasCache.implName = implName
-    chainExtrasCache.specName = specName
-    chainExtrasCache.specVersion = specVersion
+      // update logos in balancesConfig
+      // TODO: Refactor so we don't need to do this here
+      const configTokens: TokenDef[] = []
+      if (moduleConfig !== undefined) {
+        if ('tokens' in moduleConfig && Array.isArray(moduleConfig.tokens)) configTokens.push(...moduleConfig.tokens)
+        else configTokens.push(moduleConfig)
 
-    if (specChanged) {
-      console.log(`Updating metadata for chain ${chain.id}`)
-
-      // Clear any old data
-      chainExtrasCache.miniMetadatas = {}
-      chainExtrasCache.tokens = {}
-
-      // TODO: Remove this hack
-      //
-      // We don't actually have the derived `Chain` at this point, only the `ConfigChain`.
-      // But the module only needs access to the `isTestnet` value of the `Chain`, which we do already have.
-      //
-      // So, we will provide the `isTestnet` value using a hacked together `ChaindataProvider` interface.
-      //
-      // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
-      // implementation, it will throw an error. This is fine.
-      const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(chain, rpcUrl)
-      for (const mod of defaultBalanceModules
-        .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider }))
-        .filter((mod) => mod.type.startsWith('substrate-'))) {
-        const moduleConfig = chain.balancesConfig?.[mod.type]
-
-        // update logos in balancesConfig
-        // TODO: Refactor so we don't need to do this here
-        const configTokens: TokenDef[] = []
-        if (moduleConfig !== undefined) {
-          if ('tokens' in moduleConfig && Array.isArray(moduleConfig.tokens)) configTokens.push(...moduleConfig.tokens)
-          else configTokens.push(moduleConfig)
-
-          for (const token of configTokens) {
-            setTokenLogo(token, chain.id, mod.type)
-          }
+        for (const token of configTokens) {
+          setTokenLogo(token, chain.id, mod.type)
         }
+      }
 
-        const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig ?? {}, metadataRpc)
-        const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig ?? {})
+      const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig ?? {}, metadataRpc)
+      const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig ?? {})
 
-        const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
-        const miniMetadata: MiniMetadata = {
-          id: deriveMiniMetadataId({
-            source: mod.type,
-            chainId: chain.id,
-            specName,
-            specVersion,
-            balancesConfig: JSON.stringify(moduleConfig ?? {}),
-          }),
+      const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
+      const miniMetadata: MiniMetadata = {
+        id: deriveMiniMetadataId({
           source: mod.type,
           chainId: chain.id,
           specName,
           specVersion,
           balancesConfig: JSON.stringify(moduleConfig ?? {}),
-          // TODO: Standardise return value from `fetchSubstrateChainMeta`
-          version,
-          data,
-          extra: JSON.stringify(extra),
-        }
-
-        chainExtrasCache.miniMetadatas[miniMetadata.id] = miniMetadata
-        chainExtrasCache.tokens = { ...chainExtrasCache.tokens, ...tokens }
+        }),
+        source: mod.type,
+        chainId: chain.id,
+        specName,
+        specVersion,
+        balancesConfig: JSON.stringify(moduleConfig ?? {}),
+        // TODO: Standardise return value from `fetchSubstrateChainMeta`
+        version,
+        data,
+        extra: JSON.stringify(extra),
       }
+
+      chainExtrasCache.miniMetadatas[miniMetadata.id] = miniMetadata
+      chainExtrasCache.tokens = { ...chainExtrasCache.tokens, ...tokens }
     }
 
-    if (!chainsExtrasCache.includes(chainExtrasCache)) chainsExtrasCache.push(chainExtrasCache)
+    if (existingCache) chainsExtrasCache.splice(chainsExtrasCache.indexOf(existingCache), 1) // remove existing, if exists
+    chainsExtrasCache.push(chainExtrasCache) // insert new
 
     return true
   } catch (error) {
