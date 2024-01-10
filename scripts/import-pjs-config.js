@@ -76,7 +76,23 @@ const customTestnetChainIds = {
   rococoBridgehub: 'rococo-bridge-hub-testnet',
 }
 
-// a map of ids to talisman names
+// a set of pjs ids which we don't want to import
+const ignoreChainIds = []
+
+// a set of testnet pjs ids which we don't want to import
+const ignoreTestnetChainIds = []
+
+// a map of talisman ids to a list of rpcs with which we want to override the pjs list
+const customChainRpcs = {
+  'genshiro-kusama-2': [],
+}
+
+// a map of testnet talisman ids to a list of rpcs with which we want to override the pjs list
+const customTestnetChainRpcs = {
+  'tangle-testnet': ['wss://testnet-rpc-archive.tangle.tools'],
+}
+
+// a map of talisman ids to talisman names
 const customNames = {
   'polkadot-asset-hub': 'Polkadot Asset Hub',
   'polkadot-bridge-hub': 'Polkadot Bridge Hub',
@@ -195,6 +211,9 @@ const main = async () => {
     (para) => {
       const map = isTestnet ? testnetsChaindataMap : chaindataMap
 
+      // ignore pjs chains which we don't want to import
+      if (isTestnet ? ignoreTestnetChainIds[para.info] : ignoreChainIds[para.info]) return
+
       let id = isTestnet ? deriveTestnetId(para.info) : deriveId(para.info)
       const conflicts = isTestnet ? idConflictsTestnets : idConflicts
       const conflictNums = isTestnet ? idConflictNumsTestnets : idConflictNums
@@ -209,7 +228,8 @@ const main = async () => {
       chain.name = trimName(para.text, id)
       if (chain.name !== para.text) console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
       if (!chain.account) chain.account = '*25519'
-      chain.rpcs = Object.values(para.providers)
+      const overrideRpcs = isTestnet ? customTestnetChainRpcs[id] : customChainRpcs[id]
+      chain.rpcs = (overrideRpcs ?? Object.values(para.providers))
         .filter((url) => url.startsWith('wss://'))
         .sort(sortGoodFirst)
         .filter(filterUnreliable)
