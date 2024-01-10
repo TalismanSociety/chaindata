@@ -1,7 +1,7 @@
-import fs from 'node:fs'
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile, stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
+import { PromisePool } from '@supercharge/promise-pool'
 import sharp from 'sharp'
 
 import {
@@ -10,6 +10,7 @@ import {
   FILE_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
+  PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import { ConfigChain, ConfigEvmNetwork } from '../../shared/types'
 import { fetchCoinDetails } from '../coingecko'
@@ -136,44 +137,64 @@ export const fetchCoingeckoTokensLogos = async () => {
   ) as ConfigEvmNetwork[]
   const chains = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
 
-  const coingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides, defaultEvmNetworks)
+  const allCoingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides, defaultEvmNetworks)
+  const validCoingeckoIds = allCoingeckoIds.filter((coingeckoId) => !INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId))
 
-  let downloads = 0
+  const logoFilepaths = new Map(
+    validCoingeckoIds.map((coingeckoId) => [
+      coingeckoId,
+      path.resolve('./assets/tokens/coingecko', `${coingeckoId}.webp`),
+    ]),
+  )
+
+  console.log('checking for missing logos')
 
   // expect each of these to have a logo in ./assets/tokens/known
   // download only if missing
-  for (const coingeckoId of coingeckoIds) {
-    // max 100 per run to prevent github action timeout
-    if (downloads > COINGECKO_LOGO_DOWNLOAD_LIMIT) break
+  const missingLogoCoingeckoIds = (
+    await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
+      .for(logoFilepaths)
+      .process(async ([coingeckoId, filepath]) => {
+        try {
+          if (await exists(filepath)) return
+          return coingeckoId
+        } catch (error) {
+          console.error(`Failed to check if logo for coingeckoId ${coingeckoId} exists at filepath ${filepath}`)
+        }
+      })
+  ).results.flatMap((coingeckoId) => coingeckoId ?? [])
 
-    if (INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId)) continue
+  // max 100 per run to prevent github action timeout
+  const fetchCoingeckoIds = missingLogoCoingeckoIds.slice(0, COINGECKO_LOGO_DOWNLOAD_LIMIT)
 
-    try {
-      const filepathWebp = path.resolve('./assets/tokens/coingecko', `${coingeckoId}.webp`)
+  console.log(`fetching logos for ${fetchCoingeckoIds.length} tokens`)
 
-      if (fs.existsSync(filepathWebp)) continue
+  await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
+    .for(fetchCoingeckoIds)
+    .process(async (coingeckoId) => {
+      try {
+        const coin = await fetchCoinDetails(coingeckoId, { retryAfter60s: true })
+        console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
-      const coin = await fetchCoinDetails(coingeckoId, { retryAfter30s: true })
-      console.log('downloading icon for %s : %s', coin.id, coin.image.large)
+        if (!coin.image.large.startsWith('https://')) return console.warn('missing image, skipping...', coin.image)
 
-      if (!coin.image.large.startsWith('https://')) {
-        console.warn('missing image, skipping...', coin.image)
-        continue
+        const responseImg = await fetch(coin.image.large)
+        const responseBuffer = await responseImg.arrayBuffer()
+
+        const img = sharp(responseBuffer)
+        const { width, height } = await img.metadata()
+        if (!width || !height || width > 256 || height > 256) img.resize(256, 256, { fit: 'contain' })
+
+        const webpBuffer = await img.webp().toBuffer()
+        await writeFile(logoFilepaths.get(coingeckoId)!, Buffer.from(webpBuffer))
+      } catch (error) {
+        console.log('Failed to download coingecko image for %s', coingeckoId, error)
       }
-
-      const responseImg = await fetch(coin.image.large)
-      const responseBuffer = await responseImg.arrayBuffer()
-
-      const img = sharp(responseBuffer)
-      const { width, height } = await img.metadata()
-      if (!width || !height || width > 256 || height > 256) img.resize(256, 256, { fit: 'contain' })
-      const webpBuffer = await img.webp().toBuffer()
-
-      await writeFile(filepathWebp, Buffer.from(webpBuffer))
-    } catch (err) {
-      console.log('Failed to download coingecko image for %s', coingeckoId, err)
-    }
-
-    downloads++
-  }
+    })
 }
+
+const exists = (path: PathLike) =>
+  stat(path).then(
+    () => true,
+    () => false,
+  )

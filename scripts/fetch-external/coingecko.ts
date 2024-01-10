@@ -42,7 +42,7 @@ export const fetchCoins = async () => {
 
 export const fetchCoinDetails = async (
   coingeckoId: string,
-  { retryAfter30s }: { retryAfter30s?: boolean } = {},
+  { retryAfter60s }: { retryAfter60s?: boolean } = {},
 ): Promise<CoingeckoCoinDetails> => {
   const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
   urlParams.set('localization', 'false')
@@ -54,7 +54,7 @@ export const fetchCoinDetails = async (
 
   const resCoins = await fetch(`https://api.coingecko.com/api/v3/coins/${coingeckoId}?${urlParams}`)
 
-  if (resCoins.status === 429 && retryAfter30s) {
+  if (resCoins.status === 429 && retryAfter60s) {
     const retryAfter = resCoins.headers.get('retry-after')
     const timeout = retryAfter ? parseInt(retryAfter) * 1000 : 60_000
     console.log('429 - Too many requests - waiting %d seconds', Math.round(timeout / 1000))
