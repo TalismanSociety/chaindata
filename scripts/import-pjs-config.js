@@ -84,6 +84,7 @@ const ignoreTestnetChainIds = []
 
 // a map of talisman ids to a list of rpcs with which we want to override the pjs list
 const customChainRpcs = {
+  ewx: ['wss://public-rpc.mainnet.energywebx.com'],
   'genshiro-kusama-2': [],
 }
 
