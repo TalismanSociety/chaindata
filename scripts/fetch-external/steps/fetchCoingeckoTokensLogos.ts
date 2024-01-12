@@ -100,6 +100,17 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'patriot-pay',
   'vibingcattoken',
   'basic-dog-meme',
+  'exactly-wbtc',
+  '0xgasless-2',
+  'osschain',
+  'mevai',
+  'grok-queen',
+  'grok-queen',
+  'whatbot',
+  'barsik',
+  'three-hundred-ai',
+  'edge-matrix-computing',
+  'balancer-80-rdnt-20-weth',
 ]
 
 type BalanceModuleConfig = {

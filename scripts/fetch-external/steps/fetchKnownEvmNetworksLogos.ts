@@ -9,29 +9,23 @@ import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types'
 
 // Dead IPFS hashes, not worth trying to download these
 const KNOWN_UNAVAILABLE_IPFS_HASHES = [
-  'QmSHN5GtRGpMMpszSn1hF47ZSLRLqrLxWsQ48YYdJPyjLf',
   'QmcM8kHNsNYoitt5S3kLThyrKVFTZo3k2rgnume6tnNroQ',
   'QmbUcDQHCvheYQrWk9WFJRMW5fTJQmtZqkoGUed4bhCM7T',
   'Qmd7omPxrehSuxHHPMYd5Nr7nfrtjKdRJQEhDLfTb87w8G',
   'QmUVJ7MLCEAfq3pHVPFLscqRMiyAY5biVgTkeDQCmAhHNS',
   'QmaGd5L9jGPbfyGXBFhu9gjinWJ66YtNrXq8x6Q98Eep9e',
   'QmS9kDKr1rgcz5W55yCQVfFs1vRTCneaLHt1t9cBizpqpH',
-  'QmaGd5L9jGPbfyGXBFhu9gjinWJ66YtNrXq8x6Q98Eep9e',
+  'QmXGJevyPHHKT28hDfsJ9Cq2DQ2bAavdie37MEwFQUVCQz',
   'QmXbsQe7QsVFZJZdBmbZVvS6LgX9ZFoaTMBs9MiQXUzJTw',
   'QmcM8kHNsNYoitt5S3kLThyrKVFTZo3k2rgnume6tnNroQ',
-  'QmfXZCAh3HWS2bJroUStN9TieL4QA9QArMotie3X4pwBfj',
   'QmUkFZC2ZmoYPTKf7AHdjwRPZoV2h1MCuHaGM4iu8SNFpi',
   'QmatP9qMHEYoXqRDyHMTyjYRQa6j6Gk7pmv1QLxQkvpGRP',
-  'QmfXZCAh3HWS2bJroUStN9TieL4QA9QArMotie3X4pwBfj',
   'QmdP1sLnsmW9dwnfb1GxAXU1nHDzCvWBQNumvMXpdbCSuz',
   'QmPtiJGaApbW3ATZhPW3pKJpw3iGVrRGsZLWhrDKF9ZK18',
   'QmbkCVC5vZpVAfq8SuPXR9PhpTRS2m8w6LGqBkhXAvmie6',
   'Qmf3GYbPXmTDpSP6t7Ug2j5HjEwrY5oGhBDP7d4TQHvGnG',
-  'QmUVJ7MLCEAfq3pHVPFLscqRMiyAY5biVgTkeDQCmAhHNS',
-  'QmQbUVcaxFwY8gqMq1Jeup4NEyivo12QYhbLvVRvgXRBFb',
   'QmdW7XfRgeyoaHXEvXp8MaVteonankR32CxhL3K5Yc2uQM',
-  'QmVgFqXA3kkCrVYGcWFF7Mhx8JUSe9vSCauNamuKWSvCym',
-  'QmawMDPsaj3kBTZErCYQ3tshv5RrMAN3smWNs72m943Fyj',
+  'QmUU784i1ZHDNwgXvt9weZmq6YbHHkyXvuDS7r4iDzao72',
 ]
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
@@ -108,14 +102,26 @@ export const fetchKnownEvmNetworksLogos = async () => {
         // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
         console.log('downloading', downloadUrl)
 
-        const responseIconImage = await fetchWithTimeout(downloadUrl, undefined, 10_000)
-        if (!responseIconImage.ok || !responseIconImage.body) {
-          console.warn(
-            `Failed to download icon for ${evmNetwork.name} (${evmNetwork.id})`,
-            downloadUrl,
-            responseIconImage.status,
-          )
-          continue
+        let responseIconImage: Response | null = null
+        try {
+          responseIconImage = await fetchWithTimeout(downloadUrl, undefined, 10_000)
+        } catch (err1) {
+          // ignore
+        }
+
+        if (!responseIconImage || !responseIconImage.ok || !responseIconImage.body) {
+          // some don't exist on ipfs.io but exist on cloudflare-ipfs.com
+          const alternateDownloadUrl = downloadUrl.replace('https://ipfs.io/ipfs/', 'https://cloudflare-ipfs.com/ipfs/')
+          console.log('downloading', alternateDownloadUrl)
+          responseIconImage = await fetchWithTimeout(alternateDownloadUrl, undefined, 10_000)
+          if (!responseIconImage.ok || !responseIconImage.body) {
+            console.warn(
+              `Failed to download icon for ${evmNetwork.name} (${evmNetwork.id})`,
+              downloadUrl,
+              responseIconImage.status,
+            )
+            continue
+          }
         }
 
         let buffer: any = await responseIconImage.arrayBuffer()
