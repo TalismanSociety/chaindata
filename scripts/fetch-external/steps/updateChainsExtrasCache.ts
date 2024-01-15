@@ -17,6 +17,7 @@ import {
   PROCESS_CONCURRENCY,
   RPC_REQUEST_TIMEOUT,
 } from '../../shared/constants'
+import { PRETTIER_CONFIG } from '../../shared/constants'
 import { TokenDef, setTokenLogo } from '../../shared/setTokenLogo'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { sendWithTimeout } from '../../shared/util'
@@ -47,6 +48,7 @@ export const updateChainsExtrasCache = async () => {
         2,
       ),
       {
+        ...PRETTIER_CONFIG,
         parser: 'json',
       },
     ),

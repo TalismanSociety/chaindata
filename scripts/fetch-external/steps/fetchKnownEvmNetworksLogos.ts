@@ -4,7 +4,7 @@ import path from 'node:path'
 import prettier from 'prettier'
 import sharp from 'sharp'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types'
 
 // Dead IPFS hashes, not worth trying to download these
@@ -149,6 +149,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
       await writeFile(
         FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
         await prettier.format(JSON.stringify(evmNetworksIconsCache, null, 2), {
+          ...PRETTIER_CONFIG,
           parser: 'json',
         }),
       )

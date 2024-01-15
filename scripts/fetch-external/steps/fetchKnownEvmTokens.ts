@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork } from '../../shared/types'
 import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
 
@@ -50,6 +50,7 @@ export const fetchKnownEvmTokens = async () => {
   await writeFile(
     FILE_KNOWN_EVM_NETWORKS,
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
+      ...PRETTIER_CONFIG,
       parser: 'json',
     }),
   )

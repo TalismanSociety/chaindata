@@ -28,3 +28,10 @@ export const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY ?? ''
 export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT
   ? Number(process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT)
   : 100
+
+export const PRETTIER_CONFIG = {
+  printWidth: 120,
+  semi: false,
+  singleQuote: true,
+  plugins: ['prettier-plugin-import-sort'],
+}

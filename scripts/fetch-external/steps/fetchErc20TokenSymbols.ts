@@ -5,7 +5,12 @@ import prettier from 'prettier'
 import { BaseError, ContractFunctionExecutionError, TimeoutError, getContract, hexToString, parseAbi } from 'viem'
 
 import { cleanupString } from '../../shared/cleanupString'
-import { FILE_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE } from '../../shared/constants'
+import {
+  FILE_EVM_NETWORKS,
+  FILE_KNOWN_EVM_NETWORKS,
+  FILE_KNOWN_EVM_TOKENS_CACHE,
+  PRETTIER_CONFIG,
+} from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
 import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
@@ -141,6 +146,7 @@ export const fetchErc20TokenSymbols = async () => {
   await writeFile(
     FILE_KNOWN_EVM_TOKENS_CACHE,
     await prettier.format(JSON.stringify(tokensCache, null, 2), {
+      ...PRETTIER_CONFIG,
       parser: 'json',
     }),
   )

@@ -4,7 +4,7 @@ import { PromisePool } from '@supercharge/promise-pool'
 import prettier from 'prettier'
 import { Hex, hexToNumber } from 'viem'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE } from '../../shared/constants'
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpcStatus } from '../../shared/types'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
@@ -333,6 +333,7 @@ export const fetchKnownEvmNetworks = async () => {
   await writeFile(
     FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE,
     await prettier.format(JSON.stringify(knownEvmNetworksRpcsCache, null, 2), {
+      ...PRETTIER_CONFIG,
       parser: 'json',
     }),
   )
@@ -344,6 +345,7 @@ export const fetchKnownEvmNetworks = async () => {
   await writeFile(
     FILE_KNOWN_EVM_NETWORKS,
     await prettier.format(JSON.stringify(validNetworks, null, 2), {
+      ...PRETTIER_CONFIG,
       parser: 'json',
     }),
   )

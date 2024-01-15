@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE } from '../../shared/constants'
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
 
 export const updateKnownEvmTokensFromCache = async () => {
@@ -30,6 +30,7 @@ export const updateKnownEvmTokensFromCache = async () => {
   await writeFile(
     FILE_KNOWN_EVM_NETWORKS,
     await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
+      ...PRETTIER_CONFIG,
       parser: 'json',
     }),
   )
