@@ -31,11 +31,11 @@ import { PRETTIER_CONFIG } from './shared/constants'
 //
 // make sure these are a list of regexes, i.e. Regex[]
 const goodRpcProviders = [
-  // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network` or `wss://rpc.dotters.network` or `wss://sys.dotters.network`
-  /^wss:\/\/(?:rpc|sys)\.(?:ibp|dotters)\.network/i,
-
   // test if rpc ends with `dwellier.com` or `dwellier.com/`
   /dwellir\.com\/?$/i,
+
+  // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network` or `wss://rpc.dotters.network` or `wss://sys.dotters.network`
+  /^wss:\/\/(?:rpc|sys)\.(?:ibp|dotters)\.network/i,
 ]
 
 const unreliableRpcProviders = [
