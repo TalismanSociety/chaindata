@@ -55,6 +55,6 @@ jobs:
           git config user.email "146698419+chaindata-ci-superuser[bot]@users.noreply.github.com"
           if [[ "$(git status --porcelain=v2)" != "" ]]; then
             git add .
-            git commit -m 'chore: updated externals'
+            git commit -m 'chore: built chaindata'
             git push
           fi
