@@ -93,6 +93,7 @@ const customChainRpcs: Record<string, string[] | undefined> = {
 
 // a map of testnet talisman ids to a list of rpcs with which we want to override the pjs list
 const customTestnetChainRpcs: Record<string, string[] | undefined> = {
+  'avail-goldberg-testnet': ['wss://goldberg.avail.tools/ws', 'wss://rpc-goldberg.avail.tools/ws'],
   'tangle-testnet': ['wss://testnet-rpc-archive.tangle.tools'],
 }
 
