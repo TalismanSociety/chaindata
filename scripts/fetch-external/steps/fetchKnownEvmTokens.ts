@@ -12,6 +12,21 @@ export const fetchKnownEvmTokens = async () => {
 
   const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
 
+  for (const assetPlatform of assetPlatforms)
+    if (!!assetPlatform.native_coin_id) {
+      const evmNetwork = knownEvmNetworks.find(
+        (evmNetwork) => evmNetwork.id === assetPlatform.chain_identifier?.toString(),
+      )
+      if (evmNetwork) {
+        if (!evmNetwork.balancesConfig) evmNetwork.balancesConfig = {}
+        if (!evmNetwork.balancesConfig['evm-native']) {
+          evmNetwork.balancesConfig['evm-native'] = {}
+        }
+
+        evmNetwork.balancesConfig['evm-native'].coingeckoId = assetPlatform.native_coin_id as string
+      }
+    }
+
   for (const coin of coins) {
     if (coin.platforms) {
       for (const [platformId, contractAddress] of Object.entries(coin.platforms)) {

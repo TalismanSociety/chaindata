@@ -98,6 +98,7 @@ export type CoingeckoAssetPlatform = {
   chain_identifier: number | null
   name: string
   shortname: string
+  native_coin_id: string | null
 }
 
 export type CoingeckoCoin = {
