@@ -10,7 +10,7 @@ const main = async () => {
     JSON.parse((await readFile('dist/tokens/all.json')).toString('utf8')).map((token: any) => [token.id, token]),
   )
   const missing = [...allTokens.values()]
-    .filter((token) => (token.coingeckoId === undefined ? false : true))
+    .filter((token) => (token.coingeckoId === undefined ? true : false))
     .map((token) => ({ ...token, chainId: token.chain?.id }))
   const byChain = groupBy(missing, 'chainId')
 
