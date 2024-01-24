@@ -31,6 +31,9 @@ import { PRETTIER_CONFIG } from './shared/constants'
 //
 // make sure these are a list of regexes, i.e. Regex[]
 const goodRpcProviders = [
+  // test if rpc starts with `wss://1rpc.io/`
+  /^wss:\/\/1rpc\.io\//i,
+
   // test if rpc ends with `dwellier.com` or `dwellier.com/`
   /dwellir\.com\/?$/i,
 
