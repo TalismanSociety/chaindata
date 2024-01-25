@@ -12,9 +12,6 @@
   },
   "homepage": "https://talisman.community",
   "packageManager": "pnpm@8",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
     "validate-json": "prettier --write *.json",
     "validate-schema-chains": "ajv --spec=draft2020 --allow-union-types -s schemas/json/chaindata.json -d data/chaindata.json -d data/testnets-chaindata.json",
