@@ -17,37 +17,22 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  publish:
-    name: 'Build & publish chaindata to dist folder'
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
+  build-main:
+    uses: ./.github/workflows/build-jobs.yml
+    with:
+      environment: 'builds'
+    secrets: inherit
+    # Sets permissions of the GITHUB_TOKEN to allow pushing commits
+    permissions:
+      contents: write
+      id-token: write
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: pnpm
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Build chaindata
-        run: pnpm build
-      - name: Commit changes
-        env:
-          CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN: ${{ secrets.CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN }}
-        run: |
-          git config --local --unset-all 'http.https://github.com/.extraheader'
-          git remote set-url origin https://x-access-token:${CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN}@github.com/TalismanSociety/chaindata
-          git config user.name "chaindata-ci-superuser[bot]"
-          git config user.email "146698419+chaindata-ci-superuser[bot]@users.noreply.github.com"
-          if [[ "$(git status --porcelain=v2)" != "" ]]; then
-            git add .
-            git commit -m 'chore: built chaindata'
-            git push
-          fi
+  build-pr:
+    uses: ./.github/workflows/build-jobs.yml
+    with:
+      environment: 'pr-builds'
+    secrets: inherit
+    # Sets permissions of the GITHUB_TOKEN to allow pushing commits
+    permissions:
+      contents: write
+      id-token: write
