@@ -31,14 +31,14 @@ import { PRETTIER_CONFIG } from './shared/constants'
 //
 // make sure these are a list of regexes, i.e. Regex[]
 const goodRpcProviders = [
-  // test if rpc starts with `wss://1rpc.io/`
-  /^wss:\/\/1rpc\.io\//i,
-
   // test if rpc ends with `dwellier.com` or `dwellier.com/`
   /dwellir\.com\/?$/i,
 
   // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network` or `wss://rpc.dotters.network` or `wss://sys.dotters.network`
   /^wss:\/\/(?:rpc|sys)\.(?:ibp|dotters)\.network/i,
+
+  // test if rpc starts with `wss://1rpc.io/`
+  /^wss:\/\/1rpc\.io\//i,
 ]
 
 const unreliableRpcProviders = [
@@ -49,7 +49,7 @@ const unreliableRpcProviders = [
   /onfinality\.io\/public-ws\/?$/i,
 
   // test if rpc is `rpc.polkadot.io` or `kusama-rpc.polkadot.io`
-  /^wss:\/\/(?:kusama-)?rpc\.polkadot\.io\/?$/i,
+  /^wss:\/\/(?:kusama-)?(?:apps-)?rpc\.polkadot\.io\/?$/i,
 ]
 
 const sortGoodFirst = (a: string, b: string) => {
