@@ -3464,6 +3464,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BEFY",
+            "coingeckoId": "befy",
+            "contractAddress": "0x39a9728fb398583154e6cc5e3defa60908f58e2f",
+            "decimals": 18
+          },
+          {
             "symbol": "BEG",
             "coingeckoId": "beg",
             "contractAddress": "0xbe6be64e9e5042b6e84e4c27956cce6353efa5f5",
@@ -19375,6 +19381,12 @@
             "decimals": 18
           },
           {
+            "symbol": "OPCAT",
+            "coingeckoId": "opcat",
+            "contractAddress": "0xdaa7699352ac8709f3d2fd092226d3dd7da40474",
+            "decimals": 18
+          },
+          {
             "symbol": "OPENAI",
             "coingeckoId": "openai-erc",
             "contractAddress": "0x6a6aa13393b7d1100c00a57c76c39e8b6c835041",
@@ -28397,6 +28409,12 @@
             "decimals": 18
           },
           {
+            "symbol": "WHIRL",
+            "coingeckoId": "whirl-privacy",
+            "contractAddress": "0xb7037457de15fed6cbecc0c62d5d610834b958ec",
+            "decimals": 18
+          },
+          {
             "symbol": "WSP",
             "coingeckoId": "whisperbot",
             "contractAddress": "0xfba5aa703939238c4d03cacbbd126fd7107b2082",
@@ -35707,6 +35725,12 @@
             "coingeckoId": "calorie",
             "contractAddress": "0x859c940f080b197659b3effc804fd622df66f0a1",
             "decimals": 18
+          },
+          {
+            "symbol": "CAMLY",
+            "coingeckoId": "camly-coin",
+            "contractAddress": "0x0910320181889fefde0bb1ca63962b0a8882e413",
+            "decimals": 3
           },
           {
             "symbol": "CADINU",
@@ -65107,6 +65131,20 @@
     "isTestnet": true
   },
   {
+    "id": "307",
+    "name": "Lovely Network Testnet",
+    "rpcs": ["https://trpc.lovely.network"],
+    "icon": "lovely",
+    "explorerUrl": "https://tscan.lovely.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "LOVELY",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "309",
     "name": "Wyzth Testnet",
     "rpcs": ["https://rpc-testnet3.wyzthchain.org/"],
@@ -66746,6 +66784,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BLU",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "730",
+    "name": "Lovely Network Mainnet",
+    "rpcs": ["https://rpc.lovely.network"],
+    "icon": "lovely",
+    "explorerUrl": "https://scan.lovely.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "LOVELY",
         "decimals": 18
       }
     }
@@ -70647,6 +70698,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "2941",
+    "name": "Xenon Chain Testnet",
+    "rpcs": ["https://testnet-chain.xenonchain.com/", "https://testnet-dev.xenonchain.com/"],
+    "icon": "xenon",
+    "explorerUrl": "https://testnet.xenonchain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "tXEN",
         "decimals": 18
       }
     },
@@ -84955,6 +85020,20 @@
     "isTestnet": true
   },
   {
+    "id": "323213",
+    "name": "Bloom Genesis Testnet",
+    "rpcs": ["https://testnet-rpc.bloomgenesis.com"],
+    "icon": "bloom",
+    "explorerUrl": "https://testnet.bloomgenesis.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BGBC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "330844",
     "name": "TTcoin Smart Chain Mainnet",
     "rpcs": ["https://mainnet-rpc.tscscan.com"],
@@ -84967,6 +85046,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "333313",
+    "name": "Bloom Genesis Mainnet",
+    "rpcs": ["https://mainnet-rpc.bloomgenesis.com"],
+    "icon": "bloom",
+    "explorerUrl": "https://explorer.bloomgenesis.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BGBC",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "333331",
@@ -85308,7 +85400,132 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "weth"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "axlUSDC",
+            "coingeckoId": "bridged-axelar-wrapped-usd-coin-scroll",
+            "contractAddress": "0xeb466342c4d449bc9f53a865d5cb90586f405215",
+            "decimals": 6
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "bridged-tether-scroll",
+            "contractAddress": "0xf55bec9cafdbe8730f096aa55dad6d22d44099df",
+            "decimals": 6
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "bridged-usd-coin-scroll",
+            "contractAddress": "0x06efdbff2a14a7c8e15944d1f4a48f9f95f663a4",
+            "decimals": 6
+          },
+          {
+            "symbol": "WBTC",
+            "coingeckoId": "bridged-wrapped-bitcoin-scroll",
+            "contractAddress": "0x3c1bca5a656e69edcd0d4e36bebb3fcdaca60cf1",
+            "decimals": 8
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "bridged-wrapped-ether-scroll",
+            "contractAddress": "0x5300000000000000000000000000000000000004",
+            "decimals": 18
+          },
+          {
+            "symbol": "wstETH",
+            "coingeckoId": "bridged-wrapped-lido-staked-ether-scroll",
+            "contractAddress": "0xf610a9dfb7c89644979b4a0f27063e9e7d7cda32",
+            "decimals": 18
+          },
+          {
+            "symbol": "CAT",
+            "coingeckoId": "danjuan-scroll-cat",
+            "contractAddress": "0xdd6a49995ad38fe7409b5d5cb5539261bd1bc901",
+            "decimals": 18
+          },
+          {
+            "symbol": "ITP",
+            "coingeckoId": "interport-token",
+            "contractAddress": "0x2b1d36f5b61addaf7da7ebbd11b35fd8cfb0de31",
+            "decimals": 18
+          },
+          {
+            "symbol": "ISS",
+            "coingeckoId": "issuaa",
+            "contractAddress": "0x46ead9ad6bfa9986c53dde09abf929ac2a7d82c7",
+            "decimals": 18
+          },
+          {
+            "symbol": "iUSD",
+            "coingeckoId": "izumi-bond-usd",
+            "contractAddress": "0x0a3bb08b3a15a19b4de82f8acfc862606fb69a2d",
+            "decimals": 18
+          },
+          {
+            "symbol": "iZi",
+            "coingeckoId": "izumi-finance",
+            "contractAddress": "0x60d01ec2d5e98ac51c8b4cf84dfcce98d527c747",
+            "decimals": 18
+          },
+          {
+            "symbol": "LORA",
+            "coingeckoId": "lendora-protocol",
+            "contractAddress": "0x3e6c99915803631d200441cdf6d84786912b0871",
+            "decimals": 18
+          },
+          {
+            "symbol": "vAMM-WETH/OMKG",
+            "coingeckoId": "omnikingdoms-gold",
+            "contractAddress": "0x63e3c9c06120af5dca2788ecbb30b923e52d0180",
+            "decimals": 18
+          },
+          {
+            "symbol": "PAPYRUS",
+            "coingeckoId": "papyrus-swap",
+            "contractAddress": "0x0fc479e2f9b7310bfb1db606cf565dea6910eedc",
+            "decimals": 18
+          },
+          {
+            "symbol": "PED",
+            "coingeckoId": "perseid-finance",
+            "contractAddress": "0xfec65bfb6e5bbcc9ab8ae98f62a8aab2ea51c495",
+            "decimals": 18
+          },
+          {
+            "symbol": "PUNK",
+            "coingeckoId": "punkswap",
+            "contractAddress": "0xddeb23905f6987d5f786a93c00bbed3d97af1ccc",
+            "decimals": 18
+          },
+          {
+            "symbol": "zKDoge",
+            "coingeckoId": "scroll-doge",
+            "contractAddress": "0x36f983124b027781216adc94c4d81ef4026ffcdd",
+            "decimals": 9
+          },
+          {
+            "symbol": "SF",
+            "coingeckoId": "scrollswap-finance",
+            "contractAddress": "0x9daea97fd467d704c583beda2454e3da27097b60",
+            "decimals": 18
+          },
+          {
+            "symbol": "SKY",
+            "coingeckoId": "skydrome",
+            "contractAddress": "0x95a52ec1d60e74cd3eb002fe54a2c74b185a4c16",
+            "decimals": 18
+          },
+          {
+            "symbol": "SIS",
+            "coingeckoId": "symbiosis-finance",
+            "contractAddress": "0x1467b62a6ae5cdcb10a6a8173cfe187dd2c5a136",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
