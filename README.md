@@ -15,7 +15,7 @@ The goals of this repo are:
 
 ## Usage
 
-The files in this repo, `chaindata.json`, `testnets-chaindata.json` and `evm-networks.json` are used to configure a GitHub workflow which scrapes information from each chain and publishes it as a collection of JSON files in the `dist` directory of this repo.
+The files in this repo, `data/chaindata.json`, `data/testnets-chaindata.json` and `data/evm-networks.json` are used to configure a GitHub workflow which scrapes information from each chain and publishes it as a collection of JSON files in the `dist` directory of this repo.
 
 The published files can be browsed at this URL: https://raw.githubusercontent.com/TalismanSociety/chaindata/main/dist/index.txt
 
