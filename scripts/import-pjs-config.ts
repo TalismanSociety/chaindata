@@ -92,7 +92,24 @@ const customChainRpcs: Record<string, string[] | undefined> = {
   ewx: ['wss://public-rpc.mainnet.energywebx.com'],
   'genshiro-kusama-2': [],
   gm: ['wss://ws.gm.bldnodes.org/'],
+  khala: [
+    'wss://khala-rpc.dwellir.com',
+    'wss://khala.public.curie.radiumblock.co/ws',
+    'wss://khala-api.phala.network/ws',
+  ],
   krest: ['wss://wss-krest.peaq.network/', 'wss://krest.unitedbloc.com/'],
+  moonriver: [
+    'wss://moonriver-rpc.dwellir.com',
+    'wss://wss.api.moonriver.moonbeam.network',
+    'wss://moonriver.public.curie.radiumblock.co/ws',
+    'wss://moonriver.unitedbloc.com',
+  ],
+  phala: ['wss://phala-rpc.dwellir.com', 'wss://phala.public.curie.radiumblock.co/ws', 'wss://api.phala.network/ws'],
+  'shiden-kusama': [
+    'wss://shiden-rpc.dwellir.com',
+    'wss://shiden.public.curie.radiumblock.co/ws',
+    'wss://rpc.shiden.astar.network',
+  ],
 }
 
 // a map of testnet talisman ids to a list of rpcs with which we want to override the pjs list
