@@ -111,6 +111,14 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'three-hundred-ai',
   'edge-matrix-computing',
   'balancer-80-rdnt-20-weth',
+  'redlight-chain',
+  'hoo-token',
+  'jongro-boutique',
+  'lexa-ai',
+  'realvirm',
+  'dragon-3',
+  'ghost',
+  'utility-nexusmind',
 ]
 
 type BalanceModuleConfig = {

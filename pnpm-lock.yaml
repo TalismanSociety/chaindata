@@ -56,6 +56,9 @@ dependencies:
   tinycolor2:
     specifier: ^1.6.0
     version: 1.6.0
+  url-join:
+    specifier: ^5.0.0
+    version: 5.0.0
   viem:
     specifier: ^1.19.9
     version: 1.19.9(typescript@5.3.2)
@@ -1052,7 +1055,7 @@ packages:
       '@polkadot/api-augment': 9.10.1
       '@polkadot/api-base': 9.10.1
       '@polkadot/api-derive': 9.10.1
-      '@polkadot/keyring': 10.2.1(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2)
+      '@polkadot/keyring': 10.4.2(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2)
       '@polkadot/rpc-augment': 9.10.1
       '@polkadot/rpc-core': 9.10.1
       '@polkadot/rpc-provider': 9.10.1
@@ -1159,18 +1162,6 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@polkadot/keyring@10.2.1(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2):
-    resolution: {integrity: sha512-84/zzxDZANQ4AfsCT1vrjX3I23/mj9WUWl1F7q9ruK6UBFyGsl46Y3ABOopFHij9UXhppndhB65IeDnqoOKqxQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      '@polkadot/util': 10.2.1
-      '@polkadot/util-crypto': 10.2.1
-    dependencies:
-      '@babel/runtime': 7.23.9
-      '@polkadot/util': 10.4.2
-      '@polkadot/util-crypto': 10.4.2(@polkadot/util@10.4.2)
-    dev: false
-
   /@polkadot/keyring@10.2.1(@polkadot/util-crypto@12.6.2)(@polkadot/util@12.6.2):
     resolution: {integrity: sha512-84/zzxDZANQ4AfsCT1vrjX3I23/mj9WUWl1F7q9ruK6UBFyGsl46Y3ABOopFHij9UXhppndhB65IeDnqoOKqxQ==}
     engines: {node: '>=14.0.0'}
@@ -1193,7 +1184,6 @@ packages:
       '@babel/runtime': 7.23.9
       '@polkadot/util': 10.4.2
       '@polkadot/util-crypto': 10.4.2(@polkadot/util@10.4.2)
-    dev: true
 
   /@polkadot/keyring@12.6.2(@polkadot/util-crypto@12.6.2)(@polkadot/util@12.6.2):
     resolution: {integrity: sha512-O3Q7GVmRYm8q7HuB3S0+Yf/q/EB2egKRRU3fv9b3B7V+A52tKzA+vIwEmNVaD1g5FKW9oB97rmpggs0zaKFqHw==}
@@ -1495,7 +1485,7 @@ packages:
     engines: {node: '>=14.0.0'}
     dependencies:
       '@babel/runtime': 7.23.9
-      '@polkadot/keyring': 10.2.1(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2)
+      '@polkadot/keyring': 10.4.2(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2)
       '@polkadot/types': 9.10.1
       '@polkadot/types-support': 9.10.1
       '@polkadot/util': 10.4.2
@@ -1797,7 +1787,7 @@ packages:
     engines: {node: '>=14.0.0'}
     dependencies:
       '@babel/runtime': 7.23.9
-      '@polkadot/keyring': 10.2.1(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2)
+      '@polkadot/keyring': 10.4.2(@polkadot/util-crypto@10.4.2)(@polkadot/util@10.4.2)
       '@polkadot/types-augment': 9.10.1
       '@polkadot/types-codec': 9.10.1
       '@polkadot/types-create': 9.10.1
@@ -4406,6 +4396,11 @@ packages:
     dependencies:
       punycode: 2.3.1
     dev: true
+
+  /url-join@5.0.0:
+    resolution: {integrity: sha512-n2huDr9h9yzd6exQVnH/jU5mr+Pfx08LRXXZhkLLetAMESRj+anQsTAh940iMrIetKAmry9coFuZQ2jY8/p3WA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
 
   /utf-8-validate@5.0.10:
     resolution: {integrity: sha512-Z6czzLq4u8fPOyx7TU6X3dvUZVvoJmxSQ+IcrlmagKhilxlhZgxPK6C5Jqbkw1IDUmFTM+cz9QDnnLTwDz/2gQ==}
