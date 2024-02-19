@@ -24,7 +24,9 @@ export const FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE = 'data/cache/known-evm-networks
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds
 
-export const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY ?? ''
+export const COINGECKO_API_URL = process.env.COINGECKO_API_URL ?? 'http://api.coingecko.com'
+export const COINGECKO_API_KEY_NAME = process.env.COINGECKO_API_KEY_NAME
+export const COINGECKO_API_KEY_VALUE = process.env.COINGECKO_API_KEY_VALUE
 export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT
   ? Number(process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT)
   : 100

@@ -1,14 +1,8 @@
-import { COINGECKO_API_KEY } from '../shared/constants'
+import { fetchFromCoingecko } from '../shared/fetchFromCoingecko'
 import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from '../shared/types'
 
-// docs mentions api key can be set in header, but if there is a query string then header are ignored
-// => always specify api key in query string
-const DEFAULT_URL_PARAMS = COINGECKO_API_KEY ? { 'x-cg-demo-api-key': COINGECKO_API_KEY } : undefined
-
 export const fetchAssetPlatforms = async () => {
-  const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
-
-  const resAssetPlatforms = await fetch('https://api.coingecko.com/api/v3/asset_platforms?' + urlParams.toString())
+  const resAssetPlatforms = await fetchFromCoingecko('/api/v3/asset_platforms')
   const assetPlatforms = (await resAssetPlatforms.json()) as CoingeckoAssetPlatform[]
 
   // // TODO for debugging only, remove when ready
@@ -24,10 +18,10 @@ export const fetchAssetPlatforms = async () => {
 }
 
 export const fetchCoins = async () => {
-  const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
+  const urlParams = new URLSearchParams()
   urlParams.set('include_platform', 'true')
 
-  const resCoins = await fetch('https://api.coingecko.com/api/v3/coins/list?' + urlParams)
+  const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams) // fetch('https://api.coingecko.com/api/v3/coins/list?' + urlParams)
   const coins = (await resCoins.json()) as CoingeckoCoin[]
 
   // // TODO for debugging only, remove when ready
@@ -46,7 +40,7 @@ export const fetchCoinDetails = async (
   coingeckoId: string,
   { retryAfter60s }: { retryAfter60s?: boolean } = {},
 ): Promise<CoingeckoCoinDetails> => {
-  const urlParams = new URLSearchParams(DEFAULT_URL_PARAMS)
+  const urlParams = new URLSearchParams()
   urlParams.set('localization', 'false')
   urlParams.set('market_data', 'false')
   urlParams.set('community_data', 'false')
@@ -54,7 +48,7 @@ export const fetchCoinDetails = async (
   urlParams.set('sparkline', 'false')
   urlParams.set('tickers', 'false')
 
-  const resCoins = await fetch(`https://api.coingecko.com/api/v3/coins/${coingeckoId}?${urlParams}`)
+  const resCoins = await fetchFromCoingecko(`/api/v3/coins/${coingeckoId}?${urlParams}`)
 
   if (resCoins.status === 429 && retryAfter60s) {
     const retryAfter = resCoins.headers.get('retry-after')
