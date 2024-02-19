@@ -21,7 +21,7 @@ export const fetchCoins = async () => {
   const urlParams = new URLSearchParams()
   urlParams.set('include_platform', 'true')
 
-  const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams) // fetch('https://api.coingecko.com/api/v3/coins/list?' + urlParams)
+  const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams)
   const coins = (await resCoins.json()) as CoingeckoCoin[]
 
   // // TODO for debugging only, remove when ready
