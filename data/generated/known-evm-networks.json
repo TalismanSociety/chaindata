@@ -4,7 +4,7 @@
     "name": "Ethereum Mainnet",
     "rpcs": [
       "https://cloudflare-eth.com",
-      "https://ethereum.publicnode.com",
+      "https://ethereum-rpc.publicnode.com",
       "https://mainnet.gateway.tenderly.co",
       "https://rpc.blocknative.com/boost",
       "https://rpc.flashbots.net",
@@ -138,6 +138,12 @@
             "coingeckoId": "0x-leverage",
             "contractAddress": "0x03ee5026c07d85ff8ae791370dd0f4c1ae6c97fc",
             "decimals": 18
+          },
+          {
+            "symbol": "0xLP",
+            "coingeckoId": "0xliquidity",
+            "contractAddress": "0xd377f28245bc505190c8f34d2bfe5f215754f634",
+            "decimals": 9
           },
           {
             "symbol": "0xMR",
@@ -9463,6 +9469,12 @@
             "decimals": 18
           },
           {
+            "symbol": "EGGX",
+            "coingeckoId": "eggx",
+            "contractAddress": "0xe2f95ee8b72ffed59bc4d2f35b1d19b909a6e6b3",
+            "decimals": 18
+          },
+          {
             "symbol": "EHASH",
             "coingeckoId": "ehash",
             "contractAddress": "0x2942e3b38e33123965bfbc21e802be943a76bbc6",
@@ -11323,6 +11335,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FBG",
+            "coingeckoId": "fort-block-games",
+            "contractAddress": "0xeb935deb517e4c2abc282e5e251ed4d05db79e93",
+            "decimals": 18
+          },
+          {
             "symbol": "FRT",
             "coingeckoId": "fortunebets",
             "contractAddress": "0xb622907fbff6cbf7c3ce355173251e3edb13a606",
@@ -11548,12 +11566,6 @@
             "symbol": "FROG",
             "coingeckoId": "frogswap",
             "contractAddress": "0x4fee21439f2b95b72da2f9f901b3956f27fe91d5",
-            "decimals": 18
-          },
-          {
-            "symbol": "FANX",
-            "coingeckoId": "frontfanz-2",
-            "contractAddress": "0x3ac81633a291f342b62e7de5d00eb02924032e06",
             "decimals": 18
           },
           {
@@ -17005,6 +17017,12 @@
             "decimals": 8
           },
           {
+            "symbol": "PARTY",
+            "coingeckoId": "maximus-pool-party",
+            "contractAddress": "0x4581af35199bbde87a89941220e04e27ce4b0099",
+            "decimals": 18
+          },
+          {
             "symbol": "TRIO",
             "coingeckoId": "maximus-trio",
             "contractAddress": "0xf55cd1e399e1cc3d95303048897a680be3313308",
@@ -20095,6 +20113,12 @@
             "decimals": 8
           },
           {
+            "symbol": "OX",
+            "coingeckoId": "ox-fun",
+            "contractAddress": "0xba0dda8762c24da9487f5fa026a9b64b695a07ea",
+            "decimals": 18
+          },
+          {
             "symbol": "OXY",
             "coingeckoId": "oxygen",
             "contractAddress": "0x965697b4ef02f0de01384d0d4f9f782b1670c163",
@@ -21088,6 +21112,12 @@
             "symbol": "PLOT",
             "coingeckoId": "plotx",
             "contractAddress": "0x72f020f8f3e8fd9382705723cd26380f8d0c66bb",
+            "decimals": 18
+          },
+          {
+            "symbol": "LOONG",
+            "coingeckoId": "plumpy-dragons",
+            "contractAddress": "0x954a75564cb355ea2d6fccc6c1212fd01fdcb06f",
             "decimals": 18
           },
           {
@@ -24239,6 +24269,12 @@
             "decimals": 18
           },
           {
+            "symbol": "EMERALD",
+            "coingeckoId": "sj741-emeralds",
+            "contractAddress": "0x382edfe4c6168858c81893fe00fcb7b68914d929",
+            "decimals": 8
+          },
+          {
             "symbol": "SKL",
             "coingeckoId": "skale",
             "contractAddress": "0x00c83aecc790e8a4453e5dd3b0b4b3680501a7a7",
@@ -25947,6 +25983,12 @@
             "coingeckoId": "tap",
             "contractAddress": "0x6368e1e18c4c419ddfc608a0bed1ccb87b9250fc",
             "decimals": 18
+          },
+          {
+            "symbol": "TAPROOT",
+            "coingeckoId": "taproot",
+            "contractAddress": "0x07b701ac44aacb03d8bed42eb85ec38210bdf513",
+            "decimals": 6
           },
           {
             "symbol": "TWB",
@@ -29033,6 +29075,12 @@
             "decimals": 9
           },
           {
+            "symbol": "WUSD",
+            "coingeckoId": "worldwide-usd",
+            "contractAddress": "0xb6667b04cb61aa16b59617f90ffa068722cf21da",
+            "decimals": 6
+          },
+          {
             "symbol": "WORMZ",
             "coingeckoId": "wormz",
             "contractAddress": "0x5c77bffc54e33ee4ae303a168a4a0e45b238d09c",
@@ -30448,7 +30496,7 @@
   {
     "id": "5",
     "name": "Goerli",
-    "rpcs": ["https://ethereum-goerli.publicnode.com", "https://goerli.gateway.tenderly.co"],
+    "rpcs": ["https://ethereum-goerli-rpc.publicnode.com", "https://goerli.gateway.tenderly.co"],
     "explorerUrl": "https://goerli.etherscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -30485,7 +30533,11 @@
   {
     "id": "10",
     "name": "OP Mainnet",
-    "rpcs": ["https://mainnet.optimism.io", "https://optimism.publicnode.com", "https://optimism.gateway.tenderly.co"],
+    "rpcs": [
+      "https://mainnet.optimism.io",
+      "https://optimism-rpc.publicnode.com",
+      "https://optimism.gateway.tenderly.co"
+    ],
     "explorerUrl": "https://optimistic.etherscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -31911,7 +31963,7 @@
   {
     "id": "25",
     "name": "Cronos Mainnet",
-    "rpcs": ["https://evm.cronos.org", "https://cronos-evm.publicnode.com"],
+    "rpcs": ["https://evm.cronos.org", "https://cronos-evm-rpc.publicnode.com"],
     "explorerUrl": "https://explorer.cronos.org",
     "balancesConfig": {
       "evm-native": {
@@ -32847,7 +32899,7 @@
       "https://bsc-dataseed2.ninicoin.io",
       "https://bsc-dataseed3.ninicoin.io",
       "https://bsc-dataseed4.ninicoin.io",
-      "https://bsc.publicnode.com"
+      "https://bsc-rpc.publicnode.com"
     ],
     "explorerUrl": "https://bscscan.com",
     "balancesConfig": {
@@ -33935,8 +33987,8 @@
           {
             "symbol": "ENIX",
             "coingeckoId": "asenix",
-            "contractAddress": "0x408cefb5f92f0e47fc12e9840cc50529fc986226",
-            "decimals": 18
+            "contractAddress": "0x7787e53d8091e153eb0d0339d4e912fee4402d9a",
+            "decimals": 9
           },
           {
             "symbol": "ASH",
@@ -34281,6 +34333,12 @@
             "decimals": 9
           },
           {
+            "symbol": "BOO",
+            "coingeckoId": "baby-boo",
+            "contractAddress": "0x6f77660037020b011e9b2cf990df67e7bd1cc88f",
+            "decimals": 18
+          },
+          {
             "symbol": "babybtc",
             "coingeckoId": "babybtc-token",
             "contractAddress": "0x6d58c0202fb1053f63523ebe2b5521acdc465d32",
@@ -34536,6 +34594,12 @@
             "symbol": "BabyTomcat",
             "coingeckoId": "baby-tomcat",
             "contractAddress": "0xbfc89d2134053d15d277a01c2a1a1980e0a5dbcd",
+            "decimals": 9
+          },
+          {
+            "symbol": "BabyTroll",
+            "coingeckoId": "baby-troll",
+            "contractAddress": "0x6ec07dbd9311975b8002079d70c6f6d9e3e1ee5c",
             "decimals": 9
           },
           {
@@ -40004,6 +40068,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FOMOS",
+            "coingeckoId": "fomosfi",
+            "contractAddress": "0xf8ccea8707cfc155ef595fc25cb77696d4445fcc",
+            "decimals": 18
+          },
+          {
             "symbol": "Food",
             "coingeckoId": "food-bank",
             "contractAddress": "0x6359f0d2004433d2a38b03dce8f966cc243f1da9",
@@ -40301,6 +40371,12 @@
             "symbol": "FUTURE",
             "coingeckoId": "futurecoin",
             "contractAddress": "0x9fbff386a9405b4c98329824418ec02b5c20976b",
+            "decimals": 18
+          },
+          {
+            "symbol": "FXB",
+            "coingeckoId": "fxbox-io",
+            "contractAddress": "0x0dbcec4214d7e9c316e0eb53991a43f42f432e15",
             "decimals": 18
           },
           {
@@ -43844,6 +43920,12 @@
             "decimals": 18
           },
           {
+            "symbol": "MDN",
+            "coingeckoId": "maidaan",
+            "contractAddress": "0xb2a3ff23bc36b962ca5f2ca8fef118ef7f83c152",
+            "decimals": 18
+          },
+          {
             "symbol": "MAIN",
             "coingeckoId": "main",
             "contractAddress": "0xa5f249f401ba8931899a364d8e2699b5fa1d87a9",
@@ -44742,6 +44824,12 @@
             "coingeckoId": "milliondollarbaby",
             "contractAddress": "0x0557a288a93ed0df218785f2787dac1cd077f8f3",
             "decimals": 18
+          },
+          {
+            "symbol": "MILO DOG",
+            "coingeckoId": "milo-dog",
+            "contractAddress": "0x2a21f535a94fac087bd5f034e07c2282844a1ffa",
+            "decimals": 9
           },
           {
             "symbol": "MILO",
@@ -52250,6 +52338,12 @@
             "decimals": 9
           },
           {
+            "symbol": "VOXELAPE",
+            "coingeckoId": "voxel-ape",
+            "contractAddress": "0xe7b74f3f4d7a5853f5a94dce59d22d2811abe6bf",
+            "decimals": 18
+          },
+          {
             "symbol": "VLK",
             "coingeckoId": "vulkania-2",
             "contractAddress": "0x797bb0beea437d2762a755ea911c0046c1284568",
@@ -53666,7 +53760,7 @@
   {
     "id": "57",
     "name": "Syscoin Mainnet",
-    "rpcs": ["https://rpc.syscoin.org", "https://syscoin.public-rpc.com", "https://syscoin-evm.publicnode.com"],
+    "rpcs": ["https://rpc.syscoin.org", "https://syscoin.public-rpc.com", "https://syscoin-evm-rpc.publicnode.com"],
     "explorerUrl": "https://explorer.syscoin.org",
     "balancesConfig": {
       "evm-native": {
@@ -54601,7 +54695,7 @@
       "https://data-seed-prebsc-2-s2.bnbchain.org:8545",
       "https://data-seed-prebsc-1-s3.bnbchain.org:8545",
       "https://data-seed-prebsc-2-s3.bnbchain.org:8545",
-      "https://bsc-testnet.publicnode.com"
+      "https://bsc-testnet-rpc.publicnode.com"
     ],
     "explorerUrl": "https://testnet.bscscan.com",
     "balancesConfig": {
@@ -54635,7 +54729,7 @@
       "https://gnosis-mainnet.public.blastapi.io",
       "https://gnosis.blockpi.network/v1/rpc/public",
       "https://gnosis.oat.farm",
-      "https://gnosis.publicnode.com",
+      "https://gnosis-rpc.publicnode.com",
       "https://gnosis.api.onfinality.io/public",
       "https://web3endpoints.com/gnosischain-mainnet"
     ],
@@ -56228,7 +56322,7 @@
       "https://polygon-rpc.com/",
       "https://rpc-mainnet.maticvigil.com",
       "https://rpc-mainnet.matic.quiknode.pro",
-      "https://polygon-bor.publicnode.com",
+      "https://polygon-bor-rpc.publicnode.com",
       "https://polygon.gateway.tenderly.co",
       "https://matic-mainnet.chainstacklabs.com",
       "https://matic-mainnet-full-rpc.bwarelabs.com"
@@ -58742,6 +58836,12 @@
             "symbol": "FXS",
             "coingeckoId": "frax-share",
             "contractAddress": "0x1a3acf6d19267e2d3e7f898f42803e90c9219062",
+            "decimals": 18
+          },
+          {
+            "symbol": "FANX",
+            "coingeckoId": "frontfanz-2",
+            "contractAddress": "0xb58458c52b6511dc723d7d6f3be8c36d7383b4a8",
             "decimals": 18
           },
           {
@@ -63517,7 +63617,7 @@
       "https://opbnb-mainnet-rpc.bnbchain.org",
       "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
       "https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
-      "https://opbnb.publicnode.com"
+      "https://opbnb-rpc.publicnode.com"
     ],
     "icon": "bnbchain",
     "explorerUrl": "https://mainnet.opbnbscan.com",
@@ -63836,7 +63936,7 @@
   {
     "id": "250",
     "name": "Fantom Opera",
-    "rpcs": ["https://rpc.ftm.tools", "https://fantom.publicnode.com"],
+    "rpcs": ["https://rpc.ftm.tools", "https://fantom-rpc.publicnode.com"],
     "icon": "fantom",
     "explorerUrl": "https://ftmscan.com",
     "balancesConfig": {
@@ -66683,7 +66783,7 @@
   {
     "id": "369",
     "name": "PulseChain",
-    "rpcs": ["https://rpc.pulsechain.com", "https://pulsechain.publicnode.com", "https://rpc-pulsechain.g4mm4.io"],
+    "rpcs": ["https://rpc.pulsechain.com", "https://pulsechain-rpc.publicnode.com", "https://rpc-pulsechain.g4mm4.io"],
     "explorerUrl": "https://scan.pulsechain.com",
     "balancesConfig": {
       "evm-native": {
@@ -66831,7 +66931,7 @@
     "name": "Optimism Goerli Testnet",
     "rpcs": [
       "https://goerli.optimism.io",
-      "https://optimism-goerli.publicnode.com",
+      "https://optimism-goerli-rpc.publicnode.com",
       "https://optimism-goerli.gateway.tenderly.co"
     ],
     "explorerUrl": "https://optimism-goerli.blockscout.com",
@@ -67615,6 +67715,19 @@
     }
   },
   {
+    "id": "799",
+    "name": "Rupaya Testnet",
+    "rpcs": ["https://rpc.testnet.rupaya.io"],
+    "explorerUrl": "https://scan.testnet.rupaya.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TRUPX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "800",
     "name": "Lucid Blockchain",
     "rpcs": ["https://rpc.lucidcoin.io"],
@@ -67916,7 +68029,7 @@
     "name": "PulseChain Testnet v4",
     "rpcs": [
       "https://rpc.v4.testnet.pulsechain.com",
-      "https://pulsechain-testnet.publicnode.com",
+      "https://pulsechain-testnet-rpc.publicnode.com",
       "https://rpc-testnet-pulsechain.g4mm4.io"
     ],
     "icon": "pulsechain",
@@ -68561,7 +68674,7 @@
   {
     "id": "1100",
     "name": "Dymension",
-    "rpcs": ["https://dymension-evm.blockpi.network/v1/rpc/public"],
+    "rpcs": ["https://dymension-evm.blockpi.network/v1/rpc/public", "https://dymension-evm-rpc.publicnode.com"],
     "icon": "dymension",
     "explorerUrl": "https://dym.fyi",
     "balancesConfig": {
@@ -69107,7 +69220,7 @@
   {
     "id": "1284",
     "name": "Moonbeam",
-    "rpcs": ["https://rpc.api.moonbeam.network", "https://moonbeam.publicnode.com"],
+    "rpcs": ["https://rpc.api.moonbeam.network", "https://moonbeam-rpc.publicnode.com"],
     "explorerUrl": "https://moonbeam.moonscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -69388,7 +69501,7 @@
   {
     "id": "1285",
     "name": "Moonriver",
-    "rpcs": ["https://rpc.api.moonriver.moonbeam.network", "https://moonriver.publicnode.com"],
+    "rpcs": ["https://rpc.api.moonriver.moonbeam.network", "https://moonriver-rpc.publicnode.com"],
     "explorerUrl": "https://moonriver.moonscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -71133,9 +71246,9 @@
     "name": "Kava",
     "rpcs": [
       "https://evm.kava.io",
-      "https://kava-evm.publicnode.com",
       "https://evm.kava-rpc.com",
-      "https://rpc.ankr.com/kava_evm"
+      "https://rpc.ankr.com/kava_evm",
+      "https://kava-evm-rpc.publicnode.com"
     ],
     "icon": "kava",
     "explorerUrl": "https://kavascan.com",
@@ -71365,9 +71478,11 @@
     "id": "2323",
     "name": "SOMA Network Testnet",
     "rpcs": [
+      "https://data-testnet-v1.somanetwork.io/",
       "https://testnet-au-server-2.somanetwork.io",
       "https://testnet-au-server-1.somanetwork.io",
-      "https://testnet-sg-server-1.somanetwork.io"
+      "https://testnet-sg-server-1.somanetwork.io",
+      "https://testnet-sg-server-2.somanetwork.io"
     ],
     "icon": "soma",
     "explorerUrl": "https://testnet.somascan.io",
@@ -71395,7 +71510,12 @@
   {
     "id": "2332",
     "name": "SOMA Network Mainnet",
-    "rpcs": ["https://hk-mainnet.somanetwork.io", "https://sg-mainnet.somanetwork.io"],
+    "rpcs": [
+      "https://data-mainnet-v1.somanetwork.io/",
+      "https://id-mainnet.somanetwork.io",
+      "https://hk-mainnet.somanetwork.io",
+      "https://sg-mainnet.somanetwork.io"
+    ],
     "icon": "soma",
     "explorerUrl": "https://somascan.io",
     "balancesConfig": {
@@ -72211,7 +72331,7 @@
   {
     "id": "4002",
     "name": "Fantom Testnet",
-    "rpcs": ["https://rpc.testnet.fantom.network", "https://fantom-testnet.publicnode.com"],
+    "rpcs": ["https://rpc.testnet.fantom.network", "https://fantom-testnet-rpc.publicnode.com"],
     "icon": "fantom",
     "explorerUrl": "https://testnet.ftmscan.com",
     "balancesConfig": {
@@ -72645,7 +72765,7 @@
   {
     "id": "5000",
     "name": "Mantle",
-    "rpcs": ["https://rpc.mantle.xyz", "https://mantle.publicnode.com"],
+    "rpcs": ["https://rpc.mantle.xyz", "https://mantle-rpc.publicnode.com"],
     "icon": "mantle",
     "explorerUrl": "https://explorer.mantle.xyz",
     "balancesConfig": {
@@ -72906,7 +73026,7 @@
   {
     "id": "5165",
     "name": "Bahamut",
-    "rpcs": ["https://rpc1.bahamut.io", "https://rpc2.bahamut.io", "https://bahamut.publicnode.com"],
+    "rpcs": ["https://rpc1.bahamut.io", "https://rpc2.bahamut.io", "https://bahamut-rpc.publicnode.com"],
     "icon": "bahamut",
     "explorerUrl": "https://ftnscan.com",
     "balancesConfig": {
@@ -73054,7 +73174,8 @@
     "rpcs": [
       "https://opbnb-testnet-rpc.bnbchain.org",
       "https://opbnb-testnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
-      "https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5"
+      "https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
+      "https://opbnb-testnet-rpc.publicnode.com"
     ],
     "icon": "bnbchain",
     "explorerUrl": "https://opbnb-testnet.bscscan.com",
@@ -73080,7 +73201,7 @@
   {
     "id": "5700",
     "name": "Syscoin Tanenbaum Testnet",
-    "rpcs": ["https://rpc.tanenbaum.io", "https://syscoin-tanenbaum-evm.publicnode.com"],
+    "rpcs": ["https://rpc.tanenbaum.io", "https://syscoin-tanenbaum-evm-rpc.publicnode.com"],
     "explorerUrl": "https://tanenbaum.io",
     "balancesConfig": {
       "evm-native": {
@@ -74056,7 +74177,7 @@
       "https://mainnet.base.org/",
       "https://developer-access-mainnet.base.org/",
       "https://base.gateway.tenderly.co",
-      "https://base.publicnode.com"
+      "https://base-rpc.publicnode.com"
     ],
     "icon": "base",
     "explorerUrl": "https://basescan.org",
@@ -75100,6 +75221,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ZEB",
+            "coingeckoId": "zebradao",
+            "contractAddress": "0xf0ce1d83b5fc9c67f157d8b97fd09e2cf8af899e",
+            "decimals": 18
+          },
+          {
             "symbol": "ZOOMER",
             "coingeckoId": "zoomer",
             "contractAddress": "0xd1db4851bcf5b41442caa32025ce0afe6b8eabc2",
@@ -76018,7 +76145,7 @@
     "rpcs": [
       "https://rpc.chiadochain.net",
       "https://rpc.chiado.gnosis.gateway.fm",
-      "https://gnosis-chiado.publicnode.com"
+      "https://gnosis-chiado-rpc.publicnode.com"
     ],
     "icon": "gnosis",
     "explorerUrl": "https://blockscout.chiadochain.net",
@@ -76194,7 +76321,7 @@
   {
     "id": "11235",
     "name": "Haqq Network",
-    "rpcs": ["https://rpc.eth.haqq.network", "https://haqq-evm.publicnode.com"],
+    "rpcs": ["https://rpc.eth.haqq.network", "https://haqq-evm-rpc.publicnode.com"],
     "explorerUrl": "https://explorer.haqq.network",
     "balancesConfig": {
       "evm-native": {
@@ -76594,7 +76721,7 @@
   {
     "id": "17000",
     "name": "Holesky",
-    "rpcs": ["https://rpc.holesky.ethpandaops.io", "https://ethereum-holesky.publicnode.com"],
+    "rpcs": ["https://rpc.holesky.ethpandaops.io", "https://ethereum-holesky-rpc.publicnode.com"],
     "icon": "ethereum",
     "explorerUrl": "https://holesky.beaconcha.in",
     "balancesConfig": {
@@ -77024,7 +77151,18 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ROSE",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "oasis-network"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "pIX",
+            "coingeckoId": "illuminex",
+            "contractAddress": "0xd7f2507cafe0f04f5c1939999e9be4e1b36dc219",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -77412,7 +77550,7 @@
     "explorerUrl": "https://explorer.q.org",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "Q",
+        "symbol": "QGOV",
         "decimals": 18
       }
     }
@@ -81804,7 +81942,7 @@
   {
     "id": "43113",
     "name": "Avalanche Fuji Testnet",
-    "rpcs": ["https://api.avax-test.network/ext/bc/C/rpc", "https://avalanche-fuji-c-chain.publicnode.com"],
+    "rpcs": ["https://api.avax-test.network/ext/bc/C/rpc", "https://avalanche-fuji-c-chain-rpc.publicnode.com"],
     "icon": "avax",
     "explorerUrl": "https://testnet.snowtrace.io",
     "balancesConfig": {
@@ -81818,7 +81956,7 @@
   {
     "id": "43114",
     "name": "Avalanche C-Chain",
-    "rpcs": ["https://api.avax.network/ext/bc/C/rpc", "https://avalanche-c-chain.publicnode.com"],
+    "rpcs": ["https://api.avax.network/ext/bc/C/rpc", "https://avalanche-c-chain-rpc.publicnode.com"],
     "icon": "avax",
     "explorerUrl": "https://snowtrace.io",
     "balancesConfig": {
@@ -85390,7 +85528,7 @@
     "name": "Mumbai",
     "rpcs": [
       "https://rpc-mumbai.maticvigil.com",
-      "https://polygon-mumbai-bor.publicnode.com",
+      "https://polygon-mumbai-bor-rpc.publicnode.com",
       "https://polygon-mumbai.gateway.tenderly.co"
     ],
     "icon": "polygon",
@@ -85474,7 +85612,7 @@
     "name": "Base Goerli Testnet",
     "rpcs": [
       "https://base-goerli.gateway.tenderly.co",
-      "https://base-goerli.publicnode.com",
+      "https://base-goerli-rpc.publicnode.com",
       "https://goerli.base.org"
     ],
     "icon": "baseTestnet",
@@ -85490,7 +85628,7 @@
   {
     "id": "84532",
     "name": "Base Sepolia Testnet",
-    "rpcs": ["https://sepolia.base.org"],
+    "rpcs": ["https://base-sepolia-rpc.publicnode.com", "https://https://sepolia.base.org"],
     "icon": "baseTestnet",
     "explorerUrl": "https://base-sepolia.blockscout.com",
     "balancesConfig": {
@@ -85803,6 +85941,19 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "103454",
+    "name": "Masa Testnet",
+    "rpcs": ["https://subnets.avax.network/masatestne/testnet/rpc"],
+    "explorerUrl": "https://subnets-test.avax.network/masatestnet",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MASA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "108801",
@@ -87623,7 +87774,7 @@
       "https://rpc-sepolia.rockx.com",
       "https://rpc.sepolia.ethpandaops.io",
       "https://sepolia.gateway.tenderly.co",
-      "https://ethereum-sepolia.publicnode.com"
+      "https://ethereum-sepolia-rpc.publicnode.com"
     ],
     "explorerUrl": "https://sepolia.etherscan.io",
     "balancesConfig": {
