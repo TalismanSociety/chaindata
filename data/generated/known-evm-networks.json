@@ -11323,6 +11323,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FBG",
+            "coingeckoId": "fort-block-games",
+            "contractAddress": "0xeb935deb517e4c2abc282e5e251ed4d05db79e93",
+            "decimals": 18
+          },
+          {
             "symbol": "FRT",
             "coingeckoId": "fortunebets",
             "contractAddress": "0xb622907fbff6cbf7c3ce355173251e3edb13a606",
@@ -21091,6 +21097,12 @@
             "decimals": 18
           },
           {
+            "symbol": "LOONG",
+            "coingeckoId": "plumpy-dragons",
+            "contractAddress": "0x954a75564cb355ea2d6fccc6c1212fd01fdcb06f",
+            "decimals": 18
+          },
+          {
             "symbol": "PLUMS",
             "coingeckoId": "plums",
             "contractAddress": "0x666cbfaa3baa2faccfac8854fea1e5db140fb104",
@@ -24237,6 +24249,12 @@
             "coingeckoId": "sirin-labs-token",
             "contractAddress": "0x68d57c9a1c35f63e2c83ee8e49a64e9d70528d25",
             "decimals": 18
+          },
+          {
+            "symbol": "EMERALD",
+            "coingeckoId": "sj741-emeralds",
+            "contractAddress": "0x382edfe4c6168858c81893fe00fcb7b68914d929",
+            "decimals": 8
           },
           {
             "symbol": "SKL",
@@ -29031,6 +29049,12 @@
             "coingeckoId": "world-peace-coin",
             "contractAddress": "0xc7c53760375530e5af29fded5e13989325299382",
             "decimals": 9
+          },
+          {
+            "symbol": "WUSD",
+            "coingeckoId": "worldwide-usd",
+            "contractAddress": "0xb6667b04cb61aa16b59617f90ffa068722cf21da",
+            "decimals": 6
           },
           {
             "symbol": "WORMZ",
@@ -34281,6 +34305,12 @@
             "decimals": 9
           },
           {
+            "symbol": "BOO",
+            "coingeckoId": "baby-boo",
+            "contractAddress": "0x6f77660037020b011e9b2cf990df67e7bd1cc88f",
+            "decimals": 18
+          },
+          {
             "symbol": "babybtc",
             "coingeckoId": "babybtc-token",
             "contractAddress": "0x6d58c0202fb1053f63523ebe2b5521acdc465d32",
@@ -34536,6 +34566,12 @@
             "symbol": "BabyTomcat",
             "coingeckoId": "baby-tomcat",
             "contractAddress": "0xbfc89d2134053d15d277a01c2a1a1980e0a5dbcd",
+            "decimals": 9
+          },
+          {
+            "symbol": "BabyTroll",
+            "coingeckoId": "baby-troll",
+            "contractAddress": "0x6ec07dbd9311975b8002079d70c6f6d9e3e1ee5c",
             "decimals": 9
           },
           {
@@ -40004,6 +40040,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FOMOS",
+            "coingeckoId": "fomosfi",
+            "contractAddress": "0xf8ccea8707cfc155ef595fc25cb77696d4445fcc",
+            "decimals": 18
+          },
+          {
             "symbol": "Food",
             "coingeckoId": "food-bank",
             "contractAddress": "0x6359f0d2004433d2a38b03dce8f966cc243f1da9",
@@ -40301,6 +40343,12 @@
             "symbol": "FUTURE",
             "coingeckoId": "futurecoin",
             "contractAddress": "0x9fbff386a9405b4c98329824418ec02b5c20976b",
+            "decimals": 18
+          },
+          {
+            "symbol": "FXB",
+            "coingeckoId": "fxbox-io",
+            "contractAddress": "0x0dbcec4214d7e9c316e0eb53991a43f42f432e15",
             "decimals": 18
           },
           {
@@ -44742,6 +44790,12 @@
             "coingeckoId": "milliondollarbaby",
             "contractAddress": "0x0557a288a93ed0df218785f2787dac1cd077f8f3",
             "decimals": 18
+          },
+          {
+            "symbol": "MILO DOG",
+            "coingeckoId": "milo-dog",
+            "contractAddress": "0x2a21f535a94fac087bd5f034e07c2282844a1ffa",
+            "decimals": 9
           },
           {
             "symbol": "MILO",
@@ -67615,6 +67669,19 @@
     }
   },
   {
+    "id": "799",
+    "name": "Rupaya Testnet",
+    "rpcs": ["https://rpc.testnet.rupaya.io"],
+    "explorerUrl": "https://scan.testnet.rupaya.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TRUPX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "800",
     "name": "Lucid Blockchain",
     "rpcs": ["https://rpc.lucidcoin.io"],
@@ -71365,9 +71432,11 @@
     "id": "2323",
     "name": "SOMA Network Testnet",
     "rpcs": [
+      "https://data-testnet-v1.somanetwork.io/",
       "https://testnet-au-server-2.somanetwork.io",
       "https://testnet-au-server-1.somanetwork.io",
-      "https://testnet-sg-server-1.somanetwork.io"
+      "https://testnet-sg-server-1.somanetwork.io",
+      "https://testnet-sg-server-2.somanetwork.io"
     ],
     "icon": "soma",
     "explorerUrl": "https://testnet.somascan.io",
@@ -71395,7 +71464,12 @@
   {
     "id": "2332",
     "name": "SOMA Network Mainnet",
-    "rpcs": ["https://hk-mainnet.somanetwork.io", "https://sg-mainnet.somanetwork.io"],
+    "rpcs": [
+      "https://data-mainnet-v1.somanetwork.io/",
+      "https://id-mainnet.somanetwork.io",
+      "https://hk-mainnet.somanetwork.io",
+      "https://sg-mainnet.somanetwork.io"
+    ],
     "icon": "soma",
     "explorerUrl": "https://somascan.io",
     "balancesConfig": {
@@ -75100,6 +75174,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ZEB",
+            "coingeckoId": "zebradao",
+            "contractAddress": "0xf0ce1d83b5fc9c67f157d8b97fd09e2cf8af899e",
+            "decimals": 18
+          },
+          {
             "symbol": "ZOOMER",
             "coingeckoId": "zoomer",
             "contractAddress": "0xd1db4851bcf5b41442caa32025ce0afe6b8eabc2",
@@ -77412,7 +77492,7 @@
     "explorerUrl": "https://explorer.q.org",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "Q",
+        "symbol": "QGOV",
         "decimals": 18
       }
     }
