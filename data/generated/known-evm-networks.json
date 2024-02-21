@@ -60133,6 +60133,12 @@
             "decimals": 18
           },
           {
+            "symbol": "MLN",
+            "coingeckoId": "melon",
+            "contractAddress": "0xa9f37d84c856fda3812ad0519dad44fa0a3fe207",
+            "decimals": 18
+          },
+          {
             "symbol": "MEM",
             "coingeckoId": "memecoin",
             "contractAddress": "0x42dbbd5ae373fea2fc320f62d44c058522bb3758",
@@ -66350,6 +66356,12 @@
             "symbol": "GOVI",
             "coingeckoId": "govi",
             "contractAddress": "0xd63ef5e9c628c8a0e8984cdfb7444aee44b09044",
+            "decimals": 18
+          },
+          {
+            "symbol": "GRAI",
+            "coingeckoId": "grai",
+            "contractAddress": "0x5fc44e95eaa48f9eb84be17bd3ac66b6a82af709",
             "decimals": 18
           },
           {
@@ -73034,7 +73046,8 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTC",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "wrapped-bitcoin"
       }
     }
   },
@@ -74095,6 +74108,42 @@
             "coingeckoId": "wrapped-zetachain",
             "contractAddress": "0x5f0b1a82749cb4e2278ec87f8bf6b618dc71a8bf",
             "decimals": 18
+          },
+          {
+            "symbol": "BNB.BSC",
+            "coingeckoId": "zetachain-bridged-bnb-bsc-zetachain",
+            "contractAddress": "0x48f80608b672dc30dc7e3dbbd0343c5f02c738eb",
+            "decimals": 18
+          },
+          {
+            "symbol": "BTC.BTC",
+            "coingeckoId": "zetachain-bridged-btc-btc-zetachain",
+            "contractAddress": "0x13a0c5930c028511dc02665e7285134b6d11a5f4",
+            "decimals": 8
+          },
+          {
+            "symbol": "USDC.BSC",
+            "coingeckoId": "zetachain-bridged-usdc-bsc-zetachain",
+            "contractAddress": "0x05ba149a7bd6dc1f937fa9046a9e05c05f3b18b0",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDC.ETH",
+            "coingeckoId": "zetachain-bridged-usdc-eth-zetachain",
+            "contractAddress": "0x0cbe0df132a6c6b4a2974fa1b7fb953cf0cc798a",
+            "decimals": 6
+          },
+          {
+            "symbol": "USDT.BSC",
+            "coingeckoId": "zetachain-bridged-usdt-bsc-zetachain",
+            "contractAddress": "0x91d4f0d54090df2d81e834c3c8ce71c6c865e79f",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDT.ETH",
+            "coingeckoId": "zetachain-bridged-usdt-eth-zetachain",
+            "contractAddress": "0x7c8dda80bbbe1254a7aacf3219ebe1481c6e01d7",
+            "decimals": 6
           },
           {
             "symbol": "ETH.ETH",
@@ -75924,7 +75973,7 @@
   {
     "id": "8768",
     "name": "TMY Chain",
-    "rpcs": ["https://node1.tmyblockchain.org/rpc"],
+    "rpcs": [],
     "icon": "tmychain",
     "balancesConfig": {
       "evm-native": {
@@ -75972,8 +76021,7 @@
       "https://rpc-quartz.unique.network",
       "https://eu-rpc-quartz.unique.network",
       "https://asia-rpc-quartz.unique.network",
-      "https://us-rpc-quartz.unique.network",
-      "https://quartz.api.onfinality.io/public-ws"
+      "https://us-rpc-quartz.unique.network"
     ],
     "icon": "quartz",
     "explorerUrl": "https://uniquescan.io/quartz",
