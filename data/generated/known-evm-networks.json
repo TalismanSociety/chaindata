@@ -31867,7 +31867,14 @@
   {
     "id": "14",
     "name": "Flare Mainnet",
-    "rpcs": ["https://flare-api.flare.network/ext/C/rpc", "https://flare.public-rpc.com", "https://rpc.ftso.au/flare"],
+    "rpcs": [
+      "https://flare-api.flare.network/ext/C/rpc",
+      "https://flare.rpc.thirdweb.com",
+      "https://flare-bundler.etherspot.io",
+      "https://rpc.ankr.com/flare",
+      "https://rpc.ftso.au/flare",
+      "https://flare.solidifi.app/ext/C/rpc"
+    ],
     "icon": "flare",
     "explorerUrl": "https://flare-explorer.flare.network",
     "balancesConfig": {
@@ -31925,8 +31932,8 @@
   },
   {
     "id": "16",
-    "name": "Flare Testnet Coston",
-    "rpcs": ["https://coston-api.flare.network/ext/bc/C/rpc"],
+    "name": "Songbird Testnet Coston",
+    "rpcs": ["https://coston-api.flare.network/ext/C/rpc"],
     "icon": "coston",
     "explorerUrl": "https://coston-explorer.flare.network",
     "balancesConfig": {
@@ -31966,8 +31973,8 @@
     "name": "Songbird Canary-Network",
     "rpcs": [
       "https://songbird-api.flare.network/ext/C/rpc",
-      "https://sgb.ftso.com.au/ext/bc/C/rpc",
-      "https://rpc.ftso.au/songbird"
+      "https://rpc.ftso.au/songbird",
+      "https://songbird.solidifi.app/ext/C/rpc"
     ],
     "icon": "songbird",
     "explorerUrl": "https://songbird-explorer.flare.network",
@@ -32822,11 +32829,7 @@
   {
     "id": "44",
     "name": "Crab Network",
-    "rpcs": [
-      "https://crab-rpc.darwinia.network",
-      "https://crab-rpc.darwiniacommunitydao.xyz",
-      "https://darwiniacrab-rpc.dwellir.com"
-    ],
+    "rpcs": ["https://crab-rpc.darwinia.network", "https://crab-rpc.darwiniacommunitydao.xyz"],
     "explorerUrl": "https://crab.subscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -55799,7 +55802,12 @@
   {
     "id": "114",
     "name": "Flare Testnet Coston2",
-    "rpcs": ["https://coston2-api.flare.network/ext/bc/C/rpc"],
+    "rpcs": [
+      "https://coston2-api.flare.network/ext/C/rpc",
+      "https://flare-testnet-coston2.rpc.thirdweb.com",
+      "https://flaretestnet-bundler.etherspot.io",
+      "https://coston2.enosys.global/ext/C/rpc"
+    ],
     "icon": "coston2",
     "explorerUrl": "https://coston2-explorer.flare.network",
     "balancesConfig": {
@@ -70623,10 +70631,10 @@
   },
   {
     "id": "1875",
-    "name": "WhiteBIT Network",
-    "rpcs": ["https://rpc.whitebit.network"],
-    "icon": "whitebit",
-    "explorerUrl": "https://explorer.whitebit.network",
+    "name": "Whitechain",
+    "rpcs": ["https://rpc.whitechain.io"],
+    "icon": "whitechain",
+    "explorerUrl": "https://explorer.whitechain.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "WBT",
@@ -72461,10 +72469,10 @@
   },
   {
     "id": "2625",
-    "name": "WhiteBIT Network Testnet",
-    "rpcs": ["https://rpc-testnet.whitebit.network"],
-    "icon": "whitebit-testnet",
-    "explorerUrl": "https://explorer.whitebit.network/testnet",
+    "name": "Whitechain Testnet",
+    "rpcs": ["https://rpc-testnet.whitechain.io"],
+    "icon": "whitechain-testnet",
+    "explorerUrl": "https://testnet.whitechain.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "WBT",
@@ -77723,6 +77731,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "18889",
+    "name": "Titan (TKX) Testnet",
+    "rpcs": ["https://titan-testnet-json-rpc-1.tokenize-dev.com", "https://titan-testnet-json-rpc-2.tokenize-dev.com"],
+    "icon": "titan_tkx",
+    "explorerUrl": "https://titan-testnet-explorer-light.tokenize-dev.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TKX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "19011",
@@ -87093,6 +87115,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "200810",
+    "name": "Bitlayer Testnet",
+    "rpcs": ["https://testnet-rpc.bitlayer.org"],
+    "icon": "bitlayer",
+    "explorerUrl": "https://testnet-scan.bitlayer.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "201018",
