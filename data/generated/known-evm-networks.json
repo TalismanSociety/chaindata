@@ -21055,6 +21055,12 @@
             "decimals": 18
           },
           {
+            "symbol": "PAI",
+            "coingeckoId": "piuai",
+            "contractAddress": "0x20f031e2eca9e9247eb8c57bab5db9a1daa9c5d1",
+            "decimals": 9
+          },
+          {
             "symbol": "PIXE",
             "coingeckoId": "pixel-2",
             "contractAddress": "0x6a26edf3bbc9f154ca9175216ceb9812f5305e6e",
@@ -30261,6 +30267,12 @@
             "coingeckoId": "z-cubed",
             "contractAddress": "0x50eec6d765792dcfb0913c8403ef2a12e1b861a6",
             "decimals": 18
+          },
+          {
+            "symbol": "ZAI",
+            "coingeckoId": "zeal-ai",
+            "contractAddress": "0xc2aeedc081d4cb6797a681e9403a82211f97b308",
+            "decimals": 9
           },
           {
             "symbol": "ZCO",
@@ -67430,6 +67442,18 @@
     "isTestnet": true
   },
   {
+    "id": "529",
+    "name": "Firechain Mainnet",
+    "rpcs": [],
+    "icon": "firechain",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FIRE",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "530",
     "name": "F(x)Core Mainnet Network",
     "rpcs": ["https://fx-json-web3.functionx.io:8545"],
@@ -68056,6 +68080,18 @@
     }
   },
   {
+    "id": "814",
+    "name": "Firechain zkEVM",
+    "rpcs": [],
+    "icon": "firechain",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "818",
     "name": "BeOne Chain Mainnet",
     "rpcs": [],
@@ -68254,7 +68290,7 @@
   {
     "id": "917",
     "name": "Rinia Testnet",
-    "rpcs": [],
+    "rpcs": ["https://rinia-rpc1.thefirechain.com"],
     "icon": "rinia",
     "balancesConfig": {
       "evm-native": {
@@ -72495,7 +72531,7 @@
   {
     "id": "2941",
     "name": "Xenon Chain Testnet",
-    "rpcs": ["https://testnet-chain.xenonchain.com/", "https://testnet-dev.xenonchain.com/"],
+    "rpcs": [],
     "icon": "xenon",
     "explorerUrl": "https://testnet.xenonchain.com",
     "balancesConfig": {
@@ -72898,7 +72934,7 @@
   },
   {
     "id": "3885",
-    "name": "Firechain zkEVM Ghostrider",
+    "name": "Firechain zkEVM Testnet",
     "rpcs": [],
     "balancesConfig": {
       "evm-native": {
@@ -87965,8 +88001,8 @@
     "rpcs": [
       "https://rpc.hypra.network",
       "https://rpc.rethereum.org",
-      "https://rpc.rthcentral.org",
-      "https://hypra.rpc.thirdweb.com"
+      "https://hypra.rpc.thirdweb.com",
+      "https://rpc.rthcentral.org"
     ],
     "icon": "rethereum",
     "explorerUrl": "https://explorer.hypra.network",
