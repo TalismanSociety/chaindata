@@ -9859,12 +9859,6 @@
             "decimals": 18
           },
           {
-            "symbol": "ENO",
-            "coingeckoId": "eno",
-            "contractAddress": "0x1c3d163219bb74f430411b95d66b72056f366ec1",
-            "decimals": 18
-          },
-          {
             "symbol": "ENOCH",
             "coingeckoId": "enoch",
             "contractAddress": "0x4db57d585fa82ca32d25086ddc069d899f08d455",
@@ -20794,6 +20788,12 @@
             "symbol": "PEPE",
             "coingeckoId": "pepe",
             "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+            "decimals": 18
+          },
+          {
+            "symbol": "PEPE",
+            "coingeckoId": "pepe-2",
+            "contractAddress": "0x4dfae3690b93c47470b03036a17b23c1be05127c",
             "decimals": 18
           },
           {
@@ -43631,6 +43631,12 @@
             "symbol": "PTAS",
             "coingeckoId": "la-peseta-2",
             "contractAddress": "0x991bb6093fa735d27cd1444b2ad8fdd95876fed5",
+            "decimals": 18
+          },
+          {
+            "symbol": "LQR",
+            "coingeckoId": "laqira-protocol",
+            "contractAddress": "0xc4a1e7106d08b7ff947254b6d75cf2b877d55daf",
             "decimals": 18
           },
           {
@@ -71036,7 +71042,7 @@
   {
     "id": "1821",
     "name": "Ruby Smart Chain MAINNET",
-    "rpcs": ["https://mainnet-data.rubychain.io/", "https://mainnet.rubychain.io/"],
+    "rpcs": ["https://mainnet.rubychain.io/"],
     "icon": "ruby",
     "explorerUrl": "https://rubyscan.net",
     "balancesConfig": {
@@ -73338,6 +73344,19 @@
     "isTestnet": true
   },
   {
+    "id": "3776",
+    "name": "Astar zkEVM",
+    "rpcs": ["https://rpc.startale.com/astar-zkevm"],
+    "icon": "astar",
+    "explorerUrl": "https://astar-zkevm.explorer.startale.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "3797",
     "name": "AlveyChain Mainnet",
     "rpcs": ["https://elves-core1.alvey.io", "https://elves-core2.alvey.io", "https://elves-core3.alvey.io"],
@@ -74316,10 +74335,7 @@
   {
     "id": "5353",
     "name": "Tritanium Testnet",
-    "rpcs": [
-      "https://nodetestnet-station-one.tritanium.network/",
-      "https://nodetestnet-station-two.tritanium.network/"
-    ],
+    "rpcs": ["https://nodetestnet-station-two.tritanium.network/"],
     "icon": "tritanium",
     "explorerUrl": "https://testnet.tritanium.network",
     "balancesConfig": {
@@ -78924,6 +78940,22 @@
         "symbol": "ETH",
         "decimals": 18,
         "coingeckoId": "mode"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "ANKR",
+            "coingeckoId": "ankr",
+            "contractAddress": "0xdf474b7109b73b7d57926d43598d5934131136b2",
+            "decimals": 18
+          },
+          {
+            "symbol": "ankrETH",
+            "coingeckoId": "ankreth",
+            "contractAddress": "0x12d8ce035c5de3ce39b1fdd4c1d5a745eaba3b8c",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -80269,6 +80301,12 @@
             "symbol": "EMP",
             "coingeckoId": "empyreal",
             "contractAddress": "0x772598e9e62155d7fdfe65fdf01eb5a53a8465be",
+            "decimals": 18
+          },
+          {
+            "symbol": "ENO",
+            "coingeckoId": "eno",
+            "contractAddress": "0x2b41806cbf1ffb3d9e31a9ece6b738bf9d6f645f",
             "decimals": 18
           },
           {
@@ -87089,7 +87127,120 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "blast"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "",
+            "coingeckoId": "any-inu",
+            "contractAddress": "0x764933fbad8f5d04ccd088602096655c2ed9879f",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "bag",
+            "contractAddress": "0xb9dfcd4cf589bb8090569cb52fac1b88dbe4981f",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "blastcat",
+            "contractAddress": "0x9bd75c164daf830733ac2ea71a0258f95aac7c57",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "blastdex",
+            "contractAddress": "0x60701c37cd9fed322dde7c17dc1e356f09a35b88",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "blast-inu-2",
+            "contractAddress": "0x34050224f9ea1859790b7cbbbe2264f1204771a6",
+            "decimals": 9
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "blast-pepe",
+            "contractAddress": "0xb582dc28968c725d2868130752afa0c13ebf9b1a",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "cyberblast-token",
+            "contractAddress": "0xe070b87c4d88826d4cd1b85babe186fdb14cd321",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "finger-blast",
+            "contractAddress": "0x7217124c626f0b7077be91df939195c9a8184ecc",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "magic-internet-money",
+            "contractAddress": "0x76da31d7c9cbeae102aff34d3398bc450c8374c1",
+            "decimals": 18
+          },
+          {
+            "symbol": "MIA",
+            "coingeckoId": "mia",
+            "contractAddress": "0xa4c7aa67189ec5623121c6c94ec757dfed932d4b",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "orbit-protocol",
+            "contractAddress": "0x42e12d42b3d6c4a74a88a61063856756ea2db357",
+            "decimals": 18
+          },
+          {
+            "symbol": "PUMP",
+            "coingeckoId": "pump",
+            "contractAddress": "0x216a5a1135a9dab49fa9ad865e0f22fe22b5630a",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "sekai-glory",
+            "contractAddress": "0xd582879453337bd149ae53ec2092b0af5281d1d7",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "swapblast-finance-token",
+            "contractAddress": "0xd07379a755a8f11b57610154861d694b2a0f615a",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDB",
+            "coingeckoId": "usdb",
+            "contractAddress": "0x4300000000000000000000000000000000000003",
+            "decimals": 18
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "weth",
+            "contractAddress": "0x4300000000000000000000000000000000000004",
+            "decimals": 18
+          },
+          {
+            "symbol": "XDX",
+            "coingeckoId": "xdx",
+            "contractAddress": "0x9b0ae1c1fbe7006697356030d45ab3e17cbcf70f",
+            "decimals": 18
+          },
+          {
+            "symbol": "YES",
+            "coingeckoId": "yes-money",
+            "contractAddress": "0x20fe91f17ec9080e3cac2d688b4ecb48c5ac3a9c",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
