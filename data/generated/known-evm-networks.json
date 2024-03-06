@@ -27359,6 +27359,12 @@
             "decimals": 9
           },
           {
+            "symbol": "TrendGuru",
+            "coingeckoId": "trendguru",
+            "contractAddress": "0x559babc46a6ab52fd11b2790bce01f0a434a8b4e",
+            "decimals": 18
+          },
+          {
             "symbol": "TRENDX",
             "coingeckoId": "trend-x",
             "contractAddress": "0xc89d9aa9d9e54bb196319c6195aea1038d2bc936",
@@ -67992,7 +67998,7 @@
   {
     "id": "570",
     "name": "Rollux Mainnet",
-    "rpcs": ["https://rpc.rollux.com"],
+    "rpcs": ["https://rpc.rollux.com", "https://rollux.rpc.syscoin.org"],
     "explorerUrl": "https://explorer.rollux.com",
     "balancesConfig": {
       "evm-native": {
@@ -68131,6 +68137,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "646",
+    "name": "FlowEVM PreviewNet",
+    "rpcs": ["https://previewnet.evm.nodes.onflow.org"],
+    "icon": "flowevm",
+    "explorerUrl": "https://previewnet.flowdiver.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FLOW",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "647",
@@ -68379,6 +68399,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "747",
+    "name": "FlowEVM Mainnet",
+    "rpcs": [],
+    "icon": "flowevm",
+    "explorerUrl": "https://flowdiver.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FLOW",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "766",
@@ -76441,6 +76474,12 @@
             "symbol": "DOG",
             "coingeckoId": "the-doge-nft",
             "contractAddress": "0xafb89a09d82fbde58f18ac6437b3fc81724e4df6",
+            "decimals": 18
+          },
+          {
+            "symbol": "TN100x",
+            "coingeckoId": "tn100x",
+            "contractAddress": "0x5b5dee44552546ecea05edea01dcd7be7aa6144a",
             "decimals": 18
           },
           {
@@ -86349,7 +86388,7 @@
   {
     "id": "57000",
     "name": "Rollux Testnet",
-    "rpcs": ["https://rpc-tanenbaum.rollux.com"],
+    "rpcs": ["https://rpc-tanenbaum.rollux.com", "https://rollux.rpc.tanenbaum.io"],
     "explorerUrl": "https://rollux.tanenbaum.io",
     "balancesConfig": {
       "evm-native": {
@@ -89803,8 +89842,8 @@
     "isTestnet": true
   },
   {
-    "id": "65100001",
-    "name": "Autonity Piccadilly (Barada) Testnet",
+    "id": "65100002",
+    "name": "Autonity Piccadilly (Sumida) Testnet",
     "rpcs": ["https://rpc1.piccadilly.autonity.org/"],
     "icon": "autonity",
     "explorerUrl": "https://piccadilly.autonity.org",
