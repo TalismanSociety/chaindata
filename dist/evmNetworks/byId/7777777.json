@@ -1,7 +1,7 @@
 {
   "id": "7777777",
   "isTestnet": false,
-  "sortIndex": 715,
+  "sortIndex": 716,
   "name": "Zora",
   "themeColor": "#ceb3ea",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zora.webp",
@@ -20,7 +20,31 @@
       "moduleConfig": {
         "symbol": "ETH",
         "decimals": 18,
+        "coingeckoId": "weth",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "ENJOY",
+            "coingeckoId": "enjoy",
+            "contractAddress": "0xa6b280b42cb0b7c4a4f789ec6ccc3a7609a1bc39",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/enjoy.webp"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "zora-bridged-weth-zora-network",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
       }
     }
   ],
