@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
 import { Metadata, TypeRegistry } from '@polkadot/types'
+import { xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
 import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
@@ -132,7 +133,7 @@ const attemptToFetchChainExtras = async (
       existingCache.implName !== implName ||
       existingCache.specName !== specName ||
       existingCache.specVersion !== specVersion ||
-      JSON.stringify(existingCache.balancesConfig) !== JSON.stringify(chain.balancesConfig)
+      existingCache.cacheBalancesConfigHash !== xxhashAsHex(JSON.stringify(chain.balancesConfig))
 
     // no need to do anything else if this chain's extras are already cached
     if (!specChanged) return true
@@ -167,7 +168,7 @@ const attemptToFetchChainExtras = async (
       implName,
       specName,
       specVersion,
-      balancesConfig: chain.balancesConfig,
+      cacheBalancesConfigHash: xxhashAsHex(JSON.stringify(chain.balancesConfig)),
 
       // Note: These should always be cleared back to an empty `{}` when they need to be updated.
       // i.e. when an update is needed, don't persist the previous cached miniMetadatas/tokens under any circumstances.

@@ -52,7 +52,7 @@ export type ChainExtrasCache = {
   implName: string
   specName: string
   specVersion: string
-  balancesConfig: any
+  cacheBalancesConfigHash: string
 
   // These are separated into their own build files, `tokens/all.json` and `miniMetadatas/all.json`
   miniMetadatas: Record<string, MiniMetadata>

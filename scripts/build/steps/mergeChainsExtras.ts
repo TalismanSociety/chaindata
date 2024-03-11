@@ -8,7 +8,8 @@ export const mergeChainsExtras = async () => {
   const chainsExtrasCache: ChainExtrasCache[] = JSON.parse(await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8'))
 
   for (const chain of sharedData.chains) {
-    const { miniMetadatas, tokens, ...extras } = chainsExtrasCache.find((cc) => cc.id === chain.id) ?? {}
+    const { cacheBalancesConfigHash, miniMetadatas, tokens, ...extras } =
+      chainsExtrasCache.find((cc) => cc.id === chain.id) ?? {}
 
     if (extras) Object.assign(chain, extras)
     if (miniMetadatas) sharedData.miniMetadatas.push(...Object.values(miniMetadatas))
