@@ -132,7 +132,7 @@ const attemptToFetchChainExtras = async (
       existingCache.implName !== implName ||
       existingCache.specName !== specName ||
       existingCache.specVersion !== specVersion ||
-      existingCache.balancesConfig !== JSON.stringify(chain.balancesConfig)
+      JSON.stringify(existingCache.balancesConfig) !== JSON.stringify(chain.balancesConfig)
 
     // no need to do anything else if this chain's extras are already cached
     if (!specChanged) return true
@@ -167,7 +167,7 @@ const attemptToFetchChainExtras = async (
       implName,
       specName,
       specVersion,
-      balancesConfig: JSON.stringify(chain.balancesConfig),
+      balancesConfig: chain.balancesConfig,
 
       // Note: These should always be cleared back to an empty `{}` when they need to be updated.
       // i.e. when an update is needed, don't persist the previous cached miniMetadatas/tokens under any circumstances.
