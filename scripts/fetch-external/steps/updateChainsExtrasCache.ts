@@ -6,9 +6,17 @@ import { PromisePool } from '@supercharge/promise-pool'
 import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
-import { Chain, ChainId, ChaindataProvider } from '@talismn/chaindata-provider'
+import {
+  Chain,
+  ChainId,
+  ChaindataProvider,
+  EvmNetworkId,
+  IChaindataProvider,
+  TokenId,
+} from '@talismn/chaindata-provider'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
+import { from } from 'rxjs'
 
 import {
   FILE_CHAINDATA,
@@ -123,7 +131,8 @@ const attemptToFetchChainExtras = async (
       !isEqual(existingCache.chainType, chainType) ||
       existingCache.implName !== implName ||
       existingCache.specName !== specName ||
-      existingCache.specVersion !== specVersion
+      existingCache.specVersion !== specVersion ||
+      existingCache.balancesConfig !== JSON.stringify(chain.balancesConfig)
 
     // no need to do anything else if this chain's extras are already cached
     if (!specChanged) return true
@@ -158,6 +167,7 @@ const attemptToFetchChainExtras = async (
       implName,
       specName,
       specVersion,
+      balancesConfig: JSON.stringify(chain.balancesConfig),
 
       // Note: These should always be cleared back to an empty `{}` when they need to be updated.
       // i.e. when an update is needed, don't persist the previous cached miniMetadatas/tokens under any circumstances.
@@ -176,7 +186,7 @@ const attemptToFetchChainExtras = async (
     // implementation, it will throw an error. This is fine.
     const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(chain, rpcUrl)
     for (const mod of defaultBalanceModules
-      .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider }))
+      .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
       .filter((mod) => mod.type.startsWith('substrate-'))) {
       const moduleConfig = chain.balancesConfig?.[mod.type]
 
@@ -236,18 +246,52 @@ const attemptToFetchChainExtras = async (
 }
 
 const getHackedBalanceModuleDeps = (chain: ConfigChain, rpcUrl: string) => {
-  const stubChaindataProvider: ChaindataProvider = {
+  const stubChaindataProvider: IChaindataProvider = {
+    chainsObservable: from(Promise.resolve([chain as unknown as Chain])),
+    chains: () => Promise.resolve([chain as unknown as Chain]),
+
+    customChainsObservable: from(Promise.resolve([])),
+    customChains: () => Promise.resolve([]),
+
+    chainIdsObservable: from(Promise.resolve([chain.id])),
     chainIds: () => Promise.resolve([chain.id]),
-    chains: () => Promise.resolve({ [chain.id]: chain as unknown as Chain }),
-    getChain: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as Chain) : null),
 
+    chainsByIdObservable: from(Promise.resolve({ [chain.id]: chain as unknown as Chain })),
+    chainsById: () => Promise.resolve({ [chain.id]: chain as unknown as Chain }),
+
+    chainsByGenesisHashObservable: from(Promise.resolve({})),
+    chainsByGenesisHash: () => Promise.resolve({}),
+
+    chainById: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as Chain) : null),
+    chainByGenesisHash: (genesisHash: `0x${string}`) => Promise.resolve(null),
+
+    evmNetworksObservable: from(Promise.resolve([])),
+    evmNetworks: () => Promise.resolve([]),
+
+    customEvmNetworksObservable: from(Promise.resolve([])),
+    customEvmNetworks: () => Promise.resolve([]),
+
+    evmNetworkIdsObservable: from(Promise.resolve([])),
     evmNetworkIds: () => Promise.resolve([]),
-    evmNetworks: () => Promise.resolve({}),
-    getEvmNetwork: () => Promise.resolve(null),
 
+    evmNetworksByIdObservable: from(Promise.resolve({})),
+    evmNetworksById: () => Promise.resolve({}),
+
+    evmNetworkById: (evmNetworkId: EvmNetworkId) => Promise.resolve(null),
+
+    tokensObservable: from(Promise.resolve([])),
+    tokens: () => Promise.resolve([]),
+
+    customTokensObservable: from(Promise.resolve([])),
+    customTokens: () => Promise.resolve([]),
+
+    tokenIdsObservable: from(Promise.resolve([])),
     tokenIds: () => Promise.resolve([]),
-    tokens: () => Promise.resolve({}),
-    getToken: () => Promise.resolve(null),
+
+    tokensByIdObservable: from(Promise.resolve({})),
+    tokensById: () => Promise.resolve({}),
+
+    tokenById: (tokenId: TokenId) => Promise.resolve(null),
   }
   const stubChainConnector = {
     asProvider(chainId: ChainId): ProviderInterface {
