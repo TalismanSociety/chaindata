@@ -1166,6 +1166,12 @@
             "decimals": 18
           },
           {
+            "symbol": "AEVO",
+            "coingeckoId": "aevo-exchange",
+            "contractAddress": "0xb528edbef013aff855ac3c50b381f253af13b997",
+            "decimals": 18
+          },
+          {
             "symbol": "ADAO",
             "coingeckoId": "aficionadao",
             "contractAddress": "0x4ce9975a510d9b02ecca7541bc94c5530c1b1929",
@@ -4658,12 +4664,6 @@
             "decimals": 9
           },
           {
-            "symbol": "BLUI",
-            "coingeckoId": "blui",
-            "contractAddress": "0xe0c99ed6950ccb38347154abd06e10eba5a1f89a",
-            "decimals": 18
-          },
-          {
             "symbol": "BLUR",
             "coingeckoId": "blur",
             "contractAddress": "0x5283d291dbcf85356a21ba090e6db59121208b44",
@@ -5483,6 +5483,12 @@
             "symbol": "C21",
             "coingeckoId": "carbon21",
             "contractAddress": "0x2c642cd3bed9b4e4eeec493611779f13efb502f1",
+            "decimals": 18
+          },
+          {
+            "symbol": "CSIX",
+            "coingeckoId": "carbon-browser",
+            "contractAddress": "0x345887cdb19e12833ed376bbf8b8b38269f5f5c8",
             "decimals": 18
           },
           {
@@ -9394,12 +9400,6 @@
             "symbol": "DUCKS",
             "coingeckoId": "ducks",
             "contractAddress": "0x8666cb197af5103f7a3a0295b50efea47f3df78b",
-            "decimals": 18
-          },
-          {
-            "symbol": "DUEL",
-            "coingeckoId": "duel",
-            "contractAddress": "0x0e79de3a7ee59abf6086c2138231b1f8ec8c638e",
             "decimals": 18
           },
           {
@@ -18265,12 +18265,6 @@
             "decimals": 18
           },
           {
-            "symbol": "MXRBOT",
-            "coingeckoId": "mixerbot",
-            "contractAddress": "0x6995923faa52f1d0cd3ed7870eb273ebb1b0970b",
-            "decimals": 18
-          },
-          {
             "symbol": "MIX",
             "coingeckoId": "mixmarvel",
             "contractAddress": "0x5d285f735998f36631f678ff41fb56a10a4d0429",
@@ -22705,12 +22699,6 @@
             "decimals": 18
           },
           {
-            "symbol": "RZR",
-            "coingeckoId": "raiser-token",
-            "contractAddress": "0xa3a80559bbc1989654e6b8385f5001fa1333332f",
-            "decimals": 18
-          },
-          {
             "symbol": "yvRAI",
             "coingeckoId": "rai-yvault",
             "contractAddress": "0x873fb544277fd7b977b196a826459a69e27ea4ea",
@@ -23020,6 +23008,12 @@
             "symbol": "$REKT",
             "coingeckoId": "rekt-3",
             "contractAddress": "0x4f8b986ecffe7bed5dbeb2b49310fb00ca85a539",
+            "decimals": 18
+          },
+          {
+            "symbol": "$REKT",
+            "coingeckoId": "rektcoin",
+            "contractAddress": "0xec33d722d014c02cf4efb46d68098e98e027c364",
             "decimals": 18
           },
           {
@@ -39610,12 +39604,6 @@
             "decimals": 18
           },
           {
-            "symbol": "DUEL",
-            "coingeckoId": "duel",
-            "contractAddress": "0x60a8b010e2d7e536f576d15cfb8ffae99227df61",
-            "decimals": 18
-          },
-          {
             "symbol": "DUET",
             "coingeckoId": "duet-protocol",
             "contractAddress": "0x95ee03e1e2c5c4877f9a298f1c0d6c98698fab7b",
@@ -49210,6 +49198,12 @@
             "decimals": 18
           },
           {
+            "symbol": "$REKT",
+            "coingeckoId": "rektcoin",
+            "contractAddress": "0xec33d722d014c02cf4efb46d68098e98e027c364",
+            "decimals": 18
+          },
+          {
             "symbol": "RELAY",
             "coingeckoId": "relay-token",
             "contractAddress": "0xe338d4250a4d959f88ff8789eaae8c32700bd175",
@@ -54749,6 +54743,7 @@
       "https://geth-at.etc-network.info",
       "https://geth-de.etc-network.info",
       "https://etc.etcdesktop.com",
+      "https://rpc.etcinscribe.com",
       "https://etc.mytokenpocket.vip"
     ],
     "icon": "ethereumclassic",
@@ -54801,7 +54796,7 @@
   {
     "id": "66",
     "name": "OKXChain Mainnet",
-    "rpcs": ["https://exchainrpc.okex.org"],
+    "rpcs": ["https://exchainrpc.okex.org", "https://okc-mainnet.gateway.pokt.network/v1/lb/6275309bea1b320039c893ff"],
     "explorerUrl": "https://www.oklink.com/en/okc",
     "balancesConfig": {
       "evm-native": {
@@ -73800,7 +73795,8 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "weth"
       }
     }
   },
