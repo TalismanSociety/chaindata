@@ -73562,6 +73562,20 @@
     "isTestnet": true
   },
   {
+    "id": "2340",
+    "name": "Atleta Testnet",
+    "rpcs": ["https://atleta-testnet-rpc.quark.blue:9944"],
+    "icon": "atleta",
+    "explorerUrl": "http://185.234.69.18/?rpc=wss%3A%2F%2Fatleta-testnet-rpc.quark.blue%3A9944#/explorer",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ATLA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "2358",
     "name": "Kroma Sepolia",
     "rpcs": ["https://api.sepolia.kroma.network"],
@@ -76205,6 +76219,23 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "7778",
+    "name": "Orenium Mainnet Protocol",
+    "rpcs": [
+      "https://validator-mainnet.orenium.org",
+      "https://rpc-oracle-mainnet.orenium.org",
+      "https://portalmainnet.orenium.org"
+    ],
+    "icon": "ore",
+    "explorerUrl": "https://oreniumscan.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ORE",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "7860",
@@ -88684,9 +88715,21 @@
             "decimals": 18
           },
           {
+            "symbol": "USD+",
+            "coingeckoId": "usd",
+            "contractAddress": "0x4fee793d435c6d2c10c135983bb9d6d4fc7b9bbd",
+            "decimals": 18
+          },
+          {
             "symbol": "USDB",
             "coingeckoId": "usdb",
             "contractAddress": "0x4300000000000000000000000000000000000003",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDC+",
+            "coingeckoId": "usdc-plus-overnight",
+            "contractAddress": "0x870a8f46b62b8bdeda4c02530c1750cddf2ed32e",
             "decimals": 18
           },
           {
@@ -91650,7 +91693,7 @@
   {
     "id": "666666666",
     "name": "Degen Chain",
-    "rpcs": [],
+    "rpcs": ["https://rpc.degen.tips"],
     "icon": "degen",
     "balancesConfig": {
       "evm-native": {
