@@ -3849,7 +3849,7 @@
       }
     ],
     "account": "*25519",
-    "subscanUrl": null,
+    "subscanUrl": "https://matrix.subscan.io/",
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
     "isUnknownFeeToken": false,
@@ -3868,7 +3868,15 @@
     "relay": {
       "id": "enjin-relay"
     },
-    "balancesConfig": [],
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "enjincoin",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/enjin-matrixchain.svg"
+        }
+      }
+    ],
     "balancesMetadata": []
   },
   {
