@@ -23,7 +23,7 @@
     "update-rpcs": "pnpm run update-pjs && pnpm run import-pjs-config",
     "typecheck": "tsc --noEmit",
     "fetch-external": "tsx scripts/fetch-external.ts",
-    "build": "tsx scripts/build.ts",
+    "build-dist": "pnpm run validate && tsx scripts/build.ts",
     "clean": "rm -rf dist"
   },
   "dependencies": {
