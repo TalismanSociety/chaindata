@@ -8,7 +8,6 @@ import {
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   NOVASAMA_METADATA_PORTAL_CONFIG,
   PRETTIER_CONFIG,
-  PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import { MetadataPortalUrls } from '../../shared/types'
 
@@ -18,7 +17,7 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   'aleph-node': 'aleph-zero',
   altair: 'altair',
   amplitude: 'amplitude',
-  appchain: 'appchain',
+  appchain: 'myriad',
   astar: 'astar',
   bajun: 'bajun',
   basilisk: 'basilisk',
@@ -127,7 +126,7 @@ export const fetchNovasamaMetadataPortalUrls = async () => {
   })
 
   const validPortalUrls = (
-    await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
+    await PromisePool.withConcurrency(4)
       .for(portalUrls)
       .process(async (chain) => {
         const [specResp, metadataResp] = await Promise.all([
