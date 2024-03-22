@@ -34,7 +34,16 @@ import { sendWithTimeout } from '../../shared/util'
 export const updateChainsExtrasCache = async () => {
   const mainnets = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
   const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
-  const chainsExtrasCache = JSON.parse(await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8')) as ChainExtrasCache[]
+  const chainsExtrasCache = JSON.parse(
+    await (async () => {
+      try {
+        return await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8')
+      } catch (error) {
+        console.error('Failed to read chains extras cache', error)
+        return '[]'
+      }
+    })(),
+  ) as ChainExtrasCache[]
 
   const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
   const chainIdExists = Object.fromEntries(chains.map((chain) => [chain.id, true] as const))

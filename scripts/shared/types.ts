@@ -59,6 +59,19 @@ export type ChainExtrasCache = {
   tokens: Record<string, Token>
 }
 
+export type MetadataPortalUrls = Array<{
+  id: string
+  isTestnet: boolean
+  meta: {
+    name: string
+    title: string
+  }
+  urls: {
+    chainspecQrUrl: string
+    latestMetadataQrUrl: string
+  }
+}>
+
 export type EvmNetworkRpcStatus = 'unknown' | 'valid' | 'invalid'
 
 export type EvmNetworkRpcCache = {

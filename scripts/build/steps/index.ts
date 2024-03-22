@@ -1,6 +1,7 @@
 import { cleanupOutputDir } from '../../shared/util'
 import { addChains } from './addChains'
 import { addEvmNetworks } from './addEvmNetworks'
+import { addNovasamaMetadataPortalUrls } from './addNovasamaMetadataPortalUrls'
 import { addThemeColors } from './addThemeColors'
 import { applyNativeTokenOverrides } from './applyNativeTokenOverrides'
 import { fixChainEvmNetworkRelations } from './fixChainsEvmNetworkRelations'
@@ -17,6 +18,7 @@ export const buildSteps: Array<() => Promise<void>> = [
 
   addChains,
   mergeChainsExtras,
+  addNovasamaMetadataPortalUrls,
 
   addEvmNetworks,
   removeInvalidErc20Tokens,
