@@ -7,15 +7,14 @@ import { sharedData } from './_sharedData'
 export const addNovasamaMetadataPortalUrls = async () => {
   const portalUrls: MetadataPortalUrls = JSON.parse(await readFile(FILE_NOVASAMA_METADATA_PORTAL_URLS, 'utf-8'))
 
-  // prepare to remove existing novasama urls
-  const chainsToDeleteMetadataUrls = new Map(
-    sharedData.chains.flatMap((chain) => {
-      if (!chain.chainspecQrUrl?.startsWith?.('https://metadata.novasama.io')) return []
-      if (!chain.latestMetadataQrUrl?.startsWith?.('https://metadata.novasama.io')) return []
+  // remove existing novasama urls
+  sharedData.chains.forEach((chain) => {
+    if (!chain.chainspecQrUrl?.startsWith?.('https://metadata.novasama.io')) return
+    if (!chain.latestMetadataQrUrl?.startsWith?.('https://metadata.novasama.io')) return
 
-      return [[chain.id, chain]]
-    }),
-  )
+    chain.chainspecQrUrl = null
+    chain.latestMetadataQrUrl = null
+  })
 
   // add latest novasama urls
   for (const portalUrl of portalUrls) {
@@ -36,13 +35,5 @@ export const addNovasamaMetadataPortalUrls = async () => {
 
     chain.chainspecQrUrl = portalUrl.urls.chainspecQrUrl
     chain.latestMetadataQrUrl = portalUrl.urls.latestMetadataQrUrl
-
-    chainsToDeleteMetadataUrls.delete(chain.id)
-  }
-
-  // remove invalid existing novasama urls
-  for (const chain of chainsToDeleteMetadataUrls.values()) {
-    delete (chain as any).chainspecQrUrl
-    delete (chain as any).latestMetadataQrUrl
   }
 }
