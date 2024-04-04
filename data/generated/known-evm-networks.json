@@ -11288,6 +11288,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FLOVI",
+            "coingeckoId": "flovi-inu",
+            "contractAddress": "0x725024200cd4e1f259fcf2b7153d37fb477e139c",
+            "decimals": 9
+          },
+          {
             "symbol": "FLC",
             "coingeckoId": "flowchaincoin",
             "contractAddress": "0x32c4adb9cf57f972bc375129de91c897b4f364f1",
@@ -64298,6 +64304,33 @@
     "isTestnet": true
   },
   {
+    "id": "158",
+    "name": "Roburna Mainnet",
+    "rpcs": ["https://dataseed.roburna.com"],
+    "icon": "roburna",
+    "explorerUrl": "https://rbascan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "RBA",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "159",
+    "name": "Roburna Testnet",
+    "rpcs": ["https://preseed-testnet-1.roburna.com"],
+    "icon": "roburna",
+    "explorerUrl": "https://testnet.rbascan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "RBAT",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "160",
     "name": "Armonia Eva Chain Mainnet",
     "rpcs": ["https://evascan.io/api/eth-rpc/"],
@@ -69868,7 +69901,7 @@
   {
     "id": "917",
     "name": "Rinia Testnet",
-    "rpcs": ["https://rinia-rpc1.thefirechain.com"],
+    "rpcs": [],
     "icon": "rinia",
     "explorerUrl": "https://rinia.firescan.io",
     "balancesConfig": {
@@ -70083,8 +70116,8 @@
   {
     "id": "1001",
     "name": "Klaytn Testnet Baobab",
-    "rpcs": ["https://api.baobab.klaytn.net:8651", "https://klaytn-baobab.drpc.org"],
-    "explorerUrl": "https://scope.klaytn.com",
+    "rpcs": ["https://public-en-baobab.klaytn.net", "https://api.baobab.klaytn.net:8651"],
+    "explorerUrl": "https://baobab.klaytnscope.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "KLAY",
@@ -73944,6 +73977,20 @@
     }
   },
   {
+    "id": "2331",
+    "name": "RSS3 VSL Sepolia Testnet",
+    "rpcs": ["https://rpc.testnet.rss3.io"],
+    "icon": "rss3-testnet",
+    "explorerUrl": "https://scan.testnet.rss3.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "RSS3",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "2332",
     "name": "SOMA Network Mainnet",
     "rpcs": [],
@@ -74075,20 +74122,6 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "U2U",
-        "decimals": 18
-      }
-    },
-    "isTestnet": true
-  },
-  {
-    "id": "2511",
-    "name": "Karak Testnet",
-    "rpcs": ["https://goerli.node1.karak.network"],
-    "icon": "karak",
-    "explorerUrl": "https://goerli.scan.karak.network",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "KRK",
         "decimals": 18
       }
     },
@@ -74738,7 +74771,7 @@
   {
     "id": "3885",
     "name": "Firechain zkEVM Ghostrider",
-    "rpcs": [],
+    "rpcs": ["https://rpc-zkevm-ghostrider.thefirechain.com"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -76835,6 +76868,19 @@
     "isTestnet": true
   },
   {
+    "id": "8054",
+    "name": "Karak Sepolia",
+    "rpcs": ["https://rpc.sepolia.karak.network"],
+    "icon": "karak",
+    "explorerUrl": "https://explorer.sepolia.karak.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "8080",
     "name": "Shardeum Liberty 1.X",
     "rpcs": [],
@@ -76960,7 +77006,7 @@
   {
     "id": "8217",
     "name": "Klaytn Mainnet Cypress",
-    "rpcs": ["https://public-node-api.klaytnapi.com/v1/cypress"],
+    "rpcs": ["https://public-en-cypress.klaytn.net"],
     "explorerUrl": "https://scope.klaytn.com",
     "balancesConfig": {
       "evm-native": {
@@ -79356,6 +79402,33 @@
     }
   },
   {
+    "id": "9007",
+    "name": "Shido Testnet Block",
+    "rpcs": ["https://rpc-testnet-nodes.shidoscan.com"],
+    "icon": "shidoChain",
+    "explorerUrl": "https://testnet.shidoscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SHIDO",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "9008",
+    "name": "Shido Mainnet Block",
+    "rpcs": ["https://rpc-nodes.shidoscan.com", "https://rpc-delta-nodes.shidoscan.com"],
+    "icon": "shidoChain",
+    "explorerUrl": "https://shidoscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SHIDO",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "9024",
     "name": "Nexa Testnet Block",
     "rpcs": ["https://rpc-testnet-nodes.nexablockscan.io"],
@@ -80160,6 +80233,19 @@
     "isTestnet": true
   },
   {
+    "id": "12553",
+    "name": "RSS3 VSL Mainnet",
+    "rpcs": ["https://rpc.rss3.io"],
+    "icon": "rss3",
+    "explorerUrl": "https://scan.rss3.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "RSS3",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "12715",
     "name": "Rikeza Network Testnet",
     "rpcs": [],
@@ -80311,6 +80397,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ECG",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "14324",
+    "name": "EVOLVE Testnet",
+    "rpcs": ["https://testnet-rpc.evolveblockchain.io"],
+    "icon": "evolveIcon",
+    "explorerUrl": "https://testnet.evolveblockchain.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "EVO",
         "decimals": 18
       }
     },
@@ -80656,10 +80756,10 @@
   },
   {
     "id": "18686",
-    "name": "MXC zkEVM Mainnet",
+    "name": "MXC zkEVM Moonchain",
     "rpcs": ["https://rpc.mxc.com"],
     "icon": "mxczkevm",
-    "explorerUrl": "https://explorer.mxc.com",
+    "explorerUrl": "https://explorer.moonchain.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "MXC",
@@ -90262,6 +90362,18 @@
     "isTestnet": true
   },
   {
+    "id": "83872",
+    "name": "ZEDXION",
+    "rpcs": ["https://mainnet-rpc.zedscan.net"],
+    "explorerUrl": "http://zedscan.net",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "zedx",
+        "decimals": 9
+      }
+    }
+  },
+  {
     "id": "84531",
     "name": "Base Goerli Testnet",
     "rpcs": [
@@ -90315,6 +90427,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "tZBC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "88817",
+    "name": "Unit Zero Testnet",
+    "rpcs": ["https://rpc-testnet.unit0.dev"],
+    "explorerUrl": "https://explorer-testnet.unit0.dev",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "UNIT0",
         "decimals": 18
       }
     },
@@ -92496,6 +92621,20 @@
     "isTestnet": true
   },
   {
+    "id": "5167004",
+    "name": "Moonchain Geneva Testnet",
+    "rpcs": ["https://geneva-rpc.moonchain.com"],
+    "icon": "mxc",
+    "explorerUrl": "https://geneva-explorer.moonchain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MXC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "5201420",
     "name": "Electroneum Testnet",
     "rpcs": [],
@@ -93047,6 +93186,18 @@
     }
   },
   {
+    "id": "94204209",
+    "name": "Polygon Blackberry",
+    "rpcs": ["https://rpc.polygon-blackberry.gelato.digital"],
+    "explorerUrl": "https://polygon-blackberry.gelatoscout.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "99415706",
     "name": "Joys Digital TestNet",
     "rpcs": [],
@@ -93059,11 +93210,23 @@
     "isTestnet": true
   },
   {
+    "id": "123420111",
+    "name": "OP Celestia Raspberry",
+    "rpcs": ["https://rpc.opcelestia-raspberry.gelato.digital"],
+    "explorerUrl": "https://opcelestia-raspberry.gelatoscout.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "161221135",
     "name": "Plume Testnet",
-    "rpcs": ["https://plume-testnet.rpc.caldera.xyz/http"],
+    "rpcs": ["https://testnet-rpc.plumenetwork.xyz/http"],
     "icon": "plume",
-    "explorerUrl": "https://plume-testnet.explorer.caldera.xyz",
+    "explorerUrl": "https://testnet-explorer.plumenetwork.xyz",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -94552,6 +94715,18 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "GS-ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "88153591557",
+    "name": "Arbitrum Blueberry",
+    "rpcs": ["https://rpc.arb-blueberry.gelato.digital"],
+    "explorerUrl": "https://arb-blueberry.gelatoscout.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "CGT",
         "decimals": 18
       }
     }
