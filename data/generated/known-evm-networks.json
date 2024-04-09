@@ -5871,6 +5871,12 @@
             "decimals": 18
           },
           {
+            "symbol": "CMINER",
+            "coingeckoId": "chainminer",
+            "contractAddress": "0xda63feff6e6d75cd7a862cd56c625045dcf26e88",
+            "decimals": 9
+          },
+          {
             "symbol": "PORTX",
             "coingeckoId": "chainport",
             "contractAddress": "0x104f3152d8ebfc3f679392977356962ff36566ac",
@@ -8717,6 +8723,12 @@
             "symbol": "DGMV",
             "coingeckoId": "digimetaverse",
             "contractAddress": "0x8eedefe828a0f16c8fc80e46a87bc0f1de2d960c",
+            "decimals": 18
+          },
+          {
+            "symbol": "DAR",
+            "coingeckoId": "digital-asset-right-token",
+            "contractAddress": "0x1db11e86fa9b9a87813a4dd3f747eef12ed55a55",
             "decimals": 18
           },
           {
@@ -17820,6 +17832,12 @@
             "coingeckoId": "metal-tools",
             "contractAddress": "0x7ae075546e8042dc263fa0eb6519ce0a04eabb93",
             "decimals": 9
+          },
+          {
+            "symbol": "MEMAGX",
+            "coingeckoId": "meta-masters-guild-games",
+            "contractAddress": "0x857de36f92330e1b9a21e8745c692f2ce13866cb",
+            "decimals": 18
           },
           {
             "symbol": "metameme",
@@ -37656,6 +37674,12 @@
             "coingeckoId": "cherry-network",
             "contractAddress": "0x8f36cc333f55b09bb71091409a3d7ade399e3b1c",
             "decimals": 18
+          },
+          {
+            "symbol": "CHESS",
+            "coingeckoId": "chesscoin-0-32",
+            "contractAddress": "0x9ca5dfa3b0b187d7f53f4ef83ca435a2ec2e4070",
+            "decimals": 8
           },
           {
             "symbol": "CHEX",
@@ -72164,7 +72188,7 @@
   {
     "id": "1442",
     "name": "Polygon zkEVM Testnet",
-    "rpcs": ["https://rpc.public.zkevm-test.net", "https://polygon-zkevm-testnet.drpc.org"],
+    "rpcs": ["https://rpc.public.zkevm-test.net"],
     "explorerUrl": "https://explorer.public.zkevm-test.net",
     "balancesConfig": {
       "evm-native": {
@@ -76414,6 +76438,19 @@
     "isTestnet": true
   },
   {
+    "id": "5845",
+    "name": "Tangle",
+    "rpcs": ["https://rpc.tangle.tools"],
+    "icon": "tangle",
+    "explorerUrl": "https://explorer.tangle.tools",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TNT",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "5851",
     "name": "Ontology Testnet",
     "rpcs": [
@@ -78700,6 +78737,12 @@
             "decimals": 18
           },
           {
+            "symbol": "MAW",
+            "coingeckoId": "mawcat",
+            "contractAddress": "0x435f49a87df832a582a1657421f083a0529edf7c",
+            "decimals": 9
+          },
+          {
             "symbol": "MEDIA",
             "coingeckoId": "media-network",
             "contractAddress": "0x6e51b3a19f114013e5dc09d0477a536c7e4e0207",
@@ -78817,6 +78860,12 @@
             "symbol": "NFI",
             "coingeckoId": "netherfi",
             "contractAddress": "0x60359a0dd148b18d5cf1ddf8aa1916221ed0cbcd",
+            "decimals": 18
+          },
+          {
+            "symbol": "NOJEET",
+            "coingeckoId": "nojeet",
+            "contractAddress": "0xa68482c74367ff7e7d8aed23553e4c7c2af231f1",
             "decimals": 18
           },
           {
@@ -89846,7 +89895,7 @@
   },
   {
     "id": "59140",
-    "name": "Linea Testnet",
+    "name": "Linea Goerli",
     "rpcs": ["https://rpc.goerli.linea.build"],
     "icon": "linea",
     "explorerUrl": "https://goerli.lineascan.build",
@@ -89857,6 +89906,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "59141",
+    "name": "Linea Sepolia",
+    "rpcs": ["https://rpc.sepolia.linea.build"],
+    "icon": "linea",
+    "explorerUrl": "https://sepolia.lineascan.build",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "59144",
@@ -90710,7 +90772,7 @@
   {
     "id": "80002",
     "name": "Amoy",
-    "rpcs": ["https://rpc-amoy.polygon.technology"],
+    "rpcs": ["https://polygon-amoy-bor-rpc.publicnode.com", "https://https://rpc-amoy.polygon.technology"],
     "icon": "polygon",
     "explorerUrl": "https://www.oklink.com/amoy",
     "balancesConfig": {
