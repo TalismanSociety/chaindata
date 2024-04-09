@@ -1,0 +1,92 @@
+{
+  "id": "zero",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 645,
+  "genesisHash": "0x2991d4125ac465d64c4c0b915fedd7168b5961b7676480636e3747f1ad64cfb9",
+  "prefix": 25,
+  "name": "Subzero",
+  "themeColor": "#f6921e",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/zero.svg",
+  "chainName": "Subzero",
+  "chainType": "Live",
+  "implName": "live",
+  "specName": "subzero",
+  "specVersion": "75",
+  "nativeToken": {
+    "id": "zero-substrate-native"
+  },
+  "tokens": [
+    {
+      "id": "zero-substrate-native"
+    },
+    {
+      "id": "zero-substrate-tokens-dot"
+    },
+    {
+      "id": "zero-substrate-tokens-game"
+    },
+    {
+      "id": "zero-substrate-tokens-play"
+    },
+    {
+      "id": "zero-substrate-tokens-zero"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": null,
+  "chainspecQrUrl": null,
+  "latestMetadataQrUrl": null,
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://rpc-1.kusama.node.zero.io"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2236,
+  "relay": {
+    "id": "kusama"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"DOT\"}",
+            "coingeckoId": "polkadot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
+          },
+          {
+            "symbol": "GAME",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"GAME\"}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "PLAY",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"PLAY\"}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "ZERO",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"ZERO\"}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

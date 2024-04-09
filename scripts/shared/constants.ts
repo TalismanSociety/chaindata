@@ -8,7 +8,7 @@ export const GITHUB_REPO = 'chaindata'
 export const GITHUB_BRANCH = 'main'
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
-export const DIR_OUTPUT = 'dist'
+export const DIR_OUTPUT = 'dist/v2'
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'

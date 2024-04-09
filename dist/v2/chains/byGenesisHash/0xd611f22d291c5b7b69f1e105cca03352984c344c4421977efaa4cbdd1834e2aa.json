@@ -1,0 +1,65 @@
+{
+  "id": "mangata",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 416,
+  "genesisHash": "0xd611f22d291c5b7b69f1e105cca03352984c344c4421977efaa4cbdd1834e2aa",
+  "prefix": 42,
+  "name": "MangataX",
+  "themeColor": "#7aead7",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/mangata.svg",
+  "chainName": "Mangata Kusama Mainnet",
+  "chainType": "Live",
+  "implName": "mangata-parachain",
+  "specName": "mangata-parachain",
+  "specVersion": "3200",
+  "nativeToken": {
+    "id": "mangata-substrate-tokens-mgx"
+  },
+  "tokens": [
+    {
+      "id": "mangata-substrate-native"
+    },
+    {
+      "id": "mangata-substrate-tokens-mgx"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://mangatax.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-mangata-parachain_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-mangata-parachain_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": "mangata-substrate-tokens-mgx",
+  "rpcs": [
+    {
+      "url": "wss://kusama-archive.mangata.online"
+    },
+    {
+      "url": "wss://kusama-rpc.mangata.online"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2110,
+  "relay": {
+    "id": "kusama"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "MGX",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": 0,
+            "coingeckoId": "mangata-x",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mangata-x.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}
