@@ -1,0 +1,112 @@
+{
+  "id": "7000",
+  "isTestnet": false,
+  "sortIndex": 770,
+  "name": "ZetaChain Mainnet",
+  "themeColor": "#005740",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zetachain.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.mainnet.zetachain.com",
+  "rpcs": [
+    {
+      "url": "https://zetachain-evm.blockpi.network/v1/rpc/public"
+    },
+    {
+      "url": "https://zetachain-mainnet-archive.allthatnode.com:8545"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "ZETA",
+        "decimals": 18,
+        "coingeckoId": "zetachain",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WZETA",
+            "coingeckoId": "wrapped-zetachain",
+            "contractAddress": "0x5f0b1a82749cb4e2278ec87f8bf6b618dc71a8bf",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-zetachain.webp"
+          },
+          {
+            "symbol": "BNB.BSC",
+            "coingeckoId": "zetachain-bridged-bnb-bsc-zetachain",
+            "contractAddress": "0x48f80608b672dc30dc7e3dbbd0343c5f02c738eb",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-bridged-bnb-bsc-zetachain.webp"
+          },
+          {
+            "symbol": "BTC.BTC",
+            "coingeckoId": "zetachain-bridged-btc-btc-zetachain",
+            "contractAddress": "0x13a0c5930c028511dc02665e7285134b6d11a5f4",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-bridged-btc-btc-zetachain.webp"
+          },
+          {
+            "symbol": "USDC.BSC",
+            "coingeckoId": "zetachain-bridged-usdc-bsc-zetachain",
+            "contractAddress": "0x05ba149a7bd6dc1f937fa9046a9e05c05f3b18b0",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-bridged-usdc-bsc-zetachain.webp"
+          },
+          {
+            "symbol": "USDC.ETH",
+            "coingeckoId": "zetachain-bridged-usdc-eth-zetachain",
+            "contractAddress": "0x0cbe0df132a6c6b4a2974fa1b7fb953cf0cc798a",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-bridged-usdc-eth-zetachain.webp"
+          },
+          {
+            "symbol": "USDT.BSC",
+            "coingeckoId": "zetachain-bridged-usdt-bsc-zetachain",
+            "contractAddress": "0x91d4f0d54090df2d81e834c3c8ce71c6c865e79f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-bridged-usdt-bsc-zetachain.webp"
+          },
+          {
+            "symbol": "USDT.ETH",
+            "coingeckoId": "zetachain-bridged-usdt-eth-zetachain",
+            "contractAddress": "0x7c8dda80bbbe1254a7aacf3219ebe1481c6e01d7",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-bridged-usdt-eth-zetachain.webp"
+          },
+          {
+            "symbol": "ETH.ETH",
+            "coingeckoId": "zetachain-eth-eth",
+            "contractAddress": "0xd97b1de3619ed2c6beb3860147e30ca8a7dc9891",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetachain-eth-eth.webp"
+          },
+          {
+            "symbol": "stZETA",
+            "coingeckoId": "zetaearn-staked-zeta",
+            "contractAddress": "0x45334a5b0a01ce6c260f2b570ec941c680ea62c0",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zetaearn-staked-zeta.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}

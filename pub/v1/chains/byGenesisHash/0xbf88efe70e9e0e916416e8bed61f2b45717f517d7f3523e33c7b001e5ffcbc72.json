@@ -1,0 +1,212 @@
+{
+  "id": "interlay",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 344,
+  "genesisHash": "0xbf88efe70e9e0e916416e8bed61f2b45717f517d7f3523e33c7b001e5ffcbc72",
+  "prefix": 2032,
+  "name": "Interlay",
+  "themeColor": "#948d9d",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/interlay.svg",
+  "chainName": "Interlay",
+  "chainType": "Live",
+  "implName": "interlay-parachain",
+  "specName": "interlay-parachain",
+  "specVersion": "1025003",
+  "nativeToken": {
+    "id": "interlay-substrate-tokens-intr"
+  },
+  "tokens": [
+    {
+      "id": "interlay-substrate-native"
+    },
+    {
+      "id": "interlay-substrate-tokens-dot"
+    },
+    {
+      "id": "interlay-substrate-tokens-ibtc"
+    },
+    {
+      "id": "interlay-substrate-tokens-intr"
+    },
+    {
+      "id": "interlay-substrate-tokens-kbtc"
+    },
+    {
+      "id": "interlay-substrate-tokens-kint"
+    },
+    {
+      "id": "interlay-substrate-tokens-ksm"
+    },
+    {
+      "id": "interlay-substrate-tokens-ldot"
+    },
+    {
+      "id": "interlay-substrate-tokens-usdt"
+    },
+    {
+      "id": "interlay-substrate-tokens-lp-ibtc-dot"
+    },
+    {
+      "id": "interlay-substrate-tokens-lp-ibtc-usdt"
+    },
+    {
+      "id": "interlay-substrate-tokens-lp-dot-intr"
+    },
+    {
+      "id": "interlay-substrate-tokens-qibtc"
+    },
+    {
+      "id": "interlay-substrate-tokens-qdot"
+    },
+    {
+      "id": "interlay-substrate-tokens-qusdt"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://interlay.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-interlay-parachain_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-interlay-parachain_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": "interlay-substrate-tokens-intr",
+  "rpcs": [
+    {
+      "url": "wss://interlay-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://api.interlay.io/parachain"
+    },
+    {
+      "url": "wss://rpc-interlay.luckyfriday.io/"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2032,
+  "relay": {
+    "id": "polkadot"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "interlay",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/interlay.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"DOT\"}",
+            "coingeckoId": "polkadot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
+          },
+          {
+            "symbol": "iBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"IBTC\"}",
+            "coingeckoId": "interbtc",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ibtc.svg"
+          },
+          {
+            "symbol": "INTR",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"INTR\"}",
+            "coingeckoId": "interlay",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/intr.svg"
+          },
+          {
+            "symbol": "kBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KBTC\"}",
+            "coingeckoId": "kintsugi-btc",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/kbtc.svg"
+          },
+          {
+            "symbol": "KINT",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KINT\"}",
+            "coingeckoId": "kintsugi",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/kint.svg"
+          },
+          {
+            "symbol": "KSM",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"KSM\"}",
+            "coingeckoId": "kusama",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+          },
+          {
+            "symbol": "LDOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":1}",
+            "coingeckoId": "liquid-staking-dot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ldot.svg"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "0",
+            "onChainId": "{\"ForeignAsset\":2}",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "lp iBTC-DOT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"IBTC\"},{\"Token\":\"DOT\"}]}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "lp iBTC-USDT",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"IBTC\"},{\"ForeignAsset\":2}]}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "lp DOT-INTR",
+            "decimals": 18,
+            "ed": "0",
+            "onChainId": "{\"LpToken\":[{\"Token\":\"DOT\"},{\"Token\":\"INTR\"}]}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "qIBTC",
+            "decimals": 8,
+            "ed": "0",
+            "onChainId": "{\"LendToken\":1}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/qibtc.svg"
+          },
+          {
+            "symbol": "qDOT",
+            "decimals": 10,
+            "ed": "0",
+            "onChainId": "{\"LendToken\":2}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/qdot.svg"
+          },
+          {
+            "symbol": "qUSDT",
+            "decimals": 6,
+            "ed": "0",
+            "onChainId": "{\"LendToken\":3}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/qusdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}
