@@ -7,7 +7,7 @@ export const fetchAssetPlatforms = async () => {
 
   // // TODO for debugging only, remove when ready
   // await writeFile(
-  //   'dist/assetPlatforms.json',
+  //   `${DIR_OUTPUT}/assetPlatforms.json`,
   //   await prettier.format(JSON.stringify(assetPlatforms, null, 2), {
   //     ...PRETTIER_CONFIG,
   //     parser: 'json',
@@ -26,7 +26,7 @@ export const fetchCoins = async () => {
 
   // // TODO for debugging only, remove when ready
   // await writeFile(
-  //   'dist/coins.json',
+  //   `${DIR_OUTPUT}/coins.json`,
   //   await prettier.format(JSON.stringify(coins, null, 2), {
   //     ...PRETTIER_CONFIG,
   //     parser: 'json',

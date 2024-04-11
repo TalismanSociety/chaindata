@@ -85,7 +85,7 @@ export const addEvmNetworks = async () => {
           sortIndex: null,
           name: configEvmNetwork.name ?? substrateChain?.name ?? substrateConfig?.name ?? null,
           themeColor: configEvmNetwork.themeColor ?? substrateChain?.themeColor ?? substrateChain?.themeColor ?? null,
-          logo: substrateChain?.logo ?? configEvmNetwork.logo ?? null, // TODO: Copy chain & token assets into dist output
+          logo: substrateChain?.logo ?? configEvmNetwork.logo ?? null, // TODO: Copy chain & token assets into pub output
           nativeToken: null,
           tokens: [],
           explorerUrl: configEvmNetwork.explorerUrl ?? null,

@@ -9,7 +9,7 @@ import { fetchExternalSteps } from './fetch-external/steps'
 //   // update local data
 //   ...fetchExternalSteps,
 
-//   // update dist folder (use only for local testing, on github this will be run by the build script)
+//   // update pub folder (use only for local testing, on github this will be run by the build script)
 //   ...buildSteps
 // ]
 
