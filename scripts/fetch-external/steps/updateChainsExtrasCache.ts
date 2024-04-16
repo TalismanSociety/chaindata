@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
 import { Metadata, TypeRegistry } from '@polkadot/types'
-import { xxhashAsHex } from '@polkadot/util-crypto'
+import { encodeAddress, xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
 import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
@@ -57,19 +57,24 @@ export const updateChainsExtrasCache = async () => {
 
   chainsExtrasCache.sort((a, b) => a.id.localeCompare(b.id))
 
+  const filteredChainsExtrasCache = chainsExtrasCache
+    .filter((chain) => chainIdExists[chain.id])
+    .filter((chain) => {
+      try {
+        // this will throw if the prefix is invalid
+        encodeAddress('5CK8D1sKNwF473wbuBP6NuhQfPaWUetNsWUNAAzVwTfxqjfr', chain.prefix)
+        return true
+      } catch (error) {
+        return false
+      }
+    })
+
   await writeFile(
     FILE_CHAINS_EXTRAS_CACHE,
-    await prettier.format(
-      JSON.stringify(
-        chainsExtrasCache.filter((chain) => chainIdExists[chain.id]),
-        null,
-        2,
-      ),
-      {
-        ...PRETTIER_CONFIG,
-        parser: 'json',
-      },
-    ),
+    await prettier.format(JSON.stringify(filteredChainsExtrasCache, null, 2), {
+      ...PRETTIER_CONFIG,
+      parser: 'json',
+    }),
   )
 }
 
