@@ -29,6 +29,24 @@ const summary = await fetch(chainsSummaryUrl).then(result => result.json())
 For an example of a more advanced use-case, you can check out the [Talisman wallet](https://github.com/TalismanSociety/talisman) source code.  
 The wallet uses chaindata to populate a database of chains and tokens which is used for features like account balance subscriptions and sending funds.
 
+## Chaindata `pub` versions
+
+When breaking changes are made to the format of the built chaindata files, we increment the `pub` directory version.
+
+Old directories are generally not kept up-to-date, but they are also not deleted.
+
+The effect of this is that newer `@talismn/balances` releases will target the newer `pub` version, while older releases will continue to operate with the most up-to-date chaindata before the breaking change occurred.
+
+A brief rundown of the changes introduced by each `pub` version:
+
+- **`dist` -> `pub/v1`**  
+  The miniMetadatas for the `substrate-native` balance module now include types for `Balances::Holds` and `Balances::Locks`.  
+  Without upgrading `@talismn/balances`, these new types cause `PortableRegistry` to throw on construction of a `new Metadata(miniMetadata)`.
+
+- **`pub/v1` -> `pub/v2`**  
+  All miniMetadatas have been upgraded from metadata format v14 to v15.  
+  Without upgrading `@talismn/balances`, the new format causes the library to throw.
+
 ## Contributing
 
 To make a contribution, please fork this repo and make your changes in your fork, then open a PR to merge your changes back into this repo.
