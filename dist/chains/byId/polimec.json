@@ -2,7 +2,7 @@
   "id": "polimec",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 547,
+  "sortIndex": 551,
   "genesisHash": "0x7eb9354488318e7549c722669dcbdcdc526f1fef1420e7944667212f3601fdbd",
   "prefix": 41,
   "name": "Polimec",
@@ -29,13 +29,21 @@
   "feeToken": null,
   "rpcs": [
     {
+      "url": "wss://polimec.rpc.amforc.com"
+    },
+    {
+      "url": "wss://rpc.helikon.io/polimec"
+    },
+    {
       "url": "wss://rpc.polimec.org"
     }
   ],
   "evmNetworks": [],
   "parathreads": null,
-  "paraId": null,
-  "relay": null,
+  "paraId": 3344,
+  "relay": {
+    "id": "polkadot"
+  },
   "balancesConfig": [],
   "balancesMetadata": []
 }
