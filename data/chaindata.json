@@ -13,8 +13,10 @@
       "wss://rpc.ibp.network/polkadot",
       "wss://rpc.dotters.network/polkadot",
       "wss://1rpc.io/dot",
+      "wss://polkadot-public-rpc.blockops.network/ws",
       "wss://rpc-polkadot.luckyfriday.io",
       "wss://polkadot.public.curie.radiumblock.co/ws",
+      "wss://rockx-dot.w3node.com/polka-public-dot/ws",
       "wss://dot-rpc.stakeworld.io"
     ],
     "balancesConfig": {
@@ -39,8 +41,10 @@
       "wss://rpc.ibp.network/kusama",
       "wss://rpc.dotters.network/kusama",
       "wss://1rpc.io/ksm",
+      "wss://kusama-public-rpc.blockops.network/ws",
       "wss://rpc-kusama.luckyfriday.io",
       "wss://kusama.public.curie.radiumblock.co/ws",
+      "wss://rockx-ksm.w3node.com/polka-public-ksm/ws",
       "wss://ksm-rpc.stakeworld.io"
     ],
     "balancesConfig": {
@@ -54,7 +58,7 @@
     "id": "3-dpass",
     "name": "3DPass",
     "account": "*25519",
-    "rpcs": ["wss://rpc2.3dpass.org"]
+    "rpcs": ["wss://rpc.3dpscan.io"]
   },
   {
     "id": "aband",
@@ -77,7 +81,8 @@
       "wss://acala-rpc.dwellir.com",
       "wss://acala-rpc-0.aca-api.network",
       "wss://acala-rpc-1.aca-api.network",
-      "wss://acala-rpc-3.aca-api.network/ws"
+      "wss://acala-rpc-3.aca-api.network/ws",
+      "wss://rpc-acala.luckyfriday.io"
     ],
     "paraId": 2000,
     "relay": {
@@ -295,29 +300,13 @@
     }
   },
   {
-    "id": "continuum",
-    "name": "Continuum",
-    "account": "*25519",
-    "subscanUrl": "https://continuum.subscan.io/",
-    "rpcs": ["wss://continuum-rpc-1.metaverse.network/wss"],
-    "paraId": 3346,
-    "relay": {
-      "id": "polkadot"
-    },
-    "balancesConfig": {
-      "substrate-native": {
-        "coingeckoId": "mnet-continuum"
-      }
-    }
-  },
-  {
     "id": "aleph-zero",
     "name": "Aleph Zero",
     "account": "*25519",
     "subscanUrl": "https://alephzero.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
-    "rpcs": ["wss://ws.azero.dev", "wss://aleph-zero-rpc.dwellir.com"],
+    "rpcs": ["wss://aleph-zero-rpc.dwellir.com", "wss://ws.azero.dev"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "aleph-zero"
@@ -457,17 +446,6 @@
     }
   },
   {
-    "id": "commune-ai",
-    "name": "Commune AI Standalone",
-    "account": "*25519",
-    "rpcs": ["wss://commune.api.onfinality.io/public-ws"],
-    "balancesConfig": {
-      "substrate-native": {
-        "coingeckoId": "commune-ai"
-      }
-    }
-  },
-  {
     "id": "ares-odyssey",
     "name": "Ares Odyssey Standalone",
     "account": "*25519",
@@ -486,9 +464,9 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/astar_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
     "rpcs": [
-      "wss://rpc.astar.network",
       "wss://astar-rpc.dwellir.com",
       "wss://1rpc.io/astr",
+      "wss://rpc.astar.network",
       "wss://astar.public.curie.radiumblock.co/ws"
     ],
     "paraId": 2006,
@@ -591,7 +569,7 @@
     "id": "automata",
     "name": "Automata",
     "account": "*25519",
-    "rpcs": ["wss://api.ata.network"],
+    "rpcs": [],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "automata"
@@ -886,7 +864,11 @@
     "subscanUrl": "https://bifrost.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/bifrost_polkadot_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/bifrost_polkadot_metadata_latest.apng",
-    "rpcs": ["wss://hk.p.bifrost-rpc.liebi.com/ws", "wss://eu.bifrost-polkadot-rpc.liebi.com/ws"],
+    "rpcs": [
+      "wss://bifrost-polkadot-rpc.dwellir.com",
+      "wss://hk.p.bifrost-rpc.liebi.com/ws",
+      "wss://eu.bifrost-polkadot-rpc.liebi.com/ws"
+    ],
     "paraId": 2030,
     "relay": {
       "id": "polkadot"
@@ -1119,6 +1101,12 @@
     "rpcs": ["wss://archive.mainnet.cere.network/ws"]
   },
   {
+    "id": "chainflip",
+    "name": "Chainflip",
+    "account": "*25519",
+    "rpcs": ["wss://mainnet-archive.chainflip.io"]
+  },
+  {
     "id": "chainx",
     "name": "ChainX",
     "account": "*25519",
@@ -1137,7 +1125,7 @@
     "subscanUrl": "https://clover.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/clover-mainnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/clover-mainnet_metadata_latest.apng",
-    "rpcs": ["wss://rpc-para.clover.finance"],
+    "rpcs": [],
     "paraId": 2002,
     "relay": {
       "id": "polkadot"
@@ -1156,6 +1144,17 @@
     "paraId": 2027,
     "relay": {
       "id": "polkadot"
+    }
+  },
+  {
+    "id": "commune-ai",
+    "name": "Commune AI Standalone",
+    "account": "*25519",
+    "rpcs": ["wss://commune.api.onfinality.io/public-ws"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "commune-ai"
+      }
     }
   },
   {
@@ -1338,17 +1337,29 @@
     }
   },
   {
+    "id": "continuum",
+    "name": "Continuum",
+    "account": "*25519",
+    "subscanUrl": "https://continuum.subscan.io/",
+    "rpcs": ["wss://continuum-rpc-1.metaverse.network/wss"],
+    "paraId": 3346,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "mnet-continuum"
+      }
+    }
+  },
+  {
     "id": "crab",
     "name": "Darwinia Crab",
     "account": "secp256k1",
     "subscanUrl": "https://crab.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/crab2_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crab2_metadata_latest.apng",
-    "rpcs": [
-      "wss://darwiniacrab-rpc.dwellir.com",
-      "wss://crab-rpc.darwinia.network/",
-      "wss://crab-rpc.darwiniacommunitydao.xyz"
-    ],
+    "rpcs": ["wss://crab-rpc.darwinia.network/", "wss://crab-rpc.darwiniacommunitydao.xyz"],
     "paraId": 2105,
     "relay": {
       "id": "kusama"
@@ -1369,7 +1380,7 @@
     "id": "crown-sterling",
     "name": "Crown Sterling",
     "account": "*25519",
-    "rpcs": ["wss://blockchain.crownsterling.io"]
+    "rpcs": []
   },
   {
     "id": "crust",
@@ -1399,6 +1410,16 @@
     }
   },
   {
+    "id": "curio",
+    "name": "Curio",
+    "account": "*25519",
+    "rpcs": ["wss://parachain.curioinvest.com/"],
+    "paraId": 3339,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
     "id": "darwinia",
     "name": "Darwinia",
     "account": "secp256k1",
@@ -1422,7 +1443,7 @@
     "id": "debio",
     "name": "DeBio",
     "account": "*25519",
-    "rpcs": ["wss://ws-rpc.debio.network"]
+    "rpcs": ["wss://gateway.mainnet.octopus.network/debionetwork/ae48005a0c7ecb4053394559a7f4069e"]
   },
   {
     "id": "dock-pos-mainnet",
@@ -1461,7 +1482,12 @@
     "subscanUrl": "https://edgeware.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/edgeware_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/edgeware_metadata_latest.apng",
-    "rpcs": ["wss://mainnet2.edgewa.re", "wss://edgeware.jelliedowl.net"],
+    "rpcs": [
+      "wss://edgeware-rpc1.jelliedowl.net",
+      "wss://edgeware-rpc3.jelliedowl.net",
+      "wss://edgeware-rpc0.jelliedowl.net",
+      "wss://edgeware-rpc2.jelliedowl.net"
+    ],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "edgeware"
@@ -1502,8 +1528,7 @@
     "rpcs": [
       "wss://sys.ibp.network/encointer-kusama",
       "wss://sys.dotters.network/encointer-kusama",
-      "wss://kusama.api.encointer.org",
-      "wss://ksm-rpc.stakeworld.io/encointer"
+      "wss://kusama.api.encointer.org"
     ],
     "paraId": 1001,
     "relay": {
@@ -1610,12 +1635,6 @@
     }
   },
   {
-    "id": "equilibrium-standalone",
-    "name": "Equilibrium Standalone",
-    "account": "*25519",
-    "rpcs": []
-  },
-  {
     "id": "ewx",
     "name": "Energy Web X",
     "account": "*25519",
@@ -1629,7 +1648,7 @@
     "id": "fragnova",
     "name": "Fragnova",
     "account": "*25519",
-    "rpcs": ["wss://ws.fragnova.network"]
+    "rpcs": []
   },
   {
     "id": "frequency",
@@ -1678,12 +1697,6 @@
     "relay": {
       "id": "kusama"
     }
-  },
-  {
-    "id": "genshiro-standalone",
-    "name": "Genshiro",
-    "account": "*25519",
-    "rpcs": []
   },
   {
     "id": "gm",
@@ -1773,7 +1786,7 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/hydradx_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/hydradx_metadata_latest.apng",
     "isUnknownFeeToken": true,
-    "rpcs": ["wss://hydradx-rpc.dwellir.com", "wss://rpc.hydradx.cloud"],
+    "rpcs": ["wss://hydradx-rpc.dwellir.com", "wss://rpc.hydradx.cloud", "wss://rpc.helikon.io/hydradx"],
     "paraId": 2034,
     "relay": {
       "id": "polkadot"
@@ -1928,6 +1941,26 @@
     }
   },
   {
+    "id": "hyperbridge-kusama",
+    "name": "Hyperbridge",
+    "account": "*25519",
+    "rpcs": ["wss://hyperbridge-messier-rpc.blockops.network"],
+    "paraId": 3340,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "hyperbridge-polkadot",
+    "name": "Hyperbridge",
+    "account": "*25519",
+    "rpcs": ["wss://hyperbridge-nexus-rpc.blockops.network"],
+    "paraId": 3367,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
     "id": "imbue",
     "name": "Imbue",
     "account": "*25519",
@@ -1943,6 +1976,12 @@
         "coingeckoId": "imbue-network"
       }
     }
+  },
+  {
+    "id": "innovatorchain",
+    "name": "Innovator Chain",
+    "account": "*25519",
+    "rpcs": []
   },
   {
     "id": "integritee-kusama",
@@ -1964,10 +2003,10 @@
   },
   {
     "id": "integritee-polkadot",
-    "name": "Integritee Shell",
+    "name": "Integritee",
     "account": "*25519",
-    "rpcs": [],
-    "paraId": 2039,
+    "rpcs": ["wss://integritee-rpc.dwellir.com", "wss://polkadot.api.integritee.network"],
+    "paraId": 3359,
     "relay": {
       "id": "polkadot"
     },
@@ -1975,6 +2014,16 @@
       "substrate-native": {
         "coingeckoId": "integritee"
       }
+    }
+  },
+  {
+    "id": "integritee-polkadot-2",
+    "name": "Integritee",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 2039,
+    "relay": {
+      "id": "polkadot"
     }
   },
   {
@@ -2119,7 +2168,7 @@
     "id": "joystream",
     "name": "Joystream",
     "account": "*25519",
-    "rpcs": ["wss://rpc.joystream.org"],
+    "rpcs": ["wss://rpc.joyutils.org", "wss://rpc.joystream.org"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "joystream"
@@ -2130,10 +2179,17 @@
     "id": "jur",
     "name": "Jur",
     "account": "*25519",
-    "rpcs": [
-      "wss://jur-mainnet-archive-rpc-1.icebergnodes.io",
-      "wss://jur-archive-mainnet-1.simplystaking.xyz/VX68C07AR4K2/ws"
-    ]
+    "rpcs": []
+  },
+  {
+    "id": "k-laos",
+    "name": "K-Laos",
+    "account": "*25519",
+    "rpcs": ["wss://rpc.klaos.laosfoundation.io"],
+    "paraId": 3336,
+    "relay": {
+      "id": "kusama"
+    }
   },
   {
     "id": "kabocha",
@@ -2153,7 +2209,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/totem-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/totem-parachain_metadata_latest.apng",
-    "rpcs": ["wss://kapex-rpc.dwellir.com"],
+    "rpcs": [],
     "paraId": 2007,
     "relay": {
       "id": "polkadot"
@@ -2171,7 +2227,8 @@
       "wss://karura-rpc-0.aca-api.network",
       "wss://karura-rpc-1.aca-api.network",
       "wss://karura-rpc-2.aca-api.network/ws",
-      "wss://karura-rpc-3.aca-api.network/ws"
+      "wss://karura-rpc-3.aca-api.network/ws",
+      "wss://rpc-karura.luckyfriday.io"
     ],
     "paraId": 2000,
     "relay": {
@@ -2722,7 +2779,7 @@
     "id": "kreivo",
     "name": "Kreivo",
     "account": "*25519",
-    "rpcs": ["wss://kreivo.io/"],
+    "rpcs": ["wss://kreivo.kippu.rocks/"],
     "paraId": 2281,
     "relay": {
       "id": "kusama"
@@ -2808,7 +2865,9 @@
       "wss://kusama-bridge-hub-rpc-tn.dwellir.com",
       "wss://sys.ibp.network/bridgehub-kusama",
       "wss://sys.dotters.network/bridgehub-kusama",
+      "wss://rpc-bridge-hub-kusama.luckyfriday.io",
       "wss://kusama-bridge-hub-rpc.polkadot.io",
+      "wss://bridgehub-kusama.public.curie.radiumblock.co/ws",
       "wss://ksm-rpc.stakeworld.io/bridgehub"
     ],
     "paraId": 1002,
@@ -2833,6 +2892,18 @@
     "paraId": 2052,
     "relay": {
       "id": "polkadot"
+    }
+  },
+  {
+    "id": "liberland",
+    "name": "Liberland",
+    "account": "*25519",
+    "rpcs": ["wss://liberland-rpc.dwellir.com", "wss://mainnet.liberland.org"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "liberland-lld",
+        "logo": "./assets/tokens/coingecko/liberland-lld.webp"
+      }
     }
   },
   {
@@ -2879,7 +2950,7 @@
     "id": "logion-polkadot",
     "name": "Logion",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://para-rpc01.logion.network", "wss://para-rpc02.logion.network"],
     "paraId": 3354,
     "relay": {
       "id": "polkadot"
@@ -2889,7 +2960,7 @@
     "id": "logion-standalone",
     "name": "Logion Standalone",
     "account": "*25519",
-    "rpcs": ["wss://rpc01.logion.network"]
+    "rpcs": ["wss://rpc01.logion.network", "wss://rpc02.logion.network", "wss://rpc03.logion.network"]
   },
   {
     "id": "loom-network",
@@ -2899,16 +2970,6 @@
     "paraId": 2080,
     "relay": {
       "id": "kusama"
-    }
-  },
-  {
-    "id": "mandala",
-    "name": "Mandala",
-    "account": "*25519",
-    "rpcs": [],
-    "paraId": 3366,
-    "relay": {
-      "id": "polkadot"
     }
   },
   {
@@ -2980,8 +3041,8 @@
       "wss://moonbeam-rpc.dwellir.com",
       "wss://1rpc.io/glmr",
       "wss://wss.api.moonbeam.network",
-      "wss://moonbeam.unitedbloc.com",
-      "wss://moonbeam.public.curie.radiumblock.co/ws"
+      "wss://moonbeam.public.curie.radiumblock.co/ws",
+      "wss://moonbeam.unitedbloc.com"
     ],
     "paraId": 2004,
     "relay": {
@@ -3035,7 +3096,7 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/appchain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/appchain_metadata_latest.apng",
     "account": "*25519",
-    "rpcs": ["wss://ws-rpc.myriad.social"],
+    "rpcs": ["wss://gateway.mainnet.octopus.network/myriad/a4cb0a6e30ff5233a3567eb4e8cb71e0"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "myriad-social"
@@ -3047,6 +3108,28 @@
     "name": "Neatcoin",
     "account": "*25519",
     "rpcs": ["wss://rpc.neatcoin.org/ws"]
+  },
+  {
+    "id": "neuroweb-polkadot",
+    "name": "NeuroWeb",
+    "account": "*25519",
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_metadata_latest.apng",
+    "rpcs": ["wss://origintrail-rpc.dwellir.com", "wss://parachain-rpc.origin-trail.network"],
+    "paraId": 2043,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "neuroweb-polkadot-2",
+    "name": "NeuroWeb",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 3360,
+    "relay": {
+      "id": "polkadot"
+    }
   },
   {
     "id": "nftmart",
@@ -3115,25 +3198,13 @@
     }
   },
   {
-    "id": "origintrail-parachain",
-    "name": "OriginTrail",
-    "account": "*25519",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_metadata_latest.apng",
-    "rpcs": ["wss://origintrail-rpc.dwellir.com", "wss://parachain-rpc.origin-trail.network"],
-    "paraId": 2043,
-    "relay": {
-      "id": "polkadot"
-    }
-  },
-  {
     "id": "parallel",
     "name": "Parallel",
     "account": "*25519",
     "subscanUrl": "https://parallel.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/parallel_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/parallel_metadata_latest.apng",
-    "rpcs": ["wss://parallel-rpc.dwellir.com", "wss://rpc.parallel.fi"],
+    "rpcs": ["wss://parallel-rpc.dwellir.com"],
     "paraId": 2012,
     "relay": {
       "id": "polkadot"
@@ -3536,13 +3607,32 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-polimec-mainnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-polimec-mainnet_metadata_latest.apng",
-    "rpcs": ["wss://rpc.polimec.org"]
+    "rpcs": ["wss://polimec.rpc.amforc.com", "wss://rpc.helikon.io/polimec", "wss://rpc.polimec.org"],
+    "paraId": 3344,
+    "relay": {
+      "id": "polkadot"
+    }
   },
   {
     "id": "polkadex-polkadot",
     "name": "Polkadex",
     "account": "*25519",
-    "rpcs": ["wss://polkadex-rpc.dwellir.com", "wss://polkadex-parachain.public.curie.radiumblock.co/ws"],
+    "rpcs": [],
+    "paraId": 3363,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadex"
+      }
+    }
+  },
+  {
+    "id": "polkadex-polkadot-2",
+    "name": "Polkadex",
+    "account": "*25519",
+    "rpcs": ["wss://polkadex-parachain-rpc.dwellir.com", "wss://polkadex-parachain.public.curie.radiumblock.co/ws"],
     "paraId": 2040,
     "relay": {
       "id": "polkadot"
@@ -3560,7 +3650,7 @@
     "subscanUrl": "https://polkadex.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/node_metadata_latest.apng",
-    "rpcs": ["wss://polkadex.public.curie.radiumblock.co/ws"],
+    "rpcs": ["wss://polkadex-mainnet-rpc.dwellir.com", "wss://polkadex.public.curie.radiumblock.co/ws"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "polkadex"
@@ -3631,6 +3721,7 @@
       "wss://sys.dotters.network/bridgehub-polkadot",
       "wss://rpc-bridge-hub-polkadot.luckyfriday.io",
       "wss://polkadot-bridge-hub-rpc.polkadot.io",
+      "wss://bridgehub-polkadot.public.curie.radiumblock.co/ws",
       "wss://dot-rpc.stakeworld.io/bridgehub"
     ],
     "paraId": 1002,
@@ -3687,7 +3778,7 @@
     "id": "qpn",
     "name": "Quantum Portal",
     "account": "*25519",
-    "rpcs": ["wss://qpn.svcs.ferrumnetwork.io/"],
+    "rpcs": [],
     "paraId": 2274,
     "relay": {
       "id": "kusama"
@@ -3740,7 +3831,11 @@
     "subscanUrl": "https://robonomics.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/robonomics_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/robonomics_metadata_latest.apng",
-    "rpcs": ["wss://kusama.rpc.robonomics.network/", "wss://robonomics.0xsamsara.com"],
+    "rpcs": [
+      "wss://robonomics-rpc.dwellir.com",
+      "wss://kusama.rpc.robonomics.network/",
+      "wss://robonomics.0xsamsara.com"
+    ],
     "paraId": 2048,
     "relay": {
       "id": "kusama"
@@ -3819,7 +3914,11 @@
     "subscanUrl": "https://shiden.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/shiden_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/shiden_metadata_latest.apng",
-    "rpcs": ["wss://shiden-rpc.dwellir.com"],
+    "rpcs": [
+      "wss://shiden-rpc.dwellir.com",
+      "wss://shiden.public.curie.radiumblock.co/ws",
+      "wss://rpc.shiden.astar.network"
+    ],
     "paraId": 2007,
     "relay": {
       "id": "kusama"
@@ -3856,7 +3955,7 @@
     "id": "sora-kusama",
     "name": "Sora",
     "account": "*25519",
-    "rpcs": ["wss://ws.parachain-collator-1.c1.sora2.soramitsu.co.jp"],
+    "rpcs": ["wss://ws.parachain-collator-2.c2.sora2.soramitsu.co.jp"],
     "paraId": 2011,
     "relay": {
       "id": "kusama"
@@ -3871,7 +3970,7 @@
     "id": "sora-polkadot",
     "name": "Sora",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp"],
     "paraId": 2025,
     "relay": {
       "id": "polkadot"
@@ -3958,7 +4057,7 @@
     "id": "subsocial-polkadot",
     "name": "Subsocial",
     "account": "*25519",
-    "rpcs": ["wss://para.subsocial.network"],
+    "rpcs": ["wss://subsocial-rpc.dwellir.com", "wss://para.subsocial.network"],
     "paraId": 2101,
     "relay": {
       "id": "polkadot"
@@ -4001,7 +4100,7 @@
     "id": "t-1-rn",
     "name": "t1rn",
     "account": "*25519",
-    "rpcs": ["wss://rpc.t1rn.io"],
+    "rpcs": [],
     "paraId": 3334,
     "relay": {
       "id": "kusama"
@@ -4083,7 +4182,7 @@
     "subscanUrl": "https://turing.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/turing_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/turing_metadata_latest.apng",
-    "rpcs": ["wss://turing-rpc.dwellir.com", "wss://rpc.turing.oak.tech"],
+    "rpcs": ["wss://rpc.turing.oak.tech"],
     "paraId": 2114,
     "relay": {
       "id": "kusama"
@@ -4146,7 +4245,7 @@
     "name": "Vara",
     "account": "*25519",
     "subscanUrl": "https://vara.subscan.io/",
-    "rpcs": ["wss://rpc.vara-network.io"],
+    "rpcs": ["wss://rpc.vara.network"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "vara-network"
@@ -4154,10 +4253,16 @@
     }
   },
   {
+    "id": "vtb",
+    "name": "Vtb",
+    "account": "*25519",
+    "rpcs": ["wss://substratenode.vtbcfoundation.org/explorer"]
+  },
+  {
     "id": "watr",
     "name": "Watr",
     "account": "*25519",
-    "rpcs": ["wss://watr-rpc.watr-api.network"],
+    "rpcs": ["wss://watr.public.curie.radiumblock.co/ws", "wss://watr-rpc.watr-api.network"],
     "paraId": 2058,
     "relay": {
       "id": "polkadot"
@@ -4173,8 +4278,31 @@
     "id": "xode",
     "name": "Xode",
     "account": "*25519",
-    "rpcs": ["wss://bootnodea01.xode.net/n7yoxCmcIrCF6VziCcDmYTwL8R03a/rpc"],
+    "rpcs": ["wss://rpcnodea01.xode.net/n7yoxCmcIrCF6VziCcDmYTwL8R03a/rpc"],
     "paraId": 3344,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "xxnetwork",
+    "name": "XX Network",
+    "account": "*25519",
+    "rpcs": ["wss://rpc.xx.network/", "wss://xxnetwork-rpc.dwellir.com/"],
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/xxnetwork_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng",
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "xxcoin"
+      }
+    }
+  },
+  {
+    "id": "yerba",
+    "name": "Yerba",
+    "account": "*25519",
+    "rpcs": [],
+    "paraId": 3345,
     "relay": {
       "id": "kusama"
     }
@@ -4237,30 +4365,5 @@
         ]
       }
     }
-  },
-  {
-    "id": "liberland",
-    "name": "Liberland",
-    "account": "*25519",
-    "rpcs": ["wss://liberland-rpc.dwellir.com", "wss://mainnet.liberland.org/", "wss://mainnet.node2.liberland.org/"],
-    "balancesConfig": {
-      "substrate-native": {
-        "coingeckoId": "liberland-lld",
-        "logo": "./assets/tokens/coingecko/liberland-lld.webp"
-      }
-    }
-  },
-  {
-    "id": "xxnetwork",
-    "name": "XX Network",
-    "account": "*25519",
-    "rpcs": ["wss://rpc.xx.network/", "wss://xxnetwork-rpc.dwellir.com/"],
-    "balancesConfig": {
-      "substrate-native": {
-        "coingeckoId": "xxcoin"
-      }
-    },
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/xxnetwork_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng"
   }
 ]
