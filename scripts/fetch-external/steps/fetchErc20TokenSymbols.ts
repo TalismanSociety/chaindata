@@ -19,10 +19,13 @@ const IGNORED_TOKENS = [
   { chainId: 1, contractAddress: '0x1da4858ad385cc377165a298cc2ce3fce0c5fd31' },
   { chainId: 1, contractAddress: '0xbdeb4b83251fb146687fa19d1c660f99411eefe3' },
   { chainId: 1, contractAddress: '0xc19b6a4ac7c7cc24459f08984bbd09664af17bd1' },
+  { chainId: 42, contractAddress: '0x5b8b0e44d4719f8a328470dccd3746bfc73d6b14' },
+  { chainId: 42, contractAddress: '0x650e14f636295af421d9bb788636356aa7f5924c' },
   { chainId: 56, contractAddress: '0x3e3b357061103dc040759ac7dceeaba9901043ad' },
   { chainId: 137, contractAddress: '0x8af78f0c818302164f73b2365fe152c2d1fe80e1' },
   { chainId: 137, contractAddress: '0xf4bb0ed25ac7bcc9c327b88bac5ca288a08ec41e' },
   { chainId: 137, contractAddress: '0xeb99748e91afca94a6289db3b02e7ef4a8f0a22d' },
+  { chainId: 137, contractAddress: '0xe9d2fa815b95a9d087862a09079549f351dab9bd' },
   { chainId: 295, contractAddress: '0x00000000000000000000000000000000001a88b2' },
   { chainId: 295, contractAddress: '0x000000000000000000000000000000000006f89a' },
   { chainId: 295, contractAddress: '0x00000000000000000000000000000000000b2ad5' },
@@ -30,33 +33,31 @@ const IGNORED_TOKENS = [
   { chainId: 295, contractAddress: '0x00000000000000000000000000000000001647e8' },
   { chainId: 295, contractAddress: '0x000000000000000000000000000000000011afa2' },
   { chainId: 295, contractAddress: '0x0000000000000000000000000000000000101ae3' },
-  { chainId: 324, contractAddress: '0x47EF4A5641992A72CFd57b9406c9D9cefEE8e0C4/token-transfers' },
-  { chainId: 324, contractAddress: '0x14acccd04393f26ba155e5402aa6fddbb8e2254a for zksync erc-20 tokens' },
   { chainId: 1101, contractAddress: '0x3b6564b5da73a41d3a66e6558a98fd0e9e1e77ad' },
+  { chainId: 1101, contractAddress: '0xd4e38eb4a9581e05de8aeb5f895916647b5933f1' },
+  { chainId: 1101, contractAddress: '0x0709e962221dd8ac9ec5c56f85ef789d3c1b9776' },
   { chainId: 2222, contractAddress: '0x471ee749bal270eb4c1165b5ad95e614947f6fceb' },
   { chainId: 3693, contractAddress: '0xc84d8d03aa41ef941721a4d77b24bb44d7c7ac55' },
   { chainId: 8453, contractAddress: '0x1b5d3a85ef27a213c73c610352a0912fd7031637' },
+  { chainId: 8453, contractAddress: '0xf2d012f604f43e927da3b3576c9c0cafe301428b' },
   { chainId: 42161, contractAddress: '0xafa5676a6ef790f08290dd4a45e0ec2a5cc5cdab' },
   { chainId: 42161, contractAddress: '0xedd6ca8a4202d4a36611e2fff109648c4863ae19' },
   { chainId: 42170, contractAddress: '0xb962150760f9a3bb00e3e9cf48297ee20ada4a33' },
+  { chainId: 59144, contractAddress: '0x7e63a5f1a8f0b4d0934b2f2327daed3f6bb2ee75' },
 ]
 
 const isCached = (tokenCache: Erc20TokenCache[], chainId: number, contractAddress: string) =>
   tokenCache.some((t) => t.chainId === chainId && t.contractAddress.toLowerCase() === contractAddress.toLowerCase())
 
-const updateTokenCache = async (
-  tokenCache: Erc20TokenCache[],
-  evmNetwork: ConfigEvmNetwork,
-  contractAddress: string,
-) => {
+const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: ConfigEvmNetwork, address: string) => {
   const chainId = Number(evmNetwork.id)
 
-  if (
-    IGNORED_TOKENS.some(
-      (t) => t.chainId === chainId && t.contractAddress.toLowerCase() === contractAddress.toLowerCase(),
-    )
-  )
+  if (IGNORED_TOKENS.some((t) => t.chainId === chainId && t.contractAddress.toLowerCase() === address.toLowerCase()))
     return
+
+  //cleanup (some entries have some odd suffixes from bad copy paste, ex "0xf025d53bbf98b6b681f7bae9a9083194163e1214#code")
+  const contractAddress = address.match(/0x[0-9a-fA-F]{40}/)?.[0]
+  if (!contractAddress) return
 
   if (isCached(tokenCache, chainId, contractAddress)) return
 
