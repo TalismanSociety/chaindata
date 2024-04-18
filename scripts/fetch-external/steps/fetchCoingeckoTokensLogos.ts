@@ -119,6 +119,26 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'dragon-3',
   'ghost',
   'utility-nexusmind',
+  'zora-bridged-weth-zora-network',
+  'pnear',
+  'multichain-bridged-busd-moonriver',
+  'brightpool',
+  'bridged-matic-manta-pacific',
+  'multichain-bridged-busd-okt-chain',
+  'polygon-bridged-busd-polygon',
+  'nyan-cat-on-base',
+  'seamans-token',
+  'thundercore-bridged-busd-thundercore',
+  'zebradao',
+  'lua-balancing-token',
+  'bridged-weeth-manta-pacific',
+  'metastreet-v2-mwsteth-wpunks-20',
+  'dexnet',
+  'going-to-the-moon',
+  'bridged-unieth-manta-pacific',
+  'bridged-busd',
+  'celer-bridged-busd-zksync',
+  'harmony-horizen-bridged-busd-harmony',
 ]
 
 type BalanceModuleConfig = {
@@ -195,7 +215,7 @@ export const fetchCoingeckoTokensLogos = async () => {
         const coin = await fetchCoinDetails(coingeckoId, { retryAfter60s: true })
         console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
-        if (!coin.image.large.startsWith('https://')) return console.warn('missing image, skipping...', coin.image)
+        if (!coin.image.large.startsWith('https://')) return console.warn('missing image, skipping...')
 
         const responseImg = await fetch(coin.image.large)
         const responseBuffer = await responseImg.arrayBuffer()
