@@ -30,7 +30,19 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'qmxhs7fvjanzwm14vjpbnmklre32gsiy9chsarrnbtfa1n',
   'QmVgFqXA3kkCrVYGcWFF7Mhx8JUSe9vSCauNamuKWSvCym',
   'QmdWZ1frB47fr3tw31xE68C2Vocaw5Ef53LQ5WDNdNnNyG',
+  'QmeucqvcreQk8nnSRUiHo3QTvLoYYB7shJTKXj5Tk6BtWi',
+  'QmPgpWfGsAZ5UHekWFR8rioadVe3Wox8idFyeVxuv9N4Vo',
+  'QmahJhdaLfGwBStQ9q9K4Mc73vLNqFV1otWCsT2ZKsMavv',
 ]
+
+// collection hash => image name
+const IPFS_COLLECTIONS: Record<string, string> = {
+  bafybeie7jzlzlpz7c3a3oh4x5joej23dj2qf3cexmchjyc72hv3fblcaja: 'mintara.png',
+  bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae: 'logo-128px.png',
+  bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie: 'bnb-icon2.png',
+  QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw: 'zkfair.jpg',
+  bafybeiapootrvggtigdlvgvk6srfseplpuowsqq3zpyup4j5yj5moxuala: 'boyaanetwork.png',
+}
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
   const controller = new AbortController()
@@ -92,18 +104,10 @@ export const fetchKnownEvmNetworksLogos = async () => {
       if (KNOWN_UNAVAILABLE_IPFS_HASHES.includes(ipfsHash)) cache.path = './assets/chains/unknown.svg'
       else {
         let downloadUrl = `https://ipfs.io/ipfs/${ipfsHash}`
-        // edge cases
-        if (downloadUrl === 'https://ipfs.io/ipfs/bafybeie7jzlzlpz7c3a3oh4x5joej23dj2qf3cexmchjyc72hv3fblcaja')
-          downloadUrl = 'https://ipfs.io/ipfs/bafybeie7jzlzlpz7c3a3oh4x5joej23dj2qf3cexmchjyc72hv3fblcaja/mintara.png'
-        if (downloadUrl === 'https://ipfs.io/ipfs/bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae')
-          downloadUrl =
-            'https://ipfs.io/ipfs/bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae/logo-128px.png'
-        if (downloadUrl === 'https://ipfs.io/ipfs/bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie')
-          downloadUrl = 'https://ipfs.io/ipfs/bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie/bnb-icon2.png'
-        if (downloadUrl === 'https://ipfs.io/ipfs/QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw')
-          downloadUrl = 'https://ipfs.io/ipfs/QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw/zkfair.jpg'
+        if (IPFS_COLLECTIONS[ipfsHash]) downloadUrl += `/${IPFS_COLLECTIONS[ipfsHash]}`
 
         // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
+        // @dev: if error says "Input buffer contains unsupported image format", then it's most likely a collection. add an entry to IPFS_COLLECTIONS
         console.log('downloading', downloadUrl)
 
         let responseIconImage: Response | null = null
