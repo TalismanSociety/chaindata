@@ -2,7 +2,7 @@
   "id": "mangata",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 424,
+  "sortIndex": 427,
   "genesisHash": "0xd611f22d291c5b7b69f1e105cca03352984c344c4421977efaa4cbdd1834e2aa",
   "prefix": 42,
   "name": "MangataX",
@@ -17,9 +17,6 @@
     "id": "mangata-substrate-tokens-mgx"
   },
   "tokens": [
-    {
-      "id": "mangata-substrate-native"
-    },
     {
       "id": "mangata-substrate-tokens-mgx"
     }
@@ -45,6 +42,13 @@
     "id": "kusama"
   },
   "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "disable": true,
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/mangata.svg"
+      }
+    },
     {
       "moduleType": "substrate-tokens",
       "moduleConfig": {
