@@ -62,7 +62,7 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   node: 'polkadex-standalone',
   'node-subtensor': 'bittensor',
   'nodle-para': 'nodle-polkadot',
-  'origintrail-parachain': 'origintrail-parachain',
+  'origintrail-parachain': 'neuroweb-polkadot',
   parallel: 'parallel',
   paseo: 'paseo-testnet',
   'peaq-node-krest': 'krest',
