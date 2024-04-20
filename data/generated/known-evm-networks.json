@@ -20516,6 +20516,12 @@
             "decimals": 18
           },
           {
+            "symbol": "OLM",
+            "coingeckoId": "ora-protocol",
+            "contractAddress": "0xe5018913f2fdf33971864804ddb5fca25c539032",
+            "decimals": 18
+          },
+          {
             "symbol": "ORBN",
             "coingeckoId": "orbeon-protocol",
             "contractAddress": "0xa7fbd9254f10f8e20a31a593c9e8bc0d041e15f6",
@@ -55609,10 +55615,10 @@
       "https://dataserver-us-1.zenithchain.co/",
       "https://dataserver-asia-3.zenithchain.co/",
       "https://dataserver-asia-4.zenithchain.co/",
+      "https://dataserver-asia-2.zenithchain.co/",
       "https://dataserver-asia-5.zenithchain.co/",
       "https://dataserver-asia-6.zenithchain.co/",
-      "https://dataserver-asia-7.zenithchain.co/",
-      "https://dataserver-asia-2.zenithchain.co/"
+      "https://dataserver-asia-7.zenithchain.co/"
     ],
     "explorerUrl": "https://scan.zenithchain.co",
     "balancesConfig": {
@@ -73588,6 +73594,18 @@
     "isTestnet": true
   },
   {
+    "id": "1918",
+    "name": "UPB CRESCDI Testnet",
+    "rpcs": ["https://testnet.crescdi.pub.ro"],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "UPBEth",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "1945",
     "name": "ONUS Chain Testnet",
     "rpcs": ["https://rpc-testnet.onuschain.io"],
@@ -75889,7 +75907,7 @@
   {
     "id": "4200",
     "name": "Merlin Mainnet",
-    "rpcs": ["https://rpc.merlinchain.io"],
+    "rpcs": ["https://rpc.merlinchain.io", "https://merlin-mainnet-enterprise.unifra.io"],
     "icon": "merlin",
     "explorerUrl": "https://scan.merlinchain.io",
     "balancesConfig": {
@@ -76871,8 +76889,9 @@
   },
   {
     "id": "5678",
-    "name": "Tanssi EVM ContainerChain",
+    "name": "Tanssi Demo",
     "rpcs": ["https://fraa-dancebox-3001-rpc.a.dancebox.tanssi.network"],
+    "explorerUrl": "https://3001-blockscout.a.dancebox.tanssi.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "TANGO",
@@ -93095,6 +93114,18 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "tSTRAX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "210049",
+    "name": "GitAGI Atlas Testnet",
+    "rpcs": [],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "tGAGI",
         "decimals": 18
       }
     },
