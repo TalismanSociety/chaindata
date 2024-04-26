@@ -65399,7 +65399,12 @@
   {
     "id": "223",
     "name": "B2 Mainnet",
-    "rpcs": ["https://rpc.bsquared.network", "https://b2-mainnet.alt.technology"],
+    "rpcs": [
+      "https://mainnet.b2-rpc.com",
+      "https://rpc.bsquared.network",
+      "https://b2-mainnet.alt.technology",
+      "https://b2-mainnet-public.s.chainbase.com"
+    ],
     "icon": "bsquare",
     "explorerUrl": "https://explorer.bsquared.network",
     "balancesConfig": {
@@ -67492,6 +67497,20 @@
     "rpcs": ["https://sepolia.era.zksync.dev", "https://zksync-sepolia.drpc.org"],
     "icon": "zksync-era",
     "explorerUrl": "https://sepolia.explorer.zksync.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "302",
+    "name": "zkCandy Sepolia Testnet",
+    "rpcs": ["https://sepolia.rpc.zkcandy.io"],
+    "icon": "zkcandy",
+    "explorerUrl": "https://sepolia.explorer.zkcandy.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -71406,13 +71425,13 @@
   },
   {
     "id": "1113",
-    "name": "B2 Hub Habitat Testnet",
-    "rpcs": [],
+    "name": "B2 Hub Testnet",
+    "rpcs": ["https://testnet-hub-rpc.bsquared.network"],
     "icon": "bsquare",
-    "explorerUrl": "https://habitat-hub-explorer.bsquared.network",
+    "explorerUrl": "https://testnet-hub-explorer.bsquared.network",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "BSQ",
+        "symbol": "B2",
         "decimals": 18
       }
     },
@@ -71461,10 +71480,10 @@
   },
   {
     "id": "1123",
-    "name": "B2 Habitat Testnet",
-    "rpcs": [],
+    "name": "B2 Testnet",
+    "rpcs": ["https://b2-testnet.alt.technology"],
     "icon": "bsquare",
-    "explorerUrl": "https://habitat-explorer.bsquared.network",
+    "explorerUrl": "https://testnet-explorer.bsquared.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTC",
@@ -74873,7 +74892,7 @@
   {
     "id": "2611",
     "name": "Redlight Chain Mainnet",
-    "rpcs": ["https://dataseed2.redlightscan.finance"],
+    "rpcs": [],
     "explorerUrl": "https://redlightscan.finance",
     "balancesConfig": {
       "evm-native": {
@@ -74977,6 +74996,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "2748",
+    "name": "Nanon",
+    "rpcs": ["https://rpc.nanon.network"],
+    "icon": "nanon",
+    "explorerUrl": "https://explorer.nanon.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "2810",
@@ -76050,6 +76082,19 @@
     "isTestnet": true
   },
   {
+    "id": "4613",
+    "name": "VERY Mainnet",
+    "rpcs": ["https://rpc.verylabs.io"],
+    "icon": "very",
+    "explorerUrl": "https://www.veryscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "VERY",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "4653",
     "name": "Gold Chain",
     "rpcs": ["https://chain-rpc.gold.dev"],
@@ -76655,6 +76700,19 @@
     "isTestnet": true
   },
   {
+    "id": "5424",
+    "name": "edeXa Mainnet",
+    "rpcs": [],
+    "icon": "edexa",
+    "explorerUrl": "https://explorer.edexa.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "EDX",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "5439",
     "name": "Egochain",
     "rpcs": ["https://mainnet.egochain.org"],
@@ -76937,6 +76995,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "tCC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "6321",
+    "name": "Aura Euphoria Testnet",
+    "rpcs": ["https://jsonrpc.euphoria.aura.network"],
+    "icon": "aura",
+    "explorerUrl": "https://euphoria.aurascan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "eAura",
         "decimals": 18
       }
     },
@@ -78312,6 +78384,12 @@
             "symbol": "BSW",
             "coingeckoId": "basedswap",
             "contractAddress": "0x314da69de85145fdd5b7580971e9db0388a2cdc4",
+            "decimals": 18
+          },
+          {
+            "symbol": "BFROG",
+            "coingeckoId": "basefrog",
+            "contractAddress": "0x1308ae20e66e43d575a76b5dfb30771a50c9256a",
             "decimals": 18
           },
           {
@@ -82891,6 +82969,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "28516",
+    "name": "Vizing Testnet",
+    "rpcs": ["https://rpc-sepolia.vizing.com"],
+    "icon": "vizing",
+    "explorerUrl": "https://explorer-sepolia.vizing.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "28518",
@@ -90956,6 +91048,19 @@
     "isTestnet": true
   },
   {
+    "id": "56026",
+    "name": "Lambda Chain Mainnet",
+    "rpcs": ["https://nrpc.lambda.im/"],
+    "icon": "lambda-chain",
+    "explorerUrl": "https://scan.lambda.im",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "56288",
     "name": "Boba BNB Mainnet",
     "rpcs": [
@@ -94827,6 +94932,19 @@
     "isTestnet": true
   },
   {
+    "id": "5318008",
+    "name": "Reactive Network Testnet Kopli",
+    "rpcs": ["https://kopli-rpc.reactive.network"],
+    "explorerUrl": "https://kopli.reactscan.net",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "REACT",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "5555555",
     "name": "Imversed Mainnet",
     "rpcs": ["https://jsonrpc.imversed.network"],
@@ -95136,6 +95254,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "TPI",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "17000920",
+    "name": "Lambda Chain Testnet",
+    "rpcs": ["https://testnrpc.lambda.im/"],
+    "icon": "lambda-chain",
+    "explorerUrl": "https://testscan.lambda.im",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
         "decimals": 18
       }
     },
