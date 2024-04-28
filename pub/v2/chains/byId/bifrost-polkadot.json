@@ -1,0 +1,213 @@
+{
+  "id": "bifrost-polkadot",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 72,
+  "genesisHash": "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b",
+  "prefix": 6,
+  "name": "Bifrost Polkadot",
+  "themeColor": "#68baf9",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/bifrost-polkadot.svg",
+  "chainName": "Bifrost Polkadot",
+  "chainType": "Live",
+  "implName": "bifrost_polkadot",
+  "specName": "bifrost_polkadot",
+  "specVersion": "996",
+  "nativeToken": {
+    "id": "bifrost-polkadot-substrate-native"
+  },
+  "tokens": [
+    {
+      "id": "bifrost-polkadot-substrate-native"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-bnc"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-dot"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-glmr"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-usdt"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-astr"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-fil"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-usdc"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-ibtc"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-intr"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-vdot"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-vglmr"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-vastr"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-vfil"
+    },
+    {
+      "id": "bifrost-polkadot-substrate-tokens-vsdot"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://bifrost.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-bifrost_polkadot_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-bifrost_polkadot_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://bifrost-polkadot-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://hk.p.bifrost-rpc.liebi.com/ws"
+    },
+    {
+      "url": "wss://eu.bifrost-polkadot-rpc.liebi.com/ws"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2030,
+  "relay": {
+    "id": "polkadot"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "bifrost-native-coin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/bifrost-polkadot.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "BNC",
+            "decimals": 12,
+            "ed": "0",
+            "onChainId": "{\"Token\":\"BNC\"}",
+            "coingeckoId": "bifrost-native-coin",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bnc.svg"
+          },
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "1000000",
+            "onChainId": "{\"Token2\":0}",
+            "coingeckoId": "polkadot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
+          },
+          {
+            "symbol": "GLMR",
+            "decimals": 18,
+            "ed": "1000000000000",
+            "onChainId": "{\"Token2\":1}",
+            "coingeckoId": "moonbeam",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/moonbeam.webp"
+          },
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "1000",
+            "onChainId": "{\"Token2\":2}",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "ASTR",
+            "decimals": 18,
+            "ed": "10000000000000000",
+            "onChainId": "{\"Token2\":3}",
+            "coingeckoId": "astar",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/astar.webp"
+          },
+          {
+            "symbol": "FIL",
+            "decimals": 18,
+            "ed": "1000000000000",
+            "onChainId": "{\"Token2\":4}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "USDC",
+            "decimals": 6,
+            "ed": "1000",
+            "onChainId": "{\"Token2\":5}",
+            "coingeckoId": "usd-coin",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
+          },
+          {
+            "symbol": "IBTC",
+            "decimals": 8,
+            "ed": "100",
+            "onChainId": "{\"Token2\":6}",
+            "coingeckoId": "interbtc",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ibtc.svg"
+          },
+          {
+            "symbol": "INTR",
+            "decimals": 10,
+            "ed": "10000000",
+            "onChainId": "{\"Token2\":7}",
+            "coingeckoId": "interlay",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/intr.svg"
+          },
+          {
+            "symbol": "vDOT",
+            "decimals": 10,
+            "ed": "1000000",
+            "onChainId": "{\"VToken2\":0}",
+            "coingeckoId": "voucher-dot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vdot.svg"
+          },
+          {
+            "symbol": "vGLMR",
+            "decimals": 18,
+            "ed": "1000000000000",
+            "onChainId": "{\"VToken2\":1}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "vASTR",
+            "decimals": 18,
+            "ed": "10000000000000000",
+            "onChainId": "{\"VToken2\":3}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "vFIL",
+            "decimals": 18,
+            "ed": "1000000000000",
+            "onChainId": "{\"VToken2\":4}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "vsDOT",
+            "decimals": 10,
+            "ed": "1000000",
+            "onChainId": "{\"VSToken2\":0}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vsdot.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": []
+}

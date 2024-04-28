@@ -1,0 +1,62 @@
+{
+  "id": "314",
+  "isTestnet": false,
+  "sortIndex": 264,
+  "name": "Filecoin - Mainnet",
+  "themeColor": "#008ffe",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/filecoin.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://filfox.info/en",
+  "rpcs": [
+    {
+      "url": "https://api.node.glif.io/"
+    },
+    {
+      "url": "https://rpc.ankr.com/filecoin"
+    },
+    {
+      "url": "https://filfox.info/rpc/v1"
+    },
+    {
+      "url": "https://filecoin.drpc.org"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "FIL",
+        "decimals": 18,
+        "coingeckoId": "filecoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/filecoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WFIL",
+            "coingeckoId": "wrapped-fil",
+            "contractAddress": "0x60e1773636cf5e4a227d9ac24f20feca034ee25a",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-fil.webp"
+          },
+          {
+            "symbol": "wpFIL",
+            "coingeckoId": "wrapped-pfil",
+            "contractAddress": "0x57e3bb9f790185cfe70cc2c15ed5d6b84dcf4adb",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-pfil.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}

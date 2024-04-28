@@ -1,0 +1,62 @@
+{
+  "id": "622277",
+  "isTestnet": false,
+  "sortIndex": 337,
+  "name": "Hypra Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/rethereum.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.hypra.network",
+  "rpcs": [
+    {
+      "url": "https://rpc.hypra.network"
+    },
+    {
+      "url": "https://rpc.rethereum.org"
+    },
+    {
+      "url": "https://hypra.rpc.thirdweb.com"
+    },
+    {
+      "url": "https://rpc.rthcentral.org"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "HYP",
+        "decimals": 18,
+        "coingeckoId": "hypra",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hypra.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "HINU",
+            "coingeckoId": "hypra-inu",
+            "contractAddress": "0xcbfbd38167519f4dccff1dbd48304a4fc8d4de32",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hypra-inu.webp"
+          },
+          {
+            "symbol": "wHYP",
+            "coingeckoId": "wrapped-hyp",
+            "contractAddress": "0x0000000000079c645a9bde0bd8af1775faf5598a",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-hyp.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}
