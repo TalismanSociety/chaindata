@@ -4575,6 +4575,12 @@
             "decimals": 18
           },
           {
+            "symbol": "$SWIPES",
+            "coingeckoId": "bndr",
+            "contractAddress": "0x4cb1e6c430bb4b874869fd6049ed07ae975b02f1",
+            "decimals": 9
+          },
+          {
             "symbol": "BFT",
             "coingeckoId": "bnktothefuture",
             "contractAddress": "0x01ff50f8b7f74e4f00580d9596cd3d0d6d6e326f",
@@ -9335,6 +9341,12 @@
             "symbol": "DRIFT",
             "coingeckoId": "drift-token",
             "contractAddress": "0xb7cffebb06621287c7850ffefb22c30252e78e6b",
+            "decimals": 18
+          },
+          {
+            "symbol": "DRV3",
+            "coingeckoId": "drive3",
+            "contractAddress": "0x4022754bf8857395383c63326391f289d1bb14b9",
             "decimals": 18
           },
           {
@@ -27220,6 +27232,12 @@
             "coingeckoId": "thorwallet",
             "contractAddress": "0x108a850856db3f85d0269a2693d896b394c80325",
             "decimals": 18
+          },
+          {
+            "symbol": "THREE",
+            "coingeckoId": "three",
+            "contractAddress": "0xa059b81568fee88791de88232e838465826cf419",
+            "decimals": 9
           },
           {
             "symbol": "TFT",
@@ -70457,6 +70475,19 @@
     }
   },
   {
+    "id": "1011",
+    "name": "Rebus Mainnet",
+    "rpcs": ["https://apievm.rebuschain.com/rpc"],
+    "icon": "rebus",
+    "explorerUrl": "https://evm.rebuschain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "REBUS",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "1012",
     "name": "Newton",
     "rpcs": ["https://global.rpc.mainnet.newtonproject.org"],
@@ -70872,6 +70903,12 @@
             "symbol": "XCAD",
             "coingeckoId": "xcad-network",
             "contractAddress": "0x66673f0a3b5d99524ba76a558b93a9ca1386f4cd",
+            "decimals": 18
+          },
+          {
+            "symbol": "ZKE",
+            "coingeckoId": "zkera-finance",
+            "contractAddress": "0xdf020cbd1897133978c7fcdf04b07e69d8934efc",
             "decimals": 18
           }
         ]
@@ -74006,6 +74043,31 @@
     "isTestnet": true
   },
   {
+    "id": "2140",
+    "name": "Oneness Network",
+    "rpcs": ["https://rpc.onenesslabs.io/"],
+    "explorerUrl": "https://scan.onenesslabs.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTC",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "2141",
+    "name": "Oneness TestNet",
+    "rpcs": ["https://rpc.testnet.onenesslabs.io/"],
+    "explorerUrl": "https://scan.testnet.onenesslabs.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "2151",
     "name": "BOSagora Mainnet",
     "rpcs": ["https://mainnet.bosagora.org", "https://rpc.bosagora.org"],
@@ -74867,6 +74929,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ORL",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "3033",
+    "name": "Rebus Testnet",
+    "rpcs": ["https://testnet.rebus.money/rpc"],
+    "icon": "rebus",
+    "explorerUrl": "https://evm.testnet.rebus.money",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "REBUS",
         "decimals": 18
       }
     },
@@ -82952,7 +83028,7 @@
   {
     "id": "30067",
     "name": "Piece testnet",
-    "rpcs": ["https://testnet-rpc0.piecenetwork.com"],
+    "rpcs": [],
     "icon": "piecechain",
     "explorerUrl": "https://testnet-scan.piecenetwork.com",
     "balancesConfig": {
@@ -90881,6 +90957,20 @@
     }
   },
   {
+    "id": "53457",
+    "name": "DODOchain testnet",
+    "rpcs": ["https://dodochain-testnet.alt.technology"],
+    "icon": "dodochain_testnet",
+    "explorerUrl": "https://testnet-scan.dodochain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BERD",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "53935",
     "name": "DFK Chain",
     "rpcs": ["https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc"],
@@ -91409,6 +91499,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "60808",
+    "name": "BOB",
+    "rpcs": ["https://rpc.gobob.xyz"],
+    "icon": "bob",
+    "explorerUrl": "https://explorer.gobob.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "61406",
@@ -94889,8 +94992,9 @@
   },
   {
     "id": "5318008",
-    "name": "Reactive Network Testnet Kopli",
+    "name": "Reactive Kopli",
     "rpcs": ["https://kopli-rpc.reactive.network"],
+    "icon": "reactive",
     "explorerUrl": "https://kopli.reactscan.net",
     "balancesConfig": {
       "evm-native": {
@@ -97034,6 +97138,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ONE",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1802203764",
+    "name": "Kakarot Sepolia",
+    "rpcs": ["https://sepolia-rpc.kakarot.org"],
+    "icon": "kakarot",
+    "explorerUrl": "https://sepolia.kakarotscan.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
         "decimals": 18
       }
     }
