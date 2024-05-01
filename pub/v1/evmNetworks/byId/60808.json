@@ -3,14 +3,14 @@
   "isTestnet": false,
   "sortIndex": 100,
   "name": "BOB",
-  "themeColor": "#ff6400",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bob.webp",
+  "themeColor": "#505050",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
   "nativeToken": null,
   "tokens": [],
-  "explorerUrl": "https://explorer.gobob.xyz",
+  "explorerUrl": "https://explorer.gobob.xyz/",
   "rpcs": [
     {
-      "url": "https://rpc.gobob.xyz"
+      "url": "https://rpc.gobob.xyz/"
     }
   ],
   "substrateChain": null,
@@ -18,12 +18,19 @@
     {
       "moduleType": "evm-native",
       "moduleConfig": {
+        "coingeckoId": "ethereum",
         "symbol": "ETH",
         "decimals": 18,
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
       }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": []
+      }
     }
   ],
   "balancesMetadata": [],
-  "isDefault": false
+  "isDefault": true
 }
