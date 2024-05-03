@@ -1098,7 +1098,7 @@
     "id": "chainflip",
     "name": "Chainflip",
     "account": "*25519",
-    "rpcs": ["wss://mainnet-archive.chainflip.io"]
+    "rpcs": ["wss://chainflip-rpc.dwellir.com", "wss://mainnet-archive.chainflip.io"]
   },
   {
     "id": "chainx",
@@ -1520,6 +1520,7 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/encointer-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/encointer-parachain_metadata_latest.apng",
     "rpcs": [
+      "wss://encointer-kusama-rpc.dwellir.com",
       "wss://sys.ibp.network/encointer-kusama",
       "wss://sys.dotters.network/encointer-kusama",
       "wss://kusama.api.encointer.org"
@@ -1658,7 +1659,7 @@
     "id": "geminis",
     "name": "Geminis",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://rpc.geminis.network"],
     "paraId": 2038,
     "relay": {
       "id": "polkadot"
@@ -1668,7 +1669,7 @@
     "id": "genshiro-kusama",
     "name": "Genshiro",
     "account": "*25519",
-    "rpcs": ["wss://node.ksm.genshiro.io"],
+    "rpcs": [],
     "paraId": 2024,
     "relay": {
       "id": "kusama"
@@ -1732,7 +1733,7 @@
     "id": "hashed",
     "name": "Hashed",
     "account": "*25519",
-    "rpcs": ["wss://c1.hashed.live", "wss://c2.hashed.network", "wss://c3.hashed.live"],
+    "rpcs": ["wss://c1.hashed.network", "wss://c2.hashed.network", "wss://c3.hashed.network"],
     "paraId": 2093,
     "relay": {
       "id": "polkadot"
@@ -1948,7 +1949,7 @@
     "id": "hyperbridge-polkadot",
     "name": "Hyperbridge",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://hyperbridge-nexus-rpc.blockops.network"],
     "paraId": 3367,
     "relay": {
       "id": "polkadot"
@@ -2763,7 +2764,7 @@
     "id": "kpron",
     "name": "Kpron",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://kusama-kpron-rpc.apron.network/"],
     "paraId": 2019,
     "relay": {
       "id": "kusama"
@@ -2773,7 +2774,7 @@
     "id": "kreivo",
     "name": "Kreivo",
     "account": "*25519",
-    "rpcs": ["wss://kreivo.kippu.rocks/"],
+    "rpcs": ["wss://kreivo.kippu.rocks/", "wss://kreivo.io/"],
     "paraId": 2281,
     "relay": {
       "id": "kusama"
@@ -2865,6 +2866,16 @@
       "wss://ksm-rpc.stakeworld.io/bridgehub"
     ],
     "paraId": 1002,
+    "relay": {
+      "id": "kusama"
+    }
+  },
+  {
+    "id": "kusama-coretime",
+    "name": "Coretime",
+    "account": "*25519",
+    "rpcs": ["wss://kusama-coretime-rpc.polkadot.io"],
+    "paraId": 1005,
     "relay": {
       "id": "kusama"
     }
@@ -3101,13 +3112,23 @@
     }
   },
   {
+    "id": "mythos",
+    "name": "Mythos",
+    "account": "*25519",
+    "rpcs": ["wss://polkadot-mythos-rpc.polkadot.io"],
+    "paraId": 3369,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
     "id": "neatcoin",
     "name": "Neatcoin",
     "account": "*25519",
     "rpcs": ["wss://rpc.neatcoin.org/ws"]
   },
   {
-    "id": "neuroweb-polkadot",
+    "id": "neuroweb",
     "name": "NeuroWeb",
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/origintrail-parachain_specs.png",
@@ -3168,7 +3189,7 @@
     "id": "oak",
     "name": "Oak",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://rpc.oak.tech"],
     "paraId": 2090,
     "relay": {
       "id": "polkadot"
@@ -3188,7 +3209,7 @@
     "id": "omnibtc",
     "name": "OmniBTC",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://psc-parachain.coming.chat"],
     "paraId": 2053,
     "relay": {
       "id": "polkadot"
@@ -3234,7 +3255,7 @@
     "id": "pendulum",
     "name": "Pendulum",
     "account": "*25519",
-    "rpcs": ["wss://pendulum-rpc.dwellir.com", "wss://rpc-pendulum.prd.pendulumchain.tech"],
+    "rpcs": ["wss://rpc-pendulum.prd.pendulumchain.tech"],
     "paraId": 2094,
     "relay": {
       "id": "polkadot"
@@ -3858,7 +3879,7 @@
     "name": "Sakura",
     "account": "*25519",
     "subscanUrl": "https://sakura.subscan.io/",
-    "rpcs": [],
+    "rpcs": ["wss://api-sakura.clover.finance"],
     "paraId": 2016,
     "relay": {
       "id": "kusama"
@@ -3961,7 +3982,7 @@
     "id": "sora-polkadot",
     "name": "Sora",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp"],
     "paraId": 2025,
     "relay": {
       "id": "polkadot"
@@ -4006,7 +4027,7 @@
     "id": "subdao",
     "name": "SubDAO",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://parachain-rpc.subdao.org"],
     "paraId": 2018,
     "relay": {
       "id": "polkadot"
@@ -4121,7 +4142,7 @@
   },
   {
     "id": "tangle",
-    "name": "Tangle Network",
+    "name": "Tangle",
     "account": "*25519",
     "rpcs": ["wss://rpc.tangle.tools"],
     "balancesConfig": {
@@ -4135,7 +4156,7 @@
     "name": "Ternoa",
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/mainnet_specs.png",
-    "rpcs": []
+    "rpcs": ["wss://mainnet.ternoa.network"]
   },
   {
     "id": "thebifrost-mainnet",
@@ -4235,7 +4256,7 @@
     "name": "Vara",
     "account": "*25519",
     "subscanUrl": "https://vara.subscan.io/",
-    "rpcs": ["wss://rpc.vara.network"],
+    "rpcs": ["wss://rpc.vara.network", "wss://vara.drpc.org"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "vara-network"

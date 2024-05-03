@@ -162,10 +162,16 @@
     "rpcs": []
   },
   {
+    "id": "creditcoin-classic-testnet",
+    "name": "Creditcoin Classic",
+    "account": "*25519",
+    "rpcs": ["wss://rpc.testnet.creditcoin.network/ws"]
+  },
+  {
     "id": "creditcoin-testnet",
     "name": "Creditcoin Testnet",
     "account": "*25519",
-    "rpcs": ["wss://rpc.testnet.creditcoin.network/ws"]
+    "rpcs": ["wss://rpc.cc3-testnet.creditcoin.network/ws"]
   },
   {
     "id": "crust-maxwell-testnet",
@@ -184,6 +190,12 @@
     "name": "Dancebox",
     "account": "*25519",
     "rpcs": ["wss://fraa-dancebox-rpc.a.dancebox.tanssi.network"]
+  },
+  {
+    "id": "dancebox-testnet",
+    "name": "Dancebox",
+    "account": "*25519",
+    "rpcs": ["wss://dancebox.tanssi-api.network"]
   },
   {
     "id": "datahighway-testnet",
@@ -364,7 +376,7 @@
     "id": "ipse-testnet",
     "name": "Ipse",
     "account": "*25519",
-    "rpcs": []
+    "rpcs": ["wss://testnet-china.ipse.io", "wss://testnet-europe.ipse.io", "wss://testnet-usa.ipse.io"]
   },
   {
     "id": "jaz-testnet",
@@ -461,7 +473,7 @@
     "id": "logion-testnet",
     "name": "Logion Testnet",
     "account": "*25519",
-    "rpcs": ["wss://test-rpc01.logion.network"]
+    "rpcs": ["wss://test-para-rpc01.logion.network"]
   },
   {
     "id": "mandala-testnet",
@@ -777,7 +789,7 @@
   },
   {
     "id": "rococo-coretime-testnet",
-    "name": "Coretime",
+    "name": "Coretime Testnet",
     "account": "*25519",
     "rpcs": ["wss://rococo-coretime-rpc.polkadot.io"],
     "paraId": 1005,
@@ -911,7 +923,7 @@
     "id": "rococo-invo-testnet",
     "name": "Invo",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://chain.dev.ourinvo.com"],
     "paraId": 4377,
     "relay": {
       "id": "rococo-testnet"
@@ -972,7 +984,7 @@
     "id": "rococo-md-5-testnet",
     "name": "MD5",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://c1md5.hashed.network"],
     "paraId": 2093,
     "relay": {
       "id": "rococo-testnet"
@@ -1337,7 +1349,7 @@
   },
   {
     "id": "tangle-testnet",
-    "name": "Tangle",
+    "name": "Tangle Testnet",
     "account": "*25519",
     "rpcs": ["wss://testnet-rpc-archive.tangle.tools"]
   },
@@ -1345,7 +1357,7 @@
     "id": "ternoa-alphanet-testnet",
     "name": "Ternoa Alphanet",
     "account": "*25519",
-    "rpcs": []
+    "rpcs": ["wss://alphanet.ternoa.com"]
   },
   {
     "id": "ternoa-testnet",
@@ -1449,9 +1461,9 @@
   },
   {
     "id": "westend-coretime-testnet",
-    "name": "Coretime",
+    "name": "Coretime Testnet",
     "account": "*25519",
-    "rpcs": ["wss://westend-coretime-rpc.polkadot.io"],
+    "rpcs": ["wss://sys.dotters.network/coretime-westend", "wss://westend-coretime-rpc.polkadot.io"],
     "paraId": 1005,
     "relay": {
       "id": "westend-testnet"
@@ -1461,7 +1473,7 @@
     "id": "westend-people-testnet",
     "name": "People",
     "account": "*25519",
-    "rpcs": ["wss://westend-people-rpc.polkadot.io"],
+    "rpcs": ["wss://sys.dotters.network/people-westend", "wss://westend-people-rpc.polkadot.io"],
     "paraId": 1004,
     "relay": {
       "id": "westend-testnet"
@@ -1501,7 +1513,7 @@
     "id": "xsocial-testnet",
     "name": "xSocial",
     "account": "*25519",
-    "rpcs": []
+    "rpcs": ["wss://xsocial.subsocial.network"]
   },
   {
     "id": "z-cloak-testnet",
