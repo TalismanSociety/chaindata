@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
 import { Metadata, TypeRegistry } from '@polkadot/types'
-import { xxhashAsHex } from '@polkadot/util-crypto'
+import { encodeAddress, xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
 import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
@@ -164,10 +164,17 @@ const attemptToFetchChainExtras = async (
     const metadata: Metadata = new Metadata(new TypeRegistry(), metadataRpc)
     metadata.registry.setMetadata(metadata)
 
-    // Definition taken from here:
-    // https://github.com/polkadot-js/common/blob/f23f0944a85a6ddff72a8cd5866e85fd88edea39/packages/util-crypto/src/address/encode.ts#L18
-    const isValidSs58Prefix = (ss58Prefix: number | undefined) =>
-      typeof ss58Prefix === 'number' && 0 <= ss58Format && ss58Format <= 16383 && ![46, 47].includes(ss58Format)
+    const isValidSs58Prefix = (ss58Prefix: number | undefined) => {
+      const canEncodeWithPrefix = (ss58Prefix: number) => {
+        try {
+          encodeAddress('5CcU6DRpocLUWYJHuNLjB4gGyHJrkWuruQD5XFbRYffCfSAP', ss58Prefix)
+          return true
+        } catch {
+          return false
+        }
+      }
+      return typeof ss58Prefix === 'number' && canEncodeWithPrefix(ss58Format)
+    }
 
     const { ss58Format } = chainProperties
     const ss58Prefix = metadata.registry.chainSS58
