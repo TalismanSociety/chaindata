@@ -164,9 +164,14 @@ const attemptToFetchChainExtras = async (
     const metadata: Metadata = new Metadata(new TypeRegistry(), metadataRpc)
     metadata.registry.setMetadata(metadata)
 
+    // Definition taken from here:
+    // https://github.com/polkadot-js/common/blob/f23f0944a85a6ddff72a8cd5866e85fd88edea39/packages/util-crypto/src/address/encode.ts#L18
+    const isValidSs58Prefix = (ss58Prefix: number | undefined) =>
+      typeof ss58Prefix === 'number' && 0 <= ss58Format && ss58Format <= 16383 && ![46, 47].includes(ss58Format)
+
     const { ss58Format } = chainProperties
     const ss58Prefix = metadata.registry.chainSS58
-    const prefix = typeof ss58Prefix === 'number' ? ss58Prefix : typeof ss58Format === 'number' ? ss58Format : 42
+    const prefix = isValidSs58Prefix(ss58Prefix) ? ss58Prefix : isValidSs58Prefix(ss58Format) ? ss58Format : 42
 
     const chainExtrasCache: ChainExtrasCache = {
       id: chain.id,
