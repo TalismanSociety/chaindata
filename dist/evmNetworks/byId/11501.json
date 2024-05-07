@@ -1,7 +1,7 @@
 {
   "id": "11501",
   "isTestnet": false,
-  "sortIndex": 69,
+  "sortIndex": 70,
   "name": "BEVM Mainnet",
   "themeColor": "#fef6dd",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bevm.webp",
@@ -23,7 +23,31 @@
       "moduleConfig": {
         "symbol": "BTC",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "bitcoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "stBTC",
+            "coingeckoId": "bido-staked-bitcoin",
+            "contractAddress": "0x26bda683f874e7ae3e3a5d3fad44bcb82a7c107c",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bido-staked-bitcoin.webp"
+          },
+          {
+            "symbol": "wstBTC",
+            "coingeckoId": "wrapped-stbtc",
+            "contractAddress": "0x2967e7bb9daa5711ac332caf874bd47ef99b3820",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-stbtc.webp"
+          }
+        ]
       }
     }
   ],
