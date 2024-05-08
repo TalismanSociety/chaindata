@@ -3411,6 +3411,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BSX",
+            "coingeckoId": "basix",
+            "contractAddress": "0x5d6f4e7b3f57b238eea545f16f9d6d17b77ec2fb",
+            "decimals": 18
+          },
+          {
             "symbol": "BSKT",
             "coingeckoId": "basket",
             "contractAddress": "0xbc0899e527007f1b8ced694508fcb7a2b9a46f53",
@@ -4695,9 +4701,21 @@
             "decimals": 9
           },
           {
+            "symbol": "BONK",
+            "coingeckoId": "bonk-on-eth",
+            "contractAddress": "0x4fbaf51b95b024d0d7cab575be2a1f0afedc9b64",
+            "decimals": 18
+          },
+          {
             "symbol": "SEED",
             "coingeckoId": "bonsai3",
             "contractAddress": "0xe2353069f71a27bbbe66eeabff05de109c7d5e19",
+            "decimals": 18
+          },
+          {
+            "symbol": "BNSAI",
+            "coingeckoId": "bonsai-network",
+            "contractAddress": "0x401e6d25c2991824299aa5dbe67c82486a64381d",
             "decimals": 18
           },
           {
@@ -48223,6 +48241,12 @@
             "decimals": 18
           },
           {
+            "symbol": "PNIC",
+            "coingeckoId": "phoenic-token",
+            "contractAddress": "0x76d36d44dc4595e8d2eb3ad745f175eda134284f",
+            "decimals": 18
+          },
+          {
             "symbol": "PDRAGON",
             "coingeckoId": "phoenix-dragon",
             "contractAddress": "0x3d780eb7deef5d2fa1194e4b4b739f919bc81f00",
@@ -52192,6 +52216,12 @@
             "symbol": "TKP",
             "coingeckoId": "tokpie",
             "contractAddress": "0x7849ed1447250d0b896f89b58f3075b127ca29b3",
+            "decimals": 18
+          },
+          {
+            "symbol": "TKD",
+            "coingeckoId": "tokuda",
+            "contractAddress": "0xd79bc26c424bcb52eec2708d224868c1499422c8",
             "decimals": 18
           },
           {
@@ -71692,7 +71722,7 @@
   {
     "id": "1213",
     "name": "Popcateum Mainnet",
-    "rpcs": ["https://dataseed.popcateum.org"],
+    "rpcs": [],
     "explorerUrl": "https://explorer.popcateum.org",
     "balancesConfig": {
       "evm-native": {
@@ -71875,7 +71905,15 @@
   {
     "id": "1284",
     "name": "Moonbeam",
-    "rpcs": ["https://rpc.api.moonbeam.network", "https://moonbeam-rpc.publicnode.com", "https://moonbeam.drpc.org"],
+    "rpcs": [
+      "https://rpc.api.moonbeam.network",
+      "https://moonbeam.public.blastapi.io",
+      "https://moonbeam-rpc.dwellir.com",
+      "https://moonbeam.api.onfinality.io/public",
+      "https://moonbeam.unitedbloc.com",
+      "https://moonbeam-rpc.publicnode.com",
+      "https://moonbeam.drpc.org"
+    ],
     "explorerUrl": "https://moonbeam.moonscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -72146,6 +72184,10 @@
     "name": "Moonriver",
     "rpcs": [
       "https://rpc.api.moonriver.moonbeam.network",
+      "https://moonriver.public.blastapi.io",
+      "https://moonriver-rpc.dwellir.com",
+      "https://moonriver.api.onfinality.io/public",
+      "https://moonriver.unitedbloc.com",
       "https://moonriver-rpc.publicnode.com",
       "https://moonriver.drpc.org"
     ],
@@ -72351,7 +72393,14 @@
   {
     "id": "1287",
     "name": "Moonbase Alpha",
-    "rpcs": ["https://rpc.api.moonbase.moonbeam.network", "https://moonbase-alpha.drpc.org"],
+    "rpcs": [
+      "https://rpc.api.moonbase.moonbeam.network",
+      "https://moonbase-alpha.public.blastapi.io",
+      "https://moonbase-rpc.dwellir.com",
+      "https://moonbeam-alpha.api.onfinality.io/public",
+      "https://moonbase.unitedbloc.com",
+      "https://moonbase-alpha.drpc.org"
+    ],
     "explorerUrl": "https://moonbase.moonscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -80150,6 +80199,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FOMO",
+            "coingeckoId": "fomo-tocd",
+            "contractAddress": "0xa7ea9d5d4d4c7cf7dbde5871e6d108603c6942a5",
+            "decimals": 18
+          },
+          {
             "symbol": "FORTUNE",
             "coingeckoId": "fortune-bets",
             "contractAddress": "0x5eb7edfcad75415abb54c345a4ea6ec390f77207",
@@ -84653,6 +84708,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "39656",
+    "name": "PRM Mainnet",
+    "rpcs": ["https://mainnet-rpc.prmscan.org"],
+    "icon": "prmIcon",
+    "explorerUrl": "https://prmscan.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "PRM",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "39797",
@@ -96676,6 +96744,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "839320",
+    "name": "PRM Testnet",
+    "rpcs": ["https://testnet-rpc.prmscan.org"],
+    "icon": "prmIcon",
+    "explorerUrl": "https://testnet-explorer.prmscan.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "PRM",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "855456",
