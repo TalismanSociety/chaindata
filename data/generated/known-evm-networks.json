@@ -32869,6 +32869,12 @@
             "decimals": 18
           },
           {
+            "symbol": "CRONON",
+            "coingeckoId": "crononymous",
+            "contractAddress": "0x50aa2611004b3252030cc95e9c5a2a44dfed9983",
+            "decimals": 18
+          },
+          {
             "symbol": "USDC",
             "coingeckoId": "cronos-bridged-usdc-cronos",
             "contractAddress": "0xc21223249ca28397b4b6541dffaecc539bff0c59",
@@ -48019,6 +48025,12 @@
             "decimals": 9
           },
           {
+            "symbol": "PEKA",
+            "coingeckoId": "peka",
+            "contractAddress": "0x6385fae4c6510d0a70d41f4bfa3529fad850aeca",
+            "decimals": 18
+          },
+          {
             "symbol": "PENDLE",
             "coingeckoId": "pendle",
             "contractAddress": "0xb3ed0a426155b79b898849803e3b36552f7ed507",
@@ -58285,6 +58297,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BET",
+            "coingeckoId": "betfin-token",
+            "contractAddress": "0xbf7970d56a150cd0b60bd08388a4a75a27777777",
+            "decimals": 18
+          },
+          {
             "symbol": "BETS",
             "coingeckoId": "betswirl",
             "contractAddress": "0x94025780a1ab58868d9b2dbbb775f44b32e8e6e5",
@@ -66961,7 +66979,7 @@
   {
     "id": "255",
     "name": "Kroma",
-    "rpcs": ["https://api.kroma.network"],
+    "rpcs": ["https://api.kroma.network", "https://rpc-kroma.rockx.com"],
     "icon": "kroma",
     "explorerUrl": "https://blockscout.kroma.network",
     "balancesConfig": {
@@ -76085,7 +76103,11 @@
   {
     "id": "4200",
     "name": "Merlin Mainnet",
-    "rpcs": ["https://rpc.merlinchain.io", "https://merlin-mainnet-enterprise.unifra.io"],
+    "rpcs": [
+      "https://rpc.merlinchain.io",
+      "https://rpc-merlin.rockx.com",
+      "https://merlin-mainnet-enterprise.unifra.io"
+    ],
     "icon": "merlin",
     "explorerUrl": "https://scan.merlinchain.io",
     "balancesConfig": {
@@ -80439,6 +80461,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ISK",
+            "coingeckoId": "iskra-token",
+            "contractAddress": "0xd85eff20288ca72ea9eecffb428f89ee5066ca5c",
+            "decimals": 18
+          },
+          {
             "symbol": "OVER",
             "coingeckoId": "it-s-so-over",
             "contractAddress": "0x7aef64e5997a81f695e0bc951ca874afccd4d1e1",
@@ -80634,6 +80662,12 @@
             "symbol": "MARK",
             "coingeckoId": "mark-friend-tech",
             "contractAddress": "0xca7465e2c4e6ffa198e11ddfa2e6c6b3522bf799",
+            "decimals": 18
+          },
+          {
+            "symbol": "MATH",
+            "coingeckoId": "math",
+            "contractAddress": "0x9e81f6495ba29a6b4d48bddd042c0598fa8abc9f",
             "decimals": 18
           },
           {
@@ -81012,6 +81046,12 @@
             "symbol": "STAR",
             "coingeckoId": "preon-star",
             "contractAddress": "0xc19669a405067927865b40ea045a2baabbbe57f5",
+            "decimals": 18
+          },
+          {
+            "symbol": "PRE",
+            "coingeckoId": "presearch",
+            "contractAddress": "0x3816dd4bd44c8830c2fa020a5605bac72fa3de7a",
             "decimals": 18
           },
           {
@@ -83436,7 +83476,8 @@
     "rpcs": [
       "https://rpc.holesky.ethpandaops.io",
       "https://ethereum-holesky-rpc.publicnode.com",
-      "https://holesky.drpc.org"
+      "https://holesky.drpc.org",
+      "https://rpc-holesky.rockx.com"
     ],
     "icon": "ethereum",
     "explorerUrl": "https://holesky.beaconcha.in",
@@ -84577,6 +84618,12 @@
             "symbol": "ankrETH",
             "coingeckoId": "ankreth",
             "contractAddress": "0x12d8ce035c5de3ce39b1fdd4c1d5a745eaba3b8c",
+            "decimals": 18
+          },
+          {
+            "symbol": "DUSD",
+            "coingeckoId": "davos-protocol",
+            "contractAddress": "0x819d1daa794c1c46b841981b61cc978d95a17b8e",
             "decimals": 18
           },
           {
@@ -90305,6 +90352,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ARROW",
+            "coingeckoId": "arrow-token",
+            "contractAddress": "0x5c5e384bd4e36724b2562ccaa582afd125277c9b",
+            "decimals": 18
+          },
+          {
             "symbol": "USV",
             "coingeckoId": "atlas-usv",
             "contractAddress": "0xb0a8e082e5f8d2a04e74372c1be47737d85a0e73",
@@ -95344,7 +95397,12 @@
   {
     "id": "200901",
     "name": "Bitlayer Mainnet",
-    "rpcs": ["https://rpc.bitlayer.org", "https://rpc.bitlayer-rpc.com", "https://rpc.ankr.com/bitlayer"],
+    "rpcs": [
+      "https://rpc.bitlayer.org",
+      "https://rpc.bitlayer-rpc.com",
+      "https://rpc.ankr.com/bitlayer",
+      "https://rpc-bitlayer.rockx.com"
+    ],
     "icon": "bitlayer",
     "explorerUrl": "https://www.btrscan.com",
     "balancesConfig": {
@@ -97497,6 +97555,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "13068200",
+    "name": "COTI Devnet",
+    "rpcs": ["https://devnet.coti.io"],
+    "icon": "coti",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "COTI2",
         "decimals": 18
       }
     },
