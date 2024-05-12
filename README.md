@@ -96,3 +96,21 @@ The table below describes the purpose of each file and how it is edited.
 | `data/known-evm-networks-overrides.json`         | manual    | Overrides to `known-evm-networks.json`, matched by chain id                                   |
 | `data/cache/known-evm-networks-icons-cache.json` | automatic | Caches images for each network defined in [ethereum-lists](https://github.com/ethereum-lists) |
 | `data/cache/known-evm-tokens-cache.json`         | automatic | Caches static data for ERC20 tokens                                                           |
+
+## Dev Resources
+
+#### Query the top 100 (by TVL) Uniswap V2 pool addresses
+
+```shell
+curl 'https://interface.gateway.uniswap.org/v1/graphql' \
+-X 'POST' \
+-H 'Content-Type: application/json' \
+-H 'Origin: https://app.uniswap.org' \
+--data-binary '{"operationName":"TopV2Pairs","variables":{"first":100,"chain":"ETHEREUM"},"query":"query TopV2Pairs($chain: Chain!, $first: Int!, $cursor: Float, $tokenAddress: String) {\n  topV2Pairs(\n    first: $first\n    chain: $chain\n    tokenFilter: $tokenAddress\n    tvlCursor: $cursor\n  ) {\n    protocolVersion\n    address\n  }\n}"}'
+```
+
+Possible values for `chain` when this was written:
+
+```
+ARBITRUM, AVALANCHE, ETHEREUM, ETHEREUM_GOERLI, ETHEREUM_SEPOLIA, OPTIMISM, POLYGON, CELO, BNB, BASE, BLAST
+```
