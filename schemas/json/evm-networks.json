@@ -56,6 +56,29 @@
             },
             "required": ["tokens"],
             "additionalProperties": false
+          },
+          "evm-uniswapv2": {
+            "type": "object",
+            "properties": {
+              "pools": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "poolAddress": {
+                      "type": "string",
+                      "pattern": "^0x[0-9a-fA-F]{40}$"
+                    },
+                    "logo": { "type": "string" },
+                    "isDefault": { "type": "boolean" }
+                  },
+                  "required": ["poolAddress"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["pools"],
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
