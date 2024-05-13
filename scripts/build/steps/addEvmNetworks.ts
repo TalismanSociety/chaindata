@@ -88,22 +88,23 @@ export const addEvmNetworks = async () => {
 
         // fill in missing token info from cache
         if (configEvmNetwork?.balancesConfig?.['evm-uniswapv2']?.pools) {
-          for (const token of configEvmNetwork?.balancesConfig?.['evm-uniswapv2']?.pools) {
+          for (const pool of configEvmNetwork?.balancesConfig?.['evm-uniswapv2']?.pools) {
             const tokenInfo = uniswapv2TokensCache.find(
               (ti) =>
-                ti.chainId === configEvmNetwork.id && ti.poolAddress.toLowerCase() === ti.poolAddress.toLowerCase(),
+                ti.chainId === configEvmNetwork.id &&
+                ti.poolAddress.toLowerCase() === pool.poolAddress?.toLowerCase?.(),
             )
             if (!tokenInfo) continue
 
-            if (!token.decimals) token.decimals = tokenInfo.decimals
-            if (!token.symbol0) token.symbol0 = tokenInfo.symbol0
-            if (!token.symbol1) token.symbol1 = tokenInfo.symbol1
-            if (!token.decimals0) token.decimals0 = tokenInfo.decimals0
-            if (!token.decimals1) token.decimals1 = tokenInfo.decimals1
-            if (!token.tokenAddress0) token.tokenAddress0 = tokenInfo.tokenAddress0
-            if (!token.tokenAddress1) token.tokenAddress1 = tokenInfo.tokenAddress1
-            if (!token.coingeckoId0) token.coingeckoId0 = tokenInfo.coingeckoId0
-            if (!token.coingeckoId1) token.coingeckoId1 = tokenInfo.coingeckoId1
+            if (!pool.decimals) pool.decimals = tokenInfo.decimals
+            if (!pool.symbol0) pool.symbol0 = tokenInfo.symbol0
+            if (!pool.symbol1) pool.symbol1 = tokenInfo.symbol1
+            if (!pool.decimals0) pool.decimals0 = tokenInfo.decimals0
+            if (!pool.decimals1) pool.decimals1 = tokenInfo.decimals1
+            if (!pool.tokenAddress0) pool.tokenAddress0 = tokenInfo.tokenAddress0
+            if (!pool.tokenAddress1) pool.tokenAddress1 = tokenInfo.tokenAddress1
+            if (!pool.coingeckoId0) pool.coingeckoId0 = tokenInfo.coingeckoId0
+            if (!pool.coingeckoId1) pool.coingeckoId1 = tokenInfo.coingeckoId1
           }
         }
 
