@@ -21,7 +21,8 @@ export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-
 export const FILE_EVM_NETWORKS = 'data/evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'data/known-evm-networks-overrides.json'
-export const FILE_KNOWN_EVM_TOKENS_CACHE = 'data/cache/known-evm-tokens-cache.json'
+export const FILE_KNOWN_EVM_ERC20_TOKENS_CACHE = 'data/cache/known-evm-erc20-tokens-cache.json'
+export const FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE = 'data/cache/known-evm-uniswapv2-tokens-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE = 'data/cache/known-evm-networks-rpcs-cache.json'
 

@@ -7,8 +7,8 @@ import { BaseError, ContractFunctionExecutionError, TimeoutError, getContract, h
 import { cleanupString } from '../../shared/cleanupString'
 import {
   FILE_EVM_NETWORKS,
+  FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_NETWORKS,
-  FILE_KNOWN_EVM_TOKENS_CACHE,
   PRETTIER_CONFIG,
 } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
@@ -118,8 +118,9 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
 export const fetchErc20TokenSymbols = async () => {
   const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
   const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
-  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8'))
+  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, 'utf-8'))
 
+  // NOTE: results in duplicates for some networks, e.g. Ethereum Mainnet
   const allNetworks = knownEvmNetworks.concat(evmNetworks)
   const networksById = Object.fromEntries(allNetworks.map((n) => [n.id, n]))
 
@@ -147,7 +148,7 @@ export const fetchErc20TokenSymbols = async () => {
   })
 
   await writeFile(
-    FILE_KNOWN_EVM_TOKENS_CACHE,
+    FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
     await prettier.format(JSON.stringify(tokensCache, null, 2), {
       ...PRETTIER_CONFIG,
       parser: 'json',

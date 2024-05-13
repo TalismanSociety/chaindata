@@ -6,8 +6,12 @@ import type { EvmErc20Token, EvmNativeModuleConfig, EvmNativeToken } from '@tali
 import { EvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
 
-import { FILE_KNOWN_EVM_TOKENS_CACHE, PROCESS_CONCURRENCY } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
+import {
+  FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
+  FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
+  PROCESS_CONCURRENCY,
+} from '../../shared/constants'
+import { ConfigEvmNetwork, Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
 import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
@@ -22,7 +26,10 @@ export const addEvmNetworks = async () => {
       ? typeof evmNetwork.substrateChain?.id === 'string'
       : typeof evmNetwork.substrateChainId !== 'undefined'
 
-  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8'))
+  const erc20TokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, 'utf-8'))
+  const uniswapv2TokensCache: Uniswapv2TokenCache[] = JSON.parse(
+    await readFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, 'utf-8'),
+  )
 
   // we don't know most evm network ids until the second step where we look it up on-chain
   //
@@ -67,15 +74,36 @@ export const addEvmNetworks = async () => {
             token.isDefault = true
 
             // fill in missing token info from cache
-            const tokenInfo = tokensCache.find(
+            const tokenInfo = erc20TokensCache.find(
               (ti) =>
                 ti.chainId === Number(configEvmNetwork.id) &&
                 ti.contractAddress.toLowerCase() === token.contractAddress.toLowerCase(),
             )
-            if (tokenInfo) {
-              if (!token.symbol) token.symbol = tokenInfo.symbol
-              if (!token.decimals) token.decimals = tokenInfo.decimals
-            }
+            if (!tokenInfo) continue
+
+            if (!token.symbol) token.symbol = tokenInfo.symbol
+            if (!token.decimals) token.decimals = tokenInfo.decimals
+          }
+        }
+
+        // fill in missing token info from cache
+        if (configEvmNetwork?.balancesConfig?.['evm-uniswapv2']?.pools) {
+          for (const token of configEvmNetwork?.balancesConfig?.['evm-uniswapv2']?.pools) {
+            const tokenInfo = uniswapv2TokensCache.find(
+              (ti) =>
+                ti.chainId === configEvmNetwork.id && ti.poolAddress.toLowerCase() === ti.poolAddress.toLowerCase(),
+            )
+            if (!tokenInfo) continue
+
+            if (!token.decimals) token.decimals = tokenInfo.decimals
+            if (!token.symbol0) token.symbol0 = tokenInfo.symbol0
+            if (!token.symbol1) token.symbol1 = tokenInfo.symbol1
+            if (!token.decimals0) token.decimals0 = tokenInfo.decimals0
+            if (!token.decimals1) token.decimals1 = tokenInfo.decimals1
+            if (!token.tokenAddress0) token.tokenAddress0 = tokenInfo.tokenAddress0
+            if (!token.tokenAddress1) token.tokenAddress1 = tokenInfo.tokenAddress1
+            if (!token.coingeckoId0) token.coingeckoId0 = tokenInfo.coingeckoId0
+            if (!token.coingeckoId1) token.coingeckoId1 = tokenInfo.coingeckoId1
           }
         }
 

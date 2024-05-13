@@ -1,4 +1,9 @@
-import type { EvmErc20ModuleConfig, EvmNativeModuleConfig, MiniMetadata } from '@talismn/balances'
+import type {
+  EvmErc20ModuleConfig,
+  EvmNativeModuleConfig,
+  EvmUniswapV2ModuleConfig,
+  MiniMetadata,
+} from '@talismn/balances'
 import { Chain, Token } from '@talismn/chaindata-provider'
 
 export type ChainId = string
@@ -38,6 +43,7 @@ export type ConfigEvmNetwork = {
   balancesConfig?: Record<string, Record<string, unknown>> & {
     'evm-native'?: EvmNativeModuleConfig
     'evm-erc20'?: EvmErc20ModuleConfig
+    'evm-uniswapv2'?: EvmUniswapV2ModuleConfig
   }
   icon?: string
 }
@@ -99,6 +105,20 @@ export type Erc20TokenCache = {
   contractAddress: string
   symbol: string
   decimals: number
+}
+
+export type Uniswapv2TokenCache = {
+  chainId: string
+  poolAddress: string
+  decimals: number
+  symbol0: string
+  symbol1: string
+  decimals0: number
+  decimals1: number
+  tokenAddress0: string
+  tokenAddress1: string
+  coingeckoId0?: string
+  coingeckoId1?: string
 }
 
 export type EvmNetworkIconCache = {

@@ -2,16 +2,16 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import prettier from 'prettier'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_TOKENS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
+import { FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
 
-export const updateKnownEvmTokensFromCache = async () => {
+export const updateKnownEvmErc20TokensFromCache = async () => {
   const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
-  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_TOKENS_CACHE, 'utf-8'))
+  const erc20TokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, 'utf-8'))
 
   for (const network of knownEvmNetworks) {
     const chainId = Number(network.id)
-    const cachedTokens = tokensCache.filter((token) => token.chainId === chainId)
+    const cachedTokens = erc20TokensCache.filter((token) => token.chainId === chainId)
 
     if (network.balancesConfig?.['evm-erc20']?.tokens)
       for (const token of network.balancesConfig?.['evm-erc20']?.tokens) {

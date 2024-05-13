@@ -99,6 +99,23 @@ The table below describes the purpose of each file and how it is edited.
 
 ## Dev Resources
 
+#### Sections needing improvement
+
+There are a few sections in this repo which could do with a tidy up.  
+Here is a list of some of them, feel free to add more!
+
+- The use of relative logo paths vs absolute logo paths is confusing.  
+  We should decide on one, and then also clear up exactly how it is that logos are handled in the repo.  
+  By `clear up`, I mean to make the code easier to understand where possible, and to add docs anywhere it needs to remain complex.  
+  It is currently unclear to contributors whether they only need to add their own logos, or if changes also need to be made to the files in `data`.
+
+- The code for merging `known-evm-networks.json` with `evm-networks.json` is complex, stateful, full of side-effects and therefore difficult to re-use between the build stage and the fetch-external stage.  
+  It is currently co-located inside of `scripts/build/steps/addEvmNetworks.ts`.  
+  We should decide on a simpler mechanism for merging these two files, and extract the implementation of that into a util file.  
+  An example of where this currently fails is in `scripts/fetch-external/steps/fetchErc20TokenSymbols.ts`.  
+  In here we append the two files like so `const allNetworks = knownEvmNetworks.concat(evmNetworks)`, which results in duplicate networks in the `allNetworks` list.  
+  This makes it difficult to e.g. extract a coingeckoId for a given erc20 contract address on a given network, since the code using `allNetworks` needs to account for duplicate networks with potentially conflicting information.
+
 #### Query the top 100 (by TVL) Uniswap V2 pool addresses
 
 ```shell
