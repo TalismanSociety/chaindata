@@ -32892,6 +32892,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BAD",
+            "coingeckoId": "bad-token",
+            "contractAddress": "0x0e66ed8e8646472ab98a7acd38e7bdcb86da456f",
+            "decimals": 18
+          },
+          {
             "symbol": "bCRO",
             "coingeckoId": "bonded-cronos",
             "contractAddress": "0xebaceb7f193955b946cc5dd8f8724a80671a1f2f",
@@ -95936,11 +95942,11 @@
     }
   },
   {
-    "id": "88880",
-    "name": "Chiliz Scoville Testnet",
-    "rpcs": [],
-    "icon": "chiliz",
-    "explorerUrl": "https://scoville-explorer.chiliz.com",
+    "id": "88882",
+    "name": "Chiliz Spicy Testnet",
+    "rpcs": ["https://spicy-rpc.chiliz.com"],
+    "icon": "chilizspicy",
+    "explorerUrl": "https://testnet.chiliscan.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "CHZ",
@@ -95951,13 +95957,13 @@
   },
   {
     "id": "88888",
-    "name": "IVAR Chain Mainnet",
-    "rpcs": ["https://mainnet-rpc.ivarex.com"],
-    "icon": "ivar",
-    "explorerUrl": "https://ivarscan.com",
+    "name": "Chiliz Chain Mainnet",
+    "rpcs": ["https://rpc.chiliz.com", "https://rpc.ankr.com/chiliz", "https://chiliz.publicnode.com"],
+    "icon": "chilizchain",
+    "explorerUrl": "https://chiliscan.com",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "IVAR",
+        "symbol": "CHZ",
         "decimals": 18
       }
     },
@@ -96085,6 +96091,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "MANTIS",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "97531",
+    "name": "Green Chain Testnet",
+    "rpcs": ["https://node.greenchain.app/rpc/"],
+    "icon": "greenchain",
+    "explorerUrl": "https://explorer.greenchain.app",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "GREEN",
         "decimals": 18
       }
     },
