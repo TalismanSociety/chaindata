@@ -31960,12 +31960,6 @@
             "decimals": 18
           },
           {
-            "symbol": "sUSD",
-            "coingeckoId": "nusd",
-            "contractAddress": "0x8c6f28f2f1a3c87f0f938b96d27520d9751ec8d9",
-            "decimals": 18
-          },
-          {
             "symbol": "O3",
             "coingeckoId": "o3-swap",
             "contractAddress": "0xee9801669c6138e84bd50deb500827b776777d28",
@@ -32245,6 +32239,12 @@
             "symbol": "STG",
             "coingeckoId": "stargate-finance",
             "contractAddress": "0x296f55f8fb28e498b858d0bcda06d955b2cb3f97",
+            "decimals": 18
+          },
+          {
+            "symbol": "sUSD",
+            "coingeckoId": "susd-optimism",
+            "contractAddress": "0x8c6f28f2f1a3c87f0f938b96d27520d9751ec8d9",
             "decimals": 18
           },
           {
@@ -33375,6 +33375,12 @@
             "symbol": "SINGLE",
             "coingeckoId": "single-finance",
             "contractAddress": "0x0804702a4e749d39a35fde73d1df0b1f1d6b8347",
+            "decimals": 18
+          },
+          {
+            "symbol": "RIP",
+            "coingeckoId": "skull-with-ripped-hood",
+            "contractAddress": "0x34acea6cc02578af041a5e976b7289ca23ccb7a8",
             "decimals": 18
           },
           {
@@ -68546,7 +68552,36 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "SDN",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "shiden"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "JPYC",
+            "coingeckoId": "jpyc",
+            "contractAddress": "0x735abe48e8782948a37c7765ecb76b98cde97b0f",
+            "decimals": 18
+          },
+          {
+            "symbol": "JPYC",
+            "coingeckoId": "jpy-coin",
+            "contractAddress": "0x431d5dff03120afa4bdf332c61a6e1766ef37bdb",
+            "decimals": 18
+          },
+          {
+            "symbol": "BNB",
+            "coingeckoId": "wbnb",
+            "contractAddress": "0x332730a4f6e03d9c55829435f10360e13cfa41ff",
+            "decimals": 18
+          },
+          {
+            "symbol": "WSDN",
+            "coingeckoId": "wrapped-shiden-network",
+            "contractAddress": "0x0f933dc137d21ca519ae4c7e93f87a4c8ef365ef",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -98816,8 +98851,9 @@
   {
     "id": "13068200",
     "name": "COTI Devnet",
-    "rpcs": ["https://devnet.coti.io"],
+    "rpcs": ["https://devnet.coti.io/rpc"],
     "icon": "coti",
+    "explorerUrl": "https://explorer-devnet.coti.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "COTI2",
