@@ -19616,6 +19616,12 @@
             "decimals": 9
           },
           {
+            "symbol": "NLK",
+            "coingeckoId": "nulink-2",
+            "contractAddress": "0x744030ad4e6c10faf5483b62473d88a254d62261",
+            "decimals": 18
+          },
+          {
             "symbol": "NUM",
             "coingeckoId": "numbers-protocol",
             "contractAddress": "0x3496b523e5c00a4b4150d6721320cddb234c3079",
@@ -44679,6 +44685,12 @@
             "symbol": "LIFE",
             "coingeckoId": "life-crypto",
             "contractAddress": "0x82190d28e710ea9c029d009fad951c6f1d803bb3",
+            "decimals": 18
+          },
+          {
+            "symbol": "LFT",
+            "coingeckoId": "lifeform",
+            "contractAddress": "0xa9f978c02915246e435c0bda9785aaaad3cc46d2",
             "decimals": 18
           },
           {
@@ -82985,11 +82997,11 @@
     "id": "8890",
     "name": "Orenium Testnet Protocol",
     "rpcs": [
-      "https://rpc-dev-testnet.orenium.org/",
-      "https://rpc-testnet.orenium.org/",
       "https://rpc-orc.oredex.finance",
       "https://testnet-rpc.oredex.finance",
-      "https://oredex-node.oredex.finance"
+      "https://oredex-node.oredex.finance",
+      "https://rpc-dev-testnet.orenium.org/",
+      "https://rpc-testnet.orenium.org/"
     ],
     "icon": "ore",
     "explorerUrl": "https://testnet.oreniumscan.org",
@@ -96363,7 +96375,7 @@
   {
     "id": "108801",
     "name": "BROChain Mainnet",
-    "rpcs": [],
+    "rpcs": ["https://rpc.brochain.org", "https://rpc.brochain.org/mainnet"],
     "explorerUrl": "https://explorer.brochain.org",
     "balancesConfig": {
       "evm-native": {
@@ -96510,7 +96522,7 @@
   {
     "id": "112358",
     "name": "Metachain One Mainnet",
-    "rpcs": ["https://rpc2.metachain.one", "https://rpc.metachain.one"],
+    "rpcs": ["https://rpc.metachain.one", "https://rpc2.metachain.one"],
     "icon": "metao",
     "explorerUrl": "https://explorer.metachain.one",
     "balancesConfig": {
