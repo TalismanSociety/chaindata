@@ -3,7 +3,6 @@
     "id": "1",
     "name": "Ethereum Mainnet",
     "rpcs": [
-      "https://cloudflare-eth.com",
       "https://ethereum-rpc.publicnode.com",
       "https://mainnet.gateway.tenderly.co",
       "https://rpc.blocknative.com/boost",
@@ -14,7 +13,8 @@
       "https://rpc.mevblocker.io/noreverts",
       "https://rpc.mevblocker.io/fullprivacy",
       "https://eth.drpc.org",
-      "https://api.mycryptoapi.com/eth"
+      "https://api.mycryptoapi.com/eth",
+      "https://cloudflare-eth.com"
     ],
     "icon": "ethereum",
     "explorerUrl": "https://etherscan.io",
@@ -1302,12 +1302,6 @@
             "symbol": "AI",
             "coingeckoId": "ai-pin",
             "contractAddress": "0xbc544207ff1c5b2bc47a35f745010b603b97e99e",
-            "decimals": 18
-          },
-          {
-            "symbol": "ABL",
-            "coingeckoId": "airbloc-protocol",
-            "contractAddress": "0xf8b358b3397a8ea5464f8cc753645d42e14b79ea",
             "decimals": 18
           },
           {
@@ -17426,12 +17420,6 @@
             "decimals": 18
           },
           {
-            "symbol": "MCI",
-            "coingeckoId": "mci-coin",
-            "contractAddress": "0x3b58c52c03ca5eb619eba171091c86c34d603e5f",
-            "decimals": 9
-          },
-          {
             "symbol": "MCONTENT",
             "coingeckoId": "mcontent",
             "contractAddress": "0xd3c51de3e6dd9b53d7f37699afb3ee3bf9b9b3f4",
@@ -30744,12 +30732,6 @@
             "decimals": 18
           },
           {
-            "symbol": "YVS",
-            "coingeckoId": "yvs-finance",
-            "contractAddress": "0xec681f28f4561c2a9534799aa38e0d36a83cf478",
-            "decimals": 18
-          },
-          {
             "symbol": "ZAI",
             "coingeckoId": "zaibot",
             "contractAddress": "0x68449870eea84453044bd430822827e21fd8f101",
@@ -38671,6 +38653,12 @@
             "decimals": 18
           },
           {
+            "symbol": "CRED",
+            "coingeckoId": "cred-coin-pay",
+            "contractAddress": "0xfc76ba9157ee5d079de8c1e969ee54096aaa6c9c",
+            "decimals": 18
+          },
+          {
             "symbol": "CREDI",
             "coingeckoId": "credefi",
             "contractAddress": "0x2235e79086dd23135119366da45851c741874e5b",
@@ -44643,12 +44631,6 @@
             "symbol": "LDRE",
             "coingeckoId": "lendrusre",
             "contractAddress": "0x0fb6b79b89fc91d55a00a8e0ac1b1dc5957944ee",
-            "decimals": 18
-          },
-          {
-            "symbol": "LEONS",
-            "coingeckoId": "leonicorn-swap-leons",
-            "contractAddress": "0x8303a44c770c666b8a45eebab0879c1a880d39e7",
             "decimals": 18
           },
           {
@@ -64374,12 +64356,6 @@
             "decimals": 18
           },
           {
-            "symbol": "YVS",
-            "coingeckoId": "yvs-finance",
-            "contractAddress": "0xb565cf70613ca464d68427106af80c67a8e4b801",
-            "decimals": 18
-          },
-          {
             "symbol": "DPLAT",
             "coingeckoId": "zbyte",
             "contractAddress": "0x0059ca765cc75a9b977293681a1b8add0424f5f8",
@@ -70080,19 +70056,6 @@
     "isTestnet": true
   },
   {
-    "id": "599",
-    "name": "Metis Goerli Testnet",
-    "rpcs": [],
-    "explorerUrl": "https://goerli.explorer.metisdevops.link",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "METIS",
-        "decimals": 18
-      }
-    },
-    "isTestnet": true
-  },
-  {
     "id": "601",
     "name": "Vine Testnet",
     "rpcs": ["https://rpc-testnet.vne.network"],
@@ -70978,6 +70941,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTCC",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "969",
+    "name": "EthXY",
+    "rpcs": ["https://rpc.ethxy.com"],
+    "icon": "sexy",
+    "explorerUrl": "https://explorer.ethxy.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SEXY",
         "decimals": 18
       }
     }
@@ -77724,6 +77700,7 @@
     "id": "5039",
     "name": "ONIGIRI Test Subnet",
     "rpcs": ["https://subnets.avax.network/onigiri/testnet/rpc"],
+    "icon": "onigiri",
     "explorerUrl": "https://subnets-test.avax.network/onigiri",
     "balancesConfig": {
       "evm-native": {
@@ -77732,6 +77709,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "5040",
+    "name": "ONIGIRI Subnet",
+    "rpcs": ["https://subnets.avax.network/onigiri/mainnet/rpc"],
+    "icon": "onigiri",
+    "explorerUrl": "https://subnets.avax.network/onigiri",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ONGR",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "5051",
@@ -84251,6 +84241,33 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BLG",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "12324",
+    "name": "L3X Protocol",
+    "rpcs": ["https://rpc-mainnet.l3x.com"],
+    "icon": "l3x",
+    "explorerUrl": "https://explorer.l3x.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "12325",
+    "name": "L3X Protocol Testnet",
+    "rpcs": ["https://rpc-testnet.l3x.com"],
+    "icon": "l3x",
+    "explorerUrl": "https://explorer-testnet.l3x.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
         "decimals": 18
       }
     },
@@ -98017,7 +98034,6 @@
     "name": "Hypra Mainnet",
     "rpcs": [
       "https://rpc.hypra.network",
-      "https://rpc.rethereum.org",
       "https://rpc.rthcentral.org",
       "https://hypra.rpc.thirdweb.com",
       "https://rethereum.rpc.restratagem.com"
@@ -99251,6 +99267,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "USD",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "20241133",
+    "name": "Swan Proxima Testnet",
+    "rpcs": ["https://rpc-proxima.swanchain.io"],
+    "explorerUrl": "https://proxima-explorer.swanchain.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "sETH",
         "decimals": 18
       }
     },
