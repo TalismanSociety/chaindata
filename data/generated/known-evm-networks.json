@@ -195,12 +195,6 @@
             "decimals": 8
           },
           {
-            "symbol": "VAULT",
-            "coingeckoId": "0xvault",
-            "contractAddress": "0x239354efb40ce8e843e2609ec7cccda7e2881808",
-            "decimals": 18
-          },
-          {
             "symbol": "VPN",
             "coingeckoId": "0xvpn-org",
             "contractAddress": "0xf898bae008cd85046431ab0a75f00689d6aa1b1c",
@@ -7349,12 +7343,6 @@
             "symbol": "SDG",
             "coingeckoId": "crypto-sdg",
             "contractAddress": "0x0f5def84ced3e9e295dae28df96d0b846de92c1a",
-            "decimals": 18
-          },
-          {
-            "symbol": "CTASK",
-            "coingeckoId": "cryptotask-2",
-            "contractAddress": "0x196c81385bc536467433014042788eb707703934",
             "decimals": 18
           },
           {
@@ -15690,12 +15678,6 @@
             "coingeckoId": "kirobo",
             "contractAddress": "0xb1191f691a355b43542bea9b8847bc73e7abb137",
             "decimals": 18
-          },
-          {
-            "symbol": "KISHIMOTO",
-            "coingeckoId": "kishimoto",
-            "contractAddress": "0xae36155a55f04a696b8362777620027882b31db5",
-            "decimals": 9
           },
           {
             "symbol": "KISHU",
@@ -26550,12 +26532,6 @@
             "decimals": 18
           },
           {
-            "symbol": "TWB",
-            "coingeckoId": "targetwatch-bot",
-            "contractAddress": "0xacdbfcbd4d6d4e9fe72c3ba4280d728ab2ace30f",
-            "decimals": 18
-          },
-          {
             "symbol": "TAROT",
             "coingeckoId": "tarot",
             "contractAddress": "0x837d904a3799c0769079be9ecbaddf1abd4ccd6e",
@@ -29091,12 +29067,6 @@
             "coingeckoId": "vxdefi",
             "contractAddress": "0xe1a3864dbf62fb94834b108ff6bf439ce70183ac",
             "decimals": 18
-          },
-          {
-            "symbol": "VZZN",
-            "coingeckoId": "vzzn",
-            "contractAddress": "0x60867b79a68abecb78351b2dbb5fdec4282c5acb",
-            "decimals": 9
           },
           {
             "symbol": "WTK",
@@ -44387,12 +44357,6 @@
             "decimals": 18
           },
           {
-            "symbol": "KISHIMOTO",
-            "coingeckoId": "kishimoto",
-            "contractAddress": "0xae36155a55f04a696b8362777620027882b31db5",
-            "decimals": 9
-          },
-          {
             "symbol": "KSN",
             "coingeckoId": "kissan",
             "contractAddress": "0xc8a11f433512c16ed895245f34bcc2ca44eb06bd",
@@ -45321,12 +45285,6 @@
             "coingeckoId": "magiccraft",
             "contractAddress": "0x4b8285ab433d8f69cb48d5ad62b415ed1a221e4f",
             "decimals": 9
-          },
-          {
-            "symbol": "MGPT",
-            "coingeckoId": "magic-gpt-game",
-            "contractAddress": "0x03450c8c2a9265823a715cad9cd3ade2c840bbc2",
-            "decimals": 18
           },
           {
             "symbol": "MIM",
@@ -69066,12 +69024,6 @@
             "decimals": 18
           },
           {
-            "symbol": "INVEST",
-            "coingeckoId": "investdex",
-            "contractAddress": "0x853a8ab1c365ea54719eb13a54d6b22f1fbe7feb",
-            "decimals": 18
-          },
-          {
             "symbol": "LOAN",
             "coingeckoId": "liquid-loans",
             "contractAddress": "0x9159f1d2a9f51998fc9ab03fbd8f265ab14a1b3b",
@@ -75072,11 +75024,11 @@
     "id": "2021",
     "name": "Edgeware EdgeEVM Mainnet",
     "rpcs": [
+      "https://edgeware-evm0.jelliedowl.net",
       "https://edgeware-evm1.jelliedowl.net",
       "https://edgeware-evm2.jelliedowl.net",
-      "https://edgeware-evm3.jelliedowl.net",
       "https://edgeware-evm.jelliedowl.net",
-      "https://edgeware-evm0.jelliedowl.net"
+      "https://edgeware-evm3.jelliedowl.net"
     ],
     "icon": "edgeware",
     "explorerUrl": "https://edgscan.live",
@@ -75156,9 +75108,9 @@
     "name": "Centrifuge",
     "rpcs": [
       "https://fullnode.centrifuge.io",
+      "https://centrifuge-parachain.api.onfinality.io/public",
       "https://centrifuge-rpc.dwellir.com",
-      "https://rpc-centrifuge.luckyfriday.io",
-      "https://centrifuge-parachain.api.onfinality.io/public"
+      "https://rpc-centrifuge.luckyfriday.io"
     ],
     "icon": "centrifuge",
     "explorerUrl": "https://centrifuge.subscan.io",
@@ -97098,7 +97050,8 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "reETH",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "weth"
       }
     }
   },
