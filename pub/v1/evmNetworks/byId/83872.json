@@ -1,7 +1,7 @@
 {
   "id": "83872",
   "isTestnet": false,
-  "sortIndex": 832,
+  "sortIndex": 833,
   "name": "ZEDXION",
   "themeColor": "#505050",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -20,7 +20,47 @@
       "moduleConfig": {
         "symbol": "zedx",
         "decimals": 9,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "zedxion-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zedxion-2.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "BTC.z",
+            "coingeckoId": "bitcoin-bridged-zed20",
+            "contractAddress": "0x240962a6ddd67dd382db4d417cbdf0d8822aca2f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin-bridged-zed20.webp"
+          },
+          {
+            "symbol": "USDC.z",
+            "coingeckoId": "usd-coin-bridged-zed20",
+            "contractAddress": "0xfe5f4fa42e7a3027475a3eb54f7ee16c332298f1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin-bridged-zed20.webp"
+          },
+          {
+            "symbol": "WZEDX",
+            "coingeckoId": "wrapped-zedxion",
+            "contractAddress": "0x3f7be9db9d37bd89c3fa722bb29ba17300c18fc8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-zedxion.webp"
+          },
+          {
+            "symbol": "ZED",
+            "coingeckoId": "zeddex",
+            "contractAddress": "0x5b0f21f60116b9463210c00c7a1a6a46e26bfa33",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zeddex.webp"
+          }
+        ]
       }
     }
   ],
