@@ -65,14 +65,14 @@
                 "items": {
                   "type": "object",
                   "properties": {
-                    "poolAddress": {
+                    "contractAddress": {
                       "type": "string",
                       "pattern": "^0x[0-9a-fA-F]{40}$"
                     },
                     "logo": { "type": "string" },
                     "isDefault": { "type": "boolean" }
                   },
-                  "required": ["poolAddress"],
+                  "required": ["contractAddress"],
                   "additionalProperties": false
                 }
               }

@@ -38,7 +38,7 @@ export const fetchUniswapv2TokenExtras = async () => {
   const erc20CoingeckoIdsByNetwork = new Map<string, Map<string, string>>()
   for (const network of evmNetworks.concat(knownEvmNetworks)) {
     ;(network.balancesConfig?.['evm-uniswapv2']?.pools ?? []).forEach((token) =>
-      tokenDefs.add(`${network.id}||${token.poolAddress?.toLowerCase?.()}`),
+      tokenDefs.add(`${network.id}||${token.contractAddress?.toLowerCase?.()}`),
     )
 
     if (!erc20CoingeckoIdsByNetwork.has(network.id)) erc20CoingeckoIdsByNetwork.set(network.id, new Map())
@@ -54,13 +54,13 @@ export const fetchUniswapv2TokenExtras = async () => {
   await Promise.all(
     Array.from(tokenDefs)
       .map((td) => {
-        const [chainId, poolAddress] = td.split('||')
+        const [chainId, contractAddress] = td.split('||')
         const network = networksById[chainId] ?? knownNetworksById[chainId]
         const erc20CoingeckoIds = erc20CoingeckoIdsByNetwork.get(chainId) ?? new Map<string, string>()
-        return [network, erc20CoingeckoIds, poolAddress] as const
+        return [network, erc20CoingeckoIds, contractAddress] as const
       })
-      .map(([network, erc20CoingeckoIds, poolAddress]) =>
-        updateTokenCache(tokensCache, network, erc20CoingeckoIds, poolAddress),
+      .map(([network, erc20CoingeckoIds, contractAddress]) =>
+        updateTokenCache(tokensCache, network, erc20CoingeckoIds, contractAddress),
       ),
   )
 
@@ -68,7 +68,7 @@ export const fetchUniswapv2TokenExtras = async () => {
     if (a.chainId !== b.chainId) return parseInt(a.chainId) - parseInt(b.chainId)
     if (a.symbol0 !== b.symbol0) return a.symbol0.localeCompare(b.symbol0)
     if (a.symbol1 !== b.symbol1) return a.symbol1.localeCompare(b.symbol1)
-    return a.poolAddress.localeCompare(b.poolAddress)
+    return a.contractAddress.localeCompare(b.contractAddress)
   })
 
   await writeFile(
@@ -80,25 +80,25 @@ export const fetchUniswapv2TokenExtras = async () => {
   )
 }
 
-const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, poolAddress: string) =>
-  tokenCache.some((t) => t.chainId === chainId && t.poolAddress.toLowerCase() === poolAddress.toLowerCase())
+const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, contractAddress: string) =>
+  tokenCache.some((t) => t.chainId === chainId && t.contractAddress.toLowerCase() === contractAddress.toLowerCase())
 
 const updateTokenCache = async (
   tokenCache: Uniswapv2TokenCache[],
   evmNetwork: ConfigEvmNetwork,
   erc20CoingeckoIds: Map<string, string>,
-  poolAddress: string,
+  contractAddress: string,
 ) => {
   // reject invalid addresses
-  if (!poolAddress.match(/0x[0-9a-fA-F]{40}/)?.[0]) return
+  if (!contractAddress.match(/0x[0-9a-fA-F]{40}/)?.[0]) return
 
   // short-circuit if already cached
-  if (isCached(tokenCache, evmNetwork.id, poolAddress)) return
+  if (isCached(tokenCache, evmNetwork.id, contractAddress)) return
 
   try {
     const client = getEvmNetworkClient(evmNetwork)
 
-    const poolContract = { abi: uniswapV2PairAbi, address: poolAddress as `0x${string}` }
+    const poolContract = { abi: uniswapV2PairAbi, address: contractAddress as `0x${string}` }
 
     const [
       // Always `UNI-V2` for uniswap v2 contracts
@@ -137,7 +137,7 @@ const updateTokenCache = async (
 
     tokenCache.push({
       chainId: evmNetwork.id,
-      poolAddress,
+      contractAddress,
       decimals,
       symbol0,
       decimals0,
@@ -156,7 +156,7 @@ const updateTokenCache = async (
     const viemError = err as BaseError
     console.warn('Failed to fetch uniswapv2 token info', {
       network: `${evmNetwork.name} (${evmNetwork.id})`,
-      poolAddress,
+      contractAddress,
       err: viemError.shortMessage ?? viemError.message,
     })
   }

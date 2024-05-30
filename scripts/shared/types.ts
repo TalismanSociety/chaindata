@@ -109,7 +109,7 @@ export type Erc20TokenCache = {
 
 export type Uniswapv2TokenCache = {
   chainId: string
-  poolAddress: string
+  contractAddress: string
   decimals: number
   symbol0: string
   symbol1: string

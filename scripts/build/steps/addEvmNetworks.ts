@@ -92,7 +92,7 @@ export const addEvmNetworks = async () => {
             const tokenInfo = uniswapv2TokensCache.find(
               (ti) =>
                 ti.chainId === configEvmNetwork.id &&
-                ti.poolAddress.toLowerCase() === pool.poolAddress?.toLowerCase?.(),
+                ti.contractAddress.toLowerCase() === pool.contractAddress?.toLowerCase?.(),
             )
             if (!tokenInfo) continue
 
