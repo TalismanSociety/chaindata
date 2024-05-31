@@ -116,6 +116,10 @@ Here is a list of some of them, feel free to add more!
   In here we append the two files like so `const allNetworks = knownEvmNetworks.concat(evmNetworks)`, which results in duplicate networks in the `allNetworks` list.  
   This makes it difficult to e.g. extract a coingeckoId for a given erc20 contract address on a given network, since the code using `allNetworks` needs to account for duplicate networks with potentially conflicting information.
 
+- Currently all of the EVM tokens are hydrated from known-tokens, while all substrate tokens are hydrated from tokens.json.  
+  This is counter-intuitive, and so it leads to questions like "Why can I only see substrate tokens on chaindata? Are the EVM tokens missing / broken?"  
+  We should either consolidate the two lists of tokens in one place, or change the naming used to clarify that not _all_ tokens can be found in one place.
+
 #### Query the top 100 (by TVL) Uniswap V2 pool addresses
 
 ```shell
