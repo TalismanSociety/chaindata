@@ -1299,6 +1299,12 @@
             "decimals": 18
           },
           {
+            "symbol": "AIR",
+            "coingeckoId": "airian",
+            "contractAddress": "0x294b9da569c0d694870239813bbe7b5824fd2339",
+            "decimals": 18
+          },
+          {
             "symbol": "APUFF",
             "coingeckoId": "airpuff",
             "contractAddress": "0x2be056e595110b30ddd5eaf674bdac54615307d9",
@@ -35364,6 +35370,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ACE",
+            "coingeckoId": "apollo-caps",
+            "contractAddress": "0xcb7bf0218ccbf340c6676706c60a41c1e9cbdd44",
+            "decimals": 18
+          },
+          {
             "symbol": "APX",
             "coingeckoId": "apollox-2",
             "contractAddress": "0x78f5d389f5cdccfc41594abab4b0ed02f31398b3",
@@ -48824,6 +48836,12 @@
             "coingeckoId": "phoenix-token",
             "contractAddress": "0xac86e5f9ba48d680516df50c72928c2ec50f3025",
             "decimals": 18
+          },
+          {
+            "symbol": "pch",
+            "coingeckoId": "pigcoinhero",
+            "contractAddress": "0x2b168f6beeaa101aaf414f3320f2fdfdc9fdf04b",
+            "decimals": 6
           },
           {
             "symbol": "PIG",
@@ -75195,7 +75213,7 @@
   {
     "id": "1995",
     "name": "edeXa Testnet",
-    "rpcs": ["https://testnet.edexa.network/rpc", "https://io-dataseed1.testnet.edexa.io-market.com/rpc"],
+    "rpcs": ["https://io-dataseed1.testnet.edexa.io-market.com/rpc", "https://testnet.edexa.network/rpc"],
     "icon": "edexa",
     "explorerUrl": "https://explorer.testnet.edexa.network",
     "balancesConfig": {
@@ -77471,6 +77489,33 @@
     "isTestnet": true
   },
   {
+    "id": "4061",
+    "name": "Nahmii 3 Mainnet",
+    "rpcs": ["https://rpc.n3.nahmii.io"],
+    "icon": "nahmii",
+    "explorerUrl": "https://explorer.nahmii.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "4062",
+    "name": "Nahmii 3 Testnet",
+    "rpcs": ["https://rpc.testnet.nahmii.io"],
+    "icon": "nahmii",
+    "explorerUrl": "https://explorer.testnet.nahmii.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "4078",
     "name": "Muster Mainnet",
     "rpcs": ["https://muster.alt.technology"],
@@ -78788,30 +78833,16 @@
   },
   {
     "id": "5551",
-    "name": "Nahmii Mainnet",
+    "name": "Nahmii 2 Mainnet",
     "rpcs": ["https://l2.nahmii.io"],
     "icon": "nahmii",
-    "explorerUrl": "https://explorer.nahmii.io",
+    "explorerUrl": "https://explorer.n2.nahmii.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
         "decimals": 18
       }
     }
-  },
-  {
-    "id": "5553",
-    "name": "Nahmii Testnet",
-    "rpcs": [],
-    "icon": "nahmii",
-    "explorerUrl": "https://explorer.testnet.nahmii.io",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "ETH",
-        "decimals": 18
-      }
-    },
-    "isTestnet": true
   },
   {
     "id": "5555",
@@ -79086,6 +79117,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "6322",
+    "name": "Aura Mainnet",
+    "rpcs": ["https://jsonrpc.aura.network"],
+    "icon": "aura",
+    "explorerUrl": "https://aurascan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "AURA",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "6363",
@@ -98386,7 +98430,7 @@
   {
     "id": "142857",
     "name": "ICPlaza Mainnet",
-    "rpcs": ["https://rpcmainnet.ic-plaza.org/"],
+    "rpcs": [],
     "icon": "icplaza",
     "explorerUrl": "https://browsemainnet.ic-plaza.org/index",
     "balancesConfig": {
