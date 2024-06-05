@@ -1,8 +1,13 @@
+import 'anylogger-loglevel'
+
 import { cryptoWaitReady } from '@polkadot/util-crypto'
 import { watCryptoWaitReady } from '@talismn/scale'
 import startCase from 'lodash/startCase'
+import loglevel from 'loglevel'
 
 import { fetchExternalSteps } from './fetch-external/steps'
+
+loglevel.setLevel('info')
 
 // import { buildSteps } from './build/steps'
 // const steps: Array<() => Promise<void>> = [

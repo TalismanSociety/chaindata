@@ -88,12 +88,21 @@ devDependencies:
   ajv-cli:
     specifier: ^5.0.0
     version: 5.0.0
+  anylogger:
+    specifier: ^1.0.11
+    version: 1.0.11
+  anylogger-loglevel:
+    specifier: ^1.0.0
+    version: 1.0.0(anylogger@1.0.11)(loglevel@1.9.1)
   bun-types:
     specifier: ^1.0.14
     version: 1.0.14
   import-sort-style-module:
     specifier: ^6.0.0
     version: 6.0.0
+  loglevel:
+    specifier: ^1.8.1
+    version: 1.9.1
   prettier:
     specifier: ^3.1.0
     version: 3.1.0
@@ -3394,9 +3403,18 @@ packages:
       color-convert: 1.9.3
     dev: true
 
+  /anylogger-loglevel@1.0.0(anylogger@1.0.11)(loglevel@1.9.1):
+    resolution: {integrity: sha512-3MYHDlTkB10GNHO8eLZaAa8fS24Gz6Bz1BGegwkjF2I349U7tj5bqP7lsEn0EvyGW6CMJNDNxpxN/84LphrSzw==}
+    peerDependencies:
+      anylogger: ^1.0.3
+      loglevel: ^1.6.6
+    dependencies:
+      anylogger: 1.0.11
+      loglevel: 1.9.1
+    dev: true
+
   /anylogger@1.0.11:
     resolution: {integrity: sha512-sKTWPTG2/d71kLGVmymMJQQslUppxvCz6DN/eODL3/ckmfygZzD0t4P5tRXE3qpM62jI98F/YTHHzFhM12jiJQ==}
-    dev: false
 
   /argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -4232,6 +4250,11 @@ packages:
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
+
+  /loglevel@1.9.1:
+    resolution: {integrity: sha512-hP3I3kCrDIMuRwAwHltphhDM1r8i55H33GgqjXbrisuJhF4kRhW1dNuxsRklp4bXl8DSdLaNLuiL4A/LWRfxvg==}
+    engines: {node: '>= 0.6.0'}
+    dev: true
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
