@@ -25080,12 +25080,6 @@
             "decimals": 18
           },
           {
-            "symbol": "sLTC",
-            "coingeckoId": "sltc",
-            "contractAddress": "0xc14103c2141e842e228fbac594579e798616ce7a",
-            "decimals": 18
-          },
-          {
             "symbol": "SDOG",
             "coingeckoId": "small-doge",
             "contractAddress": "0x537edd52ebcb9f48ff2f8a28c51fcdb9d6a6e0d4",
@@ -57502,11 +57496,7 @@
   {
     "id": "121",
     "name": "Realchain Mainnet",
-    "rpcs": [
-      "https://rcl-dataseed1.rclsidechain.com",
-      "https://rcl-dataseed3.rclsidechain.com",
-      "https://rcl-dataseed4.rclsidechain.com"
-    ],
+    "rpcs": ["https://rcl-dataseed1.rclsidechain.com", "https://rcl-dataseed3.rclsidechain.com"],
     "explorerUrl": "https://rclscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -58162,12 +58152,12 @@
     "name": "Polygon Mainnet",
     "rpcs": [
       "https://polygon-rpc.com/",
-      "https://rpc-mainnet.maticvigil.com",
       "https://rpc-mainnet.matic.quiknode.pro",
       "https://polygon-bor-rpc.publicnode.com",
       "https://polygon.gateway.tenderly.co",
       "https://polygon.drpc.org",
       "https://matic-mainnet.chainstacklabs.com",
+      "https://rpc-mainnet.maticvigil.com",
       "https://matic-mainnet-full-rpc.bwarelabs.com"
     ],
     "icon": "polygon",
@@ -59414,12 +59404,6 @@
             "symbol": "BUILD",
             "coingeckoId": "build",
             "contractAddress": "0xe94845ac6782a2e71c407abe4d5201445c26a62b",
-            "decimals": 18
-          },
-          {
-            "symbol": "BULL",
-            "coingeckoId": "bullieverse",
-            "contractAddress": "0x9f95e17b2668afe01f8fbd157068b0a4405cc08d",
             "decimals": 18
           },
           {
@@ -62751,12 +62735,6 @@
             "decimals": 18
           },
           {
-            "symbol": "PEARL",
-            "coingeckoId": "pearl",
-            "contractAddress": "0x7238390d5f6f64e67c3211c343a410e2a3dec142",
-            "decimals": 18
-          },
-          {
             "symbol": "wPPC",
             "coingeckoId": "peercoin",
             "contractAddress": "0x91e7e32c710661c44ae44d10aa86135d91c3ed65",
@@ -65356,7 +65334,7 @@
   {
     "id": "167",
     "name": "Atoshi Testnet",
-    "rpcs": ["https://node.atoshi.io/"],
+    "rpcs": [],
     "icon": "atoshi",
     "explorerUrl": "https://scan.atoverse.info",
     "balancesConfig": {
@@ -65654,7 +65632,7 @@
   {
     "id": "185",
     "name": "Mint Mainnet",
-    "rpcs": ["https://rpc.mintchain.io", "https://asia.rpc.mintchain.io", "https://global.rpc.mintchain.io"],
+    "rpcs": ["https://rpc.mintchain.io", "https://global.rpc.mintchain.io", "https://asia.rpc.mintchain.io"],
     "icon": "mint",
     "explorerUrl": "https://explorer.mintchain.io",
     "balancesConfig": {
@@ -69488,6 +69466,12 @@
       },
       "evm-erc20": {
         "tokens": [
+          {
+            "symbol": "4WMM",
+            "coingeckoId": "4-way-mirror-money",
+            "contractAddress": "0x8bf45680485b2ac15e452a9599e87b94c5a07792",
+            "decimals": 18
+          },
           {
             "symbol": "9INCH",
             "coingeckoId": "9inch",
@@ -73982,7 +73966,18 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "SEI",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "wrapped-sei"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "WSEI",
+            "coingeckoId": "wrapped-sei",
+            "contractAddress": "0xe30fedd158a2e3b13e9badaeabafc5516e95e8c7",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -80591,6 +80586,11 @@
             "decimals": 18
           },
           {
+            "symbol": "kai",
+            "coingeckoId": "kai-protocol",
+            "contractAddress": "0xe950bdcfa4d1e45472e76cf967db93dbfc51ba3e"
+          },
+          {
             "symbol": "KLAP",
             "coingeckoId": "klap-finance",
             "contractAddress": "0xd109065ee17e2dc20b3472a4d4fb5907bd687d09",
@@ -81857,6 +81857,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BULL",
+            "coingeckoId": "bullieverse",
+            "contractAddress": "0x9f95e17b2668afe01f8fbd157068b0a4405cc08d",
+            "decimals": 18
+          },
+          {
             "symbol": "CIRCLE",
             "coingeckoId": "burning-circle",
             "contractAddress": "0x5babfc2f240bc5de90eb7e19d789412db1dec402",
@@ -82960,6 +82966,12 @@
             "decimals": 18
           },
           {
+            "symbol": "LAN",
+            "coingeckoId": "lanify",
+            "contractAddress": "0xa83d1a010e4a36198a884dcb3d7d2de87fe9a59d",
+            "decimals": 18
+          },
+          {
             "symbol": "LOA",
             "coingeckoId": "law-of-attraction",
             "contractAddress": "0x8d3419b9a18651f3926a205ee0b1acea1e7192de",
@@ -83245,6 +83257,12 @@
             "symbol": "NFI",
             "coingeckoId": "netherfi",
             "contractAddress": "0x60359a0dd148b18d5cf1ddf8aa1916221ed0cbcd",
+            "decimals": 18
+          },
+          {
+            "symbol": "NEWB",
+            "coingeckoId": "newton-on-base",
+            "contractAddress": "0xeb9e49fb4c33d9f6aefb1b03f9133435e24c0ec6",
             "decimals": 18
           },
           {
@@ -96512,7 +96530,8 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BOBA",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "boba-network"
       }
     }
   },
@@ -98821,6 +98840,12 @@
       "evm-erc20": {
         "tokens": [
           {
+            "symbol": "PEARL",
+            "coingeckoId": "pearl",
+            "contractAddress": "0xce1581d7b4ba40176f0e219b2cac30088ad50c7a",
+            "decimals": 18
+          },
+          {
             "symbol": "DAI",
             "coingeckoId": "real-bridged-dai-real",
             "contractAddress": "0x75d0cbf342060b14c2fc756fd6e717dfeb5b1b70",
@@ -98977,9 +99002,27 @@
       "evm-erc20": {
         "tokens": [
           {
+            "symbol": "DKD",
+            "coingeckoId": "daikodex",
+            "contractAddress": "0xf2658ee288e92789e6c3f4f33cb1c0eaaef338f6",
+            "decimals": 18
+          },
+          {
             "symbol": "TAIKO",
             "coingeckoId": "taiko",
             "contractAddress": "0xa9d23408b9ba935c230493c40c73824df71a0975",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "taiko-bridged-usdc-taiko",
+            "contractAddress": "0x07d83526730c7438048d55a4fc0b850e2aab6f0b",
+            "decimals": 6
+          },
+          {
+            "symbol": "TKOSWAP",
+            "coingeckoId": "taikoswap",
+            "contractAddress": "0xed197058a19e3a7c0d1ac402aaadef22a0f31d0b",
             "decimals": 18
           },
           {
