@@ -1564,7 +1564,13 @@
     "id": "enjin-relay",
     "name": "Enjin Relaychain",
     "account": "*25519",
-    "rpcs": ["wss://rpc.relay.blockchain.enjin.io"]
+    "rpcs": ["wss://rpc.relay.blockchain.enjin.io"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "enjincoin"
+      },
+    },
+    "subscanUrl": "https://enjin.subscan.io/"
   },
   {
     "id": "equilibrium-polkadot",
