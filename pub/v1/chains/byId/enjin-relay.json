@@ -22,7 +22,7 @@
     }
   ],
   "account": "*25519",
-  "subscanUrl": null,
+  "subscanUrl": "https://enjin.subscan.io/",
   "chainspecQrUrl": null,
   "latestMetadataQrUrl": null,
   "isUnknownFeeToken": false,
@@ -47,6 +47,14 @@
   ],
   "paraId": null,
   "relay": null,
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "enjincoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/enjin-relay.svg"
+      }
+    }
+  ],
   "balancesMetadata": []
 }
