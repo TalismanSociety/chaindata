@@ -1875,6 +1875,12 @@
             "decimals": 18
           },
           {
+            "symbol": "AEUR",
+            "coingeckoId": "anchored-coins-eur",
+            "contractAddress": "0xa40640458fbc27b6eefedea1e9c9e17d4cee7a21",
+            "decimals": 18
+          },
+          {
             "symbol": "ANC",
             "coingeckoId": "anchor-protocol",
             "contractAddress": "0x0f3adc247e91c3c50bc08721355a41037e89bc20",
@@ -35329,6 +35335,12 @@
             "symbol": "ACHF",
             "coingeckoId": "anchored-coins-chf",
             "contractAddress": "0x653aab62056b92641116d63927de6141d780e596",
+            "decimals": 18
+          },
+          {
+            "symbol": "AEUR",
+            "coingeckoId": "anchored-coins-eur",
+            "contractAddress": "0xa40640458fbc27b6eefedea1e9c9e17d4cee7a21",
             "decimals": 18
           },
           {
@@ -77409,7 +77421,7 @@
   {
     "id": "3799",
     "name": "Tangle Testnet",
-    "rpcs": [],
+    "rpcs": ["https://testnet-rpc.tangle.tools"],
     "icon": "tangle",
     "explorerUrl": "https://testnet-explorer.tangle.tools",
     "balancesConfig": {
@@ -81885,6 +81897,12 @@
             "symbol": "CHRETT",
             "coingeckoId": "chinese-brett",
             "contractAddress": "0xf8a99f2bf2ce5bb6ce4aafcf070d8723bc904aa2",
+            "decimals": 18
+          },
+          {
+            "symbol": "CTOSHI",
+            "coingeckoId": "chinese-toshi",
+            "contractAddress": "0x28a730de97dc62a8c88363e0b1049056f1274a70",
             "decimals": 18
           },
           {
@@ -86452,7 +86470,18 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "GSYS",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "genesys"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "BLDT",
+            "coingeckoId": "bluelotusdao",
+            "contractAddress": "0xb4a3f9d3cece2c298e9b73113f7b6c2b9f9d61ff",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
