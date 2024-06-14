@@ -33,6 +33,13 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmeucqvcreQk8nnSRUiHo3QTvLoYYB7shJTKXj5Tk6BtWi',
   'QmPgpWfGsAZ5UHekWFR8rioadVe3Wox8idFyeVxuv9N4Vo',
   'QmahJhdaLfGwBStQ9q9K4Mc73vLNqFV1otWCsT2ZKsMavv',
+  'QmUTDMvoY7JgDs9sZuuBhsyJz6B2dNfc5jj6xUj355be2C',
+  'QmY4vp1mJoGpUiuWbRVenNiDZC17wSyyueGPK9A5QyK1M2',
+  'bafybeia5n537fj2mkfcwmjfwktkmqrcwef3affdodhxnvmkg2gkvmbv2ke',
+  'QmSj6SSWmBiRjnjZQPb17kvhGDmB9xAGRkG13RwPuXLTCT',
+  'QmYV6beVVg3iS9RGPno7GAASpgjyBDoKmWGUcvAKe2nXWK',
+  'QmNMuNBwg9opKvsnrDaoYBP743LeddeooQupVYjpBXf7d7',
+  'QmWcaVLcPYBxi76HYJc4qudLJwXtfNCDJieLHAs632jMEA',
 ]
 
 // collection hash => image name
@@ -42,6 +49,8 @@ const IPFS_COLLECTIONS: Record<string, string> = {
   bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie: 'bnb-icon2.png',
   QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw: 'zkfair.jpg',
   bafybeiapootrvggtigdlvgvk6srfseplpuowsqq3zpyup4j5yj5moxuala: 'boyaanetwork.png',
+  bafybeibcrxeavdxpwwmj4mc6hhp232nkrfbpvfpngcqux2v5rmoshycj3u: 'FLAG-500x500.png',
+  bafybeigpyvnir6awzgeazkk5xdkvexw7w6ww3yxawszue6zms4a5ygdfky: 'Eclat-500x500.png',
 }
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {

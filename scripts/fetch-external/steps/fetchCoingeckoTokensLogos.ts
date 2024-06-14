@@ -139,6 +139,17 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'bridged-busd',
   'celer-bridged-busd-zksync',
   'harmony-horizen-bridged-busd-harmony',
+  'blast-old',
+  'proof-of-memes-pomchain',
+  'bridged-usdc-x-layer',
+  'humanity-protocol-dply',
+  'dook',
+  'iotex-bridged-busd-iotex',
+  'butter-bridged-solvbtc-map-protocol',
+  'frax-doge',
+  'wienerai',
+  'all-time-high-degen',
+  'fefe',
 ]
 
 type BalanceModuleConfig = {
