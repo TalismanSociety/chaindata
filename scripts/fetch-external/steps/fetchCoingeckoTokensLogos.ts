@@ -20,7 +20,6 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'baousd-lusd-stablepool',
   'bifinance-exchange',
   'cellframe',
-  'diva-staking',
   'epiko',
   'fake-market-cap',
   'fight-out',
