@@ -142,7 +142,8 @@ const attemptToFetchChainExtras = async (
       existingCache.implName !== implName ||
       existingCache.specName !== specName ||
       existingCache.specVersion !== specVersion ||
-      existingCache.cacheBalancesConfigHash !== xxhashAsHex(JSON.stringify(chain.balancesConfig))
+      existingCache.cacheBalancesConfigHash !== xxhashAsHex(JSON.stringify(chain.balancesConfig)) ||
+      existingCache.hasCheckMetadataHash === undefined
 
     // no need to do anything else if this chain's extras are already cached
     if (!specChanged) return true
@@ -179,6 +180,7 @@ const attemptToFetchChainExtras = async (
     const { ss58Format } = chainProperties
     const ss58Prefix = metadata.registry.chainSS58
     const prefix = isValidSs58Prefix(ss58Prefix) ? ss58Prefix : isValidSs58Prefix(ss58Format) ? ss58Format : 42
+    const hasCheckMetadataHash = getHasCheckMetadataHash(metadata)
 
     const chainExtrasCache: ChainExtrasCache = {
       id: chain.id,
@@ -189,6 +191,7 @@ const attemptToFetchChainExtras = async (
       implName,
       specName,
       specVersion,
+      hasCheckMetadataHash,
       cacheBalancesConfigHash: xxhashAsHex(JSON.stringify(chain.balancesConfig)),
 
       // Note: These should always be cleared back to an empty `{}` when they need to be updated.
@@ -351,4 +354,13 @@ const getHackedBalanceModuleDeps = (chain: ConfigChain, rpcUrl: string) => {
   }
 
   return { chainConnectors, stubChaindataProvider }
+}
+
+const getHasCheckMetadataHash = (metadata: Metadata) => {
+  try {
+    return metadata.asLatest.extrinsic.signedExtensions.some((ext) => ext.identifier.toString() === 'CheckMetadataHash')
+  } catch (err) {
+    console.error('Failed to check if CheckMetadataHash exists', err)
+    return false
+  }
 }

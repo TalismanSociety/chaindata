@@ -59,6 +59,7 @@ export type ChainExtrasCache = {
   specName: string
   specVersion: string
   cacheBalancesConfigHash: string
+  hasCheckMetadataHash: boolean
 
   // These are separated into their own build files, `tokens/all.json` and `miniMetadatas/all.json`
   miniMetadatas: Record<string, MiniMetadata>
