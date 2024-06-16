@@ -66158,7 +66158,8 @@
       "https://mainnet.b2-rpc.com",
       "https://rpc.bsquared.network",
       "https://b2-mainnet.alt.technology",
-      "https://b2-mainnet-public.s.chainbase.com"
+      "https://b2-mainnet-public.s.chainbase.com",
+      "https://rpc.ankr.com/b2"
     ],
     "icon": "bsquare",
     "explorerUrl": "https://explorer.bsquared.network",
@@ -72979,7 +72980,11 @@
   {
     "id": "1123",
     "name": "B2 Testnet",
-    "rpcs": ["https://b2-testnet.alt.technology"],
+    "rpcs": [
+      "https://b2-testnet.alt.technology",
+      "https://rpc.ankr.com/b2_testnet",
+      "https://testnet-rpc.bsquared.network"
+    ],
     "icon": "bsquare",
     "explorerUrl": "https://testnet-explorer.bsquared.network",
     "balancesConfig": {
@@ -73236,9 +73241,9 @@
     "isTestnet": true
   },
   {
-    "id": "1224",
+    "id": "1225",
     "name": "Hybrid Testnet",
-    "rpcs": ["https://testnet-rpc.buildonhybrid.com"],
+    "rpcs": ["https://hybrid-testnet.rpc.caldera.xyz/http"],
     "icon": "hybridIcon",
     "explorerUrl": "https://explorer.buildonhybrid.com",
     "balancesConfig": {
@@ -77483,6 +77488,7 @@
     "id": "3639",
     "name": "iChain Network",
     "rpcs": ["https://rpc.ichainscan.com"],
+    "icon": "iChain",
     "explorerUrl": "https://ichainscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -77490,6 +77496,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "3645",
+    "name": "iChain Testnet",
+    "rpcs": ["https://istanbul.ichainscan.com"],
+    "icon": "iChain",
+    "explorerUrl": "https://test.ichainscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ISLAMI",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "3666",
