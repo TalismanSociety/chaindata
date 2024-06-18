@@ -99,6 +99,7 @@ const KNOWN_INVALID_RPC_URLS = [
   'https://toys.joys.cash/',
   'https://test.doschain.com/jsonrpc',
   'https://rpc.dexilla.com',
+  'https://rpc.xerom.org',
 ].map((url) => url.replace(/\/$/, ''))
 
 const DEBUG = false
