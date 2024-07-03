@@ -9,6 +9,10 @@ import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpc
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 
+const IGNORED_CHAINS = [
+  1313500, // Xerom, a dead project with malicious RPC url
+]
+
 // RPCs that are not to be fail both from github and browser
 const KNOWN_INVALID_RPC_URLS = [
   'https://mainnet.openpiece.io',
@@ -126,6 +130,7 @@ const isValidRpcUrl = (rpcUrl: string) => {
   }
 }
 const isActiveChain = (chain: EthereumListsChain) => !chain.status || chain.status !== 'deprecated'
+const isAllowedChain = (chain: EthereumListsChain) => !IGNORED_CHAINS.includes(chain.chainId)
 
 const getTimeoutSignal = (ms: number) => {
   const controller = new AbortController()
@@ -246,6 +251,7 @@ export const fetchKnownEvmNetworks = async () => {
 
   const knownEvmNetworks = chainsList
     .filter((chain) => !!chain.chainId)
+    .filter(isAllowedChain)
     .filter(isActiveChain)
     .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
     .map((chain) => {
