@@ -72,13 +72,13 @@ To make a contribution, please fork this repo and make your changes in your fork
 
 ### To build the pub directory locally:
 
-1. Install [pnpm](pnpm.io)
-1. Clone the repo via  
+1. Install `pnpm` via [corepack](https://nodejs.org/api/corepack.html) by running `corepack enable` on the command line
+1. Clone the repo with  
    `git clone git@github.com:TalismanSociety/chaindata.git`
-1. Install the deps via  
+1. Install the dependencies with  
    `pnpm install`
 1. Copy `.env.sample` to `.env` and fill in the variables
-1. Run the build via  
+1. Run the build with  
    `pnpm build`
 
 ### File structure

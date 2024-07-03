@@ -26,11 +26,11 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+      - name: Enable corepack
+        run: corepack enable
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - name: Setup Node
+        uses: pnpm/action-setup@v4
+      - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Fetch external
-        env: 
+        env:
           COINGECKO_API_URL: ${{ vars.COINGECKO_API_URL}}
           COINGECKO_API_KEY_NAME: ${{ vars.COINGECKO_API_KEY_NAME}}
           COINGECKO_API_KEY_VALUE: ${{ secrets.COINGECKO_API_KEY_VALUE }}

@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+      - name: Enable corepack
+        run: corepack enable
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - name: Setup Node
+        uses: pnpm/action-setup@v4
+      - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: 18
