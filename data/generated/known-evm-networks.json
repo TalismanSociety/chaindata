@@ -23695,6 +23695,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ROCK",
+            "coingeckoId": "rock-3",
+            "contractAddress": "0x724af984b63fd53fdedb5ded17063001e3afc3e5",
+            "decimals": 18
+          },
+          {
             "symbol": "RPL",
             "coingeckoId": "rocket-pool",
             "contractAddress": "0xd33526068d116ce69f19a9ee46f0bd304f21a51f",
@@ -49395,12 +49401,6 @@
             "decimals": 18
           },
           {
-            "symbol": "POPCAT",
-            "coingeckoId": "popcat-cash",
-            "contractAddress": "0xd52456e8a33718f72ba38469539c082eb761f78b",
-            "decimals": 18
-          },
-          {
             "symbol": "POP",
             "coingeckoId": "pop-chest-token",
             "contractAddress": "0x1bb76a939d6b7f5be6b95c4f9f822b02b4d62ced",
@@ -73973,6 +73973,19 @@
     "isTestnet": true
   },
   {
+    "id": "1313",
+    "name": "JaiHo Chain",
+    "rpcs": ["https://rpc.jaihochain.com"],
+    "icon": "jaihoIcon",
+    "explorerUrl": "https://jaihochain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "JaiHo",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "1314",
     "name": "Alyx Mainnet",
     "rpcs": ["https://rpc.alyxchain.com"],
@@ -75531,7 +75544,7 @@
   {
     "id": "1995",
     "name": "edeXa Testnet",
-    "rpcs": ["https://testnet.edexa.network/rpc", "https://io-dataseed1.testnet.edexa.io-market.com/rpc"],
+    "rpcs": ["https://io-dataseed1.testnet.edexa.io-market.com/rpc", "https://testnet.edexa.network/rpc"],
     "icon": "edexa",
     "explorerUrl": "https://explorer.testnet.edexa.network",
     "balancesConfig": {
@@ -80378,6 +80391,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "7774",
+    "name": "GDCC MAINNET",
+    "rpcs": ["https://mainnet-rpc-1.gdccscan.io"],
+    "icon": "gdcc",
+    "explorerUrl": "https://gdccscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "GDCC",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "7775",
@@ -99352,7 +99378,7 @@
   {
     "id": "84886",
     "name": "Aerie Network",
-    "rpcs": ["https://mainnet.aerielab.io"],
+    "rpcs": [],
     "icon": "aerie",
     "explorerUrl": "https://explorer.aerielab.io",
     "balancesConfig": {
@@ -99726,6 +99752,43 @@
       "evm-native": {
         "symbol": "QKC",
         "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "100009",
+    "name": "VeChain",
+    "rpcs": ["https://rpc-mainnet.vechain.energy"],
+    "explorerUrl": "https://vechainstats.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "VET",
+        "decimals": 18,
+        "coingeckoId": "vechain"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "dhn",
+            "coingeckoId": "dohrnii",
+            "contractAddress": "0x8e57aadf0992afcc41f7843656c6c7129f738f7b"
+          },
+          {
+            "symbol": "hai",
+            "coingeckoId": "hackenai",
+            "contractAddress": "0xacc280010b2ee0efc770bce34774376656d8ce14"
+          },
+          {
+            "symbol": "oce",
+            "coingeckoId": "oceanex",
+            "contractAddress": "0x0ce6661b4ba86a0ea7ca2bd86a0de87b0b860f14"
+          },
+          {
+            "symbol": "sha",
+            "coingeckoId": "safe-haven",
+            "contractAddress": "0x5db3c8a942333f6468176a870db36eef120a34dc"
+          }
+        ]
       }
     }
   },
@@ -102877,6 +102940,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "12227331",
+    "name": "NeoX Testnet",
+    "rpcs": [],
+    "icon": "neox",
+    "explorerUrl": "https://testnet.scan.banelabs.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "GAS",
         "decimals": 18
       }
     },
