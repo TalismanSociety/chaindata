@@ -358,10 +358,7 @@ const getHackedBalanceModuleDeps = (chain: ConfigChain, rpcUrl: string) => {
 
 const getHasCheckMetadataHash = (metadata: Metadata) => {
   try {
-    return (
-      metadata.version >= 15 &&
-      metadata.asLatest.extrinsic.signedExtensions.some((ext) => ext.identifier.toString() === 'CheckMetadataHash')
-    )
+    return metadata.asLatest.extrinsic.signedExtensions.some((ext) => ext.identifier.toString() === 'CheckMetadataHash')
   } catch (err) {
     console.error('Failed to check if CheckMetadataHash exists', err)
     return false
