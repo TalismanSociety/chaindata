@@ -2899,13 +2899,53 @@
     }
   },
   {
-    "id": "kusama-coretime",
-    "name": "Coretime",
+    "id": "kusama-people",
+    "name": "Kusama People",
     "account": "*25519",
-    "rpcs": ["wss://kusama-coretime-rpc.polkadot.io"],
+    "subscanUrl": "https://people-kusama.subscan.io/",
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-people-kusama_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-people-kusama_metadata_1002006.apng",
+    "rpcs": [
+      "wss://people-kusama-rpc.dwellir.com",
+      "wss://kusama-people-rpc.polkadot.io",
+      "wss://sys.ibp.network/people-kusama",
+      "wss://sys.dotters.network/people-kusama",
+      "wss://ksm-rpc.stakeworld.io/people"
+    ],
+    "paraId": 1004,
+    "relay": {
+      "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kusama",
+        "logo": "./assets/tokens/ksm.svg"
+      }
+    }
+  },
+  {
+    "id": "kusama-coretime",
+    "name": "Kusama Coretime",
+    "account": "*25519",
+    "subscanUrl": "https://coretime-kusama.subscan.io/",
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-coretime-kusama_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-coretime-kusama_metadata_1002005.apng",
+    "rpcs": [
+      "wss://coretime-kusama-rpc.dwellir.com",
+      "wss://kusama-coretime-rpc.polkadot.io",
+      "wss://sys.ibp.network/coretime-kusama",
+      "wss://sys.dotters.network/coretime-kusama",
+      "wss://ksm-rpc.stakeworld.io/coretime"
+    ],
     "paraId": 1005,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kusama",
+        "logo": "./assets/tokens/ksm.svg"
+      }
     }
   },
   {
