@@ -65723,6 +65723,12 @@
             "decimals": 18
           },
           {
+            "symbol": "inETH",
+            "coingeckoId": "genesislrt-restaked-eth",
+            "contractAddress": "0x5a7a183b6b44dc4ec2e3d2ef43f98c5152b1d76d",
+            "decimals": 18
+          },
+          {
             "symbol": "PUFF",
             "coingeckoId": "how-to-fly",
             "contractAddress": "0x4d87750a795b0ae310a24349fa9108585100a90e",
@@ -79723,7 +79729,7 @@
   {
     "id": "6066",
     "name": "Tres Mainnet",
-    "rpcs": ["https://rpc.tresleches.finance/"],
+    "rpcs": ["https://rpc.tresleches.finance/", "https://rpc.treschain.io/"],
     "icon": "tresleches",
     "explorerUrl": "https://explorer.tresleches.finance",
     "balancesConfig": {
@@ -79736,7 +79742,7 @@
   {
     "id": "6102",
     "name": "Cascadia Testnet",
-    "rpcs": [],
+    "rpcs": ["https://testnet.cascadia.foundation"],
     "icon": "cascadia",
     "explorerUrl": "https://explorer.cascadia.foundation",
     "balancesConfig": {
@@ -79942,6 +79948,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "6805",
+    "name": "RACE Mainnet",
+    "rpcs": ["https://racemainnet.io/"],
+    "icon": "race",
+    "explorerUrl": "https://racescan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "6806",
@@ -89013,6 +89032,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "33979",
+    "name": "Funki",
+    "rpcs": ["https://rpc-mainnet.funkichain.com"],
+    "icon": "funki",
+    "explorerUrl": "https://funki.superscan.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "34443",
@@ -98577,6 +98609,19 @@
     }
   },
   {
+    "id": "61022",
+    "name": "Orange Chain Mainnet",
+    "rpcs": ["https://rpc.orangechain.xyz"],
+    "icon": "orange",
+    "explorerUrl": "https://scan.orangechain.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTC",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "61406",
     "name": "KaiChain",
     "rpcs": ["https://mainnet-rpc.kaichain.net"],
@@ -103155,6 +103200,20 @@
     "isTestnet": true
   },
   {
+    "id": "4457845",
+    "name": "ZERO Testnet (Sepolia)",
+    "rpcs": ["https://rpc.zerion.io/v1/zero-sepolia"],
+    "icon": "zero-sepolia",
+    "explorerUrl": "https://explorer.zero.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "5112023",
     "name": "NumBlock Chain",
     "rpcs": ["https://rpc-mainnet.numblock.org"],
@@ -103568,9 +103627,9 @@
     "isTestnet": true
   },
   {
-    "id": "12227331",
-    "name": "NeoX Testnet",
-    "rpcs": [],
+    "id": "12227332",
+    "name": "NeoX Testnet T4",
+    "rpcs": ["https://testnet.rpc.banelabs.org/"],
     "icon": "neox",
     "explorerUrl": "https://testnet.scan.banelabs.org",
     "balancesConfig": {
