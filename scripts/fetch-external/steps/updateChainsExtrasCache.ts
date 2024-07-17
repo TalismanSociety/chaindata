@@ -15,9 +15,11 @@ import {
   IChaindataProvider,
   TokenId,
 } from '@talismn/chaindata-provider'
+import { decodeMetadata, decodeScale, toHex } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
 import { from } from 'rxjs'
+import { Bytes, Option, u32 } from 'scale-ts'
 
 import {
   FILE_CHAINDATA,
@@ -150,17 +152,45 @@ const attemptToFetchChainExtras = async (
 
     console.log(`Updating extras for chain ${chain.id}`)
 
+    const fetchMetadata = async () => {
+      const errors: { v15: null | unknown; v14: null | unknown } = { v15: null, v14: null }
+
+      try {
+        const [response] = await sendWithTimeout(
+          rpcUrl,
+          [['state_call', ['Metadata_metadata_at_version', toHex(u32.enc(15))]]],
+          RPC_REQUEST_TIMEOUT,
+        )
+        const result = response ? Option(Bytes()).dec(response) : null
+        if (result) return result
+      } catch (v15Cause) {
+        errors.v15 = v15Cause
+      }
+
+      try {
+        const [response] = await sendWithTimeout(rpcUrl, [['state_getMetadata', []]], RPC_REQUEST_TIMEOUT)
+        if (response) return response
+      } catch (v14Cause) {
+        errors.v14 = v14Cause
+      }
+
+      console.warn(`Failed to fetch both metadata v15 and v14 for chain ${chain.id}`, errors.v15, errors.v14)
+      return null
+    }
+
     // fetch extra rpc data
-    const [metadataRpc, chainProperties] = await sendWithTimeout(
-      rpcUrl,
-      [
-        ['state_getMetadata', []],
-        ['system_properties', []],
-        // // TODO: Get parachainId from storage
-        // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
-      ],
-      RPC_REQUEST_TIMEOUT,
-    )
+    const [metadataRpc, [systemProperties]] = await Promise.all([
+      fetchMetadata(),
+      sendWithTimeout(
+        rpcUrl,
+        [
+          ['system_properties', []],
+          // // TODO: Get parachainId from storage
+          // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
+        ],
+        RPC_REQUEST_TIMEOUT,
+      ),
+    ])
 
     const metadata: Metadata = new Metadata(new TypeRegistry(), metadataRpc)
     metadata.registry.setMetadata(metadata)
@@ -177,11 +207,11 @@ const attemptToFetchChainExtras = async (
       return typeof ss58Prefix === 'number' && canEncodeWithPrefix(ss58Format)
     }
 
-    const { ss58Format } = chainProperties
+    const { ss58Format } = systemProperties
     const ss58Prefix = metadata.registry.chainSS58
     const prefix = isValidSs58Prefix(ss58Prefix) ? ss58Prefix : isValidSs58Prefix(ss58Format) ? ss58Format : 42
     const hasCheckMetadataHash = chain.hasCheckMetadataHash ?? getHasCheckMetadataHash(metadata)
-    const account = getAccountType(metadata)
+    const account = getAccountType(metadataRpc, chain.id)
 
     const chainExtrasCache: ChainExtrasCache = {
       id: chain.id,
@@ -229,7 +259,12 @@ const attemptToFetchChainExtras = async (
         }
       }
 
-      const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig ?? {}, metadataRpc)
+      const metadata: any = await mod.fetchSubstrateChainMeta(
+        chain.id,
+        moduleConfig ?? {},
+        metadataRpc,
+        systemProperties,
+      )
       const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig ?? {})
 
       const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
@@ -367,9 +402,33 @@ const getHasCheckMetadataHash = (metadata: Metadata) => {
   }
 }
 
-const getAccountType = (metadata: Metadata) => {
-  const accountIdLength = metadata?.registry?.createType?.('AccountId')?.byteLength ?? 0
-  if (accountIdLength === 20) return 'secp256k1'
-  if (accountIdLength === 32) return '*25519'
-  return '*25519'
+const getAccountType = (metadataRpc: string, chainId?: string) => {
+  const { metadata } = decodeMetadata(metadataRpc)
+  if (!metadata) {
+    console.error(`Failed to detect account type for ${chainId}`)
+    return '*25519'
+  }
+
+  const system = metadata.pallets.find((p) => p.name === 'System')
+  const account = system?.storage?.items.find((s) => s.name === 'Account')
+  const storage = account?.type
+  if (storage?.tag !== 'map') {
+    console.error(`Failed to detect account type for ${chainId}`)
+    return '*25519'
+  }
+
+  const args = metadata.lookup.at(storage.value.key)
+  if (!args) {
+    console.error(`Failed to detect account type for ${chainId}`)
+    return '*25519'
+  }
+
+  const accountType = args.path.slice(-1)[0]
+  if (!accountType) {
+    console.error(`Failed to detect account type for ${chainId}`)
+    return '*25519'
+  }
+
+  const isEthereum = accountType === 'AccountId20'
+  return isEthereum ? 'secp256k1' : '*25519'
 }
