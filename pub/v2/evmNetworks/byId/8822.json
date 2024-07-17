@@ -1,7 +1,7 @@
 {
   "id": "8822",
   "isTestnet": false,
-  "sortIndex": 354,
+  "sortIndex": 398,
   "name": "IOTA EVM",
   "themeColor": "#ffffff",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/iotaevm.webp",
@@ -23,7 +23,47 @@
       "moduleConfig": {
         "symbol": "IOTA",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "iota",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/iota.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "MLUM",
+            "coingeckoId": "magic-lum",
+            "contractAddress": "0xa87666b0cb3631c49f96cbf1e6a52ebac79a6143",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/magic-lum.webp"
+          },
+          {
+            "symbol": "LUM",
+            "coingeckoId": "shimmersea-lum",
+            "contractAddress": "0x34a85ddc4e30818e44e6f4a8ee39d8cba9a60fb3",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shimmersea-lum.webp"
+          },
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-iota",
+            "contractAddress": "0xfbda5f676cb37624f28265a144a48b0d6e87d3b6",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stargate-bridged-usdc-iota.webp"
+          },
+          {
+            "symbol": "wIOTA",
+            "coingeckoId": "wrapped-iota",
+            "contractAddress": "0x6e47f8d48a01b44df3fff35d258a10a3aedc114c",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-iota.webp"
+          }
+        ]
       }
     }
   ],

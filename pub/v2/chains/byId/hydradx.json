@@ -2,17 +2,17 @@
   "id": "hydradx",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 334,
+  "sortIndex": 378,
   "genesisHash": "0xafdc188f45c71dacbaa0b62e16a91f726c7b8699a9748cdf715459de6b7f366d",
   "prefix": 63,
-  "name": "HydraDX",
-  "themeColor": "#52b2ed",
+  "name": "Hydration",
+  "themeColor": "#e53e76",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/hydradx.svg",
-  "chainName": "HydraDX",
+  "chainName": "Hydration",
   "chainType": "Live",
   "implName": "hydradx",
   "specName": "hydradx",
-  "specVersion": "228",
+  "specVersion": "244",
   "nativeToken": {
     "id": "hydradx-substrate-native"
   },
@@ -70,10 +70,13 @@
     },
     {
       "id": "hydradx-substrate-tokens-intr"
+    },
+    {
+      "id": "hydradx-substrate-tokens-wifd"
     }
   ],
   "account": "*25519",
-  "subscanUrl": "https://hydradx.subscan.io/",
+  "subscanUrl": "https://hydration.subscan.io/",
   "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_specs.png",
   "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng",
   "isUnknownFeeToken": true,
@@ -135,8 +138,8 @@
             "decimals": 18,
             "ed": "7000000000000",
             "onChainId": 4,
-            "coingeckoId": "ethereum",
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ethereum.webp"
+            "coingeckoId": "weth",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
           },
           {
             "symbol": "DOT",
@@ -265,10 +268,18 @@
             "onChainId": 20,
             "coingeckoId": "weth",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+          },
+          {
+            "symbol": "WIFD",
+            "ed": "1",
+            "decimals": 10,
+            "onChainId": 1000082,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wifd.svg"
           }
         ]
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": false
 }
