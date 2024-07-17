@@ -20,6 +20,7 @@
     "validate-schema": "pnpm run validate-schema-chains && pnpm run validate-schema-evm-networks",
     "validate": "pnpm run validate-json && pnpm run validate-schema",
     "find-missing-coingeckoIds": "tsx scripts/find-missing-coingeckoIds.ts",
+    "invalidate-chains-extras-cache": "tsx scripts/invalidate-chains-extras-cache.ts",
     "update-pjs": "pnpm update -L '@polkadot/*'",
     "import-pjs-config": "tsx scripts/import-pjs-config.ts",
     "update-rpcs": "pnpm run update-pjs && pnpm run import-pjs-config",
