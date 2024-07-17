@@ -15,9 +15,11 @@ import {
   IChaindataProvider,
   TokenId,
 } from '@talismn/chaindata-provider'
+import { toHex } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
 import { from } from 'rxjs'
+import { Bytes, Option, u32 } from 'scale-ts'
 
 import {
   FILE_CHAINDATA,
@@ -150,17 +152,45 @@ const attemptToFetchChainExtras = async (
 
     console.log(`Updating extras for chain ${chain.id}`)
 
+    const fetchMetadata = async () => {
+      const errors: { v15: null | unknown; v14: null | unknown } = { v15: null, v14: null }
+
+      try {
+        const [response] = await sendWithTimeout(
+          rpcUrl,
+          [['state_call', ['Metadata_metadata_at_version', toHex(u32.enc(15))]]],
+          RPC_REQUEST_TIMEOUT,
+        )
+        const result = response ? Option(Bytes()).dec(response) : null
+        if (result) return result
+      } catch (v15Cause) {
+        errors.v15 = v15Cause
+      }
+
+      try {
+        const [response] = await sendWithTimeout(rpcUrl, [['state_getMetadata', []]], RPC_REQUEST_TIMEOUT)
+        if (response) return response
+      } catch (v14Cause) {
+        errors.v14 = v14Cause
+      }
+
+      console.warn(`Failed to fetch both metadata v15 and v14 for chain ${chain.id}`, errors.v15, errors.v14)
+      return null
+    }
+
     // fetch extra rpc data
-    const [metadataRpc, chainProperties] = await sendWithTimeout(
-      rpcUrl,
-      [
-        ['state_getMetadata', []],
-        ['system_properties', []],
-        // // TODO: Get parachainId from storage
-        // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
-      ],
-      RPC_REQUEST_TIMEOUT,
-    )
+    const [metadataRpc, [systemProperties]] = await Promise.all([
+      fetchMetadata(),
+      sendWithTimeout(
+        rpcUrl,
+        [
+          ['system_properties', []],
+          // // TODO: Get parachainId from storage
+          // ['state_getStorage', ['0x0d715f2646c8f85767b5d2764bb2782604a74d81251e398fd8a0a4d55023bb3f']],
+        ],
+        RPC_REQUEST_TIMEOUT,
+      ),
+    ])
 
     const metadata: Metadata = new Metadata(new TypeRegistry(), metadataRpc)
     metadata.registry.setMetadata(metadata)
@@ -177,7 +207,7 @@ const attemptToFetchChainExtras = async (
       return typeof ss58Prefix === 'number' && canEncodeWithPrefix(ss58Format)
     }
 
-    const { ss58Format } = chainProperties
+    const { ss58Format } = systemProperties
     const ss58Prefix = metadata.registry.chainSS58
     const prefix = isValidSs58Prefix(ss58Prefix) ? ss58Prefix : isValidSs58Prefix(ss58Format) ? ss58Format : 42
     const hasCheckMetadataHash = getHasCheckMetadataHash(metadata)
@@ -227,7 +257,12 @@ const attemptToFetchChainExtras = async (
         }
       }
 
-      const metadata: any = await mod.fetchSubstrateChainMeta(chain.id, moduleConfig ?? {}, metadataRpc)
+      const metadata: any = await mod.fetchSubstrateChainMeta(
+        chain.id,
+        moduleConfig ?? {},
+        metadataRpc,
+        systemProperties,
+      )
       const tokens = await mod.fetchSubstrateChainTokens(chain.id, metadata, moduleConfig ?? {})
 
       const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
