@@ -13,7 +13,7 @@
     "chainType": "Live",
     "implName": "parity-polkadot",
     "specName": "polkadot",
-    "specVersion": "1002000",
+    "specVersion": "1002006",
     "nativeToken": {
       "id": "polkadot-substrate-native"
     },
@@ -136,6 +136,11 @@
         "name": "Frequency"
       },
       {
+        "id": "geminis",
+        "paraId": 2038,
+        "name": "Geminis"
+      },
+      {
         "id": "hashed",
         "paraId": 2093,
         "name": "Hashed"
@@ -143,7 +148,12 @@
       {
         "id": "hydradx",
         "paraId": 2034,
-        "name": "HydraDX"
+        "name": "Hydration"
+      },
+      {
+        "id": "hyperbridge-polkadot",
+        "paraId": 3367,
+        "name": "Hyperbridge"
       },
       {
         "id": "integritee-polkadot",
@@ -186,7 +196,12 @@
         "name": "Moonbeam"
       },
       {
-        "id": "neuroweb-polkadot",
+        "id": "mythos",
+        "paraId": 3369,
+        "name": "Mythos"
+      },
+      {
+        "id": "neuroweb",
         "paraId": 2043,
         "name": "NeuroWeb"
       },
@@ -194,6 +209,16 @@
         "id": "nodle-polkadot",
         "paraId": 2026,
         "name": "Nodle"
+      },
+      {
+        "id": "oak",
+        "paraId": 2090,
+        "name": "Oak"
+      },
+      {
+        "id": "omnibtc",
+        "paraId": 2053,
+        "name": "OmniBTC"
       },
       {
         "id": "parallel",
@@ -236,6 +261,16 @@
         "name": "Collectives"
       },
       {
+        "id": "sora-polkadot",
+        "paraId": 2025,
+        "name": "Sora"
+      },
+      {
+        "id": "subdao",
+        "paraId": 2018,
+        "name": "SubDAO"
+      },
+      {
         "id": "subsocial-polkadot",
         "paraId": 2101,
         "name": "Subsocial"
@@ -273,7 +308,8 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "kusama",
@@ -289,7 +325,7 @@
     "chainType": "Live",
     "implName": "parity-kusama",
     "specName": "kusama",
-    "specVersion": "1002000",
+    "specVersion": "1002006",
     "nativeToken": {
       "id": "kusama-substrate-native"
     },
@@ -322,9 +358,6 @@
       },
       {
         "url": "wss://1rpc.io/ksm"
-      },
-      {
-        "url": "wss://kusama-public-rpc.blockops.network/ws"
       },
       {
         "url": "wss://rpc-kusama.luckyfriday.io"
@@ -397,24 +430,9 @@
         "name": "Encointer"
       },
       {
-        "id": "genshiro-kusama",
-        "paraId": 2024,
-        "name": "Genshiro"
-      },
-      {
         "id": "gm",
         "paraId": 2123,
         "name": "GM"
-      },
-      {
-        "id": "heiko-kusama",
-        "paraId": 2085,
-        "name": "Parallel Heiko"
-      },
-      {
-        "id": "hyperbridge-kusama",
-        "paraId": 3340,
-        "name": "Hyperbridge"
       },
       {
         "id": "imbue",
@@ -457,6 +475,11 @@
         "name": "Kintsugi"
       },
       {
+        "id": "kpron",
+        "paraId": 2019,
+        "name": "Kpron"
+      },
+      {
         "id": "kreivo",
         "paraId": 2281,
         "name": "Kreivo"
@@ -475,6 +498,16 @@
         "id": "kusama-bridge-hub",
         "paraId": 1002,
         "name": "Kusama Bridge Hub"
+      },
+      {
+        "id": "kusama-people",
+        "paraId": 1004,
+        "name": "Kusama People"
+      },
+      {
+        "id": "kusama-coretime",
+        "paraId": 1005,
+        "name": "Kusama Coretime"
       },
       {
         "id": "litmus",
@@ -505,6 +538,11 @@
         "id": "robonomics-kusama",
         "paraId": 2048,
         "name": "Robonomics"
+      },
+      {
+        "id": "sakura",
+        "paraId": 2016,
+        "name": "Sakura"
       },
       {
         "id": "shadow-kusama",
@@ -553,7 +591,8 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "3-dpass",
@@ -569,7 +608,7 @@
     "chainType": "Live",
     "implName": "poscan-runtime",
     "specName": "poscan-runtime",
-    "specVersion": "125",
+    "specVersion": "128",
     "nativeToken": {
       "id": "3-dpass-substrate-native"
     },
@@ -594,13 +633,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "acala",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 5,
+    "sortIndex": 6,
     "genesisHash": "0xfc41b9bd8ef8fe53d58c7ea67c794c7ec9a73daf05e6d54b14ff6342c99ba64c",
     "prefix": 10,
     "name": "Acala",
@@ -610,7 +650,7 @@
     "chainType": "Live",
     "implName": "acala",
     "specName": "acala",
-    "specVersion": "2240",
+    "specVersion": "2250",
     "nativeToken": {
       "id": "acala-substrate-native"
     },
@@ -802,7 +842,8 @@
               "decimals": 18,
               "ed": "500000000000000",
               "onChainId": "{\"ForeignAsset\":6}",
-              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
             },
             {
               "symbol": "ASTR",
@@ -899,7 +940,8 @@
               "decimals": 18,
               "ed": "8500000000000",
               "onChainId": "{\"Erc20\":\"0x5a4d6acdc4e3e5ab15717f407afe957f7a242578\"}",
-              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
             },
             {
               "symbol": "WBTC",
@@ -954,13 +996,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "acurast",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 8,
+    "sortIndex": 9,
     "genesisHash": "0xce7681fb12aa8f7265d229a9074be0ea1d5e99b53eedcec2deade43857901808",
     "prefix": 42,
     "name": "Acurast Canary",
@@ -970,7 +1013,7 @@
     "chainType": "Live",
     "implName": "acurast-parachain",
     "specName": "acurast-parachain",
-    "specVersion": "12",
+    "specVersion": "15",
     "nativeToken": {
       "id": "acurast-substrate-native"
     },
@@ -997,13 +1040,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "ajuna",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 16,
+    "sortIndex": 18,
     "genesisHash": "0xe358eb1d11b31255a286c12e44fe6780b7edb171d657905a97e39f71d9c6c3ee",
     "prefix": 1328,
     "name": "Ajuna",
@@ -1013,7 +1057,7 @@
     "chainType": "Live",
     "implName": "ajuna",
     "specName": "ajuna",
-    "specVersion": "203",
+    "specVersion": "701",
     "nativeToken": {
       "id": "ajuna-substrate-native"
     },
@@ -1043,13 +1087,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "aleph-zero",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 19,
+    "sortIndex": 21,
     "genesisHash": "0x70255b4d28de0fc4e1a193d7e175ad1ccef431598211c55538f1018651a0344e",
     "prefix": 42,
     "name": "Aleph Zero",
@@ -1087,6 +1132,24 @@
       },
       {
         "id": "aleph-zero-substrate-psp22-ahero"
+      },
+      {
+        "id": "aleph-zero-substrate-psp22-weth"
+      },
+      {
+        "id": "aleph-zero-substrate-psp22-wbtc"
+      },
+      {
+        "id": "aleph-zero-substrate-psp22-usdt"
+      },
+      {
+        "id": "aleph-zero-substrate-psp22-usdc"
+      },
+      {
+        "id": "aleph-zero-substrate-psp22-cld"
+      },
+      {
+        "id": "aleph-zero-substrate-psp22-csd"
       }
     ],
     "account": "*25519",
@@ -1097,10 +1160,10 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://aleph-zero-rpc.dwellir.com"
+        "url": "wss://ws.azero.dev"
       },
       {
-        "url": "wss://ws.azero.dev"
+        "url": "wss://aleph-zero-rpc.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -1154,18 +1217,53 @@
               "contractAddress": "5DDvG1bTGhWk8P9fZDcdp47TykhwGV46eKjr54SPcX1yTaRg",
               "symbol": "AHERO",
               "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            },
+            {
+              "symbol": "WETH",
+              "contractAddress": "5EoFQd36196Duo6fPTz2MWHXRzwTJcyETHyCyaB3rb61Xo2u",
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+            },
+            {
+              "symbol": "WBTC",
+              "contractAddress": "5EEtCdKLyyhQnNQWWWPM1fMDx1WdVuiaoR9cA6CWttgyxtuJ",
+              "coingeckoId": "wrapped-bitcoin",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-bitcoin.webp"
+            },
+            {
+              "symbol": "USDT",
+              "contractAddress": "5Et3dDcXUiThrBCot7g65k3oDSicGy4qC82cq9f911izKNtE",
+              "coingeckoId": "tether",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+            },
+            {
+              "symbol": "USDC",
+              "contractAddress": "5FYFojNCJVFR2bBNKfAePZCa72ZcVX5yeTv8K9bzeUo8D83Z",
+              "coingeckoId": "usd-coin",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
+            },
+            {
+              "symbol": "CLD",
+              "contractAddress": "5CJ3DZ4RM4j2cPpQ49ywYiAgDYaTqk7hPud6Y1J1WY8qwDfb",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            },
+            {
+              "symbol": "CSD",
+              "contractAddress": "5DPzHtsvZHtUaGzzKqrxa2JLgpHtEaSPn9mfyNAjX12Vunts",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
             }
           ]
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "altair",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 23,
+    "sortIndex": 28,
     "genesisHash": "0xaa3876c1dc8a1afcc2e9a685a49ff7704cfd36ad8c90bf2702b9d1b00cc40011",
     "prefix": 136,
     "name": "Altair",
@@ -1175,7 +1273,7 @@
     "chainType": "Live",
     "implName": "altair",
     "specName": "altair",
-    "specVersion": "1034",
+    "specVersion": "1200",
     "nativeToken": {
       "id": "altair-substrate-native"
     },
@@ -1210,13 +1308,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "amplitude",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 30,
+    "sortIndex": 36,
     "genesisHash": "0xcceae7f3b9947cdb67369c026ef78efa5f34a08fe5808d373c04421ecf4f1aaf",
     "prefix": 57,
     "name": "Amplitude",
@@ -1226,7 +1325,7 @@
     "chainType": "Live",
     "implName": "amplitude",
     "specName": "amplitude",
-    "specVersion": "16",
+    "specVersion": "17",
     "nativeToken": {
       "id": "amplitude-substrate-native"
     },
@@ -1357,13 +1456,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "astar",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 46,
+    "sortIndex": 52,
     "genesisHash": "0x9eb76c5184c4ab8679d2d5d819fdf90b9c001403e9e17da2e14b6d8aec4029c6",
     "prefix": 5,
     "name": "Astar",
@@ -1373,7 +1473,7 @@
     "chainType": "Live",
     "implName": "astar",
     "specName": "astar",
-    "specVersion": "85",
+    "specVersion": "90",
     "nativeToken": {
       "id": "astar-substrate-native"
     },
@@ -1577,13 +1677,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "aventus",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 54,
+    "sortIndex": 61,
     "genesisHash": "0x8b5c955b5c8fd7112562327e3859473df4e3dff49bd72a113dbb668d2cfa20d7",
     "prefix": 42,
     "name": "Aventus",
@@ -1593,7 +1694,7 @@
     "chainType": "Live",
     "implName": "avn-parachain",
     "specName": "avn-parachain",
-    "specVersion": "61",
+    "specVersion": "65",
     "nativeToken": {
       "id": "aventus-substrate-native"
     },
@@ -1620,13 +1721,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "bajun",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 61,
+    "sortIndex": 69,
     "genesisHash": "0x35a06bfec2edf0ff4be89a6428ccd9ff5bd0167d618c5a0d4341f9600a458d14",
     "prefix": 1337,
     "name": "Bajun",
@@ -1636,7 +1738,7 @@
     "chainType": "Live",
     "implName": "bajun",
     "specName": "bajun",
-    "specVersion": "201",
+    "specVersion": "702",
     "nativeToken": {
       "id": "bajun-substrate-native"
     },
@@ -1674,13 +1776,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "basilisk",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 64,
+    "sortIndex": 72,
     "genesisHash": "0xa85cfb9b9fd4d622a5b28289a02347af987d8f73fa3108450e2b4a11c1ce5755",
     "prefix": 10041,
     "name": "Basilisk",
@@ -1690,7 +1793,7 @@
     "chainType": "Live",
     "implName": "basilisk",
     "specName": "basilisk",
-    "specVersion": "112",
+    "specVersion": "117",
     "nativeToken": {
       "id": "basilisk-substrate-native"
     },
@@ -1794,8 +1897,8 @@
               "decimals": 18,
               "ed": "10000000",
               "onChainId": 10,
-              "coingeckoId": "ethereum",
-              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ethereum.webp"
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
             },
             {
               "symbol": "wBTC",
@@ -1833,13 +1936,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "bifrost-kusama",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 70,
+    "sortIndex": 78,
     "genesisHash": "0x9f28c6a68e0fc9646eff64935684f6eeeece527e37bbe1f213d22caa1d9d6bed",
     "prefix": 6,
     "name": "Bifrost Kusama",
@@ -1849,7 +1953,7 @@
     "chainType": "Live",
     "implName": "bifrost",
     "specName": "bifrost",
-    "specVersion": "996",
+    "specVersion": "11000",
     "nativeToken": {
       "id": "bifrost-kusama-substrate-native"
     },
@@ -2136,13 +2240,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "bifrost-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 72,
+    "sortIndex": 80,
     "genesisHash": "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b",
     "prefix": 6,
     "name": "Bifrost Polkadot",
@@ -2152,7 +2257,7 @@
     "chainType": "Live",
     "implName": "bifrost_polkadot",
     "specName": "bifrost_polkadot",
-    "specVersion": "996",
+    "specVersion": "11000",
     "nativeToken": {
       "id": "bifrost-polkadot-substrate-native"
     },
@@ -2349,13 +2454,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "bitgreen",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 79,
+    "sortIndex": 89,
     "genesisHash": "0xc14597baeccb232d662770d2d50ae832ca8c3192693d2b0814e6433f2888ddd6",
     "prefix": 42,
     "name": "Bitgreen",
@@ -2392,13 +2498,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "bittensor",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 85,
+    "sortIndex": 95,
     "genesisHash": "0x2f0555cc76fc2840a25a6ea3b9637146806f1f44b090c175ffde2a7e5ab36c03",
     "prefix": 42,
     "name": "Bittensor",
@@ -2408,7 +2515,7 @@
     "chainType": "Live",
     "implName": "node-subtensor",
     "specName": "node-subtensor",
-    "specVersion": "145",
+    "specVersion": "164",
     "nativeToken": {
       "id": "bittensor-substrate-native"
     },
@@ -2441,13 +2548,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "calamari",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 112,
+    "sortIndex": 124,
     "genesisHash": "0x4ac80c99289841dd946ef92765bf659a307d39189b3ce374a92b5f0415ee17a1",
     "prefix": 78,
     "name": "Calamari",
@@ -2457,7 +2565,7 @@
     "chainType": "Live",
     "implName": "calamari",
     "specName": "calamari",
-    "specVersion": "4610",
+    "specVersion": "4700",
     "nativeToken": {
       "id": "calamari-substrate-native"
     },
@@ -2492,13 +2600,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "centrifuge-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 124,
+    "sortIndex": 136,
     "genesisHash": "0xb3db41421702df9a7fcac62b53ffeac85f7853cc4e689e0b93aeb3db18c09d82",
     "prefix": 36,
     "name": "Centrifuge",
@@ -2508,7 +2617,7 @@
     "chainType": "Live",
     "implName": "centrifuge",
     "specName": "centrifuge",
-    "specVersion": "1028",
+    "specVersion": "1300",
     "nativeToken": {
       "id": "centrifuge-polkadot-substrate-native"
     },
@@ -2549,23 +2658,24 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "cere",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 126,
+    "sortIndex": 138,
     "genesisHash": "0x81443836a9a24caaa23f1241897d1235717535711d1d3fe24eae4fdc942c092c",
     "prefix": 54,
     "name": "Cere",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "themeColor": "#9244e0",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/cere.svg",
     "chainName": "Cere Mainnet Beta",
     "chainType": "Live",
     "implName": "substrate-node",
     "specName": "node",
-    "specVersion": "51400",
+    "specVersion": "53102",
     "nativeToken": {
       "id": "cere-substrate-native"
     },
@@ -2590,13 +2700,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "chainflip",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 128,
+    "sortIndex": 140,
     "genesisHash": "0x8b8c140b0af9db70686583e3f6bf2a59052bfe9584b97d20c45068281e976eb9",
     "prefix": 2112,
     "name": "Chainflip",
@@ -2606,7 +2717,7 @@
     "chainType": "Live",
     "implName": "chainflip-node",
     "specName": "chainflip-node",
-    "specVersion": "135",
+    "specVersion": "145",
     "nativeToken": {
       "id": "chainflip-substrate-native"
     },
@@ -2623,6 +2734,9 @@
     "feeToken": null,
     "rpcs": [
       {
+        "url": "wss://chainflip-rpc.dwellir.com"
+      },
+      {
         "url": "wss://mainnet-archive.chainflip.io"
       }
     ],
@@ -2631,13 +2745,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "chainx",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 129,
+    "sortIndex": 141,
     "genesisHash": "0x6ac13efb5b368b97b4934cef6edfdd99c2af51ba5109bfb8dacc116f9c584c10",
     "prefix": 44,
     "name": "ChainX",
@@ -2680,13 +2795,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "polkadot-collectives",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 140,
+    "sortIndex": 154,
     "genesisHash": "0x46ee89aa2eedd13e988962630ec9fb7565964cf5023bb351f2b6b25c1b68b0b2",
     "prefix": 0,
     "name": "Collectives",
@@ -2696,7 +2812,7 @@
     "chainType": "Live",
     "implName": "collectives",
     "specName": "collectives",
-    "specVersion": "1002000",
+    "specVersion": "1002005",
     "nativeToken": {
       "id": "polkadot-collectives-substrate-native"
     },
@@ -2744,13 +2860,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "commune-ai",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 143,
+    "sortIndex": 157,
     "genesisHash": "0xbc6eb9753e2417476601485f9f8ef8474701ec199d456f989bd397682c9425c5",
     "prefix": 42,
     "name": "Commune AI Standalone",
@@ -2760,7 +2877,7 @@
     "chainType": "Live",
     "implName": "node-subspace",
     "specName": "node-subspace",
-    "specVersion": "108",
+    "specVersion": "117",
     "nativeToken": {
       "id": "commune-ai-substrate-native"
     },
@@ -2793,13 +2910,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "composable-finance",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 144,
+    "sortIndex": 158,
     "genesisHash": "0xdaab8df776eb52ec604a5df5d388bb62a050a0aaec4556a64265b9d42755552d",
     "prefix": 50,
     "name": "Composable Finance",
@@ -2886,8 +3004,8 @@
     ],
     "account": "*25519",
     "subscanUrl": "https://composable.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-composable_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-composable_metadata_latest.apng",
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
     "isUnknownFeeToken": false,
     "feeToken": null,
     "rpcs": [
@@ -3096,13 +3214,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "continuum",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 149,
+    "sortIndex": 163,
     "genesisHash": "0xae1ca86c936aa252cdc45f4f436220567b2bbbcc4834f5b8f4191462baf19dfb",
     "prefix": 268,
     "name": "Continuum",
@@ -3147,13 +3266,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "creditcoin",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 155,
+    "sortIndex": 169,
     "genesisHash": "0xdd954cbf4000542ef1a15bca509cd89684330bee5e23766c527cdb0d7275e9c2",
     "prefix": 42,
     "name": "Creditcoin",
@@ -3188,13 +3308,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "crust-parachain",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 157,
+    "sortIndex": 171,
     "genesisHash": "0x4319cc49ee79495b57a1fec4d2bd43f59052dcc690276de566c2691d6df4f7b8",
     "prefix": 88,
     "name": "Crust",
@@ -3204,7 +3325,7 @@
     "chainType": "Live",
     "implName": "polkadot-crust-parachain",
     "specName": "polkadot-crust-parachain",
-    "specVersion": "5",
+    "specVersion": "6",
     "nativeToken": {
       "id": "crust-parachain-substrate-native"
     },
@@ -3239,13 +3360,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "shadow-kusama",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 158,
+    "sortIndex": 172,
     "genesisHash": "0xd4c0c08ca49dc7c680c3dac71a7c0703e5b222f4b6c03fe4c5219bb8f22c18dc",
     "prefix": 66,
     "name": "Crust Shadow",
@@ -3290,13 +3412,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "crust",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 159,
+    "sortIndex": 173,
     "genesisHash": "0x8b404e7ed8789d813982b9cb4c8b664c05b3fbf433309f603af014ec9ce56a8c",
     "prefix": 66,
     "name": "Crust Standalone",
@@ -3306,7 +3429,7 @@
     "chainType": "Live",
     "implName": "crustio-crust",
     "specName": "crust",
-    "specVersion": "21",
+    "specVersion": "23",
     "nativeToken": {
       "id": "crust-substrate-native"
     },
@@ -3342,13 +3465,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "curio",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 163,
+    "sortIndex": 178,
     "genesisHash": "0x1d73b9f5dc392744e0dee00a6d6254fcfa2305386cceba60315894fa4807053a",
     "prefix": 777,
     "name": "Curio",
@@ -3358,7 +3482,7 @@
     "chainType": "Live",
     "implName": "curio-mainnet",
     "specName": "curio-mainnet",
-    "specVersion": "101016",
+    "specVersion": "101023",
     "nativeToken": {
       "id": "curio-substrate-native"
     },
@@ -3385,13 +3509,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "ipci",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 168,
+    "sortIndex": 184,
     "genesisHash": "0x6f0f071506de39058fe9a95bbca983ac0e9c5da3443909574e95d52eb078d348",
     "prefix": 32,
     "name": "DAO IPCI",
@@ -3428,13 +3553,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "darwinia",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 169,
+    "sortIndex": 185,
     "genesisHash": "0xf0b8924b12e8108550d28870bc03f7b45a947e1b2b9abf81bfb0b89ecb60570e",
     "prefix": 18,
     "name": "Darwinia",
@@ -3444,7 +3570,7 @@
     "chainType": "Live",
     "implName": "DarwiniaOfficialRust",
     "specName": "Darwinia2",
-    "specVersion": "6620",
+    "specVersion": "6630",
     "nativeToken": {
       "id": "darwinia-substrate-native"
     },
@@ -3489,13 +3615,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "crab",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 171,
+    "sortIndex": 187,
     "genesisHash": "0x86e49c195aeae7c5c4a86ced251f1a28c67b3c35d8289c387ede1776cdd88b24",
     "prefix": 42,
     "name": "Darwinia Crab",
@@ -3505,7 +3632,7 @@
     "chainType": "Live",
     "implName": "DarwiniaOfficialRust",
     "specName": "Crab2",
-    "specVersion": "6620",
+    "specVersion": "6630",
     "nativeToken": {
       "id": "crab-substrate-native"
     },
@@ -3543,13 +3670,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "debio",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 174,
+    "sortIndex": 194,
     "genesisHash": "0x996800af345b3109acdada9913e36d1efa98b89e7dcd0b61b70fdbfc13b2fa50",
     "prefix": 42,
     "name": "DeBio",
@@ -3584,13 +3712,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "dock-pos-mainnet",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 188,
+    "sortIndex": 209,
     "genesisHash": "0x6bfe24dca2a3be10f22212678ac13a6446ec764103c0f3471c71609eac384aae",
     "prefix": 22,
     "name": "Dock",
@@ -3600,7 +3729,7 @@
     "chainType": "Live",
     "implName": "Dock",
     "specName": "dock-pos-main-runtime",
-    "specVersion": "56",
+    "specVersion": "59",
     "nativeToken": {
       "id": "dock-pos-mainnet-substrate-native"
     },
@@ -3633,13 +3762,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "edgeware",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 214,
+    "sortIndex": 238,
     "genesisHash": "0x742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
     "prefix": 7,
     "name": "Edgeware",
@@ -3695,13 +3825,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "encointer",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 227,
+    "sortIndex": 251,
     "genesisHash": "0x7dd99936c1e9e6d1ce7d90eb6f33bea8393b4bf87677d675aa63c9cb3e8c5b5b",
     "prefix": 2,
     "name": "Encointer",
@@ -3711,7 +3842,7 @@
     "chainType": "Live",
     "implName": "encointer-parachain",
     "specName": "encointer-parachain",
-    "specVersion": "1002000",
+    "specVersion": "1002005",
     "nativeToken": {
       "id": "encointer-substrate-native"
     },
@@ -3727,6 +3858,9 @@
     "isUnknownFeeToken": false,
     "feeToken": null,
     "rpcs": [
+      {
+        "url": "wss://encointer-kusama-rpc.dwellir.com"
+      },
       {
         "url": "wss://sys.ibp.network/encointer-kusama"
       },
@@ -3752,13 +3886,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "ewx",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 231,
+    "sortIndex": 255,
     "genesisHash": "0x5a51e04b88a4784d205091aa7bada002f3e5da3045e5b05655ee4db2589c33b5",
     "prefix": 42,
     "name": "Energy Web X",
@@ -3768,7 +3903,7 @@
     "chainType": "Live",
     "implName": "ewx-parachain",
     "specName": "ewx-parachain",
-    "specVersion": "56",
+    "specVersion": "72",
     "nativeToken": {
       "id": "ewx-substrate-native"
     },
@@ -3795,13 +3930,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "enjin-matrixchain",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 232,
+    "sortIndex": 256,
     "genesisHash": "0x3af4ff48ec76d2efc8476730f423ac07e25ad48f5f4c9dc39c778b164d808615",
     "prefix": 1110,
     "name": "Enjin Matrixchain",
@@ -3811,7 +3947,7 @@
     "chainType": "Live",
     "implName": "matrix-enjin",
     "specName": "matrix-enjin",
-    "specVersion": "1005",
+    "specVersion": "1006",
     "nativeToken": {
       "id": "enjin-matrixchain-substrate-native"
     },
@@ -3849,13 +3985,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "enjin-relay",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 233,
+    "sortIndex": 257,
     "genesisHash": "0xd8761d3c88f26dc12875c00d3165f7d67243d56fc85b4cf19937601a7916e5a9",
     "prefix": 2135,
     "name": "Enjin Relaychain",
@@ -3875,7 +4012,7 @@
       }
     ],
     "account": "*25519",
-    "subscanUrl": null,
+    "subscanUrl": "https://enjin.subscan.io/",
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
     "isUnknownFeeToken": false,
@@ -3900,14 +4037,23 @@
     ],
     "paraId": null,
     "relay": null,
-    "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "enjincoin",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/enjin-relay.svg"
+        }
+      }
+    ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "equilibrium-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 238,
+    "sortIndex": 263,
     "genesisHash": "0x89d3ec46d2fb43ef5a9713833373d5ea666b092fa8fd68fbc34596036571b907",
     "prefix": 68,
     "name": "Equilibrium",
@@ -4123,23 +4269,24 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "frequency",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 276,
+    "sortIndex": 308,
     "genesisHash": "0x4a587bf17a404e3572747add7aab7bbe56e805a5479c6c436f07f36fcc8d3ae1",
     "prefix": 90,
     "name": "Frequency",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "themeColor": "#19455e",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/frequency.svg",
     "chainName": "Frequency",
     "chainType": "Live",
     "implName": "frequency",
     "specName": "frequency",
-    "specVersion": "64",
+    "specVersion": "78",
     "nativeToken": {
       "id": "frequency-substrate-native"
     },
@@ -4172,83 +4319,26 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
-    "id": "genshiro-kusama",
+    "id": "geminis",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 292,
-    "genesisHash": "0x9de765698374eb576968c8a764168893fb277e65ad3ddafcfe2c49593fc6d663",
-    "prefix": 67,
-    "name": "Genshiro",
-    "themeColor": "#e8662d",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/genshiro-kusama.svg",
-    "chainName": "Genshiro",
-    "chainType": "Live",
-    "implName": "Gens-parachain",
-    "specName": "Gens-parachain",
-    "specVersion": "22",
+    "sortIndex": 324,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "Geminis",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
     "nativeToken": null,
-    "tokens": [
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-bnb"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-crv"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-dai"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-dot"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-eqd"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-eth"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-hko"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-kar"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-ksm"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-busd"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-gens"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-hdot"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-lpt0"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-usdc"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-usdt"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-wbtc"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-xdot"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-xdot2"
-      },
-      {
-        "id": "genshiro-kusama-substrate-equilibrium-xdot3"
-      }
-    ],
+    "tokens": [],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -4257,38 +4347,23 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://node.ksm.genshiro.io"
+        "url": "wss://rpc.geminis.network"
       }
     ],
     "evmNetworks": [],
     "parathreads": null,
-    "paraId": 2024,
+    "paraId": 2038,
     "relay": {
-      "id": "kusama"
+      "id": "polkadot"
     },
-    "balancesConfig": [
-      {
-        "moduleType": "substrate-native",
-        "moduleConfig": {
-          "disable": true,
-          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/genshiro-kusama.svg"
-        }
-      },
-      {
-        "moduleType": "substrate-equilibrium",
-        "moduleConfig": {
-          "disable": false,
-          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
-        }
-      }
-    ],
+    "balancesConfig": [],
     "balancesMetadata": []
   },
   {
     "id": "gm",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 298,
+    "sortIndex": 336,
     "genesisHash": "0x19a3733beb9cb8a970a308d835599e9005e02dc007a35440e461a451466776f8",
     "prefix": 7013,
     "name": "GM",
@@ -4353,13 +4428,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "hashed",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 319,
+    "sortIndex": 361,
     "genesisHash": "0xdce5477cfca571c2cb652f38bbb70429004be3cf9649dd2b4ad9455b2251fe43",
     "prefix": 42,
     "name": "Hashed",
@@ -4386,13 +4462,13 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://c1.hashed.live"
+        "url": "wss://c1.hashed.network"
       },
       {
         "url": "wss://c2.hashed.network"
       },
       {
-        "url": "wss://c3.hashed.live"
+        "url": "wss://c3.hashed.network"
       }
     ],
     "evmNetworks": [],
@@ -4402,13 +4478,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "humanode",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 329,
+    "sortIndex": 372,
     "genesisHash": "0xc56fa32442b2dad76f214b3ae07998e4ca09736e4813724bfb0717caae2c8bee",
     "prefix": 5234,
     "name": "Humanode",
@@ -4418,7 +4495,7 @@
     "chainType": "Live",
     "implName": "humanode",
     "specName": "humanode",
-    "specVersion": "115",
+    "specVersion": "118",
     "nativeToken": {
       "id": "humanode-substrate-native"
     },
@@ -4451,23 +4528,24 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "hydradx",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 334,
+    "sortIndex": 378,
     "genesisHash": "0xafdc188f45c71dacbaa0b62e16a91f726c7b8699a9748cdf715459de6b7f366d",
     "prefix": 63,
-    "name": "HydraDX",
-    "themeColor": "#52b2ed",
+    "name": "Hydration",
+    "themeColor": "#e53e76",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/hydradx.svg",
-    "chainName": "HydraDX",
+    "chainName": "Hydration",
     "chainType": "Live",
     "implName": "hydradx",
     "specName": "hydradx",
-    "specVersion": "228",
+    "specVersion": "244",
     "nativeToken": {
       "id": "hydradx-substrate-native"
     },
@@ -4525,10 +4603,13 @@
       },
       {
         "id": "hydradx-substrate-tokens-intr"
+      },
+      {
+        "id": "hydradx-substrate-tokens-wifd"
       }
     ],
     "account": "*25519",
-    "subscanUrl": "https://hydradx.subscan.io/",
+    "subscanUrl": "https://hydration.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng",
     "isUnknownFeeToken": true,
@@ -4590,8 +4671,8 @@
               "decimals": 18,
               "ed": "7000000000000",
               "onChainId": 4,
-              "coingeckoId": "ethereum",
-              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ethereum.webp"
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
             },
             {
               "symbol": "DOT",
@@ -4720,30 +4801,44 @@
               "onChainId": 20,
               "coingeckoId": "weth",
               "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+            },
+            {
+              "symbol": "WIFD",
+              "ed": "1",
+              "decimals": 10,
+              "onChainId": 1000082,
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wifd.svg"
             }
           ]
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
-    "id": "hyperbridge-kusama",
+    "id": "hyperbridge-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 336,
-    "genesisHash": "0x8e5d874e855e6afe37162a408220d435e779bc5174bc887c5f94bd023417885a",
+    "sortIndex": 379,
+    "genesisHash": "0x61ea8a51fd4a058ee8c0e86df0a89cc85b8b67a0a66432893d09719050c9f540",
     "prefix": 42,
     "name": "Hyperbridge",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Hyperbridge (Messier)",
+    "chainName": "Hyperbridge (Nexus)",
     "chainType": "Live",
-    "implName": "messier",
-    "specName": "messier",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "implName": "nexus",
+    "specName": "nexus",
+    "specVersion": "100",
+    "nativeToken": {
+      "id": "hyperbridge-polkadot-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "hyperbridge-polkadot-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -4752,23 +4847,24 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://hyperbridge-messier-rpc.blockops.network"
+        "url": "wss://hyperbridge-nexus-rpc.blockops.network"
       }
     ],
     "evmNetworks": [],
     "parathreads": null,
-    "paraId": 3340,
+    "paraId": 3367,
     "relay": {
-      "id": "kusama"
+      "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "imbue",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 343,
+    "sortIndex": 386,
     "genesisHash": "0xca93a37c913a25fa8fdb33c7f738afc39379cb71d37874a16d4c091a5aef9f89",
     "prefix": 42,
     "name": "Imbue",
@@ -4813,13 +4909,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "integritee-kusama",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 348,
+    "sortIndex": 392,
     "genesisHash": "0xcdedc8eadbfa209d3f207bba541e57c3c58a667b05a2e1d1e86353c9000758da",
     "prefix": 13,
     "name": "Integritee",
@@ -4829,7 +4926,7 @@
     "chainType": "Live",
     "implName": "integritee-full",
     "specName": "integritee-parachain",
-    "specVersion": "44",
+    "specVersion": "520",
     "nativeToken": {
       "id": "integritee-kusama-substrate-native"
     },
@@ -4864,13 +4961,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "integritee-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 349,
+    "sortIndex": 393,
     "genesisHash": "0xe13e7af377c64e83f95e0d70d5e5c3c01d697a84538776c5b9bbe0e7d7b6034c",
     "prefix": 13,
     "name": "Integritee",
@@ -4918,13 +5016,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "interlay",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 350,
+    "sortIndex": 394,
     "genesisHash": "0xbf88efe70e9e0e916416e8bed61f2b45717f517d7f3523e33c7b001e5ffcbc72",
     "prefix": 2032,
     "name": "Interlay",
@@ -5130,13 +5229,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "invarch",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 351,
+    "sortIndex": 395,
     "genesisHash": "0x31a7d8914fb31c249b972f18c115f1e22b4b039abbcb03c73b6774c5642f9efe",
     "prefix": 117,
     "name": "InvArch",
@@ -5146,7 +5246,7 @@
     "chainType": "Live",
     "implName": "invarch",
     "specName": "invarch",
-    "specVersion": "6",
+    "specVersion": "7",
     "nativeToken": {
       "id": "invarch-substrate-native"
     },
@@ -5173,13 +5273,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "tinker",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 352,
+    "sortIndex": 396,
     "genesisHash": "0xd42e9606a995dfe433dc7955dc2a70f495f350f373daa200098ae84437816ad2",
     "prefix": 117,
     "name": "InvArch Tinkernet",
@@ -5189,7 +5290,7 @@
     "chainType": "Live",
     "implName": "tinkernet_node",
     "specName": "tinkernet_node",
-    "specVersion": "22",
+    "specVersion": "23",
     "nativeToken": {
       "id": "tinker-substrate-native"
     },
@@ -5216,13 +5317,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "joystream",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 365,
+    "sortIndex": 411,
     "genesisHash": "0x6b5e488e0fa8f9821110d5c13f4c468abcd43ce5e297e62b34c53c3346465956",
     "prefix": 126,
     "name": "Joystream",
@@ -5232,7 +5334,7 @@
     "chainType": "Live",
     "implName": "joystream-node",
     "specName": "joystream-node",
-    "specVersion": "2003",
+    "specVersion": "2004",
     "nativeToken": {
       "id": "joystream-substrate-native"
     },
@@ -5268,13 +5370,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "k-laos",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 368,
+    "sortIndex": 414,
     "genesisHash": "0xcfeba07b526c58a0b4604baf84af7878b7480a265b9196eb7b7058df323bef92",
     "prefix": 42,
     "name": "K-Laos",
@@ -5293,7 +5396,7 @@
         "id": "k-laos-substrate-native"
       }
     ],
-    "account": "*25519",
+    "account": "secp256k1",
     "subscanUrl": null,
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
@@ -5311,13 +5414,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kabocha",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 370,
+    "sortIndex": 416,
     "genesisHash": "0xfeb426ca713f0f46c96465b8f039890370cf6bfd687c9076ea2843f58a6ae8a7",
     "prefix": 27,
     "name": "Kabocha",
@@ -5354,13 +5458,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "karura",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 378,
+    "sortIndex": 425,
     "genesisHash": "0xbaf5aabe40646d11f0ee8abbdc64f4a4b7674925cba08e4a05ff9ebed6e2126b",
     "prefix": 8,
     "name": "Karura",
@@ -5370,7 +5475,7 @@
     "chainType": "Live",
     "implName": "karura",
     "specName": "karura",
-    "specVersion": "2240",
+    "specVersion": "2250",
     "nativeToken": {
       "id": "karura-substrate-native"
     },
@@ -5975,13 +6080,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "khala",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 382,
+    "sortIndex": 430,
     "genesisHash": "0xd43540ba6d3eb4897c28a77d48cb5b729fea37603cbbfc7a86a73b72adb3be8d",
     "prefix": 30,
     "name": "Khala",
@@ -6032,13 +6138,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kilt-spiritnet",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 383,
+    "sortIndex": 431,
     "genesisHash": "0x411f057b9107718c9624d6aa4a3f23c1653898297f3d4d529d9bb6511a39dd21",
     "prefix": 38,
     "name": "KILT Spiritnet",
@@ -6086,13 +6193,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kintsugi",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 387,
+    "sortIndex": 435,
     "genesisHash": "0x9af9a64e6e4da8e3073901c3ff0cc4c3aad9563786d89daf6ad820b6e14a0b8b",
     "prefix": 2092,
     "name": "Kintsugi",
@@ -6306,23 +6414,24 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
-    "id": "kreivo",
+    "id": "kpron",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 394,
-    "genesisHash": "0xc710a5f16adc17bcd212cff0aedcbf1c1212a043cdc0fb2dcba861efe5305b01",
-    "prefix": 2,
-    "name": "Kreivo",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Kreivo",
-    "chainType": "Live",
-    "implName": "kreivo-parachain",
-    "specName": "kreivo-parachain",
-    "specVersion": "0",
+    "sortIndex": 442,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "Kpron",
+    "themeColor": "#215fed",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/kpron.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
     "nativeToken": null,
     "tokens": [],
     "account": "*25519",
@@ -6333,7 +6442,53 @@
     "feeToken": null,
     "rpcs": [
       {
+        "url": "wss://kusama-kpron-rpc.apron.network/"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2019,
+    "relay": {
+      "id": "kusama"
+    },
+    "balancesConfig": [],
+    "balancesMetadata": []
+  },
+  {
+    "id": "kreivo",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 443,
+    "genesisHash": "0xc710a5f16adc17bcd212cff0aedcbf1c1212a043cdc0fb2dcba861efe5305b01",
+    "prefix": 2,
+    "name": "Kreivo",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Kreivo",
+    "chainType": "Live",
+    "implName": "kreivo-parachain",
+    "specName": "kreivo-parachain",
+    "specVersion": "111",
+    "nativeToken": {
+      "id": "kreivo-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "kreivo-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
         "url": "wss://kreivo.kippu.rocks/"
+      },
+      {
+        "url": "wss://kreivo.io/"
       }
     ],
     "evmNetworks": [],
@@ -6343,13 +6498,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "krest",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 395,
+    "sortIndex": 444,
     "genesisHash": "0xb3dd5ad6a82872b30aabaede8f41dfd4ff6c32ff82f8757d034a45be63cf104c",
     "prefix": 42,
     "name": "Krest",
@@ -6376,7 +6532,7 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://wss-krest.peaq.network/"
+        "url": "wss://krest.api.onfinality.io/public-ws"
       },
       {
         "url": "wss://krest.unitedbloc.com/"
@@ -6397,13 +6553,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kulupu",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 400,
+    "sortIndex": 449,
     "genesisHash": "0xf7a99d3cb92853d00d5275c971c132c074636256583fee53b3bbe60d7b8769ba",
     "prefix": 16,
     "name": "Kulupu",
@@ -6438,13 +6595,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kusama-asset-hub",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 401,
+    "sortIndex": 450,
     "genesisHash": "0x48239ef607d7928874027a43a67689209727dfb3d3dc5e5b03a39bdc2eda771a",
     "prefix": 2,
     "name": "Kusama Asset Hub",
@@ -6454,7 +6612,7 @@
     "chainType": "Live",
     "implName": "statemine",
     "specName": "statemine",
-    "specVersion": "1002000",
+    "specVersion": "1002006",
     "nativeToken": {
       "id": "kusama-asset-hub-substrate-native"
     },
@@ -6543,13 +6701,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "kusama-bridge-hub",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 402,
+    "sortIndex": 451,
     "genesisHash": "0x00dcb981df86429de8bbacf9803401f09485366c44efbf53af9ecfab03adc7e5",
     "prefix": 2,
     "name": "Kusama Bridge Hub",
@@ -6559,7 +6718,7 @@
     "chainType": "Live",
     "implName": "bridge-hub-kusama",
     "specName": "bridge-hub-kusama",
-    "specVersion": "1002000",
+    "specVersion": "1002005",
     "nativeToken": {
       "id": "kusama-bridge-hub-substrate-native"
     },
@@ -6607,13 +6766,142 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
+  },
+  {
+    "id": "kusama-coretime",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 452,
+    "genesisHash": "0x638cd2b9af4b3bb54b8c1f0d22711fc89924ca93300f0caf25a580432b29d050",
+    "prefix": 2,
+    "name": "Kusama Coretime",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Kusama Coretime",
+    "chainType": "Live",
+    "implName": "coretime-kusama",
+    "specName": "coretime-kusama",
+    "specVersion": "1002005",
+    "nativeToken": {
+      "id": "kusama-coretime-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "kusama-coretime-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": "https://coretime-kusama.subscan.io/",
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://coretime-kusama-rpc.dwellir.com"
+      },
+      {
+        "url": "wss://kusama-coretime-rpc.polkadot.io"
+      },
+      {
+        "url": "wss://sys.ibp.network/coretime-kusama"
+      },
+      {
+        "url": "wss://sys.dotters.network/coretime-kusama"
+      },
+      {
+        "url": "wss://ksm-rpc.stakeworld.io/coretime"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 1005,
+    "relay": {
+      "id": "kusama"
+    },
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "kusama",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+        }
+      }
+    ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
+  },
+  {
+    "id": "kusama-people",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 453,
+    "genesisHash": "0xc1af4cb4eb3918e5db15086c0cc5ec17fb334f728b7c65dd44bfe1e174ff8b3f",
+    "prefix": 2,
+    "name": "Kusama People",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Kusama People",
+    "chainType": "Live",
+    "implName": "people-kusama",
+    "specName": "people-kusama",
+    "specVersion": "1002006",
+    "nativeToken": {
+      "id": "kusama-people-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "kusama-people-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": "https://people-kusama.subscan.io/",
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://people-kusama-rpc.dwellir.com"
+      },
+      {
+        "url": "wss://kusama-people-rpc.polkadot.io"
+      },
+      {
+        "url": "wss://sys.ibp.network/people-kusama"
+      },
+      {
+        "url": "wss://sys.dotters.network/people-kusama"
+      },
+      {
+        "url": "wss://ksm-rpc.stakeworld.io/people"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 1004,
+    "relay": {
+      "id": "kusama"
+    },
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "kusama",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+        }
+      }
+    ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "liberland",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 407,
+    "sortIndex": 465,
     "genesisHash": "0x6bd89e052d67a45bb60a9a23e8581053d5e0d619f15cb9865946937e690c42d6",
     "prefix": 42,
     "name": "Liberland",
@@ -6623,7 +6911,7 @@
     "chainType": "Live",
     "implName": "liberland-node",
     "specName": "Liberland",
-    "specVersion": "19",
+    "specVersion": "24",
     "nativeToken": {
       "id": "liberland-substrate-native"
     },
@@ -6659,13 +6947,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "litentry",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 413,
+    "sortIndex": 473,
     "genesisHash": "0x2fc8bb6ed7c0051bdcf4866c322ed32b6276572713607e3297ccf411b8f14aa9",
     "prefix": 31,
     "name": "Litentry",
@@ -6675,7 +6964,7 @@
     "chainType": "Live",
     "implName": "litentry-parachain",
     "specName": "litentry-parachain",
-    "specVersion": "9175",
+    "specVersion": "9182",
     "nativeToken": {
       "id": "litentry-substrate-native"
     },
@@ -6713,13 +7002,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "litmus",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 414,
+    "sortIndex": 474,
     "genesisHash": "0xda5831fbc8570e3c6336d0d72b8c08f8738beefec812df21ef2afc2982ede09c",
     "prefix": 131,
     "name": "Litmus",
@@ -6729,7 +7019,7 @@
     "chainType": "Live",
     "implName": "litmus-parachain",
     "specName": "litmus-parachain",
-    "specVersion": "9151",
+    "specVersion": "9180",
     "nativeToken": {
       "id": "litmus-substrate-native"
     },
@@ -6756,13 +7046,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "logion-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 417,
+    "sortIndex": 477,
     "genesisHash": "0x28e1d199bc6066751490ae2112010464ee8950f76ae9e2f11a03e9ea336b528b",
     "prefix": 2021,
     "name": "Logion",
@@ -6772,7 +7063,7 @@
     "chainType": "Live",
     "implName": "logion",
     "specName": "logion",
-    "specVersion": "3000",
+    "specVersion": "4001",
     "nativeToken": {
       "id": "logion-polkadot-substrate-native"
     },
@@ -6802,60 +7093,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
-  },
-  {
-    "id": "logion-standalone",
-    "isTestnet": false,
-    "isDefault": true,
-    "sortIndex": 418,
-    "genesisHash": "0xe9d7420a5f73edef005ccb8e043500aa5b2458f173912184ea93c14dc035a203",
-    "prefix": 42,
-    "name": "Logion Standalone",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "logion MVP",
-    "chainType": "Live",
-    "implName": "logion",
-    "specName": "logion",
-    "specVersion": "164",
-    "nativeToken": {
-      "id": "logion-standalone-substrate-native"
-    },
-    "tokens": [
-      {
-        "id": "logion-standalone-substrate-native"
-      }
-    ],
-    "account": "*25519",
-    "subscanUrl": null,
-    "chainspecQrUrl": null,
-    "latestMetadataQrUrl": null,
-    "isUnknownFeeToken": false,
-    "feeToken": null,
-    "rpcs": [
-      {
-        "url": "wss://rpc01.logion.network"
-      },
-      {
-        "url": "wss://rpc02.logion.network"
-      },
-      {
-        "url": "wss://rpc03.logion.network"
-      }
-    ],
-    "evmNetworks": [],
-    "parathreads": null,
-    "paraId": null,
-    "relay": null,
-    "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "mangata",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 430,
+    "sortIndex": 490,
     "genesisHash": "0xd611f22d291c5b7b69f1e105cca03352984c344c4421977efaa4cbdd1834e2aa",
     "prefix": 42,
     "name": "MangataX",
@@ -6918,13 +7163,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "manta",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 431,
+    "sortIndex": 491,
     "genesisHash": "0xf3c7ad88f6a80f366c4be216691411ef0622e8b809b1046ea297ef106058d4eb",
     "prefix": 77,
     "name": "Manta",
@@ -6934,7 +7180,7 @@
     "chainType": "Live",
     "implName": "manta",
     "specName": "manta",
-    "specVersion": "4620",
+    "specVersion": "4720",
     "nativeToken": {
       "id": "manta-substrate-native"
     },
@@ -6961,23 +7207,24 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "moonbeam",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 465,
+    "sortIndex": 530,
     "genesisHash": "0xfe58ea77779b7abda7da4ec526d14db9b1e9cd40a217c34892af80a9b332b76d",
     "prefix": 1284,
     "name": "Moonbeam",
-    "themeColor": "#53cbc9",
+    "themeColor": "#958fdc",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/moonbeam.svg",
     "chainName": "Moonbeam",
     "chainType": "Live",
     "implName": "moonbeam",
     "specName": "moonbeam",
-    "specVersion": "2801",
+    "specVersion": "3001",
     "nativeToken": {
       "id": "moonbeam-substrate-native"
     },
@@ -6995,9 +7242,6 @@
     "rpcs": [
       {
         "url": "wss://moonbeam-rpc.dwellir.com"
-      },
-      {
-        "url": "wss://1rpc.io/glmr"
       },
       {
         "url": "wss://wss.api.moonbeam.network"
@@ -7028,23 +7272,24 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "moonriver",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 467,
+    "sortIndex": 532,
     "genesisHash": "0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b",
     "prefix": 1285,
     "name": "Moonriver",
-    "themeColor": "#f2b705",
+    "themeColor": "#95f921",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/moonriver.svg",
     "chainName": "Moonriver",
     "chainType": "Live",
     "implName": "moonriver",
     "specName": "moonriver",
-    "specVersion": "2801",
+    "specVersion": "3000",
     "nativeToken": {
       "id": "moonriver-substrate-native"
     },
@@ -7092,13 +7337,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "myriad",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 476,
+    "sortIndex": 541,
     "genesisHash": "0x74ed91fbc18497f011290f9119a2217908649170337b6414a2d44923ade07063",
     "prefix": 42,
     "name": "Myriad",
@@ -7141,13 +7387,58 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "mythos",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 543,
+    "genesisHash": "0xf6ee56e9c5277df5b4ce6ae9983ee88f3cbed27d31beeb98f9f84f997a1ab0b9",
+    "prefix": 42,
+    "name": "Mythos",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Mythos",
+    "chainType": "Live",
+    "implName": "mythos",
+    "specName": "mythos",
+    "specVersion": "1004",
+    "nativeToken": {
+      "id": "mythos-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "mythos-substrate-native"
+      }
+    ],
+    "account": "secp256k1",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://polkadot-mythos-rpc.polkadot.io"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 3369,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "neatcoin",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 483,
+    "sortIndex": 552,
     "genesisHash": "0xfbb541421d30423c9a753ffa844b64fd44d823f513bf49e3b73b3a656309a595",
     "prefix": 48,
     "name": "Neatcoin",
@@ -7182,35 +7473,36 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
-    "id": "neuroweb-polkadot",
+    "id": "neuroweb",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 487,
+    "sortIndex": 557,
     "genesisHash": "0xe7e0962324a3b86c83404dbea483f25fb5dab4c224791c81b756cfc948006174",
     "prefix": 101,
     "name": "NeuroWeb",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "themeColor": "#ffffff",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/neuroweb.svg",
     "chainName": "NeuroWeb",
     "chainType": "Live",
     "implName": "neuroweb",
     "specName": "origintrail-parachain",
     "specVersion": "130",
     "nativeToken": {
-      "id": "neuroweb-polkadot-substrate-native"
+      "id": "neuroweb-substrate-native"
     },
     "tokens": [
       {
-        "id": "neuroweb-polkadot-substrate-native"
+        "id": "neuroweb-substrate-native"
       }
     ],
     "account": "*25519",
     "subscanUrl": null,
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-origintrail-parachain_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-origintrail-parachain_metadata_latest.apng",
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
     "isUnknownFeeToken": false,
     "feeToken": null,
     "rpcs": [
@@ -7228,13 +7520,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "nftmart",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 492,
+    "sortIndex": 563,
     "genesisHash": "0xfcf9074303d8f319ad1bf0195b145871977e7c375883b834247cb01ff22f51f9",
     "prefix": 12191,
     "name": "NFTMart",
@@ -7277,13 +7570,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "nodle-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 493,
+    "sortIndex": 565,
     "genesisHash": "0x97da7ede98d7bad4e36b4d734b6055425a3be036da2a332ea5a7037656427a21",
     "prefix": 37,
     "name": "Nodle",
@@ -7293,9 +7587,15 @@
     "chainType": "Live",
     "implName": "nodle-para",
     "specName": "nodle-para",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "specVersion": "27",
+    "nativeToken": {
+      "id": "nodle-polkadot-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "nodle-polkadot-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": "https://nodle.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-nodle-para_specs.png",
@@ -7304,7 +7604,7 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://eden-rpc.dwellir.com"
+        "url": "wss://nodle-rpc.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -7323,13 +7623,88 @@
         }
       }
     ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "oak",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 573,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "Oak",
+    "themeColor": "#1ab8d0",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/oak.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://rpc.oak.tech"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2090,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": [],
+    "balancesMetadata": []
+  },
+  {
+    "id": "omnibtc",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 582,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "OmniBTC",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://psc-parachain.coming.chat"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2053,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": [],
     "balancesMetadata": []
   },
   {
     "id": "parallel",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 529,
+    "sortIndex": 615,
     "genesisHash": "0xe61a41c53f5dcd0beb09df93b34402aada44cb05117b71059cce40a2723a4e97",
     "prefix": 172,
     "name": "Parallel",
@@ -7339,7 +7714,7 @@
     "chainType": "Live",
     "implName": "parallel",
     "specName": "parallel",
-    "specVersion": "205",
+    "specVersion": "207",
     "nativeToken": {
       "id": "parallel-substrate-native"
     },
@@ -7385,56 +7760,14 @@
         }
       }
     ],
-    "balancesMetadata": []
-  },
-  {
-    "id": "heiko-kusama",
-    "isTestnet": false,
-    "isDefault": true,
-    "sortIndex": 530,
-    "genesisHash": "0x64a1c658a48b2e70a7fb1ad4c39eea35022568c20fc44a6e2e3d0a57aee6053b",
-    "prefix": 110,
-    "name": "Parallel Heiko",
-    "themeColor": "#f026a8",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/heiko-kusama.svg",
-    "chainName": "Parallel Heiko",
-    "chainType": "Live",
-    "implName": "heiko",
-    "specName": "heiko",
-    "specVersion": "205",
-    "nativeToken": {
-      "id": "heiko-kusama-substrate-native"
-    },
-    "tokens": [
-      {
-        "id": "heiko-kusama-substrate-native"
-      }
-    ],
-    "account": "*25519",
-    "subscanUrl": "https://parallel-heiko.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-heiko_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-heiko_metadata_latest.apng",
-    "isUnknownFeeToken": false,
-    "feeToken": null,
-    "rpcs": [
-      {
-        "url": "wss://heiko-rpc.parallel.fi"
-      }
-    ],
-    "evmNetworks": [],
-    "parathreads": null,
-    "paraId": 2085,
-    "relay": {
-      "id": "kusama"
-    },
-    "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "pendulum",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 538,
+    "sortIndex": 624,
     "genesisHash": "0x5d3c298622d5634ed019bf61ea4b71655030015bde9beb0d6a24743714462c86",
     "prefix": 56,
     "name": "Pendulum",
@@ -7444,7 +7777,7 @@
     "chainType": "Live",
     "implName": "pendulum",
     "specName": "pendulum",
-    "specVersion": "16",
+    "specVersion": "17",
     "nativeToken": {
       "id": "pendulum-substrate-native"
     },
@@ -7484,15 +7817,12 @@
       }
     ],
     "account": "*25519",
-    "subscanUrl": null,
+    "subscanUrl": "https://pendulum.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-pendulum_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-pendulum_metadata_latest.apng",
     "isUnknownFeeToken": false,
     "feeToken": null,
     "rpcs": [
-      {
-        "url": "wss://pendulum-rpc.dwellir.com"
-      },
       {
         "url": "wss://rpc-pendulum.prd.pendulumchain.tech"
       }
@@ -7593,13 +7923,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "phala",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 542,
+    "sortIndex": 628,
     "genesisHash": "0x1bb969d85965e4bb5a651abbedf21a54b6b31a21f66b5401cc3f1e286268d736",
     "prefix": 30,
     "name": "Phala",
@@ -7650,13 +7981,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "picasso",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 545,
+    "sortIndex": 631,
     "genesisHash": "0x6811a339673c9daa897944dcdac99c6e2939cc88245ed21951a0a3c9a2be75bc",
     "prefix": 49,
     "name": "Picasso",
@@ -8022,8 +8354,8 @@
               "decimals": 18,
               "ed": "0",
               "onChainId": 133,
-              "coingeckoId": "ethereum",
-              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ethereum.webp"
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
             },
             {
               "symbol": "TNKR",
@@ -8068,13 +8400,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "bitcountry-pioneer",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 546,
+    "sortIndex": 632,
     "genesisHash": "0xf22b7850cdd5a7657bbfd90ac86441275bbc57ace3d2698a740c7b0ec4de5ec3",
     "prefix": 268,
     "name": "Pioneer",
@@ -8170,13 +8503,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "polimec",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 556,
+    "sortIndex": 646,
     "genesisHash": "0x7eb9354488318e7549c722669dcbdcdc526f1fef1420e7944667212f3601fdbd",
     "prefix": 41,
     "name": "Polimec",
@@ -8186,7 +8520,7 @@
     "chainType": "Live",
     "implName": "polimec-mainnet",
     "specName": "polimec-mainnet",
-    "specVersion": "6000",
+    "specVersion": "7005",
     "nativeToken": {
       "id": "polimec-substrate-native"
     },
@@ -8219,13 +8553,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "polkadex-polkadot-2",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 557,
+    "sortIndex": 647,
     "genesisHash": "0x72f3bba34b1ecd532bccbed46701ad37c4ef329bfe86b7cf014ac06cb92ed47d",
     "prefix": 89,
     "name": "Polkadex",
@@ -8235,7 +8570,7 @@
     "chainType": "Live",
     "implName": "polkadex-parachain",
     "specName": "polkadex-parachain",
-    "specVersion": "13",
+    "specVersion": "17",
     "nativeToken": {
       "id": "polkadex-polkadot-2-substrate-native"
     },
@@ -8273,13 +8608,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "polkadex-standalone",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 558,
+    "sortIndex": 648,
     "genesisHash": "0x3920bcb4960a1eef5580cd5367ff3f430eef052774f78468852f7b9cb39f8a3c",
     "prefix": 88,
     "name": "Polkadex Standalone",
@@ -8289,7 +8625,7 @@
     "chainType": "Live",
     "implName": "polkadex-official",
     "specName": "node",
-    "specVersion": "350",
+    "specVersion": "371",
     "nativeToken": {
       "id": "polkadex-standalone-substrate-native"
     },
@@ -8325,13 +8661,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "polkadot-asset-hub",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 559,
+    "sortIndex": 649,
     "genesisHash": "0x68d56f15f85d3136970ec16946040bc1752654e906147f7e43e9d539d7c3de2f",
     "prefix": 0,
     "name": "Polkadot Asset Hub",
@@ -8341,7 +8678,7 @@
     "chainType": "Live",
     "implName": "statemint",
     "specName": "statemint",
-    "specVersion": "1002000",
+    "specVersion": "1002006",
     "nativeToken": {
       "id": "polkadot-asset-hub-substrate-native"
     },
@@ -8357,6 +8694,9 @@
       },
       {
         "id": "polkadot-asset-hub-substrate-assets-30-ded"
+      },
+      {
+        "id": "polkadot-asset-hub-substrate-assets-17-wifd"
       },
       {
         "id": "polkadot-asset-hub-substrate-native"
@@ -8432,19 +8772,85 @@
             {
               "assetId": 30,
               "symbol": "DED",
+              "coingeckoId": "dot-is-ded",
               "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ded.svg"
+            },
+            {
+              "assetId": 17,
+              "symbol": "WIFD",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wifd.svg"
+            }
+          ]
+        }
+      },
+      {
+        "moduleType": "substrate-foreignassets",
+        "moduleConfig": {
+          "tokens": [
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X1\":{\"Parachain\":2011}}}",
+              "symbol": "EQ",
+              "coingeckoId": "equilibrium-token",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eq.svg"
+            },
+            {
+              "assetId": "{\"parents\":2,\"interior\":{\"X2\":[{\"GlobalConsensus\":{\"Ethereum\":{\"chainId\":1} }},{\"AccountKey20\":{\"network\":null,\"key\":\"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\"}}]}}",
+              "symbol": "WETH",
+              "coingeckoId": "weth",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+            },
+            {
+              "assetId": "{\"parents\":2,\"interior\":{\"X1\":{\"GlobalConsensus\":\"Kusama\"}}}",
+              "symbol": "KSM",
+              "coingeckoId": "kusama",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+            },
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2030},{\"GeneralKey\":{\"length\":2,\"data\":\"0x0001000000000000000000000000000000000000000000000000000000000000\"}}]}}",
+              "symbol": "BNC",
+              "coingeckoId": "bifrost-native-coin",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bnc.svg"
+            },
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2011},{\"GeneralKey\":{\"length\":3,\"data\":\"0x6571640000000000000000000000000000000000000000000000000000000000\"}}]}}",
+              "symbol": "EQD",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eqd.svg"
+            },
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2004},{\"PalletInstance\":10}]}}",
+              "symbol": "GLMR",
+              "coingeckoId": "moonbeam",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/moonbeam.webp"
+            },
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2030},{\"GeneralKey\":{\"length\":2,\"data\":\"0x0900000000000000000000000000000000000000000000000000000000000000\"}}]}}",
+              "symbol": "vDOT",
+              "coingeckoId": "voucher-dot",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vdot.svg"
+            },
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2034},{\"GeneralIndex\":0}]}}",
+              "symbol": "HDX",
+              "coingeckoId": "hydradx",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hydradx.webp"
+            },
+            {
+              "assetId": "{\"parents\":1,\"interior\":{\"X1\":{\"Parachain\":2051}}}",
+              "symbol": "AJUN",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
             }
           ]
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "polkadot-bridge-hub",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 560,
+    "sortIndex": 650,
     "genesisHash": "0xdcf691b5a3fbe24adc99ddc959c0561b973e329b1aef4c4b22e7bb2ddecb4464",
     "prefix": 0,
     "name": "Polkadot Bridge Hub",
@@ -8454,7 +8860,7 @@
     "chainType": "Live",
     "implName": "bridge-hub-polkadot",
     "specName": "bridge-hub-polkadot",
-    "specVersion": "1002000",
+    "specVersion": "1002005",
     "nativeToken": {
       "id": "polkadot-bridge-hub-substrate-native"
     },
@@ -8502,13 +8908,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "polymesh",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 565,
+    "sortIndex": 655,
     "genesisHash": "0x6fbd74e5e1d0a61d52ccfe9d4adaed16dd3a7caa37c6bc4d0c2fa12e8b2f4063",
     "prefix": 12,
     "name": "Polymesh",
@@ -8518,7 +8925,7 @@
     "chainType": "Live",
     "implName": "polymesh_mainnet",
     "specName": "polymesh_mainnet",
-    "specVersion": "6002010",
+    "specVersion": "6003020",
     "nativeToken": {
       "id": "polymesh-substrate-native"
     },
@@ -8551,13 +8958,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "quartz",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 600,
+    "sortIndex": 694,
     "genesisHash": "0xcd4d732201ebe5d6b014edda071c4203e16867305332301dc8d092044b28e554",
     "prefix": 255,
     "name": "Quartz",
@@ -8614,13 +9022,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "robonomics-kusama",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 614,
+    "sortIndex": 712,
     "genesisHash": "0x631ccc82a078481584041656af292834e1ae6daab61d2875b4dd0c14bb9b17bc",
     "prefix": 32,
     "name": "Robonomics",
@@ -8671,13 +9080,51 @@
         }
       }
     ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "sakura",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 721,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "Sakura",
+    "themeColor": "#f9fff3",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/sakura.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
+    "account": "*25519",
+    "subscanUrl": "https://sakura.subscan.io/",
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://api-sakura.clover.finance"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2016,
+    "relay": {
+      "id": "kusama"
+    },
+    "balancesConfig": [],
     "balancesMetadata": []
   },
   {
     "id": "shiden-kusama",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 636,
+    "sortIndex": 739,
     "genesisHash": "0xf1cf9022c7ebb34b162d5b5e34e705a5a740b2d0ecc1009fb89023e62a488108",
     "prefix": 5,
     "name": "Shiden",
@@ -8687,7 +9134,7 @@
     "chainType": "Live",
     "implName": "shiden",
     "specName": "shiden",
-    "specVersion": "123",
+    "specVersion": "129",
     "nativeToken": {
       "id": "shiden-kusama-substrate-native"
     },
@@ -8732,13 +9179,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "sora-kusama",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 654,
+    "sortIndex": 757,
     "genesisHash": "0x6d8d9f145c2177fa83512492cdd80a71e29f22473f4a8943a6292149ac319fb9",
     "prefix": 420,
     "name": "Sora",
@@ -8783,13 +9231,66 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "sora-polkadot",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 758,
+    "genesisHash": "0xe92d165ad41e41e215d09713788173aecfdbe34d3bed29409d33a2ef03980738",
+    "prefix": 81,
+    "name": "Sora",
+    "themeColor": "#fd0100",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/sora-polkadot.svg",
+    "chainName": "SORA Polkadot",
+    "chainType": "Live",
+    "implName": "sora_ksm",
+    "specName": "sora_ksm",
+    "specVersion": "14",
+    "nativeToken": {
+      "id": "sora-polkadot-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "sora-polkadot-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2025,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "sora",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/sora-polkadot.svg"
+        }
+      }
+    ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "sora-standalone",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 655,
+    "sortIndex": 759,
     "genesisHash": "0x7e4e32d0feafd4f9c9414b0be86373f9a1efa904809b683453a9af6856d38ad5",
     "prefix": 69,
     "name": "Sora Standalone",
@@ -8799,7 +9300,7 @@
     "chainType": "Live",
     "implName": "sora-substrate",
     "specName": "sora-substrate",
-    "specVersion": "77",
+    "specVersion": "88",
     "nativeToken": {
       "id": "sora-standalone-substrate-native"
     },
@@ -8838,13 +9339,51 @@
         }
       }
     ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "subdao",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 770,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "SubDAO",
+    "themeColor": "#d51073",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/subdao.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://parachain-rpc.subdao.org"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2018,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": [],
     "balancesMetadata": []
   },
   {
     "id": "subsocial-polkadot",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 664,
+    "sortIndex": 771,
     "genesisHash": "0x4a12be580bb959937a1c7a61d5cf24428ed67fa571974b4007645d1886e7c89f",
     "prefix": 28,
     "name": "Subsocial",
@@ -8892,13 +9431,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "zero",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 665,
+    "sortIndex": 772,
     "genesisHash": "0x2991d4125ac465d64c4c0b915fedd7168b5961b7676480636e3747f1ad64cfb9",
     "prefix": 25,
     "name": "Subzero",
@@ -8984,13 +9524,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "t-3-rn",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 679,
+    "sortIndex": 786,
     "genesisHash": "0x9a33d1af38c2736ecddbbbcdc2cb2c3023e9b91dc295ac3f1473fe226e5944a7",
     "prefix": 9935,
     "name": "t3rn",
@@ -9027,23 +9568,24 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "tangle",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 684,
+    "sortIndex": 791,
     "genesisHash": "0x44f68476df71ebf765b630bf08dc1e0fedb2bf614a1aa0563b3f74f20e47b3e0",
     "prefix": 5845,
-    "name": "Tangle Network",
+    "name": "Tangle",
     "themeColor": "#7578fb",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/tangle.svg",
     "chainName": "Tangle Mainnet",
     "chainType": "Live",
     "implName": "tangle",
     "specName": "tangle",
-    "specVersion": "1000",
+    "specVersion": "1012",
     "nativeToken": {
       "id": "tangle-substrate-native"
     },
@@ -9080,13 +9622,56 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
+  },
+  {
+    "id": "ternoa",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 806,
+    "genesisHash": "0x6859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4e",
+    "prefix": 42,
+    "name": "Ternoa",
+    "themeColor": "#ff8500",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/ternoa.svg",
+    "chainName": "Ternoa Mainnet",
+    "chainType": "Live",
+    "implName": "mainnet",
+    "specName": "mainnet",
+    "specVersion": "26",
+    "nativeToken": {
+      "id": "ternoa-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "ternoa-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/mainnet_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/mainnet_metadata_latest.apng",
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://mainnet.ternoa.network"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": null,
+    "relay": null,
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "thebifrost-mainnet",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 701,
+    "sortIndex": 810,
     "genesisHash": "0x63e1e2390bf7758f2462ad22b950e7e191f3500226ba6f572346ac06ced516fe",
     "prefix": 42,
     "name": "The Bifrost",
@@ -9105,7 +9690,7 @@
         "id": "thebifrost-mainnet-substrate-native"
       }
     ],
-    "account": "*25519",
+    "account": "secp256k1",
     "subscanUrl": null,
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
@@ -9124,13 +9709,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "turing",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 720,
+    "sortIndex": 832,
     "genesisHash": "0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d",
     "prefix": 51,
     "name": "Turing",
@@ -9175,13 +9761,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "unique",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 728,
+    "sortIndex": 842,
     "genesisHash": "0x84322d9cddbf35088f1e54e9a85c967a41a56a4f43445768125e61af166c7d31",
     "prefix": 7391,
     "name": "Unique",
@@ -9238,13 +9825,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "vara",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 737,
+    "sortIndex": 851,
     "genesisHash": "0xfe1b4c55fd4d668101126434206571a7838a8b6b93a6d1b95d607e78e6c53763",
     "prefix": 137,
     "name": "Vara",
@@ -9254,7 +9842,7 @@
     "chainType": "Live",
     "implName": "vara",
     "specName": "vara",
-    "specVersion": "1210",
+    "specVersion": "1410",
     "nativeToken": {
       "id": "vara-substrate-native"
     },
@@ -9272,6 +9860,9 @@
     "rpcs": [
       {
         "url": "wss://rpc.vara.network"
+      },
+      {
+        "url": "wss://vara.drpc.org"
       }
     ],
     "evmNetworks": [],
@@ -9287,13 +9878,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "vtb",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 750,
+    "sortIndex": 867,
     "genesisHash": "0x21a1ba24a807ab70ade25cbd741e6428746a7007926ac7b82d102df7d620e2ea",
     "prefix": 42,
     "name": "Vtb",
@@ -9328,13 +9920,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "watr",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 754,
+    "sortIndex": 872,
     "genesisHash": "0x161db6cdc5896fe55ef12b4778fe78dd65d7af43f65c601786b88d7a93ebc58a",
     "prefix": 19,
     "name": "Watr",
@@ -9374,13 +9967,14 @@
       "id": "polkadot"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "xode",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 771,
+    "sortIndex": 891,
     "genesisHash": "0x28cc1df52619f4edd9f0389a7e910a636276075ecc429600f1dd434e281a04e9",
     "prefix": 42,
     "name": "Xode",
@@ -9417,13 +10011,14 @@
       "id": "kusama"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "xxnetwork",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 774,
+    "sortIndex": 896,
     "genesisHash": "0x50dd5d206917bf10502c68fb4d18a59fc8aa31586f4e8856b493e43544aa82aa",
     "prefix": 55,
     "name": "XX Network",
@@ -9433,7 +10028,7 @@
     "chainType": "Live",
     "implName": "xxlabs-xxnetwork",
     "specName": "xxnetwork",
-    "specVersion": "205",
+    "specVersion": "206",
     "nativeToken": {
       "id": "xxnetwork-substrate-native"
     },
@@ -9469,13 +10064,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "zeitgeist",
     "isTestnet": false,
     "isDefault": true,
-    "sortIndex": 781,
+    "sortIndex": 903,
     "genesisHash": "0x1bf2a2ecb4a868de66ea8610f2ce7c8c43706561b6476031315f6640fe38e060",
     "prefix": 73,
     "name": "Zeitgeist",
@@ -9523,13 +10119,14 @@
         }
       }
     ],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "westend-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 793,
+    "sortIndex": 917,
     "genesisHash": "0xe143f23803ac50e8f6f8e62695d1ce9e4e1d68aa36c1cd2cfd15340213f3423e",
     "prefix": 42,
     "name": "Westend",
@@ -9539,7 +10136,7 @@
     "chainType": "Live",
     "implName": "parity-westend",
     "specName": "westend",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "westend-testnet-substrate-native"
     },
@@ -9600,7 +10197,7 @@
       {
         "id": "westend-coretime-testnet",
         "paraId": 1005,
-        "name": "Coretime"
+        "name": "Coretime Testnet"
       },
       {
         "id": "westend-people-testnet",
@@ -9611,13 +10208,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "rococo-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 794,
+    "sortIndex": 918,
     "genesisHash": "0x6408de7737c59c238890533af25896a2c20608d8b380bb01029acb392781063e",
     "prefix": 42,
     "name": "Rococo",
@@ -9627,7 +10225,7 @@
     "chainType": "Live",
     "implName": "parity-rococo-v2.0",
     "specName": "rococo",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "rococo-testnet-substrate-native"
     },
@@ -9702,7 +10300,7 @@
       {
         "id": "rococo-coretime-testnet",
         "paraId": 1005,
-        "name": "Coretime"
+        "name": "Coretime Testnet"
       },
       {
         "id": "rococo-curio-testnet",
@@ -9715,11 +10313,6 @@
         "name": "Rex"
       },
       {
-        "id": "rococo-frequency-testnet",
-        "paraId": 4044,
-        "name": "Frequency Testnet"
-      },
-      {
         "id": "rococo-hydra-dx-testnet",
         "paraId": 2034,
         "name": "HydraDX Testnet"
@@ -9730,6 +10323,11 @@
         "name": "Hyperbridge Testnet"
       },
       {
+        "id": "rococo-invo-testnet",
+        "paraId": 4377,
+        "name": "Invo"
+      },
+      {
         "id": "rococo-litentry-testnet",
         "paraId": 2106,
         "name": "Litentry Testnet"
@@ -9738,6 +10336,16 @@
         "id": "rococo-mangata-testnet",
         "paraId": 2110,
         "name": "MangataX Testnet"
+      },
+      {
+        "id": "rococo-md-5-testnet",
+        "paraId": 2093,
+        "name": "MD5"
+      },
+      {
+        "id": "rococo-muse-testnet",
+        "paraId": 3369,
+        "name": "Muse"
       },
       {
         "id": "rococo-neuro-web-testnet",
@@ -9813,13 +10421,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "rococo-acurast-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 798,
+    "sortIndex": 923,
     "genesisHash": "0x289ef22810bc948d3759b9fe4884d36bc41fc0257428997d827bb89a3468c9f6",
     "prefix": 42,
     "name": "Acurast",
@@ -9856,13 +10465,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "aleph-zero-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 806,
+    "sortIndex": 935,
     "genesisHash": "0x05d5279c52c484cc80396535a316add7d47b1c5b9e0398dd1f584149341460c5",
     "prefix": 42,
     "name": "Aleph Zero Testnet",
@@ -9900,13 +10510,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-amplitude-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 814,
+    "sortIndex": 948,
     "genesisHash": "0xa8d080b07f9c84465aeb9576db5a7838bcbca3ffb78dbfd7d4b56acafc1f29d1",
     "prefix": 57,
     "name": "Amplitude Testnet",
@@ -9916,7 +10527,7 @@
     "chainType": "Live",
     "implName": "foucoco",
     "specName": "foucoco",
-    "specVersion": "14",
+    "specVersion": "18",
     "nativeToken": {
       "id": "rococo-amplitude-testnet-substrate-native"
     },
@@ -9943,13 +10554,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "analog-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 816,
+    "sortIndex": 950,
     "genesisHash": "0x0614f7b74a2e47f7c8d8e2a5335be84bdde9402a43f5decdec03200a87c8b943",
     "prefix": 12850,
     "name": "Analog Testnet",
@@ -9957,9 +10569,9 @@
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
     "chainName": "Analog Testnet",
     "chainType": "Live",
-    "implName": "timechain-node",
-    "specName": "timechain-node",
-    "specVersion": "106",
+    "implName": "analog-testnet",
+    "specName": "analog-testnet",
+    "specVersion": "121",
     "nativeToken": {
       "id": "analog-testnet-substrate-native"
     },
@@ -9984,107 +10596,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
-  },
-  {
-    "id": "automata-contextfree-testnet",
-    "isTestnet": true,
-    "isDefault": true,
-    "sortIndex": 840,
-    "genesisHash": "0x6254c948b5eb7199a112cb308be3385c39c8c942625540ac749c77fe2aebc299",
-    "prefix": 11820,
-    "name": "Automata ContextFree",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "ContextFree Network",
-    "chainType": "Live",
-    "implName": "contextfree",
-    "specName": "contextfree",
-    "specVersion": "1007",
-    "nativeToken": {
-      "id": "automata-contextfree-testnet-substrate-native"
-    },
-    "tokens": [
-      {
-        "id": "automata-contextfree-testnet-substrate-native"
-      }
-    ],
-    "account": "*25519",
-    "subscanUrl": null,
-    "chainspecQrUrl": null,
-    "latestMetadataQrUrl": null,
-    "isUnknownFeeToken": false,
-    "feeToken": null,
-    "rpcs": [
-      {
-        "url": "wss://cf-api.ata.network"
-      }
-    ],
-    "evmNetworks": [],
-    "parathreads": null,
-    "paraId": null,
-    "relay": null,
-    "balancesConfig": [],
-    "balancesMetadata": []
-  },
-  {
-    "id": "avail-goldberg-testnet",
-    "isTestnet": true,
-    "isDefault": true,
-    "sortIndex": 843,
-    "genesisHash": "0x6f09966420b2608d1947ccfb0f2a362450d1fc7fd902c29b67c906eaa965a7ae",
-    "prefix": 42,
-    "name": "Avail Goldberg Testnet",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Avail Goldberg Testnet",
-    "chainType": "Live",
-    "implName": "data-avail",
-    "specName": "data-avail",
-    "specVersion": "22",
-    "nativeToken": {
-      "id": "avail-goldberg-testnet-substrate-native"
-    },
-    "tokens": [
-      {
-        "id": "avail-goldberg-testnet-substrate-native"
-      }
-    ],
-    "account": "*25519",
-    "subscanUrl": null,
-    "chainspecQrUrl": null,
-    "latestMetadataQrUrl": null,
-    "isUnknownFeeToken": false,
-    "feeToken": null,
-    "rpcs": [
-      {
-        "url": "wss://goldberg-testnet-rpc.avail.tools/ws"
-      },
-      {
-        "url": "wss://rpc-goldberg.sandbox.avail.tools"
-      },
-      {
-        "url": "wss://lc-rpc-goldberg.avail.tools:443/ws"
-      },
-      {
-        "url": "wss://goldberg.avail.tools/ws"
-      },
-      {
-        "url": "wss://rpc-goldberg.avail.tools/ws"
-      }
-    ],
-    "evmNetworks": [],
-    "parathreads": null,
-    "paraId": null,
-    "relay": null,
-    "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "avail-turing-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 844,
+    "sortIndex": 981,
     "genesisHash": "0xd3d2f3a3495dc597434a99d7d449ebad6616db45e4e4f178f31cc6fa14378b70",
     "prefix": 42,
     "name": "Avail Turing Testnet",
@@ -10094,9 +10613,15 @@
     "chainType": "Live",
     "implName": "avail",
     "specName": "avail",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "specVersion": "28",
+    "nativeToken": {
+      "id": "avail-turing-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "avail-turing-testnet-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -10119,7 +10644,7 @@
     "id": "rococo-aventus-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 846,
+    "sortIndex": 984,
     "genesisHash": "0xa6ffcef7fb8caadf7f6c5ad8ada65e3eaa90d1604f3eabda546ff1d486865a0c",
     "prefix": 42,
     "name": "Aventus Testnet",
@@ -10129,7 +10654,7 @@
     "chainType": "Live",
     "implName": "avn-parachain",
     "specName": "avn-parachain",
-    "specVersion": "62",
+    "specVersion": "65",
     "nativeToken": {
       "id": "rococo-aventus-testnet-substrate-native"
     },
@@ -10156,23 +10681,24 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-bajun-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 851,
-    "genesisHash": "0xd23837b6d1cf809cceea1f70bb0dee2e93d110f01f526117324eec3de6a5206d",
+    "sortIndex": 989,
+    "genesisHash": "0x24501a6461d701c16b017bc9f46c435b1b72deebda03c275b274bbe29303bb6a",
     "prefix": 1337,
     "name": "Bajun Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Bajun Rococo",
+    "chainName": "Bajun",
     "chainType": "Live",
     "implName": "bajun",
     "specName": "bajun",
-    "specVersion": "130",
+    "specVersion": "401",
     "nativeToken": {
       "id": "rococo-bajun-testnet-substrate-native"
     },
@@ -10205,7 +10731,7 @@
     "id": "rococo-basilisk-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 854,
+    "sortIndex": 992,
     "genesisHash": "0x317498e4a13cc902ee6b1886686101ac2dbc37a3bc1456f3ce7ee6d0efb45c50",
     "prefix": 10041,
     "name": "Basilisk Testnet",
@@ -10215,7 +10741,7 @@
     "chainType": "Live",
     "implName": "basilisk",
     "specName": "basilisk",
-    "specVersion": "113",
+    "specVersion": "117",
     "nativeToken": {
       "id": "rococo-basilisk-testnet-substrate-native"
     },
@@ -10242,13 +10768,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "edgeware-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 860,
+    "sortIndex": 999,
     "genesisHash": "0xb90d85934bfb24c3dda047c1e46eba140b4f18fd5c2810f763dd2d6be8047370",
     "prefix": 7,
     "name": "Beresheet",
@@ -10283,23 +10810,24 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-bifrost-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 864,
-    "genesisHash": "0x0c003b98abbedae774f5e13cd6146781317016725ab4db34312ea2681e9901f3",
+    "sortIndex": 1003,
+    "genesisHash": "0xec39b15e5a1945ff19b8e8c0f76990b5758ce19faa4578e8ed57eda33e844452",
     "prefix": 6,
     "name": "Bifrost Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Bifrost K Rococo",
+    "chainName": "Bifrost Paseo",
     "chainType": "Live",
-    "implName": "bifrost_polkadot",
-    "specName": "bifrost_polkadot",
-    "specVersion": "994",
+    "implName": "bifrost",
+    "specName": "bifrost",
+    "specVersion": "998",
     "nativeToken": {
       "id": "rococo-bifrost-testnet-substrate-native"
     },
@@ -10326,13 +10854,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "chainflip-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 907,
+    "sortIndex": 1050,
     "genesisHash": "0x7a5d4db858ada1d20ed6ded4933c33313fc9673e5fffab560d0ca714782f2080",
     "prefix": 2112,
     "name": "Chainflip Testnet",
@@ -10342,9 +10871,15 @@
     "chainType": "Live",
     "implName": "chainflip-node",
     "specName": "chainflip-node",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "specVersion": "145",
+    "nativeToken": {
+      "id": "chainflip-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "chainflip-testnet-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -10361,15 +10896,16 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "westend-collectives-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 915,
+    "sortIndex": 1064,
     "genesisHash": "0x713daf193a6301583ff467be736da27ef0a72711b248927ba413f573d2b38e44",
-    "prefix": 0,
+    "prefix": 42,
     "name": "Collectives Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -10377,7 +10913,7 @@
     "chainType": "Live",
     "implName": "collectives-westend",
     "specName": "collectives-westend",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "westend-collectives-testnet-substrate-native"
     },
@@ -10416,13 +10952,14 @@
       "id": "westend-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-contracts-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 924,
+    "sortIndex": 1073,
     "genesisHash": "0xc5442742bb6288bb3835ea1c9032981f06433ee5fc65d6e216c4422c0c19b989",
     "prefix": 42,
     "name": "Contracts",
@@ -10432,7 +10969,7 @@
     "chainType": "Live",
     "implName": "contracts-rococo",
     "specName": "contracts-rococo",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "rococo-contracts-testnet-substrate-native"
     },
@@ -10459,23 +10996,24 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-coretime-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 927,
+    "sortIndex": 1076,
     "genesisHash": "0xc079ad1435652801e6789aa485ca8b13616716bcefb7f77395e889dc6d98e8c5",
     "prefix": 42,
-    "name": "Coretime",
+    "name": "Coretime Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
     "chainName": "Rococo Coretime",
     "chainType": "Live",
     "implName": "coretime-rococo",
     "specName": "coretime-rococo",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "rococo-coretime-testnet-substrate-native"
     },
@@ -10502,23 +11040,24 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "westend-coretime-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 928,
+    "sortIndex": 1077,
     "genesisHash": "0xf938510edee7c23efa6e9db74f227c827a1b518bffe92e2f6c9842dc53d38840",
     "prefix": 42,
-    "name": "Coretime",
+    "name": "Coretime Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
     "chainName": "Westend Coretime",
     "chainType": "Live",
     "implName": "coretime-westend",
     "specName": "coretime-westend",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "westend-coretime-testnet-substrate-native"
     },
@@ -10535,6 +11074,9 @@
     "feeToken": null,
     "rpcs": [
       {
+        "url": "wss://sys.dotters.network/coretime-westend"
+      },
+      {
         "url": "wss://westend-coretime-rpc.polkadot.io"
       }
     ],
@@ -10545,16 +11087,17 @@
       "id": "westend-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
-    "id": "creditcoin-testnet",
+    "id": "creditcoin-classic-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 929,
+    "sortIndex": 1079,
     "genesisHash": "0xc2e43792c8acc075e564558f9a2184a0ffe9b0fd573969599eee9b647358c6cf",
     "prefix": 42,
-    "name": "Creditcoin Testnet",
+    "name": "Creditcoin Classic",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
     "chainName": "Creditcoin PoS Testnet",
@@ -10563,11 +11106,11 @@
     "specName": "creditcoin-node",
     "specVersion": "231",
     "nativeToken": {
-      "id": "creditcoin-testnet-substrate-native"
+      "id": "creditcoin-classic-testnet-substrate-native"
     },
     "tokens": [
       {
-        "id": "creditcoin-testnet-substrate-native"
+        "id": "creditcoin-classic-testnet-substrate-native"
       }
     ],
     "account": "*25519",
@@ -10586,13 +11129,56 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "creditcoin-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1080,
+    "genesisHash": "0xfc4ec97a1c1f119c4353aecb4a17c7c0cf7b40d5d660143d8bad9117e9866572",
+    "prefix": 42,
+    "name": "Creditcoin Testnet",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Creditcoin3 Testnet",
+    "chainType": "Live",
+    "implName": "creditcoin3",
+    "specName": "creditcoin3",
+    "specVersion": "28",
+    "nativeToken": {
+      "id": "creditcoin-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "creditcoin-testnet-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://rpc.cc3-testnet.creditcoin.network/ws"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": null,
+    "relay": null,
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-curio-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 937,
+    "sortIndex": 1089,
     "genesisHash": "0x84639f2a685cb614580e29b40111ba5b5d38cf95f12442252f4b5eda719da906",
     "prefix": 777,
     "name": "Curio Testnet",
@@ -10629,13 +11215,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "dancebox",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 941,
+    "sortIndex": 1094,
     "genesisHash": "0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea",
     "prefix": 42,
     "name": "Dancebox",
@@ -10645,7 +11232,7 @@
     "chainType": "Live",
     "implName": "dancebox",
     "specName": "dancebox",
-    "specVersion": "500",
+    "specVersion": "700",
     "nativeToken": {
       "id": "dancebox-substrate-native"
     },
@@ -10670,13 +11257,56 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "dancebox-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1095,
+    "genesisHash": "0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea",
+    "prefix": 42,
+    "name": "Dancebox",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Dancebox",
+    "chainType": "Live",
+    "implName": "dancebox",
+    "specName": "dancebox",
+    "specVersion": "700",
+    "nativeToken": {
+      "id": "dancebox-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "dancebox-testnet-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://dancebox.tanssi-api.network"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": null,
+    "relay": null,
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "debio-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 947,
+    "sortIndex": 1103,
     "genesisHash": "0xc15da258748903f5341b1cfb0d9f3afa7ed0bfc59be5e1185b6e303277b5237a",
     "prefix": 42,
     "name": "DeBio Testnet",
@@ -10686,7 +11316,7 @@
     "chainType": "Live",
     "implName": "debio",
     "specName": "appchain",
-    "specVersion": "2041",
+    "specVersion": "105",
     "nativeToken": {
       "id": "debio-testnet-substrate-native"
     },
@@ -10711,13 +11341,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "encointer-testnet-standalone",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 986,
+    "sortIndex": 1146,
     "genesisHash": "0xe7eafa72eb58d1fdd906202f88d68f660ea6520bdc9c9ad08d6ebf91d14b4405",
     "prefix": 42,
     "name": "Encointer Gesell",
@@ -10752,13 +11383,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "encointer-testnet-rococo",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 987,
+    "sortIndex": 1147,
     "genesisHash": "0x5d2947b8565abdf7112beff1c52b8fb017d86ef11cca9e64644f2fe3de878598",
     "prefix": 2,
     "name": "Encointer Lietaer",
@@ -10768,7 +11400,7 @@
     "chainType": "Live",
     "implName": "encointer-parachain",
     "specName": "encointer-parachain",
-    "specVersion": "1002001",
+    "specVersion": "1002004",
     "nativeToken": {
       "id": "encointer-testnet-rococo-substrate-native"
     },
@@ -10795,13 +11427,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "enjin-matrixchain-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 991,
+    "sortIndex": 1151,
     "genesisHash": "0xa37725fd8943d2a524cb7ecc65da438f9fa644db78ba24dcd0003e2f95645e8f",
     "prefix": 9030,
     "name": "Enjin Canary Matrixchain",
@@ -10811,7 +11444,7 @@
     "chainType": "Live",
     "implName": "matrix",
     "specName": "matrix",
-    "specVersion": "1005",
+    "specVersion": "1010",
     "nativeToken": {
       "id": "enjin-matrixchain-testnet-substrate-native"
     },
@@ -10838,13 +11471,14 @@
       "id": "enjin-relay"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "enjin-relay-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 992,
+    "sortIndex": 1152,
     "genesisHash": "0x735d8773c63e74ff8490fee5751ac07e15bfe2b3b5263be4d683c48dbdfbcd15",
     "prefix": 69,
     "name": "Enjin Canary Relaychain",
@@ -10854,7 +11488,7 @@
     "chainType": "Live",
     "implName": "canary",
     "specName": "canary",
-    "specVersion": "1026",
+    "specVersion": "1030",
     "nativeToken": {
       "id": "enjin-relay-testnet-substrate-native"
     },
@@ -10879,31 +11513,26 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
-    "id": "rococo-frequency-testnet",
+    "id": "paseo-frequency-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1020,
-    "genesisHash": "0x0c33dfffa907de5683ae21cc6b4af899b5c4de83f3794ed75b2dc74e1b088e72",
-    "prefix": 42,
+    "sortIndex": 1185,
+    "genesisHash": null,
+    "prefix": null,
     "name": "Frequency Testnet",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Frequency Rococo",
-    "chainType": "Live",
-    "implName": "frequency",
-    "specName": "frequency-testnet",
-    "specVersion": "74",
-    "nativeToken": {
-      "id": "rococo-frequency-testnet-substrate-native"
-    },
-    "tokens": [
-      {
-        "id": "rococo-frequency-testnet-substrate-native"
-      }
-    ],
+    "themeColor": "#00b6af",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/paseo-frequency-testnet.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -10912,17 +11541,14 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://frequency-rococo-rpc.dwellir.com"
-      },
-      {
-        "url": "wss://rpc.rococo.frequency.xyz"
+        "url": "wss://0.testnet.amplica.io"
       }
     ],
     "evmNetworks": [],
     "parathreads": null,
-    "paraId": 4044,
+    "paraId": 4000,
     "relay": {
-      "id": "rococo-testnet"
+      "id": "paseo-testnet"
     },
     "balancesConfig": [],
     "balancesMetadata": []
@@ -10931,7 +11557,7 @@
     "id": "roroco-laos-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1037,
+    "sortIndex": 1207,
     "genesisHash": "0x7a5f4b5728b68e2a1dd412a073856ee554bfbc7b184c702bc44ec25fd038b6df",
     "prefix": 42,
     "name": "Giedi",
@@ -10950,7 +11576,7 @@
         "id": "roroco-laos-testnet-substrate-native"
       }
     ],
-    "account": "*25519",
+    "account": "secp256k1",
     "subscanUrl": null,
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
@@ -10968,13 +11594,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "harmonie-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1055,
+    "sortIndex": 1230,
     "genesisHash": "0x7e18728b3f890088891d03dd5b30db9f1a0e62e05bc30eb4cf53f3c4a8280d76",
     "prefix": 441,
     "name": "Harmonie",
@@ -10993,7 +11620,7 @@
         "id": "harmonie-testnet-substrate-native"
       }
     ],
-    "account": "*25519",
+    "account": "secp256k1",
     "subscanUrl": null,
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
@@ -11009,14 +11636,15 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-hydra-dx-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1081,
-    "genesisHash": "0x5feea83342ce43200cb12b265cf21dc4e0e603571e2ac237e74ef45fb6913f52",
+    "sortIndex": 1257,
+    "genesisHash": "0x6a2f9e22feb677ca03b1887493ad5eeb240d6133b5b89999b76ab3695a036c64",
     "prefix": 63,
     "name": "HydraDX Testnet",
     "themeColor": "#505050",
@@ -11052,13 +11680,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-hyperbridge-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1082,
+    "sortIndex": 1258,
     "genesisHash": "0x19c5b43935ee2a7e4a090e2bde16ea106bcb1b3668a9abcd37bbceb8c9df16d4",
     "prefix": 42,
     "name": "Hyperbridge Testnet",
@@ -11101,7 +11730,7 @@
     "id": "interlay-testnet-standalone",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1090,
+    "sortIndex": 1268,
     "genesisHash": "0x266ad38196ddff7636206f911f0658cc76e3e906e349cb83475d93ebe80d03b5",
     "prefix": 2032,
     "name": "Interlay Testnet",
@@ -11136,13 +11765,92 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "rococo-invo-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1269,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "Invo",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://chain.dev.ourinvo.com"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 4377,
+    "relay": {
+      "id": "rococo-testnet"
+    },
+    "balancesConfig": [],
+    "balancesMetadata": []
+  },
+  {
+    "id": "ipse-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1272,
+    "genesisHash": null,
+    "prefix": null,
+    "name": "Ipse",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": null,
+    "chainType": null,
+    "implName": null,
+    "specName": null,
+    "specVersion": null,
+    "nativeToken": null,
+    "tokens": [],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://testnet-china.ipse.io"
+      },
+      {
+        "url": "wss://testnet-europe.ipse.io"
+      },
+      {
+        "url": "wss://testnet-usa.ipse.io"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": null,
+    "relay": null,
+    "balancesConfig": [],
     "balancesMetadata": []
   },
   {
     "id": "jur-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1102,
+    "sortIndex": 1283,
     "genesisHash": "0x0446ab8b4c86695018b791cd3cc4481c791f56ef2b4003197568941b5a8d2f9a",
     "prefix": 42,
     "name": "Jur Testnet",
@@ -11177,13 +11885,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kilt-testnet-standalone-2",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1113,
+    "sortIndex": 1294,
     "genesisHash": "0xa0c6e3bac382b316a68bca7141af1fba507207594c761076847ce358aeedcc21",
     "prefix": 38,
     "name": "KILT Peregrine",
@@ -11218,13 +11927,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "kintsugi-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1115,
+    "sortIndex": 1296,
     "genesisHash": "0xe3a1cf3db108e3e45c63a4841fe89ba95108b1db14fdec10c2e8a078ff322a67",
     "prefix": 2092,
     "name": "Kintsugi Testnet",
@@ -11259,13 +11969,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "liberland-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1125,
+    "sortIndex": 1311,
     "genesisHash": "0x131a8f81116a6ee880aa5f84b16115499a50f5f8dccfed80d87e204ec9203f3c",
     "prefix": 42,
     "name": "Liberland Testnet",
@@ -11275,7 +11986,7 @@
     "chainType": "Live",
     "implName": "liberland-node",
     "specName": "Liberland_testnet",
-    "specVersion": "19",
+    "specVersion": "24",
     "nativeToken": {
       "id": "liberland-testnet-substrate-native"
     },
@@ -11300,13 +12011,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-litentry-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1131,
+    "sortIndex": 1318,
     "genesisHash": "0x6940b1852737722c0aa768710e20105ab8c6a80b63a0339cb99892ffdce38283",
     "prefix": 42,
     "name": "Litentry Testnet",
@@ -11316,7 +12028,7 @@
     "chainType": "Live",
     "implName": "rococo-parachain",
     "specName": "rococo-parachain",
-    "specVersion": "9175",
+    "specVersion": "9183",
     "nativeToken": {
       "id": "rococo-litentry-testnet-substrate-native"
     },
@@ -11343,25 +12055,32 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "logion-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1132,
-    "genesisHash": "0x655269c7f7a9162e09b43eca4c667a2f6b3b174935b67f516924b70e489cdfd6",
-    "prefix": 42,
+    "sortIndex": 1319,
+    "genesisHash": "0x87ac53add0e7b7cd6cac65a1fc42284ec3a98246c1daaac535805e80216199e8",
+    "prefix": 2021,
     "name": "Logion Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "Logion Testnet",
+    "chainName": "Logion TEST",
     "chainType": "Live",
     "implName": "logion",
     "specName": "logion",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "specVersion": "4001",
+    "nativeToken": {
+      "id": "logion-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "logion-testnet-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -11370,7 +12089,7 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://test-rpc01.logion.network"
+        "url": "wss://test-para-rpc01.logion.network"
       }
     ],
     "evmNetworks": [],
@@ -11378,13 +12097,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-mangata-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1142,
+    "sortIndex": 1329,
     "genesisHash": "0x797fe0d6ea6917b5a36707961d819dca1826628123510730425c3bafc65ccf59",
     "prefix": 42,
     "name": "MangataX Testnet",
@@ -11421,13 +12141,58 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "rococo-md-5-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1341,
+    "genesisHash": "0x38656c27a232ae030ad8262ef9d6e6c63ca9fe68affbf5db26a4159340621210",
+    "prefix": 5000,
+    "name": "MD5",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "MD5 Network",
+    "chainType": "Live",
+    "implName": "hashed",
+    "specName": "hashed",
+    "specVersion": "6",
+    "nativeToken": {
+      "id": "rococo-md-5-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "rococo-md-5-testnet-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://c1md5.hashed.network"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 2093,
+    "relay": {
+      "id": "rococo-testnet"
+    },
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "moonbase-alpha-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1171,
+    "sortIndex": 1363,
     "genesisHash": "0x91bc6e169807aaa54802737e1c504b2577d4fafedd5a02c10293b1cd60e39527",
     "prefix": 1287,
     "name": "Moonbase Alpha",
@@ -11437,7 +12202,7 @@
     "chainType": "Live",
     "implName": "moonbase",
     "specName": "moonbase",
-    "specVersion": "2902",
+    "specVersion": "3000",
     "nativeToken": {
       "id": "moonbase-alpha-testnet-substrate-native"
     },
@@ -11472,13 +12237,58 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "rococo-muse-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1370,
+    "genesisHash": "0x15f6788bcf1d1a3b7e1c36074584e1a3f3d07e0a46e362a102c3c3df1a93669f",
+    "prefix": 42,
+    "name": "Muse",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Muse Testnet",
+    "chainType": "Live",
+    "implName": "muse",
+    "specName": "muse",
+    "specVersion": "1006",
+    "nativeToken": {
+      "id": "rococo-muse-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "rococo-muse-testnet-substrate-native"
+      }
+    ],
+    "account": "secp256k1",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://rococo-muse-rpc.polkadot.io"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 3369,
+    "relay": {
+      "id": "rococo-testnet"
+    },
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "myriad-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1180,
+    "sortIndex": 1373,
     "genesisHash": "0x7d45920ff7956e45ef6107720e41b1cfdbd0a50371d6e9072f67070fb285fe16",
     "prefix": 42,
     "name": "Myriad Testnet",
@@ -11488,7 +12298,7 @@
     "chainType": "Live",
     "implName": "myriad",
     "specName": "appchain",
-    "specVersion": "2036",
+    "specVersion": "101",
     "nativeToken": {
       "id": "myriad-testnet-substrate-native"
     },
@@ -11513,19 +12323,20 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-neuro-web-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1192,
+    "sortIndex": 1387,
     "genesisHash": "0xf2b8faefcf9c370872d0b4d2eee31d46b4de4a8688153d23d82a39e2d6bc8bbc",
     "prefix": 101,
     "name": "NeuroWeb Testnet",
-    "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-    "chainName": "NeuroWeb Testnet",
+    "themeColor": "#656667",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/rococo-neuro-web-testnet.svg",
+    "chainName": "Neuro Testnet",
     "chainType": "Live",
     "implName": "neuroweb",
     "specName": "origintrail-parachain",
@@ -11556,13 +12367,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "niskala-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1197,
+    "sortIndex": 1392,
     "genesisHash": "0x64e4e9ede7269c444a0052cffa87571a3e9aced2afc89951e46abc9fc2765221",
     "prefix": 42,
     "name": "Niskala Testnet",
@@ -11597,13 +12409,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-nodle-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1198,
+    "sortIndex": 1394,
     "genesisHash": "0xd9d12d9139d020f658d4469fa5c02e331195227da62567d7bf9bbd1abaf77522",
     "prefix": 37,
     "name": "Nodle Testnet",
@@ -11640,13 +12453,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "opal-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1217,
+    "sortIndex": 1416,
     "genesisHash": "0xc87870ef90a438d574b8e320f17db372c50f62beb52e479c8ff6ee5b460670b9",
     "prefix": 42,
     "name": "Opal",
@@ -11690,13 +12504,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-pangolin-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1237,
+    "sortIndex": 1438,
     "genesisHash": "0xb067215e6232ffeed7cede2f92ac6b65f2121523fa221fc76f2e4430086c6b70",
     "prefix": 42,
     "name": "Pangolin2",
@@ -11706,7 +12521,7 @@
     "chainType": "Live",
     "implName": "DarwiniaOfficialRust",
     "specName": "Pangolin2",
-    "specVersion": "6620",
+    "specVersion": "6630",
     "nativeToken": {
       "id": "rococo-pangolin-testnet-substrate-native"
     },
@@ -11733,13 +12548,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "paseo-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1239,
+    "sortIndex": 1440,
     "genesisHash": "0x77afd6190f1554ad45fd0d31aee62aacc33c6db0ea801129acb813f913e0764f",
     "prefix": 42,
     "name": "Paseo",
@@ -11749,7 +12565,7 @@
     "chainType": "Live",
     "implName": "paseo-testnet",
     "specName": "paseo",
-    "specVersion": "1001003",
+    "specVersion": "1002004",
     "nativeToken": {
       "id": "paseo-testnet-substrate-native"
     },
@@ -11770,17 +12586,24 @@
       }
     ],
     "evmNetworks": [],
-    "parathreads": null,
+    "parathreads": [
+      {
+        "id": "paseo-frequency-testnet",
+        "paraId": 4000,
+        "name": "Frequency Testnet"
+      }
+    ],
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-people-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1242,
+    "sortIndex": 1444,
     "genesisHash": "0xcaa036a5a771a7d6ea800c2988f4e3478b98de3ba9dab786db15e3e5e5b67886",
     "prefix": 42,
     "name": "People",
@@ -11790,7 +12613,7 @@
     "chainType": "Live",
     "implName": "people-rococo",
     "specName": "people-rococo",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "rococo-people-testnet-substrate-native"
     },
@@ -11817,13 +12640,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "westend-people-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1243,
+    "sortIndex": 1445,
     "genesisHash": "0x1eb6fb0ba5187434de017a70cb84d4f47142df1d571d0ef9e7e1407f2b80b93c",
     "prefix": 42,
     "name": "People",
@@ -11833,7 +12657,7 @@
     "chainType": "Live",
     "implName": "people-westend",
     "specName": "people-westend",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "westend-people-testnet-substrate-native"
     },
@@ -11850,6 +12674,9 @@
     "feeToken": null,
     "rpcs": [
       {
+        "url": "wss://sys.dotters.network/people-westend"
+      },
+      {
         "url": "wss://westend-people-rpc.polkadot.io"
       }
     ],
@@ -11860,13 +12687,14 @@
       "id": "westend-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "phala-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1245,
+    "sortIndex": 1447,
     "genesisHash": "0xd9b288f9083f852f2729af58476b82b04bc9ed7e07d705614a843c93460974b2",
     "prefix": 30,
     "name": "Phala Testnet",
@@ -11901,13 +12729,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "polymesh-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1259,
+    "sortIndex": 1465,
     "genesisHash": "0x2ace05e703aa50b48c0ccccfc8b424f7aab9a1e2c424ed12e45d20b1e8ffd0d6",
     "prefix": 42,
     "name": "Polymesh Testnet",
@@ -11917,7 +12746,7 @@
     "chainType": "Live",
     "implName": "polymesh_testnet",
     "specName": "polymesh_testnet",
-    "specVersion": "6002010",
+    "specVersion": "6003020",
     "nativeToken": {
       "id": "polymesh-testnet-substrate-native"
     },
@@ -11942,13 +12771,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-ewx-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1285,
+    "sortIndex": 1496,
     "genesisHash": "0xac123be800b7c9a3e3449bb70edd8e3d9008d27826381451eebf94bce1db1fbe",
     "prefix": 42,
     "name": "Rex",
@@ -11958,7 +12788,7 @@
     "chainType": "Live",
     "implName": "ewx-parachain",
     "specName": "ewx-parachain",
-    "specVersion": "64",
+    "specVersion": "72",
     "nativeToken": {
       "id": "rococo-ewx-testnet-substrate-native"
     },
@@ -11985,13 +12815,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-phala-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1286,
+    "sortIndex": 1497,
     "genesisHash": "0xe0baa740e6aff1d5616cda3f16c5f51ac96bbbd9899583f028045f6ac7e86c5c",
     "prefix": 30,
     "name": "Rhala",
@@ -12028,13 +12859,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-asset-hub-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1291,
+    "sortIndex": 1502,
     "genesisHash": "0x7c34d42fc815d392057c78b49f2755c753440ccd38bcb0405b3bcfb601d08734",
     "prefix": 42,
     "name": "Rococo Asset Hub",
@@ -12044,7 +12876,7 @@
     "chainType": "Live",
     "implName": "statemine",
     "specName": "statemine",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "rococo-asset-hub-testnet-substrate-native"
     },
@@ -12074,13 +12906,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "rococo-bridge-hub-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1292,
+    "sortIndex": 1503,
     "genesisHash": "0x6de3dc58adbc525bad4ae201a8660c5be8949e10308457b176510c72a413f3a3",
     "prefix": 42,
     "name": "Rococo Bridge Hub",
@@ -12090,7 +12923,7 @@
     "chainType": "Live",
     "implName": "bridge-hub-rococo",
     "specName": "bridge-hub-rococo",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "rococo-bridge-hub-testnet-substrate-native"
     },
@@ -12120,13 +12953,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "shibuya-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1321,
+    "sortIndex": 1534,
     "genesisHash": "0xddb89973361a170839f80f152d2e9e38a376a5a7eccefcade763f46a8e567019",
     "prefix": 5,
     "name": "Shibuya",
@@ -12136,7 +12970,7 @@
     "chainType": "Live",
     "implName": "shibuya",
     "specName": "shibuya",
-    "specVersion": "126",
+    "specVersion": "132",
     "nativeToken": {
       "id": "shibuya-testnet-substrate-native"
     },
@@ -12168,13 +13002,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-subsocial-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1344,
+    "sortIndex": 1557,
     "genesisHash": "0x01f15f9d48ea279640cb35267bfd33a88bb4c21ebb00b129e9bc2d2236aaafdb",
     "prefix": 28,
     "name": "SoonsocialX",
@@ -12211,13 +13046,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-sora-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1345,
+    "sortIndex": 1558,
     "genesisHash": "0x8685a8d3e57fa8024b91b8ead6cc97acf953889c6fb0a355602826a1e2db198f",
     "prefix": 420,
     "name": "Sora Testnet",
@@ -12254,13 +13090,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "sora-substrate-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1346,
+    "sortIndex": 1559,
     "genesisHash": "0x3266816be9fa51b32cfea58d3e33ca77246bc9618595a4300e44c8856a8d8a17",
     "prefix": 69,
     "name": "Sora Testnet",
@@ -12270,7 +13107,7 @@
     "chainType": "Live",
     "implName": "sora-substrate",
     "specName": "sora-substrate",
-    "specVersion": "79",
+    "specVersion": "90",
     "nativeToken": {
       "id": "sora-substrate-testnet-substrate-native"
     },
@@ -12304,13 +13141,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "subspace-gemini-1-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1355,
+    "sortIndex": 1570,
     "genesisHash": "0x9ee86eefc3cc61c71a7751bba7f25e442da2512f408e6286153b3ccc055dccf0",
     "prefix": 2254,
     "name": "Subspace Gemini",
@@ -12347,13 +13185,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "subspace-gemini-2-a-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1356,
+    "sortIndex": 1571,
     "genesisHash": "0x43d10ffd50990380ffe6c9392145431d630ae67e89dbc9c014cac2a417759101",
     "prefix": 2254,
     "name": "Subspace Gemini 2a",
@@ -12390,13 +13229,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "subspace-gemini-3-f-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1357,
+    "sortIndex": 1572,
     "genesisHash": "0x92e91e657747c41eeabed5129ff51689d2e935b9f6abfbd5dfcb2e1d0d035095",
     "prefix": 2254,
     "name": "Subspace Gemini 3f",
@@ -12433,13 +13273,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "subspace-gemini-3-g-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1358,
+    "sortIndex": 1573,
     "genesisHash": "0x418040fc282f5e5ddd432c46d05297636f6f75ce68d66499ff4cbda69ccd180b",
     "prefix": 2254,
     "name": "Subspace Gemini 3g",
@@ -12479,13 +13320,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "subspace-gemini-3-g-nova-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1359,
+    "sortIndex": 1574,
     "genesisHash": "0xf886504521519f9acd6205d9af3736ba00801f0b428bd08438d963bde3d5aeb8",
     "prefix": 2254,
     "name": "Subspace Gemini 3g Nova",
@@ -12504,7 +13346,7 @@
         "id": "subspace-gemini-3-g-nova-testnet-substrate-native"
       }
     ],
-    "account": "*25519",
+    "account": "secp256k1",
     "subscanUrl": null,
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
@@ -12520,13 +13362,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "t-0-rn-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1369,
+    "sortIndex": 1587,
     "genesisHash": "0xec62ec7bc3bd808f67a63d9a3c709d1426ec5a33cd172938fde8236a0d28ce32",
     "prefix": 42,
     "name": "t0rn",
@@ -12536,9 +13379,15 @@
     "chainType": "Live",
     "implName": "Circuit Collator",
     "specName": "t0rn",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "specVersion": "25",
+    "nativeToken": {
+      "id": "t-0-rn-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "t-0-rn-testnet-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -12557,23 +13406,24 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "tangle-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1370,
-    "genesisHash": "0x3d22af97d919611e03bbcbda96f65988758865423e89b2d99547a6bb61452db3",
+    "sortIndex": 1589,
+    "genesisHash": "0x624a09c9b7446ecd3ef5a00fb6a0554be1cd6e4472da050bd45a2a61c62d96c2",
     "prefix": 42,
-    "name": "Tangle",
+    "name": "Tangle Testnet",
     "themeColor": "#505050",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
     "chainName": "Tangle Testnet",
     "chainType": "Live",
     "implName": "tangle-testnet",
     "specName": "tangle-testnet",
-    "specVersion": "602",
+    "specVersion": "1001",
     "nativeToken": {
       "id": "tangle-testnet-substrate-native"
     },
@@ -12601,10 +13451,52 @@
     "balancesMetadata": []
   },
   {
+    "id": "ternoa-alphanet-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1599,
+    "genesisHash": "0x535f8421af34dfbb87736b3b2231ddb3c598b0b2cd73a4c5e93b13bf6e65f4c0",
+    "prefix": 42,
+    "name": "Ternoa Alphanet",
+    "themeColor": "#ff8500",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/ternoa-alphanet-testnet.svg",
+    "chainName": "Ternoa Alphanet",
+    "chainType": "Live",
+    "implName": "alphanet",
+    "specName": "alphanet",
+    "specVersion": "26",
+    "nativeToken": {
+      "id": "ternoa-alphanet-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "ternoa-alphanet-testnet-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://alphanet.ternoa.com"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": null,
+    "relay": null,
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
     "id": "thebifrost-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1381,
+    "sortIndex": 1603,
     "genesisHash": "0x15b34a3b7443c73fa1f687cce2d8e5981f6a2eaad54809a6b6af28e83d2adaff",
     "prefix": 42,
     "name": "The Bifrost Testnet",
@@ -12614,7 +13506,7 @@
     "chainType": "Live",
     "implName": "bifrost-testnet",
     "specName": "thebifrost-testnet",
-    "specVersion": "464",
+    "specVersion": "465",
     "nativeToken": {
       "id": "thebifrost-testnet-substrate-native"
     },
@@ -12623,7 +13515,7 @@
         "id": "thebifrost-testnet-substrate-native"
       }
     ],
-    "account": "*25519",
+    "account": "secp256k1",
     "subscanUrl": null,
     "chainspecQrUrl": null,
     "latestMetadataQrUrl": null,
@@ -12642,13 +13534,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-trappist-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1399,
+    "sortIndex": 1621,
     "genesisHash": "0x500ef894568a1d06aa8d4a42b8fede5c9828a5620f4833700878cee2402f5eb5",
     "prefix": 42,
     "name": "Trappist",
@@ -12691,7 +13584,7 @@
     "id": "rococo-turing-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1404,
+    "sortIndex": 1628,
     "genesisHash": "0xd54f0988402deb4548538626ce37e4a318441ea0529ca369400ebec4e04dfe4b",
     "prefix": 51,
     "name": "Turing Testnet",
@@ -12701,9 +13594,15 @@
     "chainType": "Live",
     "implName": "turing",
     "specName": "turing",
-    "specVersion": "0",
-    "nativeToken": null,
-    "tokens": [],
+    "specVersion": "297",
+    "nativeToken": {
+      "id": "rococo-turing-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "rococo-turing-testnet-substrate-native"
+      }
+    ],
     "account": "*25519",
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -12722,13 +13621,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "vara-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1411,
+    "sortIndex": 1635,
     "genesisHash": "0x525639f713f397dcf839bd022cd821f367ebcf179de7b9253531f8adbe5436d6",
     "prefix": 137,
     "name": "Vara Testnet",
@@ -12738,7 +13638,7 @@
     "chainType": "Live",
     "implName": "vara",
     "specName": "vara",
-    "specVersion": "1300",
+    "specVersion": "1421",
     "nativeToken": {
       "id": "vara-testnet-substrate-native"
     },
@@ -12763,13 +13663,14 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-watr-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1427,
+    "sortIndex": 1654,
     "genesisHash": "0xb53c620c41860278fa3068a5367c8eedceefce8a7c29237d830bc09a71737b5d",
     "prefix": 19,
     "name": "Watr Testnet",
@@ -12810,13 +13711,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "westend-asset-hub-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1432,
+    "sortIndex": 1659,
     "genesisHash": "0x67f9723393ef76214df0118c34bbbd3dbebc8ed46a10973a8c969d48fe7598c9",
     "prefix": 42,
     "name": "Westend Asset Hub",
@@ -12826,7 +13728,7 @@
     "chainType": "Live",
     "implName": "westmint",
     "specName": "westmint",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "westend-asset-hub-testnet-substrate-native"
     },
@@ -12865,13 +13767,14 @@
       "id": "westend-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "westend-bridge-hub-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1433,
+    "sortIndex": 1660,
     "genesisHash": "0x0441383e31d1266a92b4cb2ddd4c2e3661ac476996db7e5844c52433b81fe782",
     "prefix": 42,
     "name": "Westend Bridge Hub",
@@ -12881,7 +13784,7 @@
     "chainType": "Live",
     "implName": "bridge-hub-westend",
     "specName": "bridge-hub-westend",
-    "specVersion": "1010000",
+    "specVersion": "1014000",
     "nativeToken": {
       "id": "westend-bridge-hub-testnet-substrate-native"
     },
@@ -12920,13 +13823,14 @@
       "id": "westend-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-yerba-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1445,
+    "sortIndex": 1676,
     "genesisHash": "0x0a7b013f0e80502cb9063c8039f0f1b6bedc4a49e7fbb2eb25d5c61c405ebdff",
     "prefix": 42,
     "name": "Yerba Testnet",
@@ -12963,13 +13867,14 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   },
   {
     "id": "rococo-zeitgeist-testnet",
     "isTestnet": true,
     "isDefault": true,
-    "sortIndex": 1448,
+    "sortIndex": 1679,
     "genesisHash": "0xb90cd3a37b4793c6494b78962986f4f6ed3ec2eda91a6b84fd8457d24f606b9c",
     "prefix": 73,
     "name": "Zeitgeist Battery Station",
@@ -13006,6 +13911,7 @@
       "id": "rococo-testnet"
     },
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
   }
 ]
