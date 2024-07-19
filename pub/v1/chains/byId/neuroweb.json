@@ -41,7 +41,21 @@
   "relay": {
     "id": "polkadot"
   },
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-assets",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "assetId": 1,
+            "symbol": "TRAC",
+            "coingeckoId": "origintrail",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/origintrail.webp"
+          }
+        ]
+      }
+    }
+  ],
   "balancesMetadata": [],
   "hasCheckMetadataHash": false
 }
