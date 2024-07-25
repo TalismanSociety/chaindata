@@ -11,8 +11,6 @@
       "wss://westend-rpc-tn.dwellir.com",
       "wss://rpc.ibp.network/westend",
       "wss://rpc.dotters.network/westend",
-      "wss://westend-rpc.blockops.network/ws",
-      "wss://rpc-westend.luckyfriday.io",
       "wss://westend-rpc.polkadot.io",
       "wss://westend.public.curie.radiumblock.co/ws"
     ]
@@ -559,6 +557,16 @@
     "rpcs": []
   },
   {
+    "id": "paseo-frequency-testnet",
+    "name": "Frequency Testnet",
+    "account": "*25519",
+    "rpcs": ["wss://0.testnet.amplica.io"],
+    "paraId": 4000,
+    "relay": {
+      "id": "paseo-testnet"
+    }
+  },
+  {
     "id": "paseo-testnet",
     "name": "Paseo",
     "account": "*25519",
@@ -626,6 +634,16 @@
     "rpcs": []
   },
   {
+    "id": "regionx-cocos-testnet",
+    "name": "RegionX Cocos",
+    "account": "*25519",
+    "rpcs": ["wss://cocos-node.regionx.tech"],
+    "paraId": 4459,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
     "id": "riochain-testnet",
     "name": "RioChain Testnet",
     "account": "*25519",
@@ -677,7 +695,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/rococo-statemine_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/rococo-statemine_metadata_latest.apng",
-    "rpcs": ["wss://rococo-asset-hub-rpc.dwellir.com", "wss://rococo-asset-hub-rpc.polkadot.io"],
+    "rpcs": ["wss://asset-hub-rococo-rpc.dwellir.com", "wss://rococo-asset-hub-rpc.polkadot.io"],
     "paraId": 1000,
     "relay": {
       "id": "rococo-testnet"
@@ -687,7 +705,7 @@
     "id": "rococo-aventus-testnet",
     "name": "Aventus Testnet",
     "account": "*25519",
-    "rpcs": ["wss://public-rpc.public-testnet.aventus.io"],
+    "rpcs": ["wss://public-rpc.testnet.aventus.network"],
     "paraId": 2056,
     "relay": {
       "id": "rococo-testnet"
@@ -739,7 +757,7 @@
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/rococo-bridge-hub-rococo_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/rococo-bridge-hub-rococo_metadata_latest.apng",
-    "rpcs": ["wss://rococo-bridge-hub-rpc.dwellir.com", "wss://rococo-bridge-hub-rpc.polkadot.io"],
+    "rpcs": ["wss://bridge-hub-rococo-rpc.dwellir.com", "wss://rococo-bridge-hub-rpc.polkadot.io"],
     "paraId": 1013,
     "relay": {
       "id": "rococo-testnet"
@@ -840,16 +858,6 @@
     }
   },
   {
-    "id": "paseo-frequency-testnet",
-    "name": "Frequency Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://0.testnet.amplica.io"],
-    "paraId": 4000,
-    "relay": {
-      "id": "paseo-testnet"
-    }
-  },
-  {
     "id": "rococo-genshiro-testnet",
     "name": "Genshiro Testnet",
     "account": "*25519",
@@ -943,8 +951,18 @@
     "id": "rococo-kilt-testnet",
     "name": "Rilt",
     "account": "*25519",
-    "rpcs": [],
+    "rpcs": ["wss://rilt.kilt.io"],
     "paraId": 2086,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
+    "id": "rococo-kinera-testnet",
+    "name": "Kinera",
+    "account": "*25519",
+    "rpcs": ["wss://node.kinera.network"],
+    "paraId": 4437,
     "relay": {
       "id": "rococo-testnet"
     }
@@ -955,6 +973,16 @@
     "account": "*25519",
     "rpcs": ["wss://rpc.rococo-parachain.litentry.io"],
     "paraId": 2106,
+    "relay": {
+      "id": "rococo-testnet"
+    }
+  },
+  {
+    "id": "rococo-magnet-testnet",
+    "name": "Magnet",
+    "account": "*25519",
+    "rpcs": ["wss://magnet-rpc.magport.io/ws"],
+    "paraId": 4361,
     "relay": {
       "id": "rococo-testnet"
     }
@@ -1043,7 +1071,7 @@
   },
   {
     "id": "rococo-people-testnet",
-    "name": "People",
+    "name": "People Testnet",
     "account": "*25519",
     "rpcs": ["wss://rococo-people-rpc.polkadot.io"],
     "paraId": 1004,
@@ -1320,6 +1348,18 @@
     "rpcs": ["wss://rpc-1.gemini-3g.subspace.network/ws", "wss://rpc-0.gemini-3g.subspace.network/ws"]
   },
   {
+    "id": "subspace-gemini-3-h-nova-testnet",
+    "name": "Subspace Gemini 3h Nova",
+    "account": "*25519",
+    "rpcs": ["wss://nova-0.gemini-3h.subspace.network/ws", "wss://nova-1.gemini-3h.subspace.network/ws"]
+  },
+  {
+    "id": "subspace-gemini-3-h-testnet",
+    "name": "Subspace Gemini 3h",
+    "account": "*25519",
+    "rpcs": ["wss://rpc-0.gemini-3h.subspace.network/ws", "wss://rpc-1.gemini-3h.subspace.network/ws"]
+  },
+  {
     "id": "subspace-testnet",
     "name": "Subspace",
     "account": "*25519",
@@ -1414,7 +1454,7 @@
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend-westmint_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng",
     "rpcs": [
-      "wss://westmint-rpc.dwellir.com",
+      "wss://asset-hub-westend-rpc.dwellir.com",
       "wss://westmint-rpc-tn.dwellir.com",
       "wss://sys.ibp.network/westmint",
       "wss://sys.dotters.network/westmint",
@@ -1430,7 +1470,7 @@
     "name": "Westend Bridge Hub",
     "account": "*25519",
     "rpcs": [
-      "wss://westend-bridge-hub-rpc.dwellir.com",
+      "wss://bridge-hub-westend-rpc.dwellir.com",
       "wss://westend-bridge-hub-rpc-tn.dwellir.com",
       "wss://sys.ibp.network/bridgehub-westend",
       "wss://sys.dotters.network/bridgehub-westend",
@@ -1448,7 +1488,7 @@
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend-collectives-westend_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend-collectives-westend_metadata_latest.apng",
     "rpcs": [
-      "wss://westend-collectives-rpc.dwellir.com",
+      "wss://collectives-westend-rpc.dwellir.com",
       "wss://westend-collectives-rpc-tn.dwellir.com",
       "wss://sys.ibp.network/collectives-westend",
       "wss://sys.dotters.network/collectives-westend",
@@ -1463,7 +1503,12 @@
     "id": "westend-coretime-testnet",
     "name": "Coretime Testnet",
     "account": "*25519",
-    "rpcs": ["wss://sys.dotters.network/coretime-westend", "wss://westend-coretime-rpc.polkadot.io"],
+    "rpcs": [
+      "wss://coretime-westend-rpc.dwellir.com",
+      "wss://sys.ibp.network/coretime-westend",
+      "wss://sys.dotters.network/coretime-westend",
+      "wss://westend-coretime-rpc.polkadot.io"
+    ],
     "paraId": 1005,
     "relay": {
       "id": "westend-testnet"
@@ -1471,9 +1516,14 @@
   },
   {
     "id": "westend-people-testnet",
-    "name": "People",
+    "name": "People Testnet",
     "account": "*25519",
-    "rpcs": ["wss://sys.dotters.network/people-westend", "wss://westend-people-rpc.polkadot.io"],
+    "rpcs": [
+      "wss://people-westend-rpc.dwellir.com",
+      "wss://sys.ibp.network/people-westend",
+      "wss://sys.dotters.network/people-westend",
+      "wss://westend-people-rpc.polkadot.io"
+    ],
     "paraId": 1004,
     "relay": {
       "id": "westend-testnet"
@@ -1514,6 +1564,12 @@
     "name": "zCloak",
     "account": "*25519",
     "rpcs": []
+  },
+  {
+    "id": "zero-alphaville-testnet",
+    "name": "ZERO Alphaville",
+    "account": "*25519",
+    "rpcs": ["wss://rpc.dev.gamedao.net"]
   },
   {
     "id": "zero-testnet",

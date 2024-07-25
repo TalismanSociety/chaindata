@@ -87,6 +87,22 @@ const ignoreChainIds: string[] = []
 // a set of testnet pjs ids which we don't want to import
 const ignoreTestnetChainIds: string[] = []
 
+// a map of talisman ids to a list of rpcs which we want to prepend to the pjs list
+const additionalChainRpcs: Record<string, string[] | undefined> = {
+  polkadot: ['wss://1rpc.io/dot'],
+  kusama: ['wss://1rpc.io/ksm'],
+  ajuna: ['wss://ajuna.ibp.network', 'wss://ajuna.dotters.network'],
+  'bifrost-polkadot': ['wss://bifrost-polkadot.ibp.network', 'wss://bifrost-polkadot.dotters.network'],
+  hydradx: ['wss://hydration.ibp.network', 'wss://hydration.dotters.network'],
+  'hyperbridge-polkadot': ['wss://nexus.ibp.network', 'wss://nexus.dotters.network'],
+  'kilt-spiritnet': ['wss://kilt.ibp.network', 'wss://kilt.dotters.network'],
+  krest: ['wss://krest.api.onfinality.io/public-ws'],
+  moonbeam: ['wss://moonbeam.ibp.network', 'wss://moonbeam.dotters.network'],
+  polimec: ['wss://polimec.ibp.network', 'wss://polimec.dotters.network'],
+  'polkadot-asset-hub': ['wss://sys.ibp.network/statemint', 'wss://sys.dotters.network/statemint'],
+  unique: ['wss://unique.ibp.network', 'wss://unique.dotters.network'],
+}
+
 // a map of talisman ids to a list of rpcs with which we want to override the pjs list
 const customChainRpcs: Record<string, string[] | undefined> = {
   ewx: ['wss://public-rpc.mainnet.energywebx.com'],
@@ -127,6 +143,7 @@ const customNames: Record<string, string | undefined> = {
   'thebifrost-mainnet': 'The Bifrost',
   crab: 'Darwinia Crab',
   kreivo: 'Kreivo',
+  hydradx: 'Hydration',
 
   'kusama-asset-hub': 'Kusama Asset Hub',
   'kusama-bridge-hub': 'Kusama Bridge Hub',
@@ -259,7 +276,8 @@ const main = async () => {
       if (chain.name !== para.text) console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
       if (!chain.account) chain.account = '*25519'
       const overrideRpcs = isTestnet ? customTestnetChainRpcs[id] : customChainRpcs[id]
-      chain.rpcs = (overrideRpcs ?? Object.values(para.providers))
+      const prependRpcs = isTestnet ? undefined : additionalChainRpcs[id]
+      chain.rpcs = (overrideRpcs ?? ([...(prependRpcs ?? []), ...Object.values(para.providers)] as string[]))
         .filter((url) => url.startsWith('wss://'))
         .sort(sortGoodFirst)
         .filter(filterUnreliable)
