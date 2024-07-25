@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs'
 
-import { UNKNOWN_TOKEN_LOGO_URL, assetUrlPrefix, getAssetPathFromUrl, getAssetUrlFromPath } from './util'
+import { assetUrlPrefix, getAssetPathFromUrl, getAssetUrlFromPath, UNKNOWN_TOKEN_LOGO_URL } from './util'
 
 export type TokenDef = {
   symbol?: string

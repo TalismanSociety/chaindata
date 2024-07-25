@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs'
 
 import { Chain } from '@talismn/chaindata-provider'
 
-import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath } from '../../shared/util'
+import { getAssetUrlFromPath, UNKNOWN_NETWORK_LOGO_URL } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 export const addChains = async () => {

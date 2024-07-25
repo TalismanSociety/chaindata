@@ -1,4 +1,4 @@
-import { Chain, PublicClient, createPublicClient, defineChain, fallback, http } from 'viem'
+import { Chain, createPublicClient, defineChain, fallback, http, PublicClient } from 'viem'
 import * as chains from 'viem/chains'
 
 import { ConfigEvmNetwork } from '../shared/types'

@@ -6,7 +6,7 @@ import sharp from 'sharp'
 import tinycolor from 'tinycolor2'
 
 import { PROCESS_CONCURRENCY } from '../../shared/constants'
-import { UNKNOWN_NETWORK_LOGO_URL, getAssetPathFromUrl } from '../../shared/util'
+import { getAssetPathFromUrl, UNKNOWN_NETWORK_LOGO_URL } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 export const addThemeColors = async () => {

@@ -1,5 +1,7 @@
 import 'dotenv/config'
 
+import { readFileSync } from 'fs'
+
 export const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? ''
 export const GITHUB_API = 'https://api.github.com/graphql'
 export const GITHUB_CDN = 'https://raw.githubusercontent.com'
@@ -38,9 +40,6 @@ export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_LOGO_DOWNLOAD
   ? Number(process.env.COINGECKO_LOGO_DOWNLOAD_LIMIT)
   : 100
 
-export const PRETTIER_CONFIG = {
-  printWidth: 120,
-  semi: false,
-  singleQuote: true,
-  plugins: ['prettier-plugin-import-sort'],
-}
+export const PRETTIER_CONFIG = JSON.parse(
+  readFileSync(new URL('../../package.json', import.meta.url), { encoding: 'utf8' }),
+).prettier

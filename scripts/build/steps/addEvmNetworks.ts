@@ -1,8 +1,8 @@
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 
-import { PromisePool } from '@supercharge/promise-pool'
 import type { EvmErc20Token, EvmNativeModuleConfig, EvmNativeToken } from '@talismn/balances'
+import { PromisePool } from '@supercharge/promise-pool'
 import { EvmNetwork } from '@talismn/chaindata-provider'
 import mergeWith from 'lodash/mergeWith'
 
@@ -12,7 +12,7 @@ import {
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
-import { UNKNOWN_NETWORK_LOGO_URL, getAssetUrlFromPath, networkMergeCustomizer } from '../../shared/util'
+import { getAssetUrlFromPath, networkMergeCustomizer, UNKNOWN_NETWORK_LOGO_URL } from '../../shared/util'
 import { sharedData } from './_sharedData'
 
 export const addEvmNetworks = async () => {

@@ -4,13 +4,13 @@ import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-prov
 import { Metadata, TypeRegistry } from '@polkadot/types'
 import { encodeAddress, xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
-import { MiniMetadata, defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
+import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
 import {
   Chain,
-  ChainId,
   ChaindataProvider,
+  ChainId,
   EvmNetworkId,
   IChaindataProvider,
   TokenId,
@@ -23,11 +23,11 @@ import {
   FILE_CHAINDATA,
   FILE_CHAINS_EXTRAS_CACHE,
   FILE_TESTNETS_CHAINDATA,
+  PRETTIER_CONFIG,
   PROCESS_CONCURRENCY,
   RPC_REQUEST_TIMEOUT,
 } from '../../shared/constants'
-import { PRETTIER_CONFIG } from '../../shared/constants'
-import { TokenDef, setTokenLogo } from '../../shared/setTokenLogo'
+import { setTokenLogo, TokenDef } from '../../shared/setTokenLogo'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { sendWithTimeout } from '../../shared/util'
 
