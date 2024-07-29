@@ -9,6 +9,14 @@
       "logo": { "type": "string" },
       "isTestnet": { "type": "boolean" },
       "isDefault": { "type": "boolean" },
+      "fee": { "enum": ["legacy", "eip-1559"] },
+      "l2Fee": {
+        "type": "object",
+        "properties": {
+          "type": { "enum": ["op-stack", "scroll"] },
+          "l1GasPriceOracle": { "type": "string" }
+        }
+      },
       "explorerUrl": { "type": "string", "pattern": "^https://" },
       "rpcs": {
         "type": "array",
