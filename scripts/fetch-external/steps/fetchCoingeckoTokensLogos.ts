@@ -1,3 +1,4 @@
+import { PathLike } from 'node:fs'
 import { readFile, stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 

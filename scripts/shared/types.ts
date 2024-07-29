@@ -46,8 +46,8 @@ export type ConfigEvmNetwork = {
     'evm-uniswapv2'?: EvmUniswapV2ModuleConfig
   }
   icon?: string
-  feeType: EvmNetwork['feeType']
-  l2FeeType: EvmNetwork['l2FeeType']
+  feeType?: EvmNetwork['feeType']
+  l2FeeType?: EvmNetwork['l2FeeType']
 }
 
 export type ChainExtrasCache = {
