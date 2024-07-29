@@ -1589,7 +1589,8 @@
     "sortIndex": 278,
     "name": "Ethereum Mainnet",
     "themeColor": "#62688f",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/1.svg"
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/1.svg",
+    "feeType": "eip-1559"
   },
   {
     "id": "1987",
@@ -3565,7 +3566,11 @@
     "sortIndex": 607,
     "name": "OP Mainnet",
     "themeColor": "#ff0420",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/10.svg"
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/10.svg",
+    "feeType": "eip-1559",
+    "l2FeeType": {
+      "type": "op-stack"
+    }
   },
   {
     "id": "204",
@@ -4389,7 +4394,12 @@
     "sortIndex": 744,
     "name": "Scroll",
     "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg"
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "feeType": "legacy",
+    "l2FeeType": {
+      "type": "scroll",
+      "l1GasPriceOracle": "0x5300000000000000000000000000000000000002"
+    }
   },
   {
     "id": "34",
@@ -9165,7 +9175,12 @@
     "sortIndex": 1552,
     "name": "Scroll Sepolia Testnet",
     "themeColor": "#505050",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg"
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "feeType": "legacy",
+    "l2FeeType": {
+      "type": "scroll",
+      "l1GasPriceOracle": "0x5300000000000000000000000000000000000002"
+    }
   },
   {
     "id": "3434",

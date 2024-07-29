@@ -108,6 +108,10 @@ export const addEvmNetworks = async () => {
           }
         }
 
+        const overridesEvmNetwork = sharedData.knownEvmNetworksOverridesConfig.find(
+          (ov) => ov.id === configEvmNetwork.id,
+        )
+
         const evmNetwork: EvmNetwork = {
           id: configEvmNetwork.id,
           isTestnet: substrateChain?.isTestnet || substrateConfig?.isTestnet || configEvmNetwork.isTestnet || false,
@@ -120,6 +124,8 @@ export const addEvmNetworks = async () => {
           explorerUrl: configEvmNetwork.explorerUrl ?? null,
           rpcs: (configEvmNetwork.rpcs || []).map((url) => ({ url })),
           substrateChain: substrateChain ? { id: substrateChain.id } : null,
+          feeType: overridesEvmNetwork?.feeType ?? configEvmNetwork.feeType,
+          l2FeeType: overridesEvmNetwork?.l2FeeType ?? configEvmNetwork.l2FeeType,
 
           balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
             moduleType,
@@ -201,6 +207,8 @@ export const addEvmNetworks = async () => {
       explorerUrl: knownEvmNetwork.explorerUrl ?? null,
       rpcs: (knownEvmNetwork.rpcs || []).map((url) => ({ url })),
       substrateChain: null,
+      feeType: knownEvmNetwork.feeType,
+      l2FeeType: knownEvmNetwork.l2FeeType,
 
       balancesConfig: Object.entries(knownEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
         moduleType,
