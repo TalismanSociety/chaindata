@@ -27,6 +27,7 @@ export type ConfigChain = {
   paraId?: number
   relay?: { id: string }
   balancesConfig?: Record<string, Record<string, unknown>>
+  hasExtrinsicSignatureTypePrefix?: boolean
 }
 
 /** Represents an EvmNetwork from `evm-networks.json` */

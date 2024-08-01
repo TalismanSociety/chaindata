@@ -57,6 +57,7 @@ export const addChains = async () => {
         moduleConfig,
       })),
       balancesMetadata: [],
+      hasExtrinsicSignatureTypePrefix: configChain.hasExtrinsicSignatureTypePrefix,
     }
 
     if (!chain.logo) {

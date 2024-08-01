@@ -82,7 +82,8 @@
           "substrate-tokens": { "$ref": "#/$defs/asset" }
         },
         "additionalProperties": false
-      }
+      },
+      "hasExtrinsicSignatureTypePrefix": { "type": "boolean" }
     },
     "required": ["id", "name", "account", "rpcs"],
     "dependentRequired": { "paraId": ["relay"], "relay": ["paraId"] },
