@@ -58,6 +58,9 @@ export const addChains = async () => {
       })),
       balancesMetadata: [],
       hasExtrinsicSignatureTypePrefix: configChain.hasExtrinsicSignatureTypePrefix,
+
+      registryTypes: configChain.registryTypes,
+      signedExtensions: configChain.signedExtensions,
     }
 
     if (!chain.logo) {

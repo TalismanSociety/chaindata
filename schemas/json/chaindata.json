@@ -83,7 +83,9 @@
         },
         "additionalProperties": false
       },
-      "hasExtrinsicSignatureTypePrefix": { "type": "boolean" }
+      "hasExtrinsicSignatureTypePrefix": { "type": "boolean" },
+      "registryTypes": { "type": "object" },
+      "signedExtensions": { "type": "object" }
     },
     "required": ["id", "name", "rpcs"],
     "dependentRequired": { "paraId": ["relay"], "relay": ["paraId"] },
