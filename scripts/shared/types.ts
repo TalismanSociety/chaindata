@@ -54,6 +54,7 @@ export type ConfigEvmNetwork = {
 export type ChainExtrasCache = {
   // These are all copied directly into each chain
   id: string
+  account: string
   genesisHash: string
   prefix: number
   chainName: string

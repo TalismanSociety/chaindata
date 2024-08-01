@@ -181,9 +181,11 @@ const attemptToFetchChainExtras = async (
     const ss58Prefix = metadata.registry.chainSS58
     const prefix = isValidSs58Prefix(ss58Prefix) ? ss58Prefix : isValidSs58Prefix(ss58Format) ? ss58Format : 42
     const hasCheckMetadataHash = getHasCheckMetadataHash(metadata)
+    const account = getAccountType(metadata)
 
     const chainExtrasCache: ChainExtrasCache = {
       id: chain.id,
+      account,
       genesisHash,
       prefix,
       chainName,
@@ -363,4 +365,11 @@ const getHasCheckMetadataHash = (metadata: Metadata) => {
     console.error('Failed to check if CheckMetadataHash exists', err)
     return false
   }
+}
+
+const getAccountType = (metadata: Metadata) => {
+  const accountIdLength = metadata?.registry?.createType?.('AccountId')?.byteLength ?? 0
+  if (accountIdLength === 20) return 'secp256k1'
+  if (accountIdLength === 32) return '*25519'
+  return '*25519'
 }
