@@ -2955,12 +2955,6 @@
             "decimals": 9
           },
           {
-            "symbol": "BROK",
-            "coingeckoId": "baby-grok-2",
-            "contractAddress": "0xc5b490371870201e2fe6308850507db6e9cba732",
-            "decimals": 9
-          },
-          {
             "symbol": "BabyGrok",
             "coingeckoId": "baby-grok-3",
             "contractAddress": "0xf5b339d3912d5c72e16440b63a9c1df6024de93c",
@@ -9031,12 +9025,6 @@
             "decimals": 9
           },
           {
-            "symbol": "DOKI",
-            "coingeckoId": "doki-doki-finance",
-            "contractAddress": "0x9ceb84f92a0561fa3cc4132ab9c0b76a59787544",
-            "decimals": 18
-          },
-          {
             "symbol": "DBR",
             "coingeckoId": "dola-borrowing-right",
             "contractAddress": "0xad038eb671c44b853887a7e32528fab35dc5d710",
@@ -10072,12 +10060,6 @@
             "symbol": "NGL",
             "coingeckoId": "entangle",
             "contractAddress": "0x12652c6d93fdb6f4f37d48a8687783c782bb0d10",
-            "decimals": 18
-          },
-          {
-            "symbol": "ENTC",
-            "coingeckoId": "enterbutton",
-            "contractAddress": "0x3ecab35b64345bfc472477a653e4a3abe70532d9",
             "decimals": 18
           },
           {
@@ -16051,12 +16033,6 @@
             "decimals": 18
           },
           {
-            "symbol": "LEAX",
-            "coingeckoId": "leaxcoin",
-            "contractAddress": "0x2960d71855a521c8414d29a27218efdb67c34180",
-            "decimals": 18
-          },
-          {
             "symbol": "LDY",
             "coingeckoId": "ledgity-token",
             "contractAddress": "0x482df7483a52496f4c65ab499966dfcdf4ddfdbc",
@@ -21833,6 +21809,12 @@
             "coingeckoId": "pnetwork",
             "contractAddress": "0x89ab32156e46f46d02ade3fecbe5fc4243b9aaed",
             "decimals": 18
+          },
+          {
+            "symbol": "POKT",
+            "coingeckoId": "pocket-network",
+            "contractAddress": "0x764a726d9ced0433a8d7643335919deb03a9a935",
+            "decimals": 6
           },
           {
             "symbol": "POE",
@@ -43872,12 +43854,6 @@
             "decimals": 18
           },
           {
-            "symbol": "IMRTL",
-            "coingeckoId": "immortl",
-            "contractAddress": "0x170dc35c5b58aededc81960691eb4b389eba9e95",
-            "decimals": 18
-          },
-          {
             "symbol": "DARA",
             "coingeckoId": "immutable",
             "contractAddress": "0x0255af6c9f86f6b0543357bacefa262a2664f80f",
@@ -59743,12 +59719,6 @@
             "decimals": 9
           },
           {
-            "symbol": "DOKI",
-            "coingeckoId": "doki-doki-finance",
-            "contractAddress": "0x5c7f7fe4766fe8f0fa9b41e2e4194d939488ff1c",
-            "decimals": 18
-          },
-          {
             "symbol": "DOLZ",
             "coingeckoId": "dolz-io",
             "contractAddress": "0x6ab4e20f36ca48b61ecd66c0450fdf665fa130be",
@@ -60744,12 +60714,6 @@
             "decimals": 18
           },
           {
-            "symbol": "IMRTL",
-            "coingeckoId": "immortl",
-            "contractAddress": "0x2df54842cd85c60f21b4871e09bcc6047b2dcc4d",
-            "decimals": 18
-          },
-          {
             "symbol": "PACT",
             "coingeckoId": "impactmarket",
             "contractAddress": "0xf549db6b1e0b79c8f2730e7b7c6f2edca2cebaa6",
@@ -61347,12 +61311,6 @@
             "symbol": "MIM",
             "coingeckoId": "magic-internet-money-polygon",
             "contractAddress": "0x49a0400587a7f65072c87c4910449fdcc5c47242",
-            "decimals": 18
-          },
-          {
-            "symbol": "MCT",
-            "coingeckoId": "magic-shoes",
-            "contractAddress": "0x13efaa3d5e2c86e7aba168f925fef9827648cff4",
             "decimals": 18
           },
           {
@@ -63907,12 +63865,6 @@
             "symbol": "UFT",
             "coingeckoId": "unlend-finance",
             "contractAddress": "0x5b4cf2c120a9702225814e18543ee658c5f8631e",
-            "decimals": 18
-          },
-          {
-            "symbol": "UNLOCK",
-            "coingeckoId": "unlock",
-            "contractAddress": "0x930a7dc10ae084fbbddc6537d7df7d4c65a40944",
             "decimals": 18
           },
           {
@@ -69920,9 +69872,9 @@
     "rpcs": [
       "https://testnet-rpc2.areon.network",
       "https://testnet-rpc3.areon.network",
+      "https://testnet-rpc4.areon.network",
       "https://testnet-rpc5.areon.network",
-      "https://testnet-rpc.areon.network",
-      "https://testnet-rpc4.areon.network"
+      "https://testnet-rpc.areon.network"
     ],
     "icon": "areon",
     "explorerUrl": "https://areonscan.com",
@@ -75755,16 +75707,17 @@
   },
   {
     "id": "2014",
-    "name": "NOW Chain",
-    "rpcs": [],
+    "name": "NOW Chain Testnet",
+    "rpcs": ["https://rpc-testnet.nowscan.io"],
     "icon": "nowchain",
-    "explorerUrl": "https://nowscan.io",
+    "explorerUrl": "https://testnet.nowscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "NOW",
         "decimals": 18
       }
-    }
+    },
+    "isTestnet": true
   },
   {
     "id": "2016",
@@ -77060,6 +77013,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "2882",
+    "name": "Chips Network",
+    "rpcs": [
+      "https://node.chips.ooo/wasp/api/v1/chains/iota1pp3d3mnap3ufmgqnjsnw344sqmf5svjh26y2khnmc89sv6788y3r207a8fn/evm"
+    ],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "IOTA",
         "decimals": 18
       }
     }
@@ -84817,6 +84783,12 @@
             "decimals": 18
           },
           {
+            "symbol": "SHKK",
+            "coingeckoId": "shakaka",
+            "contractAddress": "0x77c6986a83d5dbb6162ddf4f1747691005b4388a",
+            "decimals": 18
+          },
+          {
             "symbol": "$SHAKA",
             "coingeckoId": "sharetheshaka",
             "contractAddress": "0x478e03d45716dda94f6dbc15a633b0d90c237e2f",
@@ -89214,6 +89186,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "33401",
+    "name": "SlingShot",
+    "rpcs": ["https://rpc.slingshotdao.com"],
+    "icon": "slingshot",
+    "explorerUrl": "https://explore.slingshotdao.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SLING",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "33469",
@@ -100490,6 +100475,20 @@
     "isTestnet": true
   },
   {
+    "id": "97435",
+    "name": "SlingShot Testnet",
+    "rpcs": ["https://rpc-dependent-emerald-whippet-gh6kch3nen.t.conduit.xyz"],
+    "icon": "slingshot",
+    "explorerUrl": "https://explorer-dependent-emerald-whippet-gh6kch3nen.t.conduit.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "SLINGT",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "97531",
     "name": "Green Chain Testnet",
     "rpcs": ["https://node.greenchain.app/rpc/"],
@@ -105693,12 +105692,6 @@
             "symbol": "1HT",
             "coingeckoId": "huobi-token",
             "contractAddress": "0xbaa0974354680b0e8146d64bb27fb92c03c4a2f2",
-            "decimals": 18
-          },
-          {
-            "symbol": "IMRTL",
-            "coingeckoId": "immortl",
-            "contractAddress": "0x550d9923693998a6fe20801abe3f1a78e0d75089",
             "decimals": 18
           },
           {
