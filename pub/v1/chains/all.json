@@ -7723,7 +7723,15 @@
     "relay": {
       "id": "polkadot"
     },
-    "balancesConfig": [],
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "mythos",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/mythos.svg"
+        }
+      }
+    ],
     "balancesMetadata": [],
     "hasCheckMetadataHash": false
   },
@@ -9277,6 +9285,12 @@
               "onChainId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2011},{\"GeneralKey\":{\"length\":3,\"data\":\"0x6571640000000000000000000000000000000000000000000000000000000000\"}}]}}",
               "symbol": "EQD",
               "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eqd.svg"
+            },
+            {
+              "onChainId": "{\"parents\":1,\"interior\":{\"X1\":{\"Parachain\":3369}}}",
+              "symbol": "MYTH",
+              "coingeckoId": "mythos",
+              "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mythos.webp"
             },
             {
               "onChainId": "{\"parents\":1,\"interior\":{\"X2\":[{\"Parachain\":2004},{\"PalletInstance\":10}]}}",
