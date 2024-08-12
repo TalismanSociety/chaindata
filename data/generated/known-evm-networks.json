@@ -21487,6 +21487,12 @@
             "decimals": 18
           },
           {
+            "symbol": "XPRT",
+            "coingeckoId": "persistence",
+            "contractAddress": "0xd454b59f16d42667be2fa55292d16647e27f40c4",
+            "decimals": 6
+          },
+          {
             "symbol": "pETH",
             "coingeckoId": "peth",
             "contractAddress": "0x821a278dfff762c76410264303f25bf42e195c0c",
@@ -26072,12 +26078,6 @@
             "symbol": "stLINK",
             "coingeckoId": "stake-link-staked-link",
             "contractAddress": "0xb8b295df2cd735b15be5eb419517aa626fc43cd5",
-            "decimals": 18
-          },
-          {
-            "symbol": "STONE",
-            "coingeckoId": "stakestone-ether",
-            "contractAddress": "0x7122985656e38bdc0302db86685bb972b145bd3c",
             "decimals": 18
           },
           {
@@ -31198,6 +31198,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ZAI",
+            "coingeckoId": "zaiho",
+            "contractAddress": "0x67037abcfefd566aeff31c240168c25d65a0754d",
+            "decimals": 18
+          },
+          {
             "symbol": "ZAM",
             "coingeckoId": "zam-io",
             "contractAddress": "0xd373576a9e738f37dc6882328358ff69c4caf4c6",
@@ -32634,6 +32640,12 @@
             "coingeckoId": "perpetual-protocol",
             "contractAddress": "0x9e1028f5f1d5ede59748ffcee5532509976840e0",
             "decimals": 18
+          },
+          {
+            "symbol": "XPRT",
+            "coingeckoId": "persistence",
+            "contractAddress": "0xc7edf7b7b3667a06992508e7b156eff794a9e1c8",
+            "decimals": 6
           },
           {
             "symbol": "PT",
@@ -48258,12 +48270,6 @@
             "decimals": 18
           },
           {
-            "symbol": "PAC",
-            "coingeckoId": "pacman",
-            "contractAddress": "0xd722bac68242bc0b830667cd8999ae6dcdfaac69",
-            "decimals": 18
-          },
-          {
             "symbol": "PACOCA",
             "coingeckoId": "pacoca",
             "contractAddress": "0x55671114d774ee99d653d6c12460c780a67f1d18",
@@ -51654,6 +51660,12 @@
             "decimals": 18
           },
           {
+            "symbol": "STONE",
+            "coingeckoId": "stakestone-ether",
+            "contractAddress": "0x80137510979822322193fc997d400d5a6c747bf7",
+            "decimals": 18
+          },
+          {
             "symbol": "BOT",
             "coingeckoId": "starbots",
             "contractAddress": "0xdbccd9131405dd1fe7320090af337952b9845dfa",
@@ -53812,6 +53824,12 @@
             "coingeckoId": "vndc",
             "contractAddress": "0xdde5b33a56f3f1c22e5a6bd8429e6ad508bff24e",
             "decimals": 0
+          },
+          {
+            "symbol": "VNST",
+            "coingeckoId": "vnst-stablecoin",
+            "contractAddress": "0x3b26fb89eab263cc6cb1e91f611bae8793f927ef",
+            "decimals": 18
           },
           {
             "symbol": "VST",
@@ -65383,6 +65401,12 @@
             "coingeckoId": "polygon-hermez-bridged-wbtc-x-layer",
             "contractAddress": "0xea034fb02eb1808c2cc3adbc15f447b93cbe08e1",
             "decimals": 8
+          },
+          {
+            "symbol": "STONE",
+            "coingeckoId": "stakestone-ether",
+            "contractAddress": "0x80137510979822322193fc997d400d5a6c747bf7",
+            "decimals": 18
           },
           {
             "symbol": "WOKB",
@@ -77633,6 +77657,12 @@
             "decimals": 18
           },
           {
+            "symbol": "STONE",
+            "coingeckoId": "stakestone-ether",
+            "contractAddress": "0x80137510979822322193fc997d400d5a6c747bf7",
+            "decimals": 18
+          },
+          {
             "symbol": "ASTR",
             "coingeckoId": "stargate-bridged-astr-astar-zkevm",
             "contractAddress": "0xdf41220c7e322bfef933d85d01821ad277f90172",
@@ -88418,7 +88448,7 @@
   {
     "id": "19600",
     "name": "LBRY Mainnet",
-    "rpcs": [],
+    "rpcs": ["https://lbry.nl/rpc"],
     "icon": "lbry",
     "explorerUrl": "https://explorer.lbry.com",
     "balancesConfig": {
@@ -89601,6 +89631,12 @@
             "symbol": "ezETH",
             "coingeckoId": "renzo-restaked-eth",
             "contractAddress": "0x2416092f143378750bb29b79ed961ab195cceea5",
+            "decimals": 18
+          },
+          {
+            "symbol": "STONE",
+            "coingeckoId": "stakestone-ether",
+            "contractAddress": "0x80137510979822322193fc997d400d5a6c747bf7",
             "decimals": 18
           },
           {
@@ -98249,7 +98285,7 @@
   {
     "id": "47763",
     "name": "Neo X Mainnet",
-    "rpcs": ["https://mainnet-1.rpc.banelabs.org"],
+    "rpcs": ["https://mainnet-1.rpc.banelabs.org", "https://mainnet-2.rpc.banelabs.org"],
     "icon": "neox",
     "explorerUrl": "https://xexplorer.neo.org",
     "balancesConfig": {
@@ -98621,6 +98657,18 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "55614",
+    "name": "Flamma Mainnet",
+    "rpcs": ["https://rpc.flamma.network"],
+    "explorerUrl": "https://flascan.net",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FLA",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "56026",
@@ -100338,6 +100386,12 @@
             "coingeckoId": "particle-trade",
             "contractAddress": "0xa027a3a04b44f79560153234e999b17c88e22db9",
             "decimals": 18
+          },
+          {
+            "symbol": "XPRT",
+            "coingeckoId": "persistence",
+            "contractAddress": "0xc7edf7b7b3667a06992508e7b156eff794a9e1c8",
+            "decimals": 6
           },
           {
             "symbol": "PETOSHI",
@@ -102939,6 +102993,12 @@
             "symbol": "SKY",
             "coingeckoId": "skydrome",
             "contractAddress": "0x95a52ec1d60e74cd3eb002fe54a2c74b185a4c16",
+            "decimals": 18
+          },
+          {
+            "symbol": "STONE",
+            "coingeckoId": "stakestone-ether",
+            "contractAddress": "0x80137510979822322193fc997d400d5a6c747bf7",
             "decimals": 18
           },
           {
