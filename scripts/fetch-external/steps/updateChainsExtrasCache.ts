@@ -180,7 +180,7 @@ const attemptToFetchChainExtras = async (
     const { ss58Format } = chainProperties
     const ss58Prefix = metadata.registry.chainSS58
     const prefix = isValidSs58Prefix(ss58Prefix) ? ss58Prefix : isValidSs58Prefix(ss58Format) ? ss58Format : 42
-    const hasCheckMetadataHash = getHasCheckMetadataHash(metadata)
+    const hasCheckMetadataHash = chain.hasCheckMetadataHash ?? getHasCheckMetadataHash(metadata)
     const account = getAccountType(metadata)
 
     const chainExtrasCache: ChainExtrasCache = {

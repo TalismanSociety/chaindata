@@ -30,6 +30,7 @@ export type ConfigChain = {
   hasExtrinsicSignatureTypePrefix?: boolean
   registryTypes?: any
   signedExtensions?: any
+  hasCheckMetadataHash?: boolean
 }
 
 /** Represents an EvmNetwork from `evm-networks.json` */
