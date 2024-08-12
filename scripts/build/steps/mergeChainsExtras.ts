@@ -11,7 +11,12 @@ export const mergeChainsExtras = async () => {
     const { cacheBalancesConfigHash, miniMetadatas, tokens, ...extras } =
       chainsExtrasCache.find((cc) => cc.id === chain.id) ?? {}
 
-    if (extras) Object.assign(chain, extras)
+    if (extras) {
+      // override hasCheckMetadataHash only if it's not set on the chain, we need to be able to force that value and ignore the cache
+      const hasCheckMetadataHash = chain.hasCheckMetadataHash
+      Object.assign(chain, extras)
+      if (hasCheckMetadataHash !== undefined) chain.hasCheckMetadataHash = hasCheckMetadataHash // force the manual value
+    }
     if (miniMetadatas) sharedData.miniMetadatas.push(...Object.values(miniMetadatas))
     if (tokens) {
       sharedData.tokens.push(...Object.values(tokens))
