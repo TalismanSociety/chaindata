@@ -4455,12 +4455,6 @@
             "decimals": 18
           },
           {
-            "symbol": "BLT",
-            "coingeckoId": "bloom",
-            "contractAddress": "0x107c4504cd79c5d2696ea0030a8dd4e92601b82e",
-            "decimals": 18
-          },
-          {
             "symbol": "CDT",
             "coingeckoId": "blox",
             "contractAddress": "0x177d39ac676ed1c67a2b268ad7f1e58826e5b0af",
@@ -25769,6 +25763,12 @@
             "decimals": 9
           },
           {
+            "symbol": "USTBL",
+            "coingeckoId": "spiko-us-t-bills-money-market-fund",
+            "contractAddress": "0xe4880249745eac5f1ed9d8f7df844792d560e750",
+            "decimals": 5
+          },
+          {
             "symbol": "SpillWays",
             "coingeckoId": "spillways",
             "contractAddress": "0x8790f2fc7ca2e7db841307fb3f4e72a03baf7b47",
@@ -42565,12 +42565,6 @@
             "decimals": 18
           },
           {
-            "symbol": "GHACOIN",
-            "coingeckoId": "ghacoin",
-            "contractAddress": "0x1196f907c8ff87c068d07fbbd440fc5f68e96c1f",
-            "decimals": 18
-          },
-          {
             "symbol": "GM",
             "coingeckoId": "ghostmarket",
             "contractAddress": "0xe5c85b60ff243cfdb067be4078e477ac04b594e9",
@@ -53088,12 +53082,6 @@
             "decimals": 18
           },
           {
-            "symbol": "TYO GHOUL",
-            "coingeckoId": "tyo-ghoul",
-            "contractAddress": "0x421a8e74f09fb000283e6fa8f1308834214b4831",
-            "decimals": 18
-          },
-          {
             "symbol": "Type",
             "coingeckoId": "typeit",
             "contractAddress": "0xd9a44c40584288505931880c9915c6a5eb5f2fb1",
@@ -63290,6 +63278,12 @@
             "decimals": 18
           },
           {
+            "symbol": "USTBL",
+            "coingeckoId": "spiko-us-t-bills-money-market-fund",
+            "contractAddress": "0xe4880249745eac5f1ed9d8f7df844792d560e750",
+            "decimals": 5
+          },
+          {
             "symbol": "SPONGE",
             "coingeckoId": "sponge-2",
             "contractAddress": "0x53df32548214f51821cf1fe4368109ac5ddea1ff",
@@ -68115,8 +68109,8 @@
     "rpcs": [
       "https://api.node.glif.io/",
       "https://rpc.ankr.com/filecoin",
-      "https://filecoin.drpc.org",
-      "https://filfox.info/rpc/v1"
+      "https://filfox.info/rpc/v1",
+      "https://filecoin.drpc.org"
     ],
     "icon": "filecoin",
     "explorerUrl": "https://filfox.info/en",
@@ -89439,9 +89433,9 @@
   {
     "id": "33111",
     "name": "Curtis",
-    "rpcs": ["https://curtis.rpc.caldera.xyz/http"],
+    "rpcs": ["https://rpc.curtis.apechain.com"],
     "icon": "curtis",
-    "explorerUrl": "https://curtis.explorer.caldera.xyz",
+    "explorerUrl": "https://explorer.curtis.apechain.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "APE",
@@ -92280,12 +92274,6 @@
             "symbol": "GAST",
             "coingeckoId": "gas-turbo",
             "contractAddress": "0x6f9590958ce2beaf9c92a3a8fca6d1ddf310e052",
-            "decimals": 18
-          },
-          {
-            "symbol": "GBOT",
-            "coingeckoId": "gbot",
-            "contractAddress": "0x32e4d98d3010ac12d75019c484caa78665b03986",
             "decimals": 18
           },
           {
@@ -99524,6 +99512,7 @@
       "https://cratd2c-testnet-node1.cratd2csmartchain.io/",
       "https://cratd2c-testnet-node2.cratd2csmartchain.io/"
     ],
+    "icon": "cratd2c-testnet",
     "explorerUrl": "https://explorer-testnet.cratd2csmartchain.io",
     "balancesConfig": {
       "evm-native": {
@@ -101022,6 +101011,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "$EL",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "99876",
+    "name": "EdgaMatrix Chain Testnet",
+    "rpcs": ["https://rpc1-testnet.emc.network"],
+    "icon": "emctest",
+    "explorerUrl": "https://testnet.emcscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "EMC",
         "decimals": 18
       }
     },
