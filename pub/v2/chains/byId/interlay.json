@@ -2,7 +2,7 @@
   "id": "interlay",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 350,
+  "sortIndex": 413,
   "genesisHash": "0xbf88efe70e9e0e916416e8bed61f2b45717f517d7f3523e33c7b001e5ffcbc72",
   "prefix": 2032,
   "name": "Interlay",
@@ -102,7 +102,7 @@
             "symbol": "DOT",
             "decimals": 10,
             "ed": "0",
-            "onChainId": "{\"Token\":\"DOT\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"DOT\"}}",
             "coingeckoId": "polkadot",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
           },
@@ -110,7 +110,7 @@
             "symbol": "iBTC",
             "decimals": 8,
             "ed": "0",
-            "onChainId": "{\"Token\":\"IBTC\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"IBTC\"}}",
             "coingeckoId": "interbtc",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ibtc.svg"
           },
@@ -118,7 +118,7 @@
             "symbol": "INTR",
             "decimals": 10,
             "ed": "0",
-            "onChainId": "{\"Token\":\"INTR\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"INTR\"}}",
             "coingeckoId": "interlay",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/intr.svg"
           },
@@ -126,7 +126,7 @@
             "symbol": "kBTC",
             "decimals": 8,
             "ed": "0",
-            "onChainId": "{\"Token\":\"KBTC\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"KBTC\"}}",
             "coingeckoId": "kintsugi-btc",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/kbtc.svg"
           },
@@ -134,7 +134,7 @@
             "symbol": "KINT",
             "decimals": 12,
             "ed": "0",
-            "onChainId": "{\"Token\":\"KINT\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"KINT\"}}",
             "coingeckoId": "kintsugi",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/kint.svg"
           },
@@ -142,7 +142,7 @@
             "symbol": "KSM",
             "decimals": 12,
             "ed": "0",
-            "onChainId": "{\"Token\":\"KSM\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"KSM\"}}",
             "coingeckoId": "kusama",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
           },
@@ -150,7 +150,7 @@
             "symbol": "LDOT",
             "decimals": 10,
             "ed": "0",
-            "onChainId": "{\"ForeignAsset\":1}",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":1}",
             "coingeckoId": "liquid-staking-dot",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ldot.svg"
           },
@@ -158,7 +158,7 @@
             "symbol": "USDT",
             "decimals": 6,
             "ed": "0",
-            "onChainId": "{\"ForeignAsset\":2}",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":2}",
             "coingeckoId": "tether",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
           },
@@ -166,47 +166,48 @@
             "symbol": "lp iBTC-DOT",
             "decimals": 18,
             "ed": "0",
-            "onChainId": "{\"LpToken\":[{\"Token\":\"IBTC\"},{\"Token\":\"DOT\"}]}",
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            "onChainId": "{\"type\":\"LpToken\",\"value\":[{\"type\":\"Token\",\"value\":{\"type\":\"IBTC\"}},{\"type\":\"Token\",\"value\":{\"type\":\"DOT\"}}]}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
           },
           {
             "symbol": "lp iBTC-USDT",
             "decimals": 18,
             "ed": "0",
-            "onChainId": "{\"LpToken\":[{\"Token\":\"IBTC\"},{\"ForeignAsset\":2}]}",
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            "onChainId": "{\"type\":\"LpToken\",\"value\":[{\"type\":\"Token\",\"value\":{\"type\":\"IBTC\"}},{\"type\":\"ForeignAsset\",\"value\":2}]}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
           },
           {
             "symbol": "lp DOT-INTR",
             "decimals": 18,
             "ed": "0",
-            "onChainId": "{\"LpToken\":[{\"Token\":\"DOT\"},{\"Token\":\"INTR\"}]}",
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            "onChainId": "{\"type\":\"LpToken\",\"value\":[{\"type\":\"Token\",\"value\":{\"type\":\"DOT\"}},{\"type\":\"Token\",\"value\":{\"type\":\"INTR\"}}]}",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
           },
           {
             "symbol": "qIBTC",
             "decimals": 8,
             "ed": "0",
-            "onChainId": "{\"LendToken\":1}",
+            "onChainId": "{\"type\":\"LendToken\",\"value\":1}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/qibtc.svg"
           },
           {
             "symbol": "qDOT",
             "decimals": 10,
             "ed": "0",
-            "onChainId": "{\"LendToken\":2}",
+            "onChainId": "{\"type\":\"LendToken\",\"value\":2}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/qdot.svg"
           },
           {
             "symbol": "qUSDT",
             "decimals": 6,
             "ed": "0",
-            "onChainId": "{\"LendToken\":3}",
+            "onChainId": "{\"type\":\"LendToken\",\"value\":3}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/qusdt.svg"
           }
         ]
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": false
 }

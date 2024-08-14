@@ -1,7 +1,7 @@
 {
   "id": "5165",
   "isTestnet": false,
-  "sortIndex": 60,
+  "sortIndex": 72,
   "name": "Bahamut",
   "themeColor": "#ff008c",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bahamut.webp",
@@ -26,7 +26,39 @@
       "moduleConfig": {
         "symbol": "FTN",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "fasttoken",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fasttoken.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "symbiosis-bridged-usdc-bahamut",
+            "contractAddress": "0x4237e0a5b55233d5b6d6d1d9bf421723954130d8",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/symbiosis-bridged-usdc-bahamut.webp"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "symbiosis-bridged-usdt-bahamut",
+            "contractAddress": "0xdef886c55a79830c47108eeb9c37e78a49684e41",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "WFTN",
+            "coingeckoId": "wrapped-ftn",
+            "contractAddress": "0x4084ab20f8ffca76c19aaf854fb5fe9de6217fbb",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-ftn.webp"
+          }
+        ]
       }
     }
   ],

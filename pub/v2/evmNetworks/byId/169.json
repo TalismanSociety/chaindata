@@ -1,7 +1,7 @@
 {
   "id": "169",
   "isTestnet": false,
-  "sortIndex": 432,
+  "sortIndex": 512,
   "name": "Manta Pacific Mainnet",
   "themeColor": "#e76abd",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/manta.webp",
@@ -32,6 +32,14 @@
       "moduleConfig": {
         "tokens": [
           {
+            "symbol": "sUSDz",
+            "coingeckoId": "anzen-staked-usdz",
+            "contractAddress": "0x8f08a3b5bceadef10c0b26c8bb720ebb8fa91758",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/anzen-staked-usdz.webp"
+          },
+          {
             "symbol": "ASM",
             "coingeckoId": "asmatch",
             "contractAddress": "0xcd5d6de3fdbce1895f0dac13a065673599ed6806",
@@ -48,12 +56,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bella-protocol.webp"
           },
           {
+            "symbol": "vMANTA",
+            "coingeckoId": "bifrost-voucher-manta",
+            "contractAddress": "0x7746ef546d562b443ae4b4145541a3b1a3d75717",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bifrost-voucher-manta.webp"
+          },
+          {
             "symbol": "MATIC",
             "coingeckoId": "bridged-matic-manta-pacific",
             "contractAddress": "0x0f52a51287f9b3894d73df05164d0ee2533ccbb4",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
           },
           {
             "symbol": "rETH",
@@ -77,7 +93,7 @@
             "contractAddress": "0x34c7ad65e4163306f8745996688b476914201ce0",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
           },
           {
             "symbol": "USDC",
@@ -93,7 +109,7 @@
             "contractAddress": "0x77b6f99970f488cfa8bd41892900b6ce881c2300",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
           },
           {
             "symbol": "WBTC",
@@ -118,6 +134,22 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-wrapped-steth-manta-pacific.webp"
+          },
+          {
+            "symbol": "CETO",
+            "coingeckoId": "ceto-swap",
+            "contractAddress": "0x3af03e8c993900f0ea6b84217071e1d4cc783982",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ceto-swap.webp"
+          },
+          {
+            "symbol": "bCETO",
+            "coingeckoId": "ceto-swap-burned-ceto",
+            "contractAddress": "0xe68874e57224d1e4e6d4c6b4cf5af7ca51867611",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ceto-swap-burned-ceto.webp"
           },
           {
             "symbol": "Circle",
@@ -184,12 +216,44 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kuma.webp"
           },
           {
+            "symbol": "mBTC",
+            "coingeckoId": "manta-mbtc",
+            "contractAddress": "0x1468177dbcb2a772f3d182d2f1358d442b553089",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/manta-mbtc.webp"
+          },
+          {
+            "symbol": "mETH",
+            "coingeckoId": "manta-meth",
+            "contractAddress": "0xaccbc418a994a27a75644d8d591afc22faba594e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/manta-meth.webp"
+          },
+          {
+            "symbol": "mUSD",
+            "coingeckoId": "manta-musd",
+            "contractAddress": "0x649d4524897ce85a864dc2a2d5a11adb3044f44a",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/manta-musd.webp"
+          },
+          {
             "symbol": "MANTA",
             "coingeckoId": "manta-network",
             "contractAddress": "0x95cef13441be50d20ca4558cc0a27b601ac544e5",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/manta-network.webp"
+          },
+          {
+            "symbol": "USDz",
+            "coingeckoId": "manta-pacific-bridged-usdz-manta-pacific",
+            "contractAddress": "0x73d23f3778a90be8846e172354a115543df2a7e4",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/manta-pacific-bridged-usdz-manta-pacific.webp"
           },
           {
             "symbol": "MNU",

@@ -2,17 +2,17 @@
   "id": "tangle",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 684,
+  "sortIndex": 828,
   "genesisHash": "0x44f68476df71ebf765b630bf08dc1e0fedb2bf614a1aa0563b3f74f20e47b3e0",
   "prefix": 5845,
-  "name": "Tangle Network",
+  "name": "Tangle",
   "themeColor": "#7578fb",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/tangle.svg",
   "chainName": "Tangle Mainnet",
   "chainType": "Live",
   "implName": "tangle",
   "specName": "tangle",
-  "specVersion": "1000",
+  "specVersion": "1012",
   "nativeToken": {
     "id": "tangle-substrate-native"
   },
@@ -28,6 +28,9 @@
   "isUnknownFeeToken": false,
   "feeToken": null,
   "rpcs": [
+    {
+      "url": "wss://tangle-mainnet-rpc.dwellir.com"
+    },
     {
       "url": "wss://rpc.tangle.tools"
     }
@@ -49,5 +52,6 @@
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

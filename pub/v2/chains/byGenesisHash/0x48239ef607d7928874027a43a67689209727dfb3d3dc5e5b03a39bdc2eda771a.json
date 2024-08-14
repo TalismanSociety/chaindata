@@ -2,7 +2,7 @@
   "id": "kusama-asset-hub",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 401,
+  "sortIndex": 468,
   "genesisHash": "0x48239ef607d7928874027a43a67689209727dfb3d3dc5e5b03a39bdc2eda771a",
   "prefix": 2,
   "name": "Kusama Asset Hub",
@@ -12,7 +12,7 @@
   "chainType": "Live",
   "implName": "statemine",
   "specName": "statemine",
-  "specVersion": "1002000",
+  "specVersion": "1002006",
   "nativeToken": {
     "id": "kusama-asset-hub-substrate-native"
   },
@@ -38,6 +38,12 @@
   "feeToken": null,
   "rpcs": [
     {
+      "url": "wss://asset-hub-kusama-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://statemine-rpc-tn.dwellir.com"
+    },
+    {
       "url": "wss://sys.ibp.network/statemine"
     },
     {
@@ -54,12 +60,6 @@
     },
     {
       "url": "wss://ksm-rpc.stakeworld.io/assethub"
-    },
-    {
-      "url": "wss://statemine-rpc.dwellir.com"
-    },
-    {
-      "url": "wss://statemine-rpc-tn.dwellir.com"
     }
   ],
   "evmNetworks": [],
@@ -101,5 +101,6 @@
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

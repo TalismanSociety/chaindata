@@ -1,7 +1,7 @@
 {
   "id": "111188",
   "isTestnet": false,
-  "sortIndex": 606,
+  "sortIndex": 733,
   "name": "re.al",
   "themeColor": "#ffffff",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/real.webp",
@@ -9,6 +9,9 @@
   "tokens": [],
   "explorerUrl": "https://explorer.re.al",
   "rpcs": [
+    {
+      "url": "https://tangible-real.gateway.tenderly.co"
+    },
     {
       "url": "https://real.drpc.org"
     }
@@ -20,7 +23,87 @@
       "moduleConfig": {
         "symbol": "reETH",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "weth",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "arcUSD",
+            "coingeckoId": "arcana-2",
+            "contractAddress": "0xaec9e50e3397f9ddc635c6c429c8c7eca418a143",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arcana-2.webp"
+          },
+          {
+            "symbol": "CVR",
+            "coingeckoId": "caviar-3",
+            "contractAddress": "0xb08f026f8a096e6d92eb5bcbe102c273a7a2d51c",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/caviar-3.webp"
+          },
+          {
+            "symbol": "PEARL",
+            "coingeckoId": "pearl",
+            "contractAddress": "0xce1581d7b4ba40176f0e219b2cac30088ad50c7a",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pearl.webp"
+          },
+          {
+            "symbol": "RWA",
+            "coingeckoId": "re-al",
+            "contractAddress": "0x4644066f535ead0cde82d209df78d94572fcbf14",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/re-al.webp"
+          },
+          {
+            "symbol": "DAI",
+            "coingeckoId": "real-bridged-dai-real",
+            "contractAddress": "0x75d0cbf342060b14c2fc756fd6e717dfeb5b1b70",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/real-bridged-dai-real.webp"
+          },
+          {
+            "symbol": "USTB",
+            "coingeckoId": "real-us-t-bill",
+            "contractAddress": "0x83fedbc0b85c6e29b589aa6bdefb1cc581935ecd",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/real-us-t-bill.webp"
+          },
+          {
+            "symbol": "MORE",
+            "coingeckoId": "stack-2",
+            "contractAddress": "0x25ea98ac87a38142561ea70143fd44c4772a16b6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stack-2.webp"
+          },
+          {
+            "symbol": "UKRE",
+            "coingeckoId": "uk-real-estate",
+            "contractAddress": "0x835d3e1c0aa079c6164aad21dcb23e60eb71af48",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/uk-real-estate.webp"
+          },
+          {
+            "symbol": "WREETH",
+            "coingeckoId": "wrapped-real-ether",
+            "contractAddress": "0x90c6e93849e06ec7478ba24522329d14a5954df4",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-real-ether.webp"
+          }
+        ]
       }
     }
   ],

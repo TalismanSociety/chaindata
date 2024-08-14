@@ -2,7 +2,7 @@
   "id": "nodle-polkadot",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 493,
+  "sortIndex": 590,
   "genesisHash": "0x97da7ede98d7bad4e36b4d734b6055425a3be036da2a332ea5a7037656427a21",
   "prefix": 37,
   "name": "Nodle",
@@ -12,9 +12,15 @@
   "chainType": "Live",
   "implName": "nodle-para",
   "specName": "nodle-para",
-  "specVersion": "0",
-  "nativeToken": null,
-  "tokens": [],
+  "specVersion": "27",
+  "nativeToken": {
+    "id": "nodle-polkadot-substrate-native"
+  },
+  "tokens": [
+    {
+      "id": "nodle-polkadot-substrate-native"
+    }
+  ],
   "account": "*25519",
   "subscanUrl": "https://nodle.subscan.io/",
   "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-nodle-para_specs.png",
@@ -23,7 +29,7 @@
   "feeToken": null,
   "rpcs": [
     {
-      "url": "wss://eden-rpc.dwellir.com"
+      "url": "wss://nodle-rpc.dwellir.com"
     }
   ],
   "evmNetworks": [],
@@ -42,5 +48,6 @@
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": false
 }

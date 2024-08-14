@@ -1,10 +1,10 @@
 {
   "id": "200901",
   "isTestnet": false,
-  "sortIndex": 82,
+  "sortIndex": 98,
   "name": "Bitlayer Mainnet",
   "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/chains/unknown.svg",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://www.btrscan.com",
@@ -17,6 +17,9 @@
     },
     {
       "url": "https://rpc.ankr.com/bitlayer"
+    },
+    {
+      "url": "https://rpc-bitlayer.rockx.com"
     }
   ],
   "substrateChain": null,
@@ -28,6 +31,29 @@
         "decimals": 18,
         "coingeckoId": "bitcoin",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "uniBTC",
+            "coingeckoId": "universal-btc",
+            "contractAddress": "0x93919784c523f39cacaa98ee0a9d96c3f32b593e",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/universal-btc.webp"
+          },
+          {
+            "symbol": "aBTC",
+            "coingeckoId": "xlink-bridged-btc-stacks",
+            "contractAddress": "0xdfd0660032c2d0d38a9092a43d1669d6568caf71",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xlink-bridged-btc-stacks.webp"
+          }
+        ]
       }
     }
   ],

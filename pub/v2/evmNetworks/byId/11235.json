@@ -1,10 +1,10 @@
 {
   "id": "11235",
   "isTestnet": false,
-  "sortIndex": 313,
+  "sortIndex": 374,
   "name": "Haqq Network",
   "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/chains/unknown.svg",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://explorer.haqq.network",
@@ -26,7 +26,23 @@
       "moduleConfig": {
         "symbol": "ISLM",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "islamic-coin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/islamic-coin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "stISLM",
+            "coingeckoId": "stride-staked-islm",
+            "contractAddress": "0x12fefeac0568503f7c0d934c149f29a42b05c48f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stride-staked-islm.webp"
+          }
+        ]
       }
     }
   ],

@@ -2,17 +2,17 @@
   "id": "westend-people-testnet",
   "isTestnet": true,
   "isDefault": true,
-  "sortIndex": 1243,
+  "sortIndex": 1508,
   "genesisHash": "0x1eb6fb0ba5187434de017a70cb84d4f47142df1d571d0ef9e7e1407f2b80b93c",
   "prefix": 42,
-  "name": "People",
+  "name": "People Testnet",
   "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/chains/unknown.svg",
   "chainName": "Westend People",
   "chainType": "Live",
   "implName": "people-westend",
   "specName": "people-westend",
-  "specVersion": "1010000",
+  "specVersion": "1015000",
   "nativeToken": {
     "id": "westend-people-testnet-substrate-native"
   },
@@ -29,6 +29,15 @@
   "feeToken": null,
   "rpcs": [
     {
+      "url": "wss://people-westend-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://sys.ibp.network/people-westend"
+    },
+    {
+      "url": "wss://sys.dotters.network/people-westend"
+    },
+    {
       "url": "wss://westend-people-rpc.polkadot.io"
     }
   ],
@@ -39,5 +48,6 @@
     "id": "westend-testnet"
   },
   "balancesConfig": [],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": false
 }

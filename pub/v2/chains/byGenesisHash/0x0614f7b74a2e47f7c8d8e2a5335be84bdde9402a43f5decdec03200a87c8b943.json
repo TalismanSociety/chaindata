@@ -2,17 +2,17 @@
   "id": "analog-testnet",
   "isTestnet": true,
   "isDefault": true,
-  "sortIndex": 816,
+  "sortIndex": 990,
   "genesisHash": "0x0614f7b74a2e47f7c8d8e2a5335be84bdde9402a43f5decdec03200a87c8b943",
   "prefix": 12850,
   "name": "Analog Testnet",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#5d3ef8",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/chains/unknown.svg",
   "chainName": "Analog Testnet",
   "chainType": "Live",
-  "implName": "timechain-node",
-  "specName": "timechain-node",
-  "specVersion": "106",
+  "implName": "analog-testnet",
+  "specName": "analog-testnet",
+  "specVersion": "124",
   "nativeToken": {
     "id": "analog-testnet-substrate-native"
   },
@@ -23,8 +23,8 @@
   ],
   "account": "*25519",
   "subscanUrl": null,
-  "chainspecQrUrl": null,
-  "latestMetadataQrUrl": null,
+  "chainspecQrUrl": "https://metadata.analog.one/qr/analog-testnet_specs.png",
+  "latestMetadataQrUrl": "https://metadata.analog.one/qr/analog-testnet_metadata_latest.apng",
   "isUnknownFeeToken": false,
   "feeToken": null,
   "rpcs": [
@@ -36,6 +36,14 @@
   "parathreads": null,
   "paraId": null,
   "relay": null,
-  "balancesConfig": [],
-  "balancesMetadata": []
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/pub/v2/assets/tokens/unknown.svg"
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

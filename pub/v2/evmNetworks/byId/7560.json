@@ -1,9 +1,9 @@
 {
   "id": "7560",
   "isTestnet": false,
-  "sortIndex": 165,
+  "sortIndex": 195,
   "name": "Cyber Mainnet",
-  "themeColor": "#ffffff",
+  "themeColor": "#b7f7b0",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/cyber.svg",
   "nativeToken": null,
   "tokens": [],
@@ -23,7 +23,23 @@
       "moduleConfig": {
         "symbol": "ETH",
         "decimals": 18,
+        "coingeckoId": "weth",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "CYBER",
+            "coingeckoId": "cyberconnect",
+            "contractAddress": "0x14778860e937f509e651192a90589de711fb88a9",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cyberconnect.webp"
+          }
+        ]
       }
     }
   ],

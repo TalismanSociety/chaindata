@@ -1,7 +1,7 @@
 {
   "id": "50",
   "isTestnet": false,
-  "sortIndex": 769,
+  "sortIndex": 925,
   "name": "XDC Network",
   "themeColor": "#b7b7b5",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xdc.webp",
@@ -10,13 +10,13 @@
   "explorerUrl": "https://xdcscan.io",
   "rpcs": [
     {
-      "url": "https://erpc.xinfin.network"
-    },
-    {
       "url": "https://rpc.xinfin.network"
     },
     {
       "url": "https://rpc1.xinfin.network"
+    },
+    {
+      "url": "https://erpc.xinfin.network"
     },
     {
       "url": "https://rpc-xdc.icecreamswap.com"
@@ -31,6 +31,21 @@
         "decimals": 18,
         "coingeckoId": "xdce-crowd-sale",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xdce-crowd-sale.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "FXD",
+            "coingeckoId": "fathom-dollar",
+            "contractAddress": "0x49d3f7543335cf38fa10889ccff10207e22110b5",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fathom-dollar.webp"
+          }
+        ]
       }
     }
   ],
