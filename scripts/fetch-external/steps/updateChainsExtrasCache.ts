@@ -15,7 +15,7 @@ import {
   IChaindataProvider,
   TokenId,
 } from '@talismn/chaindata-provider'
-import { decodeMetadata, decodeScale, toHex } from '@talismn/scale'
+import { decodeMetadata, toHex } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
 import { from } from 'rxjs'
@@ -29,6 +29,7 @@ import {
   PROCESS_CONCURRENCY,
   RPC_REQUEST_TIMEOUT,
 } from '../../shared/constants'
+import { DeadChains } from '../../shared/DeadChains'
 import { setTokenLogo, TokenDef } from '../../shared/setTokenLogo'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { sendWithTimeout } from '../../shared/util'
@@ -46,10 +47,11 @@ export const updateChainsExtrasCache = async () => {
       }
     })(),
   ) as ChainExtrasCache[]
+  const deadChains = await new DeadChains().load()
 
   const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
   const chainIdExists = Object.fromEntries(chains.map((chain) => [chain.id, true] as const))
-  const fetchDataForChain = createDataFetcher({ chains, chainsExtrasCache })
+  const fetchDataForChain = createDataFetcher({ chains, chainsExtrasCache, deadChains })
 
   // PromisePool lets us run `fetchChainExtras` on all of the chains in parallel,
   // but with a max limit on how many chains we are fetching data for at the same time
@@ -73,19 +75,33 @@ export const updateChainsExtrasCache = async () => {
       },
     ),
   )
+  await deadChains.save()
 }
 
 const createDataFetcher =
-  ({ chains, chainsExtrasCache }: { chains: ConfigChain[]; chainsExtrasCache: ChainExtrasCache[] }) =>
+  ({
+    chains,
+    chainsExtrasCache,
+    deadChains,
+  }: {
+    chains: ConfigChain[]
+    chainsExtrasCache: ChainExtrasCache[]
+    deadChains: DeadChains
+  }) =>
   async (chainId: ChainId, index: number): Promise<void> => {
     console.log(`Checking for extras updates for chain ${index + 1} of ${chains.length} (${chainId})`)
 
     // fetch extras for chain
     // makes use of the chain rpcs
-    await fetchChainExtras(chainId, chains, chainsExtrasCache)
+    await fetchChainExtras(chainId, chains, chainsExtrasCache, deadChains)
   }
 
-const fetchChainExtras = async (chainId: ChainId, chains: ConfigChain[], chainsExtrasCache: ChainExtrasCache[]) => {
+const fetchChainExtras = async (
+  chainId: ChainId,
+  chains: ConfigChain[],
+  chainsExtrasCache: ChainExtrasCache[],
+  deadChains: DeadChains,
+) => {
   const chain = chains.find((chain) => chain.id === chainId)
   const rpcs = chain?.rpcs
   if (!rpcs) return
@@ -95,16 +111,17 @@ const fetchChainExtras = async (chainId: ChainId, chains: ConfigChain[], chainsE
 
   let success = false
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    success = await attemptToFetchChainExtras(
-      chain,
-      rpcs[(attempt - 1) % rpcs.length],
-      attempt,
-      maxAttempts,
-      chainsExtrasCache,
-    )
+    const rpcUrl = rpcs[(attempt - 1) % rpcs.length]
+    success = await attemptToFetchChainExtras(chain, rpcUrl, attempt, maxAttempts, chainsExtrasCache)
 
     // if chain has been successfully updated, exit the loop here
-    if (success) break
+    if (success) {
+      deadChains.isAlive(chain.id, rpcUrl)
+      break
+    }
+
+    // otherwise, track the rpc as dead and try another
+    deadChains.isDead(chain.id, rpcUrl)
   }
 
   // ran out of attempts

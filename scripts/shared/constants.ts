@@ -20,6 +20,8 @@ export const FILE_TESTNETS_CHAINDATA = 'data/testnets-chaindata.json'
 export const FILE_CHAINS_EXTRAS_CACHE = 'data/cache/chains-extras-cache.json'
 export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-portal-urls.json'
 
+export const FILE_DEAD_CHAINS = 'data/cache/dead-chains.json'
+
 export const FILE_EVM_NETWORKS = 'data/evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'data/known-evm-networks-overrides.json'
