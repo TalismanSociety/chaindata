@@ -75,6 +75,17 @@ export class DeadChains {
     await writeFile(FILE_DEAD_CHAINS, await prettier.format(json, { ...PRETTIER_CONFIG, parser: 'json' }))
   }
 
+  /** Remove inactive RPCs from the cache */
+  trim(activeChainRpcs: Map<string, Set<string>>) {
+    this.#data.forEach((chain, chainId) => {
+      for (const rpcUrl of chain.keys()) {
+        if (activeChainRpcs.get(chainId)?.has(rpcUrl)) continue
+        chain.delete(rpcUrl)
+      }
+      if (chain.size === 0) this.#data.delete(chainId)
+    })
+  }
+
   /** Get a simplified ISO-8601 timestamp which represents the current time */
   private now() {
     return new Date().toISOString()

@@ -50,6 +50,9 @@ export const updateChainsExtrasCache = async () => {
   const deadChains = await new DeadChains().load()
 
   const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
+  const activeChainRpcs = new Map(
+    chains.flatMap((chain) => (chain?.rpcs?.length ? [[chain.id, new Set(chain.rpcs)]] : [])),
+  )
   const chainIdExists = Object.fromEntries(chains.map((chain) => [chain.id, true] as const))
   const fetchDataForChain = createDataFetcher({ chains, chainsExtrasCache, deadChains })
 
@@ -75,6 +78,7 @@ export const updateChainsExtrasCache = async () => {
       },
     ),
   )
+  deadChains.trim(activeChainRpcs)
   await deadChains.save()
 }
 
