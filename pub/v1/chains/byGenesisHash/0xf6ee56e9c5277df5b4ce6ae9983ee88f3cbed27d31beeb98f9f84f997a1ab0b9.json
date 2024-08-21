@@ -2,17 +2,17 @@
   "id": "mythos",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 553,
+  "sortIndex": 568,
   "genesisHash": "0xf6ee56e9c5277df5b4ce6ae9983ee88f3cbed27d31beeb98f9f84f997a1ab0b9",
   "prefix": 42,
   "name": "Mythos",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#ff0037",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/mythos.svg",
   "chainName": "Mythos",
   "chainType": "Live",
   "implName": "mythos",
   "specName": "mythos",
-  "specVersion": "1006",
+  "specVersion": "1007",
   "nativeToken": {
     "id": "mythos-substrate-native"
   },
@@ -38,7 +38,15 @@
   "relay": {
     "id": "polkadot"
   },
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "mythos",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/mythos.svg"
+      }
+    }
+  ],
   "balancesMetadata": [],
   "hasCheckMetadataHash": false
 }

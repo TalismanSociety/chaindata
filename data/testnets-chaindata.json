@@ -2,7 +2,6 @@
   {
     "id": "westend-testnet",
     "name": "Westend",
-    "account": "*25519",
     "subscanUrl": "https://westend.subscan.io/",
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend_metadata_latest.apng",
@@ -18,7 +17,6 @@
   {
     "id": "rococo-testnet",
     "name": "Rococo",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/rococo_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/rococo_metadata_latest.apng",
     "subscanUrl": "https://rococo.subscan.io/",
@@ -27,25 +25,21 @@
   {
     "id": "3-dpass-testnet",
     "name": "3DPass Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "ajuna-testnet",
     "name": "Ajuna Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "aleph-zero-testnet",
     "name": "Aleph Zero Testnet",
-    "account": "*25519",
     "rpcs": ["wss://aleph-zero-testnet-rpc.dwellir.com", "wss://ws.test.azero.dev"]
   },
   {
     "id": "analog-testnet",
     "name": "Analog Testnet",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.analog.one/qr/analog-testnet_specs.png",
     "latestMetadataQrUrl": "https://metadata.analog.one/qr/analog-testnet_metadata_latest.apng",
     "rpcs": ["wss://rpc.testnet.analog.one"],
@@ -59,7 +53,6 @@
   {
     "id": "arctic-testnet-rococo",
     "name": "Arctic",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 3015,
     "relay": {
@@ -69,63 +62,168 @@
   {
     "id": "arctic-testnet-standalone",
     "name": "Arctic",
-    "account": "*25519",
     "subscanUrl": "https://arctic.subscan.io/",
     "rpcs": []
   },
   {
     "id": "ares-gladios-testnet",
     "name": "Ares Gladios",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "avail-turing-testnet",
     "name": "Avail Turing Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://turing-rpc.avail.so"]
+    "rpcs": ["wss://turing-rpc.avail.so/ws"],
+    "registryTypes": {
+      "AppId": "Compact<u32>",
+      "DataLookupItem": {
+        "appId": "AppId",
+        "start": "Compact<u32>"
+      },
+      "CompactDataLookup": {
+        "size": "Compact<u32>",
+        "index": "Vec<DataLookupItem>"
+      },
+      "KateCommitment": {
+        "rows": "Compact<u16>",
+        "cols": "Compact<u16>",
+        "commitment": "Vec<u8>",
+        "dataRoot": "H256"
+      },
+      "V3HeaderExtension": {
+        "appLookup": "CompactDataLookup",
+        "commitment": "KateCommitment"
+      },
+      "HeaderExtension": {
+        "_enum": {
+          "V1": null,
+          "V2": null,
+          "V3": "V3HeaderExtension"
+        }
+      },
+      "DaHeader": {
+        "parentHash": "Hash",
+        "number": "Compact<BlockNumber>",
+        "stateRoot": "Hash",
+        "extrinsicsRoot": "Hash",
+        "digest": "Digest",
+        "extension": "HeaderExtension"
+      },
+      "Header": "DaHeader",
+      "CheckAppIdExtra": {
+        "appId": "AppId"
+      },
+      "CheckAppIdTypes": {},
+      "CheckAppId": {
+        "extra": "CheckAppIdExtra",
+        "types": "CheckAppIdTypes"
+      },
+      "BlockLengthColumns": "Compact<u32>",
+      "BlockLengthRows": "Compact<u32>",
+      "BlockLength": {
+        "max": "PerDispatchClass",
+        "cols": "BlockLengthColumns",
+        "rows": "BlockLengthRows",
+        "chunkSize": "Compact<u32>"
+      },
+      "PerDispatchClass": {
+        "normal": "u32",
+        "operational": "u32",
+        "mandatory": "u32"
+      },
+      "DataProof": {
+        "roots": "TxDataRoots",
+        "proof": "Vec<H256>",
+        "numberOfLeaves": "Compact<u32>",
+        "leafIndex": "Compact<u32>",
+        "leaf": "H256"
+      },
+      "TxDataRoots": {
+        "dataRoot": "H256",
+        "blobRoot": "H256",
+        "bridgeRoot": "H256"
+      },
+      "ProofResponse": {
+        "dataProof": "DataProof",
+        "message": "Option<AddressedMessage>"
+      },
+      "AddressedMessage": {
+        "message": "Message",
+        "from": "H256",
+        "to": "H256",
+        "originDomain": "u32",
+        "destinationDomain": "u32",
+        "data": "Vec<u8>",
+        "id": "u64"
+      },
+      "Message": {
+        "_enum": {
+          "ArbitraryMessage": "ArbitraryMessage",
+          "FungibleToken": "FungibleToken"
+        }
+      },
+      "MessageType": {
+        "_enum": ["ArbitraryMessage", "FungibleToken"]
+      },
+      "FungibleToken": {
+        "assetId": "H256",
+        "amount": "String"
+      },
+      "BoundedData": "Vec<u8>",
+      "ArbitraryMessage": "BoundedData",
+      "Cell": {
+        "row": "u32",
+        "col": "u32"
+      }
+    },
+    "signedExtensions": {
+      "CheckAppId": {
+        "extrinsic": {
+          "appId": "AvailCoreAppId"
+        },
+        "payload": {}
+      }
+    }
   },
   {
     "id": "bifrost-testnet",
     "name": "Bifrost Testnet",
-    "account": "*25519",
     "subscanUrl": "https://bifrost-testnet.subscan.io/",
     "rpcs": []
   },
   {
     "id": "bitcountry-testnet",
     "name": "Tewai",
-    "account": "*25519",
     "rpcs": []
+  },
+  {
+    "id": "bittensor-testnet",
+    "name": "Bittensor Testnet",
+    "rpcs": ["wss://test.chain.opentensor.ai:443"]
   },
   {
     "id": "brainstorm-testnet",
     "name": "InvArch Brainstorm",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "cere-testnet",
     "name": "Cere Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "cess-testnet",
     "name": "Cess",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "chainflip-testnet",
     "name": "Chainflip Testnet",
-    "account": "*25519",
     "rpcs": ["wss://archive.perseverance.chainflip.io"]
   },
   {
     "id": "chainoli-testnet",
     "name": "Oli",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4023,
     "relay": {
@@ -135,7 +233,6 @@
   {
     "id": "charcoal-testnet",
     "name": "Charcoal",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2086,
     "relay": {
@@ -145,87 +242,73 @@
   {
     "id": "clover-testnet",
     "name": "Clover Testnet",
-    "account": "*25519",
     "subscanUrl": "https://clover-testnet.subscan.io/",
     "rpcs": []
   },
   {
     "id": "creditcoin-classic-testnet",
     "name": "Creditcoin Classic",
-    "account": "*25519",
     "rpcs": ["wss://rpc.testnet.creditcoin.network/ws"]
   },
   {
     "id": "creditcoin-testnet",
     "name": "Creditcoin Testnet",
-    "account": "*25519",
     "rpcs": ["wss://rpc.cc3-testnet.creditcoin.network/ws"]
   },
   {
     "id": "crust-maxwell-testnet",
     "name": "Crust Maxwell",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "curio-testnet",
     "name": "Curio Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "dancebox",
     "name": "Dancebox",
-    "account": "*25519",
     "rpcs": ["wss://fraa-dancebox-rpc.a.dancebox.tanssi.network"]
   },
   {
     "id": "dancebox-testnet",
     "name": "Dancebox",
-    "account": "*25519",
     "rpcs": ["wss://dancebox.tanssi-api.network"]
   },
   {
     "id": "datahighway-testnet",
     "name": "Spreehafen",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "debio-testnet",
     "name": "DeBio Testnet",
-    "account": "*25519",
     "rpcs": ["wss://gateway.testnet.octopus.network/debionetwork/554976cbb180f676f188abe14d63ca24"]
   },
   {
     "id": "dock-testnet",
     "name": "Dock Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "dolphin-testnet",
     "name": "Dolphin",
-    "account": "*25519",
     "subscanUrl": "https://dolphin.subscan.io/",
     "rpcs": []
   },
   {
     "id": "dotmog-testnet",
     "name": "DOTMog",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "edgeware-testnet",
     "name": "Beresheet",
-    "account": "*25519",
     "rpcs": ["wss://beresheet.jelliedowl.net"]
   },
   {
     "id": "encointer-testnet-rococo",
     "name": "Encointer Lietaer",
-    "account": "*25519",
     "rpcs": ["wss://rococo.api.encointer.org"],
     "paraId": 1003,
     "relay": {
@@ -235,13 +318,11 @@
   {
     "id": "encointer-testnet-standalone",
     "name": "Encointer Gesell",
-    "account": "*25519",
     "rpcs": ["wss://gesell.encointer.org"]
   },
   {
     "id": "enjin-matrixchain-testnet",
     "name": "Enjin Canary Matrixchain",
-    "account": "*25519",
     "rpcs": ["wss://rpc.matrix.canary.enjin.io"],
     "paraId": 1000,
     "relay": {
@@ -251,61 +332,51 @@
   {
     "id": "enjin-relay-testnet",
     "name": "Enjin Canary Relaychain",
-    "account": "*25519",
     "rpcs": ["wss://rpc.relay.canary.enjin.io"]
   },
   {
     "id": "equilibrium-testnet",
     "name": "Equilibrium Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "fantour-testnet",
     "name": "Fantour",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "ferrum-testnet",
     "name": "Ferrum",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "fragnova-testnet",
     "name": "Fragnova Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "galital-testnet",
     "name": "Galital PC2",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "galois-testnet",
     "name": "Galois",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "gamepower-testnet",
     "name": "GamePower",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "geek-testnet",
     "name": "GeekCash",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "giant-testnet",
     "name": "Giant",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4227,
     "relay": {
@@ -315,19 +386,16 @@
   {
     "id": "halongbay-testnet",
     "name": "Halongbay",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "harmonie-testnet",
     "name": "Harmonie",
-    "account": "secp256k1",
     "rpcs": ["wss://harmonie-endpoint-02.allfeat.io"]
   },
   {
     "id": "helixstreet-testnet",
     "name": "Helixstreet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 3025,
     "relay": {
@@ -337,7 +405,6 @@
   {
     "id": "integritee-testnet",
     "name": "Integritee Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2081,
     "relay": {
@@ -347,13 +414,11 @@
   {
     "id": "interlay-testnet-standalone",
     "name": "Interlay Testnet",
-    "account": "*25519",
     "rpcs": ["wss://api-testnet.interlay.io/parachain/"]
   },
   {
     "id": "interlay-testnet-westend",
     "name": "Interlay Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2094,
     "relay": {
@@ -363,38 +428,32 @@
   {
     "id": "ipse-testnet",
     "name": "Ipse",
-    "account": "*25519",
     "rpcs": ["wss://testnet-china.ipse.io", "wss://testnet-europe.ipse.io", "wss://testnet-usa.ipse.io"]
   },
   {
     "id": "jaz-testnet",
     "name": "Artio",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "jupiter-testnet",
     "name": "Jupiter",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "jur-testnet",
     "name": "Jur Testnet",
-    "account": "*25519",
     "rpcs": ["wss://testnet.jur.io"]
   },
   {
     "id": "karmachain-testnet",
     "name": "Karmachain",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "karura-testnet",
     "name": "Wendala",
     "themeColor": "#f93d43",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2005,
     "relay": {
@@ -404,88 +463,80 @@
   {
     "id": "khala-testnet",
     "name": "Khala Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "kilt-testnet-standalone",
     "isDefault": false,
     "name": "KILT Mashnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "kilt-testnet-standalone-2",
     "name": "KILT Peregrine",
-    "account": "*25519",
     "subscanUrl": "https://kilt-testnet.subscan.io/",
     "rpcs": ["wss://peregrine.kilt.io/parachain-public-ws/"]
   },
   {
     "id": "kintsugi-testnet",
     "name": "Kintsugi Testnet",
-    "account": "*25519",
     "rpcs": ["wss://api-dev-kintsugi.interlay.io/parachain"]
   },
   {
     "id": "klugdossier-testnet",
     "name": "Klug Dossier",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "kylin-testnet",
     "name": "Kylin Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "laminar-testnet",
     "name": "Turbulence",
-    "account": "*25519",
     "rpcs": []
+  },
+  {
+    "id": "laos-testnet",
+    "name": "Laos Sigma",
+    "rpcs": ["wss://rpc.laossigma.laosfoundation.io"],
+    "hasExtrinsicSignatureTypePrefix": false
   },
   {
     "id": "liberland-testnet",
     "name": "Liberland Testnet",
-    "account": "*25519",
     "rpcs": ["wss://testchain.liberland.org"]
   },
   {
     "id": "litentry-testnet",
     "name": "Litentry Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "logion-testnet",
     "name": "Logion Testnet",
-    "account": "*25519",
     "rpcs": ["wss://test-para-rpc01.logion.network"]
   },
   {
     "id": "mandala-testnet",
     "name": "Mandala",
-    "account": "*25519",
     "subscanUrl": "https://acala-testnet.subscan.io/",
     "rpcs": []
   },
   {
     "id": "manta-testnet",
     "name": "Manta Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "minix-testnet",
     "name": "MiniX Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "moonbase-alpha-testnet",
     "name": "Moonbase Alpha",
-    "account": "secp256k1",
     "subscanUrl": "https://moonbase.subscan.io/",
     "rpcs": [
       "wss://moonbase-rpc.dwellir.com",
@@ -496,7 +547,6 @@
   {
     "id": "moonshadow-testnet",
     "name": "Moonshadow",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2002,
     "relay": {
@@ -506,37 +556,26 @@
   {
     "id": "mybank-testnet",
     "name": "mybank.network",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "myriad-testnet",
     "name": "Myriad Testnet",
-    "account": "*25519",
     "rpcs": ["wss://gateway.testnet.octopus.network/myriad/8f543a1c219f14d83c0faedefdd5be6e"]
   },
   {
     "id": "nftmart-testnet",
     "name": "NFTMart Testnet",
-    "account": "*25519",
     "rpcs": []
-  },
-  {
-    "id": "niskala-testnet",
-    "name": "Niskala Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://niskala.mandalachain.io"]
   },
   {
     "id": "nodle-testnet",
     "name": "Arcadia",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "opal-testnet",
     "name": "Opal",
-    "account": "*25519",
     "rpcs": [
       "wss://ws-opal.unique.network",
       "wss://us-ws-opal.unique.network",
@@ -547,19 +586,16 @@
   {
     "id": "opportunity-testnet",
     "name": "Opportunity",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "pangoro-testnet",
     "name": "Pangoro2",
-    "account": "secp256k1",
     "rpcs": []
   },
   {
     "id": "paseo-frequency-testnet",
     "name": "Frequency Testnet",
-    "account": "*25519",
     "rpcs": ["wss://0.testnet.amplica.io"],
     "paraId": 4000,
     "relay": {
@@ -569,74 +605,62 @@
   {
     "id": "paseo-testnet",
     "name": "Paseo",
-    "account": "*25519",
     "rpcs": ["wss://paseo.rpc.amforc.com"]
   },
   {
     "id": "phala-testnet",
     "name": "Phala Testnet",
-    "account": "*25519",
     "rpcs": ["wss://poc6.phala.network/ws"]
   },
   {
     "id": "phoenix-testnet",
     "name": "Phoenix Mashnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "phyken-network-testnet",
     "name": "Phyken",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "phyken-testnet",
     "name": "Phyken Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "pichiu-testnet",
     "name": "Pichiu Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "polkadex-testnet",
     "name": "Polkadex Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "polymesh-testnet",
     "name": "Polymesh Testnet",
-    "account": "*25519",
     "subscanUrl": "https://polymesh-testnet.subscan.io/",
     "rpcs": ["wss://testnet-rpc.polymesh.live"]
   },
   {
     "id": "pontem-testnet",
     "name": "Pontem",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "prism-testnet",
     "name": "Prism",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "realis-testnet",
     "name": "Realis.Network",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "regionx-cocos-testnet",
     "name": "RegionX Cocos",
-    "account": "*25519",
     "rpcs": ["wss://cocos-node.regionx.tech"],
     "paraId": 4459,
     "relay": {
@@ -646,13 +670,11 @@
   {
     "id": "riochain-testnet",
     "name": "RioChain Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "robonomics-testnet",
     "name": "Robonomics Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2048,
     "relay": {
@@ -662,7 +684,6 @@
   {
     "id": "rocfinity-testnet",
     "name": "Rocfinity",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2021,
     "relay": {
@@ -670,20 +691,9 @@
     }
   },
   {
-    "id": "rococo-acurast-testnet",
-    "name": "Acurast",
-    "account": "*25519",
-    "rpcs": ["wss://acurast-testnet-ws.prod.gke.papers.tech"],
-    "paraId": 2239,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "rococo-amplitude-testnet",
     "name": "Amplitude Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://rpc-foucoco.pendulumchain.tech"],
+    "rpcs": [],
     "paraId": 2124,
     "relay": {
       "id": "rococo-testnet"
@@ -692,7 +702,6 @@
   {
     "id": "rococo-asset-hub-testnet",
     "name": "Rococo Asset Hub",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/rococo-statemine_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/rococo-statemine_metadata_latest.apng",
     "rpcs": ["wss://asset-hub-rococo-rpc.dwellir.com", "wss://rococo-asset-hub-rpc.polkadot.io"],
@@ -704,7 +713,6 @@
   {
     "id": "rococo-aventus-testnet",
     "name": "Aventus Testnet",
-    "account": "*25519",
     "rpcs": ["wss://public-rpc.testnet.aventus.network"],
     "paraId": 2056,
     "relay": {
@@ -712,19 +720,8 @@
     }
   },
   {
-    "id": "rococo-bajun-testnet",
-    "name": "Bajun Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://rpc-rococo.bajun.network"],
-    "paraId": 2119,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "rococo-basilisk-testnet",
     "name": "Basilisk Testnet",
-    "account": "*25519",
     "rpcs": ["wss://basilisk-rococo-rpc.play.hydration.cloud"],
     "paraId": 2090,
     "relay": {
@@ -734,7 +731,6 @@
   {
     "id": "rococo-bifrost-testnet",
     "name": "Bifrost Testnet",
-    "account": "*25519",
     "rpcs": ["wss://bifrost-rpc.rococo.liebi.com/ws"],
     "paraId": 2030,
     "relay": {
@@ -744,7 +740,6 @@
   {
     "id": "rococo-bitgreen-testnet",
     "name": "Bitgreen Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 20048,
     "relay": {
@@ -754,7 +749,6 @@
   {
     "id": "rococo-bridge-hub-testnet",
     "name": "Rococo Bridge Hub",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/rococo-bridge-hub-rococo_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/rococo-bridge-hub-rococo_metadata_latest.apng",
     "rpcs": ["wss://bridge-hub-rococo-rpc.dwellir.com", "wss://rococo-bridge-hub-rpc.polkadot.io"],
@@ -766,7 +760,6 @@
   {
     "id": "rococo-catalyst-testnet",
     "name": "Catalyst",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2031,
     "relay": {
@@ -776,7 +769,6 @@
   {
     "id": "rococo-confti-testnet",
     "name": "Confti",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4094,
     "relay": {
@@ -786,7 +778,6 @@
   {
     "id": "rococo-contracts-testnet",
     "name": "Contracts",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/rococo-contracts-rococo_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/rococo-contracts-rococo_metadata_latest.apng",
     "rpcs": ["wss://rococo-contracts-rpc.polkadot.io"],
@@ -798,7 +789,6 @@
   {
     "id": "rococo-coretime-testnet",
     "name": "Coretime Testnet",
-    "account": "*25519",
     "rpcs": ["wss://rococo-coretime-rpc.polkadot.io"],
     "paraId": 1005,
     "relay": {
@@ -808,7 +798,6 @@
   {
     "id": "rococo-crust-testnet",
     "name": "Crust Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2012,
     "relay": {
@@ -818,7 +807,6 @@
   {
     "id": "rococo-curio-testnet",
     "name": "Curio Testnet",
-    "account": "*25519",
     "rpcs": ["wss://testnet.parachain.curioinvest.com/"],
     "paraId": 3339,
     "relay": {
@@ -828,7 +816,6 @@
   {
     "id": "rococo-dolphin-testnet",
     "name": "Dolphin",
-    "account": "*25519",
     "subscanUrl": "https://dolphin.subscan.io/",
     "rpcs": [],
     "paraId": 2084,
@@ -840,7 +827,6 @@
     "id": "rococo-ethos-testnet",
     "isDefault": false,
     "name": "Ethos",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2095,
     "relay": {
@@ -850,7 +836,6 @@
   {
     "id": "rococo-ewx-testnet",
     "name": "Rex",
-    "account": "*25519",
     "rpcs": ["wss://public-rpc.testnet.energywebx.com/"],
     "paraId": 3345,
     "relay": {
@@ -860,7 +845,6 @@
   {
     "id": "rococo-genshiro-testnet",
     "name": "Genshiro Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2024,
     "relay": {
@@ -870,7 +854,6 @@
   {
     "id": "rococo-hydra-dx-testnet",
     "name": "HydraDX Testnet",
-    "account": "*25519",
     "rpcs": ["wss://hydradx-rococo-rpc.play.hydration.cloud"],
     "paraId": 2034,
     "relay": {
@@ -878,19 +861,8 @@
     }
   },
   {
-    "id": "rococo-hyperbridge-testnet",
-    "name": "Hyperbridge Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://hyperbridge-gargantua-rpc.blockops.network"],
-    "paraId": 4374,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "rococo-idiyanale-testnet",
     "name": "Idiyanale",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4222,
     "relay": {
@@ -900,7 +872,6 @@
   {
     "id": "rococo-imbue-testnet",
     "name": "Imbue Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2121,
     "relay": {
@@ -910,7 +881,6 @@
   {
     "id": "rococo-integritee-testnet",
     "name": "Integritee Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 3002,
     "relay": {
@@ -920,7 +890,6 @@
   {
     "id": "rococo-invo-testnet",
     "name": "Invo",
-    "account": "*25519",
     "rpcs": ["wss://chain.dev.ourinvo.com"],
     "paraId": 4377,
     "relay": {
@@ -930,7 +899,6 @@
   {
     "id": "rococo-kabocha-testnet",
     "name": "Kabocha Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2113,
     "relay": {
@@ -940,7 +908,6 @@
   {
     "id": "rococo-kaizen-testnet",
     "name": "Kaizen",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2040,
     "relay": {
@@ -950,7 +917,6 @@
   {
     "id": "rococo-kilt-testnet",
     "name": "Rilt",
-    "account": "*25519",
     "rpcs": ["wss://rilt.kilt.io"],
     "paraId": 2086,
     "relay": {
@@ -960,7 +926,6 @@
   {
     "id": "rococo-kinera-testnet",
     "name": "Kinera",
-    "account": "*25519",
     "rpcs": ["wss://node.kinera.network"],
     "paraId": 4437,
     "relay": {
@@ -970,7 +935,6 @@
   {
     "id": "rococo-litentry-testnet",
     "name": "Litentry Testnet",
-    "account": "*25519",
     "rpcs": ["wss://rpc.rococo-parachain.litentry.io"],
     "paraId": 2106,
     "relay": {
@@ -980,7 +944,6 @@
   {
     "id": "rococo-magnet-testnet",
     "name": "Magnet",
-    "account": "*25519",
     "rpcs": ["wss://magnet-rpc.magport.io/ws"],
     "paraId": 4361,
     "relay": {
@@ -990,7 +953,6 @@
   {
     "id": "rococo-mangata-testnet",
     "name": "MangataX Testnet",
-    "account": "*25519",
     "subscanUrl": "https://mangata-testnet.subscan.io/",
     "rpcs": ["wss://collator-01-ws-rococo.mangata.online"],
     "paraId": 2110,
@@ -1001,7 +963,6 @@
   {
     "id": "rococo-md-5-testnet",
     "name": "MD5",
-    "account": "*25519",
     "rpcs": ["wss://c1md5.hashed.network"],
     "paraId": 2093,
     "relay": {
@@ -1011,7 +972,6 @@
   {
     "id": "rococo-moonsama-testnet",
     "name": "Moonsama Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2055,
     "relay": {
@@ -1021,7 +981,6 @@
   {
     "id": "rococo-muse-testnet",
     "name": "Muse",
-    "account": "secp256k1",
     "rpcs": ["wss://rococo-muse-rpc.polkadot.io"],
     "paraId": 3369,
     "relay": {
@@ -1031,7 +990,6 @@
   {
     "id": "rococo-neuro-web-testnet",
     "name": "NeuroWeb Testnet",
-    "account": "*25519",
     "rpcs": ["wss://parachain-testnet-rpc.origin-trail.network/"],
     "paraId": 2043,
     "relay": {
@@ -1041,7 +999,6 @@
   {
     "id": "rococo-nodle-testnet",
     "name": "Nodle Testnet",
-    "account": "*25519",
     "rpcs": ["wss://node-6957502816543653888.lh.onfinality.io/ws?apikey=09b04494-3139-4b57-a5d1-e1c4c18748ce"],
     "paraId": 2026,
     "relay": {
@@ -1051,7 +1008,6 @@
   {
     "id": "rococo-open-zeppelin-testnet",
     "name": "OpenZeppelin Runtime Template",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4354,
     "relay": {
@@ -1059,20 +1015,8 @@
     }
   },
   {
-    "id": "rococo-pangolin-testnet",
-    "name": "Pangolin2",
-    "account": "secp256k1",
-    "subscanUrl": "https://pangolin-parachain.subscan.io/",
-    "rpcs": ["wss://pangolin-rpc.darwinia.network"],
-    "paraId": 2105,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "rococo-people-testnet",
     "name": "People Testnet",
-    "account": "*25519",
     "rpcs": ["wss://rococo-people-rpc.polkadot.io"],
     "paraId": 1004,
     "relay": {
@@ -1082,7 +1026,6 @@
   {
     "id": "rococo-phala-testnet",
     "name": "Rhala",
-    "account": "*25519",
     "rpcs": ["wss://rhala-node.phala.network/ws"],
     "paraId": 2004,
     "relay": {
@@ -1092,7 +1035,6 @@
   {
     "id": "rococo-picasso-testnet",
     "name": "Picasso Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2087,
     "relay": {
@@ -1102,7 +1044,6 @@
   {
     "id": "rococo-societal-testnet",
     "name": "Societal",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4253,
     "relay": {
@@ -1112,7 +1053,6 @@
   {
     "id": "rococo-sora-testnet",
     "name": "Sora Testnet",
-    "account": "*25519",
     "rpcs": ["wss://ws.parachain-collator-1.c1.stg1.sora2.soramitsu.co.jp"],
     "paraId": 2011,
     "relay": {
@@ -1122,7 +1062,6 @@
   {
     "id": "rococo-spreehafen-testnet",
     "name": "Spreehafen",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2116,
     "relay": {
@@ -1132,7 +1071,6 @@
   {
     "id": "rococo-subsocial-testnet",
     "name": "SoonsocialX",
-    "account": "*25519",
     "rpcs": ["wss://rco-para.subsocial.network"],
     "paraId": 2100,
     "relay": {
@@ -1142,7 +1080,6 @@
   {
     "id": "rococo-subzero-testnet",
     "name": "Subzero Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4040,
     "relay": {
@@ -1152,7 +1089,6 @@
   {
     "id": "rococo-tinkernet-testnet",
     "name": "Tinkernet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2125,
     "relay": {
@@ -1160,29 +1096,8 @@
     }
   },
   {
-    "id": "rococo-trappist-testnet",
-    "name": "Trappist",
-    "account": "*25519",
-    "rpcs": ["wss://rococo-trappist-rpc.polkadot.io"],
-    "paraId": 1836,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
-    "id": "rococo-turing-testnet",
-    "name": "Turing Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://rpc.turing-staging.oak.tech"],
-    "paraId": 2114,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "rococo-unit-network-testnet",
     "name": "Unit",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 4168,
     "relay": {
@@ -1192,7 +1107,6 @@
   {
     "id": "rococo-virto-testnet",
     "name": "Virto",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 3003,
     "relay": {
@@ -1202,7 +1116,6 @@
   {
     "id": "rococo-watr-testnet",
     "name": "Watr Testnet",
-    "account": "*25519",
     "rpcs": ["wss://rpc.dev.watr.org"],
     "paraId": 2058,
     "relay": {
@@ -1212,7 +1125,6 @@
   {
     "id": "rococo-yerba-testnet",
     "name": "Yerba Testnet",
-    "account": "*25519",
     "rpcs": ["wss://rpc.dev.yerba.network"],
     "paraId": 4292,
     "relay": {
@@ -1222,7 +1134,6 @@
   {
     "id": "rococo-zeitgeist-testnet",
     "name": "Zeitgeist Battery Station",
-    "account": "*25519",
     "rpcs": ["wss://bsr.zeitgeist.pm"],
     "paraId": 2101,
     "relay": {
@@ -1230,38 +1141,24 @@
     }
   },
   {
-    "id": "roroco-laos-testnet",
-    "name": "Giedi",
-    "account": "secp256k1",
-    "rpcs": ["wss://rpc.giedi.laosfoundation.io"],
-    "paraId": 4343,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
     "id": "sherpax-testnet",
     "name": "Sherpax",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "shibuya-testnet",
     "name": "Shibuya",
-    "account": "*25519",
     "subscanUrl": "https://shibuya.subscan.io/",
     "rpcs": ["wss://shibuya-rpc.dwellir.com", "wss://rpc.shibuya.astar.network"]
   },
   {
     "id": "skyekiwi-testnet",
     "name": "SkyeKiwi",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "snowbridge-asset-hub-testnet",
     "name": "Snowbridge Asset Hub",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 3416,
     "relay": {
@@ -1271,7 +1168,6 @@
   {
     "id": "snowbridge-bridge-hub-testnet",
     "name": "Snowbridge Bridge Hub",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 3016,
     "relay": {
@@ -1281,7 +1177,6 @@
   {
     "id": "sora-substrate-testnet",
     "name": "Sora Testnet",
-    "account": "*25519",
     "rpcs": [
       "wss://ws.framenode-1.s1.stg1.sora2.soramitsu.co.jp",
       "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp",
@@ -1292,7 +1187,6 @@
   {
     "id": "stagex-testnet",
     "name": "Stagex",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2007,
     "relay": {
@@ -1302,155 +1196,116 @@
   {
     "id": "subdao-testnet",
     "name": "SubDAO Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "subgame-testnet",
     "name": "SubGame Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "subspace-farmnet-testnet",
     "name": "Subspace Farmnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "subspace-gemini-1-testnet",
     "name": "Subspace Gemini",
-    "account": "*25519",
     "rpcs": ["wss://eu.gemini-1b.subspace.network/ws"]
   },
   {
     "id": "subspace-gemini-2-a-testnet",
     "name": "Subspace Gemini 2a",
-    "account": "*25519",
     "rpcs": ["wss://eu-0.gemini-2a.subspace.network/ws"]
   },
   {
     "id": "subspace-gemini-3-f-testnet",
     "name": "Subspace Gemini 3f",
-    "account": "*25519",
     "rpcs": ["wss://rpc-1.gemini-3f.subspace.network/ws"]
   },
   {
     "id": "subspace-gemini-3-g-nova-testnet",
     "name": "Subspace Gemini 3g Nova",
-    "account": "secp256k1",
     "rpcs": ["wss://nova.gemini-3g.subspace.network/ws"]
   },
   {
     "id": "subspace-gemini-3-g-testnet",
     "name": "Subspace Gemini 3g",
-    "account": "*25519",
     "rpcs": ["wss://rpc-1.gemini-3g.subspace.network/ws", "wss://rpc-0.gemini-3g.subspace.network/ws"]
   },
   {
     "id": "subspace-gemini-3-h-nova-testnet",
     "name": "Subspace Gemini 3h Nova",
-    "account": "*25519",
     "rpcs": ["wss://nova-0.gemini-3h.subspace.network/ws", "wss://nova-1.gemini-3h.subspace.network/ws"]
   },
   {
     "id": "subspace-gemini-3-h-testnet",
     "name": "Subspace Gemini 3h",
-    "account": "*25519",
     "rpcs": ["wss://rpc-0.gemini-3h.subspace.network/ws", "wss://rpc-1.gemini-3h.subspace.network/ws"]
   },
   {
     "id": "subspace-testnet",
     "name": "Subspace",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "substrate-testnet",
     "name": "Flaming Fir",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "sumi-testnet",
     "name": "Sumi Testnet",
-    "account": "*25519",
     "rpcs": []
-  },
-  {
-    "id": "t-0-rn-testnet",
-    "name": "t0rn",
-    "account": "*25519",
-    "rpcs": ["wss://rpc.t0rn.io"],
-    "paraId": 3333,
-    "relay": {
-      "id": "rococo-testnet"
-    }
-  },
-  {
-    "id": "tangle-testnet",
-    "name": "Tangle Testnet",
-    "account": "*25519",
-    "rpcs": ["wss://testnet-rpc-archive.tangle.tools"]
   },
   {
     "id": "ternoa-alphanet-testnet",
     "name": "Ternoa Alphanet",
-    "account": "*25519",
     "rpcs": ["wss://alphanet.ternoa.com"]
   },
   {
     "id": "ternoa-testnet",
     "name": "Ternoa Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "thebifrost-testnet",
     "name": "The Bifrost Testnet",
-    "account": "secp256k1",
     "rpcs": ["wss://public-01.testnet.bifrostnetwork.com/wss", "wss://public-02.testnet.bifrostnetwork.com/wss"]
   },
   {
     "id": "uniarts-testnet",
     "name": "UniArts Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "unique-testnet",
     "name": "Unique Testnet",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "unitv-testnet",
     "name": "Unit",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "vara-testnet",
     "name": "Vara Testnet",
-    "account": "*25519",
     "rpcs": ["wss://testnet.vara.network"]
   },
   {
     "id": "vodka-testnet",
     "name": "Vodka",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "web-3-games-testnet",
     "name": "Web3Games",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "westend-asset-hub-testnet",
     "name": "Westend Asset Hub",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend-westmint_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng",
     "rpcs": [
@@ -1468,7 +1323,6 @@
   {
     "id": "westend-bridge-hub-testnet",
     "name": "Westend Bridge Hub",
-    "account": "*25519",
     "rpcs": [
       "wss://bridge-hub-westend-rpc.dwellir.com",
       "wss://westend-bridge-hub-rpc-tn.dwellir.com",
@@ -1484,7 +1338,6 @@
   {
     "id": "westend-collectives-testnet",
     "name": "Collectives Testnet",
-    "account": "*25519",
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend-collectives-westend_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend-collectives-westend_metadata_latest.apng",
     "rpcs": [
@@ -1502,7 +1355,6 @@
   {
     "id": "westend-coretime-testnet",
     "name": "Coretime Testnet",
-    "account": "*25519",
     "rpcs": [
       "wss://coretime-westend-rpc.dwellir.com",
       "wss://sys.ibp.network/coretime-westend",
@@ -1517,7 +1369,6 @@
   {
     "id": "westend-people-testnet",
     "name": "People Testnet",
-    "account": "*25519",
     "rpcs": [
       "wss://people-westend-rpc.dwellir.com",
       "wss://sys.ibp.network/people-westend",
@@ -1532,7 +1383,6 @@
   {
     "id": "westend-pichiu-testnet",
     "name": "Pichiu Testnet",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2112,
     "relay": {
@@ -1542,7 +1392,6 @@
   {
     "id": "westend-standard-testnet",
     "name": "Standard",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2094,
     "relay": {
@@ -1552,7 +1401,6 @@
   {
     "id": "whala-testnet",
     "name": "Whala",
-    "account": "*25519",
     "rpcs": [],
     "paraId": 2013,
     "relay": {
@@ -1562,19 +1410,16 @@
   {
     "id": "z-cloak-testnet",
     "name": "zCloak",
-    "account": "*25519",
     "rpcs": []
   },
   {
     "id": "zero-alphaville-testnet",
     "name": "ZERO Alphaville",
-    "account": "*25519",
     "rpcs": ["wss://rpc.dev.gamedao.net"]
   },
   {
     "id": "zero-testnet",
     "name": "Zero Alphaville",
-    "account": "*25519",
     "rpcs": []
   },
   {

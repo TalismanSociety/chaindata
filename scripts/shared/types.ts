@@ -27,6 +27,10 @@ export type ConfigChain = {
   paraId?: number
   relay?: { id: string }
   balancesConfig?: Record<string, Record<string, unknown>>
+  hasExtrinsicSignatureTypePrefix?: boolean
+  registryTypes?: any
+  signedExtensions?: any
+  hasCheckMetadataHash?: boolean
 }
 
 /** Represents an EvmNetwork from `evm-networks.json` */
@@ -53,6 +57,7 @@ export type ConfigEvmNetwork = {
 export type ChainExtrasCache = {
   // These are all copied directly into each chain
   id: string
+  account: string
   genesisHash: string
   prefix: number
   chainName: string
