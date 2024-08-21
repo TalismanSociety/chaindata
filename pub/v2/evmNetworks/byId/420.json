@@ -1,7 +1,7 @@
 {
   "id": "420",
   "isTestnet": true,
-  "sortIndex": 1224,
+  "sortIndex": 1496,
   "name": "Optimism Goerli Testnet",
   "themeColor": "#505050",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -10,16 +10,17 @@
   "explorerUrl": "https://optimism-goerli.blockscout.com",
   "rpcs": [
     {
-      "url": "https://optimism-goerli.gateway.tenderly.co"
-    },
-    {
-      "url": "https://optimism-testnet.drpc.org"
-    },
-    {
       "url": "https://optimism-goerli-rpc.publicnode.com"
+    },
+    {
+      "url": "https://optimism-goerli.gateway.tenderly.co"
     }
   ],
   "substrateChain": null,
+  "feeType": "eip-1559",
+  "l2FeeType": {
+    "type": "op-stack"
+  },
   "balancesConfig": [
     {
       "moduleType": "evm-native",

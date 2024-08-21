@@ -1,7 +1,7 @@
 {
   "id": "648",
   "isTestnet": false,
-  "sortIndex": 228,
+  "sortIndex": 274,
   "name": "Endurance Smart Chain Mainnet",
   "themeColor": "#505050",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -20,7 +20,31 @@
       "moduleConfig": {
         "symbol": "ACE",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "endurance",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/endurance.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "PeACE",
+            "coingeckoId": "primeace",
+            "contractAddress": "0x6a4a0c6f1f1644cee981ac9a6d9f4ff54ab3cd3d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/primeace.webp"
+          },
+          {
+            "symbol": "WACE",
+            "coingeckoId": "wrapped-ace",
+            "contractAddress": "0x85119527cf38f6ccf7b1b8f8fad05145358aaa81",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-ace.webp"
+          }
+        ]
       }
     }
   ],

@@ -2,7 +2,7 @@
   "id": "kreivo",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 394,
+  "sortIndex": 464,
   "genesisHash": "0xc710a5f16adc17bcd212cff0aedcbf1c1212a043cdc0fb2dcba861efe5305b01",
   "prefix": 2,
   "name": "Kreivo",
@@ -12,9 +12,15 @@
   "chainType": "Live",
   "implName": "kreivo-parachain",
   "specName": "kreivo-parachain",
-  "specVersion": "0",
-  "nativeToken": null,
-  "tokens": [],
+  "specVersion": "111",
+  "nativeToken": {
+    "id": "kreivo-substrate-native"
+  },
+  "tokens": [
+    {
+      "id": "kreivo-substrate-native"
+    }
+  ],
   "account": "*25519",
   "subscanUrl": null,
   "chainspecQrUrl": null,
@@ -24,6 +30,9 @@
   "rpcs": [
     {
       "url": "wss://kreivo.kippu.rocks/"
+    },
+    {
+      "url": "wss://kreivo.io/"
     }
   ],
   "evmNetworks": [],
@@ -33,5 +42,6 @@
     "id": "kusama"
   },
   "balancesConfig": [],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": false
 }

@@ -2,17 +2,17 @@
   "id": "hydradx",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 334,
+  "sortIndex": 400,
   "genesisHash": "0xafdc188f45c71dacbaa0b62e16a91f726c7b8699a9748cdf715459de6b7f366d",
   "prefix": 63,
-  "name": "HydraDX",
-  "themeColor": "#52b2ed",
+  "name": "Hydration",
+  "themeColor": "#e53e76",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/hydradx.svg",
-  "chainName": "HydraDX",
+  "chainName": "Hydration",
   "chainType": "Live",
   "implName": "hydradx",
   "specName": "hydradx",
-  "specVersion": "228",
+  "specVersion": "253",
   "nativeToken": {
     "id": "hydradx-substrate-native"
   },
@@ -70,10 +70,19 @@
     },
     {
       "id": "hydradx-substrate-tokens-intr"
+    },
+    {
+      "id": "hydradx-substrate-tokens-wifd"
+    },
+    {
+      "id": "hydradx-substrate-tokens-bork"
+    },
+    {
+      "id": "hydradx-substrate-tokens-wud"
     }
   ],
   "account": "*25519",
-  "subscanUrl": "https://hydradx.subscan.io/",
+  "subscanUrl": "https://hydration.subscan.io/",
   "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_specs.png",
   "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng",
   "isUnknownFeeToken": true,
@@ -83,10 +92,22 @@
       "url": "wss://hydradx-rpc.dwellir.com"
     },
     {
+      "url": "wss://hydration.ibp.network"
+    },
+    {
+      "url": "wss://hydration.dotters.network"
+    },
+    {
       "url": "wss://rpc.hydradx.cloud"
     },
     {
       "url": "wss://rpc.helikon.io/hydradx"
+    },
+    {
+      "url": "wss://hydradx.paras.ibp.network"
+    },
+    {
+      "url": "wss://hydradx.paras.dotters.network"
     }
   ],
   "evmNetworks": [],
@@ -111,14 +132,14 @@
             "symbol": "LRNA",
             "decimals": 12,
             "ed": "400000000",
-            "onChainId": 1,
+            "onChainId": "1",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
             "symbol": "DAI",
             "decimals": 18,
             "ed": "10000000000000000",
-            "onChainId": 2,
+            "onChainId": "2",
             "coingeckoId": "dai",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
           },
@@ -126,7 +147,7 @@
             "symbol": "WBTC",
             "decimals": 8,
             "ed": "44",
-            "onChainId": 3,
+            "onChainId": "3",
             "coingeckoId": "bitcoin",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin.webp"
           },
@@ -134,15 +155,15 @@
             "symbol": "WETH",
             "decimals": 18,
             "ed": "7000000000000",
-            "onChainId": 4,
-            "coingeckoId": "ethereum",
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ethereum.webp"
+            "onChainId": "4",
+            "coingeckoId": "weth",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
           },
           {
             "symbol": "DOT",
             "decimals": 10,
             "ed": "17540000",
-            "onChainId": 5,
+            "onChainId": "5",
             "coingeckoId": "polkadot",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
           },
@@ -150,7 +171,7 @@
             "symbol": "APE",
             "decimals": 18,
             "ed": "2518891687657430",
-            "onChainId": 6,
+            "onChainId": "6",
             "coingeckoId": "apecoin",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/apecoin.webp"
           },
@@ -158,7 +179,7 @@
             "symbol": "USDC",
             "decimals": 6,
             "ed": "10000",
-            "onChainId": 7,
+            "onChainId": "7",
             "coingeckoId": "usd-coin",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
           },
@@ -166,7 +187,7 @@
             "symbol": "PHA",
             "decimals": 12,
             "ed": "54945054945",
-            "onChainId": 8,
+            "onChainId": "8",
             "coingeckoId": "pha",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pha.webp"
           },
@@ -174,7 +195,7 @@
             "symbol": "ASTR",
             "decimals": 18,
             "ed": "147058823529412000",
-            "onChainId": 9,
+            "onChainId": "9",
             "coingeckoId": "astar",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/astar.webp"
           },
@@ -182,7 +203,7 @@
             "symbol": "USDT",
             "decimals": 6,
             "ed": "10000",
-            "onChainId": 10,
+            "onChainId": "10",
             "coingeckoId": "tether",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
           },
@@ -190,7 +211,7 @@
             "symbol": "iBTC",
             "decimals": 8,
             "ed": "36",
-            "onChainId": 11,
+            "onChainId": "11",
             "coingeckoId": "interbtc",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ibtc.svg"
           },
@@ -198,7 +219,7 @@
             "symbol": "ZTG",
             "decimals": 10,
             "ed": "1204151916",
-            "onChainId": 12,
+            "onChainId": "12",
             "coingeckoId": "zeitgeist",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zeitgeist.webp"
           },
@@ -206,7 +227,7 @@
             "symbol": "CFG",
             "decimals": 18,
             "ed": "32467532467532500",
-            "onChainId": 13,
+            "onChainId": "13",
             "coingeckoId": "centrifuge",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/centrifuge.webp"
           },
@@ -214,7 +235,7 @@
             "symbol": "BNC",
             "decimals": 12,
             "ed": "68795189840",
-            "onChainId": 14,
+            "onChainId": "14",
             "coingeckoId": "bifrost-native-coin",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bnc.svg"
           },
@@ -222,7 +243,7 @@
             "symbol": "vDOT",
             "decimals": 10,
             "ed": "18761726",
-            "onChainId": 15,
+            "onChainId": "15",
             "coingeckoId": "voucher-dot",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vdot.svg"
           },
@@ -230,7 +251,7 @@
             "symbol": "GLMR",
             "ed": "34854864344868000",
             "decimals": 18,
-            "onChainId": 16,
+            "onChainId": "16",
             "coingeckoId": "moonbeam",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/moonbeam.webp"
           },
@@ -238,7 +259,7 @@
             "symbol": "INTR",
             "decimals": 10,
             "ed": "6164274209",
-            "onChainId": 17,
+            "onChainId": "17",
             "coingeckoId": "interlay",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/intr.svg"
           },
@@ -246,7 +267,7 @@
             "symbol": "DAI",
             "ed": "10000000000000000",
             "decimals": 18,
-            "onChainId": 18,
+            "onChainId": "18",
             "coingeckoId": "dai",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
           },
@@ -254,7 +275,7 @@
             "symbol": "WBTC",
             "ed": "34",
             "decimals": 8,
-            "onChainId": 19,
+            "onChainId": "19",
             "coingeckoId": "wrapped-btc-wormhole",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-btc-wormhole.webp"
           },
@@ -262,13 +283,35 @@
             "symbol": "WETH",
             "ed": "5390835579515",
             "decimals": 18,
-            "onChainId": 20,
+            "onChainId": "20",
             "coingeckoId": "weth",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+          },
+          {
+            "symbol": "WIFD",
+            "ed": "1",
+            "decimals": 10,
+            "onChainId": "1000082",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wifd.svg"
+          },
+          {
+            "symbol": "BORK",
+            "ed": "1",
+            "decimals": 10,
+            "onChainId": "1000148",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bork.svg"
+          },
+          {
+            "symbol": "WUD",
+            "ed": "200000000000000",
+            "decimals": 10,
+            "onChainId": "1000085",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wud.webp"
           }
         ]
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

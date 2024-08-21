@@ -1,7 +1,7 @@
 {
   "id": "42161",
   "isTestnet": false,
-  "sortIndex": 38,
+  "sortIndex": 47,
   "name": "Arbitrum One",
   "themeColor": "#2d374b",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/42161.svg",
@@ -14,6 +14,9 @@
     },
     {
       "url": "https://rpc.ankr.com/arbitrum"
+    },
+    {
+      "url": "https://arbitrum.rpc.subquery.network/public"
     }
   ],
   "substrateChain": null,
@@ -29,17 +32,243 @@
       }
     },
     {
+      "moduleType": "evm-uniswapv2",
+      "moduleConfig": {
+        "pools": [
+          {
+            "contractAddress": "0x716fBdA28320849Daa418996CA9403Fe9d1fA564",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "YAKS",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xb50a8e92CB9782C9b8f3c88e4Ee8A1d0AA2221D7",
+            "coingeckoId0": "weth",
+            "coingeckoId1": "yak-dao"
+          },
+          {
+            "contractAddress": "0xFeBEB593140388ec4B30F08f893c54D5e282EfDD",
+            "decimals": 18,
+            "symbol0": "DOG",
+            "symbol1": "WETH",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x4425742F1EC8D98779690b5A3A6276Db85Ddc01A",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId0": "the-doge-nft",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0x348821a9326Fb05949e7B0f56Eca46436153a3ba",
+            "decimals": 18,
+            "symbol0": "BO",
+            "symbol1": "WETH",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x60460971a3D79ef265dfafA393ffBCe97d91E8B8",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0x4372A55c99785A31494D0008913Fb8272c86a2d2",
+            "decimals": 18,
+            "symbol0": "TAOx",
+            "symbol1": "WETH",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x032598D46F1d416bFA2Af63bB744c5D4Ac93D131",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0x400Bf6FA87705b45Edb04B39e66812F807456D06",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "OSAK",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xbFd5206962267c7b4b4A8B3D76AC2E1b2A5c4d5e",
+            "coingeckoId0": "weth",
+            "coingeckoId1": "osaka-protocol"
+          },
+          {
+            "contractAddress": "0x8280B26b71E10B7C455C15B3Ac23Ca46e2b91387",
+            "decimals": 18,
+            "symbol0": "XWS",
+            "symbol1": "WETH",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x6a05743697C97a1B58f2c1902D07b99532e21A7d",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0x0Ac7e584d45Eef85652c57A994deeCC3a4dD7982",
+            "decimals": 18,
+            "symbol0": "SCHRODI",
+            "symbol1": "WETH",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x35cA1E5A9B1c09Fa542Fa18D1Ba4D61c8eDfF852",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId0": "schrodi",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0x055aF1267F2C111feB0eec8Ed13f2F9adc208ca1",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "FUGG",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0x88BAD8F748Bc9FB19D93972B300e523e22073eeE",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0xF64Dfe17C8b87F012FCf50FbDA1D62bfA148366a",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "USDC",
+            "decimals0": 18,
+            "decimals1": 6,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+            "coingeckoId0": "weth",
+            "coingeckoId1": "usd-coin"
+          },
+          {
+            "contractAddress": "0xA1ac9E7f8Bf2E43A98E03aB182e7917cAcf7BB10",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "DEAI",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0x95d486aF638A6972F9C0bE2c29d281e404aCB08a",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0x6FA774876Fe6badEB1a4d0c6dCf9430A72d3873B",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "YSARB",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xE086022290444bcD279D22c56925cc5Eda389999",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0xd04Bc65744306A5C149414dd3CD5c984D9d3470d",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "USDT",
+            "decimals0": 18,
+            "decimals1": 6,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+            "coingeckoId0": "weth",
+            "coingeckoId1": "arbitrum-bridged-usdt-arbitrum"
+          },
+          {
+            "contractAddress": "0x51f39ADBD3BdB879dB332E06956b67a7AdA9e44d",
+            "decimals": 18,
+            "symbol0": "ASCEND",
+            "symbol1": "WETH",
+            "decimals0": 9,
+            "decimals1": 18,
+            "tokenAddress0": "0x081a6Dd6c381C5B03063dEF7b3A6c1Bb3CF261a2",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0x45A33E6517996ef34aa08AEEd256Ff4bF4d3bbA0",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "ODLD",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xFcAb777C231cb2c7Bd135Bcde0B535b2DA41A1B0",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0x9Ceb644713D05263Fe52522e40aE2AE5EFcb93a3",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "Starship",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xf130C1da88B4069555d60e4f39FD6aB9fB1cb717",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0x56A3454c77b1856F1C65975dbf209c4b1C0a6325",
+            "decimals": 18,
+            "symbol0": "USDC",
+            "symbol1": "TRUCE",
+            "decimals0": 6,
+            "decimals1": 6,
+            "tokenAddress0": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+            "tokenAddress1": "0xE6d9F3FEA5E20B1ec60Ce3107BEb1413A8e740B8",
+            "coingeckoId0": "usd-coin"
+          },
+          {
+            "contractAddress": "0x58De8f6317BffB1652335e87215675D9230dc82c",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "HAMAHA",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xCAb59a10D5fA4C8aba5D1dA3f90ab741a78969dD",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0xb78a3F068699c2d25cD68d359D019E4Bbffe5203",
+            "decimals": 18,
+            "symbol0": "ZK",
+            "symbol1": "WETH",
+            "decimals0": 9,
+            "decimals1": 18,
+            "tokenAddress0": "0x27752F34343E6923b7C0E949FF62e53F54029b15",
+            "tokenAddress1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "coingeckoId1": "weth"
+          },
+          {
+            "contractAddress": "0xbd76219aD04EcdED913e8000bF926Be2eA1077b9",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "GHOST",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0xB31add6A99a50B72330689C775ed3D3f7895218e",
+            "coingeckoId0": "weth"
+          },
+          {
+            "contractAddress": "0x60b1bB368AfA489Ba0E37Ae01C3fa8cB3a3a0c6d",
+            "decimals": 18,
+            "symbol0": "WETH",
+            "symbol1": "AVAT",
+            "decimals0": 18,
+            "decimals1": 18,
+            "tokenAddress0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "tokenAddress1": "0x9875ca7CFeF742dfB89Db3fc5720e0DEf8DD5259",
+            "coingeckoId0": "weth"
+          }
+        ],
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+      }
+    },
+    {
       "moduleType": "evm-erc20",
       "moduleConfig": {
         "tokens": [
-          {
-            "symbol": "1MB",
-            "coingeckoId": "1minbet",
-            "contractAddress": "0xab9ec601b82a22fbf2b030ac0dd7c1c34f52fa04",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/1minbet.webp"
-          },
           {
             "symbol": "AA",
             "coingeckoId": "a3s",
@@ -47,6 +276,22 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/a3s.webp"
+          },
+          {
+            "symbol": "A51",
+            "coingeckoId": "a51-finance",
+            "contractAddress": "0xb3f13b0c61d65d67d7d6215d70c89533ee567a91",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/a51-finance.webp"
+          },
+          {
+            "symbol": "AARK",
+            "coingeckoId": "aark-digital",
+            "contractAddress": "0xca4e51f6ad4afd9d1068e5899de9dd7d73f3463d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aark-digital.webp"
           },
           {
             "symbol": "aArbAAVE",
@@ -185,36 +430,28 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/acryptos-2.webp"
           },
           {
-            "symbol": "GEM",
-            "coingeckoId": "adv3nture-xyz-gemstone",
-            "contractAddress": "0x458a2df1a5c74c5dc9ed6e01dd1178e6d353243b",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
-          },
-          {
-            "symbol": "GOLD",
-            "coingeckoId": "adv3nture-xyz-gold",
-            "contractAddress": "0xf16585365bfe050eff7c926f22df87f46da2cafe",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/adv3nture-xyz-gold.webp"
-          },
-          {
-            "symbol": "GOLD",
-            "coingeckoId": "adventurer-gold",
-            "contractAddress": "0xc4be0798e5b5b1c15eda36d9b2d8c1a60717fa92",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/adventurer-gold.webp"
-          },
-          {
             "symbol": "aEGGS",
             "coingeckoId": "aeggs",
             "contractAddress": "0x2e516ba5bf3b7ee47fb99b09eadb60bde80a82e0",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aeggs.webp"
+          },
+          {
+            "symbol": "ATH",
+            "coingeckoId": "aethir",
+            "contractAddress": "0xc87b37a581ec3257b734886d9d3a581f5a9d056c",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aethir.webp"
+          },
+          {
+            "symbol": "AGATA",
+            "coingeckoId": "agatech",
+            "contractAddress": "0xda315aad0c080b40a3859b0b039fec4f28b56797",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/agatech.webp"
           },
           {
             "symbol": "AGVE",
@@ -231,6 +468,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ageur.webp"
+          },
+          {
+            "symbol": "AGIO",
+            "coingeckoId": "agio",
+            "contractAddress": "0xa992b7dde2ed1632d0b66c56744e914ed673a37f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/agio.webp"
           },
           {
             "symbol": "AICODE",
@@ -297,6 +542,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aitom.webp"
           },
           {
+            "symbol": "alUSD",
+            "coingeckoId": "alchemix-usd",
+            "contractAddress": "0xcb8fa9a76b8e203d8c3797bf438d8fb81ea3326a",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/alchemix-usd.webp"
+          },
+          {
             "symbol": "ALIEN",
             "coingeckoId": "alienfi",
             "contractAddress": "0x6740acb82ac5c63a7ad2397ee1faed7c788f5f8c",
@@ -329,12 +582,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/altitude.webp"
           },
           {
-            "symbol": "AMX",
-            "coingeckoId": "alt-markets",
-            "contractAddress": "0xb2d948be3a74ecce80378d4093e6cd7f4dc1cf9c",
-            "decimals": 6,
+            "symbol": "ALTR",
+            "coingeckoId": "altranium",
+            "contractAddress": "0xb9600c807f069d27f92a2a65b48f12eeef7e2007",
+            "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/alt-markets.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/altranium.webp"
           },
           {
             "symbol": "ALN",
@@ -401,6 +654,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/any-inu.webp"
           },
           {
+            "symbol": "APTR",
+            "coingeckoId": "aperture-finance",
+            "contractAddress": "0x1c986661170c1834db49c3830130d4038eeeb866",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aperture-finance.webp"
+          },
+          {
             "symbol": "BANANA",
             "coingeckoId": "apeswap-finance",
             "contractAddress": "0xd978f8489e1245568704407a479a71fcce2afe8f",
@@ -441,6 +702,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arbidoge.webp"
           },
           {
+            "symbol": "ARBINAUTS",
+            "coingeckoId": "arbinauts",
+            "contractAddress": "0x836975c507bff631fcd7fba875e9127c8a50dba6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arbinauts.webp"
+          },
+          {
             "symbol": "NYAN",
             "coingeckoId": "arbinyan",
             "contractAddress": "0xed3fb761414da74b74f33e5c5a1f78104b188dfc",
@@ -455,14 +724,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arbipad.webp"
-          },
-          {
-            "symbol": "10SHARE",
-            "coingeckoId": "arbiten-10share",
-            "contractAddress": "0xc8a1c0d8255bc2eb5f6236e119e3428fd0c33a74",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arbiten-10share.webp"
           },
           {
             "symbol": "ALP",
@@ -487,6 +748,22 @@
             "decimals": 6,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "WBTC",
+            "coingeckoId": "arbitrum-bridged-wbtc-arbitrum-one",
+            "contractAddress": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arbitrum-bridged-wbtc-arbitrum-one.webp"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "arbitrum-bridged-weth-arbitrum-one",
+            "contractAddress": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arbitrum-bridged-weth-arbitrum-one.webp"
           },
           {
             "symbol": "ARBI",
@@ -569,14 +846,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/army-of-fortune-metaverse.webp"
           },
           {
-            "symbol": "AGPT",
-            "coingeckoId": "artgpt",
-            "contractAddress": "0xd2f8b81cfff297c70e5d58ac58762dd5d213ea20",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/artgpt.webp"
-          },
-          {
             "symbol": "ARTH",
             "coingeckoId": "arth",
             "contractAddress": "0x5441695f4445e40900b4c4b0fb3ed2b9e51601a6",
@@ -609,14 +878,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/astra-dao-2.webp"
           },
           {
-            "symbol": "ATA",
-            "coingeckoId": "atlas-aggregator",
-            "contractAddress": "0x296a0b8847bd4ed9af71a9ef238fa5be0778b611",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/atlas-aggregator.webp"
-          },
-          {
             "symbol": "AUC",
             "coingeckoId": "auctus",
             "contractAddress": "0xea986d33ef8a20a96120ecc44dbdd49830192043",
@@ -633,6 +894,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aurory.webp"
           },
           {
+            "symbol": "USSD",
+            "coingeckoId": "autonomous-secure-dollar",
+            "contractAddress": "0x33c88d4cac6ac34f77020915a2a88cd0417dc069",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/autonomous-secure-dollar.webp"
+          },
+          {
             "symbol": "Avive",
             "coingeckoId": "avive",
             "contractAddress": "0x5117f4ad0bc70dbb3b05bf39a1ec1ee40dd67654",
@@ -647,6 +916,14 @@
             "decimals": 6,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/axelar.webp"
+          },
+          {
+            "symbol": "frxETH",
+            "coingeckoId": "axelar-bridged-frax-ether",
+            "contractAddress": "0xecc68d0451e20292406967fe7c04280e5238ac7d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/axelar-bridged-frax-ether.webp"
           },
           {
             "symbol": "axlUSDT",
@@ -673,12 +950,28 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/axlweth.webp"
           },
           {
+            "symbol": "AXGT",
+            "coingeckoId": "axondao-governance-token",
+            "contractAddress": "0xe0ee18eacafddaeb38f8907c74347c44385578ab",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/axondao-governance-token.webp"
+          },
+          {
             "symbol": "BARB",
             "coingeckoId": "baby-arbitrum",
             "contractAddress": "0xb98058640970d8aa7bbce3b067b2d63c14143786",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/baby-arbitrum.webp"
+          },
+          {
+            "symbol": "bERNA",
+            "coingeckoId": "backed-erna-bond",
+            "contractAddress": "0x0f76d32cdccdcbd602a55af23eaf58fd1ee17245",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/backed-erna-bond.webp"
           },
           {
             "symbol": "bNIU",
@@ -761,12 +1054,28 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/battle-pets.webp"
           },
           {
+            "symbol": "BEBE",
+            "coingeckoId": "bebe-dog",
+            "contractAddress": "0x406d59819bc2aef682f4ff2769085c98a264f97b",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bebe-dog.webp"
+          },
+          {
             "symbol": "BETS",
             "coingeckoId": "betswirl",
             "contractAddress": "0x94025780a1ab58868d9b2dbbb775f44b32e8e6e5",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/betswirl.webp"
+          },
+          {
+            "symbol": "BTB",
+            "coingeckoId": "better-fan",
+            "contractAddress": "0x86bb316d5803c10624c1d634b4d7080d6e242142",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/better-fan.webp"
           },
           {
             "symbol": "BICO",
@@ -777,14 +1086,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/biconomy.webp"
           },
           {
-            "symbol": "XBIT",
-            "coingeckoId": "bitago",
-            "contractAddress": "0xc4a0e0915d538b5ec2e6895261d34f70c64fb13d",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitago.webp"
-          },
-          {
             "symbol": "BAMA",
             "coingeckoId": "bitbama",
             "contractAddress": "0x375da692c2743e3aa18c51fdce139d08490bfa42",
@@ -793,12 +1094,28 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitbama.webp"
           },
           {
+            "symbol": "BOGE",
+            "coingeckoId": "bitci-doge",
+            "contractAddress": "0xfd2fb8de10ec41ddd898a8c7fa70d8fc100834c4",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitci-doge.webp"
+          },
+          {
             "symbol": "BTC.b",
             "coingeckoId": "bitcoin-avalanche-bridged-btc-b",
             "contractAddress": "0x2297aebd383787a160dd0d9f71508148769342e3",
             "decimals": 8,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin-avalanche-bridged-btc-b.webp"
+          },
+          {
+            "symbol": "BTRM",
+            "coingeckoId": "bitrium",
+            "contractAddress": "0x221c5799209132766a01c4cbed0d28600d282b41",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitrium.webp"
           },
           {
             "symbol": "BDT",
@@ -817,28 +1134,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/blackhat-coin.webp"
           },
           {
-            "symbol": "BRAIN",
-            "coingeckoId": "black-rabbit-ai",
-            "contractAddress": "0x847db21ef9de627c23d3dff470af6599b1a30d3f",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/black-rabbit-ai.webp"
-          },
-          {
-            "symbol": "BLOB",
-            "coingeckoId": "blobcoin",
-            "contractAddress": "0x91c0ab2e50db1afe9e673bbb1fd5a3e0e4adf1f9",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/blobcoin.webp"
-          },
-          {
             "symbol": "BLOK",
             "coingeckoId": "bloktopia",
             "contractAddress": "0x9dce8e754913d928eb39bc4fc3cf047e364f7f2c",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bloktopia.webp"
+          },
+          {
+            "symbol": "MYRC",
+            "coingeckoId": "blox-myrc",
+            "contractAddress": "0x3ed03e95dd894235090b3d4a49e0c3239edce59e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/blox-myrc.webp"
           },
           {
             "symbol": "BLS",
@@ -873,6 +1182,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bonk.webp"
           },
           {
+            "symbol": "Bonsai",
+            "coingeckoId": "bonsai",
+            "contractAddress": "0x79ead7a012d97ed8deece279f9bc39e264d7eef9",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bonsai.webp"
+          },
+          {
             "symbol": "BONUS",
             "coingeckoId": "bonusblock",
             "contractAddress": "0x7f7d7806f4eb90d63b0b278daf32a2db2c2001bd",
@@ -903,6 +1220,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/boop-2.webp"
+          },
+          {
+            "symbol": "BORPA",
+            "coingeckoId": "borpatoken",
+            "contractAddress": "0x0002bcdaf53f4889bf2f43a3252d7c03fe1b80bc",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/borpatoken.webp"
           },
           {
             "symbol": "TIA.n",
@@ -945,20 +1270,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
+            "symbol": "BRIX",
+            "coingeckoId": "brightpool-finance-brix",
+            "contractAddress": "0xf65247b6ed3e7fdbac313959b3f62475fbb5f8e4",
+            "decimals": 9,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/brightpool-finance-brix.webp"
+          },
+          {
             "symbol": "BRO",
             "coingeckoId": "brokkr",
             "contractAddress": "0x2b45e21c35a33c58e4c5ce82a82466b0754fd154",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/brokkr.webp"
-          },
-          {
-            "symbol": "BRR",
-            "coingeckoId": "brr-protocol",
-            "contractAddress": "0xd6e7c8af05d2d06a76811d44917613bdd258b995",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/brr-protocol.webp"
           },
           {
             "symbol": "BRUH",
@@ -1033,22 +1358,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/celo-wormhole.webp"
           },
           {
-            "symbol": "CERT",
-            "coingeckoId": "certicos-2",
-            "contractAddress": "0xe8e87b8f47bda705ce1a5286fbddd26e93d8dffe",
-            "decimals": 8,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/certicos-2.webp"
-          },
-          {
-            "symbol": "CEX",
-            "coingeckoId": "cex-index",
-            "contractAddress": "0x306634bd3a7982afdb42dec1c6b15176cd9e02e0",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cex-index.webp"
-          },
-          {
             "symbol": "XCHNG",
             "coingeckoId": "chainge-finance",
             "contractAddress": "0x51c601dc278eb2cfea8e52c4caa35b3d6a9a2c26",
@@ -1063,14 +1372,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/chainlink.webp"
-          },
-          {
-            "symbol": "CHAI",
-            "coingeckoId": "characterai",
-            "contractAddress": "0x743b077b103d91109082a7a48e19ffc1093137a5",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/characterai.webp"
           },
           {
             "symbol": "CDT",
@@ -1113,6 +1414,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/chunks.webp"
           },
           {
+            "symbol": "CTOK",
+            "coingeckoId": "codyfight",
+            "contractAddress": "0xa586b3b80d7e3e8d439e25fbc16bc5bcee3e2c85",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/codyfight.webp"
+          },
+          {
             "symbol": "cbETH",
             "coingeckoId": "coinbase-wrapped-staked-eth",
             "contractAddress": "0x1debd73e752beaf79865fd6446b0c970eae7732f",
@@ -1127,14 +1436,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/collab-land.webp"
-          },
-          {
-            "symbol": "cmUMAMI",
-            "coingeckoId": "compounded-marinated-umami",
-            "contractAddress": "0x1922c36f3bc762ca300b4a46bb2102f84b1684ab",
-            "decimals": 9,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/compounded-marinated-umami.webp"
           },
           {
             "symbol": "COMP",
@@ -1167,6 +1468,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/corridor-finance.webp"
+          },
+          {
+            "symbol": "COW",
+            "coingeckoId": "cow-protocol",
+            "contractAddress": "0xcb8b5cd20bdcaea9a010ac1f8d835824f5c87a04",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cow-protocol.webp"
           },
           {
             "symbol": "CRAZYRABBIT",
@@ -1225,6 +1534,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/crypto-index-pool.webp"
           },
           {
+            "symbol": "CU",
+            "coingeckoId": "crypto-unicorns",
+            "contractAddress": "0x89c49a3fa372920ac23ce757a029e6936c0b8e02",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/crypto-unicorns.webp"
+          },
+          {
             "symbol": "CRYSTAL",
             "coingeckoId": "crystal-erc404",
             "contractAddress": "0xd07d35368e04a839dee335e213302b21ef14bb4a",
@@ -1249,12 +1566,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/curve-fi-usdc-usdt.webp"
           },
           {
-            "symbol": "CYG",
-            "coingeckoId": "cygnusdao",
-            "contractAddress": "0x05eaea39f69b24f8f2da13af2d8ee0853889f2a8",
+            "symbol": "CVPAD",
+            "coingeckoId": "cv-pad",
+            "contractAddress": "0x259b0f9494b3f02c652fa11417b94cb700f1f7d8",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cygnusdao.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cv-pad.webp"
           },
           {
             "symbol": "D2",
@@ -1271,22 +1588,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dackieswap.webp"
-          },
-          {
-            "symbol": "DAI",
-            "coingeckoId": "dai",
-            "contractAddress": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dai.webp"
-          },
-          {
-            "symbol": "DGS",
-            "coingeckoId": "dao-glas",
-            "contractAddress": "0x1bebd15adbc64f2f1eea7c3604d7a4b13a28c89c",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dao-glas.webp"
           },
           {
             "symbol": "DAO",
@@ -1313,12 +1614,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/davos-protocol.webp"
           },
           {
-            "symbol": "DFTL",
-            "coingeckoId": "defitankland",
-            "contractAddress": "0xcb6460d56825ddc12229c7a7d94b6b26a9f9c867",
+            "symbol": "sDUSD",
+            "coingeckoId": "davos-protocol-staked-dusd",
+            "contractAddress": "0x5a691001bf7065a17e150681f5bfbd7bc45a668e",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/defitankland.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/davos-protocol-staked-dusd.webp"
+          },
+          {
+            "symbol": "MONEY",
+            "coingeckoId": "defi-money",
+            "contractAddress": "0x69420f9e38a4e60a62224c489be4bf7a94402496",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/defi-money.webp"
           },
           {
             "symbol": "DERI",
@@ -1353,6 +1662,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dfx-finance.webp"
           },
           {
+            "symbol": "DGW",
+            "coingeckoId": "dgwtoken",
+            "contractAddress": "0x9cce9ae579142e372a8959285e3a5a2e211904f7",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dgwtoken.webp"
+          },
+          {
             "symbol": "DHT",
             "coingeckoId": "dhedge-dao",
             "contractAddress": "0x8038f3c971414fd1fc220ba727f2d4a0fc98cb65",
@@ -1367,6 +1684,14 @@
             "decimals": 0,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/digital-reserve-currency.webp"
+          },
+          {
+            "symbol": "DD",
+            "coingeckoId": "diment-dollar",
+            "contractAddress": "0x71b3a0566f4bf80331d115d8026a7022bf670cce",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/diment-dollar.webp"
           },
           {
             "symbol": "AAPL.d",
@@ -1409,20 +1734,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-brk-a-d.webp"
           },
           {
-            "symbol": "COIN.d",
-            "coingeckoId": "dinari-coin",
-            "contractAddress": "0x46b979440ac257151ee5a5bc9597b76386907fa1",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-coin.webp"
-          },
-          {
             "symbol": "DIS.d",
             "coingeckoId": "dinari-dis-dshares",
             "contractAddress": "0x3c9f23db4ddc5655f7be636358d319a3de1ff0c4",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-dis-dshares.webp"
+          },
+          {
+            "symbol": "GME.d",
+            "coingeckoId": "dinari-gme",
+            "contractAddress": "0xb415998a7bb6f11dc589e0eb20adf586ba32f12a",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-gme.webp"
           },
           {
             "symbol": "GOOGL.d",
@@ -1457,14 +1782,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-nflx-dshares.webp"
           },
           {
-            "symbol": "NVDA.d",
-            "coingeckoId": "dinari-nvda-dshares",
-            "contractAddress": "0x4dafffddea93ddf1e0e7b61e844331455053ce5c",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-nvda-dshares.webp"
-          },
-          {
             "symbol": "PFE.d",
             "coingeckoId": "dinari-pfe-dshares",
             "contractAddress": "0xf1f18f765f118c3598cc54dcac1d0e12066263fe",
@@ -1489,6 +1806,22 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-pypl-dshares.webp"
           },
           {
+            "symbol": "RDDT.d",
+            "coingeckoId": "dinari-rddt",
+            "contractAddress": "0x97ec5dada8262bd922bffd54a93f5a11efe0b136",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-rddt.webp"
+          },
+          {
+            "symbol": "RIOT.d",
+            "coingeckoId": "dinari-riot",
+            "contractAddress": "0x0b5ac0d7dcf6964609a12af4f6c6f3c257070193",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-riot.webp"
+          },
+          {
             "symbol": "SPY.d",
             "coingeckoId": "dinari-spy-dshares",
             "contractAddress": "0xf4bd09b048248876e39fcf2e0cdf1aee1240a9d2",
@@ -1505,6 +1838,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-tsla-dshares.webp"
           },
           {
+            "symbol": "USD+",
+            "coingeckoId": "dinari-usd",
+            "contractAddress": "0xfc90518d5136585ba45e34ed5e1d108bd3950cfa",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dinari-usd.webp"
+          },
+          {
             "symbol": "USFR.d",
             "coingeckoId": "dinari-usfr-dshares",
             "contractAddress": "0x9c46e1b70d447b770dbfc8d450543a431af6df3a",
@@ -1519,6 +1860,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dizzyhavoc.webp"
+          },
+          {
+            "symbol": "DLCBTC",
+            "coingeckoId": "dlc-link-dlcbtc",
+            "contractAddress": "0x050c24dbf1eec17babe5fc585f06116a259cc77a",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dlc-link-dlcbtc.webp"
           },
           {
             "symbol": "DODO",
@@ -1569,12 +1918,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dopex-rebate-token.webp"
           },
           {
-            "symbol": "rtETH",
-            "coingeckoId": "dopex-receipt-token-eth",
-            "contractAddress": "0xc15b9db0ee5b1b7fb8800a644457207f482e260d",
+            "symbol": "DORAB",
+            "coingeckoId": "dorado-finance",
+            "contractAddress": "0x6612ce012ba5574a2ecea3a825c1ddf641f78623",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dopex-receipt-token-eth.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dorado-finance.webp"
           },
           {
             "symbol": "DBL",
@@ -1633,20 +1982,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/el-dorado-exchange-arb.webp"
           },
           {
+            "symbol": "eUSD",
+            "coingeckoId": "electronic-usd",
+            "contractAddress": "0x12275dcb9048680c4be40942ea4d92c74c63b844",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-usd.webp"
+          },
+          {
             "symbol": "ELM",
             "coingeckoId": "ellerium",
             "contractAddress": "0xeeac5e75216571773c0064b3b591a86253791db6",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ellerium.webp"
-          },
-          {
-            "symbol": "ELSD",
-            "coingeckoId": "elsd-coin",
-            "contractAddress": "0x22ab6bc52cad84aae84bd5781258677a6e0cfab0",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/elsd-coin.webp"
           },
           {
             "symbol": "EMP",
@@ -1753,14 +2102,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/euroe-stablecoin.webp"
           },
           {
-            "symbol": "EXPO",
-            "coingeckoId": "exponential-capital-2",
-            "contractAddress": "0xcb24b141ecaaad0d2c255d6f99d6f4790546a75c",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/exponential-capital-2.webp"
-          },
-          {
             "symbol": "FCTR",
             "coingeckoId": "factor",
             "contractAddress": "0x6dd963c510c2d2f09d5eddb48ede45fed063eb36",
@@ -1775,14 +2116,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fbomb.webp"
-          },
-          {
-            "symbol": "FengLvZiV2",
-            "coingeckoId": "fenglvziv2",
-            "contractAddress": "0xb1070c40d5b3d10e1f1c8876c3d2ff5ffed4b3ac",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fenglvziv2.webp"
           },
           {
             "symbol": "FRM",
@@ -1815,22 +2148,6 @@
             "decimals": 2,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fiat24-usd.webp"
-          },
-          {
-            "symbol": "FIEF",
-            "coingeckoId": "fief",
-            "contractAddress": "0xe2105bea3819d3131b5b2306d44eb3271bfcfe0e",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fief.webp"
-          },
-          {
-            "symbol": "HOTT",
-            "coingeckoId": "firepot-finance",
-            "contractAddress": "0x14e8687af6c94c7c68590bacf0f1d1e338f2862b",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
             "symbol": "FLAME",
@@ -1937,6 +2254,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/frax-share.webp"
           },
           {
+            "symbol": "FU",
+            "coingeckoId": "fu-money",
+            "contractAddress": "0x9aee3c99934c88832399d6c6e08ad802112ebeab",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fu-money.webp"
+          },
+          {
             "symbol": "FUC",
             "coingeckoId": "funny-coin",
             "contractAddress": "0x1f52145666c862ed3e2f1da213d479e61b2892af",
@@ -1977,6 +2302,22 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gains-network.webp"
           },
           {
+            "symbol": "gUSDC",
+            "coingeckoId": "gains-network-usdc",
+            "contractAddress": "0xd3443ee1e91af28e5fb858fbd0d72a63ba8046e0",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gains-network-usdc.webp"
+          },
+          {
+            "symbol": "GALAXIS",
+            "coingeckoId": "galaxis-token",
+            "contractAddress": "0xa5312c3e42a82d459162b2a3bd7ffc4f9099b911",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/galaxis-token.webp"
+          },
+          {
             "symbol": "G3",
             "coingeckoId": "gam3s-gg",
             "contractAddress": "0xc24a365a870821eb83fd216c9596edd89479d8d7",
@@ -2009,20 +2350,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/garden-2.webp"
           },
           {
+            "symbol": "LASAGNA",
+            "coingeckoId": "garffeldo",
+            "contractAddress": "0x344c796cc2474e4b779d0e81765afb91d7741a42",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/garffeldo.webp"
+          },
+          {
             "symbol": "GAST",
             "coingeckoId": "gas-turbo",
             "contractAddress": "0x6f9590958ce2beaf9c92a3a8fca6d1ddf310e052",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gas-turbo.webp"
-          },
-          {
-            "symbol": "GBOT",
-            "coingeckoId": "gbot",
-            "contractAddress": "0x32e4d98d3010ac12d75019c484caa78665b03986",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gbot.webp"
           },
           {
             "symbol": "GMAC",
@@ -2039,6 +2380,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gemdrop.webp"
+          },
+          {
+            "symbol": "inETH",
+            "coingeckoId": "genesislrt-restaked-eth",
+            "contractAddress": "0x5a7a183b6b44dc4ec2e3d2ef43f98c5152b1d76d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/genesislrt-restaked-eth.webp"
           },
           {
             "symbol": "GENSX",
@@ -2065,6 +2414,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ghast.webp"
           },
           {
+            "symbol": "GHO",
+            "coingeckoId": "gho",
+            "contractAddress": "0x7dff72693f6a4149b17e7c6314655f6a9f7c8b33",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gho.webp"
+          },
+          {
             "symbol": "GLEND",
             "coingeckoId": "glend",
             "contractAddress": "0x43df266501dff4773f8f33179e3b96ab94dbc28d",
@@ -2089,14 +2446,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gmbl-computer-chip.webp"
           },
           {
-            "symbol": "GSHARE",
-            "coingeckoId": "gmcash-share",
-            "contractAddress": "0x0f96d8c1277bd75a251238af952a7a99db1320e3",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gmcash-share.webp"
-          },
-          {
             "symbol": "GMD",
             "coingeckoId": "gmd-protocol",
             "contractAddress": "0x4945970efeec98d393b4b979b9be265a3ae28a8b",
@@ -2119,6 +2468,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gmx.webp"
+          },
+          {
+            "symbol": "GNB",
+            "coingeckoId": "gnb",
+            "contractAddress": "0x439c0cf1038f8002a4cad489b427e217ba4b42ad",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gnb.webp"
           },
           {
             "symbol": "GND",
@@ -2159,6 +2516,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/goat-protocol.webp"
+          },
+          {
+            "symbol": "oooOOO",
+            "coingeckoId": "goddog",
+            "contractAddress": "0xddf7d080c82b8048baae54e376a3406572429b4e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/goddog.webp"
           },
           {
             "symbol": "GOLD",
@@ -2233,14 +2598,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/grimace.webp"
           },
           {
-            "symbol": "GTA",
-            "coingeckoId": "gta-token",
-            "contractAddress": "0x73db621cc8f0a767bed0e5c0a2920f480d77b765",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gta-token.webp"
-          },
-          {
             "symbol": "GUARD",
             "coingeckoId": "guardian-token",
             "contractAddress": "0xbcf339df10d78f2b44aa760ead0f715a7a7d7269",
@@ -2255,6 +2612,14 @@
             "decimals": 6,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gyen.webp"
+          },
+          {
+            "symbol": "GYD",
+            "coingeckoId": "gyroscope-gyd",
+            "contractAddress": "0xca5d8f8a8d49439357d3cf46ca2e720702f132b8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gyroscope-gyd.webp"
           },
           {
             "symbol": "HAMI",
@@ -2281,6 +2646,22 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/handleusd.webp"
           },
           {
+            "symbol": "HARAMBE",
+            "coingeckoId": "harambecoin",
+            "contractAddress": "0x255f1b39172f65dc6406b8bee8b08155c45fe1b6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/harambecoin.webp"
+          },
+          {
+            "symbol": "HAT",
+            "coingeckoId": "hat",
+            "contractAddress": "0x4d22e37eb4d71d1acc5f4889a65936d2a44a2f15",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hat.webp"
+          },
+          {
             "symbol": "HEGIC",
             "coingeckoId": "hegic",
             "contractAddress": "0x431402e8b9de9aa016c743880e04e517074d8cec",
@@ -2295,6 +2676,30 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hepton.webp"
+          },
+          {
+            "symbol": "HERMES",
+            "coingeckoId": "hermes-protocol",
+            "contractAddress": "0x00000000000451f49c692bfc24971cacea2db678",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hermes-protocol.webp"
+          },
+          {
+            "symbol": "hyETH",
+            "coingeckoId": "high-yield-eth-index",
+            "contractAddress": "0x8b5d1d8b3466ec21f8ee33ce63f319642c026142",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/high-yield-eth-index.webp"
+          },
+          {
+            "symbol": "HIP",
+            "coingeckoId": "hippop",
+            "contractAddress": "0xa0995d43901551601060447f9abf93ebc277cec2",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hippop.webp"
           },
           {
             "symbol": "HMX",
@@ -2335,14 +2740,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hord.webp"
-          },
-          {
-            "symbol": "HORNY",
-            "coingeckoId": "horny-hyenas",
-            "contractAddress": "0x9925130735a30cae869230a9f19eedbaa71a2c02",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/horny-hyenas.webp"
           },
           {
             "symbol": "HND",
@@ -2387,7 +2784,7 @@
           {
             "symbol": "IDIA",
             "coingeckoId": "idia",
-            "contractAddress": "0xe6045890b20945d00e6f3c01878265c03c5435d3",
+            "contractAddress": "0x6db8b088c4d41d622b44cd81b900ba690f2d496c",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/idia.webp"
@@ -2399,14 +2796,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ifarm.webp"
-          },
-          {
-            "symbol": "IGS",
-            "coingeckoId": "igames",
-            "contractAddress": "0x51f9f9ff6cb2266d68c04ec289c7aba81378a383",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/igames.webp"
           },
           {
             "symbol": "PACT",
@@ -2423,6 +2812,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/impermax-2.webp"
+          },
+          {
+            "symbol": "InstETH",
+            "coingeckoId": "inception-restaked-steth",
+            "contractAddress": "0xd08c3f25862077056cb1b710937576af899a4959",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/inception-restaked-steth.webp"
           },
           {
             "symbol": "NDX",
@@ -2447,14 +2844,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ipor.webp"
-          },
-          {
-            "symbol": "ISS",
-            "coingeckoId": "issuaa",
-            "contractAddress": "0x6d30ab63fc4cddf268edd294a8d1b07bdb282976",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/issuaa.webp"
           },
           {
             "symbol": "iUSD",
@@ -2521,14 +2910,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/jones-usdc.webp"
           },
           {
-            "symbol": "JPG",
-            "coingeckoId": "jpg-nft-index",
-            "contractAddress": "0xafdefd913286a1cec75aca503938c6bba01a5445",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/jpg-nft-index.webp"
-          },
-          {
             "symbol": "KABOSU",
             "coingeckoId": "kabosu-arbitrum",
             "contractAddress": "0x53bcf6698c911b2a7409a740eacddb901fc2a2c6",
@@ -2553,6 +2934,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kei-finance.webp"
           },
           {
+            "symbol": "rsETH",
+            "coingeckoId": "kelpdao-bridged-rseth-arbitrum",
+            "contractAddress": "0x4186bfc76e2e237523cbc30fd220fe055156b41f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kelpdao-bridged-rseth-arbitrum.webp"
+          },
+          {
             "symbol": "KNS",
             "coingeckoId": "kenshi-2",
             "contractAddress": "0xf1264873436a0771e440e2b28072fafcc5eebd01",
@@ -2569,14 +2958,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kerc.webp"
           },
           {
-            "symbol": "KEWL",
-            "coingeckoId": "kewl",
-            "contractAddress": "0xa15907f3e7fdd0a83ec56f4ac543cb10f4d783eb",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kewl.webp"
-          },
-          {
             "symbol": "KWL",
             "coingeckoId": "kewl-exchange",
             "contractAddress": "0xed5740209fcf6974d6f3a5f11e295b5e468ac27c",
@@ -2591,6 +2972,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kiboshib.webp"
+          },
+          {
+            "symbol": "KNOX",
+            "coingeckoId": "knox-dollar",
+            "contractAddress": "0x0bbf664d46becc28593368c97236faa0fb397595",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/knox-dollar.webp"
           },
           {
             "symbol": "BEEF",
@@ -2657,6 +3046,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lamb-by-opnx.webp"
           },
           {
+            "symbol": "LAND",
+            "coingeckoId": "landshare",
+            "contractAddress": "0x27bc2757fab0b8ab406016d1f71d8123452095d3",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/landshare.webp"
+          },
+          {
             "symbol": "LNDX",
             "coingeckoId": "landx-governance-token",
             "contractAddress": "0xe10d4a4255d2d35c9e23e2c4790e073046fbaf5c",
@@ -2665,12 +3062,44 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/landx-governance-token.webp"
           },
           {
+            "symbol": "LPOOL",
+            "coingeckoId": "launchpool",
+            "contractAddress": "0xf6dae0d2be4993b00a2673360820af6bafd53887",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/launchpool.webp"
+          },
+          {
+            "symbol": "LAVA",
+            "coingeckoId": "lava-network",
+            "contractAddress": "0x11e969e9b3f89cb16d686a03cd8508c9fc0361af",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lava-network.webp"
+          },
+          {
             "symbol": "L2DAO",
             "coingeckoId": "layer2dao",
             "contractAddress": "0x2cab3abfc1670d1a452df502e216a66883cdf079",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/layer2dao.webp"
+          },
+          {
+            "symbol": "ZRO",
+            "coingeckoId": "layerzero",
+            "contractAddress": "0x6985884c4392d348587b19cb9eaaf157f13271cd",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/layerzero.webp"
+          },
+          {
+            "symbol": "LDY",
+            "coingeckoId": "ledgity-token",
+            "contractAddress": "0x999faf0af2ff109938eefe6a7bf91ca56f0d07e1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ledgity-token.webp"
           },
           {
             "symbol": "LG",
@@ -2687,14 +3116,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/level.webp"
-          },
-          {
-            "symbol": "LEVI",
-            "coingeckoId": "leverageinu",
-            "contractAddress": "0x954ac1c73e16c77198e83c088ade88f6223f3d44",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/leverageinu.webp"
           },
           {
             "symbol": "LEX",
@@ -2735,14 +3156,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/liondex.webp"
-          },
-          {
-            "symbol": "MEOW",
-            "coingeckoId": "liquicats",
-            "contractAddress": "0xfb1f65955e168e0ef500b170eed4a4efeb99ae32",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/liquicats.webp"
           },
           {
             "symbol": "Lqdr",
@@ -2857,14 +3270,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lumi-finance-governance-token.webp"
           },
           {
-            "symbol": "LUAOP",
-            "coingeckoId": "lumi-finance-lua-option",
-            "contractAddress": "0x15b6ec24f59fea164c6e235941aa00fb0d4a32f6",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lumi-finance-lua-option.webp"
-          },
-          {
             "symbol": "LUAUSD",
             "coingeckoId": "lumi-finance-luausd",
             "contractAddress": "0x1dd6b5f9281c6b4f043c02a83a46c2772024636c",
@@ -2887,6 +3292,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lumiterra-totem-404.webp"
+          },
+          {
+            "symbol": "LUDAMOON",
+            "coingeckoId": "lumi-to-da-moon",
+            "contractAddress": "0x292975973200064b1c6453505aeac5be697f5233",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lumi-to-da-moon.webp"
           },
           {
             "symbol": "LBR",
@@ -2945,12 +3358,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/magpie.webp"
           },
           {
-            "symbol": "mWOM",
-            "coingeckoId": "magpie-wom",
-            "contractAddress": "0x509fd25ee2ac7833a017f17ee8a6fb4aaf947876",
+            "symbol": "MAIA",
+            "coingeckoId": "maia",
+            "contractAddress": "0x00000000702749f73e5210b08b0a3d440078f888",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/magpie-wom.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/maia.webp"
           },
           {
             "symbol": "MAI",
@@ -2959,6 +3372,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mai-arbitrum.webp"
+          },
+          {
+            "symbol": "DAI",
+            "coingeckoId": "makerdao-arbitrum-bridged-dai-arbitrum-one",
+            "contractAddress": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/makerdao-arbitrum-bridged-dai-arbitrum-one.webp"
           },
           {
             "symbol": "POND",
@@ -2993,12 +3414,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mcdex.webp"
           },
           {
-            "symbol": "MPCKT",
-            "coingeckoId": "metapocket",
-            "contractAddress": "0xd1c533a00548dd9c1e7b0f8ea834f65383b116de",
+            "symbol": "MARK",
+            "coingeckoId": "mchain-network",
+            "contractAddress": "0x4d01397994aa636bdcc65c9e8024bc497498c3bb",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/metapocket.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mchain-network.webp"
           },
           {
             "symbol": "TT",
@@ -3041,6 +3462,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mind-games-cortex.webp"
           },
           {
+            "symbol": "MXTK",
+            "coingeckoId": "mineral-token",
+            "contractAddress": "0x3e4ffeb394b371aaaa0998488046ca19d870d9ba",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mineral-token.webp"
+          },
+          {
             "symbol": "MZR Token",
             "coingeckoId": "mizar",
             "contractAddress": "0xbbea044f9e7c0520195e49ad1e561572e7e1b948",
@@ -3063,6 +3492,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/modular-wallet.webp"
+          },
+          {
+            "symbol": "MOLANDAK",
+            "coingeckoId": "molandak",
+            "contractAddress": "0xa170eaa9a74ab4b3218c736210b0421af35c3c00",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/molandak.webp"
           },
           {
             "symbol": "MOLTEN",
@@ -3097,6 +3534,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/moon.webp"
           },
           {
+            "symbol": "MOR",
+            "coingeckoId": "morpheusai",
+            "contractAddress": "0x092baadb7def4c3981454dd9c0a0d7ff07bcfc86",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/morpheusai.webp"
+          },
+          {
             "symbol": "USDM",
             "coingeckoId": "mountain-protocol-usdm",
             "contractAddress": "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",
@@ -3121,20 +3566,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mpendle.webp"
           },
           {
+            "symbol": "MTMS",
+            "coingeckoId": "mtms-network",
+            "contractAddress": "0x4dd40ec670722067241b4396dbd253c38dd820b5",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mtms-network.webp"
+          },
+          {
             "symbol": "MULTI",
             "coingeckoId": "multichain",
             "contractAddress": "0x9fb9a33956351cf4fa040f65a13b835a3c8764e3",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/multichain.webp"
-          },
-          {
-            "symbol": "MYC",
-            "coingeckoId": "mycelium",
-            "contractAddress": "0xc74fe4c715510ec2f8c61d70d397b32043f55abe",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mycelium.webp"
           },
           {
             "symbol": "MMT",
@@ -3153,6 +3598,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neptune-mutual.webp"
           },
           {
+            "symbol": "NRN",
+            "coingeckoId": "neuron",
+            "contractAddress": "0xdadeca1167fe47499e53eb50f261103630974905",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neuron.webp"
+          },
+          {
             "symbol": "NPAI",
             "coingeckoId": "neuropulse-ai",
             "contractAddress": "0xa9011ee5796be43123651181dc75c0e72bb1191c",
@@ -3167,14 +3620,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neutra-finance.webp"
-          },
-          {
-            "symbol": "NGT",
-            "coingeckoId": "ngt",
-            "contractAddress": "0x640278bada847b7ce71bb22f20517a009a049640",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ngt.webp"
           },
           {
             "symbol": "NST",
@@ -3217,12 +3662,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nola.webp"
           },
           {
-            "symbol": "GO!",
-            "coingeckoId": "norigo",
-            "contractAddress": "0x739e93844adabfd58b00b2bed540d1661d9af682",
+            "symbol": "NOLA",
+            "coingeckoId": "nola-2",
+            "contractAddress": "0xe934ab7e98d81e39477b1e47b961876c2d902598",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/norigo.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nola-2.webp"
           },
           {
             "symbol": "NSWAP",
@@ -3271,6 +3716,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/oath.webp"
+          },
+          {
+            "symbol": "OIL",
+            "coingeckoId": "oil-token",
+            "contractAddress": "0xafe8107123eefd62469474dec9680860b890e5b6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/oil-token.webp"
           },
           {
             "symbol": "OJA",
@@ -3329,14 +3782,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/onchain-trade-protocol.webp"
           },
           {
-            "symbol": "OPENBET",
-            "coingeckoId": "openbetai",
-            "contractAddress": "0x2c7513f299778a84797f293503db1a73a15fd48d",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openbetai.webp"
-          },
-          {
             "symbol": "OBX",
             "coingeckoId": "openblox",
             "contractAddress": "0x188fb5f5ae5bbe4154d5778f2bbb2fb985c94d25",
@@ -3345,12 +3790,28 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openblox.webp"
           },
           {
+            "symbol": "OD",
+            "coingeckoId": "open-dollar",
+            "contractAddress": "0x221a0f68770658c15b525d0f89f5da2baab5f321",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/open-dollar.webp"
+          },
+          {
             "symbol": "ODG",
             "coingeckoId": "open-dollar-governance",
             "contractAddress": "0x000d636bd52bfc1b3a699165ef5aa340bea8939c",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/open-dollar-governance.webp"
+          },
+          {
+            "symbol": "TBILL",
+            "coingeckoId": "openeden-tbill",
+            "contractAddress": "0xf84d28a8d28292842dd73d1c5f99476a80b6666a",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openeden-tbill.webp"
           },
           {
             "symbol": "OLE",
@@ -3433,6 +3894,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/overnight-finance.webp"
           },
           {
+            "symbol": "USD+",
+            "coingeckoId": "overnight-fi-usd-arbitrum-one",
+            "contractAddress": "0xe80772eaf6e2e18b651f160bc9158b2a5cafca65",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/overnight-fi-usd-arbitrum-one.webp"
+          },
+          {
             "symbol": "0xBTC",
             "coingeckoId": "oxbitcoin",
             "contractAddress": "0x7cb16cb78ea464ad35c8a50abf95dff3c9e09d5d",
@@ -3495,6 +3964,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/parifi-weth.webp"
+          },
+          {
+            "symbol": "wPAW",
+            "coingeckoId": "pawswap",
+            "contractAddress": "0xc11158c5da9db1d553ed28f0c2ba1cbedd42cfcb",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pawswap.webp"
           },
           {
             "symbol": "peUSD",
@@ -3585,6 +4062,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/phonon-dao.webp"
           },
           {
+            "symbol": "PCH",
+            "coingeckoId": "pichi-finance",
+            "contractAddress": "0xbe5acfd64358805616b5cbd5277b9a85011d7cf1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pichi-finance.webp"
+          },
+          {
             "symbol": "PICKLE",
             "coingeckoId": "pickle-finance",
             "contractAddress": "0x965772e0e9c84b6f359c8597c891108dcf1c5b1a",
@@ -3595,7 +4080,7 @@
           {
             "symbol": "PINGU",
             "coingeckoId": "pingu-exchange",
-            "contractAddress": "0x964cbf436ddb782d09465930ce8b431311cb54f4",
+            "contractAddress": "0x83e60b9f7f4db5cdb0877659b1740e73c662c55b",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pingu-exchange.webp"
@@ -3607,6 +4092,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pizon.webp"
+          },
+          {
+            "symbol": "PLX",
+            "coingeckoId": "plexus-app",
+            "contractAddress": "0xfb853acea0e76f73f8274b521fe1611c888670cc",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/plexus-app.webp"
           },
           {
             "symbol": "plsJONES",
@@ -3681,14 +4174,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/polytrade.webp"
           },
           {
-            "symbol": "FIN",
-            "coingeckoId": "poolshark",
-            "contractAddress": "0x903ca00944d0b51e50d9f4fc96167c89f211542a",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/poolshark.webp"
-          },
-          {
             "symbol": "POOL",
             "coingeckoId": "pooltogether",
             "contractAddress": "0xcf934e2402a5e072928a39a956964eb8f2b5b79c",
@@ -3745,6 +4230,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/preon-star.webp"
           },
           {
+            "symbol": "PRIME",
+            "coingeckoId": "prime-2",
+            "contractAddress": "0x3de81ce90f5a27c5e6a5adb04b54aba488a6d14e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/prime-2.webp"
+          },
+          {
             "symbol": "PRISM",
             "coingeckoId": "prism-2",
             "contractAddress": "0x0b5c6ac0e1082f2d81e829b8c2957886e6bb3994",
@@ -3753,20 +4246,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/prism-2.webp"
           },
           {
+            "symbol": "QODA",
+            "coingeckoId": "qoda",
+            "contractAddress": "0x763a716dd74a79d037e57f993fe3047271879bc1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/qoda.webp"
+          },
+          {
             "symbol": "QUACK",
             "coingeckoId": "quack-token",
             "contractAddress": "0x59debed8d46a0cb823d8be8b957add987ead39aa",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/quack-token.webp"
-          },
-          {
-            "symbol": "CHAOS",
-            "coingeckoId": "quantum-chaos",
-            "contractAddress": "0x6d9d8b50a0cccdf510f681a85472626c26377876",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/quantum-chaos.webp"
           },
           {
             "symbol": "QKNTL",
@@ -3817,20 +4310,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rari-governance-token.webp"
           },
           {
-            "symbol": "RB",
-            "coingeckoId": "rb-finance",
-            "contractAddress": "0xfc0c4114ccba4a91d05bdab4a8480cbec46654dd",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rb-finance.webp"
-          },
-          {
             "symbol": "RBX",
             "coingeckoId": "rb-share",
             "contractAddress": "0x4c4b907bd5c38d14a084aac4f511a9b46f7ec429",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rb-share.webp"
+          },
+          {
+            "symbol": "шайлушай",
+            "coingeckoId": "real-smurf-cat",
+            "contractAddress": "0x06e90a57d1ece8752d6ce92d1ad348ead5eae4f4",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/real-smurf-cat.webp"
           },
           {
             "symbol": "GG",
@@ -3865,12 +4358,44 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/renzo-restaked-eth.webp"
           },
           {
+            "symbol": "ETH+",
+            "coingeckoId": "reserve-protocol-eth-plus",
+            "contractAddress": "0x18c14c2d707b2212e17d1579789fc06010cfca23",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/reserve-protocol-eth-plus.webp"
+          },
+          {
+            "symbol": "RSR",
+            "coingeckoId": "reserve-rights-token",
+            "contractAddress": "0xca5ca9083702c56b481d1eec86f1776fdbd2e594",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/reserve-rights-token.webp"
+          },
+          {
             "symbol": "REUNI",
             "coingeckoId": "reunit-wallet",
             "contractAddress": "0x9ed7e4b1bff939ad473da5e7a218c771d1569456",
             "decimals": 6,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/reunit-wallet.webp"
+          },
+          {
+            "symbol": "rgUSD",
+            "coingeckoId": "revenue-generating-usd",
+            "contractAddress": "0x96a993f06951b01430523d0d5590192d650ebf3e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/revenue-generating-usd.webp"
+          },
+          {
+            "symbol": "RPM",
+            "coingeckoId": "revolon",
+            "contractAddress": "0x158bd2d5238700a332fdc0cdf97e5fe13f8ed0de",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/revolon.webp"
           },
           {
             "symbol": "DVF",
@@ -3913,14 +4438,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rocket-pool-eth.webp"
           },
           {
-            "symbol": "RKV",
-            "coingeckoId": "rocketverse-2",
-            "contractAddress": "0xea1e79d4a0d347edcadd78d98a7da65d15e8cba1",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rocketverse-2.webp"
-          },
-          {
             "symbol": "RDO",
             "coingeckoId": "rodeo-finance",
             "contractAddress": "0x033f193b3fceb22a440e89a2867e8fee181594d9",
@@ -3935,6 +4452,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/roobee.webp"
+          },
+          {
+            "symbol": "ROSA",
+            "coingeckoId": "rosa-inu",
+            "contractAddress": "0xee0a242f28034fce0bdfac33c0ad2a58ec35fd38",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rosa-inu.webp"
           },
           {
             "symbol": "ROSX",
@@ -3985,12 +4510,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rwa-finance.webp"
           },
           {
-            "symbol": "SANCTA",
-            "coingeckoId": "sanctum-coin",
-            "contractAddress": "0x810cf1757b51963102e0b4fe9fdfcdf749dea98a",
+            "symbol": "SAIL",
+            "coingeckoId": "sail-2",
+            "contractAddress": "0xb52bd62ee0cf462fa9ccbda4bf27fe84d9ab6cf7",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sanctum-coin.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sail-2.webp"
           },
           {
             "symbol": "SAT",
@@ -4049,6 +4574,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/seneca-usd.webp"
           },
           {
+            "symbol": "SNSY",
+            "coingeckoId": "sensay",
+            "contractAddress": "0x3124678d62d2aa1f615b54525310fbfda6dcf7ae",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sensay.webp"
+          },
+          {
             "symbol": "SEX",
             "coingeckoId": "sexone",
             "contractAddress": "0xd26b0c6ef8581e921ae41c66e508c62a581b709d",
@@ -4057,20 +4590,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sexone.webp"
           },
           {
+            "symbol": "FOX",
+            "coingeckoId": "shapeshift-fox-token",
+            "contractAddress": "0xf929de51d91c77e42f5090069e0ad7a09e513c73",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shapeshift-fox-token.webp"
+          },
+          {
             "symbol": "SHARKY",
             "coingeckoId": "sharky-swap",
             "contractAddress": "0x73ed68b834e44096eb4bea6edead038c945722f1",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sharky-swap.webp"
-          },
-          {
-            "symbol": "SPI",
-            "coingeckoId": "sharp-portfolio-index",
-            "contractAddress": "0xbb5b3d9f6b57077b4545ea9879ee7fd0bdb08db0",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sharp-portfolio-index.webp"
           },
           {
             "symbol": "SHELL",
@@ -4137,44 +4670,44 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solidlizard.webp"
           },
           {
-            "symbol": "slzUSDC",
-            "coingeckoId": "solidlizard-synthetic-usd",
-            "contractAddress": "0x54355cc6913b26a15cca1f820cf17d362fa65db5",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solidlizard-synthetic-usd.webp"
-          },
-          {
-            "symbol": "SpAI",
-            "coingeckoId": "spaceai-finance",
-            "contractAddress": "0x358e5d2378f5fc3fa5504aebb728c4c568f973a4",
+            "symbol": "SolvBTC",
+            "coingeckoId": "solv-btc",
+            "contractAddress": "0x3647c54c4c2c65bc7a2d63c0da2809b399dbbdc0",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spaceai-finance.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solv-btc.webp"
+          },
+          {
+            "symbol": "SolvBTC.BBN",
+            "coingeckoId": "solv-protocol-solvbtc-bbn",
+            "contractAddress": "0x346c574c56e1a4aaa8dc88cda8f7eb12b39947ab",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solv-protocol-solvbtc-bbn.webp"
+          },
+          {
+            "symbol": "SolvBTC.ENA",
+            "coingeckoId": "solv-protocol-solvbtc-ena",
+            "contractAddress": "0xafafd68afe3fe65d376eec9eab1802616cfaccb8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solv-protocol-solvbtc-ena.webp"
           },
           {
             "symbol": "CATCH",
             "coingeckoId": "spacecatch",
-            "contractAddress": "0xf0a479c9c3378638ec603b8b6b0d75903902550b",
+            "contractAddress": "0xbc4c97fb9befaa8b41448e1dfcc5236da543217f",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spacecatch.webp"
           },
           {
-            "symbol": "SPARTA",
-            "coingeckoId": "spartadex",
-            "contractAddress": "0x11f98c7e42a367dab4f200d2fdc460fb445ce9a8",
+            "symbol": "xSPACE",
+            "coingeckoId": "space-token-bsc",
+            "contractAddress": "0x1d1498166ddceee616a6d99868e1e0677300056f",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spartadex.webp"
-          },
-          {
-            "symbol": "SPEC",
-            "coingeckoId": "speculate-dao",
-            "contractAddress": "0x54c1b12da9594c7cd8fc9a172bb2cc6f83ecf6d4",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/speculate-dao.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/space-token-bsc.webp"
           },
           {
             "symbol": "SPELL",
@@ -4217,6 +4750,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spool-dao-token.webp"
           },
           {
+            "symbol": "GAME",
+            "coingeckoId": "sportsology-game",
+            "contractAddress": "0xc4cbd54ffa7a6a142fd73554cc6c23dd95cd8e01",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sportsology-game.webp"
+          },
+          {
             "symbol": "SQUAD",
             "coingeckoId": "squad",
             "contractAddress": "0xd45e486a90ebb84e9336d371a35dcb021424b96c",
@@ -4231,22 +4772,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stabilize.webp"
-          },
-          {
-            "symbol": "USDS",
-            "coingeckoId": "stableusd",
-            "contractAddress": "0x097bf766e427f5ccd306f21ba05632e0be849b0e",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stableusd.webp"
-          },
-          {
-            "symbol": "USDLR",
-            "coingeckoId": "stable-usdlr",
-            "contractAddress": "0x7e40b3e0fd0473e0240288d2b7618ac6f0c17e1b",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stable-usdlr.webp"
           },
           {
             "symbol": "DSLA",
@@ -4361,6 +4886,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stryke.webp"
           },
           {
+            "symbol": "STYLE",
+            "coingeckoId": "style-protocol-2",
+            "contractAddress": "0x9500ba777560daf9d3ab148ea1cf1ed39df9ebdb",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/style-protocol-2.webp"
+          },
+          {
             "symbol": "suBTC",
             "coingeckoId": "sumer-money-subtc",
             "contractAddress": "0xe85411c030fb32a9d8b14bbbc6cb19417391f711",
@@ -4391,6 +4924,30 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sundae-the-dog.webp"
+          },
+          {
+            "symbol": "SCT",
+            "coingeckoId": "supercells-2",
+            "contractAddress": "0xca934030f3652eeb2a779ea653bbee521e8a8dd8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/supercells-2.webp"
+          },
+          {
+            "symbol": "GRND",
+            "coingeckoId": "superwalk",
+            "contractAddress": "0x3b58a4c865b568a2f6a957c264f6b50cba35d8ce",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/superwalk.webp"
+          },
+          {
+            "symbol": "WALK",
+            "coingeckoId": "superwalk-walk",
+            "contractAddress": "0x9d0c0675a995d5f12b03e880763f639d0628b5c6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/superwalk-walk.webp"
           },
           {
             "symbol": "SUSHI",
@@ -4433,6 +4990,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/switcheo.webp"
           },
           {
+            "symbol": "SX",
+            "coingeckoId": "sx-network-2",
+            "contractAddress": "0x8cf7e3aa6faf6ae180e5ec3f0fb95081c2086ebe",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sx-network-2.webp"
+          },
+          {
             "symbol": "SIS",
             "coingeckoId": "symbiosis-finance",
             "contractAddress": "0x9e758b8a98a42d612b3d38b66a22074dc03d7370",
@@ -4457,12 +5022,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/synonym-finance.webp"
           },
           {
-            "symbol": "Taikula",
-            "coingeckoId": "taikula-coin",
-            "contractAddress": "0xb2498cde54810424a24fdd23579164265a0c14c5",
-            "decimals": 6,
+            "symbol": "TAP",
+            "coingeckoId": "tapioca-dao-token",
+            "contractAddress": "0x2c650dab03a59332e2e0c0c4a7f726913e5028c1",
+            "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/taikula-coin.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tapioca-dao-token.webp"
           },
           {
             "symbol": "TAROT",
@@ -4505,6 +5070,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tellor.webp"
           },
           {
+            "symbol": "TLOS",
+            "coingeckoId": "telos",
+            "contractAddress": "0x193f4a4a6ea24102f49b931deeeb931f6e32405d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/telos.webp"
+          },
+          {
             "symbol": "THALES",
             "coingeckoId": "thales",
             "contractAddress": "0xe85b662fe97e8562f4099d8a1d5a92d4b453bf30",
@@ -4521,9 +5094,9 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-doge-nft.webp"
           },
           {
-            "symbol": "neadRAM",
+            "symbol": "abcRAM",
             "coingeckoId": "the-ennead",
-            "contractAddress": "0x40301951af3f80b8c1744ca77e55111dd3c1dba1",
+            "contractAddress": "0x9efcfc5b49390fc3fb9b58607d2e89445bb380bf",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-ennead.webp"
@@ -4569,14 +5142,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tigris.webp"
           },
           {
-            "symbol": "TLSD",
-            "coingeckoId": "tlsd-coin",
-            "contractAddress": "0xc56dc613c8ef3c57314171d73eaefe87aa469186",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tlsd-coin.webp"
-          },
-          {
             "symbol": "USX",
             "coingeckoId": "token-dforce-usd",
             "contractAddress": "0x641441c631e2f909700d2f41fd87f0aa6a6b4edb",
@@ -4601,22 +5166,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/torque.webp"
           },
           {
-            "symbol": "SEED",
-            "coingeckoId": "toxicgarden-finance-seed",
-            "contractAddress": "0xe6be2f5ab2ad4b8b146e3008f81832cf7b279f43",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/toxicgarden-finance-seed.webp"
-          },
-          {
-            "symbol": "TCR",
-            "coingeckoId": "tracer-dao",
-            "contractAddress": "0xa72159fc390f0e3c6d415e658264c7c4051e9b87",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tracer-dao.webp"
-          },
-          {
             "symbol": "POT",
             "coingeckoId": "traderdao-proof-of-trade",
             "contractAddress": "0x76ce14237110c865f431e18f91fc1b225fb6fe99",
@@ -4633,20 +5182,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tridentdao.webp"
           },
           {
-            "symbol": "TAI",
-            "coingeckoId": "tronai",
-            "contractAddress": "0xd2eb76feff5fbd549ca078908fb5efce7533a09d",
-            "decimals": 9,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/tai.svg"
-          },
-          {
             "symbol": "TRUF",
             "coingeckoId": "truflation",
             "contractAddress": "0xb59c8912c83157a955f9d715e556257f432c35d7",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/truflation.webp"
+          },
+          {
+            "symbol": "TUXC",
+            "coingeckoId": "tux-project",
+            "contractAddress": "0x4b019aaa21e98e212d31e54c843e73ff34d25717",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tux-project.webp"
           },
           {
             "symbol": "UMAMI",
@@ -4697,14 +5246,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unitus-2.webp"
           },
           {
-            "symbol": "UWU",
-            "coingeckoId": "unlimited-network-token",
-            "contractAddress": "0x05d35769a222affd6185e20f3f3676abde56c25f",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unlimited-network-token.webp"
-          },
-          {
             "symbol": "USH",
             "coingeckoId": "unsheth",
             "contractAddress": "0x51a80238b5738725128d3a3e06ab41c1d4c05c74",
@@ -4729,20 +5270,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unstoppable-defi.webp"
           },
           {
+            "symbol": "UNV",
+            "coingeckoId": "unvest",
+            "contractAddress": "0x51707dc661630f8fd624b985fa6ef4f1d4d919db",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unvest.webp"
+          },
+          {
             "symbol": "YOU",
             "coingeckoId": "u-protocol",
             "contractAddress": "0xf93fc7d6508ae2faf8fc5675e896bc38d6e7212c",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/u-protocol.webp"
-          },
-          {
-            "symbol": "MAKI",
-            "coingeckoId": "uramaki",
-            "contractAddress": "0xc7d91ec2b29cd22c45c15760abc189c4e78e8036",
-            "decimals": 9,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/uramaki.webp"
           },
           {
             "symbol": "U",
@@ -4759,14 +5300,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/urdex-finance.webp"
-          },
-          {
-            "symbol": "USD+",
-            "coingeckoId": "usd",
-            "contractAddress": "0xe80772eaf6e2e18b651f160bc9158b2a5cafca65",
-            "decimals": 6,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd.webp"
           },
           {
             "symbol": "USDC",
@@ -4809,6 +5342,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usdtplus.webp"
           },
           {
+            "symbol": "UXLINK",
+            "coingeckoId": "uxlink",
+            "contractAddress": "0x1a6b3a62391eccaaa992ade44cd4afe6bec8cff1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/uxlink.webp"
+          },
+          {
             "symbol": "VKA",
             "coingeckoId": "vaultka",
             "contractAddress": "0xafccb724e3aec1657fc9514e3e53a0e71e80622d",
@@ -4823,6 +5364,14 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vela-token.webp"
+          },
+          {
+            "symbol": "XVS",
+            "coingeckoId": "venus",
+            "contractAddress": "0xc1eb7689147c81ac840d4ff0d298489fc7986d52",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/venus.webp"
           },
           {
             "symbol": "USDV",
@@ -4857,12 +5406,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vesta-stable.webp"
           },
           {
-            "symbol": "Vim",
-            "coingeckoId": "vimverse",
-            "contractAddress": "0xac6e188a5a1ba58c0b3e54767f407502366f5426",
-            "decimals": 9,
+            "symbol": "VES",
+            "coingeckoId": "vestate",
+            "contractAddress": "0x1bc8bf18256d8b45d8367aac50fe2e24fc6aa8ca",
+            "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vimverse.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vestate.webp"
+          },
+          {
+            "symbol": "VCNT",
+            "coingeckoId": "vicicoin",
+            "contractAddress": "0x60bf4e7cf16ff34513514b968483b54beff42a81",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vicicoin.webp"
           },
           {
             "symbol": "VRSW",
@@ -4921,6 +5478,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/waweswaps-global-token.webp"
           },
           {
+            "symbol": "WXM",
+            "coingeckoId": "weatherxm-network",
+            "contractAddress": "0xb6093b61544572ab42a0e43af08abafd41bf25a6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weatherxm-network.webp"
+          },
+          {
             "symbol": "W3N",
             "coingeckoId": "web3-no-value",
             "contractAddress": "0xf7693c6fd9a7172d537fa75d133d309501cbd657",
@@ -4929,36 +5494,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/web3-no-value.webp"
           },
           {
-            "symbol": "MINTME",
-            "coingeckoId": "webchain",
-            "contractAddress": "0x7d05d38e6109a3aeeebf0a570eb8f6856cb4b55e",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webchain.webp"
-          },
-          {
             "symbol": "WEFI",
             "coingeckoId": "wefi-finance",
             "contractAddress": "0xffa188493c15dfaf2c206c97d8633377847b6a52",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wefi-finance.webp"
-          },
-          {
-            "symbol": "WETH",
-            "coingeckoId": "weth",
-            "contractAddress": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
-          },
-          {
-            "symbol": "WHEAT",
-            "coingeckoId": "wheat",
-            "contractAddress": "0x771146816a0c7d74daf652252d646ab0bff7c21a",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wheat.webp"
           },
           {
             "symbol": "LOTUS",
@@ -5001,14 +5542,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wombex.webp"
           },
           {
-            "symbol": "AFX",
-            "coingeckoId": "wonderly-finance",
-            "contractAddress": "0x42972edecd94bdd19a622a6a419bdded2de56e08",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wonderly-finance.webp"
-          },
-          {
             "symbol": "WOO",
             "coingeckoId": "woo-network",
             "contractAddress": "0xcafcd85d8ca7ad1e1c6f82f651fa15e33aefd07b",
@@ -5025,6 +5558,22 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/workoutapp.webp"
           },
           {
+            "symbol": "WBC",
+            "coingeckoId": "worldbrain-coin",
+            "contractAddress": "0x7ae9ab13fc8945323b778b3f8678145e80ec2efb",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/worldbrain-coin.webp"
+          },
+          {
+            "symbol": "WUSD",
+            "coingeckoId": "worldwide-usd",
+            "contractAddress": "0x386601d1e55c48e759bbf57c56015aad0d7f1b56",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/worldwide-usd.webp"
+          },
+          {
             "symbol": "W",
             "coingeckoId": "wormhole",
             "contractAddress": "0xb0ffa8000886e57f86dd5264b9582b2ad87b2b91",
@@ -5039,14 +5588,6 @@
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-banano.webp"
-          },
-          {
-            "symbol": "WBTC",
-            "coingeckoId": "wrapped-bitcoin",
-            "contractAddress": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
-            "decimals": 8,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-bitcoin.webp"
           },
           {
             "symbol": "weETH",
@@ -5113,14 +5654,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xave-token.webp"
           },
           {
-            "symbol": "XB",
-            "coingeckoId": "xblue-finance",
-            "contractAddress": "0x50aa7a13b28eea97dc6c3f5e8aaa7fe512e7306d",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xblue-finance.webp"
-          },
-          {
             "symbol": "XDAO",
             "coingeckoId": "xdao",
             "contractAddress": "0x71eeba415a523f5c952cc2f06361d5443545ad28",
@@ -5169,12 +5702,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xfish.webp"
           },
           {
-            "symbol": "XLSD",
-            "coingeckoId": "xlsd-coin",
-            "contractAddress": "0xce3a75572bc375476438206f6f29f46f8466ecc2",
+            "symbol": "XGPU",
+            "coingeckoId": "xgpu-ai",
+            "contractAddress": "0x36295e7de7024362ad95bb8be93d6d6d21d7f6c1",
             "decimals": 18,
             "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xlsd-coin.webp"
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xgpu-ai.webp"
           },
           {
             "symbol": "XNF",
@@ -5201,28 +5734,12 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xpet-tech-bpet.webp"
           },
           {
-            "symbol": "XRAI",
-            "coingeckoId": "xrender",
-            "contractAddress": "0x617b76412bd9f3f80fe87d1533dc7017defa8ad1",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xrender.webp"
-          },
-          {
             "symbol": "XTK",
             "coingeckoId": "xtoken",
             "contractAddress": "0xf0a5717ec0883ee56438932b0fe4a20822735fba",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xtoken.webp"
-          },
-          {
-            "symbol": "XTS",
-            "coingeckoId": "x-travel-space",
-            "contractAddress": "0x9c7049d2ddbda7df5da9a9069926f517d2d9e6ff",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/x-travel-space.webp"
           },
           {
             "symbol": "XWG",
@@ -5257,6 +5774,14 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yak-dao.webp"
           },
           {
+            "symbol": "YAKU",
+            "coingeckoId": "yaku",
+            "contractAddress": "0xb00eaedb98f1e30ad545703d8ff14b24d109514f",
+            "decimals": 9,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yaku.webp"
+          },
+          {
             "symbol": "YFI",
             "coingeckoId": "yearn-finance",
             "contractAddress": "0x82e3a8f066a6989666b031d916c43672085b1582",
@@ -5265,12 +5790,28 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yearn-finance.webp"
           },
           {
+            "symbol": "YEL",
+            "coingeckoId": "yel-finance",
+            "contractAddress": "0x949185d3be66775ea648f4a306740ea9eff9c567",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yel-finance.webp"
+          },
+          {
             "symbol": "Yf-DAI",
             "coingeckoId": "yfdai-finance",
             "contractAddress": "0xf061956612b3dc79fd285d3d51bc128f2ea87740",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yfdai-finance.webp"
+          },
+          {
+            "symbol": "YFX",
+            "coingeckoId": "yfx",
+            "contractAddress": "0x569deb225441fd18bde18aed53e2ec7eb4e10d93",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yfx.webp"
           },
           {
             "symbol": "YFX",
@@ -5305,20 +5846,20 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/youwho.webp"
           },
           {
+            "symbol": "YUM",
+            "coingeckoId": "yum",
+            "contractAddress": "0x9f41b34f42058a7b74672055a5fae22c4b113fd1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yum.webp"
+          },
+          {
             "symbol": "Yuri",
             "coingeckoId": "yuri",
             "contractAddress": "0x077bc655c8d81b7de71c79318d0eb8f987e12820",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yuri.webp"
-          },
-          {
-            "symbol": "ZSP",
-            "coingeckoId": "zenithswap",
-            "contractAddress": "0xb2dcbd5258a22385240e4ac13fc6726b66f0de96",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zenithswap.webp"
           },
           {
             "symbol": "ZENF",
@@ -5337,14 +5878,6 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zenpandacoin.webp"
           },
           {
-            "symbol": "ZOCI",
-            "coingeckoId": "zoci",
-            "contractAddress": "0x45d780cfe839b8a8f292c9e26aa5d1805bc536dc",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zoci.webp"
-          },
-          {
             "symbol": "ZOO",
             "coingeckoId": "zoodao",
             "contractAddress": "0x1689a6e1f09658ff37d0bb131514e701045876da",
@@ -5361,20 +5894,36 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ztx.webp"
           },
           {
+            "symbol": "zunETH",
+            "coingeckoId": "zunami-eth-2",
+            "contractAddress": "0x06d65ec13465ac5a4376dc101e1141252c4addf8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zunami-eth-2.webp"
+          },
+          {
+            "symbol": "ZUN",
+            "coingeckoId": "zunami-governance-token",
+            "contractAddress": "0x346e74dc9935a9b02eb34fb84658a66010fa056d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zunami-governance-token.webp"
+          },
+          {
+            "symbol": "zunUSD",
+            "coingeckoId": "zunami-usd",
+            "contractAddress": "0x870908873b6f940e025a7c6879678cb82ec6c9b6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zunami-usd.webp"
+          },
+          {
             "symbol": "ZYB",
             "coingeckoId": "zyberswap",
             "contractAddress": "0x3b475f6f2f41853706afc9fa6a6b8c5df1a2724c",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zyberswap.webp"
-          },
-          {
-            "symbol": "WZYX",
-            "coingeckoId": "zyx",
-            "contractAddress": "0x377c6e37633e390aef9afb4f5e0b16689351eed4",
-            "decimals": 18,
-            "isDefault": false,
-            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zyx.webp"
           },
           {
             "symbol": "ZZZ",

@@ -2,7 +2,7 @@
   "id": "bifrost-polkadot",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 72,
+  "sortIndex": 85,
   "genesisHash": "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b",
   "prefix": 6,
   "name": "Bifrost Polkadot",
@@ -12,7 +12,7 @@
   "chainType": "Live",
   "implName": "bifrost_polkadot",
   "specName": "bifrost_polkadot",
-  "specVersion": "996",
+  "specVersion": "12001",
   "nativeToken": {
     "id": "bifrost-polkadot-substrate-native"
   },
@@ -74,6 +74,12 @@
       "url": "wss://bifrost-polkadot-rpc.dwellir.com"
     },
     {
+      "url": "wss://bifrost-polkadot.ibp.network"
+    },
+    {
+      "url": "wss://bifrost-polkadot.dotters.network"
+    },
+    {
       "url": "wss://hk.p.bifrost-rpc.liebi.com/ws"
     },
     {
@@ -102,7 +108,7 @@
             "symbol": "BNC",
             "decimals": 12,
             "ed": "0",
-            "onChainId": "{\"Token\":\"BNC\"}",
+            "onChainId": "{\"type\":\"Token\",\"value\":{\"type\":\"BNC\"}}",
             "coingeckoId": "bifrost-native-coin",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bnc.svg"
           },
@@ -110,7 +116,7 @@
             "symbol": "DOT",
             "decimals": 10,
             "ed": "1000000",
-            "onChainId": "{\"Token2\":0}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":0}",
             "coingeckoId": "polkadot",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
           },
@@ -118,7 +124,7 @@
             "symbol": "GLMR",
             "decimals": 18,
             "ed": "1000000000000",
-            "onChainId": "{\"Token2\":1}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":1}",
             "coingeckoId": "moonbeam",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/moonbeam.webp"
           },
@@ -126,7 +132,7 @@
             "symbol": "USDT",
             "decimals": 6,
             "ed": "1000",
-            "onChainId": "{\"Token2\":2}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":2}",
             "coingeckoId": "tether",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
           },
@@ -134,7 +140,7 @@
             "symbol": "ASTR",
             "decimals": 18,
             "ed": "10000000000000000",
-            "onChainId": "{\"Token2\":3}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":3}",
             "coingeckoId": "astar",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/astar.webp"
           },
@@ -142,14 +148,14 @@
             "symbol": "FIL",
             "decimals": 18,
             "ed": "1000000000000",
-            "onChainId": "{\"Token2\":4}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":4}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
             "symbol": "USDC",
             "decimals": 6,
             "ed": "1000",
-            "onChainId": "{\"Token2\":5}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":5}",
             "coingeckoId": "usd-coin",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp"
           },
@@ -157,7 +163,7 @@
             "symbol": "IBTC",
             "decimals": 8,
             "ed": "100",
-            "onChainId": "{\"Token2\":6}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":6}",
             "coingeckoId": "interbtc",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ibtc.svg"
           },
@@ -165,7 +171,7 @@
             "symbol": "INTR",
             "decimals": 10,
             "ed": "10000000",
-            "onChainId": "{\"Token2\":7}",
+            "onChainId": "{\"type\":\"Token2\",\"value\":7}",
             "coingeckoId": "interlay",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/intr.svg"
           },
@@ -173,7 +179,7 @@
             "symbol": "vDOT",
             "decimals": 10,
             "ed": "1000000",
-            "onChainId": "{\"VToken2\":0}",
+            "onChainId": "{\"type\":\"VToken2\",\"value\":0}",
             "coingeckoId": "voucher-dot",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vdot.svg"
           },
@@ -181,33 +187,34 @@
             "symbol": "vGLMR",
             "decimals": 18,
             "ed": "1000000000000",
-            "onChainId": "{\"VToken2\":1}",
+            "onChainId": "{\"type\":\"VToken2\",\"value\":1}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
             "symbol": "vASTR",
             "decimals": 18,
             "ed": "10000000000000000",
-            "onChainId": "{\"VToken2\":3}",
+            "onChainId": "{\"type\":\"VToken2\",\"value\":3}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
             "symbol": "vFIL",
             "decimals": 18,
             "ed": "1000000000000",
-            "onChainId": "{\"VToken2\":4}",
+            "onChainId": "{\"type\":\"VToken2\",\"value\":4}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           },
           {
             "symbol": "vsDOT",
             "decimals": 10,
             "ed": "1000000",
-            "onChainId": "{\"VSToken2\":0}",
+            "onChainId": "{\"type\":\"VSToken2\",\"value\":0}",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vsdot.svg"
           }
         ]
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

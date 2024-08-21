@@ -2,7 +2,7 @@
   "id": "polkadot-asset-hub",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 559,
+  "sortIndex": 680,
   "genesisHash": "0x68d56f15f85d3136970ec16946040bc1752654e906147f7e43e9d539d7c3de2f",
   "prefix": 0,
   "name": "Polkadot Asset Hub",
@@ -12,7 +12,7 @@
   "chainType": "Live",
   "implName": "statemint",
   "specName": "statemint",
-  "specVersion": "1002000",
+  "specVersion": "1002006",
   "nativeToken": {
     "id": "polkadot-asset-hub-substrate-native"
   },
@@ -30,6 +30,45 @@
       "id": "polkadot-asset-hub-substrate-assets-30-ded"
     },
     {
+      "id": "polkadot-asset-hub-substrate-assets-17-wifd"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-assets-690-bork"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-assets-31337-wud"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-eq"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-weth"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-ksm"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-bnc"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-eqd"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-myth"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-glmr"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-vdot"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-hdx"
+    },
+    {
+      "id": "polkadot-asset-hub-substrate-foreignassets-ajun"
+    },
+    {
       "id": "polkadot-asset-hub-substrate-native"
     }
   ],
@@ -40,6 +79,12 @@
   "isUnknownFeeToken": false,
   "feeToken": null,
   "rpcs": [
+    {
+      "url": "wss://asset-hub-polkadot-rpc.dwellir.com"
+    },
+    {
+      "url": "wss://statemint-rpc-tn.dwellir.com"
+    },
     {
       "url": "wss://sys.ibp.network/statemint"
     },
@@ -57,12 +102,6 @@
     },
     {
       "url": "wss://dot-rpc.stakeworld.io/assethub"
-    },
-    {
-      "url": "wss://statemint-rpc.dwellir.com"
-    },
-    {
-      "url": "wss://statemint-rpc-tn.dwellir.com"
     }
   ],
   "evmNetworks": [],
@@ -103,11 +142,93 @@
           {
             "assetId": 30,
             "symbol": "DED",
+            "coingeckoId": "dot-is-ded",
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ded.svg"
+          },
+          {
+            "assetId": 17,
+            "symbol": "WIFD",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wifd.svg"
+          },
+          {
+            "assetId": 690,
+            "symbol": "BORK",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bork.svg"
+          },
+          {
+            "assetId": 31337,
+            "symbol": "WUD",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/wud.webp"
+          }
+        ]
+      }
+    },
+    {
+      "moduleType": "substrate-foreignassets",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X1\",\"value\":{\"type\":\"Parachain\",\"value\":2011}}}",
+            "symbol": "EQ",
+            "coingeckoId": "equilibrium-token",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eq.svg"
+          },
+          {
+            "onChainId": "{\"parents\":2,\"interior\":{\"type\":\"X2\",\"value\":[{\"type\":\"GlobalConsensus\",\"value\":{\"type\":\"Ethereum\",\"value\":{\"chain_id\":\"bigint:1\"}}},{\"type\":\"AccountKey20\",\"value\":{\"key\":\"hex:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\"}}]}}",
+            "symbol": "WETH",
+            "coingeckoId": "weth",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+          },
+          {
+            "onChainId": "{\"parents\":2,\"interior\":{\"type\":\"X1\",\"value\":{\"type\":\"GlobalConsensus\",\"value\":{\"type\":\"Kusama\"}}}}",
+            "symbol": "KSM",
+            "coingeckoId": "kusama",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/ksm.svg"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X2\",\"value\":[{\"type\":\"Parachain\",\"value\":2030},{\"type\":\"GeneralKey\",\"value\":{\"length\":2,\"data\":\"hex:0x0001000000000000000000000000000000000000000000000000000000000000\"}}]}}",
+            "symbol": "BNC",
+            "coingeckoId": "bifrost-native-coin",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bnc.svg"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X2\",\"value\":[{\"type\":\"Parachain\",\"value\":2011},{\"type\":\"GeneralKey\",\"value\":{\"length\":3,\"data\":\"hex:0x6571640000000000000000000000000000000000000000000000000000000000\"}}]}}",
+            "symbol": "EQD",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eqd.svg"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X1\",\"value\":{\"type\":\"Parachain\",\"value\":3369}}}",
+            "symbol": "MYTH",
+            "coingeckoId": "mythos",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/mythos.svg"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X2\",\"value\":[{\"type\":\"Parachain\",\"value\":2004},{\"type\":\"PalletInstance\",\"value\":10}]}}",
+            "symbol": "GLMR",
+            "coingeckoId": "moonbeam",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/moonbeam.webp"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X2\",\"value\":[{\"type\":\"Parachain\",\"value\":2030},{\"type\":\"GeneralKey\",\"value\":{\"length\":2,\"data\":\"hex:0x0900000000000000000000000000000000000000000000000000000000000000\"}}]}}",
+            "symbol": "vDOT",
+            "coingeckoId": "voucher-dot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/vdot.svg"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X2\",\"value\":[{\"type\":\"Parachain\",\"value\":2034},{\"type\":\"GeneralIndex\",\"value\":\"bigint:0\"}]}}",
+            "symbol": "HDX",
+            "coingeckoId": "hydradx",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hydradx.webp"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X1\",\"value\":{\"type\":\"Parachain\",\"value\":2051}}}",
+            "symbol": "AJUN",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
           }
         ]
       }
     }
   ],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

@@ -2,7 +2,7 @@
   "id": "paseo-testnet",
   "isTestnet": true,
   "isDefault": true,
-  "sortIndex": 1239,
+  "sortIndex": 1512,
   "genesisHash": "0x77afd6190f1554ad45fd0d31aee62aacc33c6db0ea801129acb813f913e0764f",
   "prefix": 42,
   "name": "Paseo",
@@ -12,7 +12,7 @@
   "chainType": "Live",
   "implName": "paseo-testnet",
   "specName": "paseo",
-  "specVersion": "1001003",
+  "specVersion": "1002005",
   "nativeToken": {
     "id": "paseo-testnet-substrate-native"
   },
@@ -33,9 +33,16 @@
     }
   ],
   "evmNetworks": [],
-  "parathreads": null,
+  "parathreads": [
+    {
+      "id": "paseo-frequency-testnet",
+      "paraId": 4000,
+      "name": "Frequency Testnet"
+    }
+  ],
   "paraId": null,
   "relay": null,
   "balancesConfig": [],
-  "balancesMetadata": []
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
 }

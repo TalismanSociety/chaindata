@@ -1,0 +1,77 @@
+{
+  "id": "167000",
+  "isTestnet": false,
+  "sortIndex": 831,
+  "name": "Taiko Mainnet",
+  "themeColor": "#e8189a",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/taiko.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://taikoscan.io",
+  "rpcs": [
+    {
+      "url": "https://rpc.mainnet.taiko.xyz"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "ETH",
+        "decimals": 18,
+        "coingeckoId": "ethereum",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "DKD",
+            "coingeckoId": "daikodex",
+            "contractAddress": "0xf2658ee288e92789e6c3f4f33cb1c0eaaef338f6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/daikodex.webp"
+          },
+          {
+            "symbol": "TAIKO",
+            "coingeckoId": "taiko",
+            "contractAddress": "0xa9d23408b9ba935c230493c40c73824df71a0975",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/taiko.webp"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "taiko-bridged-usdc-taiko",
+            "contractAddress": "0x07d83526730c7438048d55a4fc0b850e2aab6f0b",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/taiko-bridged-usdc-taiko.webp"
+          },
+          {
+            "symbol": "TKOSWAP",
+            "coingeckoId": "taikoswap",
+            "contractAddress": "0xed197058a19e3a7c0d1ac402aaadef22a0f31d0b",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/taikoswap.webp"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "wrapped-eth-taiko",
+            "contractAddress": "0xa51894664a773981c6c112c43ce576f315d5b1b6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-eth-taiko.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}

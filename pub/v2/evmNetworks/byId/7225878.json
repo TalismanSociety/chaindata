@@ -1,7 +1,7 @@
 {
   "id": "7225878",
   "isTestnet": false,
-  "sortIndex": 619,
+  "sortIndex": 754,
   "name": "Saakuru Mainnet",
   "themeColor": "#e131b3",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/saakuru.webp",
@@ -20,7 +20,23 @@
       "moduleConfig": {
         "symbol": "OAS",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "wrapped-oasys",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-oasys.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WOAS",
+            "coingeckoId": "wrapped-oasys",
+            "contractAddress": "0x557a526472372f1f222ecc6af8818c1e6e78a85f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-oasys.webp"
+          }
+        ]
       }
     }
   ],

@@ -1,0 +1,53 @@
+{
+  "id": "42793",
+  "isTestnet": false,
+  "sortIndex": 295,
+  "name": "Etherlink Mainnet",
+  "themeColor": "#b7ffdb",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/etherlink.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.etherlink.com",
+  "rpcs": [
+    {
+      "url": "https://node.mainnet.etherlink.com"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "XTZ",
+        "decimals": 18,
+        "coingeckoId": "tezos",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tezos.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "layerzero-bridged-usdc-etherlink",
+            "contractAddress": "0x796ea11fa2dd751ed01b53c372ffdb4aaa8f00f9",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/layerzero-bridged-usdc-etherlink.webp"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "layerzero-bridged-usdt-etherlink",
+            "contractAddress": "0x2c03058c8afc06713be23e58d2febc8337dbfe6a",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false
+}
