@@ -65338,7 +65338,11 @@
   {
     "id": "254",
     "name": "Swan Chain Mainnet",
-    "rpcs": ["https://mainnet-rpc01.swanchain.io"],
+    "rpcs": [
+      "https://mainnet-rpc.swanchain.org",
+      "https://mainnet-rpc-01.swanchain.org",
+      "https://mainnet-rpc-02.swanchain.org"
+    ],
     "explorerUrl": "https://swanscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -68669,13 +68673,13 @@
     "id": "813",
     "name": "Qitmeer Network Mainnet",
     "rpcs": [
+      "https://evm-dataseed1.meerscan.io",
       "https://evm-dataseed2.meerscan.io",
       "https://evm-dataseed3.meerscan.io",
       "https://evm-dataseed.meerscan.com",
       "https://qng.rpc.qitmeer.io",
       "https://mainnet.meerlabs.com",
       "https://rpc.dimai.ai",
-      "https://evm-dataseed1.meerscan.io",
       "https://rpc.woowow.io"
     ],
     "icon": "meer",
@@ -88707,6 +88711,19 @@
     }
   },
   {
+    "id": "40000",
+    "name": "DIV Chain",
+    "rpcs": ["https://rpc.divchain.org"],
+    "icon": "divc",
+    "explorerUrl": "https://scan.divchain.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "DIVC",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "41455",
     "name": "Aleph Zero EVM",
     "rpcs": ["https://rpc.alephzero.raas.gelato.cloud"],
@@ -99811,6 +99828,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "168168",
+    "name": "Zchains",
+    "rpcs": ["https://rpc.zchains.com"],
+    "icon": "zchain",
+    "explorerUrl": "https://scan.zchains.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ZCD",
         "decimals": 18
       }
     }
