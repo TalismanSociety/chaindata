@@ -71,6 +71,15 @@ export class DeadChains {
     const dataToJson = (data: Data) =>
       Object.fromEntries([...data].map(([key, value]) => [key, Object.fromEntries([...value])]))
 
+    // sort the dead chains list by the number of times we've failed to connect to each chain's RPCs
+    this.#data = new Map(
+      [...this.#data.entries()].sort((a, b) => {
+        const aTotalCount = [...a[1].values()].reduce((acc, { count }) => acc + count, 0)
+        const bTotalCount = [...b[1].values()].reduce((acc, { count }) => acc + count, 0)
+        return bTotalCount - aTotalCount
+      }),
+    )
+
     const json = JSON.stringify(dataToJson(this.#data), null, 2)
     await writeFile(FILE_DEAD_CHAINS, await prettier.format(json, { ...PRETTIER_CONFIG, parser: 'json' }))
   }
