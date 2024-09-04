@@ -54,7 +54,12 @@
   {
     "id": "3-dpass",
     "name": "3DPass",
-    "rpcs": ["wss://rpc.3dpscan.io"]
+    "rpcs": ["wss://rpc.3dpscan.io"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "3dpass"
+      }
+    }
   },
   {
     "id": "aband",
@@ -718,6 +723,11 @@
     "paraId": 2056,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "aventus"
+      }
     }
   },
   {
@@ -1499,7 +1509,12 @@
   {
     "id": "creditcoin",
     "name": "Creditcoin",
-    "rpcs": ["wss://mainnet.creditcoin.network/ws"]
+    "rpcs": ["wss://mainnet.creditcoin.network/ws"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "creditcoin-2"
+      }
+    }
   },
   {
     "id": "crown-sterling",
@@ -1770,12 +1785,22 @@
     "paraId": 3345,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "energy-web-token"
+      }
     }
   },
   {
     "id": "fragnova",
     "name": "Fragnova",
-    "rpcs": []
+    "rpcs": [],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "nova-finance"
+      }
+    }
   },
   {
     "id": "frequency",
@@ -2280,7 +2305,12 @@
   {
     "id": "jur",
     "name": "Jur",
-    "rpcs": []
+    "rpcs": [],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "jur"
+      }
+    }
   },
   {
     "id": "kabocha",
@@ -2955,6 +2985,11 @@
     "paraId": 1002,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "kusama"
+      }
     }
   },
   {
@@ -3137,6 +3172,11 @@
     "paraId": 2104,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "manta-network"
+      }
     }
   },
   {
@@ -3244,7 +3284,12 @@
   {
     "id": "neatcoin",
     "name": "Neatcoin",
-    "rpcs": ["wss://rpc.neatcoin.org/ws"]
+    "rpcs": ["wss://rpc.neatcoin.org/ws"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "neat"
+      }
+    }
   },
   {
     "id": "neuroweb",
@@ -3349,6 +3394,9 @@
       "id": "polkadot"
     },
     "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "parallel-finance"
+      },
       "substrate-tokens": {
         "tokens": [
           {
@@ -3661,7 +3709,8 @@
             "symbol": "vKSM",
             "decimals": 12,
             "ed": "0",
-            "onChainId": "\"bigint:32\""
+            "onChainId": "\"bigint:32\"",
+            "coingeckoId": "voucher-ksm"
           },
           {
             "symbol": "BNC DOT",
@@ -3695,7 +3744,8 @@
             "symbol": "vKSM",
             "decimals": 12,
             "ed": "100000000",
-            "onChainId": "\"bigint:103\""
+            "onChainId": "\"bigint:103\"",
+            "coingeckoId": "voucher-ksm"
           },
           {
             "symbol": "MOVR",
@@ -3749,7 +3799,8 @@
             "symbol": "TNKR",
             "decimals": 12,
             "ed": "13500000000",
-            "onChainId": "\"bigint:212\""
+            "onChainId": "\"bigint:212\"",
+            "coingeckoId": "tinkernet"
           },
           {
             "symbol": "HUAHUA",
@@ -3809,6 +3860,11 @@
     "paraId": 3344,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polimec"
+      }
     }
   },
   {
@@ -4043,6 +4099,11 @@
     "paraId": 1002,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadot"
+      }
     }
   },
   {
@@ -4063,6 +4124,11 @@
     "paraId": 1001,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "polkadot"
+      }
     }
   },
   {
@@ -4440,12 +4506,22 @@
     "id": "ternoa",
     "name": "Ternoa",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/mainnet_specs.png",
-    "rpcs": ["wss://mainnet.ternoa.network"]
+    "rpcs": ["wss://mainnet.ternoa.network"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "coin-capsule"
+      }
+    }
   },
   {
     "id": "thebifrost-mainnet",
     "name": "The Bifrost",
-    "rpcs": ["wss://public-01.mainnet.bifrostnetwork.com/wss", "wss://public-02.mainnet.bifrostnetwork.com/wss"]
+    "rpcs": ["wss://public-01.mainnet.bifrostnetwork.com/wss", "wss://public-02.mainnet.bifrostnetwork.com/wss"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "bifrost"
+      }
+    }
   },
   {
     "id": "tinker",
@@ -4456,6 +4532,11 @@
     "paraId": 2125,
     "relay": {
       "id": "kusama"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "tinkernet"
+      }
     }
   },
   {
