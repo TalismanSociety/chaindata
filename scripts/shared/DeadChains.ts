@@ -22,6 +22,8 @@ type DataRpc = {
   dead_since: string
   /** date of most recent failed attempt */
   last_check: string
+  /** number of days RPC has been down */
+  days?: number
 }
 
 export class DeadChains {
@@ -77,6 +79,14 @@ export class DeadChains {
         const aTotalCount = [...a[1].values()].reduce((acc, { count }) => acc + count, 0)
         const bTotalCount = [...b[1].values()].reduce((acc, { count }) => acc + count, 0)
         return bTotalCount - aTotalCount
+      }),
+    )
+    // update day counters
+    this.#data.forEach((chain) =>
+      chain.forEach((rpc) => {
+        const msToDays = (milliseconds: number) => Math.floor(milliseconds / 1000 / 60 / 60 / 24)
+        rpc.days = msToDays(new Date(rpc.last_check).getTime() - new Date(rpc.dead_since).getTime())
+        if (rpc.days === 0) delete rpc.days
       }),
     )
 
