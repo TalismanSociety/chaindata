@@ -2,7 +2,7 @@
   "id": "neatcoin",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 582,
+  "sortIndex": 588,
   "genesisHash": "0xfbb541421d30423c9a753ffa844b64fd44d823f513bf49e3b73b3a656309a595",
   "prefix": 48,
   "name": "Neatcoin",
@@ -36,7 +36,15 @@
   "parathreads": null,
   "paraId": null,
   "relay": null,
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "neat",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neat.webp"
+      }
+    }
+  ],
   "balancesMetadata": [],
   "hasCheckMetadataHash": false
 }

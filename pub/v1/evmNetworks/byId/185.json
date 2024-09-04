@@ -1,7 +1,7 @@
 {
   "id": "185",
   "isTestnet": false,
-  "sortIndex": 552,
+  "sortIndex": 558,
   "name": "Mint Mainnet",
   "themeColor": "#30bf54",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/mint.webp",
@@ -28,6 +28,29 @@
         "decimals": 18,
         "coingeckoId": "weth",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WETH",
+            "coingeckoId": "mintchain-bridged-weth-mint",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mintchain-bridged-weth-mint.webp"
+          },
+          {
+            "symbol": "MST",
+            "coingeckoId": "mintswaptoken",
+            "contractAddress": "0x9f7bd1ce3412960524e86183b8f005271c09a5e0",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mintswaptoken.webp"
+          }
+        ]
       }
     }
   ],
