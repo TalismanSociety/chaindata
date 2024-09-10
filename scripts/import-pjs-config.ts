@@ -31,14 +31,14 @@ import { PRETTIER_CONFIG } from './shared/constants'
 //
 // make sure these are a list of regexes, i.e. Regex[]
 const goodRpcProviders = [
-  // test if rpc ends with `dwellier.com` or `dwellier.com/`
-  /dwellir\.com\/?$/i,
-
   // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network` or `wss://rpc.dotters.network` or `wss://sys.dotters.network`
   /^wss:\/\/(?:rpc|sys)\.(?:ibp|dotters)\.network/i,
 
   // test if rpc starts with `wss://1rpc.io/`
   /^wss:\/\/1rpc\.io\//i,
+
+  // test if rpc ends with `dwellier.com` or `dwellier.com/`
+  /dwellir\.com\/?$/i,
 ]
 
 const unreliableRpcProviders = [
@@ -274,7 +274,6 @@ const main = async () => {
 
       chain.name = trimName(para.text, id)
       if (chain.name !== para.text) console.log(`Prettified chain name ${para.text} -> ${chain.name}`)
-      if (!chain.account) chain.account = '*25519'
       const overrideRpcs = isTestnet ? customTestnetChainRpcs[id] : customChainRpcs[id]
       const prependRpcs = isTestnet ? undefined : additionalChainRpcs[id]
       chain.rpcs = (overrideRpcs ?? ([...(prependRpcs ?? []), ...Object.values(para.providers)] as string[]))
