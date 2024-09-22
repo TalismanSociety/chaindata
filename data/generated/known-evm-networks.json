@@ -18337,6 +18337,12 @@
             "decimals": 18
           },
           {
+            "symbol": "XMW",
+            "coingeckoId": "morphware",
+            "contractAddress": "0x391cf4b21f557c935c7f670218ef42c21bd8d686",
+            "decimals": 18
+          },
+          {
             "symbol": "MORRA",
             "coingeckoId": "morra",
             "contractAddress": "0xd9adfb67381d392c6e9671f64cdd9014bfcd74f2",
@@ -18689,6 +18695,12 @@
             "coingeckoId": "nebula-2",
             "contractAddress": "0xac1419ee74f203c6b9daa3635ad7169b7ebb5c1a",
             "decimals": 9
+          },
+          {
+            "symbol": "NEBULA",
+            "coingeckoId": "nebula-3",
+            "contractAddress": "0x541f9ac587be412ba0486ea3dbcf09dc11db76ce",
+            "decimals": 18
           },
           {
             "symbol": "NAS",
@@ -21025,6 +21037,12 @@
             "decimals": 18
           },
           {
+            "symbol": "SOCIAL",
+            "coingeckoId": "phavercoin",
+            "contractAddress": "0xd3c68968137317a57a9babeacc7707ec433548b4",
+            "decimals": 18
+          },
+          {
             "symbol": "PT",
             "coingeckoId": "phemex",
             "contractAddress": "0xbbb32f99e6f2cb29337eebaa43c5069386de6e6c",
@@ -21802,6 +21820,12 @@
             "symbol": "PRAI",
             "coingeckoId": "produce-ai",
             "contractAddress": "0x0e6d98de664a28a32b584c72e606ff7dea898dc6",
+            "decimals": 18
+          },
+          {
+            "symbol": "ATHENA",
+            "coingeckoId": "project-athena",
+            "contractAddress": "0xcdf6b7657b8f26c396293417d713b7fc6b8304d9",
             "decimals": 18
           },
           {
@@ -26679,6 +26703,12 @@
             "coingeckoId": "term-finance",
             "contractAddress": "0xc3d21f79c3120a4ffda7a535f8005a7c297799bf",
             "decimals": 18
+          },
+          {
+            "symbol": "TMNS",
+            "coingeckoId": "terminus",
+            "contractAddress": "0x70054a18e57bd9e21e8b6361f6a8dfcd86cdc7d0",
+            "decimals": 9
           },
           {
             "symbol": "TRR",
@@ -71936,7 +71966,7 @@
   {
     "id": "1625",
     "name": "Gravity Alpha Mainnet",
-    "rpcs": ["https://rpc.gravity.xyz"],
+    "rpcs": ["https://rpc.gravity.xyz", "https://rpc.ankr.com/gravity"],
     "icon": "gravity",
     "explorerUrl": "https://explorer.gravity.xyz",
     "balancesConfig": {
@@ -80231,6 +80261,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BASEX",
+            "coingeckoId": "base-terminal",
+            "contractAddress": "0xb8e564b206032bbcda2c3978bc371da52152f72e",
+            "decimals": 18
+          },
+          {
             "symbol": "BVM",
             "coingeckoId": "base-velocimeter",
             "contractAddress": "0xd386a121991e51eab5e3433bf5b1cf4c8884b47a",
@@ -82867,6 +82903,12 @@
             "symbol": "CASH",
             "coingeckoId": "phase-dollar",
             "contractAddress": "0xbe92452bb46485af3308e6d77786bfbe3557808d",
+            "decimals": 18
+          },
+          {
+            "symbol": "SOCIAL",
+            "coingeckoId": "phavercoin",
+            "contractAddress": "0xd3c68968137317a57a9babeacc7707ec433548b4",
             "decimals": 18
           },
           {
@@ -97287,7 +97329,7 @@
   {
     "id": "59141",
     "name": "Linea Sepolia",
-    "rpcs": ["https://rpc.sepolia.linea.build"],
+    "rpcs": ["https://rpc.sepolia.linea.build", "https://linea-sepolia-rpc.publicnode.com"],
     "icon": "linea",
     "explorerUrl": "https://sepolia.lineascan.build",
     "balancesConfig": {
@@ -97300,7 +97342,7 @@
   {
     "id": "59144",
     "name": "Linea",
-    "rpcs": ["https://rpc.linea.build"],
+    "rpcs": ["https://rpc.linea.build", "https://linea-rpc.publicnode.com"],
     "icon": "linea",
     "explorerUrl": "https://lineascan.build",
     "balancesConfig": {
@@ -100269,6 +100311,18 @@
     }
   },
   {
+    "id": "158245",
+    "name": "CryptoX",
+    "rpcs": ["https://rpc-xcoin.cryptoxnetwork.io"],
+    "explorerUrl": "https://cryptoxscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "XCOIN",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "165279",
     "name": "Eclat Mainnet",
     "rpcs": ["https://mainnet-rpc.eclatscan.com"],
@@ -100284,7 +100338,7 @@
   {
     "id": "167000",
     "name": "Taiko Mainnet",
-    "rpcs": ["https://rpc.mainnet.taiko.xyz"],
+    "rpcs": ["https://rpc.mainnet.taiko.xyz", "https://taiko-rpc.publicnode.com"],
     "icon": "taiko",
     "explorerUrl": "https://taikoscan.io",
     "balancesConfig": {
@@ -100351,7 +100405,7 @@
   {
     "id": "167009",
     "name": "Taiko Hekla L2",
-    "rpcs": ["https://rpc.hekla.taiko.xyz"],
+    "rpcs": ["https://rpc.hekla.taiko.xyz", "https://taiko-hekla-rpc.publicnode.com"],
     "icon": "taiko",
     "explorerUrl": "https://blockscoutapi.hekla.taiko.xyz",
     "balancesConfig": {
@@ -101592,7 +101646,8 @@
       "https://sepolia-rpc.scroll.io",
       "https://rpc.ankr.com/scroll_sepolia_testnet",
       "https://scroll-sepolia.chainstacklabs.com",
-      "https://scroll-testnet-public.unifra.io"
+      "https://scroll-testnet-public.unifra.io",
+      "https://scroll-sepolia-rpc.publicnode.com"
     ],
     "explorerUrl": "https://sepolia.scrollscan.com",
     "balancesConfig": {
@@ -101606,7 +101661,12 @@
   {
     "id": "534352",
     "name": "Scroll",
-    "rpcs": ["https://rpc.scroll.io", "https://rpc.ankr.com/scroll", "https://scroll-mainnet.chainstacklabs.com"],
+    "rpcs": [
+      "https://rpc.scroll.io",
+      "https://rpc.ankr.com/scroll",
+      "https://scroll-mainnet.chainstacklabs.com",
+      "https://scroll-rpc.publicnode.com"
+    ],
     "explorerUrl": "https://scrollscan.com",
     "balancesConfig": {
       "evm-native": {
@@ -102255,7 +102315,7 @@
   {
     "id": "808080",
     "name": "BIZ Smart Chain Testnet",
-    "rpcs": ["https://rpc-testnet.bizex.io/"],
+    "rpcs": [],
     "icon": "biz",
     "explorerUrl": "https://testnet.btscan.io",
     "balancesConfig": {
