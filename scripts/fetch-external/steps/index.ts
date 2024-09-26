@@ -9,17 +9,17 @@ import { updateChainsExtrasCache } from './updateChainsExtrasCache'
 import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensFromCache'
 
 export const fetchExternalSteps: Array<() => Promise<void>> = [
-  fetchKnownEvmNetworks,
-  fetchKnownEvmTokens,
-  fetchErc20TokenSymbols,
-  updateKnownEvmErc20TokensFromCache,
+  // fetchKnownEvmNetworks,
+  // fetchKnownEvmTokens,
+  // fetchErc20TokenSymbols,
+  // updateKnownEvmErc20TokensFromCache,
 
-  // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds
-  // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
-  fetchUniswapv2TokenExtras,
+  // // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds
+  // // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
+  // fetchUniswapv2TokenExtras,
 
-  fetchKnownEvmNetworksLogos,
-  fetchCoingeckoTokensLogos,
-  fetchNovasamaMetadataPortalUrls,
+  // fetchKnownEvmNetworksLogos,
+  // fetchCoingeckoTokensLogos,
+  // fetchNovasamaMetadataPortalUrls,
   updateChainsExtrasCache,
 ]

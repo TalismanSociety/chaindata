@@ -1,6 +1,7 @@
 import 'anylogger-loglevel'
 
 import { cryptoWaitReady } from '@polkadot/util-crypto'
+import { watCryptoWaitReady } from '@talismn/scale'
 import startCase from 'lodash/startCase'
 import loglevel from 'loglevel'
 
@@ -17,8 +18,12 @@ loglevel.setLevel('info')
 //   ...buildSteps
 // ]
 
-// wait for `@polkadot/util-crypto` to be ready (it needs to load some wasm)
-await cryptoWaitReady()
+await Promise.all([
+  // wait for `@polkadot/util-crypto` to be ready (it needs to load some wasm)
+  cryptoWaitReady(),
+  // wait for `@talismn/scale` to be ready (it needs to load some wasm)
+  watCryptoWaitReady(),
+])
 
 for (const [index, executeStep] of fetchExternalSteps.entries()) {
   console.log(`Executing step ${index + 1} - ${startCase(executeStep.name)}`)
