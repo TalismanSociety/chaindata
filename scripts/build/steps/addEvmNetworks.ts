@@ -65,7 +65,12 @@ export const addEvmNetworks = async () => {
           configsByIndex.substrate.set(substrateIndex, configIndex)
         }
 
-        const substrateChain = sharedData.chains.find((chain) => chain.id === configEvmNetwork.substrateChainId)
+        const overridesEvmNetwork = sharedData.knownEvmNetworksOverridesConfig.find(
+          (ov) => ov.id === configEvmNetwork.id,
+        )
+
+        const substrateChainId = overridesEvmNetwork?.substrateChainId ?? configEvmNetwork.substrateChainId
+        const substrateChain = sharedData.chains.find((chain) => chain.id === substrateChainId)
         const substrateConfig = sharedData.chainsConfig.find((chain) => chain.id === configEvmNetwork.substrateChainId)
 
         // mark all ERC20 tokens with isDefault true
@@ -107,10 +112,6 @@ export const addEvmNetworks = async () => {
             if (!pool.coingeckoId1) pool.coingeckoId1 = tokenInfo.coingeckoId1
           }
         }
-
-        const overridesEvmNetwork = sharedData.knownEvmNetworksOverridesConfig.find(
-          (ov) => ov.id === configEvmNetwork.id,
-        )
 
         const evmNetwork: EvmNetwork = {
           id: configEvmNetwork.id,
@@ -195,6 +196,8 @@ export const addEvmNetworks = async () => {
       continue
     }
 
+    const substrateChain = sharedData.chains.find((chain) => chain.id === knownEvmNetwork.substrateChainId)
+
     const evmNetwork: EvmNetwork = {
       id: knownEvmNetwork.id,
       isTestnet: knownEvmNetwork.isTestnet ?? false,
@@ -206,7 +209,7 @@ export const addEvmNetworks = async () => {
       tokens: [],
       explorerUrl: knownEvmNetwork.explorerUrl ?? null,
       rpcs: (knownEvmNetwork.rpcs || []).map((url) => ({ url })),
-      substrateChain: null,
+      substrateChain: substrateChain ? { id: substrateChain.id } : null,
       feeType: knownEvmNetwork.feeType,
       l2FeeType: knownEvmNetwork.l2FeeType,
 
