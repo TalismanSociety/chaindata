@@ -885,6 +885,11 @@
             "decimals": 18
           },
           {
+            "symbol": "abe",
+            "coingeckoId": "abe",
+            "contractAddress": "0xd0dfca0b404e866dc9a3038bd2a545c6735d9fa9"
+          },
+          {
             "symbol": "ABE",
             "coingeckoId": "aboard",
             "contractAddress": "0xb0ed164f6e3c6a4153eeb43bf9674955a259ec45",
@@ -2821,6 +2826,11 @@
             "coingeckoId": "babyfloki",
             "contractAddress": "0xdf35988d795d90711e785b488bb2127692e6f956",
             "decimals": 9
+          },
+          {
+            "symbol": "babyneiro",
+            "coingeckoId": "baby-neiro-token",
+            "contractAddress": "0xbabe3ce7835665464228df00b03246115c30730a"
           },
           {
             "symbol": "BABYPEPE",
@@ -12323,6 +12333,11 @@
             "coingeckoId": "gmfam",
             "contractAddress": "0xe9da5e227e3fa4fc933b5f540be021e7ecc3fd81",
             "decimals": 18
+          },
+          {
+            "symbol": "gm",
+            "coingeckoId": "gm-frens",
+            "contractAddress": "0x89c1da46d692d09814a88a27270d0dca21e4734d"
           },
           {
             "symbol": "GMT",
@@ -55274,7 +55289,7 @@
   {
     "id": "131",
     "name": "Engram Testnet",
-    "rpcs": ["https://tokioswift.engram.tech", "https://tokio-archive.engram.tech"],
+    "rpcs": ["https://tokio-archive.engram.tech"],
     "icon": "engram",
     "explorerUrl": "https://tokioscan-v2.engram.tech",
     "balancesConfig": {
@@ -69503,7 +69518,7 @@
   {
     "id": "1005",
     "name": "LemonChainTestnet",
-    "rpcs": ["https://rpc.testnet.allthingslemon.io"],
+    "rpcs": ["https://rpc.testnet.lemonchain.io", "https://rpc.testnet.allthingslemon.io"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "tLEMX",
@@ -69515,7 +69530,7 @@
   {
     "id": "1006",
     "name": "LemonChain",
-    "rpcs": ["https://rpc.allthingslemon.io"],
+    "rpcs": ["https://rpc.lemonchain.io", "https://rpc.allthingslemon.io"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "LEMX",
@@ -98784,6 +98799,19 @@
     }
   },
   {
+    "id": "65536",
+    "name": "Automata Mainnet",
+    "rpcs": ["https://rpc.ata.network", "https://automata-mainnet.alt.technology/"],
+    "icon": "automata",
+    "explorerUrl": "https://explorer.ata.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ATA",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "66665",
     "name": "Creator Chain Testnet",
     "rpcs": ["https://rpc.creatorchain.io"],
@@ -103595,9 +103623,9 @@
   {
     "id": "1398243",
     "name": "Automata Testnet",
-    "rpcs": ["https://automata-testnet.alt.technology"],
+    "rpcs": ["https://rpc-testnet.ata.network", "https://automata-testnet.alt.technology"],
     "icon": "automata",
-    "explorerUrl": "https://automata-testnet-explorer.alt.technology",
+    "explorerUrl": "https://explorer-testnet.ata.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ATA",
@@ -105261,6 +105289,19 @@
     "isTestnet": true
   },
   {
+    "id": "994873017",
+    "name": "Lumia Mainnet",
+    "rpcs": ["https://mainnet-rpc.lumia.org"],
+    "icon": "lumia",
+    "explorerUrl": "https://explorer.lumia.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "LUMIA",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "999999999",
     "name": "Zora Sepolia Testnet",
     "rpcs": ["https://sepolia.rpc.zora.energy"],
@@ -106393,6 +106434,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "1952959480",
+    "name": "Lumia Testnet",
+    "rpcs": ["https://testnet-rpc.lumia.org"],
+    "icon": "lumia",
+    "explorerUrl": "https://testnet-explorer.lumia.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "LUMIA",
         "decimals": 18
       }
     },
