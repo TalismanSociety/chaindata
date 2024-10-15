@@ -14179,6 +14179,12 @@
             "decimals": 18
           },
           {
+            "symbol": "intBTC",
+            "coingeckoId": "inception-restaked-tbtc",
+            "contractAddress": "0x1aee5ec60fc79b669f11fe368fde789e267649e2",
+            "decimals": 18
+          },
+          {
             "symbol": "INCR",
             "coingeckoId": "increment",
             "contractAddress": "0x1b9ebb707d87fbec93c49d9f2d994ebb60461b9b",
@@ -19873,6 +19879,12 @@
             "decimals": 18
           },
           {
+            "symbol": "OMNIA",
+            "coingeckoId": "omnia",
+            "contractAddress": "0x2e7e487d84b5baba5878a9833fb394bc89633fd7",
+            "decimals": 18
+          },
+          {
             "symbol": "$OMNIX",
             "coingeckoId": "omnibotx",
             "contractAddress": "0x621879c6239d8ab9b82712fb56e7be880ce0c6ee",
@@ -24885,6 +24897,12 @@
             "coingeckoId": "smog",
             "contractAddress": "0x89e8e084cc60e6988527f0904b4be71656e8bfa9",
             "decimals": 6
+          },
+          {
+            "symbol": "SCF",
+            "coingeckoId": "smokingchickenfisheth",
+            "contractAddress": "0x723abbea6e985fb21c57f550d9cceba1c676a6a9",
+            "decimals": 9
           },
           {
             "symbol": "smol",
@@ -46294,6 +46312,12 @@
             "decimals": 18
           },
           {
+            "symbol": "OMNIA",
+            "coingeckoId": "omnia",
+            "contractAddress": "0xb53cc8303943582949b9a23f0556b0f0c41fec98",
+            "decimals": 18
+          },
+          {
             "symbol": "OMNI",
             "coingeckoId": "omnicat",
             "contractAddress": "0x9e20461bc2c4c980f62f1b279d71734207a6a356",
@@ -46309,6 +46333,12 @@
             "symbol": "OSEA",
             "coingeckoId": "omnisea",
             "contractAddress": "0x7b610012bdc4d6deba2c2d91684e408f40863429",
+            "decimals": 18
+          },
+          {
+            "symbol": "OMOM",
+            "coingeckoId": "omom",
+            "contractAddress": "0xd93a10aaf86c18333e34e1c2eb628ef0d8215de0",
             "decimals": 18
           },
           {
@@ -66137,6 +66167,12 @@
             "decimals": 18
           },
           {
+            "symbol": "FIUSD",
+            "coingeckoId": "sygnum-fiusd-liquidity-fund",
+            "contractAddress": "0x2ab105a3ead22731082b790ca9a00d9a3a7627f9",
+            "decimals": 2
+          },
+          {
             "symbol": "syBTC",
             "coingeckoId": "symbiosis-bridged-btc-zksync",
             "contractAddress": "0xed0c95ebe5a3e687cb2224687024fec6518e683e",
@@ -77285,8 +77321,8 @@
     "rpcs": [
       "https://node0.testnet.treasurenet.io",
       "https://node1.testnet.treasurenet.io",
-      "https://node2.testnet.treasurenet.io",
-      "https://node3.testnet.treasurenet.io"
+      "https://node3.testnet.treasurenet.io",
+      "https://node2.testnet.treasurenet.io"
     ],
     "icon": "treasurenet",
     "explorerUrl": "https://evmexplorer.testnet.treasurenet.io",
@@ -77471,7 +77507,7 @@
   {
     "id": "5165",
     "name": "Bahamut",
-    "rpcs": ["https://rpc1.bahamut.io", "https://rpc2.bahamut.io", "https://bahamut-rpc.publicnode.com"],
+    "rpcs": ["https://rpc1.bahamut.io", "https://bahamut-rpc.publicnode.com", "https://rpc2.bahamut.io"],
     "icon": "bahamut",
     "explorerUrl": "https://ftnscan.com",
     "balancesConfig": {
@@ -82098,6 +82134,12 @@
             "coingeckoId": "fxdx",
             "contractAddress": "0x30b593f8c3ab37615359b4e0e6df2e06d55bb55d",
             "decimals": 18
+          },
+          {
+            "symbol": "gUSDC",
+            "coingeckoId": "gains-network-usdc-base",
+            "contractAddress": "0xad20523a7dc37babc1cc74897e4977232b3d02e5",
+            "decimals": 6
           },
           {
             "symbol": "GAME",
@@ -101624,6 +101666,19 @@
     }
   },
   {
+    "id": "210210",
+    "name": "Sorian Testnet",
+    "rpcs": ["https://testnet-rpc.sorian.io", "https://testnet.rpc.sorian.io"],
+    "icon": "sorianTestnet",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "tSOR",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "210425",
     "name": "PlatON Mainnet",
     "rpcs": ["https://openapi2.platon.network/rpc"],
@@ -106583,19 +106638,6 @@
     "isTestnet": true
   },
   {
-    "id": "1802203764",
-    "name": "Kakarot Sepolia",
-    "rpcs": ["https://sepolia-rpc.kakarot.org"],
-    "icon": "kakarot",
-    "explorerUrl": "https://sepolia.kakarotscan.org",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "ETH",
-        "decimals": 18
-      }
-    }
-  },
-  {
     "id": "1903648807",
     "name": "Gemuchain Testnet",
     "rpcs": ["https://gemutest-rpc.gemuchain.io"],
@@ -106916,6 +106958,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "920637907288165",
+    "name": "Kakarot Starknet Sepolia",
+    "rpcs": ["https://sepolia-rpc.kakarot.org"],
+    "icon": "kakarot",
+    "explorerUrl": "https://sepolia.kakarotscan.org",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "2713017997578000",
