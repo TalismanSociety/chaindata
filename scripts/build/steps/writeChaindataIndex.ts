@@ -53,16 +53,19 @@ const writeEvmNetworks = async () => {
   await writeChaindataFile(
     `evmNetworks/summary.json`,
     JSON.stringify(
-      allEvmNetworks.map(({ id, isTestnet, sortIndex, name, themeColor, logo, feeType, l2FeeType }) => ({
-        id,
-        isTestnet,
-        sortIndex,
-        name,
-        themeColor,
-        logo,
-        feeType,
-        l2FeeType,
-      })),
+      allEvmNetworks.map(
+        ({ id, isTestnet, sortIndex, name, themeColor, logo, feeType, erc20aggregator, l2FeeType }) => ({
+          id,
+          isTestnet,
+          sortIndex,
+          name,
+          themeColor,
+          logo,
+          feeType,
+          l2FeeType,
+          erc20aggregator,
+        }),
+      ),
       null,
       2,
     ),

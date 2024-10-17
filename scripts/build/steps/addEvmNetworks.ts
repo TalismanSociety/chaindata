@@ -127,7 +127,7 @@ export const addEvmNetworks = async () => {
           substrateChain: substrateChain ? { id: substrateChain.id } : null,
           feeType: overridesEvmNetwork?.feeType ?? configEvmNetwork.feeType,
           l2FeeType: overridesEvmNetwork?.l2FeeType ?? configEvmNetwork.l2FeeType,
-
+          erc20aggregator: overridesEvmNetwork?.erc20aggregator ?? configEvmNetwork.erc20aggregator,
           balancesConfig: Object.entries(configEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
             moduleType,
             moduleConfig,
@@ -212,7 +212,7 @@ export const addEvmNetworks = async () => {
       substrateChain: substrateChain ? { id: substrateChain.id } : null,
       feeType: knownEvmNetwork.feeType,
       l2FeeType: knownEvmNetwork.l2FeeType,
-
+      erc20aggregator: knownEvmNetwork.erc20aggregator,
       balancesConfig: Object.entries(knownEvmNetwork.balancesConfig ?? {}).map(([moduleType, moduleConfig]) => ({
         moduleType,
         moduleConfig,

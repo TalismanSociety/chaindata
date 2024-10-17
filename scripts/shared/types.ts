@@ -52,6 +52,7 @@ export type ConfigEvmNetwork = {
   icon?: string
   feeType?: EvmNetwork['feeType']
   l2FeeType?: EvmNetwork['l2FeeType']
+  erc20aggregator?: EvmNetwork['erc20aggregator']
 }
 
 export type ChainExtrasCache = {
