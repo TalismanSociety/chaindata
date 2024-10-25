@@ -5708,6 +5708,12 @@
             "decimals": 18
           },
           {
+            "symbol": "CAI",
+            "coingeckoId": "chasm-ai",
+            "contractAddress": "0x19247618d79e3fc4d4866169789e4b8eedef52e6",
+            "decimals": 18
+          },
+          {
             "symbol": "AI",
             "coingeckoId": "chat-ai",
             "contractAddress": "0xa89bf95c5f15a847c8eb8d348cd7fed719ad7d80",
@@ -13189,6 +13195,12 @@
             "decimals": 18
           },
           {
+            "symbol": "USYC",
+            "coingeckoId": "hashnote-usyc",
+            "contractAddress": "0x136471a34f6ef19fe571effc1ca711fdb8e49f2b",
+            "decimals": 6
+          },
+          {
             "symbol": "0xVOX",
             "coingeckoId": "hashvox-ai",
             "contractAddress": "0x6371d7ebd6851b2f6c688081d34edf230332fd00",
@@ -15685,6 +15697,12 @@
             "decimals": 18
           },
           {
+            "symbol": "KYRA",
+            "coingeckoId": "kyra",
+            "contractAddress": "0x4b41a481a7a3e0396751aa49bee970b842fdaede",
+            "decimals": 9
+          },
+          {
             "symbol": "L",
             "coingeckoId": "l",
             "contractAddress": "0xf8c76dbea329ec4fa987afc514f805b21b249d79",
@@ -17860,6 +17878,12 @@
             "symbol": "mBASIS",
             "coingeckoId": "midas-basis-trading-token",
             "contractAddress": "0x2a8c22e3b10036f3aef5875d04f8441d4188b656",
+            "decimals": 18
+          },
+          {
+            "symbol": "mBTC",
+            "coingeckoId": "midas-btc-yield-token",
+            "contractAddress": "0x007115416ab6c266329a03b09a8aa39ac2ef7d9d",
             "decimals": 18
           },
           {
@@ -42822,12 +42846,6 @@
           },
           {
             "symbol": "IMO",
-            "coingeckoId": "imo",
-            "contractAddress": "0x94d79c325268c898d2902050730f27a478c56cc1",
-            "decimals": 18
-          },
-          {
-            "symbol": "IMO",
             "coingeckoId": "imonster",
             "contractAddress": "0xb2c1528a5ea04528ac6a3e481d38c19003cb71d4",
             "decimals": 18
@@ -43538,6 +43556,12 @@
             "symbol": "KingGrok",
             "coingeckoId": "king-grok",
             "contractAddress": "0x2df3774f46049da1efeb2b0c393efd7234b6ad56",
+            "decimals": 9
+          },
+          {
+            "symbol": "KingNeiro",
+            "coingeckoId": "king-neiro",
+            "contractAddress": "0xe5ba37d7818dad6aac9212f0e8a363c6e8ea0dfb",
             "decimals": 9
           },
           {
@@ -48146,6 +48170,12 @@
             "symbol": "Base",
             "coingeckoId": "rebasechain",
             "contractAddress": "0xc2fd585d2e6a33fe48a0ffc65072216b0e3b2e07",
+            "decimals": 18
+          },
+          {
+            "symbol": "REBD",
+            "coingeckoId": "reborn-2",
+            "contractAddress": "0x4b497a84fe1b0df682425799c0580355b0dc05b8",
             "decimals": 18
           },
           {
@@ -67756,7 +67786,12 @@
   {
     "id": "480",
     "name": "World Chain",
-    "rpcs": ["https://worldchain-mainnet.g.alchemy.com/public"],
+    "rpcs": [
+      "https://worldchain-mainnet.g.alchemy.com/public",
+      "https://480.rpc.thirdweb.com",
+      "https://worldchain-mainnet.gateway.tenderly.co"
+    ],
+    "explorerUrl": "https://worldscan.org",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -72336,6 +72371,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "1555",
+    "name": "Digital Smart Chain",
+    "rpcs": ["https://rpc01.dscscan.io"],
+    "icon": "dscscan",
+    "explorerUrl": "https://explorer.dotblox.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "DSCs",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "1559",
@@ -77122,7 +77170,12 @@
   {
     "id": "4801",
     "name": "World Chain Sepolia Testnet",
-    "rpcs": ["https://worldchain-sepolia.g.alchemy.com/public"],
+    "rpcs": [
+      "https://worldchain-sepolia.g.alchemy.com/public",
+      "https://4801.rpc.thirdweb.com",
+      "https://worldchain-sepolia.gateway.tenderly.co"
+    ],
+    "explorerUrl": "https://sepolia.worldscan.org",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -77236,6 +77289,12 @@
             "symbol": "CDFi",
             "coingeckoId": "cedefiai",
             "contractAddress": "0x527856315a4bcd2f428ea7fa05ea251f7e96a50a",
+            "decimals": 18
+          },
+          {
+            "symbol": "CAI",
+            "coingeckoId": "chasm-ai",
+            "contractAddress": "0xf793ac038e7688aa3220005852836108cddb065c",
             "decimals": 18
           },
           {
@@ -78734,6 +78793,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "DAI",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7117",
+    "name": "0XL3",
+    "rpcs": ["https://rpc.0xl3.com"],
+    "icon": "0xl3",
+    "explorerUrl": "https://exp.0xl3.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "XL3",
         "decimals": 18
       }
     }
@@ -81095,6 +81167,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BLUE",
+            "coingeckoId": "blue-3",
+            "contractAddress": "0x7f65323e468939073ef3b5287c73f13951b0ff5b",
+            "decimals": 18
+          },
+          {
             "symbol": "CHIP",
             "coingeckoId": "blue-chip",
             "contractAddress": "0x4c40454659c8ec1283355d8e3911ba1745ff6fd1",
@@ -81200,6 +81278,12 @@
             "symbol": "BOOMER",
             "coingeckoId": "boomer",
             "contractAddress": "0xcde172dc5ffc46d228838446c57c1227e0b82049",
+            "decimals": 18
+          },
+          {
+            "symbol": "BOOSHI",
+            "coingeckoId": "booshi",
+            "contractAddress": "0x0d1fc046900628879d579364789273fd552ec582",
             "decimals": 18
           },
           {
@@ -99398,6 +99482,19 @@
     }
   },
   {
+    "id": "70701",
+    "name": "Proof of Play - Boss",
+    "rpcs": ["https://rpc.boss.proofofplay.com"],
+    "icon": "pop-boss",
+    "explorerUrl": "https://explorer.boss.proofofplay.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "71111",
     "name": "GuapcoinX",
     "rpcs": [
@@ -107238,6 +107335,19 @@
             "decimals": 18
           }
         ]
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "2478899481",
+    "name": "Accumulate Kermit",
+    "rpcs": ["https://kermit.accumulatenetwork.io/eth"],
+    "explorerUrl": "https://kermit.explorer.accumulatenetwork.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ACME",
+        "decimals": 18
       }
     },
     "isTestnet": true
