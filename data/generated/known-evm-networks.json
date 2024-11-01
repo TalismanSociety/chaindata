@@ -26009,6 +26009,12 @@
             "decimals": 18
           },
           {
+            "symbol": "STONKS",
+            "coingeckoId": "stonks-on-eth",
+            "contractAddress": "0x7d4a23832fad83258b32ce4fd3109ceef4332af4",
+            "decimals": 9
+          },
+          {
             "symbol": "WSTOR",
             "coingeckoId": "storagechain",
             "contractAddress": "0x346b46280f559def274f80c5d16471b4b7ef2f14",
@@ -35741,6 +35747,12 @@
             "coingeckoId": "atlas-usv",
             "contractAddress": "0xaf6162dc717cfc8818efc8d6f46a41cf7042fcba",
             "decimals": 9
+          },
+          {
+            "symbol": "TUA",
+            "coingeckoId": "atua-ai",
+            "contractAddress": "0x36b2269fd151208a4bfc3dea503e0a6f2485fa78",
+            "decimals": 18
           },
           {
             "symbol": "AUC",
@@ -62659,6 +62671,18 @@
     "isTestnet": true
   },
   {
+    "id": "175",
+    "name": "OTC",
+    "rpcs": ["https://rpc.otc.run"],
+    "icon": "otc",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "OTC",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "176",
     "name": "DC Mainnet",
     "rpcs": ["https://rpc.dcnetio.cloud"],
@@ -72285,10 +72309,10 @@
     "name": "Digital Smart Chain",
     "rpcs": ["https://rpc01.dscscan.io"],
     "icon": "dscscan",
-    "explorerUrl": "https://explorer.dotblox.io",
+    "explorerUrl": "https://dscscan.io",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "DSCs",
+        "symbol": "DSC",
         "decimals": 18
       }
     }
@@ -74152,7 +74176,7 @@
   {
     "id": "2023",
     "name": "Taycan Testnet",
-    "rpcs": ["https://test-taycan.hupayx.io"],
+    "rpcs": [],
     "icon": "shuffle",
     "explorerUrl": "https://evmscan-test.hupayx.io",
     "balancesConfig": {
@@ -76819,6 +76843,19 @@
     }
   },
   {
+    "id": "4422",
+    "name": "Testnet Pika",
+    "rpcs": ["https://testnet-rpc1.pikascan.com"],
+    "icon": "testnetpsc",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "tPKA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "4444",
     "name": "Htmlcoin Mainnet",
     "rpcs": ["https://janus.htmlcoin.com/api/"],
@@ -78678,10 +78715,10 @@
     "name": "ZetaChain Testnet",
     "rpcs": [
       "https://zetachain-athens-evm.blockpi.network/v1/rpc/public",
-      "https://zetachain-testnet.public.blastapi.io",
       "https://zetachain-athens.g.allthatnode.com/archive/evm",
       "https://7001.rpc.thirdweb.com",
-      "https://zeta-chain-testnet.drpc.org"
+      "https://zeta-chain-testnet.drpc.org",
+      "https://zetachain-testnet.public.blastapi.io"
     ],
     "icon": "zetachain",
     "explorerUrl": "https://athens.explorer.zetachain.com",
@@ -104046,6 +104083,18 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "MIX",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "763373",
+    "name": "Ink Sepolia",
+    "rpcs": ["https://rpc-gel-sepolia.inkonchain.com"],
+    "explorerUrl": "https://explorer-sepolia.inkonchain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
         "decimals": 18
       }
     }
