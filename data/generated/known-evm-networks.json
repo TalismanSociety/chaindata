@@ -34923,7 +34923,7 @@
           {
             "symbol": "AGATA",
             "coingeckoId": "agatech",
-            "contractAddress": "0xb427e47e8fdd678278d2a91eeac014ffcddaf029",
+            "contractAddress": "0x18c4af61dbe6fd55d6470943b4ab8530777d009c",
             "decimals": 18
           },
           {
@@ -65249,7 +65249,9 @@
     "rpcs": [
       "https://mainnet-rpc.swanchain.org",
       "https://mainnet-rpc-01.swanchain.org",
-      "https://mainnet-rpc-02.swanchain.org"
+      "https://mainnet-rpc-02.swanchain.org",
+      "https://mainnet-rpc-03.swanchain.org",
+      "https://mainnet-rpc-04.swanchain.org"
     ],
     "explorerUrl": "https://swanscan.io",
     "balancesConfig": {
@@ -67589,7 +67591,6 @@
     "id": "462",
     "name": "Areon Network Testnet",
     "rpcs": [
-      "https://testnet-rpc3.areon.network",
       "https://testnet-rpc4.areon.network",
       "https://testnet-rpc5.areon.network",
       "https://testnet-rpc.areon.network"
@@ -72658,6 +72659,19 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "1833",
+    "name": "Verify testnet",
+    "rpcs": ["https://rpc.verify-testnet.gelato.digital"],
+    "explorerUrl": "https://verify-testnet.blockscout.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MATIC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "1853",
@@ -85220,7 +85234,7 @@
   {
     "id": "8768",
     "name": "TMY Chain",
-    "rpcs": [],
+    "rpcs": ["https://node1.tmyblockchain.org/rpc"],
     "icon": "tmychain",
     "balancesConfig": {
       "evm-native": {
@@ -87925,6 +87939,7 @@
     "id": "19180",
     "name": "LocaChain Mainnet",
     "rpcs": ["https://tgrpntwm.locachain.io"],
+    "icon": "locacoin",
     "explorerUrl": "https://explorer.locachain.io",
     "balancesConfig": {
       "evm-native": {
@@ -104825,10 +104840,10 @@
   },
   {
     "id": "3397901",
-    "name": "Funki Sepolia Sandbox",
+    "name": "Funki Sepolia Testnet",
     "rpcs": ["https://funki-testnet.alt.technology"],
     "icon": "funki",
-    "explorerUrl": "https://sepolia-sandbox.funkichain.com",
+    "explorerUrl": "https://testnet.funkiscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
