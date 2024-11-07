@@ -22297,6 +22297,12 @@
             "decimals": 18
           },
           {
+            "symbol": "QQQ",
+            "coingeckoId": "qqq6900",
+            "contractAddress": "0x690031313d70c2545357f4487c6a3f134c434507",
+            "decimals": 9
+          },
+          {
             "symbol": "QRDO",
             "coingeckoId": "qredo",
             "contractAddress": "0x4123a133ae3c521fd134d7b13a2dec35b56c2463",
@@ -65076,6 +65082,12 @@
             "decimals": 18
           },
           {
+            "symbol": "sFRAX",
+            "coingeckoId": "staked-frax-2",
+            "contractAddress": "0xfc00000000000000000000000000000000000008",
+            "decimals": 18
+          },
+          {
             "symbol": "SAM",
             "coingeckoId": "superalgorithmicmoney",
             "contractAddress": "0x4bfba51ae91420302fb49680da38ca068e0ee6ea",
@@ -71120,6 +71132,7 @@
       "https://moonbeam-rpc.publicnode.com",
       "https://moonbeam.drpc.org"
     ],
+    "icon": "moonbeam",
     "explorerUrl": "https://moonbeam.moonscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -71367,6 +71380,7 @@
       "https://moonriver-rpc.publicnode.com",
       "https://moonriver.drpc.org"
     ],
+    "icon": "moonriver",
     "explorerUrl": "https://moonriver.moonscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -71559,13 +71573,15 @@
       "https://moonbase.unitedbloc.com",
       "https://moonbase-alpha.drpc.org"
     ],
+    "icon": "moonbasealpha",
     "explorerUrl": "https://moonbase.moonscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "DEV",
         "decimals": 18
       }
-    }
+    },
+    "isTestnet": true
   },
   {
     "id": "1288",
@@ -95350,7 +95366,7 @@
     "name": "Avalanche Fuji Testnet",
     "rpcs": ["https://api.avax-test.network/ext/bc/C/rpc", "https://avalanche-fuji-c-chain-rpc.publicnode.com"],
     "icon": "avax",
-    "explorerUrl": "https://testnet.snowtrace.io",
+    "explorerUrl": "https://testnet.snowscan.xyz",
     "balancesConfig": {
       "evm-native": {
         "symbol": "AVAX",
@@ -95364,7 +95380,7 @@
     "name": "Avalanche C-Chain",
     "rpcs": ["https://api.avax.network/ext/bc/C/rpc", "https://avalanche-c-chain-rpc.publicnode.com"],
     "icon": "avax",
-    "explorerUrl": "https://snowtrace.io",
+    "explorerUrl": "https://snowscan.xyz",
     "balancesConfig": {
       "evm-native": {
         "symbol": "AVAX",
@@ -100024,7 +100040,7 @@
     "name": "Amoy",
     "rpcs": ["https://rpc-amoy.polygon.technology", "https://polygon-amoy-bor-rpc.publicnode.com"],
     "icon": "polygon",
-    "explorerUrl": "https://www.oklink.com/amoy",
+    "explorerUrl": "https://amoy.polygonscan.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "POL",
@@ -100760,7 +100776,7 @@
     "name": "Base Sepolia Testnet",
     "rpcs": ["https://sepolia.base.org", "https://base-sepolia-rpc.publicnode.com"],
     "icon": "baseTestnet",
-    "explorerUrl": "https://base-sepolia.blockscout.com",
+    "explorerUrl": "https://sepolia.basescan.org",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -102972,7 +102988,7 @@
     "explorerUrl": "https://explorer.mainnet.bitfinity.network",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "BFT",
+        "symbol": "BTF",
         "decimals": 18
       }
     }
@@ -102984,7 +103000,7 @@
     "explorerUrl": "https://explorer.testnet.bitfinity.network",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "BFT",
+        "symbol": "BTF",
         "decimals": 18
       }
     },
@@ -103137,7 +103153,7 @@
     "id": "421614",
     "name": "Arbitrum Sepolia",
     "rpcs": ["https://sepolia-rollup.arbitrum.io/rpc"],
-    "explorerUrl": "https://sepolia-explorer.arbitrum.io",
+    "explorerUrl": "https://sepolia.arbiscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -105319,7 +105335,7 @@
     "id": "11155420",
     "name": "OP Sepolia Testnet",
     "rpcs": ["https://sepolia.optimism.io", "https://optimism-sepolia.drpc.org"],
-    "explorerUrl": "https://optimism-sepolia.blockscout.com",
+    "explorerUrl": "https://sepolia-optimism.etherscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
