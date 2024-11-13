@@ -13,11 +13,8 @@ import {
 } from '@polkadot/apps-config/endpoints/production'
 import {
   testChains,
-  testParasRococo,
-  testParasRococoCommon,
   testParasWestend,
   testParasWestendCommon,
-  testRelayRococo,
   testRelayWestend,
 } from '@polkadot/apps-config/endpoints/testing'
 import kebabCase from 'lodash/kebabCase'
@@ -78,7 +75,6 @@ const customTestnetChainIds: Record<string, string | undefined> = {
   'aleph-testnet': 'aleph-zero-testnet',
   'goldberg-testnet': 'avail-goldberg-testnet',
   'myriad-tesnet': 'myriad-testnet',
-  rococoBridgehub: 'rococo-bridge-hub-testnet',
 }
 
 // a set of pjs ids which we don't want to import
@@ -151,13 +147,9 @@ const customNames: Record<string, string | undefined> = {
   'subgame-kusama': 'SubGame Gamma Kusama',
 
   'bifrost-testnet': 'Bifrost Testnet',
-  'rococo-bifrost-testnet': 'Bifrost Testnet',
 
   'thebifrost-testnet': 'The Bifrost Testnet',
   'avail-goldberg-testnet': 'Avail Goldberg Testnet',
-
-  'rococo-asset-hub-testnet': 'Rococo Asset Hub',
-  'rococo-bridge-hub-testnet': 'Rococo Bridge Hub',
 
   'westend-asset-hub-testnet': 'Westend Asset Hub',
   'westend-bridge-hub-testnet': 'Westend Bridge Hub',
@@ -197,7 +189,7 @@ const trimName = (text: string, id: string) =>
 
     .replace(/[ -]\(?kusama\)?$/i, '')
     .replace(/[ -]\(?polkadot\)?$/i, '')
-    .replace(/[ -]\(?rococo\)?$/i, '')
+    .replace(/[ -]\(?paseo\)?$/i, '')
     .replace(/[ -]\(?foucoco\)?$/i, '')
     .replace(/[ -]\(?standalone\)?$/i, '')
 
@@ -305,15 +297,7 @@ const main = async () => {
     let id = deriveId(info)
     idConflicts[id] = idConflicts[id] ? (idConflicts[id] ?? 0) + 1 : 1
   })
-  ;[
-    testRelayWestend,
-    testRelayRococo,
-    ...testParasWestend,
-    ...testParasWestendCommon,
-    ...testParasRococo,
-    ...testParasRococoCommon,
-    ...testChains,
-  ].forEach(({ info }) => {
+  ;[testRelayWestend, ...testParasWestend, ...testParasWestendCommon, ...testChains].forEach(({ info }) => {
     let id = deriveTestnetId(info)
     idConflictsTestnets[id] = idConflictsTestnets[id] ? (idConflictsTestnets[id] ?? 0) + 1 : 1
   })
@@ -331,13 +315,10 @@ const main = async () => {
   prodChains.forEach(addParaToMap(null, 'standalone'))
 
   // derive relay (testnets) chains
-  ;[testRelayWestend, testRelayRococo].forEach(addParaToMap(null, 'relay', true))
+  ;[testRelayWestend].forEach(addParaToMap(null, 'relay', true))
 
   // derive westend parachains
   ;[...testParasWestend, ...testParasWestendCommon].forEach(addParaToMap({ id: 'westend-testnet' }, 'westend', true))
-
-  // derive rococo parachains
-  ;[...testParasRococo, ...testParasRococoCommon].forEach(addParaToMap({ id: 'rococo-testnet' }, 'rococo', true))
 
   // derive solo (testnets) chains
   testChains.forEach(addParaToMap(null, 'standalone', true))
@@ -357,8 +338,6 @@ const main = async () => {
     if (a.id === b.id) return 0
     if (a.id === 'westend-testnet') return -1
     if (b.id === 'westend-testnet') return 1
-    if (a.id === 'rococo-testnet') return -1
-    if (b.id === 'rococo-testnet') return 1
     return a.id.localeCompare(b.id)
   })
 
