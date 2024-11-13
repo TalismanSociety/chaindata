@@ -1,24 +1,24 @@
 {
-  "id": "creditcoin",
+  "id": "creditcoin-classic",
   "isTestnet": false,
   "isDefault": true,
-  "sortIndex": 199,
+  "sortIndex": 156,
   "genesisHash": "0xdd954cbf4000542ef1a15bca509cd89684330bee5e23766c527cdb0d7275e9c2",
   "prefix": 42,
-  "name": "Creditcoin",
-  "themeColor": "#2d353f",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/creditcoin.svg",
+  "name": "CC Enterprise",
+  "themeColor": "#505050",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
   "chainName": "Creditcoin",
   "chainType": "Live",
   "implName": "creditcoin-node",
   "specName": "creditcoin-node",
   "specVersion": "240",
   "nativeToken": {
-    "id": "creditcoin-substrate-native"
+    "id": "creditcoin-classic-substrate-native"
   },
   "tokens": [
     {
-      "id": "creditcoin-substrate-native"
+      "id": "creditcoin-classic-substrate-native"
     }
   ],
   "account": "*25519",
@@ -29,22 +29,14 @@
   "feeToken": null,
   "rpcs": [
     {
-      "url": "wss://mainnet3.creditcoin.network"
+      "url": "wss://mainnet.creditcoin.network/ws"
     }
   ],
   "evmNetworks": [],
   "parathreads": null,
   "paraId": null,
   "relay": null,
-  "balancesConfig": [
-    {
-      "moduleType": "substrate-native",
-      "moduleConfig": {
-        "coingeckoId": "creditcoin-2",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/creditcoin.svg"
-      }
-    }
-  ],
+  "balancesConfig": [],
   "balancesMetadata": [],
   "hasCheckMetadataHash": false
 }
