@@ -300,6 +300,11 @@
     "paraId": 2051,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "ajuna-network-2"
+      }
     }
   },
   {
@@ -1986,11 +1991,25 @@
             "coingeckoId": "weth"
           },
           {
+            "symbol": "CRU",
+            "ed": "7874015748",
+            "decimals": 12,
+            "onChainId": "27",
+            "coingeckoId": "crust-network"
+          },
+          {
             "symbol": "MYTH",
             "ed": "21367521367521400",
             "decimals": 18,
             "onChainId": "30",
             "coingeckoId": "mythos"
+          },
+          {
+            "symbol": "AJUN",
+            "ed": "100786131828",
+            "decimals": 12,
+            "onChainId": "32",
+            "coingeckoId": "ajuna-network-2"
           },
           {
             "symbol": "WIFD",
@@ -2010,6 +2029,13 @@
             "decimals": 10,
             "onChainId": "1000085",
             "logo": "./assets/tokens/wud.webp"
+          },
+          {
+            "symbol": "ACA",
+            "ed": "90744101633",
+            "decimals": 12,
+            "onChainId": "1000099",
+            "coingeckoId": "acala"
           }
         ]
       }
@@ -3982,7 +4008,8 @@
           },
           {
             "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X1\",\"value\":{\"type\":\"Parachain\",\"value\":2051}}}",
-            "symbol": "AJUN"
+            "symbol": "AJUN",
+            "coingeckoId": "ajuna-network-2"
           }
         ]
       }
@@ -4597,6 +4624,17 @@
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "zeitgeist"
+      },
+      "substrate-tokens": {
+        "tokens": [
+          {
+            "symbol": "GLMR",
+            "decimals": 18,
+            "ed": "233481200",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":3}",
+            "coingeckoId": "moonbeam"
+          }
+        ]
       }
     }
   },
