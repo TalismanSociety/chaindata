@@ -103,7 +103,6 @@ const additionalChainRpcs: Record<string, string[] | undefined> = {
 const customChainRpcs: Record<string, string[] | undefined> = {
   ewx: ['wss://public-rpc.mainnet.energywebx.com'],
   'genshiro-kusama-2': [],
-  gm: ['wss://ws.gm.bldnodes.org/'],
   khala: [
     'wss://khala-rpc.dwellir.com',
     'wss://khala.public.curie.radiumblock.co/ws',
