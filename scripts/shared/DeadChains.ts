@@ -76,6 +76,10 @@ export class DeadChains {
     // sort the dead chains list by the number of times we've failed to connect to each chain's RPCs
     this.#data = new Map(
       [...this.#data.entries()].sort((a, b) => {
+        const aTotalDays = [...a[1].values()].reduce((acc, { days }) => acc + (days ?? 0), 0)
+        const bTotalDays = [...b[1].values()].reduce((acc, { days }) => acc + (days ?? 0), 0)
+        if (aTotalDays !== bTotalDays) return bTotalDays - aTotalDays
+
         const aTotalCount = [...a[1].values()].reduce((acc, { count }) => acc + count, 0)
         const bTotalCount = [...b[1].values()].reduce((acc, { count }) => acc + count, 0)
         return bTotalCount - aTotalCount
