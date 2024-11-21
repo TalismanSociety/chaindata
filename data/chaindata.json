@@ -1241,6 +1241,39 @@
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "centrifuge"
+      },
+      "substrate-tokens": {
+        "palletId": "OrmlTokens",
+        "tokens": [
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "10000",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":1}",
+            "coingeckoId": "tether"
+          },
+          {
+            "symbol": "GLMR",
+            "ed": "1000000000000000",
+            "decimals": 18,
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":4}",
+            "coingeckoId": "moonbeam"
+          },
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "100000",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":5}",
+            "coingeckoId": "polkadot"
+          },
+          {
+            "symbol": "USDC",
+            "decimals": 6,
+            "ed": "1000",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":6}",
+            "coingeckoId": "usd-coin"
+          }
+        ]
       }
     }
   },
