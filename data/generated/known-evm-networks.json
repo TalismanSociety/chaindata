@@ -146,6 +146,12 @@
             "decimals": 18
           },
           {
+            "symbol": "1984",
+            "coingeckoId": "1984-token",
+            "contractAddress": "0x4278a8944cf63753b13e9f726bbc1192412988d8",
+            "decimals": 18
+          },
+          {
             "symbol": "1ART",
             "coingeckoId": "1art",
             "contractAddress": "0xd3c325848d7c6e29b574cb0789998b2ff901f17e",
@@ -6534,12 +6540,6 @@
             "decimals": 18
           },
           {
-            "symbol": "CONVERGE",
-            "coingeckoId": "converge-bot",
-            "contractAddress": "0x032c3ec6d4c894844fd855874062a86592801cc9",
-            "decimals": 18
-          },
-          {
             "symbol": "CONV",
             "coingeckoId": "convergence",
             "contractAddress": "0xc834fa996fa3bec7aad3693af486ae53d8aa8b50",
@@ -7225,7 +7225,7 @@
           },
           {
             "symbol": "CULO",
-            "coingeckoId": "culo",
+            "coingeckoId": "culo-eth",
             "contractAddress": "0xb646c4fe0090bf6fdba226d3ccd8f775b30fdbb5",
             "decimals": 18
           },
@@ -7392,9 +7392,9 @@
             "decimals": 9
           },
           {
-            "symbol": "DACXI",
+            "symbol": "DXI",
             "coingeckoId": "dacxi",
-            "contractAddress": "0xefab7248d36585e2340e5d25f8a8d243e6e3193f",
+            "contractAddress": "0x5e29cf3e3fed4df50acab95f8268e9ee26ea36f2",
             "decimals": 18
           },
           {
@@ -17112,6 +17112,12 @@
             "decimals": 18
           },
           {
+            "symbol": "XAUM",
+            "coingeckoId": "matrixdock-gold",
+            "contractAddress": "0x2103e845c5e135493bb6c2a4f0b8651956ea8682",
+            "decimals": 18
+          },
+          {
             "symbol": "MDF",
             "coingeckoId": "matrixetf",
             "contractAddress": "0x1a57367c6194199e5d9aea1ce027431682dfb411",
@@ -20332,12 +20338,6 @@
             "coingeckoId": "ordibank",
             "contractAddress": "0xce6e54daa1ea95fb3530859d69d4bdb978dd821b",
             "decimals": 18
-          },
-          {
-            "symbol": "ORDIBOT",
-            "coingeckoId": "ordibot",
-            "contractAddress": "0x0c7b199ac2bca0dba8d1785480648f0318b9a7b8",
-            "decimals": 9
           },
           {
             "symbol": "ODGN",
@@ -34937,12 +34937,6 @@
             "decimals": 18
           },
           {
-            "symbol": "ACE",
-            "coingeckoId": "acetoken",
-            "contractAddress": "0xfaaa87943bfca6d97434be3d26c589647fea4375",
-            "decimals": 18
-          },
-          {
             "symbol": "ACT",
             "coingeckoId": "acet-token",
             "contractAddress": "0x9f3bcbe48e8b754f331dfc694a894e8e686ac31d",
@@ -44829,6 +44823,12 @@
             "decimals": 18
           },
           {
+            "symbol": "XAUM",
+            "coingeckoId": "matrixdock-gold",
+            "contractAddress": "0x23ae4fd8e7844cdbc97775496ebd0e8248656028",
+            "decimals": 18
+          },
+          {
             "symbol": "MAI",
             "coingeckoId": "matrixgpt",
             "contractAddress": "0xe045fc25581cfdc3cfb5c282501f3cd1a133a7ec",
@@ -53090,11 +53090,6 @@
       },
       "evm-erc20": {
         "tokens": [
-          {
-            "symbol": "1984",
-            "coingeckoId": "1984-token",
-            "contractAddress": "0x4278a8944cf63753b13e9f726bbc1192412988d8"
-          },
           {
             "symbol": "USC",
             "coingeckoId": "classic-usd",
@@ -65665,7 +65660,7 @@
   {
     "id": "291",
     "name": "Orderly Mainnet",
-    "rpcs": ["https://rpc.orderly.network", "https://l2-orderly-mainnet-0.t.conduit.xyz"],
+    "rpcs": ["https://rpc.orderly.network"],
     "icon": "orderly",
     "explorerUrl": "https://explorer.orderly.network",
     "balancesConfig": {
@@ -67719,6 +67714,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "426",
+    "name": "The Widows Mite",
+    "rpcs": ["https://rpc.twmcrypto.com/"],
+    "icon": "mite",
+    "explorerUrl": "https://scan.twmcrypto.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MITE",
+        "decimals": 8
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "427",
@@ -75886,7 +75895,7 @@
   {
     "id": "3031",
     "name": "Orlando Chain",
-    "rpcs": [],
+    "rpcs": ["https://rpc-testnet.orlchain.com"],
     "icon": "orl",
     "explorerUrl": "https://orlscan.com",
     "balancesConfig": {
@@ -76214,7 +76223,7 @@
     "name": "Botanix Testnet",
     "rpcs": ["https://node.botanixlabs.dev"],
     "icon": "botanix",
-    "explorerUrl": "https://3xpl.com/botanix",
+    "explorerUrl": "https://testnet.botanixscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTC",
@@ -77164,9 +77173,9 @@
   {
     "id": "4460",
     "name": "Orderly Sepolia Testnet",
-    "rpcs": ["https://l2-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz"],
+    "rpcs": ["https://testnet-rpc.orderly.org"],
     "icon": "orderlyTestnet",
-    "explorerUrl": "https://explorerl2new-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz",
+    "explorerUrl": "https://testnet-explorer.orderly.org",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -88068,6 +88077,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "14149",
+    "name": "Bitharvest Chian Mainnet",
+    "rpcs": ["https://rpc.bthscan.io/"],
+    "icon": "bth",
+    "explorerUrl": "https://bthscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "14324",
@@ -102083,6 +102105,19 @@
     "isTestnet": true
   },
   {
+    "id": "98864",
+    "name": "Plume Devnet",
+    "rpcs": ["https://test-rpc.plumenetwork.xyz/http"],
+    "icon": "plume",
+    "explorerUrl": "https://test-explorer.plumenetwork.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "98881",
     "name": "Ebi Chain",
     "rpcs": ["https://rpc.ebi.xyz"],
@@ -102762,6 +102797,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "MAG",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "141491",
+    "name": "Bitharvest Chian Testnet",
+    "rpcs": ["https://rpc-testnet.bthscan.io/"],
+    "icon": "bth",
+    "explorerUrl": "https://testnet.bthscan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "bth",
         "decimals": 18
       }
     },
@@ -106564,6 +106613,18 @@
     "isTestnet": true
   },
   {
+    "id": "21000000",
+    "name": "Corn Maizenet",
+    "rpcs": ["https://maizenet-rpc.usecorn.com"],
+    "explorerUrl": "https://maizenet-explorer.usecorn.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "BTCN",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "22052002",
     "name": "Excelon Mainnet",
     "rpcs": ["https://edgewallet1.xlon.org/"],
@@ -106934,20 +106995,6 @@
         "decimals": 18
       }
     }
-  },
-  {
-    "id": "161221135",
-    "name": "Plume Testnet",
-    "rpcs": ["https://testnet-rpc.plumenetwork.xyz/http"],
-    "icon": "plume",
-    "explorerUrl": "https://testnet-explorer.plumenetwork.xyz",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "ETH",
-        "decimals": 18
-      }
-    },
-    "isTestnet": true
   },
   {
     "id": "168587773",
