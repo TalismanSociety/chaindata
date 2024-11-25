@@ -76933,6 +76933,12 @@
             "decimals": 18
           },
           {
+            "symbol": "RMNER",
+            "coingeckoId": "mner-club",
+            "contractAddress": "0x4fd67c2d9e8c4fdd9c66954bafe124ca50fc1819",
+            "decimals": 18
+          },
+          {
             "symbol": "SolvBTC",
             "coingeckoId": "solv-btc",
             "contractAddress": "0x41d9036454be47d3745a823c4aacd0e29cfb0f71",
@@ -80434,6 +80440,11 @@
             "coingeckoId": "round-x",
             "contractAddress": "0xff1bf7a212012ee903fbb5a3adb4a9a31f371ef7",
             "decimals": 18
+          },
+          {
+            "symbol": "sto",
+            "coingeckoId": "security-token-offering",
+            "contractAddress": "0xff0a463792b61c029c1782153a62c303cd9b545f"
           },
           {
             "symbol": "SELO",
@@ -86577,7 +86588,7 @@
   {
     "id": "9025",
     "name": "Nexa Mainnet Block",
-    "rpcs": ["https://rpc-nodes.nexablockscan.io", "https://rpc-nodes-delta.nexablockscan.io"],
+    "rpcs": ["https://rpc-nodes-delta.nexablockscan.io"],
     "icon": "nexaChain",
     "explorerUrl": "https://nexablockscan.io",
     "balancesConfig": {
@@ -87049,9 +87060,9 @@
     "id": "9996",
     "name": "Mind Smart Chain Mainnet",
     "rpcs": [
-      "https://mind-smart-chain.rpc.thirdweb.com",
       "https://rpc-msc.mindchain.info/",
-      "https://seednode.mindchain.info"
+      "https://seednode.mindchain.info",
+      "https://mind-smart-chain.rpc.thirdweb.com"
     ],
     "icon": "mindchain",
     "explorerUrl": "https://mainnet.mindscan.info",
@@ -87102,11 +87113,7 @@
   {
     "id": "10000",
     "name": "Smart Bitcoin Cash",
-    "rpcs": [
-      "https://smartbch.greyh.at",
-      "https://smartbch.fountainhead.cash/mainnet",
-      "https://rpc-mainnet.smartbch.org"
-    ],
+    "rpcs": ["https://smartbch.greyh.at", "https://smartbch.fountainhead.cash/mainnet"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "BCH",
@@ -87158,7 +87165,7 @@
   {
     "id": "10001",
     "name": "Smart Bitcoin Cash Testnet",
-    "rpcs": ["https://rpc-testnet.smartbch.org"],
+    "rpcs": [],
     "balancesConfig": {
       "evm-native": {
         "symbol": "BCHT",
