@@ -10530,12 +10530,6 @@
             "decimals": 18
           },
           {
-            "symbol": "WEVMOS",
-            "coingeckoId": "evmos",
-            "contractAddress": "0x93581991f68dbae1ea105233b67f7fa0d6bdee7b",
-            "decimals": 18
-          },
-          {
             "symbol": "EVRY",
             "coingeckoId": "evrynet",
             "contractAddress": "0xd7dcd9b99787c619b4d57979521258d1a7267ad7",
@@ -13176,12 +13170,6 @@
             "decimals": 6
           },
           {
-            "symbol": "0xVOX",
-            "coingeckoId": "hashvox-ai",
-            "contractAddress": "0x6371d7ebd6851b2f6c688081d34edf230332fd00",
-            "decimals": 9
-          },
-          {
             "symbol": "HAT",
             "coingeckoId": "hat",
             "contractAddress": "0x76c4ec0068923da13ee11527d6cf9b7521000049",
@@ -13828,12 +13816,6 @@
             "coingeckoId": "hyperdao",
             "contractAddress": "0x74faab6986560fd1140508e4266d8a7b87274ffd",
             "decimals": 18
-          },
-          {
-            "symbol": "HyperAI",
-            "coingeckoId": "hyperhash-ai",
-            "contractAddress": "0x34b64fd41675520bf5098bbcc37c679ca55fb5df",
-            "decimals": 9
           },
           {
             "symbol": "HQ",
@@ -18400,6 +18382,12 @@
             "coingeckoId": "monkei",
             "contractAddress": "0x28b7f370a2b0fd04a9f420c8863b12f35c0f791a",
             "decimals": 9
+          },
+          {
+            "symbol": "MF",
+            "coingeckoId": "monkeyfi",
+            "contractAddress": "0x6768d4d4957a2ba2ef3f6d4a8883c0042e230bec",
+            "decimals": 18
           },
           {
             "symbol": "MONKEYS",
@@ -37949,12 +37937,6 @@
             "decimals": 18
           },
           {
-            "symbol": "BS",
-            "coingeckoId": "bullshits404",
-            "contractAddress": "0xdec515489e4a12b9429a976b18a1a7459c148891",
-            "decimals": 18
-          },
-          {
             "symbol": "BSF",
             "coingeckoId": "bull-star-finance",
             "contractAddress": "0x39541a42b5085f3cf69b2258eaeb5bb3ee8c823c",
@@ -49741,12 +49723,6 @@
             "symbol": "SLC",
             "coingeckoId": "sparklucky",
             "contractAddress": "0xb65d506b0343db06200c0803585554da3712830f",
-            "decimals": 18
-          },
-          {
-            "symbol": "SFUEL",
-            "coingeckoId": "sparkpoint-fuel",
-            "contractAddress": "0x37ac4d6140e54304d77437a5c11924f61a2d976f",
             "decimals": 18
           },
           {
@@ -69433,7 +69409,7 @@
   {
     "id": "917",
     "name": "Rinia Testnet",
-    "rpcs": ["https://rinia-rpc1.thefirechain.com"],
+    "rpcs": [],
     "icon": "rinia",
     "explorerUrl": "https://rinia.firescan.io",
     "balancesConfig": {
@@ -75913,7 +75889,7 @@
   {
     "id": "2941",
     "name": "Xenon Chain Testnet",
-    "rpcs": ["https://testnet-chain.xenonchain.com/", "https://testnet-dev.xenonchain.com/"],
+    "rpcs": ["https://testnet-dev.xenonchain.com/"],
     "icon": "xenon",
     "explorerUrl": "https://testnet.xenonchain.com",
     "balancesConfig": {
@@ -83127,6 +83103,12 @@
             "decimals": 18
           },
           {
+            "symbol": "GOAT",
+            "coingeckoId": "goat-based",
+            "contractAddress": "0x106c8a8ba4d7fcc70e35a3ffaa35252047bc5271",
+            "decimals": 18
+          },
+          {
             "symbol": "GIF",
             "coingeckoId": "goatwifhat",
             "contractAddress": "0x6b82297c6f1f9c3b1f501450d2ee7c37667ab70d",
@@ -86708,12 +86690,6 @@
             "coingeckoId": "e-money-eur",
             "contractAddress": "0x5db67696c3c088dfbf588d3dd849f44266ff0ffa",
             "decimals": 6
-          },
-          {
-            "symbol": "WEVMOS",
-            "coingeckoId": "evmos",
-            "contractAddress": "0xd4949664cd82660aae99bedc034a0dea8a0bd517",
-            "decimals": 18
           },
           {
             "symbol": "FRAX",
@@ -91587,10 +91563,10 @@
   },
   {
     "id": "41923",
-    "name": "Open Campus Codex Mainnet",
+    "name": "EDU Chain",
     "rpcs": ["https://rpc.edu-chain.raas.gelato.cloud"],
     "icon": "occ-mainnet",
-    "explorerUrl": "https://edu-chain.blockscout.com",
+    "explorerUrl": "https://educhain.blockscout.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "EDU",
@@ -105145,16 +105121,17 @@
   },
   {
     "id": "656476",
-    "name": "Open Campus Codex",
+    "name": "EDU Chain Testnet",
     "rpcs": ["https://rpc.open-campus-codex.gelato.digital"],
     "icon": "open-campus-codex",
-    "explorerUrl": "https://opencampus-codex.blockscout.com",
+    "explorerUrl": "https://edu-chain-testnet.blockscout.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "EDU",
         "decimals": 18
       }
-    }
+    },
+    "isTestnet": true
   },
   {
     "id": "660279",
@@ -106994,8 +106971,8 @@
   {
     "id": "21000000",
     "name": "Corn Maizenet",
-    "rpcs": ["https://maizenet-rpc.usecorn.com"],
-    "explorerUrl": "https://maizenet-explorer.usecorn.com",
+    "rpcs": ["https://rpc.ankr.com/corn_maizenet", "https://maizenet-rpc.usecorn.com"],
+    "explorerUrl": "https://cornscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTCN",
@@ -107006,8 +106983,8 @@
   {
     "id": "21000001",
     "name": "Corn Testnet",
-    "rpcs": ["https://testnet-rpc.usecorn.com"],
-    "explorerUrl": "https://testnet-explorer.usecorn.com",
+    "rpcs": ["https://rpc.ankr.com/corn_testnet", "https://testnet-rpc.usecorn.com"],
+    "explorerUrl": "https://testnet.cornscan.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTCN",
