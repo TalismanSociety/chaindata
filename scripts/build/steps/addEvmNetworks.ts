@@ -76,7 +76,7 @@ export const addEvmNetworks = async () => {
         // mark all ERC20 tokens with isDefault true
         if (configEvmNetwork?.balancesConfig?.['evm-erc20']?.tokens) {
           for (const token of configEvmNetwork.balancesConfig['evm-erc20'].tokens as EvmErc20Token[]) {
-            token.isDefault = true
+            token.isDefault = token.isDefault ?? true
 
             // fill in missing token info from cache
             const tokenInfo = erc20TokensCache.find(
