@@ -18900,12 +18900,6 @@
             "decimals": 9
           },
           {
-            "symbol": "NAT",
-            "coingeckoId": "natcoin-ai",
-            "contractAddress": "0x22c5ff2999bd728eaa91f8a25e9515adec2ee20a",
-            "decimals": 18
-          },
-          {
             "symbol": "NATION",
             "coingeckoId": "nation3",
             "contractAddress": "0x333a4823466879eef910a04d473505da62142069",
@@ -23061,12 +23055,6 @@
             "symbol": "RBT",
             "coingeckoId": "reboot-world",
             "contractAddress": "0x902169d471b62f22ffadc690ca292ec454d0b260",
-            "decimals": 18
-          },
-          {
-            "symbol": "RCG",
-            "coingeckoId": "recharge",
-            "contractAddress": "0xe74be071f3b62f6a4ac23ca68e5e2a39797a3c30",
             "decimals": 18
           },
           {
@@ -48304,12 +48292,6 @@
             "decimals": 18
           },
           {
-            "symbol": "RCG",
-            "coingeckoId": "recharge",
-            "contractAddress": "0x2d94172436d869c1e3c094bead272508fab0d9e3",
-            "decimals": 18
-          },
-          {
             "symbol": "RTG",
             "coingeckoId": "rectangle-finance",
             "contractAddress": "0xc75835c00c7b1b8589d2438e8b8d83472d238306",
@@ -52382,12 +52364,6 @@
             "coingeckoId": "wrapped-zedxion",
             "contractAddress": "0x567556a7493fb7a22d2fd158dd4c766a98705f96",
             "decimals": 18
-          },
-          {
-            "symbol": "xAI",
-            "coingeckoId": "xai-3",
-            "contractAddress": "0x8ea43e15b1a616a19903f6a87498f7dca1efae0f",
-            "decimals": 9
           },
           {
             "symbol": "XETA",
@@ -63043,18 +63019,6 @@
       "evm-erc20": {
         "tokens": [
           {
-            "symbol": "ABS",
-            "coingeckoId": "abstradex",
-            "contractAddress": "0x54455532324468f5d60ebd6469f2bbd3dc47a7f8",
-            "decimals": 18
-          },
-          {
-            "symbol": "ApeX",
-            "coingeckoId": "apex-3",
-            "contractAddress": "0x3116d456c053c8c6fd91f4ef85db4463eaef3898",
-            "decimals": 18
-          },
-          {
             "symbol": "USDC",
             "coingeckoId": "bridged-usdc-x-layer",
             "contractAddress": "0xa8ce8aee21bc2a48a5ef670afcc9274c7bbbc035",
@@ -63094,12 +63058,6 @@
             "symbol": "PUFF",
             "coingeckoId": "how-to-fly",
             "contractAddress": "0x4d87750a795b0ae310a24349fa9108585100a90e",
-            "decimals": 18
-          },
-          {
-            "symbol": "MUKI",
-            "coingeckoId": "muki",
-            "contractAddress": "0x73644a48a4f540fa49a8b4d41dba2ded5df3912b",
             "decimals": 18
           },
           {
@@ -69877,7 +69835,12 @@
   {
     "id": "1009",
     "name": "Jumbochain Mainnet",
-    "rpcs": ["https://rpcpriv.jumbochain.org"],
+    "rpcs": [
+      "https://rpcpriv.jumbochain.org",
+      "https://rpc-datajumbo1.jumbochain.org",
+      "https://rpc-datajumbo2.jumbochain.org",
+      "https://rpc-datajumbo3.jumbochain.org"
+    ],
     "explorerUrl": "https://jumboscan.jumbochain.org",
     "balancesConfig": {
       "evm-native": {
@@ -86097,6 +86060,12 @@
             "decimals": 18
           },
           {
+            "symbol": "XTGPT",
+            "coingeckoId": "xtremegpt",
+            "contractAddress": "0x0d5d2450f19ffa71b16a95b3fabef52786238828",
+            "decimals": 18
+          },
+          {
             "symbol": "YFI",
             "coingeckoId": "yearn-finance",
             "contractAddress": "0x9eaf8c1e34f05a589eda6bafdf391cf6ad3cb239",
@@ -101793,12 +101762,6 @@
             "decimals": 18
           },
           {
-            "symbol": "KALA",
-            "coingeckoId": "kalax",
-            "contractAddress": "0x2f67f59b3629bf24962290db9ede0cd4127e606d",
-            "decimals": 18
-          },
-          {
             "symbol": "KAP",
             "coingeckoId": "kapital-dao",
             "contractAddress": "0x15d24de366f69b835be19f7cf9447e770315dd80",
@@ -102464,6 +102427,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "96369",
+    "name": "Lux Network",
+    "rpcs": ["https://api.lux.network"],
+    "icon": "lux",
+    "explorerUrl": "https://explore.lux.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "LUX",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "96970",
@@ -103572,6 +103549,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "mTAda",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "200200",
+    "name": "Zoo Network",
+    "rpcs": ["https://api.zoo.network"],
+    "icon": "zoo",
+    "explorerUrl": "https://explore.zoo.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ZOO",
         "decimals": 18
       }
     },
