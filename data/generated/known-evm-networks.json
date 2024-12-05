@@ -10080,6 +10080,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ESPORT",
+            "coingeckoId": "esportplayer",
+            "contractAddress": "0x0b1bd555adf860d4d51c9caba48d756e224451bf",
+            "decimals": 18
+          },
+          {
             "symbol": "ESPR",
             "coingeckoId": "espresso-bot",
             "contractAddress": "0xa3c31927a092bd54eb9a0b5dfe01d9db5028bd4f",
@@ -21057,6 +21063,12 @@
             "symbol": "PEAS",
             "coingeckoId": "peapods-finance",
             "contractAddress": "0x02f92800f57bcd74066f5709f1daa1a4302df875",
+            "decimals": 18
+          },
+          {
+            "symbol": "PEAR",
+            "coingeckoId": "pear-ai",
+            "contractAddress": "0xfc40b76cdd4e62ef0c8273fdbdbc458253776015",
             "decimals": 18
           },
           {
@@ -34903,6 +34915,8 @@
       "https://rpc.xinfin.network",
       "https://rpc.xdcrpc.com",
       "https://erpc.xdcrpc.com",
+      "https://rpc.ankr.com/xdc",
+      "https://rpc.xdc.org",
       "https://rpc1.xinfin.network"
     ],
     "icon": "xdc",
@@ -34940,9 +34954,9 @@
   {
     "id": "51",
     "name": "XDC Apothem Network",
-    "rpcs": ["https://rpc.apothem.network", "https://erpc.apothem.network"],
+    "rpcs": ["https://rpc.apothem.network", "https://erpc.apothem.network", "https://apothem.xdcrpc.com"],
     "icon": "xdc",
-    "explorerUrl": "https://apothem.xinfinscan.com",
+    "explorerUrl": "https://testnet.xdcscan.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "TXDC",
@@ -45658,6 +45672,12 @@
             "decimals": 6
           },
           {
+            "symbol": "Mini GOUT",
+            "coingeckoId": "mini-gout",
+            "contractAddress": "0xbe3a6594fde8a93dd2fa40bc0b52a899f3f91671",
+            "decimals": 18
+          },
+          {
             "symbol": "MINT",
             "coingeckoId": "mint-club",
             "contractAddress": "0x1f3af095cda17d63cad238358837321e95fc5915",
@@ -56089,6 +56109,12 @@
             "symbol": "ALI",
             "coingeckoId": "alethea-artificial-liquid-intelligence-token",
             "contractAddress": "0xbfc70507384047aa74c29cdc8c5cb88d0f7213ac",
+            "decimals": 18
+          },
+          {
+            "symbol": "ALOR",
+            "coingeckoId": "algorix-alor",
+            "contractAddress": "0xd4d996ccda51b65c6fd884feaea83b237d084262",
             "decimals": 18
           },
           {
@@ -68105,6 +68131,19 @@
     }
   },
   {
+    "id": "466",
+    "name": "AppChain",
+    "rpcs": ["https://appchain.calderachain.xyz/http"],
+    "icon": "appchain",
+    "explorerUrl": "https://explorer.appchain.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "480",
     "name": "World Chain",
     "rpcs": [
@@ -70015,8 +70054,8 @@
   },
   {
     "id": "1001",
-    "name": "Kaia Testnet Kairos",
-    "rpcs": [],
+    "name": "Kaia Kairos Testnet",
+    "rpcs": ["https://public-en-kairos.node.kaia.io"],
     "explorerUrl": "https://kairos.kaiascope.com",
     "balancesConfig": {
       "evm-native": {
@@ -72734,6 +72773,20 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "1480",
+    "name": "Vana",
+    "rpcs": ["https://rpc.vana.org/"],
+    "icon": "vana",
+    "explorerUrl": "https://vanascan.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "VANA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "1490",
@@ -77649,6 +77702,20 @@
     }
   },
   {
+    "id": "4661",
+    "name": "AppChain Testnet",
+    "rpcs": ["https://appchaintestnet.rpc.caldera.xyz/http"],
+    "icon": "appchain",
+    "explorerUrl": "https://appchaintestnet.explorer.caldera.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "4689",
     "name": "IoTeX Network Mainnet",
     "rpcs": ["https://babel-api.mainnet.iotex.io"],
@@ -78740,7 +78807,24 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "TON",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "the-open-network"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "USDT",
+            "coingeckoId": "duckchain-bridged-usdt-duckchain",
+            "contractAddress": "0xbe138ad5d41fdc392ae0b61b09421987c1966cc3",
+            "decimals": 18
+          },
+          {
+            "symbol": "WTON",
+            "coingeckoId": "wrapped-ton",
+            "contractAddress": "0x7f9308e8d724e724ec31395f3af52e0593bb2e3f",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -83557,12 +83641,6 @@
             "decimals": 18
           },
           {
-            "symbol": "GOAT",
-            "coingeckoId": "goat-based",
-            "contractAddress": "0x106c8a8ba4d7fcc70e35a3ffaa35252047bc5271",
-            "decimals": 18
-          },
-          {
             "symbol": "GIF",
             "coingeckoId": "goatwifhat",
             "contractAddress": "0x6b82297c6f1f9c3b1f501450d2ee7c37667ab70d",
@@ -85654,12 +85732,6 @@
             "coingeckoId": "shiba-armstrong",
             "contractAddress": "0x041fdf3f472d2c8a7ecc458fc3b7f543e6c57ef7",
             "decimals": 9
-          },
-          {
-            "symbol": "SHIRO",
-            "coingeckoId": "shiro-neko",
-            "contractAddress": "0x9e2bf5e09384a5ad18443cb8206522d85ffc3763",
-            "decimals": 18
           },
           {
             "symbol": "SHOG",
@@ -89634,7 +89706,7 @@
     "explorerUrl": "https://blockscout-testnet.expchain.ai",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "tEXP",
+        "symbol": "tZKJ",
         "decimals": 18
       }
     },
@@ -95771,6 +95843,12 @@
             "symbol": "GAME",
             "coingeckoId": "sportsology-game",
             "contractAddress": "0xc4cbd54ffa7a6a142fd73554cc6c23dd95cd8e01",
+            "decimals": 18
+          },
+          {
+            "symbol": "SSDX",
+            "coingeckoId": "spunkysdx",
+            "contractAddress": "0xdb40357fbc1eb1038c5df94c1cd7b7fd3f434480",
             "decimals": 18
           },
           {
@@ -107915,6 +107993,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "TEEth",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "33772211",
+    "name": "Xone Testnet",
+    "rpcs": ["https://rpc-testnet.xone.plus"],
+    "icon": "xone-test",
+    "explorerUrl": "https://testnet.xscscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "XOC",
         "decimals": 18
       }
     },
