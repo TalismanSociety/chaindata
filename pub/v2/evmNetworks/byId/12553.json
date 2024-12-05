@@ -1,7 +1,7 @@
 {
   "id": "12553",
   "isTestnet": false,
-  "sortIndex": 835,
+  "sortIndex": 836,
   "name": "RSS3 VSL Mainnet",
   "themeColor": "#1477fb",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/rss3.svg",
@@ -20,7 +20,47 @@
       "moduleConfig": {
         "symbol": "RSS3",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "rss3",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rss3.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "POWER",
+            "coingeckoId": "power-2",
+            "contractAddress": "0xe06af68f0c9e819513a6cd083ef6848e76c28cd8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/power-2.webp"
+          },
+          {
+            "symbol": "RSS3",
+            "coingeckoId": "rss3",
+            "contractAddress": "0x4200000000000000000000000000000000000042",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rss3.webp"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "rss3-bridged-usdc-rss3",
+            "contractAddress": "0xb62f35b9546a908d11c5803ecbba735abc3e3eae",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "WRSS3",
+            "coingeckoId": "wrapped-rss3",
+            "contractAddress": "0xe27d019909738d98ab7f850c05ee07806c30c71d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-rss3.webp"
+          }
+        ]
       }
     }
   ],
