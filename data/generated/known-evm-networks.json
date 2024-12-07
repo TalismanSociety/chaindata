@@ -12780,12 +12780,6 @@
             "decimals": 9
           },
           {
-            "symbol": "GTRON",
-            "coingeckoId": "gravitron",
-            "contractAddress": "0x20bc71ddf242b88502d9819e02d45ad0d4a586c8",
-            "decimals": 9
-          },
-          {
             "symbol": "GRL",
             "coingeckoId": "greelance",
             "contractAddress": "0xa067237f8016d5e3770cf08b20e343ab9ee813d5",
@@ -14325,12 +14319,6 @@
             "symbol": "INVA",
             "coingeckoId": "innoviatrust",
             "contractAddress": "0x1814b8a33446549ed5766ab3250b670498699bd6",
-            "decimals": 18
-          },
-          {
-            "symbol": "FON",
-            "coingeckoId": "inofi",
-            "contractAddress": "0xa4be4cdc552891a6702e1ae9645ef445179a4463",
             "decimals": 18
           },
           {
@@ -17098,6 +17086,12 @@
             "coingeckoId": "martin-shkreli-inu",
             "contractAddress": "0xc4c75f2a0cb1a9acc33929512dc9733ea1fd6fde",
             "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "marutaro-2",
+            "contractAddress": "0x7afd0d633e0a2b1db97506d97cadc880c894eca9",
+            "decimals": 9
           },
           {
             "symbol": "MARV",
@@ -24628,12 +24622,6 @@
             "decimals": 18
           },
           {
-            "symbol": "$SHARBI",
-            "coingeckoId": "sharbi",
-            "contractAddress": "0x9bd20ed5be5e1b50cdbb28270a2f0815d9d23af3",
-            "decimals": 18
-          },
-          {
             "symbol": "ULT",
             "coingeckoId": "shardus",
             "contractAddress": "0x09617f6fd6cf8a71278ec86e23bbab29c04353a7",
@@ -25873,6 +25861,12 @@
             "symbol": "SPUME",
             "coingeckoId": "spume",
             "contractAddress": "0xa16a609ff4e1a15b6ccb469e7a5dd14e89305283",
+            "decimals": 18
+          },
+          {
+            "symbol": "",
+            "coingeckoId": "spunkysdx",
+            "contractAddress": "0x5eeecb13a98e2019aaaca47df17683431f5cab04",
             "decimals": 18
           },
           {
@@ -46224,12 +46218,6 @@
             "decimals": 18
           },
           {
-            "symbol": "NANO",
-            "coingeckoId": "nanomatic",
-            "contractAddress": "0xb15488af39bd1de209d501672a293bcd05f82ab4",
-            "decimals": 18
-          },
-          {
             "symbol": "NMBTC",
             "coingeckoId": "nanometer-bitcoin",
             "contractAddress": "0x5ddb331c3ba48a1d68cbf50dd3bc7aac407dc115",
@@ -50068,6 +50056,12 @@
             "coingeckoId": "spritzmoon-crypto",
             "contractAddress": "0x6fc39ac154cfd20f1951a2823abab7ec471b783a",
             "decimals": 9
+          },
+          {
+            "symbol": "SSDX",
+            "coingeckoId": "spunkysdx",
+            "contractAddress": "0x4fa159afacdbd56d67434ca0de4573214708a846",
+            "decimals": 18
           },
           {
             "symbol": "SQRB",
@@ -62591,12 +62585,6 @@
             "decimals": 18
           },
           {
-            "symbol": "WEN",
-            "coingeckoId": "wen-3",
-            "contractAddress": "0x4259b21ad6d95d747dda908e9617443a530cd20d",
-            "decimals": 0
-          },
-          {
             "symbol": "ZERO",
             "coingeckoId": "zeroswapnft",
             "contractAddress": "0x5c09ef80efb7aefd0a25289715e0a164c98ac713",
@@ -65090,6 +65078,12 @@
             "decimals": 18
           },
           {
+            "symbol": "PLUS",
+            "coingeckoId": "plus-bet",
+            "contractAddress": "0x39551b1c26ce03714e4661833b0fa730174bd7e9",
+            "decimals": 18
+          },
+          {
             "symbol": "POLTER",
             "coingeckoId": "polter-finance",
             "contractAddress": "0x5c725631fd299703d0a74c23f89a55c6b9a0c52f",
@@ -66902,6 +66896,31 @@
         ]
       }
     }
+  },
+  {
+    "id": "325",
+    "name": "GRVT Exchange",
+    "rpcs": ["https://rpc.grvt.io"],
+    "icon": "grvt",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "326",
+    "name": "GRVT Exchange Testnet",
+    "rpcs": ["https://zkrpc.testnet.grvt.io"],
+    "icon": "grvt",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "332",
@@ -74097,9 +74116,10 @@
   },
   {
     "id": "1923",
-    "name": "Swell Network",
-    "rpcs": ["https://swell-mainnet.alt.technology"],
-    "explorerUrl": "https://swell-mainnet-explorer.alt.technology",
+    "name": "Swellchain",
+    "rpcs": ["https://swell-mainnet.alt.technology", "https://rpc.ankr.com/swell"],
+    "icon": "swell",
+    "explorerUrl": "https://explorer.swellnetwork.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -74109,8 +74129,9 @@
   },
   {
     "id": "1924",
-    "name": "Swell Network Testnet",
+    "name": "Swellchain Testnet",
     "rpcs": ["https://swell-testnet.alt.technology"],
+    "icon": "swell",
     "explorerUrl": "https://swell-testnet-explorer.alt.technology",
     "balancesConfig": {
       "evm-native": {
@@ -82256,6 +82277,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BMONEY",
+            "coingeckoId": "b-money-aka-brett",
+            "contractAddress": "0xfae89a7966d13195960459e6b483cacb9fe9cfcf",
+            "decimals": 18
+          },
+          {
             "symbol": "BMX",
             "coingeckoId": "bmx",
             "contractAddress": "0x548f93779fbc992010c07467cbaf329dd5f059b7",
@@ -85854,6 +85881,12 @@
             "decimals": 9
           },
           {
+            "symbol": "SKIPEPE",
+            "coingeckoId": "ski-mask-pepe",
+            "contractAddress": "0xb9a5f238dc61eebe820060226c8143cd24624771",
+            "decimals": 18
+          },
+          {
             "symbol": "SKIPUP",
             "coingeckoId": "ski-mask-pup",
             "contractAddress": "0x4e73420dcc85702ea134d91a262c8ffc0a72aa70",
@@ -85960,6 +85993,11 @@
             "coingeckoId": "spot",
             "contractAddress": "0x8f2e6758c4d6570344bd5007dec6301cd57590a0",
             "decimals": 9
+          },
+          {
+            "symbol": "ssdx",
+            "coingeckoId": "spunkysdx",
+            "contractAddress": "0x62bba099edd65740c0d192ffe84973b1aae682d2"
           },
           {
             "symbol": "SPX",
@@ -100063,6 +100101,20 @@
     }
   },
   {
+    "id": "43521",
+    "name": "Formicarium",
+    "rpcs": ["https://rpc.formicarium.memecore.net"],
+    "icon": "memecore",
+    "explorerUrl": "https://www.okx.com/web3/explorer/formicarium-testnet",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "M",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "43851",
     "name": "ZKFair Testnet",
     "rpcs": ["https://testnet-rpc.zkfair.io"],
@@ -104277,6 +104329,19 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "171717",
+    "name": "Wadzchain Mainnet",
+    "rpcs": ["https://rpc.wadzchain.io"],
+    "icon": "wadz",
+    "explorerUrl": "https://scan.wadzchain.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "WCO",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "175177",
