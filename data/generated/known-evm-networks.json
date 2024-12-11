@@ -10626,12 +10626,6 @@
             "decimals": 18
           },
           {
-            "symbol": "BERC",
-            "coingeckoId": "fair-berc20",
-            "contractAddress": "0xbc8e35221904f61b4200ca44a08e4dac387ac83a",
-            "decimals": 18
-          },
-          {
             "symbol": "ferc",
             "coingeckoId": "fairerc20",
             "contractAddress": "0x2ecba91da63c29ea80fbe7b52632ca2d1f8e5be0",
@@ -13698,12 +13692,6 @@
             "decimals": 9
           },
           {
-            "symbol": "HGP",
-            "coingeckoId": "hourglass-protocol",
-            "contractAddress": "0x017073b9bae99d2afbb6d7e30d464f993ae9c741",
-            "decimals": 18
-          },
-          {
             "symbol": "HOUSE",
             "coingeckoId": "house",
             "contractAddress": "0xfa4baa6951b6ee382e9ff9af2d523278b99ca6d0",
@@ -16317,12 +16305,6 @@
             "symbol": "LIT",
             "coingeckoId": "lit",
             "contractAddress": "0xc5b3d3231001a776123194cf1290068e8b0c783b",
-            "decimals": 18
-          },
-          {
-            "symbol": "FIAS",
-            "coingeckoId": "litcraft-fias",
-            "contractAddress": "0x1d64231e179f074baa3f22d44a6ca3a2670b2709",
             "decimals": 18
           },
           {
@@ -23118,12 +23100,6 @@
             "decimals": 18
           },
           {
-            "symbol": "RZBY",
-            "coingeckoId": "razzberry-inu",
-            "contractAddress": "0x3cedd76acb8b88f5616767785b4dd0902de4a355",
-            "decimals": 18
-          },
-          {
             "symbol": "RBX",
             "coingeckoId": "rbx-token",
             "contractAddress": "0x8254e26e453eb5abd29b3c37ac9e8da32e5d3299",
@@ -25544,12 +25520,6 @@
             "coingeckoId": "somnium-space-cubes",
             "contractAddress": "0xdf801468a808a32656d2ed2d2d80b72a129739f4",
             "decimals": 8
-          },
-          {
-            "symbol": "SONAR",
-            "coingeckoId": "sonar-systems",
-            "contractAddress": "0x990204dc24fa22c8d590870a7cc7fbb25e4e35dc",
-            "decimals": 9
           },
           {
             "symbol": "SONA",
@@ -28087,12 +28057,6 @@
             "symbol": "TORN",
             "coingeckoId": "tornado-cash",
             "contractAddress": "0x77777feddddffc19ff86db637967013e6c6a116c",
-            "decimals": 18
-          },
-          {
-            "symbol": "TORO",
-            "coingeckoId": "toro",
-            "contractAddress": "0xab14f1262ea8d910756828cbe08e6cedfb66360d",
             "decimals": 18
           },
           {
@@ -36961,12 +36925,6 @@
             "decimals": 18
           },
           {
-            "symbol": "BAYE",
-            "coingeckoId": "bayesian",
-            "contractAddress": "0xf40cb2efc2e015c55da85d23fde18975edbdf99a",
-            "decimals": 18
-          },
-          {
             "symbol": "BB",
             "coingeckoId": "bb-gaming",
             "contractAddress": "0x688ec465111ed639267cb17c47e790c9cc7279c1",
@@ -37918,12 +37876,6 @@
             "symbol": "BOMB",
             "coingeckoId": "bomb-money",
             "contractAddress": "0x522348779dcb2911539e76a1042aa922f9c47ee3",
-            "decimals": 18
-          },
-          {
-            "symbol": "BOME 2.0",
-            "coingeckoId": "bome-ai",
-            "contractAddress": "0xd6180faf969e3a5af1b7e57d7fc460d6dd8a5d93",
             "decimals": 18
           },
           {
@@ -52992,12 +52944,6 @@
             "decimals": 9
           },
           {
-            "symbol": "JEDALS",
-            "coingeckoId": "yoda-coin-swap",
-            "contractAddress": "0xa310017e40e687c8670d218e3c86a0d09786574f",
-            "decimals": 18
-          },
-          {
             "symbol": "YOLO",
             "coingeckoId": "yolo",
             "contractAddress": "0xff61f59f1591b32d08414acac4454cf7096b67ea",
@@ -55109,7 +55055,7 @@
   {
     "id": "109",
     "name": "Shibarium",
-    "rpcs": ["https://www.shibrpc.com"],
+    "rpcs": ["https://www.shibrpc.com", "https://rpc.shibrpc.com", "https://shib.nownodes.io"],
     "icon": "shibarium",
     "explorerUrl": "https://www.shibariumscan.io",
     "balancesConfig": {
@@ -62759,7 +62705,7 @@
   },
   {
     "id": "157",
-    "name": "Puppynet Shibarium",
+    "name": "Puppynet",
     "rpcs": ["https://puppynet.shibrpc.com"],
     "icon": "shibarium",
     "explorerUrl": "https://puppyscan.shib.io",
@@ -68329,6 +68275,19 @@
     "rpcs": ["https://rpc.appchain.xyz/http"],
     "icon": "appchain",
     "explorerUrl": "https://explorer.appchain.xyz",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "478",
+    "name": "Form Network",
+    "rpcs": ["https://rpc.form.network/http"],
+    "icon": "form",
+    "explorerUrl": "https://explorer.form.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -77917,6 +77876,19 @@
     }
   },
   {
+    "id": "4646",
+    "name": "MST Chain",
+    "rpcs": ["https://mariorpc.mstblockchain.com", "https://craftrpc.mstblockchain.com"],
+    "icon": "mst",
+    "explorerUrl": "https://mstscan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "MST",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "4653",
     "name": "Gold Chain",
     "rpcs": ["https://chain-rpc.gold.dev"],
@@ -79292,24 +79264,28 @@
       "evm-erc20": {
         "tokens": [
           {
-            "symbol": "$bssb",
+            "symbol": "BSSB",
             "coingeckoId": "bitstable-finance",
-            "contractAddress": "0xda31d0d1bc934fc34f7189e38a413ca0a5e8b44f"
+            "contractAddress": "0xda31d0d1bc934fc34f7189e38a413ca0a5e8b44f",
+            "decimals": 18
           },
           {
-            "symbol": "bbtc",
+            "symbol": "BBTC",
             "coingeckoId": "bouncebit-btc",
-            "contractAddress": "0xf5e11df1ebcf78b6b6d26e04ff19cd786a1e81dc"
+            "contractAddress": "0xf5e11df1ebcf78b6b6d26e04ff19cd786a1e81dc",
+            "decimals": 18
           },
           {
-            "symbol": "bbusd",
+            "symbol": "BBUSD",
             "coingeckoId": "bouncebit-usd",
-            "contractAddress": "0x77776b40c3d75cb07ce54dea4b2fd1d07f865222"
+            "contractAddress": "0x77776b40c3d75cb07ce54dea4b2fd1d07f865222",
+            "decimals": 18
           },
           {
-            "symbol": "wbb",
+            "symbol": "WBB",
             "coingeckoId": "wrapped-bouncebit",
-            "contractAddress": "0xf4c20e5004c6fdcdda920bdd491ba8c98a9c5863"
+            "contractAddress": "0xf4c20e5004c6fdcdda920bdd491ba8c98a9c5863",
+            "decimals": 18
           }
         ]
       }
@@ -84561,6 +84537,12 @@
             "decimals": 18
           },
           {
+            "symbol": "LINGO",
+            "coingeckoId": "lingo",
+            "contractAddress": "0xfb42da273158b0f642f59f2ba7cc1d5457481677",
+            "decimals": 18
+          },
+          {
             "symbol": "LUSD",
             "coingeckoId": "liquity-usd",
             "contractAddress": "0x368181499736d0c0cc614dbb145e2ec1ac86b8c6",
@@ -85116,6 +85098,12 @@
             "symbol": "NFI",
             "coingeckoId": "netherfi",
             "contractAddress": "0x60359a0dd148b18d5cf1ddf8aa1916221ed0cbcd",
+            "decimals": 18
+          },
+          {
+            "symbol": "BRO",
+            "coingeckoId": "neurobro",
+            "contractAddress": "0xc796e499cc8f599a2a8280825d8bda92f7a895e0",
             "decimals": 18
           },
           {
@@ -104500,8 +104488,8 @@
   {
     "id": "132902",
     "name": "Form Testnet",
-    "rpcs": ["https://testnet-rpc.form.network/http"],
-    "explorerUrl": "https://testnet-explorer.form.network",
+    "rpcs": ["https://sepolia-rpc.form.network/http"],
+    "explorerUrl": "https://sepolia-explorer.form.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
