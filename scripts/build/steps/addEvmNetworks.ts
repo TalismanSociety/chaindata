@@ -204,7 +204,7 @@ export const addEvmNetworks = async () => {
       sortIndex: null,
       name: knownEvmNetwork.name ?? null,
       themeColor: null,
-      logo: null,
+      logo: knownEvmNetwork.logo ? getAssetUrlFromPath(knownEvmNetwork.logo) : null,
       nativeToken: null,
       tokens: [],
       explorerUrl: knownEvmNetwork.explorerUrl ?? null,

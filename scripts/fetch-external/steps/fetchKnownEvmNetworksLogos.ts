@@ -35,11 +35,20 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmahJhdaLfGwBStQ9q9K4Mc73vLNqFV1otWCsT2ZKsMavv',
   'QmUTDMvoY7JgDs9sZuuBhsyJz6B2dNfc5jj6xUj355be2C',
   'QmY4vp1mJoGpUiuWbRVenNiDZC17wSyyueGPK9A5QyK1M2',
-  'bafybeia5n537fj2mkfcwmjfwktkmqrcwef3affdodhxnvmkg2gkvmbv2ke',
   'QmSj6SSWmBiRjnjZQPb17kvhGDmB9xAGRkG13RwPuXLTCT',
   'QmYV6beVVg3iS9RGPno7GAASpgjyBDoKmWGUcvAKe2nXWK',
   'QmNMuNBwg9opKvsnrDaoYBP743LeddeooQupVYjpBXf7d7',
   'QmWcaVLcPYBxi76HYJc4qudLJwXtfNCDJieLHAs632jMEA',
+  'QmdDeCjjYSG5FEAxzAuERXnS3AbeZvqSFVTn9x7UbrQeuT',
+  'QAZt75XixnEtFzqHTrJa8kJkV4ccXWaXqeMeqM8BcBomQc',
+  'QmcwGGWyemrFUZPriS3PqxLUoT7vdtS7FqNY5fAaoTG27Q',
+  'Qmbk23C5vXpGBfq8SuPXR1PrfWER2m8w6LGqBkhXAvxia9',
+  'QmTEnk2fosqbY6HQW5vySrLGbopJfeni9ThZ6R9sVefbnq',
+  'QmRwyxmvNEJBJwXDFAAGSaoUqTLjdthwzhKx3rjyKRR6ZL',
+  'Qmbk23C5vZpGBfq8SuPXR1PrfWER2m8w6LGqBkhXAvxia1',
+  'QmAbz7VfGvf6NVHezuBy5HpJTCi1gEshBxxdDdfVXNQ8Bt',
+  'QmRb2rWanyBTKS5KyrmrbXPNy9zovpxfLRxz9FPPiuRgfg',
+  'QmbySJWaSQxzL3F4zvpKYaNvMjHsX2qUyWTv2kpitq9dW8',
 ]
 
 // collection hash => image name
@@ -51,6 +60,8 @@ const IPFS_COLLECTIONS: Record<string, string> = {
   bafybeiapootrvggtigdlvgvk6srfseplpuowsqq3zpyup4j5yj5moxuala: 'boyaanetwork.png',
   bafybeibcrxeavdxpwwmj4mc6hhp232nkrfbpvfpngcqux2v5rmoshycj3u: 'FLAG-500x500.png',
   bafybeigpyvnir6awzgeazkk5xdkvexw7w6ww3yxawszue6zms4a5ygdfky: 'Eclat-500x500.png',
+  bafybeib7ovny3xkl4nr4a5oqvoqwf7dcjtqavydysclfmbavbl2oekhxty: '1.png',
+  bafybeifb4vnpn3jv7cfdlne2dwhe6agdnpgmu46a7nbc5divjuyaznkyay: 'binary.png',
 }
 
 async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
