@@ -150,6 +150,11 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'wienerai',
   'all-time-high-degen',
   'fefe',
+  'brazilian-digital-token',
+  'jur',
+  'eurc',
+  'hydration',
+  'axelar-bridged-usdc',
 ]
 
 type BalanceModuleConfig = {
