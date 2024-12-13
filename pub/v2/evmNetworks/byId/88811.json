@@ -1,7 +1,7 @@
 {
   "id": "88811",
   "isTestnet": false,
-  "sortIndex": 995,
+  "sortIndex": 997,
   "name": "Unit Zero Mainnet",
   "themeColor": "#505050",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -20,7 +20,31 @@
       "moduleConfig": {
         "symbol": "UNIT0",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "unit0",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unit0.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDT",
+            "coingeckoId": "units-network-bridged-usdt-units-network",
+            "contractAddress": "0xb303d80db8415fd1d3c9fed68a52eeac9a052671",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "WUNIT0",
+            "coingeckoId": "wrapped-unit0",
+            "contractAddress": "0xcf43f7703d9b4e8835f977ef364b4014fa7e856e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-unit0.webp"
+          }
+        ]
       }
     }
   ],
