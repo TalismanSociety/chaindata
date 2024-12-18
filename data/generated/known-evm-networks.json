@@ -61223,7 +61223,7 @@
           {
             "symbol": "JET",
             "coingeckoId": "sathosi-airlines-token",
-            "contractAddress": "0xa615df92fca12ad40b8f642f46167b623a03d646",
+            "contractAddress": "0xb02ef03245fc7df987bbd876768e6d441b7099b6",
             "decimals": 8
           },
           {
@@ -75256,6 +75256,12 @@
             "decimals": 6
           },
           {
+            "symbol": "KDR",
+            "coingeckoId": "kdr",
+            "contractAddress": "0xc6046fa4b8961b0e9d823bb3f2dde8fe161d547d",
+            "decimals": 18
+          },
+          {
             "symbol": "LUA",
             "coingeckoId": "lumi-finance",
             "contractAddress": "0xd61bbbb8369c46c15868ad9263a2710aced156c4",
@@ -82140,6 +82146,12 @@
             "decimals": 18
           },
           {
+            "symbol": "BABYPENGU",
+            "coingeckoId": "baby-pengu",
+            "contractAddress": "0x583c5c735a90792e122ddcd2e9e82ff743489174",
+            "decimals": 18
+          },
+          {
             "symbol": "BBT",
             "coingeckoId": "baby-tiger",
             "contractAddress": "0x8a638ea79f71f3b91bdc96bbdf9fb27c93013d60",
@@ -87279,6 +87291,12 @@
             "decimals": 18
           },
           {
+            "symbol": "USDS",
+            "coingeckoId": "usds",
+            "contractAddress": "0x820c137fa70c8691f0e44dc420a5e53c168921dc",
+            "decimals": 18
+          },
+          {
             "symbol": "VAB",
             "coingeckoId": "vabble",
             "contractAddress": "0x2c9ab600d71967ff259c491ad51f517886740cbc",
@@ -88154,7 +88172,11 @@
   {
     "id": "8890",
     "name": "Orenium Testnet Protocol",
-    "rpcs": ["https://rpc-dev-testnet.orenium.org/", "https://oredex-node.oredex.finance"],
+    "rpcs": [
+      "https://rpc-dev-testnet.orenium.org/",
+      "https://rpc-testnet.orenium.org/",
+      "https://oredex-node.oredex.finance"
+    ],
     "icon": "ore",
     "explorerUrl": "https://testnet.oreniumscan.org",
     "balancesConfig": {
@@ -93341,7 +93363,7 @@
   {
     "id": "42161",
     "name": "Arbitrum One",
-    "rpcs": ["https://arb1.arbitrum.io/rpc", "https://arbitrum-one.publicnode.com"],
+    "rpcs": ["https://arb1.arbitrum.io/rpc", "https://arbitrum-one-rpc.publicnode.com"],
     "explorerUrl": "https://arbiscan.io",
     "balancesConfig": {
       "evm-native": {
@@ -97874,7 +97896,7 @@
   {
     "id": "42170",
     "name": "Arbitrum Nova",
-    "rpcs": ["https://nova.arbitrum.io/rpc", "https://arbitrum-nova.publicnode.com"],
+    "rpcs": ["https://nova.arbitrum.io/rpc", "https://arbitrum-nova-rpc.publicnode.com"],
     "explorerUrl": "https://nova-explorer.arbitrum.io",
     "balancesConfig": {
       "evm-native": {
@@ -101803,6 +101825,19 @@
     "isTestnet": true
   },
   {
+    "id": "57073",
+    "name": "Ink",
+    "rpcs": ["https://rpc-gel.inkonchain.com", "https://rpc-qnd.inkonchain.com"],
+    "explorerUrl": "https://explorer.inkonchain.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "57451",
     "name": "COINSEC Network",
     "rpcs": [],
@@ -105327,6 +105362,12 @@
             "decimals": 6
           },
           {
+            "symbol": "stBTC",
+            "coingeckoId": "lorenzo-stbtc",
+            "contractAddress": "0xf6718b2701d4a6498ef77d7c152b2137ab28b8a3",
+            "decimals": 18
+          },
+          {
             "symbol": "M-BTC",
             "coingeckoId": "merlin-s-seal-btc",
             "contractAddress": "0xf7fb2df9280eb0a76427dc3b34761db8b1441a49",
@@ -106611,7 +106652,7 @@
   {
     "id": "421614",
     "name": "Arbitrum Sepolia",
-    "rpcs": ["https://sepolia-rollup.arbitrum.io/rpc"],
+    "rpcs": ["https://sepolia-rollup.arbitrum.io/rpc", "https://arbitrum-sepolia-rpc.publicnode.com"],
     "explorerUrl": "https://sepolia.arbiscan.io",
     "balancesConfig": {
       "evm-native": {
