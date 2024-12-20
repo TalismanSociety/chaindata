@@ -23,7 +23,31 @@
       "moduleConfig": {
         "symbol": "ETH",
         "decimals": 18,
+        "coingeckoId": "ethereum",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WETH",
+            "coingeckoId": "ink-bridged-weth-ink",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ink-bridged-weth-ink.webp"
+          },
+          {
+            "symbol": "Kraken",
+            "coingeckoId": "kraken-ink",
+            "contractAddress": "0xca5f2ccbd9c40b32657df57c716de44237f80f05",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kraken-ink.webp"
+          }
+        ]
       }
     }
   ],
