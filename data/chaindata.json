@@ -1391,7 +1391,13 @@
   {
     "id": "communeai",
     "name": "Commune AI",
-    "rpcs": ["wss://commune-api-node-1.communeai.net"]
+    "rpcs": ["wss://api.communeai.net", "wss://commune-api-node-1.communeai.net"],
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "commune-ai",
+        "symbol": "COMAI"
+      }
+    }
   },
   {
     "id": "competitors-club",
