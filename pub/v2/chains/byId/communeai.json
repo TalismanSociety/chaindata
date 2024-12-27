@@ -6,8 +6,8 @@
   "genesisHash": "0xbc6eb9753e2417476601485f9f8ef8474701ec199d456f989bd397682c9425c5",
   "prefix": 42,
   "name": "Commune AI",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/communeai.svg",
   "chainName": "commune",
   "chainType": "Live",
   "implName": "node-subspace",
@@ -29,6 +29,9 @@
   "feeToken": null,
   "rpcs": [
     {
+      "url": "wss://api.communeai.net"
+    },
+    {
       "url": "wss://commune-api-node-1.communeai.net"
     }
   ],
@@ -36,7 +39,16 @@
   "parathreads": null,
   "paraId": null,
   "relay": null,
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "commune-ai",
+        "symbol": "COMAI",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/communeai.svg"
+      }
+    }
+  ],
   "balancesMetadata": [],
   "hasCheckMetadataHash": false
 }
