@@ -2528,6 +2528,11 @@
             "decimals": 18
           },
           {
+            "symbol": "audai",
+            "coingeckoId": "auditai",
+            "contractAddress": "0x2f4c6f8175e89480b97bc9d390358744541c5ac6"
+          },
+          {
             "symbol": "AUDT",
             "coingeckoId": "auditchain",
             "contractAddress": "0xb90cb79b72eb10c39cbdf86e50b1c89f6a235f2e",
@@ -13900,12 +13905,6 @@
             "decimals": 6
           },
           {
-            "symbol": "HDAO",
-            "coingeckoId": "hyperdao",
-            "contractAddress": "0x74faab6986560fd1140508e4266d8a7b87274ffd",
-            "decimals": 18
-          },
-          {
             "symbol": "HQ",
             "coingeckoId": "hyperquant-2",
             "contractAddress": "0x986df267bb88a0a0be06dd4a1052e1bdec1a6172",
@@ -21334,12 +21333,6 @@
             "decimals": 18
           },
           {
-            "symbol": "PEPEBOMB",
-            "coingeckoId": "pepebomb",
-            "contractAddress": "0x8dba4bc68126bd186fbb62c976539d1558c9fe73",
-            "decimals": 18
-          },
-          {
             "symbol": "BEEF",
             "coingeckoId": "pepebull",
             "contractAddress": "0xbeef698bd78139829e540622d5863e723e8715f1",
@@ -28513,6 +28506,11 @@
             "decimals": 9
           },
           {
+            "symbol": "trumpius",
+            "coingeckoId": "trumpius-maximus",
+            "contractAddress": "0x47000a7b27a75d44ffadfe9d0b97fa04d569b323"
+          },
+          {
             "symbol": "TruMaga",
             "coingeckoId": "trumpmaga",
             "contractAddress": "0x328ea6e5ba4cc4b58799f2aec3d8ba839f4314ba",
@@ -30591,12 +30589,6 @@
             "coingeckoId": "worldcoin-wld",
             "contractAddress": "0x163f8c2467924be0ae7b5347228cabf260318753",
             "decimals": 18
-          },
-          {
-            "symbol": "WRC",
-            "coingeckoId": "worldcore",
-            "contractAddress": "0x72adadb447784dd7ab1f472467750fc485e4cb2d",
-            "decimals": 6
           },
           {
             "symbol": "WEPC",
@@ -47253,12 +47245,6 @@
             "decimals": 9
           },
           {
-            "symbol": "OPINU",
-            "coingeckoId": "optimus-inu",
-            "contractAddress": "0x674aa28ac436834051fff3fc7b6e59d6f9c57a1c",
-            "decimals": 18
-          },
-          {
             "symbol": "OPX",
             "coingeckoId": "optimus-x",
             "contractAddress": "0x6ec9a568881755c9698384cc6b5b13bf4064e12b",
@@ -58801,12 +58787,6 @@
             "coingeckoId": "greengold",
             "contractAddress": "0x21a00838e6b2d4aa3ac4bbc11111be011e1ca111",
             "decimals": 6
-          },
-          {
-            "symbol": "GOBAL",
-            "coingeckoId": "guardians-of-the-ball",
-            "contractAddress": "0x70f300fe3c8d62a169d3c1d656d284c3b4e00461",
-            "decimals": 18
           },
           {
             "symbol": "GUARD",
@@ -74648,7 +74628,8 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "ethereum"
       }
     }
   },
@@ -80774,7 +80755,7 @@
   {
     "id": "7575",
     "name": "ADIL Testnet",
-    "rpcs": [],
+    "rpcs": ["https://testnet.adilchain-rpc.io"],
     "icon": "adil",
     "explorerUrl": "https://testnet.adilchain-scan.io",
     "balancesConfig": {
@@ -80788,7 +80769,7 @@
   {
     "id": "7576",
     "name": "Adil Chain V2 Mainnet",
-    "rpcs": [],
+    "rpcs": ["https://adilchain-rpc.io"],
     "icon": "adil",
     "explorerUrl": "https://adilchain-scan.io",
     "balancesConfig": {
@@ -92200,6 +92181,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "OAC",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "26988",
+    "name": "Newton Finance Testnet",
+    "rpcs": ["https://jp-rpc-testnet-newfi.newpay.io"],
+    "explorerUrl": "https://explorer-testnet-newfi.newpay.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "NEW",
         "decimals": 18
       }
     },
@@ -112500,7 +112494,7 @@
   {
     "id": "920637907288165",
     "name": "Kakarot Starknet Sepolia",
-    "rpcs": ["https://sepolia-rpc.kakarot.org"],
+    "rpcs": [],
     "icon": "kakarot",
     "explorerUrl": "https://sepolia.kakarotscan.org",
     "balancesConfig": {
