@@ -27,7 +27,7 @@ const chainsSummaryUrl = 'https://raw.githubusercontent.com/TalismanSociety/chai
 const summary = await fetch(chainsSummaryUrl).then((result) => result.json())
 ```
 
-For an example of a more advanced use-case, you can check out the [Talisman wallet](https://github.com/TalismanSociety/talisman) source code.  
+For an example of a more advanced use-case, you can check out the source code for [Talisman Wallet](https://github.com/TalismanSociety/talisman).  
 The wallet uses chaindata to populate a database of chains and tokens which is used for features like account balance subscriptions and sending funds.
 
 ## Chaindata `pub` versions
