@@ -28,6 +28,7 @@ export const addChains = async () => {
       sortIndex: null,
       genesisHash: null,
       prefix: null,
+      oldPrefix: configChain.oldPrefix,
       name: configChain.name ?? null,
       themeColor: null,
       logo: null,

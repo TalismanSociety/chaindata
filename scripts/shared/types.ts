@@ -23,6 +23,7 @@ export type ConfigChain = {
   overrideNativeTokenId?: string
   isUnknownFeeToken?: boolean
   feeToken?: string
+  oldPrefix?: number
   rpcs?: string[]
   paraId?: number
   relay?: { id: string }
