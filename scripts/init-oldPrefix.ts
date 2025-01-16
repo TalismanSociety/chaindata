@@ -12,11 +12,13 @@ const chaindataTestnets = JSON.parse(fs.readFileSync(FILEPATH_CHAINDATA_TESTNETS
 
 for (const publishedChain of publishedChainsAll) {
   const chaindataChain = chaindata.find((c: any) => c.id === publishedChain.id)
-  if (chaindataChain) chaindataChain.oldPrefix = publishedChain.prefix
-
-  const chaindataTestnet = chaindataTestnets.find((c: any) => c.id === publishedChain.id)
-  if (chaindataTestnet) chaindataTestnet.oldPrefix = publishedChain.prefix
+  if (chaindataChain) {
+    if (chaindataChain.relay?.id === 'polkadot') chaindataChain.oldPrefix = publishedChain.prefix
+    else delete chaindataChain.oldPrefix
+  }
 }
+
+for (const testnet of chaindataTestnets) delete testnet.oldPrefix
 
 // write back
 fs.writeFileSync(FILEPATH_CHAINDATA_CHAINS, JSON.stringify(chaindata, null, 2))
