@@ -72361,6 +72361,12 @@
             "decimals": 8
           },
           {
+            "symbol": "WETH",
+            "coingeckoId": "lisk-bridged-weth-lisk",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18
+          },
+          {
             "symbol": "M-BTC",
             "coingeckoId": "merlin-s-seal-btc",
             "contractAddress": "0x9bfa177621119e64cecbeabe184ab9993e2ef727",
@@ -74521,6 +74527,34 @@
         "symbol": "ETH",
         "decimals": 18,
         "coingeckoId": "ethereum"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "ASTR",
+            "coingeckoId": "soneium-bridged-astar-soneium",
+            "contractAddress": "0x2cae934a1e84f693fbb78ca5ed3b0a6893259441",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "soneium-bridged-usdc-soneium",
+            "contractAddress": "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369",
+            "decimals": 6
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "soneium-bridged-usdt-soneium",
+            "contractAddress": "0x3a337a6ada9d885b6ad95ec48f9b75f197b5ae35",
+            "decimals": 6
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "superbridge-bridged-weth-soneium",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -104179,6 +104213,12 @@
             "coingeckoId": "squidswap",
             "contractAddress": "0xbf0cafcbaaf0be8221ae8d630500984edc908861",
             "decimals": 18
+          },
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-ink",
+            "contractAddress": "0xf1815bd50389c46847f0bda824ec8da914045d14",
+            "decimals": 6
           }
         ]
       }
@@ -112319,7 +112359,7 @@
   {
     "id": "245022926",
     "name": "Neon EVM Devnet",
-    "rpcs": ["https://devnet.neonevm.org"],
+    "rpcs": ["https://devnet.neonevm.org", "https://neon-evm-devnet.drpc.org"],
     "icon": "neon",
     "explorerUrl": "https://devnet.neonscan.org",
     "balancesConfig": {
