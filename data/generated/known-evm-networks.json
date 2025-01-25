@@ -32242,6 +32242,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ZUSD",
+            "coingeckoId": "zusd",
+            "contractAddress": "0xc56c2b7e71b54d38aab6d52e94a04cbfa8f604fa",
+            "decimals": 6
+          },
+          {
             "symbol": "ZUZALU",
             "coingeckoId": "zuzalu-inu",
             "contractAddress": "0xd1f17b7a6bff962659ed608bcd6d318bb5fbb249",
@@ -33917,10 +33923,10 @@
     "rpcs": [
       "https://flare-api.flare.network/ext/C/rpc",
       "https://flare.rpc.thirdweb.com",
-      "https://flare-bundler.etherspot.io",
       "https://rpc.ankr.com/flare",
       "https://rpc.au.cc/flare",
       "https://flare.solidifi.app/ext/C/rpc",
+      "https://flare-bundler.etherspot.io",
       "https://01-gravelines-003-01.rpc.tatum.io/ext/bc/C/rpc",
       "https://01-vinthill-003-02.rpc.tatum.io/ext/bc/C/rpc"
     ],
@@ -80450,13 +80456,13 @@
     "isTestnet": true
   },
   {
-    "id": "5372",
-    "name": "Settlus Testnet",
-    "rpcs": [],
-    "explorerUrl": "https://testnet.settlus.network",
+    "id": "5373",
+    "name": "Settlus Sepolia Testnet",
+    "rpcs": ["https://settlus-septestnet.g.alchemy.com/public"],
+    "explorerUrl": "https://settlus-sepolia-testnet.explorer.alchemy.com",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "SETL",
+        "symbol": "ETH",
         "decimals": 18
       }
     },
@@ -87162,6 +87168,12 @@
             "decimals": 18
           },
           {
+            "symbol": "LMNL",
+            "coingeckoId": "liminal-agent",
+            "contractAddress": "0xb7b4e8406673528e7dc3d787f3a42eb1ebc01cf6",
+            "decimals": 18
+          },
+          {
             "symbol": "LINGO",
             "coingeckoId": "lingo",
             "contractAddress": "0xfb42da273158b0f642f59f2ba7cc1d5457481677",
@@ -93693,6 +93705,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTCIX",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "19991",
+    "name": "Ultra EVM Network",
+    "rpcs": ["https://evm.ultra.eosusa.io"],
+    "icon": "ultra",
+    "explorerUrl": "https://evmexplorer.ultra.io",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "UOS",
         "decimals": 18
       }
     }
@@ -100954,6 +100979,12 @@
             "coingeckoId": "zunami-usd",
             "contractAddress": "0xbfeb8b6813491bb4fb823b8f451b62ef535420d1",
             "decimals": 18
+          },
+          {
+            "symbol": "ZUSD",
+            "coingeckoId": "zusd",
+            "contractAddress": "0x6e4cc0ab2b4d2edafa6723cfa1582229f1dd1be1",
+            "decimals": 6
           },
           {
             "symbol": "ZYB",
@@ -108873,7 +108904,7 @@
   },
   {
     "id": "161201",
-    "name": "Openledger Testnet",
+    "name": "OpenLedger Testnet",
     "rpcs": ["https://rpctn.openledger.xyz"],
     "icon": "openledger",
     "explorerUrl": "https://scantn.openledger.xyz",
