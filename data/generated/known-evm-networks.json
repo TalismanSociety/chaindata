@@ -48212,6 +48212,12 @@
             "decimals": 18
           },
           {
+            "symbol": "PINEYE",
+            "coingeckoId": "pineye",
+            "contractAddress": "0x4b3a2187648902082db0a44e8235d57f3f23dd10",
+            "decimals": 18
+          },
+          {
             "symbol": "PinkM",
             "coingeckoId": "pinkmoon",
             "contractAddress": "0xb6090a50f66046e3c6afb9311846a6432e45060a",
@@ -77700,7 +77706,36 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "ethereum"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "WETH",
+            "coingeckoId": "l2-standard-bridged-weth-abstract",
+            "contractAddress": "0x3439153eb7af838ad19d56e1571fbd09333c2809",
+            "decimals": 18
+          },
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-abstract",
+            "contractAddress": "0x84a71ccd554cc1b02749b35d22f684cc8ec987e1",
+            "decimals": 6
+          },
+          {
+            "symbol": "VIBE",
+            "coingeckoId": "vibe-3",
+            "contractAddress": "0x2c46ad181b8ed22c5bf53e21de2af87b11888ecb",
+            "decimals": 18
+          },
+          {
+            "symbol": "YUP",
+            "coingeckoId": "yup-2",
+            "contractAddress": "0x8041fbc255d6e6330e92a61325da515656bfd2dd",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -104972,7 +105007,7 @@
   {
     "id": "55004",
     "name": "Titan",
-    "rpcs": ["https://rpc.titan.tokamak.network"],
+    "rpcs": [],
     "explorerUrl": "https://explorer.titan.tokamak.network",
     "balancesConfig": {
       "evm-native": {
