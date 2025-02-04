@@ -2345,7 +2345,7 @@
           {
             "symbol": "ATAI",
             "coingeckoId": "artemisai",
-            "contractAddress": "0x92098551e613dfdcd4d7c7b2c35615709e4e0397",
+            "contractAddress": "0x781d201db8c837ea2aefea7394554071da45ff0f",
             "decimals": 18
           },
           {
@@ -10799,6 +10799,12 @@
             "symbol": "EVOAI",
             "coingeckoId": "evolvai",
             "contractAddress": "0x770880c3927e63e31d4b90314f7a37e09fbbf2fd",
+            "decimals": 18
+          },
+          {
+            "symbol": "EVOLVE",
+            "coingeckoId": "evolve-network",
+            "contractAddress": "0x0f719591e2bcb6fcc3e68b16d2a88c89c6ae0d42",
             "decimals": 18
           },
           {
@@ -19347,12 +19353,6 @@
           },
           {
             "symbol": "NEBULA",
-            "coingeckoId": "nebula-2",
-            "contractAddress": "0xac1419ee74f203c6b9daa3635ad7169b7ebb5c1a",
-            "decimals": 9
-          },
-          {
-            "symbol": "NEBULA",
             "coingeckoId": "nebula-3",
             "contractAddress": "0x541f9ac587be412ba0486ea3dbcf09dc11db76ce",
             "decimals": 18
@@ -22526,10 +22526,9 @@
             "decimals": 18
           },
           {
-            "symbol": "PREME",
+            "symbol": "preme",
             "coingeckoId": "preme-token",
-            "contractAddress": "0x7d0c49057c09501595a8ce23b773bb36a40b521f",
-            "decimals": 18
+            "contractAddress": "0x8c62ac3b71db8c81a764b84ffbc2a8d0bad7f111"
           },
           {
             "symbol": "PREMIA",
@@ -25240,12 +25239,6 @@
             "coingeckoId": "shiba-v-pepe",
             "contractAddress": "0x0b0a8c7c34374c1d0c649917a97eee6c6c929b1b",
             "decimals": 9
-          },
-          {
-            "symbol": "WING",
-            "coingeckoId": "shiba-wing",
-            "contractAddress": "0xc47db7535b063a494f3619317b7633041737c8e9",
-            "decimals": 18
           },
           {
             "symbol": "SHIBELON",
@@ -31805,12 +31798,6 @@
             "decimals": 18
           },
           {
-            "symbol": "YOYO",
-            "coingeckoId": "yoyo-market",
-            "contractAddress": "0x4a88ebf6f76b04f5e0e71a351a22e573f636affe",
-            "decimals": 18
-          },
-          {
             "symbol": "YUGE",
             "coingeckoId": "yuge-on-eth",
             "contractAddress": "0x8854d278bdb3140c161bf011888d9dc7a5918e77",
@@ -34075,7 +34062,7 @@
   {
     "id": "18",
     "name": "ThunderCore Testnet",
-    "rpcs": ["https://testnet-rpc.thundercore.com", "https://thundercore-testnet.drpc.org"],
+    "rpcs": ["https://testnet-rpc.thundercore.com"],
     "explorerUrl": "https://explorer-testnet.thundercore.com",
     "balancesConfig": {
       "evm-native": {
@@ -36019,7 +36006,7 @@
           {
             "symbol": "AIG",
             "coingeckoId": "a-i-genesis",
-            "contractAddress": "0x4b4594bfe661919a8e2373eb175004da2989a479",
+            "contractAddress": "0xc1f0768587dc889e494c171b155c60b4e9a13f08",
             "decimals": 18
           },
           {
@@ -42042,12 +42029,6 @@
             "symbol": "FMT",
             "coingeckoId": "finminity",
             "contractAddress": "0x99c6e435ec259a7e8d65e1955c9423db624ba54c",
-            "decimals": 18
-          },
-          {
-            "symbol": "FINS",
-            "coingeckoId": "fins-token",
-            "contractAddress": "0x1b219aca875f8c74c33cff9ff98f3a9b62fcbff5",
             "decimals": 18
           },
           {
@@ -64114,7 +64095,7 @@
   {
     "id": "189",
     "name": "BMC Testnet",
-    "rpcs": [],
+    "rpcs": ["https://testnet.bmcchain.com"],
     "explorerUrl": "https://bmctestnet.blockmeta.com",
     "balancesConfig": {
       "evm-native": {
@@ -64640,7 +64621,7 @@
   {
     "id": "214",
     "name": "Shinarium Mainnet",
-    "rpcs": ["https://mainnet.shinarium.org"],
+    "rpcs": [],
     "icon": "shinarium",
     "explorerUrl": "https://shinascan.shinarium.org",
     "balancesConfig": {
@@ -68935,7 +68916,47 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "SX",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "sx-network-2"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "LFI",
+            "coingeckoId": "lunafi",
+            "contractAddress": "0x4c882ec256823ee773b25b414d36f92ef58a7c0c",
+            "decimals": 18
+          },
+          {
+            "symbol": "sx",
+            "coingeckoId": "sx-network-2",
+            "contractAddress": "0x3e96b0a25d51e3cc89c557f152797c33b839968f"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "sx-network-bridged-usdc-sx-network",
+            "contractAddress": "0xe2aa35c2039bd0ff196a6ef99523cc0d3972ae3e",
+            "decimals": 6
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "sx-network-bridged-weth-sx-network",
+            "contractAddress": "0xa173954cc4b1810c0dbdb007522adbc182dab380",
+            "decimals": 18
+          },
+          {
+            "symbol": "WMATIC",
+            "coingeckoId": "wmatic",
+            "contractAddress": "0xfa6f64dfbad14e6883321c2f756f5b22ff658f9c",
+            "decimals": 18
+          },
+          {
+            "symbol": "WSX",
+            "coingeckoId": "wrapped-sx",
+            "contractAddress": "0xaa99be3356a11ee92c3f099bd7a038399633566f",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -85968,6 +85989,12 @@
             "decimals": 18
           },
           {
+            "symbol": "EMP",
+            "coingeckoId": "empyreal",
+            "contractAddress": "0x39d5313c3750140e5042887413ba8aa6145a9bd2",
+            "decimals": 18
+          },
+          {
             "symbol": "VIS",
             "coingeckoId": "envision-2",
             "contractAddress": "0xfc60aa1ffca50ce08b3cdec9626c0bb9e9b09bec",
@@ -86160,9 +86187,21 @@
             "decimals": 18
           },
           {
+            "symbol": "FLNCHY",
+            "coingeckoId": "flaunchy",
+            "contractAddress": "0x1c93d155bd388241f9ab5df500d69eb529ce9583",
+            "decimals": 18
+          },
+          {
             "symbol": "FLAY",
             "coingeckoId": "flayer",
             "contractAddress": "0xf1a7000000950c7ad8aff13118bb7ab561a448ee",
+            "decimals": 18
+          },
+          {
+            "symbol": "flETH",
+            "coingeckoId": "fleth",
+            "contractAddress": "0x000000000d564d5be76f7f0d28fe52605afc7cf8",
             "decimals": 18
           },
           {
@@ -87891,6 +87930,12 @@
             "symbol": "MDOGAI",
             "coingeckoId": "moondog-ai",
             "contractAddress": "0xd81cb23a4690f7fdf54e583f221d2c01882604f8",
+            "decimals": 18
+          },
+          {
+            "symbol": "MOONED",
+            "coingeckoId": "moonedge",
+            "contractAddress": "0x599899dbaa0b4d3110b53d1a4d05fcdcb1c81945",
             "decimals": 18
           },
           {
@@ -109243,6 +109288,18 @@
     "isTestnet": true
   },
   {
+    "id": "121224",
+    "name": "Fushuma",
+    "rpcs": ["https://rpc.fushuma.com"],
+    "explorerUrl": "https://fumascan.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FUMA",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "123321",
     "name": "Gemchain",
     "rpcs": ["https://evm-rpc.gemchain.org"],
@@ -110426,6 +110483,22 @@
         "symbol": "PRX",
         "decimals": 18,
         "coingeckoId": "parex"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "USDT",
+            "coingeckoId": "parex-bridged-usdt-parex",
+            "contractAddress": "0x19a5c551e4762f232448da1984ecb445b4a7721e",
+            "decimals": 18
+          },
+          {
+            "symbol": "WPRX",
+            "coingeckoId": "wrapped-prx",
+            "contractAddress": "0x1595abe9dcf068a969b819b64809d2bedd3703b6",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -114205,10 +114278,10 @@
   },
   {
     "id": "476462898",
-    "name": "Skopje Testnet",
-    "rpcs": ["https://skopje-rpc.gptprotocol.io"],
+    "name": "GPT Testnet",
+    "rpcs": ["https://testnet-rpc.gptprotocol.io"],
     "icon": "skopje-gpt",
-    "explorerUrl": "https://skopje-explorer.gptprotocol.io",
+    "explorerUrl": "https://testnet-explorer.gptprotocol.io",
     "balancesConfig": {
       "evm-native": {
         "symbol": "SkpGPT",
@@ -115735,7 +115808,7 @@
   {
     "id": "111222333444",
     "name": "Alphabet Mainnet",
-    "rpcs": ["https://londonpublic.alphabetnetwork.org"],
+    "rpcs": [],
     "icon": "alphabetnetwork",
     "explorerUrl": "https://scan.alphabetnetwork.org",
     "balancesConfig": {
