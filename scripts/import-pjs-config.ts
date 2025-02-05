@@ -23,11 +23,11 @@ import prettier from 'prettier'
 
 import { PRETTIER_CONFIG } from './shared/constants'
 
-// prioritise rpcs we love (good connections, good limits)
-// remove pjs rpcs we don't like (the ones our users have had regular issues connecting to)
+// prioritise rpcs that have good performance and rate limits
+// remove pjs rpcs that have had frequent issues reported by users
 //
 // make sure these are a list of regexes, i.e. Regex[]
-const goodRpcProviders = [
+const priorityRpcProviders = [
   // test if rpc begins with `wss://rpc.ibp.network` or `wss://sys.ibp.network` or `wss://rpc.dotters.network` or `wss://sys.dotters.network`
   /^wss:\/\/(?:rpc|sys)\.(?:ibp|dotters)\.network/i,
 
@@ -38,27 +38,24 @@ const goodRpcProviders = [
   /dwellir\.com\/?$/i,
 ]
 
-const unreliableRpcProviders = [
+const skippedRpcProviders = [
   // test if rpc ends with `public.blastapi.io` or `public.blastapi.io/`
   /public\.blastapi\.io\/?$/i,
-
-  // test if rpc ends with `onfinality.io/public-ws` or `onfinality.io/public-ws/`
-  /onfinality\.io\/public-ws\/?$/i,
 
   // test if rpc is `rpc.polkadot.io` or `kusama-rpc.polkadot.io`
   /^wss:\/\/(?:kusama-)?(?:apps-)?rpc\.polkadot\.io\/?$/i,
 ]
 
-const sortGoodFirst = (a: string, b: string) => {
-  const aIsGoodIndex = goodRpcProviders.findIndex((regex) => regex.test(a))
-  const bIsGoodIndex = goodRpcProviders.findIndex((regex) => regex.test(b))
+const sortPriorityFirst = (a: string, b: string) => {
+  const aIsPriorityIndex = priorityRpcProviders.findIndex((regex) => regex.test(a))
+  const bIsPriorityIndex = priorityRpcProviders.findIndex((regex) => regex.test(b))
 
-  if (aIsGoodIndex !== -1 && bIsGoodIndex === -1) return -1
-  if (bIsGoodIndex !== -1 && aIsGoodIndex === -1) return 1
-  return aIsGoodIndex - bIsGoodIndex
+  if (aIsPriorityIndex !== -1 && bIsPriorityIndex === -1) return -1
+  if (bIsPriorityIndex !== -1 && aIsPriorityIndex === -1) return 1
+  return aIsPriorityIndex - bIsPriorityIndex
 }
 
-const filterUnreliable = (url: string) => !unreliableRpcProviders.some((regex) => regex.test(url))
+const filterSkipped = (url: string) => !skippedRpcProviders.some((regex) => regex.test(url))
 
 // a map of pjs ids to their talisman chaindata equivalents
 const customChainIds: Record<string, string | undefined> = {
@@ -269,8 +266,8 @@ const main = async () => {
       const prependRpcs = isTestnet ? undefined : additionalChainRpcs[id]
       chain.rpcs = (overrideRpcs ?? ([...(prependRpcs ?? []), ...Object.values(para.providers)] as string[]))
         .filter((url) => url.startsWith('wss://'))
-        .sort(sortGoodFirst)
-        .filter(filterUnreliable)
+        .sort(sortPriorityFirst)
+        .filter(filterSkipped)
         .filter((rpc) => (seenRpcs[rpc] ? false : (seenRpcs[rpc] = true)))
       if (relay) {
         chain.paraId = para.paraId
