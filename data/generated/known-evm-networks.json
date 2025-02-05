@@ -43779,6 +43779,12 @@
             "decimals": 18
           },
           {
+            "symbol": "LIME",
+            "coingeckoId": "ime-lab",
+            "contractAddress": "0x7bc75e291e656e8658d66be1cc8154a3769a35dd",
+            "decimals": 18
+          },
+          {
             "symbol": "DARA",
             "coingeckoId": "immutable",
             "contractAddress": "0x0255af6c9f86f6b0543357bacefa262a2664f80f",
@@ -64285,7 +64291,7 @@
   {
     "id": "199",
     "name": "BitTorrent Chain Mainnet",
-    "rpcs": ["https://rpc.bt.io", "https://bittorrent.drpc.org"],
+    "rpcs": ["https://rpc.bt.io"],
     "icon": "bttc",
     "explorerUrl": "https://bttcscan.com",
     "balancesConfig": {
@@ -69907,7 +69913,7 @@
   {
     "id": "653",
     "name": "Kalichain Testnet",
-    "rpcs": [],
+    "rpcs": ["https://rpc.kalichain.com"],
     "icon": "kalichain",
     "explorerUrl": "https://explorer.kalichain.com",
     "balancesConfig": {
@@ -69934,7 +69940,7 @@
   {
     "id": "662",
     "name": "UltronSmartchain",
-    "rpcs": ["https://rpc.ultronsmartchain.io"],
+    "rpcs": [],
     "icon": "ultronsmartchain",
     "explorerUrl": "https://scan.ultronsmartchain.io",
     "balancesConfig": {
@@ -79380,7 +79386,7 @@
   {
     "id": "4545",
     "name": "Emoney Network Mainnet",
-    "rpcs": ["https://rpc-publicnode.emoney.io/"],
+    "rpcs": ["https://rpc-publicnode.emoney.io/", "https://public-node1-rpc.emoney.network/"],
     "icon": "emoney",
     "explorerUrl": "https://explore.emoney.network",
     "balancesConfig": {
@@ -87282,6 +87288,12 @@
             "coingeckoId": "klima-dao",
             "contractAddress": "0xdcefd8c8fcc492630b943abcab3429f12ea9fea2",
             "decimals": 9
+          },
+          {
+            "symbol": "KLINK",
+            "coingeckoId": "klink-finance",
+            "contractAddress": "0xdc5eb0fc6d3f64689290595ebe8943155ed4a73a",
+            "decimals": 18
           },
           {
             "symbol": "KOGIN",
@@ -107351,7 +107363,22 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BERA",
-        "decimals": 18
+        "decimals": 18,
+        "coingeckoId": "berachain-bera"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "bgt",
+            "coingeckoId": "berachain-governance-token",
+            "contractAddress": "0x656b95e550c07a9ffe548bd4085c72418ceb1dba"
+          },
+          {
+            "symbol": "honey",
+            "coingeckoId": "honey-3",
+            "contractAddress": "0xfcbd14dc51f0a4d49d5e53c2e0950e0bc26d0dce"
+          }
+        ]
       }
     },
     "isTestnet": true
