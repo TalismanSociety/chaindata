@@ -1,7 +1,7 @@
 {
   "id": "9008",
   "isTestnet": false,
-  "sortIndex": 917,
+  "sortIndex": 918,
   "name": "Shido Mainnet Block",
   "themeColor": "#0071ff",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/shidoChain.webp",
@@ -23,7 +23,31 @@
       "moduleConfig": {
         "symbol": "SHIDO",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "shido-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shido-2.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "shido-bridged-usdc-shido",
+            "contractAddress": "0x80b5a32e4f032b2a058b4f29ec95eefeeb87adcd",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "WSHIDO",
+            "coingeckoId": "wrapped-shido",
+            "contractAddress": "0x8cbaffd9b658997e7bf87e98febf6ea6917166f7",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-shido.webp"
+          }
+        ]
       }
     }
   ],
