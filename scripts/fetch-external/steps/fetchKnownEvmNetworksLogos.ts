@@ -49,6 +49,10 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmAbz7VfGvf6NVHezuBy5HpJTCi1gEshBxxdDdfVXNQ8Bt',
   'QmRb2rWanyBTKS5KyrmrbXPNy9zovpxfLRxz9FPPiuRgfg',
   'QmbySJWaSQxzL3F4zvpKYaNvMjHsX2qUyWTv2kpitq9dW8',
+  'QmSuVbbBRAnquu3EsbsFgEMNgM8bTpiVKns2CCBVM6c2aJ',
+  'QmTY2Z7AEEWxmzQyh7DFG8fyR3w6Y166GDJfi6o3xo6GgV',
+  'QmeGtXdTHHMnf6rWUWFcefMGaVp7dJ6SWNgxgbVgm9YHTZ',
+  'QmdwQDr6vmBtXmK2TmknkEuZNoaDqTasFdZdu3DRw8b2ws',
 ]
 
 // collection hash => image name
