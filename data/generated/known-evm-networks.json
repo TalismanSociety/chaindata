@@ -64322,7 +64322,7 @@
   {
     "id": "189",
     "name": "BMC Testnet",
-    "rpcs": ["https://testnet.bmcchain.com"],
+    "rpcs": [],
     "explorerUrl": "https://bmctestnet.blockmeta.com",
     "balancesConfig": {
       "evm-native": {
@@ -92918,6 +92918,22 @@
         "symbol": "LRS",
         "decimals": 18,
         "coingeckoId": "larissa-blockchain"
+      },
+      "evm-erc20": {
+        "tokens": [
+          {
+            "symbol": "LRSN",
+            "coingeckoId": "lrsnode",
+            "contractAddress": "0x31b16cc5750178e4e1c332ed9003791d2904f333",
+            "decimals": 18
+          },
+          {
+            "symbol": "WLRS",
+            "coingeckoId": "wrapped-lrs",
+            "contractAddress": "0x2347302968d7d7cd25aa82ff8be78850ad8119f7",
+            "decimals": 18
+          }
+        ]
       }
     }
   },
@@ -113765,6 +113781,20 @@
     }
   },
   {
+    "id": "763374",
+    "name": "Surge Testnet",
+    "rpcs": ["https://l2-rpc.surge.staging-nethermind.xyz"],
+    "icon": "surge-testnet",
+    "explorerUrl": "https://explorer.holesky.surge.wtf",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "764984",
     "name": "Lamina1 Testnet",
     "rpcs": ["https://subnets.avax.network/lamina1tes/testnet/rpc"],
@@ -115579,6 +115609,18 @@
       "evm-erc20": {
         "tokens": [
           {
+            "symbol": "USDC.e",
+            "coingeckoId": "corn-bridged-usdc-corn",
+            "contractAddress": "0xdf0b24095e15044538866576754f3c964e902ee6",
+            "decimals": 6
+          },
+          {
+            "symbol": "LBTC",
+            "coingeckoId": "lombard-staked-btc",
+            "contractAddress": "0xecac9c5f704e954931349da37f60e39f515c11c1",
+            "decimals": 8
+          },
+          {
             "symbol": "SolvBTC",
             "coingeckoId": "solv-btc",
             "contractAddress": "0x541fd749419ca806a8bc7da8ac23d346f2df8b77",
@@ -115588,6 +115630,12 @@
             "symbol": "SolvBTC.BBN",
             "coingeckoId": "solv-protocol-solvbtc-bbn",
             "contractAddress": "0xcc0966d8418d412c599a6421b760a847eb169a8c",
+            "decimals": 18
+          },
+          {
+            "symbol": "WBTCN",
+            "coingeckoId": "wrapped-bitcorn",
+            "contractAddress": "0xda5ddd7270381a7c2717ad10d1c0ecb19e3cdfb2",
             "decimals": 18
           }
         ]
@@ -116335,7 +116383,7 @@
   {
     "id": "476462898",
     "name": "GPT Testnet",
-    "rpcs": ["https://testnet-rpc.gptprotocol.io"],
+    "rpcs": [],
     "icon": "skopje-gpt",
     "explorerUrl": "https://testnet-explorer.gptprotocol.io",
     "balancesConfig": {
