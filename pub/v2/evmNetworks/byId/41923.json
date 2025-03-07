@@ -1,7 +1,7 @@
 {
   "id": "41923",
   "isTestnet": true,
-  "sortIndex": 1444,
+  "sortIndex": 1445,
   "name": "EDU Chain",
   "themeColor": "#505050",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -20,7 +20,47 @@
       "moduleConfig": {
         "symbol": "EDU",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "edu-coin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/edu-coin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "edu-chain-bridged-usdc-edu-chain",
+            "contractAddress": "0x836d275563bab5e93fd6ca62a95db7065da94342",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "edu-chain-bridged-usdt-edu-chain",
+            "contractAddress": "0x7277cc818e3f3ffbb169c6da9cc77fc2d2a34895",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "ESD",
+            "coingeckoId": "edu-stabledollar",
+            "contractAddress": "0xd282de0c2bd41556c887f319a5c19ff441dcdf90",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/edu-stabledollar.webp"
+          },
+          {
+            "symbol": "WEDU",
+            "coingeckoId": "wrapped-edu",
+            "contractAddress": "0xd02e8c38a8e3db71f8b2ae30b8186d7874934e12",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-edu.webp"
+          }
+        ]
       }
     }
   ],
