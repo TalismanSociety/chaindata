@@ -7,12 +7,16 @@
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/polkadot_metadata_latest.apng",
     "rpcs": [
       "wss://rpc.ibp.network/polkadot",
+      "wss://1rpc.io/dot",
       "wss://polkadot-rpc.dwellir.com",
       "wss://polkadot-rpc-tn.dwellir.com",
       "wss://polkadot-rpc.publicnode.com",
       "wss://polkadot-public-rpc.blockops.network/ws",
+      "wss://rpc-polkadot.helixstreet.io",
       "wss://polkadot.dotters.network",
       "wss://rpc-polkadot.luckyfriday.io",
+      "wss://polkadot.api.onfinality.io/public-ws",
+      "wss://polkadot.rpc.permanence.io",
       "wss://polkadot.public.curie.radiumblock.co/ws",
       "wss://rockx-dot.w3node.com/polka-public-dot/ws",
       "wss://dot-rpc.stakeworld.io",
@@ -34,15 +38,17 @@
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/kusama_metadata_latest.apng",
     "rpcs": [
       "wss://rpc.ibp.network/kusama",
+      "wss://1rpc.io/ksm",
       "wss://kusama-rpc.dwellir.com",
       "wss://kusama-rpc-tn.dwellir.com",
       "wss://kusama-rpc.publicnode.com",
+      "wss://rpc-kusama.helixstreet.io",
       "wss://kusama.dotters.network",
       "wss://rpc-kusama.luckyfriday.io",
+      "wss://kusama.api.onfinality.io/public-ws",
       "wss://kusama.public.curie.radiumblock.co/ws",
       "wss://rockx-ksm.w3node.com/polka-public-ksm/ws",
-      "wss://ksm-rpc.stakeworld.io",
-      "wss://kusama.rpc.subquery.network/public/ws"
+      "wss://ksm-rpc.stakeworld.io"
     ],
     "balancesConfig": {
       "substrate-native": {
@@ -81,7 +87,10 @@
       "wss://acala-rpc.dwellir.com",
       "wss://acala-rpc-0.aca-api.network",
       "wss://acala-rpc-1.aca-api.network",
-      "wss://acala-rpc-3.aca-api.network/ws"
+      "wss://acala-rpc-3.aca-api.network/ws",
+      "wss://acala.ibp.network",
+      "wss://acala.dotters.network",
+      "wss://acala-polkadot.api.onfinality.io/public-ws"
     ],
     "paraId": 2000,
     "relay": {
@@ -314,7 +323,7 @@
     "subscanUrl": "https://alephzero.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
-    "rpcs": ["wss://aleph-zero-rpc.dwellir.com", "wss://ws.azero.dev"],
+    "rpcs": ["wss://aleph-zero-rpc.dwellir.com", "wss://ws.azero.dev", "wss://aleph-zero.api.onfinality.io/public-ws"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "aleph-zero"
@@ -392,7 +401,7 @@
     "subscanUrl": "https://altair.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/altair_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/altair_metadata_latest.apng",
-    "rpcs": ["wss://fullnode.altair.centrifuge.io"],
+    "rpcs": ["wss://fullnode.altair.centrifuge.io", "wss://altair.api.onfinality.io/public-ws"],
     "paraId": 2088,
     "relay": {
       "id": "kusama"
@@ -510,7 +519,13 @@
     "subscanUrl": "https://astar.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/astar_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
-    "rpcs": ["wss://astar-rpc.dwellir.com", "wss://rpc.astar.network", "wss://astar.public.curie.radiumblock.co/ws"],
+    "rpcs": [
+      "wss://1rpc.io/astr",
+      "wss://astar-rpc.dwellir.com",
+      "wss://rpc.astar.network",
+      "wss://astar.api.onfinality.io/public-ws",
+      "wss://astar.public.curie.radiumblock.co/ws"
+    ],
     "paraId": 2006,
     "relay": {
       "id": "polkadot"
@@ -623,6 +638,11 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "autonomys-mainnet",
+    "name": "Autonomys",
+    "rpcs": ["wss://rpc.mainnet.subspace.foundation/ws", "wss://rpc-0.mainnet.autonomys.xyz/ws"]
   },
   {
     "id": "avail",
@@ -755,7 +775,7 @@
   {
     "id": "aventus",
     "name": "Aventus",
-    "rpcs": ["wss://public-rpc.mainnet.aventus.network"],
+    "rpcs": ["wss://public-rpc.mainnet.aventus.io"],
     "paraId": 2056,
     "relay": {
       "id": "polkadot"
@@ -772,7 +792,7 @@
     "name": "Bajun",
     "subscanUrl": "https://bajun.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/bajun_specs.png",
-    "rpcs": ["wss://bajun.public.curie.radiumblock.co/ws"],
+    "rpcs": ["wss://rpc-para.bajun.network"],
     "paraId": 2119,
     "relay": {
       "id": "kusama"
@@ -789,7 +809,7 @@
     "subscanUrl": "https://basilisk.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/basilisk_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/basilisk_metadata_latest.apng",
-    "rpcs": ["wss://basilisk-rpc.dwellir.com", "wss://rpc.basilisk.cloud"],
+    "rpcs": ["wss://basilisk-rpc.n.dwellir.com", "wss://rpc.basilisk.cloud"],
     "paraId": 2090,
     "relay": {
       "id": "kusama"
@@ -886,7 +906,12 @@
     "name": "Bifrost Kusama",
     "subscanUrl": "https://bifrost-kusama.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/bifrost_specs.png",
-    "rpcs": ["wss://bifrost-rpc.dwellir.com", "wss://bifrost-rpc.liebi.com/ws", "wss://us.bifrost-rpc.liebi.com/ws"],
+    "rpcs": [
+      "wss://bifrost-rpc.dwellir.com",
+      "wss://bifrost-rpc.liebi.com/ws",
+      "wss://us.bifrost-rpc.liebi.com/ws",
+      "wss://bifrost.public.curie.radiumblock.co/ws"
+    ],
     "paraId": 2001,
     "relay": {
       "id": "kusama"
@@ -1062,8 +1087,7 @@
       "wss://bifrost-polkadot.ibp.network",
       "wss://bifrost-polkadot.dotters.network",
       "wss://hk.p.bifrost-rpc.liebi.com/ws",
-      "wss://eu.bifrost-polkadot-rpc.liebi.com/ws",
-      "wss://bifrost.public.curie.radiumblock.co/ws"
+      "wss://eu.bifrost-polkadot-rpc.liebi.com/ws"
     ],
     "paraId": 2030,
     "relay": {
@@ -1291,7 +1315,7 @@
   {
     "id": "bittensor",
     "name": "Bittensor",
-    "rpcs": ["wss://entrypoint-finney.opentensor.ai:443"],
+    "rpcs": ["wss://lite.sub.latent.to:443", "wss://entrypoint-finney.opentensor.ai:443"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "bittensor"
@@ -1321,7 +1345,12 @@
     "subscanUrl": "https://centrifuge.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/centrifuge_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/centrifuge_metadata_latest.apng",
-    "rpcs": ["wss://centrifuge-rpc.dwellir.com", "wss://fullnode.centrifuge.io", "wss://rpc-centrifuge.luckyfriday.io"],
+    "rpcs": [
+      "wss://centrifuge-rpc.dwellir.com",
+      "wss://fullnode.centrifuge.io",
+      "wss://rpc-centrifuge.luckyfriday.io",
+      "wss://centrifuge-parachain.api.onfinality.io/public-ws"
+    ],
     "paraId": 2031,
     "relay": {
       "id": "polkadot"
@@ -1379,7 +1408,7 @@
   {
     "id": "cere",
     "name": "Cere",
-    "rpcs": ["wss://rpc.mainnet.blockchain.cefdragon.life"],
+    "rpcs": ["wss://archive.mainnet.cere.network/ws"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "cere-network"
@@ -1431,7 +1460,7 @@
   {
     "id": "communeai",
     "name": "Commune AI",
-    "rpcs": ["wss://api.communeai.net", "wss://commune-api-node-1.communeai.net"],
+    "rpcs": ["wss://commune-api-node-1.communeai.net"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "commune-ai",
@@ -1639,7 +1668,7 @@
     "subscanUrl": "https://crab.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/crab2_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crab2_metadata_latest.apng",
-    "rpcs": ["wss://darwiniacrab-rpc.dwellir.com", "wss://crab-rpc.darwinia.network/", "wss://crab-rpc.dcdao.box"],
+    "rpcs": ["wss://darwiniacrab-rpc.dwellir.com", "wss://crab-rpc.darwinia.network/"],
     "paraId": 2105,
     "relay": {
       "id": "kusama"
@@ -1681,7 +1710,8 @@
       "wss://rpc.crust.network",
       "wss://rpc.crustnetwork.app",
       "wss://rpc.crustnetwork.cc",
-      "wss://rpc.crustnetwork.xyz"
+      "wss://rpc.crustnetwork.xyz",
+      "wss://crust.api.onfinality.io/public-ws"
     ],
     "balancesConfig": {
       "substrate-native": {
@@ -1723,7 +1753,11 @@
     "id": "darwinia",
     "name": "Darwinia",
     "subscanUrl": "https://darwinia.subscan.io/",
-    "rpcs": ["wss://darwinia-rpc.dwellir.com", "wss://rpc.darwinia.network", "wss://darwinia-rpc.dcdao.box"],
+    "rpcs": [
+      "wss://darwinia-rpc.dwellir.com",
+      "wss://rpc.darwinia.network",
+      "wss://darwinia.rpc.subquery.network/public/ws"
+    ],
     "paraId": 2046,
     "relay": {
       "id": "polkadot"
@@ -1775,8 +1809,8 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/edgeware_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/edgeware_metadata_latest.apng",
     "rpcs": [
-      "wss://edgeware-rpc1.jelliedowl.net",
       "wss://edgeware-rpc3.jelliedowl.net",
+      "wss://edgeware-rpc1.jelliedowl.net",
       "wss://edgeware-rpc0.jelliedowl.net",
       "wss://edgeware-rpc2.jelliedowl.net"
     ],
@@ -1891,7 +1925,12 @@
   {
     "id": "frequency",
     "name": "Frequency",
-    "rpcs": ["wss://frequency-rpc.dwellir.com", "wss://0.rpc.frequency.xyz", "wss://1.rpc.frequency.xyz"],
+    "rpcs": [
+      "wss://frequency-rpc.dwellir.com",
+      "wss://0.rpc.frequency.xyz",
+      "wss://1.rpc.frequency.xyz",
+      "wss://frequency-polkadot.api.onfinality.io/public-ws"
+    ],
     "paraId": 2091,
     "relay": {
       "id": "polkadot"
@@ -1901,7 +1940,7 @@
   {
     "id": "geminis",
     "name": "Geminis",
-    "rpcs": [],
+    "rpcs": ["wss://rpc.geminis.network"],
     "paraId": 2038,
     "relay": {
       "id": "polkadot"
@@ -1978,6 +2017,15 @@
     "oldPrefix": 42
   },
   {
+    "id": "heima",
+    "name": "Heima",
+    "rpcs": ["wss://litentry-rpc.dwellir.com", "wss://rpc.litentry-parachain.litentry.io"],
+    "paraId": 2013,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
     "id": "humanode",
     "name": "Humanode",
     "subscanUrl": "https://humanode.subscan.io/",
@@ -1996,12 +2044,11 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng",
     "isUnknownFeeToken": true,
     "rpcs": [
-      "wss://hydradx-rpc.dwellir.com",
+      "wss://hydration-rpc.n.dwellir.com",
       "wss://hydration.ibp.network",
       "wss://hydration.dotters.network",
       "wss://rpc.hydradx.cloud",
-      "wss://rpc.helikon.io/hydradx",
-      "wss://hydradx.paras.ibp.network"
+      "wss://rpc.helikon.io/hydradx"
     ],
     "paraId": 2034,
     "relay": {
@@ -2330,7 +2377,7 @@
     "subscanUrl": "https://integritee.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/integritee-parachain_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/integritee-parachain_metadata_latest.apng",
-    "rpcs": ["wss://kusama.api.integritee.network"],
+    "rpcs": ["wss://kusama.api.integritee.network", "wss://integritee-kusama.api.onfinality.io/public-ws"],
     "paraId": 2015,
     "relay": {
       "id": "kusama"
@@ -2491,7 +2538,7 @@
   {
     "id": "invarch",
     "name": "InvArch",
-    "rpcs": ["wss://invarch-rpc.dwellir.com"],
+    "rpcs": ["wss://invarch-rpc.dwellir.com", "wss://invarch.ibp.network", "wss://invarch.dotters.network"],
     "paraId": 3340,
     "relay": {
       "id": "polkadot"
@@ -2507,6 +2554,15 @@
     "paraId": 2222,
     "relay": {
       "id": "kusama"
+    }
+  },
+  {
+    "id": "jamton",
+    "name": "Jamton",
+    "rpcs": ["wss://rpc.jamton.network"],
+    "paraId": 3397,
+    "relay": {
+      "id": "polkadot"
     }
   },
   {
@@ -2564,7 +2620,8 @@
       "wss://karura-rpc-0.aca-api.network",
       "wss://karura-rpc-1.aca-api.network",
       "wss://karura-rpc-2.aca-api.network/ws",
-      "wss://karura-rpc-3.aca-api.network/ws"
+      "wss://karura-rpc-3.aca-api.network/ws",
+      "wss://karura.api.onfinality.io/public-ws"
     ],
     "paraId": 2000,
     "relay": {
@@ -2988,7 +3045,11 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kintsugi-parachain_metadata_latest.apng",
     "overrideNativeTokenId": "kintsugi-substrate-tokens-kint",
     "feeToken": "kintsugi-substrate-tokens-kint",
-    "rpcs": ["wss://kintsugi-rpc.dwellir.com", "wss://api-kusama.interlay.io/parachain"],
+    "rpcs": [
+      "wss://kintsugi-rpc.dwellir.com",
+      "wss://api-kusama.interlay.io/parachain",
+      "wss://kintsugi.api.onfinality.io/public-ws"
+    ],
     "paraId": 2092,
     "relay": {
       "id": "kusama"
@@ -3105,7 +3166,7 @@
   {
     "id": "kpron",
     "name": "Kpron",
-    "rpcs": [],
+    "rpcs": ["wss://kusama-kpron-rpc.apron.network/"],
     "paraId": 2019,
     "relay": {
       "id": "kusama"
@@ -3124,7 +3185,7 @@
     "id": "krest",
     "name": "Krest",
     "subscanUrl": "https://krest.subscan.io/",
-    "rpcs": ["wss://krest-rpc.dwellir.com", "wss://krest.api.onfinality.io/public-ws", "wss://wss-krest.peaq.network/"],
+    "rpcs": ["wss://wss-krest.peaq.network/", "wss://krest.unitedbloc.com/"],
     "paraId": 2241,
     "relay": {
       "id": "kusama"
@@ -3148,7 +3209,7 @@
     "chainspecQrUrl": "https://metadata.parity.io/qr/kusama-statemine_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/kusama-statemine_metadata_latest.apng",
     "rpcs": [
-      "wss://sys.ibp.network/statemine",
+      "wss://sys.ibp.network/asset-hub-kusama",
       "wss://asset-hub-kusama-rpc.dwellir.com",
       "wss://statemine-rpc-tn.dwellir.com",
       "wss://asset-hub-kusama.dotters.network",
@@ -3375,7 +3436,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/mangata-parachain_metadata_latest.apng",
     "overrideNativeTokenId": "mangata-substrate-tokens-mgx",
     "feeToken": "mangata-substrate-tokens-mgx",
-    "rpcs": ["wss://kusama-archive.mangata.online"],
+    "rpcs": ["wss://kusama-archive.mangata.online", "wss://kusama-rpc.mangata.online"],
     "paraId": 2110,
     "relay": {
       "id": "kusama"
@@ -3437,11 +3498,12 @@
     "name": "Moonbeam",
     "subscanUrl": "https://moonbeam.subscan.io/",
     "rpcs": [
-      "wss://moonbeam-rpc.dwellir.com",
+      "wss://moonbeam-rpc.n.dwellir.com",
       "wss://moonbeam.ibp.network",
       "wss://moonbeam.dotters.network",
       "wss://moonbeam-rpc.publicnode.com",
       "wss://wss.api.moonbeam.network",
+      "wss://moonbeam.api.onfinality.io/public-ws",
       "wss://moonbeam.public.curie.radiumblock.co/ws",
       "wss://moonbeam.unitedbloc.com"
     ],
@@ -3544,7 +3606,12 @@
     "id": "mythos",
     "name": "Mythos",
     "subscanUrl": "https://mythos.subscan.io/",
-    "rpcs": ["wss://polkadot-mythos-rpc.polkadot.io"],
+    "rpcs": [
+      "wss://rpc.helikon.io/mythos",
+      "wss://mythos.ibp.network",
+      "wss://mythos.dotters.network",
+      "wss://polkadot-mythos-rpc.polkadot.io"
+    ],
     "paraId": 3369,
     "relay": {
       "id": "polkadot"
@@ -3602,7 +3669,7 @@
   {
     "id": "nftmart",
     "name": "NFTMart",
-    "rpcs": ["wss://mainnet.nftmart.io/rpc/ws"],
+    "rpcs": [],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "nftmart-token"
@@ -3615,7 +3682,7 @@
     "subscanUrl": "https://nodle.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/nodle-para_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/nodle-para_metadata_latest.apng",
-    "rpcs": ["wss://nodle-parachain.api.onfinality.io/public-ws", "wss://nodle-rpc.dwellir.com"],
+    "rpcs": ["wss://nodle-rpc.dwellir.com", "wss://nodle-parachain.api.onfinality.io/public-ws"],
     "paraId": 2026,
     "relay": {
       "id": "polkadot"
@@ -3636,7 +3703,7 @@
   {
     "id": "oak",
     "name": "Oak",
-    "rpcs": [],
+    "rpcs": ["wss://rpc.oak.tech"],
     "paraId": 2090,
     "relay": {
       "id": "polkadot"
@@ -3654,8 +3721,17 @@
   {
     "id": "omnibtc",
     "name": "OmniBTC",
-    "rpcs": [],
+    "rpcs": ["wss://psc-parachain.coming.chat"],
     "paraId": 2053,
+    "relay": {
+      "id": "polkadot"
+    }
+  },
+  {
+    "id": "parallel",
+    "name": "Parallel",
+    "rpcs": ["wss://parallel.gatotech.network"],
+    "paraId": 2012,
     "relay": {
       "id": "polkadot"
     }
@@ -3664,7 +3740,7 @@
     "id": "peaq",
     "name": "Peaq",
     "subscanUrl": "https://peaq.subscan.io/",
-    "rpcs": ["wss://peaq-rpc.dwellir.com", "wss://peaq-rpc.publicnode.com", "wss://peaq.api.onfinality.io/public"],
+    "rpcs": [],
     "paraId": 3338,
     "relay": {
       "id": "polkadot"
@@ -4145,7 +4221,11 @@
     "id": "polkadex-polkadot-2",
     "name": "Polkadex",
     "subscanUrl": "https://polkadex-parachain.subscan.io/",
-    "rpcs": ["wss://polkadex-parachain-rpc.dwellir.com", "wss://polkadex-parachain.public.curie.radiumblock.co/ws"],
+    "rpcs": [
+      "wss://polkadex-parachain-rpc.dwellir.com",
+      "wss://polkadex-parachain.api.onfinality.io/public-ws",
+      "wss://polkadex-parachain.public.curie.radiumblock.co/ws"
+    ],
     "paraId": 2040,
     "relay": {
       "id": "polkadot"
@@ -4163,7 +4243,11 @@
     "subscanUrl": "https://polkadex.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/node_metadata_latest.apng",
-    "rpcs": ["wss://polkadex-mainnet-rpc.dwellir.com", "wss://polkadex.public.curie.radiumblock.co/ws"],
+    "rpcs": [
+      "wss://polkadex-mainnet-rpc.dwellir.com",
+      "wss://polkadex.api.onfinality.io/public-ws",
+      "wss://polkadex.public.curie.radiumblock.co/ws"
+    ],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "polkadex"
@@ -4182,8 +4266,10 @@
       "wss://sys.ibp.network/asset-hub-polkadot",
       "wss://asset-hub-polkadot-rpc.dwellir.com",
       "wss://statemint-rpc-tn.dwellir.com",
+      "wss://polkadot-assethub-rpc.blockops.network/ws",
       "wss://asset-hub-polkadot.dotters.network",
       "wss://rpc-asset-hub-polkadot.luckyfriday.io",
+      "wss://statemint.api.onfinality.io/public-ws",
       "wss://polkadot-asset-hub-rpc.polkadot.io",
       "wss://statemint.public.curie.radiumblock.co/ws",
       "wss://dot-rpc.stakeworld.io/assethub"
@@ -4367,6 +4453,7 @@
       "wss://polkadot-bridge-hub-rpc-tn.dwellir.com",
       "wss://bridge-hub-polkadot.dotters.network",
       "wss://rpc-bridge-hub-polkadot.luckyfriday.io",
+      "wss://bridgehub-polkadot.api.onfinality.io/public-ws",
       "wss://polkadot-bridge-hub-rpc.polkadot.io",
       "wss://bridgehub-polkadot.public.curie.radiumblock.co/ws",
       "wss://dot-rpc.stakeworld.io/bridgehub"
@@ -4394,6 +4481,7 @@
       "wss://polkadot-collectives-rpc-tn.dwellir.com",
       "wss://collectives-polkadot.dotters.network",
       "wss://rpc-collectives-polkadot.luckyfriday.io",
+      "wss://collectives.api.onfinality.io/public-ws",
       "wss://polkadot-collectives-rpc.polkadot.io",
       "wss://collectives.public.curie.radiumblock.co/ws",
       "wss://dot-rpc.stakeworld.io/collectives"
@@ -4413,7 +4501,11 @@
     "id": "polkadot-coretime",
     "name": "Polkadot Coretime",
     "subscanUrl": "https://coretime-polkadot.subscan.io/",
-    "rpcs": ["wss://coretime-polkadot.dotters.network", "wss://polkadot-coretime-rpc.polkadot.io"],
+    "rpcs": [
+      "wss://sys.ibp.network/coretime-polkadot",
+      "wss://coretime-polkadot.dotters.network",
+      "wss://polkadot-coretime-rpc.polkadot.io"
+    ],
     "paraId": 1005,
     "relay": {
       "id": "polkadot"
@@ -4538,7 +4630,7 @@
     "id": "sakura",
     "name": "Sakura",
     "subscanUrl": "https://sakura.subscan.io/",
-    "rpcs": [],
+    "rpcs": ["wss://api-sakura.clover.finance"],
     "paraId": 2016,
     "relay": {
       "id": "kusama"
@@ -4550,7 +4642,12 @@
     "subscanUrl": "https://shadow.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/crust-collator_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crust-collator_metadata_latest.apng",
-    "rpcs": ["wss://rpc-shadow.crust.network/", "wss://rpc-shadow.crustnetwork.app"],
+    "rpcs": [
+      "wss://rpc-shadow.crust.network/",
+      "wss://rpc-shadow.crustnetwork.app",
+      "wss://rpc-shadow.crustnetwork.cc",
+      "wss://rpc-shadow.crustnetwork.xyz"
+    ],
     "paraId": 2012,
     "relay": {
       "id": "kusama"
@@ -4649,7 +4746,12 @@
     "id": "sora-standalone",
     "name": "Sora Standalone",
     "subscanUrl": "https://sora.subscan.io/",
-    "rpcs": ["wss://ws.mof.sora.org", "wss://mof2.sora.org", "wss://mof3.sora.org"],
+    "rpcs": [
+      "wss://sora.api.onfinality.io/public-ws",
+      "wss://ws.mof.sora.org",
+      "wss://mof2.sora.org",
+      "wss://mof3.sora.org"
+    ],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "sora"
@@ -4675,7 +4777,7 @@
   {
     "id": "subdao",
     "name": "SubDAO",
-    "rpcs": [],
+    "rpcs": ["wss://parachain-rpc.subdao.org"],
     "paraId": 2018,
     "relay": {
       "id": "polkadot"
@@ -4804,7 +4906,7 @@
   {
     "id": "thebifrost-mainnet",
     "name": "The Bifrost",
-    "rpcs": [],
+    "rpcs": ["wss://public-01.mainnet.bifrostnetwork.com/wss", "wss://public-02.mainnet.bifrostnetwork.com/wss"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "bifrost"
@@ -4847,7 +4949,7 @@
     "subscanUrl": "https://turing.subscan.io/",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/turing_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/turing_metadata_latest.apng",
-    "rpcs": ["wss://turing-rpc.dwellir.com", "wss://rpc.turing.oak.tech"],
+    "rpcs": ["wss://turing-rpc.dwellir.com"],
     "paraId": 2114,
     "relay": {
       "id": "kusama"
@@ -4908,7 +5010,7 @@
     "id": "vara",
     "name": "Vara",
     "subscanUrl": "https://vara.subscan.io/",
-    "rpcs": ["wss://rpc.vara.network", "wss://vara.substrate-rpc.p2p.org/"],
+    "rpcs": ["wss://rpc.vara.network"],
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "vara-network"

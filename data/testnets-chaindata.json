@@ -10,6 +10,7 @@
       "wss://westend-rpc.dwellir.com",
       "wss://westend-rpc-tn.dwellir.com",
       "wss://westend.dotters.network",
+      "wss://westend.api.onfinality.io/public-ws",
       "wss://westend-rpc.polkadot.io",
       "wss://westend.public.curie.radiumblock.co/ws"
     ]
@@ -81,6 +82,11 @@
     "id": "argon-testnet",
     "name": "Argon",
     "rpcs": ["wss://rpc.testnet.argonprotocol.org"]
+  },
+  {
+    "id": "autonomys-taurus-evm-testnet",
+    "name": "Autonomys Taurus EVM",
+    "rpcs": ["wss://auto-evm.taurus.autonomys.xyz/ws"]
   },
   {
     "id": "autonomys-taurus-testnet",
@@ -336,7 +342,7 @@
   {
     "id": "encointer-testnet",
     "name": "Encointer Gesell",
-    "rpcs": ["wss://gesell.encointer.org"]
+    "rpcs": []
   },
   {
     "id": "encointer-testnet-standalone",
@@ -443,7 +449,7 @@
   {
     "id": "ipse-testnet",
     "name": "Ipse",
-    "rpcs": []
+    "rpcs": ["wss://testnet-china.ipse.io", "wss://testnet-europe.ipse.io", "wss://testnet-usa.ipse.io"]
   },
   {
     "id": "jaz-testnet",
@@ -545,6 +551,11 @@
     "rpcs": []
   },
   {
+    "id": "melodie-testnet",
+    "name": "Melodie | Allfeat",
+    "rpcs": ["wss://melodie-rpc.allfeat.io"]
+  },
+  {
     "id": "minix-testnet",
     "name": "MiniX Testnet",
     "rpcs": []
@@ -611,6 +622,18 @@
     "rpcs": []
   },
   {
+    "id": "paseo-asset-hub",
+    "name": "Paseo Asset Hub",
+    "subscanUrl": "https://assethub-paseo.subscan.io/",
+    "rpcs": [
+      "wss://asset-hub-paseo-rpc.dwellir.com",
+      "wss://sys.ibp.network/asset-hub-paseo",
+      "wss://asset-hub-paseo.dotters.network",
+      "wss://pas-rpc.stakeworld.io/assethub",
+      "wss://sys.turboflakes.io/asset-hub-paseo"
+    ]
+  },
+  {
     "id": "paseo-frequency-testnet",
     "name": "Frequency Testnet",
     "rpcs": [],
@@ -630,18 +653,6 @@
       "wss://paseo.dotters.network",
       "wss://pas-rpc.stakeworld.io",
       "wss://api2.zondax.ch/pas/node/rpc"
-    ]
-  },
-  {
-    "id": "paseo-asset-hub",
-    "name": "Paseo Asset Hub",
-    "subscanUrl": "https://assethub-paseo.subscan.io/",
-    "rpcs": [
-      "wss://asset-hub-paseo-rpc.dwellir.com",
-      "wss://sys.ibp.network/asset-hub-paseo",
-      "wss://asset-hub-paseo.dotters.network",
-      "wss://pas-rpc.stakeworld.io/assethub",
-      "wss://sys.turboflakes.io/asset-hub-paseo"
     ]
   },
   {
@@ -1127,12 +1138,7 @@
   {
     "id": "sora-substrate-testnet",
     "name": "Sora Testnet",
-    "rpcs": [
-      "wss://ws.framenode-1.s1.stg1.sora2.soramitsu.co.jp",
-      "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp",
-      "wss://ws.framenode-3.s2.stg1.sora2.soramitsu.co.jp",
-      "wss://ws.framenode-4.s2.stg1.sora2.soramitsu.co.jp"
-    ]
+    "rpcs": ["wss://ws.framenode-7.s4.stg1.sora2.soramitsu.co.jp", "wss://ws.framenode-8.s5.stg1.sora2.soramitsu.co.jp"]
   },
   {
     "id": "stagex-testnet",
@@ -1181,17 +1187,17 @@
   {
     "id": "subspace-gemini-3-g-testnet",
     "name": "Subspace Gemini 3g",
-    "rpcs": ["wss://rpc-0.gemini-3g.subspace.network/ws"]
+    "rpcs": []
   },
   {
     "id": "subspace-gemini-3-h-nova-testnet",
     "name": "Subspace Gemini 3h Nova",
-    "rpcs": ["wss://nova-0.gemini-3h.subspace.network/ws"]
+    "rpcs": []
   },
   {
     "id": "subspace-gemini-3-h-testnet",
     "name": "Subspace Gemini 3h",
-    "rpcs": ["wss://rpc-0.gemini-3h.subspace.network/ws", "wss://rpc-1.gemini-3h.subspace.network/ws"]
+    "rpcs": ["wss://rpc-0.gemini-3h.subspace.network/ws"]
   },
   {
     "id": "subspace-testnet",
@@ -1211,7 +1217,7 @@
   {
     "id": "tangle-testnet",
     "name": "Tangle Testnet",
-    "rpcs": []
+    "rpcs": ["wss://testnet-rpc-archive.tangle.tools"]
   },
   {
     "id": "ternoa-alphanet-testnet",
@@ -1226,7 +1232,7 @@
   {
     "id": "thebifrost-testnet",
     "name": "The Bifrost Testnet",
-    "rpcs": []
+    "rpcs": ["wss://public-01.testnet.bifrostnetwork.com/wss", "wss://public-02.testnet.bifrostnetwork.com/wss"]
   },
   {
     "id": "uniarts-testnet",
@@ -1265,11 +1271,12 @@
     "chainspecQrUrl": "https://metadata.parity.io/qr/westend-westmint_specs.png",
     "latestMetadataQrUrl": "https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng",
     "rpcs": [
-      "wss://sys.ibp.network/westmint",
+      "wss://sys.ibp.network/asset-hub-westend",
       "wss://asset-hub-westend-rpc.dwellir.com",
       "wss://westmint-rpc-tn.dwellir.com",
       "wss://asset-hub-westend.dotters.network",
-      "wss://westend-asset-hub-rpc.polkadot.io"
+      "wss://westend-asset-hub-rpc.polkadot.io",
+      "wss://asset-hub-westend.rpc.permanence.io"
     ],
     "paraId": 1000,
     "relay": {
@@ -1325,6 +1332,15 @@
     }
   },
   {
+    "id": "westend-penpal-testnet",
+    "name": "Penpal",
+    "rpcs": ["wss://westend-penpal-rpc.polkadot.io"],
+    "paraId": 2042,
+    "relay": {
+      "id": "westend-testnet"
+    }
+  },
+  {
     "id": "westend-people-testnet",
     "name": "People Testnet",
     "rpcs": [
@@ -1373,12 +1389,17 @@
   {
     "id": "zero-alphaville-testnet",
     "name": "ZERO Alphaville",
-    "rpcs": ["wss://rpc.dev.gamedao.net"]
+    "rpcs": []
   },
   {
     "id": "zero-testnet",
     "name": "Zero Alphaville",
     "rpcs": []
+  },
+  {
+    "id": "zk-verify-testnet",
+    "name": "zkVerify",
+    "rpcs": ["wss://testnet-rpc.zkverify.io"]
   },
   {
     "id": "zkverify-testnet",
