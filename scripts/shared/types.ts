@@ -41,6 +41,7 @@ export type ConfigEvmNetwork = {
   name?: string
   logo?: string
   isDefault?: boolean
+  forceScan?: boolean
   themeColor?: string
   isTestnet?: boolean
   explorerUrl?: string
