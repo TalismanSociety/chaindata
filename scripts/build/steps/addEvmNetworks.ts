@@ -134,7 +134,7 @@ export const addEvmNetworks = async () => {
           })),
           balancesMetadata: [],
           isDefault: configEvmNetwork.isDefault ?? true, // if not specified, it's default
-          forceScan: configEvmNetwork.forceScan ?? false,
+          forceScan: overridesEvmNetwork?.forceScan ?? configEvmNetwork.forceScan ?? false,
         }
 
         return evmNetwork
@@ -220,7 +220,7 @@ export const addEvmNetworks = async () => {
       })),
       balancesMetadata: [],
       isDefault: false,
-      forceScan: false,
+      forceScan: knownEvmNetwork.forceScan ?? false,
     }
 
     if (!evmNetwork.logo && knownEvmNetwork.icon) {
