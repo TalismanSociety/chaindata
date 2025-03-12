@@ -2003,6 +2003,11 @@
             "decimals": 18
           },
           {
+            "symbol": "acred",
+            "coingeckoId": "apollo-diversified-credit-securitize-fund",
+            "contractAddress": "0x17418038ecf73ba4026c4f428547bf099706f27b"
+          },
+          {
             "symbol": "FTW",
             "coingeckoId": "apollo-ftw",
             "contractAddress": "0xbc188b5dbb155b6ea693d46d98bf60b8482939b9",
@@ -39008,6 +39013,12 @@
             "decimals": 8
           },
           {
+            "symbol": "CRS",
+            "coingeckoId": "ceranos",
+            "contractAddress": "0x3e51783fef3cb3e807cff7fcb660d3e51c6127f6",
+            "decimals": 18
+          },
+          {
             "symbol": "CGT",
             "coingeckoId": "cgtcoin",
             "contractAddress": "0x4418260a42145eeb873eafc48d8618d8261dfde7",
@@ -56468,6 +56479,12 @@
             "decimals": 8
           },
           {
+            "symbol": "ACRED",
+            "coingeckoId": "apollo-diversified-credit-securitize-fund",
+            "contractAddress": "0xfce60bbc52a5705cec5b445501fbaf3274dc43d0",
+            "decimals": 6
+          },
+          {
             "symbol": "APW",
             "coingeckoId": "apwine",
             "contractAddress": "0x6c0ab120dbd11ba701aff6748568311668f63fe0",
@@ -58782,6 +58799,12 @@
             "coingeckoId": "gyroscope-gyd",
             "contractAddress": "0xca5d8f8a8d49439357d3cf46ca2e720702f132b8",
             "decimals": 18
+          },
+          {
+            "symbol": "HLSCOPE",
+            "coingeckoId": "hamilton-lane-senior-credit-opportunities-securitize-fund",
+            "contractAddress": "0x4c5ca366e26409845624e29b62c388a06961a792",
+            "decimals": 6
           },
           {
             "symbol": "FOREX",
@@ -77315,9 +77338,9 @@
   {
     "id": "2477",
     "name": "6Degree of Outreach",
-    "rpcs": ["https://rpc.6do.world"],
+    "rpcs": ["https://rpc.6dochain.com", "https://rpc2.6dochain.com", "https://rpc3.6dochain.com"],
     "icon": "6do",
-    "explorerUrl": "https://explorer.6do.world",
+    "explorerUrl": "https://explorer.6dochain.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "6DO",
@@ -80031,6 +80054,12 @@
             "coingeckoId": "yield-yak",
             "contractAddress": "0x7f4db37d7beb31f445307782bc3da0f18df13696",
             "decimals": 18
+          },
+          {
+            "symbol": "ynETHx",
+            "coingeckoId": "yneth-max",
+            "contractAddress": "0xe231db5f348d709239ef1741ea30961b3b635a61",
+            "decimals": 18
           }
         ]
       }
@@ -82175,6 +82204,19 @@
     "rpcs": ["https://rpc.powerloom.network"],
     "icon": "power",
     "explorerUrl": "https://explorer.powerloom.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "POWER",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "7869",
+    "name": "Powerloom Mainnet V2",
+    "rpcs": ["https://rpc-v2.powerloom.network"],
+    "icon": "power",
+    "explorerUrl": "https://explorer-v2.powerloom.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "POWER",
@@ -92437,6 +92479,20 @@
     }
   },
   {
+    "id": "9029",
+    "name": "Qubetics Testnet",
+    "rpcs": ["https://rpc-testnet.qubetics.work/"],
+    "icon": "qubetics",
+    "explorerUrl": "https://testnet.qubetics.work",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "TICS",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
     "id": "9069",
     "name": "Apex Fusion - Nexus Mainnet",
     "rpcs": ["https://rpc.nexus.mainnet.apexfusion.org/"],
@@ -96140,33 +96196,6 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "BTC",
-        "decimals": 18
-      }
-    },
-    "isTestnet": true
-  },
-  {
-    "id": "31753",
-    "name": "Xchain Mainnet",
-    "rpcs": ["https://rpc.xchainscan.com"],
-    "icon": "intd",
-    "explorerUrl": "https://xchainscan.com",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "INTD",
-        "decimals": 18
-      }
-    }
-  },
-  {
-    "id": "31754",
-    "name": "Xchain Testnet",
-    "rpcs": ["https://rpc.xchaintest.net"],
-    "icon": "intd",
-    "explorerUrl": "https://xchaintest.net",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "INTD",
         "decimals": 18
       }
     },
@@ -103702,6 +103731,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ACRED",
+            "coingeckoId": "apollo-diversified-credit-securitize-fund",
+            "contractAddress": "0x7c64925002bfa705834b118a923e9911bee32875",
+            "decimals": 6
+          },
+          {
             "symbol": "xARC",
             "coingeckoId": "arcade-2",
             "contractAddress": "0xfa7664f2385743b73369bdc9427cdb2a942af809",
@@ -106556,7 +106591,7 @@
   {
     "id": "50001",
     "name": "Liveplex OracleEVM",
-    "rpcs": [],
+    "rpcs": ["https://rpc.oracle.liveplex.io"],
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -108029,6 +108064,19 @@
         "decimals": 18
       }
     }
+  },
+  {
+    "id": "64002",
+    "name": "XCHAIN Testnet",
+    "rpcs": ["https://xchain-testnet-rpc.kuma.bid"],
+    "explorerUrl": "https://xchain-testnet-explorer.kuma.bid",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
   },
   {
     "id": "65349",
@@ -109910,6 +109958,12 @@
             "decimals": 24
           },
           {
+            "symbol": "ynETHx",
+            "coingeckoId": "yneth-max",
+            "contractAddress": "0xe231db5f348d709239ef1741ea30961b3b635a61",
+            "decimals": 18
+          },
+          {
             "symbol": "YOLO",
             "coingeckoId": "yolo-games",
             "contractAddress": "0xf77dd21c5ce38ac08786be35ef1d1dec1a6a15f3",
@@ -110411,6 +110465,18 @@
       }
     },
     "isTestnet": true
+  },
+  {
+    "id": "94524",
+    "name": "XCHAIN",
+    "rpcs": ["https://xchain-rpc.kuma.bid"],
+    "explorerUrl": "https://xchain-explorer.kuma.bid",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
   },
   {
     "id": "95432",
@@ -111556,6 +111622,12 @@
             "symbol": "WETH",
             "coingeckoId": "wrapped-eth-taiko",
             "contractAddress": "0xa51894664a773981c6c112c43ce576f315d5b1b6",
+            "decimals": 18
+          },
+          {
+            "symbol": "ynETHx",
+            "coingeckoId": "yneth-max",
+            "contractAddress": "0xe231db5f348d709239ef1741ea30961b3b635a61",
             "decimals": 18
           }
         ]
@@ -113376,6 +113448,12 @@
             "decimals": 18
           },
           {
+            "symbol": "ynETHx",
+            "coingeckoId": "yneth-max",
+            "contractAddress": "0xe231db5f348d709239ef1741ea30961b3b635a61",
+            "decimals": 18
+          },
+          {
             "symbol": "xUSDz",
             "coingeckoId": "zai-stablecoin",
             "contractAddress": "0x44d4b627997b41abd2bf2ea05b731fe535f01c3d",
@@ -113682,6 +113760,20 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "WON",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "695569",
+    "name": "Pyrope Testnet",
+    "rpcs": ["https://rpc.pyropechain.com"],
+    "icon": "pyrope",
+    "explorerUrl": "https://pyrope.blockscout.com",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
         "decimals": 18
       }
     },
@@ -115833,9 +115925,9 @@
   {
     "id": "24772477",
     "name": "6Degree of Outreach - Testnet",
-    "rpcs": ["https://rpc-testnet.6do.world"],
+    "rpcs": ["https://rpc-testnet.6dochain.com"],
     "icon": "6do",
-    "explorerUrl": "https://explorer-testnet.6do.world",
+    "explorerUrl": "https://explorer-testnet.6dochain.com",
     "balancesConfig": {
       "evm-native": {
         "symbol": "6DO-T",
