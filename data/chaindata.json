@@ -2019,10 +2019,15 @@
   {
     "id": "heima",
     "name": "Heima",
-    "rpcs": ["wss://litentry-rpc.dwellir.com", "wss://rpc.litentry-parachain.litentry.io"],
+    "rpcs": ["wss://litentry-rpc.dwellir.com", "wss://rpc.heima-parachain.heima.network"],
     "paraId": 2013,
     "relay": {
       "id": "polkadot"
+    },
+    "balancesConfig": {
+      "substrate-native": {
+        "coingeckoId": "heima"
+      }
     }
   },
   {
@@ -2748,11 +2753,11 @@
             "coingeckoId": "quartz"
           },
           {
-            "symbol": "LIT",
+            "symbol": "HEI",
             "decimals": 18,
             "ed": "100000000000",
             "onChainId": "{\"type\":\"ForeignAsset\",\"value\":20}",
-            "coingeckoId": "litentry"
+            "coingeckoId": "heima"
           },
           {
             "symbol": "NEER",
@@ -3375,23 +3380,6 @@
     "relay": {
       "id": "kusama"
     }
-  },
-  {
-    "id": "litentry",
-    "name": "Litentry",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/litentry-parachain_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/litentry-parachain_metadata_latest.apng",
-    "rpcs": ["wss://litentry-rpc.dwellir.com", "wss://rpc.litentry-parachain.litentry.io"],
-    "paraId": 2013,
-    "relay": {
-      "id": "polkadot"
-    },
-    "balancesConfig": {
-      "substrate-native": {
-        "coingeckoId": "litentry"
-      }
-    },
-    "oldPrefix": 31
   },
   {
     "id": "litmus",
