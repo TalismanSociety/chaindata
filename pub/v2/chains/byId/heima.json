@@ -6,8 +6,8 @@
   "genesisHash": "0x2fc8bb6ed7c0051bdcf4866c322ed32b6276572713607e3297ccf411b8f14aa9",
   "prefix": 31,
   "name": "Heima",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#bdf9b0",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/heima.svg",
   "chainName": "Heima",
   "chainType": "Live",
   "implName": "heima",
@@ -32,7 +32,7 @@
       "url": "wss://litentry-rpc.dwellir.com"
     },
     {
-      "url": "wss://rpc.litentry-parachain.litentry.io"
+      "url": "wss://rpc.heima-parachain.heima.network"
     }
   ],
   "evmNetworks": [],
@@ -41,7 +41,15 @@
   "relay": {
     "id": "polkadot"
   },
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "heima",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/heima.svg"
+      }
+    }
+  ],
   "balancesMetadata": [],
   "hasCheckMetadataHash": false
 }
