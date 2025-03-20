@@ -4180,6 +4180,25 @@
     "balancesConfig": {
       "substrate-native": {
         "coingeckoId": "polimec"
+      },
+      "substrate-foreignassets": {
+        "tokens": [
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X3\",\"value\":[{\"type\":\"Parachain\",\"value\":1000},{\"type\":\"PalletInstance\",\"value\":50},{\"type\":\"GeneralIndex\",\"value\":\"bigint:1337\"}]}}",
+            "symbol": "USDC",
+            "coingeckoId": "usd-coin"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"X3\",\"value\":[{\"type\":\"Parachain\",\"value\":1000},{\"type\":\"PalletInstance\",\"value\":50},{\"type\":\"GeneralIndex\",\"value\":\"bigint:1984\"}]}}",
+            "symbol": "USDT",
+            "coingeckoId": "tether"
+          },
+          {
+            "onChainId": "{\"parents\":1,\"interior\":{\"type\":\"Here\"}}",
+            "symbol": "DOT",
+            "coingeckoId": "polkadot"
+          }
+        ]
       }
     },
     "oldPrefix": 41
