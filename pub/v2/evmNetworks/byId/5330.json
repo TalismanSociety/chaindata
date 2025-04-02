@@ -20,7 +20,39 @@
       "moduleConfig": {
         "symbol": "ETH",
         "decimals": 18,
+        "coingeckoId": "ethereum",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "oUSDT",
+            "coingeckoId": "openusdt",
+            "contractAddress": "0x1217bfe6c773eec6cc4a38b5dc45b92292b6e189",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openusdt.webp"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "superseed-bridged-usdc-superseed",
+            "contractAddress": "0xc316c8252b5f2176d0135ebb0999e99296998f2e",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "superseed-bridged-weth-superseed",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/superseed-bridged-weth-superseed.webp"
+          }
+        ]
       }
     }
   ],
