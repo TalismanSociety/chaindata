@@ -25,6 +25,7 @@
     "update-pjs": "pnpm update -L '@polkadot/*'",
     "import-pjs-config": "tsx scripts/import-pjs-config.ts",
     "update-rpcs": "pnpm run update-pjs && pnpm run import-pjs-config",
+    "report-erc20-aggregator": "pnpm tsx scripts/report-erc20-aggregator.ts",
     "typecheck": "tsc --noEmit",
     "fetch-external": "tsx scripts/fetch-external.ts",
     "build": "pnpm run validate && tsx scripts/build.ts",
