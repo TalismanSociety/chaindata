@@ -2,7 +2,17 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import type { EvmErc20Token } from '@talismn/balances'
 import prettier from 'prettier'
-import { BaseError, ContractFunctionExecutionError, getContract, hexToString, parseAbi, TimeoutError } from 'viem'
+import {
+  Abi,
+  BaseError,
+  Client,
+  ContractFunctionExecutionError,
+  erc20Abi,
+  erc20Abi_bytes32,
+  getContract,
+  hexToString,
+  TimeoutError,
+} from 'viem'
 
 import { cleanupString } from '../../shared/cleanupString'
 import {
@@ -12,7 +22,6 @@ import {
   PRETTIER_CONFIG,
 } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
-import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 
 const IGNORED_TOKENS = [
@@ -21,17 +30,27 @@ const IGNORED_TOKENS = [
   { chainId: 1, contractAddress: '0xc19b6a4ac7c7cc24459f08984bbd09664af17bd1' },
   { chainId: 1, contractAddress: '0xf8c4a95c92b0d0121d1d20f4575073b37883d663' },
   { chainId: 1, contractAddress: '0x3797c46db697c24a983222c335f17ba28e8c5b69' },
+  { chainId: 10, contractAddress: '0x5019fe1867d8ccfd76d8d5abd85db5efce548fba' },
   { chainId: 40, contractAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' },
   { chainId: 42, contractAddress: '0x5b8b0e44d4719f8a328470dccd3746bfc73d6b14' },
   { chainId: 42, contractAddress: '0x650e14f636295af421d9bb788636356aa7f5924c' },
   { chainId: 42, contractAddress: '0x2db41674f2b882889e5e1bd09a3f3613952bc472' },
   { chainId: 56, contractAddress: '0x3e3b357061103dc040759ac7dceeaba9901043ad' },
   { chainId: 56, contractAddress: '0x7212088a11b4d8f6fc90fbb3dfe793b45dd72323' },
+  { chainId: 56, contractAddress: '0xebee37aaf2905b7bda7e3b928043862e982e8f32' },
+  { chainId: 56, contractAddress: '0x374a457967ba24fd3ae66294cab08244185574b0' },
+  { chainId: 56, contractAddress: '0xac28c9178acc8ba4a11a29e013a3a2627086e422' },
+  { chainId: 56, contractAddress: '0xd8b95b1987741849ca7e71e976aeb535fd2e55a2' },
+  { chainId: 56, contractAddress: '0x14a5f2872396802c3cc8942a39ab3e4118ee5038' },
+  { chainId: 56, contractAddress: '0xa34c5e0abe843e10461e2c9586ea03e55dbcc495' },
   { chainId: 61, contractAddress: '0xd508f85f1511aaec63434e26aeb6d10be0188dc7' },
   { chainId: 137, contractAddress: '0x8af78f0c818302164f73b2365fe152c2d1fe80e1' },
   { chainId: 137, contractAddress: '0xf4bb0ed25ac7bcc9c327b88bac5ca288a08ec41e' },
   { chainId: 137, contractAddress: '0xeb99748e91afca94a6289db3b02e7ef4a8f0a22d' },
   { chainId: 137, contractAddress: '0xe9d2fa815b95a9d087862a09079549f351dab9bd' },
+  { chainId: 248, contractAddress: '0x7275b8dbaf919fdda6ee6b36f12fd25c0f193502' },
+  { chainId: 248, contractAddress: '0x50c5725949a6f0c72e6c4a641f24049a917db0cb' },
+  { chainId: 248, contractAddress: '0xe7798f023fc62146e8aa1b36da45fb70855a77ea' },
   { chainId: 295, contractAddress: '0x00000000000000000000000000000000001a88b2' },
   { chainId: 295, contractAddress: '0x000000000000000000000000000000000006f89a' },
   { chainId: 295, contractAddress: '0x00000000000000000000000000000000000b2ad5' },
@@ -49,6 +68,7 @@ const IGNORED_TOKENS = [
   { chainId: 8453, contractAddress: '0xf2d012f604f43e927da3b3576c9c0cafe301428b' },
   { chainId: 8453, contractAddress: '0xdbb975d6c449d2ac63a23ae3cbc80e40054b8921' },
   { chainId: 8453, contractAddress: '0xe5a1b06a2450b45c998b8eae6212ebd1c10c47b5' },
+  { chainId: 8453, contractAddress: '0x62bba099edd65740c0d192ffe84973b1aae682d2' },
   { chainId: 39797, contractAddress: '0x709adadd7ba01655ec684c9a74074ec70b023fe9' },
   { chainId: 39797, contractAddress: '0x04cb6ed1d4cef27b2b0d42d628f57ee223d6beee' },
   { chainId: 39797, contractAddress: '0xe19ab0a7f5bf5b243e011bd070cf9e26296f7ebc' },
@@ -69,6 +89,7 @@ const IGNORED_TOKENS = [
   { chainId: 39797, contractAddress: '0x8bc2b030b299964eefb5e1e0b36991352e56d2d3' },
   { chainId: 42161, contractAddress: '0xafa5676a6ef790f08290dd4a45e0ec2a5cc5cdab' },
   { chainId: 42161, contractAddress: '0xedd6ca8a4202d4a36611e2fff109648c4863ae19' },
+  { chainId: 42161, contractAddress: '0x5019fe1867d8ccfd76d8d5abd85db5efce548fba' },
   { chainId: 42170, contractAddress: '0xb962150760f9a3bb00e3e9cf48297ee20ada4a33' },
   { chainId: 59144, contractAddress: '0x7e63a5f1a8f0b4d0934b2f2327daed3f6bb2ee75' },
   { chainId: 83872, contractAddress: '0x68db713779f7470c2fd43d3d06841d0192d44939' },
@@ -77,6 +98,42 @@ const IGNORED_TOKENS = [
 
 const isCached = (tokenCache: Erc20TokenCache[], chainId: number, contractAddress: string) =>
   tokenCache.some((t) => t.chainId === chainId && t.contractAddress.toLowerCase() === contractAddress.toLowerCase())
+
+const getErc20Contract =
+  (client: Client, contractAddress: `0x${string}`) =>
+  <TAbi extends Abi>(abi: TAbi) =>
+    getContract({
+      address: contractAddress,
+      abi,
+      client: { public: client },
+    })
+
+export const getErc20ContractData = async (
+  client: Client,
+  contractAddress: `0x${string}`,
+): Promise<{ symbol: string; decimals: number }> => {
+  const getEr20ContractFn = getErc20Contract(client, contractAddress)
+
+  try {
+    const contract = getEr20ContractFn(erc20Abi)
+
+    // eslint-disable-next-line no-var
+    var [symbol, decimals] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
+  } catch (e) {
+    if (e instanceof ContractFunctionExecutionError) {
+      // try to perform the contract read with bytes32 symbol
+      const contract = getEr20ContractFn(erc20Abi_bytes32)
+
+      // eslint-disable-next-line no-var
+      var [bytesSymbol, decimals] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
+      symbol = hexToString(bytesSymbol).replace(/\0/g, '').trim() // remove NULL characters
+    } else {
+      throw e
+    }
+  }
+
+  return { symbol, decimals }
+}
 
 const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: ConfigEvmNetwork, address: string) => {
   const chainId = Number(evmNetwork.id)
@@ -92,37 +149,8 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
 
   try {
     const client = getEvmNetworkClient(evmNetwork)
-    const contract = getContract({
-      address: contractAddress as `0x${string}`,
-      abi: erc20Abi,
-      client,
-    })
 
-    let symbol: string
-    let decimals: number
-
-    try {
-      ;[symbol, decimals] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
-    } catch (e) {
-      if (e instanceof ContractFunctionExecutionError) {
-        // some older tokens have symbol as bytes32, ex 0x0d88ed6e74bbfd96b831231638b66c05571e824f on mainnet
-        const erc20BytesAbi = parseAbi([
-          'function decimals() view returns (uint8)',
-          'function symbol() view returns (bytes32)',
-        ] as const)
-        const contract = getContract({
-          address: contractAddress as `0x${string}`,
-          abi: erc20BytesAbi,
-          client,
-        })
-
-        const [symbolBytes, decimals2] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
-        decimals = decimals2
-        symbol = hexToString(symbolBytes)
-      } else {
-        throw e
-      }
-    }
+    const { symbol, decimals } = await getErc20ContractData(client, contractAddress as `0x${string}`)
 
     tokenCache.push({
       chainId,
@@ -136,6 +164,12 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
       return null
     }
     const viemError = err as BaseError
+    const errorText = viemError.shortMessage ?? viemError.message
+
+    if (errorText === 'An unknown RPC error occurred.') return null
+
+    if (errorText === 'HTTP request failed.') return null
+
     console.warn('Failed to fetch token info', {
       network: `${evmNetwork.name} (${evmNetwork.id})`,
       contractAddress,
