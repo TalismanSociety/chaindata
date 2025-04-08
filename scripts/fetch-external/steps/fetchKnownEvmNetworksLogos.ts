@@ -7,7 +7,7 @@ import sharp from 'sharp'
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types'
 
-// Dead IPFS hashes, not worth trying to download these
+// IPFS hashes that cant be found on github
 const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmcM8kHNsNYoitt5S3kLThyrKVFTZo3k2rgnume6tnNroQ',
   'QmbUcDQHCvheYQrWk9WFJRMW5fTJQmtZqkoGUed4bhCM7T',
@@ -53,33 +53,15 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES = [
   'QmTY2Z7AEEWxmzQyh7DFG8fyR3w6Y166GDJfi6o3xo6GgV',
   'QmeGtXdTHHMnf6rWUWFcefMGaVp7dJ6SWNgxgbVgm9YHTZ',
   'QmdwQDr6vmBtXmK2TmknkEuZNoaDqTasFdZdu3DRw8b2ws',
+  'QmbgWUbQMgc4ASEjN7HcNU7yfgPahYaTeogNLfzvWmcYEJ',
+  'QmaNywdCUrHoe3grk3hhHXrsTgc3tHVpt2ZaoRYoNkgEvc',
+  'bafybeiaqaphacy5swvtyxw56ma5f5iewjcqspbgxr5l6ln2433liyw2djy',
+  'bafybeiaqaphacy5swvtyxw56ma5f5iewjcqspbgxr5l6ln2433liyw2djy',
 ]
 
-// collection hash => image name
-const IPFS_COLLECTIONS: Record<string, string> = {
-  bafybeie7jzlzlpz7c3a3oh4x5joej23dj2qf3cexmchjyc72hv3fblcaja: 'mintara.png',
-  bafybeiadlvc4pfiykehyt2z67nvgt5w4vlov27olu5obvmryv4xzua4tae: 'logo-128px.png',
-  bafybeib75gwytvblyvjpfminitr3i6mpat3a624udfsqsl5nysf5vuuvie: 'bnb-icon2.png',
-  QmVb682D4mUXkKNP28xxJDNgSYbDLvEc3kVYx7TQxEa6Cw: 'zkfair.jpg',
-  bafybeiapootrvggtigdlvgvk6srfseplpuowsqq3zpyup4j5yj5moxuala: 'boyaanetwork.png',
-  bafybeibcrxeavdxpwwmj4mc6hhp232nkrfbpvfpngcqux2v5rmoshycj3u: 'FLAG-500x500.png',
-  bafybeigpyvnir6awzgeazkk5xdkvexw7w6ww3yxawszue6zms4a5ygdfky: 'Eclat-500x500.png',
-  bafybeib7ovny3xkl4nr4a5oqvoqwf7dcjtqavydysclfmbavbl2oekhxty: '1.png',
-  bafybeifb4vnpn3jv7cfdlne2dwhe6agdnpgmu46a7nbc5divjuyaznkyay: 'binary.png',
-}
-
-async function fetchWithTimeout(resource: string, options: RequestInit = {}, timeout: number) {
-  const controller = new AbortController()
-  const id = setTimeout(() => controller.abort(), timeout)
-
-  const response = await fetch(resource, {
-    ...options,
-    signal: controller.signal,
-  })
-  clearTimeout(id)
-
-  return response
-}
+// @dev: temporarily uncomment this to force check etag and redownload if changed
+// by default, we dont want to check because it takes about 5 minutes alone
+const FORCE_CACHE_CHECK = false
 
 export const fetchKnownEvmNetworksLogos = async () => {
   const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
@@ -89,7 +71,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
 
   const processedIcons = new Set<string>()
 
-  for (const evmNetwork of knownEvmNetworks.filter((n) => n.icon)) {
+  for (const evmNetwork of knownEvmNetworks.filter((n) => n.icon && !n.logo)) {
     if (processedIcons.has(evmNetwork.icon!)) continue
 
     try {
@@ -97,6 +79,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
       processedIcons.add(icon)
 
       const cache = evmNetworksIconsCache.find((c) => c.icon === icon) ?? ({ icon } as EvmNetworkIconCache)
+      if (!FORCE_CACHE_CHECK && cache) continue
 
       // Download icon definition (json with ipfs url and size)
       const responseIconJson = await fetch(
@@ -125,35 +108,23 @@ export const fetchKnownEvmNetworksLogos = async () => {
 
       // Download the image
       const ipfsHash = fileDesc.url.substring('ipfs://'.length)
+
       if (KNOWN_UNAVAILABLE_IPFS_HASHES.includes(ipfsHash)) cache.path = './assets/chains/unknown.svg'
       else {
-        let downloadUrl = `https://ipfs.io/ipfs/${ipfsHash}`
-        if (IPFS_COLLECTIONS[ipfsHash]) downloadUrl += `/${IPFS_COLLECTIONS[ipfsHash]}`
+        let downloadUrl = `https://raw.githubusercontent.com/ethereum-lists/chains/master/_data/iconsDoanload/${ipfsHash}`
 
         // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
-        // @dev: if error says "Input buffer contains unsupported image format", then it's most likely a collection. add an entry to IPFS_COLLECTIONS
         console.log('downloading', downloadUrl)
 
-        let responseIconImage: Response | null = null
-        try {
-          responseIconImage = await fetchWithTimeout(downloadUrl, undefined, 10_000)
-        } catch (err1) {
-          // ignore
-        }
+        const responseIconImage: Response | null = await fetch(downloadUrl)
 
-        if (!responseIconImage || !responseIconImage.ok || !responseIconImage.body) {
-          // some don't exist on ipfs.io but exist on cloudflare-ipfs.com
-          const alternateDownloadUrl = downloadUrl.replace('https://ipfs.io/ipfs/', 'https://cloudflare-ipfs.com/ipfs/')
-          console.log('downloading', alternateDownloadUrl)
-          responseIconImage = await fetchWithTimeout(alternateDownloadUrl, undefined, 10_000)
-          if (!responseIconImage.ok || !responseIconImage.body) {
-            console.warn(
-              `Failed to download icon for ${evmNetwork.name} (${evmNetwork.id})`,
-              downloadUrl,
-              responseIconImage.status,
-            )
-            continue
-          }
+        if (!responseIconImage.ok || !responseIconImage.body) {
+          console.warn(
+            `Failed to download icon for ${evmNetwork.name} (${evmNetwork.id})`,
+            downloadUrl,
+            responseIconImage.status,
+          )
+          continue
         }
 
         let buffer: any = await responseIconImage.arrayBuffer()
@@ -169,7 +140,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
         const relativePath = `./assets/chains/known/${filename}`
         const destination = path.resolve(relativePath)
 
-        await writeFile(destination, Buffer.from(buffer))
+        await writeFile(destination, new Uint8Array(buffer))
         cache.path = relativePath
       }
 

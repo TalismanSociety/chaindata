@@ -1,3 +1,4 @@
+import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchCoingeckoEvmNetworksLogos'
 import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
 import { fetchErc20TokenSymbols } from './fetchErc20TokenSymbols'
 import { fetchKnownEvmNetworks } from './fetchKnownEvmNetworks'
@@ -10,6 +11,8 @@ import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensF
 
 export const fetchExternalSteps: Array<() => Promise<void>> = [
   fetchKnownEvmNetworks,
+  fetchKnownEvmNetworksCoingeckoLogos,
+
   fetchKnownEvmTokens,
   fetchErc20TokenSymbols,
   updateKnownEvmErc20TokensFromCache,

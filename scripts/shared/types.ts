@@ -144,6 +144,11 @@ export type CoingeckoAssetPlatform = {
   name: string
   shortname: string
   native_coin_id: string | null
+  image: {
+    thumb: string | null
+    small: string | null
+    large: string | null
+  }
 }
 
 export type CoingeckoCoin = {

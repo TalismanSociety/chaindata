@@ -1,39 +1,30 @@
 import { fetchFromCoingecko } from '../shared/fetchFromCoingecko'
 import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from '../shared/types'
 
+let ASSET_PLATFORMS: CoingeckoAssetPlatform[] | null = null
+
 export const fetchAssetPlatforms = async () => {
-  const resAssetPlatforms = await fetchFromCoingecko('/api/v3/asset_platforms')
-  const assetPlatforms = (await resAssetPlatforms.json()) as CoingeckoAssetPlatform[]
+  if (!ASSET_PLATFORMS) {
+    const resAssetPlatforms = await fetchFromCoingecko('/api/v3/asset_platforms')
+    if (!resAssetPlatforms.ok) throw new Error('Failed to fetch coingecko asset platforms')
+    ASSET_PLATFORMS = (await resAssetPlatforms.json()) as CoingeckoAssetPlatform[]
+  }
 
-  // // TODO for debugging only, remove when ready
-  // await writeFile(
-  //   `${DIR_OUTPUT}/assetPlatforms.json`,
-  //   await prettier.format(JSON.stringify(assetPlatforms, null, 2), {
-  //     ...PRETTIER_CONFIG,
-  //     parser: 'json',
-  //   }),
-  // )
-
-  return assetPlatforms
+  return ASSET_PLATFORMS
 }
 
+let COINS: CoingeckoCoin[] | null = null
+
 export const fetchCoins = async () => {
-  const urlParams = new URLSearchParams()
-  urlParams.set('include_platform', 'true')
+  if (!COINS) {
+    const urlParams = new URLSearchParams()
+    urlParams.set('include_platform', 'true')
 
-  const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams)
-  const coins = (await resCoins.json()) as CoingeckoCoin[]
+    const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams)
+    COINS = (await resCoins.json()) as CoingeckoCoin[]
+  }
 
-  // // TODO for debugging only, remove when ready
-  // await writeFile(
-  //   `${DIR_OUTPUT}/coins.json`,
-  //   await prettier.format(JSON.stringify(coins, null, 2), {
-  //     ...PRETTIER_CONFIG,
-  //     parser: 'json',
-  //   }),
-  // )
-
-  return coins
+  return COINS
 }
 
 export const fetchCoinDetails = async (

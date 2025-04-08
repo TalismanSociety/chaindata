@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 import mergeWith from 'lodash/mergeWith'
 import prettier from 'prettier'
-import { BaseError, TimeoutError } from 'viem'
+import { BaseError, erc20Abi, TimeoutError } from 'viem'
 
 import {
   FILE_EVM_NETWORKS,
@@ -13,7 +13,6 @@ import {
 } from '../../shared/constants'
 import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
 import { networkMergeCustomizer } from '../../shared/util'
-import { erc20Abi } from '../erc20Abi'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 import { uniswapV2PairAbi } from '../uniswapV2PairAbi'
 
