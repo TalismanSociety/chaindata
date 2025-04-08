@@ -7,8 +7,8 @@
   "prefix": 0,
   "oldPrefix": 42,
   "name": "Hyperbridge",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#dd9d4e",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/hyperbridge-polkadot.svg",
   "chainName": "Hyperbridge (Nexus)",
   "chainType": "Live",
   "implName": "nexus",
@@ -45,7 +45,15 @@
   "relay": {
     "id": "polkadot"
   },
-  "balancesConfig": [],
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "hyperbridge-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/bridge.svg"
+      }
+    }
+  ],
   "balancesMetadata": [],
   "hasCheckMetadataHash": true
 }
