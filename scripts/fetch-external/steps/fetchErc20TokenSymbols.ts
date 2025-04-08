@@ -95,7 +95,7 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
     const contract = getContract({
       address: contractAddress as `0x${string}`,
       abi: erc20Abi,
-      publicClient: client,
+      client,
     })
 
     let symbol: string
@@ -113,7 +113,7 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
         const contract = getContract({
           address: contractAddress as `0x${string}`,
           abi: erc20BytesAbi,
-          publicClient: client,
+          client,
         })
 
         const [symbolBytes, decimals2] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
