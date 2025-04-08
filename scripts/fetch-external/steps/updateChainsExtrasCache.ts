@@ -18,7 +18,7 @@ import {
 import { decodeMetadata, toHex } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
-import { from } from 'rxjs'
+import { BehaviorSubject, from } from 'rxjs'
 import { Bytes, Option, u32 } from 'scale-ts'
 
 import {
@@ -330,47 +330,60 @@ const attemptToFetchChainExtras = async (
 
 const getHackedBalanceModuleDeps = (chain: ConfigChain, rpcUrl: string) => {
   const stubChaindataProvider: IChaindataProvider = {
-    chainsObservable: from(Promise.resolve([chain as unknown as Chain])),
+    // @ts-ignore
+    chainsObservable: new BehaviorSubject([chain as unknown as Chain]).asObservable(),
     chains: () => Promise.resolve([chain as unknown as Chain]),
 
+    // @ts-ignore
     customChainsObservable: from(Promise.resolve([])),
     customChains: () => Promise.resolve([]),
 
+    // @ts-ignore
     chainIdsObservable: from(Promise.resolve([chain.id])),
     chainIds: () => Promise.resolve([chain.id]),
 
+    // @ts-ignore
     chainsByIdObservable: from(Promise.resolve({ [chain.id]: chain as unknown as Chain })),
     chainsById: () => Promise.resolve({ [chain.id]: chain as unknown as Chain }),
 
+    // @ts-ignore
     chainsByGenesisHashObservable: from(Promise.resolve({})),
     chainsByGenesisHash: () => Promise.resolve({}),
 
     chainById: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as Chain) : null),
     chainByGenesisHash: (genesisHash: `0x${string}`) => Promise.resolve(null),
 
+    // @ts-ignore
     evmNetworksObservable: from(Promise.resolve([])),
     evmNetworks: () => Promise.resolve([]),
 
+    // @ts-ignore
     customEvmNetworksObservable: from(Promise.resolve([])),
     customEvmNetworks: () => Promise.resolve([]),
 
+    // @ts-ignore
     evmNetworkIdsObservable: from(Promise.resolve([])),
     evmNetworkIds: () => Promise.resolve([]),
 
+    // @ts-ignore
     evmNetworksByIdObservable: from(Promise.resolve({})),
     evmNetworksById: () => Promise.resolve({}),
 
     evmNetworkById: (evmNetworkId: EvmNetworkId) => Promise.resolve(null),
 
+    // @ts-ignore
     tokensObservable: from(Promise.resolve([])),
     tokens: () => Promise.resolve([]),
 
+    // @ts-ignore
     customTokensObservable: from(Promise.resolve([])),
     customTokens: () => Promise.resolve([]),
 
+    // @ts-ignore
     tokenIdsObservable: from(Promise.resolve([])),
     tokenIds: () => Promise.resolve([]),
 
+    // @ts-ignore
     tokensByIdObservable: from(Promise.resolve({})),
     tokensById: () => Promise.resolve({}),
 
