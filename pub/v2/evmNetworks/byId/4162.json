@@ -3,8 +3,8 @@
   "isTestnet": false,
   "sortIndex": 1020,
   "name": "SX Rollup",
-  "themeColor": "#bcf8e6",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/SX.webp",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/4162.webp",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://explorerl2.sx.technology",
@@ -20,7 +20,31 @@
       "moduleConfig": {
         "symbol": "SX",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "sx-network-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sx-network-2.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "sx-rollup-bridged-usdc-sx-rollup",
+            "contractAddress": "0x6629ce1cf35cc1329ebb4f63202f3f197b3f050b",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "WSX",
+            "coingeckoId": "wrapped-sx",
+            "contractAddress": "0x3e96b0a25d51e3cc89c557f152797c33b839968f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-sx.webp"
+          }
+        ]
       }
     }
   ],
