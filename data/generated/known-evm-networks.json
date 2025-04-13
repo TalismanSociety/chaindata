@@ -74135,6 +74135,40 @@
     }
   },
   {
+    "id": "1732",
+    "name": "Fuga Mainnet",
+    "rpcs": [],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FUGA",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "1733",
+    "name": "Fuga Testnet",
+    "rpcs": [],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FUGA",
+        "decimals": 18
+      }
+    },
+    "isTestnet": true
+  },
+  {
+    "id": "1734",
+    "name": "Fuga Develop",
+    "rpcs": [],
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "FUGA",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "1740",
     "name": "Metal L2 Testnet",
     "rpcs": ["https://testnet.rpc.metall2.com"],
@@ -76515,7 +76549,7 @@
   {
     "id": "2187",
     "name": "Game7",
-    "rpcs": ["https://mainnet-rpc.game7.io"],
+    "rpcs": ["https://mainnet-rpc.game7.io", "https://mainnet-rpc.game7.build"],
     "icon": "game7",
     "explorerUrl": "https://mainnet.game7.io",
     "balancesConfig": {
@@ -80466,10 +80500,22 @@
     "isTestnet": true
   },
   {
+    "id": "5371",
+    "name": "Settlus",
+    "rpcs": ["https://settlus-mainnet.g.alchemy.com/public"],
+    "explorerUrl": "https://mainnet.settlus.network",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "ETH",
+        "decimals": 18
+      }
+    }
+  },
+  {
     "id": "5373",
     "name": "Settlus Sepolia Testnet",
     "rpcs": ["https://settlus-septestnet.g.alchemy.com/public"],
-    "explorerUrl": "https://settlus-sepolia-testnet.explorer.alchemy.com",
+    "explorerUrl": "https://sepolia.settlus.network",
     "balancesConfig": {
       "evm-native": {
         "symbol": "ETH",
@@ -94569,7 +94615,7 @@
   {
     "id": "13746",
     "name": "Game7 Testnet",
-    "rpcs": ["https://testnet-rpc.game7.io"],
+    "rpcs": ["https://testnet-rpc.game7.io", "https://testnet-rpc.game7.build"],
     "icon": "game7testnet",
     "explorerUrl": "https://testnet.game7.io",
     "balancesConfig": {
@@ -107214,15 +107260,16 @@
   },
   {
     "id": "50341",
-    "name": "Reddio Devnet",
+    "name": "Reddio Testnet",
     "rpcs": ["https://reddio-dev.reddio.com"],
     "explorerUrl": "https://reddio-devnet.l2scan.co",
     "balancesConfig": {
       "evm-native": {
-        "symbol": "RED",
+        "symbol": "RDO",
         "decimals": 18
       }
-    }
+    },
+    "isTestnet": true
   },
   {
     "id": "50505",
@@ -112854,7 +112901,14 @@
       "https://rpc.hydradx.cloud",
       "https://hydration-rpc.n.dwellir.com",
       "https://rpc.helikon.io/hydradx",
-      "https://hydration.dotters.network"
+      "https://hydration.dotters.network",
+      "https://hydration.ibp.network",
+      "https://rpc.cay.hydration.cloud",
+      "https://rpc.parm.hydration.cloud",
+      "https://rpc.roach.hydration.cloud",
+      "https://rpc.zipp.hydration.cloud",
+      "https://rpc.sin.hydration.cloud",
+      "https://rpc.coke.hydration.cloud"
     ],
     "icon": "hydration",
     "explorerUrl": "https://explorer.evm.hydration.cloud",
@@ -115511,7 +115565,7 @@
   {
     "id": "1698369",
     "name": "Primea Network Testnet",
-    "rpcs": ["https://test-rpc.primeanetwork.com/rpc-https"],
+    "rpcs": [],
     "icon": "prim",
     "balancesConfig": {
       "evm-native": {
@@ -116546,20 +116600,6 @@
     "isTestnet": true
   },
   {
-    "id": "20230825",
-    "name": "Vcity Testnet",
-    "rpcs": ["https://testnet.vcity.app"],
-    "icon": "vcity",
-    "explorerUrl": "https://scan.vcity.app",
-    "balancesConfig": {
-      "evm-native": {
-        "symbol": "VCITY",
-        "decimals": 18
-      }
-    },
-    "isTestnet": true
-  },
-  {
     "id": "20240324",
     "name": "DeBank Sepolia Testnet",
     "rpcs": [],
@@ -116608,6 +116648,19 @@
     "balancesConfig": {
       "evm-native": {
         "symbol": "XP",
+        "decimals": 18
+      }
+    }
+  },
+  {
+    "id": "20250825",
+    "name": "Vcitychain Mainnet",
+    "rpcs": ["https://mainnet-rpc.vcity.app"],
+    "icon": "vcitychain",
+    "explorerUrl": "https://blockchain.vcity.app",
+    "balancesConfig": {
+      "evm-native": {
+        "symbol": "VCITY",
         "decimals": 18
       }
     }
