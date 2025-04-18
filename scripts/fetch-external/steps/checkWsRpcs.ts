@@ -40,7 +40,6 @@ export const checkWsRpcs = async () => {
     .process(async (rpcUrl): Promise<[string, WsRpcHealth]> => {
       try {
         return [rpcUrl, await getWsRpcHealth(rpcUrl)]
-        // if (!isHealthy) console.log('[RESULT]', rpcUrl, isHealthy)
       } catch (err) {
         console.log('isUnhealthy', rpcUrl, 'ERROR', err)
         return [rpcUrl, 'NOK' as WsRpcHealth]
