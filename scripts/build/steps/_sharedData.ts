@@ -1,6 +1,7 @@
 import type { MiniMetadata } from '@talismn/balances'
 import { Chain, EvmNetwork, Token } from '@talismn/chaindata-provider'
 
+import { WsRpcHealth } from '../../fetch-external/steps/checkWsRpcs'
 import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../../shared/types'
 
 export const sharedData: {
@@ -18,6 +19,8 @@ export const sharedData: {
     chains: Map<ChainId, string>
     evmNetworks: Map<EvmNetworkId, string>
   }
+
+  rpcHealthWebSocket: Record<string, WsRpcHealth>
 } = {
   chains: [],
   evmNetworks: [],
@@ -33,4 +36,6 @@ export const sharedData: {
     chains: new Map(),
     evmNetworks: new Map(),
   },
+
+  rpcHealthWebSocket: {},
 }

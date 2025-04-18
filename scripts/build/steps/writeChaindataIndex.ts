@@ -15,6 +15,16 @@ const writeChains = async () => {
     .filter((chain) => Array.isArray(chain.rpcs) && chain.rpcs.length > 0)
     .sort((a, b) => (a.sortIndex ?? Number.MAX_SAFE_INTEGER) - (b.sortIndex ?? Number.MAX_SAFE_INTEGER))
 
+  // update rpcs list based on tests
+  allChains.forEach((chain) => {
+    chain.rpcs = [
+      ...(chain.rpcs?.filter((rpc) => sharedData.rpcHealthWebSocket[rpc.url] === 'OK') ?? []),
+      ...(chain.rpcs?.filter((rpc) => !sharedData.rpcHealthWebSocket[rpc.url]) ?? []), // new rpcs, assume better than MEH
+      ...(chain.rpcs?.filter((rpc) => sharedData.rpcHealthWebSocket[rpc.url] === 'MEH') ?? []),
+      // ...(chain.rpcs?.filter((rpc) => sharedData.substrateRpcsHealth[rpc] === 'NOK') ?? []), // bad rpcs, exclude
+    ]
+  })
+
   await writeChaindataFile(`chains/all.json`, JSON.stringify(allChains, null, 2))
   await writeChaindataFile(
     `chains/summary.json`,

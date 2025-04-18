@@ -5,6 +5,7 @@ import {
   FILE_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
+  FILE_RPC_HEALTH_WEBSOCKET,
   FILE_TESTNETS_CHAINDATA,
 } from '../../shared/constants'
 import { ConfigChain } from '../../shared/types'
@@ -12,15 +13,17 @@ import { sharedData } from './_sharedData'
 
 export const loadConfig = async () => {
   // retrieve chains & evmNetworks configuration from this repo
-  const [chains, testnetChains, evmNetworks, knownEvmNetworks, knownEvmNetworksOverrides] = await Promise.all([
-    readFile(FILE_CHAINDATA).then((data) => JSON.parse(data.toString())),
-    readFile(FILE_TESTNETS_CHAINDATA)
-      .then((data) => JSON.parse(data.toString()))
-      .then((chains) => chains?.map?.((chain: ConfigChain) => ({ ...chain, isTestnet: true }))),
-    readFile(FILE_EVM_NETWORKS).then((data) => JSON.parse(data.toString())),
-    readFile(FILE_KNOWN_EVM_NETWORKS).then((data) => JSON.parse(data.toString())),
-    readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES).then((data) => JSON.parse(data.toString())),
-  ])
+  const [chains, testnetChains, evmNetworks, knownEvmNetworks, knownEvmNetworksOverrides, rpcHealthWs] =
+    await Promise.all([
+      readFile(FILE_CHAINDATA).then((data) => JSON.parse(data.toString())),
+      readFile(FILE_TESTNETS_CHAINDATA)
+        .then((data) => JSON.parse(data.toString()))
+        .then((chains) => chains?.map?.((chain: ConfigChain) => ({ ...chain, isTestnet: true }))),
+      readFile(FILE_EVM_NETWORKS).then((data) => JSON.parse(data.toString())),
+      readFile(FILE_KNOWN_EVM_NETWORKS).then((data) => JSON.parse(data.toString())),
+      readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES).then((data) => JSON.parse(data.toString())),
+      readFile(FILE_RPC_HEALTH_WEBSOCKET).then((data) => JSON.parse(data.toString())),
+    ])
 
   if (!Array.isArray(chains) || chains.length < 1) throw new Error(`Failed to load chains config. Aborting update.`)
 
@@ -40,4 +43,5 @@ export const loadConfig = async () => {
   sharedData.evmNetworksConfig = evmNetworks
   sharedData.knownEvmNetworksConfig = knownEvmNetworks
   sharedData.knownEvmNetworksOverridesConfig = knownEvmNetworksOverrides
+  sharedData.rpcHealthWebSocket = rpcHealthWs
 }
