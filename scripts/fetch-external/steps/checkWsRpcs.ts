@@ -9,12 +9,12 @@ import { ConfigChain } from '../../shared/types'
 
 export type WsRpcHealth = 'OK' | 'MEH' | 'NOK'
 
-const MEH_IGNORED_ERROR_MESSAGES = [
+const MEH_ERROR_MESSAGES = [
   'Unexpected server response: 502', // bad gateway, could work on client
   'Unexpected server response: 429', // rate limited, could work on client
   'Unexpected server response: 521', // server down, could be temporary
   'Unexpected server response: 500', // random server error, out of our control
-  'Unexpected server response: 523', // Cloudflare is unable to reach your origin server
+  'Unexpected server response: 523', // Cloudflare is unable to reach your origin server, could work on client
   'connect ECONNREFUSED', // server is up but GitHub IP is blacklisted
   'WebSocket was closed before the connection was established', // very helpful, thanks!
 ]
@@ -25,6 +25,10 @@ const NOK_ERROR_MESSAGES = [
   'Unexpected server response: 530', // Cloudflare DNS error, assume client wont resolve it neither
   'self-signed certificate', // Nice try!
 ]
+
+const isNok = (errorMessage: string) => NOK_ERROR_MESSAGES.some((msg) => errorMessage.includes(msg))
+
+const isMeh = (errorMessage: string) => MEH_ERROR_MESSAGES.some((msg) => errorMessage.includes(msg))
 
 export const checkWsRpcs = async () => {
   // ATN we only use websocket rpcs for substrate chains
@@ -55,62 +59,40 @@ export const checkWsRpcs = async () => {
 
 const getWsRpcHealth = (wsUrl: string): Promise<WsRpcHealth> =>
   new Promise((resolve) => {
-    let isResolved = false
-    let isClosed = false
+    let isDone = false
 
     const ws = new WebSocket(wsUrl)
 
-    const tryClose = () => {
-      if (isClosed) return
-      try {
-        ws.close()
-        isClosed = true
-      } catch (err) {
-        console.error('Failed to close web socket', wsUrl, err)
-      }
-    }
+    const done = (value: WsRpcHealth, logLevel?: 'log' | 'warn', logMessage?: string) => {
+      if (isDone) return
+      isDone = true
 
-    const tryResolve = (value: WsRpcHealth) => {
-      if (isResolved) return
-      try {
-        resolve(value)
-        isResolved = true
-      } catch (err) {
-        console.error('Failed to resolve', wsUrl, err)
-      }
+      if (logLevel) console[logLevel](value, wsUrl, logMessage)
+
+      resolve(value)
+      ws.close()
     }
 
     // fallback timeout (e.g. 5 seconds)
     const timeout = setTimeout(() => {
-      if (!isResolved) {
-        console.log('Timeout', wsUrl)
-        tryResolve('MEH')
-        tryClose()
-      }
+      if (isDone) return
+
+      done('MEH', 'log', 'Timeout')
     }, 5000)
 
     ws.onopen = (e) => {
+      if (isDone) return
       clearTimeout(timeout)
-      // as long as rpc is responding, we consider it healthy enough
-      tryClose()
-      tryResolve('OK')
+
+      done('OK')
     }
 
     ws.onerror = (err) => {
+      if (isDone) return
       clearTimeout(timeout)
-      tryClose()
 
-      if (isNok(err.message)) tryResolve('NOK')
-      else if (isMeh(err.message)) tryResolve('MEH')
-      else {
-        // Not 100% sure, consider healthy as MEH. could be github IP being rate limited or something like that
-        console.warn('WebSocket error', wsUrl, err.message)
-        // either way it sucks
-        tryResolve('MEH')
-      }
+      if (isMeh(err.message)) done('MEH')
+      else if (isNok(err.message)) done('NOK', 'log', err.message)
+      else done('MEH', 'warn', err.message) //worth investigating
     }
   })
-
-const isNok = (errorMessage: string) => NOK_ERROR_MESSAGES.some((msg) => errorMessage.includes(msg))
-
-const isMeh = (errorMessage: string) => MEH_IGNORED_ERROR_MESSAGES.some((msg) => errorMessage.includes(msg))
