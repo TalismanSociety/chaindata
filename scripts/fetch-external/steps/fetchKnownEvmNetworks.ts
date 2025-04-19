@@ -220,6 +220,7 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
           case 'CERT_HAS_EXPIRED':
           case 'ERR_TLS_CERT_ALTNAME_INVALID':
           case 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR':
+          case 'ERR_SSL_TLSV1_UNRECOGNIZED_NAME':
           case 'UNABLE_TO_VERIFY_LEAF_SIGNATURE':
           case 'SELF_SIGNED_CERT_IN_CHAIN': {
             if (DEBUG) console.warn(`[invalid] invalid certificate ${chainId} ${rpcUrl} - ${cause.code}`)
