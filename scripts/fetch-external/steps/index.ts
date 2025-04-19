@@ -1,3 +1,4 @@
+import { checkWsRpcs } from './checkWsRpcs'
 import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchCoingeckoEvmNetworksLogos'
 import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
 import { fetchErc20TokenSymbols } from './fetchErc20TokenSymbols'
@@ -10,6 +11,8 @@ import { updateChainsExtrasCache } from './updateChainsExtrasCache'
 import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensFromCache'
 
 export const fetchExternalSteps: Array<() => Promise<void>> = [
+  checkWsRpcs,
+
   fetchKnownEvmNetworks,
   fetchKnownEvmNetworksCoingeckoLogos,
 

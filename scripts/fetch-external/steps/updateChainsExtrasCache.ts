@@ -24,6 +24,7 @@ import { Bytes, Option, u32 } from 'scale-ts'
 import {
   FILE_CHAINDATA,
   FILE_CHAINS_EXTRAS_CACHE,
+  FILE_RPC_HEALTH_WEBSOCKET,
   FILE_TESTNETS_CHAINDATA,
   PRETTIER_CONFIG,
   PROCESS_CONCURRENCY,
@@ -33,10 +34,13 @@ import { DeadChains } from '../../shared/DeadChains'
 import { setTokenLogo, TokenDef } from '../../shared/setTokenLogo'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { sendWithTimeout } from '../../shared/util'
+import { WsRpcHealth } from './checkWsRpcs'
 
 export const updateChainsExtrasCache = async () => {
   const mainnets = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
   const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
+  const rpcsHealth = JSON.parse(await readFile(FILE_RPC_HEALTH_WEBSOCKET, 'utf-8')) as Record<string, WsRpcHealth>
+
   const chainsExtrasCache = JSON.parse(
     await (async () => {
       try {
@@ -50,6 +54,12 @@ export const updateChainsExtrasCache = async () => {
   const deadChains = await new DeadChains().load()
 
   const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
+
+  // remove rpcs that were not flagged as healthy during this run
+  chains.forEach((chain) => {
+    chain.rpcs = chain.rpcs?.filter((rpc) => rpcsHealth[rpc] === 'OK') ?? []
+  })
+
   const activeChainRpcs = new Map(
     chains.flatMap((chain) => (chain?.rpcs?.length ? [[chain.id, new Set(chain.rpcs)]] : [])),
   )
