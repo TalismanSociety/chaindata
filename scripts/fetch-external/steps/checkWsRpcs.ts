@@ -48,7 +48,7 @@ export const checkWsRpcs = async () => {
 
   if (res.errors.length) throw new Error(res.errors.join('\n\n'))
 
-  const data = Object.fromEntries(res.results)
+  const data = Object.fromEntries(res.results.sort(([a], [b]) => a.localeCompare(b)))
 
   await writeFile(FILE_RPC_HEALTH_WEBSOCKET, JSON.stringify(data, null, 2))
 }
