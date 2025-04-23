@@ -36,9 +36,6 @@
         "url": "wss://polkadot-rpc.dwellir.com"
       },
       {
-        "url": "wss://polkadot-rpc-tn.dwellir.com"
-      },
-      {
         "url": "wss://polkadot-rpc.publicnode.com"
       },
       {
@@ -46,6 +43,9 @@
       },
       {
         "url": "wss://rpc-polkadot.helixstreet.io"
+      },
+      {
+        "url": "wss://polkadot.dotters.network"
       },
       {
         "url": "wss://rpc-polkadot.luckyfriday.io"
@@ -69,7 +69,7 @@
         "url": "wss://polkadot.rpc.subquery.network/public/ws"
       },
       {
-        "url": "wss://polkadot.dotters.network"
+        "url": "wss://polkadot-rpc-tn.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -347,22 +347,13 @@
         "url": "wss://kusama-rpc.dwellir.com"
       },
       {
+        "url": "wss://kusama-rpc-tn.dwellir.com"
+      },
+      {
         "url": "wss://kusama-rpc.publicnode.com"
       },
       {
         "url": "wss://rpc-kusama.helixstreet.io"
-      },
-      {
-        "url": "wss://kusama.public.curie.radiumblock.co/ws"
-      },
-      {
-        "url": "wss://rockx-ksm.w3node.com/polka-public-ksm/ws"
-      },
-      {
-        "url": "wss://ksm-rpc.stakeworld.io"
-      },
-      {
-        "url": "wss://kusama-rpc-tn.dwellir.com"
       },
       {
         "url": "wss://kusama.dotters.network"
@@ -372,6 +363,15 @@
       },
       {
         "url": "wss://kusama.api.onfinality.io/public-ws"
+      },
+      {
+        "url": "wss://kusama.public.curie.radiumblock.co/ws"
+      },
+      {
+        "url": "wss://rockx-ksm.w3node.com/polka-public-ksm/ws"
+      },
+      {
+        "url": "wss://ksm-rpc.stakeworld.io"
       }
     ],
     "evmNetworks": [],
@@ -2047,8 +2047,8 @@
     ],
     "account": "*25519",
     "subscanUrl": "https://bajun.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/bajun_specs.png",
-    "latestMetadataQrUrl": null,
+    "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-bajun_specs.png",
+    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-bajun_metadata_latest.apng",
     "isUnknownFeeToken": false,
     "feeToken": null,
     "rpcs": [
@@ -2970,58 +2970,6 @@
     "hasCheckMetadataHash": true
   },
   {
-    "id": "calamari",
-    "isTestnet": false,
-    "isDefault": true,
-    "sortIndex": 170,
-    "genesisHash": "0x4ac80c99289841dd946ef92765bf659a307d39189b3ce374a92b5f0415ee17a1",
-    "prefix": 78,
-    "name": "Calamari",
-    "themeColor": "#ff991f",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/calamari.svg",
-    "chainName": "Calamari Parachain",
-    "chainType": "Live",
-    "implName": "calamari",
-    "specName": "calamari",
-    "specVersion": "4720",
-    "nativeToken": {
-      "id": "calamari-substrate-native"
-    },
-    "tokens": [
-      {
-        "id": "calamari-substrate-native"
-      }
-    ],
-    "account": "*25519",
-    "subscanUrl": "https://calamari.subscan.io/",
-    "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-calamari_specs.png",
-    "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-calamari_metadata_latest.apng",
-    "isUnknownFeeToken": false,
-    "feeToken": null,
-    "rpcs": [
-      {
-        "url": "wss://calamari.systems"
-      }
-    ],
-    "evmNetworks": [],
-    "parathreads": null,
-    "paraId": 2084,
-    "relay": {
-      "id": "kusama"
-    },
-    "balancesConfig": [
-      {
-        "moduleType": "substrate-native",
-        "moduleConfig": {
-          "coingeckoId": "calamari-network",
-          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/calamari.svg"
-        }
-      }
-    ],
-    "balancesMetadata": [],
-    "hasCheckMetadataHash": true
-  },
-  {
     "id": "creditcoin-classic",
     "isTestnet": false,
     "isDefault": true,
@@ -3759,6 +3707,9 @@
         "url": "wss://coretime-kusama-rpc.dwellir.com"
       },
       {
+        "url": "wss://coretime-kusama.dotters.network"
+      },
+      {
         "url": "wss://rpc-coretime-kusama.luckyfriday.io"
       },
       {
@@ -3766,9 +3717,6 @@
       },
       {
         "url": "wss://ksm-rpc.stakeworld.io/coretime"
-      },
-      {
-        "url": "wss://coretime-kusama.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -4369,6 +4317,9 @@
         "url": "wss://sys.ibp.network/encointer-kusama"
       },
       {
+        "url": "wss://encointer-kusama-rpc.dwellir.com"
+      },
+      {
         "url": "wss://kusama.api.encointer.org"
       },
       {
@@ -4679,7 +4630,7 @@
     "chainType": "Live",
     "implName": "humanode",
     "specName": "humanode",
-    "specVersion": "128",
+    "specVersion": "129",
     "nativeToken": {
       "id": "humanode-substrate-native"
     },
@@ -4867,13 +4818,13 @@
         "url": "wss://hydration.ibp.network"
       },
       {
+        "url": "wss://hydration.dotters.network"
+      },
+      {
         "url": "wss://rpc.hydradx.cloud"
       },
       {
         "url": "wss://rpc.helikon.io/hydradx"
-      },
-      {
-        "url": "wss://hydration.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -6584,13 +6535,10 @@
     "feeToken": "kintsugi-substrate-tokens-kint",
     "rpcs": [
       {
-        "url": "wss://kintsugi.api.onfinality.io/public-ws"
-      },
-      {
-        "url": "wss://kintsugi-rpc.dwellir.com"
-      },
-      {
         "url": "wss://api-kusama.interlay.io/parachain"
+      },
+      {
+        "url": "wss://kintsugi.api.onfinality.io/public-ws"
       }
     ],
     "evmNetworks": [],
@@ -6883,6 +6831,9 @@
         "url": "wss://asset-hub-kusama-rpc.dwellir.com"
       },
       {
+        "url": "wss://asset-hub-kusama.dotters.network"
+      },
+      {
         "url": "wss://rpc-asset-hub-kusama.luckyfriday.io"
       },
       {
@@ -6896,9 +6847,6 @@
       },
       {
         "url": "wss://statemine-rpc-tn.dwellir.com"
-      },
-      {
-        "url": "wss://asset-hub-kusama.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -6985,12 +6933,6 @@
         "url": "wss://bridge-hub-kusama-rpc.dwellir.com"
       },
       {
-        "url": "wss://bridgehub-kusama.public.curie.radiumblock.co/ws"
-      },
-      {
-        "url": "wss://ksm-rpc.stakeworld.io/bridgehub"
-      },
-      {
         "url": "wss://kusama-bridge-hub-rpc-tn.dwellir.com"
       },
       {
@@ -7001,6 +6943,12 @@
       },
       {
         "url": "wss://kusama-bridge-hub-rpc.polkadot.io"
+      },
+      {
+        "url": "wss://bridgehub-kusama.public.curie.radiumblock.co/ws"
+      },
+      {
+        "url": "wss://ksm-rpc.stakeworld.io/bridgehub"
       }
     ],
     "evmNetworks": [],
@@ -7176,10 +7124,10 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://mainnet.liberland.org"
+        "url": "wss://liberland-rpc.dwellir.com"
       },
       {
-        "url": "wss://liberland-rpc.dwellir.com"
+        "url": "wss://mainnet.liberland.org"
       }
     ],
     "evmNetworks": [],
@@ -7428,6 +7376,9 @@
         "url": "wss://moonbeam.ibp.network"
       },
       {
+        "url": "wss://moonbeam.dotters.network"
+      },
+      {
         "url": "wss://moonbeam-rpc.publicnode.com"
       },
       {
@@ -7441,9 +7392,6 @@
       },
       {
         "url": "wss://moonbeam.unitedbloc.com"
-      },
-      {
-        "url": "wss://moonbeam.dotters.network"
       }
     ],
     "evmNetworks": [
@@ -7737,10 +7685,10 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://nodle-parachain.api.onfinality.io/public-ws"
+        "url": "wss://nodle-rpc.dwellir.com"
       },
       {
-        "url": "wss://nodle-rpc.dwellir.com"
+        "url": "wss://nodle-parachain.api.onfinality.io/public-ws"
       }
     ],
     "evmNetworks": [],
@@ -8199,7 +8147,7 @@
     "chainType": "Live",
     "implName": "picasso",
     "specName": "picasso",
-    "specVersion": "200",
+    "specVersion": "10046",
     "nativeToken": {
       "id": "picasso-substrate-native"
     },
@@ -8751,6 +8699,9 @@
         "url": "wss://polimec.ibp.network"
       },
       {
+        "url": "wss://polimec.dotters.network"
+      },
+      {
         "url": "wss://polimec.rpc.amforc.com"
       },
       {
@@ -8758,9 +8709,6 @@
       },
       {
         "url": "wss://rpc.polimec.org"
-      },
-      {
-        "url": "wss://polimec.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -9001,7 +8949,22 @@
         "url": "wss://sys.ibp.network/statemint"
       },
       {
+        "url": "wss://sys.dotters.network/statemint"
+      },
+      {
+        "url": "wss://sys.ibp.network/asset-hub-polkadot"
+      },
+      {
+        "url": "wss://asset-hub-polkadot-rpc.dwellir.com"
+      },
+      {
+        "url": "wss://statemint-rpc-tn.dwellir.com"
+      },
+      {
         "url": "wss://polkadot-assethub-rpc.blockops.network/ws"
+      },
+      {
+        "url": "wss://asset-hub-polkadot.dotters.network"
       },
       {
         "url": "wss://rpc-asset-hub-polkadot.luckyfriday.io"
@@ -9017,21 +8980,6 @@
       },
       {
         "url": "wss://dot-rpc.stakeworld.io/assethub"
-      },
-      {
-        "url": "wss://sys.dotters.network/statemint"
-      },
-      {
-        "url": "wss://sys.ibp.network/asset-hub-polkadot"
-      },
-      {
-        "url": "wss://asset-hub-polkadot-rpc.dwellir.com"
-      },
-      {
-        "url": "wss://statemint-rpc-tn.dwellir.com"
-      },
-      {
-        "url": "wss://asset-hub-polkadot.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -9277,6 +9225,15 @@
         "url": "wss://bridge-hub-polkadot-rpc.dwellir.com"
       },
       {
+        "url": "wss://bridge-hub-polkadot.dotters.network"
+      },
+      {
+        "url": "wss://rpc-bridge-hub-polkadot.luckyfriday.io"
+      },
+      {
+        "url": "wss://bridgehub-polkadot.api.onfinality.io/public-ws"
+      },
+      {
         "url": "wss://polkadot-bridge-hub-rpc.polkadot.io"
       },
       {
@@ -9287,15 +9244,6 @@
       },
       {
         "url": "wss://polkadot-bridge-hub-rpc-tn.dwellir.com"
-      },
-      {
-        "url": "wss://bridge-hub-polkadot.dotters.network"
-      },
-      {
-        "url": "wss://rpc-bridge-hub-polkadot.luckyfriday.io"
-      },
-      {
-        "url": "wss://bridgehub-polkadot.api.onfinality.io/public-ws"
       }
     ],
     "evmNetworks": [],
@@ -9351,7 +9299,13 @@
         "url": "wss://sys.ibp.network/collectives-polkadot"
       },
       {
+        "url": "wss://collectives-polkadot-rpc.dwellir.com"
+      },
+      {
         "url": "wss://polkadot-collectives-rpc-tn.dwellir.com"
+      },
+      {
+        "url": "wss://collectives-polkadot.dotters.network"
       },
       {
         "url": "wss://rpc-collectives-polkadot.luckyfriday.io"
@@ -9367,9 +9321,6 @@
       },
       {
         "url": "wss://dot-rpc.stakeworld.io/collectives"
-      },
-      {
-        "url": "wss://collectives-polkadot.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -9473,9 +9424,6 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://people-polkadot.public.curie.radiumblock.co/ws"
-      },
-      {
         "url": "wss://sys.ibp.network/people-polkadot"
       },
       {
@@ -9486,6 +9434,9 @@
       },
       {
         "url": "wss://polkadot-people-rpc.polkadot.io"
+      },
+      {
+        "url": "wss://people-polkadot.public.curie.radiumblock.co/ws"
       }
     ],
     "evmNetworks": [],
@@ -10169,19 +10120,19 @@
         "url": "wss://unique.ibp.network"
       },
       {
+        "url": "wss://unique.dotters.network"
+      },
+      {
         "url": "wss://ws.unique.network"
+      },
+      {
+        "url": "wss://us-ws.unique.network"
       },
       {
         "url": "wss://asia-ws.unique.network"
       },
       {
         "url": "wss://eu-ws.unique.network"
-      },
-      {
-        "url": "wss://unique.dotters.network"
-      },
-      {
-        "url": "wss://us-ws.unique.network"
       }
     ],
     "evmNetworks": [],
@@ -10667,7 +10618,7 @@
         "url": "wss://westend-rpc.dwellir.com"
       },
       {
-        "url": "wss://westend-rpc-tn.dwellir.com"
+        "url": "wss://westend.dotters.network"
       },
       {
         "url": "wss://westend.api.onfinality.io/public-ws"
@@ -10679,7 +10630,7 @@
         "url": "wss://westend.public.curie.radiumblock.co/ws"
       },
       {
-        "url": "wss://westend.dotters.network"
+        "url": "wss://westend-rpc-tn.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -11396,19 +11347,19 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://westend-collectives-rpc.polkadot.io"
-      },
-      {
         "url": "wss://sys.ibp.network/collectives-westend"
       },
       {
         "url": "wss://collectives-westend-rpc.dwellir.com"
       },
       {
-        "url": "wss://westend-collectives-rpc-tn.dwellir.com"
+        "url": "wss://collectives-westend.dotters.network"
       },
       {
-        "url": "wss://collectives-westend.dotters.network"
+        "url": "wss://westend-collectives-rpc.polkadot.io"
+      },
+      {
+        "url": "wss://westend-collectives-rpc-tn.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -12139,7 +12090,7 @@
     "name": "NeuroWeb Testnet",
     "themeColor": "#656667",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/rococo-neuro-web-testnet.svg",
-    "chainName": "NeuroWeb Testnet",
+    "chainName": "Neuro Testnet",
     "chainType": "Live",
     "implName": "neuroweb",
     "specName": "origintrail-parachain",
@@ -12316,13 +12267,13 @@
         "url": "wss://sys.ibp.network/asset-hub-paseo"
       },
       {
+        "url": "wss://asset-hub-paseo.dotters.network"
+      },
+      {
         "url": "wss://pas-rpc.stakeworld.io/assethub"
       },
       {
         "url": "wss://sys.turboflakes.io/asset-hub-paseo"
-      },
-      {
-        "url": "wss://asset-hub-paseo.dotters.network"
       }
     ],
     "evmNetworks": [],
@@ -12408,10 +12359,10 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://people-westend-rpc.dwellir.com"
+        "url": "wss://sys.ibp.network/people-westend"
       },
       {
-        "url": "wss://sys.ibp.network/people-westend"
+        "url": "wss://people-westend-rpc.dwellir.com"
       },
       {
         "url": "wss://people-westend.dotters.network"
@@ -12987,16 +12938,16 @@
         "url": "wss://asset-hub-westend-rpc.dwellir.com"
       },
       {
-        "url": "wss://westend-asset-hub-rpc.polkadot.io"
-      },
-      {
-        "url": "wss://asset-hub-westend.rpc.permanence.io"
-      },
-      {
         "url": "wss://westmint-rpc-tn.dwellir.com"
       },
       {
         "url": "wss://asset-hub-westend.dotters.network"
+      },
+      {
+        "url": "wss://westend-asset-hub-rpc.polkadot.io"
+      },
+      {
+        "url": "wss://asset-hub-westend.rpc.permanence.io"
       }
     ],
     "evmNetworks": [],
