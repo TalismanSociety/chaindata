@@ -39,8 +39,8 @@ importers:
         specifier: 0.8.3
         version: 0.8.3(@polkadot/keyring@13.4.4(@polkadot/util-crypto@13.4.3(@polkadot/util@13.4.3))(@polkadot/util@13.4.3))(@polkadot/util-crypto@13.4.3(@polkadot/util@13.4.3))(@polkadot/util@13.4.3)(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.6.3)(utf-8-validate@6.0.4)
       '@talismn/chaindata-provider':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.0.0-pr1907-20250426071258
+        version: 0.0.0-pr1907-20250426071258
       '@talismn/scale':
         specifier: 0.0.0-pr1876-20250414012202
         version: 0.0.0-pr1876-20250414012202
@@ -2008,6 +2008,10 @@ packages:
       '@polkadot/util': '*'
       '@polkadot/x-global': '*'
       '@polkadot/x-ws': '*'
+
+  '@talismn/chaindata-provider@0.0.0-pr1907-20250426071258':
+    resolution: {integrity: sha512-H3pvfzg3IOy45fDNDs0b90jl2f0GNNuKViCTjphd4cUuf6/afNIGu2kbNjXaqM0pK38CU3l6H37tSA8rWOh+cQ==}
+    engines: {node: '>=18'}
 
   '@talismn/chaindata-provider@0.8.3':
     resolution: {integrity: sha512-yzrjuAxbGMl5//r/KJioLIZcgTaDgiEnEBTgM5WNNOMNtF4OgX1ZJijS7idSVejXr3A5DdM96opOFlk7yRvW7A==}
@@ -7002,6 +7006,12 @@ snapshots:
       - '@polkadot/keyring'
       - '@polkadot/util-crypto'
       - rxjs
+
+  '@talismn/chaindata-provider@0.0.0-pr1907-20250426071258':
+    dependencies:
+      anylogger: 1.0.11
+      dexie: 4.0.10
+      rxjs: 7.8.2
 
   '@talismn/chaindata-provider@0.8.3':
     dependencies:
