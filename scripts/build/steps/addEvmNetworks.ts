@@ -135,6 +135,8 @@ export const addEvmNetworks = async () => {
           balancesMetadata: [],
           isDefault: configEvmNetwork.isDefault ?? true, // if not specified, it's default
           forceScan: overridesEvmNetwork?.forceScan ?? configEvmNetwork.forceScan ?? false,
+          preserveGasEstimate:
+            overridesEvmNetwork?.preserveGasEstimate ?? configEvmNetwork.preserveGasEstimate ?? false,
         }
 
         return evmNetwork
@@ -221,6 +223,7 @@ export const addEvmNetworks = async () => {
       balancesMetadata: [],
       isDefault: false,
       forceScan: knownEvmNetwork.forceScan ?? false,
+      preserveGasEstimate: knownEvmNetwork.preserveGasEstimate ?? false,
     }
 
     if (!evmNetwork.logo && knownEvmNetwork.icon) {
