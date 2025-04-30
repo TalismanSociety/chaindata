@@ -1136,11 +1136,25 @@
     "preserveGasEstimate": true,
     "explorerUrl": "https://testnet.monadexplorer.com/",
     "rpcs": ["https://testnet-rpc.monad.xyz/"],
+    "erc20aggregator": "0x951d5f07Afc1704CeAc760Fa632801674469845f",
     "balancesConfig": {
       "evm-native": {
         "symbol": "MON",
         "decimals": 18,
         "logo": "./assets/tokens/monad.svg"
+      },
+      "evm-erc20": {
+        "tokens": [
+          { "symbol": "WMON", "contractAddress": "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701" },
+          { "symbol": "USDC", "contractAddress": "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea" },
+          { "symbol": "USDT", "contractAddress": "0x88b8E2161DEDC77EF4ab7585569D2415a1C1055D" },
+          { "symbol": "WBTC", "contractAddress": "0xcf5a6076cfa32686c0Df13aBaDa2b40dec133F1d" },
+          { "symbol": "WETH", "contractAddress": "0xB5a30b0FDc5EA94A52fDc42e3E9760Cb8449Fb37" },
+          { "symbol": "WSOL", "contractAddress": "0x5387C85A4965769f6B0Df430638a1388493486F1" },
+          { "symbol": "YAKI", "contractAddress": "0xfe140e1dCe99Be9F4F15d657CD9b7BF622270C50" },
+          { "symbol": "DAK", "contractAddress": "0x0F0BDEbF0F83cD1EE3974779Bcb7315f9808c714" },
+          { "symbol": "CHOG", "contractAddress": "0xE0590015A873bF326bd645c3E1266d4db41C4E6B" }
+        ]
       }
     }
   }
