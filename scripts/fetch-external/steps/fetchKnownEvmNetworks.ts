@@ -14,6 +14,7 @@ const IGNORED_CHAINS = [
   1200, // Cuckoo chain - can be un-ignored when https://github.com/MetaMask/eth-phishing-detect/issues/89066 closed
   1210, // Cuckoo testnet - as above
   728126428, // TRX - unsupported address format
+  31337, // GoChain - same ID as Anvil and Hardhat, which are both here to stay.
 ]
 
 // RPCs that are not to be fail both from github and browser
