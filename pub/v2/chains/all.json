@@ -4524,7 +4524,7 @@
     "isDefault": true,
     "sortIndex": 504,
     "genesisHash": "0xafdc188f45c71dacbaa0b62e16a91f726c7b8699a9748cdf715459de6b7f366d",
-    "prefix": 63,
+    "prefix": 0,
     "oldPrefix": 63,
     "name": "Hydration",
     "themeColor": "#e53e76",
@@ -4533,7 +4533,7 @@
     "chainType": "Live",
     "implName": "hydradx",
     "specName": "hydradx",
-    "specVersion": "308",
+    "specVersion": "313",
     "nativeToken": {
       "id": "hydradx-substrate-native"
     },
@@ -7283,9 +7283,6 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://moonbeam-rpc.n.dwellir.com"
-      },
-      {
         "url": "wss://moonbeam.ibp.network"
       },
       {
@@ -7302,6 +7299,9 @@
       },
       {
         "url": "wss://moonbeam.unitedbloc.com"
+      },
+      {
+        "url": "wss://moonbeam-rpc.n.dwellir.com"
       }
     ],
     "evmNetworks": [
@@ -8054,7 +8054,7 @@
     "chainType": "Live",
     "implName": "picasso",
     "specName": "picasso",
-    "specVersion": "200",
+    "specVersion": "10046",
     "nativeToken": {
       "id": "picasso-substrate-native"
     },
@@ -8771,9 +8771,6 @@
         "url": "wss://asset-hub-polkadot.dotters.network"
       },
       {
-        "url": "wss://rpc-asset-hub-polkadot.luckyfriday.io"
-      },
-      {
         "url": "wss://polkadot-asset-hub-rpc.polkadot.io"
       },
       {
@@ -8781,6 +8778,9 @@
       },
       {
         "url": "wss://statemint.public.curie.radiumblock.co/ws"
+      },
+      {
+        "url": "wss://rpc-asset-hub-polkadot.luckyfriday.io"
       }
     ],
     "evmNetworks": [],
@@ -9466,7 +9466,7 @@
     "chainType": "Live",
     "implName": "shiden",
     "specName": "shiden",
-    "specVersion": "1302",
+    "specVersion": "1500",
     "nativeToken": {
       "id": "shiden-kusama-substrate-native"
     },
@@ -9925,6 +9925,9 @@
       },
       {
         "url": "wss://eu-ws.unique.network"
+      },
+      {
+        "url": "wss://unique-rpc.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -11511,6 +11514,48 @@
     "hasCheckMetadataHash": true
   },
   {
+    "id": "rococo-kinera-testnet",
+    "isTestnet": true,
+    "isDefault": true,
+    "sortIndex": 1677,
+    "genesisHash": "0x4a7aaa78298a3c6921f7137b47e951d27fa3aa61b6bf96d8b0cf85f6c626397d",
+    "prefix": 42,
+    "name": "Kinera",
+    "themeColor": "#505050",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+    "chainName": "Kinera",
+    "chainType": "Development",
+    "implName": "Kinera",
+    "specName": "Kinera",
+    "specVersion": "100",
+    "nativeToken": {
+      "id": "rococo-kinera-testnet-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "rococo-kinera-testnet-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": null,
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://node.kinera.network"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": null,
+    "relay": null,
+    "balancesConfig": [],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
     "id": "kintsugi-testnet",
     "isTestnet": true,
     "isDefault": true,
@@ -11786,7 +11831,7 @@
     "chainType": "Live",
     "implName": "moonbase",
     "specName": "moonbase",
-    "specVersion": "3600",
+    "specVersion": "3700",
     "nativeToken": {
       "id": "moonbase-alpha-testnet-substrate-native"
     },
@@ -11837,7 +11882,7 @@
     "name": "NeuroWeb Testnet",
     "themeColor": "#656667",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/rococo-neuro-web-testnet.svg",
-    "chainName": "NeuroWeb Testnet",
+    "chainName": "Neuro Testnet",
     "chainType": "Live",
     "implName": "neuroweb",
     "specName": "origintrail-parachain",
