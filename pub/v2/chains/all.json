@@ -2904,7 +2904,7 @@
     "chainType": "Live",
     "implName": "node-subtensor",
     "specName": "node-subtensor",
-    "specVersion": "263",
+    "specVersion": "265",
     "nativeToken": {
       "id": "bittensor-substrate-native"
     },
@@ -2921,10 +2921,10 @@
     "feeToken": null,
     "rpcs": [
       {
-        "url": "wss://lite.sub.latent.to:443"
+        "url": "wss://entrypoint-finney.opentensor.ai:443"
       },
       {
-        "url": "wss://entrypoint-finney.opentensor.ai:443"
+        "url": "wss://lite.sub.latent.to:443"
       }
     ],
     "evmNetworks": [
@@ -3161,7 +3161,7 @@
     "chainType": "Live",
     "implName": "chainflip-node",
     "specName": "chainflip-node",
-    "specVersion": "10903",
+    "specVersion": "10904",
     "nativeToken": {
       "id": "chainflip-substrate-native"
     },
@@ -3589,6 +3589,59 @@
               "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
             }
           ]
+        }
+      }
+    ],
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": false
+  },
+  {
+    "id": "continuum",
+    "isTestnet": false,
+    "isDefault": true,
+    "sortIndex": 218,
+    "genesisHash": "0xae1ca86c936aa252cdc45f4f436220567b2bbbcc4834f5b8f4191462baf19dfb",
+    "prefix": 268,
+    "oldPrefix": 268,
+    "name": "Continuum",
+    "themeColor": "#902a90",
+    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/continuum.svg",
+    "chainName": "Continuum Network",
+    "chainType": "Live",
+    "implName": "continuum-runtime",
+    "specName": "continuum-runtime",
+    "specVersion": "9",
+    "nativeToken": {
+      "id": "continuum-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "continuum-substrate-native"
+      }
+    ],
+    "account": "*25519",
+    "subscanUrl": "https://continuum.subscan.io/",
+    "chainspecQrUrl": null,
+    "latestMetadataQrUrl": null,
+    "isUnknownFeeToken": false,
+    "feeToken": null,
+    "rpcs": [
+      {
+        "url": "wss://continuum-rpc-1.metaverse.network/wss"
+      }
+    ],
+    "evmNetworks": [],
+    "parathreads": null,
+    "paraId": 3346,
+    "relay": {
+      "id": "polkadot"
+    },
+    "balancesConfig": [
+      {
+        "moduleType": "substrate-native",
+        "moduleConfig": {
+          "coingeckoId": "mnet-continuum",
+          "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/continuum.svg"
         }
       }
     ],
@@ -4700,10 +4753,10 @@
         "url": "wss://hydration.dotters.network"
       },
       {
-        "url": "wss://rpc.helikon.io/hydradx"
+        "url": "wss://rpc.hydradx.cloud"
       },
       {
-        "url": "wss://rpc.hydradx.cloud"
+        "url": "wss://rpc.helikon.io/hydradx"
       }
     ],
     "evmNetworks": [],
@@ -10993,7 +11046,7 @@
     "chainType": "Development",
     "implName": "node-subtensor",
     "specName": "node-subtensor",
-    "specVersion": "271",
+    "specVersion": "272",
     "nativeToken": {
       "id": "bittensor-testnet-substrate-native"
     },
