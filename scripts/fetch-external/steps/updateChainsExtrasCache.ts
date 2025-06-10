@@ -15,7 +15,7 @@ import {
   IChaindataProvider,
   TokenId,
 } from '@talismn/chaindata-provider'
-import { decodeMetadata, toHex } from '@talismn/scale'
+import { decAnyMetadata, toHex } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
 import { BehaviorSubject, from } from 'rxjs'
@@ -439,7 +439,9 @@ const getHackedBalanceModuleDeps = (chain: ConfigChain, rpcUrl: string) => {
 
 const getHasCheckMetadataHash = (metadata: Metadata) => {
   try {
-    return metadata.asLatest.extrinsic.signedExtensions.some((ext) => ext.identifier.toString() === 'CheckMetadataHash')
+    return metadata.asLatest.extrinsic.transactionExtensions.some(
+      (ext) => ext.identifier.toString() === 'CheckMetadataHash',
+    )
   } catch (err) {
     console.error('Failed to check if CheckMetadataHash exists', err)
     return false
@@ -447,13 +449,24 @@ const getHasCheckMetadataHash = (metadata: Metadata) => {
 }
 
 const getAccountType = (metadataRpc: string, chainId?: string) => {
-  const { metadata } = decodeMetadata(metadataRpc)
+  const { metadata } = decAnyMetadata(metadataRpc)
   if (!metadata) {
     console.error(`Failed to detect account type for ${chainId}`)
     return '*25519'
   }
 
-  const system = metadata.pallets.find((p) => p.name === 'System')
+  switch (metadata.tag) {
+    case 'v14':
+    case 'v15':
+    case 'v16':
+      break
+    default: {
+      console.error(`Failed to detect account type for ${chainId}`)
+      return '*25519'
+    }
+  }
+
+  const system = metadata.value.pallets.find((p) => p.name === 'System')
   const account = system?.storage?.items.find((s) => s.name === 'Account')
   const storage = account?.type
   if (storage?.tag !== 'map') {
@@ -461,7 +474,7 @@ const getAccountType = (metadataRpc: string, chainId?: string) => {
     return '*25519'
   }
 
-  const args = metadata.lookup.at(storage.value.key)
+  const args = metadata.value.lookup.at(storage.value.key)
   if (!args) {
     console.error(`Failed to detect account type for ${chainId}`)
     return '*25519'
