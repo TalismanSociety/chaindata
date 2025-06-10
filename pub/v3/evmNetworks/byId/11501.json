@@ -1,0 +1,66 @@
+{
+  "id": "11501",
+  "isTestnet": false,
+  "sortIndex": 429,
+  "name": "GEB Mainnet",
+  "themeColor": "#fef6dd",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/11501.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://scan.geb.network",
+  "rpcs": [
+    {
+      "url": "https://rpc-mainnet-1.geb.network/"
+    },
+    {
+      "url": "https://rpc-mainnet-2.geb.network/"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "BTC",
+        "decimals": 18,
+        "coingeckoId": "bitcoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "stBTC",
+            "coingeckoId": "bido-staked-bitcoin",
+            "contractAddress": "0x26bda683f874e7ae3e3a5d3fad44bcb82a7c107c",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bido-staked-bitcoin.webp"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "bridged-tether-bevm",
+            "contractAddress": "0xa67ed736649f2958a35fd249a584151056b4b745",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "WBTC",
+            "coingeckoId": "bridged-wrapped-btc-bevm",
+            "contractAddress": "0xb5136feba197f5ff4b765e5b50c74db717796dcd",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bridged-wrapped-btc-bevm.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

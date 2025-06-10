@@ -1,0 +1,63 @@
+{
+  "id": "32769",
+  "isTestnet": false,
+  "sortIndex": 1198,
+  "name": "Zilliqa EVM",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/32769.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://evmx.zilliqa.com",
+  "rpcs": [
+    {
+      "url": "https://api.zilliqa.com"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "ZIL",
+        "decimals": 18,
+        "coingeckoId": "zilliqa",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zilliqa.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "SEED",
+            "coingeckoId": "kalijo",
+            "contractAddress": "0xe64ca52ef34fdd7e20c0c7fb2e392cc9b4f6d049",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kalijo.webp"
+          },
+          {
+            "symbol": "WZIL",
+            "coingeckoId": "wrapped-zil",
+            "contractAddress": "0x94e18ae7dd5ee57b55f30c4b63e2760c09efb192",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-zil.webp"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "zilliqa-evm-bridged-usdc-zilliqa-evm",
+            "contractAddress": "0xd8b73ced1b16c047048f2c5ea42233da33168198",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

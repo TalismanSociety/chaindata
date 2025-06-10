@@ -1,0 +1,66 @@
+{
+  "id": "570",
+  "isTestnet": true,
+  "sortIndex": 1949,
+  "name": "Rollux Mainnet",
+  "themeColor": "#dcef89",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/570.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.rollux.com",
+  "rpcs": [
+    {
+      "url": "https://rpc.rollux.com"
+    },
+    {
+      "url": "https://rpc.ankr.com/rollux"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "SYS",
+        "decimals": 18,
+        "coingeckoId": "syscoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/syscoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "bridged-usdc",
+            "contractAddress": "0x368433cac2a0b8d76e64681a9835502a1f2a8a30",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "bridged-usdt",
+            "contractAddress": "0x28c9c7fb3fe3104d2116af26cc8ef7905547349c",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "SUPR",
+            "coingeckoId": "superdapp",
+            "contractAddress": "0x3390108e913824b8ead638444cc52b9abdf63798",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/superdapp.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

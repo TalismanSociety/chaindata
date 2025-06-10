@@ -1,0 +1,63 @@
+{
+  "id": "83872",
+  "isTestnet": false,
+  "sortIndex": 1187,
+  "name": "ZEDXION",
+  "themeColor": "#00c0ff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/83872.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "http://zedscan.net",
+  "rpcs": [
+    {
+      "url": "https://mainnet-rpc.zedscan.net"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "ZEDX",
+        "decimals": 9,
+        "coingeckoId": "zedxion-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zedxion-2.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "BTC.z",
+            "coingeckoId": "bitcoin-bridged-zed20",
+            "contractAddress": "0x240962a6ddd67dd382db4d417cbdf0d8822aca2f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitcoin-bridged-zed20.webp"
+          },
+          {
+            "symbol": "WZEDX",
+            "coingeckoId": "wrapped-zedxion",
+            "contractAddress": "0x3f7be9db9d37bd89c3fa722bb29ba17300c18fc8",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-zedxion.webp"
+          },
+          {
+            "symbol": "ZED",
+            "coingeckoId": "zeddex",
+            "contractAddress": "0x5b0f21f60116b9463210c00c7a1a6a46e26bfa33",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zeddex.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

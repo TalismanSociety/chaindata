@@ -1,0 +1,55 @@
+{
+  "id": "8668",
+  "isTestnet": false,
+  "sortIndex": 484,
+  "name": "Hela Official Runtime Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/8668.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://mainnet-blockexplorer.helachain.com",
+  "rpcs": [
+    {
+      "url": "https://mainnet-rpc.helachain.com"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "HLUSD",
+        "decimals": 18,
+        "coingeckoId": "hela-usd",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hela-usd.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "hUSDC",
+            "coingeckoId": "hela-usdc",
+            "contractAddress": "0xf5b85320a772b436cb8105441a3db9ba29437b4a",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hela-usdc.webp"
+          },
+          {
+            "symbol": "WHLUSD",
+            "coingeckoId": "wrapped-hlusd",
+            "contractAddress": "0x3a035615e101373fa9ba21c5bea7fe4026fc40b4",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-hlusd.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

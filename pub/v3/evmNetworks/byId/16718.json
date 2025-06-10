@@ -1,0 +1,71 @@
+{
+  "id": "16718",
+  "isTestnet": false,
+  "sortIndex": 26,
+  "name": "AirDAO Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/16718.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://airdao.io/explorer",
+  "rpcs": [
+    {
+      "url": "https://network.ambrosus.io"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "AMB",
+        "decimals": 18,
+        "coingeckoId": "amber",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/amber.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "airdao-bridged-usdc-airdao",
+            "contractAddress": "0xff9f502976e7bd2b4901ad7dd1131bb81e5567de",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "AST",
+            "coingeckoId": "astra-2",
+            "contractAddress": "0x5cecbde7811ac0ed86be11827ae622b89bc429df",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/astra-2.webp"
+          },
+          {
+            "symbol": "SWINE",
+            "coingeckoId": "swiss-wine",
+            "contractAddress": "0xc410f3eb0c0f0e1efa188d38c366536d59a265ba",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/swiss-wine.webp"
+          },
+          {
+            "symbol": "SAMB",
+            "coingeckoId": "synthetic-amber",
+            "contractAddress": "0x2b2d892c3fe2b4113dd7ac0d2c1882af202fb28f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/synthetic-amber.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

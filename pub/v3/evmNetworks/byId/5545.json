@@ -1,0 +1,74 @@
+{
+  "id": "5545",
+  "isTestnet": false,
+  "sortIndex": 300,
+  "name": "DuckChain Mainnet",
+  "themeColor": "#fc7429",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/5545.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": null,
+  "rpcs": [
+    {
+      "url": "https://rpc.duckchain.io"
+    },
+    {
+      "url": "https://rpc-hk.duckchain.io"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "TON",
+        "decimals": 18,
+        "coingeckoId": "the-open-network",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-open-network.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDT",
+            "coingeckoId": "duckchain-bridged-usdt-duckchain",
+            "contractAddress": "0xbe138ad5d41fdc392ae0b61b09421987c1966cc3",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "DUCK",
+            "coingeckoId": "duckchain-token",
+            "contractAddress": "0xda65892ea771d3268610337e9964d916028b7dad",
+            "decimals": 9,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/duckchain-token.webp"
+          },
+          {
+            "symbol": "M-BTC",
+            "coingeckoId": "merlin-s-seal-btc",
+            "contractAddress": "0x9bfa177621119e64cecbeabe184ab9993e2ef727",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/merlin-s-seal-btc.webp"
+          },
+          {
+            "symbol": "WTON",
+            "coingeckoId": "wrapped-ton",
+            "contractAddress": "0x7f9308e8d724e724ec31395f3af52e0593bb2e3f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-ton.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

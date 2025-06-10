@@ -1,0 +1,71 @@
+{
+  "id": "17777",
+  "isTestnet": false,
+  "sortIndex": 344,
+  "name": "EOS EVM Network",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/17777.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.evm.eosnetwork.com",
+  "rpcs": [
+    {
+      "url": "https://api.evm.eosnetwork.com"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "EOS",
+        "decimals": 18,
+        "coingeckoId": "eos",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/eos.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "ESCC",
+            "coingeckoId": "eos-stable-coin",
+            "contractAddress": "0x08f23e6f35e5fc026be6179a962aac8ebf6b4f29",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/eos-stable-coin.webp"
+          },
+          {
+            "symbol": "NEUTRO",
+            "coingeckoId": "neutroswap",
+            "contractAddress": "0xf4bd487a8190211e62925435963d996b59a860c0",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neutroswap.webp"
+          },
+          {
+            "symbol": "NOAH",
+            "coingeckoId": "noahswap",
+            "contractAddress": "0x2a3b2d64960036de519dc4a45cafd532bfa99ff0",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/noahswap.webp"
+          },
+          {
+            "symbol": "WEOS",
+            "coingeckoId": "wrapped-eos",
+            "contractAddress": "0xc00592aa41d32d137dc480d9f6d0df19b860104f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-eos.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

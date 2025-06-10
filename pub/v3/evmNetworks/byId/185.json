@@ -1,0 +1,77 @@
+{
+  "id": "185",
+  "isTestnet": false,
+  "sortIndex": 685,
+  "name": "Mint Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/185.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.mintchain.io",
+  "rpcs": [
+    {
+      "url": "https://rpc.mintchain.io"
+    },
+    {
+      "url": "https://global.rpc.mintchain.io"
+    },
+    {
+      "url": "https://asia.rpc.mintchain.io"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "ETH",
+        "decimals": 18,
+        "coingeckoId": "weth",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "MINT",
+            "coingeckoId": "mint-blockchain",
+            "contractAddress": "0x8511138208529fe1b9a37b863c7eee3fe234b7ab",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mint-blockchain.webp"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "mintchain-bridged-weth-mint",
+            "contractAddress": "0x4200000000000000000000000000000000000006",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mintchain-bridged-weth-mint.webp"
+          },
+          {
+            "symbol": "MST",
+            "coingeckoId": "mintswaptoken",
+            "contractAddress": "0x9f7bd1ce3412960524e86183b8f005271c09a5e0",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mintswaptoken.webp"
+          },
+          {
+            "symbol": "SLN",
+            "coingeckoId": "smart-layer-network",
+            "contractAddress": "0xa356c6c6dc0fec7eb14778269fa4fc38a4fb3d1f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/smart-layer-network.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

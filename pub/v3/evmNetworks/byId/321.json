@@ -1,0 +1,98 @@
+{
+  "id": "321",
+  "isTestnet": false,
+  "sortIndex": 576,
+  "name": "KCC Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/321.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.kcc.io/en",
+  "rpcs": [
+    {
+      "url": "https://rpc-mainnet.kcc.network"
+    },
+    {
+      "url": "https://kcc.mytokenpocket.vip"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "KCS",
+        "decimals": 18,
+        "coingeckoId": "kucoin-shares",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kucoin-shares.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "ETH",
+            "coingeckoId": "kcc-bridged-weth-kucoin-community-chain",
+            "contractAddress": "0xf55af137a98607f7ed2efefa4cd2dfe70e4253b1",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "kucoin-bridged-usdc-kucoin-community-chain",
+            "contractAddress": "0x980a5afef3d17ad98635f6c5aebcbaeded3c3430",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "kucoin-bridged-usdt-kucoin-community-chain",
+            "contractAddress": "0x0039f574ee5cc39bdd162e9a88e3eb1f111baf48",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "KUS",
+            "coingeckoId": "kuswap",
+            "contractAddress": "0x4a81704d8c16d9fb0d7f61b747d0b5a272badf14",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kuswap.webp"
+          },
+          {
+            "symbol": "MJT",
+            "coingeckoId": "mojitoswap",
+            "contractAddress": "0x2ca48b4eea5a731c2b54e7c3944dbdb87c0cfb6f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mojitoswap.webp"
+          },
+          {
+            "symbol": "sKCS",
+            "coingeckoId": "staked-kcs",
+            "contractAddress": "0x00ee2d494258d6c5a30d6b6472a09b27121ef451",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/staked-kcs.webp"
+          },
+          {
+            "symbol": "WKCS",
+            "coingeckoId": "wrapped-kcs",
+            "contractAddress": "0x4446fc4eb47f2f6586f9faab68b3498f86c07521",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-kcs.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

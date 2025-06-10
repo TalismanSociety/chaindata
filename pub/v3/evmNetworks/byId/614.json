@@ -1,0 +1,55 @@
+{
+  "id": "614",
+  "isTestnet": false,
+  "sortIndex": 458,
+  "name": "Graphlinq Blockchain Mainnet",
+  "themeColor": "#fbedff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/614.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.graphlinq.io",
+  "rpcs": [
+    {
+      "url": "https://glq-dataseed.graphlinq.io"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "GLQ",
+        "decimals": 18,
+        "coingeckoId": "graphlinq-protocol",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/graphlinq-protocol.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WETH",
+            "coingeckoId": "graphlinq-wrapped-eth",
+            "contractAddress": "0xbeed106d0f2e6950bfa1eec74e1253ca0a643442",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/graphlinq-wrapped-eth.webp"
+          },
+          {
+            "symbol": "WGLQ",
+            "coingeckoId": "wrapped-glq",
+            "contractAddress": "0xeb567ec41738c2bab2599a1070fc5b727721b3b6",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-glq.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

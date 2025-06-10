@@ -1,0 +1,74 @@
+{
+  "id": "9008",
+  "isTestnet": false,
+  "sortIndex": 973,
+  "name": "Shido Network",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/9008.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://shidoscan.com",
+  "rpcs": [
+    {
+      "url": "https://shido-mainnet-archive-lb-nw5es9.zeeve.net/USjg7xqUmCZ4wCsqEOOE/rpc"
+    },
+    {
+      "url": "https://evm.shidoscan.net"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "SHIDO",
+        "decimals": 18,
+        "coingeckoId": "shido-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shido-2.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "KENSEI",
+            "coingeckoId": "kensei",
+            "contractAddress": "0xfb889425b72c97c5b4484cf148ae2404ab7a13e7",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kensei.webp"
+          },
+          {
+            "symbol": "USDC",
+            "coingeckoId": "shido-bridged-usdc-shido",
+            "contractAddress": "0x80b5a32e4f032b2a058b4f29ec95eefeeb87adcd",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "SHDX",
+            "coingeckoId": "shido-dex",
+            "contractAddress": "0xe550bde2f0898552b38a41635d7a8ddb1fd81276",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shido-dex.webp"
+          },
+          {
+            "symbol": "WSHIDO",
+            "coingeckoId": "wrapped-shido",
+            "contractAddress": "0x8cbaffd9b658997e7bf87e98febf6ea6917166f7",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-shido.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

@@ -1,0 +1,108 @@
+{
+  "id": "centrifuge-polkadot",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 181,
+  "genesisHash": "0xb3db41421702df9a7fcac62b53ffeac85f7853cc4e689e0b93aeb3db18c09d82",
+  "prefix": 36,
+  "oldPrefix": 36,
+  "name": "Centrifuge",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/centrifuge-polkadot.svg",
+  "chainName": "Centrifuge",
+  "chainType": "Live",
+  "implName": "centrifuge",
+  "specName": "centrifuge",
+  "specVersion": "1506",
+  "nativeToken": {
+    "id": "centrifuge-polkadot-substrate-native"
+  },
+  "tokens": [
+    {
+      "id": "centrifuge-polkadot-substrate-native"
+    },
+    {
+      "id": "centrifuge-polkadot-substrate-tokens-N4IgLgngDgpiBcIBiB7ATjAlgcwHYEEBnQmMEAGhADcBDAGwFc54BGAXyA"
+    },
+    {
+      "id": "centrifuge-polkadot-substrate-tokens-N4IgLgngDgpiBcIBiB7ATjAlgcwHYEEBnQmMEAGhADcBDAGwFc54AWAXyA"
+    },
+    {
+      "id": "centrifuge-polkadot-substrate-tokens-N4IgLgngDgpiBcIBiB7ATjAlgcwHYEEBnQmMEAGhADcBDAGwFc54BWAXyA"
+    },
+    {
+      "id": "centrifuge-polkadot-substrate-tokens-N4IgLgngDgpiBcIBiB7ATjAlgcwHYEEBnQmMEAGhADcBDAGwFc54A2AXyA"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://centrifuge.subscan.io/",
+  "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-centrifuge_specs.png",
+  "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-centrifuge_metadata_latest.apng",
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://fullnode.centrifuge.io"
+    },
+    {
+      "url": "wss://rpc-centrifuge.luckyfriday.io"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2031,
+  "relay": {
+    "id": "polkadot"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-native",
+      "moduleConfig": {
+        "coingeckoId": "centrifuge",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/centrifuge-polkadot.svg"
+      }
+    },
+    {
+      "moduleType": "substrate-tokens",
+      "moduleConfig": {
+        "palletId": "OrmlTokens",
+        "tokens": [
+          {
+            "symbol": "USDT",
+            "decimals": 6,
+            "ed": "10000",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":1}",
+            "coingeckoId": "tether",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "GLMR",
+            "ed": "1000000000000000",
+            "decimals": 18,
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":4}",
+            "coingeckoId": "moonbeam",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/glmr.svg"
+          },
+          {
+            "symbol": "DOT",
+            "decimals": 10,
+            "ed": "100000",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":5}",
+            "coingeckoId": "polkadot",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg"
+          },
+          {
+            "symbol": "USDC",
+            "decimals": 6,
+            "ed": "1000",
+            "onChainId": "{\"type\":\"ForeignAsset\",\"value\":6}",
+            "coingeckoId": "usd-coin",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
+}

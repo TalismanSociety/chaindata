@@ -1,0 +1,61 @@
+{
+  "id": "57",
+  "isTestnet": true,
+  "sortIndex": 2056,
+  "name": "Syscoin Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/57.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://explorer.syscoin.org",
+  "rpcs": [
+    {
+      "url": "https://rpc.syscoin.org"
+    },
+    {
+      "url": "https://syscoin.public-rpc.com"
+    },
+    {
+      "url": "https://syscoin-evm.publicnode.com"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "SYS",
+        "decimals": 18,
+        "coingeckoId": "syscoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/syscoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "MAI",
+            "coingeckoId": "mimatic",
+            "contractAddress": "0x2611fa1cae2a3e20ed47fb1b293437c14f41b00f",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mimatic.webp"
+          },
+          {
+            "symbol": "SUPR",
+            "coingeckoId": "superdapp",
+            "contractAddress": "0x9ce31ff4c2ccfcc2ae8708c0178fc021a86ac18e",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/superdapp.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

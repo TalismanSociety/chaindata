@@ -1,0 +1,55 @@
+{
+  "id": "1480",
+  "isTestnet": true,
+  "sortIndex": 2123,
+  "name": "Vana",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/1480.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://vanascan.io",
+  "rpcs": [
+    {
+      "url": "https://rpc.vana.org/"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "VANA",
+        "decimals": 18,
+        "coingeckoId": "vana",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vana.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-vana",
+            "contractAddress": "0xf1815bd50389c46847f0bda824ec8da914045d14",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stargate-bridged-usdc-vana.webp"
+          },
+          {
+            "symbol": "WVANA",
+            "coingeckoId": "wrapped-vana",
+            "contractAddress": "0x00eddd9621fb08436d0331c149d1690909a5906d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-vana.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

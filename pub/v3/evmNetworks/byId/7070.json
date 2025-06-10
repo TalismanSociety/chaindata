@@ -1,0 +1,47 @@
+{
+  "id": "7070",
+  "isTestnet": false,
+  "sortIndex": 828,
+  "name": "Planq Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/7070.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://evm.planq.network",
+  "rpcs": [
+    {
+      "url": "https://evm-rpc.planq.network"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "PLQ",
+        "decimals": 18,
+        "coingeckoId": "planq",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/planq.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "bridged-usdc",
+            "contractAddress": "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

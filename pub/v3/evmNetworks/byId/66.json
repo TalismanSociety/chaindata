@@ -1,0 +1,90 @@
+{
+  "id": "66",
+  "isTestnet": false,
+  "sortIndex": 755,
+  "name": "OKXChain Mainnet",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/66.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://www.oklink.com/en/okc",
+  "rpcs": [
+    {
+      "url": "https://exchainrpc.okex.org"
+    },
+    {
+      "url": "https://okc-mainnet.gateway.pokt.network/v1/lb/6275309bea1b320039c893ff"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "OKT",
+        "decimals": 18,
+        "coingeckoId": "oec-token",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/oec-token.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "bridged-usdc",
+            "contractAddress": "0xc946daf81b08146b1c7a8da2a851ddf2b3eaaf85",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "bridged-usdt",
+            "contractAddress": "0x382bb369d343125bfb2117af9c149795c6c65c50",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "O3",
+            "coingeckoId": "o3-swap",
+            "contractAddress": "0xee9801669c6138e84bd50deb500827b776777d28",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/o3-swap.webp"
+          },
+          {
+            "symbol": "BTCK",
+            "coingeckoId": "oec-btc",
+            "contractAddress": "0x54e4622dc504176b3bb432dccaf504569699a7ff",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/oec-btc.webp"
+          },
+          {
+            "symbol": "OKB",
+            "coingeckoId": "okb",
+            "contractAddress": "0xdf54b6c6195ea4d948d03bfd818d365cf175cfc2",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/okb.webp"
+          },
+          {
+            "symbol": "RACA",
+            "coingeckoId": "radio-caca",
+            "contractAddress": "0x12bb890508c125661e03b09ec06e404bc9289040",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/radio-caca.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}

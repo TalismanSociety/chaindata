@@ -1,0 +1,62 @@
+{
+  "id": "neuroweb",
+  "isTestnet": false,
+  "isDefault": true,
+  "sortIndex": 725,
+  "genesisHash": "0xe7e0962324a3b86c83404dbea483f25fb5dab4c224791c81b756cfc948006174",
+  "prefix": 101,
+  "oldPrefix": 101,
+  "name": "NeuroWeb",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/neuroweb.svg",
+  "chainName": "NeuroWeb",
+  "chainType": "Live",
+  "implName": "neuroweb",
+  "specName": "origintrail-parachain",
+  "specVersion": "138",
+  "nativeToken": {
+    "id": "neuroweb-substrate-native"
+  },
+  "tokens": [
+    {
+      "id": "neuroweb-substrate-assets-1-trac"
+    },
+    {
+      "id": "neuroweb-substrate-native"
+    }
+  ],
+  "account": "*25519",
+  "subscanUrl": "https://neuroweb.subscan.io/",
+  "chainspecQrUrl": null,
+  "latestMetadataQrUrl": null,
+  "isUnknownFeeToken": false,
+  "feeToken": null,
+  "rpcs": [
+    {
+      "url": "wss://parachain-rpc.origin-trail.network"
+    }
+  ],
+  "evmNetworks": [],
+  "parathreads": null,
+  "paraId": 2043,
+  "relay": {
+    "id": "polkadot"
+  },
+  "balancesConfig": [
+    {
+      "moduleType": "substrate-assets",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "assetId": 1,
+            "symbol": "TRAC",
+            "coingeckoId": "origintrail",
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/origintrail.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "hasCheckMetadataHash": true
+}

@@ -1,0 +1,55 @@
+{
+  "id": "3776",
+  "isTestnet": false,
+  "sortIndex": 76,
+  "name": "Astar zkEVM",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/3776.webp",
+  "nativeToken": null,
+  "tokens": [],
+  "explorerUrl": "https://astar-zkevm.explorer.startale.com",
+  "rpcs": [
+    {
+      "url": "https://rpc.startale.com/astar-zkevm"
+    }
+  ],
+  "substrateChain": null,
+  "balancesConfig": [
+    {
+      "moduleType": "evm-native",
+      "moduleConfig": {
+        "symbol": "ETH",
+        "decimals": 18,
+        "coingeckoId": "weth",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "BONSAICOIN",
+            "coingeckoId": "bonsai-coin",
+            "contractAddress": "0x90e3f8e749dbd40286ab29aecd1e8487db4a8785",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bonsai-coin.webp"
+          },
+          {
+            "symbol": "STONE",
+            "coingeckoId": "stakestone-ether",
+            "contractAddress": "0x80137510979822322193fc997d400d5a6c747bf7",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stakestone-ether.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "balancesMetadata": [],
+  "isDefault": false,
+  "forceScan": false,
+  "preserveGasEstimate": false
+}
