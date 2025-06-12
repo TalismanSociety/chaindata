@@ -40,6 +40,7 @@ export const addChains = async () => {
       nativeToken: null,
       tokens: [],
       account: configChain.account ?? null,
+      blockExplorerUrls: configChain.blockExplorerUrls ?? null,
       subscanUrl: configChain.subscanUrl ?? null,
       chainspecQrUrl: configChain.chainspecQrUrl ?? null,
       latestMetadataQrUrl: configChain.latestMetadataQrUrl ?? null,
