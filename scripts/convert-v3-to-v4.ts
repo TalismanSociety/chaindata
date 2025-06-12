@@ -60,37 +60,41 @@ const migrateDotNativeCurrency = (network: ConfigChain): DotNetworkConfig['nativ
   return { decimals, symbol, name, coingeckoId, mirrorOf, logo }
 }
 
-const migrateEthNetworkV3ToV4 = (network: ConfigEvmNetwork): EthNetworkConfig => {
-  const { id, name = '', rpcs = [], balancesConfig, isTestnet } = network
+const migrateEthNetworkV3ToV4 =
+  (dotNetworks: DotNetworkConfig[]) =>
+  (network: ConfigEvmNetwork): EthNetworkConfig => {
+    const { id, name = '', rpcs = [], balancesConfig, isTestnet } = network
 
-  return {
-    // requried
-    id,
-    name,
-    rpcs,
+    const dotNetwork = dotNetworks.find((n) => n.id === network.substrateChainId)
 
-    // from NetworkBase
-    isTestnet: isTestnet || undefined,
-    isDefault: network.isDefault || undefined,
-    forceScan: network.forceScan || undefined,
-    themeColor: network.themeColor || undefined,
-    blockExplorerUrls: network.explorerUrl ? [network.explorerUrl] : [],
+    return {
+      // requried
+      id,
+      name: dotNetwork?.name ? name || dotNetwork.name : name, // in v3 they are not set for networks tied to a polkadot chain
+      rpcs,
 
-    // from EvmNetwork
-    substrateChainId: network.substrateChainId || undefined,
-    logo: network.logo || undefined,
-    preserveGasEstimate: network.preserveGasEstimate || undefined,
-    feeType: network.feeType || undefined,
-    l2FeeType: network.l2FeeType || undefined,
-    contracts: network.erc20aggregator
-      ? {
-          Erc20Aggregator: network.erc20aggregator,
-        }
-      : undefined,
+      // from NetworkBase
+      isTestnet: isTestnet || undefined,
+      isDefault: network.isDefault || undefined,
+      forceScan: network.forceScan || undefined,
+      themeColor: network.themeColor || undefined,
+      blockExplorerUrls: network.explorerUrl ? [network.explorerUrl] : [],
 
-    balancesConfig: migrateEthBalancesConfig(network),
+      // from EvmNetwork
+      substrateChainId: network.substrateChainId || undefined,
+      logo: network.logo || undefined,
+      preserveGasEstimate: network.preserveGasEstimate || undefined,
+      feeType: network.feeType || undefined,
+      l2FeeType: network.l2FeeType || undefined,
+      contracts: network.erc20aggregator
+        ? {
+            Erc20Aggregator: network.erc20aggregator,
+          }
+        : undefined,
+
+      balancesConfig: migrateEthBalancesConfig(network),
+    }
   }
-}
 
 const migrateDotBalancesConfig = (network: ConfigChain): DotNetworkConfig['balancesConfig'] => {
   if (!network.balancesConfig) return undefined
@@ -120,7 +124,7 @@ const chaindataTestnets = JSON.parse(readFileSync(`./data/testnets-chaindata.jso
 const evmNetworks = JSON.parse(readFileSync(`./data/evm-networks.json`, 'utf-8'))
 
 const newDotNetworks = [...chaindata, ...chaindataTestnets].map(migrateDotNetworkV3ToV4)
-const newEthNetworks = evmNetworks.map(migrateEthNetworkV3ToV4)
+const newEthNetworks = evmNetworks.map(migrateEthNetworkV3ToV4(newDotNetworks))
 
 writeFileSync(`./data/networks-polkadot.yaml`, yamlify(newDotNetworks))
 writeFileSync(`./data/networks-ethereum.yaml`, yamlify(newEthNetworks))
