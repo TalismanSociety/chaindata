@@ -32,7 +32,7 @@ import {
 } from '../../shared/constants'
 import { DeadChains } from '../../shared/DeadChains'
 import { setTokenLogo, TokenDef } from '../../shared/setTokenLogo'
-import { ChainExtrasCache, ConfigChain } from '../../shared/types'
+import { ChainExtrasCache, ConfigChain } from '../../shared/types.legacy'
 import { sendWithTimeout } from '../../shared/util'
 import { WsRpcHealth } from './checkWsRpcs'
 

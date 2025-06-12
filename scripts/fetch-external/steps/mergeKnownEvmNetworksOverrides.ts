@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import mergeWith from 'lodash/mergeWith'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_OVERRIDES } from '../../shared/constants'
-import { ConfigEvmNetwork } from '../../shared/types'
+import { ConfigEvmNetwork } from '../../shared/types.legacy'
 import { networkMergeCustomizer } from '../../shared/util'
 
 /**

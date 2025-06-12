@@ -13,7 +13,7 @@ import {
   FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
-import { ConfigChain, ConfigEvmNetwork } from '../../shared/types'
+import { ConfigChain, ConfigEvmNetwork } from '../../shared/types.legacy'
 import { fetchCoinDetails } from '../coingecko'
 
 const INVALID_IMAGE_COINGECKO_IDS = [

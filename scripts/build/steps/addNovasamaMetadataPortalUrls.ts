@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 
 import { FILE_NOVASAMA_METADATA_PORTAL_URLS } from '../../shared/constants'
-import { MetadataPortalUrls } from '../../shared/types'
+import { MetadataPortalUrls } from '../../shared/types.legacy'
 import { sharedData } from './_sharedData'
 
 export const addNovasamaMetadataPortalUrls = async () => {

@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 
 import { FILE_CHAINS_EXTRAS_CACHE } from '../../shared/constants'
-import { ChainExtrasCache } from '../../shared/types'
+import { ChainExtrasCache } from '../../shared/types.legacy'
 import { sharedData } from './_sharedData'
 
 export const mergeChainsExtras = async () => {

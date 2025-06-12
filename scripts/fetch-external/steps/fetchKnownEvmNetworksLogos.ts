@@ -5,7 +5,7 @@ import prettier from 'prettier'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
-import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types'
+import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types.legacy'
 
 // IPFS hashes that cant be found on github
 const KNOWN_UNAVAILABLE_IPFS_HASHES = [

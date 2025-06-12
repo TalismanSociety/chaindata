@@ -5,7 +5,12 @@ import prettier from 'prettier'
 import { Hex, hexToNumber } from 'viem'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
-import { ConfigEvmNetwork, EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpcStatus } from '../../shared/types'
+import {
+  ConfigEvmNetwork,
+  EthereumListsChain,
+  EvmNetworkRpcCache,
+  EvmNetworkRpcStatus,
+} from '../../shared/types.legacy'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 

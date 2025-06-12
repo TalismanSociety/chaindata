@@ -10,11 +10,15 @@ export const GITHUB_REPO = 'chaindata'
 export const GITHUB_BRANCH = 'main'
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
-export const DIR_OUTPUT = 'pub/v3'
+export const DIR_OUTPUT = 'pub/v4'
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
 
+export const FILE_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
+export const FILE_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
+
+// TODO yeet unused ones
 export const FILE_CHAINDATA = 'data/chaindata.json'
 export const FILE_TESTNETS_CHAINDATA = 'data/testnets-chaindata.json'
 export const FILE_CHAINS_EXTRAS_CACHE = 'data/cache/chains-extras-cache.json'

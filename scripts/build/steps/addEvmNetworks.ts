@@ -11,7 +11,7 @@ import {
   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
+import { ConfigEvmNetwork, Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types.legacy'
 import { getAssetUrlFromPath, networkMergeCustomizer, UNKNOWN_NETWORK_LOGO_URL } from '../../shared/util'
 import { sharedData } from './_sharedData'
 

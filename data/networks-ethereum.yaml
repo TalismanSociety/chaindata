@@ -1,0 +1,673 @@
+- id: "1"
+  name: Ethereum Mainnet
+  rpcs:
+    - https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
+    - https://rpc.ankr.com/eth
+    - https://ethereum-rpc.publicnode.com
+    - https://eth.merkle.io
+    - https://ethereum.rpc.subquery.network/public
+    - https://eth.llamarpc.com
+  blockExplorerUrls:
+    - https://etherscan.io
+  feeType: eip-1559
+  contracts:
+    Erc20Aggregator: "0x2e556284556ecEe5754d201bBB6E2cb47fB95DFd"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: USDC
+          contractAddress: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+          coingeckoId: usd-coin
+        - symbol: USDT
+          contractAddress: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+          coingeckoId: tether
+        - symbol: DAI
+          contractAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+          coingeckoId: dai
+        - symbol: stETH
+          contractAddress: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
+        - symbol: rETH
+          contractAddress: "0xae78736Cd615f374D3085123A210448E74Fc6393"
+          coingeckoId: rocket-pool-eth
+        - symbol: LINK
+          contractAddress: "0x514910771af9ca656af840dff83e8264ecf986ca"
+          coingeckoId: chainlink
+        - symbol: WBTC
+          contractAddress: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+          coingeckoId: wrapped-bitcoin
+        - symbol: SHIB
+          contractAddress: "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE"
+          coingeckoId: shiba-inu
+- id: "10"
+  name: OP Mainnet
+  rpcs:
+    - https://mainnet.optimism.io
+    - https://optimism.publicnode.com
+    - https://optimism.gateway.tenderly.co
+    - https://optimism.rpc.subquery.network/public
+  blockExplorerUrls:
+    - https://optimistic.etherscan.io
+  feeType: eip-1559
+  l2FeeType:
+    type: op-stack
+  contracts:
+    Erc20Aggregator: "0xD322E48CFBC43faDF284FB235860288544eF6C56"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: USDbC
+          coingeckoId: bridged-usd-coin-optimism
+          contractAddress: "0x7f5c764cbc14f9669b88837ca1490cca17c31607"
+        - symbol: DAI
+          coingeckoId: dai
+          contractAddress: "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1"
+        - symbol: OP
+          coingeckoId: optimism
+          contractAddress: "0x4200000000000000000000000000000000000042"
+        - symbol: USDT
+          coingeckoId: tether
+          contractAddress: "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58"
+        - symbol: USDC
+          coingeckoId: usd-coin
+          contractAddress: "0x0b2c639c533813f4aa9d7837caf62653d097ff85"
+- id: "100"
+  name: Gnosis
+  rpcs:
+    - https://rpc.ankr.com/gnosis
+    - https://gnosis-mainnet.public.blastapi.io
+    - https://rpc.gnosischain.com/
+  blockExplorerUrls:
+    - https://blockscout.com/xdai/mainnet/
+  balancesConfig: {}
+- id: "137"
+  name: Polygon
+  rpcs:
+    - https://mempool.merkle.io/rpc/polygon/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
+    - https://polygon-rpc.com/
+    - https://rpc.ankr.com/polygon
+    - https://polygon-mainnet.public.blastapi.io
+    - https://polygon.rpc.subquery.network/public
+  blockExplorerUrls:
+    - https://polygonscan.com/
+  contracts:
+    Erc20Aggregator: "0xb1EFd1407104Cf00F7b9983C1Fa474A2702B5874"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: AAVE
+          contractAddress: "0xD6DF932A45C0f255f85145f286eA0b292B21C90B"
+          coingeckoId: aave
+        - symbol: USDC
+          contractAddress: "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359"
+          coingeckoId: usd-coin
+        - symbol: USDC
+          contractAddress: "0x4318cb63a2b8edf2de971e2f17f77097e499459d"
+          coingeckoId: usd-coin-wormhole-from-ethereum
+        - symbol: USDC.e
+          contractAddress: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+          coingeckoId: bridged-usdc-polygon-pos-bridge
+        - symbol: USDT
+          contractAddress: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+          coingeckoId: tether
+        - symbol: POL
+          contractAddress: "0x0000000000000000000000000000000000001010"
+          coingeckoId: matic-network
+          isDefault: false
+          mirrorOf: 137-evm-native
+          noDiscovery: true
+- id: "42161"
+  name: Arbitrum One
+  rpcs:
+    - https://mempool.merkle.io/rpc/arbitrum/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
+    - https://arb1.arbitrum.io/rpc
+    - https://rpc.ankr.com/arbitrum
+    - https://arbitrum.rpc.subquery.network/public
+  blockExplorerUrls:
+    - https://arbiscan.io/
+  contracts:
+    Erc20Aggregator: "0x180c2f0A65788258524Ab1e5c3c398EC46211b89"
+  balancesConfig: {}
+- id: "56"
+  name: Binance Smart Chain
+  rpcs:
+    - https://mempool.merkle.io/rpc/bsc/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
+    - https://rpc.ankr.com/bsc
+    - https://bsc-dataseed2.binance.org
+    - https://bsc-dataseed3.binance.org
+    - https://bsc-dataseed4.binance.org
+  blockExplorerUrls:
+    - https://bscscan.com
+  contracts:
+    Erc20Aggregator: "0x21741D68121db79Fd1e9eA34028D3B2e87056DBd"
+  balancesConfig: {}
+- id: "146"
+  name: Sonic Mainnet
+  rpcs:
+    - https://rpc.soniclabs.com
+    - https://sonic-rpc.publicnode.com
+  isDefault: true
+  blockExplorerUrls:
+    - https://explorer.soniclabs.com
+  contracts:
+    Erc20Aggregator: "0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: wS/stS LP
+          contractAddress: "0x374641076B68371e69D03C417DAc3E5F236c32FA"
+          logo: ./assets/tokens/lp-ws-sts.png
+        - symbol: wS/stS Farm
+          contractAddress: "0x8476F3A8DA52092e7835167AFe27835dC171C133"
+          logo: ./assets/tokens/lp-ws-sts.png
+        - symbol: atETH
+          contractAddress: "0x284d81e48fbc782aa9186a03a226690aea5cbe0e"
+          coingeckoId: atoll-eth
+        - symbol: atETH
+          contractAddress: "0x284d81e48fbc782aa9186a03a226690aea5cbe0e"
+          coingeckoId: atoll-eth
+        - symbol: BEETS
+          contractAddress: "0x2d0e0814e62d80056181f5cd932274405966e4f0"
+          coingeckoId: beets
+        - symbol: stS
+          contractAddress: "0xe5da20f15420ad15de0fa650600afc998bbe3955"
+          coingeckoId: beets-staked-sonic
+        - symbol: WETH
+          contractAddress: "0x50c42deacd8fc9773493ed674b675be577f2634b"
+          coingeckoId: bridged-wrapped-ether-sonic
+        - symbol: DERP
+          contractAddress: "0xe920d1da9a4d59126dc35996ea242d60efca1304"
+          coingeckoId: derp-2
+        - symbol: EQUAL
+          contractAddress: "0xddf26b42c1d903de8962d3f79a74a501420d5f19"
+          coingeckoId: equalizer-on-sonic
+        - symbol: ECO
+          contractAddress: "0x7a08bf5304094ca4c7b4132ef62b5edc4a3478b7"
+          coingeckoId: fantom-eco-2
+        - symbol: fSONIC
+          contractAddress: "0x05e31a691405d06708a355c029599c12d5da8b28"
+          coingeckoId: fantomsonicinu-2
+        - symbol: FS
+          contractAddress: "0xbc0d0650412ef353d672c0bbd12efff90591b251"
+          coingeckoId: fantomstarter
+        - symbol: FROQ
+          contractAddress: "0x131f5ae1cbfefe8efbdf93da23fa4d39f14a817c"
+          coingeckoId: froq
+        - symbol: GOGLZ
+          contractAddress: "0x9fdbc3f8abc05fa8f3ad3c17d2f806c1230c4564"
+          coingeckoId: googles
+        - symbol: GFI
+          contractAddress: "0xbf5899166ac476370b3117c9256b7fc45624f4ea"
+          coingeckoId: gravity-finance-2
+        - symbol: HEDGY
+          contractAddress: "0x6fb9897896fe5d05025eb43306675727887d0b7c"
+          coingeckoId: hedgy-the-hedgehog
+        - symbol: Anon
+          contractAddress: "0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c"
+          coingeckoId: heyanon
+        - symbol: INDI
+          contractAddress: "0x4eec869d847a6d13b0f6d1733c5dec0d1e741b4f"
+          coingeckoId: indi
+        - symbol: METRO
+          contractAddress: "0x71e99522ead5e21cf57f1f542dc4ad2e841f7321"
+          coingeckoId: metropolis
+        - symbol: MOON
+          contractAddress: "0x486b6fa0419b33a0c7a6e4698c231d7e2f2d5299"
+          coingeckoId: moon-bay-2
+        - symbol: NAVI
+          contractAddress: "0x6881b80ea7c858e4aeef63893e18a8a36f3682f3"
+          coingeckoId: mummy-finance
+        - symbol: OS
+          contractAddress: "0xb1e25689d55734fd3fffc939c4c3eb52dff8a794"
+          coingeckoId: origin-staked-s
+        - symbol: BRUSH
+          contractAddress: "0xe51ee9868c1f0d6cd968a8b8c8376dc2991bfe44"
+          coingeckoId: paint-swap
+        - symbol: SACRA
+          contractAddress: "0x7ad5935ea295c4e743e4f2f5b4cda951f41223c2"
+          coingeckoId: sacra
+        - symbol: SHADOW
+          contractAddress: "0x3333b97138d4b086720b5ae8a7844b1345a33333"
+          coingeckoId: shadow-2
+        - symbol: CONK
+          contractAddress: "0x63a522f6e7d5b96f7aebb74d2648545e9e14078d"
+          coingeckoId: shibapoconk
+        - symbol: $AG
+          contractAddress: "0x005851f943ee2957b1748957f26319e4f9edebc1"
+          coingeckoId: silver-2
+        - symbol: Sonic
+          contractAddress: "0x446649f0727621bdbb76644b1910be2163b62a11"
+          coingeckoId: sonic-4
+        - symbol: USDC.e
+          contractAddress: "0x29219dd400f2bf60e5a23d13be72b486d4038894"
+          coingeckoId: sonic-bridged-usdc-e-sonic
+        - symbol: SWPx
+          contractAddress: "0xa04bc7140c26fc9bb1f36b1a604c7a5a88fb0e70"
+          coingeckoId: swapx-2
+        - symbol: TAILS
+          contractAddress: "0x41211648c51acb9a5f39a93c657e894a0bdb88e4"
+          coingeckoId: tails-2
+        - symbol: THC
+          contractAddress: "0x17af1df44444ab9091622e4aa66db5bb34e51ad5"
+          coingeckoId: tinhatcat
+        - symbol: toona
+          contractAddress: "0xf4f9c50455c698834bb645089dbaa89093b93838"
+          coingeckoId: toona
+        - symbol: WAGMI
+          contractAddress: "0x0e0ce4d450c705f8a0b6dd9d5123e3df2787d16b"
+          coingeckoId: wagmi-2
+        - symbol: WHALE
+          contractAddress: "0x068e9e009fda970fa953e1f6a43d982ca991f4ba"
+          coingeckoId: whale-ecosystem
+        - symbol: wS
+          contractAddress: "0x039e2fb66102314ce7b64ce5ce3e5183bc94ad38"
+          coingeckoId: wrapped-sonic
+        - symbol: wOS
+          contractAddress: "0x9f0df7799f6fdad409300080cff680f5a23df4b1"
+          coingeckoId: wrapped-sonic-origin
+        - symbol: YOKO
+          contractAddress: "0x59524d5667b299c0813ba3c99a11c038a3908fbc"
+          coingeckoId: yoko
+- id: "787"
+  name: Acala EVM+
+  rpcs:
+    - https://eth-rpc-acala.aca-api.network
+    - https://rpc.evm.acala.network
+  blockExplorerUrls:
+    - https://blockscout.acala.network
+  substrateChainId: acala
+  preserveGasEstimate: true
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: NEMO
+          contractAddress: "0xfa904c86b73fd041d6cc2aeed9e6ec0148fd51da"
+          logo: ./assets/tokens/nemo.png
+- id: "592"
+  name: Astar EVM
+  rpcs:
+    - https://evm.astar.network
+    - https://astar-rpc.dwellir.com
+    - https://astar.api.onfinality.io/public
+  blockExplorerUrls:
+    - https://blockscout.com/astar
+  substrateChainId: astar
+  contracts:
+    Erc20Aggregator: "0x1b21934f85A53b99996613ABa4E676533bA432CF"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: PKEX
+          contractAddress: "0x1fE622E91e54D6AD00B01917351Ea6081426764A"
+          coingeckoId: polkaex
+        - symbol: USDT
+          contractAddress: "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283"
+          coingeckoId: tether
+        - symbol: BUSD
+          contractAddress: "0x4Bf769b05E832FCdc9053fFFBC78Ca889aCb5E1E"
+          coingeckoId: binance-usd
+        - symbol: USDC
+          contractAddress: "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98"
+          coingeckoId: usd-coin
+        - symbol: DAI
+          contractAddress: "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb"
+          coingeckoId: dai
+        - symbol: SDN
+          contractAddress: "0x75364D4F779d0Bd0facD9a218c67f87dD9Aff3b4"
+          coingeckoId: shiden
+        - symbol: CRV
+          contractAddress: "0x7756a83563f0f56937a6fdf668e7d9f387c0d199"
+          coingeckoId: curve-dao-token
+        - symbol: BNB
+          contractAddress: "0x7f27352D5F83Db87a5A3E00f4B07Cc2138D8ee52"
+          coingeckoId: binancecoin
+        - symbol: WETH
+          contractAddress: "0x81ECac0D6Be0550A00FF064a4f9dd2400585FE9c"
+          coingeckoId: weth
+        - symbol: WBTC
+          contractAddress: "0xad543f18cff85c77e140e3e5e3c3392f6ba9d5ca"
+          coingeckoId: wrapped-bitcoin
+        - symbol: WASTAR
+          contractAddress: "0xAeaaf0e2c81Af264101B9129C00F4440cCF0F720"
+          coingeckoId: astar
+        - symbol: ESW
+          contractAddress: "0xb361dad0cc1a03404b650a69d9a5adb5af8a531f"
+        - symbol: MATIC
+          contractAddress: "0xdd90E5E87A2081Dcf0391920868eBc2FFB81a1aF"
+          coingeckoId: matic-network
+        - symbol: AAVE
+          contractAddress: "0xfcde4a87b8b6fa58326bb462882f1778158b02f1"
+          coingeckoId: aave
+- id: "46"
+  name: Darwinia EVM
+  rpcs:
+    - https://rpc.darwinia.network
+  blockExplorerUrls:
+    - https://darwinia.subview.xyz
+  substrateChainId: darwinia
+  balancesConfig: {}
+- id: "2021"
+  name: Edgeware EVM
+  rpcs:
+    - https://mainnet2.edgewa.re/evm
+    - https://edgeware-evm.jelliedowl.net
+    - https://mainnet3.edgewa.re/evm
+    - https://mainnet4.edgewa.re/evm
+    - https://mainnet5.edgewa.re/evm
+  blockExplorerUrls:
+    - https://edgscan.live
+  substrateChainId: edgeware
+  balancesConfig: {}
+- id: "5845"
+  name: Tangle EVM
+  rpcs:
+    - https://rpc.tangle.tools
+  blockExplorerUrls:
+    - https://explorer.tangle.tools
+  substrateChainId: tangle
+- id: "1284"
+  name: ""
+  rpcs:
+    - https://rpc.api.moonbeam.network
+    - https://moonbeam-rpc.dwellir.com
+    - https://moonbeam-rpc.publicnode.com
+    - https://moonbeam.api.onfinality.io/public
+  blockExplorerUrls:
+    - https://moonbeam.moonscan.io/
+  substrateChainId: moonbeam
+  contracts:
+    Erc20Aggregator: "0x294063B3727d6eE918100693e76fdADee90c8B51"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: BEANS
+          contractAddress: "0x65b09ef8c5A096C5Fd3A80f1F7369E56eB932412"
+          coingeckoId: moonbeans
+        - symbol: madUSDC
+          contractAddress: "0x8f552a71EFE5eeFc207Bf75485b356A0b3f01eC9"
+          coingeckoId: usd-coin
+        - symbol: multiUSDC
+          contractAddress: "0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b"
+          coingeckoId: usd-coin
+        - symbol: whUSDC
+          contractAddress: "0x931715fee2d06333043d11f658c8ce934ac61d0c"
+          coingeckoId: usd-coin
+        - symbol: xcDOT
+          contractAddress: "0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080"
+          coingeckoId: polkadot
+          mirrorOf: moonbeam-substrate-assets-42259045809535163221576417993425387648-dot
+        - symbol: xcACA
+          contractAddress: "0xffffFFffa922Fef94566104a6e5A35a4fCDDAA9f"
+          coingeckoId: acala
+        - symbol: xcvGLMR
+          contractAddress: "0xFfFfFFff99dABE1a8De0EA22bAa6FD48fdE96F6c"
+        - symbol: xcPINK
+          contractAddress: "0xfFfFFfFf30478fAFBE935e466da114E14fB3563d"
+          logo: ./assets/tokens/pink.svg
+          mirrorOf: moonbeam-substrate-assets-64174511183114006009298114091987195453-pink
+        - symbol: xcDED
+          contractAddress: "0xfFffFFFf5da2d7214D268375cf8fb1715705FdC6"
+          logo: ./assets/tokens/ded.svg
+          coingeckoId: dot-is-ded
+        - symbol: xcUSDC
+          contractAddress: "0xFFfffffF7D2B0B761Af01Ca8e25242976ac0aD7D"
+          coingeckoId: usd-coin
+          mirrorOf: moonbeam-substrate-assets-166377000701797186346254371275954761085-usdc
+        - symbol: xcUSDT
+          contractAddress: "0xffffffffea09fb06d082fd1275cd48b191cbcd1d"
+          coingeckoId: tether
+          mirrorOf: moonbeam-substrate-assets-311091173110107856861649819128533077277-usdt
+- id: "1285"
+  name: ""
+  rpcs:
+    - https://rpc.api.moonriver.moonbeam.network
+    - https://moonriver-rpc.dwellir.com
+    - https://moonriver.api.onfinality.io/public
+  blockExplorerUrls:
+    - https://moonriver.moonscan.io/
+  substrateChainId: moonriver
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: BEANS
+          contractAddress: "0xC2392DD3e3fED2c8Ed9f7f0bDf6026fcd1348453"
+          coingeckoId: moonbeans
+        - symbol: USDC
+          contractAddress: "0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D"
+          coingeckoId: usd-coin
+        - symbol: xcRMRK
+          contractAddress: "0xffffffFF893264794d9d57E1E0E21E0042aF5A0A"
+          coingeckoId: rmrk
+- id: "336"
+  name: ""
+  rpcs:
+    - https://shiden-rpc.dwellir.com
+  blockExplorerUrls:
+    - https://blockscout.com/shiden
+  substrateChainId: shiden-kusama
+  balancesConfig: {}
+- id: "595"
+  name: ""
+  rpcs:
+    - https://eth-rpc-tc9.aca-staging.network
+  isTestnet: true
+  blockExplorerUrls: []
+  substrateChainId: mandala-testnet
+  preserveGasEstimate: true
+- id: "1287"
+  name: ""
+  rpcs:
+    - https://rpc.api.moonbase.moonbeam.network
+    - https://moonbeam-alpha.api.onfinality.io/public
+  isTestnet: true
+  blockExplorerUrls:
+    - https://moonbase.moonscan.io/
+  substrateChainId: moonbase-alpha-testnet
+  balancesConfig: {}
+- id: "81"
+  name: ""
+  rpcs:
+    - https://evm.shibuya.astar.network
+  isTestnet: true
+  blockExplorerUrls:
+    - https://blockscout.com/shibuya
+  substrateChainId: shibuya-testnet
+  balancesConfig: {}
+- id: "8453"
+  name: Base
+  rpcs:
+    - https://mempool.merkle.io/rpc/base/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
+    - https://mainnet.base.org/
+    - https://base.publicnode.com
+    - https://developer-access-mainnet.base.org/
+    - https://base.rpc.subquery.network/public
+  blockExplorerUrls:
+    - https://basescan.org
+  logo: https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/base.webp
+  feeType: eip-1559
+  l2FeeType:
+    type: op-stack
+  contracts:
+    Erc20Aggregator: "0xF1cD0c4f32A9f4A623A765c54c2f4f7bA36150a5"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: USDbC
+          coingeckoId: bridged-usd-coin-base
+          contractAddress: "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca"
+        - symbol: DAI
+          coingeckoId: dai
+          contractAddress: "0x50c5725949a6f0c72e6c4a641f24049a917db0cb"
+        - symbol: USDC
+          coingeckoId: usd-coin
+          contractAddress: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+        - symbol: PINK
+          contractAddress: "0x66fc31b3233c7C001bdD21Ff6E5E66fA08EF85D0"
+- id: "60808"
+  name: BOB
+  rpcs:
+    - https://rpc.gobob.xyz/
+  blockExplorerUrls:
+    - https://explorer.gobob.xyz/
+  l2FeeType:
+    type: op-stack
+  contracts:
+    Erc20Aggregator: "0xe6af6D72372Aee70523a52Ece60F26329C0dEBDA"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: WBTC
+          contractAddress: "0x03c7054bcb39f7b2e5b2c7acb37583e32d70cfa3"
+          coingeckoId: wrapped-bitcoin
+        - symbol: tBTC
+          contractAddress: "0xBBa2eF945D523C4e2608C9E1214C2Cc64D4fc2e2"
+          coingeckoId: tbtc
+        - symbol: rETH
+          contractAddress: "0xb5686c4f60904ec2bda6277d6fe1f7caa8d1b41a"
+          coingeckoId: rocket-pool-eth
+        - symbol: wstETH
+          contractAddress: "0x85008aE6198BC91aC0735CB5497CF125ddAAc528"
+        - symbol: STONE
+          contractAddress: "0x96147a9ae9a42d7da551fd2322ca15b71032f342"
+          coingeckoId: stakestone-ether
+        - symbol: USDT
+          contractAddress: "0x05d032ac25d322df992303dca074ee7392c117b9"
+          coingeckoId: tether
+        - symbol: USDC
+          contractAddress: "0xe75D0fB2C24A55cA1e3F96781a2bCC7bdba058F0"
+          coingeckoId: usd-coin
+        - symbol: DAI
+          contractAddress: "0x6c851f501a3f24e29a8e39a29591cddf09369080"
+          coingeckoId: dai
+        - symbol: eDLLR
+          contractAddress: "0xf3107eEC1e6F067552C035FD87199e1A5169CB20"
+        - symbol: eSOV
+          contractAddress: "0xba20a5e63eeEFfFA6fD365E7e540628F8fC61474"
+          coingeckoId: sovryn
+        - symbol: ALEX
+          contractAddress: "0xa669e059fdcbdfc532a2edd658eb2922799eedb8"
+- id: "10143"
+  name: Monad Testnet
+  rpcs:
+    - https://testnet-rpc.monad.xyz/
+  isTestnet: true
+  forceScan: true
+  blockExplorerUrls:
+    - https://testnet.monadexplorer.com/
+  preserveGasEstimate: true
+  contracts:
+    Erc20Aggregator: "0x951d5f07Afc1704CeAc760Fa632801674469845f"
+  balancesConfig:
+    evm-erc20:
+      tokens:
+        - symbol: WMON
+          contractAddress: "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701"
+          isDefault: false
+          logo: ./assets/tokens/monad/wmon.png
+        - symbol: aprMON
+          contractAddress: "0x508426eE8CB3154f4B418f6c3B6Ca6294D2c043c"
+          isDefault: false
+          logo: ./assets/tokens/monad/aprmon.png
+        - symbol: DAK
+          contractAddress: "0x0F0BDEbF0F83cD1EE3974779Bcb7315f9808c714"
+          isDefault: false
+          logo: ./assets/tokens/monad/dak.png
+        - symbol: YAKI
+          contractAddress: "0xfe140e1dCe99Be9F4F15d657CD9b7BF622270C50"
+          isDefault: false
+          logo: ./assets/tokens/monad/yaki.png
+        - symbol: CHOG
+          contractAddress: "0xE0590015A873bF326bd645c3E1266d4db41C4E6B"
+          isDefault: false
+          logo: ./assets/tokens/monad/chog.png
+        - symbol: gMON
+          contractAddress: "0xaEef2f6B429Cb59C9B2D7bB2141ADa993E8571c3"
+          isDefault: false
+          logo: ./assets/tokens/monad/gmon.png
+        - symbol: shMON
+          contractAddress: "0x3a98250F98Dd388C211206983453837C8365BDc1"
+          isDefault: false
+          logo: ./assets/tokens/monad/shmon.png
+        - symbol: USDC
+          contractAddress: "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea"
+          isDefault: false
+          logo: ./assets/tokens/usdc.svg
+        - symbol: sMON
+          contractAddress: "0xe1d2439b75fb9746E7Bc6cB777Ae10AA7f7ef9c5"
+          isDefault: false
+          logo: ./assets/tokens/monad/smon.svg
+        - symbol: USDT
+          contractAddress: "0x88b8E2161DEDC77EF4ab7585569D2415a1C1055D"
+          isDefault: false
+          logo: ./assets/tokens/usdt.svg
+        - symbol: BEAN
+          contractAddress: "0x268E4E24E0051EC27b3D27A95977E71cE6875a05"
+          isDefault: false
+          logo: ./assets/tokens/monad/bean.png
+        - symbol: USDC
+          contractAddress: "0x5D876D73f4441D5f2438B1A3e2A51771B337F27A"
+          isDefault: false
+          logo: ./assets/tokens/monad/usdcoin.png
+        - symbol: MOON
+          contractAddress: "0x4aa50E8208095d9594d18E8e3008ABB811125dCE"
+          isDefault: false
+          logo: ./assets/tokens/monad/moon.png
+        - symbol: USDm
+          contractAddress: "0xBdd352f339e27E07089039Ba80029f9135F6146F"
+          isDefault: false
+          logo: ./assets/tokens/monad/usdm.png
+        - symbol: WETH
+          contractAddress: "0xB5a30b0FDc5EA94A52fDc42e3E9760Cb8449Fb37"
+          isDefault: false
+          logo: ./assets/tokens/monad/weth.png
+        - symbol: muBOND
+          contractAddress: "0x0EfeD4D9fB7863ccC7bb392847C08dCd00FE9bE2"
+          isDefault: false
+          logo: ./assets/tokens/monad/mubond.svg
+        - symbol: JAI
+          contractAddress: "0xCc5B42F9d6144DFDFb6fb3987a2A916af902F5f8"
+          isDefault: false
+          logo: ./assets/tokens/monad/jai.png
+        - symbol: MONDA
+          contractAddress: "0x0C0c92FcF37Ae2CBCc512e59714Cd3a1A1cbc411"
+          isDefault: false
+          logo: ./assets/tokens/monad/monda.png
+        - symbol: MONDA
+          contractAddress: "0x0C0c92FcF37Ae2CBCc512e59714Cd3a1A1cbc411"
+          isDefault: false
+          logo: ./assets/tokens/monad/monda.png
+        - symbol: WBTC
+          contractAddress: "0xcf5a6076cfa32686c0Df13aBaDa2b40dec133F1d"
+          isDefault: false
+          logo: ./assets/tokens/monad/wbtc.png
+        - symbol: RBSD
+          contractAddress: "0x8a86d48c867b76FF74A36d3AF4d2F1E707B143eD"
+          isDefault: false
+          logo: ./assets/tokens/monad/rbsd.png
+        - symbol: MAD
+          contractAddress: "0xC8527e96c3CB9522f6E35e95C0A28feAb8144f15"
+          isDefault: false
+          logo: ./assets/tokens/monad/mad.png
+        - symbol: iceMON
+          contractAddress: "0xceB564775415B524640D9f688278490A7f3EF9cd"
+          isDefault: false
+          logo: ./assets/tokens/monad/icemon.png
+        - symbol: TED
+          contractAddress: "0x4C632c40C2DcD39C20ee7eCDd6F9743a3c7FFE6B"
+          isDefault: false
+          logo: ./assets/tokens/monad/ted.png
+        - symbol: MIST
+          contractAddress: "0xb38bb873cca844b20A9eE448a87Af3626a6e1EF5"
+          isDefault: false
+          logo: ./assets/tokens/monad/mist.png
+        - symbol: NOM
+          contractAddress: "0x43e52CBC0073Caa7c0cf6e64b576CE2D6FB14eB8"
+          isDefault: false
+          logo: ./assets/tokens/monad/nom.png
+        - symbol: HEDGE
+          contractAddress: "0x04a9d9D4AEa93F512A4c7b71993915004325ed38"
+          isDefault: false
+          logo: ./assets/tokens/monad/hedge.png
+        - symbol: WSOL
+          contractAddress: "0x5387C85A4965769f6B0Df430638a1388493486F1"
+          isDefault: false
+          logo: ./assets/tokens/known/solana.png

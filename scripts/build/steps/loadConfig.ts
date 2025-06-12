@@ -8,7 +8,7 @@ import {
   FILE_RPC_HEALTH_WEBSOCKET,
   FILE_TESTNETS_CHAINDATA,
 } from '../../shared/constants'
-import { ConfigChain } from '../../shared/types'
+import { ConfigChain } from '../../shared/types.legacy'
 import { sharedData } from './_sharedData'
 
 export const loadConfig = async () => {

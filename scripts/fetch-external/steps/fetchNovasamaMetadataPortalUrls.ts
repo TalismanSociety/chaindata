@@ -9,7 +9,7 @@ import {
   NOVASAMA_METADATA_PORTAL_CONFIG,
   PRETTIER_CONFIG,
 } from '../../shared/constants'
-import { MetadataPortalUrls } from '../../shared/types'
+import { MetadataPortalUrls } from '../../shared/types.legacy'
 
 const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   acala: 'acala',

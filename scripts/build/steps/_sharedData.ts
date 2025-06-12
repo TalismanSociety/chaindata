@@ -2,7 +2,7 @@ import type { MiniMetadata } from '@talismn/balances'
 import { Chain, EvmNetwork, Token } from '@talismn/chaindata-provider'
 
 import { WsRpcHealth } from '../../fetch-external/steps/checkWsRpcs'
-import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../../shared/types'
+import { ChainId, ConfigChain, ConfigEvmNetwork, EvmNetworkId } from '../../shared/types.legacy'
 
 export const sharedData: {
   chains: Chain[]

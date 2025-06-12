@@ -6,18 +6,10 @@ import loglevel from 'loglevel'
 
 import { fetchExternalSteps } from './fetch-external/steps'
 
+// set loglevel for @talismn/* libraries
 loglevel.setLevel('info')
 
-// import { buildSteps } from './build/steps'
-// const steps: Array<() => Promise<void>> = [
-//   // update local data
-//   ...fetchExternalSteps,
-
-//   // update pub folder (use only for local testing, on github this will be run by the build script)
-//   ...buildSteps
-// ]
-
-// wait for `@polkadot/util-crypto` to be ready (it needs to load some wasm)
+// TODO check if this is still necessary
 await cryptoWaitReady()
 
 for (const [index, executeStep] of fetchExternalSteps.entries()) {

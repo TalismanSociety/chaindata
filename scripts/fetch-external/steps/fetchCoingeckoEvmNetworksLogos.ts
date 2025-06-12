@@ -6,7 +6,7 @@ import prettier from 'prettier'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
-import { ConfigEvmNetwork } from '../../shared/types'
+import { ConfigEvmNetwork } from '../../shared/types.legacy'
 import { fetchAssetPlatforms } from '../coingecko'
 
 /**

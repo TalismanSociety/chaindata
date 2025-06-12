@@ -1,5 +1,5 @@
 import { fetchFromCoingecko } from '../shared/fetchFromCoingecko'
-import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from '../shared/types'
+import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from '../shared/types.legacy'
 
 let ASSET_PLATFORMS: CoingeckoAssetPlatform[] | null = null
 

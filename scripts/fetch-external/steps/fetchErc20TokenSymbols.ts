@@ -21,7 +21,7 @@ import {
   FILE_KNOWN_EVM_NETWORKS,
   PRETTIER_CONFIG,
 } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
+import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types.legacy'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 
 const IGNORED_TOKENS = [

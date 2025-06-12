@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import prettier from 'prettier'
 
 import { FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
+import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types.legacy'
 
 export const updateKnownEvmErc20TokensFromCache = async () => {
   const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))

@@ -11,7 +11,7 @@ import {
   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   PRETTIER_CONFIG,
 } from '../../shared/constants'
-import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
+import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types.legacy'
 import { networkMergeCustomizer } from '../../shared/util'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 import { uniswapV2PairAbi } from '../uniswapV2PairAbi'
