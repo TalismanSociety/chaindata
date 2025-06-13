@@ -17,7 +17,7 @@ import {
   EthNetworkConfig,
   EthNetworksConfigFileSchema,
   KnownEthNetworkConfig,
-} from '../../shared/types.v4'
+} from '../../shared/schemas'
 import { parseYamlFile } from '../../shared/util'
 import { fetchCoinDetails } from '../coingecko'
 import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'

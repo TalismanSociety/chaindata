@@ -1,6 +1,6 @@
 {
-  "name": "@talismn/chaindata",
-  "version": "0.0.1",
+  "name": "chaindata",
+  "private": true,
   "type": "module",
   "description": "A community controlled index of relay/parachain assets to suppliment on-chain data, allowing developers to easily leverage the latest parachain information when building within the polkadot ecosystem.",
   "repository": "https://github.com/TalismanSociety/chaindata.git",
@@ -14,7 +14,7 @@
   "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
   "scripts": {
     "prepare": "husky",
-    "validate-json": "prettier --write *.json",
+    "validate-json": "prettier --write *.json,*.yaml",
     "validate-schema-chains": "ajv --spec=draft2020 --allow-union-types -s schemas/json/chaindata.json -d data/chaindata.json -d data/testnets-chaindata.json",
     "validate-schema-evm-networks": "ajv --spec=draft2020 --allow-union-types -s schemas/json/evm-networks.json -d data/evm-networks.json",
     "validate-schema": "pnpm run validate-schema-chains && pnpm run validate-schema-evm-networks",
@@ -29,9 +29,11 @@
     "report-metadata-versions": "pnpm tsx scripts/report-metadata-versions.ts",
     "convert-v3-to-v4": "pnpm tsx scripts/convert-v3-to-v4.ts",
     "typecheck": "tsc --noEmit",
+    "generate-schemas": "tsx scripts/generate-schemas.ts",
     "fetch-external": "tsx scripts/fetch-external.ts",
     "build": "pnpm run validate && tsx scripts/build.ts",
-    "clean": "rm -rf pub"
+    "clean": "rm -rf pub",
+    "postinstall": "pnpm -F @talismn/chaindata build"
   },
   "dependencies": {
     "@polkadot-api/descriptors": "file:.papi/descriptors",
@@ -49,6 +51,7 @@
     "@talismn/sapi": "0.0.0-pr2043-20250613003855",
     "@talismn/crypto": "^0.1.5",
     "@talismn/scale": "0.1.2",
+    "@talismn/chaindata": "workspace:*",
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "extract-colors": "^4.2.0",

@@ -1,11 +1,10 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import prettier from 'prettier'
 import sharp from 'sharp'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
-import { ConfigEvmNetwork, EvmNetworkIconCache } from '../../shared/types.legacy'
+import { FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
+import { EvmNetworkIconCache } from '../../shared/types'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
 

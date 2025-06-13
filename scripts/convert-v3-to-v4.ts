@@ -1,22 +1,18 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 
-import { evm } from '@polkadot/types/interfaces/definitions'
-import { balances } from '@talismn/balances'
-import { Token, TokenDef } from '@talismn/chaindata-provider'
 import { stringify as yamlify } from 'yaml'
 
-import { ConfigChain, ConfigEvmNetwork } from './shared/types.legacy'
 import {
   DotBalancesConfigTypes,
   DotNetworkConfig,
-  DotNetworkConfigDef,
   DotNetworksConfigFileSchema,
   EthBalancesConfigTypes,
   EthNetworkConfig,
   EthNetworksConfigFileSchema,
   KnownEthNetworkOverrides,
   KnownEthNetworksOverridesFileSchema,
-} from './shared/types.v4'
+} from './shared/schemas'
+import { ConfigChain, ConfigEvmNetwork } from './shared/types'
 import { parseJsonFile, validate } from './shared/util'
 
 const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {

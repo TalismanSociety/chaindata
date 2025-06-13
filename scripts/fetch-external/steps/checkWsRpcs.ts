@@ -12,8 +12,8 @@ import {
   FILE_RPC_HEALTH_WEBSOCKET,
   FILE_TESTNETS_CHAINDATA,
 } from '../../shared/constants'
-import { ConfigChain } from '../../shared/types.legacy'
-import { DotNetworkConfig, DotNetworkConfigDef, DotNetworksConfigFileSchema } from '../../shared/types.v4'
+import { DotNetworkConfig, DotNetworkConfigDef, DotNetworksConfigFileSchema } from '../../shared/schemas'
+import { ConfigChain } from '../../shared/types'
 import { parseYamlFile, writeJsonFile } from '../../shared/util'
 
 export type WsRpcHealth = 'OK' | 'MEH' | 'NOK'

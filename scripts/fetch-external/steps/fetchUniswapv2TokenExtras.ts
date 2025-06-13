@@ -5,8 +5,8 @@ import {
   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   FILE_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
-import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types.legacy'
-import { EthNetworksConfigFileSchema } from '../../shared/types.v4'
+import { EthNetworksConfigFileSchema } from '../../shared/schemas'
+import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
 import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'

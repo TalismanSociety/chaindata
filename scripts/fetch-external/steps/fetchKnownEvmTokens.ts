@@ -1,5 +1,5 @@
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { KnownEthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
 

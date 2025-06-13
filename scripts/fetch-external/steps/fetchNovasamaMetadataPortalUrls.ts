@@ -1,18 +1,14 @@
-import { writeFile } from 'node:fs/promises'
-
 import { PromisePool } from '@supercharge/promise-pool'
-import prettier from 'prettier'
 import TOML from 'toml'
 
 import {
   FILE_NETWORKS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   NOVASAMA_METADATA_PORTAL_CONFIG,
-  PRETTIER_CONFIG,
 } from '../../shared/constants'
-import { MetadataPortalUrls } from '../../shared/types.legacy'
-import { DotNetworksConfigFileSchema } from '../../shared/types.v4'
-import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
+import { DotNetworksConfigFileSchema } from '../../shared/schemas'
+import { MetadataPortalUrls } from '../../shared/types'
+import { parseYamlFile, writeJsonFile } from '../../shared/util'
 
 const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   acala: 'acala',

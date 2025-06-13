@@ -2,20 +2,22 @@ import { readFileSync } from 'node:fs'
 
 import { u32, Vector } from '@polkadot-api/substrate-bindings'
 import { WsProvider } from '@polkadot/rpc-provider'
-import { Chain } from '@talismn/chaindata-provider'
+import { DotNetwork, Network } from '@talismn/chaindata'
 import { decAnyMetadata } from '@talismn/scale'
 
 import { DIR_OUTPUT } from './shared/constants'
+import { parseJsonFile } from './shared/util'
 
-const json = readFileSync(`./${DIR_OUTPUT}/chains/all.json`, 'utf-8')
-const chains = JSON.parse(json) as Chain[]
+const chains: DotNetwork[] = parseJsonFile<Network[]>(`${DIR_OUTPUT}/networks.json`).filter(
+  (n) => n.platform === 'polkadot',
+)
 
-type Result = Chain & { metadataVersions: number[] | 'timeout' }
+type Result = DotNetwork & { metadataVersions: number[] | 'timeout' }
 const results: Result[] = []
 
 console.log('%d networks', chains.length)
 
-const getProviderVersions = async (chain: Chain, provider: WsProvider): Promise<number[]> => {
+const getProviderVersions = async (chain: DotNetwork, provider: WsProvider): Promise<number[]> => {
   const timeout = setTimeout(() => {
     provider.disconnect()
   }, 11_000)
@@ -48,14 +50,14 @@ const getProviderVersions = async (chain: Chain, provider: WsProvider): Promise<
   return []
 }
 
-const getChainVersions = async (chain: Chain): Promise<number[] | 'timeout'> => {
+const getChainVersions = async (chain: DotNetwork): Promise<number[] | 'timeout'> => {
   if (!chain.rpcs?.length) {
     console.log('skipping chain without RPCs', chain.id, chain.name)
     return []
   }
 
   const provider = new WsProvider(
-    chain.rpcs.map((rpc) => rpc.url),
+    chain.rpcs,
     2_000,
     {
       Origin: 'chrome-extension://abpofhpcakjhnpklgodncneklaobppdc',

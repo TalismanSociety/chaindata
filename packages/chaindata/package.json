@@ -1,0 +1,52 @@
+{
+  "name": "@talismn/chaindata",
+  "version": "0.0.0",
+  "description": "tokens and networks information for Talisman",
+  "repository": "https://github.com/TalismanSociety/chaindata.git",
+  "bugs": {
+    "url": "https://github.com/TalismanSociety/chaindata/issues"
+  },
+  "keywords": [],
+  "author": "Talisman Devs <devs@talisman.community>",
+  "license": "GPL-3.0-only",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "clean": "rm -rf ./dist && rm -rf ./node_modules"
+  },
+  "dependencies": {
+    "zod": "^3.25.62"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true,
+    "dts": true,
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "target": "es2020"
+  }
+}

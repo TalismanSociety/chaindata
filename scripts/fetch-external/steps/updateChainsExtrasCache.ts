@@ -1,5 +1,3 @@
-import { readFile, writeFile } from 'node:fs/promises'
-
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
 import { Metadata, TypeRegistry } from '@polkadot/types'
 import { encodeAddress, xxhashAsHex } from '@polkadot/util-crypto'
@@ -7,35 +5,24 @@ import { PromisePool } from '@supercharge/promise-pool'
 import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
-import {
-  Chain,
-  ChaindataProvider,
-  ChainId,
-  EvmNetworkId,
-  IChaindataProvider,
-  TokenId,
-} from '@talismn/chaindata-provider'
+import { NetworkId, TokenId } from '@talismn/chaindata'
+import { Chain, ChaindataProvider, ChainId, EvmNetworkId, IChaindataProvider } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
-import { decAnyMetadata, toHex } from '@talismn/scale'
+import { decAnyMetadata } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
-import prettier from 'prettier'
 import { BehaviorSubject, from } from 'rxjs'
-import { Bytes, Option, u32 } from 'scale-ts'
 
 import {
-  FILE_CHAINDATA,
   FILE_CHAINS_EXTRAS_CACHE,
   FILE_NETWORKS_POLKADOT,
   FILE_RPC_HEALTH_WEBSOCKET,
-  FILE_TESTNETS_CHAINDATA,
-  PRETTIER_CONFIG,
   PROCESS_CONCURRENCY,
   RPC_REQUEST_TIMEOUT,
 } from '../../shared/constants'
 import { DeadChains } from '../../shared/DeadChains'
+import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { setTokenLogo, TokenDef } from '../../shared/setTokenLogo'
-import { ChainExtrasCache, ConfigChain } from '../../shared/types.legacy'
-import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/types.v4'
+import { ChainExtrasCache, ConfigChain } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, sendWithTimeout, writeJsonFile } from '../../shared/util'
 import { WsRpcHealth } from './checkWsRpcs'
 
@@ -83,11 +70,11 @@ const createDataFetcher =
     chainsExtrasCache,
     deadChains,
   }: {
-    chains: ConfigChain[]
+    chains: DotNetworkConfig[]
     chainsExtrasCache: ChainExtrasCache[]
     deadChains: DeadChains
   }) =>
-  async (chainId: ChainId, index: number): Promise<void> => {
+  async (chainId: NetworkId, index: number): Promise<void> => {
     console.log(`Checking for extras updates for chain ${index + 1} of ${chains.length} (${chainId})`)
 
     // fetch extras for chain
@@ -97,7 +84,7 @@ const createDataFetcher =
 
 const fetchChainExtras = async (
   chainId: ChainId,
-  chains: ConfigChain[],
+  chains: DotNetworkConfig[],
   chainsExtrasCache: ChainExtrasCache[],
   deadChains: DeadChains,
 ) => {
@@ -128,7 +115,7 @@ const fetchChainExtras = async (
 }
 
 const attemptToFetchChainExtras = async (
-  chain: ConfigChain,
+  chain: DotNetworkConfig,
   rpcUrl: string,
   attempt: number,
   maxAttempts: number,

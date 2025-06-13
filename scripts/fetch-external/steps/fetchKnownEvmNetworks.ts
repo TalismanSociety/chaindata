@@ -1,19 +1,11 @@
-import { readFile, writeFile } from 'node:fs/promises'
-
 import { PromisePool } from '@supercharge/promise-pool'
-import prettier from 'prettier'
 import { Hex, hexToNumber } from 'viem'
+import { z } from 'zod/v4'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, PRETTIER_CONFIG } from '../../shared/constants'
-import {
-  ConfigEvmNetwork,
-  EthereumListsChain,
-  EvmNetworkRpcCache,
-  EvmNetworkRpcStatus,
-} from '../../shared/types.legacy'
-import { KnownEthNetworkConfig, KnownEthNetworkConfigDef, KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE } from '../../shared/constants'
+import { KnownEthNetworkConfig, KnownEthNetworkConfigDef, KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpcStatus } from '../../shared/types'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
-import { validateNetwork, validateNetworks } from '../../shared/validateNetworks'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 
@@ -255,6 +247,14 @@ const getRpcStatus = async (rpcUrl: string, chainId: string): Promise<EvmNetwork
     } else console.warn('unexpected error', chainId, rpcUrl, err)
 
     return 'unknown'
+  }
+}
+
+const validateNetwork = (network: { id: string }, networkSchema: z.ZodType<any>) => {
+  const parsable = networkSchema.safeParse(network)
+  if (!parsable.success) {
+    console.error(parsable.error.message, { issues: parsable.error.issues, network })
+    throw new Error(`Failed to parse network "${network.id}"`)
   }
 }
 

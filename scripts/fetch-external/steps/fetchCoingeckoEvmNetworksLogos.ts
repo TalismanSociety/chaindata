@@ -5,8 +5,8 @@ import path from 'node:path'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { ConfigEvmNetwork } from '../../shared/types.legacy'
-import { KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { ConfigEvmNetwork } from '../../shared/types'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { fetchAssetPlatforms } from '../coingecko'
 

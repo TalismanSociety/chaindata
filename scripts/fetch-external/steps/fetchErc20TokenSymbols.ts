@@ -1,7 +1,3 @@
-import { readFile, writeFile } from 'node:fs/promises'
-
-import type { EvmErc20Token } from '@talismn/chaindata-provider'
-import prettier from 'prettier'
 import {
   Abi,
   BaseError,
@@ -16,15 +12,13 @@ import {
 
 import { cleanupString } from '../../shared/cleanupString'
 import {
-  FILE_EVM_NETWORKS,
   FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_NETWORKS,
   FILE_NETWORKS_ETHEREUM,
-  PRETTIER_CONFIG,
 } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types.legacy'
-import { EthNetworkConfig, KnownEthNetworkConfig } from '../../shared/types.v4'
-import { parseJsonFile, parseYamlFile } from '../../shared/util'
+import { EthNetworkConfig, KnownEthNetworkConfig } from '../../shared/schemas'
+import { Erc20TokenCache } from '../../shared/types'
+import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 
 const IGNORED_TOKENS = [
@@ -240,11 +234,5 @@ export const fetchErc20TokenSymbols = async () => {
     return a.contractAddress.localeCompare(b.contractAddress)
   })
 
-  await writeFile(
-    FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
-    await prettier.format(JSON.stringify(tokensCache, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, tokensCache)
 }

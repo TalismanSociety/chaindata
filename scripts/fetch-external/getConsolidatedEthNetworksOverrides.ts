@@ -6,7 +6,7 @@ import {
   KnownEthNetworkOverrides,
   KnownEthNetworksFileSchema,
   KnownEthNetworksOverridesFileSchema,
-} from '../shared/types.v4'
+} from '../shared/schemas'
 import { networkMergeCustomizer, parseJsonFile, parseYamlFile } from '../shared/util'
 
 export const getConsolidatedKnownEthNetworks = () => {

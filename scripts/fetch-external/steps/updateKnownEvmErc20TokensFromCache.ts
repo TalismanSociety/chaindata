@@ -1,6 +1,6 @@
 import { FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types.legacy'
-import { KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 
 export const updateKnownEvmErc20TokensFromCache = async () => {

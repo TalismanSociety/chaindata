@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "isTestnet": {
+        "type": "boolean"
+      },
+      "isDefault": {
+        "type": "boolean"
+      },
+      "forceScan": {
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "logo": {
+        "type": "string"
+      },
+      "nativeTokenId": {
+        "type": "string"
+      },
+      "nativeCurrency": {
+        "type": "object",
+        "properties": {
+          "decimals": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "symbol": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "coingeckoId": {
+            "type": "string"
+          },
+          "mirrorOf": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          }
+        }
+      },
+      "themeColor": {
+        "type": "string"
+      },
+      "blockExplorerUrls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "platform": {
+        "type": "string",
+        "const": "polkadot"
+      },
+      "isRelay": {
+        "type": "boolean"
+      },
+      "specName": {
+        "type": "string"
+      },
+      "specVersion": {
+        "type": "number"
+      },
+      "account": {
+        "type": "string",
+        "enum": ["polkadot", "ethereum"]
+      },
+      "chainspecQrUrl": {
+        "type": "string"
+      },
+      "latestMetadataQrUrl": {
+        "type": "string"
+      },
+      "overrideNativeTokenId": {
+        "type": "string"
+      },
+      "prefix": {
+        "type": "number"
+      },
+      "oldPrefix": {
+        "type": "number"
+      },
+      "rpcs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "registryTypes": {},
+      "signedExtensions": {},
+      "hasCheckMetadataHash": {
+        "type": "boolean"
+      },
+      "hasExtrinsicSignatureTypePrefix": {
+        "type": "boolean"
+      },
+      "isUnknownFeeToken": {
+        "type": "boolean"
+      },
+      "balancesConfig": {
+        "type": "object",
+        "propertyNames": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": ["substrate-assets", "substrate-psp22", "substrate-tokens", "substrate-foreignassets"]
+            },
+            {
+              "not": {}
+            }
+          ]
+        },
+        "additionalProperties": {}
+      }
+    },
+    "required": ["id", "rpcs"],
+    "additionalProperties": false
+  }
+}

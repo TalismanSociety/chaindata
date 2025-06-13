@@ -1,4 +1,4 @@
-import { DotNetworkDef, EthNetworkDef, SubTokensTokenDef, TokenDef } from '@talismn/chaindata-provider'
+import { DotNetworkDef, EthNetworkDef } from '@talismn/chaindata'
 import { z } from 'zod/v4'
 
 export const DotBalancesConfigTypes = z.enum([
@@ -8,7 +8,7 @@ export const DotBalancesConfigTypes = z.enum([
   'substrate-foreignassets',
 ])
 
-export const DotNetworkConfigDef = z.object({
+export const DotNetworkConfigDef = z.strictObject({
   ...DotNetworkDef.omit({
     relayId: true, // determine which relay by checking api.consts.parachainSystem.relayChainGenesisHash
     paraId: true, // fetch from api.query.parachainInfo.parachainId
@@ -25,7 +25,7 @@ export const DotNetworksConfigFileSchema = z.array(DotNetworkConfigDef)
 export type DotNetworkConfig = z.infer<typeof DotNetworkConfigDef>
 
 export const EthBalancesConfigTypes = z.enum(['evm-erc20', 'evm-uniswapv2'])
-export const EthNetworkConfigDef = z.object({
+export const EthNetworkConfigDef = z.strictObject({
   ...EthNetworkDef.partial().shape,
   ...EthNetworkDef.pick({ id: true, rpcs: true }).shape,
   balancesConfig: z.partialRecord(EthBalancesConfigTypes, z.any()).optional(),
@@ -33,7 +33,7 @@ export const EthNetworkConfigDef = z.object({
 export const EthNetworksConfigFileSchema = z.array(EthNetworkConfigDef)
 export type EthNetworkConfig = z.infer<typeof EthNetworkConfigDef>
 
-export const KnownEthNetworkConfigDef = z.object({
+export const KnownEthNetworkConfigDef = z.strictObject({
   ...EthNetworkDef.partial().shape,
   ...EthNetworkDef.pick({ id: true, rpcs: true }).shape,
   nativeCurrency: EthNetworkDef.shape.nativeCurrency,
@@ -44,7 +44,7 @@ export type KnownEthNetworkConfig = z.infer<typeof KnownEthNetworkConfigDef>
 
 export const KnownEthNetworksFileSchema = z.array(KnownEthNetworkConfigDef)
 
-export const KnownEthNetworkOverridesDef = z.object({
+export const KnownEthNetworkOverridesDef = z.strictObject({
   ...KnownEthNetworkConfigDef.partial().shape,
   ...KnownEthNetworkConfigDef.pick({ id: true }).shape,
   nativeCurrency: EthNetworkDef.shape.nativeCurrency.partial().optional(),
