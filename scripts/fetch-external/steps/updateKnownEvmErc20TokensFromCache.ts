@@ -1,13 +1,11 @@
-import { readFile, writeFile } from 'node:fs/promises'
-
-import prettier from 'prettier'
-
-import { FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
+import { FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types.legacy'
+import { KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { parseJsonFile, writeJsonFile } from '../../shared/util'
 
 export const updateKnownEvmErc20TokensFromCache = async () => {
-  const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
-  const erc20TokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, 'utf-8'))
+  const knownEvmNetworks = parseJsonFile<ConfigEvmNetwork[]>(FILE_KNOWN_EVM_NETWORKS)
+  const erc20TokensCache = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
 
   for (const network of knownEvmNetworks) {
     const chainId = Number(network.id)
@@ -19,19 +17,13 @@ export const updateKnownEvmErc20TokensFromCache = async () => {
           (t) =>
             t.chainId === chainId && t.contractAddress.toLowerCase() === token.contractAddress?.toLocaleLowerCase(),
         )
-        if (token.symbol === 'BEANS') console.debug('BEANS token (debug):', { token, cached })
         if (cached) {
           token.symbol = cached.symbol
           token.decimals = cached.decimals
+          token.name = token.name || cached.name // feels better to keep the name from coingecko if available
         }
       }
   }
 
-  await writeFile(
-    FILE_KNOWN_EVM_NETWORKS,
-    await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, { schema: KnownEthNetworksFileSchema, format: true })
 }

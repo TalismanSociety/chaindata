@@ -13,7 +13,8 @@ import {
   FILE_TESTNETS_CHAINDATA,
 } from '../../shared/constants'
 import { ConfigChain } from '../../shared/types.legacy'
-import { DotNetworkConfig, DotNetworkConfigDef } from '../../shared/types.v4'
+import { DotNetworkConfig, DotNetworkConfigDef, DotNetworksConfigFileSchema } from '../../shared/types.v4'
+import { parseYamlFile, writeJsonFile } from '../../shared/util'
 
 export type WsRpcHealth = 'OK' | 'MEH' | 'NOK'
 
@@ -40,7 +41,7 @@ const isMeh = (errorMessage: string) => MEH_ERROR_MESSAGES.some((msg) => errorMe
 
 export const checkWsRpcs = async () => {
   // ATM we only use websocket rpcs for substrate chains
-  const networks = parse(await readFile(FILE_NETWORKS_POLKADOT, 'utf-8')) as DotNetworkConfig[]
+  const networks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
   // const mainnets = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
   // const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
@@ -64,7 +65,7 @@ export const checkWsRpcs = async () => {
 
   const data = Object.fromEntries(res.results.sort(([a], [b]) => a.localeCompare(b)))
 
-  await writeFile(FILE_RPC_HEALTH_WEBSOCKET, JSON.stringify(data, null, 2))
+  await writeJsonFile(FILE_RPC_HEALTH_WEBSOCKET, data, { format: true })
 }
 
 const getWsRpcHealth = (wsUrl: string): Promise<WsRpcHealth> =>

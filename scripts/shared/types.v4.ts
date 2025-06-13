@@ -21,22 +21,33 @@ export const DotNetworkConfigDef = z.object({
   nativeCurrency: DotNetworkDef.shape.nativeCurrency.partial().optional(),
   balancesConfig: z.partialRecord(DotBalancesConfigTypes, z.any()).optional(),
 })
+export const DotNetworksConfigFileSchema = z.array(DotNetworkConfigDef)
 export type DotNetworkConfig = z.infer<typeof DotNetworkConfigDef>
 
-export const EthBalancesConfigTypes = z.enum(['evm-erc20', 'evm-uniswap-v2'])
-
+export const EthBalancesConfigTypes = z.enum(['evm-erc20', 'evm-uniswapv2'])
 export const EthNetworkConfigDef = z.object({
   ...EthNetworkDef.partial().shape,
-  ...EthNetworkDef.pick({ id: true, name: true, rpcs: true }).shape,
+  ...EthNetworkDef.pick({ id: true, rpcs: true }).shape,
   balancesConfig: z.partialRecord(EthBalancesConfigTypes, z.any()).optional(),
 })
+export const EthNetworksConfigFileSchema = z.array(EthNetworkConfigDef)
 export type EthNetworkConfig = z.infer<typeof EthNetworkConfigDef>
 
 export const KnownEthNetworkConfigDef = z.object({
   ...EthNetworkDef.partial().shape,
-  ...EthNetworkDef.pick({ id: true, name: true, rpcs: true }).shape,
+  ...EthNetworkDef.pick({ id: true, rpcs: true }).shape,
   nativeCurrency: EthNetworkDef.shape.nativeCurrency,
   icon: z.string().optional(),
   balancesConfig: z.partialRecord(EthBalancesConfigTypes, z.any()).optional(),
 })
 export type KnownEthNetworkConfig = z.infer<typeof KnownEthNetworkConfigDef>
+
+export const KnownEthNetworksFileSchema = z.array(KnownEthNetworkConfigDef)
+
+export const KnownEthNetworkOverridesDef = z.object({
+  ...KnownEthNetworkConfigDef.partial().shape,
+  ...KnownEthNetworkConfigDef.pick({ id: true }).shape,
+  nativeCurrency: EthNetworkDef.shape.nativeCurrency.partial().optional(),
+})
+export const KnownEthNetworksOverridesFileSchema = z.array(KnownEthNetworkOverridesDef)
+export type KnownEthNetworkOverrides = z.infer<typeof KnownEthNetworkOverridesDef>

@@ -1,14 +1,13 @@
 import { existsSync } from 'node:fs'
-import { readFile, stat, writeFile } from 'node:fs/promises'
+import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import prettier from 'prettier'
 import sharp from 'sharp'
 
-import { FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
+import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { ConfigEvmNetwork } from '../../shared/types.legacy'
-import { KnownEthNetworkConfigDef } from '../../shared/types.v4'
-import { validateNetworks } from '../../shared/validateNetworks'
+import { KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { fetchAssetPlatforms } from '../coingecko'
 
 /**
@@ -16,8 +15,7 @@ import { fetchAssetPlatforms } from '../coingecko'
  * If an image requires an update, delete the image file so its fetched again on next run.
  */
 export const fetchKnownEvmNetworksCoingeckoLogos = async () => {
-  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
-  validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
+  const knownEvmNetworks = parseJsonFile<ConfigEvmNetwork[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   const assetPlatforms = await fetchAssetPlatforms()
 
@@ -40,16 +38,17 @@ export const fetchKnownEvmNetworksCoingeckoLogos = async () => {
     }
   }
 
-  validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
+  //validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
 
   if (shouldSave) {
-    await writeFile(
-      FILE_KNOWN_EVM_NETWORKS,
-      await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
-        ...PRETTIER_CONFIG,
-        parser: 'json',
-      }),
-    )
+    await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, { schema: KnownEthNetworksFileSchema, format: true })
+    // await writeFile(
+    //   FILE_KNOWN_EVM_NETWORKS,
+    //   await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
+    //     ...PRETTIER_CONFIG,
+    //     parser: 'json',
+    //   }),
+    // )
   }
 }
 

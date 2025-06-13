@@ -15,18 +15,19 @@ export const fetchExternalSteps: Array<() => Awaited<void>> = [
   validateConfigFiles,
   // checkWsRpcs,
 
-  // fetchKnownEvmNetworks,
+  //fetchKnownEvmNetworks,
   // fetchKnownEvmNetworksCoingeckoLogos,
 
   // fetchKnownEvmTokens,
-  fetchErc20TokenSymbols,
+  // fetchErc20TokenSymbols,
+
   // updateKnownEvmErc20TokensFromCache,
 
   // // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds
   // // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
   // fetchUniswapv2TokenExtras,
 
-  // fetchKnownEvmNetworksLogos,
+  fetchKnownEvmNetworksLogos,
   // fetchCoingeckoTokensLogos,
   // fetchNovasamaMetadataPortalUrls,
   // updateChainsExtrasCache,

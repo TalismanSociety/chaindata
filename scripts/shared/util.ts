@@ -1,12 +1,14 @@
-import { PathLike, readFileSync } from 'node:fs'
+import { PathLike, readFileSync, writeFileSync } from 'node:fs'
 import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
 
 import { WsProvider } from '@polkadot/api'
 import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
+import prettier from 'prettier'
 import { parse } from 'yaml'
+import z from 'zod/v4'
 
-import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO } from './constants'
+import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO, PRETTIER_CONFIG } from './constants'
 
 // Can be used for nicer vscode syntax highlighting & auto formatting
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#raw_strings
@@ -153,10 +155,55 @@ export const networkMergeCustomizer = (objValue: any, srcValue: any, key: string
   }
 }
 
-export const parseYamlFile = <T>(filePath: string): T => {
-  return parse(readFileSync(filePath, 'utf-8')) as T
+export const parseYamlFile = <T>(filePath: string, schema?: z.ZodType<T>): T => {
+  if (!filePath.endsWith('.yaml') && !filePath.endsWith('.yml'))
+    throw new Error(`Invalid file extension for YAML file: ${filePath}`)
+
+  const data = parse(readFileSync(filePath, 'utf-8')) as T
+
+  return schema ? validate(data, schema) : data
 }
 
-export const parseJsonFile = <T>(filePath: string): T => {
-  return JSON.parse(readFileSync(filePath, 'utf-8')) as T
+export const parseJsonFile = <T>(filePath: string, schema?: z.ZodType<T>): T => {
+  if (!filePath.endsWith('.json')) throw new Error(`Invalid file extension for JSON file: ${filePath}`)
+
+  const data = JSON.parse(readFileSync(filePath, 'utf-8')) as T
+
+  return schema ? validate(data, schema) : data
+}
+
+type WriteJsonOptions = {
+  schema?: z.ZodType<any>
+  format?: boolean
+}
+
+export const writeJsonFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
+  if (!filePath.endsWith('.json')) throw new Error(`Invalid file extension for JSON file: ${filePath}`)
+
+  if (opts.schema) data = validate(data, opts.schema)
+
+  writeFileSync(filePath, opts.format ? await prettifyJson(data) : JSON.stringify(data))
+
+  console.debug(filePath, 'updated')
+}
+
+export const prettifyJson = async (data: unknown) => {
+  try {
+    return await prettier.format(JSON.stringify(data, null, 2), {
+      ...PRETTIER_CONFIG,
+      parser: 'json',
+    })
+  } catch (cause) {
+    // wrap error to prevent HUGE error messages
+    throw new Error('Failed to prettify JSON', { cause })
+  }
+}
+
+export const validate = <T>(data: unknown, schema: z.ZodType<T>): T => {
+  const result = schema.safeParse(data)
+  if (!result.success) {
+    console.error('Validation failed3:', result.error.toString(), result.error.issues[0])
+    throw new Error('Invalid data')
+  }
+  return result.data
 }

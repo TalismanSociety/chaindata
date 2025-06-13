@@ -11,7 +11,8 @@ import {
   EvmNetworkRpcCache,
   EvmNetworkRpcStatus,
 } from '../../shared/types.legacy'
-import { KnownEthNetworkConfig, KnownEthNetworkConfigDef } from '../../shared/types.v4'
+import { KnownEthNetworkConfig, KnownEthNetworkConfigDef, KnownEthNetworksFileSchema } from '../../shared/types.v4'
+import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { validateNetwork, validateNetworks } from '../../shared/validateNetworks'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
@@ -295,9 +296,7 @@ export const fetchKnownEvmNetworks = async () => {
       return evmNetwork
     })
 
-  const knownEvmNetworksRpcsCache = JSON.parse(
-    await readFile(FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, 'utf-8'),
-  ) as EvmNetworkRpcCache[]
+  const knownEvmNetworksRpcsCache = parseJsonFile<EvmNetworkRpcCache[]>(FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE)
 
   if (IGNORE_CACHE_LIST.length) {
     const itemsToDelete = knownEvmNetworksRpcsCache.filter((c) => isKnownInvalidRpcUrl(c.rpcUrl))
@@ -348,25 +347,24 @@ export const fetchKnownEvmNetworks = async () => {
     a.chainId !== b.chainId ? Number(a.chainId) - Number(b.chainId) : a.rpcUrl.localeCompare(b.rpcUrl),
   )
 
-  await writeFile(
-    FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE,
-    await prettier.format(JSON.stringify(knownEvmNetworksRpcsCache, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, knownEvmNetworksRpcsCache, { format: true })
 
-  validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
+  // validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
 
-  // sort but don't filter out networks without RPCs
-  // wallet needs their names, icons etc.
+  // // sort but don't filter out networks without RPCs
+  // // wallet needs their names, icons etc.
   const validNetworks = knownEvmNetworks.sort((a, b) => Number(a.id) - Number(b.id))
 
-  await writeFile(
-    FILE_KNOWN_EVM_NETWORKS,
-    await prettier.format(JSON.stringify(validNetworks, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, validNetworks, {
+    format: true,
+    schema: KnownEthNetworksFileSchema,
+  })
+
+  // await writeFile(
+  //   FILE_KNOWN_EVM_NETWORKS,
+  //   await prettier.format(JSON.stringify(validNetworks, null, 2), {
+  //     ...PRETTIER_CONFIG,
+  //     parser: 'json',
+  //   }),
+  // )
 }

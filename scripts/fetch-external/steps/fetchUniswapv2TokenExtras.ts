@@ -1,41 +1,30 @@
-import { readFile, writeFile } from 'node:fs/promises'
-
-import mergeWith from 'lodash/mergeWith'
-import prettier from 'prettier'
 import { BaseError, erc20Abi, TimeoutError } from 'viem'
 
 import {
   FILE_EVM_NETWORKS,
-  FILE_KNOWN_EVM_NETWORKS,
-  FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
-  PRETTIER_CONFIG,
+  FILE_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
 import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types.legacy'
-import { networkMergeCustomizer } from '../../shared/util'
+import { EthNetworksConfigFileSchema } from '../../shared/types.v4'
+import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
+import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 import { uniswapV2PairAbi } from '../uniswapV2PairAbi'
 
 export const fetchUniswapv2TokenExtras = async () => {
-  const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
-  const tokensCache: Uniswapv2TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, 'utf-8'))
-
-  const _knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
-  const knownEvmNetworksOverrides: ConfigEvmNetwork[] = JSON.parse(
-    await readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES, 'utf-8'),
-  )
-  const knownEvmNetworks = _knownEvmNetworks.map((knownEvmNetwork) => {
-    const overrides = knownEvmNetworksOverrides.find((ov) => ov.id === knownEvmNetwork.id)
-    return overrides ? mergeWith(knownEvmNetwork, overrides, networkMergeCustomizer) : knownEvmNetwork
-  })
+  // const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
+  const evmNetworks = parseYamlFile<ConfigEvmNetwork[]>(FILE_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const tokensCache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
+  const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   const networksById = Object.fromEntries(evmNetworks.map((n) => [n.id, n]))
-  const knownNetworksById = Object.fromEntries(knownEvmNetworks.map((n) => [n.id, n]))
+  const knownNetworksById = Object.fromEntries(knownEthNetworks.map((n) => [n.id, n]))
 
   // need to dedupe tokens that are registered in both knownEvmTokens and evmTokens
   const tokenDefs = new Set<string>()
   const erc20CoingeckoIdsByNetwork = new Map<string, Map<string, string>>()
-  for (const network of evmNetworks.concat(knownEvmNetworks)) {
+  for (const network of evmNetworks.concat(knownEthNetworks)) {
     ;(network.balancesConfig?.['evm-uniswapv2']?.pools ?? []).forEach((token) =>
       tokenDefs.add(`${network.id}||${token.contractAddress?.toLowerCase?.()}`),
     )
@@ -70,13 +59,15 @@ export const fetchUniswapv2TokenExtras = async () => {
     return a.contractAddress.localeCompare(b.contractAddress)
   })
 
-  await writeFile(
-    FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
-    await prettier.format(JSON.stringify(tokensCache, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, tokensCache, { format: true })
+
+  // await writeFile(
+  //   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
+  //   await prettier.format(JSON.stringify(tokensCache, null, 2), {
+  //     ...PRETTIER_CONFIG,
+  //     parser: 'json',
+  //   }),
+  // )
 }
 
 const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, contractAddress: string) =>
