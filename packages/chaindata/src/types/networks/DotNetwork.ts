@@ -1,8 +1,8 @@
 import z from 'zod/v4'
 
-import { NetworkBaseDef } from './NetworkBase'
+import { NetworkBaseSchema } from './NetworkBase'
 
-export const DotNetworkDef = NetworkBaseDef.extend({
+export const DotNetworkSchema = NetworkBaseSchema.extend({
   platform: z.literal('polkadot'),
   isRelay: z.boolean().optional(), // has paras pallet
   specName: z.string(),
@@ -22,4 +22,4 @@ export const DotNetworkDef = NetworkBaseDef.extend({
   hasExtrinsicSignatureTypePrefix: z.boolean().optional(),
   isUnknownFeeToken: z.boolean().optional(),
 })
-export type DotNetwork = z.infer<typeof DotNetworkDef>
+export type DotNetwork = z.infer<typeof DotNetworkSchema>

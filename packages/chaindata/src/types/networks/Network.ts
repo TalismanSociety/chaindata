@@ -1,11 +1,11 @@
 import z from 'zod/v4'
 
-import { DotNetworkDef } from './DotNetwork'
-import { EthNetworkDef } from './EthNetwork'
+import { DotNetworkSchema } from './DotNetwork'
+import { EthNetworkSchema } from './EthNetwork'
 
-export const NetworkDef = z.discriminatedUnion('platform', [DotNetworkDef, EthNetworkDef])
+export const NetworkSchema = z.discriminatedUnion('platform', [DotNetworkSchema, EthNetworkSchema])
 
-export type Network = z.infer<typeof NetworkDef>
+export type Network = z.infer<typeof NetworkSchema>
 
 export type NetworkId = Network['id']
 

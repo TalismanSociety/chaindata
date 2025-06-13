@@ -1,15 +1,21 @@
 import z from 'zod/v4'
 
+import { NetworkId } from '../networks'
 import { TokenBase } from './TokenBase'
+import { generateTokenId } from './utils'
 
-export const SubNativeTokenDef = TokenBase.extend({
-  type: z.literal('substrate-native'),
+const TOKEN_TYPE = 'substrate-native'
+
+export const SubNativeTokenSchema = TokenBase.extend({
+  type: z.literal(TOKEN_TYPE),
   platform: z.literal('polkadot'),
   existentialDeposit: z.string(),
 })
-export type SubNativeToken = z.infer<typeof SubNativeTokenDef>
+export type SubNativeToken = z.infer<typeof SubNativeTokenSchema>
 
-export const CustomSubNativeTokenDef = SubNativeTokenDef.extend({
+export const CustomSubNativeTokenSchema = SubNativeTokenSchema.extend({
   isCustom: z.literal(true),
 })
-export type CustomSubNativeToken = z.infer<typeof CustomSubNativeTokenDef>
+export type CustomSubNativeToken = z.infer<typeof CustomSubNativeTokenSchema>
+
+export const subNativeTokenId = (networkId: NetworkId) => generateTokenId(networkId, TOKEN_TYPE)

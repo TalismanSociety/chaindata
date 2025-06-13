@@ -14,21 +14,22 @@ import { writeChaindataIndex } from './writeChaindataIndex'
 
 export const buildSteps: Array<() => Promise<void>> = [
   cleanupOutputDir,
-  loadConfig,
+  buildNetworksPolkadot,
+  // loadConfig,
 
-  addChains,
-  mergeChainsExtras,
-  addNovasamaMetadataPortalUrls,
+  // addChains,
+  // mergeChainsExtras,
+  // addNovasamaMetadataPortalUrls,
 
-  addEvmNetworks,
-  removeInvalidErc20Tokens,
-  fixChainEvmNetworkRelations,
+  // addEvmNetworks,
+  // removeInvalidErc20Tokens,
+  // fixChainEvmNetworkRelations,
 
-  updateSortIndexes,
+  // updateSortIndexes,
 
-  applyNativeTokenOverrides,
-  setTokenLogos,
-  addThemeColors,
+  // applyNativeTokenOverrides,
+  // setTokenLogos,
+  // addThemeColors,
 
-  writeChaindataIndex,
+  // writeChaindataIndex,
 ]

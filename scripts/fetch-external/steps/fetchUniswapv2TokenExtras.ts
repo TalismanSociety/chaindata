@@ -1,10 +1,6 @@
 import { BaseError, erc20Abi, TimeoutError } from 'viem'
 
-import {
-  FILE_EVM_NETWORKS,
-  FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
-  FILE_NETWORKS_ETHEREUM,
-} from '../../shared/constants'
+import { FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, FILE_NETWORKS_ETHEREUM } from '../../shared/constants'
 import { EthNetworksConfigFileSchema } from '../../shared/schemas'
 import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'

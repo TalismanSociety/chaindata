@@ -13,7 +13,7 @@ const BalanceModuleType = z.enum([
 export type BalanceModuleType = z.infer<typeof BalanceModuleType>
 export const BalanceModuleConfig = z.partialRecord(BalanceModuleType, z.any())
 
-export const NetworkBaseDef = z.strictObject({
+export const NetworkBaseSchema = z.strictObject({
   id: z.string(),
   isTestnet: z.boolean().optional(),
   isDefault: z.boolean().optional(),
@@ -32,4 +32,4 @@ export const NetworkBaseDef = z.strictObject({
   themeColor: z.string().optional(),
   blockExplorerUrls: z.array(z.url({ protocol: /^https?$/ })).optional(),
 })
-export type NetworkBase = z.infer<typeof NetworkBaseDef>
+export type NetworkBase = z.infer<typeof NetworkBaseSchema>

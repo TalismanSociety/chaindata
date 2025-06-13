@@ -3,7 +3,7 @@ import { Hex, hexToNumber } from 'viem'
 import { z } from 'zod/v4'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE } from '../../shared/constants'
-import { KnownEthNetworkConfig, KnownEthNetworkConfigDef, KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { KnownEthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpcStatus } from '../../shared/types'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 
@@ -291,7 +291,7 @@ export const fetchKnownEvmNetworks = async () => {
       )
         evmNetwork.isTestnet = true
 
-      validateNetwork(evmNetwork, KnownEthNetworkConfigDef)
+      validateNetwork(evmNetwork, KnownEthNetworkConfigSchema)
 
       return evmNetwork
     })
