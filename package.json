@@ -15,9 +15,10 @@
   "scripts": {
     "prepare": "husky",
     "validate-json": "prettier --write *.json,*.yaml",
-    "validate-schema-chains": "ajv --spec=draft2020 --allow-union-types -s schemas/json/chaindata.json -d data/chaindata.json -d data/testnets-chaindata.json",
-    "validate-schema-evm-networks": "ajv --spec=draft2020 --allow-union-types -s schemas/json/evm-networks.json -d data/evm-networks.json",
-    "validate-schema": "pnpm run validate-schema-chains && pnpm run validate-schema-evm-networks",
+    "validate-networks-polkadot": "ajv --spec=draft2020 --allow-union-types --strict=false -s schemas/networks-polkadot.json -d data/networks-polkadot.yaml",
+    "validate-networks-ethereum": "ajv --spec=draft2020 --allow-union-types --strict=false -s schemas/networks-ethereum.json -d data/networks-ethereum.yaml",
+    "validate-known-networks-ethereum-overrides": "ajv --spec=draft2020 --allow-union-types --strict=false -s schemas/known-networks-ethereum-overrides.json -d data/known-networks-ethereum-overrides.yaml",
+    "validate-schema": "pnpm run validate-networks-polkadot && pnpm run validate-networks-ethereum && pnpm run validate-known-networks-ethereum-overrides",
     "validate": "pnpm run validate-json && pnpm run validate-schema",
     "find-missing-coingeckoIds": "tsx scripts/find-missing-coingeckoIds.ts",
     "find-pah-foreign-assets": "tsx scripts/find-pah-foreign-assets.ts",
