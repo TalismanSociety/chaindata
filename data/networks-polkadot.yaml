@@ -1,5 +1,12 @@
 - id: polkadot
   name: Polkadot
+  nativeCurrency:
+    coingeckoId: polkadot
+    logo: ./assets/tokens/dot.svg
+  blockExplorerUrls:
+    - https://polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot_metadata_latest.apng
   rpcs:
     - wss://rpc.ibp.network/polkadot
     - wss://polkadot-rpc.dwellir.com
@@ -14,15 +21,15 @@
     - wss://dot-rpc.stakeworld.io
     - wss://polkadot.public.curie.radiumblock.co/ws
     - wss://polkadot.rpc.subquery.network/public/ws
-  blockExplorerUrls:
-    - https://polkadot.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/polkadot_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: polkadot
-    logo: ./assets/tokens/dot.svg
 - id: kusama
   name: Kusama
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://kusama.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/kusama_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama_metadata_latest.apng
   rpcs:
     - wss://rpc.ibp.network/kusama
     - wss://kusama-rpc.dwellir.com
@@ -34,29 +41,28 @@
     - wss://rockx-ksm.w3node.com/polka-public-ksm/ws
     - wss://ksm-rpc.stakeworld.io
     - wss://kusama.public.curie.radiumblock.co/ws
-  blockExplorerUrls:
-    - https://kusama.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/kusama_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: kusama
-    logo: ./assets/tokens/ksm.svg
 - id: 3-dpass
   name: 3DPass
+  nativeCurrency:
+    coingeckoId: 3dpass
+    logo: ./assets/chains/3-dpass.svg
   rpcs:
     - wss://rpc.3dpass.org
     - wss://rpc2.3dpass.org
     - wss://rpc3.3dpass.org
-  blockExplorerUrls: []
-  nativeCurrency:
-    coingeckoId: 3dpass
-    logo: ./assets/chains/3-dpass.svg
 - id: aband
   name: Aband
   rpcs: []
-  blockExplorerUrls: []
 - id: acala
   name: Acala
+  nativeCurrency:
+    coingeckoId: acala
+    logo: ./assets/tokens/aca.svg
+  blockExplorerUrls:
+    - https://acala.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/acala_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/acala_metadata_latest.apng
+  oldPrefix: 10
   rpcs:
     - wss://acala-rpc.dwellir.com
     - wss://acala-rpc-0.aca-api.network
@@ -64,11 +70,6 @@
     - wss://acala-rpc-3.aca-api.network/ws
     - wss://acala.ibp.network
     - wss://acala.dotters.network
-  blockExplorerUrls:
-    - https://acala.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/acala_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/acala_metadata_latest.apng
-  oldPrefix: 10
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -200,34 +201,32 @@
           decimals: 12
           ed: '100000000000'
           onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":4}]}'
-  nativeCurrency:
-    coingeckoId: acala
-    logo: ./assets/tokens/aca.svg
 - id: acurast
   name: Acurast Canary
   rpcs:
     - wss://public-rpc.canary.acurast.com
-  blockExplorerUrls: []
 - id: ajuna
   name: Ajuna
+  nativeCurrency:
+    coingeckoId: ajuna-network-2
+  blockExplorerUrls:
+    - https://ajuna.subscan.io/
+  oldPrefix: 1328
   rpcs:
     - wss://ajuna.ibp.network
     - wss://ajuna.dotters.network
     - wss://rpc-para.ajuna.network
-  blockExplorerUrls:
-    - https://ajuna.subscan.io/
-  oldPrefix: 1328
-  nativeCurrency:
-    coingeckoId: ajuna-network-2
 - id: aleph-zero
   name: Aleph Zero
-  rpcs:
-    - wss://ws.azero.dev
-    - wss://aleph-zero-rpc.dwellir.com
+  nativeCurrency:
+    coingeckoId: aleph-zero
   blockExplorerUrls:
     - https://alephzero.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/aleph-node_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng
+  rpcs:
+    - wss://ws.azero.dev
+    - wss://aleph-zero-rpc.dwellir.com
   balancesConfig:
     substrate-psp22:
       tokens:
@@ -264,25 +263,22 @@
           contractAddress: 5DPzHtsvZHtUaGzzKqrxa2JLgpHtEaSPn9mfyNAjX12Vunts
         - symbol: sA0
           contractAddress: 5FZ35bwDiXEHdvdmRn2bfcvb2LB9K9pM1dJaSJzj3n4sDoLA
-  nativeCurrency:
-    coingeckoId: aleph-zero
 - id: altair
   name: Altair
-  rpcs:
-    - wss://fullnode.altair.centrifuge.io
+  nativeCurrency:
+    coingeckoId: altair
   blockExplorerUrls:
     - https://altair.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/altair_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/altair_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: altair
+  rpcs:
+    - wss://fullnode.altair.centrifuge.io
 - id: amplitude
   name: Amplitude
-  rpcs:
-    - wss://rpc-amplitude.pendulumchain.tech
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/amplitude_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/amplitude_metadata_latest.apng
+  rpcs:
+    - wss://rpc-amplitude.pendulumchain.tech
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -327,34 +323,34 @@
           onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
 - id: analog-timechain
   name: Analog Timechain
-  rpcs:
-    - wss://rpc.timechain.analog.one
-  themeColor: '#9A75F7'
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.analog.one/qr/analog-timechain_specs.png
-  latestMetadataQrUrl: https://metadata.analog.one/qr/analog-timechain_metadata_latest.apng
   nativeCurrency:
     decimals: 12
     symbol: ANLOG
     coingeckoId: analog
     logo: ./assets/tokens/anlog.svg
+  themeColor: '#9A75F7'
+  chainspecQrUrl: https://metadata.analog.one/qr/analog-timechain_specs.png
+  latestMetadataQrUrl: https://metadata.analog.one/qr/analog-timechain_metadata_latest.apng
+  rpcs:
+    - wss://rpc.timechain.analog.one
 - id: ares-odyssey
   name: Ares Odyssey Standalone
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: ares-protocol
+  rpcs: []
 - id: astar
   name: Astar
-  rpcs:
-    - wss://astar-rpc.dwellir.com
-    - wss://rpc.astar.network
-    - wss://astar.public.curie.radiumblock.co/ws
+  nativeCurrency:
+    coingeckoId: astar
   blockExplorerUrls:
     - https://astar.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/astar_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/astar_metadata_latest.apng
   oldPrefix: 5
+  rpcs:
+    - wss://astar-rpc.dwellir.com
+    - wss://rpc.astar.network
+    - wss://astar.public.curie.radiumblock.co/ws
   balancesConfig:
     substrate-assets:
       tokens:
@@ -407,28 +403,30 @@
           symbol: PINK
         - assetId: '18446744073709551641'
           symbol: GAME
-  nativeCurrency:
-    coingeckoId: astar
 - id: autonomys
   name: Autonomys
-  rpcs:
-    - wss://rpc.mainnet.subspace.foundation/ws
-    - wss://rpc-0.mainnet.autonomys.xyz/ws
-  blockExplorerUrls:
-    - https://autonomys.subscan.io/
   nativeCurrency:
     decimals: 18
     symbol: AI3
     coingeckoId: autonomys-network
+  blockExplorerUrls:
+    - https://autonomys.subscan.io/
+  rpcs:
+    - wss://rpc.mainnet.subspace.foundation/ws
+    - wss://rpc-0.mainnet.autonomys.xyz/ws
 - id: avail
   name: Avail
+  nativeCurrency:
+    decimals: 18
+    symbol: AVAIL
+    coingeckoId: avail
+  blockExplorerUrls:
+    - https://avail.subscan.io/
   rpcs:
     - wss://avail-us.brightlystake.com
     - wss://avail.rpc.bountyblok.io
     - wss://avail-mainnet.public.blastapi.io/
     - wss://mainnet.avail-rpc.com/
-  blockExplorerUrls:
-    - https://avail.subscan.io/
   registryTypes:
     AppId: Compact<u32>
     DataLookupItem:
@@ -517,36 +515,33 @@
       extrinsic:
         appId: AvailCoreAppId
       payload: {}
-  nativeCurrency:
-    decimals: 18
-    symbol: AVAIL
-    coingeckoId: avail
 - id: aventus
   name: Aventus
-  rpcs:
-    - wss://public-rpc.mainnet.aventus.io
-  blockExplorerUrls: []
-  oldPrefix: 42
   nativeCurrency:
     coingeckoId: aventus
+  oldPrefix: 42
+  rpcs:
+    - wss://public-rpc.mainnet.aventus.io
 - id: bajun
   name: Bajun
-  rpcs:
-    - wss://rpc-para.bajun.network
+  nativeCurrency:
+    coingeckoId: ajuna-network
   blockExplorerUrls:
     - https://bajun.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/bajun_specs.png
-  nativeCurrency:
-    coingeckoId: ajuna-network
+  rpcs:
+    - wss://rpc-para.bajun.network
 - id: basilisk
   name: Basilisk
-  rpcs:
-    - wss://basilisk-rpc.n.dwellir.com
-    - wss://rpc.basilisk.cloud
+  nativeCurrency:
+    coingeckoId: basilisk
   blockExplorerUrls:
     - https://basilisk.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/basilisk_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/basilisk_metadata_latest.apng
+  rpcs:
+    - wss://basilisk-rpc.n.dwellir.com
+    - wss://rpc.basilisk.cloud
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -605,16 +600,16 @@
           ed: '8333333333'
           onChainId: 17
           coingeckoId: integritee
-  nativeCurrency:
-    coingeckoId: basilisk
 - id: bifrost-kusama
   name: Bifrost Kusama
-  rpcs:
-    - wss://bifrost-rpc.liebi.com/ws
-    - wss://us.bifrost-rpc.liebi.com/ws
+  nativeCurrency:
+    coingeckoId: bifrost-native-coin
   blockExplorerUrls:
     - https://bifrost-kusama.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/bifrost_specs.png
+  rpcs:
+    - wss://bifrost-rpc.liebi.com/ws
+    - wss://us.bifrost-rpc.liebi.com/ws
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -722,20 +717,20 @@
           decimals: 12
           ed: '1000000'
           onChainId: '{"type":"BLP","value":3}'
-  nativeCurrency:
-    coingeckoId: bifrost-native-coin
 - id: bifrost-polkadot
   name: Bifrost Polkadot
-  rpcs:
-    - wss://bifrost-polkadot.ibp.network
-    - wss://bifrost-polkadot.dotters.network
-    - wss://hk.p.bifrost-rpc.liebi.com/ws
-    - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
+  nativeCurrency:
+    coingeckoId: bifrost-native-coin
   blockExplorerUrls:
     - https://bifrost.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/bifrost_polkadot_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/bifrost_polkadot_metadata_latest.apng
   oldPrefix: 6
+  rpcs:
+    - wss://bifrost-polkadot.ibp.network
+    - wss://bifrost-polkadot.dotters.network
+    - wss://hk.p.bifrost-rpc.liebi.com/ws
+    - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -844,15 +839,15 @@
           decimals: 10
           ed: '1000000'
           onChainId: '{"type":"VSToken2","value":0}'
-  nativeCurrency:
-    coingeckoId: bifrost-native-coin
 - id: bitcountry-pioneer
   name: Pioneer
-  rpcs: []
+  nativeCurrency:
+    coingeckoId: metaverse-network-pioneer
   blockExplorerUrls:
     - https://pioneer.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_metadata_latest.apng
+  rpcs: []
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -876,42 +871,40 @@
           ed: '0'
           onChainId: '{"type":"MiningResource","value":"bigint:0"}'
           coingeckoId: bit
-  nativeCurrency:
-    coingeckoId: metaverse-network-pioneer
 - id: bitgreen
   name: Bitgreen
+  oldPrefix: 42
   rpcs:
     - wss://mainnet.bitgreen.org
-  blockExplorerUrls: []
-  oldPrefix: 42
 - id: bittensor
   name: Bittensor
+  nativeCurrency:
+    coingeckoId: bittensor
   rpcs:
     - wss://entrypoint-finney.opentensor.ai:443
     - wss://lite.sub.latent.to:443
-  blockExplorerUrls: []
-  nativeCurrency:
-    coingeckoId: bittensor
 - id: calamari
   name: Calamari
-  rpcs: []
+  nativeCurrency:
+    coingeckoId: calamari-network
   blockExplorerUrls:
     - https://calamari.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/calamari_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/calamari_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: calamari-network
+  rpcs: []
 - id: centrifuge-polkadot
   name: Centrifuge
-  rpcs:
-    - wss://centrifuge-rpc.dwellir.com
-    - wss://fullnode.centrifuge.io
-    - wss://rpc-centrifuge.luckyfriday.io
+  nativeCurrency:
+    coingeckoId: centrifuge
   blockExplorerUrls:
     - https://centrifuge.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/centrifuge_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/centrifuge_metadata_latest.apng
   oldPrefix: 36
+  rpcs:
+    - wss://centrifuge-rpc.dwellir.com
+    - wss://fullnode.centrifuge.io
+    - wss://rpc-centrifuge.luckyfriday.io
   balancesConfig:
     substrate-tokens:
       palletId: OrmlTokens
@@ -936,67 +929,61 @@
           ed: '1000'
           onChainId: '{"type":"ForeignAsset","value":6}'
           coingeckoId: usd-coin
-  nativeCurrency:
-    coingeckoId: centrifuge
 - id: centrifuge-standalone
   name: Centrifuge Standalone [Archived]
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: centrifuge
+  rpcs: []
 - id: cere
   name: Cere
-  rpcs:
-    - wss://archive.mainnet.cere.network/ws
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: cere-network
+  rpcs:
+    - wss://archive.mainnet.cere.network/ws
 - id: chainflip
   name: Chainflip
   rpcs:
     - wss://mainnet-archive.chainflip.io
-  blockExplorerUrls: []
 - id: chainx
   name: ChainX
-  rpcs:
-    - wss://mainnet.chainx.org/ws
-  blockExplorerUrls:
-    - https://chainx.subscan.io/
   nativeCurrency:
     coingeckoId: chainx
+  blockExplorerUrls:
+    - https://chainx.subscan.io/
+  rpcs:
+    - wss://mainnet.chainx.org/ws
 - id: clover
   name: Clover
-  rpcs: []
+  nativeCurrency:
+    coingeckoId: clover-finance
   blockExplorerUrls:
     - https://clover.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/clover-mainnet_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/clover-mainnet_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: clover-finance
+  rpcs: []
 - id: coinversation
   name: Coinversation
   rpcs: []
-  blockExplorerUrls: []
 - id: communeai
   name: Commune AI
-  rpcs:
-    - wss://commune-api-node-1.communeai.net
-  blockExplorerUrls: []
   nativeCurrency:
     symbol: COMAI
     coingeckoId: commune-ai
+  rpcs:
+    - wss://commune-api-node-1.communeai.net
 - id: competitors-club
   name: Competitors Club
   rpcs: []
-  blockExplorerUrls: []
 - id: composable-finance
   name: Composable Finance
-  rpcs:
-    - wss://composable-rpc.dwellir.com
-    - wss://rpc.composable.finance
+  nativeCurrency:
+    coingeckoId: composable-finance-layr
   blockExplorerUrls:
     - https://composable.subscan.io/
   oldPrefix: 50
+  rpcs:
+    - wss://composable-rpc.dwellir.com
+    - wss://rpc.composable.finance
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1107,208 +1094,194 @@
           ed: '0'
           onChainId: '"bigint:79228162514264337593543950486"'
           coingeckoId: usd-coin
-  nativeCurrency:
-    coingeckoId: composable-finance-layr
 - id: continuum
   name: Continuum
-  rpcs:
-    - wss://continuum-rpc-1.metaverse.network/wss
+  nativeCurrency:
+    coingeckoId: mnet-continuum
   blockExplorerUrls:
     - https://continuum.subscan.io/
   oldPrefix: 268
-  nativeCurrency:
-    coingeckoId: mnet-continuum
+  rpcs:
+    - wss://continuum-rpc-1.metaverse.network/wss
 - id: crab
   name: Darwinia Crab
-  rpcs:
-    - wss://darwiniacrab-rpc.dwellir.com
-    - wss://crab-rpc.darwinia.network/
+  nativeCurrency:
+    coingeckoId: darwinia-crab-network
   blockExplorerUrls:
     - https://crab.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/crab2_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/crab2_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: darwinia-crab-network
+  rpcs:
+    - wss://darwiniacrab-rpc.dwellir.com
+    - wss://crab-rpc.darwinia.network/
 - id: creditcoin
   name: Creditcoin
-  rpcs:
-    - wss://mainnet3.creditcoin.network
-  blockExplorerUrls:
-    - https://creditcoin.subscan.io/
   nativeCurrency:
     coingeckoId: creditcoin-2
+  blockExplorerUrls:
+    - https://creditcoin.subscan.io/
+  rpcs:
+    - wss://mainnet3.creditcoin.network
 - id: creditcoin-classic
   name: CC Enterprise
-  rpcs:
-    - wss://mainnet.creditcoin.network/ws
   blockExplorerUrls:
     - https://cc-enterprise.subscan.io/
+  rpcs:
+    - wss://mainnet.creditcoin.network/ws
 - id: crown-sterling
   name: Crown Sterling
   rpcs: []
-  blockExplorerUrls: []
 - id: crust
   name: Crust Standalone
+  nativeCurrency:
+    coingeckoId: crust-network
+  blockExplorerUrls:
+    - https://crust.subscan.io/
   rpcs:
     - wss://crust-mainnet-rpc.dwellir.com
     - wss://rpc.crust.network
     - wss://rpc.crustnetwork.app
     - wss://rpc.crustnetwork.cc
     - wss://rpc.crustnetwork.xyz
-  blockExplorerUrls:
-    - https://crust.subscan.io/
-  nativeCurrency:
-    coingeckoId: crust-network
 - id: crust-parachain
   name: Crust
+  nativeCurrency:
+    coingeckoId: crust-network
+  blockExplorerUrls:
+    - https://crust-parachain.subscan.io/
+  oldPrefix: 88
   rpcs:
     - wss://crust-parachain.crustapps.net
     - wss://crust-parachain.crustnetwork.app
     - wss://crust-parachain.crustnetwork.cc
     - wss://crust-parachain.crustnetwork.xyz
-  blockExplorerUrls:
-    - https://crust-parachain.subscan.io/
-  oldPrefix: 88
-  nativeCurrency:
-    coingeckoId: crust-network
 - id: curio
   name: Curio
   rpcs:
     - wss://parachain.curioinvest.com/
-  blockExplorerUrls: []
 - id: darwinia
   name: Darwinia
+  nativeCurrency:
+    coingeckoId: darwinia-network-native-token
+  blockExplorerUrls:
+    - https://darwinia.subscan.io/
+  oldPrefix: 18
   rpcs:
     - wss://darwinia-rpc.dwellir.com
     - wss://rpc.darwinia.network
     - wss://darwinia.rpc.subquery.network/public/ws
-  blockExplorerUrls:
-    - https://darwinia.subscan.io/
-  oldPrefix: 18
-  nativeCurrency:
-    coingeckoId: darwinia-network-native-token
 - id: debio
   name: DeBio
   rpcs: []
-  blockExplorerUrls: []
 - id: dock-pos-mainnet
   name: Dock
-  rpcs: []
-  blockExplorerUrls:
-    - https://dock.subscan.io/
   nativeCurrency:
     coingeckoId: dock
+  blockExplorerUrls:
+    - https://dock.subscan.io/
+  rpcs: []
 - id: dora-factory
   name: Dora Factory
-  rpcs: []
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
   nativeCurrency:
     coingeckoId: dora-factory
+  chainspecQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
+  rpcs: []
 - id: edgeware
   name: Edgeware
+  nativeCurrency:
+    coingeckoId: edgeware
+  blockExplorerUrls:
+    - https://edgeware.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/edgeware_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/edgeware_metadata_latest.apng
   rpcs:
     - wss://edgeware-rpc3.jelliedowl.net
     - wss://edgeware-rpc1.jelliedowl.net
     - wss://edgeware-rpc0.jelliedowl.net
     - wss://edgeware-rpc2.jelliedowl.net
-  blockExplorerUrls:
-    - https://edgeware.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/edgeware_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/edgeware_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: edgeware
 - id: efinity-polkadot
   name: Efinity
-  rpcs: []
+  nativeCurrency:
+    coingeckoId: efinity
   blockExplorerUrls:
     - https://efinity.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/efinity_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/efinity_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: efinity
+  rpcs: []
 - id: efinity-standalone
   name: Efinity Standalone
   rpcs: []
-  blockExplorerUrls: []
 - id: elysium
   name: Elysium
   rpcs:
     - wss://ws.elysiumchain.tech
-  blockExplorerUrls: []
 - id: encointer
   name: Encointer
+  nativeCurrency:
+    coingeckoId: kusama
+  blockExplorerUrls:
+    - https://encointer.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/encointer-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/encointer-parachain_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/encointer-kusama
     - wss://encointer-kusama-rpc.dwellir.com
     - wss://kusama.api.encointer.org
     - wss://encointer-kusama.dotters.network
-  blockExplorerUrls:
-    - https://encointer.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/encointer-parachain_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/encointer-parachain_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: kusama
 - id: enjin-matrixchain
   name: Enjin Matrix
+  nativeCurrency:
+    coingeckoId: enjincoin
+  blockExplorerUrls:
+    - https://matrix.subscan.io/
   rpcs:
     - wss://rpc.matrix.blockchain.enjin.io
     - wss://enjin-matrix-rpc-1.dwellir.com
-  blockExplorerUrls:
-    - https://matrix.subscan.io/
-  nativeCurrency:
-    coingeckoId: enjincoin
 - id: enjin-relay
   name: Enjin
-  rpcs:
-    - wss://rpc.relay.blockchain.enjin.io
-  blockExplorerUrls:
-    - https://enjin.subscan.io/
   nativeCurrency:
     coingeckoId: enjincoin
+  blockExplorerUrls:
+    - https://enjin.subscan.io/
+  rpcs:
+    - wss://rpc.relay.blockchain.enjin.io
 - id: ewx
   name: Energy Web X
-  rpcs:
-    - wss://public-rpc.mainnet.energywebx.com
+  nativeCurrency:
+    coingeckoId: energy-web-token
   blockExplorerUrls:
     - https://energywebx.subscan.io/
   oldPrefix: 42
-  nativeCurrency:
-    coingeckoId: energy-web-token
+  rpcs:
+    - wss://public-rpc.mainnet.energywebx.com
 - id: fragnova
   name: Fragnova
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: nova-finance
+  rpcs: []
 - id: frequency
   name: Frequency
+  oldPrefix: 90
   rpcs:
     - wss://frequency-rpc.dwellir.com
     - wss://0.rpc.frequency.xyz
     - wss://1.rpc.frequency.xyz
-  blockExplorerUrls: []
-  oldPrefix: 90
 - id: geminis
   name: Geminis
   rpcs: []
-  blockExplorerUrls: []
 - id: genshiro-kusama
   name: Genshiro
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency: {}
+  rpcs: []
 - id: genshiro-kusama-2
   name: Genshiro
   rpcs: []
-  blockExplorerUrls: []
 - id: gm
   name: GM
-  rpcs: []
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/gm_parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/gm_parachain_metadata_latest.apng
+  rpcs: []
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1323,41 +1296,40 @@
 - id: hanonycash
   name: Hanonycash
   rpcs: []
-  blockExplorerUrls: []
 - id: hashed
   name: Hashed
-  rpcs: []
-  blockExplorerUrls: []
   oldPrefix: 42
+  rpcs: []
 - id: heima
   name: Heima
+  nativeCurrency:
+    coingeckoId: heima
   rpcs:
     - wss://litentry-rpc.dwellir.com
     - wss://rpc.heima-parachain.heima.network
-  blockExplorerUrls: []
-  nativeCurrency:
-    coingeckoId: heima
 - id: humanode
   name: Humanode
-  rpcs:
-    - wss://explorer-rpc-ws.mainnet.stages.humanode.io
-  blockExplorerUrls:
-    - https://humanode.subscan.io/
   nativeCurrency:
     coingeckoId: humanode
+  blockExplorerUrls:
+    - https://humanode.subscan.io/
+  rpcs:
+    - wss://explorer-rpc-ws.mainnet.stages.humanode.io
 - id: hydradx
   name: Hydration
+  nativeCurrency:
+    coingeckoId: hydradx
+  blockExplorerUrls:
+    - https://hydration.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/polkadot-hydradx_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng
+  oldPrefix: 63
   rpcs:
     - wss://hydration-rpc.n.dwellir.com
     - wss://hydration.ibp.network
     - wss://hydration.dotters.network
     - wss://rpc.hydradx.cloud
     - wss://rpc.helikon.io/hydradx
-  blockExplorerUrls:
-    - https://hydration.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/polkadot-hydradx_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng
-  oldPrefix: 63
   isUnknownFeeToken: true
   balancesConfig:
     substrate-tokens:
@@ -1592,65 +1564,60 @@
           decimals: 9
           onChainId: '1000752'
           coingeckoId: solana
-  nativeCurrency:
-    coingeckoId: hydradx
 - id: hyperbridge-polkadot
   name: Hyperbridge
+  nativeCurrency:
+    coingeckoId: hyperbridge-2
+    logo: ./assets/tokens/bridge.svg
+  oldPrefix: 42
   rpcs:
     - wss://nexus.ibp.network
     - wss://nexus.dotters.network
     - wss://hyperbridge-nexus-rpc.blockops.network
-  blockExplorerUrls: []
-  oldPrefix: 42
-  nativeCurrency:
-    coingeckoId: hyperbridge-2
-    logo: ./assets/tokens/bridge.svg
 - id: imbue
   name: Imbue
-  rpcs: []
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/imbue_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/imbue_metadata_latest.apng
   nativeCurrency:
     coingeckoId: imbue-network
+  chainspecQrUrl: https://metadata.novasama.io/qr/imbue_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/imbue_metadata_latest.apng
+  rpcs: []
 - id: innovatorchain
   name: Innovator Chain
   rpcs: []
-  blockExplorerUrls: []
 - id: integritee-kusama
   name: Integritee Kusama
-  rpcs:
-    - wss://kusama.api.integritee.network
+  nativeCurrency:
+    coingeckoId: integritee
   blockExplorerUrls:
     - https://integritee.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/integritee-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/integritee-parachain_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: integritee
+  rpcs:
+    - wss://kusama.api.integritee.network
 - id: integritee-polkadot
   name: Integritee
+  nativeCurrency:
+    coingeckoId: integritee
+  oldPrefix: 13
   rpcs:
     - wss://integritee-rpc.dwellir.com
     - wss://polkadot.api.integritee.network
-  blockExplorerUrls: []
-  oldPrefix: 13
-  nativeCurrency:
-    coingeckoId: integritee
 - id: integritee-polkadot-2
   name: Integritee
   rpcs: []
-  blockExplorerUrls: []
 - id: interlay
   name: Interlay
-  rpcs:
-    - wss://interlay-rpc.dwellir.com
-    - wss://api.interlay.io/parachain
-    - wss://rpc-interlay.luckyfriday.io/
+  nativeCurrency:
+    coingeckoId: interlay
   blockExplorerUrls:
     - https://interlay.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/interlay-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/interlay-parachain_metadata_latest.apng
   oldPrefix: 2032
+  rpcs:
+    - wss://interlay-rpc.dwellir.com
+    - wss://api.interlay.io/parachain
+    - wss://rpc-interlay.luckyfriday.io/
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1723,69 +1690,63 @@
           decimals: 6
           ed: '0'
           onChainId: '{"type":"LendToken","value":3}'
-  nativeCurrency:
-    coingeckoId: interlay
 - id: invarch
   name: InvArch
+  oldPrefix: 117
   rpcs:
     - wss://invarch-rpc.dwellir.com
     - wss://invarch.ibp.network
     - wss://invarch.dotters.network
-  blockExplorerUrls: []
-  oldPrefix: 117
 - id: ipci
   name: DAO IPCI
-  rpcs:
-    - wss://ipci.rpc.robonomics.network
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/ipci_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/ipci_metadata_latest.apng
+  rpcs:
+    - wss://ipci.rpc.robonomics.network
 - id: jamton
   name: Jamton
   rpcs:
     - wss://rpc.jamton.network
-  blockExplorerUrls: []
 - id: joystream
   name: Joystream
+  nativeCurrency:
+    coingeckoId: joystream
+  blockExplorerUrls:
+    - https://joystream.subscan.io/
   rpcs:
     - wss://rpc.joyutils.org
     - wss://rpc.joystream.org
-  blockExplorerUrls:
-    - https://joystream.subscan.io/
-  nativeCurrency:
-    coingeckoId: joystream
 - id: jur
   name: Jur
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: jur
+  rpcs: []
 - id: kabocha
   name: Kabocha
-  rpcs:
-    - wss://kabocha.jelliedowl.net
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/kabocha-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kabocha-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kabocha.jelliedowl.net
 - id: kapex
   name: Kapex
-  rpcs: []
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/totem-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/totem-parachain_metadata_latest.apng
+  rpcs: []
 - id: karura
   name: Karura
+  nativeCurrency:
+    coingeckoId: karura
+  themeColor: '#f93d43'
+  blockExplorerUrls:
+    - https://karura.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/karura_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/karura_metadata_latest.apng
   rpcs:
     - wss://karura-rpc.dwellir.com
     - wss://karura-rpc-0.aca-api.network
     - wss://karura-rpc-1.aca-api.network
     - wss://karura-rpc-2.aca-api.network/ws
     - wss://karura-rpc-3.aca-api.network/ws
-  themeColor: '#f93d43'
-  blockExplorerUrls:
-    - https://karura.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/karura_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/karura_metadata_latest.apng
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2022,47 +1983,45 @@
           decimals: 12
           ed: '10000000000'
           onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KBTC"}}]}'
-  nativeCurrency:
-    coingeckoId: karura
 - id: khala
   name: Khala
-  rpcs: []
+  nativeCurrency:
+    coingeckoId: pha
   blockExplorerUrls:
     - https://khala.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/khala_specs.png
-  nativeCurrency:
-    coingeckoId: pha
+  rpcs: []
 - id: kico
   name: Kico
   rpcs: []
-  blockExplorerUrls: []
 - id: kico-2
   name: Kico
   rpcs: []
-  blockExplorerUrls: []
 - id: kilt-spiritnet
   name: KILT Spiritnet
-  rpcs:
-    - wss://kilt-rpc.dwellir.com
-    - wss://kilt.ibp.network
-    - wss://kilt.dotters.network
-    - wss://spiritnet.kilt.io/
+  nativeCurrency:
+    coingeckoId: kilt-protocol
   blockExplorerUrls:
     - https://spiritnet.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/kilt-spiritnet_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kilt-spiritnet_metadata_latest.apng
   oldPrefix: 38
-  nativeCurrency:
-    coingeckoId: kilt-protocol
+  rpcs:
+    - wss://kilt-rpc.dwellir.com
+    - wss://kilt.ibp.network
+    - wss://kilt.dotters.network
+    - wss://spiritnet.kilt.io/
 - id: kintsugi
   name: Kintsugi
-  rpcs:
-    - wss://kintsugi-rpc.dwellir.com
-    - wss://api-kusama.interlay.io/parachain
+  nativeCurrency:
+    coingeckoId: kintsugi
   blockExplorerUrls:
     - https://kintsugi.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/kintsugi-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kintsugi-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kintsugi-rpc.dwellir.com
+    - wss://api-kusama.interlay.io/parachain
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2135,34 +2094,37 @@
           decimals: 6
           ed: '0'
           onChainId: '{"type":"LendToken","value":3}'
-  nativeCurrency:
-    coingeckoId: kintsugi
 - id: kpron
   name: Kpron
   rpcs: []
-  blockExplorerUrls: []
 - id: kreivo
   name: Kreivo
   rpcs:
     - wss://kreivo.kippu.rocks/
     - wss://kreivo.io/
-  blockExplorerUrls: []
 - id: krest
   name: Krest
+  nativeCurrency:
+    coingeckoId: krest
+  blockExplorerUrls:
+    - https://krest.subscan.io/
   rpcs:
     - wss://wss-krest.peaq.network/
     - wss://krest.unitedbloc.com/
-  blockExplorerUrls:
-    - https://krest.subscan.io/
-  nativeCurrency:
-    coingeckoId: krest
 - id: kulupu
   name: Kulupu
-  rpcs: []
   blockExplorerUrls:
     - https://kulupu.subscan.io/
+  rpcs: []
 - id: kusama-asset-hub
   name: Kusama Asset Hub
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://assethub-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/kusama-statemine_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-statemine_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/asset-hub-kusama
     - wss://asset-hub-kusama-rpc.dwellir.com
@@ -2172,10 +2134,6 @@
     - wss://kusama-asset-hub-rpc.polkadot.io
     - wss://statemine.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/assethub
-  blockExplorerUrls:
-    - https://assethub-kusama.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/kusama-statemine_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-statemine_metadata_latest.apng
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2190,11 +2148,14 @@
         - assetId: 50000002
           symbol: dUSD
           logo: ./assets/tokens/dusd.webp
-  nativeCurrency:
-    coingeckoId: kusama
-    logo: ./assets/tokens/ksm.svg
 - id: kusama-bridge-hub
   name: Kusama Bridge Hub
+  nativeCurrency:
+    coingeckoId: kusama
+  blockExplorerUrls:
+    - https://bridgehub-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/bridgehub-kusama
     - wss://bridge-hub-kusama-rpc.dwellir.com
@@ -2204,14 +2165,15 @@
     - wss://kusama-bridge-hub-rpc.polkadot.io
     - wss://bridgehub-kusama.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/bridgehub
-  blockExplorerUrls:
-    - https://bridgehub-kusama.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: kusama
 - id: kusama-coretime
   name: Kusama Coretime
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://coretime-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_metadata_1002005.apng
   rpcs:
     - wss://sys.ibp.network/coretime-kusama
     - wss://coretime-kusama-rpc.dwellir.com
@@ -2219,15 +2181,15 @@
     - wss://rpc-coretime-kusama.luckyfriday.io
     - wss://kusama-coretime-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/coretime
-  blockExplorerUrls:
-    - https://coretime-kusama.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_metadata_1002005.apng
+- id: kusama-people
+  name: Kusama People
   nativeCurrency:
     coingeckoId: kusama
     logo: ./assets/tokens/ksm.svg
-- id: kusama-people
-  name: Kusama People
+  blockExplorerUrls:
+    - https://people-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_metadata_1002006.apng
   rpcs:
     - wss://sys.ibp.network/people-kusama
     - wss://people-kusama-rpc.dwellir.com
@@ -2235,71 +2197,58 @@
     - wss://rpc-people-kusama.luckyfriday.io
     - wss://kusama-people-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/people
-  blockExplorerUrls:
-    - https://people-kusama.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_metadata_1002006.apng
-  nativeCurrency:
-    coingeckoId: kusama
-    logo: ./assets/tokens/ksm.svg
 - id: kusari
   name: Kusari
   rpcs: []
-  blockExplorerUrls: []
 - id: kylin
   name: Kylin
-  rpcs: []
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/kylin_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kylin_metadata_latest.apng
+  rpcs: []
 - id: laos
   name: LAOS
-  rpcs:
-    - wss://rpc.laos.laosfoundation.io
-  blockExplorerUrls: []
-  oldPrefix: 42
   nativeCurrency:
     coingeckoId: laos-network
+  oldPrefix: 42
+  rpcs:
+    - wss://rpc.laos.laosfoundation.io
 - id: liberland
   name: Liberland
-  rpcs:
-    - wss://liberland-rpc.dwellir.com
-    - wss://mainnet.liberland.org
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: liberland-lld
     logo: ./assets/tokens/coingecko/liberland-lld.webp
+  rpcs:
+    - wss://liberland-rpc.dwellir.com
+    - wss://mainnet.liberland.org
 - id: listen
   name: Listen
   rpcs: []
-  blockExplorerUrls: []
 - id: litmus
   name: Litmus
-  rpcs: []
   blockExplorerUrls:
     - https://litmus.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/litmus-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/litmus-parachain_metadata_latest.apng
+  rpcs: []
 - id: logion-polkadot
   name: Logion
+  oldPrefix: 2021
   rpcs:
     - wss://para-rpc01.logion.network
     - wss://para-rpc02.logion.network
-  blockExplorerUrls: []
-  oldPrefix: 2021
 - id: loom-network
   name: Loom
   rpcs: []
-  blockExplorerUrls: []
 - id: mangata
   name: MangataX
-  rpcs:
-    - wss://kusama-archive.mangata.online
-    - wss://kusama-rpc.mangata.online
+  nativeCurrency: {}
   blockExplorerUrls:
     - https://mangatax.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/mangata-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/mangata-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kusama-archive.mangata.online
+    - wss://kusama-rpc.mangata.online
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2308,30 +2257,31 @@
           ed: '0'
           onChainId: '"0"'
           coingeckoId: mangata-x
-  nativeCurrency: {}
 - id: manta
   name: Manta
-  rpcs:
-    - wss://ws.manta.systems
+  nativeCurrency:
+    coingeckoId: manta-network
   blockExplorerUrls:
     - https://manta.subscan.io/
   oldPrefix: 77
-  nativeCurrency:
-    coingeckoId: manta-network
+  rpcs:
+    - wss://ws.manta.systems
 - id: mars
   name: Mars
   rpcs: []
-  blockExplorerUrls: []
 - id: mathchain
   name: MathChain
   rpcs: []
-  blockExplorerUrls: []
 - id: minix
   name: MiniX
   rpcs: []
-  blockExplorerUrls: []
 - id: moonbeam
   name: Moonbeam
+  nativeCurrency:
+    coingeckoId: moonbeam
+  blockExplorerUrls:
+    - https://moonbeam.subscan.io/
+  oldPrefix: 1284
   rpcs:
     - wss://moonbeam-rpc.n.dwellir.com
     - wss://moonbeam.ibp.network
@@ -2340,9 +2290,6 @@
     - wss://wss.api.moonbeam.network
     - wss://moonbeam.public.curie.radiumblock.co/ws
     - wss://moonbeam.unitedbloc.com
-  blockExplorerUrls:
-    - https://moonbeam.subscan.io/
-  oldPrefix: 1284
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2366,60 +2313,55 @@
         - assetId: '311091173110107856861649819128533077277'
           symbol: USDT
           coingeckoId: tether
-  nativeCurrency:
-    coingeckoId: moonbeam
 - id: moonriver
   name: Moonriver
+  nativeCurrency:
+    coingeckoId: moonriver
+  blockExplorerUrls:
+    - https://moonriver.subscan.io/
   rpcs:
     - wss://moonriver-rpc.dwellir.com
     - wss://wss.api.moonriver.moonbeam.network
     - wss://moonriver.public.curie.radiumblock.co/ws
     - wss://moonriver.unitedbloc.com
-  blockExplorerUrls:
-    - https://moonriver.subscan.io/
-  nativeCurrency:
-    coingeckoId: moonriver
 - id: moonsama
   name: Moonsama
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: exosama-network
+  rpcs: []
 - id: myriad
   name: Myriad
-  rpcs: []
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/appchain_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/appchain_metadata_latest.apng
   nativeCurrency:
     coingeckoId: myriad-social
+  chainspecQrUrl: https://metadata.novasama.io/qr/appchain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/appchain_metadata_latest.apng
+  rpcs: []
 - id: mythos
   name: Mythos
+  nativeCurrency:
+    coingeckoId: mythos
+  blockExplorerUrls:
+    - https://mythos.subscan.io/
+  oldPrefix: 42
   rpcs:
     - wss://rpc.helikon.io/mythos
     - wss://mythos.ibp.network
     - wss://mythos.dotters.network
     - wss://polkadot-mythos-rpc.polkadot.io
-  blockExplorerUrls:
-    - https://mythos.subscan.io/
-  oldPrefix: 42
-  nativeCurrency:
-    coingeckoId: mythos
 - id: neatcoin
   name: Neatcoin
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: neat
+  rpcs: []
 - id: neuroweb
   name: NeuroWeb
-  rpcs:
-    - wss://parachain-rpc.origin-trail.network
   blockExplorerUrls:
     - https://neuroweb.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/origintrail-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/origintrail-parachain_metadata_latest.apng
   oldPrefix: 101
+  rpcs:
+    - wss://parachain-rpc.origin-trail.network
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2429,62 +2371,57 @@
 - id: neuroweb-polkadot-2
   name: NeuroWeb
   rpcs: []
-  blockExplorerUrls: []
 - id: nftmart
   name: NFTMart
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: nftmart-token
+  rpcs: []
 - id: nodle-polkadot
   name: Nodle
-  rpcs:
-    - wss://nodle-rpc.dwellir.com
+  nativeCurrency:
+    coingeckoId: nodle-network
   blockExplorerUrls:
     - https://nodle.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/nodle-para_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/nodle-para_metadata_latest.apng
   oldPrefix: 37
-  nativeCurrency:
-    coingeckoId: nodle-network
+  rpcs:
+    - wss://nodle-rpc.dwellir.com
 - id: nodle-standalone
   name: Nodle Standalone
   rpcs: []
-  blockExplorerUrls: []
 - id: oak
   name: Oak
   rpcs: []
-  blockExplorerUrls: []
 - id: odyssey
   name: Ares Odyssey
   rpcs: []
-  blockExplorerUrls: []
 - id: omnibtc
   name: OmniBTC
   rpcs: []
-  blockExplorerUrls: []
 - id: parallel
   name: Parallel
   rpcs:
     - wss://parallel.gatotech.network
-  blockExplorerUrls: []
 - id: peaq
   name: Peaq
-  rpcs:
-    - wss://peaq-rpc.dwellir.com
-    - wss://peaq-rpc.publicnode.com
+  nativeCurrency:
+    coingeckoId: peaq-2
   blockExplorerUrls:
     - https://peaq.subscan.io/
   oldPrefix: 42
-  nativeCurrency:
-    coingeckoId: peaq-2
+  rpcs:
+    - wss://peaq-rpc.dwellir.com
+    - wss://peaq-rpc.publicnode.com
 - id: pendulum
   name: Pendulum
-  rpcs:
-    - wss://rpc-pendulum.prd.pendulumchain.tech
+  nativeCurrency:
+    coingeckoId: pendulum-chain
   blockExplorerUrls:
     - https://pendulum.subscan.io/
   oldPrefix: 56
+  rpcs:
+    - wss://rpc-pendulum.prd.pendulumchain.tech
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2578,29 +2515,29 @@
           ed: '1000'
           onChainId: '{"type":"XCM","value":12}'
           coingeckoId: axelar-bridged-usdc
-  nativeCurrency:
-    coingeckoId: pendulum-chain
 - id: phala
   name: Phala
-  rpcs:
-    - wss://phala-rpc.dwellir.com
-    - wss://phala.public.curie.radiumblock.co/ws
-    - wss://api.phala.network/ws
+  nativeCurrency:
+    coingeckoId: pha
   blockExplorerUrls:
     - https://phala.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/phala_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/phala_metadata_latest.apng
   oldPrefix: 30
-  nativeCurrency:
-    coingeckoId: pha
+  rpcs:
+    - wss://phala-rpc.dwellir.com
+    - wss://phala.public.curie.radiumblock.co/ws
+    - wss://api.phala.network/ws
 - id: picasso
   name: Picasso
-  rpcs:
-    - wss://picasso-rpc.dwellir.com
-    - wss://rpc.composablenodes.tech
+  nativeCurrency:
+    coingeckoId: picasso
   blockExplorerUrls:
     - https://picasso.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/picasso_specs.png
+  rpcs:
+    - wss://picasso-rpc.dwellir.com
+    - wss://rpc.composablenodes.tech
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2768,26 +2705,24 @@
           ed: '700000000'
           onChainId: '"bigint:2011"'
           coingeckoId: equilibrium-token
-  nativeCurrency:
-    coingeckoId: picasso
 - id: pichiu
   name: Pichiu
-  rpcs: []
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/pichiu_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/pichiu_metadata_latest.apng
+  rpcs: []
 - id: polimec
   name: Polimec
+  nativeCurrency:
+    coingeckoId: polimec
+  chainspecQrUrl: https://metadata.novasama.io/qr/polkadot-polimec-mainnet_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/polkadot-polimec-mainnet_metadata_latest.apng
+  oldPrefix: 41
   rpcs:
     - wss://polimec.ibp.network
     - wss://polimec.dotters.network
     - wss://polimec.rpc.amforc.com
     - wss://rpc.helikon.io/polimec
     - wss://rpc.polimec.org
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/polkadot-polimec-mainnet_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/polkadot-polimec-mainnet_metadata_latest.apng
-  oldPrefix: 41
   balancesConfig:
     substrate-foreignassets:
       tokens:
@@ -2800,37 +2735,41 @@
         - onChainId: '{"parents":1,"interior":{"type":"Here"}}'
           symbol: DOT
           coingeckoId: polkadot
-  nativeCurrency:
-    coingeckoId: polimec
 - id: polkadex-polkadot
   name: Polkadex
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: polkadex
+  rpcs: []
 - id: polkadex-polkadot-2
   name: Polkadex
-  rpcs:
-    - wss://polkadex-parachain-rpc.dwellir.com
-    - wss://polkadex-parachain.public.curie.radiumblock.co/ws
+  nativeCurrency:
+    coingeckoId: polkadex
   blockExplorerUrls:
     - https://polkadex-parachain.subscan.io/
   oldPrefix: 89
-  nativeCurrency:
-    coingeckoId: polkadex
+  rpcs:
+    - wss://polkadex-parachain-rpc.dwellir.com
+    - wss://polkadex-parachain.public.curie.radiumblock.co/ws
 - id: polkadex-standalone
   name: Polkadex Standalone
-  rpcs:
-    - wss://polkadex-mainnet-rpc.dwellir.com
-    - wss://polkadex.public.curie.radiumblock.co/ws
+  nativeCurrency:
+    coingeckoId: polkadex
   blockExplorerUrls:
     - https://polkadex.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/node_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/node_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: polkadex
+  rpcs:
+    - wss://polkadex-mainnet-rpc.dwellir.com
+    - wss://polkadex.public.curie.radiumblock.co/ws
 - id: polkadot-asset-hub
   name: Polkadot Asset Hub
+  nativeCurrency:
+    coingeckoId: polkadot
+    logo: ./assets/tokens/dot.svg
+  blockExplorerUrls:
+    - https://assethub-polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-statemint_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-statemint_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/statemint
     - wss://sys.dotters.network/statemint
@@ -2843,10 +2782,6 @@
     - wss://polkadot-asset-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/assethub
     - wss://statemint.public.curie.radiumblock.co/ws
-  blockExplorerUrls:
-    - https://assethub-polkadot.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-statemint_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-statemint_metadata_latest.apng
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2939,11 +2874,14 @@
         - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2051}}}'
           symbol: AJUN
           coingeckoId: ajuna-network-2
-  nativeCurrency:
-    coingeckoId: polkadot
-    logo: ./assets/tokens/dot.svg
 - id: polkadot-bridge-hub
   name: Polkadot Bridge Hub
+  nativeCurrency:
+    coingeckoId: polkadot
+  blockExplorerUrls:
+    - https://bridgehub-polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/bridgehub-polkadot
     - wss://bridge-hub-polkadot-rpc.dwellir.com
@@ -2953,14 +2891,14 @@
     - wss://polkadot-bridge-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/bridgehub
     - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
-  blockExplorerUrls:
-    - https://bridgehub-polkadot.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: polkadot
 - id: polkadot-collectives
   name: Polkadot Collectives
+  nativeCurrency:
+    coingeckoId: polkadot
+  blockExplorerUrls:
+    - https://collectives-polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-collectives_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-collectives_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/collectives-polkadot
     - wss://collectives-polkadot-rpc.dwellir.com
@@ -2970,286 +2908,261 @@
     - wss://polkadot-collectives-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/collectives
     - wss://collectives.public.curie.radiumblock.co/ws
-  blockExplorerUrls:
-    - https://collectives-polkadot.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-collectives_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-collectives_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: polkadot
 - id: polkadot-coretime
   name: Polkadot Coretime
+  blockExplorerUrls:
+    - https://coretime-polkadot.subscan.io/
   rpcs:
     - wss://sys.ibp.network/coretime-polkadot
     - wss://coretime-polkadot.dotters.network
     - wss://polkadot-coretime-rpc.polkadot.io
-  blockExplorerUrls:
-    - https://coretime-polkadot.subscan.io/
 - id: polkadot-people
   name: Polkadot People
+  blockExplorerUrls:
+    - https://people-polkadot.subscan.io/
   rpcs:
     - wss://sys.ibp.network/people-polkadot
     - wss://people-polkadot.dotters.network
     - wss://rpc-people-polkadot.luckyfriday.io
     - wss://polkadot-people-rpc.polkadot.io
     - wss://people-polkadot.public.curie.radiumblock.co/ws
-  blockExplorerUrls:
-    - https://people-polkadot.subscan.io/
 - id: polkasmith
   name: PolkaSmith
   rpcs: []
-  blockExplorerUrls: []
 - id: polymesh
   name: Polymesh
-  rpcs:
-    - wss://mainnet-rpc.polymesh.network
+  nativeCurrency:
+    coingeckoId: polymesh
+    logo: ./assets/chains/polymesh.svg
   blockExplorerUrls:
     - https://polymesh.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/polymesh_mainnet_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/polymesh_mainnet_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: polymesh
-    logo: ./assets/chains/polymesh.svg
+  rpcs:
+    - wss://mainnet-rpc.polymesh.network
 - id: qpn
   name: Quantum Portal
   rpcs: []
-  blockExplorerUrls: []
 - id: quartz
   name: Quartz
+  nativeCurrency:
+    coingeckoId: quartz
+  blockExplorerUrls:
+    - https://quartz.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/quartz_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/quartz_metadata_latest.apng
   rpcs:
     - wss://quartz-rpc.dwellir.com
     - wss://ws-quartz.unique.network
     - wss://us-ws-quartz.unique.network
     - wss://asia-ws-quartz.unique.network
     - wss://eu-ws-quartz.unique.network
-  blockExplorerUrls:
-    - https://quartz.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/quartz_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/quartz_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: quartz
 - id: riochain
   name: RioChain
   rpcs: []
-  blockExplorerUrls: []
 - id: riodefi
   name: RioDeFi
   rpcs: []
-  blockExplorerUrls: []
 - id: robonomics-kusama
   name: Robonomics Kusama
-  rpcs:
-    - wss://kusama.rpc.robonomics.network/
+  nativeCurrency:
+    coingeckoId: robonomics-network
   blockExplorerUrls:
     - https://robonomics.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/robonomics_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/robonomics_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: robonomics-network
+  rpcs:
+    - wss://kusama.rpc.robonomics.network/
 - id: robonomics-polkadot
   name: Robonomics Polkadot
-  rpcs:
-    - wss://polkadot.rpc.robonomics.network/
   blockExplorerUrls:
     - https://robonomics.subscan.io/
   oldPrefix: 32
+  rpcs:
+    - wss://polkadot.rpc.robonomics.network/
 - id: sakura
   name: Sakura
-  rpcs: []
   blockExplorerUrls:
     - https://sakura.subscan.io/
+  rpcs: []
 - id: shadow-kusama
   name: Crust Shadow
+  nativeCurrency:
+    coingeckoId: crust-storage-market
+  blockExplorerUrls:
+    - https://shadow.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/crust-collator_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/crust-collator_metadata_latest.apng
   rpcs:
     - wss://rpc-shadow.crust.network/
     - wss://rpc-shadow.crustnetwork.app
     - wss://rpc-shadow.crustnetwork.cc
     - wss://rpc-shadow.crustnetwork.xyz
-  blockExplorerUrls:
-    - https://shadow.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/crust-collator_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/crust-collator_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: crust-storage-market
 - id: shadow-kusama-2
   name: Crust Shadow
   rpcs: []
-  blockExplorerUrls: []
 - id: sherpax
   name: SherpaX
   rpcs: []
-  blockExplorerUrls: []
 - id: shiden-kusama
   name: Shiden
-  rpcs:
-    - wss://shiden-rpc.dwellir.com
-    - wss://shiden.public.curie.radiumblock.co/ws
-    - wss://rpc.shiden.astar.network
+  nativeCurrency:
+    coingeckoId: shiden
   blockExplorerUrls:
     - https://shiden.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/shiden_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/shiden_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: shiden
+  rpcs:
+    - wss://shiden-rpc.dwellir.com
+    - wss://shiden.public.curie.radiumblock.co/ws
+    - wss://rpc.shiden.astar.network
 - id: shiden-kusama-2
   name: Shiden
   rpcs: []
-  blockExplorerUrls: []
 - id: snow
   name: Snow
-  rpcs: []
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/snow_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/snow_metadata_latest.apng
+  rpcs: []
 - id: sora-kusama
   name: Sora
+  nativeCurrency:
+    coingeckoId: sora
   rpcs:
     - wss://ws.parachain-collator-2.c2.sora2.soramitsu.co.jp
-  blockExplorerUrls: []
-  nativeCurrency:
-    coingeckoId: sora
 - id: sora-polkadot
   name: Sora
-  rpcs:
-    - wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp
-  blockExplorerUrls: []
-  oldPrefix: 81
   nativeCurrency:
     coingeckoId: sora
+  oldPrefix: 81
+  rpcs:
+    - wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp
 - id: sora-standalone
   name: Sora Standalone
+  nativeCurrency:
+    coingeckoId: sora
+  blockExplorerUrls:
+    - https://sora.subscan.io/
   rpcs:
     - wss://ws.mof.sora.org
     - wss://mof2.sora.org
     - wss://mof3.sora.org
-  blockExplorerUrls:
-    - https://sora.subscan.io/
-  nativeCurrency:
-    coingeckoId: sora
 - id: spanner
   name: Spanner
   rpcs: []
-  blockExplorerUrls: []
 - id: stafi
   name: Stafi
-  rpcs: []
-  blockExplorerUrls:
-    - https://stafi.subscan.io/
   nativeCurrency:
     coingeckoId: stafi
+  blockExplorerUrls:
+    - https://stafi.subscan.io/
+  rpcs: []
 - id: subdao
   name: SubDAO
   rpcs: []
-  blockExplorerUrls: []
 - id: subgame-kusama
   name: SubGame Gamma Kusama
   rpcs: []
-  blockExplorerUrls: []
 - id: subgame-polkadot
   name: SubGame Gamma Polkadot
   rpcs: []
-  blockExplorerUrls: []
 - id: subgame-standalone
   name: SubGame
-  rpcs: []
-  blockExplorerUrls:
-    - https://subgame.subscan.io/
   nativeCurrency:
     coingeckoId: subgame
+  blockExplorerUrls:
+    - https://subgame.subscan.io/
+  rpcs: []
 - id: subsocial-polkadot
   name: Subsocial
+  nativeCurrency:
+    coingeckoId: subsocial
+  oldPrefix: 28
   rpcs:
     - wss://subsocial-rpc.dwellir.com
     - wss://para.subsocial.network
-  blockExplorerUrls: []
-  oldPrefix: 28
-  nativeCurrency:
-    coingeckoId: subsocial
 - id: subsocial-standalone
   name: Subsocial Standalone
   rpcs: []
-  blockExplorerUrls: []
 - id: subsocial-x
   name: SubsocialX
-  rpcs: []
-  blockExplorerUrls: []
   chainspecQrUrl: https://metadata.novasama.io/qr/subsocial-parachain_specs.png
+  rpcs: []
 - id: swapdex
   name: Swapdex
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: swapdex
+  rpcs: []
 - id: t-1-rn
   name: t1rn
   rpcs: []
-  blockExplorerUrls: []
 - id: t-3-rn
   name: t3rn
-  rpcs: []
-  blockExplorerUrls: []
   oldPrefix: 9935
+  rpcs: []
 - id: tanganika
   name: Tanganika
-  rpcs: []
   blockExplorerUrls:
     - https://datahighway.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/datahighway-parachain_specs.png
+  rpcs: []
 - id: tangle
   name: Tangle
+  nativeCurrency:
+    coingeckoId: tangle-network
   rpcs:
     - wss://tangle-mainnet-rpc.dwellir.com
     - wss://rpc.tangle.tools
-  blockExplorerUrls: []
-  nativeCurrency:
-    coingeckoId: tangle-network
 - id: ternoa
   name: Ternoa
-  rpcs:
-    - wss://mainnet.ternoa.network
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/mainnet_specs.png
   nativeCurrency:
     coingeckoId: coin-capsule
+  chainspecQrUrl: https://metadata.novasama.io/qr/mainnet_specs.png
+  rpcs:
+    - wss://mainnet.ternoa.network
 - id: thebifrost-mainnet
   name: The Bifrost
-  rpcs: []
-  blockExplorerUrls: []
   nativeCurrency:
     coingeckoId: bifrost
+  rpcs: []
 - id: tinker
   name: InvArch Tinkernet
-  rpcs: []
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/tinkernet_node_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/tinkernet_node_metadata_latest.apng
   nativeCurrency:
     coingeckoId: tinkernet
+  chainspecQrUrl: https://metadata.novasama.io/qr/tinkernet_node_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/tinkernet_node_metadata_latest.apng
+  rpcs: []
 - id: torus
   name: Torus
   rpcs:
     - wss://api.torus.network
-  blockExplorerUrls: []
 - id: trustbase
   name: TrustBase
   rpcs: []
-  blockExplorerUrls: []
 - id: turing
   name: Turing
-  rpcs:
-    - wss://turing-rpc.dwellir.com
+  nativeCurrency:
+    coingeckoId: turing-network
   blockExplorerUrls:
     - https://turing.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/turing_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/turing_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: turing-network
+  rpcs:
+    - wss://turing-rpc.dwellir.com
 - id: uniarts
   name: UniArts
-  rpcs: []
   blockExplorerUrls:
     - https://uniarts.subscan.io/
+  rpcs: []
 - id: unique
   name: Unique
+  nativeCurrency:
+    coingeckoId: unique-network
+  blockExplorerUrls:
+    - https://unique.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/unique_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/unique_metadata_latest.apng
+  oldPrefix: 7391
   rpcs:
     - wss://unique-rpc.dwellir.com
     - wss://unique.ibp.network
@@ -3258,47 +3171,34 @@
     - wss://us-ws.unique.network
     - wss://asia-ws.unique.network
     - wss://eu-ws.unique.network
-  blockExplorerUrls:
-    - https://unique.subscan.io/
-  chainspecQrUrl: https://metadata.novasama.io/qr/unique_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/unique_metadata_latest.apng
-  oldPrefix: 7391
-  nativeCurrency:
-    coingeckoId: unique-network
 - id: unitnetwork
   name: UnitNetwork
   rpcs: []
-  blockExplorerUrls: []
 - id: unorthodox
   name: Unorthodox
   rpcs: []
-  blockExplorerUrls: []
 - id: vara
   name: Vara
-  rpcs:
-    - wss://rpc.vara.network
-  blockExplorerUrls:
-    - https://vara.subscan.io/
   nativeCurrency:
     coingeckoId: vara-network
+  blockExplorerUrls:
+    - https://vara.subscan.io/
+  rpcs:
+    - wss://rpc.vara.network
 - id: vtb
   name: Vtb
   rpcs:
     - wss://substratenode.vtbcfoundation.org/explorer
-  blockExplorerUrls: []
 - id: watr
   name: Watr
   rpcs: []
-  blockExplorerUrls: []
 - id: westlake
   name: Westlake
   rpcs: []
-  blockExplorerUrls: []
 - id: xode
   name: Xode
   rpcs:
     - wss://rpcnodea01.xode.net/n7yoxCmcIrCF6VziCcDmYTwL8R03a/rpc
-  blockExplorerUrls: []
   balancesConfig:
     substrate-assets:
       tokens:
@@ -3323,27 +3223,27 @@
           logo: ./assets/tokens/xode-substrate-assets-9-don.svg
 - id: xxnetwork
   name: XX Network
+  nativeCurrency:
+    coingeckoId: xxcoin
+  chainspecQrUrl: https://metadata.novasama.io/qr/xxnetwork_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng
   rpcs:
     - wss://rpc.xx.network/
     - wss://xxnetwork-rpc.dwellir.com/
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.novasama.io/qr/xxnetwork_specs.png
-  latestMetadataQrUrl: https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng
-  nativeCurrency:
-    coingeckoId: xxcoin
 - id: yerba
   name: Yerba
   rpcs: []
-  blockExplorerUrls: []
 - id: zeitgeist
   name: Zeitgeist
-  rpcs:
-    - wss://zeitgeist.api.onfinality.io/public-ws
+  nativeCurrency:
+    coingeckoId: zeitgeist
   blockExplorerUrls:
     - https://zeitgeist.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/zeitgeist_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/zeitgeist_metadata_latest.apng
   oldPrefix: 73
+  rpcs:
+    - wss://zeitgeist.api.onfinality.io/public-ws
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -3392,12 +3292,9 @@
           ed: '1295001295'
           onChainId: '{"type":"ForeignAsset","value":11}'
           coingeckoId: bifrost-voucher-astr
-  nativeCurrency:
-    coingeckoId: zeitgeist
 - id: zero
   name: ZERO
   rpcs: []
-  blockExplorerUrls: []
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -3419,7 +3316,12 @@
           ed: '0'
           onChainId: '{"type":"Token","value":{"type":"ZERO"}}'
 - id: westend-testnet
+  isTestnet: true
   name: Westend
+  blockExplorerUrls:
+    - https://westend.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/westend_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/westend_metadata_latest.apng
   rpcs:
     - wss://rpc.ibp.network/westend
     - wss://westend-rpc.dwellir.com
@@ -3427,97 +3329,83 @@
     - wss://westend.dotters.network
     - wss://westend-rpc.polkadot.io
     - wss://westend.public.curie.radiumblock.co/ws
-  isTestnet: true
-  blockExplorerUrls:
-    - https://westend.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/westend_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/westend_metadata_latest.apng
 - id: 3-dpass-testnet
+  isTestnet: true
   name: 3DPass Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: ajuna-testnet
+  isTestnet: true
   name: Ajuna Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: aleph-zero-testnet
+  isTestnet: true
   name: Aleph Zero Testnet
+  blockExplorerUrls:
+    - https://alephzero-testnet.subscan.io/
   rpcs:
     - wss://aleph-zero-testnet-rpc.dwellir.com
     - wss://ws.test.azero.dev
-  isTestnet: true
-  blockExplorerUrls:
-    - https://alephzero-testnet.subscan.io/
 - id: allfeat-testnet
-  name: Melodie | Allfeat Testnet
-  rpcs:
-    - wss://melodie-rpc.allfeat.io
   isTestnet: true
-  themeColor: '#ff4a5f'
-  blockExplorerUrls: []
+  name: Melodie | Allfeat Testnet
   nativeCurrency:
     decimals: 12
     symbol: MEL
-- id: analog-testnet
-  name: Analog Testnet
+  themeColor: '#ff4a5f'
   rpcs:
-    - wss://rpc.testnet.analog.one
+    - wss://melodie-rpc.allfeat.io
+- id: analog-testnet
   isTestnet: true
-  themeColor: '#5C3FF7'
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.analog.one/qr/analog-testnet_specs.png
-  latestMetadataQrUrl: https://metadata.analog.one/qr/analog-testnet_metadata_latest.apng
+  name: Analog Testnet
   nativeCurrency:
     decimals: 12
     symbol: TANLOG
     logo: ./assets/tokens/tanlog.svg
+  themeColor: '#5C3FF7'
+  chainspecQrUrl: https://metadata.analog.one/qr/analog-testnet_specs.png
+  latestMetadataQrUrl: https://metadata.analog.one/qr/analog-testnet_metadata_latest.apng
+  rpcs:
+    - wss://rpc.testnet.analog.one
 - id: arctic-testnet-rococo
+  isTestnet: true
   name: Arctic
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: arctic-testnet-standalone
-  name: Arctic
-  rpcs: []
   isTestnet: true
+  name: Arctic
   blockExplorerUrls:
     - https://arctic.subscan.io/
+  rpcs: []
 - id: ares-gladios-testnet
+  isTestnet: true
   name: Ares Gladios
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: argon-testnet
+  isTestnet: true
   name: Argon
   rpcs:
     - wss://rpc.testnet.argonprotocol.org
-  isTestnet: true
-  blockExplorerUrls: []
 - id: autonomys-taurus-evm-testnet
+  isTestnet: true
   name: Autonomys Taurus EVM
   rpcs:
     - wss://auto-evm.taurus.autonomys.xyz/ws
-  isTestnet: true
-  blockExplorerUrls: []
 - id: autonomys-taurus-testnet
-  name: Autonomys Taurus Testnet
-  rpcs:
-    - wss://rpc-0.taurus.subspace.network/ws
-    - wss://rpc-1.taurus.subspace.network/ws
   isTestnet: true
-  blockExplorerUrls: []
+  name: Autonomys Taurus Testnet
   nativeCurrency:
     decimals: 18
     symbol: tAI3
-- id: avail-turing-testnet
-  name: Avail Turing Testnet
   rpcs:
-    - wss://turing-rpc.avail.so/ws
+    - wss://rpc-0.taurus.subspace.network/ws
+    - wss://rpc-1.taurus.subspace.network/ws
+- id: avail-turing-testnet
   isTestnet: true
+  name: Avail Turing Testnet
   blockExplorerUrls:
     - https://avail-turing.subscan.io/
+  rpcs:
+    - wss://turing-rpc.avail.so/ws
   registryTypes:
     AppId: Compact<u32>
     DataLookupItem:
@@ -3607,405 +3495,350 @@
         appId: AvailCoreAppId
       payload: {}
 - id: bifrost-testnet
-  name: Bifrost Testnet
-  rpcs: []
   isTestnet: true
+  name: Bifrost Testnet
   blockExplorerUrls:
     - https://bifrost-testnet.subscan.io/
+  rpcs: []
 - id: bitcountry-testnet
+  isTestnet: true
   name: Tewai
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: bittensor-testnet
+  isTestnet: true
   name: Bittensor Testnet
   rpcs:
     - wss://test.chain.opentensor.ai:443
-  isTestnet: true
-  blockExplorerUrls: []
 - id: brainstorm-testnet
+  isTestnet: true
   name: InvArch Brainstorm
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: cere-testnet
+  isTestnet: true
   name: Cere Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: cess-testnet
+  isTestnet: true
   name: Cess
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: chainflip-testnet
+  isTestnet: true
   name: Chainflip Testnet
   rpcs:
     - wss://archive.perseverance.chainflip.io
-  isTestnet: true
-  blockExplorerUrls: []
 - id: chainoli-testnet
+  isTestnet: true
   name: Oli
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: charcoal-testnet
+  isTestnet: true
   name: Charcoal
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: clover-testnet
-  name: Clover Testnet
-  rpcs: []
   isTestnet: true
+  name: Clover Testnet
   blockExplorerUrls:
     - https://clover-testnet.subscan.io/
+  rpcs: []
 - id: creditcoin-classic-testnet
-  name: CC Enterprise Testnet
-  rpcs:
-    - wss://rpc.testnet.creditcoin.network/ws
   isTestnet: true
+  name: CC Enterprise Testnet
   blockExplorerUrls:
     - https://cc-enterprise-testnet.subscan.io/
-- id: creditcoin-testnet
-  name: Creditcoin Testnet
   rpcs:
-    - wss://rpc.cc3-testnet.creditcoin.network/ws
+    - wss://rpc.testnet.creditcoin.network/ws
+- id: creditcoin-testnet
   isTestnet: true
+  name: Creditcoin Testnet
   blockExplorerUrls:
     - https://creditcoin3-testnet.subscan.io/
+  rpcs:
+    - wss://rpc.cc3-testnet.creditcoin.network/ws
 - id: crust-maxwell-testnet
+  isTestnet: true
   name: Crust Maxwell
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: curio-testnet
+  isTestnet: true
   name: Curio Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: dancebox
+  isTestnet: true
   name: Dancebox
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: dancelight-testnet
-  name: Dancelight
-  rpcs:
-    - wss://dancelight.tanssi-api.network
   isTestnet: true
+  name: Dancelight
   blockExplorerUrls:
     - https://dancelight.subscan.io/
+  rpcs:
+    - wss://dancelight.tanssi-api.network
 - id: datahighway-testnet
+  isTestnet: true
   name: Spreehafen
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: debio-testnet
+  isTestnet: true
   name: DeBio Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: dock-testnet
+  isTestnet: true
   name: Dock Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: dolphin-testnet
-  name: Dolphin
-  rpcs: []
   isTestnet: true
+  name: Dolphin
   blockExplorerUrls:
     - https://dolphin.subscan.io/
+  rpcs: []
 - id: dotmog-testnet
+  isTestnet: true
   name: DOTMog
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: edgeware-testnet
+  isTestnet: true
   name: Beresheet
   rpcs:
     - wss://beresheet.jelliedowl.net
-  isTestnet: true
-  blockExplorerUrls: []
 - id: encointer-testnet
+  isTestnet: true
   name: Encointer Gesell
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: encointer-testnet-standalone
+  isTestnet: true
   name: Encointer Gesell
   rpcs:
     - wss://gesell.encointer.org
-  isTestnet: true
-  blockExplorerUrls: []
 - id: enjin-matrixchain-testnet
-  name: Enjin Matrix Canary
-  rpcs:
-    - wss://rpc.matrix.canary.enjin.io
   isTestnet: true
+  name: Enjin Matrix Canary
   blockExplorerUrls:
     - https://canary-matrix.subscan.io/
-- id: enjin-relay-testnet
-  name: Enjin Canary
   rpcs:
-    - wss://rpc.relay.canary.enjin.io
+    - wss://rpc.matrix.canary.enjin.io
+- id: enjin-relay-testnet
   isTestnet: true
+  name: Enjin Canary
   blockExplorerUrls:
     - https://canary.subscan.io/
+  rpcs:
+    - wss://rpc.relay.canary.enjin.io
 - id: fantour-testnet
+  isTestnet: true
   name: Fantour
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: ferrum-testnet
+  isTestnet: true
   name: Ferrum
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: fragnova-testnet
+  isTestnet: true
   name: Fragnova Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: galital-testnet
+  isTestnet: true
   name: Galital PC2
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: galois-testnet
+  isTestnet: true
   name: Galois
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: gamepower-testnet
+  isTestnet: true
   name: GamePower
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: geek-testnet
+  isTestnet: true
   name: GeekCash
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: giant-testnet
+  isTestnet: true
   name: Giant
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: halongbay-testnet
+  isTestnet: true
   name: Halongbay
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: helixstreet-testnet
+  isTestnet: true
   name: Helixstreet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: integritee-testnet
+  isTestnet: true
   name: Integritee Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: interlay-testnet-standalone
+  isTestnet: true
   name: Interlay Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: interlay-testnet-westend
+  isTestnet: true
   name: Interlay Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: ipse-testnet
+  isTestnet: true
   name: Ipse
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: jaz-testnet
+  isTestnet: true
   name: Artio
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: jupiter-testnet
+  isTestnet: true
   name: Jupiter
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: jur-testnet
+  isTestnet: true
   name: Jur Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: karmachain-testnet
+  isTestnet: true
   name: Karmachain
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: karura-testnet
-  name: Wendala
-  rpcs: []
   isTestnet: true
+  name: Wendala
   themeColor: '#f93d43'
-  blockExplorerUrls: []
+  rpcs: []
 - id: khala-testnet
+  isTestnet: true
   name: Khala Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: kilt-testnet-standalone
+  isTestnet: true
   name: KILT Mashnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: kilt-testnet-standalone-2
-  name: KILT Peregrine
-  rpcs:
-    - wss://peregrine.kilt.io/parachain-public-ws/
   isTestnet: true
+  name: KILT Peregrine
   blockExplorerUrls:
     - https://kilt-testnet.subscan.io/
+  rpcs:
+    - wss://peregrine.kilt.io/parachain-public-ws/
 - id: kintsugi-testnet
+  isTestnet: true
   name: Kintsugi Testnet
   rpcs:
     - wss://api-dev-kintsugi.interlay.io/parachain
-  isTestnet: true
-  blockExplorerUrls: []
 - id: klugdossier-testnet
+  isTestnet: true
   name: Klug Dossier
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: kylin-testnet
+  isTestnet: true
   name: Kylin Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: laminar-testnet
+  isTestnet: true
   name: Turbulence
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: laos-testnet
+  isTestnet: true
   name: Laos Sigma
   rpcs:
     - wss://rpc.laossigma.laosfoundation.io
-  isTestnet: true
-  blockExplorerUrls: []
 - id: liberland-testnet
+  isTestnet: true
   name: Liberland Testnet
   rpcs:
     - wss://testchain.liberland.org
-  isTestnet: true
-  blockExplorerUrls: []
 - id: heima-testnet
+  isTestnet: true
   name: Heima Testnet
   rpcs:
     - wss://rpc.paseo-parachain.heima.network
-  isTestnet: true
-  blockExplorerUrls: []
 - id: logion-testnet
+  isTestnet: true
   name: Logion Testnet
   rpcs:
     - wss://test-para-rpc01.logion.network
-  isTestnet: true
-  blockExplorerUrls: []
 - id: mandala-testnet
-  name: Mandala
-  rpcs: []
   isTestnet: true
+  name: Mandala
   blockExplorerUrls:
     - https://acala-testnet.subscan.io/
+  rpcs: []
 - id: manta-testnet
+  isTestnet: true
   name: Manta Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: melodie-testnet
+  isTestnet: true
   name: Melodie | Allfeat
   rpcs:
     - wss://melodie-rpc.allfeat.io
-  isTestnet: true
-  blockExplorerUrls: []
 - id: minix-testnet
+  isTestnet: true
   name: MiniX Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: moonbase-alpha-testnet
+  isTestnet: true
   name: Moonbase Alpha
+  blockExplorerUrls:
+    - https://moonbase.subscan.io/
   rpcs:
     - wss://moonbase-rpc.dwellir.com
     - wss://wss.api.moonbase.moonbeam.network
     - wss://moonbase.public.curie.radiumblock.co/ws
     - wss://moonbase.unitedbloc.com
-  isTestnet: true
-  blockExplorerUrls:
-    - https://moonbase.subscan.io/
 - id: moonshadow-testnet
+  isTestnet: true
   name: Moonshadow
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: mybank-testnet
+  isTestnet: true
   name: mybank.network
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: myriad-testnet
+  isTestnet: true
   name: Myriad Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: nftmart-testnet
+  isTestnet: true
   name: NFTMart Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: nodle-testnet
+  isTestnet: true
   name: Arcadia
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: opal-testnet
+  isTestnet: true
   name: Opal
+  blockExplorerUrls:
+    - https://opal.subscan.io/
   rpcs:
     - wss://ws-opal.unique.network
     - wss://us-ws-opal.unique.network
     - wss://asia-ws-opal.unique.network
     - wss://eu-ws-opal.unique.network
-  isTestnet: true
-  blockExplorerUrls:
-    - https://opal.subscan.io/
 - id: opportunity-testnet
+  isTestnet: true
   name: Opportunity
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: pangoro-testnet
+  isTestnet: true
   name: Pangoro2
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: paseo-asset-hub
+  isTestnet: true
   name: Paseo Asset Hub
+  blockExplorerUrls:
+    - https://assethub-paseo.subscan.io/
   rpcs:
     - wss://asset-hub-paseo-rpc.dwellir.com
     - wss://sys.ibp.network/asset-hub-paseo
     - wss://asset-hub-paseo.dotters.network
     - wss://pas-rpc.stakeworld.io/assethub
     - wss://sys.turboflakes.io/asset-hub-paseo
-  isTestnet: true
-  blockExplorerUrls:
-    - https://assethub-paseo.subscan.io/
 - id: paseo-frequency-testnet
+  isTestnet: true
   name: Frequency Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: paseo-testnet
+  isTestnet: true
   name: Paseo
+  blockExplorerUrls:
+    - https://paseo.subscan.io/
   rpcs:
     - wss://paseo-rpc.dwellir.com
     - wss://paseo.rpc.amforc.com
@@ -4013,455 +3846,377 @@
     - wss://paseo.dotters.network
     - wss://pas-rpc.stakeworld.io
     - wss://api2.zondax.ch/pas/node/rpc
-  isTestnet: true
-  blockExplorerUrls:
-    - https://paseo.subscan.io/
 - id: phala-testnet
+  isTestnet: true
   name: Phala Testnet
   rpcs:
     - wss://poc6.phala.network/ws
-  isTestnet: true
-  blockExplorerUrls: []
 - id: phoenix-testnet
+  isTestnet: true
   name: Phoenix Mashnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: phyken-network-testnet
+  isTestnet: true
   name: Phyken
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: phyken-testnet
+  isTestnet: true
   name: Phyken Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: pichiu-testnet
+  isTestnet: true
   name: Pichiu Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: polkadex-testnet
+  isTestnet: true
   name: Polkadex Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: polymesh-testnet
-  name: Polymesh Testnet
-  rpcs:
-    - wss://testnet-rpc.polymesh.live
   isTestnet: true
+  name: Polymesh Testnet
   blockExplorerUrls:
     - https://polymesh-testnet.subscan.io/
+  rpcs:
+    - wss://testnet-rpc.polymesh.live
 - id: pontem-testnet
+  isTestnet: true
   name: Pontem
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: prism-testnet
+  isTestnet: true
   name: Prism
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: realis-testnet
+  isTestnet: true
   name: Realis.Network
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: regionx-cocos-testnet
+  isTestnet: true
   name: RegionX Cocos
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: riochain-testnet
+  isTestnet: true
   name: RioChain Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: robonomics-testnet
+  isTestnet: true
   name: Robonomics Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rocfinity-testnet
+  isTestnet: true
   name: Rocfinity
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-amplitude-testnet
+  isTestnet: true
   name: Amplitude Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-aventus-testnet
+  isTestnet: true
   name: Aventus Testnet
   rpcs:
     - wss://public-rpc.testnet.aventus.network
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-basilisk-testnet
+  isTestnet: true
   name: Basilisk Testnet
   rpcs:
     - wss://basilisk-rococo-rpc.play.hydration.cloud
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-bifrost-testnet
+  isTestnet: true
   name: Bifrost Testnet
   rpcs:
     - wss://bifrost-rpc.rococo.liebi.com/ws
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-bitgreen-testnet
+  isTestnet: true
   name: Bitgreen Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-catalyst-testnet
+  isTestnet: true
   name: Catalyst
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-confti-testnet
+  isTestnet: true
   name: Confti
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-crust-testnet
+  isTestnet: true
   name: Crust Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-curio-testnet
+  isTestnet: true
   name: Curio Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-dolphin-testnet
-  name: Dolphin
-  rpcs: []
   isTestnet: true
+  name: Dolphin
   blockExplorerUrls:
     - https://dolphin.subscan.io/
+  rpcs: []
 - id: rococo-ethos-testnet
+  isTestnet: true
   name: Ethos
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-ewx-testnet
+  isTestnet: true
   name: Rex
   rpcs:
     - wss://public-rpc.testnet.energywebx.com/
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-genshiro-testnet
+  isTestnet: true
   name: Genshiro Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-hyperbridge-testnet
+  isTestnet: true
   name: Hyperbridge Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-idiyanale-testnet
+  isTestnet: true
   name: Idiyanale
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-imbue-testnet
+  isTestnet: true
   name: Imbue Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-integritee-testnet
+  isTestnet: true
   name: Integritee Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-invo-testnet
+  isTestnet: true
   name: Invo
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-kabocha-testnet
+  isTestnet: true
   name: Kabocha Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-kaizen-testnet
+  isTestnet: true
   name: Kaizen
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-kinera-testnet
+  isTestnet: true
   name: Kinera
   rpcs:
     - wss://node.kinera.network
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-mangata-testnet
-  name: MangataX Testnet
-  rpcs: []
   isTestnet: true
+  name: MangataX Testnet
   blockExplorerUrls:
     - https://mangata-testnet.subscan.io/
+  rpcs: []
 - id: rococo-md-5-testnet
+  isTestnet: true
   name: MD5
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-moonsama-testnet
+  isTestnet: true
   name: Moonsama Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-neuro-web-testnet
+  isTestnet: true
   name: NeuroWeb Testnet
   rpcs:
     - wss://parachain-testnet-rpc.origin-trail.network/
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-nodle-testnet
+  isTestnet: true
   name: Nodle Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-open-zeppelin-testnet
+  isTestnet: true
   name: OpenZeppelin Runtime Template
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-phala-testnet
+  isTestnet: true
   name: Rhala
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-picasso-testnet
+  isTestnet: true
   name: Picasso Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-societal-testnet
+  isTestnet: true
   name: Societal
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-sora-testnet
+  isTestnet: true
   name: Sora Testnet
   rpcs:
     - wss://ws.parachain-collator-1.c1.stg1.sora2.soramitsu.co.jp
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-spreehafen-testnet
+  isTestnet: true
   name: Spreehafen
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-subsocial-testnet
+  isTestnet: true
   name: SoonsocialX
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-subzero-testnet
+  isTestnet: true
   name: Subzero Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-tinkernet-testnet
+  isTestnet: true
   name: Tinkernet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-unit-network-testnet
+  isTestnet: true
   name: Unit
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-virto-testnet
+  isTestnet: true
   name: Virto
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-watr-testnet
+  isTestnet: true
   name: Watr Testnet
   rpcs:
     - wss://rpc.dev.watr.org
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-yerba-testnet
+  isTestnet: true
   name: Yerba Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: rococo-zeitgeist-testnet
+  isTestnet: true
   name: Zeitgeist Battery Station
   rpcs:
     - wss://bsr.zeitgeist.pm
-  isTestnet: true
-  blockExplorerUrls: []
 - id: sherpax-testnet
+  isTestnet: true
   name: Sherpax
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: shibuya-testnet
+  isTestnet: true
   name: Shibuya
+  blockExplorerUrls:
+    - https://shibuya.subscan.io/
   rpcs:
     - wss://shibuya-rpc.dwellir.com
     - wss://rpc.shibuya.astar.network
-  isTestnet: true
-  blockExplorerUrls:
-    - https://shibuya.subscan.io/
 - id: skyekiwi-testnet
+  isTestnet: true
   name: SkyeKiwi
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: snowbridge-asset-hub-testnet
+  isTestnet: true
   name: Snowbridge Asset Hub
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: snowbridge-bridge-hub-testnet
+  isTestnet: true
   name: Snowbridge Bridge Hub
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: sora-substrate-testnet
+  isTestnet: true
   name: Sora Testnet
   rpcs:
     - wss://ws.framenode-7.s4.stg1.sora2.soramitsu.co.jp
     - wss://ws.framenode-8.s5.stg1.sora2.soramitsu.co.jp
-  isTestnet: true
-  blockExplorerUrls: []
 - id: stagex-testnet
+  isTestnet: true
   name: Stagex
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subdao-testnet
+  isTestnet: true
   name: SubDAO Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subgame-testnet
+  isTestnet: true
   name: SubGame Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-farmnet-testnet
+  isTestnet: true
   name: Subspace Farmnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-1-testnet
+  isTestnet: true
   name: Subspace Gemini
   rpcs:
     - wss://eu.gemini-1b.subspace.network/ws
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-2-a-testnet
+  isTestnet: true
   name: Subspace Gemini 2a
   rpcs:
     - wss://eu-0.gemini-2a.subspace.network/ws
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-3-f-testnet
+  isTestnet: true
   name: Subspace Gemini 3f
   rpcs:
     - wss://rpc-1.gemini-3f.subspace.network/ws
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-3-g-nova-testnet
+  isTestnet: true
   name: Subspace Gemini 3g Nova
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-3-g-testnet
+  isTestnet: true
   name: Subspace Gemini 3g
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-3-h-nova-testnet
+  isTestnet: true
   name: Subspace Gemini 3h Nova
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-gemini-3-h-testnet
+  isTestnet: true
   name: Subspace Gemini 3h
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: subspace-testnet
+  isTestnet: true
   name: Subspace
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: substrate-testnet
+  isTestnet: true
   name: Flaming Fir
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: sumi-testnet
+  isTestnet: true
   name: Sumi Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: tangle-testnet
+  isTestnet: true
   name: Tangle Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: ternoa-alphanet-testnet
+  isTestnet: true
   name: Ternoa Alphanet
   rpcs:
     - wss://alphanet.ternoa.com
-  isTestnet: true
-  blockExplorerUrls: []
 - id: ternoa-testnet
+  isTestnet: true
   name: Ternoa Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: thebifrost-testnet
+  isTestnet: true
   name: The Bifrost Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: uniarts-testnet
+  isTestnet: true
   name: UniArts Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: unique-testnet
+  isTestnet: true
   name: Unique Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: unitv-testnet
+  isTestnet: true
   name: Unit
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: vara-testnet
+  isTestnet: true
   name: Vara Testnet
   rpcs:
     - wss://testnet.vara.network
-  isTestnet: true
-  blockExplorerUrls: []
 - id: vodka-testnet
+  isTestnet: true
   name: Vodka
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: web-3-games-testnet
+  isTestnet: true
   name: Web3Games
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: westend-asset-hub-testnet
+  isTestnet: true
   name: Westend Asset Hub
+  blockExplorerUrls:
+    - https://assethub-westend.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/westend-westmint_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/asset-hub-westend
     - wss://asset-hub-westend-rpc.dwellir.com
@@ -4469,98 +4224,82 @@
     - wss://asset-hub-westend.dotters.network
     - wss://westend-asset-hub-rpc.polkadot.io
     - wss://asset-hub-westend.rpc.permanence.io
-  isTestnet: true
-  blockExplorerUrls:
-    - https://assethub-westend.subscan.io/
-  chainspecQrUrl: https://metadata.parity.io/qr/westend-westmint_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng
 - id: westend-bridge-hub-testnet
+  isTestnet: true
   name: Westend Bridge Hub
+  blockExplorerUrls:
+    - https://bridgehub-westend.subscan.io/
   rpcs:
     - wss://sys.ibp.network/bridgehub-westend
     - wss://bridge-hub-westend-rpc.dwellir.com
     - wss://westend-bridge-hub-rpc-tn.dwellir.com
     - wss://bridge-hub-westend.dotters.network
     - wss://westend-bridge-hub-rpc.polkadot.io
-  isTestnet: true
-  blockExplorerUrls:
-    - https://bridgehub-westend.subscan.io/
 - id: westend-collectives-testnet
+  isTestnet: true
   name: Collectives Testnet
+  chainspecQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_metadata_latest.apng
   rpcs:
     - wss://sys.ibp.network/collectives-westend
     - wss://collectives-westend-rpc.dwellir.com
     - wss://westend-collectives-rpc-tn.dwellir.com
     - wss://collectives-westend.dotters.network
     - wss://westend-collectives-rpc.polkadot.io
-  isTestnet: true
-  blockExplorerUrls: []
-  chainspecQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_specs.png
-  latestMetadataQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_metadata_latest.apng
 - id: westend-coretime-testnet
+  isTestnet: true
   name: Coretime Testnet
+  blockExplorerUrls:
+    - https://coretime-westend.subscan.io/
   rpcs:
     - wss://sys.ibp.network/coretime-westend
     - wss://coretime-westend-rpc.dwellir.com
     - wss://coretime-westend.dotters.network
     - wss://westend-coretime-rpc.polkadot.io
-  isTestnet: true
-  blockExplorerUrls:
-    - https://coretime-westend.subscan.io/
 - id: westend-penpal-testnet
+  isTestnet: true
   name: Penpal
   rpcs:
     - wss://westend-penpal-rpc.polkadot.io
-  isTestnet: true
-  blockExplorerUrls: []
 - id: westend-people-testnet
+  isTestnet: true
   name: People Testnet
   rpcs:
     - wss://sys.ibp.network/people-westend
     - wss://people-westend-rpc.dwellir.com
     - wss://people-westend.dotters.network
     - wss://westend-people-rpc.polkadot.io
-  isTestnet: true
-  blockExplorerUrls: []
 - id: westend-pichiu-testnet
+  isTestnet: true
   name: Pichiu Testnet
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: westend-standard-testnet
+  isTestnet: true
   name: Standard
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: whala-testnet
+  isTestnet: true
   name: Whala
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: z-cloak-testnet
+  isTestnet: true
   name: zCloak
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: zero-alphaville-testnet
+  isTestnet: true
   name: ZERO Alphaville
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: zero-testnet
+  isTestnet: true
   name: Zero Alphaville
   rpcs: []
-  isTestnet: true
-  blockExplorerUrls: []
 - id: zk-verify-testnet
+  isTestnet: true
   name: zkVerify
   rpcs:
     - wss://testnet-rpc.zkverify.io
-  isTestnet: true
-  blockExplorerUrls: []
 - id: zkverify-volta-testnet
+  isTestnet: true
   name: zkVerify Volta Testnet
   rpcs:
     - wss://volta-rpc.zkverify.io
-  isTestnet: true
-  blockExplorerUrls: []

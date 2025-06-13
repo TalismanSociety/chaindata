@@ -5,7 +5,7 @@ import { dirname, join, sep } from 'node:path'
 import { WsProvider } from '@polkadot/api'
 import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
 import prettier from 'prettier'
-import { parse } from 'yaml'
+import { parse as parseYaml, stringify as yamlify } from 'yaml'
 import z from 'zod/v4'
 
 import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO, PRETTIER_CONFIG } from './constants'
@@ -159,7 +159,7 @@ export const parseYamlFile = <T>(filePath: string, schema?: z.ZodType<T>): T => 
   if (!filePath.endsWith('.yaml') && !filePath.endsWith('.yml'))
     throw new Error(`Invalid file extension for YAML file: ${filePath}`)
 
-  const data = parse(readFileSync(filePath, 'utf-8')) as T
+  const data = parseYaml(readFileSync(filePath, 'utf-8')) as T
 
   return schema ? validate(data, schema, filePath) : data
 }
@@ -196,6 +196,28 @@ export const prettifyJson = async (data: unknown) => {
   } catch (cause) {
     // wrap error to prevent HUGE error messages
     throw new Error('Failed to prettify JSON', { cause })
+  }
+}
+
+export const writeYamlFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
+  if (!filePath.endsWith('.yaml')) throw new Error(`Invalid file extension for YAML file: ${filePath}`)
+
+  if (opts.schema) data = validate(data, opts.schema, `${filePath} (before saving)`)
+
+  writeFileSync(filePath, opts.format ? await prettifyYaml(data) : yamlify(data))
+
+  console.debug(filePath, 'updated')
+}
+
+export const prettifyYaml = async (data: unknown) => {
+  try {
+    return await prettier.format(yamlify(data), {
+      ...PRETTIER_CONFIG,
+      parser: 'yaml',
+    })
+  } catch (cause) {
+    // wrap error to prevent HUGE error messages
+    throw new Error('Failed to prettify YAML', { cause })
   }
 }
 

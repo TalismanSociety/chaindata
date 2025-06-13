@@ -274,8 +274,8 @@
     coingeckoId: wanchain
 - id: '945'
   nativeCurrency:
-    symbol: TAO
     decimals: 18
+    symbol: TAO
 - id: '964'
   substrateChainId: bittensor
 - id: '989'
@@ -421,8 +421,8 @@
     coingeckoId: kava
 - id: '2241'
   nativeCurrency:
-    coingeckoId: krest
     symbol: KREST
+    coingeckoId: krest
 - id: '2415'
   nativeCurrency:
     coingeckoId: xodex
@@ -484,13 +484,13 @@
   nativeCurrency:
     coingeckoId: tres-chain
 - id: '6283'
-  substrateChainId: laos
   nativeCurrency:
-    symbol: LAOS
     decimals: 18
+    symbol: LAOS
+    coingeckoId: laos-network
     mirrorOf: laos-substrate-native
     logo: ./assets/chains/laos.svg
-    coingeckoId: laos-network
+  substrateChainId: laos
 - id: '6626'
   nativeCurrency:
     coingeckoId: pixie
@@ -603,10 +603,10 @@
   nativeCurrency:
     coingeckoId: celo
 - id: '43114'
-  contracts:
-    Erc20Aggregator: '0xe6af6D72372Aee70523a52Ece60F26329C0dEBDA'
   nativeCurrency:
     coingeckoId: avalanche-2
+  contracts:
+    Erc20Aggregator: '0xe6af6D72372Aee70523a52Ece60F26329C0dEBDA'
 - id: '45000'
   nativeCurrency:
     coingeckoId: autobahn-network
@@ -769,12 +769,12 @@
   nativeCurrency:
     coingeckoId: ethereum
 - id: '1380012617'
+  nativeCurrency:
+    decimals: 18
+    symbol: ETH
+    coingeckoId: weth
   rpcs:
     - https://mainnet.rpc.rarichain.org/http
-  nativeCurrency:
-    symbol: ETH
-    decimals: 18
-    coingeckoId: weth
   balancesConfig:
     evm-erc20:
       tokens:

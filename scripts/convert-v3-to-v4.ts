@@ -1,7 +1,3 @@
-import { writeFileSync } from 'node:fs'
-
-import { stringify as yamlify } from 'yaml'
-
 import {
   DotBalancesConfigTypes,
   DotNetworkConfig,
@@ -13,12 +9,10 @@ import {
   KnownEthNetworksOverridesFileSchema,
 } from './shared/schemas'
 import { ConfigChain, ConfigEvmNetwork } from './shared/types'
-import { parseJsonFile, validate } from './shared/util'
+import { parseJsonFile, writeYamlFile } from './shared/util'
 
 const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
   const { id, name = '', rpcs = [] } = network
-
-  // TODO extract native token config if present
 
   return {
     // required
@@ -30,7 +24,7 @@ const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
     isDefault: network.isDefault || undefined,
     isTestnet: network.isTestnet || undefined,
     themeColor: network.themeColor || undefined,
-    blockExplorerUrls: network.subscanUrl ? [network.subscanUrl] : [],
+    blockExplorerUrls: network.subscanUrl ? [network.subscanUrl] : undefined,
 
     // polkadot specific
     //account: chain.account as DotNetwork["account"] ?? "*25519", // could be determined automatically by inspecting the Address type in the metadata - also some chains support both (ex: hydration) so we might need to rework this
@@ -69,7 +63,7 @@ const migrateEthNetworkV3ToV4 =
 
     const dotNetwork = dotNetworks.find((n) => n.id === network.substrateChainId)
 
-    const res = {
+    return {
       // required
       id,
       name: !name && dotNetwork?.name ? dotNetwork.name : name, // in v3 they are not set for networks tied to a polkadot chain
@@ -96,10 +90,6 @@ const migrateEthNetworkV3ToV4 =
 
       balancesConfig: migrateEthBalancesConfig(network),
     }
-
-    if (id === '1') console.log(res)
-
-    return res
   }
 
 const migrateDotBalancesConfig = (network: ConfigChain): DotNetworkConfig['balancesConfig'] => {
@@ -108,9 +98,7 @@ const migrateDotBalancesConfig = (network: ConfigChain): DotNetworkConfig['balan
   // remove unknown token types
   const result = Object.fromEntries(
     Object.entries(network.balancesConfig).filter(([key]) => {
-      const keep = DotBalancesConfigTypes.safeParse(key).success
-      if (network.id === '1') console.log(`migrating balancesConfig: ${key} -> ${keep}`)
-      return keep
+      return DotBalancesConfigTypes.safeParse(key).success
     }),
   )
 
@@ -123,9 +111,7 @@ const migrateEthBalancesConfig = (network: ConfigEvmNetwork): EthNetworkConfig['
   // remove unknown token types
   const balancesConfig = Object.fromEntries(
     Object.entries(network.balancesConfig).filter(([key]) => {
-      const keep = EthBalancesConfigTypes.safeParse(key).success
-      if (network.id === '1') console.log(`migrating balancesConfig: ${key} -> ${keep}`)
-      return keep
+      return EthBalancesConfigTypes.safeParse(key).success
     }),
   )
 
@@ -160,29 +146,32 @@ const migrateEvmNetworksOverrides = (
   }
 }
 
-const chaindata = parseJsonFile<ConfigChain[]>(`./data/chaindata.json`)
-const chaindataTestnets = parseJsonFile<ConfigChain[]>(`./data/testnets-chaindata.json`).map((n) => ({
+const chaindata = parseJsonFile<ConfigChain[]>(`data/chaindata.json`)
+const chaindataTestnets = parseJsonFile<ConfigChain[]>(`data/testnets-chaindata.json`).map((n) => ({
   ...n,
   isTestnet: true,
 }))
-const evmNetworks = parseJsonFile<ConfigEvmNetwork[]>(`./data/evm-networks.json`)
+const evmNetworks = parseJsonFile<ConfigEvmNetwork[]>(`data/evm-networks.json`)
 
-const knownNetworksOverrides = parseJsonFile<LegacyNetworkOverrides[]>(`./data/known-evm-networks-overrides.json`)
+const knownNetworksOverrides = parseJsonFile<LegacyNetworkOverrides[]>(`data/known-evm-networks-overrides.json`)
 
 const newDotNetworks = [...chaindata, ...chaindataTestnets].map(migrateDotNetworkV3ToV4)
-validate(newDotNetworks, DotNetworksConfigFileSchema)
+// validate(newDotNetworks, DotNetworksConfigFileSchema)
 
 const newEthNetworks = evmNetworks
   .map(migrateEthNetworkV3ToV4(newDotNetworks))
   .sort((n1, n2) => Number(n1.id) - Number(n2.id))
-validate(newEthNetworks, EthNetworksConfigFileSchema)
+// validate(newEthNetworks, EthNetworksConfigFileSchema)
 
 const newKnownNetworksOverrides = knownNetworksOverrides
   .map(migrateEvmNetworksOverrides)
   .sort((n1, n2) => Number(n1.id) - Number(n2.id))
 //console.log(newKnownNetworksOverrides[15])
-validate(newKnownNetworksOverrides, KnownEthNetworksOverridesFileSchema)
+// validate(newKnownNetworksOverrides, KnownEthNetworksOverridesFileSchema)
 
-writeFileSync(`./data/networks-polkadot.yaml`, yamlify(newDotNetworks))
-writeFileSync(`./data/networks-ethereum.yaml`, yamlify(newEthNetworks))
-writeFileSync(`./data/known-networks-ethereum-overrides.yaml`, yamlify(newKnownNetworksOverrides))
+writeYamlFile(`data/networks-polkadot.yaml`, newDotNetworks, { format: true, schema: DotNetworksConfigFileSchema })
+writeYamlFile(`data/networks-ethereum.yaml`, newEthNetworks, { format: true, schema: EthNetworksConfigFileSchema })
+writeYamlFile(`data/known-networks-ethereum-overrides.yaml`, newKnownNetworksOverrides, {
+  format: true,
+  schema: KnownEthNetworksOverridesFileSchema,
+})

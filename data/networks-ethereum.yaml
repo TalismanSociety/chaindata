@@ -1,5 +1,7 @@
 - id: '1'
   name: Ethereum Mainnet
+  blockExplorerUrls:
+    - https://etherscan.io
   rpcs:
     - https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
     - https://rpc.ankr.com/eth
@@ -7,8 +9,6 @@
     - https://eth.merkle.io
     - https://ethereum.rpc.subquery.network/public
     - https://eth.llamarpc.com
-  blockExplorerUrls:
-    - https://etherscan.io
   feeType: eip-1559
   contracts:
     Erc20Aggregator: '0x2e556284556ecEe5754d201bBB6E2cb47fB95DFd'
@@ -142,13 +142,13 @@
         - contractAddress: '0x3478B3ecC153CE61eA3c6788611FdBB374D4305d'
 - id: '10'
   name: OP Mainnet
+  blockExplorerUrls:
+    - https://optimistic.etherscan.io
   rpcs:
     - https://mainnet.optimism.io
     - https://optimism.publicnode.com
     - https://optimism.gateway.tenderly.co
     - https://optimism.rpc.subquery.network/public
-  blockExplorerUrls:
-    - https://optimistic.etherscan.io
   feeType: eip-1559
   l2FeeType:
     type: op-stack
@@ -174,21 +174,21 @@
           contractAddress: '0x0b2c639c533813f4aa9d7837caf62653d097ff85'
 - id: '46'
   name: Darwinia
-  rpcs:
-    - https://rpc.darwinia.network
   blockExplorerUrls:
     - https://darwinia.subview.xyz
   substrateChainId: darwinia
+  rpcs:
+    - https://rpc.darwinia.network
 - id: '56'
   name: Binance Smart Chain
+  blockExplorerUrls:
+    - https://bscscan.com
   rpcs:
     - https://mempool.merkle.io/rpc/bsc/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
     - https://rpc.ankr.com/bsc
     - https://bsc-dataseed2.binance.org
     - https://bsc-dataseed3.binance.org
     - https://bsc-dataseed4.binance.org
-  blockExplorerUrls:
-    - https://bscscan.com
   contracts:
     Erc20Aggregator: '0x21741D68121db79Fd1e9eA34028D3B2e87056DBd'
   balancesConfig:
@@ -207,31 +207,31 @@
         - contractAddress: '0x64B6B730B56D3E582C29e982Ef4b24C8C1ADfb20'
         - contractAddress: '0x751470712B4f7861bD9557a6Bc099ad0d3dBd46F'
 - id: '81'
-  name: Shibuya
-  rpcs:
-    - https://evm.shibuya.astar.network
   isTestnet: true
+  name: Shibuya
   blockExplorerUrls:
     - https://blockscout.com/shibuya
   substrateChainId: shibuya-testnet
+  rpcs:
+    - https://evm.shibuya.astar.network
 - id: '100'
   name: Gnosis
+  blockExplorerUrls:
+    - https://blockscout.com/xdai/mainnet/
   rpcs:
     - https://rpc.ankr.com/gnosis
     - https://gnosis-mainnet.public.blastapi.io
     - https://rpc.gnosischain.com/
-  blockExplorerUrls:
-    - https://blockscout.com/xdai/mainnet/
 - id: '137'
   name: Polygon
+  blockExplorerUrls:
+    - https://polygonscan.com/
   rpcs:
     - https://mempool.merkle.io/rpc/polygon/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
     - https://polygon-rpc.com/
     - https://rpc.ankr.com/polygon
     - https://polygon-mainnet.public.blastapi.io
     - https://polygon.rpc.subquery.network/public
-  blockExplorerUrls:
-    - https://polygonscan.com/
   contracts:
     Erc20Aggregator: '0xb1EFd1407104Cf00F7b9983C1Fa474A2702B5874'
   balancesConfig:
@@ -269,13 +269,13 @@
         - contractAddress: '0x732bcdAe837Be7d5C22B5b03dDEE15511DD9F9ca'
         - contractAddress: '0x2Fc2dEF50Dd4C9c158bD1F7241Fb82fd4D24F4Bf'
 - id: '146'
+  isDefault: true
   name: Sonic Mainnet
+  blockExplorerUrls:
+    - https://explorer.soniclabs.com
   rpcs:
     - https://rpc.soniclabs.com
     - https://sonic-rpc.publicnode.com
-  isDefault: true
-  blockExplorerUrls:
-    - https://explorer.soniclabs.com
   contracts:
     Erc20Aggregator: '0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4'
   balancesConfig:
@@ -397,20 +397,20 @@
           coingeckoId: yoko
 - id: '336'
   name: Shiden
-  rpcs:
-    - https://shiden-rpc.dwellir.com
   blockExplorerUrls:
     - https://blockscout.com/shiden
   substrateChainId: shiden-kusama
+  rpcs:
+    - https://shiden-rpc.dwellir.com
 - id: '592'
   name: Astar
+  blockExplorerUrls:
+    - https://blockscout.com/astar
+  substrateChainId: astar
   rpcs:
     - https://evm.astar.network
     - https://astar-rpc.dwellir.com
     - https://astar.api.onfinality.io/public
-  blockExplorerUrls:
-    - https://blockscout.com/astar
-  substrateChainId: astar
   contracts:
     Erc20Aggregator: '0x1b21934f85A53b99996613ABa4E676533bA432CF'
   balancesConfig:
@@ -458,21 +458,21 @@
           contractAddress: '0xfcde4a87b8b6fa58326bb462882f1778158b02f1'
           coingeckoId: aave
 - id: '595'
-  name: Mandala
-  rpcs:
-    - https://eth-rpc-tc9.aca-staging.network
   isTestnet: true
+  name: Mandala
   substrateChainId: mandala-testnet
   preserveGasEstimate: true
+  rpcs:
+    - https://eth-rpc-tc9.aca-staging.network
 - id: '787'
   name: Acala
-  rpcs:
-    - https://eth-rpc-acala.aca-api.network
-    - https://rpc.evm.acala.network
   blockExplorerUrls:
     - https://blockscout.acala.network
   substrateChainId: acala
   preserveGasEstimate: true
+  rpcs:
+    - https://eth-rpc-acala.aca-api.network
+    - https://rpc.evm.acala.network
   balancesConfig:
     evm-erc20:
       tokens:
@@ -481,14 +481,14 @@
           logo: ./assets/tokens/nemo.png
 - id: '1284'
   name: Moonbeam
+  blockExplorerUrls:
+    - https://moonbeam.moonscan.io/
+  substrateChainId: moonbeam
   rpcs:
     - https://rpc.api.moonbeam.network
     - https://moonbeam-rpc.dwellir.com
     - https://moonbeam-rpc.publicnode.com
     - https://moonbeam.api.onfinality.io/public
-  blockExplorerUrls:
-    - https://moonbeam.moonscan.io/
-  substrateChainId: moonbeam
   contracts:
     Erc20Aggregator: '0x294063B3727d6eE918100693e76fdADee90c8B51'
   balancesConfig:
@@ -533,13 +533,13 @@
           mirrorOf: moonbeam-substrate-assets-311091173110107856861649819128533077277-usdt
 - id: '1285'
   name: Moonriver
+  blockExplorerUrls:
+    - https://moonriver.moonscan.io/
+  substrateChainId: moonriver
   rpcs:
     - https://rpc.api.moonriver.moonbeam.network
     - https://moonriver-rpc.dwellir.com
     - https://moonriver.api.onfinality.io/public
-  blockExplorerUrls:
-    - https://moonriver.moonscan.io/
-  substrateChainId: moonriver
   balancesConfig:
     evm-erc20:
       tokens:
@@ -553,43 +553,43 @@
           contractAddress: '0xffffffFF893264794d9d57E1E0E21E0042aF5A0A'
           coingeckoId: rmrk
 - id: '1287'
-  name: Moonbase Alpha
-  rpcs:
-    - https://rpc.api.moonbase.moonbeam.network
-    - https://moonbeam-alpha.api.onfinality.io/public
   isTestnet: true
+  name: Moonbase Alpha
   blockExplorerUrls:
     - https://moonbase.moonscan.io/
   substrateChainId: moonbase-alpha-testnet
+  rpcs:
+    - https://rpc.api.moonbase.moonbeam.network
+    - https://moonbeam-alpha.api.onfinality.io/public
 - id: '2021'
   name: Edgeware
+  blockExplorerUrls:
+    - https://edgscan.live
+  substrateChainId: edgeware
   rpcs:
     - https://mainnet2.edgewa.re/evm
     - https://edgeware-evm.jelliedowl.net
     - https://mainnet3.edgewa.re/evm
     - https://mainnet4.edgewa.re/evm
     - https://mainnet5.edgewa.re/evm
-  blockExplorerUrls:
-    - https://edgscan.live
-  substrateChainId: edgeware
 - id: '5845'
   name: Tangle
-  rpcs:
-    - https://rpc.tangle.tools
   blockExplorerUrls:
     - https://explorer.tangle.tools
   substrateChainId: tangle
+  rpcs:
+    - https://rpc.tangle.tools
 - id: '8453'
   name: Base
+  logo: https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/base.webp
+  blockExplorerUrls:
+    - https://basescan.org
   rpcs:
     - https://mempool.merkle.io/rpc/base/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
     - https://mainnet.base.org/
     - https://base.publicnode.com
     - https://developer-access-mainnet.base.org/
     - https://base.rpc.subquery.network/public
-  blockExplorerUrls:
-    - https://basescan.org
-  logo: https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/base.webp
   feeType: eip-1559
   l2FeeType:
     type: op-stack
@@ -712,14 +712,14 @@
         - contractAddress: '0xCc260b06b10567F1842423938d19F96f9c14674a'
         - contractAddress: '0xdb144A5D6CD37Cfd512258b1CBb4717Aee3bDD0a'
 - id: '10143'
-  name: Monad Testnet
-  rpcs:
-    - https://testnet-rpc.monad.xyz/
   isTestnet: true
   forceScan: true
+  name: Monad Testnet
   blockExplorerUrls:
     - https://testnet.monadexplorer.com/
   preserveGasEstimate: true
+  rpcs:
+    - https://testnet-rpc.monad.xyz/
   contracts:
     Erc20Aggregator: '0x951d5f07Afc1704CeAc760Fa632801674469845f'
   balancesConfig:
@@ -839,13 +839,13 @@
           logo: ./assets/tokens/known/solana.png
 - id: '42161'
   name: Arbitrum One
+  blockExplorerUrls:
+    - https://arbiscan.io/
   rpcs:
     - https://mempool.merkle.io/rpc/arbitrum/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1
     - https://arb1.arbitrum.io/rpc
     - https://rpc.ankr.com/arbitrum
     - https://arbitrum.rpc.subquery.network/public
-  blockExplorerUrls:
-    - https://arbiscan.io/
   contracts:
     Erc20Aggregator: '0x180c2f0A65788258524Ab1e5c3c398EC46211b89'
   balancesConfig:
@@ -873,10 +873,10 @@
         - contractAddress: '0x60b1bB368AfA489Ba0E37Ae01C3fa8cB3a3a0c6d'
 - id: '60808'
   name: BOB
-  rpcs:
-    - https://rpc.gobob.xyz/
   blockExplorerUrls:
     - https://explorer.gobob.xyz/
+  rpcs:
+    - https://rpc.gobob.xyz/
   l2FeeType:
     type: op-stack
   contracts:
