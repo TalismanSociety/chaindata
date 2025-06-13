@@ -27,8 +27,8 @@ export const fetchExternalSteps: Array<() => Awaited<void>> = [
   // // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
   // fetchUniswapv2TokenExtras,
 
-  fetchKnownEvmNetworksLogos,
-  // fetchCoingeckoTokensLogos,
+  // fetchKnownEvmNetworksLogos,
+  fetchCoingeckoTokensLogos,
   // fetchNovasamaMetadataPortalUrls,
   // updateChainsExtrasCache,
 ]
