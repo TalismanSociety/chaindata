@@ -5,11 +5,14 @@ import prettier from 'prettier'
 import TOML from 'toml'
 
 import {
+  FILE_NETWORKS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   NOVASAMA_METADATA_PORTAL_CONFIG,
   PRETTIER_CONFIG,
 } from '../../shared/constants'
 import { MetadataPortalUrls } from '../../shared/types.legacy'
+import { DotNetworksConfigFileSchema } from '../../shared/types.v4'
+import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
 
 const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   acala: 'acala',
@@ -30,12 +33,17 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   'clover-mainnet': 'clover',
   collectives: 'polkadot-collectives',
   composable: 'composable-finance',
+  'coretime-kusama': 'kusama-coretime',
+  creditcoin3: 'creditcoin',
+  'creditcoin-node': 'credit-classic',
   crab2: 'crab',
   'crust-collator': 'shadow-kusama',
   darwinia2: 'darwinia',
   'dock-pos-main-runtime': 'dock-pos-mainnet',
   edgeware: 'edgeware',
   'encointer-parachain': 'encointer',
+  enjin: 'enjin-relay',
+  'ewx-parachain': 'ewx',
   frequency: 'frequency',
   heiko: 'heiko-kusama',
   hydradx: 'hydradx',
@@ -44,6 +52,7 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   'interlay-parachain': 'interlay',
   invarch: 'invarch',
   ipci: 'ipci',
+  'jamton-runtime': 'jamton',
   'joystream-node': 'joystream',
   'kabocha-parachain': 'kabocha',
   karura: 'karura',
@@ -66,9 +75,12 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   parallel: 'parallel',
   paseo: 'paseo-testnet',
   'peaq-node-krest': 'krest',
+  'peaq-node': 'peaq',
   pendulum: 'pendulum',
   phala: 'phala',
   picasso: 'picasso',
+  'people-polkadot': 'polkadot-people',
+  'people-kusama': 'kusama-people',
   'pioneer-runtime': 'bitcountry-pioneer',
   'polimec-mainnet': 'polimec',
   'polkadot-crust-parachain': 'crust-parachain',
@@ -92,6 +104,7 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
 }
 
 export const fetchNovasamaMetadataPortalUrls = async () => {
+  const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const config = TOML.parse(await (await fetch(NOVASAMA_METADATA_PORTAL_CONFIG)).text())
 
   const portalUrls: MetadataPortalUrls = config?.chains?.flatMap((chain: any) => {
@@ -100,7 +113,9 @@ export const fetchNovasamaMetadataPortalUrls = async () => {
     const relayName = chain?.relay_chain
     const isTestnet = chain?.testnet === true
 
-    const talismanId = novasamaNameToTalismanChainId[name]
+    let talismanId = novasamaNameToTalismanChainId[name]
+    if (!talismanId && dotNetworks.some((c) => c.id === name)) talismanId = name
+
     if (!talismanId) {
       console.warn(`Missing novasamaNameToTalismanChainId map for '${name}'`)
       return []
@@ -146,11 +161,5 @@ export const fetchNovasamaMetadataPortalUrls = async () => {
     .flatMap((chain) => chain)
     .sort((a, b) => a.id.localeCompare(b.id))
 
-  await writeFile(
-    FILE_NOVASAMA_METADATA_PORTAL_URLS,
-    await prettier.format(JSON.stringify(validPortalUrls, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_NOVASAMA_METADATA_PORTAL_URLS, validPortalUrls, { format: true })
 }

@@ -15,6 +15,7 @@ import {
   IChaindataProvider,
   TokenId,
 } from '@talismn/chaindata-provider'
+import { fetchBestMetadata } from '@talismn/sapi'
 import { decAnyMetadata, toHex } from '@talismn/scale'
 import isEqual from 'lodash/isEqual'
 import prettier from 'prettier'
@@ -24,6 +25,7 @@ import { Bytes, Option, u32 } from 'scale-ts'
 import {
   FILE_CHAINDATA,
   FILE_CHAINS_EXTRAS_CACHE,
+  FILE_NETWORKS_POLKADOT,
   FILE_RPC_HEALTH_WEBSOCKET,
   FILE_TESTNETS_CHAINDATA,
   PRETTIER_CONFIG,
@@ -33,27 +35,18 @@ import {
 import { DeadChains } from '../../shared/DeadChains'
 import { setTokenLogo, TokenDef } from '../../shared/setTokenLogo'
 import { ChainExtrasCache, ConfigChain } from '../../shared/types.legacy'
-import { sendWithTimeout } from '../../shared/util'
+import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/types.v4'
+import { parseJsonFile, parseYamlFile, sendWithTimeout, writeJsonFile } from '../../shared/util'
 import { WsRpcHealth } from './checkWsRpcs'
 
 export const updateChainsExtrasCache = async () => {
-  const mainnets = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
-  const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
-  const rpcsHealth = JSON.parse(await readFile(FILE_RPC_HEALTH_WEBSOCKET, 'utf-8')) as Record<string, WsRpcHealth>
+  const chains = parseYamlFile<DotNetworkConfig[]>(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
-  const chainsExtrasCache = JSON.parse(
-    await (async () => {
-      try {
-        return await readFile(FILE_CHAINS_EXTRAS_CACHE, 'utf-8')
-      } catch (error) {
-        console.error('Failed to read chains extras cache', error)
-        return '[]'
-      }
-    })(),
-  ) as ChainExtrasCache[]
+  const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
+
+  const chainsExtrasCache = parseJsonFile<ChainExtrasCache[]>(FILE_CHAINS_EXTRAS_CACHE)
+
   const deadChains = await new DeadChains().load()
-
-  const chains = [...mainnets, ...testnets.map((testnet) => ({ ...testnet, isTestnet: true }))]
 
   // remove rpcs that were not flagged as healthy during this run
   chains.forEach((chain) => {
@@ -74,20 +67,8 @@ export const updateChainsExtrasCache = async () => {
 
   chainsExtrasCache.sort((a, b) => a.id.localeCompare(b.id))
 
-  await writeFile(
-    FILE_CHAINS_EXTRAS_CACHE,
-    await prettier.format(
-      JSON.stringify(
-        chainsExtrasCache.filter((chain) => chainIdExists[chain.id]),
-        null,
-        2,
-      ),
-      {
-        ...PRETTIER_CONFIG,
-        parser: 'json',
-      },
-    ),
-  )
+  await writeJsonFile(FILE_CHAINS_EXTRAS_CACHE, chainsExtrasCache, { format: true })
+
   deadChains.trim(activeChainRpcs)
   await deadChains.save()
 }
@@ -183,30 +164,45 @@ const attemptToFetchChainExtras = async (
 
     console.log(`Updating extras for chain ${chain.id}`)
 
+    // const fetchMetadata = async () => {
+    //   const errors: { v15: null | unknown; v14: null | unknown } = { v15: null, v14: null }
+
+    //   try {
+    //     const [response] = await sendWithTimeout(
+    //       rpcUrl,
+    //       [['state_call', ['Metadata_metadata_at_version', toHex(u32.enc(15))]]],
+    //       RPC_REQUEST_TIMEOUT,
+    //     )
+    //     const result = response ? Option(Bytes()).dec(response) : null
+    //     if (result) return result
+    //   } catch (v15Cause) {
+    //     errors.v15 = v15Cause
+    //   }
+
+    //   try {
+    //     const [response] = await sendWithTimeout(rpcUrl, [['state_getMetadata', []]], RPC_REQUEST_TIMEOUT)
+    //     if (response) return response
+    //   } catch (v14Cause) {
+    //     errors.v14 = v14Cause
+    //   }
+
+    //   console.warn(`Failed to fetch both metadata v15 and v14 for chain ${chain.id}`, errors.v15, errors.v14)
+    //   return null
+    // }
+
     const fetchMetadata = async () => {
-      const errors: { v15: null | unknown; v14: null | unknown } = { v15: null, v14: null }
-
       try {
-        const [response] = await sendWithTimeout(
-          rpcUrl,
-          [['state_call', ['Metadata_metadata_at_version', toHex(u32.enc(15))]]],
-          RPC_REQUEST_TIMEOUT,
+        return await fetchBestMetadata(
+          async (method, params, isCacheable) => {
+            const [result] = await sendWithTimeout(rpcUrl, [[method, params]], RPC_REQUEST_TIMEOUT)
+            return result
+          },
+          true, // allow v14 fallback
         )
-        const result = response ? Option(Bytes()).dec(response) : null
-        if (result) return result
-      } catch (v15Cause) {
-        errors.v15 = v15Cause
+      } catch (err) {
+        console.warn(`Failed to fetch metadata for chain ${chain.id}`)
+        throw err
       }
-
-      try {
-        const [response] = await sendWithTimeout(rpcUrl, [['state_getMetadata', []]], RPC_REQUEST_TIMEOUT)
-        if (response) return response
-      } catch (v14Cause) {
-        errors.v14 = v14Cause
-      }
-
-      console.warn(`Failed to fetch both metadata v15 and v14 for chain ${chain.id}`, errors.v15, errors.v14)
-      return null
     }
 
     // fetch extra rpc data

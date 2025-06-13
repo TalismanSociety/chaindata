@@ -28,7 +28,7 @@ export const fetchExternalSteps: Array<() => Awaited<void>> = [
   // fetchUniswapv2TokenExtras,
 
   // fetchKnownEvmNetworksLogos,
-  fetchCoingeckoTokensLogos,
+  // fetchCoingeckoTokensLogos,
   // fetchNovasamaMetadataPortalUrls,
-  // updateChainsExtrasCache,
+  updateChainsExtrasCache,
 ]
