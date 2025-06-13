@@ -13,7 +13,7 @@ const BalanceModuleType = z.enum([
 export type BalanceModuleType = z.infer<typeof BalanceModuleType>
 export const BalanceModuleConfig = z.partialRecord(BalanceModuleType, z.any())
 
-export const NetworkBaseDef = z.object({
+export const NetworkBaseDef = z.strictObject({
   id: z.string(),
   isTestnet: z.boolean().optional(),
   isDefault: z.boolean().optional(),
@@ -21,7 +21,7 @@ export const NetworkBaseDef = z.object({
   name: z.string().nonempty(),
   logo: z.string().optional(),
   nativeTokenId: z.string(),
-  nativeCurrency: z.object({
+  nativeCurrency: z.strictObject({
     decimals: z.uint32(),
     symbol: z.string().nonempty(),
     name: z.string().nonempty(),

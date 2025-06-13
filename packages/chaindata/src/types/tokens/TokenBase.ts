@@ -1,6 +1,6 @@
 import z from 'zod/v4'
 
-export const TokenBase = z.object({
+export const TokenBase = z.strictObject({
   id: z.string(),
   isTestnet: z.boolean().optional(),
   isDefault: z.boolean().optional(),

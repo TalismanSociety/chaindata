@@ -52,7 +52,8 @@
             "type": "string"
           }
         },
-        "required": ["decimals", "symbol", "name"]
+        "required": ["decimals", "symbol", "name"],
+        "additionalProperties": false
       },
       "themeColor": {
         "type": "string"
@@ -95,7 +96,8 @@
                 "const": "op-stack"
               }
             },
-            "required": ["type"]
+            "required": ["type"],
+            "additionalProperties": false
           },
           {
             "type": "object",
@@ -109,7 +111,8 @@
                 "pattern": "^0x[a-fA-F0-9]{40}$"
               }
             },
-            "required": ["type", "l1GasPriceOracle"]
+            "required": ["type", "l1GasPriceOracle"],
+            "additionalProperties": false
           }
         ]
       },
