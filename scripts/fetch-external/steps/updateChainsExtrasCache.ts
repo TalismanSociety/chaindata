@@ -67,7 +67,11 @@ export const updateChainsExtrasCache = async () => {
 
   chainsExtrasCache.sort((a, b) => a.id.localeCompare(b.id))
 
-  await writeJsonFile(FILE_CHAINS_EXTRAS_CACHE, chainsExtrasCache, { format: true })
+  await writeJsonFile(
+    FILE_CHAINS_EXTRAS_CACHE,
+    chainsExtrasCache.filter((chain) => chainIdExists[chain.id]),
+    { format: true },
+  )
 
   deadChains.trim(activeChainRpcs)
   await deadChains.save()

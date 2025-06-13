@@ -165,7 +165,7 @@ const migrateEvmNetworksOverrides = (
 }
 
 const chaindata = parseJsonFile<ConfigChain[]>(`./data/chaindata.json`)
-const chaindataTestnets = parseJsonFile<ConfigChain[]>(`./data/chaindata.json`).map((n) => ({
+const chaindataTestnets = parseJsonFile<ConfigChain[]>(`./data/testnets-chaindata.json`).map((n) => ({
   ...n,
   isTestnet: true,
 }))

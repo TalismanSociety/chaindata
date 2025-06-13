@@ -12,10 +12,10 @@ import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensF
 import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Awaited<void>> = [
-  validateConfigFiles,
+  // validateConfigFiles,
   // checkWsRpcs,
 
-  //fetchKnownEvmNetworks,
+  // fetchKnownEvmNetworks,
   // fetchKnownEvmNetworksCoingeckoLogos,
 
   // fetchKnownEvmTokens,
