@@ -7,6 +7,8 @@ import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
 import { ConfigEvmNetwork } from '../../shared/types.legacy'
+import { KnownEthNetworkConfigDef } from '../../shared/types.v4'
+import { validateNetworks } from '../../shared/validateNetworks'
 import { fetchAssetPlatforms } from '../coingecko'
 
 /**
@@ -15,6 +17,8 @@ import { fetchAssetPlatforms } from '../coingecko'
  */
 export const fetchKnownEvmNetworksCoingeckoLogos = async () => {
   const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
+  validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
+
   const assetPlatforms = await fetchAssetPlatforms()
 
   let shouldSave = false
@@ -35,6 +39,8 @@ export const fetchKnownEvmNetworksCoingeckoLogos = async () => {
       console.warn('failed to set logo for %s - %s', network.id, network.name, err)
     }
   }
+
+  validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
 
   if (shouldSave) {
     await writeFile(

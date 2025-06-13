@@ -11,6 +11,8 @@ import {
   EvmNetworkRpcCache,
   EvmNetworkRpcStatus,
 } from '../../shared/types.legacy'
+import { KnownEthNetworkConfig, KnownEthNetworkConfigDef } from '../../shared/types.v4'
+import { validateNetworks } from '../../shared/validateNetworks'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 
@@ -19,7 +21,7 @@ const IGNORED_CHAINS = [
   1200, // Cuckoo chain - can be un-ignored when https://github.com/MetaMask/eth-phishing-detect/issues/89066 closed
   1210, // Cuckoo testnet - as above
   728126428, // TRX - unsupported address format
-  31337, // GoChain - same ID as Anvil and Hardhat, which are both here to stay.
+  31337, // GoChain testnet - same ID as Anvil and Hardhat, which are both here to stay.
 ]
 
 // RPCs that are not to be fail both from github and browser
@@ -265,7 +267,7 @@ export const fetchKnownEvmNetworks = async () => {
     .filter(isActiveChain)
     .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
     .map((chain) => {
-      const evmNetwork: ConfigEvmNetwork = {
+      const evmNetwork: KnownEthNetworkConfig = {
         id: chain.chainId.toString(),
         name: chain.name,
         rpcs: chain.rpc.filter(isValidRpcUrl),
@@ -273,14 +275,13 @@ export const fetchKnownEvmNetworks = async () => {
       }
 
       const explorerUrl = chain.explorers?.[0]?.url
-      if (explorerUrl) evmNetwork.explorerUrl = explorerUrl
+      if (explorerUrl) evmNetwork.blockExplorerUrls = [explorerUrl]
 
       if (chain.nativeCurrency) {
-        evmNetwork.balancesConfig = {
-          'evm-native': {
-            symbol: chain.nativeCurrency.symbol,
-            decimals: chain.nativeCurrency.decimals,
-          },
+        evmNetwork.nativeCurrency = {
+          symbol: chain.nativeCurrency.symbol,
+          decimals: chain.nativeCurrency.decimals,
+          name: chain.nativeCurrency.name,
         }
       }
 
@@ -354,6 +355,8 @@ export const fetchKnownEvmNetworks = async () => {
       parser: 'json',
     }),
   )
+
+  validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
 
   // sort but don't filter out networks without RPCs
   // wallet needs their names, icons etc.

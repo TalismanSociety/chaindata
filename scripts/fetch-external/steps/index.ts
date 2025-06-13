@@ -1,4 +1,3 @@
-import { checkConfigFiles } from './checkConfigFiles'
 import { checkWsRpcs } from './checkWsRpcs'
 import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchCoingeckoEvmNetworksLogos'
 import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
@@ -10,13 +9,14 @@ import { fetchNovasamaMetadataPortalUrls } from './fetchNovasamaMetadataPortalUr
 import { fetchUniswapv2TokenExtras } from './fetchUniswapv2TokenExtras'
 import { updateChainsExtrasCache } from './updateChainsExtrasCache'
 import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensFromCache'
+import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Awaited<void>> = [
-  checkConfigFiles,
+  validateConfigFiles,
   // checkWsRpcs,
 
   // fetchKnownEvmNetworks,
-  // fetchKnownEvmNetworksCoingeckoLogos,
+  fetchKnownEvmNetworksCoingeckoLogos,
 
   // fetchKnownEvmTokens,
   // fetchErc20TokenSymbols,

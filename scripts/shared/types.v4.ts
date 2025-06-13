@@ -31,3 +31,10 @@ export const EthNetworkConfigDef = z.object({
   balancesConfig: z.partialRecord(EthBalancesConfigTypes, z.any()).optional(),
 })
 export type EthNetworkConfig = z.infer<typeof EthNetworkConfigDef>
+
+export const KnownEthNetworkConfigDef = z.object({
+  ...EthNetworkDef.partial().shape,
+  ...EthNetworkDef.pick({ id: true, name: true, rpcs: true }).shape,
+  icon: z.string().optional(),
+})
+export type KnownEthNetworkConfig = z.infer<typeof KnownEthNetworkConfigDef>

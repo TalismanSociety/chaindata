@@ -68,7 +68,7 @@ const migrateEthNetworkV3ToV4 =
     const dotNetwork = dotNetworks.find((n) => n.id === network.substrateChainId)
 
     return {
-      // requried
+      // required
       id,
       name: dotNetwork?.name ? name || dotNetwork.name : name, // in v3 they are not set for networks tied to a polkadot chain
       rpcs,
