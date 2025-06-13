@@ -161,7 +161,7 @@ export const parseYamlFile = <T>(filePath: string, schema?: z.ZodType<T>): T => 
 
   const data = parse(readFileSync(filePath, 'utf-8')) as T
 
-  return schema ? validate(data, schema) : data
+  return schema ? validate(data, schema, filePath) : data
 }
 
 export const parseJsonFile = <T>(filePath: string, schema?: z.ZodType<T>): T => {
@@ -169,7 +169,7 @@ export const parseJsonFile = <T>(filePath: string, schema?: z.ZodType<T>): T => 
 
   const data = JSON.parse(readFileSync(filePath, 'utf-8')) as T
 
-  return schema ? validate(data, schema) : data
+  return schema ? validate(data, schema, filePath) : data
 }
 
 type WriteJsonOptions = {
@@ -180,7 +180,7 @@ type WriteJsonOptions = {
 export const writeJsonFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
   if (!filePath.endsWith('.json')) throw new Error(`Invalid file extension for JSON file: ${filePath}`)
 
-  if (opts.schema) data = validate(data, opts.schema)
+  if (opts.schema) data = validate(data, opts.schema, `${filePath} (before saving)`)
 
   writeFileSync(filePath, opts.format ? await prettifyJson(data) : JSON.stringify(data))
 
@@ -199,10 +199,11 @@ export const prettifyJson = async (data: unknown) => {
   }
 }
 
-export const validate = <T>(data: unknown, schema: z.ZodType<T>): T => {
+export const validate = <T>(data: unknown, schema: z.ZodType<T>, label: string): T => {
   const result = schema.safeParse(data)
   if (!result.success) {
-    console.error('Validation failed3:', result.error.toString(), result.error.issues[0])
+    console.error('Failed to validate', label)
+    console.error(result.error)
     throw new Error('Invalid data')
   }
   return result.data
