@@ -16,10 +16,10 @@ export const fetchExternalSteps: Array<() => Awaited<void>> = [
   // checkWsRpcs,
 
   // fetchKnownEvmNetworks,
-  fetchKnownEvmNetworksCoingeckoLogos,
+  // fetchKnownEvmNetworksCoingeckoLogos,
 
   // fetchKnownEvmTokens,
-  // fetchErc20TokenSymbols,
+  fetchErc20TokenSymbols,
   // updateKnownEvmErc20TokensFromCache,
 
   // // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds

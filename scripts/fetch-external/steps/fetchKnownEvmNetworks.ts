@@ -12,7 +12,7 @@ import {
   EvmNetworkRpcStatus,
 } from '../../shared/types.legacy'
 import { KnownEthNetworkConfig, KnownEthNetworkConfigDef } from '../../shared/types.v4'
-import { validateNetworks } from '../../shared/validateNetworks'
+import { validateNetwork, validateNetworks } from '../../shared/validateNetworks'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 
@@ -267,7 +267,7 @@ export const fetchKnownEvmNetworks = async () => {
     .filter(isActiveChain)
     .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
     .map((chain) => {
-      const evmNetwork: KnownEthNetworkConfig = {
+      const evmNetwork: Partial<KnownEthNetworkConfig> & { id: string } = {
         id: chain.chainId.toString(),
         name: chain.name,
         rpcs: chain.rpc.filter(isValidRpcUrl),
@@ -277,12 +277,10 @@ export const fetchKnownEvmNetworks = async () => {
       const explorerUrl = chain.explorers?.[0]?.url
       if (explorerUrl) evmNetwork.blockExplorerUrls = [explorerUrl]
 
-      if (chain.nativeCurrency) {
-        evmNetwork.nativeCurrency = {
-          symbol: chain.nativeCurrency.symbol,
-          decimals: chain.nativeCurrency.decimals,
-          name: chain.nativeCurrency.name,
-        }
+      evmNetwork.nativeCurrency = {
+        symbol: chain.nativeCurrency.symbol,
+        decimals: chain.nativeCurrency.decimals,
+        name: chain.nativeCurrency.name,
       }
 
       if (
@@ -291,6 +289,8 @@ export const fetchKnownEvmNetworks = async () => {
         chain.rpc.some((rpc) => rpc.includes('testnet'))
       )
         evmNetwork.isTestnet = true
+
+      validateNetwork(evmNetwork, KnownEthNetworkConfigDef)
 
       return evmNetwork
     })

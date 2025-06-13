@@ -1,9 +1,10 @@
-import { PathLike } from 'node:fs'
+import { PathLike, readFileSync } from 'node:fs'
 import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
 
 import { WsProvider } from '@polkadot/api'
 import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
+import { parse } from 'yaml'
 
 import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO } from './constants'
 
@@ -150,4 +151,12 @@ export const networkMergeCustomizer = (objValue: any, srcValue: any, key: string
     // TODO support overriding properties on array items, such as forcing a coingeckoId for one token
     return objValue.concat(srcValue)
   }
+}
+
+export const parseYamlFile = <T>(filePath: string): T => {
+  return parse(readFileSync(filePath, 'utf-8')) as T
+}
+
+export const parseJsonFile = <T>(filePath: string): T => {
+  return JSON.parse(readFileSync(filePath, 'utf-8')) as T
 }

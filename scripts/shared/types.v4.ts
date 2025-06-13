@@ -35,6 +35,8 @@ export type EthNetworkConfig = z.infer<typeof EthNetworkConfigDef>
 export const KnownEthNetworkConfigDef = z.object({
   ...EthNetworkDef.partial().shape,
   ...EthNetworkDef.pick({ id: true, name: true, rpcs: true }).shape,
+  nativeCurrency: EthNetworkDef.shape.nativeCurrency,
   icon: z.string().optional(),
+  balancesConfig: z.partialRecord(EthBalancesConfigTypes, z.any()).optional(),
 })
 export type KnownEthNetworkConfig = z.infer<typeof KnownEthNetworkConfigDef>

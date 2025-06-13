@@ -117,6 +117,7 @@ export type Erc20TokenCache = {
   contractAddress: string
   symbol: string
   decimals: number
+  name: string
 }
 
 export type Uniswapv2TokenCache = {

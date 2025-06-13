@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
-import type { EvmErc20Token } from '@talismn/balances'
+import type { EvmErc20Token } from '@talismn/chaindata-provider'
 import prettier from 'prettier'
 import {
   Abi,
@@ -19,9 +19,12 @@ import {
   FILE_EVM_NETWORKS,
   FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_NETWORKS,
+  FILE_NETWORKS_ETHEREUM,
   PRETTIER_CONFIG,
 } from '../../shared/constants'
 import { ConfigEvmNetwork, Erc20TokenCache } from '../../shared/types.legacy'
+import { EthNetworkConfig, KnownEthNetworkConfig } from '../../shared/types.v4'
+import { parseJsonFile, parseYamlFile } from '../../shared/util'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
 
 const IGNORED_TOKENS = [
@@ -111,31 +114,44 @@ const getErc20Contract =
 export const getErc20ContractData = async (
   client: Client,
   contractAddress: `0x${string}`,
-): Promise<{ symbol: string; decimals: number }> => {
+): Promise<{ symbol: string; decimals: number; name: string }> => {
   const getEr20ContractFn = getErc20Contract(client, contractAddress)
 
   try {
     const contract = getEr20ContractFn(erc20Abi)
 
     // eslint-disable-next-line no-var
-    var [symbol, decimals] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
+    var [symbol, decimals, name] = await Promise.all([
+      contract.read.symbol(),
+      contract.read.decimals(),
+      contract.read.name(),
+    ])
   } catch (e) {
     if (e instanceof ContractFunctionExecutionError) {
       // try to perform the contract read with bytes32 symbol
       const contract = getEr20ContractFn(erc20Abi_bytes32)
 
       // eslint-disable-next-line no-var
-      var [bytesSymbol, decimals] = await Promise.all([contract.read.symbol(), contract.read.decimals()])
+      var [bytesSymbol, decimals, nameSymbol] = await Promise.all([
+        contract.read.symbol(),
+        contract.read.decimals(),
+        contract.read.name(),
+      ])
       symbol = hexToString(bytesSymbol).replace(/\0/g, '').trim() // remove NULL characters
+      name = hexToString(nameSymbol).replace(/\0/g, '').trim() // remove NULL characters
     } else {
       throw e
     }
   }
 
-  return { symbol, decimals }
+  return { symbol, decimals, name }
 }
 
-const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: ConfigEvmNetwork, address: string) => {
+const updateTokenCache = async (
+  tokenCache: Erc20TokenCache[],
+  evmNetwork: EthNetworkConfig | KnownEthNetworkConfig,
+  address: string,
+) => {
   const chainId = Number(evmNetwork.id)
 
   if (IGNORED_TOKENS.some((t) => t.chainId === chainId && t.contractAddress.toLowerCase() === address.toLowerCase()))
@@ -150,13 +166,14 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
   try {
     const client = getEvmNetworkClient(evmNetwork)
 
-    const { symbol, decimals } = await getErc20ContractData(client, contractAddress as `0x${string}`)
+    const { symbol, decimals, name } = await getErc20ContractData(client, contractAddress as `0x${string}`)
 
     tokenCache.push({
       chainId,
       contractAddress: contractAddress.toLowerCase(),
       symbol: cleanupString(symbol),
       decimals,
+      name: cleanupString(name),
     })
   } catch (err) {
     if (err instanceof TimeoutError) {
@@ -179,22 +196,35 @@ const updateTokenCache = async (tokenCache: Erc20TokenCache[], evmNetwork: Confi
 }
 
 export const fetchErc20TokenSymbols = async () => {
-  const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
-  const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
-  const tokensCache: Erc20TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE, 'utf-8'))
+  const evmNetworks = parseYamlFile<EthNetworkConfig[]>(FILE_NETWORKS_ETHEREUM)
+  const knownEvmNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS)
+  const tokensCache = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
 
-  // NOTE: results in duplicates for some networks, e.g. Ethereum Mainnet
-  const allNetworks = knownEvmNetworks.concat(evmNetworks)
-  const networksById = Object.fromEntries(allNetworks.map((n) => [n.id, n]))
+  // used to dedupe tokens that are registered in both knownEvmTokens and evmNetworks
+  const erc20sByChainId = new Map<string, Set<`0x${string}`>>()
 
-  // need to dedupe tokens that are registered in both knownEvmTokens and evmTokens
-  const tokenDefs = new Set<string>()
-  for (const network of allNetworks) {
-    const tokens = (network.balancesConfig?.['evm-erc20']?.tokens as EvmErc20Token[]) ?? []
-    for (const token of tokens) tokenDefs.add(`${network.id}||${token.contractAddress.toLowerCase()}`)
-  }
+  const networksById: Record<string, EthNetworkConfig | KnownEthNetworkConfig> = Object.fromEntries([
+    ...knownEvmNetworks.map((n) => [n.id, n] as const),
+    ...evmNetworks.map((n) => [n.id, n] as const),
+  ])
 
-  const promises = Array.from(tokenDefs)
+  const chainTokens = [
+    ...knownEvmNetworks.map((n) => ({ chainId: n.id, tokens: n.balancesConfig?.['evm-erc20']?.tokens ?? [] })),
+    ...evmNetworks.map((n) => ({ chainId: n.id, tokens: n.balancesConfig?.['evm-erc20']?.tokens ?? [] })),
+  ]
+  chainTokens.forEach(({ chainId, tokens }) => {
+    for (const token of tokens) {
+      if (!erc20sByChainId.has(chainId)) erc20sByChainId.set(chainId, new Set())
+      const addresses = erc20sByChainId.get(chainId)!
+      addresses.add(token.contractAddress.toLowerCase() as `0x${string}`)
+    }
+  })
+
+  const tokensDef = Array.from(erc20sByChainId.entries()).flatMap(([chainId, addresses]) => {
+    return Array.from(addresses.keys()).map((a) => `${chainId}||${a}`.toLowerCase())
+  })
+
+  const promises = tokensDef
     .map((td) => {
       const [chainId, contractAddress] = td.split('||')
       const network = networksById[chainId]
