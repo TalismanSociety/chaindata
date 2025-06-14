@@ -1,14 +1,15 @@
 import { existsSync } from 'fs'
 
 import { subNativeTokenId } from '@talismn/balances'
-import { DotNetwork, DotNetworkExtended, DotNetworkSchema, isDotNetwork } from '@talismn/chaindata'
+import { DotNetwork, DotNetworkSchema, isDotNetwork } from '@talismn/chaindata'
 import keyBy from 'lodash/keyBy'
+import { z } from 'zod/v4'
 
 import { WsRpcHealth } from '../../fetch-external/steps/checkWsRpcs'
 import {
-  FILE_CACHE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
-  FILE_CACHE_NETWORKS_SPECS_POLKADOT,
+  FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_POLKADOT,
+  FILE_NETWORKS_SPECS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_RPC_HEALTH_WEBSOCKET,
@@ -25,15 +26,12 @@ import {
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { MetadataPortalUrls } from '../../shared/types'
-import { parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
+import { getAssetUrlFromPath, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 
 export const buildNetworksPolkadot = async () => {
   const dotNetworksConfig = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
-  const metadataExtracts = parseJsonFile(
-    FILE_CACHE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
-    DotNetworkMetadataExtractsFileSchema,
-  )
-  const networkSpecs = parseJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
+  const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
+  const networkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
   const novaMetatadaPortalConfig = parseJsonFile<MetadataPortalUrls>(FILE_NOVASAMA_METADATA_PORTAL_URLS)
 
@@ -52,8 +50,12 @@ export const buildNetworksPolkadot = async () => {
       ),
     )
     .filter(isDotNetwork)
+    .sort((a, b) => a.id.localeCompare(b.id))
 
-  await writeJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, dotNetworks)
+  await writeJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, dotNetworks, {
+    format: true,
+    schema: z.array(DotNetworkSchema),
+  })
 }
 
 const consolidateDotNetwork = (
@@ -80,7 +82,15 @@ const consolidateDotNetwork = (
       name: specs.properties.tokenSymbol,
     },
     config.nativeCurrency, // allow overriding native currency properties
+    {
+      logo:
+        getAssetUrlFromPath(config.nativeCurrency?.logo) ||
+        getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId) ||
+        undefined,
+    },
   )
+
+  const logoRelativePath = config.logo || findDotNetworkLogo(config) || undefined
 
   const network: DotNetwork = {
     id: config.id,
@@ -89,19 +99,12 @@ const consolidateDotNetwork = (
     name: config.name ?? specs.name,
     nativeTokenId: subNativeTokenId(config.id),
     nativeCurrency,
-    specName: specs.runtimeVersion.specName,
-    specVersion: specs.runtimeVersion.specVersion,
-    genesisHash: specs.genesisHash,
     isTestnet: (config.isTestnet ?? specs.isTestnet) || undefined,
     isDefault: config.isDefault || undefined,
     forceScan: config.forceScan || undefined,
     themeColor: config.themeColor || undefined,
-    logo: config.logo || findDotNetworkLogo(config) || undefined,
-    account: metadataExtracts.account,
-    hasCheckMetadataHash: metadataExtracts.hasCheckMetadataHash,
+    logo: getAssetUrlFromPath(logoRelativePath),
     blockExplorerUrls: config.blockExplorerUrls?.length ? config.blockExplorerUrls : undefined,
-    prefix: metadataExtracts.ss58Prefix,
-    oldPrefix: config.oldPrefix,
     chainspecQrUrl: config.chainspecQrUrl || metadataPortalUrls?.urls.chainspecQrUrl || undefined,
     latestMetadataQrUrl: config.latestMetadataQrUrl || metadataPortalUrls?.urls.latestMetadataQrUrl || undefined,
     hasExtrinsicSignatureTypePrefix: config.hasCheckMetadataHash || undefined,
@@ -109,11 +112,16 @@ const consolidateDotNetwork = (
     overrideNativeTokenId: config.overrideNativeTokenId || undefined,
     registryTypes: config.registryTypes || undefined,
     signedExtensions: config.signedExtensions || undefined,
+    oldPrefix: config.oldPrefix,
 
-    // TODO
-    isRelay: false,
-    paraId: undefined,
-    relayId: undefined,
+    specName: specs.runtimeVersion.specName,
+    specVersion: specs.runtimeVersion.specVersion,
+    genesisHash: specs.genesisHash,
+
+    hasCheckMetadataHash: (config.hasCheckMetadataHash ?? metadataExtracts.hasCheckMetadataHash) || undefined,
+    prefix: metadataExtracts.ss58Prefix,
+    account: metadataExtracts.account,
+    topologyInfo: metadataExtracts.topologyInfo,
   }
 
   try {
@@ -131,8 +139,12 @@ const findDotNetworkLogo = (config: DotNetworkConfig): string | undefined => {
   }
 
   // fallback to coingecko logo of the native token
-  if (config.nativeCurrency?.coingeckoId) {
-    const logoPath = `./assets/tokens/coingecko/${config.nativeCurrency.coingeckoId}.webp`
-    if (existsSync(logoPath)) return logoPath
-  }
+  return getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
+}
+
+const getCoingeckoTokenLogoUrl = (coingeckoId: string | undefined): string | undefined => {
+  if (!coingeckoId) return undefined
+
+  const logoPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
+  if (existsSync(logoPath)) return logoPath
 }

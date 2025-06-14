@@ -22,6 +22,7 @@ const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
   return {
     // required
     id,
+    relay: network.relay?.id || undefined,
     name, // not really required, but keep value if forced
     rpcs,
 

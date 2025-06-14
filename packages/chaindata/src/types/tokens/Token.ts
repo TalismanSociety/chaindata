@@ -12,7 +12,7 @@ import { SubTokensTokenSchema } from './SubstrateTokensToken'
 /**
  * The `Token` sum type, which is a union of all of the possible `TokenTypes`.
  */
-export const TokenSchema = z.discriminatedUnion('type', [
+export const TokenSchemaBase = z.discriminatedUnion('type', [
   EvmErc20TokenSchema,
   EvmNativeTokenSchema,
   EvmUniswapV2TokenSchema,
@@ -22,10 +22,52 @@ export const TokenSchema = z.discriminatedUnion('type', [
   SubPsp22TokenSchema,
   SubTokensTokenSchema,
 ])
-export type Token = z.infer<typeof TokenSchema>
+
+export const TokenTypeSchema = z.enum(TokenSchemaBase.options.map((t) => t.shape.type.value))
+
+export type Token = z.infer<typeof TokenSchemaBase>
 
 export type TokenId = Token['id']
 
-export const TokenTypeSchema = z.enum(TokenSchema.options.map((t) => t.shape.type.value))
-
 export type TokenType = z.infer<typeof TokenTypeSchema>
+
+// transform to control in which order properties are output as JSON when parsed from schema
+export const TokenSchema = TokenSchemaBase.transform((token: Token): Token => {
+  // reorder properties for easier reading
+  const {
+    id,
+    platform,
+    networkId,
+    type,
+    symbol,
+    decimals,
+    name,
+    coingeckoId,
+    logo,
+    isDefault,
+    isTestnet,
+    mirrorOf,
+    noDiscovery,
+  } = token
+
+  return Object.assign(
+    // appropriate order of base properties
+    {
+      id,
+      platform,
+      networkId,
+      type,
+      symbol,
+      decimals,
+      name,
+      coingeckoId,
+      logo,
+      isDefault,
+      isTestnet,
+      mirrorOf,
+      noDiscovery,
+    },
+    // token type specifics go after
+    token,
+  )
+})

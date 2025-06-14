@@ -1,24 +1,15 @@
-import { readFile, writeFile } from 'fs/promises'
-
 import { PromisePool } from '@supercharge/promise-pool'
 import uniq from 'lodash/uniq'
 import WebSocket from 'ws'
-import { parse } from 'yaml'
-import z from 'zod/v4'
 
-import {
-  FILE_CHAINDATA,
-  FILE_NETWORKS_POLKADOT,
-  FILE_RPC_HEALTH_WEBSOCKET,
-  FILE_TESTNETS_CHAINDATA,
-} from '../../shared/constants'
-import { DotNetworkConfig, DotNetworkConfigSchema, DotNetworksConfigFileSchema } from '../../shared/schemas'
-import { ConfigChain } from '../../shared/types'
+import { FILE_NETWORKS_POLKADOT, FILE_RPC_HEALTH_WEBSOCKET } from '../../shared/constants'
+import { DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { parseYamlFile, writeJsonFile } from '../../shared/util'
 
 export type WsRpcHealth = 'OK' | 'MEH' | 'NOK'
 
 const MEH_ERROR_MESSAGES = [
+  'Unexpected server response: 503', // service unavailable, hopefully temporary
   'Unexpected server response: 502', // bad gateway, could work on client
   'Unexpected server response: 429', // rate limited, could work on client
   'Unexpected server response: 521', // server down, could be temporary
@@ -43,8 +34,6 @@ export const checkWsRpcs = async () => {
   // ATM we only use websocket rpcs for substrate chains
   const networks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
-  // const mainnets = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
-  // const testnets = JSON.parse(await readFile(FILE_TESTNETS_CHAINDATA, 'utf-8')) as ConfigChain[]
   const rpcUrls = uniq(networks.flatMap((chain) => chain.rpcs ?? []))
 
   // v8 can only do 2 requests at once but the speed increment is worth the false positives

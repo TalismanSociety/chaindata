@@ -1,4 +1,5 @@
 import { XcmV3JunctionNetworkId } from '@polkadot-api/descriptors'
+import { WsProvider } from '@polkadot/rpc-provider'
 import { xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
 import { fetchBestMetadata } from '@talismn/sapi'
@@ -7,9 +8,9 @@ import keyBy from 'lodash/keyBy'
 import { cache } from 'sharp'
 
 import {
-  FILE_CACHE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
-  FILE_CACHE_NETWORKS_SPECS_POLKADOT,
+  FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_POLKADOT,
+  FILE_NETWORKS_SPECS_POLKADOT,
   FILE_RPC_HEALTH_WEBSOCKET,
 } from '../../shared/constants'
 import {
@@ -34,12 +35,15 @@ import {
 import { WsRpcHealth } from './checkWsRpcs'
 import { fetchMiniMetadatas } from './helpers/fetchMinimetadata'
 
+// set this to a specific chain id to debug it
+const DEV_CHAIN_ID = null // ex: 'hydradx'
+
 export const fetchDotNetworksMetadataExtracts = async () => {
   const oldMetadataExtracts = parseJsonFile(
-    FILE_CACHE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
+    FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
     DotNetworkMetadataExtractsFileSchema,
   )
-  const dotNetworkSpecs = parseJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
+  const dotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
 
@@ -63,6 +67,9 @@ export const fetchDotNetworksMetadataExtracts = async () => {
       const metadataExtract = metadataExtractsById[network.id]
       if (!metadataExtract) return true // no metadata extract yet, fetch it
 
+      // if debugging a specific chain, force it to update
+      if (DEV_CHAIN_ID && network.id === DEV_CHAIN_ID) return true
+
       // spec version changed, metadata will be different
       if (metadataExtract.specVersion !== specs.runtimeVersion.specVersion) return true
 
@@ -71,6 +78,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
 
       return false // no changes, no need to update
     })
+    .filter((network) => !DEV_CHAIN_ID || network.network.id === DEV_CHAIN_ID)
 
   console.log(
     'fetchDotNetworkMetadataExtracts processing %s networks (total:%s invalid:%s)',
@@ -103,7 +111,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
     .sort((a, b) => a.id.localeCompare(b.id))
 
   // return data // Replace with actual validation when schema is available
-  await writeJsonFile(FILE_CACHE_NETWORKS_METADATA_EXTRACTS_POLKADOT, data, {
+  await writeJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, data, {
     format: true,
     schema: DotNetworkMetadataExtractsFileSchema,
   })
@@ -146,6 +154,9 @@ const fetchMetadataExtract = async ({
 
     const { miniMetadatas, tokens } = await fetchMiniMetadatas(network, specs, provider, metadataRpc)
 
+    const topologyInfo = await getTopologyInfo(metadata, provider, network)
+    console.log('Topology for network %s: %o', network.id, topologyInfo)
+
     return validateDebug(
       {
         id: network.id,
@@ -156,6 +167,7 @@ const fetchMetadataExtract = async ({
         cacheBalancesConfigHash,
         miniMetadatas,
         tokens,
+        topologyInfo,
       },
       DotNetworkMetadataExtractSchema,
       'network metadata extract ' + network.id,
@@ -163,7 +175,7 @@ const fetchMetadataExtract = async ({
   } catch (cause) {
     // decAnyMetadata throws null if metadata version is unsupported
     if (cause === null) console.warn('Unsupported metadata version on network', network.id)
-    throw new Error(`Failed to fetch metadata extract for ${network.id}`, { cause })
+    throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}`, { cause })
   } finally {
     await provider.disconnect()
   }
@@ -208,4 +220,48 @@ const getSs58Prefix = (metadata: UnifiedMetadata) => {
     return 42
   }
   return prefix
+}
+
+const getTopologyInfo = async (
+  metadata: UnifiedMetadata,
+  provider: WsProvider,
+  network: DotNetworkConfig,
+): Promise<DotNetworkMetadataExtract['topologyInfo']> => {
+  if (metadata.pallets.some((p) => p.name === 'Paras')) {
+    if (network.relay && network.id !== network.relay)
+      console.warn(`Network ${network.id} has invalid relay property, remove it`)
+    return { type: 'relay' }
+  }
+
+  const parachainInfo = metadata.pallets.find((p) => p.name === 'ParachainInfo')
+  if (parachainInfo) {
+    try {
+      if (!network.relay) {
+        console.warn(`Unknown relay for ${network.id} (plz fill the relay property in networks-polkadot.yaml)`)
+        // TODO throw error instead ? can do after v4 launch, we need at least one invalid entry in output file before doing so
+        return { type: 'standalone' }
+      }
+
+      const builder = getDynamicBuilder(getLookupFn(metadata))
+      const codec = builder.buildStorage('ParachainInfo', 'ParachainId')
+      const stateKey = codec.keys.enc()
+      const hexValue = await provider.send<`0x${string}`>('state_getStorage', [stateKey])
+      const paraId = codec.value.dec(hexValue) as number
+
+      return {
+        type: 'parachain',
+        relayId: network.relay,
+        paraId,
+      }
+    } catch (cause) {
+      console.error(cause)
+      throw new Error(`Failed to construct parachain info: ${cause}`, { cause })
+    }
+  }
+
+  if (network.relay) console.warn(`Network ${network.id} has invalid relay property, remove it`)
+
+  return {
+    type: 'standalone',
+  }
 }

@@ -5,7 +5,8 @@
     "type": "object",
     "properties": {
       "id": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "isTestnet": {
         "type": "boolean"
@@ -21,10 +22,8 @@
         "minLength": 1
       },
       "logo": {
-        "type": "string"
-      },
-      "nativeTokenId": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "nativeCurrency": {
         "type": "object",
@@ -55,7 +54,8 @@
         "additionalProperties": false
       },
       "themeColor": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "blockExplorerUrls": {
         "type": "array",
@@ -64,34 +64,17 @@
           "format": "uri"
         }
       },
-      "platform": {
-        "type": "string",
-        "const": "polkadot"
-      },
-      "isRelay": {
-        "type": "boolean"
-      },
-      "specName": {
-        "type": "string"
-      },
-      "specVersion": {
-        "type": "number"
-      },
-      "account": {
-        "type": "string",
-        "enum": ["polkadot", "ethereum"]
-      },
       "chainspecQrUrl": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "latestMetadataQrUrl": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "overrideNativeTokenId": {
-        "type": "string"
-      },
-      "prefix": {
-        "type": "number"
+        "type": "string",
+        "minLength": 1
       },
       "oldPrefix": {
         "type": "number"
@@ -113,6 +96,10 @@
       },
       "isUnknownFeeToken": {
         "type": "boolean"
+      },
+      "relay": {
+        "type": "string",
+        "minLength": 1
       },
       "balancesConfig": {
         "type": "object",

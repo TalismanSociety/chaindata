@@ -53,6 +53,7 @@
 - id: aband
   name: Aband
   rpcs: []
+  relay: kusama
 - id: acala
   name: Acala
   nativeCurrency:
@@ -70,6 +71,7 @@
     - wss://acala-rpc-3.aca-api.network/ws
     - wss://acala.ibp.network
     - wss://acala.dotters.network
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -205,6 +207,7 @@
   name: Acurast Canary
   rpcs:
     - wss://public-rpc.canary.acurast.com
+  relay: kusama
 - id: ajuna
   name: Ajuna
   nativeCurrency:
@@ -216,6 +219,7 @@
     - wss://ajuna.ibp.network
     - wss://ajuna.dotters.network
     - wss://rpc-para.ajuna.network
+  relay: polkadot
 - id: aleph-zero
   name: Aleph Zero
   nativeCurrency:
@@ -273,12 +277,14 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/altair_metadata_latest.apng
   rpcs:
     - wss://fullnode.altair.centrifuge.io
+  relay: kusama
 - id: amplitude
   name: Amplitude
   chainspecQrUrl: https://metadata.novasama.io/qr/amplitude_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/amplitude_metadata_latest.apng
   rpcs:
     - wss://rpc-amplitude.pendulumchain.tech
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -351,6 +357,7 @@
     - wss://astar-rpc.dwellir.com
     - wss://rpc.astar.network
     - wss://astar.public.curie.radiumblock.co/ws
+  relay: polkadot
   balancesConfig:
     substrate-assets:
       tokens:
@@ -522,6 +529,7 @@
   oldPrefix: 42
   rpcs:
     - wss://public-rpc.mainnet.aventus.io
+  relay: polkadot
 - id: bajun
   name: Bajun
   nativeCurrency:
@@ -531,6 +539,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/bajun_specs.png
   rpcs:
     - wss://rpc-para.bajun.network
+  relay: kusama
 - id: basilisk
   name: Basilisk
   nativeCurrency:
@@ -542,6 +551,7 @@
   rpcs:
     - wss://basilisk-rpc.n.dwellir.com
     - wss://rpc.basilisk.cloud
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -610,6 +620,7 @@
   rpcs:
     - wss://bifrost-rpc.liebi.com/ws
     - wss://us.bifrost-rpc.liebi.com/ws
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -731,6 +742,7 @@
     - wss://bifrost-polkadot.dotters.network
     - wss://hk.p.bifrost-rpc.liebi.com/ws
     - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -848,6 +860,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_metadata_latest.apng
   rpcs: []
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -876,6 +889,7 @@
   oldPrefix: 42
   rpcs:
     - wss://mainnet.bitgreen.org
+  relay: polkadot
 - id: bittensor
   name: Bittensor
   nativeCurrency:
@@ -892,6 +906,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/calamari_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/calamari_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: centrifuge-polkadot
   name: Centrifuge
   nativeCurrency:
@@ -905,6 +920,7 @@
     - wss://centrifuge-rpc.dwellir.com
     - wss://fullnode.centrifuge.io
     - wss://rpc-centrifuge.luckyfriday.io
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       palletId: OrmlTokens
@@ -961,9 +977,11 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/clover-mainnet_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/clover-mainnet_metadata_latest.apng
   rpcs: []
+  relay: polkadot
 - id: coinversation
   name: Coinversation
   rpcs: []
+  relay: polkadot
 - id: communeai
   name: Commune AI
   nativeCurrency:
@@ -984,6 +1002,7 @@
   rpcs:
     - wss://composable-rpc.dwellir.com
     - wss://rpc.composable.finance
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1103,6 +1122,7 @@
   oldPrefix: 268
   rpcs:
     - wss://continuum-rpc-1.metaverse.network/wss
+  relay: polkadot
 - id: crab
   name: Darwinia Crab
   nativeCurrency:
@@ -1114,6 +1134,7 @@
   rpcs:
     - wss://darwiniacrab-rpc.dwellir.com
     - wss://crab-rpc.darwinia.network/
+  relay: kusama
 - id: creditcoin
   name: Creditcoin
   nativeCurrency:
@@ -1155,10 +1176,12 @@
     - wss://crust-parachain.crustnetwork.app
     - wss://crust-parachain.crustnetwork.cc
     - wss://crust-parachain.crustnetwork.xyz
+  relay: polkadot
 - id: curio
   name: Curio
   rpcs:
     - wss://parachain.curioinvest.com/
+  relay: kusama
 - id: darwinia
   name: Darwinia
   nativeCurrency:
@@ -1170,6 +1193,7 @@
     - wss://darwinia-rpc.dwellir.com
     - wss://rpc.darwinia.network
     - wss://darwinia.rpc.subquery.network/public/ws
+  relay: polkadot
 - id: debio
   name: DeBio
   rpcs: []
@@ -1187,6 +1211,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
   latestMetadataQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: edgeware
   name: Edgeware
   nativeCurrency:
@@ -1209,6 +1234,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/efinity_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/efinity_metadata_latest.apng
   rpcs: []
+  relay: polkadot
 - id: efinity-standalone
   name: Efinity Standalone
   rpcs: []
@@ -1229,6 +1255,7 @@
     - wss://encointer-kusama-rpc.dwellir.com
     - wss://kusama.api.encointer.org
     - wss://encointer-kusama.dotters.network
+  relay: kusama
 - id: enjin-matrixchain
   name: Enjin Matrix
   nativeCurrency:
@@ -1238,6 +1265,7 @@
   rpcs:
     - wss://rpc.matrix.blockchain.enjin.io
     - wss://enjin-matrix-rpc-1.dwellir.com
+  relay: enjin-relay
 - id: enjin-relay
   name: Enjin
   nativeCurrency:
@@ -1255,6 +1283,7 @@
   oldPrefix: 42
   rpcs:
     - wss://public-rpc.mainnet.energywebx.com
+  relay: polkadot
 - id: fragnova
   name: Fragnova
   nativeCurrency:
@@ -1267,21 +1296,26 @@
     - wss://frequency-rpc.dwellir.com
     - wss://0.rpc.frequency.xyz
     - wss://1.rpc.frequency.xyz
+  relay: polkadot
 - id: geminis
   name: Geminis
   rpcs: []
+  relay: polkadot
 - id: genshiro-kusama
   name: Genshiro
   nativeCurrency: {}
   rpcs: []
+  relay: kusama
 - id: genshiro-kusama-2
   name: Genshiro
   rpcs: []
+  relay: kusama
 - id: gm
   name: GM
   chainspecQrUrl: https://metadata.novasama.io/qr/gm_parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/gm_parachain_metadata_latest.apng
   rpcs: []
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1300,6 +1334,7 @@
   name: Hashed
   oldPrefix: 42
   rpcs: []
+  relay: polkadot
 - id: heima
   name: Heima
   nativeCurrency:
@@ -1307,6 +1342,7 @@
   rpcs:
     - wss://litentry-rpc.dwellir.com
     - wss://rpc.heima-parachain.heima.network
+  relay: polkadot
 - id: humanode
   name: Humanode
   nativeCurrency:
@@ -1331,6 +1367,7 @@
     - wss://rpc.hydradx.cloud
     - wss://rpc.helikon.io/hydradx
   isUnknownFeeToken: true
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1574,6 +1611,7 @@
     - wss://nexus.ibp.network
     - wss://nexus.dotters.network
     - wss://hyperbridge-nexus-rpc.blockops.network
+  relay: polkadot
 - id: imbue
   name: Imbue
   nativeCurrency:
@@ -1581,6 +1619,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/imbue_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/imbue_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: innovatorchain
   name: Innovator Chain
   rpcs: []
@@ -1594,6 +1633,7 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/integritee-parachain_metadata_latest.apng
   rpcs:
     - wss://kusama.api.integritee.network
+  relay: kusama
 - id: integritee-polkadot
   name: Integritee
   nativeCurrency:
@@ -1602,9 +1642,11 @@
   rpcs:
     - wss://integritee-rpc.dwellir.com
     - wss://polkadot.api.integritee.network
+  relay: polkadot
 - id: integritee-polkadot-2
   name: Integritee
   rpcs: []
+  relay: polkadot
 - id: interlay
   name: Interlay
   nativeCurrency:
@@ -1618,6 +1660,7 @@
     - wss://interlay-rpc.dwellir.com
     - wss://api.interlay.io/parachain
     - wss://rpc-interlay.luckyfriday.io/
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1697,16 +1740,19 @@
     - wss://invarch-rpc.dwellir.com
     - wss://invarch.ibp.network
     - wss://invarch.dotters.network
+  relay: polkadot
 - id: ipci
   name: DAO IPCI
   chainspecQrUrl: https://metadata.novasama.io/qr/ipci_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/ipci_metadata_latest.apng
   rpcs:
     - wss://ipci.rpc.robonomics.network
+  relay: kusama
 - id: jamton
   name: Jamton
   rpcs:
     - wss://rpc.jamton.network
+  relay: polkadot
 - id: joystream
   name: Joystream
   nativeCurrency:
@@ -1727,11 +1773,13 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kabocha-parachain_metadata_latest.apng
   rpcs:
     - wss://kabocha.jelliedowl.net
+  relay: kusama
 - id: kapex
   name: Kapex
   chainspecQrUrl: https://metadata.novasama.io/qr/totem-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/totem-parachain_metadata_latest.apng
   rpcs: []
+  relay: polkadot
 - id: karura
   name: Karura
   nativeCurrency:
@@ -1747,6 +1795,7 @@
     - wss://karura-rpc-1.aca-api.network
     - wss://karura-rpc-2.aca-api.network/ws
     - wss://karura-rpc-3.aca-api.network/ws
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -1991,12 +2040,15 @@
     - https://khala.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/khala_specs.png
   rpcs: []
+  relay: kusama
 - id: kico
   name: Kico
   rpcs: []
+  relay: kusama
 - id: kico-2
   name: Kico
   rpcs: []
+  relay: kusama
 - id: kilt-spiritnet
   name: KILT Spiritnet
   nativeCurrency:
@@ -2011,6 +2063,7 @@
     - wss://kilt.ibp.network
     - wss://kilt.dotters.network
     - wss://spiritnet.kilt.io/
+  relay: polkadot
 - id: kintsugi
   name: Kintsugi
   nativeCurrency:
@@ -2022,6 +2075,7 @@
   rpcs:
     - wss://kintsugi-rpc.dwellir.com
     - wss://api-kusama.interlay.io/parachain
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2097,11 +2151,13 @@
 - id: kpron
   name: Kpron
   rpcs: []
+  relay: kusama
 - id: kreivo
   name: Kreivo
   rpcs:
     - wss://kreivo.kippu.rocks/
     - wss://kreivo.io/
+  relay: kusama
 - id: krest
   name: Krest
   nativeCurrency:
@@ -2111,6 +2167,7 @@
   rpcs:
     - wss://wss-krest.peaq.network/
     - wss://krest.unitedbloc.com/
+  relay: kusama
 - id: kulupu
   name: Kulupu
   blockExplorerUrls:
@@ -2134,6 +2191,7 @@
     - wss://kusama-asset-hub-rpc.polkadot.io
     - wss://statemine.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/assethub
+  relay: kusama
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2165,6 +2223,7 @@
     - wss://kusama-bridge-hub-rpc.polkadot.io
     - wss://bridgehub-kusama.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/bridgehub
+  relay: kusama
 - id: kusama-coretime
   name: Kusama Coretime
   nativeCurrency:
@@ -2181,6 +2240,7 @@
     - wss://rpc-coretime-kusama.luckyfriday.io
     - wss://kusama-coretime-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/coretime
+  relay: kusama
 - id: kusama-people
   name: Kusama People
   nativeCurrency:
@@ -2197,6 +2257,7 @@
     - wss://rpc-people-kusama.luckyfriday.io
     - wss://kusama-people-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/people
+  relay: kusama
 - id: kusari
   name: Kusari
   rpcs: []
@@ -2205,6 +2266,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/kylin_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kylin_metadata_latest.apng
   rpcs: []
+  relay: polkadot
 - id: laos
   name: LAOS
   nativeCurrency:
@@ -2212,6 +2274,7 @@
   oldPrefix: 42
   rpcs:
     - wss://rpc.laos.laosfoundation.io
+  relay: polkadot
 - id: liberland
   name: Liberland
   nativeCurrency:
@@ -2223,6 +2286,7 @@
 - id: listen
   name: Listen
   rpcs: []
+  relay: kusama
 - id: litmus
   name: Litmus
   blockExplorerUrls:
@@ -2230,15 +2294,18 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/litmus-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/litmus-parachain_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: logion-polkadot
   name: Logion
   oldPrefix: 2021
   rpcs:
     - wss://para-rpc01.logion.network
     - wss://para-rpc02.logion.network
+  relay: polkadot
 - id: loom-network
   name: Loom
   rpcs: []
+  relay: kusama
 - id: mangata
   name: MangataX
   nativeCurrency: {}
@@ -2249,6 +2316,7 @@
   rpcs:
     - wss://kusama-archive.mangata.online
     - wss://kusama-rpc.mangata.online
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2266,9 +2334,11 @@
   oldPrefix: 77
   rpcs:
     - wss://ws.manta.systems
+  relay: polkadot
 - id: mars
   name: Mars
   rpcs: []
+  relay: kusama
 - id: mathchain
   name: MathChain
   rpcs: []
@@ -2290,6 +2360,7 @@
     - wss://wss.api.moonbeam.network
     - wss://moonbeam.public.curie.radiumblock.co/ws
     - wss://moonbeam.unitedbloc.com
+  relay: polkadot
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2324,11 +2395,13 @@
     - wss://wss.api.moonriver.moonbeam.network
     - wss://moonriver.public.curie.radiumblock.co/ws
     - wss://moonriver.unitedbloc.com
+  relay: kusama
 - id: moonsama
   name: Moonsama
   nativeCurrency:
     coingeckoId: exosama-network
   rpcs: []
+  relay: polkadot
 - id: myriad
   name: Myriad
   nativeCurrency:
@@ -2348,6 +2421,7 @@
     - wss://mythos.ibp.network
     - wss://mythos.dotters.network
     - wss://polkadot-mythos-rpc.polkadot.io
+  relay: polkadot
 - id: neatcoin
   name: Neatcoin
   nativeCurrency:
@@ -2362,6 +2436,7 @@
   oldPrefix: 101
   rpcs:
     - wss://parachain-rpc.origin-trail.network
+  relay: polkadot
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2371,6 +2446,7 @@
 - id: neuroweb-polkadot-2
   name: NeuroWeb
   rpcs: []
+  relay: polkadot
 - id: nftmart
   name: NFTMart
   nativeCurrency:
@@ -2387,22 +2463,27 @@
   oldPrefix: 37
   rpcs:
     - wss://nodle-rpc.dwellir.com
+  relay: polkadot
 - id: nodle-standalone
   name: Nodle Standalone
   rpcs: []
 - id: oak
   name: Oak
   rpcs: []
+  relay: polkadot
 - id: odyssey
   name: Ares Odyssey
   rpcs: []
+  relay: polkadot
 - id: omnibtc
   name: OmniBTC
   rpcs: []
+  relay: polkadot
 - id: parallel
   name: Parallel
   rpcs:
     - wss://parallel.gatotech.network
+  relay: polkadot
 - id: peaq
   name: Peaq
   nativeCurrency:
@@ -2413,6 +2494,7 @@
   rpcs:
     - wss://peaq-rpc.dwellir.com
     - wss://peaq-rpc.publicnode.com
+  relay: polkadot
 - id: pendulum
   name: Pendulum
   nativeCurrency:
@@ -2422,6 +2504,7 @@
   oldPrefix: 56
   rpcs:
     - wss://rpc-pendulum.prd.pendulumchain.tech
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2528,6 +2611,7 @@
     - wss://phala-rpc.dwellir.com
     - wss://phala.public.curie.radiumblock.co/ws
     - wss://api.phala.network/ws
+  relay: polkadot
 - id: picasso
   name: Picasso
   nativeCurrency:
@@ -2538,6 +2622,7 @@
   rpcs:
     - wss://picasso-rpc.dwellir.com
     - wss://rpc.composablenodes.tech
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -2710,6 +2795,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/pichiu_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/pichiu_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: polimec
   name: Polimec
   nativeCurrency:
@@ -2723,6 +2809,7 @@
     - wss://polimec.rpc.amforc.com
     - wss://rpc.helikon.io/polimec
     - wss://rpc.polimec.org
+  relay: polkadot
   balancesConfig:
     substrate-foreignassets:
       tokens:
@@ -2740,6 +2827,7 @@
   nativeCurrency:
     coingeckoId: polkadex
   rpcs: []
+  relay: polkadot
 - id: polkadex-polkadot-2
   name: Polkadex
   nativeCurrency:
@@ -2750,6 +2838,7 @@
   rpcs:
     - wss://polkadex-parachain-rpc.dwellir.com
     - wss://polkadex-parachain.public.curie.radiumblock.co/ws
+  relay: polkadot
 - id: polkadex-standalone
   name: Polkadex Standalone
   nativeCurrency:
@@ -2782,6 +2871,7 @@
     - wss://polkadot-asset-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/assethub
     - wss://statemint.public.curie.radiumblock.co/ws
+  relay: polkadot
   balancesConfig:
     substrate-assets:
       tokens:
@@ -2891,6 +2981,7 @@
     - wss://polkadot-bridge-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/bridgehub
     - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
+  relay: polkadot
 - id: polkadot-collectives
   name: Polkadot Collectives
   nativeCurrency:
@@ -2908,6 +2999,7 @@
     - wss://polkadot-collectives-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/collectives
     - wss://collectives.public.curie.radiumblock.co/ws
+  relay: polkadot
 - id: polkadot-coretime
   name: Polkadot Coretime
   blockExplorerUrls:
@@ -2916,6 +3008,7 @@
     - wss://sys.ibp.network/coretime-polkadot
     - wss://coretime-polkadot.dotters.network
     - wss://polkadot-coretime-rpc.polkadot.io
+  relay: polkadot
 - id: polkadot-people
   name: Polkadot People
   blockExplorerUrls:
@@ -2926,9 +3019,11 @@
     - wss://rpc-people-polkadot.luckyfriday.io
     - wss://polkadot-people-rpc.polkadot.io
     - wss://people-polkadot.public.curie.radiumblock.co/ws
+  relay: polkadot
 - id: polkasmith
   name: PolkaSmith
   rpcs: []
+  relay: kusama
 - id: polymesh
   name: Polymesh
   nativeCurrency:
@@ -2943,6 +3038,7 @@
 - id: qpn
   name: Quantum Portal
   rpcs: []
+  relay: kusama
 - id: quartz
   name: Quartz
   nativeCurrency:
@@ -2957,12 +3053,14 @@
     - wss://us-ws-quartz.unique.network
     - wss://asia-ws-quartz.unique.network
     - wss://eu-ws-quartz.unique.network
+  relay: kusama
 - id: riochain
   name: RioChain
   rpcs: []
 - id: riodefi
   name: RioDeFi
   rpcs: []
+  relay: kusama
 - id: robonomics-kusama
   name: Robonomics Kusama
   nativeCurrency:
@@ -2973,6 +3071,7 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/robonomics_metadata_latest.apng
   rpcs:
     - wss://kusama.rpc.robonomics.network/
+  relay: kusama
 - id: robonomics-polkadot
   name: Robonomics Polkadot
   blockExplorerUrls:
@@ -2980,11 +3079,13 @@
   oldPrefix: 32
   rpcs:
     - wss://polkadot.rpc.robonomics.network/
+  relay: polkadot
 - id: sakura
   name: Sakura
   blockExplorerUrls:
     - https://sakura.subscan.io/
   rpcs: []
+  relay: kusama
 - id: shadow-kusama
   name: Crust Shadow
   nativeCurrency:
@@ -2998,9 +3099,11 @@
     - wss://rpc-shadow.crustnetwork.app
     - wss://rpc-shadow.crustnetwork.cc
     - wss://rpc-shadow.crustnetwork.xyz
+  relay: kusama
 - id: shadow-kusama-2
   name: Crust Shadow
   rpcs: []
+  relay: kusama
 - id: sherpax
   name: SherpaX
   rpcs: []
@@ -3016,20 +3119,24 @@
     - wss://shiden-rpc.dwellir.com
     - wss://shiden.public.curie.radiumblock.co/ws
     - wss://rpc.shiden.astar.network
+  relay: kusama
 - id: shiden-kusama-2
   name: Shiden
   rpcs: []
+  relay: kusama
 - id: snow
   name: Snow
   chainspecQrUrl: https://metadata.novasama.io/qr/snow_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/snow_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: sora-kusama
   name: Sora
   nativeCurrency:
     coingeckoId: sora
   rpcs:
     - wss://ws.parachain-collator-2.c2.sora2.soramitsu.co.jp
+  relay: kusama
 - id: sora-polkadot
   name: Sora
   nativeCurrency:
@@ -3037,6 +3144,7 @@
   oldPrefix: 81
   rpcs:
     - wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp
+  relay: polkadot
 - id: sora-standalone
   name: Sora Standalone
   nativeCurrency:
@@ -3060,12 +3168,15 @@
 - id: subdao
   name: SubDAO
   rpcs: []
+  relay: polkadot
 - id: subgame-kusama
   name: SubGame Gamma Kusama
   rpcs: []
+  relay: kusama
 - id: subgame-polkadot
   name: SubGame Gamma Polkadot
   rpcs: []
+  relay: polkadot
 - id: subgame-standalone
   name: SubGame
   nativeCurrency:
@@ -3081,6 +3192,7 @@
   rpcs:
     - wss://subsocial-rpc.dwellir.com
     - wss://para.subsocial.network
+  relay: polkadot
 - id: subsocial-standalone
   name: Subsocial Standalone
   rpcs: []
@@ -3088,6 +3200,7 @@
   name: SubsocialX
   chainspecQrUrl: https://metadata.novasama.io/qr/subsocial-parachain_specs.png
   rpcs: []
+  relay: kusama
 - id: swapdex
   name: Swapdex
   nativeCurrency:
@@ -3096,16 +3209,19 @@
 - id: t-1-rn
   name: t1rn
   rpcs: []
+  relay: kusama
 - id: t-3-rn
   name: t3rn
   oldPrefix: 9935
   rpcs: []
+  relay: polkadot
 - id: tanganika
   name: Tanganika
   blockExplorerUrls:
     - https://datahighway.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/datahighway-parachain_specs.png
   rpcs: []
+  relay: kusama
 - id: tangle
   name: Tangle
   nativeCurrency:
@@ -3132,6 +3248,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/tinkernet_node_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/tinkernet_node_metadata_latest.apng
   rpcs: []
+  relay: kusama
 - id: torus
   name: Torus
   rpcs:
@@ -3139,6 +3256,7 @@
 - id: trustbase
   name: TrustBase
   rpcs: []
+  relay: kusama
 - id: turing
   name: Turing
   nativeCurrency:
@@ -3149,6 +3267,7 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/turing_metadata_latest.apng
   rpcs:
     - wss://turing-rpc.dwellir.com
+  relay: kusama
 - id: uniarts
   name: UniArts
   blockExplorerUrls:
@@ -3171,12 +3290,14 @@
     - wss://us-ws.unique.network
     - wss://asia-ws.unique.network
     - wss://eu-ws.unique.network
+  relay: polkadot
 - id: unitnetwork
   name: UnitNetwork
   rpcs: []
 - id: unorthodox
   name: Unorthodox
   rpcs: []
+  relay: kusama
 - id: vara
   name: Vara
   nativeCurrency:
@@ -3192,6 +3313,7 @@
 - id: watr
   name: Watr
   rpcs: []
+  relay: polkadot
 - id: westlake
   name: Westlake
   rpcs: []
@@ -3199,6 +3321,7 @@
   name: Xode
   rpcs:
     - wss://rpcnodea01.xode.net/n7yoxCmcIrCF6VziCcDmYTwL8R03a/rpc
+  relay: kusama
   balancesConfig:
     substrate-assets:
       tokens:
@@ -3233,6 +3356,7 @@
 - id: yerba
   name: Yerba
   rpcs: []
+  relay: kusama
 - id: zeitgeist
   name: Zeitgeist
   nativeCurrency:
@@ -3244,6 +3368,7 @@
   oldPrefix: 73
   rpcs:
     - wss://zeitgeist.api.onfinality.io/public-ws
+  relay: polkadot
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -3295,6 +3420,7 @@
 - id: zero
   name: ZERO
   rpcs: []
+  relay: kusama
   balancesConfig:
     substrate-tokens:
       tokens:
@@ -3370,6 +3496,7 @@
   isTestnet: true
   name: Arctic
   rpcs: []
+  relay: rococo-testnet
 - id: arctic-testnet-standalone
   isTestnet: true
   name: Arctic
@@ -3530,10 +3657,12 @@
   isTestnet: true
   name: Oli
   rpcs: []
+  relay: rococo-testnet
 - id: charcoal-testnet
   isTestnet: true
   name: Charcoal
   rpcs: []
+  relay: westend-testnet
 - id: clover-testnet
   isTestnet: true
   name: Clover Testnet
@@ -3616,6 +3745,7 @@
     - https://canary-matrix.subscan.io/
   rpcs:
     - wss://rpc.matrix.canary.enjin.io
+  relay: enjin-relay
 - id: enjin-relay-testnet
   isTestnet: true
   name: Enjin Canary
@@ -3655,6 +3785,7 @@
   isTestnet: true
   name: Giant
   rpcs: []
+  relay: rococo-testnet
 - id: halongbay-testnet
   isTestnet: true
   name: Halongbay
@@ -3663,10 +3794,12 @@
   isTestnet: true
   name: Helixstreet
   rpcs: []
+  relay: rococo-testnet
 - id: integritee-testnet
   isTestnet: true
   name: Integritee Testnet
   rpcs: []
+  relay: westend-testnet
 - id: interlay-testnet-standalone
   isTestnet: true
   name: Interlay Testnet
@@ -3675,6 +3808,7 @@
   isTestnet: true
   name: Interlay Testnet
   rpcs: []
+  relay: westend-testnet
 - id: ipse-testnet
   isTestnet: true
   name: Ipse
@@ -3700,6 +3834,7 @@
   name: Wendala
   themeColor: '#f93d43'
   rpcs: []
+  relay: westend-testnet
 - id: khala-testnet
   isTestnet: true
   name: Khala Testnet
@@ -3785,6 +3920,7 @@
   isTestnet: true
   name: Moonshadow
   rpcs: []
+  relay: westend-testnet
 - id: mybank-testnet
   isTestnet: true
   name: mybank.network
@@ -3834,6 +3970,7 @@
   isTestnet: true
   name: Frequency Testnet
   rpcs: []
+  relay: paseo-testnet
 - id: paseo-testnet
   isTestnet: true
   name: Paseo
@@ -3894,6 +4031,7 @@
   isTestnet: true
   name: RegionX Cocos
   rpcs: []
+  relay: rococo-testnet
 - id: riochain-testnet
   isTestnet: true
   name: RioChain Testnet
@@ -3902,183 +4040,225 @@
   isTestnet: true
   name: Robonomics Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rocfinity-testnet
   isTestnet: true
   name: Rocfinity
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-amplitude-testnet
   isTestnet: true
   name: Amplitude Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-aventus-testnet
   isTestnet: true
   name: Aventus Testnet
   rpcs:
     - wss://public-rpc.testnet.aventus.network
+  relay: rococo-testnet
 - id: rococo-basilisk-testnet
   isTestnet: true
   name: Basilisk Testnet
   rpcs:
     - wss://basilisk-rococo-rpc.play.hydration.cloud
+  relay: rococo-testnet
 - id: rococo-bifrost-testnet
   isTestnet: true
   name: Bifrost Testnet
   rpcs:
     - wss://bifrost-rpc.rococo.liebi.com/ws
+  relay: rococo-testnet
 - id: rococo-bitgreen-testnet
   isTestnet: true
   name: Bitgreen Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-catalyst-testnet
   isTestnet: true
   name: Catalyst
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-confti-testnet
   isTestnet: true
   name: Confti
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-crust-testnet
   isTestnet: true
   name: Crust Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-curio-testnet
   isTestnet: true
   name: Curio Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-dolphin-testnet
   isTestnet: true
   name: Dolphin
   blockExplorerUrls:
     - https://dolphin.subscan.io/
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-ethos-testnet
   isTestnet: true
   name: Ethos
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-ewx-testnet
   isTestnet: true
   name: Rex
   rpcs:
     - wss://public-rpc.testnet.energywebx.com/
+  relay: rococo-testnet
 - id: rococo-genshiro-testnet
   isTestnet: true
   name: Genshiro Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-hyperbridge-testnet
   isTestnet: true
   name: Hyperbridge Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-idiyanale-testnet
   isTestnet: true
   name: Idiyanale
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-imbue-testnet
   isTestnet: true
   name: Imbue Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-integritee-testnet
   isTestnet: true
   name: Integritee Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-invo-testnet
   isTestnet: true
   name: Invo
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-kabocha-testnet
   isTestnet: true
   name: Kabocha Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-kaizen-testnet
   isTestnet: true
   name: Kaizen
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-kinera-testnet
   isTestnet: true
   name: Kinera
   rpcs:
     - wss://node.kinera.network
+  relay: rococo-testnet
 - id: rococo-mangata-testnet
   isTestnet: true
   name: MangataX Testnet
   blockExplorerUrls:
     - https://mangata-testnet.subscan.io/
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-md-5-testnet
   isTestnet: true
   name: MD5
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-moonsama-testnet
   isTestnet: true
   name: Moonsama Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-neuro-web-testnet
   isTestnet: true
   name: NeuroWeb Testnet
   rpcs:
     - wss://parachain-testnet-rpc.origin-trail.network/
+  relay: rococo-testnet
 - id: rococo-nodle-testnet
   isTestnet: true
   name: Nodle Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-open-zeppelin-testnet
   isTestnet: true
   name: OpenZeppelin Runtime Template
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-phala-testnet
   isTestnet: true
   name: Rhala
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-picasso-testnet
   isTestnet: true
   name: Picasso Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-societal-testnet
   isTestnet: true
   name: Societal
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-sora-testnet
   isTestnet: true
   name: Sora Testnet
   rpcs:
     - wss://ws.parachain-collator-1.c1.stg1.sora2.soramitsu.co.jp
+  relay: rococo-testnet
 - id: rococo-spreehafen-testnet
   isTestnet: true
   name: Spreehafen
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-subsocial-testnet
   isTestnet: true
   name: SoonsocialX
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-subzero-testnet
   isTestnet: true
   name: Subzero Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-tinkernet-testnet
   isTestnet: true
   name: Tinkernet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-unit-network-testnet
   isTestnet: true
   name: Unit
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-virto-testnet
   isTestnet: true
   name: Virto
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-watr-testnet
   isTestnet: true
   name: Watr Testnet
   rpcs:
     - wss://rpc.dev.watr.org
+  relay: rococo-testnet
 - id: rococo-yerba-testnet
   isTestnet: true
   name: Yerba Testnet
   rpcs: []
+  relay: rococo-testnet
 - id: rococo-zeitgeist-testnet
   isTestnet: true
   name: Zeitgeist Battery Station
   rpcs:
     - wss://bsr.zeitgeist.pm
+  relay: rococo-testnet
 - id: sherpax-testnet
   isTestnet: true
   name: Sherpax
@@ -4099,10 +4279,12 @@
   isTestnet: true
   name: Snowbridge Asset Hub
   rpcs: []
+  relay: rococo-testnet
 - id: snowbridge-bridge-hub-testnet
   isTestnet: true
   name: Snowbridge Bridge Hub
   rpcs: []
+  relay: rococo-testnet
 - id: sora-substrate-testnet
   isTestnet: true
   name: Sora Testnet
@@ -4113,6 +4295,7 @@
   isTestnet: true
   name: Stagex
   rpcs: []
+  relay: rococo-testnet
 - id: subdao-testnet
   isTestnet: true
   name: SubDAO Testnet
@@ -4224,6 +4407,7 @@
     - wss://asset-hub-westend.dotters.network
     - wss://westend-asset-hub-rpc.polkadot.io
     - wss://asset-hub-westend.rpc.permanence.io
+  relay: westend-testnet
 - id: westend-bridge-hub-testnet
   isTestnet: true
   name: Westend Bridge Hub
@@ -4235,6 +4419,7 @@
     - wss://westend-bridge-hub-rpc-tn.dwellir.com
     - wss://bridge-hub-westend.dotters.network
     - wss://westend-bridge-hub-rpc.polkadot.io
+  relay: westend-testnet
 - id: westend-collectives-testnet
   isTestnet: true
   name: Collectives Testnet
@@ -4246,6 +4431,7 @@
     - wss://westend-collectives-rpc-tn.dwellir.com
     - wss://collectives-westend.dotters.network
     - wss://westend-collectives-rpc.polkadot.io
+  relay: westend-testnet
 - id: westend-coretime-testnet
   isTestnet: true
   name: Coretime Testnet
@@ -4256,11 +4442,13 @@
     - wss://coretime-westend-rpc.dwellir.com
     - wss://coretime-westend.dotters.network
     - wss://westend-coretime-rpc.polkadot.io
+  relay: westend-testnet
 - id: westend-penpal-testnet
   isTestnet: true
   name: Penpal
   rpcs:
     - wss://westend-penpal-rpc.polkadot.io
+  relay: westend-testnet
 - id: westend-people-testnet
   isTestnet: true
   name: People Testnet
@@ -4269,18 +4457,22 @@
     - wss://people-westend-rpc.dwellir.com
     - wss://people-westend.dotters.network
     - wss://westend-people-rpc.polkadot.io
+  relay: westend-testnet
 - id: westend-pichiu-testnet
   isTestnet: true
   name: Pichiu Testnet
   rpcs: []
+  relay: westend-testnet
 - id: westend-standard-testnet
   isTestnet: true
   name: Standard
   rpcs: []
+  relay: westend-testnet
 - id: whala-testnet
   isTestnet: true
   name: Whala
   rpcs: []
+  relay: westend-testnet
 - id: z-cloak-testnet
   isTestnet: true
   name: zCloak

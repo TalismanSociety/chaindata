@@ -33,6 +33,7 @@
     "generate-schemas": "tsx scripts/generate-schemas.ts",
     "fetch-external": "tsx scripts/fetch-external.ts",
     "build": "pnpm run validate && tsx scripts/build.ts",
+    "build:dev": "tsx scripts/build.ts",
     "clean": "rm -rf pub",
     "postinstall": "pnpm -F @talismn/chaindata build"
   },

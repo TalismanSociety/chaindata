@@ -1,10 +1,6 @@
 import { PromisePool } from '@supercharge/promise-pool'
 
-import {
-  FILE_CACHE_NETWORKS_SPECS_POLKADOT,
-  FILE_NETWORKS_POLKADOT,
-  FILE_RPC_HEALTH_WEBSOCKET,
-} from '../../shared/constants'
+import { FILE_NETWORKS_POLKADOT, FILE_NETWORKS_SPECS_POLKADOT, FILE_RPC_HEALTH_WEBSOCKET } from '../../shared/constants'
 import {
   DotNetworksConfigFileSchema,
   DotNetworkSpecs,
@@ -25,7 +21,7 @@ export const fetchDotNetworksSpecs = async () => {
   const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
 
-  const oldDotNetworkSpecs = parseJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
+  const oldDotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
 
   const networksToUpdate = dotNetworks
     .map(({ id, rpcs }) => ({
@@ -60,7 +56,7 @@ export const fetchDotNetworksSpecs = async () => {
     .concat(result.results)
     .sort((a, b) => a.id.localeCompare(b.id))
 
-  await writeJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, data, {
+  await writeJsonFile(FILE_NETWORKS_SPECS_POLKADOT, data, {
     format: true,
     schema: DotNetworkSpecsFileSchema,
   })

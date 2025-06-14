@@ -5,6 +5,7 @@ import { addNovasamaMetadataPortalUrls } from './addNovasamaMetadataPortalUrls'
 import { addThemeColors } from './addThemeColors'
 import { applyNativeTokenOverrides } from './applyNativeTokenOverrides'
 import { buildNetworksPolkadot } from './buildNetworksPolkadot'
+import { buildTokensPolkadot } from './buildTokensPolkadot'
 import { fixChainEvmNetworkRelations } from './fixChainsEvmNetworkRelations'
 import { loadConfig } from './loadConfig'
 import { mergeChainsExtras } from './mergeChainsExtras'
@@ -15,6 +16,7 @@ import { writeChaindataIndex } from './writeChaindataIndex'
 
 export const buildSteps: Array<() => Promise<void>> = [
   cleanupOutputDir,
+  buildTokensPolkadot,
   buildNetworksPolkadot,
   // loadConfig,
 

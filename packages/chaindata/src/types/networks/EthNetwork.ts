@@ -26,9 +26,3 @@ export const EthNetworkSchema = NetworkBaseSchema.extend({
   contracts: z.partialRecord(ContractName, EthereumAddressSchema).optional(),
 })
 export type EthNetwork = z.infer<typeof EthNetworkSchema>
-
-export const EthNetworkExtendedSchema = EthNetworkSchema.extend({
-  balancesConfig: z.partialRecord(TokenTypeSchema, z.any()).optional(),
-})
-
-export type EthNetworkExtended = z.infer<typeof EthNetworkExtendedSchema>

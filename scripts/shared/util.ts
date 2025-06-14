@@ -1,6 +1,8 @@
+import { execSync } from 'node:child_process'
 import { PathLike, readFileSync, writeFileSync } from 'node:fs'
 import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { WsProvider } from '@polkadot/api'
 import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
@@ -149,7 +151,8 @@ export const sortChainsAndNetworks = (chains: Chain[], evmNetworks: EvmNetwork[]
 export const assetUrlPrefix = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/${GITHUB_BRANCH}/`
 export const assetPathPrefix = './'
 
-export const getAssetUrlFromPath = (path: string) => {
+export const getAssetUrlFromPath = (path: string | undefined) => {
+  if (!path) return path
   if (!path.startsWith(assetPathPrefix)) throw new Error(`Invalid asset path: ${path}`)
   return `${assetUrlPrefix}${path.slice(assetPathPrefix.length)}`
 }
@@ -200,6 +203,8 @@ export const writeJsonFile = async (filePath: string, data: unknown, opts: Write
 
   if (opts.schema) data = validate(data, opts.schema, `${filePath} (before saving)`)
 
+  await mkdirRecursive(dirname(filePath))
+
   writeFileSync(filePath, opts.format ? await prettifyJson(data) : JSON.stringify(data))
 
   console.debug(filePath, 'updated')
@@ -223,6 +228,8 @@ export const writeYamlFile = async (filePath: string, data: unknown, opts: Write
   if (!filePath.endsWith('.yaml')) throw new Error(`Invalid file extension for YAML file: ${filePath}`)
 
   if (opts.schema) data = validate(data, opts.schema, `${filePath} (before saving)`)
+
+  await mkdirRecursive(dirname(filePath))
 
   writeFileSync(filePath, opts.format ? await prettifyYaml(data) : yamlify(data))
 
