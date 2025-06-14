@@ -162,8 +162,7 @@ const fetchMetadataExtract = async ({
     )
   } catch (cause) {
     // decAnyMetadata throws null if metadata version is unsupported
-    if (cause === null) console.error('Unsupported metadata version on network', network.id)
-    else console.error('fetchMetadataExtract error:', cause)
+    if (cause === null) console.warn('Unsupported metadata version on network', network.id)
     throw new Error(`Failed to fetch metadata extract for ${network.id}`, { cause })
   } finally {
     await provider.disconnect()

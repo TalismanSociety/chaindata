@@ -194,6 +194,8 @@ type WriteJsonOptions = {
 }
 
 export const writeJsonFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
+  opts = Object.assign({ format: true }, opts)
+
   if (!filePath.endsWith('.json')) throw new Error(`Invalid file extension for JSON file: ${filePath}`)
 
   if (opts.schema) data = validate(data, opts.schema, `${filePath} (before saving)`)
@@ -216,6 +218,8 @@ export const prettifyJson = async (data: unknown) => {
 }
 
 export const writeYamlFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
+  opts = Object.assign({ format: true }, opts)
+
   if (!filePath.endsWith('.yaml')) throw new Error(`Invalid file extension for YAML file: ${filePath}`)
 
   if (opts.schema) data = validate(data, opts.schema, `${filePath} (before saving)`)

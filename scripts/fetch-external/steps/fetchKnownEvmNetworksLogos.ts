@@ -82,8 +82,6 @@ export const fetchKnownEvmNetworksLogos = async () => {
       const etag = responseIconJson.headers.get('etag')
       const iconJson = await responseIconJson.json()
 
-      console.log('fetched icon json for', evmNetwork.name, evmNetwork.id, iconJson)
-
       if (!etag) {
         console.log('Skipping icon because etag is missing for', evmNetwork.name, evmNetwork.id)
         continue
@@ -107,7 +105,6 @@ export const fetchKnownEvmNetworksLogos = async () => {
       const ipfsHash = fileDesc.url.substring('ipfs://'.length)
 
       if (KNOWN_UNAVAILABLE_IPFS_HASHES.includes(ipfsHash)) {
-        console.debug('skipping known unavailable IPFS hash')
         continue
       } else {
         let downloadUrl = `https://raw.githubusercontent.com/ethereum-lists/chains/master/_data/iconsDownload/${ipfsHash}`
