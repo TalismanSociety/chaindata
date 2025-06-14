@@ -26,4 +26,6 @@ export type Token = z.infer<typeof TokenSchema>
 
 export type TokenId = Token['id']
 
-export type TokenType = Token['type']
+export const TokenTypeSchema = z.enum(TokenSchema.options.map((t) => t.shape.type.value))
+
+export type TokenType = z.infer<typeof TokenTypeSchema>

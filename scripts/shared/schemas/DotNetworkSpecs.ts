@@ -17,17 +17,10 @@ const DotNetworkPropertiesArray = z.object({
   tokenSymbol: z.array(z.string()).nonempty(),
 })
 
-const DotNetworkProperties = z.union([DotNetworkPropertiesSimple, DotNetworkPropertiesArray]).transform((val) =>
-  Array.isArray(val.tokenDecimals)
-    ? {
-        tokenDecimals: val.tokenDecimals[0],
-        tokenSymbol: val.tokenSymbol[0],
-      }
-    : {
-        tokenDecimals: val.tokenDecimals,
-        tokenSymbol: val.tokenSymbol,
-      },
-)
+const DotNetworkProperties = z.union([DotNetworkPropertiesSimple, DotNetworkPropertiesArray]).transform((val) => ({
+  tokenDecimals: Array.isArray(val.tokenDecimals) ? val.tokenDecimals[0] : val.tokenDecimals,
+  tokenSymbol: Array.isArray(val.tokenSymbol) ? val.tokenSymbol[0] : val.tokenSymbol,
+}))
 
 export const DotNetworkSpecsSchema = z.strictObject({
   id: z.string().nonempty(),

@@ -1,9 +1,20 @@
 import z from 'zod/v4'
 
 import { EthereumAddressSchema } from '../shared'
+import { TokenTypeSchema } from '../tokens'
 import { NetworkBaseSchema } from './NetworkBase'
 
 const ContractName = z.enum(['Erc20Aggregator', 'Multicall3'])
+
+const L2FeeSchema = z.discriminatedUnion('type', [
+  z.strictObject({
+    type: z.literal('op-stack'),
+  }),
+  z.strictObject({
+    type: z.literal('scroll'),
+    l1GasPriceOracle: EthereumAddressSchema,
+  }),
+])
 
 export const EthNetworkSchema = NetworkBaseSchema.extend({
   platform: z.literal('ethereum'),
@@ -11,15 +22,13 @@ export const EthNetworkSchema = NetworkBaseSchema.extend({
   preserveGasEstimate: z.boolean().optional(),
   rpcs: z.array(z.url({ protocol: /^https?$/ })),
   feeType: z.enum(['legacy', 'eip-1559']).optional(),
-  l2FeeType: z.discriminatedUnion('type', [
-    z.strictObject({
-      type: z.literal('op-stack'),
-    }),
-    z.strictObject({
-      type: z.literal('scroll'),
-      l1GasPriceOracle: EthereumAddressSchema,
-    }),
-  ]),
+  l2FeeType: L2FeeSchema.optional(),
   contracts: z.partialRecord(ContractName, EthereumAddressSchema).optional(),
 })
 export type EthNetwork = z.infer<typeof EthNetworkSchema>
+
+export const EthNetworkExtendedSchema = EthNetworkSchema.extend({
+  balancesConfig: z.partialRecord(TokenTypeSchema, z.any()).optional(),
+})
+
+export type EthNetworkExtended = z.infer<typeof EthNetworkExtendedSchema>

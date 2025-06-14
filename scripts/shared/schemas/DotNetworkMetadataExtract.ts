@@ -3,7 +3,7 @@ import z from 'zod/v4'
 
 export const DotNetworkMetadataExtractSchema = z.strictObject({
   id: z.string().nonempty(),
-  account: z.string().nonempty(),
+  account: z.enum(['secp256k1', '*25519']),
   specVersion: z.uint32(),
   ss58Prefix: z.uint32(),
   hasCheckMetadataHash: z.boolean(),

@@ -11,5 +11,5 @@ console.log('data/networks-polkadot.yaml schema validation completed successfull
 parseYamlFile('data/networks-ethereum.yaml', EthNetworksConfigFileSchema)
 console.log('data/networks-ethereum.yaml schema validation completed successfully.')
 
-parseYamlFile('data/known-networks-ethereum-overrides.yaml', KnownEthNetworksOverridesFileSchema)
-console.log('data/known-networks-ethereum-overrides.yaml schema validation completed successfully.')
+parseYamlFile('data/ethereum-known-networks-overrides.yaml', KnownEthNetworksOverridesFileSchema)
+console.log('data/ethereum-known-networks-overrides.yaml schema validation completed successfully.')

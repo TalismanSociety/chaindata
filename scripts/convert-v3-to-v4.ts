@@ -1,4 +1,9 @@
 import {
+  FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES,
+  FILE_NETWORKS_ETHEREUM,
+  FILE_NETWORKS_POLKADOT,
+} from './shared/constants'
+import {
   DotBalancesConfigTypes,
   DotNetworkConfig,
   DotNetworksConfigFileSchema,
@@ -169,9 +174,9 @@ const newKnownNetworksOverrides = knownNetworksOverrides
 //console.log(newKnownNetworksOverrides[15])
 // validate(newKnownNetworksOverrides, KnownEthNetworksOverridesFileSchema)
 
-writeYamlFile(`data/networks-polkadot.yaml`, newDotNetworks, { format: true, schema: DotNetworksConfigFileSchema })
-writeYamlFile(`data/networks-ethereum.yaml`, newEthNetworks, { format: true, schema: EthNetworksConfigFileSchema })
-writeYamlFile(`data/known-networks-ethereum-overrides.yaml`, newKnownNetworksOverrides, {
+writeYamlFile(FILE_NETWORKS_POLKADOT, newDotNetworks, { format: true, schema: DotNetworksConfigFileSchema })
+writeYamlFile(FILE_NETWORKS_ETHEREUM, newEthNetworks, { format: true, schema: EthNetworksConfigFileSchema })
+writeYamlFile(FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, newKnownNetworksOverrides, {
   format: true,
   schema: KnownEthNetworksOverridesFileSchema,
 })

@@ -1,4 +1,4 @@
-import { Token } from '../types'
+import { DotNetwork, EthNetwork, Network, Token } from './types'
 
 export type DotToken = Extract<Token, { platform: 'polkadot' }>
 export type EthToken = Extract<Token, { platform: 'ethereum' }>
@@ -9,4 +9,12 @@ export const isDotToken = (token: Token | null | undefined): token is DotToken =
 
 export const isEthToken = (token: Token | null | undefined): token is EthToken => {
   return !!token && token.platform === 'ethereum'
+}
+
+export const isDotNetwork = (network: Network | null | undefined): network is DotNetwork => {
+  return !!network && network.platform === 'polkadot'
+}
+
+export const isEthNetwork = (network: Network | null | undefined): network is EthNetwork => {
+  return !!network && network.platform === 'ethereum'
 }
