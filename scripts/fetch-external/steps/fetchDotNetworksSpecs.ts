@@ -11,15 +11,23 @@ import {
   DotNetworkSpecsFileSchema,
   DotNetworkSpecsSchema,
 } from '../../shared/schemas'
-import { getRpcProvider, parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
+import {
+  getRpcProvider,
+  parseJsonFile,
+  parseYamlFile,
+  validateDebug,
+  withTimeout,
+  writeJsonFile,
+} from '../../shared/util'
 import { WsRpcHealth } from './checkWsRpcs'
 
 export const fetchDotNetworksSpecs = async () => {
-  const dotNetworkSpecs = parseJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
 
-  const networksWithRpcs = dotNetworks
+  const oldDotNetworkSpecs = parseJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
+
+  const networksToUpdate = dotNetworks
     .map(({ id, rpcs }) => ({
       id,
       rpcs: rpcs?.filter((rpc) => rpcsHealth[rpc] === 'OK') ?? [],
@@ -28,25 +36,29 @@ export const fetchDotNetworksSpecs = async () => {
 
   console.log(
     'fetchDotNetworksInfos processing %s networks (total:%s invalid:%s)',
-    networksWithRpcs.length,
+    networksToUpdate.length,
     dotNetworks.length,
-    dotNetworks.length - networksWithRpcs.length,
+    dotNetworks.length - networksToUpdate.length,
   )
 
-  const result = await PromisePool.withConcurrency(4).for(networksWithRpcs).process(fetchNetworkInfo)
+  const result = await PromisePool.withConcurrency(4)
+    .for(networksToUpdate)
+    .process((network) =>
+      withTimeout(() => fetchNetworkSpecs(network), 30_000, 'Failed to fetch network specs for ' + network.id),
+    )
 
+  for (const error of result.errors) console.warn(error.message)
   console.log(
-    'fetchDotNetworksInfos processed %s networks success:%s errors:%s',
-    networksWithRpcs.length,
+    'fetchDotNetworksInfos processed %s networks (success:%s errors:%s)',
+    networksToUpdate.length,
     result.results.length,
     result.errors.length,
   )
 
-  const newDotNetworkInfos = result.results.filter((info): info is DotNetworkSpecs => !!info)
-
-  const data = dotNetworkSpecs
-    .filter(({ id }) => !newDotNetworkInfos.some((newInfo) => newInfo.id === id))
-    .concat(newDotNetworkInfos)
+  const data = oldDotNetworkSpecs
+    .filter(({ id }) => !result.results.some((networkSpecs) => networkSpecs.id === id))
+    .concat(result.results)
+    .sort((a, b) => a.id.localeCompare(b.id))
 
   await writeJsonFile(FILE_CACHE_NETWORKS_SPECS_POLKADOT, data, {
     format: true,
@@ -54,7 +66,7 @@ export const fetchDotNetworksSpecs = async () => {
   })
 }
 
-const fetchNetworkInfo = async (network: { id: string; rpcs: string[] }) => {
+const fetchNetworkSpecs = async (network: { id: string; rpcs: string[] }) => {
   const provider = getRpcProvider(network.rpcs)
 
   try {
@@ -68,28 +80,22 @@ const fetchNetworkInfo = async (network: { id: string; rpcs: string[] }) => {
       provider.send('system_properties', []),
     ])
 
-    return validateNetworkInfo({
-      id: network.id,
-      name,
-      isTestnet: chainType !== 'Live' || undefined,
-      genesisHash,
-      runtimeVersion,
-      properties,
-    })
+    return validateDebug(
+      {
+        id: network.id,
+        name,
+        isTestnet: chainType !== 'Live' || undefined,
+        genesisHash,
+        runtimeVersion,
+        properties,
+      },
+      DotNetworkSpecsSchema,
+      'network specs ' + network.id,
+    )
   } catch (cause) {
     // console.log('Failed to fetch network info for %s: %s', network.id, err)
     throw new Error(`Failed to fetch network info for ${network.id}`, { cause })
   } finally {
     await provider.disconnect()
-  }
-}
-
-const validateNetworkInfo = (networkInfo: DotNetworkSpecs): DotNetworkSpecs => {
-  try {
-    return DotNetworkSpecsSchema.parse(networkInfo)
-  } catch (err) {
-    console.error('Failed to validate network info:', networkInfo)
-    // console.error((err as ZodError))
-    throw new Error(`Invalid network info for ${networkInfo.id}`)
   }
 }

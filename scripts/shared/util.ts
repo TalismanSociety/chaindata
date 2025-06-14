@@ -6,7 +6,7 @@ import { WsProvider } from '@polkadot/api'
 import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
 import prettier from 'prettier'
 import { parse as parseYaml, stringify as yamlify } from 'yaml'
-import z from 'zod/v4'
+import z, { ZodError } from 'zod/v4'
 
 import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO, PRETTIER_CONFIG } from './constants'
 
@@ -58,8 +58,8 @@ export const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(r
 export const throwAfter = (ms: number, reason: string) =>
   new Promise<never>((_, reject) => setTimeout(() => reject(new Error(reason)), ms))
 
-export const withTimeout = <T>(func: () => Promise<T>, timeout: number): Promise<T> =>
-  Promise.race([func(), throwAfter(timeout, `Timeout after ${timeout}ms`)])
+export const withTimeout = <T>(func: () => Promise<T>, timeout: number, msgPrefix?: string): Promise<T> =>
+  Promise.race([func(), throwAfter(timeout, `${msgPrefix ? `${msgPrefix}:` : ''}Timeout after ${timeout}ms`)])
 
 export const getRpcProvider = (rpcs: string[], autoConnectMs = 5_000, timeout = autoConnectMs) =>
   new WsProvider(
@@ -245,4 +245,17 @@ export const validate = <T>(data: unknown, schema: z.ZodType<T>, label: string):
     throw new Error('Invalid data')
   }
   return result.data
+}
+
+/**
+ * Outputs the data to the console if validation fails, useful for debugging
+ */
+export const validateDebug = <T>(data: T, schema: z.ZodType<T>, label: string): T => {
+  try {
+    return schema.parse(data)
+  } catch (err) {
+    console.error('Failed to validate %s:', label, data)
+    console.error(err as ZodError)
+    throw new Error(`Invalid data for ${label}`)
+  }
 }

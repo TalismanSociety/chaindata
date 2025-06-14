@@ -17,8 +17,9 @@ export const NOVASAMA_METADATA_PORTAL_CONFIG =
 
 export const FILE_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
 export const FILE_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
-export const FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/known-networks-ethereum-overrides.yaml'
-export const FILE_CACHE_NETWORKS_SPECS_POLKADOT = 'data/cache/networks-specs-polkadot.json'
+export const FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/ethereum-known-networks-overrides.yaml'
+export const FILE_CACHE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
+export const FILE_CACHE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'
 
 // TODO yeet unused ones
 export const FILE_CHAINDATA = 'data/chaindata.json'
