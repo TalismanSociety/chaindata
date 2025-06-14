@@ -8,8 +8,8 @@ const DotNetworkRuntimeVersionSchema = z.object({
 })
 
 const DotNetworkPropertiesSimple = z.object({
-  tokenDecimals: z.number(),
-  tokenSymbol: z.string(),
+  tokenDecimals: z.number().optional().default(0),
+  tokenSymbol: z.string().optional().default('Unit'),
 })
 
 const DotNetworkPropertiesArray = z.object({

@@ -14,7 +14,7 @@ import {
 import { parseYamlFile } from '../../shared/util'
 
 export const validateConfigFiles = () => {
-  parseYamlFile<DotNetworkConfig[]>(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
-  parseYamlFile<EthNetworkConfig[]>(FILE_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
-  parseYamlFile<KnownEthNetworkOverrides[]>(FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, KnownEthNetworksOverridesFileSchema)
+  parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  parseYamlFile(FILE_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  parseYamlFile(FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, KnownEthNetworksOverridesFileSchema)
 }
