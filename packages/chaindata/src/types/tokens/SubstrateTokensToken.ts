@@ -1,4 +1,4 @@
-import { compressToEncodedURIComponent } from 'lz-string'
+import LZString from 'lz-string'
 import z from 'zod/v4'
 
 import { NetworkId } from '../networks'
@@ -16,4 +16,4 @@ export const SubTokensTokenSchema = TokenBase.extend({
 export type SubTokensToken = z.infer<typeof SubTokensTokenSchema>
 
 export const subTokensTokenId = (networkId: NetworkId, onChainId: string | number) =>
-  generateTokenId(networkId, TOKEN_TYPE, compressToEncodedURIComponent(String(onChainId)))
+  generateTokenId(networkId, TOKEN_TYPE, LZString.compressToEncodedURIComponent(String(onChainId)))

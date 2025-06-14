@@ -1,4 +1,4 @@
-import { Token } from '@talismn/chaindata'
+import { subNativeTokenId, Token } from '@talismn/chaindata'
 
 import { getConsolidatedKnownEthNetworks } from '../../fetch-external/getConsolidatedEthNetworksOverrides'
 import { FILE_NETWORKS_ETHEREUM, FILE_NETWORKS_POLKADOT } from '../../shared/constants'
@@ -13,9 +13,18 @@ export const buildTokens = async () => {
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   for (const network of dotNetworksConfig) {
-    // native token
-    // tokens.push({
-    //     id:
-    // })
+    if (!network.nativeCurrency) {
+      console.warn(`Network ${network.id} does not have a native currency defined, skipping native token creation.`)
+    } else {
+      const { coingeckoId, decimals, logo } = network.nativeCurrency
+
+      // native token
+      // tokens.push({
+      //     type: "substrate-native",
+      //     id: subNativeTokenId(network.id),
+      //     networkId: network.id,
+
+      // })
+    }
   }
 }

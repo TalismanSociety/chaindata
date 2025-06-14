@@ -55,6 +55,22 @@ export const mkdirRecursive = async (path: string) => {
 
 export const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms))
 
+export const throwAfter = (ms: number, reason: string) =>
+  new Promise<never>((_, reject) => setTimeout(() => reject(new Error(reason)), ms))
+
+export const withTimeout = <T>(func: () => Promise<T>, timeout: number): Promise<T> =>
+  Promise.race([func(), throwAfter(timeout, `Timeout after ${timeout}ms`)])
+
+export const getRpcProvider = (rpcs: string[], autoConnectMs = 5_000, timeout = autoConnectMs) =>
+  new WsProvider(
+    rpcs,
+    autoConnectMs,
+    {
+      Origin: 'chrome-extension://abpofhpcakjhnpklgodncneklaobppdc',
+    },
+    timeout,
+  )
+
 export const sendWithTimeout = async (
   url: string | string[],
   requests: Array<[string, any?]>,
