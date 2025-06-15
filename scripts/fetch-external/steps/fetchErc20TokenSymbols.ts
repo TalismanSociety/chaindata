@@ -12,9 +12,9 @@ import {
 
 import { cleanupString } from '../../shared/cleanupString'
 import {
+  FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_NETWORKS,
-  FILE_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
 import { EthNetworkConfig, KnownEthNetworkConfig } from '../../shared/schemas'
 import { Erc20TokenCache } from '../../shared/types'
@@ -195,7 +195,7 @@ const updateTokenCache = async (
 }
 
 export const fetchErc20TokenSymbols = async () => {
-  const evmNetworks = parseYamlFile<EthNetworkConfig[]>(FILE_NETWORKS_ETHEREUM)
+  const evmNetworks = parseYamlFile<EthNetworkConfig[]>(FILE_INPUT_NETWORKS_ETHEREUM)
   const knownEvmNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS)
   const tokensCache = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
 

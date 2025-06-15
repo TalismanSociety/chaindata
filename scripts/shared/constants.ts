@@ -19,28 +19,20 @@ export const DIR_OUTPUT = 'pub/v4'
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
 
-export const FILE_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
-export const FILE_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
-export const FILE_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/ethereum-known-networks-overrides.yaml'
+export const FILE_INPUT_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
+export const FILE_INPUT_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
+export const FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/ethereum-known-networks-overrides.yaml'
 
-export const FILE_OUTPUT_TOKENS_POLKADOT = DIR_OUTPUT + '/tokens/polkadot.json'
-export const FILE_OUTPUT_TOKENS_ETHEREUM = DIR_OUTPUT + '/tokens/ethereum.json'
-export const FILE_OUTPUT_TOKENS_ALL = DIR_OUTPUT + '/tokens/all.json'
+export const FILE_OUTPUT_TOKENS_POLKADOT = DIR_OUTPUT + '/tokens-polkadot.json'
+export const FILE_OUTPUT_TOKENS_ETHEREUM = DIR_OUTPUT + '/tokens-ethereum.json'
+export const FILE_OUTPUT_TOKENS_ALL = DIR_OUTPUT + '/tokens.json'
+export const FILE_OUTPUT_NETWORKS_POLKADOT = DIR_OUTPUT + '/networks-polkadot.json'
+export const FILE_OUTPUT_NETWORKS_ETHEREUM = DIR_OUTPUT + '/networks-ethereum.json'
+export const FILE_OUTPUT_NETWORKS_ALL = DIR_OUTPUT + '/networks.json'
+export const FILE_OUTPUT_MINI_METADATAS = DIR_OUTPUT + '/mini-metadatas.json'
+export const FILE_OUTPUT_CHAINDATA = DIR_OUTPUT + '/chaindata.json'
 
-export const FILE_OUTPUT_NETWORKS_POLKADOT = DIR_OUTPUT + '/networks/polkadot.json'
-export const FILE_OUTPUT_NETWORKS_ETHEREUM = DIR_OUTPUT + '/networks/ethereum.json'
-export const FILE_OUTPUT_NETWORKS_ALL = DIR_OUTPUT + '/networks/all.json'
-
-// TODO yeet unused ones
-// export const FILE_CHAINDATA = 'data/chaindata.json'
-// export const FILE_TESTNETS_CHAINDATA = 'data/testnets-chaindata.json'
-// export const FILE_CHAINS_EXTRAS_CACHE = 'data/cache/chains-extras-cache.json'
-
-// export const FILE_DEAD_CHAINS = 'data/cache/dead-chains.json'
 export const FILE_RPC_HEALTH_WEBSOCKET = 'data/generated/rpc-health-websocket.json'
-
-// export const FILE_EVM_NETWORKS = 'data/evm-networks.json'
-// export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'data/known-evm-networks-overrides.json'
 export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
 export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'
 export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-portal-urls.json'

@@ -2,7 +2,7 @@ import { PromisePool } from '@supercharge/promise-pool'
 import uniq from 'lodash/uniq'
 import WebSocket from 'ws'
 
-import { FILE_NETWORKS_POLKADOT, FILE_RPC_HEALTH_WEBSOCKET } from '../../shared/constants'
+import { FILE_INPUT_NETWORKS_POLKADOT, FILE_RPC_HEALTH_WEBSOCKET } from '../../shared/constants'
 import { DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { parseYamlFile, writeJsonFile } from '../../shared/util'
 
@@ -32,7 +32,7 @@ const isMeh = (errorMessage: string) => MEH_ERROR_MESSAGES.some((msg) => errorMe
 
 export const checkWsRpcs = async () => {
   // ATM we only use websocket rpcs for substrate chains
-  const networks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const networks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
   const rpcUrls = uniq(networks.flatMap((chain) => chain.rpcs ?? []))
 

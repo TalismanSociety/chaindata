@@ -16,6 +16,10 @@ import {
 import { ConfigChain, ConfigEvmNetwork } from './shared/types'
 import { parseJsonFile, writeYamlFile } from './shared/util'
 
+const migrateUrl = (url: string | undefined): string | undefined => {
+  return url?.replace('https://raw.githubusercontent.com/TalismanSociety/chaindata/main/', './')
+}
+
 const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
   const { id, name = '', rpcs = [] } = network
 
@@ -59,7 +63,7 @@ const migrateDotNativeCurrency = (network: ConfigChain): DotNetworkConfig['nativ
     undefined
   >
 
-  return { decimals, symbol, name, coingeckoId, mirrorOf, logo }
+  return { decimals, symbol, name, coingeckoId, mirrorOf, logo: migrateUrl(logo) }
 }
 
 const migrateEthNetworkV3ToV4 =
@@ -84,7 +88,7 @@ const migrateEthNetworkV3ToV4 =
 
       // from EvmNetwork
       substrateChainId: network.substrateChainId || undefined,
-      logo: network.logo || undefined,
+      logo: migrateUrl(network.logo) || undefined,
       preserveGasEstimate: network.preserveGasEstimate || undefined,
       feeType: network.feeType || undefined,
       l2FeeType: network.l2FeeType || undefined,
@@ -136,7 +140,7 @@ const migrateEvmNetworksOverrides = (
     isDefault: overrides.isDefault || undefined,
     isTestnet: overrides.isTestnet || undefined,
     name: overrides.name || undefined,
-    logo: overrides.logo || undefined,
+    logo: migrateUrl(overrides.logo) || undefined,
     themeColor: overrides.themeColor || undefined,
     blockExplorerUrls: overrides.explorerUrl ? [overrides.explorerUrl] : undefined,
     contracts: overrides.erc20aggregator

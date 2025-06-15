@@ -1,23 +1,35 @@
 import { cleanupOutputDir } from '../../shared/util'
-import { addChains } from './addChains'
-import { addEvmNetworks } from './addEvmNetworks'
-import { addNovasamaMetadataPortalUrls } from './addNovasamaMetadataPortalUrls'
-import { addThemeColors } from './addThemeColors'
-import { applyNativeTokenOverrides } from './applyNativeTokenOverrides'
+import { buildConsolidatedData } from './buildConsolidatedData'
+import { buildMiniMetadatasPolkadot } from './buildMiniMetadatasPolkadot'
+import { buildNetworksEthereum } from './buildNetworksEthereum'
 import { buildNetworksPolkadot } from './buildNetworksPolkadot'
+import { buildTokensEthereum } from './buildTokensEthereum'
 import { buildTokensPolkadot } from './buildTokensPolkadot'
-import { fixChainEvmNetworkRelations } from './fixChainsEvmNetworkRelations'
-import { loadConfig } from './loadConfig'
-import { mergeChainsExtras } from './mergeChainsExtras'
-import { removeInvalidErc20Tokens } from './removeInvalidErc20Tokens'
-import { setTokenLogos } from './setTokenLogos'
-import { updateSortIndexes } from './updateSortIndexes'
-import { writeChaindataIndex } from './writeChaindataIndex'
 
+// to provide better debugging experience, output of each step is now persisted in the output directory
 export const buildSteps: Array<() => Promise<void>> = [
   cleanupOutputDir,
+
   buildTokensPolkadot,
   buildNetworksPolkadot,
+  buildMiniMetadatasPolkadot,
+
+  buildNetworksEthereum,
+  buildTokensEthereum,
+
+  // TODO identify duplicates in tokens and networks
+
+  // TODO theme colors
+  // TODO check novasama
+
+  // TODO fix logo urls ?
+
+  // TODO remove orphan tokens
+  // TODO remove orphan substrateChainId ?
+  // TODO check each network has an existing nativeTokenId
+
+  buildConsolidatedData,
+
   // loadConfig,
 
   // addChains,

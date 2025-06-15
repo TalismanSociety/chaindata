@@ -1,5 +1,5 @@
 import { execSync } from 'node:child_process'
-import { PathLike, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, PathLike, readFileSync, writeFileSync } from 'node:fs'
 import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -154,12 +154,18 @@ export const assetPathPrefix = './'
 export const getAssetUrlFromPath = (path: string | undefined) => {
   if (!path) return path
   if (!path.startsWith(assetPathPrefix)) throw new Error(`Invalid asset path: ${path}`)
+  if (!existsSync(path)) return undefined
   return `${assetUrlPrefix}${path.slice(assetPathPrefix.length)}`
 }
 
 export const getAssetPathFromUrl = (url: string) => {
   if (!url.startsWith(assetUrlPrefix)) throw new Error(`Invalid asset url: ${url}`)
   return `${assetPathPrefix}${url.slice(assetUrlPrefix.length)}`
+}
+
+export const getAssetPathFromCoingeckoTokenId = (coingecko: string | undefined) => {
+  const path = `./assets/tokens/coingecko/${coingecko}.webp`
+  return getAssetUrlFromPath(path)
 }
 
 export const UNKNOWN_TOKEN_LOGO_URL = githubUnknownTokenLogoUrl
@@ -191,12 +197,16 @@ export const parseJsonFile = <T>(filePath: string, schema?: z.ZodType<T>): T => 
   return schema ? validate(data, schema, filePath) : data
 }
 
-type WriteJsonOptions = {
-  schema?: z.ZodType<any>
+type WriteJsonOptions<T> = {
+  schema?: z.ZodType<T>
   format?: boolean
 }
 
-export const writeJsonFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
+export const writeJsonFile = async <T>(
+  filePath: string,
+  data: unknown,
+  opts: WriteJsonOptions<T> = {},
+): Promise<void> => {
   opts = Object.assign({ format: true }, opts)
 
   if (!filePath.endsWith('.json')) throw new Error(`Invalid file extension for JSON file: ${filePath}`)
@@ -222,7 +232,11 @@ export const prettifyJson = async (data: unknown) => {
   }
 }
 
-export const writeYamlFile = async (filePath: string, data: unknown, opts: WriteJsonOptions = {}): Promise<void> => {
+export const writeYamlFile = async <T>(
+  filePath: string,
+  data: unknown,
+  opts: WriteJsonOptions<T> = {},
+): Promise<void> => {
   opts = Object.assign({ format: true }, opts)
 
   if (!filePath.endsWith('.yaml')) throw new Error(`Invalid file extension for YAML file: ${filePath}`)

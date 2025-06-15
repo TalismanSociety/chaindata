@@ -7,8 +7,8 @@ import { z } from 'zod/v4'
 
 import { WsRpcHealth } from '../../fetch-external/steps/checkWsRpcs'
 import {
+  FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
-  FILE_NETWORKS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   FILE_OUTPUT_NETWORKS_POLKADOT,
@@ -29,7 +29,7 @@ import { MetadataPortalUrls } from '../../shared/types'
 import { getAssetUrlFromPath, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 
 export const buildNetworksPolkadot = async () => {
-  const dotNetworksConfig = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
   const networkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
