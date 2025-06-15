@@ -1,4 +1,5 @@
 import { cleanupOutputDir } from '../../shared/util'
+import { addThemeColors } from './addThemeColors'
 import { buildConsolidatedData } from './buildConsolidatedData'
 import { buildMiniMetadatasPolkadot } from './buildMiniMetadatasPolkadot'
 import { buildNetworksEthereum } from './buildNetworksEthereum'
@@ -16,6 +17,8 @@ export const buildSteps: Array<() => Promise<void>> = [
 
   buildNetworksEthereum,
   buildTokensEthereum,
+
+  addThemeColors,
 
   // TODO identify duplicates in tokens and networks
 
