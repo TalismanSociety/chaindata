@@ -2,7 +2,7 @@ import { PromisePool } from '@supercharge/promise-pool'
 import TOML from 'toml'
 
 import {
-  FILE_NETWORKS_POLKADOT,
+  FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   NOVASAMA_METADATA_PORTAL_CONFIG,
 } from '../../shared/constants'
@@ -100,7 +100,7 @@ const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
 }
 
 export const fetchNovasamaMetadataPortalUrls = async () => {
-  const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const config = TOML.parse(await (await fetch(NOVASAMA_METADATA_PORTAL_CONFIG)).text())
 
   const portalUrls: MetadataPortalUrls = config?.chains?.flatMap((chain: any) => {

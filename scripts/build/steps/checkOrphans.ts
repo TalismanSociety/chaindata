@@ -1,0 +1,44 @@
+import { isDotNetwork, isEthNetwork, NetworkSchema, TokenSchema } from '@talismn/chaindata'
+import groupBy from 'lodash/groupBy'
+import keyBy from 'lodash/keyBy'
+import toPairs from 'lodash/toPairs'
+import { z } from 'zod/v4'
+
+import { FILE_OUTPUT_NETWORKS_ALL, FILE_OUTPUT_TOKENS_ALL } from '../../shared/constants'
+import { parseJsonFile } from '../../shared/util'
+
+export const checkOrphans = () => {
+  const networks = parseJsonFile(FILE_OUTPUT_NETWORKS_ALL, z.array(NetworkSchema))
+  const tokens = parseJsonFile(FILE_OUTPUT_TOKENS_ALL, z.array(TokenSchema))
+
+  const dicNetworks = keyBy(networks, 'id')
+  const dicTokens = keyBy(tokens, 'id')
+
+  const tokensWithoutNetwork = tokens.filter((token) => !dicNetworks[token.networkId])
+  if (tokensWithoutNetwork.length) {
+    const networkIds = new Set(...tokensWithoutNetwork.map((token) => token.networkId))
+    console.warn(`Found ${tokensWithoutNetwork.length} orphan tokens on ${networkIds.size} networks`)
+  }
+
+  const networksWithoutNativeToken = networks.filter((network) => !dicTokens[network.nativeTokenId])
+  if (networksWithoutNativeToken.length) {
+    console.warn(`Found ${networksWithoutNativeToken.length} networks without native token`)
+    // console.table(
+    //   networksWithoutNativeToken
+    //     .slice(0, 10)
+    //     .map((network) => ({ id: network.id, nativeTokenId: network.nativeTokenId })),
+    // )
+  }
+
+  const networksWithoutSubstrateChain = networks
+    .filter(isEthNetwork)
+    .filter((network) => network.substrateChainId && !dicNetworks[network.substrateChainId])
+  if (networksWithoutSubstrateChain.length) {
+    console.warn(`Found ${networksWithoutSubstrateChain.length} Eth networks without substrate chain`)
+    // console.table(
+    //   networksWithoutSubstrateChain
+    //     .slice(0, 10)
+    //     .map((network) => ({ id: network.id, substrateChainId: network.substrateChainId })),
+    // )
+  }
+}

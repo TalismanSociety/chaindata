@@ -1,22 +1,23 @@
 import { cleanupOutputDir } from '../../shared/util'
 import { addThemeColors } from './addThemeColors'
 import { buildConsolidatedData } from './buildConsolidatedData'
-import { buildMiniMetadatasPolkadot } from './buildMiniMetadatasPolkadot'
-import { buildNetworksEthereum } from './buildNetworksEthereum'
-import { buildNetworksPolkadot } from './buildNetworksPolkadot'
-import { buildTokensEthereum } from './buildTokensEthereum'
-import { buildTokensPolkadot } from './buildTokensPolkadot'
+import { buildEthereumNetworks } from './buildEthereumNetworks'
+import { buildEthereumTokens } from './buildEthereumTokens'
+import { buildPolkadotMiniMetadatas } from './buildPolkadotMiniMetadatas'
+import { buildPolkadotNetworks } from './buildPolkadotNetworks'
+import { buildPolkadotTokens } from './buildPolkadotTokens'
+import { checkOrphans } from './checkOrphans'
 
 // to provide better debugging experience, output of each step is now persisted in the output directory
-export const buildSteps: Array<() => Promise<void>> = [
+export const buildSteps: Array<() => Awaited<void>> = [
   cleanupOutputDir,
 
-  buildTokensPolkadot,
-  buildNetworksPolkadot,
-  buildMiniMetadatasPolkadot,
+  buildPolkadotTokens,
+  buildPolkadotNetworks,
+  buildPolkadotMiniMetadatas,
 
-  buildNetworksEthereum,
-  buildTokensEthereum,
+  buildEthereumNetworks,
+  buildEthereumTokens,
 
   addThemeColors,
 
@@ -32,6 +33,8 @@ export const buildSteps: Array<() => Promise<void>> = [
   // TODO check each network has an existing nativeTokenId
 
   buildConsolidatedData,
+
+  checkOrphans,
 
   // loadConfig,
 

@@ -14,7 +14,7 @@
 
 // import {
 //   FILE_CHAINS_EXTRAS_CACHE,
-//   FILE_NETWORKS_POLKADOT,
+//   FILE_INPUT_NETWORKS_POLKADOT,
 //   FILE_RPC_HEALTH_WEBSOCKET,
 //   PROCESS_CONCURRENCY,
 //   RPC_REQUEST_TIMEOUT,
@@ -27,7 +27,7 @@
 // import { WsRpcHealth } from './checkWsRpcs'
 
 // export const updateChainsExtrasCache = async () => {
-//   const chains = parseYamlFile<DotNetworkConfig[]>(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+//   const chains = parseYamlFile<DotNetworkConfig[]>(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
 //   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
 

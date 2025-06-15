@@ -7,8 +7,8 @@ import sharp from 'sharp'
 
 import {
   COINGECKO_LOGO_DOWNLOAD_LIMIT,
-  FILE_NETWORKS_ETHEREUM,
-  FILE_NETWORKS_POLKADOT,
+  FILE_INPUT_NETWORKS_ETHEREUM,
+  FILE_INPUT_NETWORKS_POLKADOT,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import {
@@ -168,13 +168,7 @@ type BalanceModuleConfig = {
   tokens?: { coingeckoId?: string }[]
 }
 
-const getAllCoingeckoIds = (
-  ...networks: (EthNetworkConfig | DotNetworkConfig | KnownEthNetworkConfig)[]
-  // chains: ConfigChain[],
-  // knownEvmNetworks: ConfigEvmNetwork[],
-  // knownEvmNetworksOverrides: ConfigEvmNetwork[],
-  // defaultEvmNetworks: ConfigEvmNetwork[],
-) => {
+const getAllCoingeckoIds = (...networks: (EthNetworkConfig | DotNetworkConfig | KnownEthNetworkConfig)[]) => {
   const coingeckoIds = new Set<string>()
 
   for (const network of networks) {
@@ -195,9 +189,9 @@ const getAllCoingeckoIds = (
 }
 
 export const fetchCoingeckoTokensLogos = async () => {
-  const ethNetworks = parseYamlFile(FILE_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const ethNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
-  const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
   const allCoingeckoIds = getAllCoingeckoIds(...ethNetworks, ...knownEthNetworks, ...dotNetworks)
   const validCoingeckoIds = allCoingeckoIds.filter((coingeckoId) => !INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId))

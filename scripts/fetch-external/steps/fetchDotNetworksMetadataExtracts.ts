@@ -8,8 +8,8 @@ import keyBy from 'lodash/keyBy'
 import { cache } from 'sharp'
 
 import {
+  FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
-  FILE_NETWORKS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
   FILE_RPC_HEALTH_WEBSOCKET,
 } from '../../shared/constants'
@@ -44,7 +44,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
     DotNetworkMetadataExtractsFileSchema,
   )
   const dotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
-  const dotNetworks = parseYamlFile(FILE_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
 
   const metadataExtractsById = keyBy(oldMetadataExtracts, 'id')

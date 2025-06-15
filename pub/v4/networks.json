@@ -1717,19 +1717,6 @@
     "rpcs": ["https://preseed-testnet-1.roburna.com"]
   },
   {
-    "id": "160",
-    "name": "Armonia Eva Chain Mainnet",
-    "nativeTokenId": "160:evm-native",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "AMAX",
-      "name": "Armonia Multichain Native Token"
-    },
-    "themeColor": "#505050",
-    "platform": "ethereum",
-    "rpcs": ["https://evascan.io/api/eth-rpc/"]
-  },
-  {
     "id": "164",
     "isTestnet": true,
     "name": "Omni Omega Testnet",
@@ -15378,6 +15365,21 @@
     "rpcs": ["https://nizascan.io/rpc"]
   },
   {
+    "id": "20073",
+    "isTestnet": true,
+    "name": "Niza Chain Testnet",
+    "nativeTokenId": "20073:evm-native",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "NIZA",
+      "name": "Niza Global"
+    },
+    "themeColor": "#505050",
+    "blockExplorerUrls": ["https://testnet.nizascan.io"],
+    "platform": "ethereum",
+    "rpcs": ["https://testnet.nizascan.io/rpc"]
+  },
+  {
     "id": "20441",
     "name": "XUSD ONE StableChain Mainnet",
     "nativeTokenId": "20441:evm-native",
@@ -25866,6 +25868,7 @@
     "prefix": 5,
     "oldPrefix": 5,
     "rpcs": [
+      "wss://astar-rpc.dwellir.com",
       "wss://rpc.astar.network",
       "wss://astar.public.curie.radiumblock.co/ws",
       "wss://astar-rpc.dwellir.com",
@@ -26390,7 +26393,7 @@
     "genesisHash": "0x2f0555cc76fc2840a25a6ea3b9637146806f1f44b090c175ffde2a7e5ab36c03",
     "platform": "polkadot",
     "specName": "node-subtensor",
-    "specVersion": 274,
+    "specVersion": 276,
     "account": "*25519",
     "chainspecQrUrl": "https://metadata.novasama.io/qr/node-subtensor_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/node-subtensor_metadata_latest.apng",
@@ -26634,6 +26637,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crab2_metadata_latest.apng",
     "prefix": 42,
     "rpcs": [
+      "wss://darwiniacrab-rpc.dwellir.com",
       "wss://crab-rpc.darwinia.network/",
       "wss://darwiniacrab-rpc.dwellir.com",
       "wss://crab-rpc.darwinia.network/"
@@ -26849,7 +26853,6 @@
     "prefix": 18,
     "oldPrefix": 18,
     "rpcs": [
-      "wss://darwinia-rpc.dwellir.com",
       "wss://rpc.darwinia.network",
       "wss://darwinia.rpc.subquery.network/public/ws",
       "wss://darwinia-rpc.dwellir.com",
@@ -27514,7 +27517,7 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/joystream-node_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/joystream-node_metadata_latest.apng",
     "prefix": 126,
-    "rpcs": ["wss://rpc.joyutils.org", "wss://rpc.joyutils.org", "wss://rpc.joystream.org", "wss://rpc.joystream.org"],
+    "rpcs": ["wss://rpc.joyutils.org", "wss://rpc.joystream.org", "wss://rpc.joyutils.org", "wss://rpc.joystream.org"],
     "topologyInfo": {
       "type": "standalone"
     }
@@ -27763,7 +27766,6 @@
     "prefix": 2,
     "rpcs": [
       "wss://rpc.ibp.network/kusama",
-      "wss://kusama-rpc.dwellir.com",
       "wss://kusama-rpc-tn.dwellir.com",
       "wss://kusama-rpc.publicnode.com",
       "wss://rpc-kusama.helixstreet.io",
@@ -27812,7 +27814,6 @@
     "rpcs": [
       "wss://sys.ibp.network/asset-hub-kusama",
       "wss://asset-hub-kusama-rpc.dwellir.com",
-      "wss://statemine-rpc-tn.dwellir.com",
       "wss://asset-hub-kusama.dotters.network",
       "wss://rpc-asset-hub-kusama.luckyfriday.io",
       "wss://kusama-asset-hub-rpc.polkadot.io",
@@ -27825,7 +27826,8 @@
       "wss://rpc-asset-hub-kusama.luckyfriday.io",
       "wss://kusama-asset-hub-rpc.polkadot.io",
       "wss://statemine.public.curie.radiumblock.co/ws",
-      "wss://ksm-rpc.stakeworld.io/assethub"
+      "wss://ksm-rpc.stakeworld.io/assethub",
+      "wss://statemine-rpc-tn.dwellir.com"
     ],
     "hasCheckMetadataHash": true,
     "topologyInfo": {
@@ -27859,7 +27861,6 @@
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-kusama",
       "wss://bridge-hub-kusama-rpc.dwellir.com",
-      "wss://kusama-bridge-hub-rpc-tn.dwellir.com",
       "wss://bridge-hub-kusama.dotters.network",
       "wss://rpc-bridge-hub-kusama.luckyfriday.io",
       "wss://kusama-bridge-hub-rpc.polkadot.io",
@@ -27871,7 +27872,8 @@
       "wss://rpc-bridge-hub-kusama.luckyfriday.io",
       "wss://kusama-bridge-hub-rpc.polkadot.io",
       "wss://bridgehub-kusama.public.curie.radiumblock.co/ws",
-      "wss://ksm-rpc.stakeworld.io/bridgehub"
+      "wss://ksm-rpc.stakeworld.io/bridgehub",
+      "wss://kusama-bridge-hub-rpc-tn.dwellir.com"
     ],
     "hasCheckMetadataHash": true,
     "topologyInfo": {
@@ -27947,7 +27949,6 @@
     "prefix": 2,
     "rpcs": [
       "wss://sys.ibp.network/people-kusama",
-      "wss://people-kusama-rpc.dwellir.com",
       "wss://people-kusama.dotters.network",
       "wss://rpc-people-kusama.luckyfriday.io",
       "wss://kusama-people-rpc.polkadot.io",
@@ -28037,7 +28038,12 @@
     "specVersion": 31,
     "account": "*25519",
     "prefix": 42,
-    "rpcs": ["wss://mainnet.liberland.org", "wss://liberland-rpc.dwellir.com", "wss://mainnet.liberland.org"],
+    "rpcs": [
+      "wss://liberland-rpc.dwellir.com",
+      "wss://mainnet.liberland.org",
+      "wss://liberland-rpc.dwellir.com",
+      "wss://mainnet.liberland.org"
+    ],
     "hasCheckMetadataHash": true,
     "topologyInfo": {
       "type": "standalone"
@@ -28263,6 +28269,7 @@
     "prefix": 1284,
     "oldPrefix": 1284,
     "rpcs": [
+      "wss://moonbeam-rpc.n.dwellir.com",
       "wss://moonbeam.ibp.network",
       "wss://moonbeam.dotters.network",
       "wss://moonbeam-rpc.publicnode.com",
@@ -28307,6 +28314,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
     "prefix": 1285,
     "rpcs": [
+      "wss://moonriver-rpc.dwellir.com",
       "wss://wss.api.moonriver.moonbeam.network",
       "wss://moonriver.public.curie.radiumblock.co/ws",
       "wss://moonriver.unitedbloc.com",
@@ -28619,7 +28627,6 @@
     "prefix": 30,
     "oldPrefix": 30,
     "rpcs": [
-      "wss://phala-rpc.dwellir.com",
       "wss://phala.public.curie.radiumblock.co/ws",
       "wss://api.phala.network/ws",
       "wss://phala-rpc.dwellir.com",
@@ -28749,8 +28756,8 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/node_metadata_latest.apng",
     "prefix": 88,
     "rpcs": [
-      "wss://polkadex-mainnet-rpc.dwellir.com",
       "wss://polkadex.public.curie.radiumblock.co/ws",
+      "wss://polkadex-mainnet-rpc.dwellir.com",
       "wss://polkadex.public.curie.radiumblock.co/ws"
     ],
     "hasCheckMetadataHash": true,
@@ -28840,6 +28847,7 @@
       "wss://sys.dotters.network/statemint",
       "wss://sys.ibp.network/asset-hub-polkadot",
       "wss://asset-hub-polkadot-rpc.dwellir.com",
+      "wss://statemint-rpc-tn.dwellir.com",
       "wss://polkadot-assethub-rpc.blockops.network/ws",
       "wss://asset-hub-polkadot.dotters.network",
       "wss://rpc-asset-hub-polkadot.luckyfriday.io",
@@ -28855,8 +28863,7 @@
       "wss://rpc-asset-hub-polkadot.luckyfriday.io",
       "wss://polkadot-asset-hub-rpc.polkadot.io",
       "wss://dot-rpc.stakeworld.io/assethub",
-      "wss://statemint.public.curie.radiumblock.co/ws",
-      "wss://statemint-rpc-tn.dwellir.com"
+      "wss://statemint.public.curie.radiumblock.co/ws"
     ],
     "hasCheckMetadataHash": true,
     "topologyInfo": {
@@ -29428,7 +29435,12 @@
     "specVersion": 1501,
     "account": "*25519",
     "prefix": 5,
-    "rpcs": ["wss://rpc.shibuya.astar.network", "wss://shibuya-rpc.dwellir.com", "wss://rpc.shibuya.astar.network"],
+    "rpcs": [
+      "wss://shibuya-rpc.dwellir.com",
+      "wss://rpc.shibuya.astar.network",
+      "wss://shibuya-rpc.dwellir.com",
+      "wss://rpc.shibuya.astar.network"
+    ],
     "hasCheckMetadataHash": true,
     "topologyInfo": {
       "type": "standalone"
@@ -29944,7 +29956,6 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/coretime-westend",
-      "wss://coretime-westend-rpc.dwellir.com",
       "wss://coretime-westend.dotters.network",
       "wss://westend-coretime-rpc.polkadot.io",
       "wss://sys.ibp.network/coretime-westend",
