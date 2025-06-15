@@ -16,6 +16,7 @@ export const DotNetworkConfigSchema = z.strictObject({
     specVersion: true, // fetched from rpc
     prefix: true, // determined from metadata
     platform: true, // always polkadot
+    topologyInfo: true, // fetched from rpc
   }).partial().shape,
   // required fields
   ...DotNetworkSchema.pick({
