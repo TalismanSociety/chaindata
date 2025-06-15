@@ -1,6 +1,6 @@
 import { existsSync } from 'fs'
 
-import { EthNetwork, EthNetworkSchema, evmNativeTokenId } from '@talismn/chaindata'
+import { EthNetwork, EthNetworkSchema, evmNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'

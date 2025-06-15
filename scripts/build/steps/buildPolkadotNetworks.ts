@@ -1,7 +1,7 @@
 import { existsSync } from 'fs'
 
 import { subNativeTokenId } from '@talismn/balances'
-import { DotNetwork, DotNetworkSchema, isDotNetwork } from '@talismn/chaindata'
+import { DotNetwork, DotNetworkSchema, isDotNetwork } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
@@ -19,7 +19,6 @@ import {
   DotNetworksConfigFileSchema,
   DotNetworkSpecs,
   DotNetworkSpecsFileSchema,
-  DotNetworkSpecsSchema,
 } from '../../shared/schemas'
 import {
   DotNetworkMetadataExtract,

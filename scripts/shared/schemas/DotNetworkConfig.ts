@@ -1,4 +1,4 @@
-import { DotNetworkSchema } from '@talismn/chaindata'
+import { DotNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import { DotBalancesConfigTypes } from './shared'

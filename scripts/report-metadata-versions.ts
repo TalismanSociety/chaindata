@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 
 import { u32, Vector } from '@polkadot-api/substrate-bindings'
 import { WsProvider } from '@polkadot/rpc-provider'
-import { DotNetwork, Network } from '@talismn/chaindata'
+import { DotNetwork, Network } from '@talismn/chaindata-provider'
 import { decAnyMetadata } from '@talismn/scale'
 
 import { DIR_OUTPUT } from './shared/constants'

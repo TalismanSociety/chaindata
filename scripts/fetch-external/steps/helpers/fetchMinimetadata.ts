@@ -3,8 +3,14 @@ import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-prov
 import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
-import { TokenId } from '@talismn/chaindata'
-import { Chain, ChaindataProvider, ChainId, EvmNetworkId, IChaindataProvider } from '@talismn/chaindata-provider'
+import {
+  Chain,
+  ChaindataProvider,
+  ChainId,
+  EvmNetworkId,
+  IChaindataProvider,
+  TokenId,
+} from '@talismn/chaindata-provider'
 import { BehaviorSubject, from } from 'rxjs'
 
 import { RPC_REQUEST_TIMEOUT } from '../../../shared/constants'

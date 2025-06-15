@@ -1,7 +1,5 @@
-import { isDotNetwork, isEthNetwork, NetworkSchema, TokenSchema } from '@talismn/chaindata'
-import groupBy from 'lodash/groupBy'
+import { isEthNetwork, NetworkSchema, TokenSchema } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
-import toPairs from 'lodash/toPairs'
 import { z } from 'zod/v4'
 
 import { FILE_OUTPUT_NETWORKS_ALL, FILE_OUTPUT_TOKENS_ALL } from '../../shared/constants'

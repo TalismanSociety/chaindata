@@ -35,7 +35,7 @@
     "build": "pnpm run validate && tsx scripts/build.ts",
     "build:dev": "tsx scripts/build.ts",
     "clean": "rm -rf pub",
-    "postinstall": "pnpm -F @talismn/chaindata build"
+    "postinstall": "pnpm generate-schemas"
   },
   "dependencies": {
     "@polkadot-api/descriptors": "file:.papi/descriptors",
@@ -46,14 +46,13 @@
     "@polkadot/util": "^13.5.1",
     "@polkadot/util-crypto": "^13.5.1",
     "@supercharge/promise-pool": "^3.1.0",
-    "@talismn/balances": "0.0.0-pr2043-20250613003855",
-    "@talismn/chain-connector": "0.0.0-pr2043-20250613003855",
-    "@talismn/chain-connector-evm": "0.0.0-pr2043-20250613003855",
-    "@talismn/chaindata-provider": "0.0.0-pr2043-20250613003855",
-    "@talismn/sapi": "0.0.0-pr2043-20250613003855",
+    "@talismn/balances": "0.0.0-pr2043-20250615092436",
+    "@talismn/chain-connector": "0.0.0-pr2043-20250615092436",
+    "@talismn/chain-connector-evm": "0.0.0-pr2043-20250615092436",
+    "@talismn/chaindata-provider": "0.0.0-pr2043-20250615092436",
+    "@talismn/sapi": "0.0.0-pr2043-20250615092436",
     "@talismn/crypto": "^0.1.5",
     "@talismn/scale": "0.1.2",
-    "@talismn/chaindata": "workspace:*",
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "extract-colors": "^4.2.0",

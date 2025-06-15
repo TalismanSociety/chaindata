@@ -1,5 +1,5 @@
 import type { Dictionary } from 'lodash'
-import { DotNetwork, DotToken, Token, TokenSchema } from '@talismn/chaindata'
+import { DotNetwork, DotToken, Token, TokenSchema } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 

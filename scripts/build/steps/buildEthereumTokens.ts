@@ -11,11 +11,10 @@ import {
   NetworkId,
   Token,
   TokenSchema,
-} from '@talismn/chaindata'
+} from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import keys from 'lodash/keys'
 import uniq from 'lodash/uniq'
-import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
 import { getConsolidatedKnownEthNetworks } from '../../fetch-external/getConsolidatedEthNetworksOverrides'
@@ -54,12 +53,6 @@ export const buildEthereumTokens = async () => {
 
   const ethNetworkConfigById = keyBy(ethNetworksConfig, (c) => String(c.id))
   const knownEthNetworkById = keyBy(knownEthNetworks, (c) => String(c.id))
-  const ethNetworksById = keyBy(ethNetworks, (c) => String(c.id))
-  // const viemChainById = keyBy(viemChains, (c) => String(c.id))
-
-  const allEthNetworkIds = ethNetworks.map((n) => n.id)
-
-  // const erc20s = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
 
   const ethTokens: Token[] = ethNetworks
     .flatMap((network) => {

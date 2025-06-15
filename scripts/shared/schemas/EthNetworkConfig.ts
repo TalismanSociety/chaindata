@@ -1,4 +1,4 @@
-import { EthNetworkSchema } from '@talismn/chaindata'
+import { EthNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import { EthBalancesConfigTypes } from './shared'

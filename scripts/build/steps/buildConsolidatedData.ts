@@ -1,6 +1,6 @@
 import { write } from 'fs'
 
-import { Network, NetworkSchema, Token, TokenSchema } from '@talismn/chaindata'
+import { Network, NetworkSchema, Token, TokenSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import {

@@ -1,6 +1,4 @@
-import { readFileSync } from 'node:fs'
-
-import { EthNetwork, Network, Token } from '@talismn/chaindata'
+import { Network, Token } from '@talismn/chaindata-provider'
 
 import { DIR_OUTPUT } from './shared/constants'
 import { parseJsonFile } from './shared/util'

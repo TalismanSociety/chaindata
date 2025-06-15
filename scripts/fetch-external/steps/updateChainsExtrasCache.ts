@@ -5,7 +5,7 @@
 // import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
 // import { ChainConnector } from '@talismn/chain-connector'
 // import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
-// import { NetworkId, TokenId } from '@talismn/chaindata'
+// import { NetworkId, TokenId } from '@talismn/chaindata-provider'
 // import { Chain, ChaindataProvider, ChainId, EvmNetworkId, IChaindataProvider } from '@talismn/chaindata-provider'
 // import { fetchBestMetadata } from '@talismn/sapi'
 // import { decAnyMetadata } from '@talismn/scale'

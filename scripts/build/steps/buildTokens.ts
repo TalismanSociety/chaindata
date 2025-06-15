@@ -1,4 +1,4 @@
-// import { subNativeTokenId, Token } from '@talismn/chaindata'
+// import { subNativeTokenId, Token } from '@talismn/chaindata-provider'
 
 // import { getConsolidatedKnownEthNetworks } from '../../fetch-external/getConsolidatedEthNetworksOverrides'
 // import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_INPUT_NETWORKS_POLKADOT } from '../../shared/constants'

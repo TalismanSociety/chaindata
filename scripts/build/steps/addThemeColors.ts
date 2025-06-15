@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises'
 import { parse } from 'node:path'
 
 import { PromisePool } from '@supercharge/promise-pool'
-import { NetworkSchema } from '@talismn/chaindata'
+import { NetworkSchema } from '@talismn/chaindata-provider'
 import { extractColors } from 'extract-colors'
 import sharp from 'sharp'
 import tinycolor from 'tinycolor2'

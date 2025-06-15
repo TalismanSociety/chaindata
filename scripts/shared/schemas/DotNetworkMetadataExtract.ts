@@ -1,4 +1,4 @@
-import { DotNetworkTopologyInfoSchema } from '@talismn/chaindata'
+import { DotNetworkTopologyInfoSchema } from '@talismn/chaindata-provider'
 import z from 'zod/v4'
 
 export const DotNetworkMetadataExtractSchema = z.strictObject({
