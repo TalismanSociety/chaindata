@@ -1,21 +1,26 @@
 import { WsProvider } from '@polkadot/rpc-provider'
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
-import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
+import { BalanceModule, defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
+import pkgBalances from '@talismn/balances/package.json'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
 import {
   Chain,
   ChaindataProvider,
   ChainId,
+  DotNetwork,
   EvmNetworkId,
   IChaindataProvider,
+  Network,
   TokenId,
 } from '@talismn/chaindata-provider'
-import { BehaviorSubject, from } from 'rxjs'
+import { from, of } from 'rxjs'
 
 import { RPC_REQUEST_TIMEOUT } from '../../../shared/constants'
 import { DotNetworkConfig, DotNetworkSpecs } from '../../../shared/schemas'
 import { withTimeout } from '../../../shared/util'
+
+const { version: libVersion } = pkgBalances
 
 export const fetchMiniMetadatas = async (
   network: DotNetworkConfig,
@@ -40,52 +45,36 @@ export const fetchMiniMetadatas = async (
   for (const mod of defaultBalanceModules
     .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
     .filter((mod) => mod.type.startsWith('substrate-'))) {
-    const moduleConfig = network.balancesConfig?.[mod.type]
+    const source = mod.type
+    const chainId = network.id
+    const moduleConfig = network.balancesConfig?.[source]
 
-    // update logos in balancesConfig
-    // TODO: Refactor so we don't need to do this here
-    // const configTokens: TokenDef[] = []
-    // if (moduleConfig !== undefined) {
-    //     if ('tokens' in moduleConfig && Array.isArray(moduleConfig.tokens)) configTokens.push(...moduleConfig.tokens)
-    //     else configTokens.push(moduleConfig)
+    const { specVersion } = networkSpecs.runtimeVersion
 
-    //     for (const token of configTokens) {
-    //         setTokenLogo(token, chain.id, mod.type)
-    //     }
-    // }
-
-    const { specName, specVersion } = networkSpecs.runtimeVersion
-
-    const metadata: any = await mod.fetchSubstrateChainMeta(
+    const chainMeta = await mod.fetchSubstrateChainMeta(
       network.id,
       moduleConfig ?? {},
       metadataRpc,
       networkSpecs.properties,
     )
 
-    const { miniMetadata: data, metadataVersion: version, ...extra } = metadata ?? {}
     const miniMetadata: MiniMetadata = {
       id: deriveMiniMetadataId({
-        source: mod.type,
-        chainId: network.id,
-        specName,
-        specVersion: specVersion.toString(), // this should be a number!
-        balancesConfig: JSON.stringify(moduleConfig ?? {}),
+        source,
+        chainId,
+        specVersion,
+        libVersion,
       }),
-      source: mod.type,
-      chainId: network.id,
-      specName,
-      specVersion: specVersion.toString(), // this should be a number!
-      balancesConfig: JSON.stringify(moduleConfig ?? {}),
-      // TODO: Standardise return value from `fetchSubstrateChainMeta`
-      version,
-      data,
-      extra: JSON.stringify(extra),
+      source,
+      chainId,
+      specVersion, // this should be a number!
+      data: (chainMeta?.miniMetadata as `0x${string}`) ?? null,
+      libVersion,
     }
 
     miniMetadatas[miniMetadata.id] = miniMetadata
 
-    const moduleTokens = await mod.fetchSubstrateChainTokens(network.id, metadata, moduleConfig ?? {})
+    const moduleTokens = await mod.fetchSubstrateChainTokens(network.id, chainMeta as never, moduleConfig ?? {})
     Object.assign(tokens, moduleTokens)
   }
 
@@ -95,8 +84,14 @@ export const fetchMiniMetadatas = async (
 const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: WsProvider) => {
   const stubChaindataProvider: IChaindataProvider = {
     // @ts-ignore
-    chainsObservable: from([chain as unknown as Chain]), // new BehaviorSubject([chain as unknown as Chain]).asObservable(),
-    chains: () => Promise.resolve([chain as unknown as Chain]),
+    chainsObservable: of([chain as unknown as DotNetwork]),
+    chains: () => Promise.resolve([chain as unknown as DotNetwork]),
+
+    networksObservable: of([chain as unknown as Network]),
+    networks: () => Promise.resolve([chain as unknown as Network]),
+
+    customNetworksObservable: of([chain as unknown as Network]),
+    customNetworks: () => Promise.resolve([chain as unknown as Network]),
 
     // @ts-ignore
     customChainsObservable: from(Promise.resolve([])),
@@ -106,16 +101,28 @@ const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: WsProvide
     chainIdsObservable: from(Promise.resolve([chain.id])),
     chainIds: () => Promise.resolve([chain.id]),
 
+    networkIdsObservable: from(Promise.resolve([chain.id])),
+    networkIds: () => Promise.resolve([chain.id]),
+
     // @ts-ignore
-    chainsByIdObservable: from(Promise.resolve({ [chain.id]: chain as unknown as Chain })),
-    chainsById: () => Promise.resolve({ [chain.id]: chain as unknown as Chain }),
+    chainsByIdObservable: from(Promise.resolve({ [chain.id]: chain as unknown as DotNetwork })),
+    chainsById: () => Promise.resolve({ [chain.id]: chain as unknown as DotNetwork }),
+
+    networksByIdObservable: from(Promise.resolve({ [chain.id]: chain as unknown as Network })),
+    networksById: () => Promise.resolve({ [chain.id]: chain as unknown as Network }),
 
     // @ts-ignore
     chainsByGenesisHashObservable: from(Promise.resolve({})),
     chainsByGenesisHash: () => Promise.resolve({}),
 
-    chainById: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as Chain) : null),
+    networksByGenesisHashObservable: from(Promise.resolve({})),
+    networksByGenesisHash: () => Promise.resolve({}),
+
+    chainById: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as DotNetwork) : null),
     chainByGenesisHash: (genesisHash: `0x${string}`) => Promise.resolve(null),
+
+    networkById: (chainId: ChainId) => Promise.resolve(chainId === chain.id ? (chain as unknown as Network) : null),
+    networkByGenesisHash: (genesisHash: `0x${string}`) => Promise.resolve(null),
 
     // @ts-ignore
     evmNetworksObservable: from(Promise.resolve([])),
