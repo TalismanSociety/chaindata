@@ -45,9 +45,9 @@ export const fetchMiniMetadatas = async (
   for (const mod of defaultBalanceModules
     .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
     .filter((mod) => mod.type.startsWith('substrate-'))) {
-    const source = mod.type
+    const source = mod.type as keyof DotNetworkConfig['balancesConfig']
     const chainId = network.id
-    const moduleConfig = network.balancesConfig?.[source]
+    const moduleConfig = network.balancesConfig?.[source] ?? {}
 
     const { specVersion } = networkSpecs.runtimeVersion
 

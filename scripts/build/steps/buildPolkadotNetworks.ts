@@ -1,7 +1,6 @@
 import { existsSync } from 'fs'
 
-import { subNativeTokenId } from '@talismn/balances'
-import { DotNetwork, DotNetworkSchema, isDotNetwork } from '@talismn/chaindata-provider'
+import { DotNetwork, DotNetworkSchema, isDotNetwork, subNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
@@ -106,7 +105,7 @@ const consolidateDotNetwork = (
     forceScan: config.forceScan || undefined,
     themeColor: config.themeColor || undefined,
     logo: getAssetUrlFromPath(logoRelativePath),
-    blockExplorerUrls: config.blockExplorerUrls?.length ? config.blockExplorerUrls : undefined,
+    blockExplorerUrls: config.blockExplorerUrls?.length ? config.blockExplorerUrls : (undefined as unknown as string[]), // zod will default to empty array
     chainspecQrUrl: config.chainspecQrUrl || metadataPortalUrls?.urls.chainspecQrUrl || undefined,
     latestMetadataQrUrl: config.latestMetadataQrUrl || metadataPortalUrls?.urls.latestMetadataQrUrl || undefined,
     hasExtrinsicSignatureTypePrefix: config.hasCheckMetadataHash || undefined,
@@ -116,6 +115,7 @@ const consolidateDotNetwork = (
     signedExtensions: config.signedExtensions || undefined,
     oldPrefix: config.oldPrefix,
 
+    chainName: specs.name,
     specName: specs.runtimeVersion.specName,
     specVersion: specs.runtimeVersion.specVersion,
     genesisHash: specs.genesisHash,

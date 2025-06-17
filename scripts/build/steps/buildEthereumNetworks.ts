@@ -128,7 +128,8 @@ const consolidateEthNetwork = (
     forceScan: config?.forceScan || knownEvmNetwork?.forceScan || undefined,
     themeColor: config?.themeColor || knownEvmNetwork?.themeColor || undefined,
     logo: getAssetUrlFromPath(config?.logo || knownEvmNetwork?.logo),
-    blockExplorerUrls: config?.blockExplorerUrls ?? knownEvmNetwork?.blockExplorerUrls ?? undefined,
+    blockExplorerUrls:
+      config?.blockExplorerUrls ?? knownEvmNetwork?.blockExplorerUrls ?? (undefined as unknown as string[]), // zod will replace with empty array
 
     // TODO
     contracts: Object.keys(contracts).length ? contracts : undefined,

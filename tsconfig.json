@@ -14,9 +14,10 @@
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "allowJs": true,
     "types": ["bun-types"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "bun.lockb", "bunfig.toml", "scripts", "test", "tests"]
+  "include": ["src", "scripts"],
+  "exclude": ["node_modules", "dist", "bun.lockb", "bunfig.toml", "test", "tests"]
 }
