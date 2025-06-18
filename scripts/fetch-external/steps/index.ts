@@ -13,24 +13,24 @@ import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensF
 import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Awaited<void>> = [
-  validateConfigFiles,
-  checkWsRpcs,
+  // validateConfigFiles,
+  // checkWsRpcs,
 
-  fetchKnownEvmNetworks,
-  fetchKnownEvmNetworksCoingeckoLogos,
+  // fetchKnownEvmNetworks,
+  // fetchKnownEvmNetworksCoingeckoLogos,
 
-  fetchKnownEvmTokens,
-  fetchErc20TokenSymbols,
+  // fetchKnownEvmTokens,
+  // fetchErc20TokenSymbols,
 
-  updateKnownEvmErc20TokensFromCache,
+  // updateKnownEvmErc20TokensFromCache,
 
-  // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds
-  // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
-  fetchUniswapv2TokenExtras,
+  // // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds
+  // // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
+  // fetchUniswapv2TokenExtras,
 
-  fetchKnownEvmNetworksLogos,
-  fetchCoingeckoTokensLogos,
-  fetchNovasamaMetadataPortalUrls,
+  // fetchKnownEvmNetworksLogos,
+  // fetchCoingeckoTokensLogos,
+  // fetchNovasamaMetadataPortalUrls,
 
   fetchDotNetworksSpecs,
   fetchDotNetworksMetadataExtracts,

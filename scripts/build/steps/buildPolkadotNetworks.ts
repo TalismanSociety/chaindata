@@ -123,7 +123,7 @@ const consolidateDotNetwork = (
     hasCheckMetadataHash: (config.hasCheckMetadataHash ?? metadataExtracts.hasCheckMetadataHash) || undefined,
     prefix: metadataExtracts.ss58Prefix,
     account: metadataExtracts.account,
-    topologyInfo: metadataExtracts.topology,
+    topology: metadataExtracts.topology,
   }
 
   try {

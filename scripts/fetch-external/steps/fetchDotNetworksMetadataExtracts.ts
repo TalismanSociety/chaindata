@@ -156,7 +156,6 @@ const fetchMetadataExtract = async ({
     const { miniMetadatas, tokens } = await fetchMiniMetadatas(network, specs, provider, metadataRpc)
 
     const topology = await getTopology(metadata, provider, network)
-    console.log('Topology for network %s: %o', network.id, topology)
 
     return validateDebug(
       {
