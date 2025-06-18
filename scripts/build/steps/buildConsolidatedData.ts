@@ -5,6 +5,7 @@ import { z } from 'zod/v4'
 
 import {
   FILE_OUTPUT_CHAINDATA,
+  FILE_OUTPUT_CHAINDATA_MINIFIED,
   FILE_OUTPUT_MINI_METADATAS,
   FILE_OUTPUT_NETWORKS_ALL,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
@@ -39,13 +40,12 @@ export const buildConsolidatedData = async () => {
 
   const miniMetadatas = parseJsonFile(FILE_OUTPUT_MINI_METADATAS, MiniMetadatasSchema)
 
-  await writeJsonFile(
-    FILE_OUTPUT_CHAINDATA,
-    {
-      networks,
-      tokens,
-      miniMetadatas,
-    },
-    { schema: ChainDataSchema },
-  )
+  const chaindata = {
+    networks,
+    tokens,
+    miniMetadatas,
+  }
+
+  await writeJsonFile(FILE_OUTPUT_CHAINDATA, chaindata, { schema: ChainDataSchema })
+  await writeJsonFile(FILE_OUTPUT_CHAINDATA_MINIFIED, chaindata, { schema: ChainDataSchema, format: false })
 }

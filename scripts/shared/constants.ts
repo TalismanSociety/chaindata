@@ -35,6 +35,7 @@ export const FILE_OUTPUT_NETWORKS_ETHEREUM = DIR_OUTPUT + '/networks-ethereum.js
 export const FILE_OUTPUT_NETWORKS_ALL = DIR_OUTPUT + '/networks.json'
 export const FILE_OUTPUT_MINI_METADATAS = DIR_OUTPUT + '/mini-metadatas.json'
 export const FILE_OUTPUT_CHAINDATA = DIR_OUTPUT + '/chaindata.json'
+export const FILE_OUTPUT_CHAINDATA_MINIFIED = DIR_OUTPUT + '/chaindata.min.json'
 
 export const FILE_RPC_HEALTH_WEBSOCKET = 'data/generated/rpc-health-websocket.json'
 export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
