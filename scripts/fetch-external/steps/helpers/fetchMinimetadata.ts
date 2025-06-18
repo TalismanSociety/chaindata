@@ -1,11 +1,9 @@
 import { WsProvider } from '@polkadot/rpc-provider'
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
-import { BalanceModule, defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
-import pkgBalances from '@talismn/balances/package.json'
+import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
 import {
-  Chain,
   ChaindataProvider,
   ChainId,
   DotNetwork,
@@ -16,11 +14,11 @@ import {
 } from '@talismn/chaindata-provider'
 import { from, of } from 'rxjs'
 
-import { RPC_REQUEST_TIMEOUT } from '../../../shared/constants'
+import { BALANCES_LIB_VERSION, RPC_REQUEST_TIMEOUT } from '../../../shared/constants'
 import { DotNetworkConfig, DotNetworkSpecs } from '../../../shared/schemas'
 import { withTimeout } from '../../../shared/util'
 
-const { version: libVersion } = pkgBalances
+const libVersion = BALANCES_LIB_VERSION
 
 export const fetchMiniMetadatas = async (
   network: DotNetworkConfig,

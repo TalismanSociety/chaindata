@@ -8,6 +8,7 @@ import keyBy from 'lodash/keyBy'
 import { cache } from 'sharp'
 
 import {
+  BALANCES_LIB_VERSION,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
@@ -74,7 +75,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
       if (metadataExtract.specVersion !== specs.runtimeVersion.specVersion) return true
 
       // balances config hash changed, miniMetadatas need to be updated
-      if (metadataExtract.cacheBalancesConfigHash !== cacheBalancesConfigHash) return true
+      if (metadataExtract.balancesLibVersion !== BALANCES_LIB_VERSION) return true
 
       return false // no changes, no need to update
     })
@@ -154,20 +155,20 @@ const fetchMetadataExtract = async ({
 
     const { miniMetadatas, tokens } = await fetchMiniMetadatas(network, specs, provider, metadataRpc)
 
-    const topologyInfo = await getTopologyInfo(metadata, provider, network)
-    console.log('Topology for network %s: %o', network.id, topologyInfo)
+    const topology = await getTopology(metadata, provider, network)
+    console.log('Topology for network %s: %o', network.id, topology)
 
     return validateDebug(
       {
         id: network.id,
         specVersion: specs.runtimeVersion.specVersion,
+        balancesLibVersion: BALANCES_LIB_VERSION,
         account,
         ss58Prefix,
         hasCheckMetadataHash,
-        cacheBalancesConfigHash,
         miniMetadatas,
         tokens,
-        topologyInfo,
+        topology,
       },
       DotNetworkMetadataExtractSchema,
       'network metadata extract ' + network.id,
@@ -222,11 +223,11 @@ const getSs58Prefix = (metadata: UnifiedMetadata) => {
   return prefix
 }
 
-const getTopologyInfo = async (
+const getTopology = async (
   metadata: UnifiedMetadata,
   provider: WsProvider,
   network: DotNetworkConfig,
-): Promise<DotNetworkMetadataExtract['topologyInfo']> => {
+): Promise<DotNetworkMetadataExtract['topology']> => {
   if (metadata.pallets.some((p) => p.name === 'Paras')) {
     if (network.relay && network.id !== network.relay)
       console.warn(`Network ${network.id} has invalid relay property, remove it`)

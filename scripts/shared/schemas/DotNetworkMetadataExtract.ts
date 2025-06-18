@@ -5,12 +5,12 @@ export const DotNetworkMetadataExtractSchema = z.strictObject({
   id: z.string().nonempty(),
   account: z.enum(['secp256k1', '*25519']),
   specVersion: z.uint32(),
+  balancesLibVersion: z.string().nonempty(),
   ss58Prefix: z.uint32(),
   hasCheckMetadataHash: z.boolean(),
-  cacheBalancesConfigHash: z.string(),
   miniMetadatas: z.partialRecord(z.string().nonempty(), z.any()),
   tokens: z.partialRecord(z.string().nonempty(), z.any()),
-  topologyInfo: DotNetworkTopologyInfoSchema,
+  topology: DotNetworkTopologyInfoSchema,
 })
 
 export type DotNetworkMetadataExtract = z.infer<typeof DotNetworkMetadataExtractSchema>
