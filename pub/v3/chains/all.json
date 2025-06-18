@@ -8209,6 +8209,9 @@
         "url": "wss://phala-rpc.dwellir.com"
       },
       {
+        "url": "wss://phala.public.curie.radiumblock.co/ws"
+      },
+      {
         "url": "wss://api.phala.network/ws"
       }
     ],
@@ -8244,7 +8247,7 @@
     "chainType": "Live",
     "implName": "picasso",
     "specName": "picasso",
-    "specVersion": "10046",
+    "specVersion": "200",
     "nativeToken": {
       "id": "picasso-substrate-native"
     },
@@ -8980,9 +8983,6 @@
         "url": "wss://asset-hub-polkadot.dotters.network"
       },
       {
-        "url": "wss://rpc-asset-hub-polkadot.luckyfriday.io"
-      },
-      {
         "url": "wss://polkadot-asset-hub-rpc.polkadot.io"
       },
       {
@@ -8990,6 +8990,9 @@
       },
       {
         "url": "wss://statemint.public.curie.radiumblock.co/ws"
+      },
+      {
+        "url": "wss://rpc-asset-hub-polkadot.luckyfriday.io"
       }
     ],
     "evmNetworks": [],
@@ -9315,9 +9318,6 @@
         "url": "wss://collectives-polkadot-rpc.dwellir.com"
       },
       {
-        "url": "wss://polkadot-collectives-rpc-tn.dwellir.com"
-      },
-      {
         "url": "wss://collectives-polkadot.dotters.network"
       },
       {
@@ -9331,6 +9331,9 @@
       },
       {
         "url": "wss://collectives.public.curie.radiumblock.co/ws"
+      },
+      {
+        "url": "wss://polkadot-collectives-rpc-tn.dwellir.com"
       }
     ],
     "evmNetworks": [],
@@ -10033,19 +10036,25 @@
     "isTestnet": false,
     "isDefault": true,
     "sortIndex": 1046,
-    "genesisHash": null,
-    "prefix": null,
+    "genesisHash": "0xdd6d086f75ec041b66e20c4186d327b23c8af244c534a2418de6574e8c041a60",
+    "prefix": 42,
     "name": "Tanssi",
     "themeColor": "#149b9b",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/tanssi.svg",
-    "chainName": null,
-    "chainType": null,
-    "implName": null,
-    "specName": null,
-    "specVersion": null,
-    "nativeToken": null,
-    "tokens": [],
-    "account": null,
+    "chainName": "Tanssi",
+    "chainType": "Live",
+    "implName": "tanssi-starlight-v2.0",
+    "specName": "starlight",
+    "specVersion": "1321",
+    "nativeToken": {
+      "id": "tanssi-substrate-native"
+    },
+    "tokens": [
+      {
+        "id": "tanssi-substrate-native"
+      }
+    ],
+    "account": "*25519",
     "blockExplorerUrls": null,
     "subscanUrl": null,
     "chainspecQrUrl": null,
@@ -10062,7 +10071,8 @@
     "paraId": null,
     "relay": null,
     "balancesConfig": [],
-    "balancesMetadata": []
+    "balancesMetadata": [],
+    "hasCheckMetadataHash": true
   },
   {
     "id": "ternoa",
@@ -12202,7 +12212,7 @@
     "name": "NeuroWeb Testnet",
     "themeColor": "#656667",
     "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/rococo-neuro-web-testnet.svg",
-    "chainName": "Neuro Testnet",
+    "chainName": "NeuroWeb Testnet",
     "chainType": "Live",
     "implName": "neuroweb",
     "specName": "origintrail-parachain",
