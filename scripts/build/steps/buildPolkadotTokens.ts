@@ -22,6 +22,7 @@ import {
   fixAssetUrl,
   getAssetPathFromCoingeckoTokenId,
   getAssetPathFromUrl,
+  getTokenLogoUrl,
   parseJsonFile,
   parseYamlFile,
   validateDebug,
@@ -52,7 +53,11 @@ export const buildPolkadotTokens = async () => {
       }
       return token
     })
-    .map(fixLogoUrl)
+    .map((token) => ({
+      ...token,
+      // fix logo
+      logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol),
+    }))
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
   // apply nativeCurrency properties
@@ -73,12 +78,4 @@ export const buildPolkadotTokens = async () => {
     format: true,
     schema: z.array(TokenSchema),
   })
-}
-
-const fixLogoUrl = (token: Token): Token => {
-  token.logo = fixAssetUrl(token.logo) // in most cases this will clear out the logo because it doesnt exist
-
-  if (!token.logo && token.coingeckoId) token.logo = getAssetPathFromCoingeckoTokenId(token.coingeckoId)
-
-  return token
 }

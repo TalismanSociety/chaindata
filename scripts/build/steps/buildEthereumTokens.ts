@@ -27,6 +27,7 @@ import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } 
 import {
   getAssetPathFromCoingeckoTokenId,
   getAssetUrlFromPath,
+  getTokenLogoUrl,
   parseJsonFile,
   parseYamlFile,
   validateDebug,
@@ -106,7 +107,7 @@ const getNetworkTokens = (
         symbol: erc20Config.symbol,
         name: erc20Config.name,
         decimals: erc20Config.decimals,
-        logo: getAssetUrlFromPath(erc20Config.logo) ?? getAssetPathFromCoingeckoTokenId(erc20Config.coingeckoId),
+        logo: getTokenLogoUrl(erc20Config.logo, erc20Config.coingeckoId, erc20Config.symbol), // getAssetUrlFromPath(erc20Config.logo) ?? getAssetPathFromCoingeckoTokenId(erc20Config.coingeckoId),
         mirrorOf: erc20Config.mirrorOf,
         coingeckoId: erc20Config.coingeckoId,
         noDiscovery: erc20Config.noDiscovery,
@@ -130,7 +131,11 @@ const getNativeToken = (network: EthNetwork): EvmNativeToken => {
     symbol: network.nativeCurrency.symbol,
     name: network.nativeCurrency.name,
     decimals: network.nativeCurrency.decimals ?? 18,
-    logo: network.nativeCurrency.logo,
+    logo: getTokenLogoUrl(
+      network.nativeCurrency.logo,
+      network.nativeCurrency.coingeckoId,
+      network.nativeCurrency.symbol,
+    ),
     coingeckoId: network.nativeCurrency.coingeckoId,
     mirrorOf: network.nativeCurrency.mirrorOf,
   }

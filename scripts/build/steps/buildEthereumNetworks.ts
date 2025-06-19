@@ -13,7 +13,14 @@ import {
   EthNetworksConfigFileSchema,
   KnownEthNetworkConfig,
 } from '../../shared/schemas'
-import { getAssetUrlFromPath, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
+import {
+  getAssetUrlFromPath,
+  getNetworkLogoUrl,
+  getTokenLogoUrl,
+  parseYamlFile,
+  validateDebug,
+  writeJsonFile,
+} from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
 export const buildEthereumNetworks = async () => {
@@ -100,10 +107,25 @@ const consolidateEthNetwork = (
     viemContracts,
   )
 
-  const tokenLogo =
-    config?.nativeCurrency?.logo ||
-    knownEvmNetwork?.nativeCurrency?.logo ||
-    getCoingeckoTokenLogoUrl(config?.nativeCurrency?.coingeckoId ?? knownEvmNetwork?.nativeCurrency.coingeckoId)
+  const symbol =
+    config?.nativeCurrency?.symbol ?? knownEvmNetwork?.nativeCurrency.symbol ?? viemChain?.nativeCurrency.symbol ?? ''
+
+  const nativeCurrency: EthNetwork['nativeCurrency'] = {
+    symbol,
+    decimals:
+      config?.nativeCurrency?.decimals ??
+      knownEvmNetwork?.nativeCurrency.decimals ??
+      viemChain?.nativeCurrency.decimals ??
+      -1,
+    name: config?.nativeCurrency?.name ?? knownEvmNetwork?.nativeCurrency.name ?? viemChain?.nativeCurrency.name ?? '',
+    coingeckoId: config?.nativeCurrency?.coingeckoId || knownEvmNetwork?.nativeCurrency.coingeckoId,
+    logo: getTokenLogoUrl(
+      config?.nativeCurrency?.logo ?? knownEvmNetwork?.nativeCurrency?.logo,
+      config?.nativeCurrency?.coingeckoId ?? knownEvmNetwork?.nativeCurrency.coingeckoId,
+      symbol,
+    ),
+    mirrorOf: config?.nativeCurrency?.mirrorOf || knownEvmNetwork?.nativeCurrency.mirrorOf,
+  }
 
   const network: EthNetwork = {
     id,
@@ -111,28 +133,29 @@ const consolidateEthNetwork = (
     rpcs,
     name: config?.name ?? knownEvmNetwork?.name ?? viemChain?.name ?? '',
     nativeTokenId: evmNativeTokenId(id),
-    nativeCurrency: {
-      symbol:
-        config?.nativeCurrency?.symbol ??
-        knownEvmNetwork?.nativeCurrency.symbol ??
-        viemChain?.nativeCurrency.symbol ??
-        '',
-      decimals:
-        config?.nativeCurrency?.decimals ??
-        knownEvmNetwork?.nativeCurrency.decimals ??
-        viemChain?.nativeCurrency.decimals ??
-        -1,
-      name:
-        config?.nativeCurrency?.name ?? knownEvmNetwork?.nativeCurrency.name ?? viemChain?.nativeCurrency.name ?? '',
-      coingeckoId: config?.nativeCurrency?.coingeckoId || knownEvmNetwork?.nativeCurrency.coingeckoId,
-      logo: getAssetUrlFromPath(tokenLogo),
-      mirrorOf: config?.nativeCurrency?.mirrorOf || knownEvmNetwork?.nativeCurrency.mirrorOf,
-    },
+    nativeCurrency,
+    // : {
+    //   symbol:
+    //     config?.nativeCurrency?.symbol ??
+    //     knownEvmNetwork?.nativeCurrency.symbol ??
+    //     viemChain?.nativeCurrency.symbol ??
+    //     '',
+    //   decimals:
+    //     config?.nativeCurrency?.decimals ??
+    //     knownEvmNetwork?.nativeCurrency.decimals ??
+    //     viemChain?.nativeCurrency.decimals ??
+    //     -1,
+    //   name:
+    //     config?.nativeCurrency?.name ?? knownEvmNetwork?.nativeCurrency.name ?? viemChain?.nativeCurrency.name ?? '',
+    //   coingeckoId: config?.nativeCurrency?.coingeckoId || knownEvmNetwork?.nativeCurrency.coingeckoId,
+    //   logo: getAssetUrlFromPath(tokenLogo),
+    //   mirrorOf: config?.nativeCurrency?.mirrorOf || knownEvmNetwork?.nativeCurrency.mirrorOf,
+    // },
     isTestnet: config?.isTestnet || knownEvmNetwork?.isTestnet || viemChain?.testnet || undefined,
     isDefault: (!!config && config.isDefault !== false) || knownEvmNetwork?.isDefault || undefined,
     forceScan: config?.forceScan || knownEvmNetwork?.forceScan || undefined,
     themeColor: config?.themeColor || knownEvmNetwork?.themeColor || undefined,
-    logo: getAssetUrlFromPath(config?.logo || knownEvmNetwork?.logo),
+    logo: getNetworkLogoUrl(config?.logo ?? knownEvmNetwork?.logo, id, nativeCurrency),
     blockExplorerUrls:
       config?.blockExplorerUrls ?? knownEvmNetwork?.blockExplorerUrls ?? (undefined as unknown as string[]), // zod will replace with empty array
 
@@ -229,19 +252,19 @@ const consolidateEthNetwork = (
 //   }
 // }
 
-const findEthNetworkLogo = (config: DotNetworkConfig): string | undefined => {
-  for (const ext of ['svg', 'png', 'webp']) {
-    const logoPath = `./assets/chains/${config.id}.${ext}`
-    if (existsSync(logoPath)) return logoPath
-  }
+// const findEthNetworkLogo = (config: DotNetworkConfig): string | undefined => {
+//   for (const ext of ['svg', 'png', 'webp']) {
+//     const logoPath = `./assets/chains/${config.id}.${ext}`
+//     if (existsSync(logoPath)) return logoPath
+//   }
 
-  // fallback to coingecko logo of the native token
-  return getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
-}
+//   // fallback to coingecko logo of the native token
+//   return getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
+// }
 
-const getCoingeckoTokenLogoUrl = (coingeckoId: string | undefined): string | undefined => {
-  if (!coingeckoId) return undefined
+// const getCoingeckoTokenLogoUrl = (coingeckoId: string | undefined): string | undefined => {
+//   if (!coingeckoId) return undefined
 
-  const logoPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
-  if (existsSync(logoPath)) return logoPath
-}
+//   const logoPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
+//   if (existsSync(logoPath)) return logoPath
+// }

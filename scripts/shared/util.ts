@@ -175,9 +175,61 @@ export const getAssetPathFromUrl = (url: string) => {
   throw new Error(`Invalid asset url: ${url}`)
 }
 
+// smelly name
 export const getAssetPathFromCoingeckoTokenId = (coingecko: string | undefined) => {
   const path = `./assets/tokens/coingecko/${coingecko}.webp`
   return getAssetUrlFromPath(path)
+}
+
+export const getTokenLogoUrl = (
+  logo: string | undefined,
+  coingeckoId: string | undefined,
+  symbol: string | undefined,
+) => {
+  // if logo is set and is not a relative path, assume it's a good full url
+  if (logo && !logo.startsWith(assetPathPrefix)) return logo
+
+  // if logo is relative and exists, perfect
+  if (logo && logo.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
+
+  // fallback to coingeckoId if provided
+  const cgPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
+  if (existsSync(cgPath)) return getAssetUrlFromPath(cgPath)
+
+  // try to find a match in /assets/tokens/ folder
+  if (symbol)
+    for (const ext of ['svg', 'webp', 'png']) {
+      const symbolPath = `./assets/tokens/${symbol.toLowerCase()}.${ext}`
+      if (existsSync(symbolPath)) return getAssetUrlFromPath(symbolPath)
+    }
+
+  return undefined
+}
+
+export const getNetworkLogoUrl = (
+  logo: string | undefined,
+  id: string | undefined,
+  nativeToken: {
+    logo?: string
+    symbol?: string
+    coingeckoId?: string
+  },
+) => {
+  // if logo is set and is not a relative path, assume it's a good full url
+  if (logo && !logo.startsWith(assetPathPrefix)) return logo
+
+  // if logo is relative and exists, perfect
+  if (logo && logo.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
+
+  // try to find a match in /assets/chains/ folder
+  if (id)
+    for (const ext of ['svg', 'webp', 'png']) {
+      const symbolPath = `./assets/chains/${id}.${ext}`
+      if (existsSync(symbolPath)) return getAssetUrlFromPath(symbolPath)
+    }
+
+  // use native token logo if available
+  return getTokenLogoUrl(nativeToken.logo, nativeToken.coingeckoId, nativeToken.symbol)
 }
 
 export const UNKNOWN_TOKEN_LOGO_URL = githubUnknownTokenLogoUrl

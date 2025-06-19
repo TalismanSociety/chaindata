@@ -24,7 +24,15 @@ import {
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { MetadataPortalUrls } from '../../shared/types'
-import { getAssetUrlFromPath, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
+import {
+  getAssetUrlFromPath,
+  getNetworkLogoUrl,
+  getTokenLogoUrl,
+  parseJsonFile,
+  parseYamlFile,
+  validateDebug,
+  writeJsonFile,
+} from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
 export const buildPolkadotNetworks = async () => {
@@ -76,7 +84,7 @@ const consolidateDotNetwork = (
   ]
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated
 
-  const tokenLogo = config.nativeCurrency?.logo || getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
+  // const tokenLogo = config.nativeCurrency?.logo || getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
 
   const nativeCurrency = Object.assign(
     {
@@ -86,11 +94,15 @@ const consolidateDotNetwork = (
     },
     config.nativeCurrency, // allow overriding native currency properties
     {
-      logo: tokenLogo ? getAssetUrlFromPath(tokenLogo) : undefined,
+      logo: getTokenLogoUrl(
+        config.nativeCurrency?.logo,
+        config.nativeCurrency?.coingeckoId,
+        config.nativeCurrency?.symbol,
+      ),
     },
   )
 
-  const logoRelativePath = config.logo || findDotNetworkLogo(config) || undefined
+  //const logoRelativePath = config.logo || findDotNetworkLogo(config) || undefined
 
   const network: DotNetwork = {
     id: config.id,
@@ -103,7 +115,7 @@ const consolidateDotNetwork = (
     isDefault: config.isDefault || undefined,
     forceScan: config.forceScan || undefined,
     themeColor: config.themeColor || undefined,
-    logo: getAssetUrlFromPath(logoRelativePath),
+    logo: getNetworkLogoUrl(config.logo, config.nativeCurrency?.coingeckoId, nativeCurrency), // getAssetUrlFromPath(logoRelativePath),
     blockExplorerUrls: config.blockExplorerUrls?.length ? config.blockExplorerUrls : (undefined as unknown as string[]), // zod will default to empty array
     chainspecQrUrl: config.chainspecQrUrl || metadataPortalUrls?.urls.chainspecQrUrl || undefined,
     latestMetadataQrUrl: config.latestMetadataQrUrl || metadataPortalUrls?.urls.latestMetadataQrUrl || undefined,
@@ -133,19 +145,19 @@ const consolidateDotNetwork = (
   }
 }
 
-const findDotNetworkLogo = (config: DotNetworkConfig): string | undefined => {
-  for (const ext of ['svg', 'png', 'webp']) {
-    const logoPath = `./assets/chains/${config.id}.${ext}`
-    if (existsSync(logoPath)) return logoPath
-  }
+// const findDotNetworkLogo = (config: DotNetworkConfig): string | undefined => {
+//   for (const ext of ['svg', 'png', 'webp']) {
+//     const logoPath = `./assets/chains/${config.id}.${ext}`
+//     if (existsSync(logoPath)) return logoPath
+//   }
 
-  // fallback to coingecko logo of the native token
-  return getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
-}
+//   // fallback to coingecko logo of the native token
+//   return getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
+// }
 
-const getCoingeckoTokenLogoUrl = (coingeckoId: string | undefined): string | undefined => {
-  if (!coingeckoId) return undefined
+// const getCoingeckoTokenLogoUrl = (coingeckoId: string | undefined): string | undefined => {
+//   if (!coingeckoId) return undefined
 
-  const logoPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
-  if (existsSync(logoPath)) return logoPath
-}
+//   const logoPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
+//   if (existsSync(logoPath)) return logoPath
+// }
