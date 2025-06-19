@@ -13,7 +13,7 @@ import {
   FILE_OUTPUT_NETWORKS_POLKADOT,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
-import { getAssetPathFromUrl, parseJsonFile, UNKNOWN_NETWORK_LOGO_URL, writeJsonFile } from '../../shared/util'
+import { getAssetPathFromUrl, parseJsonFile, writeJsonFile } from '../../shared/util'
 
 const DEFAULT_THEME_COLOR = '#505050'
 
@@ -49,7 +49,7 @@ const updateNetworksFile = async (filepath: string) => {
 }
 
 const extractDominantLogoColor = async (logoUrl: string | undefined) => {
-  if (!logoUrl || logoUrl === UNKNOWN_NETWORK_LOGO_URL) return DEFAULT_THEME_COLOR
+  if (!logoUrl) return DEFAULT_THEME_COLOR
 
   const buffer = await readFile(getAssetPathFromUrl(logoUrl), { encoding: null })
 

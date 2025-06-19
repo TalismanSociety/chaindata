@@ -49,12 +49,7 @@ export const fetchMiniMetadatas = async (
 
     const { specVersion } = networkSpecs.runtimeVersion
 
-    const chainMeta = await mod.fetchSubstrateChainMeta(
-      network.id,
-      moduleConfig ?? {},
-      metadataRpc,
-      networkSpecs.properties,
-    )
+    const chainMeta = await mod.fetchSubstrateChainMeta(network.id, moduleConfig ?? {}, metadataRpc)
 
     const miniMetadata: MiniMetadata = {
       id: deriveMiniMetadataId({

@@ -1,17 +1,8 @@
-import { execSync } from 'node:child_process'
 import { existsSync, PathLike, readFileSync, writeFileSync } from 'node:fs'
 import { access, mkdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, sep } from 'node:path'
-import { fileURLToPath } from 'node:url'
 
 import { WsProvider } from '@polkadot/api'
-import {
-  Chain,
-  EvmNetwork,
-  githubUnknownChainLogoUrl,
-  githubUnknownTokenLogoUrl,
-  TokenId,
-} from '@talismn/chaindata-provider'
 import fromPairs from 'lodash/fromPairs'
 import prettier from 'prettier'
 import { parse as parseYaml, stringify as yamlify } from 'yaml'
@@ -26,7 +17,7 @@ import {
   GITHUB_REPO,
   PRETTIER_CONFIG,
 } from './constants'
-import { CoingeckoOverride, CoingeckoOverridesFileSchema } from './schemas/CoingeckoOverrides'
+import { CoingeckoOverridesFileSchema } from './schemas/CoingeckoOverrides'
 
 // Can be used for nicer vscode syntax highlighting & auto formatting
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#raw_strings
@@ -132,37 +123,37 @@ export const sendWithTimeout = async (
   })()
 }
 
-export const sortChainsAndNetworks = (chains: Chain[], evmNetworks: EvmNetwork[]): Array<Chain | EvmNetwork> => {
-  return [...chains, ...evmNetworks]
-    .sort((a, b) => {
-      if (a.id === b.id) return 0
-      if (a.id === 'polkadot') return -1
-      if (b.id === 'polkadot') return 1
-      if (a.id === 'kusama') return -1
-      if (b.id === 'kusama') return 1
-      if (a.isTestnet !== b.isTestnet) {
-        if (a.isTestnet) return 1
-        if (b.isTestnet) return -1
-      }
-      if (a.id === 'westend-testnet') return -1
-      if (b.id === 'westend-testnet') return 1
-      if (a.id === 'rococo-testnet') return -1
-      if (b.id === 'rococo-testnet') return 1
+// export const sortChainsAndNetworks = (chains: Chain[], evmNetworks: EvmNetwork[]): Array<Chain | EvmNetwork> => {
+//   return [...chains, ...evmNetworks]
+//     .sort((a, b) => {
+//       if (a.id === b.id) return 0
+//       if (a.id === 'polkadot') return -1
+//       if (b.id === 'polkadot') return 1
+//       if (a.id === 'kusama') return -1
+//       if (b.id === 'kusama') return 1
+//       if (a.isTestnet !== b.isTestnet) {
+//         if (a.isTestnet) return 1
+//         if (b.isTestnet) return -1
+//       }
+//       if (a.id === 'westend-testnet') return -1
+//       if (b.id === 'westend-testnet') return 1
+//       if (a.id === 'rococo-testnet') return -1
+//       if (b.id === 'rococo-testnet') return 1
 
-      const aCmp = a.name?.toLowerCase() || parseInt(a.id)
-      const bCmp = b.name?.toLowerCase() || parseInt(b.id)
+//       const aCmp = a.name?.toLowerCase() || parseInt(a.id)
+//       const bCmp = b.name?.toLowerCase() || parseInt(b.id)
 
-      if (typeof aCmp === 'number' && typeof bCmp === 'number') return aCmp - bCmp
-      if (typeof aCmp === 'number') return 1
-      if (typeof bCmp === 'number') return -1
+//       if (typeof aCmp === 'number' && typeof bCmp === 'number') return aCmp - bCmp
+//       if (typeof aCmp === 'number') return 1
+//       if (typeof bCmp === 'number') return -1
 
-      return aCmp.localeCompare(bCmp)
-    })
-    .map((chainOrNetwork, index) => {
-      chainOrNetwork.sortIndex = index + 1
-      return chainOrNetwork
-    })
-}
+//       return aCmp.localeCompare(bCmp)
+//     })
+//     .map((chainOrNetwork, index) => {
+//       chainOrNetwork.sortIndex = index + 1
+//       return chainOrNetwork
+//     })
+// }
 
 export const assetUrlPrefixChaindataProvider = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/main/`
 console.log('assetUrlPrefixChaindataProvider:', assetUrlPrefixChaindataProvider)
@@ -268,8 +259,8 @@ export const getNetworkLogoUrl = (
   return getTokenLogoUrl(nativeToken.logo, nativeToken.coingeckoId, nativeToken.symbol)
 }
 
-export const UNKNOWN_TOKEN_LOGO_URL = githubUnknownTokenLogoUrl
-export const UNKNOWN_NETWORK_LOGO_URL = githubUnknownChainLogoUrl
+// export const UNKNOWN_TOKEN_LOGO_URL = githubUnknownTokenLogoUrl
+// export const UNKNOWN_NETWORK_LOGO_URL = githubUnknownChainLogoUrl
 
 /** Used to merge `known-evm-networks-overrides.json` into `known-evm-networks.json` */
 export const networkMergeCustomizer = (objValue: any, srcValue: any, key: string, object: any, source: any): any => {
