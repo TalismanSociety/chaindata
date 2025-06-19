@@ -18,15 +18,16 @@ const tryUpdateSchema = async (filePath: string, schema: z4.ZodTypeAny) => {
       }),
       { format: true },
     )
+    console.log(`Schema updated successfully: ${filePath.split('/').pop()}`)
   } catch (error) {
     console.error(`Failed to update schema ${filePath.split('/').pop()}:`, error)
   }
 }
-
-await tryUpdateSchema('./schemas/networks-polkadot.json', DotNetworksConfigFileSchema)
 
 await tryUpdateSchema('./schemas/networks-ethereum.json', EthNetworksConfigFileSchema)
 
 await tryUpdateSchema('./schemas/known-networks-ethereum-overrides.json', KnownEthNetworksOverridesFileSchema)
 
 await tryUpdateSchema('./schemas/coingecko-overrides.json', CoingeckoOverridesFileSchema)
+
+await tryUpdateSchema('./schemas/networks-polkadot.json', DotNetworksConfigFileSchema)

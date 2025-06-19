@@ -6,9 +6,6 @@ import { DotBalancesConfigTypes } from './shared'
 export const DotNetworkConfigSchema = z.strictObject({
   // keep only fields that we want to override from config
   ...DotNetworkSchema.omit({
-    relayId: true, // determined from metadata
-    paraId: true, // fetched from chain
-    isRelay: true, // determined from metadata
     account: true, // determined from metadata
     genesisHash: true, // determined from rpcs,
     nativeTokenId: true, // computed automatically

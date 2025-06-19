@@ -1,6 +1,13 @@
 import { write } from 'fs'
 
-import { Network, NetworkSchema, Token, TokenSchema } from '@talismn/chaindata-provider'
+import {
+  AnyMiniMetadataSchema,
+  ChaindataFileSchema,
+  Network,
+  NetworkSchema,
+  Token,
+  TokenSchema,
+} from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import {
@@ -18,14 +25,15 @@ import { parseJsonFile, writeJsonFile } from '../../shared/util'
 
 const TokensSchema = z.array(TokenSchema)
 const NetworksSchema = z.array(NetworkSchema)
+const MiniMetadatasSchema = z.array(AnyMiniMetadataSchema)
 
-const MiniMetadatasSchema = z.array(z.any())
+// const MiniMetadatasSchema = z.array(z.any())
 
-const ChainDataSchema = z.strictObject({
-  tokens: TokensSchema,
-  networks: NetworksSchema,
-  miniMetadatas: MiniMetadatasSchema,
-})
+// const ChainDataSchema = z.strictObject({
+//   tokens: TokensSchema,
+//   networks: NetworksSchema,
+//   miniMetadatas: MiniMetadatasSchema,
+// })
 
 export const buildConsolidatedData = async () => {
   const ethTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_ETHEREUM)
@@ -46,6 +54,6 @@ export const buildConsolidatedData = async () => {
     miniMetadatas,
   }
 
-  await writeJsonFile(FILE_OUTPUT_CHAINDATA, chaindata, { schema: ChainDataSchema })
-  await writeJsonFile(FILE_OUTPUT_CHAINDATA_MINIFIED, chaindata, { schema: ChainDataSchema, format: false })
+  await writeJsonFile(FILE_OUTPUT_CHAINDATA, chaindata, { schema: ChaindataFileSchema })
+  await writeJsonFile(FILE_OUTPUT_CHAINDATA_MINIFIED, chaindata, { schema: ChaindataFileSchema, format: false })
 }
