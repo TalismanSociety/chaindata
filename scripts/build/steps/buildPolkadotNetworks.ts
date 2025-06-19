@@ -76,6 +76,8 @@ const consolidateDotNetwork = (
   ]
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated
 
+  const tokenLogo = config.nativeCurrency?.logo || getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
+
   const nativeCurrency = Object.assign(
     {
       symbol: specs.properties.tokenSymbol,
@@ -84,10 +86,7 @@ const consolidateDotNetwork = (
     },
     config.nativeCurrency, // allow overriding native currency properties
     {
-      logo:
-        getAssetUrlFromPath(config.nativeCurrency?.logo) ||
-        getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId) ||
-        undefined,
+      logo: tokenLogo ? getAssetUrlFromPath(tokenLogo) : undefined,
     },
   )
 

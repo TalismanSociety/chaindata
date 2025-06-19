@@ -100,6 +100,11 @@ const consolidateEthNetwork = (
     viemContracts,
   )
 
+  const tokenLogo =
+    config?.nativeCurrency?.logo ||
+    knownEvmNetwork?.nativeCurrency?.logo ||
+    getCoingeckoTokenLogoUrl(config?.nativeCurrency?.coingeckoId ?? knownEvmNetwork?.nativeCurrency.coingeckoId)
+
   const network: EthNetwork = {
     id,
     platform: 'ethereum',
@@ -120,7 +125,7 @@ const consolidateEthNetwork = (
       name:
         config?.nativeCurrency?.name ?? knownEvmNetwork?.nativeCurrency.name ?? viemChain?.nativeCurrency.name ?? '',
       coingeckoId: config?.nativeCurrency?.coingeckoId || knownEvmNetwork?.nativeCurrency.coingeckoId,
-      logo: getAssetUrlFromPath(config?.nativeCurrency?.logo || knownEvmNetwork?.nativeCurrency.logo),
+      logo: getAssetUrlFromPath(tokenLogo),
       mirrorOf: config?.nativeCurrency?.mirrorOf || knownEvmNetwork?.nativeCurrency.mirrorOf,
     },
     isTestnet: config?.isTestnet || knownEvmNetwork?.isTestnet || viemChain?.testnet || undefined,

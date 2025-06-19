@@ -39,18 +39,33 @@ export const buildPolkadotTokens = async () => {
       (network) =>
         Object.values<DotToken>(network.tokens).map((token) => validateDebug(token, TokenSchema, 'token')) ?? [],
     )
+    .map((token): Token => {
+      if (token.type === 'substrate-native') {
+        // grab missing info from the network's nativeCurrency (balance module didnt have access to it)
+        const network = dotNetworks.find((n) => n.id === token.networkId)
+        if (!network) {
+          console.warn(`Network not found for token ${token.id}, skipping...`)
+          return token
+        }
+        // override
+        Object.assign(token, network.nativeCurrency)
+      }
+      return token
+    })
     .map(fixLogoUrl)
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
   // apply nativeCurrency properties
-  for (const network of dotNetworks) {
-    const nativeToken = dotTokens.find((t) => t.id === network.nativeTokenId)
-    if (!nativeToken) {
-      console.warn(`Native token not found for network ${network.id}, skipping...`)
-      continue
-    }
-    Object.assign(nativeToken, network.nativeCurrency)
-  }
+  // for (const network of dotNetworks) {
+  //   const nativeToken = dotTokens.find((t) => t.id === network.nativeTokenId)
+  //   if (!nativeToken) {
+  //     console.warn(`Native token not found for network ${network.id}, skipping...`)
+  //     continue
+  //   }
+  //   if(network.id === "aleph")
+  //   console.log()
+  //   Object.assign(nativeToken, network.nativeCurrency)
+  // }
 
   checkDuplicates(dotTokens)
 
