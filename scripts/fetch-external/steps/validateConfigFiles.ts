@@ -1,4 +1,5 @@
 import {
+  FILE_INPUT_COINGECKO_OVERRIDES,
   FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES,
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_INPUT_NETWORKS_POLKADOT,
@@ -13,7 +14,7 @@ import { parseYamlFile } from '../../shared/util'
 
 export const validateConfigFiles = () => {
   parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
-  parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
-  parseYamlFile(FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, CoingeckoOverridesFileSchema)
+  parseYamlFile(FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, KnownEthNetworksOverridesFileSchema)
+  parseYamlFile(FILE_INPUT_COINGECKO_OVERRIDES, CoingeckoOverridesFileSchema)
 }

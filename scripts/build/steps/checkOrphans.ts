@@ -20,23 +20,19 @@ export const checkOrphans = () => {
 
   const networksWithoutNativeToken = networks.filter((network) => !dicTokens[network.nativeTokenId])
   if (networksWithoutNativeToken.length) {
-    console.warn(`Found ${networksWithoutNativeToken.length} networks without native token`)
-    // console.table(
-    //   networksWithoutNativeToken
-    //     .slice(0, 10)
-    //     .map((network) => ({ id: network.id, nativeTokenId: network.nativeTokenId })),
-    // )
+    console.warn(
+      `Found ${networksWithoutNativeToken.length} networks without native token: `,
+      networksWithoutNativeToken.map((n) => n.id).join(', '),
+    )
   }
 
   const networksWithoutSubstrateChain = networks
     .filter(isEthNetwork)
     .filter((network) => network.substrateChainId && !dicNetworks[network.substrateChainId])
   if (networksWithoutSubstrateChain.length) {
-    console.warn(`Found ${networksWithoutSubstrateChain.length} Eth networks without substrate chain`)
-    // console.table(
-    //   networksWithoutSubstrateChain
-    //     .slice(0, 10)
-    //     .map((network) => ({ id: network.id, substrateChainId: network.substrateChainId })),
-    // )
+    console.warn(
+      `Found ${networksWithoutSubstrateChain.length} Eth networks without substrate chain:`,
+      networksWithoutSubstrateChain.map((n) => n.id).join(', '),
+    )
   }
 }

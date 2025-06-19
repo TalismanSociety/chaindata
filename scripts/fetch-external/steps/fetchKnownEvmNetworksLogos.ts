@@ -4,7 +4,7 @@ import path from 'node:path'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
-import { EvmNetworkIconCache } from '../../shared/types'
+import { KnownEthNetworkIcon, KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
 
@@ -48,7 +48,10 @@ const FORCE_CACHE_CHECK = false
 
 export const fetchKnownEvmNetworksLogos = async () => {
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
-  const evmNetworksIconsCache = parseJsonFile<EvmNetworkIconCache[]>(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE)
+  const evmNetworksIconsCache = parseJsonFile<KnownEthNetworkIcon[]>(
+    FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
+    KnownEthNetworkIconsFileSchema,
+  )
 
   const processedIcons = new Set<string>()
 
@@ -61,7 +64,7 @@ export const fetchKnownEvmNetworksLogos = async () => {
       const icon = evmNetwork.icon as string
       processedIcons.add(icon)
 
-      let cache: Partial<EvmNetworkIconCache> | undefined = evmNetworksIconsCache.find((c) => c.icon === icon) // ?? ({ icon } as EvmNetworkIconCache)
+      let cache: Partial<KnownEthNetworkIcon> | undefined = evmNetworksIconsCache.find((c) => c.icon === icon) // ?? ({ icon } as EvmNetworkIconCache)
       if (!FORCE_CACHE_CHECK && cache) continue
 
       // create empty cache entry
@@ -144,20 +147,16 @@ export const fetchKnownEvmNetworksLogos = async () => {
       }
 
       // if it worked, then add the entry to the cache file
-      if (!evmNetworksIconsCache.includes(cache as Required<EvmNetworkIconCache>))
-        evmNetworksIconsCache.push(cache as Required<EvmNetworkIconCache>)
+      if (!evmNetworksIconsCache.includes(cache as Required<KnownEthNetworkIcon>))
+        evmNetworksIconsCache.push(cache as Required<KnownEthNetworkIcon>)
 
       // Save cache to disk
       evmNetworksIconsCache.sort((a, b) => a.icon.localeCompare(b.icon))
 
-      await writeJsonFile(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, evmNetworksIconsCache, { format: true })
-      // await writeFile(
-      //   FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
-      //   await prettier.format(JSON.stringify(evmNetworksIconsCache, null, 2), {
-      //     ...PRETTIER_CONFIG,
-      //     parser: 'json',
-      //   }),
-      // )
+      await writeJsonFile(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, evmNetworksIconsCache, {
+        format: true,
+        schema: KnownEthNetworkIconsFileSchema,
+      })
     } catch (err) {
       console.error(
         `Failed to update icon cache for ${evmNetwork.name} (${evmNetwork.id})`,
