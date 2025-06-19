@@ -5,12 +5,28 @@ import { dirname, join, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { WsProvider } from '@polkadot/api'
-import { Chain, EvmNetwork, githubUnknownChainLogoUrl, githubUnknownTokenLogoUrl } from '@talismn/chaindata-provider'
+import {
+  Chain,
+  EvmNetwork,
+  githubUnknownChainLogoUrl,
+  githubUnknownTokenLogoUrl,
+  TokenId,
+} from '@talismn/chaindata-provider'
+import fromPairs from 'lodash/fromPairs'
 import prettier from 'prettier'
 import { parse as parseYaml, stringify as yamlify } from 'yaml'
 import z, { ZodError } from 'zod/v4'
 
-import { DIR_OUTPUT, GITHUB_BRANCH, GITHUB_CDN, GITHUB_ORG, GITHUB_REPO, PRETTIER_CONFIG } from './constants'
+import {
+  DIR_OUTPUT,
+  FILE_INPUT_COINGECKO_OVERRIDES,
+  GITHUB_BRANCH,
+  GITHUB_CDN,
+  GITHUB_ORG,
+  GITHUB_REPO,
+  PRETTIER_CONFIG,
+} from './constants'
+import { CoingeckoOverride, CoingeckoOverridesFileSchema } from './schemas/CoingeckoOverrides'
 
 // Can be used for nicer vscode syntax highlighting & auto formatting
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#raw_strings
@@ -176,10 +192,10 @@ export const getAssetPathFromUrl = (url: string) => {
 }
 
 // smelly name
-export const getAssetPathFromCoingeckoTokenId = (coingecko: string | undefined) => {
-  const path = `./assets/tokens/coingecko/${coingecko}.webp`
-  return getAssetUrlFromPath(path)
-}
+// export const getAssetPathFromCoingeckoTokenId = (coingecko: string | undefined) => {
+//   const path = `./assets/tokens/coingecko/${coingecko}.webp`
+//   return getAssetUrlFromPath(path)
+// }
 
 export const getTokenLogoUrl = (
   logo: string | undefined,
@@ -193,8 +209,8 @@ export const getTokenLogoUrl = (
   if (logo && logo.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
 
   // fallback to coingeckoId if provided
-  const cgPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
-  if (existsSync(cgPath)) return getAssetUrlFromPath(cgPath)
+  const cgPath = getCoingeckoTokenAssetPath(coingeckoId)
+  if (cgPath) return getAssetUrlFromPath(cgPath)
 
   // try to find a match in /assets/tokens/ folder
   if (symbol)
@@ -204,6 +220,26 @@ export const getTokenLogoUrl = (
     }
 
   return undefined
+}
+
+let COINGECKO_LOGO_OVERRIDES: Record<string, string | undefined> | null = null
+
+const getCoingeckoTokenAssetPath = (coingeckoId: string | undefined) => {
+  if (!coingeckoId) return undefined
+
+  if (COINGECKO_LOGO_OVERRIDES === null) {
+    const overrides = parseYamlFile(FILE_INPUT_COINGECKO_OVERRIDES, CoingeckoOverridesFileSchema)
+    COINGECKO_LOGO_OVERRIDES = fromPairs(overrides.map((override) => [override.id, override.logo]))
+
+    if (COINGECKO_LOGO_OVERRIDES[coingeckoId]) {
+      if (existsSync(COINGECKO_LOGO_OVERRIDES[coingeckoId] as string)) return COINGECKO_LOGO_OVERRIDES[coingeckoId]
+    }
+
+    const cgPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
+    if (existsSync(cgPath)) return cgPath
+
+    return undefined
+  }
 }
 
 export const getNetworkLogoUrl = (

@@ -1,13 +1,4 @@
-import type { Dictionary } from 'lodash'
-import {
-  DotNetwork,
-  DotNetworkSchema,
-  DotToken,
-  subNativeTokenId,
-  Token,
-  TokenSchema,
-} from '@talismn/chaindata-provider'
-import keyBy from 'lodash/keyBy'
+import { DotNetworkSchema, DotToken, Token, TokenSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import {
@@ -16,18 +7,9 @@ import {
   FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_TOKENS_POLKADOT,
 } from '../../shared/constants'
-import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
+import { DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { DotNetworkMetadataExtractsFileSchema } from '../../shared/schemas/DotNetworkMetadataExtract'
-import {
-  fixAssetUrl,
-  getAssetPathFromCoingeckoTokenId,
-  getAssetPathFromUrl,
-  getTokenLogoUrl,
-  parseJsonFile,
-  parseYamlFile,
-  validateDebug,
-  writeJsonFile,
-} from '../../shared/util'
+import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
 export const buildPolkadotTokens = async () => {

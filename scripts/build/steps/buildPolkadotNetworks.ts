@@ -1,5 +1,3 @@
-import { existsSync } from 'fs'
-
 import { DotNetwork, DotNetworkSchema, isDotNetwork, subNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
@@ -25,7 +23,6 @@ import {
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { MetadataPortalUrls } from '../../shared/types'
 import {
-  getAssetUrlFromPath,
   getNetworkLogoUrl,
   getTokenLogoUrl,
   parseJsonFile,
@@ -84,8 +81,6 @@ const consolidateDotNetwork = (
   ]
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated
 
-  // const tokenLogo = config.nativeCurrency?.logo || getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
-
   const nativeCurrency = Object.assign(
     {
       symbol: specs.properties.tokenSymbol,
@@ -101,8 +96,6 @@ const consolidateDotNetwork = (
       ),
     },
   )
-
-  //const logoRelativePath = config.logo || findDotNetworkLogo(config) || undefined
 
   const network: DotNetwork = {
     id: config.id,
@@ -144,20 +137,3 @@ const consolidateDotNetwork = (
     return null
   }
 }
-
-// const findDotNetworkLogo = (config: DotNetworkConfig): string | undefined => {
-//   for (const ext of ['svg', 'png', 'webp']) {
-//     const logoPath = `./assets/chains/${config.id}.${ext}`
-//     if (existsSync(logoPath)) return logoPath
-//   }
-
-//   // fallback to coingecko logo of the native token
-//   return getCoingeckoTokenLogoUrl(config.nativeCurrency?.coingeckoId)
-// }
-
-// const getCoingeckoTokenLogoUrl = (coingeckoId: string | undefined): string | undefined => {
-//   if (!coingeckoId) return undefined
-
-//   const logoPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
-//   if (existsSync(logoPath)) return logoPath
-// }

@@ -29,15 +29,7 @@ import {
 } from '../../shared/constants'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { Uniswapv2TokenCache } from '../../shared/types'
-import {
-  getAssetPathFromCoingeckoTokenId,
-  getAssetUrlFromPath,
-  getTokenLogoUrl,
-  parseJsonFile,
-  parseYamlFile,
-  validateDebug,
-  writeJsonFile,
-} from '../../shared/util'
+import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
 type EvmErc20TokenBalanceConfig = {
