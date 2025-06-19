@@ -13,8 +13,8 @@ import { cleanupOutputs } from './cleanupOutputs'
 export const buildSteps: Array<() => Awaited<void>> = [
   cleanupOutputDir,
 
-  buildPolkadotTokens,
   buildPolkadotNetworks,
+  buildPolkadotTokens,
   buildPolkadotMiniMetadatas,
 
   buildEthereumNetworks,

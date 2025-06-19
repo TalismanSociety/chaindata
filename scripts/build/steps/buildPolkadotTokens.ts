@@ -1,11 +1,19 @@
 import type { Dictionary } from 'lodash'
-import { DotNetwork, DotToken, Token, TokenSchema } from '@talismn/chaindata-provider'
+import {
+  DotNetwork,
+  DotNetworkSchema,
+  DotToken,
+  subNativeTokenId,
+  Token,
+  TokenSchema,
+} from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
+  FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_TOKENS_POLKADOT,
 } from '../../shared/constants'
 import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
@@ -23,6 +31,8 @@ import { checkDuplicates } from './helpers/checkDuplicates'
 
 export const buildPolkadotTokens = async () => {
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
+  const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const dotNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, z.array(DotNetworkSchema))
 
   const dotTokens: Token[] = metadataExtracts
     .flatMap(
@@ -31,6 +41,16 @@ export const buildPolkadotTokens = async () => {
     )
     .map(fixLogoUrl)
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
+
+  // apply nativeCurrency properties
+  for (const network of dotNetworks) {
+    const nativeToken = dotTokens.find((t) => t.id === network.nativeTokenId)
+    if (!nativeToken) {
+      console.warn(`Native token not found for network ${network.id}, skipping...`)
+      continue
+    }
+    Object.assign(nativeToken, network.nativeCurrency)
+  }
 
   checkDuplicates(dotTokens)
 
