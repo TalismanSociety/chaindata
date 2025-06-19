@@ -9,7 +9,6 @@ import { buildPolkadotTokens } from './buildPolkadotTokens'
 import { checkOrphans } from './checkOrphans'
 import { cleanupOutputs } from './cleanupOutputs'
 
-// to provide better debugging experience, output of each step is now persisted in the output directory
 export const buildSteps: Array<() => Awaited<void>> = [
   cleanupOutputDir,
 
@@ -25,5 +24,6 @@ export const buildSteps: Array<() => Awaited<void>> = [
 
   checkOrphans,
 
-  cleanupOutputs, // use gitignore instead
+  // PRO TIP: comment this one while debugging outputs
+  cleanupOutputs,
 ]

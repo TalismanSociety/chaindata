@@ -221,16 +221,15 @@ const getCoingeckoTokenAssetPath = (coingeckoId: string | undefined) => {
   if (COINGECKO_LOGO_OVERRIDES === null) {
     const overrides = parseYamlFile(FILE_INPUT_COINGECKO_OVERRIDES, CoingeckoOverridesFileSchema)
     COINGECKO_LOGO_OVERRIDES = fromPairs(overrides.map((override) => [override.id, override.logo]))
-
-    if (COINGECKO_LOGO_OVERRIDES[coingeckoId]) {
-      if (existsSync(COINGECKO_LOGO_OVERRIDES[coingeckoId] as string)) return COINGECKO_LOGO_OVERRIDES[coingeckoId]
-    }
-
-    const cgPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
-    if (existsSync(cgPath)) return cgPath
-
-    return undefined
   }
+
+  if (COINGECKO_LOGO_OVERRIDES[coingeckoId] && existsSync(COINGECKO_LOGO_OVERRIDES[coingeckoId]))
+    return COINGECKO_LOGO_OVERRIDES[coingeckoId]
+
+  const cgPath = `./assets/tokens/coingecko/${coingeckoId}.webp`
+  if (existsSync(cgPath)) return cgPath
+
+  return undefined
 }
 
 export const getNetworkLogoUrl = (
