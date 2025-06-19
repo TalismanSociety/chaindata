@@ -25,5 +25,5 @@ export const buildSteps: Array<() => Awaited<void>> = [
 
   checkOrphans,
 
-  cleanupOutputs,
+  cleanupOutputs, // use gitignore instead
 ]

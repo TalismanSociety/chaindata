@@ -161,6 +161,7 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'eurc',
   'hydration',
   'axelar-bridged-usdc',
+  '-8',
 ]
 
 type BalanceModuleConfig = {
