@@ -118,6 +118,7 @@ const consolidateDotNetwork = (
     registryTypes: config.registryTypes || undefined,
     signedExtensions: config.signedExtensions || undefined,
     oldPrefix: config.oldPrefix,
+    balancesConfig: config.balancesConfig || undefined,
 
     chainName: specs.name,
     specName: specs.runtimeVersion.specName,

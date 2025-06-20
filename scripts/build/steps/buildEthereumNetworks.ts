@@ -130,6 +130,7 @@ const consolidateEthNetwork = (
     logo,
     blockExplorerUrls:
       config?.blockExplorerUrls ?? knownEvmNetwork?.blockExplorerUrls ?? (undefined as unknown as string[]), // zod will replace with empty array
+    balancesConfig: config?.balancesConfig || knownEvmNetwork?.balancesConfig || undefined,
 
     contracts: Object.keys(contracts).length ? contracts : undefined,
     feeType: config?.feeType || knownEvmNetwork?.feeType || undefined,
