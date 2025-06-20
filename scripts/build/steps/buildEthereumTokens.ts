@@ -1,3 +1,5 @@
+import type { Dictionary } from 'lodash'
+import { EvmErc20TokenConfig, EvmUniswapV2TokenConfig } from '@talismn/balances'
 import {
   EthNetwork,
   EthNetworkSchema,
@@ -23,43 +25,47 @@ import { z } from 'zod/v4'
 import { getConsolidatedKnownEthNetworks } from '../../fetch-external/getConsolidatedEthNetworksOverrides'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
+  FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_TOKENS_ETHEREUM,
 } from '../../shared/constants'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
-import { Uniswapv2TokenCache } from '../../shared/types'
+import { Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
 import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
-type EvmErc20TokenBalanceConfig = {
-  symbol: string
-  name: string
-  decimals: number
-  contractAddress: `0x${string}`
-  mirrorOf?: string
-  coingeckoId?: string
-  logo?: string
-  noDiscovery?: boolean
-  isDefault?: boolean
-}
+// type EvmErc20TokenBalanceConfig = {
+//   symbol: string
+//   name: string
+//   decimals: number
+//   contractAddress: `0x${string}`
+//   mirrorOf?: string
+//   coingeckoId?: string
+//   logo?: string
+//   noDiscovery?: boolean
+//   isDefault?: boolean
+// }
 
 export const buildEthereumTokens = async () => {
   const ethNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, z.array(EthNetworkSchema))
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const uniswapV2Cache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
+  const erc20sCache = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
 
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   const ethNetworkConfigById = keyBy(ethNetworksConfig, (c) => String(c.id))
   const knownEthNetworkById = keyBy(knownEthNetworks, (c) => String(c.id))
+  const dicErc20Cache = keyBy(erc20sCache, (c) => `${c.chainId}:${c.contractAddress.toLowerCase()}`)
+  const dicUniv2Cache = keyBy(uniswapV2Cache, (c) => `${c.chainId}:${c.contractAddress.toLowerCase()}`)
 
   const ethTokens: Token[] = ethNetworks
     .flatMap((network) => {
       const config = ethNetworkConfigById[network.id]
       const knownEvmNetwork = knownEthNetworkById[network.id]
 
-      return getNetworkTokens(network, config, knownEvmNetwork, uniswapV2Cache)
+      return getNetworkTokens(network, config, knownEvmNetwork, dicErc20Cache, dicUniv2Cache)
     })
     .map((token) => ({
       ...token,
@@ -80,12 +86,13 @@ const getNetworkTokens = (
   network: EthNetwork,
   networkConfig: EthNetworkConfig | undefined,
   knownEthNetwork: KnownEthNetworkConfig | undefined,
-  univ2Cache: Uniswapv2TokenCache[],
+  dicErc20Cache: Dictionary<Erc20TokenCache>,
+  dicUniv2Cache: Dictionary<Uniswapv2TokenCache>,
 ): Token[] => {
-  const knownErc20s = (knownEthNetwork?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenBalanceConfig[]
-  const knownUniswapV2 = (knownEthNetwork?.tokens?.['evm-uniswapv2'] ?? []) as EvmErc20TokenBalanceConfig[]
-  const configErc20s = (networkConfig?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenBalanceConfig[]
-  const configUniswapV2 = (networkConfig?.tokens?.['evm-uniswapv2'] ?? []) as EvmErc20TokenBalanceConfig[]
+  const knownErc20s = (knownEthNetwork?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenConfig[]
+  const knownUniswapV2 = (knownEthNetwork?.tokens?.['evm-uniswapv2'] ?? []) as EvmUniswapV2TokenConfig[]
+  const configErc20s = (networkConfig?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenConfig[]
+  const configUniswapV2 = (networkConfig?.tokens?.['evm-uniswapv2'] ?? []) as EvmUniswapV2TokenConfig[]
 
   const dicKnownErc20s = keyBy(knownErc20s, (c) => c.contractAddress.toLowerCase())
   const dicConfigErc20s = keyBy(configErc20s, (c) => c.contractAddress.toLowerCase())
@@ -103,11 +110,7 @@ const getNetworkTokens = (
   const nativeToken = getNativeToken(network)
 
   const uniswapV2s = uniswapV2Configs.map((uniswapV2Config): EthToken | null => {
-    const pool = univ2Cache.find(
-      (pool) =>
-        pool.chainId === networkId &&
-        pool.contractAddress.toLowerCase() === uniswapV2Config.contractAddress.toLowerCase(),
-    )
+    const pool = dicUniv2Cache[`${networkId}:${uniswapV2Config.contractAddress.toLowerCase()}`]
     if (!pool) {
       console.log('UniswapV2 pool not found in cache for', networkId, uniswapV2Config.contractAddress)
       return null
@@ -155,15 +158,17 @@ const getNetworkTokens = (
   })
 
   const erc20s = erc20Configs.map((erc20Config): EthToken | null => {
+    const erc20 = dicErc20Cache[`${networkId}:${erc20Config.contractAddress.toLowerCase()}`]
+
     const token: EvmErc20Token = {
       type: 'evm-erc20',
       id: evmErc20TokenId(networkId, erc20Config.contractAddress as `0x${string}`),
       platform: 'ethereum',
       networkId,
       contractAddress: erc20Config.contractAddress as `0x${string}`,
-      symbol: erc20Config.symbol,
-      name: erc20Config.name,
-      decimals: erc20Config.decimals,
+      symbol: erc20Config.symbol ?? erc20?.symbol!,
+      name: erc20Config.name ?? erc20?.name ?? `${erc20Config.symbol} ERC20 Token`,
+      decimals: erc20Config.decimals ?? erc20?.decimals!,
       logo: getTokenLogoUrl(erc20Config.logo, erc20Config.coingeckoId, erc20Config.symbol), // getAssetUrlFromPath(erc20Config.logo) ?? getAssetPathFromCoingeckoTokenId(erc20Config.coingeckoId),
       mirrorOf: erc20Config.mirrorOf,
       coingeckoId: erc20Config.coingeckoId,
@@ -173,9 +178,12 @@ const getNetworkTokens = (
 
     // filter out invalid tokens (empty symbol, missing decimals, etc.)
     const parsed = EvmErc20TokenSchema.safeParse(token)
+    // if (!parsed.success) console.warn('Invalid ERC20 token:', parsed.error, token)
     return parsed.success ? parsed.data : null
   })
 
+  // console.log('TOTAL ERC20s', erc20Configs.length)
+  // console.log('OUTPUT ERC20s', erc20s.filter((t): t is EthToken => !!t).length)
   return [nativeToken, ...erc20s, ...uniswapV2s].filter((t): t is EthToken => !!t)
 }
 
