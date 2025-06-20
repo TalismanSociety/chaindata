@@ -1,4 +1,4 @@
-import { DotNetworkTopologySchema } from '@talismn/chaindata-provider'
+import { AnyMiniMetadataSchema, DotNetworkTopologySchema } from '@talismn/chaindata-provider'
 import z from 'zod/v4'
 
 export const DotNetworkMetadataExtractSchema = z.strictObject({
@@ -8,9 +8,9 @@ export const DotNetworkMetadataExtractSchema = z.strictObject({
   balancesLibVersion: z.string().nonempty(),
   ss58Prefix: z.uint32(),
   hasCheckMetadataHash: z.boolean(),
-  miniMetadatas: z.partialRecord(z.string().nonempty(), z.any()),
-  tokens: z.partialRecord(z.string().nonempty(), z.any()),
   topology: DotNetworkTopologySchema,
+  miniMetadatas: z.partialRecord(z.string().nonempty(), AnyMiniMetadataSchema),
+  // tokens: z.partialRecord(z.string().nonempty(), z.any()),
 })
 
 export type DotNetworkMetadataExtract = z.infer<typeof DotNetworkMetadataExtractSchema>

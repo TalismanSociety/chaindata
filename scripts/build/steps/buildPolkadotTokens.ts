@@ -1,39 +1,41 @@
-import { DotNetworkSchema, DotToken, Token, TokenSchema } from '@talismn/chaindata-provider'
+import {
+  DotNetwork,
+  DotNetworkSchema,
+  DotToken,
+  parseTokenId,
+  Token,
+  TokenId,
+  TokenSchema,
+} from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import {
+  FILE_DOT_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_TOKENS_POLKADOT,
 } from '../../shared/constants'
-import { DotNetworksConfigFileSchema } from '../../shared/schemas'
+import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { DotNetworkMetadataExtractsFileSchema } from '../../shared/schemas/DotNetworkMetadataExtract'
+import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
 import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
 export const buildPolkadotTokens = async () => {
-  const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
   const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const dotNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, z.array(DotNetworkSchema))
+  const dotTokensCache = parseJsonFile(FILE_DOT_TOKENS_CACHE, DotTokensCacheFileSchema)
 
-  const dotTokens: Token[] = metadataExtracts
-    .flatMap(
-      (network) =>
-        Object.values<DotToken>(network.tokens).map((token) => validateDebug(token, TokenSchema, 'token')) ?? [],
-    )
-    .map((token): Token => {
-      if (token.type === 'substrate-native') {
-        // grab missing info from the network's nativeCurrency (balance module didnt have access to it)
-        const network = dotNetworks.find((n) => n.id === token.networkId)
-        if (!network) {
-          console.warn(`Network not found for token ${token.id}, skipping...`)
-          return token
-        }
-        // override
-        Object.assign(token, network.nativeCurrency)
-      }
-      return token
+  const dotTokens: Token[] = dotNetworks
+    .flatMap((network) => dotTokensCache.filter((t) => t.networkId === network.id))
+    .map((token) => {
+      const networkConfig = dotNetworksConfig.find((n) => n.id === token.networkId)
+      if (!networkConfig) return token
+      const tokenConfig = findTokenConfigByTokenId(token.id, networkConfig)
+      if (!tokenConfig) return token
+
+      return Object.assign({}, token, tokenConfig)
     })
     .map((token) => ({
       ...token,
@@ -42,22 +44,28 @@ export const buildPolkadotTokens = async () => {
     }))
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
-  // apply nativeCurrency properties
-  // for (const network of dotNetworks) {
-  //   const nativeToken = dotTokens.find((t) => t.id === network.nativeTokenId)
-  //   if (!nativeToken) {
-  //     console.warn(`Native token not found for network ${network.id}, skipping...`)
-  //     continue
-  //   }
-  //   if(network.id === "aleph")
-  //   console.log()
-  //   Object.assign(nativeToken, network.nativeCurrency)
-  // }
-
   checkDuplicates(dotTokens)
 
   await writeJsonFile(FILE_OUTPUT_TOKENS_POLKADOT, dotTokens, {
     format: true,
     schema: z.array(TokenSchema),
   })
+}
+
+const findTokenConfigByTokenId = (tokenId: TokenId, network: DotNetworkConfig) => {
+  const parsed = parseTokenId(tokenId)
+  switch (parsed.type) {
+    case 'substrate-native':
+      return network.nativeCurrency
+    case 'substrate-assets':
+      return network.tokens?.['substrate-assets']?.find((t) => t.assetId === parsed.assetId)
+    case 'substrate-psp22':
+      return network.tokens?.['substrate-psp22']?.find((t) => t.contractAddress === parsed.contractAddress)
+    case 'substrate-tokens':
+      return network.tokens?.['substrate-tokens']?.find((t) => t.onChainId === parsed.onChainId)
+    case 'substrate-foreignassets':
+      return network.tokens?.['substrate-foreignassets']?.find((t) => t.onChainId === parsed.onChainId)
+    default:
+      throw new Error(`Unknown token type: ${parsed.type} for tokenId: ${tokenId}`)
+  }
 }

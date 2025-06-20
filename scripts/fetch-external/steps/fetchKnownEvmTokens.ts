@@ -1,3 +1,5 @@
+import { EvmErc20TokenConfig, EvmErc20TokenConfigSchema } from '@talismn/balances'
+
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
@@ -28,28 +30,33 @@ export const fetchKnownEvmTokens = async () => {
             (evmNetwork) => evmNetwork.id === platform.chain_identifier?.toString(),
           )
           if (evmNetwork) {
-            if (!evmNetwork.balancesConfig) evmNetwork.balancesConfig = {}
-            if (!evmNetwork.balancesConfig['evm-erc20']) {
-              evmNetwork.balancesConfig['evm-erc20'] = {
-                tokens: [],
-              }
+            if (!evmNetwork.tokens) evmNetwork.tokens = {}
+            if (!evmNetwork.tokens['evm-erc20']) {
+              evmNetwork.tokens['evm-erc20'] = []
             }
 
-            const token = {
-              symbol: coin.symbol, // most symbols are inacurate, but are fixed in step fetchErc20TokensSymbols
+            const token: EvmErc20TokenConfig = {
+              // symbol will be fetched from chain later in fetchErc20TokenSymbols.ts
               coingeckoId: coin.id,
               name: coin.name,
-              contractAddress,
+              contractAddress: contractAddress as `0x${string}`,
+            }
+
+            if (!EvmErc20TokenConfigSchema.safeParse(token).success) {
+              console.warn(
+                `Token ${token.name} (${token.contractAddress}) does not match EvmErc20TokenConfigSchema, skipping`,
+              )
+              console.log(token)
+              continue
             }
 
             const existingIdx =
-              evmNetwork.balancesConfig['evm-erc20'].tokens?.findIndex(
-                (t: typeof token) => t.contractAddress === contractAddress,
-              ) ?? -1
+              evmNetwork.tokens['evm-erc20']?.findIndex((t: typeof token) => t.contractAddress === contractAddress) ??
+              -1
 
-            if (evmNetwork.balancesConfig['evm-erc20'].tokens && existingIdx !== -1)
-              evmNetwork.balancesConfig['evm-erc20'].tokens[existingIdx] = token
-            else evmNetwork.balancesConfig['evm-erc20'].tokens?.push(token)
+            if (evmNetwork.tokens['evm-erc20'] && existingIdx !== -1)
+              evmNetwork.tokens['evm-erc20'][existingIdx] = token
+            else evmNetwork.tokens['evm-erc20']?.push(token)
           }
         }
       }

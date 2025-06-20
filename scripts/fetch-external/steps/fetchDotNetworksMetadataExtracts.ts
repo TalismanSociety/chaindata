@@ -2,6 +2,8 @@ import { XcmV3JunctionNetworkId } from '@polkadot-api/descriptors'
 import { WsProvider } from '@polkadot/rpc-provider'
 import { xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
+import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
+import { ChaindataProvider } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
 import { decAnyMetadata, getDynamicBuilder, getLookupFn, UnifiedMetadata, unifyMetadata } from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
@@ -34,7 +36,7 @@ import {
   writeJsonFile,
 } from '../../shared/util'
 import { WsRpcHealth } from './checkWsRpcs'
-import { fetchMiniMetadatas } from './helpers/fetchMinimetadata'
+import { getHackedBalanceModuleDeps } from './helpers/getHackedBalanceModuleDeps'
 
 // set this to a specific chain id to debug it
 const DEV_CHAIN_ID = null // ex: 'hydradx'
@@ -55,11 +57,10 @@ export const fetchDotNetworksMetadataExtracts = async () => {
     .map((network) => ({
       network,
       rpcs: network.rpcs?.filter((rpc) => rpcsHealth[rpc] === 'OK') ?? [],
-      cacheBalancesConfigHash: xxhashAsHex(JSON.stringify(network.balancesConfig)),
       specs: specsById[network.id] as DotNetworkSpecs | undefined,
     }))
     .filter((args): args is FetchMetadataExtractArgs => {
-      const { network, rpcs, cacheBalancesConfigHash, specs } = args
+      const { network, rpcs, specs } = args
       if (!rpcs.length) return false // no rpcs available for this network - cant be updated
       if (!specs) return false // no specs available for this network - cant be updated
 
@@ -121,13 +122,11 @@ export const fetchDotNetworksMetadataExtracts = async () => {
 type FetchMetadataExtractArgs = {
   network: DotNetworkConfig
   rpcs: string[]
-  cacheBalancesConfigHash: `0x${string}`
   specs: DotNetworkSpecs
 }
 
 const fetchMetadataExtract = async ({
   network,
-  cacheBalancesConfigHash,
   specs,
   rpcs,
 }: FetchMetadataExtractArgs): Promise<DotNetworkMetadataExtract> => {
@@ -153,7 +152,7 @@ const fetchMetadataExtract = async ({
 
     const account = getAccountType(metadata)
 
-    const { miniMetadatas, tokens } = await fetchMiniMetadatas(network, specs, provider, metadataRpc)
+    const miniMetadatas = await fetchMiniMetadatas(network, specs, provider, metadataRpc)
 
     const topology = await getTopology(metadata, provider, network)
 
@@ -166,7 +165,6 @@ const fetchMetadataExtract = async ({
         ss58Prefix,
         hasCheckMetadataHash,
         miniMetadatas,
-        tokens,
         topology,
       },
       DotNetworkMetadataExtractSchema,
@@ -179,6 +177,60 @@ const fetchMetadataExtract = async ({
   } finally {
     await provider.disconnect()
   }
+}
+
+const libVersion = BALANCES_LIB_VERSION
+
+export const fetchMiniMetadatas = async (
+  network: DotNetworkConfig,
+  networkSpecs: DotNetworkSpecs,
+  provider: WsProvider,
+  metadataRpc: `0x${string}`,
+) => {
+  // TODO: Remove this hack
+  //
+  // We don't actually have the derived `Chain` at this point, only the `ConfigChain`.
+  // But the module only needs access to the `isTestnet` value of the `Chain`, which we do already have.
+  //
+  // So, we will provide the `isTestnet` value using a hacked together `ChaindataProvider` interface.
+  //
+  // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
+  // implementation, it will throw an error. This is fine.
+  const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(network, provider)
+
+  const miniMetadatas: Record<string, MiniMetadata> = {}
+  const tokens: Record<string, any> = {}
+
+  for (const mod of defaultBalanceModules
+    .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
+    .filter((mod) => mod.type.startsWith('substrate-'))) {
+    const source = mod.type as keyof DotNetworkConfig['balancesConfig']
+    const chainId = network.id
+
+    const { specVersion } = networkSpecs.runtimeVersion
+
+    const chainMeta = await mod.fetchSubstrateChainMeta(network.id, network.balancesConfig?.[source], metadataRpc)
+
+    const miniMetadata: MiniMetadata = {
+      id: deriveMiniMetadataId({
+        source,
+        chainId,
+        specVersion,
+        libVersion,
+      }),
+      source,
+      chainId,
+      specVersion, // this should be a number!
+
+      libVersion,
+      data: chainMeta?.miniMetadata ?? null,
+      extra: chainMeta?.extra ?? null,
+    }
+
+    miniMetadatas[miniMetadata.id] = miniMetadata
+  }
+
+  return miniMetadatas
 }
 
 const getAccountType = (metadata: UnifiedMetadata) => {

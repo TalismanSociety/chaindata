@@ -1,7 +1,20 @@
+import {
+  SubAssetsTokenConfigSchema,
+  SubForeignAssetsTokenConfigSchema,
+  // SubNativeTokenConfigSchema,
+  SubPsp22TokenConfigSchema,
+  SubTokensTokenConfigSchema,
+} from '@talismn/balances'
 import { DotNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
-import { DotBalancesConfigTypes } from './shared'
+const DotTokensConfigSchema = z.object({
+  // 'substrate-native': SubNativeTokenConfigSchema.optional(),
+  'substrate-assets': z.array(SubAssetsTokenConfigSchema).optional(),
+  'substrate-psp22': z.array(SubPsp22TokenConfigSchema).optional(),
+  'substrate-foreignassets': z.array(SubForeignAssetsTokenConfigSchema).optional(),
+  'substrate-tokens': z.array(SubTokensTokenConfigSchema).optional(),
+})
 
 export const DotNetworkConfigSchema = z.strictObject({
   // keep only fields that we want to override from config
@@ -23,7 +36,8 @@ export const DotNetworkConfigSchema = z.strictObject({
   }).shape,
   relay: z.string().nonempty().optional(), // relay chain id, if this is a parachain
   nativeCurrency: DotNetworkSchema.shape.nativeCurrency.partial().optional(),
-  balancesConfig: z.partialRecord(DotBalancesConfigTypes, z.any()).optional(),
+  balancesConfig: DotNetworkSchema.shape.balancesConfig.optional(),
+  tokens: DotTokensConfigSchema.optional(),
 })
 
 export const DotNetworksConfigFileSchema = z.array(DotNetworkConfigSchema)

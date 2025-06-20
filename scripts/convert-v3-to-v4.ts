@@ -1,3 +1,5 @@
+import keys from 'lodash/keys'
+
 import {
   FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES,
   FILE_INPUT_NETWORKS_ETHEREUM,
@@ -47,9 +49,9 @@ const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
     hasExtrinsicSignatureTypePrefix: network.hasExtrinsicSignatureTypePrefix || undefined,
     isUnknownFeeToken: network.isUnknownFeeToken || undefined,
 
-    // yuk!
     balancesConfig: migrateDotBalancesConfig(network),
     nativeCurrency: migrateDotNativeCurrency(network),
+    tokens: migrateDotTokensConfig(network),
   }
 }
 
@@ -99,6 +101,7 @@ const migrateEthNetworkV3ToV4 =
         : undefined,
 
       balancesConfig: migrateEthBalancesConfig(network),
+      tokens: migrateEthTokensConfig(network),
     }
   }
 
@@ -107,12 +110,40 @@ const migrateDotBalancesConfig = (network: ConfigChain): DotNetworkConfig['balan
 
   // remove unknown token types
   const result = Object.fromEntries(
-    Object.entries(network.balancesConfig).filter(([key]) => {
-      return DotBalancesConfigTypes.safeParse(key).success
-    }),
+    Object.entries(network.balancesConfig)
+      .map(([key, value]) => {
+        const { tokens, pools, ...rest } = value
+
+        return [key, rest]
+      })
+      .filter(([key, value]) => {
+        return keys(value).length && DotBalancesConfigTypes.safeParse(key).success
+      }),
   )
 
   return Object.keys(result).length ? result : undefined
+}
+
+const migrateDotTokensConfig = (network: ConfigChain): DotNetworkConfig['tokens'] => {
+  if (!network.balancesConfig) return undefined
+
+  // remove unknown token types
+  const result = Object.fromEntries(
+    Object.entries(network.balancesConfig)
+      .map(([type, value]) => {
+        // @ts-ignore
+        const entries: any[] = value.tokens || []
+        console.log(network.id, type, entries.length, value)
+        return [type, entries.map(({ ed, ...rest }) => (ed ? { ...rest, existentialDeposit: ed } : rest))]
+      })
+      .filter(([type, values]) => values.length && DotBalancesConfigTypes.safeParse(type).success),
+  )
+
+  const res = Object.keys(result).length ? result : undefined
+
+  console.log('Tokens for network', network.id, ':')
+  console.log(res)
+  return res
 }
 
 const migrateEthBalancesConfig = (network: ConfigEvmNetwork): EthNetworkConfig['balancesConfig'] => {
@@ -120,12 +151,40 @@ const migrateEthBalancesConfig = (network: ConfigEvmNetwork): EthNetworkConfig['
 
   // remove unknown token types
   const balancesConfig = Object.fromEntries(
-    Object.entries(network.balancesConfig).filter(([key]) => {
-      return EthBalancesConfigTypes.safeParse(key).success
-    }),
+    Object.entries(network.balancesConfig)
+      .map(([key, value]) => {
+        const { tokens, pools, ...rest } = value
+
+        return [key, rest]
+      })
+      .filter(([key, value]) => {
+        return keys(value).length && EthBalancesConfigTypes.safeParse(key).success
+      }),
   )
 
   return Object.keys(balancesConfig).length ? balancesConfig : undefined
+}
+
+const migrateEthTokensConfig = (network: ConfigChain): EthNetworkConfig['tokens'] => {
+  if (!network.balancesConfig) return undefined
+
+  // remove unknown token types
+  const result = Object.fromEntries(
+    Object.entries(network.balancesConfig)
+      .map(([type, value]) => {
+        // @ts-ignore
+        const entries: any[] = value.tokens || value.pools || []
+        console.log(network.id, type, entries.length, value)
+        return [type, entries]
+      })
+      .filter(([type, values]) => values.length && EthBalancesConfigTypes.safeParse(type).success),
+  )
+
+  const res = Object.keys(result).length ? result : undefined
+
+  console.log('Tokens for network', network.id, ':')
+  console.log(res)
+  return res
 }
 
 type LegacyNetworkOverrides = Partial<ConfigChain> & { id: string }
@@ -153,6 +212,7 @@ const migrateEvmNetworksOverrides = (
     l2FeeType: overrides.l2FeeType,
     preserveGasEstimate: overrides.preserveGasEstimate || undefined,
     balancesConfig: migrateEthBalancesConfig(overrides),
+    tokens: migrateEthTokensConfig(overrides),
   }
 }
 

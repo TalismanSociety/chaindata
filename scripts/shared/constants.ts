@@ -47,6 +47,7 @@ export const FILE_KNOWN_EVM_ERC20_TOKENS_CACHE = 'data/cache/known-evm-erc20-tok
 export const FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE = 'data/cache/known-evm-uniswapv2-tokens-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE = 'data/cache/known-evm-networks-rpcs-cache.json'
+export const FILE_DOT_TOKENS_CACHE = 'data/cache/polkadot-tokens-cache.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

@@ -46,6 +46,7 @@
   nativeCurrency:
     coingeckoId: 3dpass
     logo: ./assets/chains/3-dpass.svg
+    symbol: PATATOR
   rpcs:
     - wss://rpc.3dpass.org
     - wss://rpc2.3dpass.org
@@ -72,137 +73,136 @@
     - wss://acala.ibp.network
     - wss://acala.dotters.network
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: aSEED
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"Token","value":{"type":"AUSD"}}'
-          coingeckoId: ausd-seed-acala
-        - symbol: TAP
-          decimals: 12
-          ed: '1000000000000'
-          onChainId: '{"type":"Token","value":{"type":"TAP"}}'
-          coingeckoId: tapio-protocol
-        - symbol: lcDOT
-          decimals: 10
-          ed: '100000000'
-          onChainId: '{"type":"LiquidCrowdloan","value":13}'
-          coingeckoId: liquid-crowdloan-dot
-        - symbol: LDOT
-          decimals: 10
-          ed: '500000000'
-          onChainId: '{"type":"Token","value":{"type":"LDOT"}}'
-          coingeckoId: liquid-staking-dot
-        - symbol: DOT
-          decimals: 10
-          ed: '100000000'
-          onChainId: '{"type":"Token","value":{"type":"DOT"}}'
-          coingeckoId: polkadot
-        - symbol: EQD
-          decimals: 9
-          ed: '1000000000'
-          onChainId: '{"type":"ForeignAsset","value":8}'
-        - symbol: INTR
-          decimals: 10
-          ed: '1000000000'
-          onChainId: '{"type":"ForeignAsset","value":4}'
-          coingeckoId: interlay
-        - symbol: WETH
-          decimals: 18
-          ed: '500000000000000'
-          onChainId: '{"type":"ForeignAsset","value":6}'
-          coingeckoId: weth
-        - symbol: ASTR
-          decimals: 18
-          ed: '100000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":2}'
-          coingeckoId: astar
-        - symbol: PHA
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"ForeignAsset","value":9}'
-          coingeckoId: pha
-        - symbol: PARA
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"ForeignAsset","value":1}'
-        - symbol: GLMR
-          decimals: 18
-          ed: '100000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":0}'
-          coingeckoId: moonbeam
-        - symbol: WBTC
-          decimals: 8
-          ed: '3000'
-          onChainId: '{"type":"ForeignAsset","value":5}'
-          coingeckoId: wrapped-bitcoin
-        - symbol: EQ
-          decimals: 9
-          ed: '1000000000'
-          onChainId: '{"type":"ForeignAsset","value":7}'
-          coingeckoId: equilibrium-token
-        - symbol: IBTC
-          decimals: 8
-          ed: '100'
-          onChainId: '{"type":"ForeignAsset","value":3}'
-          coingeckoId: interbtc
-        - symbol: PINK
-          decimals: 10
-          ed: '1000000000'
-          onChainId: '{"type":"ForeignAsset","value":13}'
-        - symbol: tDOT
-          decimals: 10
-          ed: '100000000'
-          onChainId: '{"type":"StableAssetPoolToken","value":0}'
-        - symbol: USDCet
-          decimals: 6
-          ed: '10000'
-          onChainId: '{"type":"Erc20","value":"hex:0x07df96d1341a7d16ba1ad431e2c847d978bc2bce"}'
-        - symbol: APE
-          decimals: 18
-          ed: '3000000000000000'
-          onChainId: '{"type":"Erc20","value":"hex:0xf4c723e61709d90f89939c1852f516e373d418a8"}'
-        - symbol: DAI
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '{"type":"Erc20","value":"hex:0x54a37a01cd75b616d63e0ab665bffdb0143c52ae"}'
-          coingeckoId: dai
-        - symbol: WETH
-          decimals: 18
-          ed: '8500000000000'
-          onChainId: '{"type":"Erc20","value":"hex:0x5a4d6acdc4e3e5ab15717f407afe957f7a242578"}'
-          coingeckoId: weth
-        - symbol: WBTC
-          decimals: 8
-          ed: '60'
-          onChainId: '{"type":"Erc20","value":"hex:0xc80084af223c8b598536178d9361dc55bfda6818"}'
-          coingeckoId: wrapped-bitcoin
-        - symbol: lp aSEED-LDOT
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"Token","value":{"type":"LDOT"}}]}'
-        - symbol: lp aSEED-IBTC
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":3}]}'
-        - symbol: lp aSEED-lcDOT
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"LiquidCrowdloan","value":13}]}'
-        - symbol: lp ACA-aSEED
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"ACA"}},{"type":"Token","value":{"type":"AUSD"}}]}'
-        - symbol: lp DOT-lcDOT
-          decimals: 10
-          ed: '100000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"DOT"}},{"type":"LiquidCrowdloan","value":13}]}'
-        - symbol: lp aSEED-INTR
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":4}]}'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-acala
+        onChainId: '{"type":"Token","value":{"type":"AUSD"}}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: TAP
+        coingeckoId: tapio-protocol
+        onChainId: '{"type":"Token","value":{"type":"TAP"}}'
+        existentialDeposit: '1000000000000'
+      - decimals: 10
+        symbol: lcDOT
+        coingeckoId: liquid-crowdloan-dot
+        onChainId: '{"type":"LiquidCrowdloan","value":13}'
+        existentialDeposit: '100000000'
+      - decimals: 10
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        onChainId: '{"type":"Token","value":{"type":"LDOT"}}'
+        existentialDeposit: '500000000'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        existentialDeposit: '100000000'
+      - decimals: 9
+        symbol: EQD
+        onChainId: '{"type":"ForeignAsset","value":8}'
+        existentialDeposit: '1000000000'
+      - decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        onChainId: '{"type":"ForeignAsset","value":4}'
+        existentialDeposit: '1000000000'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: '{"type":"ForeignAsset","value":6}'
+        existentialDeposit: '500000000000000'
+      - decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        onChainId: '{"type":"ForeignAsset","value":2}'
+        existentialDeposit: '100000000000000000'
+      - decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        onChainId: '{"type":"ForeignAsset","value":9}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: PARA
+        onChainId: '{"type":"ForeignAsset","value":1}'
+        existentialDeposit: '100000000000'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '{"type":"ForeignAsset","value":0}'
+        existentialDeposit: '100000000000000000'
+      - decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        onChainId: '{"type":"ForeignAsset","value":5}'
+        existentialDeposit: '3000'
+      - decimals: 9
+        symbol: EQ
+        coingeckoId: equilibrium-token
+        onChainId: '{"type":"ForeignAsset","value":7}'
+        existentialDeposit: '1000000000'
+      - decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        onChainId: '{"type":"ForeignAsset","value":3}'
+        existentialDeposit: '100'
+      - decimals: 10
+        symbol: PINK
+        onChainId: '{"type":"ForeignAsset","value":13}'
+        existentialDeposit: '1000000000'
+      - decimals: 10
+        symbol: tDOT
+        onChainId: '{"type":"StableAssetPoolToken","value":0}'
+        existentialDeposit: '100000000'
+      - decimals: 6
+        symbol: USDCet
+        onChainId: '{"type":"Erc20","value":"hex:0x07df96d1341a7d16ba1ad431e2c847d978bc2bce"}'
+        existentialDeposit: '10000'
+      - decimals: 18
+        symbol: APE
+        onChainId: '{"type":"Erc20","value":"hex:0xf4c723e61709d90f89939c1852f516e373d418a8"}'
+        existentialDeposit: '3000000000000000'
+      - decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        onChainId: '{"type":"Erc20","value":"hex:0x54a37a01cd75b616d63e0ab665bffdb0143c52ae"}'
+        existentialDeposit: '10000000000000000'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: '{"type":"Erc20","value":"hex:0x5a4d6acdc4e3e5ab15717f407afe957f7a242578"}'
+        existentialDeposit: '8500000000000'
+      - decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        onChainId: '{"type":"Erc20","value":"hex:0xc80084af223c8b598536178d9361dc55bfda6818"}'
+        existentialDeposit: '60'
+      - decimals: 12
+        symbol: lp aSEED-LDOT
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"Token","value":{"type":"LDOT"}}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp aSEED-IBTC
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":3}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp aSEED-lcDOT
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"LiquidCrowdloan","value":13}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp ACA-aSEED
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"ACA"}},{"type":"Token","value":{"type":"AUSD"}}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 10
+        symbol: lp DOT-lcDOT
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"DOT"}},{"type":"LiquidCrowdloan","value":13}]}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: lp aSEED-INTR
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":4}]}'
+        existentialDeposit: '100000000000'
 - id: acurast
   name: Acurast Canary
   rpcs:
@@ -231,42 +231,41 @@
   rpcs:
     - wss://ws.azero.dev
     - wss://aleph-zero-rpc.dwellir.com
-  balancesConfig:
+  tokens:
     substrate-psp22:
-      tokens:
-        - contractAddress: 5GSGAcvqpF5SuH2MhJ1YUdbLAbssCjeqCn2miMUCWUjnr5DQ
-          symbol: PANX
-          coingeckoId: panorama-swap-token
-        - contractAddress: 5CSAAAbQpPeY1ieqRS7LynmuMHVJdthq8nxt2S4L6qBGcdnF
-          symbol: AINU
-        - contractAddress: 5GYgJ1xBPtyUwbPVnDfbg9uRGWdGrcaM6y1TaftUMoxUHQh5
-          symbol: IOU
-        - contractAddress: 5H4aCwLKUpVpct6XGJzDGPPXFockNKQU2JUVNgUw6BXEPzST
-          symbol: INW
-        - contractAddress: 5FyVkDZi86awxJsXnJa2a1TeXwnMdhXmcQ2pmKLNmUgYRNM7
-          symbol: PETE
-        - contractAddress: 5E3xgSL2kLA56Z7ykNwoGB4a9sdaYRbCBxRF4cDLQYhZU8bv
-          symbol: DEGEN
-        - contractAddress: 5DDvG1bTGhWk8P9fZDcdp47TykhwGV46eKjr54SPcX1yTaRg
-          symbol: AHERO
-        - symbol: WETH
-          contractAddress: 5EoFQd36196Duo6fPTz2MWHXRzwTJcyETHyCyaB3rb61Xo2u
-          coingeckoId: weth
-        - symbol: WBTC
-          contractAddress: 5EEtCdKLyyhQnNQWWWPM1fMDx1WdVuiaoR9cA6CWttgyxtuJ
-          coingeckoId: wrapped-bitcoin
-        - symbol: USDT
-          contractAddress: 5Et3dDcXUiThrBCot7g65k3oDSicGy4qC82cq9f911izKNtE
-          coingeckoId: tether
-        - symbol: USDC
-          contractAddress: 5FYFojNCJVFR2bBNKfAePZCa72ZcVX5yeTv8K9bzeUo8D83Z
-          coingeckoId: usd-coin
-        - symbol: CLD
-          contractAddress: 5CJ3DZ4RM4j2cPpQ49ywYiAgDYaTqk7hPud6Y1J1WY8qwDfb
-        - symbol: CSD
-          contractAddress: 5DPzHtsvZHtUaGzzKqrxa2JLgpHtEaSPn9mfyNAjX12Vunts
-        - symbol: sA0
-          contractAddress: 5FZ35bwDiXEHdvdmRn2bfcvb2LB9K9pM1dJaSJzj3n4sDoLA
+      - symbol: PANX
+        coingeckoId: panorama-swap-token
+        contractAddress: 5GSGAcvqpF5SuH2MhJ1YUdbLAbssCjeqCn2miMUCWUjnr5DQ
+      - symbol: AINU
+        contractAddress: 5CSAAAbQpPeY1ieqRS7LynmuMHVJdthq8nxt2S4L6qBGcdnF
+      - symbol: IOU
+        contractAddress: 5GYgJ1xBPtyUwbPVnDfbg9uRGWdGrcaM6y1TaftUMoxUHQh5
+      - symbol: INW
+        contractAddress: 5H4aCwLKUpVpct6XGJzDGPPXFockNKQU2JUVNgUw6BXEPzST
+      - symbol: PETE
+        contractAddress: 5FyVkDZi86awxJsXnJa2a1TeXwnMdhXmcQ2pmKLNmUgYRNM7
+      - symbol: DEGEN
+        contractAddress: 5E3xgSL2kLA56Z7ykNwoGB4a9sdaYRbCBxRF4cDLQYhZU8bv
+      - symbol: AHERO
+        contractAddress: 5DDvG1bTGhWk8P9fZDcdp47TykhwGV46eKjr54SPcX1yTaRg
+      - symbol: WETH
+        coingeckoId: weth
+        contractAddress: 5EoFQd36196Duo6fPTz2MWHXRzwTJcyETHyCyaB3rb61Xo2u
+      - symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        contractAddress: 5EEtCdKLyyhQnNQWWWPM1fMDx1WdVuiaoR9cA6CWttgyxtuJ
+      - symbol: USDT
+        coingeckoId: tether
+        contractAddress: 5Et3dDcXUiThrBCot7g65k3oDSicGy4qC82cq9f911izKNtE
+      - symbol: USDC
+        coingeckoId: usd-coin
+        contractAddress: 5FYFojNCJVFR2bBNKfAePZCa72ZcVX5yeTv8K9bzeUo8D83Z
+      - symbol: CLD
+        contractAddress: 5CJ3DZ4RM4j2cPpQ49ywYiAgDYaTqk7hPud6Y1J1WY8qwDfb
+      - symbol: CSD
+        contractAddress: 5DPzHtsvZHtUaGzzKqrxa2JLgpHtEaSPn9mfyNAjX12Vunts
+      - symbol: sA0
+        contractAddress: 5FZ35bwDiXEHdvdmRn2bfcvb2LB9K9pM1dJaSJzj3n4sDoLA
 - id: altair
   name: Altair
   nativeCurrency:
@@ -285,48 +284,47 @@
   rpcs:
     - wss://rpc-amplitude.pendulumchain.tech
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: KSM
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"XCM","value":0}'
-          coingeckoId: kusama
-        - symbol: USDT
-          decimals: 6
-          ed: '0'
-          onChainId: '{"type":"XCM","value":1}'
-          coingeckoId: tether
-        - symbol: XLM
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"StellarNative"}}'
-          coingeckoId: stellar
-        - symbol: TZS.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:TZS","issuer":"hex:0x34c94b2a4ba9e8b57b22547dcbb30f443c4cb02da3829a89aa1bd4780e4466ba"}}}'
-        - symbol: BRL.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:BRL","issuer":"hex:0xeaac68d4d0e37b4c24c2536916e830735f032d0d6b2a1c8fca3bc5a25e083e3a"}}}'
-        - symbol: USDC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:USDC","issuer":"hex:0x3b9911380efe988ba0a8900eb1cfe44f366f7dbe946bed077240f7f624df15c5"}}}'
-        - symbol: AUDD.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:AUDD","issuer":"hex:0xc5fbe9979e240552860221f4fe2f2219f35e40458b8b58fc32da520a154a561d"}}}'
-        - symbol: EURC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0x2112ee863867e4e219fe254c0918b00bc9ea400775bfc3ab4430971ce505877c"}}}'
-        - symbol: NGNC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"type":"XCM","value":0}'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"XCM","value":1}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: XLM
+        coingeckoId: stellar
+        onChainId: '{"type":"Stellar","value":{"type":"StellarNative"}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: TZS.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:TZS","issuer":"hex:0x34c94b2a4ba9e8b57b22547dcbb30f443c4cb02da3829a89aa1bd4780e4466ba"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: BRL.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:BRL","issuer":"hex:0xeaac68d4d0e37b4c24c2536916e830735f032d0d6b2a1c8fca3bc5a25e083e3a"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: USDC.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:USDC","issuer":"hex:0x3b9911380efe988ba0a8900eb1cfe44f366f7dbe946bed077240f7f624df15c5"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: AUDD.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:AUDD","issuer":"hex:0xc5fbe9979e240552860221f4fe2f2219f35e40458b8b58fc32da520a154a561d"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: EURC.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0x2112ee863867e4e219fe254c0918b00bc9ea400775bfc3ab4430971ce505877c"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: NGNC.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
+        existentialDeposit: '1000'
 - id: analog-timechain
   name: Analog Timechain
   nativeCurrency:
@@ -358,58 +356,57 @@
     - wss://rpc.astar.network
     - wss://astar.public.curie.radiumblock.co/ws
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-assets:
-      tokens:
-        - assetId: '4294969280'
-          symbol: USDT
-          coingeckoId: tether
-        - assetId: '18446744073709551616'
-          symbol: ACA
-          coingeckoId: acala
-        - assetId: '18446744073709551617'
-          symbol: aSEED
-          coingeckoId: ausd-seed-acala
-        - assetId: '18446744073709551618'
-          symbol: LDOT
-          coingeckoId: liquid-staking-dot
-        - assetId: '18446744073709551619'
-          symbol: GLMR
-          coingeckoId: moonbeam
-        - assetId: '18446744073709551620'
-          symbol: IBTC
-          coingeckoId: interbtc
-        - assetId: '18446744073709551621'
-          symbol: INTR
-          coingeckoId: interlay
-        - assetId: '18446744073709551622'
-          symbol: PHA
-          coingeckoId: pha
-        - assetId: '18446744073709551623'
-          symbol: BNC
-          coingeckoId: bifrost-native-coin
-        - assetId: '18446744073709551624'
-          symbol: vDOT
-          coingeckoId: voucher-dot
-        - assetId: '18446744073709551625'
-          symbol: CLV
-        - assetId: '18446744073709551626'
-          symbol: VSDOT
-        - assetId: '18446744073709551627'
-          symbol: RING
-          coingeckoId: darwinia-network-native-token
-        - assetId: '18446744073709551628'
-          symbol: EQ
-          coingeckoId: equilibrium-token
-        - assetId: '18446744073709551629'
-          symbol: EQD
-        - assetId: '340282366920938463463374607431768211455'
-          symbol: DOT
-          coingeckoId: polkadot
-        - assetId: '18446744073709551633'
-          symbol: PINK
-        - assetId: '18446744073709551641'
-          symbol: GAME
+      - symbol: USDT
+        coingeckoId: tether
+        assetId: '4294969280'
+      - symbol: ACA
+        coingeckoId: acala
+        assetId: '18446744073709551616'
+      - symbol: aSEED
+        coingeckoId: ausd-seed-acala
+        assetId: '18446744073709551617'
+      - symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        assetId: '18446744073709551618'
+      - symbol: GLMR
+        coingeckoId: moonbeam
+        assetId: '18446744073709551619'
+      - symbol: IBTC
+        coingeckoId: interbtc
+        assetId: '18446744073709551620'
+      - symbol: INTR
+        coingeckoId: interlay
+        assetId: '18446744073709551621'
+      - symbol: PHA
+        coingeckoId: pha
+        assetId: '18446744073709551622'
+      - symbol: BNC
+        coingeckoId: bifrost-native-coin
+        assetId: '18446744073709551623'
+      - symbol: vDOT
+        coingeckoId: voucher-dot
+        assetId: '18446744073709551624'
+      - symbol: CLV
+        assetId: '18446744073709551625'
+      - symbol: VSDOT
+        assetId: '18446744073709551626'
+      - symbol: RING
+        coingeckoId: darwinia-network-native-token
+        assetId: '18446744073709551627'
+      - symbol: EQ
+        coingeckoId: equilibrium-token
+        assetId: '18446744073709551628'
+      - symbol: EQD
+        assetId: '18446744073709551629'
+      - symbol: DOT
+        coingeckoId: polkadot
+        assetId: '340282366920938463463374607431768211455'
+      - symbol: PINK
+        assetId: '18446744073709551633'
+      - symbol: GAME
+        assetId: '18446744073709551641'
 - id: autonomys
   name: Autonomys
   nativeCurrency:
@@ -552,64 +549,63 @@
     - wss://basilisk-rpc.n.dwellir.com
     - wss://rpc.basilisk.cloud
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: KSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: 1
-          coingeckoId: kusama
-        - symbol: aSEED
-          decimals: 12
-          ed: '10000000000'
-          onChainId: 2
-          coingeckoId: ausd-seed-acala
-        - symbol: TNKR
-          decimals: 12
-          ed: '1000000000'
-          onChainId: 6
-          coingeckoId: tinkernet
-        - symbol: USDCet
-          decimals: 6
-          ed: '10000'
-          onChainId: 9
-          coingeckoId: usd-coin-wormhole-from-ethereum
-        - symbol: WETH
-          decimals: 18
-          ed: '10000000'
-          onChainId: 10
-          coingeckoId: weth
-        - symbol: WBTC
-          decimals: 8
-          ed: '1000000'
-          onChainId: 11
-          coingeckoId: wrapped-bitcoin
-        - symbol: wUSDT
-          decimals: 6
-          ed: '10000000000'
-          onChainId: 12
-          coingeckoId: tether
-        - symbol: DAI
-          decimals: 18
-          ed: '10000000000'
-          onChainId: 13
-          coingeckoId: dai
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: 14
-          coingeckoId: tether
-        - symbol: XRT
-          decimals: 9
-          ed: '1683502'
-          onChainId: 16
-          coingeckoId: robonomics-network
-        - symbol: TEER
-          decimals: 12
-          ed: '8333333333'
-          onChainId: 17
-          coingeckoId: integritee
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: 1
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-acala
+        onChainId: 2
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: TNKR
+        coingeckoId: tinkernet
+        onChainId: 6
+        existentialDeposit: '1000000000'
+      - decimals: 6
+        symbol: USDCet
+        coingeckoId: usd-coin-wormhole-from-ethereum
+        onChainId: 9
+        existentialDeposit: '10000'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: 10
+        existentialDeposit: '10000000'
+      - decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        onChainId: 11
+        existentialDeposit: '1000000'
+      - decimals: 6
+        symbol: wUSDT
+        coingeckoId: tether
+        onChainId: 12
+        existentialDeposit: '10000000000'
+      - decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        onChainId: 13
+        existentialDeposit: '10000000000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: 14
+        existentialDeposit: '10000'
+      - decimals: 9
+        symbol: XRT
+        coingeckoId: robonomics-network
+        onChainId: 16
+        existentialDeposit: '1683502'
+      - decimals: 12
+        symbol: TEER
+        coingeckoId: integritee
+        onChainId: 17
+        existentialDeposit: '8333333333'
 - id: bifrost-kusama
   name: Bifrost Kusama
   nativeCurrency:
@@ -621,113 +617,112 @@
     - wss://bifrost-rpc.liebi.com/ws
     - wss://us.bifrost-rpc.liebi.com/ws
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: BNC
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"BNC"}}'
-          coingeckoId: bifrost-native-coin
-        - symbol: DOT
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"DOT"}}'
-          coingeckoId: polkadot
-        - symbol: KAR
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"Token","value":{"type":"KAR"}}'
-          coingeckoId: karura
-        - symbol: KSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"Token","value":{"type":"KSM"}}'
-          coingeckoId: kusama
-        - symbol: aSEED
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"Token","value":{"type":"KUSD"}}'
-          coingeckoId: acala-dollar
-        - symbol: MOVR
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"Token","value":{"type":"MOVR"}}'
-          coingeckoId: moonriver
-        - symbol: PHA
-          decimals: 12
-          ed: '40000000000'
-          onChainId: '{"type":"Token","value":{"type":"PHA"}}'
-          coingeckoId: pha
-        - symbol: RMRK
-          decimals: 10
-          ed: '10000'
-          onChainId: '{"type":"Token","value":{"type":"RMRK"}}'
-          coingeckoId: rmrk
-        - symbol: ZLK
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"Token","value":{"type":"ZLK"}}'
-        - symbol: aSEED
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"Stable","value":{"type":"KUSD"}}'
-          coingeckoId: ausd-seed-karura
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: '{"type":"Token2","value":0}'
-          coingeckoId: tether
-        - symbol: KINT
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"Token2","value":1}'
-          coingeckoId: kintsugi
-        - symbol: kBTC
-          decimals: 8
-          ed: '100'
-          onChainId: '{"type":"Token2","value":2}'
-          coingeckoId: kintsugi-btc
-        - symbol: SDN
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '{"type":"Token2","value":3}'
-        - symbol: MGX
-          decimals: 18
-          ed: '10000000000000'
-          onChainId: '{"type":"Token2","value":4}'
-        - symbol: vBNC
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"VToken","value":{"type":"BNC"}}'
-        - symbol: vMOVR
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"VToken","value":{"type":"MOVR"}}'
-        - symbol: vKSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"VToken","value":{"type":"KSM"}}'
-        - symbol: vsKSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"VSToken","value":{"type":"KSM"}}'
-        - symbol: BLP0
-          decimals: 12
-          ed: '1000000'
-          onChainId: '{"type":"BLP","value":0}'
-        - symbol: BLP1
-          decimals: 12
-          ed: '1000000'
-          onChainId: '{"type":"BLP","value":1}'
-        - symbol: BLP2
-          decimals: 12
-          ed: '1000000'
-          onChainId: '{"type":"BLP","value":2}'
-        - symbol: BLP3
-          decimals: 12
-          ed: '1000000'
-          onChainId: '{"type":"BLP","value":3}'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '{"type":"Token","value":{"type":"BNC"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KAR
+        coingeckoId: karura
+        onChainId: '{"type":"Token","value":{"type":"KAR"}}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: acala-dollar
+        onChainId: '{"type":"Token","value":{"type":"KUSD"}}'
+        existentialDeposit: '100000000'
+      - decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        onChainId: '{"type":"Token","value":{"type":"MOVR"}}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        onChainId: '{"type":"Token","value":{"type":"PHA"}}'
+        existentialDeposit: '40000000000'
+      - decimals: 10
+        symbol: RMRK
+        coingeckoId: rmrk
+        onChainId: '{"type":"Token","value":{"type":"RMRK"}}'
+        existentialDeposit: '10000'
+      - decimals: 18
+        symbol: ZLK
+        onChainId: '{"type":"Token","value":{"type":"ZLK"}}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        onChainId: '{"type":"Stable","value":{"type":"KUSD"}}'
+        existentialDeposit: '10000000000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"Token2","value":0}'
+        existentialDeposit: '10000'
+      - decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        onChainId: '{"type":"Token2","value":1}'
+        existentialDeposit: '10000000000'
+      - decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        onChainId: '{"type":"Token2","value":2}'
+        existentialDeposit: '100'
+      - decimals: 18
+        symbol: SDN
+        onChainId: '{"type":"Token2","value":3}'
+        existentialDeposit: '10000000000000000'
+      - decimals: 18
+        symbol: MGX
+        onChainId: '{"type":"Token2","value":4}'
+        existentialDeposit: '10000000000000'
+      - decimals: 12
+        symbol: vBNC
+        onChainId: '{"type":"VToken","value":{"type":"BNC"}}'
+        existentialDeposit: '10000000000'
+      - decimals: 18
+        symbol: vMOVR
+        onChainId: '{"type":"VToken","value":{"type":"MOVR"}}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: vKSM
+        onChainId: '{"type":"VToken","value":{"type":"KSM"}}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: vsKSM
+        onChainId: '{"type":"VSToken","value":{"type":"KSM"}}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: BLP0
+        onChainId: '{"type":"BLP","value":0}'
+        existentialDeposit: '1000000'
+      - decimals: 12
+        symbol: BLP1
+        onChainId: '{"type":"BLP","value":1}'
+        existentialDeposit: '1000000'
+      - decimals: 12
+        symbol: BLP2
+        onChainId: '{"type":"BLP","value":2}'
+        existentialDeposit: '1000000'
+      - decimals: 12
+        symbol: BLP3
+        onChainId: '{"type":"BLP","value":3}'
+        existentialDeposit: '1000000'
 - id: bifrost-polkadot
   name: Bifrost Polkadot
   nativeCurrency:
@@ -743,114 +738,113 @@
     - wss://hk.p.bifrost-rpc.liebi.com/ws
     - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: BNC
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"BNC"}}'
-          coingeckoId: bifrost-native-coin
-        - symbol: DOT
-          decimals: 10
-          ed: '1000000'
-          onChainId: '{"type":"Token2","value":0}'
-          coingeckoId: polkadot
-        - symbol: GLMR
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"Token2","value":1}'
-          coingeckoId: moonbeam
-        - symbol: USDT
-          decimals: 6
-          ed: '1000'
-          onChainId: '{"type":"Token2","value":2}'
-          coingeckoId: tether
-        - symbol: ASTR
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '{"type":"Token2","value":3}'
-          coingeckoId: astar
-        - symbol: FIL
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"Token2","value":4}'
-          coingeckoId: filecoin
-        - symbol: USDC
-          decimals: 6
-          ed: '1000'
-          onChainId: '{"type":"Token2","value":5}'
-          coingeckoId: usd-coin
-        - symbol: IBTC
-          decimals: 8
-          ed: '100'
-          onChainId: '{"type":"Token2","value":6}'
-          coingeckoId: interbtc
-        - symbol: INTR
-          decimals: 10
-          ed: '10000000'
-          onChainId: '{"type":"Token2","value":7}'
-          coingeckoId: interlay
-        - symbol: MANTA
-          decimals: 18
-          ed: '10000000000000'
-          onChainId: '{"type":"Token2","value":8}'
-          coingeckoId: manta-network
-        - symbol: PINK
-          decimals: 10
-          ed: '100000000'
-          onChainId: '{"type":"Token2","value":10}'
-        - symbol: DED
-          decimals: 10
-          ed: '1'
-          onChainId: '{"type":"Token2","value":11}'
-          coingeckoId: dot-is-ded
-        - symbol: PEN
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"Token2","value":12}'
-          coingeckoId: pendulum-chain
-        - symbol: WETH
-          decimals: 18
-          ed: '15000000000000'
-          onChainId: '{"type":"Token2","value":13}'
-          coingeckoId: weth
-        - symbol: WAVE
-          decimals: 18
-          ed: '100000000000000'
-          onChainId: '{"type":"Token2","value":14}'
-        - symbol: vBNC
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"VToken","value":{"type":"BNC"}}'
-        - symbol: vDOT
-          decimals: 10
-          ed: '1000000'
-          onChainId: '{"type":"VToken2","value":0}'
-          coingeckoId: voucher-dot
-        - symbol: vGLMR
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"VToken2","value":1}'
-          coingeckoId: voucher-glmr
-        - symbol: vASTR
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '{"type":"VToken2","value":3}'
-          coingeckoId: bifrost-voucher-astr
-        - symbol: vFIL
-          decimals: 18
-          ed: '1000000000000'
-          onChainId: '{"type":"VToken2","value":4}'
-        - symbol: vMANTA
-          decimals: 18
-          ed: '10000000000000'
-          onChainId: '{"type":"VToken2","value":8}'
-          coingeckoId: bifrost-voucher-manta
-        - symbol: vsDOT
-          decimals: 10
-          ed: '1000000'
-          onChainId: '{"type":"VSToken2","value":0}'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '{"type":"Token","value":{"type":"BNC"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"Token2","value":0}'
+        existentialDeposit: '1000000'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '{"type":"Token2","value":1}'
+        existentialDeposit: '1000000000000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"Token2","value":2}'
+        existentialDeposit: '1000'
+      - decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        onChainId: '{"type":"Token2","value":3}'
+        existentialDeposit: '10000000000000000'
+      - decimals: 18
+        symbol: FIL
+        coingeckoId: filecoin
+        onChainId: '{"type":"Token2","value":4}'
+        existentialDeposit: '1000000000000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '{"type":"Token2","value":5}'
+        existentialDeposit: '1000'
+      - decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        onChainId: '{"type":"Token2","value":6}'
+        existentialDeposit: '100'
+      - decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        onChainId: '{"type":"Token2","value":7}'
+        existentialDeposit: '10000000'
+      - decimals: 18
+        symbol: MANTA
+        coingeckoId: manta-network
+        onChainId: '{"type":"Token2","value":8}'
+        existentialDeposit: '10000000000000'
+      - decimals: 10
+        symbol: PINK
+        onChainId: '{"type":"Token2","value":10}'
+        existentialDeposit: '100000000'
+      - decimals: 10
+        symbol: DED
+        coingeckoId: dot-is-ded
+        onChainId: '{"type":"Token2","value":11}'
+        existentialDeposit: '1'
+      - decimals: 12
+        symbol: PEN
+        coingeckoId: pendulum-chain
+        onChainId: '{"type":"Token2","value":12}'
+        existentialDeposit: '100000000'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: '{"type":"Token2","value":13}'
+        existentialDeposit: '15000000000000'
+      - decimals: 18
+        symbol: WAVE
+        onChainId: '{"type":"Token2","value":14}'
+        existentialDeposit: '100000000000000'
+      - decimals: 12
+        symbol: vBNC
+        onChainId: '{"type":"VToken","value":{"type":"BNC"}}'
+        existentialDeposit: '10000000000'
+      - decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        onChainId: '{"type":"VToken2","value":0}'
+        existentialDeposit: '1000000'
+      - decimals: 18
+        symbol: vGLMR
+        coingeckoId: voucher-glmr
+        onChainId: '{"type":"VToken2","value":1}'
+        existentialDeposit: '1000000000000'
+      - decimals: 18
+        symbol: vASTR
+        coingeckoId: bifrost-voucher-astr
+        onChainId: '{"type":"VToken2","value":3}'
+        existentialDeposit: '10000000000000000'
+      - decimals: 18
+        symbol: vFIL
+        onChainId: '{"type":"VToken2","value":4}'
+        existentialDeposit: '1000000000000'
+      - decimals: 18
+        symbol: vMANTA
+        coingeckoId: bifrost-voucher-manta
+        onChainId: '{"type":"VToken2","value":8}'
+        existentialDeposit: '10000000000000'
+      - decimals: 10
+        symbol: vsDOT
+        onChainId: '{"type":"VSToken2","value":0}'
+        existentialDeposit: '1000000'
 - id: bitcountry-pioneer
   name: Pioneer
   nativeCurrency:
@@ -861,29 +855,28 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_metadata_latest.apng
   rpcs: []
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: KSM
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"NativeToken","value":"bigint:1"}'
-          coingeckoId: kusama
-        - symbol: KAR
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"NativeToken","value":"bigint:2"}'
-          coingeckoId: karura
-        - symbol: aSEED
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Stable","value":"bigint:0"}'
-          coingeckoId: ausd-seed-karura
-        - symbol: BIT
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"MiningResource","value":"bigint:0"}'
-          coingeckoId: bit
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"type":"NativeToken","value":"bigint:1"}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KAR
+        coingeckoId: karura
+        onChainId: '{"type":"NativeToken","value":"bigint:2"}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        onChainId: '{"type":"Stable","value":"bigint:0"}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: BIT
+        coingeckoId: bit
+        onChainId: '{"type":"MiningResource","value":"bigint:0"}'
+        existentialDeposit: '0'
 - id: bitgreen
   name: Bitgreen
   oldPrefix: 42
@@ -920,31 +913,32 @@
     - wss://centrifuge-rpc.dwellir.com
     - wss://fullnode.centrifuge.io
     - wss://rpc-centrifuge.luckyfriday.io
-  relay: polkadot
   balancesConfig:
     substrate-tokens:
       palletId: OrmlTokens
-      tokens:
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: '{"type":"ForeignAsset","value":1}'
-          coingeckoId: tether
-        - symbol: GLMR
-          ed: '1000000000000000'
-          decimals: 18
-          onChainId: '{"type":"ForeignAsset","value":4}'
-          coingeckoId: moonbeam
-        - symbol: DOT
-          decimals: 10
-          ed: '100000'
-          onChainId: '{"type":"ForeignAsset","value":5}'
-          coingeckoId: polkadot
-        - symbol: USDC
-          decimals: 6
-          ed: '1000'
-          onChainId: '{"type":"ForeignAsset","value":6}'
-          coingeckoId: usd-coin
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"ForeignAsset","value":1}'
+        existentialDeposit: '10000'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '{"type":"ForeignAsset","value":4}'
+        existentialDeposit: '1000000000000000'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"ForeignAsset","value":5}'
+        existentialDeposit: '100000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '{"type":"ForeignAsset","value":6}'
+        existentialDeposit: '1000'
 - id: centrifuge-standalone
   name: Centrifuge Standalone [Archived]
   nativeCurrency:
@@ -1003,116 +997,115 @@
     - wss://composable-rpc.dwellir.com
     - wss://rpc.composable.finance
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: DOT
-          decimals: 10
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950342"'
-          coingeckoId: polkadot
-        - symbol: vDOT
-          decimals: 10
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950370"'
-        - symbol: lsDOT
-          decimals: 10
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950351"'
-        - symbol: KSM
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950340"'
-          coingeckoId: kusama
-        - symbol: PICA
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950337"'
-          coingeckoId: picasso
-        - symbol: ASTR
-          decimals: 18
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543952342"'
-          coingeckoId: astar
-        - symbol: ATOM
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950343"'
-          coingeckoId: cosmos
-        - symbol: stATOM
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950346"'
-        - symbol: SDN
-          decimals: 18
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543952343"'
-          coingeckoId: shiden
-        - symbol: EQ
-          decimals: 9
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543952347"'
-          coingeckoId: equilibrium-token
-        - symbol: OSMO
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950344"'
-          coingeckoId: osmosis
-        - symbol: GLMR
-          ed: '0'
-          decimals: 18
-          onChainId: '"bigint:79228162514264337593543950376"'
-          coingeckoId: moonbeam
-        - symbol: EQD
-          decimals: 9
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950463"'
-        - symbol: BLD
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950354"'
-          coingeckoId: agoric
-        - symbol: TIA
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950355"'
-        - symbol: IST
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950361"'
-        - symbol: SILK
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950352"'
-        - symbol: BNC
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950369"'
-          coingeckoId: bifrost-native-coin
-        - symbol: BNC
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950367"'
-          coingeckoId: bifrost-native-coin
-        - symbol: vKSM
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950368"'
-        - symbol: MOVR
-          decimals: 18
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950359"'
-          coingeckoId: moonriver
-        - symbol: USDT
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950485"'
-          coingeckoId: tether
-        - symbol: USDC
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:79228162514264337593543950486"'
-          coingeckoId: usd-coin
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '"bigint:79228162514264337593543950342"'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: vDOT
+        onChainId: '"bigint:79228162514264337593543950370"'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: lsDOT
+        onChainId: '"bigint:79228162514264337593543950351"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '"bigint:79228162514264337593543950340"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: PICA
+        coingeckoId: picasso
+        onChainId: '"bigint:79228162514264337593543950337"'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        onChainId: '"bigint:79228162514264337593543952342"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: ATOM
+        coingeckoId: cosmos
+        onChainId: '"bigint:79228162514264337593543950343"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: stATOM
+        onChainId: '"bigint:79228162514264337593543950346"'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: SDN
+        coingeckoId: shiden
+        onChainId: '"bigint:79228162514264337593543952343"'
+        existentialDeposit: '0'
+      - decimals: 9
+        symbol: EQ
+        coingeckoId: equilibrium-token
+        onChainId: '"bigint:79228162514264337593543952347"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: OSMO
+        coingeckoId: osmosis
+        onChainId: '"bigint:79228162514264337593543950344"'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '"bigint:79228162514264337593543950376"'
+        existentialDeposit: '0'
+      - decimals: 9
+        symbol: EQD
+        onChainId: '"bigint:79228162514264337593543950463"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: BLD
+        coingeckoId: agoric
+        onChainId: '"bigint:79228162514264337593543950354"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: TIA
+        onChainId: '"bigint:79228162514264337593543950355"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: IST
+        onChainId: '"bigint:79228162514264337593543950361"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: SILK
+        onChainId: '"bigint:79228162514264337593543950352"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '"bigint:79228162514264337593543950369"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '"bigint:79228162514264337593543950367"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: vKSM
+        onChainId: '"bigint:79228162514264337593543950368"'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        onChainId: '"bigint:79228162514264337593543950359"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '"bigint:79228162514264337593543950485"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '"bigint:79228162514264337593543950486"'
+        existentialDeposit: '0'
 - id: continuum
   name: Continuum
   nativeCurrency:
@@ -1316,17 +1309,16 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/gm_parachain_metadata_latest.apng
   rpcs: []
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: GM
-          decimals: 0
-          ed: '0'
-          onChainId: 1
-        - symbol: GN
-          decimals: 0
-          ed: '0'
-          onChainId: 2
+      - decimals: 0
+        symbol: GM
+        onChainId: 1
+        existentialDeposit: '0'
+      - decimals: 0
+        symbol: GN
+        onChainId: 2
+        existentialDeposit: '0'
 - id: hanonycash
   name: Hanonycash
   rpcs: []
@@ -1368,239 +1360,238 @@
     - wss://rpc.helikon.io/hydradx
   isUnknownFeeToken: true
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: H20
-          decimals: 12
-          ed: '400000000'
-          onChainId: '1'
-        - symbol: DAI
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '2'
-          coingeckoId: dai
-        - symbol: WBTC
-          decimals: 8
-          ed: '44'
-          onChainId: '3'
-          coingeckoId: wrapped-bitcoin
-        - symbol: WETH
-          decimals: 18
-          ed: '7000000000000'
-          onChainId: '4'
-          coingeckoId: weth
-        - symbol: DOT
-          decimals: 10
-          ed: '17540000'
-          onChainId: '5'
-          coingeckoId: polkadot
-        - symbol: APE
-          decimals: 18
-          ed: '2518891687657430'
-          onChainId: '6'
-          coingeckoId: apecoin
-        - symbol: USDC
-          decimals: 6
-          ed: '10000'
-          onChainId: '7'
-          coingeckoId: usd-coin
-        - symbol: USDC
-          decimals: 6
-          ed: '10000'
-          onChainId: '21'
-          coingeckoId: usd-coin
-        - symbol: USDC
-          decimals: 6
-          ed: '10000'
-          onChainId: '22'
-          coingeckoId: usd-coin
-        - symbol: USDC
-          decimals: 6
-          ed: '10000'
-          onChainId: '1000766'
-          coingeckoId: usd-coin
-        - symbol: PHA
-          decimals: 12
-          ed: '54945054945'
-          onChainId: '8'
-          coingeckoId: pha
-        - symbol: ASTR
-          decimals: 18
-          ed: '147058823529412000'
-          onChainId: '9'
-          coingeckoId: astar
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: '10'
-          coingeckoId: tether
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: '23'
-          coingeckoId: tether
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: '1000767'
-          coingeckoId: tether
-        - symbol: IBTC
-          decimals: 8
-          ed: '36'
-          onChainId: '11'
-          coingeckoId: interbtc
-        - symbol: ZTG
-          decimals: 10
-          ed: '1204151916'
-          onChainId: '12'
-          coingeckoId: zeitgeist
-        - symbol: CFG
-          decimals: 18
-          ed: '32467532467532500'
-          onChainId: '13'
-          coingeckoId: centrifuge
-        - symbol: BNC
-          decimals: 12
-          ed: '68795189840'
-          onChainId: '14'
-          coingeckoId: bifrost-native-coin
-        - symbol: vDOT
-          decimals: 10
-          ed: '18761726'
-          onChainId: '15'
-          coingeckoId: voucher-dot
-        - symbol: GLMR
-          ed: '34854864344868000'
-          decimals: 18
-          onChainId: '16'
-          coingeckoId: moonbeam
-        - symbol: INTR
-          decimals: 10
-          ed: '6164274209'
-          onChainId: '17'
-          coingeckoId: interlay
-        - symbol: DAI
-          ed: '10000000000000000'
-          decimals: 18
-          onChainId: '18'
-          coingeckoId: dai
-        - symbol: WBTC
-          ed: '34'
-          decimals: 8
-          onChainId: '19'
-          coingeckoId: wrapped-btc-wormhole
-        - symbol: WETH
-          ed: '5390835579515'
-          decimals: 18
-          onChainId: '20'
-          coingeckoId: weth
-        - symbol: SUB
-          ed: '20000000'
-          decimals: 10
-          onChainId: '24'
-          coingeckoId: subsocial
-        - symbol: UNQ
-          ed: '1224384348939740000'
-          decimals: 18
-          onChainId: '25'
-          coingeckoId: unique-network
-        - symbol: NODL
-          ed: '109890109890'
-          decimals: 11
-          onChainId: '26'
-          coingeckoId: nodle-network
-        - symbol: CRU
-          ed: '7874015748'
-          decimals: 12
-          onChainId: '27'
-          coingeckoId: crust-network
-        - symbol: KILT
-          ed: '21358393848783'
-          decimals: 15
-          onChainId: '28'
-          coingeckoId: kilt-protocol
-        - symbol: MYTH
-          ed: '21367521367521400'
-          decimals: 18
-          onChainId: '30'
-          coingeckoId: mythos
-        - symbol: RING
-          ed: '1000000000000000000'
-          decimals: 18
-          onChainId: '31'
-          coingeckoId: darwinia-network-native-token
-        - symbol: AJUN
-          ed: '100786131828'
-          decimals: 12
-          onChainId: '32'
-          coingeckoId: ajuna-network-2
-        - symbol: vASTR
-          ed: '133689839572193000'
-          decimals: 18
-          onChainId: '33'
-          coingeckoId: bifrost-voucher-astr
-        - symbol: GDOT
-          ed: '0'
-          decimals: 18
-          onChainId: '69'
-          logo: ./assets/tokens/gdot.svg
-        - symbol: DED
-          ed: '1'
-          decimals: 10
-          onChainId: '1000019'
-          coingeckoId: dot-is-ded
-        - symbol: PINK
-          ed: '1'
-          decimals: 10
-          onChainId: '1000021'
-        - symbol: DOTA
-          ed: '1'
-          decimals: 4
-          onChainId: '1000038'
-        - symbol: PEN
-          ed: '153256704981'
-          decimals: 12
-          onChainId: '1000081'
-          coingeckoId: pendulum-chain
-        - symbol: WIFD
-          ed: '1'
-          decimals: 10
-          onChainId: '1000082'
-        - symbol: WUD
-          ed: '200000000000000'
-          decimals: 10
-          onChainId: '1000085'
-          logo: ./assets/tokens/wud.webp
-          coingeckoId: gavun-wud
-        - symbol: ACA
-          ed: '90744101633'
-          decimals: 12
-          onChainId: '1000099'
-          coingeckoId: acala
-        - symbol: LDOT
-          ed: '100200401'
-          decimals: 10
-          onChainId: '1000100'
-          coingeckoId: liquid-staking-dot
-        - symbol: GAME
-          ed: '1'
-          decimals: 10
-          onChainId: '1000104'
-        - symbol: BORK
-          ed: '1'
-          decimals: 10
-          onChainId: '1000148'
-        - symbol: AAVE
-          ed: '60000000000000'
-          decimals: 18
-          onChainId: '1000624'
-          coingeckoId: aave
-        - symbol: SOL
-          ed: '46339'
-          decimals: 9
-          onChainId: '1000752'
-          coingeckoId: solana
+      - decimals: 12
+        symbol: H20
+        onChainId: '1'
+        existentialDeposit: '400000000'
+      - decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        onChainId: '2'
+        existentialDeposit: '10000000000000000'
+      - decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        onChainId: '3'
+        existentialDeposit: '44'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: '4'
+        existentialDeposit: '7000000000000'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '5'
+        existentialDeposit: '17540000'
+      - decimals: 18
+        symbol: APE
+        coingeckoId: apecoin
+        onChainId: '6'
+        existentialDeposit: '2518891687657430'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '7'
+        existentialDeposit: '10000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '21'
+        existentialDeposit: '10000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '22'
+        existentialDeposit: '10000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '1000766'
+        existentialDeposit: '10000'
+      - decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        onChainId: '8'
+        existentialDeposit: '54945054945'
+      - decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        onChainId: '9'
+        existentialDeposit: '147058823529412000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '10'
+        existentialDeposit: '10000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '23'
+        existentialDeposit: '10000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '1000767'
+        existentialDeposit: '10000'
+      - decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        onChainId: '11'
+        existentialDeposit: '36'
+      - decimals: 10
+        symbol: ZTG
+        coingeckoId: zeitgeist
+        onChainId: '12'
+        existentialDeposit: '1204151916'
+      - decimals: 18
+        symbol: CFG
+        coingeckoId: centrifuge
+        onChainId: '13'
+        existentialDeposit: '32467532467532500'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '14'
+        existentialDeposit: '68795189840'
+      - decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        onChainId: '15'
+        existentialDeposit: '18761726'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '16'
+        existentialDeposit: '34854864344868000'
+      - decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        onChainId: '17'
+        existentialDeposit: '6164274209'
+      - decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        onChainId: '18'
+        existentialDeposit: '10000000000000000'
+      - decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-btc-wormhole
+        onChainId: '19'
+        existentialDeposit: '34'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: '20'
+        existentialDeposit: '5390835579515'
+      - decimals: 10
+        symbol: SUB
+        coingeckoId: subsocial
+        onChainId: '24'
+        existentialDeposit: '20000000'
+      - decimals: 18
+        symbol: UNQ
+        coingeckoId: unique-network
+        onChainId: '25'
+        existentialDeposit: '1224384348939740000'
+      - decimals: 11
+        symbol: NODL
+        coingeckoId: nodle-network
+        onChainId: '26'
+        existentialDeposit: '109890109890'
+      - decimals: 12
+        symbol: CRU
+        coingeckoId: crust-network
+        onChainId: '27'
+        existentialDeposit: '7874015748'
+      - decimals: 15
+        symbol: KILT
+        coingeckoId: kilt-protocol
+        onChainId: '28'
+        existentialDeposit: '21358393848783'
+      - decimals: 18
+        symbol: MYTH
+        coingeckoId: mythos
+        onChainId: '30'
+        existentialDeposit: '21367521367521400'
+      - decimals: 18
+        symbol: RING
+        coingeckoId: darwinia-network-native-token
+        onChainId: '31'
+        existentialDeposit: '1000000000000000000'
+      - decimals: 12
+        symbol: AJUN
+        coingeckoId: ajuna-network-2
+        onChainId: '32'
+        existentialDeposit: '100786131828'
+      - decimals: 18
+        symbol: vASTR
+        coingeckoId: bifrost-voucher-astr
+        onChainId: '33'
+        existentialDeposit: '133689839572193000'
+      - decimals: 18
+        symbol: GDOT
+        logo: ./assets/tokens/gdot.svg
+        onChainId: '69'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: DED
+        coingeckoId: dot-is-ded
+        onChainId: '1000019'
+        existentialDeposit: '1'
+      - decimals: 10
+        symbol: PINK
+        onChainId: '1000021'
+        existentialDeposit: '1'
+      - decimals: 4
+        symbol: DOTA
+        onChainId: '1000038'
+        existentialDeposit: '1'
+      - decimals: 12
+        symbol: PEN
+        coingeckoId: pendulum-chain
+        onChainId: '1000081'
+        existentialDeposit: '153256704981'
+      - decimals: 10
+        symbol: WIFD
+        onChainId: '1000082'
+        existentialDeposit: '1'
+      - decimals: 10
+        symbol: WUD
+        logo: ./assets/tokens/wud.webp
+        coingeckoId: gavun-wud
+        onChainId: '1000085'
+        existentialDeposit: '200000000000000'
+      - decimals: 12
+        symbol: ACA
+        coingeckoId: acala
+        onChainId: '1000099'
+        existentialDeposit: '90744101633'
+      - decimals: 10
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        onChainId: '1000100'
+        existentialDeposit: '100200401'
+      - decimals: 10
+        symbol: GAME
+        onChainId: '1000104'
+        existentialDeposit: '1'
+      - decimals: 10
+        symbol: BORK
+        onChainId: '1000148'
+        existentialDeposit: '1'
+      - decimals: 18
+        symbol: AAVE
+        coingeckoId: aave
+        onChainId: '1000624'
+        existentialDeposit: '60000000000000'
+      - decimals: 9
+        symbol: SOL
+        coingeckoId: solana
+        onChainId: '1000752'
+        existentialDeposit: '46339'
 - id: hyperbridge-polkadot
   name: Hyperbridge
   nativeCurrency:
@@ -1661,78 +1652,77 @@
     - wss://api.interlay.io/parachain
     - wss://rpc-interlay.luckyfriday.io/
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: DOT
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"DOT"}}'
-          coingeckoId: polkadot
-        - symbol: IBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"IBTC"}}'
-          coingeckoId: interbtc
-        - symbol: INTR
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"INTR"}}'
-          coingeckoId: interlay
-        - symbol: kBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
-          coingeckoId: kintsugi-btc
-        - symbol: KINT
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"KINT"}}'
-          coingeckoId: kintsugi
-        - symbol: KSM
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"KSM"}}'
-          coingeckoId: kusama
-        - symbol: LDOT
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"ForeignAsset","value":1}'
-          coingeckoId: liquid-staking-dot
-        - symbol: USDT
-          decimals: 6
-          ed: '0'
-          onChainId: '{"type":"ForeignAsset","value":2}'
-          coingeckoId: tether
-        - symbol: HDX
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"ForeignAsset","value":13}'
-          coingeckoId: hydration
-        - symbol: lp IBTC-DOT
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"IBTC"}},{"type":"Token","value":{"type":"DOT"}}]}'
-        - symbol: lp IBTC-USDT
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"IBTC"}},{"type":"ForeignAsset","value":2}]}'
-        - symbol: lp DOT-INTR
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"DOT"}},{"type":"Token","value":{"type":"INTR"}}]}'
-        - symbol: qIBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '{"type":"LendToken","value":1}'
-        - symbol: qDOT
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"LendToken","value":2}'
-        - symbol: qUSDT
-          decimals: 6
-          ed: '0'
-          onChainId: '{"type":"LendToken","value":3}'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        onChainId: '{"type":"Token","value":{"type":"IBTC"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        onChainId: '{"type":"Token","value":{"type":"INTR"}}'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        onChainId: '{"type":"Token","value":{"type":"KINT"}}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        onChainId: '{"type":"ForeignAsset","value":1}'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"ForeignAsset","value":2}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: HDX
+        coingeckoId: hydration
+        onChainId: '{"type":"ForeignAsset","value":13}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: lp IBTC-DOT
+        onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"IBTC"}},{"type":"Token","value":{"type":"DOT"}}]}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: lp IBTC-USDT
+        onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"IBTC"}},{"type":"ForeignAsset","value":2}]}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: lp DOT-INTR
+        onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"DOT"}},{"type":"Token","value":{"type":"INTR"}}]}'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: qIBTC
+        onChainId: '{"type":"LendToken","value":1}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: qDOT
+        onChainId: '{"type":"LendToken","value":2}'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: qUSDT
+        onChainId: '{"type":"LendToken","value":3}'
+        existentialDeposit: '0'
 - id: invarch
   name: InvArch
   oldPrefix: 117
@@ -1796,242 +1786,241 @@
     - wss://karura-rpc-2.aca-api.network/ws
     - wss://karura-rpc-3.aca-api.network/ws
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: LKSM
-          decimals: 12
-          ed: '500000000'
-          onChainId: '{"type":"Token","value":{"type":"LKSM"}}'
-          coingeckoId: liquid-ksm
-        - symbol: BNC
-          decimals: 12
-          ed: '8000000000'
-          onChainId: '{"type":"Token","value":{"type":"BNC"}}'
-          coingeckoId: bifrost-native-coin
-        - symbol: TAI
-          decimals: 12
-          ed: '1000000000000'
-          onChainId: '{"type":"Token","value":{"type":"TAI"}}'
-          coingeckoId: taiga
-        - symbol: PHA
-          decimals: 12
-          ed: '40000000000'
-          onChainId: '{"type":"Token","value":{"type":"PHA"}}'
-          coingeckoId: pha
-        - symbol: KINT
-          decimals: 12
-          ed: '133330000'
-          onChainId: '{"type":"Token","value":{"type":"KINT"}}'
-          coingeckoId: kintsugi
-        - symbol: VSKSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"Token","value":{"type":"VSKSM"}}'
-        - symbol: KSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"Token","value":{"type":"KSM"}}'
-          coingeckoId: kusama
-        - symbol: aSEED
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"Token","value":{"type":"KUSD"}}'
-          coingeckoId: ausd-seed-karura
-        - symbol: kBTC
-          decimals: 8
-          ed: '66'
-          onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
-          coingeckoId: kintsugi-btc
-        - symbol: KMA
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"ForeignAsset","value":10}'
-          coingeckoId: calamari-network
-        - symbol: GENS
-          decimals: 9
-          ed: '1000000000000'
-          onChainId: '{"type":"ForeignAsset","value":14}'
-          coingeckoId: genshiro
-        - symbol: LT
-          decimals: 12
-          ed: '1000000000000'
-          onChainId: '{"type":"ForeignAsset","value":19}'
-        - symbol: TEER
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"ForeignAsset","value":8}'
-          coingeckoId: integritee
-        - symbol: TUR
-          decimals: 10
-          ed: '40000000000'
-          onChainId: '{"type":"ForeignAsset","value":16}'
-        - symbol: HKO
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"ForeignAsset","value":4}'
-        - symbol: KICO
-          decimals: 14
-          ed: '100000000000000'
-          onChainId: '{"type":"ForeignAsset","value":6}'
-        - symbol: QTZ
-          decimals: 18
-          ed: '1000000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":2}'
-          coingeckoId: quartz
-        - symbol: HEI
-          decimals: 18
-          ed: '100000000000'
-          onChainId: '{"type":"ForeignAsset","value":20}'
-          coingeckoId: heima
-        - symbol: NEER
-          decimals: 18
-          ed: '100000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":9}'
-          coingeckoId: metaverse-network-pioneer
-        - symbol: ARIS
-          decimals: 8
-          ed: '1000000000000'
-          onChainId: '{"type":"ForeignAsset","value":1}'
-        - symbol: RMRK
-          decimals: 10
-          ed: '100000000'
-          onChainId: '{"type":"ForeignAsset","value":0}'
-          coingeckoId: rmrk
-        - symbol: CSM
-          decimals: 12
-          ed: '1000000000000'
-          onChainId: '{"type":"ForeignAsset","value":5}'
-          coingeckoId: crust-storage-market
-        - symbol: PCHU
-          decimals: 18
-          ed: '100000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":17}'
-        - symbol: CRAB
-          decimals: 18
-          ed: '1000000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":13}'
-        - symbol: BSX
-          decimals: 12
-          ed: '1000000000000'
-          onChainId: '{"type":"ForeignAsset","value":11}'
-          coingeckoId: basilisk
-        - symbol: AIR
-          decimals: 18
-          ed: '100000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":12}'
-          coingeckoId: altair
-        - symbol: USDT
-          decimals: 6
-          ed: '10000'
-          onChainId: '{"type":"ForeignAsset","value":7}'
-          coingeckoId: tether
-        - symbol: SDN
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":18}'
-          coingeckoId: shiden
-        - symbol: EQD
-          decimals: 9
-          ed: '10000000000'
-          onChainId: '{"type":"ForeignAsset","value":15}'
-        - symbol: MOVR
-          decimals: 18
-          ed: '1000000000000000'
-          onChainId: '{"type":"ForeignAsset","value":3}'
-          coingeckoId: moonriver
-        - symbol: tKSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"StableAssetPoolToken","value":0}'
-        - symbol: 3USD
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"StableAssetPoolToken","value":1}'
-        - symbol: USDCet
-          decimals: 6
-          ed: '10000'
-          onChainId: '{"type":"Erc20","value":"hex:0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27"}'
-        - symbol: DAI
-          decimals: 18
-          ed: '10000000000000000'
-          onChainId: '{"type":"Erc20","value":"hex:0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71"}'
-        - symbol: waSEED
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"Erc20","value":"hex:0xe20683ad1ed8bbeed7e1ae74be10f19d8045b530"}'
-        - symbol: lp KSM-RMRK
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"ForeignAsset","value":0}]}'
-        - symbol: lp KSM-LKSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"Token","value":{"type":"LKSM"}}]}'
-        - symbol: lp KAR-KUSD
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"KUSD"}}]}'
-        - symbol: lp KAR-QTZ
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"ForeignAsset","value":2}]}'
-        - symbol: lp KUSD-KSM
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KSM"}}]}'
-        - symbol: lp KUSD-BNC
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"BNC"}}]}'
-        - symbol: lp KUSD-CSM
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":5}]}'
-        - symbol: lp KUSD-RMRK
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":0}]}'
-        - symbol: lp KSM-ARIS
-          decimals: 12
-          ed: '100000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"ForeignAsset","value":1}]}'
-        - symbol: lp KUSD-KINT
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KINT"}}]}'
-        - symbol: lp TAI-tKSM
-          decimals: 12
-          ed: '1000000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"TAI"}},{"type":"StableAssetPoolToken","value":0}]}'
-        - symbol: lp KAR-KSM
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"KSM"}}]}'
-        - symbol: lp KUSD-AIR
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":12}]}'
-        - symbol: lp KAR-LKSM
-          decimals: 12
-          ed: '100000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"LKSM"}}]}'
-        - symbol: lp KUSD-QTZ
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":2}]}'
-        - symbol: lp KUSD-PHA
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"PHA"}}]}'
-        - symbol: lp KUSD-LKSM
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"LKSM"}}]}'
-        - symbol: lp KUSD-KBTC
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KBTC"}}]}'
+      - decimals: 12
+        symbol: LKSM
+        coingeckoId: liquid-ksm
+        onChainId: '{"type":"Token","value":{"type":"LKSM"}}'
+        existentialDeposit: '500000000'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '{"type":"Token","value":{"type":"BNC"}}'
+        existentialDeposit: '8000000000'
+      - decimals: 12
+        symbol: TAI
+        coingeckoId: taiga
+        onChainId: '{"type":"Token","value":{"type":"TAI"}}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        onChainId: '{"type":"Token","value":{"type":"PHA"}}'
+        existentialDeposit: '40000000000'
+      - decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        onChainId: '{"type":"Token","value":{"type":"KINT"}}'
+        existentialDeposit: '133330000'
+      - decimals: 12
+        symbol: VSKSM
+        onChainId: '{"type":"Token","value":{"type":"VSKSM"}}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        onChainId: '{"type":"Token","value":{"type":"KUSD"}}'
+        existentialDeposit: '10000000000'
+      - decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
+        existentialDeposit: '66'
+      - decimals: 12
+        symbol: KMA
+        coingeckoId: calamari-network
+        onChainId: '{"type":"ForeignAsset","value":10}'
+        existentialDeposit: '100000000000'
+      - decimals: 9
+        symbol: GENS
+        coingeckoId: genshiro
+        onChainId: '{"type":"ForeignAsset","value":14}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: LT
+        onChainId: '{"type":"ForeignAsset","value":19}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: TEER
+        coingeckoId: integritee
+        onChainId: '{"type":"ForeignAsset","value":8}'
+        existentialDeposit: '100000000000'
+      - decimals: 10
+        symbol: TUR
+        onChainId: '{"type":"ForeignAsset","value":16}'
+        existentialDeposit: '40000000000'
+      - decimals: 12
+        symbol: HKO
+        onChainId: '{"type":"ForeignAsset","value":4}'
+        existentialDeposit: '100000000000'
+      - decimals: 14
+        symbol: KICO
+        onChainId: '{"type":"ForeignAsset","value":6}'
+        existentialDeposit: '100000000000000'
+      - decimals: 18
+        symbol: QTZ
+        coingeckoId: quartz
+        onChainId: '{"type":"ForeignAsset","value":2}'
+        existentialDeposit: '1000000000000000000'
+      - decimals: 18
+        symbol: HEI
+        coingeckoId: heima
+        onChainId: '{"type":"ForeignAsset","value":20}'
+        existentialDeposit: '100000000000'
+      - decimals: 18
+        symbol: NEER
+        coingeckoId: metaverse-network-pioneer
+        onChainId: '{"type":"ForeignAsset","value":9}'
+        existentialDeposit: '100000000000000000'
+      - decimals: 8
+        symbol: ARIS
+        onChainId: '{"type":"ForeignAsset","value":1}'
+        existentialDeposit: '1000000000000'
+      - decimals: 10
+        symbol: RMRK
+        coingeckoId: rmrk
+        onChainId: '{"type":"ForeignAsset","value":0}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: CSM
+        coingeckoId: crust-storage-market
+        onChainId: '{"type":"ForeignAsset","value":5}'
+        existentialDeposit: '1000000000000'
+      - decimals: 18
+        symbol: PCHU
+        onChainId: '{"type":"ForeignAsset","value":17}'
+        existentialDeposit: '100000000000000000'
+      - decimals: 18
+        symbol: CRAB
+        onChainId: '{"type":"ForeignAsset","value":13}'
+        existentialDeposit: '1000000000000000000'
+      - decimals: 12
+        symbol: BSX
+        coingeckoId: basilisk
+        onChainId: '{"type":"ForeignAsset","value":11}'
+        existentialDeposit: '1000000000000'
+      - decimals: 18
+        symbol: AIR
+        coingeckoId: altair
+        onChainId: '{"type":"ForeignAsset","value":12}'
+        existentialDeposit: '100000000000000000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"ForeignAsset","value":7}'
+        existentialDeposit: '10000'
+      - decimals: 18
+        symbol: SDN
+        coingeckoId: shiden
+        onChainId: '{"type":"ForeignAsset","value":18}'
+        existentialDeposit: '10000000000000000'
+      - decimals: 9
+        symbol: EQD
+        onChainId: '{"type":"ForeignAsset","value":15}'
+        existentialDeposit: '10000000000'
+      - decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        onChainId: '{"type":"ForeignAsset","value":3}'
+        existentialDeposit: '1000000000000000'
+      - decimals: 12
+        symbol: tKSM
+        onChainId: '{"type":"StableAssetPoolToken","value":0}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: 3USD
+        onChainId: '{"type":"StableAssetPoolToken","value":1}'
+        existentialDeposit: '10000000000'
+      - decimals: 6
+        symbol: USDCet
+        onChainId: '{"type":"Erc20","value":"hex:0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27"}'
+        existentialDeposit: '10000'
+      - decimals: 18
+        symbol: DAI
+        onChainId: '{"type":"Erc20","value":"hex:0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71"}'
+        existentialDeposit: '10000000000000000'
+      - decimals: 12
+        symbol: waSEED
+        onChainId: '{"type":"Erc20","value":"hex:0xe20683ad1ed8bbeed7e1ae74be10f19d8045b530"}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp KSM-RMRK
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"ForeignAsset","value":0}]}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: lp KSM-LKSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"Token","value":{"type":"LKSM"}}]}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: lp KAR-KUSD
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"KUSD"}}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp KAR-QTZ
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"ForeignAsset","value":2}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp KUSD-KSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KSM"}}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KUSD-BNC
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"BNC"}}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KUSD-CSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":5}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KUSD-RMRK
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":0}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KSM-ARIS
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"ForeignAsset","value":1}]}'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: lp KUSD-KINT
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KINT"}}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp TAI-tKSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"TAI"}},{"type":"StableAssetPoolToken","value":0}]}'
+        existentialDeposit: '1000000000000'
+      - decimals: 12
+        symbol: lp KAR-KSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"KSM"}}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp KUSD-AIR
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":12}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KAR-LKSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"LKSM"}}]}'
+        existentialDeposit: '100000000000'
+      - decimals: 12
+        symbol: lp KUSD-QTZ
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":2}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KUSD-PHA
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"PHA"}}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KUSD-LKSM
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"LKSM"}}]}'
+        existentialDeposit: '10000000000'
+      - decimals: 12
+        symbol: lp KUSD-KBTC
+        onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KBTC"}}]}'
+        existentialDeposit: '10000000000'
 - id: khala
   name: Khala
   nativeCurrency:
@@ -2076,78 +2065,77 @@
     - wss://kintsugi-rpc.dwellir.com
     - wss://api-kusama.interlay.io/parachain
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: DOT
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"DOT"}}'
-          coingeckoId: polkadot
-        - symbol: IBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"IBTC"}}'
-          coingeckoId: interbtc
-        - symbol: INTR
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"INTR"}}'
-          coingeckoId: interlay
-        - symbol: kBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
-          coingeckoId: kintsugi-btc
-        - symbol: KINT
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"KINT"}}'
-          coingeckoId: kintsugi
-        - symbol: KSM
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"KSM"}}'
-          coingeckoId: kusama
-        - symbol: aSEED
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"ForeignAsset","value":1}'
-          coingeckoId: ausd-seed-karura
-        - symbol: LKSM
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"ForeignAsset","value":2}'
-          coingeckoId: liquid-ksm
-        - symbol: USDT
-          decimals: 6
-          ed: '0'
-          onChainId: '{"type":"ForeignAsset","value":3}'
-          coingeckoId: tether
-        - symbol: lp kBTC-KSM
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KBTC"}},{"type":"Token","value":{"type":"KSM"}}]}'
-        - symbol: lp kBTC-USDT
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KBTC"}},{"type":"ForeignAsset","value":3}]}'
-        - symbol: lp KSM-KINT
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"Token","value":{"type":"KINT"}}]}'
-        - symbol: qKBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '{"type":"LendToken","value":1}'
-        - symbol: qKSM
-          decimals: 12
-          ed: '0'
-          onChainId: '{"type":"LendToken","value":2}'
-        - symbol: qUSDT
-          decimals: 6
-          ed: '0'
-          onChainId: '{"type":"LendToken","value":3}'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        onChainId: '{"type":"Token","value":{"type":"IBTC"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        onChainId: '{"type":"Token","value":{"type":"INTR"}}'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        onChainId: '{"type":"Token","value":{"type":"KINT"}}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        onChainId: '{"type":"ForeignAsset","value":1}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: LKSM
+        coingeckoId: liquid-ksm
+        onChainId: '{"type":"ForeignAsset","value":2}'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"ForeignAsset","value":3}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: lp kBTC-KSM
+        onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KBTC"}},{"type":"Token","value":{"type":"KSM"}}]}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: lp kBTC-USDT
+        onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KBTC"}},{"type":"ForeignAsset","value":3}]}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: lp KSM-KINT
+        onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"Token","value":{"type":"KINT"}}]}'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: qKBTC
+        onChainId: '{"type":"LendToken","value":1}'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: qKSM
+        onChainId: '{"type":"LendToken","value":2}'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: qUSDT
+        onChainId: '{"type":"LendToken","value":3}'
+        existentialDeposit: '0'
 - id: kpron
   name: Kpron
   rpcs: []
@@ -2192,20 +2180,19 @@
     - wss://statemine.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/assethub
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-assets:
-      tokens:
-        - assetId: 8
-          symbol: RMRK
-          coingeckoId: rmrk
-        - assetId: 16
-          symbol: ARIS
-        - assetId: 1984
-          symbol: USDT
-          coingeckoId: tether
-        - assetId: 50000002
-          symbol: dUSD
-          logo: ./assets/tokens/dusd.webp
+      - symbol: RMRK
+        coingeckoId: rmrk
+        assetId: '8'
+      - symbol: ARIS
+        assetId: '16'
+      - symbol: USDT
+        coingeckoId: tether
+        assetId: '1984'
+      - symbol: dUSD
+        logo: ./assets/tokens/dusd.webp
+        assetId: '50000002'
 - id: kusama-bridge-hub
   name: Kusama Bridge Hub
   nativeCurrency:
@@ -2317,14 +2304,13 @@
     - wss://kusama-archive.mangata.online
     - wss://kusama-rpc.mangata.online
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: MGX
-          decimals: 18
-          ed: '0'
-          onChainId: '"0"'
-          coingeckoId: mangata-x
+      - decimals: 18
+        symbol: MGX
+        coingeckoId: mangata-x
+        onChainId: '"0"'
+        existentialDeposit: '0'
 - id: manta
   name: Manta
   nativeCurrency:
@@ -2361,29 +2347,28 @@
     - wss://moonbeam.public.curie.radiumblock.co/ws
     - wss://moonbeam.unitedbloc.com
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-assets:
-      tokens:
-        - assetId: '36282181791341254438422467838694599751'
-          symbol: WBTC
-          coingeckoId: wrapped-bitcoin
-        - assetId: '42259045809535163221576417993425387648'
-          symbol: DOT
-          coingeckoId: polkadot
-        - assetId: '64174511183114006009298114091987195453'
-          symbol: PINK
-        - assetId: '69606720909260275826784788104880799692'
-          symbol: HDX
-          coingeckoId: hydradx
-        - assetId: '166377000701797186346254371275954761085'
-          symbol: USDC
-          coingeckoId: usd-coin
-        - assetId: '178794693648360392906933130845919698647'
-          symbol: WETH
-          coingeckoId: weth
-        - assetId: '311091173110107856861649819128533077277'
-          symbol: USDT
-          coingeckoId: tether
+      - symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        assetId: '36282181791341254438422467838694599751'
+      - symbol: DOT
+        coingeckoId: polkadot
+        assetId: '42259045809535163221576417993425387648'
+      - symbol: PINK
+        assetId: '64174511183114006009298114091987195453'
+      - symbol: HDX
+        coingeckoId: hydradx
+        assetId: '69606720909260275826784788104880799692'
+      - symbol: USDC
+        coingeckoId: usd-coin
+        assetId: '166377000701797186346254371275954761085'
+      - symbol: WETH
+        coingeckoId: weth
+        assetId: '178794693648360392906933130845919698647'
+      - symbol: USDT
+        coingeckoId: tether
+        assetId: '311091173110107856861649819128533077277'
 - id: moonriver
   name: Moonriver
   nativeCurrency:
@@ -2437,12 +2422,11 @@
   rpcs:
     - wss://parachain-rpc.origin-trail.network
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-assets:
-      tokens:
-        - assetId: 1
-          symbol: TRAC
-          coingeckoId: origintrail
+      - symbol: TRAC
+        coingeckoId: origintrail
+        assetId: '1'
 - id: neuroweb-polkadot-2
   name: NeuroWeb
   rpcs: []
@@ -2505,99 +2489,98 @@
   rpcs:
     - wss://rpc-pendulum.prd.pendulumchain.tech
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: DOT
-          decimals: 10
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":0}'
-          coingeckoId: polkadot
-        - symbol: USDT
-          decimals: 6
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":1}'
-          coingeckoId: tether
-        - symbol: USDC
-          decimals: 6
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":2}'
-          coingeckoId: usd-coin
-        - symbol: GLMR
-          decimals: 18
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":6}'
-          coingeckoId: moonbeam
-        - symbol: XLM
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"StellarNative"}}'
-          coingeckoId: stellar
-        - symbol: TZS.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:TZS","issuer":"hex:0x34c94b2a4ba9e8b57b22547dcbb30f443c4cb02da3829a89aa1bd4780e4466ba"}}}'
-        - symbol: BRL.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:BRL","issuer":"hex:0xeaac68d4d0e37b4c24c2536916e830735f032d0d6b2a1c8fca3bc5a25e083e3a"}}}'
-        - symbol: USDC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:USDC","issuer":"hex:0x3b9911380efe988ba0a8900eb1cfe44f366f7dbe946bed077240f7f624df15c5"}}}'
-          coingeckoId: usd-coin
-        - symbol: AUDD.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:AUDD","issuer":"hex:0xc5fbe9979e240552860221f4fe2f2219f35e40458b8b58fc32da520a154a561d"}}}'
-        - symbol: EURC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0x2112ee863867e4e219fe254c0918b00bc9ea400775bfc3ab4430971ce505877c"}}}'
-          coingeckoId: eurc
-        - symbol: EURC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0xcf4f5a26e2090bb3adcf02c7a9d73dbfe6659cc690461475b86437fa49c71136"}}}'
-          coingeckoId: eurc
-        - symbol: NGNC.s
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
-        - symbol: BRZ
-          decimals: 18
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":4}'
-          coingeckoId: brazilian-digital-token
-        - symbol: PINK
-          decimals: 10
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":7}'
-        - symbol: HDX
-          decimals: 12
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":8}'
-          coingeckoId: hydration
-        - symbol: ASTR
-          decimals: 18
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":9}'
-          coingeckoId: astar
-        - symbol: vDOT
-          decimals: 10
-          ed: '1000000'
-          onChainId: '{"type":"XCM","value":10}'
-          coingeckoId: voucher-dot
-        - symbol: BNC
-          decimals: 12
-          ed: '10000000000'
-          onChainId: '{"type":"XCM","value":11}'
-          coingeckoId: bifrost-native-coin
-        - symbol: USDC.axl
-          decimals: 6
-          ed: '1000'
-          onChainId: '{"type":"XCM","value":12}'
-          coingeckoId: axelar-bridged-usdc
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"XCM","value":0}'
+        existentialDeposit: '1000'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"type":"XCM","value":1}'
+        existentialDeposit: '1000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '{"type":"XCM","value":2}'
+        existentialDeposit: '1000'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '{"type":"XCM","value":6}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: XLM
+        coingeckoId: stellar
+        onChainId: '{"type":"Stellar","value":{"type":"StellarNative"}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: TZS.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:TZS","issuer":"hex:0x34c94b2a4ba9e8b57b22547dcbb30f443c4cb02da3829a89aa1bd4780e4466ba"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: BRL.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:BRL","issuer":"hex:0xeaac68d4d0e37b4c24c2536916e830735f032d0d6b2a1c8fca3bc5a25e083e3a"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: USDC.s
+        coingeckoId: usd-coin
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:USDC","issuer":"hex:0x3b9911380efe988ba0a8900eb1cfe44f366f7dbe946bed077240f7f624df15c5"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: AUDD.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:AUDD","issuer":"hex:0xc5fbe9979e240552860221f4fe2f2219f35e40458b8b58fc32da520a154a561d"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: EURC.s
+        coingeckoId: eurc
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0x2112ee863867e4e219fe254c0918b00bc9ea400775bfc3ab4430971ce505877c"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: EURC.s
+        coingeckoId: eurc
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0xcf4f5a26e2090bb3adcf02c7a9d73dbfe6659cc690461475b86437fa49c71136"}}}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: NGNC.s
+        onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
+        existentialDeposit: '1000'
+      - decimals: 18
+        symbol: BRZ
+        coingeckoId: brazilian-digital-token
+        onChainId: '{"type":"XCM","value":4}'
+        existentialDeposit: '1000'
+      - decimals: 10
+        symbol: PINK
+        onChainId: '{"type":"XCM","value":7}'
+        existentialDeposit: '1000'
+      - decimals: 12
+        symbol: HDX
+        coingeckoId: hydration
+        onChainId: '{"type":"XCM","value":8}'
+        existentialDeposit: '1000'
+      - decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        onChainId: '{"type":"XCM","value":9}'
+        existentialDeposit: '1000'
+      - decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        onChainId: '{"type":"XCM","value":10}'
+        existentialDeposit: '1000000'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '{"type":"XCM","value":11}'
+        existentialDeposit: '10000000000'
+      - decimals: 6
+        symbol: USDC.axl
+        coingeckoId: axelar-bridged-usdc
+        onChainId: '{"type":"XCM","value":12}'
+        existentialDeposit: '1000'
 - id: phala
   name: Phala
   nativeCurrency:
@@ -2623,173 +2606,172 @@
     - wss://picasso-rpc.dwellir.com
     - wss://rpc.composablenodes.tech
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: PICA
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:1"'
-          coingeckoId: picasso
-        - symbol: KSM
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:4"'
-          coingeckoId: kusama
-        - symbol: DOT
-          decimals: 10
-          ed: '0'
-          onChainId: '"bigint:6"'
-          coingeckoId: polkadot
-        - symbol: ATOM
-          decimals: 6
-          ed: '2500'
-          onChainId: '"bigint:7"'
-          coingeckoId: cosmos
-        - symbol: OSMO
-          decimals: 6
-          ed: '40000'
-          onChainId: '"bigint:8"'
-          coingeckoId: osmosis
-        - symbol: STRD
-          decimals: 6
-          ed: '20000'
-          onChainId: '"bigint:9"'
-          coingeckoId: stride
-        - symbol: stATOM
-          decimals: 6
-          ed: '2000'
-          onChainId: '"bigint:10"'
-          coingeckoId: stride-staked-atom
-        - symbol: STARS
-          decimals: 6
-          ed: '2000000'
-          onChainId: '"bigint:11"'
-          coingeckoId: stargaze
-        - symbol: NTRN
-          decimals: 6
-          ed: '60000'
-          onChainId: '"bigint:12"'
-          coingeckoId: neutron
-        - symbol: CRE
-          decimals: 6
-          ed: '1000000'
-          onChainId: '"bigint:13"'
-          coingeckoId: crescent-network
-        - symbol: bCRE
-          decimals: 6
-          ed: '1000000'
-          onChainId: '"bigint:14"'
-          coingeckoId: liquid-staking-crescent
-        - symbol: SCRT
-          decimals: 6
-          ed: '70000'
-          onChainId: '"bigint:15"'
-          coingeckoId: secret
-        - symbol: UMEE
-          decimals: 6
-          ed: '1000000'
-          onChainId: '"bigint:17"'
-          coingeckoId: umee
-        - symbol: BLD
-          decimals: 6
-          ed: '120000'
-          onChainId: '"bigint:18"'
-          coingeckoId: agoric
-        - symbol: BNC KSM
-          decimals: 12
-          ed: '11000000000'
-          onChainId: '"bigint:31"'
-          coingeckoId: bifrost-native-coin
-        - symbol: vKSM
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:32"'
-          coingeckoId: voucher-ksm
-        - symbol: BNC DOT
-          decimals: 10
-          ed: '100000000'
-          onChainId: '"bigint:33"'
-          coingeckoId: bifrost-native-coin
-        - symbol: vDOT
-          decimals: 10
-          ed: '100000000'
-          onChainId: '"bigint:34"'
-          coingeckoId: voucher-dot
-        - symbol: KAR
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:101"'
-          coingeckoId: karura
-        - symbol: BNC
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:102"'
-          coingeckoId: bifrost-native-coin
-        - symbol: vKSM
-          decimals: 12
-          ed: '100000000'
-          onChainId: '"bigint:103"'
-          coingeckoId: voucher-ksm
-        - symbol: MOVR
-          decimals: 18
-          ed: '0'
-          onChainId: '"bigint:104"'
-          coingeckoId: moonriver
-        - symbol: EQD
-          decimals: 9
-          ed: '200000'
-          onChainId: '"bigint:127"'
-        - symbol: aSEED
-          decimals: 12
-          ed: '0'
-          onChainId: '"bigint:129"'
-          coingeckoId: ausd-seed-karura
-        - symbol: USDT
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:130"'
-          coingeckoId: tether
-        - symbol: USDC
-          decimals: 6
-          ed: '0'
-          onChainId: '"bigint:131"'
-          coingeckoId: usd-coin
-        - symbol: WBTC
-          decimals: 8
-          ed: '0'
-          onChainId: '"bigint:132"'
-          coingeckoId: wrapped-bitcoin
-        - symbol: WETH
-          decimals: 18
-          ed: '0'
-          onChainId: '"bigint:133"'
-          coingeckoId: weth
-        - symbol: TNKR
-          decimals: 12
-          ed: '13500000000'
-          onChainId: '"bigint:212"'
-          coingeckoId: tinkernet
-        - symbol: HUAHUA
-          decimals: 6
-          ed: '1000000'
-          onChainId: '"bigint:420"'
-          coingeckoId: chihuahua-token
-        - symbol: ASTR
-          decimals: 18
-          ed: '4700000000000000'
-          onChainId: '"bigint:2006"'
-          coingeckoId: astar
-        - symbol: SDN
-          decimals: 18
-          ed: '1000000000000000'
-          onChainId: '"bigint:2007"'
-          coingeckoId: shiden
-        - symbol: EQ
-          decimals: 9
-          ed: '700000000'
-          onChainId: '"bigint:2011"'
-          coingeckoId: equilibrium-token
+      - decimals: 12
+        symbol: PICA
+        coingeckoId: picasso
+        onChainId: '"bigint:1"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        onChainId: '"bigint:4"'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '"bigint:6"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: ATOM
+        coingeckoId: cosmos
+        onChainId: '"bigint:7"'
+        existentialDeposit: '2500'
+      - decimals: 6
+        symbol: OSMO
+        coingeckoId: osmosis
+        onChainId: '"bigint:8"'
+        existentialDeposit: '40000'
+      - decimals: 6
+        symbol: STRD
+        coingeckoId: stride
+        onChainId: '"bigint:9"'
+        existentialDeposit: '20000'
+      - decimals: 6
+        symbol: stATOM
+        coingeckoId: stride-staked-atom
+        onChainId: '"bigint:10"'
+        existentialDeposit: '2000'
+      - decimals: 6
+        symbol: STARS
+        coingeckoId: stargaze
+        onChainId: '"bigint:11"'
+        existentialDeposit: '2000000'
+      - decimals: 6
+        symbol: NTRN
+        coingeckoId: neutron
+        onChainId: '"bigint:12"'
+        existentialDeposit: '60000'
+      - decimals: 6
+        symbol: CRE
+        coingeckoId: crescent-network
+        onChainId: '"bigint:13"'
+        existentialDeposit: '1000000'
+      - decimals: 6
+        symbol: bCRE
+        coingeckoId: liquid-staking-crescent
+        onChainId: '"bigint:14"'
+        existentialDeposit: '1000000'
+      - decimals: 6
+        symbol: SCRT
+        coingeckoId: secret
+        onChainId: '"bigint:15"'
+        existentialDeposit: '70000'
+      - decimals: 6
+        symbol: UMEE
+        coingeckoId: umee
+        onChainId: '"bigint:17"'
+        existentialDeposit: '1000000'
+      - decimals: 6
+        symbol: BLD
+        coingeckoId: agoric
+        onChainId: '"bigint:18"'
+        existentialDeposit: '120000'
+      - decimals: 12
+        symbol: BNC KSM
+        coingeckoId: bifrost-native-coin
+        onChainId: '"bigint:31"'
+        existentialDeposit: '11000000000'
+      - decimals: 12
+        symbol: vKSM
+        coingeckoId: voucher-ksm
+        onChainId: '"bigint:32"'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: BNC DOT
+        coingeckoId: bifrost-native-coin
+        onChainId: '"bigint:33"'
+        existentialDeposit: '100000000'
+      - decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        onChainId: '"bigint:34"'
+        existentialDeposit: '100000000'
+      - decimals: 12
+        symbol: KAR
+        coingeckoId: karura
+        onChainId: '"bigint:101"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '"bigint:102"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: vKSM
+        coingeckoId: voucher-ksm
+        onChainId: '"bigint:103"'
+        existentialDeposit: '100000000'
+      - decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        onChainId: '"bigint:104"'
+        existentialDeposit: '0'
+      - decimals: 9
+        symbol: EQD
+        onChainId: '"bigint:127"'
+        existentialDeposit: '200000'
+      - decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        onChainId: '"bigint:129"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        onChainId: '"bigint:130"'
+        existentialDeposit: '0'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '"bigint:131"'
+        existentialDeposit: '0'
+      - decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        onChainId: '"bigint:132"'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        onChainId: '"bigint:133"'
+        existentialDeposit: '0'
+      - decimals: 12
+        symbol: TNKR
+        coingeckoId: tinkernet
+        onChainId: '"bigint:212"'
+        existentialDeposit: '13500000000'
+      - decimals: 6
+        symbol: HUAHUA
+        coingeckoId: chihuahua-token
+        onChainId: '"bigint:420"'
+        existentialDeposit: '1000000'
+      - decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        onChainId: '"bigint:2006"'
+        existentialDeposit: '4700000000000000'
+      - decimals: 18
+        symbol: SDN
+        coingeckoId: shiden
+        onChainId: '"bigint:2007"'
+        existentialDeposit: '1000000000000000'
+      - decimals: 9
+        symbol: EQ
+        coingeckoId: equilibrium-token
+        onChainId: '"bigint:2011"'
+        existentialDeposit: '700000000'
 - id: pichiu
   name: Pichiu
   chainspecQrUrl: https://metadata.novasama.io/qr/pichiu_specs.png
@@ -2810,18 +2792,17 @@
     - wss://rpc.helikon.io/polimec
     - wss://rpc.polimec.org
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-foreignassets:
-      tokens:
-        - onChainId: '{"parents":1,"interior":{"type":"X3","value":[{"type":"Parachain","value":1000},{"type":"PalletInstance","value":50},{"type":"GeneralIndex","value":"bigint:1337"}]}}'
-          symbol: USDC
-          coingeckoId: usd-coin
-        - onChainId: '{"parents":1,"interior":{"type":"X3","value":[{"type":"Parachain","value":1000},{"type":"PalletInstance","value":50},{"type":"GeneralIndex","value":"bigint:1984"}]}}'
-          symbol: USDT
-          coingeckoId: tether
-        - onChainId: '{"parents":1,"interior":{"type":"Here"}}'
-          symbol: DOT
-          coingeckoId: polkadot
+      - symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '{"parents":1,"interior":{"type":"X3","value":[{"type":"Parachain","value":1000},{"type":"PalletInstance","value":50},{"type":"GeneralIndex","value":"bigint:1337"}]}}'
+      - symbol: USDT
+        coingeckoId: tether
+        onChainId: '{"parents":1,"interior":{"type":"X3","value":[{"type":"Parachain","value":1000},{"type":"PalletInstance","value":50},{"type":"GeneralIndex","value":"bigint:1984"}]}}'
+      - symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"parents":1,"interior":{"type":"Here"}}'
 - id: polkadex-polkadot
   name: Polkadex
   nativeCurrency:
@@ -2872,98 +2853,96 @@
     - wss://dot-rpc.stakeworld.io/assethub
     - wss://statemint.public.curie.radiumblock.co/ws
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-assets:
-      tokens:
-        - assetId: 1337
-          symbol: USDC
-          coingeckoId: usd-coin
-        - assetId: 1984
-          symbol: USDT
-          coingeckoId: tether
-        - assetId: 18
-          symbol: DOTA
-        - assetId: 23
-          symbol: PINK
-        - assetId: 30
-          symbol: DED
-          coingeckoId: dot-is-ded
-        - assetId: 17
-          symbol: WIFD
-          logo: ./assets/tokens/wifd.svg
-        - assetId: 555
-          symbol: GAME
-          logo: ./assets/tokens/game.svg
-        - assetId: 690
-          symbol: BORK
-          logo: ./assets/tokens/bork.svg
-        - assetId: 31337
-          symbol: WUD
-          logo: ./assets/tokens/wud.webp
-          coingeckoId: gavun-wud
+      - symbol: USDC
+        coingeckoId: usd-coin
+        assetId: '1337'
+      - symbol: USDT
+        coingeckoId: tether
+        assetId: '1984'
+      - symbol: DOTA
+        assetId: '18'
+      - symbol: PINK
+        assetId: '23'
+      - symbol: DED
+        coingeckoId: dot-is-ded
+        assetId: '30'
+      - symbol: WIFD
+        logo: ./assets/tokens/wifd.svg
+        assetId: '17'
+      - symbol: GAME
+        logo: ./assets/tokens/game.svg
+        assetId: '555'
+      - symbol: BORK
+        logo: ./assets/tokens/bork.svg
+        assetId: '690'
+      - symbol: WUD
+        logo: ./assets/tokens/wud.webp
+        coingeckoId: gavun-wud
+        assetId: '31337'
     substrate-foreignassets:
-      tokens:
-        - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2011}}}'
-          symbol: EQ
-          coingeckoId: equilibrium-token
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc0"}}]}}'
-          symbol: WETH.e
-          coingeckoId: weth
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x6982508145454ce325ddbe47a25d4ec3d2311933"}}]}}'
-          symbol: PEPE.e
-          coingeckoId: pepe
-        - onChainId: '{"parents":2,"interior":{"type":"X1","value":{"type":"GlobalConsensus","value":{"type":"Kusama"}}}}'
-          symbol: KSM
-          coingeckoId: kusama
-        - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2030},{"type":"GeneralKey","value":{"length":2,"data":"hex:0x0001000000000000000000000000000000000000000000000000000000000000"}}]}}'
-          symbol: BNC
-          coingeckoId: bifrost-native-coin
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"}}]}}'
-          symbol: USDC.e
-          coingeckoId: usd-coin
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xba41ddf06b7ffd89d1267b5a93bfef2424eb2003"}}]}}'
-          symbol: MYTH.e
-          coingeckoId: mythos
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x18084fba666a33d37592fa2633fd49a74dd93a88"}}]}}'
-          symbol: tBTC.e
-          coingeckoId: tbtc
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"}}]}}'
-          symbol: wstETH.e
-          coingeckoId: wrapped-steth
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x582d872a1b094fc48f5de31d3b73f2d9be47def1"}}]}}'
-          symbol: TONCOIN.e
-          coingeckoId: the-open-network
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x6b175474e89094c44da98b954eedeac495271d0f"}}]}}'
-          symbol: DAI.e
-          coingeckoId: dai
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}}]}}'
-          symbol: SHIB.e
-          coingeckoId: shiba-inu
-        - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2011},{"type":"GeneralKey","value":{"length":3,"data":"hex:0x6571640000000000000000000000000000000000000000000000000000000000"}}]}}'
-          symbol: EQD
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"}}]}}'
-          symbol: WBTC.e
-          coingeckoId: wrapped-bitcoin
-        - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2004},{"type":"PalletInstance","value":10}]}}'
-          symbol: GLMR
-          coingeckoId: moonbeam
-        - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":3369}}}'
-          symbol: MYTH
-          coingeckoId: mythos
-        - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2030},{"type":"GeneralKey","value":{"length":2,"data":"hex:0x0900000000000000000000000000000000000000000000000000000000000000"}}]}}'
-          symbol: vDOT
-          coingeckoId: voucher-dot
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x8daebade922df735c38c80c7ebd708af50815faa"}}]}}'
-          symbol: tBTC.e
-        - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2034},{"type":"GeneralIndex","value":"bigint:0"}]}}'
-          symbol: HDX
-          coingeckoId: hydradx
-        - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xdac17f958d2ee523a2206206994597c13d831ec7"}}]}}'
-          symbol: USDT.e
-          coingeckoId: tether
-        - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2051}}}'
-          symbol: AJUN
-          coingeckoId: ajuna-network-2
+      - symbol: EQ
+        coingeckoId: equilibrium-token
+        onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2011}}}'
+      - symbol: WETH.e
+        coingeckoId: weth
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc0"}}]}}'
+      - symbol: PEPE.e
+        coingeckoId: pepe
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x6982508145454ce325ddbe47a25d4ec3d2311933"}}]}}'
+      - symbol: KSM
+        coingeckoId: kusama
+        onChainId: '{"parents":2,"interior":{"type":"X1","value":{"type":"GlobalConsensus","value":{"type":"Kusama"}}}}'
+      - symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2030},{"type":"GeneralKey","value":{"length":2,"data":"hex:0x0001000000000000000000000000000000000000000000000000000000000000"}}]}}'
+      - symbol: USDC.e
+        coingeckoId: usd-coin
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"}}]}}'
+      - symbol: MYTH.e
+        coingeckoId: mythos
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xba41ddf06b7ffd89d1267b5a93bfef2424eb2003"}}]}}'
+      - symbol: tBTC.e
+        coingeckoId: tbtc
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x18084fba666a33d37592fa2633fd49a74dd93a88"}}]}}'
+      - symbol: wstETH.e
+        coingeckoId: wrapped-steth
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"}}]}}'
+      - symbol: TONCOIN.e
+        coingeckoId: the-open-network
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x582d872a1b094fc48f5de31d3b73f2d9be47def1"}}]}}'
+      - symbol: DAI.e
+        coingeckoId: dai
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x6b175474e89094c44da98b954eedeac495271d0f"}}]}}'
+      - symbol: SHIB.e
+        coingeckoId: shiba-inu
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}}]}}'
+      - symbol: EQD
+        onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2011},{"type":"GeneralKey","value":{"length":3,"data":"hex:0x6571640000000000000000000000000000000000000000000000000000000000"}}]}}'
+      - symbol: WBTC.e
+        coingeckoId: wrapped-bitcoin
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"}}]}}'
+      - symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2004},{"type":"PalletInstance","value":10}]}}'
+      - symbol: MYTH
+        coingeckoId: mythos
+        onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":3369}}}'
+      - symbol: vDOT
+        coingeckoId: voucher-dot
+        onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2030},{"type":"GeneralKey","value":{"length":2,"data":"hex:0x0900000000000000000000000000000000000000000000000000000000000000"}}]}}'
+      - symbol: tBTC.e
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x8daebade922df735c38c80c7ebd708af50815faa"}}]}}'
+      - symbol: HDX
+        coingeckoId: hydradx
+        onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2034},{"type":"GeneralIndex","value":"bigint:0"}]}}'
+      - symbol: USDT.e
+        coingeckoId: tether
+        onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xdac17f958d2ee523a2206206994597c13d831ec7"}}]}}'
+      - symbol: AJUN
+        coingeckoId: ajuna-network-2
+        onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2051}}}'
 - id: polkadot-bridge-hub
   name: Polkadot Bridge Hub
   nativeCurrency:
@@ -3322,28 +3301,27 @@
   rpcs:
     - wss://rpcnodea01.xode.net/n7yoxCmcIrCF6VziCcDmYTwL8R03a/rpc
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-assets:
-      tokens:
-        - assetId: '1'
-          symbol: XGM
-        - assetId: '2'
-          symbol: XAV
-        - assetId: '3'
-          symbol: AZK
-        - assetId: '4'
-          symbol: IXON
-        - assetId: '5'
-          symbol: IXAV
-        - assetId: '6'
-          symbol: IDON
-        - assetId: '7'
-          symbol: MPC
-        - assetId: '8'
-          symbol: IMPC
-        - assetId: '9'
-          symbol: DON
-          logo: ./assets/tokens/xode-substrate-assets-9-don.svg
+      - symbol: XGM
+        assetId: '1'
+      - symbol: XAV
+        assetId: '2'
+      - symbol: AZK
+        assetId: '3'
+      - symbol: IXON
+        assetId: '4'
+      - symbol: IXAV
+        assetId: '5'
+      - symbol: IDON
+        assetId: '6'
+      - symbol: MPC
+        assetId: '7'
+      - symbol: IMPC
+        assetId: '8'
+      - symbol: DON
+        logo: ./assets/tokens/xode-substrate-assets-9-don.svg
+        assetId: '9'
 - id: xxnetwork
   name: XX Network
   nativeCurrency:
@@ -3369,78 +3347,76 @@
   rpcs:
     - wss://zeitgeist.api.onfinality.io/public-ws
   relay: polkadot
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: DOT
-          decimals: 10
-          ed: '10000000'
-          onChainId: '{"type":"ForeignAsset","value":0}'
-          coingeckoId: polkadot
-        - symbol: USDC
-          decimals: 6
-          ed: '100000000'
-          onChainId: '{"type":"ForeignAsset","value":1}'
-          coingeckoId: usd-coin
-        - symbol: GLMR
-          decimals: 18
-          ed: '233481200'
-          onChainId: '{"type":"ForeignAsset","value":3}'
-          coingeckoId: moonbeam
-        - symbol: HDX
-          decimals: 12
-          ed: '15830299193'
-          onChainId: '{"type":"ForeignAsset","value":6}'
-          coingeckoId: hydration
-        - symbol: INTR
-          decimals: 10
-          ed: '8403361345'
-          onChainId: '{"type":"ForeignAsset","value":7}'
-          coingeckoId: interlay
-        - symbol: BNC
-          decimals: 12
-          ed: '466853408'
-          onChainId: '{"type":"ForeignAsset","value":8}'
-          coingeckoId: bifrost-native-coin
-        - symbol: vDOT
-          decimals: 10
-          ed: '15748031'
-          onChainId: '{"type":"ForeignAsset","value":9}'
-          coingeckoId: voucher-dot
-        - symbol: vGLMR
-          decimals: 18
-          ed: '515729758'
-          onChainId: '{"type":"ForeignAsset","value":10}'
-          coingeckoId: voucher-glmr
-        - symbol: vASTR
-          decimals: 18
-          ed: '1295001295'
-          onChainId: '{"type":"ForeignAsset","value":11}'
-          coingeckoId: bifrost-voucher-astr
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"ForeignAsset","value":0}'
+        existentialDeposit: '10000000'
+      - decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        onChainId: '{"type":"ForeignAsset","value":1}'
+        existentialDeposit: '100000000'
+      - decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        onChainId: '{"type":"ForeignAsset","value":3}'
+        existentialDeposit: '233481200'
+      - decimals: 12
+        symbol: HDX
+        coingeckoId: hydration
+        onChainId: '{"type":"ForeignAsset","value":6}'
+        existentialDeposit: '15830299193'
+      - decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        onChainId: '{"type":"ForeignAsset","value":7}'
+        existentialDeposit: '8403361345'
+      - decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        onChainId: '{"type":"ForeignAsset","value":8}'
+        existentialDeposit: '466853408'
+      - decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        onChainId: '{"type":"ForeignAsset","value":9}'
+        existentialDeposit: '15748031'
+      - decimals: 18
+        symbol: vGLMR
+        coingeckoId: voucher-glmr
+        onChainId: '{"type":"ForeignAsset","value":10}'
+        existentialDeposit: '515729758'
+      - decimals: 18
+        symbol: vASTR
+        coingeckoId: bifrost-voucher-astr
+        onChainId: '{"type":"ForeignAsset","value":11}'
+        existentialDeposit: '1295001295'
 - id: zero
   name: ZERO
   rpcs: []
   relay: kusama
-  balancesConfig:
+  tokens:
     substrate-tokens:
-      tokens:
-        - symbol: DOT
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"DOT"}}'
-          coingeckoId: polkadot
-        - symbol: GAME
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"GAME"}}'
-        - symbol: PLAY
-          decimals: 10
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"PLAY"}}'
-        - symbol: ZERO
-          decimals: 18
-          ed: '0'
-          onChainId: '{"type":"Token","value":{"type":"ZERO"}}'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: GAME
+        onChainId: '{"type":"Token","value":{"type":"GAME"}}'
+        existentialDeposit: '0'
+      - decimals: 10
+        symbol: PLAY
+        onChainId: '{"type":"Token","value":{"type":"PLAY"}}'
+        existentialDeposit: '0'
+      - decimals: 18
+        symbol: ZERO
+        onChainId: '{"type":"Token","value":{"type":"ZERO"}}'
+        existentialDeposit: '0'
 - id: westend-testnet
   isTestnet: true
   name: Westend

@@ -61,6 +61,11 @@ export const buildEthereumTokens = async () => {
 
       return getNetworkTokens(network, config, knownEvmNetwork, uniswapV2Cache)
     })
+    .map((token) => ({
+      ...token,
+      // fix logo
+      logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol),
+    }))
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
   checkDuplicates(ethTokens)
@@ -77,12 +82,10 @@ const getNetworkTokens = (
   knownEthNetwork: KnownEthNetworkConfig | undefined,
   univ2Cache: Uniswapv2TokenCache[],
 ): Token[] => {
-  const knownErc20s = (knownEthNetwork?.balancesConfig?.['evm-erc20']?.tokens ?? []) as EvmErc20TokenBalanceConfig[]
-  const knownUniswapV2 = (knownEthNetwork?.balancesConfig?.['evm-uniswapv2']?.pools ??
-    []) as EvmErc20TokenBalanceConfig[]
-  const configErc20s = (networkConfig?.balancesConfig?.['evm-erc20']?.tokens ?? []) as EvmErc20TokenBalanceConfig[]
-  const configUniswapV2 = (networkConfig?.balancesConfig?.['evm-uniswapv2']?.pools ??
-    []) as EvmErc20TokenBalanceConfig[]
+  const knownErc20s = (knownEthNetwork?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenBalanceConfig[]
+  const knownUniswapV2 = (knownEthNetwork?.tokens?.['evm-uniswapv2'] ?? []) as EvmErc20TokenBalanceConfig[]
+  const configErc20s = (networkConfig?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenBalanceConfig[]
+  const configUniswapV2 = (networkConfig?.tokens?.['evm-uniswapv2'] ?? []) as EvmErc20TokenBalanceConfig[]
 
   const dicKnownErc20s = keyBy(knownErc20s, (c) => c.contractAddress.toLowerCase())
   const dicConfigErc20s = keyBy(configErc20s, (c) => c.contractAddress.toLowerCase())
@@ -96,14 +99,6 @@ const getNetworkTokens = (
     Object.assign({}, dicKnownUniswapV2[address], dicConfigUniswapV2[address]),
   )
 
-  // const nativeCurrency = Object.assign(
-  //   {},
-  //   knownEthNetwork?.nativeCurrency,
-  //   networkConfig?.nativeCurrency,
-  // ) as EthNetwork['nativeCurrency']
-
-  // if (networkId === '9')
-  //   console.log({ nativeCurrency, known: knownEthNetwork?.nativeCurrency, config: networkConfig?.nativeCurrency })
   const networkId = String(network.id) as NetworkId
   const nativeToken = getNativeToken(network)
 

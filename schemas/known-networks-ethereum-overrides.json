@@ -138,23 +138,148 @@
           "pattern": "^0x[a-fA-F0-9]{40}$"
         }
       },
+      "balancesConfig": {
+        "type": "object",
+        "properties": {
+          "evm-native": {
+            "type": "null"
+          },
+          "evm-erc20": {
+            "type": "null"
+          },
+          "evm-uniswapv2": {
+            "type": "null"
+          }
+        },
+        "additionalProperties": false
+      },
       "icon": {
         "type": "string"
       },
-      "balancesConfig": {
+      "tokens": {
         "type": "object",
-        "propertyNames": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": ["evm-erc20", "evm-uniswapv2"]
-            },
-            {
-              "not": {}
+        "properties": {
+          "evm-erc20": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string",
+                  "pattern": "^0x[a-fA-F0-9]{40}$"
+                }
+              },
+              "required": ["contractAddress"],
+              "additionalProperties": false
             }
-          ]
-        },
-        "additionalProperties": {}
+          },
+          "evm-uniswapv2": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string",
+                  "pattern": "^0x[a-fA-F0-9]{40}$"
+                },
+                "symbol0": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "symbol1": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "decimals0": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "decimals1": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "tokenAddress0": {
+                  "type": "string",
+                  "pattern": "^0x[a-fA-F0-9]{40}$"
+                },
+                "tokenAddress1": {
+                  "type": "string",
+                  "pattern": "^0x[a-fA-F0-9]{40}$"
+                },
+                "coingeckoId0": {
+                  "type": "string"
+                },
+                "coingeckoId1": {
+                  "type": "string"
+                }
+              },
+              "required": ["contractAddress"],
+              "additionalProperties": false
+            }
+          }
+        }
       }
     },
     "required": ["id"],

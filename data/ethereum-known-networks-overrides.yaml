@@ -1,15 +1,14 @@
 - id: '1'
   nativeCurrency:
     coingeckoId: ethereum
-  balancesConfig:
+  tokens:
     evm-erc20:
-      tokens:
-        - symbol: USDCPO
-          coingeckoId: usd-coin-pos-wormhole
-          contractAddress: '0x566957ef80f9fd5526cd2bef8be67035c0b81130'
-        - symbol: USDTSO
-          coingeckoId: tether-usd-wormhole
-          contractAddress: '0x1cdd2eab61112697626f7b4bb0e23da4febf7b7c'
+      - symbol: USDCPO
+        coingeckoId: usd-coin-pos-wormhole
+        contractAddress: '0x566957ef80f9fd5526cd2bef8be67035c0b81130'
+      - symbol: USDTSO
+        coingeckoId: tether-usd-wormhole
+        contractAddress: '0x1cdd2eab61112697626f7b4bb0e23da4febf7b7c'
 - id: '2'
   nativeCurrency:
     coingeckoId: expanse
@@ -335,12 +334,11 @@
 - id: '1284'
   nativeCurrency:
     coingeckoId: moonbeam
-  balancesConfig:
+  tokens:
     evm-erc20:
-      tokens:
-        - symbol: xcNODL
-          coingeckoId: nodle-network
-          contractAddress: '0xfffffffFe896ba7Cb118b9Fa571c6dC0a99dEfF1'
+      - symbol: xcNODL
+        coingeckoId: nodle-network
+        contractAddress: '0xfffffffFe896ba7Cb118b9Fa571c6dC0a99dEfF1'
 - id: '1285'
   nativeCurrency:
     coingeckoId: moonriver
@@ -666,13 +664,12 @@
 - id: '222222'
   name: Hydration
   logo: ./assets/chains/hydration.svg
-  balancesConfig:
+  tokens:
     evm-erc20:
-      tokens:
-        - symbol: DOT
-          coingeckoId: polkadot
-          decimals: 10
-          contractAddress: '0x0000000000000000000000000000000100000005'
+      - decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        contractAddress: '0x0000000000000000000000000000000100000005'
 - id: '256256'
   nativeCurrency:
     coingeckoId: caduceus
@@ -757,7 +754,7 @@
 - id: '333000333'
   nativeCurrency:
     coingeckoId: meld-2
-- id: '420420418'
+- id: '420420418' # AssetHub
   preserveGasEstimate: true
 - id: '420420419'
   preserveGasEstimate: true
@@ -775,15 +772,14 @@
     coingeckoId: weth
   rpcs:
     - https://mainnet.rpc.rarichain.org/http
-  balancesConfig:
+  tokens:
     evm-erc20:
-      tokens:
-        - symbol: USDC.e
-          coingeckoId: bridged-usdc-stargate
-          contractAddress: '0xFbDa5F676cB37624f28265A144A48B0d6e87d3b6'
-        - symbol: USDT
-          coingeckoId: tether
-          contractAddress: '0x362FAE9A75B27BBc550aAc28a7c1F96C8D483120'
+      - symbol: USDC.e
+        coingeckoId: bridged-usdc-stargate
+        contractAddress: '0xFbDa5F676cB37624f28265A144A48B0d6e87d3b6'
+      - symbol: USDT
+        coingeckoId: tether
+        contractAddress: '0x362FAE9A75B27BBc550aAc28a7c1F96C8D483120'
 - id: '1666600000'
   nativeCurrency:
     coingeckoId: harmony
