@@ -164,6 +164,10 @@
             "items": {
               "type": "object",
               "properties": {
+                "contractAddress": {
+                  "type": "string",
+                  "pattern": "^0x[a-fA-F0-9]{40}$"
+                },
                 "networkId": {
                   "type": "string"
                 },
@@ -193,10 +197,6 @@
                 },
                 "mirrorOf": {
                   "type": "string"
-                },
-                "contractAddress": {
-                  "type": "string",
-                  "pattern": "^0x[a-fA-F0-9]{40}$"
                 }
               },
               "required": ["contractAddress"],
@@ -208,6 +208,10 @@
             "items": {
               "type": "object",
               "properties": {
+                "contractAddress": {
+                  "type": "string",
+                  "pattern": "^0x[a-fA-F0-9]{40}$"
+                },
                 "networkId": {
                   "type": "string"
                 },
@@ -237,10 +241,6 @@
                 },
                 "mirrorOf": {
                   "type": "string"
-                },
-                "contractAddress": {
-                  "type": "string",
-                  "pattern": "^0x[a-fA-F0-9]{40}$"
                 },
                 "symbol0": {
                   "type": "string",

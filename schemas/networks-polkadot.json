@@ -144,36 +144,6 @@
             "items": {
               "type": "object",
               "properties": {
-                "networkId": {
-                  "type": "string"
-                },
-                "isDefault": {
-                  "type": "boolean"
-                },
-                "decimals": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 9007199254740991
-                },
-                "symbol": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "name": {
-                  "type": "string"
-                },
-                "logo": {
-                  "type": "string"
-                },
-                "coingeckoId": {
-                  "type": "string"
-                },
-                "noDiscovery": {
-                  "type": "boolean"
-                },
-                "mirrorOf": {
-                  "type": "string"
-                },
                 "assetId": {
                   "anyOf": [
                     {
@@ -186,7 +156,34 @@
                     }
                   ]
                 },
-                "existentialDeposit": {
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
                   "type": "string"
                 }
               },
@@ -199,6 +196,9 @@
             "items": {
               "type": "object",
               "properties": {
+                "contractAddress": {
+                  "type": "string"
+                },
                 "networkId": {
                   "type": "string"
                 },
@@ -227,12 +227,6 @@
                   "type": "boolean"
                 },
                 "mirrorOf": {
-                  "type": "string"
-                },
-                "contractAddress": {
-                  "type": "string"
-                },
-                "existentialDeposit": {
                   "type": "string"
                 }
               },
@@ -245,6 +239,9 @@
             "items": {
               "type": "object",
               "properties": {
+                "onChainId": {
+                  "type": "string"
+                },
                 "networkId": {
                   "type": "string"
                 },
@@ -273,12 +270,6 @@
                   "type": "boolean"
                 },
                 "mirrorOf": {
-                  "type": "string"
-                },
-                "onChainId": {
-                  "type": "string"
-                },
-                "existentialDeposit": {
                   "type": "string"
                 }
               },
@@ -291,6 +282,16 @@
             "items": {
               "type": "object",
               "properties": {
+                "onChainId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
                 "networkId": {
                   "type": "string"
                 },
@@ -320,16 +321,6 @@
                 },
                 "mirrorOf": {
                   "type": "string"
-                },
-                "onChainId": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    }
-                  ]
                 },
                 "existentialDeposit": {
                   "type": "string"
