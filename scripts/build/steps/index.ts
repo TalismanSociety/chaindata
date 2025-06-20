@@ -25,5 +25,5 @@ export const buildSteps: Array<() => Awaited<void>> = [
   checkOrphans,
 
   // PRO TIP: comment this one while debugging outputs
-  // cleanupOutputs,
+  cleanupOutputs,
 ]

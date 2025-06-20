@@ -15,13 +15,13 @@ import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Awaited<void>> = [
   validateConfigFiles,
-  // checkWsRpcs,
+  checkWsRpcs,
 
-  // fetchKnownEvmNetworks,
-  // fetchKnownEvmNetworksCoingeckoLogos,
+  fetchKnownEvmNetworks,
+  fetchKnownEvmNetworksCoingeckoLogos,
 
-  // fetchKnownEvmTokens,
-  // fetchErc20TokenSymbols,
+  fetchKnownEvmTokens,
+  fetchErc20TokenSymbols,
 
   updateKnownEvmErc20TokensFromCache,
 
