@@ -160,16 +160,17 @@ const getNetworkTokens = (
   const erc20s = erc20Configs.map((erc20Config): EthToken | null => {
     const erc20 = dicErc20Cache[`${networkId}:${erc20Config.contractAddress.toLowerCase()}`]
 
+    const symbol = erc20?.symbol ?? erc20Config.symbol
     const token: EvmErc20Token = {
       type: 'evm-erc20',
       id: evmErc20TokenId(networkId, erc20Config.contractAddress as `0x${string}`),
       platform: 'ethereum',
       networkId,
       contractAddress: erc20Config.contractAddress as `0x${string}`,
-      symbol: erc20Config.symbol ?? erc20?.symbol!,
-      name: erc20Config.name ?? erc20?.name ?? `${erc20Config.symbol} ERC20 Token`,
+      symbol,
+      name: erc20Config.name ?? erc20?.name ?? `${symbol} ERC20 Token`,
       decimals: erc20Config.decimals ?? erc20?.decimals!,
-      logo: getTokenLogoUrl(erc20Config.logo, erc20Config.coingeckoId, erc20Config.symbol), // getAssetUrlFromPath(erc20Config.logo) ?? getAssetPathFromCoingeckoTokenId(erc20Config.coingeckoId),
+      logo: getTokenLogoUrl(erc20Config.logo, erc20Config.coingeckoId, symbol),
       mirrorOf: erc20Config.mirrorOf,
       coingeckoId: erc20Config.coingeckoId,
       noDiscovery: erc20Config.noDiscovery,

@@ -36,9 +36,9 @@ export const fetchKnownEvmTokens = async () => {
             }
 
             const token: EvmErc20TokenConfig = {
+              // note: symbols from coingecko aren't great
               // symbol will be fetched from chain later in fetchErc20TokenSymbols.ts
               coingeckoId: coin.id,
-              name: coin.name,
               contractAddress: contractAddress as `0x${string}`,
             }
 
