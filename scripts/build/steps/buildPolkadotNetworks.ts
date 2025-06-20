@@ -97,6 +97,8 @@ const consolidateDotNetwork = (
     },
   )
 
+  const isTestnet = config.isTestnet ?? specs.isTestnet
+
   const network: DotNetwork = {
     id: config.id,
     platform: 'polkadot',
@@ -104,8 +106,8 @@ const consolidateDotNetwork = (
     name: config.name ?? specs.name,
     nativeTokenId: subNativeTokenId(config.id),
     nativeCurrency,
-    isTestnet: (config.isTestnet ?? specs.isTestnet) || undefined,
-    isDefault: config.isDefault || undefined,
+    isTestnet,
+    isDefault: config.isDefault || !config.isTestnet || undefined,
     forceScan: config.forceScan || undefined,
     themeColor: config.themeColor || undefined,
     logo: getNetworkLogoUrl(config.logo, config.nativeCurrency?.coingeckoId, nativeCurrency), // getAssetUrlFromPath(logoRelativePath),
