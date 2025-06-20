@@ -4089,21 +4089,6 @@
     "rpcs": ["https://fx-json-web3.functionx.io:8545"]
   },
   {
-    "id": "542",
-    "isTestnet": true,
-    "name": "PAWCHAIN Testnet",
-    "nativeTokenId": "542:evm-native",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "PAW",
-      "name": "PAW"
-    },
-    "themeColor": "#505050",
-    "blockExplorerUrls": ["https://pawscan.io"],
-    "platform": "ethereum",
-    "rpcs": ["https://pawchainx.com/"]
-  },
-  {
     "id": "545",
     "isTestnet": true,
     "name": "Flow EVM Testnet",
@@ -4139,21 +4124,6 @@
     "rpcs": ["https://mainnet.rpc.river.build", "https://towns-mainnet.calderachain.xyz/http"]
   },
   {
-    "id": "565",
-    "isTestnet": true,
-    "name": "Prometheuz Testnet",
-    "nativeTokenId": "565:evm-native",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "PYRE",
-      "name": "Pyre"
-    },
-    "themeColor": "#505050",
-    "blockExplorerUrls": ["https://explorer.testnet.prometheuz.io"],
-    "platform": "ethereum",
-    "rpcs": ["https://explorer.testnet.prometheuz.io"]
-  },
-  {
     "id": "568",
     "isTestnet": true,
     "name": "Dogechain Testnet",
@@ -4185,7 +4155,7 @@
     "themeColor": "#dcef89",
     "blockExplorerUrls": ["https://explorer.rollux.com"],
     "platform": "ethereum",
-    "rpcs": ["https://rpc.rollux.com", "https://rpc.ankr.com/rollux"],
+    "rpcs": ["https://rpc.rollux.com"],
     "contracts": {
       "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
     }
@@ -4268,40 +4238,6 @@
     "substrateChainId": "mandala-testnet",
     "preserveGasEstimate": true,
     "rpcs": ["https://eth-rpc-tc9.aca-staging.network"]
-  },
-  {
-    "id": "596",
-    "isTestnet": true,
-    "name": "Karura Network Testnet",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/feat/chaindata-v4/assets/tokens/kar.svg",
-    "nativeTokenId": "596:evm-native",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "KAR",
-      "name": "Karura Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/feat/chaindata-v4/assets/tokens/kar.svg"
-    },
-    "themeColor": "#ffffff",
-    "blockExplorerUrls": ["https://blockscout.karura-testnet.aca-staging.network"],
-    "platform": "ethereum",
-    "rpcs": ["https://eth-rpc-karura-testnet.aca-staging.network"]
-  },
-  {
-    "id": "597",
-    "isTestnet": true,
-    "name": "Acala Network Testnet",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/feat/chaindata-v4/assets/tokens/aca.svg",
-    "nativeTokenId": "597:evm-native",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "ACA",
-      "name": "Acala Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/feat/chaindata-v4/assets/tokens/aca.svg"
-    },
-    "themeColor": "#e61059",
-    "blockExplorerUrls": ["https://blockscout.acala-dev.aca-dev.network"],
-    "platform": "ethereum",
-    "rpcs": ["https://eth-rpc-acala-testnet.aca-staging.network"]
   },
   {
     "id": "599",
@@ -4536,6 +4472,21 @@
     "blockExplorerUrls": ["https://scan.juncachain.com"],
     "platform": "ethereum",
     "rpcs": ["https://rpc.juncachain.com"]
+  },
+  {
+    "id": "669",
+    "isTestnet": true,
+    "name": "JuncaChain testnet",
+    "nativeTokenId": "669:evm-native",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "JGCT",
+      "name": "JuncaChain Testnet Native Token"
+    },
+    "themeColor": "#505050",
+    "blockExplorerUrls": ["https://scan-testnet.juncachain.com"],
+    "platform": "ethereum",
+    "rpcs": ["https://rpc-testnet.juncachain.com"]
   },
   {
     "id": "686",
@@ -21092,22 +21043,6 @@
     }
   },
   {
-    "id": "98881",
-    "name": "Ebi Chain",
-    "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/feat/chaindata-v4/assets/tokens/eth.svg",
-    "nativeTokenId": "98881:evm-native",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "ETH",
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/feat/chaindata-v4/assets/tokens/eth.svg"
-    },
-    "themeColor": "#62688f",
-    "blockExplorerUrls": [],
-    "platform": "ethereum",
-    "rpcs": ["https://rpc.ebi.xyz"]
-  },
-  {
     "id": "98985",
     "isTestnet": true,
     "name": "Superposition Testnet",
@@ -27341,6 +27276,7 @@
     "prefix": 10,
     "oldPrefix": 10,
     "rpcs": [
+      "wss://acala-rpc.dwellir.com",
       "wss://acala-rpc-0.aca-api.network",
       "wss://acala-rpc-1.aca-api.network",
       "wss://acala-rpc-3.aca-api.network/ws",
@@ -27414,9 +27350,9 @@
     "rpcs": [
       "wss://ajuna.ibp.network",
       "wss://ajuna.dotters.network",
-      "wss://rpc-para.ajuna.network",
       "wss://ajuna.ibp.network",
       "wss://ajuna.dotters.network",
+      "wss://rpc-para.ajuna.network",
       "wss://rpc-para.ajuna.network"
     ],
     "hasCheckMetadataHash": true,
@@ -27675,6 +27611,7 @@
     "prefix": 5,
     "oldPrefix": 5,
     "rpcs": [
+      "wss://astar-rpc.dwellir.com",
       "wss://rpc.astar.network",
       "wss://astar.public.curie.radiumblock.co/ws",
       "wss://astar-rpc.dwellir.com",
@@ -28911,6 +28848,7 @@
     "prefix": 1110,
     "rpcs": [
       "wss://rpc.matrix.blockchain.enjin.io",
+      "wss://enjin-matrix-rpc-1.dwellir.com",
       "wss://rpc.matrix.blockchain.enjin.io",
       "wss://enjin-matrix-rpc-1.dwellir.com"
     ],
@@ -29485,7 +29423,6 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/karura_metadata_latest.apng",
     "prefix": 8,
     "rpcs": [
-      "wss://karura-rpc.dwellir.com",
       "wss://karura-rpc-0.aca-api.network",
       "wss://karura-rpc-1.aca-api.network",
       "wss://karura-rpc-2.aca-api.network/ws",
@@ -29792,7 +29729,7 @@
     "prefix": 2,
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-kusama",
-      "wss://kusama-bridge-hub-rpc-tn.dwellir.com",
+      "wss://bridge-hub-kusama-rpc.dwellir.com",
       "wss://bridge-hub-kusama.dotters.network",
       "wss://rpc-bridge-hub-kusama.luckyfriday.io",
       "wss://kusama-bridge-hub-rpc.polkadot.io",
@@ -29804,7 +29741,8 @@
       "wss://rpc-bridge-hub-kusama.luckyfriday.io",
       "wss://kusama-bridge-hub-rpc.polkadot.io",
       "wss://bridgehub-kusama.public.curie.radiumblock.co/ws",
-      "wss://ksm-rpc.stakeworld.io/bridgehub"
+      "wss://ksm-rpc.stakeworld.io/bridgehub",
+      "wss://kusama-bridge-hub-rpc-tn.dwellir.com"
     ],
     "hasCheckMetadataHash": true,
     "topology": {
@@ -29839,6 +29777,7 @@
     "prefix": 2,
     "rpcs": [
       "wss://sys.ibp.network/coretime-kusama",
+      "wss://coretime-kusama-rpc.dwellir.com",
       "wss://coretime-kusama.dotters.network",
       "wss://rpc-coretime-kusama.luckyfriday.io",
       "wss://kusama-coretime-rpc.polkadot.io",
@@ -30218,6 +30157,7 @@
     "prefix": 1284,
     "oldPrefix": 1284,
     "rpcs": [
+      "wss://moonbeam-rpc.n.dwellir.com",
       "wss://moonbeam.ibp.network",
       "wss://moonbeam.dotters.network",
       "wss://moonbeam-rpc.publicnode.com",
@@ -30264,7 +30204,6 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
     "prefix": 1285,
     "rpcs": [
-      "wss://moonriver-rpc.dwellir.com",
       "wss://wss.api.moonriver.moonbeam.network",
       "wss://moonriver.public.curie.radiumblock.co/ws",
       "wss://moonriver.unitedbloc.com",
@@ -30519,7 +30458,12 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-peaq-node_metadata_latest.apng",
     "prefix": 42,
     "oldPrefix": 42,
-    "rpcs": ["wss://peaq-rpc.publicnode.com", "wss://peaq-rpc.dwellir.com", "wss://peaq-rpc.publicnode.com"],
+    "rpcs": [
+      "wss://peaq-rpc.dwellir.com",
+      "wss://peaq-rpc.publicnode.com",
+      "wss://peaq-rpc.dwellir.com",
+      "wss://peaq-rpc.publicnode.com"
+    ],
     "hasCheckMetadataHash": true,
     "topology": {
       "type": "parachain",
@@ -30651,7 +30595,7 @@
     "topology": {
       "type": "parachain",
       "relayId": "kusama",
-      "paraId": 2087
+      "paraId": 2104
     }
   },
   {
@@ -30817,6 +30761,7 @@
       "wss://sys.ibp.network/statemint",
       "wss://sys.dotters.network/statemint",
       "wss://sys.ibp.network/asset-hub-polkadot",
+      "wss://asset-hub-polkadot-rpc.dwellir.com",
       "wss://statemint-rpc-tn.dwellir.com",
       "wss://polkadot-assethub-rpc.blockops.network/ws",
       "wss://asset-hub-polkadot.dotters.network",
@@ -30868,7 +30813,6 @@
     "prefix": 0,
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-polkadot",
-      "wss://bridge-hub-polkadot-rpc.dwellir.com",
       "wss://polkadot-bridge-hub-rpc-tn.dwellir.com",
       "wss://bridge-hub-polkadot.dotters.network",
       "wss://rpc-bridge-hub-polkadot.luckyfriday.io",
@@ -30916,7 +30860,6 @@
     "prefix": 0,
     "rpcs": [
       "wss://sys.ibp.network/collectives-polkadot",
-      "wss://collectives-polkadot-rpc.dwellir.com",
       "wss://polkadot-collectives-rpc-tn.dwellir.com",
       "wss://collectives-polkadot.dotters.network",
       "wss://rpc-collectives-polkadot.luckyfriday.io",
@@ -31635,7 +31578,12 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/tangle_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/tangle_metadata_latest.apng",
     "prefix": 5845,
-    "rpcs": ["wss://rpc.tangle.tools", "wss://tangle-mainnet-rpc.dwellir.com", "wss://rpc.tangle.tools"],
+    "rpcs": [
+      "wss://tangle-mainnet-rpc.dwellir.com",
+      "wss://rpc.tangle.tools",
+      "wss://tangle-mainnet-rpc.dwellir.com",
+      "wss://rpc.tangle.tools"
+    ],
     "hasCheckMetadataHash": true,
     "topology": {
       "type": "standalone"
@@ -31885,14 +31833,14 @@
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-westend",
       "wss://bridge-hub-westend-rpc.dwellir.com",
-      "wss://westend-bridge-hub-rpc-tn.dwellir.com",
       "wss://bridge-hub-westend.dotters.network",
       "wss://westend-bridge-hub-rpc.polkadot.io",
       "wss://sys.ibp.network/bridgehub-westend",
       "wss://bridge-hub-westend-rpc.dwellir.com",
       "wss://westend-bridge-hub-rpc-tn.dwellir.com",
       "wss://bridge-hub-westend.dotters.network",
-      "wss://westend-bridge-hub-rpc.polkadot.io"
+      "wss://westend-bridge-hub-rpc.polkadot.io",
+      "wss://westend-bridge-hub-rpc-tn.dwellir.com"
     ],
     "hasCheckMetadataHash": true,
     "topology": {
@@ -31924,14 +31872,14 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/collectives-westend",
-      "wss://westend-collectives-rpc-tn.dwellir.com",
       "wss://collectives-westend.dotters.network",
       "wss://westend-collectives-rpc.polkadot.io",
       "wss://sys.ibp.network/collectives-westend",
       "wss://collectives-westend-rpc.dwellir.com",
       "wss://westend-collectives-rpc-tn.dwellir.com",
       "wss://collectives-westend.dotters.network",
-      "wss://westend-collectives-rpc.polkadot.io"
+      "wss://westend-collectives-rpc.polkadot.io",
+      "wss://westend-collectives-rpc-tn.dwellir.com"
     ],
     "topology": {
       "type": "parachain",
@@ -32021,7 +31969,6 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/people-westend",
-      "wss://people-westend-rpc.dwellir.com",
       "wss://people-westend.dotters.network",
       "wss://westend-people-rpc.polkadot.io",
       "wss://sys.ibp.network/people-westend",

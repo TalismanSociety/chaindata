@@ -16,9 +16,9 @@ export const updateKnownEvmErc20TokensFromCache = async () => {
         (t) => t.chainId === chainId && t.contractAddress.toLowerCase() === token.contractAddress?.toLocaleLowerCase(),
       )
       if (cached) {
-        token.symbol = cached.symbol
-        token.decimals = cached.decimals
-        token.name = token.name || cached.name // feels better to keep the name from coingecko if available
+        token.symbol = cached.symbol || undefined
+        token.decimals = cached.decimals || undefined
+        token.name = cached.name || undefined
       }
     }
   }
