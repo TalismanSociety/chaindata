@@ -5,8 +5,7 @@ import path from 'node:path'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { KnownEthNetworksFileSchema } from '../../shared/schemas'
-import { ConfigEvmNetwork } from '../../shared/types'
+import { EthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 import { fetchAssetPlatforms } from '../coingecko'
 
@@ -15,7 +14,7 @@ import { fetchAssetPlatforms } from '../coingecko'
  * If an image requires an update, delete the image file so its fetched again on next run.
  */
 export const fetchKnownEvmNetworksCoingeckoLogos = async () => {
-  const knownEvmNetworks = parseJsonFile<ConfigEvmNetwork[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
+  const knownEvmNetworks = parseJsonFile<EthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   const assetPlatforms = await fetchAssetPlatforms()
 

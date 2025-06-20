@@ -23,15 +23,16 @@ import {
   DotNetworkMetadataExtract,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
+import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
+import { WsRpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
 import { getRpcProvider, parseJsonFile, parseYamlFile, withTimeout, writeJsonFile } from '../../shared/util'
-import { WsRpcHealth } from './checkWsRpcs'
 import { getHackedBalanceModuleDeps } from './helpers/getHackedBalanceModuleDeps'
 
 // set this to a specific chain id to debug it
 const DEV_CHAIN_ID = null // ex: 'hydradx'
 
 export const fetchDotTokens = async () => {
-  const prevDotTokens = parseJsonFile(FILE_DOT_TOKENS_CACHE, z.array(TokenSchema))
+  const prevDotTokens = parseJsonFile(FILE_DOT_TOKENS_CACHE, DotTokensCacheFileSchema)
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
   const dotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
@@ -44,13 +45,13 @@ export const fetchDotTokens = async () => {
     .map((network) => ({
       network,
       miniMetadatas: metadataExtractsById[network.id]?.miniMetadatas,
-      rpcs: network.rpcs?.filter((rpc) => rpcsHealth[rpc] === 'OK'),
+      rpcs: network.rpcs?.filter((rpc) => rpcsHealth[rpc].status === 'OK'),
       specs: specsById[network.id] as DotNetworkSpecs | undefined,
     }))
     .filter((args): args is FetchDotNetworkTokensArgs => {
       const { rpcs, specs, miniMetadatas } = args
       if (!rpcs || !rpcs.length) {
-        console.warn('No rpcs available for network %s, skipping fetchDotTokens', args.network.id)
+        // console.warn('No rpcs available for network %s, skipping fetchDotTokens', args.network.id)
         return false // no rpcs available for this network - cant be updated
       }
       if (!specs) {
@@ -82,21 +83,17 @@ export const fetchDotTokens = async () => {
     result.errors.length,
   )
 
-  // TODO load previous cache and merge with new data
-
-  const newTokenList = result.results.reduce((allTokens, networkTokens) => Object.assign(allTokens, networkTokens), {})
+  // keep previous tokens to prevent some from disappearing because of rpc issues, and override them with the new ones
+  const newTokenList = result.results.reduce(
+    (allTokens, networkTokens) => Object.assign(allTokens, networkTokens),
+    keyBy(prevDotTokens, 'id'),
+  )
 
   const data = values(newTokenList).sort((a, b) => a.id.localeCompare(b.id))
 
-  await writeJsonFile(FILE_DOT_TOKENS_CACHE, values(data), {
+  await writeJsonFile(FILE_DOT_TOKENS_CACHE, data, {
     format: true,
-    // schema: DotNetworkMetadataExtractsFileSchema,
-  })
-
-  // return data // Replace with actual validation when schema is available
-  await writeJsonFile(FILE_DOT_TOKENS_CACHE, values(data), {
-    format: true,
-    schema: z.array(TokenSchema),
+    schema: DotTokensCacheFileSchema,
   })
 }
 

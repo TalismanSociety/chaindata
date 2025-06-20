@@ -1,12 +1,15 @@
 import { PromisePool } from '@supercharge/promise-pool'
+import fromPairs from 'lodash/fromPairs'
+import toPairs from 'lodash/toPairs'
 import uniq from 'lodash/uniq'
 import WebSocket from 'ws'
 
 import { FILE_INPUT_NETWORKS_POLKADOT, FILE_RPC_HEALTH_WEBSOCKET } from '../../shared/constants'
 import { DotNetworksConfigFileSchema } from '../../shared/schemas'
-import { parseYamlFile, writeJsonFile } from '../../shared/util'
+import { WsRpcHealth, WsRpcHealthFileSchema } from '../../shared/schemas/RpcHealthWebSocket'
+import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
 
-export type WsRpcHealth = 'OK' | 'MEH' | 'NOK'
+// export type WsRpcHealth = 'OK' | 'MEH' | 'NOK'
 
 const MEH_ERROR_MESSAGES = [
   'Unexpected server response: 503', // service unavailable, hopefully temporary
@@ -33,6 +36,7 @@ const isMeh = (errorMessage: string) => MEH_ERROR_MESSAGES.some((msg) => errorMe
 export const checkWsRpcs = async () => {
   // ATM we only use websocket rpcs for substrate chains
   const networks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const statusByRpc = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET, WsRpcHealthFileSchema)
 
   const rpcUrls = uniq(networks.flatMap((chain) => chain.rpcs ?? []))
 
@@ -40,19 +44,42 @@ export const checkWsRpcs = async () => {
   // concurrency 4: 99 sec (7 actual timeouts)
   // concurrency 2: 183 sec (11 actual timeouts)
   const res = await PromisePool.withConcurrency(4)
-    .for(rpcUrls)
+    .for(
+      rpcUrls.filter((url) => {
+        const prevStatus = statusByRpc[url]
+        // skip rpcs that are NOK for more than a month
+        if (
+          prevStatus?.status === 'NOK' &&
+          Date.now() - new Date(prevStatus.since).getTime() > 30 * 24 * 60 * 60 * 1000
+        ) {
+          console.warn('Skipping known dead rpc %s - consider removing it?', url)
+          return false
+        }
+        return true
+      }),
+    )
     .process(async (rpcUrl): Promise<[string, WsRpcHealth]> => {
       try {
         return [rpcUrl, await getWsRpcHealth(rpcUrl)]
       } catch (err) {
         console.log('isUnhealthy', rpcUrl, 'ERROR', err)
-        return [rpcUrl, 'NOK' as WsRpcHealth]
+        return [rpcUrl, { status: 'NOK', error: String(err), since: new Date() }]
       }
     })
 
   if (res.errors.length) throw new Error(res.errors.join('\n\n'))
 
-  const data = Object.fromEntries(res.results.sort(([a], [b]) => a.localeCompare(b)))
+  for (const [rpcUrl, status] of res.results) {
+    const prev = statusByRpc[rpcUrl]
+
+    // skip if status is the same (need to preserve the since date)
+    if (prev?.status === status.status) continue
+
+    // save the status
+    statusByRpc[rpcUrl] = status
+  }
+
+  const data = fromPairs(toPairs(statusByRpc).sort(([a], [b]) => a.localeCompare(b)))
 
   await writeJsonFile(FILE_RPC_HEALTH_WEBSOCKET, data, { format: true })
 }
@@ -63,11 +90,11 @@ const getWsRpcHealth = (wsUrl: string): Promise<WsRpcHealth> =>
 
     const ws = new WebSocket(wsUrl)
 
-    const done = (value: WsRpcHealth, logLevel?: 'log' | 'warn', logMessage?: string) => {
+    const done = (value: WsRpcHealth) => {
       if (isDone) return
       isDone = true
 
-      if (logLevel) console[logLevel](value, wsUrl, logMessage)
+      if (value.status === 'MEH' || value.status === 'NOK') console.log(value.status, wsUrl, value.error)
 
       resolve(value)
       ws.close()
@@ -77,22 +104,22 @@ const getWsRpcHealth = (wsUrl: string): Promise<WsRpcHealth> =>
     const timeout = setTimeout(() => {
       if (isDone) return
 
-      done('MEH', 'log', 'Timeout')
+      done({ status: 'MEH', error: 'Timeout', since: new Date() })
     }, 5000)
 
     ws.onopen = (e) => {
       if (isDone) return
       clearTimeout(timeout)
 
-      done('OK')
+      done({ status: 'OK' })
     }
 
     ws.onerror = (err) => {
       if (isDone) return
       clearTimeout(timeout)
 
-      if (isMeh(err.message)) done('MEH')
-      else if (isNok(err.message)) done('NOK', 'log', err.message)
-      else done('MEH', 'warn', err.message) //worth investigating
+      if (isMeh(err.message)) done({ status: 'MEH', error: err.message, since: new Date() })
+      else if (isNok(err.message)) done({ status: 'NOK', error: err.message, since: new Date() })
+      else done({ status: 'MEH', error: err.message, since: new Date() })
     }
   })

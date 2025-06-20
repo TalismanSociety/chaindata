@@ -1,6 +1,7 @@
 import { Chain, createPublicClient, defineChain, fallback, http, PublicClient } from 'viem'
 import * as chains from 'viem/chains'
 
+import { EthNetworkConfig } from '../shared/schemas'
 import { ConfigEvmNetwork } from '../shared/types'
 
 // initialize with viem chains, to benefit from multicall config
@@ -16,15 +17,15 @@ const ALL_CHAINS = Object.keys(chains).reduce(
 // create clients as needed, to prevent unnecessary health checks
 const CLIENT_CACHE: Record<number, PublicClient> = {}
 
-export const getEvmNetworkClient = (evmNetwork: ConfigEvmNetwork): PublicClient => {
+export const getEvmNetworkClient = (evmNetwork: EthNetworkConfig): PublicClient => {
   const chainId = Number(evmNetwork.id)
 
   if (CLIENT_CACHE[chainId]) return CLIENT_CACHE[chainId]
 
   // define chain if it doesn't exist
   if (!ALL_CHAINS[chainId]) {
-    const symbol = evmNetwork.balancesConfig?.['evm-native']?.symbol ?? 'ETH'
-    const decimals = evmNetwork.balancesConfig?.['evm-native']?.decimals ?? 18
+    const symbol = evmNetwork.nativeCurrency?.symbol ?? 'ETH'
+    const decimals = evmNetwork.nativeCurrency?.decimals ?? 18
 
     ALL_CHAINS[chainId] = defineChain({
       id: chainId,

@@ -2,7 +2,6 @@ import { DotNetwork, DotNetworkSchema, isDotNetwork, subNativeTokenId } from '@t
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
-import { WsRpcHealth } from '../../fetch-external/steps/checkWsRpcs'
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
@@ -21,6 +20,7 @@ import {
   DotNetworkMetadataExtract,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
+import { WsRpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
 import { MetadataPortalUrls } from '../../shared/types'
 import {
   getNetworkLogoUrl,
@@ -74,9 +74,9 @@ const consolidateDotNetwork = (
   if (!specs || !metadataExtracts) return null
 
   const rpcs = [
-    ...(config.rpcs?.filter((url) => rpcsHealth[url] === 'OK') ?? []),
+    ...(config.rpcs?.filter((url) => rpcsHealth[url].status === 'OK') ?? []),
     ...(config.rpcs?.filter((url) => rpcsHealth[url]) ?? []), // new rpcs, assume better than MEH - there should not be any though
-    ...(config.rpcs?.filter((url) => rpcsHealth[url] === 'MEH') ?? []),
+    ...(config.rpcs?.filter((url) => rpcsHealth[url].status === 'MEH') ?? []),
     // ignore NOK ones
   ]
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated

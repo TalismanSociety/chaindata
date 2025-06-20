@@ -27,6 +27,7 @@ import {
   DotNetworkMetadataExtractSchema,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
+import { WsRpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
 import {
   getRpcProvider,
   parseJsonFile,
@@ -35,7 +36,6 @@ import {
   withTimeout,
   writeJsonFile,
 } from '../../shared/util'
-import { WsRpcHealth } from './checkWsRpcs'
 import { getHackedBalanceModuleDeps } from './helpers/getHackedBalanceModuleDeps'
 
 // set this to a specific chain id to debug it
@@ -56,7 +56,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
   const networksToUpdate = dotNetworks
     .map((network) => ({
       network,
-      rpcs: network.rpcs?.filter((rpc) => rpcsHealth[rpc] === 'OK') ?? [],
+      rpcs: network.rpcs?.filter((rpc) => rpcsHealth[rpc].status === 'OK') ?? [],
       specs: specsById[network.id] as DotNetworkSpecs | undefined,
     }))
     .filter((args): args is FetchMetadataExtractArgs => {

@@ -16,7 +16,12 @@ import {
   FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_NETWORKS,
 } from '../../shared/constants'
-import { EthNetworkConfig, KnownEthNetworkConfig } from '../../shared/schemas'
+import {
+  EthNetworkConfig,
+  EthNetworksConfigFileSchema,
+  KnownEthNetworkConfig,
+  KnownEthNetworksFileSchema,
+} from '../../shared/schemas'
 import { Erc20TokenCache } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
 import { getEvmNetworkClient } from '../getEvmNetworkClient'
@@ -195,8 +200,8 @@ const updateTokenCache = async (
 }
 
 export const fetchErc20TokenSymbols = async () => {
-  const evmNetworks = parseYamlFile<EthNetworkConfig[]>(FILE_INPUT_NETWORKS_ETHEREUM)
-  const knownEvmNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS)
+  const evmNetworks = parseYamlFile<EthNetworkConfig[]>(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const knownEvmNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
   const tokensCache = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
 
   // used to dedupe tokens that are registered in both knownEvmTokens and evmNetworks
@@ -208,8 +213,8 @@ export const fetchErc20TokenSymbols = async () => {
   ])
 
   const chainTokens = [
-    ...knownEvmNetworks.map((n) => ({ chainId: n.id, tokens: n.balancesConfig?.['evm-erc20']?.tokens ?? [] })),
-    ...evmNetworks.map((n) => ({ chainId: n.id, tokens: n.balancesConfig?.['evm-erc20']?.tokens ?? [] })),
+    ...knownEvmNetworks.map((n) => ({ chainId: n.id, tokens: n.tokens?.['evm-erc20'] ?? [] })),
+    ...evmNetworks.map((n) => ({ chainId: n.id, tokens: n.tokens?.['evm-erc20'] ?? [] })),
   ]
   chainTokens.forEach(({ chainId, tokens }) => {
     for (const token of tokens) {

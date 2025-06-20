@@ -1,7 +1,7 @@
 import { BaseError, erc20Abi, TimeoutError } from 'viem'
 
 import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE } from '../../shared/constants'
-import { EthNetworksConfigFileSchema } from '../../shared/schemas'
+import { EthNetworkConfig, EthNetworksConfigFileSchema } from '../../shared/schemas'
 import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
 import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
@@ -10,7 +10,7 @@ import { uniswapV2PairAbi } from '../uniswapV2PairAbi'
 
 export const fetchUniswapv2TokenExtras = async () => {
   // const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
-  const evmNetworks = parseYamlFile<ConfigEvmNetwork[]>(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const evmNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const tokensCache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
@@ -21,13 +21,13 @@ export const fetchUniswapv2TokenExtras = async () => {
   const tokenDefs = new Set<string>()
   const erc20CoingeckoIdsByNetwork = new Map<string, Map<string, string>>()
   for (const network of evmNetworks.concat(knownEthNetworks)) {
-    ;(network.balancesConfig?.['evm-uniswapv2']?.pools ?? []).forEach((token) =>
+    ;(network.tokens?.['evm-uniswapv2'] ?? []).forEach((token) =>
       tokenDefs.add(`${network.id}||${token.contractAddress?.toLowerCase?.()}`),
     )
 
     if (!erc20CoingeckoIdsByNetwork.has(network.id)) erc20CoingeckoIdsByNetwork.set(network.id, new Map())
     const erc20CoingeckoIds = erc20CoingeckoIdsByNetwork.get(network.id)!
-    ;(network.balancesConfig?.['evm-erc20']?.tokens ?? []).forEach((token) => {
+    ;(network.tokens?.['evm-erc20'] ?? []).forEach((token) => {
       if (!token.contractAddress) return
       if (!token.coingeckoId) return
       if (erc20CoingeckoIds.has(token.contractAddress.toLowerCase())) return
@@ -71,7 +71,7 @@ const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, contractAd
 
 const updateTokenCache = async (
   tokenCache: Uniswapv2TokenCache[],
-  evmNetwork: ConfigEvmNetwork,
+  evmNetwork: EthNetworkConfig,
   erc20CoingeckoIds: Map<string, string>,
   contractAddress: string,
 ) => {

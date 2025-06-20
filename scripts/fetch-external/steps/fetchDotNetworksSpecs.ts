@@ -6,6 +6,7 @@ import {
   FILE_RPC_HEALTH_WEBSOCKET,
 } from '../../shared/constants'
 import { DotNetworksConfigFileSchema, DotNetworkSpecsFileSchema, DotNetworkSpecsSchema } from '../../shared/schemas'
+import { WsRpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
 import {
   getRpcProvider,
   parseJsonFile,
@@ -14,7 +15,6 @@ import {
   withTimeout,
   writeJsonFile,
 } from '../../shared/util'
-import { WsRpcHealth } from './checkWsRpcs'
 
 export const fetchDotNetworksSpecs = async () => {
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
@@ -25,7 +25,7 @@ export const fetchDotNetworksSpecs = async () => {
   const networksToUpdate = dotNetworks
     .map(({ id, rpcs }) => ({
       id,
-      rpcs: rpcs?.filter((rpc) => rpcsHealth[rpc] === 'OK') ?? [],
+      rpcs: rpcs?.filter((rpc) => rpcsHealth[rpc].status === 'OK') ?? [],
     }))
     .filter(({ rpcs }) => !!rpcs.length)
 

@@ -58,7 +58,6 @@
     "prefix": 10,
     "oldPrefix": 10,
     "rpcs": [
-      "wss://acala-rpc.dwellir.com",
       "wss://acala-rpc-0.aca-api.network",
       "wss://acala-rpc-1.aca-api.network",
       "wss://acala-rpc-3.aca-api.network/ws",
@@ -1210,6 +1209,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/crab2_metadata_latest.apng",
     "prefix": 42,
     "rpcs": [
+      "wss://darwiniacrab-rpc.dwellir.com",
       "wss://crab-rpc.darwinia.network/",
       "wss://darwiniacrab-rpc.dwellir.com",
       "wss://crab-rpc.darwinia.network/"
@@ -2202,6 +2202,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/karura_metadata_latest.apng",
     "prefix": 8,
     "rpcs": [
+      "wss://karura-rpc.dwellir.com",
       "wss://karura-rpc-0.aca-api.network",
       "wss://karura-rpc-1.aca-api.network",
       "wss://karura-rpc-2.aca-api.network/ws",
@@ -2409,6 +2410,7 @@
     "prefix": 2,
     "rpcs": [
       "wss://rpc.ibp.network/kusama",
+      "wss://kusama-rpc.dwellir.com",
       "wss://kusama-rpc-tn.dwellir.com",
       "wss://kusama-rpc.publicnode.com",
       "wss://rpc-kusama.helixstreet.io",
@@ -2554,7 +2556,6 @@
     "prefix": 2,
     "rpcs": [
       "wss://sys.ibp.network/coretime-kusama",
-      "wss://coretime-kusama-rpc.dwellir.com",
       "wss://coretime-kusama.dotters.network",
       "wss://rpc-coretime-kusama.luckyfriday.io",
       "wss://kusama-coretime-rpc.polkadot.io",
@@ -2599,7 +2600,6 @@
     "prefix": 2,
     "rpcs": [
       "wss://sys.ibp.network/people-kusama",
-      "wss://people-kusama-rpc.dwellir.com",
       "wss://people-kusama.dotters.network",
       "wss://rpc-people-kusama.luckyfriday.io",
       "wss://kusama-people-rpc.polkadot.io",
@@ -2696,12 +2696,7 @@
     "specVersion": 31,
     "account": "*25519",
     "prefix": 42,
-    "rpcs": [
-      "wss://liberland-rpc.dwellir.com",
-      "wss://mainnet.liberland.org",
-      "wss://liberland-rpc.dwellir.com",
-      "wss://mainnet.liberland.org"
-    ],
+    "rpcs": ["wss://mainnet.liberland.org", "wss://liberland-rpc.dwellir.com", "wss://mainnet.liberland.org"],
     "hasCheckMetadataHash": true,
     "topology": {
       "type": "standalone"
@@ -2940,7 +2935,6 @@
     "prefix": 1284,
     "oldPrefix": 1284,
     "rpcs": [
-      "wss://moonbeam-rpc.n.dwellir.com",
       "wss://moonbeam.ibp.network",
       "wss://moonbeam.dotters.network",
       "wss://moonbeam-rpc.publicnode.com",
@@ -2987,6 +2981,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
     "prefix": 1285,
     "rpcs": [
+      "wss://moonriver-rpc.dwellir.com",
       "wss://wss.api.moonriver.moonbeam.network",
       "wss://moonriver.public.curie.radiumblock.co/ws",
       "wss://moonriver.unitedbloc.com",
@@ -3199,7 +3194,6 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/paseo_metadata_latest.apng",
     "prefix": 0,
     "rpcs": [
-      "wss://paseo-rpc.dwellir.com",
       "wss://paseo.rpc.amforc.com",
       "wss://rpc.ibp.network/paseo",
       "wss://paseo.dotters.network",
@@ -3242,12 +3236,7 @@
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-peaq-node_metadata_latest.apng",
     "prefix": 42,
     "oldPrefix": 42,
-    "rpcs": [
-      "wss://peaq-rpc.dwellir.com",
-      "wss://peaq-rpc.publicnode.com",
-      "wss://peaq-rpc.dwellir.com",
-      "wss://peaq-rpc.publicnode.com"
-    ],
+    "rpcs": ["wss://peaq-rpc.publicnode.com", "wss://peaq-rpc.dwellir.com", "wss://peaq-rpc.publicnode.com"],
     "hasCheckMetadataHash": true,
     "topology": {
       "type": "parachain",
@@ -3644,6 +3633,8 @@
     "prefix": 0,
     "rpcs": [
       "wss://sys.ibp.network/collectives-polkadot",
+      "wss://collectives-polkadot-rpc.dwellir.com",
+      "wss://polkadot-collectives-rpc-tn.dwellir.com",
       "wss://collectives-polkadot.dotters.network",
       "wss://rpc-collectives-polkadot.luckyfriday.io",
       "wss://polkadot-collectives-rpc.polkadot.io",
@@ -3655,8 +3646,7 @@
       "wss://rpc-collectives-polkadot.luckyfriday.io",
       "wss://polkadot-collectives-rpc.polkadot.io",
       "wss://dot-rpc.stakeworld.io/collectives",
-      "wss://collectives.public.curie.radiumblock.co/ws",
-      "wss://polkadot-collectives-rpc-tn.dwellir.com"
+      "wss://collectives.public.curie.radiumblock.co/ws"
     ],
     "hasCheckMetadataHash": true,
     "topology": {
@@ -4142,12 +4132,7 @@
     "specVersion": 1501,
     "account": "*25519",
     "prefix": 5,
-    "rpcs": [
-      "wss://shibuya-rpc.dwellir.com",
-      "wss://rpc.shibuya.astar.network",
-      "wss://shibuya-rpc.dwellir.com",
-      "wss://rpc.shibuya.astar.network"
-    ],
+    "rpcs": ["wss://rpc.shibuya.astar.network", "wss://shibuya-rpc.dwellir.com", "wss://rpc.shibuya.astar.network"],
     "hasCheckMetadataHash": true,
     "topology": {
       "type": "standalone"
@@ -4576,6 +4561,7 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/asset-hub-westend",
+      "wss://asset-hub-westend-rpc.dwellir.com",
       "wss://westmint-rpc-tn.dwellir.com",
       "wss://asset-hub-westend.dotters.network",
       "wss://westend-asset-hub-rpc.polkadot.io",
@@ -4615,6 +4601,7 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/bridgehub-westend",
+      "wss://bridge-hub-westend-rpc.dwellir.com",
       "wss://westend-bridge-hub-rpc-tn.dwellir.com",
       "wss://bridge-hub-westend.dotters.network",
       "wss://westend-bridge-hub-rpc.polkadot.io",
@@ -4654,7 +4641,6 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/collectives-westend",
-      "wss://collectives-westend-rpc.dwellir.com",
       "wss://westend-collectives-rpc-tn.dwellir.com",
       "wss://collectives-westend.dotters.network",
       "wss://westend-collectives-rpc.polkadot.io",
@@ -4691,7 +4677,6 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/coretime-westend",
-      "wss://coretime-westend-rpc.dwellir.com",
       "wss://coretime-westend.dotters.network",
       "wss://westend-coretime-rpc.polkadot.io",
       "wss://sys.ibp.network/coretime-westend",
@@ -4753,6 +4738,7 @@
     "prefix": 42,
     "rpcs": [
       "wss://sys.ibp.network/people-westend",
+      "wss://people-westend-rpc.dwellir.com",
       "wss://people-westend.dotters.network",
       "wss://westend-people-rpc.polkadot.io",
       "wss://sys.ibp.network/people-westend",
@@ -4789,6 +4775,7 @@
     "prefix": 42,
     "rpcs": [
       "wss://rpc.ibp.network/westend",
+      "wss://westend-rpc.dwellir.com",
       "wss://westend-rpc-tn.dwellir.com",
       "wss://westend.dotters.network",
       "wss://westend-rpc.polkadot.io",
@@ -4858,12 +4845,7 @@
     "chainspecQrUrl": "https://metadata.novasama.io/qr/xxnetwork_specs.png",
     "latestMetadataQrUrl": "https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng",
     "prefix": 55,
-    "rpcs": [
-      "wss://rpc.xx.network/",
-      "wss://xxnetwork-rpc.dwellir.com/",
-      "wss://rpc.xx.network/",
-      "wss://xxnetwork-rpc.dwellir.com/"
-    ],
+    "rpcs": ["wss://rpc.xx.network/", "wss://rpc.xx.network/", "wss://xxnetwork-rpc.dwellir.com/"],
     "topology": {
       "type": "standalone"
     }
