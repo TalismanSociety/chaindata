@@ -220,9 +220,6 @@ export const getNetworkLogoUrl = (
   return getTokenLogoUrl(nativeToken.logo, nativeToken.coingeckoId, nativeToken.symbol)
 }
 
-// export const UNKNOWN_TOKEN_LOGO_URL = githubUnknownTokenLogoUrl
-// export const UNKNOWN_NETWORK_LOGO_URL = githubUnknownChainLogoUrl
-
 /** Used to merge `known-evm-networks-overrides.json` into `known-evm-networks.json` */
 export const networkMergeCustomizer = (objValue: any, srcValue: any, key: string, object: any, source: any): any => {
   // override everything except balanceConfig["evm-erc20"].tokens, which must be added one by one
