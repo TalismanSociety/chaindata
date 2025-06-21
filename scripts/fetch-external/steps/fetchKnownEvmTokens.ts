@@ -65,6 +65,5 @@ export const fetchKnownEvmTokens = async () => {
 
   await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, {
     schema: KnownEthNetworksFileSchema,
-    format: true,
   })
 }

@@ -59,7 +59,6 @@ export const buildPolkadotNetworks = async () => {
   checkDuplicates(dotNetworks)
 
   await writeJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, dotNetworks, {
-    format: true,
     schema: z.array(DotNetworkSchema),
   })
 }

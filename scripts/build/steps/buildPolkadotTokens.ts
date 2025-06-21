@@ -47,7 +47,6 @@ export const buildPolkadotTokens = async () => {
   checkDuplicates(dotTokens)
 
   await writeJsonFile(FILE_OUTPUT_TOKENS_POLKADOT, dotTokens, {
-    format: true,
     schema: z.array(TokenSchema),
   })
 }

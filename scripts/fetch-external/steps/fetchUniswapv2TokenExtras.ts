@@ -55,15 +55,7 @@ export const fetchUniswapv2TokenExtras = async () => {
     return a.contractAddress.localeCompare(b.contractAddress)
   })
 
-  await writeJsonFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, tokensCache, { format: true })
-
-  // await writeFile(
-  //   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
-  //   await prettier.format(JSON.stringify(tokensCache, null, 2), {
-  //     ...PRETTIER_CONFIG,
-  //     parser: 'json',
-  //   }),
-  // )
+  await writeJsonFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, tokensCache)
 }
 
 const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, contractAddress: string) =>

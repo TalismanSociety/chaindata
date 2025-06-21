@@ -54,7 +54,6 @@ export const buildEthereumNetworks = async () => {
   checkDuplicates(ethNetworks)
 
   await writeJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, ethNetworks, {
-    format: true,
     schema: z.array(EthNetworkSchema),
   })
 }

@@ -37,17 +37,8 @@ export const fetchKnownEvmNetworksCoingeckoLogos = async () => {
     }
   }
 
-  //validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
-
   if (shouldSave) {
-    await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, { schema: KnownEthNetworksFileSchema, format: true })
-    // await writeFile(
-    //   FILE_KNOWN_EVM_NETWORKS,
-    //   await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
-    //     ...PRETTIER_CONFIG,
-    //     parser: 'json',
-    //   }),
-    // )
+    await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, { schema: KnownEthNetworksFileSchema })
   }
 }
 

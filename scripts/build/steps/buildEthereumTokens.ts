@@ -77,7 +77,6 @@ export const buildEthereumTokens = async () => {
   checkDuplicates(ethTokens)
 
   await writeJsonFile(FILE_OUTPUT_TOKENS_ETHEREUM, ethTokens, {
-    format: true,
     schema: z.array(TokenSchema),
   })
 }

@@ -92,7 +92,6 @@ export const fetchDotTokens = async () => {
   const data = values(newTokenList).sort((a, b) => a.id.localeCompare(b.id))
 
   await writeJsonFile(FILE_DOT_TOKENS_CACHE, data, {
-    format: true,
     schema: DotTokensCacheFileSchema,
   })
 }

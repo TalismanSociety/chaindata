@@ -1,3 +1,4 @@
+import { AnyMiniMetadataSchema } from '@talismn/chaindata-provider'
 import values from 'lodash/values'
 import { z } from 'zod/v4'
 
@@ -16,7 +17,6 @@ export const buildPolkadotMiniMetadatas = async () => {
   checkDuplicates(miniMetadatas)
 
   await writeJsonFile(FILE_OUTPUT_MINI_METADATAS, miniMetadatas, {
-    format: true,
-    schema: z.array(z.any()),
+    schema: z.array(AnyMiniMetadataSchema),
   })
 }

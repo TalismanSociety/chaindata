@@ -16,7 +16,6 @@ const tryUpdateSchema = async (filePath: string, schema: z4.ZodTypeAny) => {
         // required because of EthereumAddressSchema (which uses a tranform), otherwise generation breaks
         io: 'input',
       }),
-      { format: true },
     )
     console.log(`Schema updated successfully: ${filePath.split('/').pop()}`)
   } catch (error) {

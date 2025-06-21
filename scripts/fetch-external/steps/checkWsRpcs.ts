@@ -81,7 +81,7 @@ export const checkWsRpcs = async () => {
 
   const data = fromPairs(toPairs(statusByRpc).sort(([a], [b]) => a.localeCompare(b)))
 
-  await writeJsonFile(FILE_RPC_HEALTH_WEBSOCKET, data, { format: true })
+  await writeJsonFile(FILE_RPC_HEALTH_WEBSOCKET, data, { schema: WsRpcHealthFileSchema })
 }
 
 const getWsRpcHealth = (wsUrl: string): Promise<WsRpcHealth> =>

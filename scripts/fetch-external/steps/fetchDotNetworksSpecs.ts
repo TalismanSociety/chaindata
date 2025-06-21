@@ -56,7 +56,6 @@ export const fetchDotNetworksSpecs = async () => {
     .sort((a, b) => a.id.localeCompare(b.id))
 
   await writeJsonFile(FILE_NETWORKS_SPECS_POLKADOT, data, {
-    format: true,
     schema: DotNetworkSpecsFileSchema,
   })
 }

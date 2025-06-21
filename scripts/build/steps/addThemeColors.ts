@@ -45,7 +45,7 @@ const updateNetworksFile = async (filepath: string) => {
   const updates = results.results.filter((result) => result === true)
   console.log(`${updates.length} theme colors were updated in ${parse(filepath).name} file.`)
 
-  if (updates.length) await writeJsonFile(filepath, networks, { schema: NetworksFileSchema, format: true })
+  if (updates.length) await writeJsonFile(filepath, networks, { schema: NetworksFileSchema })
 }
 
 const extractDominantLogoColor = async (logoUrl: string | undefined) => {

@@ -23,17 +23,7 @@ import {
 } from '../../shared/constants'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
 
-const TokensSchema = z.array(TokenSchema)
-const NetworksSchema = z.array(NetworkSchema)
-const MiniMetadatasSchema = z.array(AnyMiniMetadataSchema)
-
-// const MiniMetadatasSchema = z.array(z.any())
-
-// const ChainDataSchema = z.strictObject({
-//   tokens: TokensSchema,
-//   networks: NetworksSchema,
-//   miniMetadatas: MiniMetadatasSchema,
-// })
+const MiniMetadatasFileSchema = z.array(AnyMiniMetadataSchema)
 
 export const buildConsolidatedData = async () => {
   const ethTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_ETHEREUM)
@@ -46,7 +36,7 @@ export const buildConsolidatedData = async () => {
   const networks = ethNetworks.concat(...dotNetworks)
   await writeJsonFile(FILE_OUTPUT_NETWORKS_ALL, networks, { schema: z.array(NetworkSchema) })
 
-  const miniMetadatas = parseJsonFile(FILE_OUTPUT_MINI_METADATAS, MiniMetadatasSchema)
+  const miniMetadatas = parseJsonFile(FILE_OUTPUT_MINI_METADATAS, MiniMetadatasFileSchema)
 
   const chaindata = {
     networks,

@@ -112,9 +112,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
     .concat(result.results)
     .sort((a, b) => a.id.localeCompare(b.id))
 
-  // return data // Replace with actual validation when schema is available
   await writeJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, data, {
-    format: true,
     schema: DotNetworkMetadataExtractsFileSchema,
   })
 }

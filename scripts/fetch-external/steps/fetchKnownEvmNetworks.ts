@@ -349,22 +349,11 @@ export const fetchKnownEvmNetworks = async () => {
 
   await writeJsonFile(FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE, knownEvmNetworksRpcsCache, { format: true })
 
-  // validateNetworks(knownEvmNetworks, KnownEthNetworkConfigDef)
-
   // // sort but don't filter out networks without RPCs
   // // wallet needs their names, icons etc.
   const validNetworks = knownEvmNetworks.sort((a, b) => Number(a.id) - Number(b.id))
 
   await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, validNetworks, {
-    format: true,
     schema: KnownEthNetworksFileSchema,
   })
-
-  // await writeFile(
-  //   FILE_KNOWN_EVM_NETWORKS,
-  //   await prettier.format(JSON.stringify(validNetworks, null, 2), {
-  //     ...PRETTIER_CONFIG,
-  //     parser: 'json',
-  //   }),
-  // )
 }

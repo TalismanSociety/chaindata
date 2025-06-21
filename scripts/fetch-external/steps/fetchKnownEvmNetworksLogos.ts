@@ -154,7 +154,6 @@ export const fetchKnownEvmNetworksLogos = async () => {
       evmNetworksIconsCache.sort((a, b) => a.icon.localeCompare(b.icon))
 
       await writeJsonFile(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, evmNetworksIconsCache, {
-        format: true,
         schema: KnownEthNetworkIconsFileSchema,
       })
     } catch (err) {

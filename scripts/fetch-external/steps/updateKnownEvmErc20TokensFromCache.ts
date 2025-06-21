@@ -23,5 +23,5 @@ export const updateKnownEvmErc20TokensFromCache = async () => {
     }
   }
 
-  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, { schema: KnownEthNetworksFileSchema, format: true })
+  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, { schema: KnownEthNetworksFileSchema })
 }

@@ -2,7 +2,6 @@ import { EthNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import { EthNetworkConfigSchema } from './EthNetworkConfig'
-import { EthBalancesConfigTypes } from './shared'
 
 export const KnownEthNetworkConfigSchema = z.strictObject({
   ...EthNetworkConfigSchema.partial().shape,
