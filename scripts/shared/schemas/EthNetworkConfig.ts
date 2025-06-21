@@ -2,8 +2,7 @@ import { EvmErc20TokenConfigSchema, EvmNativeTokenConfigSchema, EvmUniswapV2Toke
 import { EthNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
-const EthTokensConfigSchema = z.object({
-  // 'evm-native': EvmNativeTokenConfigSchema.optional(),
+const EthTokensConfigSchema = z.strictObject({
   'evm-erc20': z.array(EvmErc20TokenConfigSchema).optional(),
   'evm-uniswapv2': z.array(EvmUniswapV2TokenConfigSchema).optional(),
 })

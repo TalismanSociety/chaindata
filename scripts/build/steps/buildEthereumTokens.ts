@@ -22,7 +22,6 @@ import keys from 'lodash/keys'
 import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
-import { getConsolidatedKnownEthNetworks } from '../../fetch-external/getConsolidatedEthNetworksOverrides'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
@@ -30,6 +29,7 @@ import {
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_TOKENS_ETHEREUM,
 } from '../../shared/constants'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
 import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'

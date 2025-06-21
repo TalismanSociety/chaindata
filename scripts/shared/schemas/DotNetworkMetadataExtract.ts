@@ -10,7 +10,6 @@ export const DotNetworkMetadataExtractSchema = z.strictObject({
   hasCheckMetadataHash: z.boolean(),
   topology: DotNetworkTopologySchema,
   miniMetadatas: z.partialRecord(z.string().nonempty(), AnyMiniMetadataSchema),
-  // tokens: z.partialRecord(z.string().nonempty(), z.any()),
 })
 
 export type DotNetworkMetadataExtract = z.infer<typeof DotNetworkMetadataExtractSchema>

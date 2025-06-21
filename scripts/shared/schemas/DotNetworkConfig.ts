@@ -1,15 +1,13 @@
 import {
   SubAssetsTokenConfigSchema,
   SubForeignAssetsTokenConfigSchema,
-  // SubNativeTokenConfigSchema,
   SubPsp22TokenConfigSchema,
   SubTokensTokenConfigSchema,
 } from '@talismn/balances'
 import { DotNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
-const DotTokensConfigSchema = z.object({
-  // 'substrate-native': SubNativeTokenConfigSchema.optional(),
+const DotTokensConfigSchema = z.strictObject({
   'substrate-assets': z.array(SubAssetsTokenConfigSchema).optional(),
   'substrate-psp22': z.array(SubPsp22TokenConfigSchema).optional(),
   'substrate-foreignassets': z.array(SubForeignAssetsTokenConfigSchema).optional(),
@@ -31,7 +29,6 @@ export const DotNetworkConfigSchema = z.strictObject({
   // required fields
   ...DotNetworkSchema.pick({
     id: true,
-    // name: true,  // can be determined from networkSpecs
     rpcs: true,
   }).shape,
   relay: z.string().nonempty().optional(), // relay chain id, if this is a parachain

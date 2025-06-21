@@ -11,6 +11,7 @@ import {
   FILE_INPUT_NETWORKS_POLKADOT,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import {
   DotNetworkConfig,
   DotNetworksConfigFileSchema,
@@ -19,8 +20,7 @@ import {
   KnownEthNetworkConfig,
 } from '../../shared/schemas'
 import { parseYamlFile } from '../../shared/util'
-import { fetchCoinDetails } from '../coingecko'
-import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
+import { fetchCoinDetails } from './helpers/coingecko'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
   'baoeth-eth-stablepool',

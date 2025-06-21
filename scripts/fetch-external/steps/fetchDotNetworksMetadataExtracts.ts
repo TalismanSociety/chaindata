@@ -1,13 +1,10 @@
-import { XcmV3JunctionNetworkId } from '@polkadot-api/descriptors'
 import { WsProvider } from '@polkadot/rpc-provider'
-import { xxhashAsHex } from '@polkadot/util-crypto'
 import { PromisePool } from '@supercharge/promise-pool'
 import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
 import { ChaindataProvider } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
 import { decAnyMetadata, getDynamicBuilder, getLookupFn, UnifiedMetadata, unifyMetadata } from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
-import { cache } from 'sharp'
 
 import {
   BALANCES_LIB_VERSION,

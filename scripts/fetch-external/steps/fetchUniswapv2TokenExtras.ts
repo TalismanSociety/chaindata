@@ -1,12 +1,12 @@
 import { BaseError, erc20Abi, TimeoutError } from 'viem'
 
 import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE } from '../../shared/constants'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { EthNetworkConfig, EthNetworksConfigFileSchema } from '../../shared/schemas'
-import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
+import { Uniswapv2TokenCache } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
-import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
-import { getEvmNetworkClient } from '../getEvmNetworkClient'
-import { uniswapV2PairAbi } from '../uniswapV2PairAbi'
+import { getEvmNetworkClient } from './helpers/getEvmNetworkClient'
+import { uniswapV2PairAbi } from './helpers/uniswapV2PairAbi'
 
 export const fetchUniswapv2TokenExtras = async () => {
   // const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))

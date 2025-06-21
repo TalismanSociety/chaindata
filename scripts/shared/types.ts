@@ -134,12 +134,6 @@ export type Uniswapv2TokenCache = {
   coingeckoId1?: string
 }
 
-// export type EvmNetworkIconCache = {
-//   icon: string
-//   etag: string
-//   path: string
-// }
-
 export type CoingeckoAssetPlatform = {
   id: string
   chain_identifier: number | null

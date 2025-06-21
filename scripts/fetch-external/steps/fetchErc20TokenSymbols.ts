@@ -24,7 +24,7 @@ import {
 } from '../../shared/schemas'
 import { Erc20TokenCache } from '../../shared/types'
 import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
-import { getEvmNetworkClient } from '../getEvmNetworkClient'
+import { getEvmNetworkClient } from './helpers/getEvmNetworkClient'
 
 const IGNORED_TOKENS = [
   { chainId: 1, contractAddress: '0x1da4858ad385cc377165a298cc2ce3fce0c5fd31' },

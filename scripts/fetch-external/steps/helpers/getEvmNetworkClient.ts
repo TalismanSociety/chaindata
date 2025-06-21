@@ -1,8 +1,7 @@
 import { Chain, createPublicClient, defineChain, fallback, http, PublicClient } from 'viem'
 import * as chains from 'viem/chains'
 
-import { EthNetworkConfig } from '../shared/schemas'
-import { ConfigEvmNetwork } from '../shared/types'
+import { EthNetworkConfig } from '../../../shared/schemas'
 
 // initialize with viem chains, to benefit from multicall config
 const ALL_CHAINS = Object.keys(chains).reduce(

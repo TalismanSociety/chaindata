@@ -1,6 +1,5 @@
+import { DotNetworkSchema } from '@talismn/chaindata-provider'
 import z from 'zod/v4'
-
-import { HexStringSchema } from './shared'
 
 const DotNetworkRuntimeVersionSchema = z.object({
   specName: z.string().nonempty(),
@@ -26,7 +25,7 @@ export const DotNetworkSpecsSchema = z.strictObject({
   id: z.string().nonempty(),
   name: z.string().nonempty(),
   isTestnet: z.literal(true).optional(),
-  genesisHash: HexStringSchema,
+  genesisHash: DotNetworkSchema.shape.genesisHash,
   properties: DotNetworkProperties,
   runtimeVersion: DotNetworkRuntimeVersionSchema,
 })

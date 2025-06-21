@@ -39,7 +39,6 @@ const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
     blockExplorerUrls: network.subscanUrl ? [network.subscanUrl] : undefined,
 
     // polkadot specific
-    //account: chain.account as DotNetwork["account"] ?? "*25519", // could be determined automatically by inspecting the Address type in the metadata - also some chains support both (ex: hydration) so we might need to rework this
     chainspecQrUrl: network.chainspecQrUrl || undefined,
     latestMetadataQrUrl: network.latestMetadataQrUrl || undefined,
     oldPrefix: network.oldPrefix || undefined,

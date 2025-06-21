@@ -4,9 +4,9 @@ import path from 'node:path'
 import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { KnownEthNetworkIcon, KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import { parseJsonFile, writeJsonFile } from '../../shared/util'
-import { getConsolidatedKnownEthNetworks } from '../getConsolidatedEthNetworksOverrides'
 
 // IPFS hashes that cant be found on github
 const KNOWN_UNAVAILABLE_IPFS_HASHES: string[] = [

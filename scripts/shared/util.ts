@@ -123,38 +123,6 @@ export const sendWithTimeout = async (
   })()
 }
 
-// export const sortChainsAndNetworks = (chains: Chain[], evmNetworks: EvmNetwork[]): Array<Chain | EvmNetwork> => {
-//   return [...chains, ...evmNetworks]
-//     .sort((a, b) => {
-//       if (a.id === b.id) return 0
-//       if (a.id === 'polkadot') return -1
-//       if (b.id === 'polkadot') return 1
-//       if (a.id === 'kusama') return -1
-//       if (b.id === 'kusama') return 1
-//       if (a.isTestnet !== b.isTestnet) {
-//         if (a.isTestnet) return 1
-//         if (b.isTestnet) return -1
-//       }
-//       if (a.id === 'westend-testnet') return -1
-//       if (b.id === 'westend-testnet') return 1
-//       if (a.id === 'rococo-testnet') return -1
-//       if (b.id === 'rococo-testnet') return 1
-
-//       const aCmp = a.name?.toLowerCase() || parseInt(a.id)
-//       const bCmp = b.name?.toLowerCase() || parseInt(b.id)
-
-//       if (typeof aCmp === 'number' && typeof bCmp === 'number') return aCmp - bCmp
-//       if (typeof aCmp === 'number') return 1
-//       if (typeof bCmp === 'number') return -1
-
-//       return aCmp.localeCompare(bCmp)
-//     })
-//     .map((chainOrNetwork, index) => {
-//       chainOrNetwork.sortIndex = index + 1
-//       return chainOrNetwork
-//     })
-// }
-
 export const assetUrlPrefixChaindataProvider = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/main/`
 console.log('assetUrlPrefixChaindataProvider:', assetUrlPrefixChaindataProvider)
 export const assetUrlPrefix = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/${GITHUB_BRANCH}/`
@@ -181,12 +149,6 @@ export const getAssetPathFromUrl = (url: string) => {
   if (url.startsWith(assetUrlPrefix)) return url.slice(assetUrlPrefix.length)
   throw new Error(`Invalid asset url: ${url}`)
 }
-
-// smelly name
-// export const getAssetPathFromCoingeckoTokenId = (coingecko: string | undefined) => {
-//   const path = `./assets/tokens/coingecko/${coingecko}.webp`
-//   return getAssetUrlFromPath(path)
-// }
 
 export const getTokenLogoUrl = (
   logo: string | undefined,
@@ -381,7 +343,7 @@ export const logDuration = (label: string) => {
   function formatDuration(seconds: number) {
     const mins = Math.floor(seconds / 60)
     const secs = Math.floor(seconds % 60)
-    return `${mins}m ${secs}s`
+    return mins ? `${mins}m ${secs}s` : `${secs}s`
   }
 
   return () => {

@@ -5,12 +5,12 @@ import keyBy from 'lodash/keyBy'
 import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
-import { getConsolidatedKnownEthNetworks } from '../../fetch-external/getConsolidatedEthNetworksOverrides'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import {

@@ -1,6 +1,6 @@
 import z from 'zod/v4'
 
-const DateSchema = z.string().transform((val, ctx) => {
+const DateSchema = z.union([z.string(), z.date()]).transform((val, ctx) => {
   const date = new Date(val)
   if (isNaN(date.getTime())) {
     ctx.addIssue({
@@ -21,5 +21,3 @@ const WsRpcHealthSchema = z.discriminatedUnion('status', [
 export type WsRpcHealth = z.infer<typeof WsRpcHealthSchema>
 
 export const WsRpcHealthFileSchema = z.partialRecord(z.url({ protocol: /^wss?$/ }), WsRpcHealthSchema)
-
-type File = z.infer<typeof WsRpcHealthFileSchema>

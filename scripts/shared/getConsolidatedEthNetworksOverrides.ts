@@ -1,13 +1,13 @@
 import mergeWith from 'lodash/mergeWith'
 
-import { FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, FILE_KNOWN_EVM_NETWORKS } from '../shared/constants'
+import { FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, FILE_KNOWN_EVM_NETWORKS } from './constants'
 import {
   KnownEthNetworkConfig,
   KnownEthNetworkOverrides,
   KnownEthNetworksFileSchema,
   KnownEthNetworksOverridesFileSchema,
-} from '../shared/schemas'
-import { networkMergeCustomizer, parseJsonFile, parseYamlFile } from '../shared/util'
+} from './schemas'
+import { networkMergeCustomizer, parseJsonFile, parseYamlFile } from './util'
 
 export const getConsolidatedKnownEthNetworks = () => {
   const knownEvmNetworksOverrides = parseYamlFile<KnownEthNetworkOverrides[]>(
