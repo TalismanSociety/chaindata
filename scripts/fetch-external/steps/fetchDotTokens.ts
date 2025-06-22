@@ -11,8 +11,8 @@ import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
-  FILE_RPC_HEALTH_POLKADOT,
 } from '../../shared/constants'
+import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
   DotNetworkConfig,
   DotNetworksConfigFileSchema,
@@ -24,7 +24,7 @@ import {
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
-import { RpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
+import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
 import { getRpcProvider, parseJsonFile, parseYamlFile, withTimeout, writeJsonFile } from '../../shared/util'
 import { getHackedBalanceModuleDeps } from './helpers/getHackedBalanceModuleDeps'
 
@@ -36,7 +36,6 @@ export const fetchDotTokens = async () => {
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
   const dotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
-  const rpcsHealth = parseJsonFile<Record<string, RpcHealth>>(FILE_RPC_HEALTH_POLKADOT)
 
   const metadataExtractsById = keyBy(metadataExtracts, 'id')
   const specsById = keyBy(dotNetworkSpecs, 'id')
@@ -45,7 +44,7 @@ export const fetchDotTokens = async () => {
     .map((network) => ({
       network,
       miniMetadatas: metadataExtractsById[network.id]?.miniMetadatas,
-      rpcs: network.rpcs?.filter((rpc) => rpcsHealth[rpc].status === 'OK'),
+      rpcs: getRpcsByStatus(network.id, 'polkadot', 'OK'),
       specs: specsById[network.id] as DotNetworkSpecs | undefined,
     }))
     .filter((args): args is FetchDotNetworkTokensArgs => {

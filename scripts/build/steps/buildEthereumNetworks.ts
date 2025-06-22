@@ -11,6 +11,7 @@ import {
   FILE_OUTPUT_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
 import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import {
@@ -68,8 +69,18 @@ const consolidateEthNetwork = (
 
   const id = String(config?.id ?? knownEvmNetwork?.id ?? viemChain?.id)
 
+  const okRpcs = getRpcsByStatus(id, 'ethereum', 'OK')
+  const mehRpcs = getRpcsByStatus(id, 'ethereum', 'MEH')
+
   const rpcs = [
-    ...new Set([...(config?.rpcs ?? []), ...(knownEvmNetwork?.rpcs ?? []), ...(viemChain?.rpcUrls.default.http ?? [])]),
+    ...new Set([
+      ...(config?.rpcs?.filter((url) => okRpcs.includes(url)) ?? []),
+      ...(config?.rpcs?.filter((url) => !okRpcs.includes(url) && !mehRpcs.includes(url)) ?? []), // new rpcs, assume better than MEH - there should not be any though
+      ...(config?.rpcs?.filter((url) => mehRpcs.includes(url)) ?? []),
+
+      ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
+      ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
+    ]),
   ]
   if (!rpcs.length) return null
 

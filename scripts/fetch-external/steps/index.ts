@@ -18,7 +18,7 @@ export const fetchExternalSteps: Array<() => Awaited<void>> = [
   validateConfigFiles,
   fetchKnownEvmNetworks,
   checkPolkadotRpcs,
-  // checkEthereumRpcs, // WIP
+  checkEthereumRpcs, // WIP
   fetchKnownEvmNetworksCoingeckoLogos,
   fetchKnownEvmTokens,
   fetchErc20TokenDetails,

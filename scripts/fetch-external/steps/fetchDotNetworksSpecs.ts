@@ -1,12 +1,8 @@
 import { PromisePool } from '@supercharge/promise-pool'
 
-import {
-  FILE_INPUT_NETWORKS_POLKADOT,
-  FILE_NETWORKS_SPECS_POLKADOT,
-  FILE_RPC_HEALTH_POLKADOT,
-} from '../../shared/constants'
+import { FILE_INPUT_NETWORKS_POLKADOT, FILE_NETWORKS_SPECS_POLKADOT } from '../../shared/constants'
+import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { DotNetworksConfigFileSchema, DotNetworkSpecsFileSchema, DotNetworkSpecsSchema } from '../../shared/schemas'
-import { RpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
 import {
   getRpcProvider,
   parseJsonFile,
@@ -18,14 +14,13 @@ import {
 
 export const fetchDotNetworksSpecs = async () => {
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
-  const rpcsHealth = parseJsonFile<Record<string, RpcHealth>>(FILE_RPC_HEALTH_POLKADOT)
 
   const oldDotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
 
   const networksToUpdate = dotNetworks
-    .map(({ id, rpcs }) => ({
+    .map(({ id }) => ({
       id,
-      rpcs: rpcs?.filter((rpc) => rpcsHealth[rpc].status === 'OK') ?? [],
+      rpcs: getRpcsByStatus(id, 'polkadot', 'OK'),
     }))
     .filter(({ rpcs }) => !!rpcs.length)
 

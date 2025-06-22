@@ -1,6 +1,7 @@
 import { Chain, createPublicClient, defineChain, fallback, http, PublicClient } from 'viem'
 import * as chains from 'viem/chains'
 
+import { getRpcsByStatus } from '../../../shared/rpcHealth'
 import { EthNetworkConfig } from '../../../shared/schemas'
 
 // initialize with viem chains, to benefit from multicall config
@@ -25,14 +26,15 @@ export const getEvmNetworkClient = (evmNetwork: EthNetworkConfig): PublicClient 
   if (!ALL_CHAINS[chainId]) {
     const symbol = evmNetwork.nativeCurrency?.symbol ?? 'ETH'
     const decimals = evmNetwork.nativeCurrency?.decimals ?? 18
+    const rpcs = getRpcsByStatus(evmNetwork.id, 'ethereum', 'OK')
 
     ALL_CHAINS[chainId] = defineChain({
       id: chainId,
       name: evmNetwork.name ?? '',
       network: evmNetwork.name ?? '',
       rpcUrls: {
-        public: { http: evmNetwork.rpcs ?? [] },
-        default: { http: evmNetwork.rpcs ?? [] },
+        public: { http: rpcs ?? [] },
+        default: { http: rpcs ?? [] },
       },
       nativeCurrency: {
         symbol,
@@ -45,12 +47,10 @@ export const getEvmNetworkClient = (evmNetwork: EthNetworkConfig): PublicClient 
   const chain = ALL_CHAINS[chainId]
 
   if (!CLIENT_CACHE[chainId]) {
-    //  const transport = chain.contracts?.multicall3
-    // ? http()
-    // : fallback((evmNetwork.rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
-
-    // TODO switch back to the above once Rpc health checks are fixed (need to test batches)
-    const transport = fallback((evmNetwork.rpcs ?? []).map((rpc) => http(rpc)))
+    const rpcs = getRpcsByStatus(evmNetwork.id, 'ethereum', 'OK')
+    const transport = chain.contracts?.multicall3
+      ? http()
+      : fallback((rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
 
     const batch = chain.contracts?.multicall3 ? { multicall: { wait: 25 } } : undefined
 

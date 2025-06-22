@@ -1,0 +1,115 @@
+import { PromisePool } from '@supercharge/promise-pool'
+import assign from 'lodash/assign'
+import keyBy from 'lodash/keyBy'
+import keys from 'lodash/keys'
+import sortBy from 'lodash/sortBy'
+import uniq from 'lodash/uniq'
+import values from 'lodash/values'
+
+import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
+import { NetworkRpcHealth, NetworkRpcHealthFileSchema, RpcHealth } from './schemas/NetworkRpcHealth'
+import { parseJsonFile, writeJsonFile } from './util'
+
+// Put RPCs that are flagged by antiviruses here:
+const BLACKLISTED_RPCS_URLS = ['https://blacklisted.example'].map((url) => url.replace(/\/$/, ''))
+
+export type RpcHealthSpec = { rpc: string; networkId: string }
+
+export const getTimeoutSignal = (ms: number) => {
+  const controller = new AbortController()
+  setTimeout(() => controller.abort(), ms)
+  return controller.signal
+}
+
+export const isBlacklistedRpcUrl = (url: string) =>
+  BLACKLISTED_RPCS_URLS.some((blacklisted) => new URL(blacklisted).host === new URL(url).host)
+
+export const getRpcHealthKey = (rpcHealth: RpcHealthSpec): string => `${rpcHealth.rpc}::${rpcHealth.networkId}`
+
+export const getRpcHealthSpecsFromKey = (key: string): RpcHealthSpec => {
+  const [rpc, networkId] = key.split('::')
+  return { rpc, networkId }
+}
+
+const FILEPATH_BY_PLATFORM = {
+  polkadot: FILE_RPC_HEALTH_POLKADOT,
+  ethereum: FILE_RPC_HEALTH_ETHEREUM,
+}
+
+type Platform = keyof typeof FILEPATH_BY_PLATFORM
+
+export const getRpcsByStatus = (networkId: string, platform: Platform, status: RpcHealth['status']): string[] => {
+  const cacheFilePath = FILEPATH_BY_PLATFORM[platform]
+  const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema)
+
+  return [
+    ...existingRpcHealths.filter(
+      (rpcHealth) => rpcHealth.networkId === networkId && rpcHealth.health.status === status,
+    ),
+  ].map((rpcHealth) => rpcHealth.rpc)
+}
+
+type CheckRpcsHealthOptions = {
+  rechecks: number
+  maxchecks: number
+}
+
+const DEFAULT_OPTIONS: CheckRpcsHealthOptions = {
+  rechecks: 50,
+  maxchecks: 200,
+}
+
+export const checkPlatformRpcsHealth = async (
+  listedRpcs: RpcHealthSpec[],
+  platform: Platform,
+  getRpcHealth: (specs: RpcHealthSpec) => Promise<RpcHealth>,
+  options?: Partial<CheckRpcsHealthOptions>,
+) => {
+  const cacheFilePath = FILEPATH_BY_PLATFORM[platform]
+  const { rechecks, maxchecks }: CheckRpcsHealthOptions = Object.assign({}, DEFAULT_OPTIONS, options)
+
+  const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema)
+  const existingRpcHealthsByKey = keyBy(existingRpcHealths, getRpcHealthKey)
+  const listedRpcHealthsKeys = listedRpcs.map(getRpcHealthKey)
+
+  // purge unlisted ones
+  for (const key of keys(existingRpcHealthsByKey))
+    if (!listedRpcHealthsKeys.includes(key)) {
+      console.debug('Purging unlisted RPC', key)
+      delete existingRpcHealthsByKey[key]
+    }
+
+  const newKeys = listedRpcHealthsKeys.filter((key) => !existingRpcHealthsByKey[key])
+  console.log('Found', newKeys.length, 'new RPCs to check')
+
+  const keysToRecheck = sortBy(values(existingRpcHealthsByKey), 'timestamp').slice(0, rechecks).map(getRpcHealthKey)
+
+  const checks = uniq([...newKeys, ...keysToRecheck])
+    .map(getRpcHealthSpecsFromKey)
+    .slice(0, maxchecks)
+
+  console.log('Checking', checks.length, 'RPCs')
+
+  // v8 can only do 2 requests at once but the speed increment is worth the false positives
+  // concurrency 4: 99 sec (7 actual timeouts)
+  // concurrency 2: 183 sec (11 actual timeouts)
+  const res = await PromisePool.withConcurrency(4)
+    .for(checks)
+    .process(async ({ rpc, networkId }): Promise<NetworkRpcHealth> => {
+      try {
+        const health = await getRpcHealth({ rpc, networkId })
+        return { rpc, networkId, health, timestamp: new Date() }
+      } catch (err) {
+        console.log('isUnhealthy', rpc, 'ERROR', err)
+        return { rpc, networkId, timestamp: new Date(), health: { status: 'NOK', error: String(err) } }
+      }
+    })
+
+  if (res.errors.length) throw new Error(res.errors.join('\n\n'))
+
+  const rpcHealthsById = assign(existingRpcHealthsByKey, keyBy(res.results, getRpcHealthKey))
+
+  const data = values(rpcHealthsById).sort((a, b) => getRpcHealthKey(a).localeCompare(getRpcHealthKey(b)))
+
+  await writeJsonFile(cacheFilePath, data, { schema: NetworkRpcHealthFileSchema })
+}
