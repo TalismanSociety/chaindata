@@ -1,18 +1,35 @@
+import uniq from 'lodash/uniq'
 import { Hex, hexToNumber } from 'viem'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_RPC_HEALTH_ETHEREUM } from '../../shared/constants'
-import { checkPlatformRpcsHealth, getTimeoutSignal, isBlacklistedRpcUrl, RpcHealthSpec } from '../../shared/rpcHealth'
-import { KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS, FILE_RPC_HEALTH_ETHEREUM } from '../../shared/constants'
+import {
+  checkPlatformRpcsHealth,
+  getRpcHealthKey,
+  getRpcHealthSpecsFromKey,
+  getTimeoutSignal,
+  isBlacklistedRpcUrl,
+  RpcHealthSpec,
+} from '../../shared/rpcHealth'
+import { EthNetworksConfigFileSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
-import { parseJsonFile } from '../../shared/util'
+import { parseJsonFile, parseYamlFile } from '../../shared/util'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 const RECHECKS_PER_RUN = 100
 const MAX_CHECKS_PER_RUN = 200
 
 export const checkEthereumRpcs = async () => {
-  const networks = parseJsonFile(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
-  const listedRpcs = networks.flatMap((network) => network.rpcs.map((rpc) => ({ rpc, networkId: network.id })))
+  const configNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const knownNetworks = parseJsonFile(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
+
+  const configNetworkKeys = configNetworks.flatMap((network) =>
+    network.rpcs.map((rpc) => getRpcHealthKey({ networkId: network.id, rpc })),
+  )
+  const knownNetworkKeys = knownNetworks.flatMap((network) =>
+    network.rpcs.map((rpc) => getRpcHealthKey({ networkId: network.id, rpc })),
+  )
+
+  const listedRpcs = uniq([...configNetworkKeys, ...knownNetworkKeys]).map(getRpcHealthSpecsFromKey)
 
   await checkPlatformRpcsHealth(listedRpcs, 'ethereum', getRpcHealth, {
     rechecks: RECHECKS_PER_RUN,

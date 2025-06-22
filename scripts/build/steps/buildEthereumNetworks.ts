@@ -1,7 +1,8 @@
-import type { Dictionary } from 'lodash'
 import { EthNetwork, EthNetworkSchema, evmNativeTokenId } from '@talismn/chaindata-provider'
+import { type Dictionary } from 'lodash'
 import fromPairs from 'lodash/fromPairs'
 import keyBy from 'lodash/keyBy'
+import uniq from 'lodash/uniq'
 import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
@@ -72,16 +73,15 @@ const consolidateEthNetwork = (
   const okRpcs = getRpcsByStatus(id, 'ethereum', 'OK')
   const mehRpcs = getRpcsByStatus(id, 'ethereum', 'MEH')
 
-  const rpcs = [
-    ...new Set([
-      ...(config?.rpcs?.filter((url) => okRpcs.includes(url)) ?? []),
-      ...(config?.rpcs?.filter((url) => !okRpcs.includes(url) && !mehRpcs.includes(url)) ?? []), // new rpcs, assume better than MEH - there should not be any though
-      ...(config?.rpcs?.filter((url) => mehRpcs.includes(url)) ?? []),
+  const rpcs = uniq([
+    ...(config?.rpcs?.filter((url) => okRpcs.includes(url)) ?? []),
+    ...(config?.rpcs?.filter((url) => !okRpcs.includes(url) && !mehRpcs.includes(url)) ?? []), // new rpcs, assume better than MEH - there should not be any though
+    ...(config?.rpcs?.filter((url) => mehRpcs.includes(url)) ?? []),
 
-      ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
-      ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
-    ]),
-  ]
+    ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
+    ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
+  ])
+
   if (!rpcs.length) return null
 
   const viemContracts: EthNetwork['contracts'] = viemChain?.contracts?.multicall3
