@@ -139,7 +139,7 @@ const fetchMetadataExtract = async ({
 
     const metadata = unifyMetadata(decAnyMetadata(metadataRpc))
 
-    const ss58Prefix = getSs58Prefix(metadata)
+    const ss58Prefix = getSs58Prefix(metadata, network.id)
 
     const hasCheckMetadataHash = metadata.extrinsic.signedExtensions.some(
       ({ identifier }) => identifier === 'CheckMetadataHash',
@@ -251,7 +251,7 @@ const getAccountType = (metadata: UnifiedMetadata) => {
   }
 }
 
-const getSs58Prefix = (metadata: UnifiedMetadata) => {
+const getSs58Prefix = (metadata: UnifiedMetadata, networkId: string) => {
   const builder = getDynamicBuilder(getLookupFn(metadata))
 
   const encodedSs58Prefix = metadata.pallets
@@ -263,7 +263,7 @@ const getSs58Prefix = (metadata: UnifiedMetadata) => {
 
   // metadata's codec is too loose: a prefix needs to be a number between 0 and 16383, and cannot be 46 or 47
   if (prefix < 0 || prefix > 16383 || [46, 47].includes(prefix)) {
-    console.warn('Invalid SS58Prefix constant found in metadata (%s), defaulting to 42', prefix)
+    console.warn('Invalid SS58Prefix constant found in %s metadata (%s), defaulting to 42', networkId, prefix)
     return 42
   }
   return prefix

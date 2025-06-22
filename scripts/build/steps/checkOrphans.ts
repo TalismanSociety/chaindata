@@ -1,4 +1,4 @@
-import { isEthNetwork, NetworkSchema, TokenSchema } from '@talismn/chaindata-provider'
+import { isNetworkEth, NetworkSchema, TokenSchema } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
@@ -27,7 +27,7 @@ export const checkOrphans = () => {
   }
 
   const networksWithoutSubstrateChain = networks
-    .filter(isEthNetwork)
+    .filter(isNetworkEth)
     .filter((network) => network.substrateChainId && !dicNetworks[network.substrateChainId])
   if (networksWithoutSubstrateChain.length) {
     console.warn(

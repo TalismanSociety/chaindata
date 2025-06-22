@@ -1,4 +1,4 @@
-import { DotNetwork, DotNetworkSchema, isDotNetwork, subNativeTokenId } from '@talismn/chaindata-provider'
+import { DotNetwork, DotNetworkSchema, isNetworkDot, subNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
@@ -53,7 +53,7 @@ export const buildPolkadotNetworks = async () => {
         dicMetadataPortalUrls[config.id],
       ),
     )
-    .filter(isDotNetwork)
+    .filter(isNetworkDot)
     .sort((a, b) => a.id.localeCompare(b.id))
 
   checkDuplicates(dotNetworks)
