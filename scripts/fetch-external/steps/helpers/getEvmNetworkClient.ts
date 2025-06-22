@@ -45,9 +45,13 @@ export const getEvmNetworkClient = (evmNetwork: EthNetworkConfig): PublicClient 
   const chain = ALL_CHAINS[chainId]
 
   if (!CLIENT_CACHE[chainId]) {
-    const transport = chain.contracts?.multicall3
-      ? http()
-      : fallback((evmNetwork.rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
+    //  const transport = chain.contracts?.multicall3
+    // ? http()
+    // : fallback((evmNetwork.rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
+
+    // TODO switch back to the above once Rpc health checks are fixed (need to test batches)
+    const transport = fallback((evmNetwork.rpcs ?? []).map((rpc) => http(rpc)))
+
     const batch = chain.contracts?.multicall3 ? { multicall: { wait: 25 } } : undefined
 
     CLIENT_CACHE[chainId] = createPublicClient({ chain, transport, batch })

@@ -7,6 +7,7 @@ export const KnownEthNetworkConfigSchema = z.strictObject({
   ...EthNetworkConfigSchema.partial().shape,
   ...EthNetworkSchema.pick({ id: true, rpcs: true, nativeCurrency: true }).shape,
   icon: z.string().optional(),
+  shortName: z.string().optional(),
 })
 
 export type KnownEthNetworkConfig = z.infer<typeof KnownEthNetworkConfigSchema>

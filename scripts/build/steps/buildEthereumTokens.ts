@@ -23,8 +23,8 @@ import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
 import {
+  FILE_EVM_ERC20_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_ETHEREUM,
-  FILE_KNOWN_EVM_ERC20_TOKENS_CACHE,
   FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_TOKENS_ETHEREUM,
@@ -51,7 +51,7 @@ export const buildEthereumTokens = async () => {
   const ethNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, z.array(EthNetworkSchema))
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const uniswapV2Cache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
-  const erc20sCache = parseJsonFile<Erc20TokenCache[]>(FILE_KNOWN_EVM_ERC20_TOKENS_CACHE)
+  const erc20sCache = parseJsonFile<Erc20TokenCache[]>(FILE_EVM_ERC20_TOKENS_CACHE)
 
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 

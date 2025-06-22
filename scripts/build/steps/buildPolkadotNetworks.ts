@@ -8,7 +8,7 @@ import {
   FILE_NETWORKS_SPECS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   FILE_OUTPUT_NETWORKS_POLKADOT,
-  FILE_RPC_HEALTH_WEBSOCKET,
+  FILE_RPC_HEALTH_POLKADOT,
 } from '../../shared/constants'
 import {
   DotNetworkConfig,
@@ -20,7 +20,7 @@ import {
   DotNetworkMetadataExtract,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
-import { WsRpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
+import { RpcHealth } from '../../shared/schemas/RpcHealthWebSocket'
 import { MetadataPortalUrls } from '../../shared/types'
 import {
   getNetworkLogoUrl,
@@ -36,7 +36,7 @@ export const buildPolkadotNetworks = async () => {
   const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
   const networkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
-  const rpcsHealth = parseJsonFile<Record<string, WsRpcHealth>>(FILE_RPC_HEALTH_WEBSOCKET)
+  const rpcsHealth = parseJsonFile<Record<string, RpcHealth>>(FILE_RPC_HEALTH_POLKADOT)
   const novaMetatadaPortalConfig = parseJsonFile<MetadataPortalUrls>(FILE_NOVASAMA_METADATA_PORTAL_URLS)
 
   const dicSpecs = keyBy(networkSpecs, 'id')
@@ -67,7 +67,7 @@ const consolidateDotNetwork = (
   config: DotNetworkConfig,
   specs: DotNetworkSpecs,
   metadataExtracts: DotNetworkMetadataExtract,
-  rpcsHealth: Record<string, WsRpcHealth>,
+  rpcsHealth: Record<string, RpcHealth>,
   metadataPortalUrls: MetadataPortalUrls[number] | null,
 ): DotNetwork | null => {
   if (!specs || !metadataExtracts) return null

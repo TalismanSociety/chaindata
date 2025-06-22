@@ -1,5 +1,7 @@
 import { PromisePool } from '@supercharge/promise-pool'
+import keyBy from 'lodash/keyBy'
 import { Hex, hexToNumber } from 'viem'
+import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE } from '../../shared/constants'
@@ -262,16 +264,23 @@ export const fetchKnownEvmNetworks = async () => {
   const response = await fetch('https://chainid.network/chains.json')
   const chainsList = (await response.json()) as Array<EthereumListsChain>
 
+  const viemChainById = keyBy(viemChains, (c) => String(c.id)) as Record<string, viemChains.Chain>
+
   const knownEvmNetworks = chainsList
     .filter((chain) => !!chain.chainId)
     .filter(isAllowedChain)
     .filter(isActiveChain)
     .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
     .map((chain) => {
+      const id = chain.chainId.toString()
+      const viemChain = viemChainById[id]
+      const viemRpcs = viemChain?.rpcUrls?.default?.http ?? []
+
       const evmNetwork: Partial<KnownEthNetworkConfig> & { id: string } = {
         id: chain.chainId.toString(),
         name: chain.name,
-        rpcs: chain.rpc.filter(isValidRpcUrl),
+        rpcs: chain.rpc.concat(...viemRpcs).filter(isValidRpcUrl),
+        shortName: chain.shortName,
         icon: chain.icon,
       }
 

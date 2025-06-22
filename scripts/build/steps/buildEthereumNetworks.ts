@@ -96,7 +96,8 @@ const consolidateEthNetwork = (
       knownEvmNetwork?.nativeCurrency.decimals ??
       viemChain?.nativeCurrency.decimals ??
       -1,
-    name: config?.nativeCurrency?.name ?? knownEvmNetwork?.nativeCurrency.name ?? viemChain?.nativeCurrency.name ?? '',
+    name:
+      config?.nativeCurrency?.name ?? knownEvmNetwork?.nativeCurrency.name ?? viemChain?.nativeCurrency.name ?? symbol,
     coingeckoId: config?.nativeCurrency?.coingeckoId || knownEvmNetwork?.nativeCurrency.coingeckoId,
     logo: getTokenLogoUrl(
       config?.nativeCurrency?.logo ?? knownEvmNetwork?.nativeCurrency?.logo,
