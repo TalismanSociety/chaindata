@@ -30,3 +30,5 @@ export const NetworkRpcHealthSchema = z.strictObject({
 export type NetworkRpcHealth = z.infer<typeof NetworkRpcHealthSchema>
 
 export const NetworkRpcHealthFileSchema = z.array(NetworkRpcHealthSchema)
+
+export type NetworkRpcHealthCache = z.infer<typeof NetworkRpcHealthFileSchema>

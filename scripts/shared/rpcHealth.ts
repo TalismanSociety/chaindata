@@ -7,8 +7,18 @@ import uniq from 'lodash/uniq'
 import values from 'lodash/values'
 
 import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
-import { NetworkRpcHealth, NetworkRpcHealthFileSchema, RpcHealth } from './schemas/NetworkRpcHealth'
+import {
+  NetworkRpcHealth,
+  NetworkRpcHealthCache,
+  NetworkRpcHealthFileSchema,
+  RpcHealth,
+} from './schemas/NetworkRpcHealth'
 import { parseJsonFile, writeJsonFile } from './util'
+
+const READ_CACHE: Record<Platform, NetworkRpcHealthCache | null> = {
+  polkadot: null,
+  ethereum: null,
+}
 
 // Put RPCs that are flagged by antiviruses here:
 const BLACKLISTED_RPCS_URLS = ['https://blacklisted.example'].map((url) => url.replace(/\/$/, ''))
@@ -37,17 +47,6 @@ const FILEPATH_BY_PLATFORM = {
 }
 
 type Platform = keyof typeof FILEPATH_BY_PLATFORM
-
-export const getRpcsByStatus = (networkId: string, platform: Platform, status: RpcHealth['status']): string[] => {
-  const cacheFilePath = FILEPATH_BY_PLATFORM[platform]
-  const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema)
-
-  return [
-    ...existingRpcHealths.filter(
-      (rpcHealth) => rpcHealth.networkId === networkId && rpcHealth.health.status === status,
-    ),
-  ].map((rpcHealth) => rpcHealth.rpc)
-}
 
 type CheckRpcsHealthOptions = {
   rechecks: number
@@ -112,4 +111,17 @@ export const checkPlatformRpcsHealth = async (
   const data = values(rpcHealthsById).sort((a, b) => getRpcHealthKey(a).localeCompare(getRpcHealthKey(b)))
 
   await writeJsonFile(cacheFilePath, data, { schema: NetworkRpcHealthFileSchema })
+
+  delete READ_CACHE[platform] // reset cache to force reload on next getRpcsByStatus call
+}
+
+export const getRpcsByStatus = (networkId: string, platform: Platform, status: RpcHealth['status']): string[] => {
+  if (!READ_CACHE[platform])
+    READ_CACHE[platform] = parseJsonFile(FILEPATH_BY_PLATFORM[platform], NetworkRpcHealthFileSchema)
+
+  return [
+    ...READ_CACHE[platform].filter(
+      (rpcHealth) => rpcHealth.networkId === networkId && rpcHealth.health.status === status,
+    ),
+  ].map((rpcHealth) => rpcHealth.rpc)
 }
