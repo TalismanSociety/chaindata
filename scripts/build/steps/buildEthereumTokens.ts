@@ -201,6 +201,7 @@ const getNativeToken = (network: EthNetwork): EvmNativeToken => {
       network.nativeCurrency.coingeckoId,
       network.nativeCurrency.symbol,
     ),
+    isDefault: true,
     coingeckoId: network.nativeCurrency.coingeckoId,
     mirrorOf: network.nativeCurrency.mirrorOf,
   }
