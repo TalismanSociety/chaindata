@@ -31,6 +31,7 @@ export const DotNetworkConfigSchema = z.strictObject({
     id: true,
     rpcs: true,
   }).shape,
+  nativeTokenId: DotNetworkSchema.shape.nativeTokenId.optional(), // allow override for interlay, mangata, kintsugi
   relay: z.string().nonempty().optional(), // relay chain id, if this is a parachain
   nativeCurrency: DotNetworkSchema.shape.nativeCurrency.partial().optional(),
   balancesConfig: DotNetworkSchema.shape.balancesConfig.optional(),

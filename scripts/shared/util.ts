@@ -124,7 +124,6 @@ export const sendWithTimeout = async (
 }
 
 export const assetUrlPrefixChaindataProvider = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/main/`
-console.log('assetUrlPrefixChaindataProvider:', assetUrlPrefixChaindataProvider)
 export const assetUrlPrefix = `${GITHUB_CDN}/${GITHUB_ORG}/${GITHUB_REPO}/${GITHUB_BRANCH}/`
 export const assetPathPrefix = './'
 

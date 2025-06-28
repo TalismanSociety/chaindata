@@ -47,6 +47,7 @@ const migrateDotNetworkV3ToV4 = (network: ConfigChain): DotNetworkConfig => {
     hasCheckMetadataHash: network.hasCheckMetadataHash || undefined,
     hasExtrinsicSignatureTypePrefix: network.hasExtrinsicSignatureTypePrefix || undefined,
     isUnknownFeeToken: network.isUnknownFeeToken || undefined,
+    nativeTokenId: network.overrideNativeTokenId?.replace('-substrate-tokens-', ':substrate-tokens:') || undefined,
 
     balancesConfig: migrateDotBalancesConfig(network),
     nativeCurrency: migrateDotNativeCurrency(network),
@@ -132,17 +133,12 @@ const migrateDotTokensConfig = (network: ConfigChain): DotNetworkConfig['tokens'
       .map(([type, value]) => {
         // @ts-ignore
         const entries: any[] = value.tokens || []
-        console.log(network.id, type, entries.length, value)
         return [type, entries.map(({ ed, ...rest }) => (ed ? { ...rest, existentialDeposit: ed } : rest))]
       })
       .filter(([type, values]) => values.length && DotBalancesConfigTypes.safeParse(type).success),
   )
 
-  const res = Object.keys(result).length ? result : undefined
-
-  console.log('Tokens for network', network.id, ':')
-  console.log(res)
-  return res
+  return Object.keys(result).length ? result : undefined
 }
 
 const migrateEthBalancesConfig = (network: ConfigEvmNetwork): EthNetworkConfig['balancesConfig'] => {
@@ -173,17 +169,12 @@ const migrateEthTokensConfig = (network: ConfigChain): EthNetworkConfig['tokens'
       .map(([type, value]) => {
         // @ts-ignore
         const entries: any[] = value.tokens || value.pools || []
-        console.log(network.id, type, entries.length, value)
         return [type, entries]
       })
       .filter(([type, values]) => values.length && EthBalancesConfigTypes.safeParse(type).success),
   )
 
-  const res = Object.keys(result).length ? result : undefined
-
-  console.log('Tokens for network', network.id, ':')
-  console.log(res)
-  return res
+  return Object.keys(result).length ? result : undefined
 }
 
 type LegacyNetworkOverrides = Partial<ConfigChain> & { id: string }
@@ -225,18 +216,14 @@ const evmNetworks = parseJsonFile<ConfigEvmNetwork[]>(`data/evm-networks.json`)
 const knownNetworksOverrides = parseJsonFile<LegacyNetworkOverrides[]>(`data/known-evm-networks-overrides.json`)
 
 const newDotNetworks = [...chaindata, ...chaindataTestnets].map(migrateDotNetworkV3ToV4)
-// validate(newDotNetworks, DotNetworksConfigFileSchema)
 
 const newEthNetworks = evmNetworks
   .map(migrateEthNetworkV3ToV4(newDotNetworks))
   .sort((n1, n2) => Number(n1.id) - Number(n2.id))
-// validate(newEthNetworks, EthNetworksConfigFileSchema)
 
 const newKnownNetworksOverrides = knownNetworksOverrides
   .map(migrateEvmNetworksOverrides)
   .sort((n1, n2) => Number(n1.id) - Number(n2.id))
-//console.log(newKnownNetworksOverrides[15])
-// validate(newKnownNetworksOverrides, KnownEthNetworksOverridesFileSchema)
 
 writeYamlFile(FILE_INPUT_NETWORKS_POLKADOT, newDotNetworks, { format: true, schema: DotNetworksConfigFileSchema })
 writeYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, newEthNetworks, { format: true, schema: EthNetworksConfigFileSchema })
