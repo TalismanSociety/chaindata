@@ -35,18 +35,6 @@ import { Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
 import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
 import { checkDuplicates } from './helpers/checkDuplicates'
 
-// type EvmErc20TokenBalanceConfig = {
-//   symbol: string
-//   name: string
-//   decimals: number
-//   contractAddress: `0x${string}`
-//   mirrorOf?: string
-//   coingeckoId?: string
-//   logo?: string
-//   noDiscovery?: boolean
-//   isDefault?: boolean
-// }
-
 export const buildEthereumTokens = async () => {
   const ethNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, z.array(EthNetworkSchema))
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
@@ -178,12 +166,9 @@ const getNetworkTokens = (
 
     // filter out invalid tokens (empty symbol, missing decimals, etc.)
     const parsed = EvmErc20TokenSchema.safeParse(token)
-    // if (!parsed.success) console.warn('Invalid ERC20 token:', parsed.error, token)
     return parsed.success ? parsed.data : null
   })
 
-  // console.log('TOTAL ERC20s', erc20Configs.length)
-  // console.log('OUTPUT ERC20s', erc20s.filter((t): t is EthToken => !!t).length)
   return [nativeToken, ...erc20s, ...uniswapV2s].filter((t): t is EthToken => !!t)
 }
 

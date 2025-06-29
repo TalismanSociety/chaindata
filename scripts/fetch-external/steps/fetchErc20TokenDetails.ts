@@ -156,14 +156,7 @@ export const getErc20ContractData = async (
       ])
       symbol = hexToString(bytesSymbol).replace(/\0/g, '').trim() // remove NULL characters
       name = hexToString(nameSymbol).replace(/\0/g, '').trim() // remove NULL characters
-    } else {
-      // console.warn('Failed to fetch token info', {
-      //   network: `${client.chain?.name ?? 'unknown'} (${client.chain?.id ?? 'unknown'})`,
-      //   contractAddress,
-      //   err: (e as BaseError).shortMessage ?? (e as Error).message,
-      // })
-      throw e
-    }
+    } else throw e
   }
 
   return { symbol, decimals, name }

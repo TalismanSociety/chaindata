@@ -1,9 +1,8 @@
 import { PromisePool } from '@supercharge/promise-pool'
 import { defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
-import { ChaindataProvider, DotToken, TokenSchema } from '@talismn/chaindata-provider'
+import { ChaindataProvider, DotToken } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import values from 'lodash/values'
-import z from 'zod/v4'
 
 import {
   BALANCES_LIB_VERSION,
@@ -24,7 +23,6 @@ import {
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
-import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
 import { getRpcProvider, parseJsonFile, parseYamlFile, withTimeout, writeJsonFile } from '../../shared/util'
 import { getHackedBalanceModuleDeps } from './helpers/getHackedBalanceModuleDeps'
 

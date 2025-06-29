@@ -24,7 +24,6 @@ const IGNORED_CHAINS = [
 
 const isValidRpcUrl = (rpcUrl: string) => {
   if (rpcUrl.includes('${')) return false // contains keys that need to be replaced
-  // if (isKnownInvalidRpcUrl(rpcUrl)) return false
 
   try {
     const url = new URL(rpcUrl)
@@ -93,8 +92,6 @@ export const fetchKnownEvmNetworks = async () => {
       return evmNetwork
     })
 
-  // // sort but don't filter out networks without RPCs
-  // // wallet needs their names, icons etc.
   const validNetworks = knownEvmNetworks.sort((a, b) => Number(a.id) - Number(b.id))
 
   await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, validNetworks, {

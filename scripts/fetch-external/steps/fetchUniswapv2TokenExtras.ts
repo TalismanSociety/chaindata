@@ -9,7 +9,6 @@ import { getEvmNetworkClient } from './helpers/getEvmNetworkClient'
 import { uniswapV2PairAbi } from './helpers/uniswapV2PairAbi'
 
 export const fetchUniswapv2TokenExtras = async () => {
-  // const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
   const evmNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const tokensCache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
