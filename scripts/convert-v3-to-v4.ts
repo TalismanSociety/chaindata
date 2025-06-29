@@ -1,3 +1,4 @@
+import { native } from 'bun:sqlite'
 import assign from 'lodash/assign'
 import keys from 'lodash/keys'
 
@@ -105,6 +106,37 @@ const migrateDotTokensConfig = (network: ConfigChain): DotNetworkConfig['tokens'
   return Object.keys(result).length ? result : undefined
 }
 
+const getChaindataV4TokenId = (oldTokenId: string): string | null => {
+  if (oldTokenId.includes('-evm-native')) return oldTokenId.replace('-evm-native', ':evm-native')
+
+  if (oldTokenId.includes('-evm-erc20-')) return oldTokenId.replace('-evm-erc20-', ':evm-erc20:')
+
+  if (oldTokenId.includes('-evm-uniswapv2-')) return oldTokenId.replace('-evm-erc20-', ':evm-erc20:')
+
+  if (oldTokenId.includes('-substrate-native')) return oldTokenId.replace('-substrate-native', ':substrate-native:')
+
+  if (oldTokenId.includes('-substrate-tokens-')) return oldTokenId.replace('-substrate-tokens-', ':substrate-tokens:')
+
+  if (oldTokenId.includes('-substrate-psp22-')) return oldTokenId.replace('-substrate-psp22-', ':substrate-psp22:')
+
+  if (oldTokenId.includes('-substrate-assets-'))
+    return oldTokenId
+      .replace('-substrate-assets-', ':substrate-assets:')
+      .split('-')
+      .slice(0, -1) // remove symbol at the end
+      .join(':')
+
+  if (oldTokenId.includes('-substrate-equilibrium-')) return null // deprecated
+
+  if (oldTokenId.includes('-substrate-foreignassets-')) {
+    console.warn('Unable to migrate foreign asset token ID', oldTokenId)
+    return null
+  }
+
+  console.warn(`Unknown token ID format: ${oldTokenId}, cannot migrate to chaindata v4`)
+  return null
+}
+
 const migrateEthNetworkV3ToV4 =
   (dotNetworks: DotNetworkConfig[]) =>
   (network: ConfigEvmNetwork): EthNetworkConfig => {
@@ -115,8 +147,16 @@ const migrateEthNetworkV3ToV4 =
     let nativeCurrency: EthNetworkConfig['nativeCurrency'] | undefined = undefined
     const oldNativeModule = balancesConfig?.['evm-native']
     if (oldNativeModule) {
-      nativeCurrency = assign({}, oldNativeModule)
-      delete nativeCurrency['dcentName']
+      nativeCurrency = assign(
+        {} as EthNetworkConfig['nativeCurrency'],
+        oldNativeModule as EthNetworkConfig['nativeCurrency'],
+      )
+      if (nativeCurrency) {
+        if ('dcentName' in nativeCurrency) delete nativeCurrency['dcentName']
+        if ('mirrorOf' in nativeCurrency)
+          nativeCurrency.mirrorOf = getChaindataV4TokenId(nativeCurrency.mirrorOf!) ?? undefined
+        nativeCurrency.logo = migrateUrl(nativeCurrency.logo) || undefined
+      }
     }
 
     return {
