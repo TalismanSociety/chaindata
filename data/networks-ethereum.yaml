@@ -1,5 +1,7 @@
 - id: '1'
   name: Ethereum Mainnet
+  nativeCurrency:
+    coingeckoId: ethereum
   blockExplorerUrls:
     - https://etherscan.io
   rpcs:
@@ -140,6 +142,8 @@
       - contractAddress: '0x3478B3ecC153CE61eA3c6788611FdBB374D4305d'
 - id: '10'
   name: OP Mainnet
+  nativeCurrency:
+    coingeckoId: ethereum
   blockExplorerUrls:
     - https://optimistic.etherscan.io
   rpcs:
@@ -171,6 +175,11 @@
         coingeckoId: usd-coin
 - id: '46'
   name: Darwinia
+  nativeCurrency:
+    decimals: 18
+    symbol: RING
+    coingeckoId: darwinia-network-native-token
+    mirrorOf: darwinia-substrate-native
   blockExplorerUrls:
     - https://darwinia.subview.xyz
   substrateChainId: darwinia
@@ -178,6 +187,10 @@
     - https://rpc.darwinia.network
 - id: '56'
   name: Binance Smart Chain
+  nativeCurrency:
+    decimals: 18
+    symbol: BNB
+    coingeckoId: binancecoin
   blockExplorerUrls:
     - https://bscscan.com
   rpcs:
@@ -205,6 +218,9 @@
 - id: '81'
   isTestnet: true
   name: Shibuya
+  nativeCurrency:
+    decimals: 18
+    symbol: SBY
   blockExplorerUrls:
     - https://blockscout.com/shibuya
   substrateChainId: shibuya-testnet
@@ -212,6 +228,10 @@
     - https://evm.shibuya.astar.network
 - id: '100'
   name: Gnosis
+  nativeCurrency:
+    decimals: 18
+    symbol: xDAI
+    coingeckoId: xdai
   blockExplorerUrls:
     - https://blockscout.com/xdai/mainnet/
   rpcs:
@@ -220,6 +240,10 @@
     - https://rpc.gnosischain.com/
 - id: '137'
   name: Polygon
+  nativeCurrency:
+    decimals: 18
+    symbol: POL
+    coingeckoId: matic-network
   blockExplorerUrls:
     - https://polygonscan.com/
   rpcs:
@@ -265,6 +289,10 @@
 - id: '146'
   isDefault: true
   name: Sonic Mainnet
+  nativeCurrency:
+    decimals: 18
+    symbol: S
+    coingeckoId: sonic-3
   blockExplorerUrls:
     - https://explorer.soniclabs.com
   rpcs:
@@ -390,6 +418,10 @@
         coingeckoId: yoko
 - id: '336'
   name: Shiden
+  nativeCurrency:
+    decimals: 18
+    symbol: SDN
+    coingeckoId: shiden
   blockExplorerUrls:
     - https://blockscout.com/shiden
   substrateChainId: shiden-kusama
@@ -397,6 +429,10 @@
     - https://shiden-rpc.dwellir.com
 - id: '592'
   name: Astar
+  nativeCurrency:
+    decimals: 18
+    symbol: ASTR
+    coingeckoId: astar
   blockExplorerUrls:
     - https://blockscout.com/astar
   substrateChainId: astar
@@ -458,6 +494,11 @@
     - https://eth-rpc-tc9.aca-staging.network
 - id: '787'
   name: Acala
+  nativeCurrency:
+    decimals: 18
+    symbol: ACA
+    coingeckoId: acala
+    mirrorOf: acala-substrate-native
   blockExplorerUrls:
     - https://blockscout.acala.network
   substrateChainId: acala
@@ -472,6 +513,11 @@
         logo: ./assets/tokens/nemo.png
 - id: '1284'
   name: Moonbeam
+  nativeCurrency:
+    decimals: 18
+    symbol: GLMR
+    coingeckoId: moonbeam
+    mirrorOf: moonbeam-substrate-native
   blockExplorerUrls:
     - https://moonbeam.moonscan.io/
   substrateChainId: moonbeam
@@ -523,6 +569,11 @@
         mirrorOf: moonbeam-substrate-assets-311091173110107856861649819128533077277-usdt
 - id: '1285'
   name: Moonriver
+  nativeCurrency:
+    decimals: 18
+    symbol: MOVR
+    coingeckoId: moonriver
+    mirrorOf: moonriver-substrate-native
   blockExplorerUrls:
     - https://moonriver.moonscan.io/
   substrateChainId: moonriver
@@ -544,6 +595,10 @@
 - id: '1287'
   isTestnet: true
   name: Moonbase Alpha
+  nativeCurrency:
+    decimals: 18
+    symbol: DEV
+    mirrorOf: moonbase-alpha-testnet-substrate-native
   blockExplorerUrls:
     - https://moonbase.moonscan.io/
   substrateChainId: moonbase-alpha-testnet
@@ -552,6 +607,10 @@
     - https://moonbeam-alpha.api.onfinality.io/public
 - id: '2021'
   name: Edgeware
+  nativeCurrency:
+    decimals: 18
+    symbol: EDG
+    coingeckoId: edgeware
   blockExplorerUrls:
     - https://edgscan.live
   substrateChainId: edgeware
@@ -571,6 +630,8 @@
 - id: '8453'
   name: Base
   logo: ./assets/chains/known/base.webp
+  nativeCurrency:
+    coingeckoId: ethereum
   blockExplorerUrls:
     - https://basescan.org
   rpcs:
@@ -702,6 +763,10 @@
   isTestnet: true
   forceScan: true
   name: Monad Testnet
+  nativeCurrency:
+    decimals: 18
+    symbol: MON
+    logo: ./assets/tokens/monad.svg
   blockExplorerUrls:
     - https://testnet.monadexplorer.com/
   preserveGasEstimate: true
@@ -825,6 +890,8 @@
         logo: ./assets/tokens/known/solana.png
 - id: '42161'
   name: Arbitrum One
+  nativeCurrency:
+    coingeckoId: ethereum
   blockExplorerUrls:
     - https://arbiscan.io/
   rpcs:
@@ -858,6 +925,8 @@
       - contractAddress: '0x60b1bB368AfA489Ba0E37Ae01C3fa8cB3a3a0c6d'
 - id: '60808'
   name: BOB
+  nativeCurrency:
+    coingeckoId: ethereum
   blockExplorerUrls:
     - https://explorer.gobob.xyz/
   rpcs:

@@ -1,3 +1,4 @@
+import assign from 'lodash/assign'
 import keys from 'lodash/keys'
 
 import {
@@ -68,43 +69,6 @@ const migrateDotNativeCurrency = (network: ConfigChain): DotNetworkConfig['nativ
   return { decimals, symbol, name, coingeckoId, mirrorOf, logo: migrateUrl(logo) }
 }
 
-const migrateEthNetworkV3ToV4 =
-  (dotNetworks: DotNetworkConfig[]) =>
-  (network: ConfigEvmNetwork): EthNetworkConfig => {
-    const { id, name, rpcs = [], balancesConfig, isTestnet } = network
-
-    const dotNetwork = dotNetworks.find((n) => n.id === network.substrateChainId)
-
-    return {
-      // required
-      id,
-      name: !name && dotNetwork?.name ? dotNetwork.name : name, // in v3 they are not set for networks tied to a polkadot chain
-      rpcs,
-
-      // from NetworkBase
-      isTestnet: isTestnet || undefined,
-      isDefault: network.isDefault || undefined,
-      forceScan: network.forceScan || undefined,
-      themeColor: network.themeColor || undefined,
-      blockExplorerUrls: network.explorerUrl ? [network.explorerUrl] : undefined,
-
-      // from EvmNetwork
-      substrateChainId: network.substrateChainId || undefined,
-      logo: migrateUrl(network.logo) || undefined,
-      preserveGasEstimate: network.preserveGasEstimate || undefined,
-      feeType: network.feeType || undefined,
-      l2FeeType: network.l2FeeType || undefined,
-      contracts: network.erc20aggregator
-        ? {
-            Erc20Aggregator: network.erc20aggregator,
-          }
-        : undefined,
-
-      balancesConfig: migrateEthBalancesConfig(network),
-      tokens: migrateEthTokensConfig(network),
-    }
-  }
-
 const migrateDotBalancesConfig = (network: ConfigChain): DotNetworkConfig['balancesConfig'] => {
   if (!network.balancesConfig) return undefined
 
@@ -140,6 +104,52 @@ const migrateDotTokensConfig = (network: ConfigChain): DotNetworkConfig['tokens'
 
   return Object.keys(result).length ? result : undefined
 }
+
+const migrateEthNetworkV3ToV4 =
+  (dotNetworks: DotNetworkConfig[]) =>
+  (network: ConfigEvmNetwork): EthNetworkConfig => {
+    const { id, name, rpcs = [], balancesConfig, isTestnet } = network
+
+    const dotNetwork = dotNetworks.find((n) => n.id === network.substrateChainId)
+
+    let nativeCurrency: EthNetworkConfig['nativeCurrency'] | undefined = undefined
+    const oldNativeModule = balancesConfig?.['evm-native']
+    if (oldNativeModule) {
+      nativeCurrency = assign({}, oldNativeModule)
+      delete nativeCurrency['dcentName']
+    }
+
+    return {
+      // required
+      id,
+      name: !name && dotNetwork?.name ? dotNetwork.name : name, // in v3 they are not set for networks tied to a polkadot chain
+      rpcs,
+
+      nativeCurrency,
+
+      // from NetworkBase
+      isTestnet: isTestnet || undefined,
+      isDefault: network.isDefault || undefined,
+      forceScan: network.forceScan || undefined,
+      themeColor: network.themeColor || undefined,
+      blockExplorerUrls: network.explorerUrl ? [network.explorerUrl] : undefined,
+
+      // from EvmNetwork
+      substrateChainId: network.substrateChainId || undefined,
+      logo: migrateUrl(network.logo) || undefined,
+      preserveGasEstimate: network.preserveGasEstimate || undefined,
+      feeType: network.feeType || undefined,
+      l2FeeType: network.l2FeeType || undefined,
+      contracts: network.erc20aggregator
+        ? {
+            Erc20Aggregator: network.erc20aggregator,
+          }
+        : undefined,
+
+      balancesConfig: migrateEthBalancesConfig(network),
+      tokens: migrateEthTokensConfig(network),
+    }
+  }
 
 const migrateEthBalancesConfig = (network: ConfigEvmNetwork): EthNetworkConfig['balancesConfig'] => {
   if (!network.balancesConfig) return undefined

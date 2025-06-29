@@ -1,5 +1,5 @@
 import { EvmErc20TokenConfigSchema, EvmNativeTokenConfigSchema, EvmUniswapV2TokenConfigSchema } from '@talismn/balances'
-import { EthNetworkSchema } from '@talismn/chaindata-provider'
+import { EthNetworkSchema, NetworkBaseSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 const EthTokensConfigSchema = z.strictObject({
@@ -10,6 +10,7 @@ const EthTokensConfigSchema = z.strictObject({
 export const EthNetworkConfigSchema = z.strictObject({
   ...EthNetworkSchema.partial().shape,
   ...EthNetworkSchema.pick({ id: true, rpcs: true }).shape,
+  nativeCurrency: NetworkBaseSchema.shape.nativeCurrency.partial().optional(),
   balancesConfig: EthNetworkSchema.shape.balancesConfig,
   tokens: EthTokensConfigSchema.optional(),
 })
