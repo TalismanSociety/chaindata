@@ -2,8 +2,8 @@ import { WsProvider } from '@polkadot/rpc-provider'
 import { ProviderInterface, ProviderInterfaceCallback } from '@polkadot/rpc-provider/types'
 import { ChainConnector } from '@talismn/chain-connector'
 import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
-import { ChainId, DotNetwork, EvmNetworkId, IChaindataProvider, Network, TokenId } from '@talismn/chaindata-provider'
-import { from, of } from 'rxjs'
+import { DotNetworkId, IChaindataProvider, Network } from '@talismn/chaindata-provider'
+import { of } from 'rxjs'
 
 import { RPC_REQUEST_TIMEOUT } from '../../../shared/constants'
 import { DotNetworkConfig } from '../../../shared/schemas'
@@ -27,10 +27,10 @@ export const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: Ws
     // @ts-expect-error
     getNetworksMapById: () => Promise.resolve({ [network.id]: network }),
 
-    // @ts-expect-error
     getNetworksMapByGenesisHash$: () => of({}),
     getNetworksMapByGenesisHash: () => Promise.resolve({}),
 
+    // @ts-expect-error
     getNetworkById$: () => of(network),
     // @ts-expect-error
     getNetworkById: () => Promise.resolve(network),
@@ -52,12 +52,12 @@ export const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: Ws
     getTokensById: () => Promise.resolve({}),
   }
   const stubChainConnector = {
-    asProvider(chainId: ChainId): ProviderInterface {
+    asProvider(chainId: DotNetworkId): ProviderInterface {
       throw new Error('asProvider method not supported by stubChainConnector')
     },
 
     async send<T = any>(
-      chainId: ChainId,
+      chainId: DotNetworkId,
       method: string,
       params: unknown[],
       isCacheable?: boolean | undefined,
@@ -71,7 +71,7 @@ export const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: Ws
     },
 
     async subscribe(
-      chainId: ChainId,
+      chainId: DotNetworkId,
       subscribeMethod: string,
       responseMethod: string,
       params: unknown[],

@@ -4,7 +4,7 @@ import type {
   EvmUniswapV2ModuleConfig,
   MiniMetadata,
 } from '@talismn/balances'
-import { Chain, EvmNetwork, Token } from '@talismn/chaindata-provider'
+import { LegacyChain, LegacyEvmNetwork, Token } from '@talismn/chaindata-provider'
 
 export type ChainId = string
 export type EvmNetworkId = string
@@ -53,9 +53,9 @@ export type ConfigEvmNetwork = {
     'evm-uniswapv2'?: EvmUniswapV2ModuleConfig
   }
   icon?: string
-  feeType?: EvmNetwork['feeType']
-  l2FeeType?: EvmNetwork['l2FeeType']
-  erc20aggregator?: EvmNetwork['erc20aggregator']
+  feeType?: LegacyEvmNetwork['feeType']
+  l2FeeType?: LegacyEvmNetwork['l2FeeType']
+  erc20aggregator?: LegacyEvmNetwork['erc20aggregator']
 }
 
 export type ChainExtrasCache = {
@@ -65,7 +65,7 @@ export type ChainExtrasCache = {
   genesisHash: string
   prefix: number
   chainName: string
-  chainType: Chain['chainType']
+  chainType: LegacyChain['chainType']
   implName: string
   specName: string
   specVersion: string

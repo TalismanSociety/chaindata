@@ -104,6 +104,8 @@ const IGNORED_TOKENS = [
   { chainId: 50104, contractAddress: '0x000000000000000000000000000000000000800a' },
   { chainId: 59144, contractAddress: '0x7e63a5f1a8f0b4d0934b2f2327daed3f6bb2ee75' },
   { chainId: 83872, contractAddress: '0x68db713779f7470c2fd43d3d06841d0192d44939' },
+  { chainId: 322202, contractAddress: '0x19a5c551e4762f232448da1984ecb445b4a7721e' },
+  { chainId: 322202, contractAddress: '0x1595abe9dcf068a969b819b64809d2bedd3703b6' },
   { chainId: 2046399126, contractAddress: '0xb2a85c5ecea99187a977ac34303b80acbddfa208' },
 ]
 
