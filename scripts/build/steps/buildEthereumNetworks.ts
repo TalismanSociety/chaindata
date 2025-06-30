@@ -6,6 +6,7 @@ import uniq from 'lodash/uniq'
 import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
+import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
@@ -81,7 +82,7 @@ const consolidateEthNetwork = (
 
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
-  ])
+  ]).filter(isNotBlacklistedRpcUrl)
 
   if (!rpcs.length) return null
 

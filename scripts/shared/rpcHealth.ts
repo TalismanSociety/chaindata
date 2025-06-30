@@ -6,6 +6,7 @@ import sortBy from 'lodash/sortBy'
 import uniq from 'lodash/uniq'
 import values from 'lodash/values'
 
+import { isNotBlacklistedRpcUrl } from './blacklistedRpcs'
 import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
 import {
   NetworkRpcHealth,
@@ -20,9 +21,6 @@ const READ_CACHE: Record<Platform, NetworkRpcHealthCache | null> = {
   ethereum: null,
 }
 
-// Put RPCs that are flagged by antiviruses here:
-const BLACKLISTED_RPCS_URLS = ['https://blacklisted.example'].map((url) => url.replace(/\/$/, ''))
-
 export type RpcHealthSpec = { rpc: string; networkId: string }
 
 export const getTimeoutSignal = (ms: number) => {
@@ -30,9 +28,6 @@ export const getTimeoutSignal = (ms: number) => {
   setTimeout(() => controller.abort(), ms)
   return controller.signal
 }
-
-export const isBlacklistedRpcUrl = (url: string) =>
-  BLACKLISTED_RPCS_URLS.some((blacklisted) => new URL(blacklisted).host === new URL(url).host)
 
 export const getRpcHealthKey = (rpcHealth: RpcHealthSpec): string => `${rpcHealth.rpc}::${rpcHealth.networkId}`
 
@@ -67,9 +62,11 @@ export const checkPlatformRpcsHealth = async (
   const cacheFilePath = FILEPATH_BY_PLATFORM[platform]
   const { rechecks, maxchecks }: CheckRpcsHealthOptions = Object.assign({}, DEFAULT_OPTIONS, options)
 
-  const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema)
+  const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema).filter(({ rpc }) =>
+    isNotBlacklistedRpcUrl(rpc),
+  )
   const existingRpcHealthsByKey = keyBy(existingRpcHealths, getRpcHealthKey)
-  const listedRpcHealthsKeys = listedRpcs.map(getRpcHealthKey)
+  const listedRpcHealthsKeys = listedRpcs.filter(({ rpc }) => isNotBlacklistedRpcUrl(rpc)).map(getRpcHealthKey)
 
   // purge unlisted ones
   for (const key of keys(existingRpcHealthsByKey))

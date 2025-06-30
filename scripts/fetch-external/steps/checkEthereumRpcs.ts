@@ -7,7 +7,6 @@ import {
   getRpcHealthKey,
   getRpcHealthSpecsFromKey,
   getTimeoutSignal,
-  isBlacklistedRpcUrl,
   RpcHealthSpec,
 } from '../../shared/rpcHealth'
 import { EthNetworksConfigFileSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
@@ -42,10 +41,6 @@ const getRpcHealth = async ({ rpc, networkId }: RpcHealthSpec): Promise<RpcHealt
   // if unreachable (DNS or SSL error), consider invalid
   // if it doesn't respond, consider unknown as it might be blocking requests from github action runner
   // if it responds, consider valid only if the chainId matches
-
-  if (isBlacklistedRpcUrl(rpc)) {
-    return { status: 'NOK', error: 'Blacklisted' }
-  }
 
   // use fetch instead of viem to ensure we get proper HTTP errors
   try {

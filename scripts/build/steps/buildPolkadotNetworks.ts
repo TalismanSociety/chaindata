@@ -1,7 +1,9 @@
 import { DotNetwork, DotNetworkSchema, isNetworkDot, subNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
+import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
+import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
@@ -72,12 +74,13 @@ const consolidateDotNetwork = (
   const mehRpcs = getRpcsByStatus(config.id, 'polkadot', 'MEH')
   const allRpcs = getRpcsByStatus(config.id, 'polkadot', 'all')
 
-  const rpcs = [
+  const rpcs = uniq([
     ...config.rpcs?.filter((url) => okRpcs.includes(url)),
     ...config.rpcs?.filter((url) => !allRpcs.includes(url)), // new rpcs, assume better than MEH - there should not be any though
     ...config.rpcs?.filter((url) => mehRpcs.includes(url)),
     // ignore NOK ones
-  ]
+  ]).filter(isNotBlacklistedRpcUrl)
+
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated
 
   const nativeCurrency = Object.assign(
