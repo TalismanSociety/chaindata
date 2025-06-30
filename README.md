@@ -18,17 +18,15 @@ The goals of this repo are:
 
 The files in this repo, `data/chaindata.json`, `data/testnets-chaindata.json` and `data/evm-networks.json` are used to configure a GitHub workflow which scrapes information from each chain and publishes it as a collection of JSON files in the `pub` directory of this repo.
 
-The published files can be browsed at this URL: https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v1/index.txt
+The published files can be downloaded at these URLs:
 
-As an example, you could use this request to get a summary of all chains including the the names, logos, [genesisHashes](## 'the hash of the first block on the chain') and [address type prefixes](https://wiki.polkadot.network/docs/learn-account-advanced#address-format):
+- https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v4/chaindata.json
+- https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v4/chaindata.min.json
 
-```ts
-const chainsSummaryUrl = 'https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v1/chains/summary.json'
-const summary = await fetch(chainsSummaryUrl).then((result) => result.json())
-```
+They are used by Talisman products via the `@talismn/chaindata-provider` library, which provides a `ChaindataProvider` that automatically synchronizes with these files to expose chains and tokens, alongside with typings and utilities.
 
 For an example of a more advanced use-case, you can check out the source code for [Talisman Wallet](https://github.com/TalismanSociety/talisman).  
-The wallet uses chaindata to populate a database of chains and tokens which is used for features like account balance subscriptions and sending funds.
+The wallet uses our `ChaindataProvider` for features like account balance subscriptions and sending funds.
 
 ## Chaindata `pub` versions
 
@@ -48,6 +46,12 @@ A brief rundown of the changes introduced by each `pub` version:
   All miniMetadatas have been upgraded from metadata format v14 to v15.  
   Without upgrading `@talismn/balances`, the new format causes the library to throw.
 
+- **`pub/v2` -> `pub/v3`**  
+  Changed how some token ids are generated.
+
+- **`pub/v4` -> `pub/v4`**  
+  Refactored network and token objects.
+
 ## Contributing
 
 To make a contribution, please fork this repo and make your changes in your fork, then open a PR to merge your changes back into this repo.
@@ -56,7 +60,7 @@ To make a contribution, please fork this repo and make your changes in your fork
 
 #### Substrate chain logos
 
-1. Identify the chain `id` from `chaindata.json` or `testnets-chaindata.json`
+1. Identify the chain `id` from `networks-polkadot.yaml`
 1. Add your logo (in `svg` format) to `assets/chains/${id}.svg`
 
 #### EVM chain logos
@@ -67,8 +71,8 @@ To make a contribution, please fork this repo and make your changes in your fork
 
 #### Token logos
 
-1. Identify the token symbol (e.g. `KSM`)
 1. Add your logo (in `svg` format) to `assets/tokens/${symbol}.svg`
+1. Provide the url in `networks-polkadot.yaml` in the `logo` property of the associated entry
 
 ### To build the pub directory locally:
 
@@ -83,20 +87,16 @@ To make a contribution, please fork this repo and make your changes in your fork
 
 ### File structure
 
-Some files are edited manually, some other are generated automatically as part of the CI.
+Only YAML files may be edited manually, JSON files are generated automatically as part of the CI.
 
-The table below describes the purpose of each file and how it is edited.
+The table below describes the purpose of each editable file.
 
-| File name                                        | Edit Type | Purpose                                                                                       |
-| ------------------------------------------------ | --------- | --------------------------------------------------------------------------------------------- |
-| `data/chaindata.json`                            | manual    | A list of all parachains and relay chains in the Polkadot ecosystem                           |
-| `data/testnets-chaindata.json`                   | manual    | A list of all parachains and relay chains in the Polkadot ecosystem                           |
-| `data/generated/chains-extras-cache.json`        | automatic | Caches static data for each substrate chain                                                   |
-| `data/evm-networks.json`                         | manual    | List of EVM chains supported by default in Talisman                                           |
-| `data/generated/known-evm-networks.json`         | automatic | List of EVM networks, generated from [ethereum-lists](https://github.com/ethereum-lists)      |
-| `data/known-evm-networks-overrides.json`         | manual    | Overrides to `known-evm-networks.json`, matched by chain id                                   |
-| `data/cache/known-evm-networks-icons-cache.json` | automatic | Caches images for each network defined in [ethereum-lists](https://github.com/ethereum-lists) |
-| `data/cache/known-evm-tokens-cache.json`         | automatic | Caches static data for ERC20 tokens                                                           |
+| File name                                    | Purpose                                                                         |
+| -------------------------------------------- | ------------------------------------------------------------------------------- |
+| `data/networks-polkadot.yaml`                | A list of all parachains and relay chains in the Polkadot ecosystem             |
+| `data/networks-ethereum.json`                | List of Ethereum networks that are marked `isDefault: true` in Talisman         |
+| `data/ethereum-known-networks-overrides.yaml | Overrides to [ethereum-lists](https://github.com/ethereum-lists), matched by id |
+| `data/coingecko-overrides.yaml`              | Overrides logos of some coingecko tokens                                        |
 
 ## Dev Resources
 
@@ -105,12 +105,7 @@ The table below describes the purpose of each file and how it is edited.
 There are a few sections in this repo which could do with a tidy up.  
 Here is a list of some of them, feel free to add more!
 
-- The use of relative logo paths vs absolute logo paths is confusing.  
-  We should decide on one, and then also clear up exactly how it is that logos are handled in the repo.  
-  By `clear up`, I mean to make the code easier to understand where possible, and to add docs anywhere it needs to remain complex.  
-  It is currently unclear to contributors whether they only need to add their own logos, or if changes also need to be made to the files in `data`.
-
-- The code for merging `known-evm-networks.json` with `evm-networks.json` is complex, stateful, full of side-effects and therefore difficult to re-use between the build stage and the fetch-external stage.  
+- The code for merging `known-evm-networks.json` with `data/networks-ethereum.json` is complex, stateful, full of side-effects and therefore difficult to re-use between the build stage and the fetch-external stage.  
   It is currently co-located inside of `scripts/build/steps/addEvmNetworks.ts`.  
   We should decide on a simpler mechanism for merging these two files, and extract the implementation of that into a util file.  
   An example of where this currently fails is in `scripts/fetch-external/steps/fetchErc20TokenSymbols.ts`.  
