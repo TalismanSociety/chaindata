@@ -72,10 +72,11 @@ const consolidateEthNetwork = (
 
   const okRpcs = getRpcsByStatus(id, 'ethereum', 'OK')
   const mehRpcs = getRpcsByStatus(id, 'ethereum', 'MEH')
+  const allRpcs = getRpcsByStatus(id, 'polkadot', 'all')
 
   const rpcs = uniq([
     ...(config?.rpcs?.filter((url) => okRpcs.includes(url)) ?? []),
-    ...(config?.rpcs?.filter((url) => !okRpcs.includes(url) && !mehRpcs.includes(url)) ?? []), // new rpcs, assume better than MEH - there should not be any though
+    ...(config?.rpcs?.filter((url) => !allRpcs.includes(url)) ?? []), // new rpcs, assume better than MEH - there should not be any though
     ...(config?.rpcs?.filter((url) => mehRpcs.includes(url)) ?? []),
 
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),

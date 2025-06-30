@@ -115,13 +115,17 @@ export const checkPlatformRpcsHealth = async (
   delete READ_CACHE[platform] // reset cache to force reload on next getRpcsByStatus call
 }
 
-export const getRpcsByStatus = (networkId: string, platform: Platform, status: RpcHealth['status']): string[] => {
+export const getRpcsByStatus = (
+  networkId: string,
+  platform: Platform,
+  status: RpcHealth['status'] | 'all',
+): string[] => {
   if (!READ_CACHE[platform])
     READ_CACHE[platform] = parseJsonFile(FILEPATH_BY_PLATFORM[platform], NetworkRpcHealthFileSchema)
 
   return [
     ...READ_CACHE[platform].filter(
-      (rpcHealth) => rpcHealth.networkId === networkId && rpcHealth.health.status === status,
+      (rpcHealth) => rpcHealth.networkId === networkId && (status === 'all' || rpcHealth.health.status === status),
     ),
   ].map((rpcHealth) => rpcHealth.rpc)
 }

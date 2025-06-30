@@ -70,9 +70,11 @@ const consolidateDotNetwork = (
 
   const okRpcs = getRpcsByStatus(config.id, 'polkadot', 'OK')
   const mehRpcs = getRpcsByStatus(config.id, 'polkadot', 'MEH')
+  const allRpcs = getRpcsByStatus(config.id, 'polkadot', 'all')
+
   const rpcs = [
     ...config.rpcs?.filter((url) => okRpcs.includes(url)),
-    ...config.rpcs?.filter((url) => !okRpcs.includes(url) && !mehRpcs.includes(url)), // new rpcs, assume better than MEH - there should not be any though
+    ...config.rpcs?.filter((url) => !allRpcs.includes(url)), // new rpcs, assume better than MEH - there should not be any though
     ...config.rpcs?.filter((url) => mehRpcs.includes(url)),
     // ignore NOK ones
   ]
