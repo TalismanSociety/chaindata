@@ -72,7 +72,7 @@ To make a contribution, please fork this repo and make your changes in your fork
 #### Token logos
 
 1. Add your logo (in `svg` format) to `assets/tokens/${symbol}.svg`
-1. Provide the url in `networks-polkadot.yaml` in the `logo` property of the associated entry
+1. In `networks-polkadot.yaml` find the logo entry and set the `logo` property with the relative path of the token.
 
 ### To build the pub directory locally:
 
