@@ -51,6 +51,7 @@ A brief rundown of the changes introduced by each `pub` version:
 
 - **`pub/v4` -> `pub/v4`**  
   Refactored network and token objects.
+  YAML input files.
 
 ## Contributing
 
