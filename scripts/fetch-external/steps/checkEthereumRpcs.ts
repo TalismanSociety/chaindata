@@ -44,8 +44,6 @@ const getRpcHealth = async ({ rpc, networkId }: RpcHealthSpec): Promise<RpcHealt
 
   // use fetch instead of viem to ensure we get proper HTTP errors
   try {
-    // if (isKnownInvalidRpcUrl(rpc)) return { status: 'NOK', error: 'Known invalid RPC URL' }
-
     const request = await fetch(rpc, {
       method: 'POST',
       headers: {
