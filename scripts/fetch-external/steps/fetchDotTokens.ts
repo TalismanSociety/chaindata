@@ -115,7 +115,6 @@ const fetchDotNetworkTokens = async ({
 
     const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(network, provider)
 
-    // const miniMetadatas: Record<string, MiniMetadata> = {}
     const tokens: Record<string, any> = {}
 
     for (const mod of defaultBalanceModules
