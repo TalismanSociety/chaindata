@@ -1,7 +1,6 @@
-import { execSync } from 'child_process'
-
 import 'dotenv/config'
 
+import { execSync } from 'child_process'
 import { readFileSync } from 'fs'
 
 import pkgBalances from '@talismn/balances/package.json'
