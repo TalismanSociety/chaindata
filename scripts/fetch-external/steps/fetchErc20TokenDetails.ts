@@ -237,7 +237,6 @@ export const fetchErc20TokenDetails = async () => {
     ...evmNetworks.map((n) => ({ chainId: n.id, tokens: n.tokens?.['evm-erc20'] ?? [] })),
   ]
   chainTokens
-    // .filter(({ chainId }) => chainId === '8453')
     .forEach(({ chainId, tokens }) => {
       for (const token of tokens) {
         if (!erc20sByChainId.has(chainId)) erc20sByChainId.set(chainId, new Set())
