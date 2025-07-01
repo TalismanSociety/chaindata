@@ -29,9 +29,6 @@ import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
 import { withTimeout } from '../../shared/withTimeout'
 import { writeJsonFile } from '../../shared/writeFile'
 
-// set this to a specific chain id to debug it
-const DEV_CHAIN_ID = null // ex: 'hydradx'
-
 export const fetchDotTokens = async () => {
   const prevDotTokens = parseJsonFile(FILE_DOT_TOKENS_CACHE, DotTokensCacheFileSchema)
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
