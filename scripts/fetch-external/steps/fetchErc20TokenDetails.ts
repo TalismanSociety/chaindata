@@ -8,7 +8,6 @@ import {
   erc20Abi_bytes32,
   getContract,
   hexToString,
-  RpcError,
   TimeoutError,
 } from 'viem'
 
@@ -18,6 +17,8 @@ import {
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_KNOWN_EVM_NETWORKS,
 } from '../../shared/constants'
+import { getEvmNetworkClient } from '../../shared/getEvmNetworkClient'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import {
   EthNetworkConfig,
   EthNetworksConfigFileSchema,
@@ -25,8 +26,7 @@ import {
   KnownEthNetworksFileSchema,
 } from '../../shared/schemas'
 import { Erc20TokenCache } from '../../shared/types'
-import { parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
-import { getEvmNetworkClient } from './helpers/getEvmNetworkClient'
+import { writeJsonFile } from '../../shared/writeFile'
 
 const POOL = new PQueue({ concurrency: 1, timeout: 10_000, throwOnTimeout: true })
 

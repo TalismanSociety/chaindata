@@ -1,4 +1,4 @@
-import { EvmErc20TokenConfigSchema, EvmNativeTokenConfigSchema, EvmUniswapV2TokenConfigSchema } from '@talismn/balances'
+import { EvmErc20TokenConfigSchema, EvmUniswapV2TokenConfigSchema } from '@talismn/balances'
 import { EthNetworkSchema, NetworkBaseSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 

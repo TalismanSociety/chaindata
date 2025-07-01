@@ -5,7 +5,7 @@ import startCase from 'lodash/startCase'
 import loglevel from 'loglevel'
 
 import { fetchExternalSteps } from './fetch-external/steps'
-import { logDuration } from './shared/util'
+import { logDuration } from './shared/logDuration'
 
 // set loglevel for @talismn/* libraries
 loglevel.setLevel('info')

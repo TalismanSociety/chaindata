@@ -1,16 +1,13 @@
 import { PromisePool } from '@supercharge/promise-pool'
 
 import { FILE_INPUT_NETWORKS_POLKADOT, FILE_NETWORKS_SPECS_POLKADOT } from '../../shared/constants'
+import { getRpcProvider } from '../../shared/getRpcProvider'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { DotNetworksConfigFileSchema, DotNetworkSpecsFileSchema, DotNetworkSpecsSchema } from '../../shared/schemas'
-import {
-  getRpcProvider,
-  parseJsonFile,
-  parseYamlFile,
-  validateDebug,
-  withTimeout,
-  writeJsonFile,
-} from '../../shared/util'
+import { validateDebug } from '../../shared/validate'
+import { withTimeout } from '../../shared/withTimeout'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchDotNetworksSpecs = async () => {
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)

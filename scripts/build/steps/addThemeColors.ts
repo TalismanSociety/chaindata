@@ -8,12 +8,14 @@ import sharp from 'sharp'
 import tinycolor from 'tinycolor2'
 import { z } from 'zod/v4'
 
+import { getAssetPathFromUrl } from '../../shared/assetUrl'
 import {
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_NETWORKS_POLKADOT,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
-import { getAssetPathFromUrl, parseJsonFile, writeJsonFile } from '../../shared/util'
+import { parseJsonFile } from '../../shared/parseFile'
+import { writeJsonFile } from '../../shared/writeFile'
 
 const DEFAULT_THEME_COLOR = '#505050'
 

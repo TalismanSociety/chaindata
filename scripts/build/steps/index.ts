@@ -1,4 +1,4 @@
-import { cleanupOutputDir } from '../../shared/util'
+import { cleanupOutputDir } from '../../shared/steps/cleanupOutputDir'
 import { addThemeColors } from './addThemeColors'
 import { buildConsolidatedData } from './buildConsolidatedData'
 import { buildEthereumNetworks } from './buildEthereumNetworks'
@@ -9,7 +9,7 @@ import { buildPolkadotTokens } from './buildPolkadotTokens'
 import { checkOrphans } from './checkOrphans'
 import { cleanupOutputs } from './cleanupOutputs'
 
-export const buildSteps: Array<() => Awaited<void>> = [
+export const buildSteps: Array<() => Promise<void> | void> = [
   cleanupOutputDir,
 
   buildPolkadotNetworks,

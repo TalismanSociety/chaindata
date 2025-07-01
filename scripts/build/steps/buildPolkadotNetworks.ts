@@ -4,6 +4,7 @@ import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
 import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
+import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
@@ -11,6 +12,8 @@ import {
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   FILE_OUTPUT_NETWORKS_POLKADOT,
 } from '../../shared/constants'
+import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
   DotNetworkConfig,
@@ -23,15 +26,8 @@ import {
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { MetadataPortalUrls } from '../../shared/types'
-import {
-  getNetworkLogoUrl,
-  getTokenLogoUrl,
-  parseJsonFile,
-  parseYamlFile,
-  validateDebug,
-  writeJsonFile,
-} from '../../shared/util'
-import { checkDuplicates } from './helpers/checkDuplicates'
+import { validateDebug } from '../../shared/validate'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildPolkadotNetworks = async () => {
   const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)

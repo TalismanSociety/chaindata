@@ -7,24 +7,20 @@ import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
 import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
+import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
 import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
-import {
-  getNetworkLogoUrl,
-  getTokenLogoUrl,
-  parseJsonFile,
-  parseYamlFile,
-  validateDebug,
-  writeJsonFile,
-} from '../../shared/util'
-import { checkDuplicates } from './helpers/checkDuplicates'
+import { validateDebug } from '../../shared/validate'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildEthereumNetworks = async () => {
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
@@ -118,9 +114,6 @@ const consolidateEthNetwork = (
       symbol,
     ),
     mirrorOf: config?.nativeCurrency?.mirrorOf || knownEvmNetwork?.nativeCurrency.mirrorOf,
-  }
-
-  if (knownEvmNetwork?.icon) {
   }
 
   const logo = getNetworkLogoUrl(

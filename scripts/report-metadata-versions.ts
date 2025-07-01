@@ -1,12 +1,10 @@
-import { readFileSync } from 'node:fs'
-
 import { u32, Vector } from '@polkadot-api/substrate-bindings'
 import { WsProvider } from '@polkadot/rpc-provider'
 import { DotNetwork, Network } from '@talismn/chaindata-provider'
 import { decAnyMetadata } from '@talismn/scale'
 
 import { DIR_OUTPUT } from './shared/constants'
-import { parseJsonFile } from './shared/util'
+import { parseJsonFile } from './shared/parseFile'
 
 const chains: DotNetwork[] = parseJsonFile<Network[]>(`${DIR_OUTPUT}/networks.json`).filter(
   (n) => n.platform === 'polkadot',

@@ -1,4 +1,3 @@
-import { native } from 'bun:sqlite'
 import assign from 'lodash/assign'
 import keys from 'lodash/keys'
 
@@ -7,6 +6,7 @@ import {
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_INPUT_NETWORKS_POLKADOT,
 } from './shared/constants'
+import { parseJsonFile } from './shared/parseFile'
 import {
   DotBalancesConfigTypes,
   DotNetworkConfig,
@@ -18,7 +18,7 @@ import {
   KnownEthNetworksOverridesFileSchema,
 } from './shared/schemas'
 import { ConfigChain, ConfigEvmNetwork } from './shared/types'
-import { parseJsonFile, writeYamlFile } from './shared/util'
+import { writeYamlFile } from './shared/writeFile'
 
 const migrateUrl = (url: string | undefined): string | undefined => {
   return url?.replace('https://raw.githubusercontent.com/TalismanSociety/chaindata/main/', './')

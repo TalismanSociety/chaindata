@@ -1,7 +1,7 @@
 import { Network, Token } from '@talismn/chaindata-provider'
 
 import { DIR_OUTPUT } from './shared/constants'
-import { parseJsonFile } from './shared/util'
+import { parseJsonFile } from './shared/parseFile'
 
 const evmNetworks = parseJsonFile<Network[]>(`${DIR_OUTPUT}/networks.json`).filter((n) => n.platform === 'ethereum')
 const erc20Tokens = parseJsonFile<Token[]>(`${DIR_OUTPUT}/tokens.json`).filter((n) => n.type === 'evm-erc20')

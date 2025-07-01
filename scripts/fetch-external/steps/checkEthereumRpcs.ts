@@ -2,6 +2,7 @@ import uniq from 'lodash/uniq'
 import { Hex, hexToNumber } from 'viem'
 
 import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS, FILE_RPC_HEALTH_ETHEREUM } from '../../shared/constants'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import {
   checkPlatformRpcsHealth,
   getRpcHealthKey,
@@ -11,7 +12,6 @@ import {
 } from '../../shared/rpcHealth'
 import { EthNetworksConfigFileSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
-import { parseJsonFile, parseYamlFile } from '../../shared/util'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 const RECHECKS_PER_RUN = 100

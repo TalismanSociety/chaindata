@@ -1,12 +1,11 @@
 import WebSocket from 'ws'
 
-import { FILE_INPUT_NETWORKS_POLKADOT, FILE_RPC_HEALTH_POLKADOT } from '../../shared/constants'
+import { FILE_INPUT_NETWORKS_POLKADOT } from '../../shared/constants'
+import { parseYamlFile } from '../../shared/parseFile'
 import { checkPlatformRpcsHealth, RpcHealthSpec } from '../../shared/rpcHealth'
 import { DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
-import { parseYamlFile } from '../../shared/util'
 
-const RPC_TIMEOUT = 4_000 // 4 seconds
 const RECHECKS_PER_RUN = 50
 const MAX_CHECKS_PER_RUN = 200
 

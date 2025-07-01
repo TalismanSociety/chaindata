@@ -14,7 +14,7 @@ import { fetchUniswapv2TokenExtras } from './fetchUniswapv2TokenExtras'
 import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensFromCache'
 import { validateConfigFiles } from './validateConfigFiles'
 
-export const fetchExternalSteps: Array<() => Awaited<void>> = [
+export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   validateConfigFiles,
   fetchKnownEvmNetworks,
   checkPolkadotRpcs,

@@ -1,5 +1,3 @@
-import { write } from 'fs'
-
 import {
   AnyMiniMetadataSchema,
   ChaindataFileSchema,
@@ -21,7 +19,8 @@ import {
   FILE_OUTPUT_TOKENS_ETHEREUM,
   FILE_OUTPUT_TOKENS_POLKADOT,
 } from '../../shared/constants'
-import { parseJsonFile, writeJsonFile } from '../../shared/util'
+import { parseJsonFile } from '../../shared/parseFile'
+import { writeJsonFile } from '../../shared/writeFile'
 
 const MiniMetadatasFileSchema = z.array(AnyMiniMetadataSchema)
 

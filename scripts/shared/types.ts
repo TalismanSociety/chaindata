@@ -134,36 +134,6 @@ export type Uniswapv2TokenCache = {
   coingeckoId1?: string
 }
 
-export type CoingeckoAssetPlatform = {
-  id: string
-  chain_identifier: number | null
-  name: string
-  shortname: string
-  native_coin_id: string | null
-  image: {
-    thumb: string | null
-    small: string | null
-    large: string | null
-  }
-}
-
-export type CoingeckoCoin = {
-  id: string
-  symbol: string
-  name: string
-  platforms: Record<string, string>
-}
-
-export type CoingeckoCoinDetails = CoingeckoCoin & {
-  id: string
-  symbol: string
-  name: string
-  platforms: Record<string, string>
-  image: Record<'thumb' | 'small' | 'large', string>
-  last_updated: string | null
-  market_cap_rank: number | null
-}
-
 // Some handy types from https://www.typescriptlang.org/docs/handbook/advanced-types.html#distributive-conditional-types
 export type FunctionPropertyNames<T> = {
   [K in keyof T]: T[K] extends Function ? K : never

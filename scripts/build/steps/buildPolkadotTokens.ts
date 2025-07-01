@@ -1,16 +1,18 @@
 import { DotNetworkSchema, parseTokenId, Token, TokenId, TokenSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
+import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_DOT_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_TOKENS_POLKADOT,
 } from '../../shared/constants'
+import { getTokenLogoUrl } from '../../shared/getLogoUrl'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
-import { getTokenLogoUrl, parseJsonFile, parseYamlFile, writeJsonFile } from '../../shared/util'
-import { checkDuplicates } from './helpers/checkDuplicates'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildPolkadotTokens = async () => {
   const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)

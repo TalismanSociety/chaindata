@@ -22,6 +22,7 @@ import keys from 'lodash/keys'
 import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
+import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_EVM_ERC20_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_ETHEREUM,
@@ -30,10 +31,12 @@ import {
   FILE_OUTPUT_TOKENS_ETHEREUM,
 } from '../../shared/constants'
 import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { getTokenLogoUrl } from '../../shared/getLogoUrl'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
-import { getTokenLogoUrl, parseJsonFile, parseYamlFile, validateDebug, writeJsonFile } from '../../shared/util'
-import { checkDuplicates } from './helpers/checkDuplicates'
+import { validateDebug } from '../../shared/validate'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildEthereumTokens = async () => {
   const ethNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, z.array(EthNetworkSchema))

@@ -5,6 +5,7 @@ import path from 'node:path'
 import { PromisePool } from '@supercharge/promise-pool'
 import sharp from 'sharp'
 
+import { fetchCoinDetails } from '../../shared/coingecko'
 import {
   COINGECKO_LOGO_DOWNLOAD_LIMIT,
   FILE_INPUT_NETWORKS_ETHEREUM,
@@ -12,6 +13,7 @@ import {
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { parseYamlFile } from '../../shared/parseFile'
 import {
   DotNetworkConfig,
   DotNetworksConfigFileSchema,
@@ -19,8 +21,6 @@ import {
   EthNetworksConfigFileSchema,
   KnownEthNetworkConfig,
 } from '../../shared/schemas'
-import { parseYamlFile } from '../../shared/util'
-import { fetchCoinDetails } from './helpers/coingecko'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
   'baoeth-eth-stablepool',

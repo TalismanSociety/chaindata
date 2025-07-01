@@ -12,6 +12,9 @@ import {
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
+import { getHackedBalanceModuleDeps } from '../../shared/getHackedBalanceModuleDeps'
+import { getRpcProvider } from '../../shared/getRpcProvider'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
   DotNetworkConfig,
@@ -24,16 +27,9 @@ import {
   DotNetworkMetadataExtractSchema,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
-import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
-import {
-  getRpcProvider,
-  parseJsonFile,
-  parseYamlFile,
-  validateDebug,
-  withTimeout,
-  writeJsonFile,
-} from '../../shared/util'
-import { getHackedBalanceModuleDeps } from './helpers/getHackedBalanceModuleDeps'
+import { validateDebug } from '../../shared/validate'
+import { withTimeout } from '../../shared/withTimeout'
+import { writeJsonFile } from '../../shared/writeFile'
 
 // set this to a specific chain id to debug it
 const DEV_CHAIN_ID = null // ex: 'hydradx'
@@ -193,8 +189,6 @@ export const fetchMiniMetadatas = async (
   const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(network, provider)
 
   const miniMetadatas: Record<string, MiniMetadata> = {}
-  const tokens: Record<string, any> = {}
-
   for (const mod of defaultBalanceModules
     .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
     .filter((mod) => mod.type.startsWith('substrate-'))) {

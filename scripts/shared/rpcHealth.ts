@@ -8,13 +8,14 @@ import values from 'lodash/values'
 
 import { isNotBlacklistedRpcUrl } from './blacklistedRpcs'
 import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
+import { parseJsonFile } from './parseFile'
 import {
   NetworkRpcHealth,
   NetworkRpcHealthCache,
   NetworkRpcHealthFileSchema,
   RpcHealth,
 } from './schemas/NetworkRpcHealth'
-import { parseJsonFile, writeJsonFile } from './util'
+import { writeJsonFile } from './writeFile'
 
 const READ_CACHE: Record<Platform, NetworkRpcHealthCache | null> = {
   polkadot: null,

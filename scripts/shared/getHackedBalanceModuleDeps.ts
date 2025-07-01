@@ -5,9 +5,9 @@ import { ChainConnectorEvm } from '@talismn/chain-connector-evm'
 import { DotNetworkId, IChaindataProvider, Network } from '@talismn/chaindata-provider'
 import { of } from 'rxjs'
 
-import { RPC_REQUEST_TIMEOUT } from '../../../shared/constants'
-import { DotNetworkConfig } from '../../../shared/schemas'
-import { withTimeout } from '../../../shared/util'
+import { RPC_REQUEST_TIMEOUT } from './constants'
+import { DotNetworkConfig } from './schemas'
+import { withTimeout } from './withTimeout'
 
 export const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: WsProvider) => {
   const network = chain as unknown as Network
@@ -64,10 +64,7 @@ export const getHackedBalanceModuleDeps = (chain: DotNetworkConfig, provider: Ws
     ): Promise<T> {
       if (chainId !== chain.id) throw new Error(`Chain ${chainId} not supported by stub connector`)
 
-      return withTimeout(
-        () => provider.send<T>(method, params, isCacheable),
-        RPC_REQUEST_TIMEOUT, // 30 seconds in milliseconds
-      )
+      return withTimeout(() => provider.send<T>(method, params, isCacheable), RPC_REQUEST_TIMEOUT)
     },
 
     async subscribe(

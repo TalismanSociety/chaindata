@@ -6,9 +6,10 @@ import {
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   NOVASAMA_METADATA_PORTAL_CONFIG,
 } from '../../shared/constants'
+import { parseYamlFile } from '../../shared/parseFile'
 import { DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { MetadataPortalUrls } from '../../shared/types'
-import { parseYamlFile, writeJsonFile } from '../../shared/util'
+import { writeJsonFile } from '../../shared/writeFile'
 
 const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
   acala: 'acala',

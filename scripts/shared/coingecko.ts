@@ -1,5 +1,34 @@
-import { fetchFromCoingecko } from '../../../shared/fetchFromCoingecko'
-import { CoingeckoAssetPlatform, CoingeckoCoin, CoingeckoCoinDetails } from '../../../shared/types'
+import { fetchFromCoingecko } from './fetchFromCoingecko'
+
+export type CoingeckoAssetPlatform = {
+  id: string
+  chain_identifier: number | null
+  name: string
+  shortname: string
+  native_coin_id: string | null
+  image: {
+    thumb: string | null
+    small: string | null
+    large: string | null
+  }
+}
+
+export type CoingeckoCoin = {
+  id: string
+  symbol: string
+  name: string
+  platforms: Record<string, string>
+}
+
+export type CoingeckoCoinDetails = CoingeckoCoin & {
+  id: string
+  symbol: string
+  name: string
+  platforms: Record<string, string>
+  image: Record<'thumb' | 'small' | 'large', string>
+  last_updated: string | null
+  market_cap_rank: number | null
+}
 
 let ASSET_PLATFORMS: CoingeckoAssetPlatform[] | null = null
 

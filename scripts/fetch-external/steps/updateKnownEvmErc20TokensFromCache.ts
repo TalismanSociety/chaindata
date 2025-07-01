@@ -1,7 +1,8 @@
 import { FILE_EVM_ERC20_TOKENS_CACHE, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { parseJsonFile } from '../../shared/parseFile'
 import { KnownEthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { Erc20TokenCache } from '../../shared/types'
-import { parseJsonFile, writeJsonFile } from '../../shared/util'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const updateKnownEvmErc20TokensFromCache = async () => {
   const knownEvmNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)

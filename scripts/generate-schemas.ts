@@ -6,7 +6,7 @@ import {
   KnownEthNetworksOverridesFileSchema,
 } from './shared/schemas'
 import { CoingeckoOverridesFileSchema } from './shared/schemas/CoingeckoOverrides'
-import { writeJsonFile } from './shared/util'
+import { writeJsonFile } from './shared/writeFile'
 
 const tryUpdateSchema = async (filePath: string, schema: z4.ZodTypeAny) => {
   try {

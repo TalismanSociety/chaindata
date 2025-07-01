@@ -3,7 +3,7 @@ import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
 
 import { FILE_OUTPUT_NETWORKS_ALL, FILE_OUTPUT_TOKENS_ALL } from '../../shared/constants'
-import { parseJsonFile } from '../../shared/util'
+import { parseJsonFile } from '../../shared/parseFile'
 
 export const checkOrphans = () => {
   const networks = parseJsonFile(FILE_OUTPUT_NETWORKS_ALL, z.array(NetworkSchema))

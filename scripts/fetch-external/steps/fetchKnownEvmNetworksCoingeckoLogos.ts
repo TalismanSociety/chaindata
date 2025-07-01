@@ -4,10 +4,11 @@ import path from 'node:path'
 
 import sharp from 'sharp'
 
+import { fetchAssetPlatforms } from '../../shared/coingecko'
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { parseJsonFile } from '../../shared/parseFile'
 import { EthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
-import { parseJsonFile, writeJsonFile } from '../../shared/util'
-import { fetchAssetPlatforms } from './helpers/coingecko'
+import { writeJsonFile } from '../../shared/writeFile'
 
 /**
  * Fetches missing evm networks logos from Coingecko.

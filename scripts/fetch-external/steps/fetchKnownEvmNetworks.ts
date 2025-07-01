@@ -1,15 +1,11 @@
-import { PromisePool } from '@supercharge/promise-pool'
 import keyBy from 'lodash/keyBy'
-import { Hex, hexToNumber } from 'viem'
 import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
-import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE } from '../../shared/constants'
+import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { KnownEthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
-import { EthereumListsChain, EvmNetworkRpcCache, EvmNetworkRpcStatus } from '../../shared/types'
-import { parseJsonFile, writeJsonFile } from '../../shared/util'
-
-const RPC_TIMEOUT = 4_000 // 4 seconds
+import { EthereumListsChain } from '../../shared/types'
+import { writeJsonFile } from '../../shared/writeFile'
 
 const IGNORED_CHAINS = [
   1313500, // Xerom, a dead project with malicious RPC url

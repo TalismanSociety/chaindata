@@ -1,9 +1,10 @@
 import { EvmErc20TokenConfig, EvmErc20TokenConfigSchema } from '@talismn/balances'
 
+import { fetchAssetPlatforms, fetchCoins } from '../../shared/coingecko'
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { parseJsonFile } from '../../shared/parseFile'
 import { KnownEthNetworksFileSchema } from '../../shared/schemas'
-import { parseJsonFile, writeJsonFile } from '../../shared/util'
-import { fetchAssetPlatforms, fetchCoins } from './helpers/coingecko'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchKnownEvmTokens = async () => {
   const assetPlatforms = await fetchAssetPlatforms()
