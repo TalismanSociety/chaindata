@@ -57,7 +57,6 @@ export const fetchDotNetworksMetadataExtracts = async () => {
       if (!specs) return false // no specs available for this network - cant be updated
 
       // we need to update only if specVersion or balancesConfigHash changed
-      // TODO also update if @talismn/balances version number changed ?
       const metadataExtract = metadataExtractsById[network.id]
       if (!metadataExtract) return true // no metadata extract yet, fetch it
 
