@@ -6,9 +6,6 @@ import type {
 } from '@talismn/balances'
 import { LegacyChain, LegacyEvmNetwork, Token } from '@talismn/chaindata-provider'
 
-export type ChainId = string
-export type EvmNetworkId = string
-
 /** Represents a Chain from `chaindata.json` or `testnets-chaindata.json` */
 export type ConfigChain = {
   id: string
@@ -58,25 +55,6 @@ export type ConfigEvmNetwork = {
   erc20aggregator?: LegacyEvmNetwork['erc20aggregator']
 }
 
-export type ChainExtrasCache = {
-  // These are all copied directly into each chain
-  id: string
-  account: string
-  genesisHash: string
-  prefix: number
-  chainName: string
-  chainType: LegacyChain['chainType']
-  implName: string
-  specName: string
-  specVersion: string
-  cacheBalancesConfigHash: string
-  hasCheckMetadataHash: boolean
-
-  // These are separated into their own build files, `tokens/all.json` and `miniMetadatas/all.json`
-  miniMetadatas: Record<string, MiniMetadata>
-  tokens: Record<string, Token>
-}
-
 export type MetadataPortalUrls = Array<{
   id: string
   isTestnet: boolean
@@ -89,15 +67,6 @@ export type MetadataPortalUrls = Array<{
     latestMetadataQrUrl: string
   }
 }>
-
-export type EvmNetworkRpcStatus = 'unknown' | 'valid' | 'invalid'
-
-export type EvmNetworkRpcCache = {
-  chainId: string
-  rpcUrl: string
-  status: EvmNetworkRpcStatus
-  timestamp: number
-}
 
 export type EthereumListsChain = {
   name: string
@@ -133,13 +102,3 @@ export type Uniswapv2TokenCache = {
   coingeckoId0?: string
   coingeckoId1?: string
 }
-
-// Some handy types from https://www.typescriptlang.org/docs/handbook/advanced-types.html#distributive-conditional-types
-export type FunctionPropertyNames<T> = {
-  [K in keyof T]: T[K] extends Function ? K : never
-}[keyof T]
-export type FunctionProperties<T> = Pick<T, FunctionPropertyNames<T>>
-export type NonFunctionPropertyNames<T> = {
-  [K in keyof T]: T[K] extends Function ? never : K
-}[keyof T]
-export type NonFunctionProperties<T> = Pick<T, NonFunctionPropertyNames<T>>
