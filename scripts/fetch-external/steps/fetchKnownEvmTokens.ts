@@ -1,30 +1,25 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { EvmErc20TokenConfig, EvmErc20TokenConfigSchema } from '@talismn/balances'
 
-import prettier from 'prettier'
-
-import { FILE_KNOWN_EVM_NETWORKS, PRETTIER_CONFIG } from '../../shared/constants'
-import { ConfigEvmNetwork } from '../../shared/types'
-import { fetchAssetPlatforms, fetchCoins } from '../coingecko'
+import { fetchAssetPlatforms, fetchCoins } from '../../shared/coingecko'
+import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { parseJsonFile } from '../../shared/parseFile'
+import { KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchKnownEvmTokens = async () => {
   const assetPlatforms = await fetchAssetPlatforms()
   const coins = await fetchCoins()
 
-  const knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
+  const knownEvmNetworks = parseJsonFile(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   for (const assetPlatform of assetPlatforms)
     if (!!assetPlatform.native_coin_id) {
       const evmNetwork = knownEvmNetworks.find(
         (evmNetwork) => evmNetwork.id === assetPlatform.chain_identifier?.toString(),
       )
-      if (evmNetwork) {
-        if (!evmNetwork.balancesConfig) evmNetwork.balancesConfig = {}
-        if (!evmNetwork.balancesConfig['evm-native']) {
-          evmNetwork.balancesConfig['evm-native'] = {}
-        }
+      if (!evmNetwork) continue
 
-        evmNetwork.balancesConfig['evm-native'].coingeckoId = assetPlatform.native_coin_id as string
-      }
+      evmNetwork.nativeCurrency.coingeckoId = assetPlatform.native_coin_id as string
     }
 
   for (const coin of coins) {
@@ -36,37 +31,40 @@ export const fetchKnownEvmTokens = async () => {
             (evmNetwork) => evmNetwork.id === platform.chain_identifier?.toString(),
           )
           if (evmNetwork) {
-            if (!evmNetwork.balancesConfig) evmNetwork.balancesConfig = {}
-            if (!evmNetwork.balancesConfig['evm-erc20']) {
-              evmNetwork.balancesConfig['evm-erc20'] = {
-                tokens: [],
-              }
+            if (!evmNetwork.tokens) evmNetwork.tokens = {}
+            if (!evmNetwork.tokens['evm-erc20']) {
+              evmNetwork.tokens['evm-erc20'] = []
             }
 
-            const token = {
-              symbol: coin.symbol, // most symbols are inacurate, but are fixed in step fetchErc20TokensSymbols
+            const token: EvmErc20TokenConfig = {
+              // note: symbols from coingecko aren't great (lowercase)
+              // symbol will be fetched from chain later in fetchErc20TokenSymbols.ts
               coingeckoId: coin.id,
-              contractAddress,
+              contractAddress: contractAddress as `0x${string}`,
+            }
+
+            if (!EvmErc20TokenConfigSchema.safeParse(token).success) {
+              console.warn(
+                `Token ${token.name} (${token.contractAddress}) does not match EvmErc20TokenConfigSchema, skipping`,
+              )
+              console.log(token)
+              continue
             }
 
             const existingIdx =
-              evmNetwork.balancesConfig['evm-erc20'].tokens?.findIndex((t) => t.contractAddress === contractAddress) ??
+              evmNetwork.tokens['evm-erc20']?.findIndex((t: typeof token) => t.contractAddress === contractAddress) ??
               -1
 
-            if (evmNetwork.balancesConfig['evm-erc20'].tokens && existingIdx !== -1)
-              evmNetwork.balancesConfig['evm-erc20'].tokens[existingIdx] = token
-            else evmNetwork.balancesConfig['evm-erc20'].tokens?.push(token)
+            if (evmNetwork.tokens['evm-erc20'] && existingIdx !== -1)
+              evmNetwork.tokens['evm-erc20'][existingIdx] = token
+            else evmNetwork.tokens['evm-erc20']?.push(token)
           }
         }
       }
     }
   }
 
-  await writeFile(
-    FILE_KNOWN_EVM_NETWORKS,
-    await prettier.format(JSON.stringify(knownEvmNetworks, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, {
+    schema: KnownEthNetworksFileSchema,
+  })
 }

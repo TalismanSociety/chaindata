@@ -1,0 +1,4496 @@
+- id: polkadot
+  name: Polkadot
+  nativeCurrency:
+    coingeckoId: polkadot
+    logo: ./assets/tokens/dot.svg
+  blockExplorerUrls:
+    - https://polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot_metadata_latest.apng
+  rpcs:
+    - wss://rpc.ibp.network/polkadot
+    - wss://polkadot-rpc.dwellir.com
+    - wss://polkadot-rpc-tn.dwellir.com
+    - wss://polkadot-rpc.publicnode.com
+    - wss://polkadot-public-rpc.blockops.network/ws
+    - wss://rpc-polkadot.helixstreet.io
+    - wss://polkadot.dotters.network
+    - wss://rpc-polkadot.luckyfriday.io
+    - wss://polkadot.rpc.permanence.io
+    - wss://rockx-dot.w3node.com/polka-public-dot/ws
+    - wss://dot-rpc.stakeworld.io
+    - wss://polkadot.public.curie.radiumblock.co/ws
+    - wss://polkadot.rpc.subquery.network/public/ws
+- id: kusama
+  name: Kusama
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://kusama.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/kusama_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama_metadata_latest.apng
+  rpcs:
+    - wss://rpc.ibp.network/kusama
+    - wss://kusama-rpc.dwellir.com
+    - wss://kusama-rpc-tn.dwellir.com
+    - wss://kusama-rpc.publicnode.com
+    - wss://rpc-kusama.helixstreet.io
+    - wss://kusama.dotters.network
+    - wss://rpc-kusama.luckyfriday.io
+    - wss://rockx-ksm.w3node.com/polka-public-ksm/ws
+    - wss://ksm-rpc.stakeworld.io
+    - wss://kusama.public.curie.radiumblock.co/ws
+- id: 3-dpass
+  name: 3DPass
+  nativeCurrency:
+    coingeckoId: 3dpass
+    logo: ./assets/chains/3-dpass.svg
+  rpcs:
+    - wss://rpc.3dpass.org
+    - wss://rpc2.3dpass.org
+    - wss://rpc3.3dpass.org
+- id: aband
+  name: Aband
+  rpcs: []
+  relay: kusama
+- id: acala
+  name: Acala
+  nativeCurrency:
+    coingeckoId: acala
+    logo: ./assets/tokens/aca.svg
+  blockExplorerUrls:
+    - https://acala.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/acala_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/acala_metadata_latest.apng
+  oldPrefix: 10
+  rpcs:
+    - wss://acala-rpc.dwellir.com
+    - wss://acala-rpc-0.aca-api.network
+    - wss://acala-rpc-1.aca-api.network
+    - wss://acala-rpc-3.aca-api.network/ws
+    - wss://acala.ibp.network
+    - wss://acala.dotters.network
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"AUSD"}}'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-acala
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"Token","value":{"type":"TAP"}}'
+        decimals: 12
+        symbol: TAP
+        coingeckoId: tapio-protocol
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"LiquidCrowdloan","value":13}'
+        decimals: 10
+        symbol: lcDOT
+        coingeckoId: liquid-crowdloan-dot
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token","value":{"type":"LDOT"}}'
+        decimals: 10
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        existentialDeposit: '500000000'
+      - onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"ForeignAsset","value":8}'
+        decimals: 9
+        symbol: EQD
+        existentialDeposit: '1000000000'
+      - onChainId: '{"type":"ForeignAsset","value":4}'
+        decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        existentialDeposit: '1000000000'
+      - onChainId: '{"type":"ForeignAsset","value":6}'
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '500000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":2}'
+        decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        existentialDeposit: '100000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":9}'
+        decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"ForeignAsset","value":1}'
+        decimals: 12
+        symbol: PARA
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"ForeignAsset","value":0}'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '100000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":5}'
+        decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        existentialDeposit: '3000'
+      - onChainId: '{"type":"ForeignAsset","value":7}'
+        decimals: 9
+        symbol: EQ
+        coingeckoId: equilibrium-token
+        existentialDeposit: '1000000000'
+      - onChainId: '{"type":"ForeignAsset","value":3}'
+        decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        existentialDeposit: '100'
+      - onChainId: '{"type":"ForeignAsset","value":13}'
+        decimals: 10
+        symbol: PINK
+        existentialDeposit: '1000000000'
+      - onChainId: '{"type":"StableAssetPoolToken","value":0}'
+        decimals: 10
+        symbol: tDOT
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Erc20","value":"hex:0x07df96d1341a7d16ba1ad431e2c847d978bc2bce"}'
+        decimals: 6
+        symbol: USDCet
+        existentialDeposit: '10000'
+      - onChainId: '{"type":"Erc20","value":"hex:0xf4c723e61709d90f89939c1852f516e373d418a8"}'
+        decimals: 18
+        symbol: APE
+        existentialDeposit: '3000000000000000'
+      - onChainId: '{"type":"Erc20","value":"hex:0x54a37a01cd75b616d63e0ab665bffdb0143c52ae"}'
+        decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        existentialDeposit: '10000000000000000'
+      - onChainId: '{"type":"Erc20","value":"hex:0x5a4d6acdc4e3e5ab15717f407afe957f7a242578"}'
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '8500000000000'
+      - onChainId: '{"type":"Erc20","value":"hex:0xc80084af223c8b598536178d9361dc55bfda6818"}'
+        decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        existentialDeposit: '60'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"Token","value":{"type":"LDOT"}}]}'
+        decimals: 12
+        symbol: lp aSEED-LDOT
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":3}]}'
+        decimals: 12
+        symbol: lp aSEED-IBTC
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"LiquidCrowdloan","value":13}]}'
+        decimals: 12
+        symbol: lp aSEED-lcDOT
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"ACA"}},{"type":"Token","value":{"type":"AUSD"}}]}'
+        decimals: 12
+        symbol: lp ACA-aSEED
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"DOT"}},{"type":"LiquidCrowdloan","value":13}]}'
+        decimals: 10
+        symbol: lp DOT-lcDOT
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"AUSD"}},{"type":"ForeignAsset","value":4}]}'
+        decimals: 12
+        symbol: lp aSEED-INTR
+        existentialDeposit: '100000000000'
+- id: acurast
+  name: Acurast Canary
+  rpcs:
+    - wss://public-rpc.canary.acurast.com
+  relay: kusama
+- id: ajuna
+  name: Ajuna
+  nativeCurrency:
+    coingeckoId: ajuna-network-2
+  blockExplorerUrls:
+    - https://ajuna.subscan.io/
+  oldPrefix: 1328
+  rpcs:
+    - wss://ajuna.ibp.network
+    - wss://ajuna.dotters.network
+    - wss://rpc-para.ajuna.network
+  relay: polkadot
+- id: aleph-zero
+  name: Aleph Zero
+  nativeCurrency:
+    coingeckoId: aleph-zero
+  blockExplorerUrls:
+    - https://alephzero.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/aleph-node_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng
+  rpcs:
+    - wss://ws.azero.dev
+    - wss://aleph-zero-rpc.dwellir.com
+  tokens:
+    substrate-psp22:
+      - contractAddress: 5GSGAcvqpF5SuH2MhJ1YUdbLAbssCjeqCn2miMUCWUjnr5DQ
+        symbol: PANX
+        coingeckoId: panorama-swap-token
+      - contractAddress: 5CSAAAbQpPeY1ieqRS7LynmuMHVJdthq8nxt2S4L6qBGcdnF
+        symbol: AINU
+      - contractAddress: 5GYgJ1xBPtyUwbPVnDfbg9uRGWdGrcaM6y1TaftUMoxUHQh5
+        symbol: IOU
+      - contractAddress: 5H4aCwLKUpVpct6XGJzDGPPXFockNKQU2JUVNgUw6BXEPzST
+        symbol: INW
+      - contractAddress: 5FyVkDZi86awxJsXnJa2a1TeXwnMdhXmcQ2pmKLNmUgYRNM7
+        symbol: PETE
+      - contractAddress: 5E3xgSL2kLA56Z7ykNwoGB4a9sdaYRbCBxRF4cDLQYhZU8bv
+        symbol: DEGEN
+      - contractAddress: 5DDvG1bTGhWk8P9fZDcdp47TykhwGV46eKjr54SPcX1yTaRg
+        symbol: AHERO
+      - contractAddress: 5EoFQd36196Duo6fPTz2MWHXRzwTJcyETHyCyaB3rb61Xo2u
+        symbol: WETH
+        coingeckoId: weth
+      - contractAddress: 5EEtCdKLyyhQnNQWWWPM1fMDx1WdVuiaoR9cA6CWttgyxtuJ
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+      - contractAddress: 5Et3dDcXUiThrBCot7g65k3oDSicGy4qC82cq9f911izKNtE
+        symbol: USDT
+        coingeckoId: tether
+      - contractAddress: 5FYFojNCJVFR2bBNKfAePZCa72ZcVX5yeTv8K9bzeUo8D83Z
+        symbol: USDC
+        coingeckoId: usd-coin
+      - contractAddress: 5CJ3DZ4RM4j2cPpQ49ywYiAgDYaTqk7hPud6Y1J1WY8qwDfb
+        symbol: CLD
+      - contractAddress: 5DPzHtsvZHtUaGzzKqrxa2JLgpHtEaSPn9mfyNAjX12Vunts
+        symbol: CSD
+      - contractAddress: 5FZ35bwDiXEHdvdmRn2bfcvb2LB9K9pM1dJaSJzj3n4sDoLA
+        symbol: sA0
+- id: altair
+  name: Altair
+  nativeCurrency:
+    coingeckoId: altair
+  blockExplorerUrls:
+    - https://altair.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/altair_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/altair_metadata_latest.apng
+  rpcs:
+    - wss://fullnode.altair.centrifuge.io
+  relay: kusama
+- id: amplitude
+  name: Amplitude
+  chainspecQrUrl: https://metadata.novasama.io/qr/amplitude_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/amplitude_metadata_latest.apng
+  rpcs:
+    - wss://rpc-amplitude.pendulumchain.tech
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"XCM","value":0}'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '0'
+      - onChainId: '{"type":"XCM","value":1}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Stellar","value":{"type":"StellarNative"}}'
+        decimals: 12
+        symbol: XLM
+        coingeckoId: stellar
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:TZS","issuer":"hex:0x34c94b2a4ba9e8b57b22547dcbb30f443c4cb02da3829a89aa1bd4780e4466ba"}}}'
+        decimals: 12
+        symbol: TZS.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:BRL","issuer":"hex:0xeaac68d4d0e37b4c24c2536916e830735f032d0d6b2a1c8fca3bc5a25e083e3a"}}}'
+        decimals: 12
+        symbol: BRL.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:USDC","issuer":"hex:0x3b9911380efe988ba0a8900eb1cfe44f366f7dbe946bed077240f7f624df15c5"}}}'
+        decimals: 12
+        symbol: USDC.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:AUDD","issuer":"hex:0xc5fbe9979e240552860221f4fe2f2219f35e40458b8b58fc32da520a154a561d"}}}'
+        decimals: 12
+        symbol: AUDD.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0x2112ee863867e4e219fe254c0918b00bc9ea400775bfc3ab4430971ce505877c"}}}'
+        decimals: 12
+        symbol: EURC.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
+        decimals: 12
+        symbol: NGNC.s
+        existentialDeposit: '1000'
+- id: analog-timechain
+  name: Analog Timechain
+  nativeCurrency:
+    decimals: 12
+    symbol: ANLOG
+    coingeckoId: analog
+    logo: ./assets/tokens/anlog.svg
+  themeColor: '#9A75F7'
+  chainspecQrUrl: https://metadata.analog.one/qr/analog-timechain_specs.png
+  latestMetadataQrUrl: https://metadata.analog.one/qr/analog-timechain_metadata_latest.apng
+  rpcs:
+    - wss://rpc.timechain.analog.one
+- id: ares-odyssey
+  name: Ares Odyssey Standalone
+  nativeCurrency:
+    coingeckoId: ares-protocol
+  rpcs: []
+- id: astar
+  name: Astar
+  nativeCurrency:
+    coingeckoId: astar
+  blockExplorerUrls:
+    - https://astar.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/astar_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/astar_metadata_latest.apng
+  oldPrefix: 5
+  rpcs:
+    - wss://astar-rpc.dwellir.com
+    - wss://rpc.astar.network
+    - wss://astar.public.curie.radiumblock.co/ws
+  relay: polkadot
+  tokens:
+    substrate-assets:
+      - assetId: '4294969280'
+        symbol: USDT
+        coingeckoId: tether
+      - assetId: '18446744073709551616'
+        symbol: ACA
+        coingeckoId: acala
+      - assetId: '18446744073709551617'
+        symbol: aSEED
+        coingeckoId: ausd-seed-acala
+      - assetId: '18446744073709551618'
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+      - assetId: '18446744073709551619'
+        symbol: GLMR
+        coingeckoId: moonbeam
+      - assetId: '18446744073709551620'
+        symbol: IBTC
+        coingeckoId: interbtc
+      - assetId: '18446744073709551621'
+        symbol: INTR
+        coingeckoId: interlay
+      - assetId: '18446744073709551622'
+        symbol: PHA
+        coingeckoId: pha
+      - assetId: '18446744073709551623'
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+      - assetId: '18446744073709551624'
+        symbol: vDOT
+        coingeckoId: voucher-dot
+      - assetId: '18446744073709551625'
+        symbol: CLV
+      - assetId: '18446744073709551626'
+        symbol: VSDOT
+      - assetId: '18446744073709551627'
+        symbol: RING
+        coingeckoId: darwinia-network-native-token
+      - assetId: '18446744073709551628'
+        symbol: EQ
+        coingeckoId: equilibrium-token
+      - assetId: '18446744073709551629'
+        symbol: EQD
+      - assetId: '340282366920938463463374607431768211455'
+        symbol: DOT
+        coingeckoId: polkadot
+      - assetId: '18446744073709551633'
+        symbol: PINK
+      - assetId: '18446744073709551641'
+        symbol: GAME
+- id: autonomys
+  name: Autonomys
+  nativeCurrency:
+    decimals: 18
+    symbol: AI3
+    coingeckoId: autonomys-network
+  blockExplorerUrls:
+    - https://autonomys.subscan.io/
+  rpcs:
+    - wss://rpc.mainnet.subspace.foundation/ws
+    - wss://rpc-0.mainnet.autonomys.xyz/ws
+- id: avail
+  name: Avail
+  nativeCurrency:
+    decimals: 18
+    symbol: AVAIL
+    coingeckoId: avail
+  blockExplorerUrls:
+    - https://avail.subscan.io/
+  rpcs:
+    - wss://avail-us.brightlystake.com
+    - wss://avail.rpc.bountyblok.io
+    - wss://avail-mainnet.public.blastapi.io/
+    - wss://mainnet.avail-rpc.com/
+  registryTypes:
+    AppId: Compact<u32>
+    DataLookupItem:
+      appId: AppId
+      start: Compact<u32>
+    CompactDataLookup:
+      size: Compact<u32>
+      index: Vec<DataLookupItem>
+    KateCommitment:
+      rows: Compact<u16>
+      cols: Compact<u16>
+      commitment: Vec<u8>
+      dataRoot: H256
+    V3HeaderExtension:
+      appLookup: CompactDataLookup
+      commitment: KateCommitment
+    HeaderExtension:
+      _enum:
+        V1: null
+        V2: null
+        V3: V3HeaderExtension
+    DaHeader:
+      parentHash: Hash
+      number: Compact<BlockNumber>
+      stateRoot: Hash
+      extrinsicsRoot: Hash
+      digest: Digest
+      extension: HeaderExtension
+    Header: DaHeader
+    CheckAppIdExtra:
+      appId: AppId
+    CheckAppIdTypes: {}
+    CheckAppId:
+      extra: CheckAppIdExtra
+      types: CheckAppIdTypes
+    BlockLengthColumns: Compact<u32>
+    BlockLengthRows: Compact<u32>
+    BlockLength:
+      max: PerDispatchClass
+      cols: BlockLengthColumns
+      rows: BlockLengthRows
+      chunkSize: Compact<u32>
+    PerDispatchClass:
+      normal: u32
+      operational: u32
+      mandatory: u32
+    DataProof:
+      roots: TxDataRoots
+      proof: Vec<H256>
+      numberOfLeaves: Compact<u32>
+      leafIndex: Compact<u32>
+      leaf: H256
+    TxDataRoots:
+      dataRoot: H256
+      blobRoot: H256
+      bridgeRoot: H256
+    ProofResponse:
+      dataProof: DataProof
+      message: Option<AddressedMessage>
+    AddressedMessage:
+      message: Message
+      from: H256
+      to: H256
+      originDomain: u32
+      destinationDomain: u32
+      data: Vec<u8>
+      id: u64
+    Message:
+      _enum:
+        ArbitraryMessage: ArbitraryMessage
+        FungibleToken: FungibleToken
+    MessageType:
+      _enum:
+        - ArbitraryMessage
+        - FungibleToken
+    FungibleToken:
+      assetId: H256
+      amount: String
+    BoundedData: Vec<u8>
+    ArbitraryMessage: BoundedData
+    Cell:
+      row: u32
+      col: u32
+  signedExtensions:
+    CheckAppId:
+      extrinsic:
+        appId: AvailCoreAppId
+      payload: {}
+- id: aventus
+  name: Aventus
+  nativeCurrency:
+    coingeckoId: aventus
+  oldPrefix: 42
+  rpcs:
+    - wss://public-rpc.mainnet.aventus.io
+  relay: polkadot
+- id: bajun
+  name: Bajun
+  nativeCurrency:
+    coingeckoId: ajuna-network
+  blockExplorerUrls:
+    - https://bajun.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/bajun_specs.png
+  rpcs:
+    - wss://rpc-para.bajun.network
+  relay: kusama
+- id: basilisk
+  name: Basilisk
+  nativeCurrency:
+    coingeckoId: basilisk
+  blockExplorerUrls:
+    - https://basilisk.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/basilisk_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/basilisk_metadata_latest.apng
+  rpcs:
+    - wss://basilisk-rpc.n.dwellir.com
+    - wss://rpc.basilisk.cloud
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: 1
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '100000000'
+      - onChainId: 2
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-acala
+        existentialDeposit: '10000000000'
+      - onChainId: 6
+        decimals: 12
+        symbol: TNKR
+        coingeckoId: tinkernet
+        existentialDeposit: '1000000000'
+      - onChainId: 9
+        decimals: 6
+        symbol: USDCet
+        coingeckoId: usd-coin-wormhole-from-ethereum
+        existentialDeposit: '10000'
+      - onChainId: 10
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '10000000'
+      - onChainId: 11
+        decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        existentialDeposit: '1000000'
+      - onChainId: 12
+        decimals: 6
+        symbol: wUSDT
+        coingeckoId: tether
+        existentialDeposit: '10000000000'
+      - onChainId: 13
+        decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        existentialDeposit: '10000000000'
+      - onChainId: 14
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: 16
+        decimals: 9
+        symbol: XRT
+        coingeckoId: robonomics-network
+        existentialDeposit: '1683502'
+      - onChainId: 17
+        decimals: 12
+        symbol: TEER
+        coingeckoId: integritee
+        existentialDeposit: '8333333333'
+- id: bifrost-kusama
+  name: Bifrost Kusama
+  nativeCurrency:
+    coingeckoId: bifrost-native-coin
+  blockExplorerUrls:
+    - https://bifrost-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/bifrost_specs.png
+  rpcs:
+    - wss://bifrost-rpc.liebi.com/ws
+    - wss://us.bifrost-rpc.liebi.com/ws
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"BNC"}}'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KAR"}}'
+        decimals: 12
+        symbol: KAR
+        coingeckoId: karura
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token","value":{"type":"KUSD"}}'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: acala-dollar
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token","value":{"type":"MOVR"}}'
+        decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"Token","value":{"type":"PHA"}}'
+        decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        existentialDeposit: '40000000000'
+      - onChainId: '{"type":"Token","value":{"type":"RMRK"}}'
+        decimals: 10
+        symbol: RMRK
+        coingeckoId: rmrk
+        existentialDeposit: '10000'
+      - onChainId: '{"type":"Token","value":{"type":"ZLK"}}'
+        decimals: 18
+        symbol: ZLK
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"Stable","value":{"type":"KUSD"}}'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"Token2","value":0}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: '{"type":"Token2","value":1}'
+        decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"Token2","value":2}'
+        decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        existentialDeposit: '100'
+      - onChainId: '{"type":"Token2","value":3}'
+        decimals: 18
+        symbol: SDN
+        existentialDeposit: '10000000000000000'
+      - onChainId: '{"type":"Token2","value":4}'
+        decimals: 18
+        symbol: MGX
+        existentialDeposit: '10000000000000'
+      - onChainId: '{"type":"VToken","value":{"type":"BNC"}}'
+        decimals: 12
+        symbol: vBNC
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"VToken","value":{"type":"MOVR"}}'
+        decimals: 18
+        symbol: vMOVR
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"VToken","value":{"type":"KSM"}}'
+        decimals: 12
+        symbol: vKSM
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"VSToken","value":{"type":"KSM"}}'
+        decimals: 12
+        symbol: vsKSM
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"BLP","value":0}'
+        decimals: 12
+        symbol: BLP0
+        existentialDeposit: '1000000'
+      - onChainId: '{"type":"BLP","value":1}'
+        decimals: 12
+        symbol: BLP1
+        existentialDeposit: '1000000'
+      - onChainId: '{"type":"BLP","value":2}'
+        decimals: 12
+        symbol: BLP2
+        existentialDeposit: '1000000'
+      - onChainId: '{"type":"BLP","value":3}'
+        decimals: 12
+        symbol: BLP3
+        existentialDeposit: '1000000'
+- id: bifrost-polkadot
+  name: Bifrost Polkadot
+  nativeCurrency:
+    coingeckoId: bifrost-native-coin
+  blockExplorerUrls:
+    - https://bifrost.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/bifrost_polkadot_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/bifrost_polkadot_metadata_latest.apng
+  oldPrefix: 6
+  rpcs:
+    - wss://bifrost-polkadot.ibp.network
+    - wss://bifrost-polkadot.dotters.network
+    - wss://hk.p.bifrost-rpc.liebi.com/ws
+    - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"BNC"}}'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token2","value":0}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '1000000'
+      - onChainId: '{"type":"Token2","value":1}'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"Token2","value":2}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Token2","value":3}'
+        decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        existentialDeposit: '10000000000000000'
+      - onChainId: '{"type":"Token2","value":4}'
+        decimals: 18
+        symbol: FIL
+        coingeckoId: filecoin
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"Token2","value":5}'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Token2","value":6}'
+        decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        existentialDeposit: '100'
+      - onChainId: '{"type":"Token2","value":7}'
+        decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        existentialDeposit: '10000000'
+      - onChainId: '{"type":"Token2","value":8}'
+        decimals: 18
+        symbol: MANTA
+        coingeckoId: manta-network
+        existentialDeposit: '10000000000000'
+      - onChainId: '{"type":"Token2","value":10}'
+        decimals: 10
+        symbol: PINK
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token2","value":11}'
+        decimals: 10
+        symbol: DED
+        coingeckoId: dot-is-ded
+        existentialDeposit: '1'
+      - onChainId: '{"type":"Token2","value":12}'
+        decimals: 12
+        symbol: PEN
+        coingeckoId: pendulum-chain
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token2","value":13}'
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '15000000000000'
+      - onChainId: '{"type":"Token2","value":14}'
+        decimals: 18
+        symbol: WAVE
+        existentialDeposit: '100000000000000'
+      - onChainId: '{"type":"VToken","value":{"type":"BNC"}}'
+        decimals: 12
+        symbol: vBNC
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"VToken2","value":0}'
+        decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        existentialDeposit: '1000000'
+      - onChainId: '{"type":"VToken2","value":1}'
+        decimals: 18
+        symbol: vGLMR
+        coingeckoId: voucher-glmr
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"VToken2","value":3}'
+        decimals: 18
+        symbol: vASTR
+        coingeckoId: bifrost-voucher-astr
+        existentialDeposit: '10000000000000000'
+      - onChainId: '{"type":"VToken2","value":4}'
+        decimals: 18
+        symbol: vFIL
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"VToken2","value":8}'
+        decimals: 18
+        symbol: vMANTA
+        coingeckoId: bifrost-voucher-manta
+        existentialDeposit: '10000000000000'
+      - onChainId: '{"type":"VSToken2","value":0}'
+        decimals: 10
+        symbol: vsDOT
+        existentialDeposit: '1000000'
+- id: bitcountry-pioneer
+  name: Pioneer
+  nativeCurrency:
+    coingeckoId: metaverse-network-pioneer
+  blockExplorerUrls:
+    - https://pioneer.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/pioneer-runtime_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"NativeToken","value":"bigint:1"}'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '0'
+      - onChainId: '{"type":"NativeToken","value":"bigint:2"}'
+        decimals: 12
+        symbol: KAR
+        coingeckoId: karura
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Stable","value":"bigint:0"}'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        existentialDeposit: '0'
+      - onChainId: '{"type":"MiningResource","value":"bigint:0"}'
+        decimals: 18
+        symbol: BIT
+        coingeckoId: bit
+        existentialDeposit: '0'
+- id: bitgreen
+  name: Bitgreen
+  oldPrefix: 42
+  rpcs:
+    - wss://mainnet.bitgreen.org
+  relay: polkadot
+- id: bittensor
+  name: Bittensor
+  nativeCurrency:
+    coingeckoId: bittensor
+  rpcs:
+    - wss://entrypoint-finney.opentensor.ai:443
+    - wss://lite.sub.latent.to:443
+- id: calamari
+  name: Calamari
+  nativeCurrency:
+    coingeckoId: calamari-network
+  blockExplorerUrls:
+    - https://calamari.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/calamari_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/calamari_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: centrifuge-polkadot
+  name: Centrifuge
+  nativeCurrency:
+    coingeckoId: centrifuge
+  blockExplorerUrls:
+    - https://centrifuge.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/centrifuge_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/centrifuge_metadata_latest.apng
+  oldPrefix: 36
+  rpcs:
+    - wss://centrifuge-rpc.dwellir.com
+    - wss://fullnode.centrifuge.io
+    - wss://rpc-centrifuge.luckyfriday.io
+  balancesConfig:
+    substrate-tokens:
+      palletId: OrmlTokens
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"ForeignAsset","value":1}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: '{"type":"ForeignAsset","value":4}'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '1000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":5}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '100000'
+      - onChainId: '{"type":"ForeignAsset","value":6}'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '1000'
+- id: centrifuge-standalone
+  name: Centrifuge Standalone [Archived]
+  nativeCurrency:
+    coingeckoId: centrifuge
+  rpcs: []
+- id: cere
+  name: Cere
+  nativeCurrency:
+    coingeckoId: cere-network
+  rpcs:
+    - wss://archive.mainnet.cere.network/ws
+- id: chainflip
+  name: Chainflip
+  rpcs:
+    - wss://mainnet-archive.chainflip.io
+- id: chainx
+  name: ChainX
+  nativeCurrency:
+    coingeckoId: chainx
+  blockExplorerUrls:
+    - https://chainx.subscan.io/
+  rpcs:
+    - wss://mainnet.chainx.org/ws
+- id: clover
+  name: Clover
+  nativeCurrency:
+    coingeckoId: clover-finance
+  blockExplorerUrls:
+    - https://clover.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/clover-mainnet_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/clover-mainnet_metadata_latest.apng
+  rpcs: []
+  relay: polkadot
+- id: coinversation
+  name: Coinversation
+  rpcs: []
+  relay: polkadot
+- id: communeai
+  name: Commune AI
+  nativeCurrency:
+    symbol: COMAI
+    coingeckoId: commune-ai
+  rpcs:
+    - wss://commune-api-node-1.communeai.net
+- id: competitors-club
+  name: Competitors Club
+  rpcs: []
+- id: composable-finance
+  name: Composable Finance
+  nativeCurrency:
+    coingeckoId: composable-finance-layr
+  blockExplorerUrls:
+    - https://composable.subscan.io/
+  oldPrefix: 50
+  rpcs:
+    - wss://composable-rpc.dwellir.com
+    - wss://rpc.composable.finance
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '"bigint:79228162514264337593543950342"'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950370"'
+        decimals: 10
+        symbol: vDOT
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950351"'
+        decimals: 10
+        symbol: lsDOT
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950340"'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950337"'
+        decimals: 12
+        symbol: PICA
+        coingeckoId: picasso
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543952342"'
+        decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950343"'
+        decimals: 6
+        symbol: ATOM
+        coingeckoId: cosmos
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950346"'
+        decimals: 6
+        symbol: stATOM
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543952343"'
+        decimals: 18
+        symbol: SDN
+        coingeckoId: shiden
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543952347"'
+        decimals: 9
+        symbol: EQ
+        coingeckoId: equilibrium-token
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950344"'
+        decimals: 6
+        symbol: OSMO
+        coingeckoId: osmosis
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950376"'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950463"'
+        decimals: 9
+        symbol: EQD
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950354"'
+        decimals: 6
+        symbol: BLD
+        coingeckoId: agoric
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950355"'
+        decimals: 6
+        symbol: TIA
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950361"'
+        decimals: 6
+        symbol: IST
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950352"'
+        decimals: 6
+        symbol: SILK
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950369"'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950367"'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950368"'
+        decimals: 12
+        symbol: vKSM
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950359"'
+        decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950485"'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '0'
+      - onChainId: '"bigint:79228162514264337593543950486"'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '0'
+- id: continuum
+  name: Continuum
+  nativeCurrency:
+    coingeckoId: mnet-continuum
+  blockExplorerUrls:
+    - https://continuum.subscan.io/
+  oldPrefix: 268
+  rpcs:
+    - wss://continuum-rpc-1.metaverse.network/wss
+  relay: polkadot
+- id: crab
+  name: Darwinia Crab
+  nativeCurrency:
+    coingeckoId: darwinia-crab-network
+  blockExplorerUrls:
+    - https://crab.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/crab2_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/crab2_metadata_latest.apng
+  rpcs:
+    - wss://darwiniacrab-rpc.dwellir.com
+    - wss://crab-rpc.darwinia.network/
+  relay: kusama
+- id: creditcoin
+  name: Creditcoin
+  nativeCurrency:
+    coingeckoId: creditcoin-2
+  blockExplorerUrls:
+    - https://creditcoin.subscan.io/
+  rpcs:
+    - wss://mainnet3.creditcoin.network
+- id: creditcoin-classic
+  name: CC Enterprise
+  blockExplorerUrls:
+    - https://cc-enterprise.subscan.io/
+  rpcs:
+    - wss://mainnet.creditcoin.network/ws
+- id: crown-sterling
+  name: Crown Sterling
+  rpcs: []
+- id: crust
+  name: Crust Standalone
+  nativeCurrency:
+    coingeckoId: crust-network
+  blockExplorerUrls:
+    - https://crust.subscan.io/
+  rpcs:
+    - wss://crust-mainnet-rpc.dwellir.com
+    - wss://rpc.crust.network
+    - wss://rpc.crustnetwork.app
+    - wss://rpc.crustnetwork.cc
+    - wss://rpc.crustnetwork.xyz
+- id: crust-parachain
+  name: Crust
+  nativeCurrency:
+    coingeckoId: crust-network
+  blockExplorerUrls:
+    - https://crust-parachain.subscan.io/
+  oldPrefix: 88
+  rpcs:
+    - wss://crust-parachain.crustapps.net
+    - wss://crust-parachain.crustnetwork.app
+    - wss://crust-parachain.crustnetwork.cc
+    - wss://crust-parachain.crustnetwork.xyz
+  relay: polkadot
+- id: curio
+  name: Curio
+  rpcs:
+    - wss://parachain.curioinvest.com/
+  relay: kusama
+- id: darwinia
+  name: Darwinia
+  nativeCurrency:
+    coingeckoId: darwinia-network-native-token
+  blockExplorerUrls:
+    - https://darwinia.subscan.io/
+  oldPrefix: 18
+  rpcs:
+    - wss://darwinia-rpc.dwellir.com
+    - wss://rpc.darwinia.network
+    - wss://darwinia.rpc.subquery.network/public/ws
+  relay: polkadot
+- id: debio
+  name: DeBio
+  rpcs: []
+- id: dock-pos-mainnet
+  name: Dock
+  nativeCurrency:
+    coingeckoId: dock
+  blockExplorerUrls:
+    - https://dock.subscan.io/
+  rpcs: []
+- id: dora-factory
+  name: Dora Factory
+  nativeCurrency:
+    coingeckoId: dora-factory
+  chainspecQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/dora%20ksm%20parachain_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: edgeware
+  name: Edgeware
+  nativeCurrency:
+    coingeckoId: edgeware
+  blockExplorerUrls:
+    - https://edgeware.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/edgeware_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/edgeware_metadata_latest.apng
+  rpcs:
+    - wss://edgeware-rpc3.jelliedowl.net
+    - wss://edgeware-rpc1.jelliedowl.net
+    - wss://edgeware-rpc0.jelliedowl.net
+    - wss://edgeware-rpc2.jelliedowl.net
+- id: efinity-polkadot
+  name: Efinity
+  nativeCurrency:
+    coingeckoId: efinity
+  blockExplorerUrls:
+    - https://efinity.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/efinity_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/efinity_metadata_latest.apng
+  rpcs: []
+  relay: polkadot
+- id: efinity-standalone
+  name: Efinity Standalone
+  rpcs: []
+- id: elysium
+  name: Elysium
+  rpcs:
+    - wss://ws.elysiumchain.tech
+- id: encointer
+  name: Encointer
+  nativeCurrency:
+    coingeckoId: kusama
+  blockExplorerUrls:
+    - https://encointer.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/encointer-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/encointer-parachain_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/encointer-kusama
+    - wss://encointer-kusama-rpc.dwellir.com
+    - wss://kusama.api.encointer.org
+    - wss://encointer-kusama.dotters.network
+  relay: kusama
+- id: enjin-matrixchain
+  name: Enjin Matrix
+  nativeCurrency:
+    coingeckoId: enjincoin
+  blockExplorerUrls:
+    - https://matrix.subscan.io/
+  rpcs:
+    - wss://rpc.matrix.blockchain.enjin.io
+    - wss://enjin-matrix-rpc-1.dwellir.com
+  relay: enjin-relay
+- id: enjin-relay
+  name: Enjin
+  nativeCurrency:
+    coingeckoId: enjincoin
+  blockExplorerUrls:
+    - https://enjin.subscan.io/
+  rpcs:
+    - wss://rpc.relay.blockchain.enjin.io
+- id: ewx
+  name: Energy Web X
+  nativeCurrency:
+    coingeckoId: energy-web-token
+  blockExplorerUrls:
+    - https://energywebx.subscan.io/
+  oldPrefix: 42
+  rpcs:
+    - wss://public-rpc.mainnet.energywebx.com
+  relay: polkadot
+- id: fragnova
+  name: Fragnova
+  nativeCurrency:
+    coingeckoId: nova-finance
+  rpcs: []
+- id: frequency
+  name: Frequency
+  oldPrefix: 90
+  rpcs:
+    - wss://frequency-rpc.dwellir.com
+    - wss://0.rpc.frequency.xyz
+    - wss://1.rpc.frequency.xyz
+  relay: polkadot
+- id: geminis
+  name: Geminis
+  rpcs: []
+  relay: polkadot
+- id: genshiro-kusama
+  name: Genshiro
+  nativeCurrency: {}
+  rpcs: []
+  relay: kusama
+- id: genshiro-kusama-2
+  name: Genshiro
+  rpcs: []
+  relay: kusama
+- id: gm
+  name: GM
+  chainspecQrUrl: https://metadata.novasama.io/qr/gm_parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/gm_parachain_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: 1
+        decimals: 0
+        symbol: GM
+        existentialDeposit: '0'
+      - onChainId: 2
+        decimals: 0
+        symbol: GN
+        existentialDeposit: '0'
+- id: hanonycash
+  name: Hanonycash
+  rpcs: []
+- id: hashed
+  name: Hashed
+  oldPrefix: 42
+  rpcs: []
+  relay: polkadot
+- id: heima
+  name: Heima
+  nativeCurrency:
+    coingeckoId: heima
+  rpcs:
+    - wss://litentry-rpc.dwellir.com
+    - wss://rpc.heima-parachain.heima.network
+  relay: polkadot
+- id: humanode
+  name: Humanode
+  nativeCurrency:
+    coingeckoId: humanode
+  blockExplorerUrls:
+    - https://humanode.subscan.io/
+  rpcs:
+    - wss://explorer-rpc-ws.mainnet.stages.humanode.io
+- id: hydradx
+  name: Hydration
+  nativeCurrency:
+    coingeckoId: hydradx
+  blockExplorerUrls:
+    - https://hydration.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/polkadot-hydradx_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/polkadot-hydradx_metadata_latest.apng
+  oldPrefix: 63
+  rpcs:
+    - wss://hydration-rpc.n.dwellir.com
+    - wss://hydration.ibp.network
+    - wss://hydration.dotters.network
+    - wss://rpc.hydradx.cloud
+    - wss://rpc.helikon.io/hydradx
+  isUnknownFeeToken: true
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '1'
+        decimals: 12
+        symbol: H20
+        existentialDeposit: '400000000'
+      - onChainId: '2'
+        decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        existentialDeposit: '10000000000000000'
+      - onChainId: '3'
+        decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        existentialDeposit: '44'
+      - onChainId: '4'
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '7000000000000'
+      - onChainId: '5'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '17540000'
+      - onChainId: '6'
+        decimals: 18
+        symbol: APE
+        coingeckoId: apecoin
+        existentialDeposit: '2518891687657430'
+      - onChainId: '7'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '10000'
+      - onChainId: '21'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '10000'
+      - onChainId: '22'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '10000'
+      - onChainId: '1000766'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '10000'
+      - onChainId: '8'
+        decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        existentialDeposit: '54945054945'
+      - onChainId: '9'
+        decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        existentialDeposit: '147058823529412000'
+      - onChainId: '10'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: '23'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: '1000767'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: '11'
+        decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        existentialDeposit: '36'
+      - onChainId: '12'
+        decimals: 10
+        symbol: ZTG
+        coingeckoId: zeitgeist
+        existentialDeposit: '1204151916'
+      - onChainId: '13'
+        decimals: 18
+        symbol: CFG
+        coingeckoId: centrifuge
+        existentialDeposit: '32467532467532500'
+      - onChainId: '14'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '68795189840'
+      - onChainId: '15'
+        decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        existentialDeposit: '18761726'
+      - onChainId: '16'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '34854864344868000'
+      - onChainId: '17'
+        decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        existentialDeposit: '6164274209'
+      - onChainId: '18'
+        decimals: 18
+        symbol: DAI
+        coingeckoId: dai
+        existentialDeposit: '10000000000000000'
+      - onChainId: '19'
+        decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-btc-wormhole
+        existentialDeposit: '34'
+      - onChainId: '20'
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '5390835579515'
+      - onChainId: '24'
+        decimals: 10
+        symbol: SUB
+        coingeckoId: subsocial
+        existentialDeposit: '20000000'
+      - onChainId: '25'
+        decimals: 18
+        symbol: UNQ
+        coingeckoId: unique-network
+        existentialDeposit: '1224384348939740000'
+      - onChainId: '26'
+        decimals: 11
+        symbol: NODL
+        coingeckoId: nodle-network
+        existentialDeposit: '109890109890'
+      - onChainId: '27'
+        decimals: 12
+        symbol: CRU
+        coingeckoId: crust-network
+        existentialDeposit: '7874015748'
+      - onChainId: '28'
+        decimals: 15
+        symbol: KILT
+        coingeckoId: kilt-protocol
+        existentialDeposit: '21358393848783'
+      - onChainId: '30'
+        decimals: 18
+        symbol: MYTH
+        coingeckoId: mythos
+        existentialDeposit: '21367521367521400'
+      - onChainId: '31'
+        decimals: 18
+        symbol: RING
+        coingeckoId: darwinia-network-native-token
+        existentialDeposit: '1000000000000000000'
+      - onChainId: '32'
+        decimals: 12
+        symbol: AJUN
+        coingeckoId: ajuna-network-2
+        existentialDeposit: '100786131828'
+      - onChainId: '33'
+        decimals: 18
+        symbol: vASTR
+        coingeckoId: bifrost-voucher-astr
+        existentialDeposit: '133689839572193000'
+      - onChainId: '69'
+        decimals: 18
+        symbol: GDOT
+        logo: ./assets/tokens/gdot.svg
+        existentialDeposit: '0'
+      - onChainId: '1000019'
+        decimals: 10
+        symbol: DED
+        coingeckoId: dot-is-ded
+        existentialDeposit: '1'
+      - onChainId: '1000021'
+        decimals: 10
+        symbol: PINK
+        existentialDeposit: '1'
+      - onChainId: '1000038'
+        decimals: 4
+        symbol: DOTA
+        existentialDeposit: '1'
+      - onChainId: '1000081'
+        decimals: 12
+        symbol: PEN
+        coingeckoId: pendulum-chain
+        existentialDeposit: '153256704981'
+      - onChainId: '1000082'
+        decimals: 10
+        symbol: WIFD
+        existentialDeposit: '1'
+      - onChainId: '1000085'
+        decimals: 10
+        symbol: WUD
+        logo: ./assets/tokens/wud.webp
+        coingeckoId: gavun-wud
+        existentialDeposit: '200000000000000'
+      - onChainId: '1000099'
+        decimals: 12
+        symbol: ACA
+        coingeckoId: acala
+        existentialDeposit: '90744101633'
+      - onChainId: '1000100'
+        decimals: 10
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        existentialDeposit: '100200401'
+      - onChainId: '1000104'
+        decimals: 10
+        symbol: GAME
+        existentialDeposit: '1'
+      - onChainId: '1000148'
+        decimals: 10
+        symbol: BORK
+        existentialDeposit: '1'
+      - onChainId: '1000624'
+        decimals: 18
+        symbol: AAVE
+        coingeckoId: aave
+        existentialDeposit: '60000000000000'
+      - onChainId: '1000752'
+        decimals: 9
+        symbol: SOL
+        coingeckoId: solana
+        existentialDeposit: '46339'
+      - onChainId: '1000795'
+        decimals: 18
+        symbol: SKY
+        coingeckoId: sky
+        existentialDeposit: '211685012701101000'
+      - onChainId: '1000794'
+        decimals: 18
+        symbol: LINK
+        coingeckoId: chainlink
+        existentialDeposit: '436681222707424'
+      - onChainId: '1000796'
+        decimals: 18
+        symbol: LDO
+        coingeckoId: lido-dao
+        existentialDeposit: '5102040816326530'
+- id: hyperbridge-polkadot
+  name: Hyperbridge
+  nativeCurrency:
+    coingeckoId: hyperbridge-2
+    logo: ./assets/tokens/bridge.svg
+  oldPrefix: 42
+  rpcs:
+    - wss://nexus.ibp.network
+    - wss://nexus.dotters.network
+    - wss://hyperbridge-nexus-rpc.blockops.network
+  relay: polkadot
+- id: imbue
+  name: Imbue
+  nativeCurrency:
+    coingeckoId: imbue-network
+  chainspecQrUrl: https://metadata.novasama.io/qr/imbue_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/imbue_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: innovatorchain
+  name: Innovator Chain
+  rpcs: []
+- id: integritee-kusama
+  name: Integritee Kusama
+  nativeCurrency:
+    coingeckoId: integritee
+  blockExplorerUrls:
+    - https://integritee.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/integritee-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/integritee-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kusama.api.integritee.network
+  relay: kusama
+- id: integritee-polkadot
+  name: Integritee
+  nativeCurrency:
+    coingeckoId: integritee
+  oldPrefix: 13
+  rpcs:
+    - wss://integritee-rpc.dwellir.com
+    - wss://polkadot.api.integritee.network
+  relay: polkadot
+- id: integritee-polkadot-2
+  name: Integritee
+  rpcs: []
+  relay: polkadot
+- id: interlay
+  name: Interlay
+  nativeCurrency:
+    coingeckoId: interlay
+  blockExplorerUrls:
+    - https://interlay.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/interlay-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/interlay-parachain_metadata_latest.apng
+  oldPrefix: 2032
+  rpcs:
+    - wss://interlay-rpc.dwellir.com
+    - wss://api.interlay.io/parachain
+    - wss://rpc-interlay.luckyfriday.io/
+  nativeTokenId: interlay:substrate-tokens:N4IgLgngDgpiBcIAqB7A1jAdiANCAbgIYA2ArnPKJLAiAJIBySASiAL5tA
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"IBTC"}}'
+        decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"INTR"}}'
+        decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
+        decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KINT"}}'
+        decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '0'
+      - onChainId: '{"type":"ForeignAsset","value":1}'
+        decimals: 10
+        symbol: LDOT
+        coingeckoId: liquid-staking-dot
+        existentialDeposit: '0'
+      - onChainId: '{"type":"ForeignAsset","value":2}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '0'
+      - onChainId: '{"type":"ForeignAsset","value":13}'
+        decimals: 12
+        symbol: HDX
+        coingeckoId: hydration
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"IBTC"}},{"type":"Token","value":{"type":"DOT"}}]}'
+        decimals: 18
+        symbol: lp IBTC-DOT
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"IBTC"}},{"type":"ForeignAsset","value":2}]}'
+        decimals: 18
+        symbol: lp IBTC-USDT
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"DOT"}},{"type":"Token","value":{"type":"INTR"}}]}'
+        decimals: 18
+        symbol: lp DOT-INTR
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LendToken","value":1}'
+        decimals: 8
+        symbol: qIBTC
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LendToken","value":2}'
+        decimals: 10
+        symbol: qDOT
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LendToken","value":3}'
+        decimals: 6
+        symbol: qUSDT
+        existentialDeposit: '0'
+- id: invarch
+  name: InvArch
+  oldPrefix: 117
+  rpcs:
+    - wss://invarch-rpc.dwellir.com
+    - wss://invarch.ibp.network
+    - wss://invarch.dotters.network
+  relay: polkadot
+- id: ipci
+  name: DAO IPCI
+  chainspecQrUrl: https://metadata.novasama.io/qr/ipci_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/ipci_metadata_latest.apng
+  rpcs:
+    - wss://ipci.rpc.robonomics.network
+  relay: kusama
+- id: jamton
+  name: Jamton
+  rpcs:
+    - wss://rpc.jamton.network
+  relay: polkadot
+- id: joystream
+  name: Joystream
+  nativeCurrency:
+    coingeckoId: joystream
+  blockExplorerUrls:
+    - https://joystream.subscan.io/
+  rpcs:
+    - wss://rpc.joyutils.org
+    - wss://rpc.joystream.org
+- id: jur
+  name: Jur
+  nativeCurrency:
+    coingeckoId: jur
+  rpcs: []
+- id: kabocha
+  name: Kabocha
+  chainspecQrUrl: https://metadata.novasama.io/qr/kabocha-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kabocha-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kabocha.jelliedowl.net
+  relay: kusama
+- id: kapex
+  name: Kapex
+  chainspecQrUrl: https://metadata.novasama.io/qr/totem-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/totem-parachain_metadata_latest.apng
+  rpcs: []
+  relay: polkadot
+- id: karura
+  name: Karura
+  nativeCurrency:
+    coingeckoId: karura
+  themeColor: '#f93d43'
+  blockExplorerUrls:
+    - https://karura.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/karura_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/karura_metadata_latest.apng
+  rpcs:
+    - wss://karura-rpc.dwellir.com
+    - wss://karura-rpc-0.aca-api.network
+    - wss://karura-rpc-1.aca-api.network
+    - wss://karura-rpc-2.aca-api.network/ws
+    - wss://karura-rpc-3.aca-api.network/ws
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"LKSM"}}'
+        decimals: 12
+        symbol: LKSM
+        coingeckoId: liquid-ksm
+        existentialDeposit: '500000000'
+      - onChainId: '{"type":"Token","value":{"type":"BNC"}}'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '8000000000'
+      - onChainId: '{"type":"Token","value":{"type":"TAI"}}'
+        decimals: 12
+        symbol: TAI
+        coingeckoId: taiga
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"Token","value":{"type":"PHA"}}'
+        decimals: 12
+        symbol: PHA
+        coingeckoId: pha
+        existentialDeposit: '40000000000'
+      - onChainId: '{"type":"Token","value":{"type":"KINT"}}'
+        decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        existentialDeposit: '133330000'
+      - onChainId: '{"type":"Token","value":{"type":"VSKSM"}}'
+        decimals: 12
+        symbol: VSKSM
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"Token","value":{"type":"KUSD"}}'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
+        decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        existentialDeposit: '66'
+      - onChainId: '{"type":"ForeignAsset","value":10}'
+        decimals: 12
+        symbol: KMA
+        coingeckoId: calamari-network
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"ForeignAsset","value":14}'
+        decimals: 9
+        symbol: GENS
+        coingeckoId: genshiro
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":19}'
+        decimals: 12
+        symbol: LT
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":8}'
+        decimals: 12
+        symbol: TEER
+        coingeckoId: integritee
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"ForeignAsset","value":16}'
+        decimals: 10
+        symbol: TUR
+        existentialDeposit: '40000000000'
+      - onChainId: '{"type":"ForeignAsset","value":4}'
+        decimals: 12
+        symbol: HKO
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"ForeignAsset","value":6}'
+        decimals: 14
+        symbol: KICO
+        existentialDeposit: '100000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":2}'
+        decimals: 18
+        symbol: QTZ
+        coingeckoId: quartz
+        existentialDeposit: '1000000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":20}'
+        decimals: 18
+        symbol: HEI
+        coingeckoId: heima
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"ForeignAsset","value":9}'
+        decimals: 18
+        symbol: NEER
+        coingeckoId: metaverse-network-pioneer
+        existentialDeposit: '100000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":1}'
+        decimals: 8
+        symbol: ARIS
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":0}'
+        decimals: 10
+        symbol: RMRK
+        coingeckoId: rmrk
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"ForeignAsset","value":5}'
+        decimals: 12
+        symbol: CSM
+        coingeckoId: crust-storage-market
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":17}'
+        decimals: 18
+        symbol: PCHU
+        existentialDeposit: '100000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":13}'
+        decimals: 18
+        symbol: CRAB
+        existentialDeposit: '1000000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":11}'
+        decimals: 12
+        symbol: BSX
+        coingeckoId: basilisk
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":12}'
+        decimals: 18
+        symbol: AIR
+        coingeckoId: altair
+        existentialDeposit: '100000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":7}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '10000'
+      - onChainId: '{"type":"ForeignAsset","value":18}'
+        decimals: 18
+        symbol: SDN
+        coingeckoId: shiden
+        existentialDeposit: '10000000000000000'
+      - onChainId: '{"type":"ForeignAsset","value":15}'
+        decimals: 9
+        symbol: EQD
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"ForeignAsset","value":3}'
+        decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        existentialDeposit: '1000000000000000'
+      - onChainId: '{"type":"StableAssetPoolToken","value":0}'
+        decimals: 12
+        symbol: tKSM
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"StableAssetPoolToken","value":1}'
+        decimals: 12
+        symbol: 3USD
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"Erc20","value":"hex:0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27"}'
+        decimals: 6
+        symbol: USDCet
+        existentialDeposit: '10000'
+      - onChainId: '{"type":"Erc20","value":"hex:0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71"}'
+        decimals: 18
+        symbol: DAI
+        existentialDeposit: '10000000000000000'
+      - onChainId: '{"type":"Erc20","value":"hex:0xe20683ad1ed8bbeed7e1ae74be10f19d8045b530"}'
+        decimals: 12
+        symbol: waSEED
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"ForeignAsset","value":0}]}'
+        decimals: 12
+        symbol: lp KSM-RMRK
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"Token","value":{"type":"LKSM"}}]}'
+        decimals: 12
+        symbol: lp KSM-LKSM
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"KUSD"}}]}'
+        decimals: 12
+        symbol: lp KAR-KUSD
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"ForeignAsset","value":2}]}'
+        decimals: 12
+        symbol: lp KAR-QTZ
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KSM"}}]}'
+        decimals: 12
+        symbol: lp KUSD-KSM
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"BNC"}}]}'
+        decimals: 12
+        symbol: lp KUSD-BNC
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":5}]}'
+        decimals: 12
+        symbol: lp KUSD-CSM
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":0}]}'
+        decimals: 12
+        symbol: lp KUSD-RMRK
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"ForeignAsset","value":1}]}'
+        decimals: 12
+        symbol: lp KSM-ARIS
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KINT"}}]}'
+        decimals: 12
+        symbol: lp KUSD-KINT
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"TAI"}},{"type":"StableAssetPoolToken","value":0}]}'
+        decimals: 12
+        symbol: lp TAI-tKSM
+        existentialDeposit: '1000000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"KSM"}}]}'
+        decimals: 12
+        symbol: lp KAR-KSM
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":12}]}'
+        decimals: 12
+        symbol: lp KUSD-AIR
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KAR"}},{"type":"Token","value":{"type":"LKSM"}}]}'
+        decimals: 12
+        symbol: lp KAR-LKSM
+        existentialDeposit: '100000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"ForeignAsset","value":2}]}'
+        decimals: 12
+        symbol: lp KUSD-QTZ
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"PHA"}}]}'
+        decimals: 12
+        symbol: lp KUSD-PHA
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"LKSM"}}]}'
+        decimals: 12
+        symbol: lp KUSD-LKSM
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"DexShare","value":[{"type":"Token","value":{"type":"KUSD"}},{"type":"Token","value":{"type":"KBTC"}}]}'
+        decimals: 12
+        symbol: lp KUSD-KBTC
+        existentialDeposit: '10000000000'
+- id: khala
+  name: Khala
+  nativeCurrency:
+    coingeckoId: pha
+  blockExplorerUrls:
+    - https://khala.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/khala_specs.png
+  rpcs: []
+  relay: kusama
+- id: kico
+  name: Kico
+  rpcs: []
+  relay: kusama
+- id: kico-2
+  name: Kico
+  rpcs: []
+  relay: kusama
+- id: kilt-spiritnet
+  name: KILT Spiritnet
+  nativeCurrency:
+    coingeckoId: kilt-protocol
+  blockExplorerUrls:
+    - https://spiritnet.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/kilt-spiritnet_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kilt-spiritnet_metadata_latest.apng
+  oldPrefix: 38
+  rpcs:
+    - wss://kilt-rpc.dwellir.com
+    - wss://kilt.ibp.network
+    - wss://kilt.dotters.network
+    - wss://spiritnet.kilt.io/
+  relay: polkadot
+- id: kintsugi
+  name: Kintsugi
+  nativeCurrency:
+    coingeckoId: kintsugi
+  blockExplorerUrls:
+    - https://kintsugi.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/kintsugi-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kintsugi-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kintsugi-rpc.dwellir.com
+    - wss://api-kusama.interlay.io/parachain
+  nativeTokenId: kintsugi:substrate-tokens:N4IgLgngDgpiBcIAqB7A1jAdiANCAbgIYA2ArnPKJLAiANICSAckiAL5tA
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"IBTC"}}'
+        decimals: 8
+        symbol: IBTC
+        coingeckoId: interbtc
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"INTR"}}'
+        decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KBTC"}}'
+        decimals: 8
+        symbol: kBTC
+        coingeckoId: kintsugi-btc
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KINT"}}'
+        decimals: 12
+        symbol: KINT
+        coingeckoId: kintsugi
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"KSM"}}'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '0'
+      - onChainId: '{"type":"ForeignAsset","value":1}'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        existentialDeposit: '0'
+      - onChainId: '{"type":"ForeignAsset","value":2}'
+        decimals: 12
+        symbol: LKSM
+        coingeckoId: liquid-ksm
+        existentialDeposit: '0'
+      - onChainId: '{"type":"ForeignAsset","value":3}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KBTC"}},{"type":"Token","value":{"type":"KSM"}}]}'
+        decimals: 18
+        symbol: lp kBTC-KSM
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KBTC"}},{"type":"ForeignAsset","value":3}]}'
+        decimals: 18
+        symbol: lp kBTC-USDT
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LpToken","value":[{"type":"Token","value":{"type":"KSM"}},{"type":"Token","value":{"type":"KINT"}}]}'
+        decimals: 18
+        symbol: lp KSM-KINT
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LendToken","value":1}'
+        decimals: 8
+        symbol: qKBTC
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LendToken","value":2}'
+        decimals: 12
+        symbol: qKSM
+        existentialDeposit: '0'
+      - onChainId: '{"type":"LendToken","value":3}'
+        decimals: 6
+        symbol: qUSDT
+        existentialDeposit: '0'
+- id: kpron
+  name: Kpron
+  rpcs: []
+  relay: kusama
+- id: kreivo
+  name: Kreivo
+  rpcs:
+    - wss://kreivo.kippu.rocks/
+    - wss://kreivo.io/
+  relay: kusama
+- id: krest
+  name: Krest
+  nativeCurrency:
+    coingeckoId: krest
+  blockExplorerUrls:
+    - https://krest.subscan.io/
+  rpcs:
+    - wss://wss-krest.peaq.network/
+    - wss://krest.unitedbloc.com/
+  relay: kusama
+- id: kulupu
+  name: Kulupu
+  blockExplorerUrls:
+    - https://kulupu.subscan.io/
+  rpcs: []
+- id: kusama-asset-hub
+  name: Kusama Asset Hub
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://assethub-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/kusama-statemine_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-statemine_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/asset-hub-kusama
+    - wss://asset-hub-kusama-rpc.dwellir.com
+    - wss://statemine-rpc-tn.dwellir.com
+    - wss://asset-hub-kusama.dotters.network
+    - wss://rpc-asset-hub-kusama.luckyfriday.io
+    - wss://kusama-asset-hub-rpc.polkadot.io
+    - wss://statemine.public.curie.radiumblock.co/ws
+    - wss://ksm-rpc.stakeworld.io/assethub
+  relay: kusama
+  tokens:
+    substrate-assets:
+      - assetId: '8'
+        symbol: RMRK
+        coingeckoId: rmrk
+      - assetId: '16'
+        symbol: ARIS
+      - assetId: '1984'
+        symbol: USDT
+        coingeckoId: tether
+      - assetId: '50000002'
+        symbol: dUSD
+        logo: ./assets/tokens/dusd.webp
+- id: kusama-bridge-hub
+  name: Kusama Bridge Hub
+  nativeCurrency:
+    coingeckoId: kusama
+  blockExplorerUrls:
+    - https://bridgehub-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/bridgehub-kusama
+    - wss://bridge-hub-kusama-rpc.dwellir.com
+    - wss://kusama-bridge-hub-rpc-tn.dwellir.com
+    - wss://bridge-hub-kusama.dotters.network
+    - wss://rpc-bridge-hub-kusama.luckyfriday.io
+    - wss://kusama-bridge-hub-rpc.polkadot.io
+    - wss://bridgehub-kusama.public.curie.radiumblock.co/ws
+    - wss://ksm-rpc.stakeworld.io/bridgehub
+  relay: kusama
+- id: kusama-coretime
+  name: Kusama Coretime
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://coretime-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_metadata_1002005.apng
+  rpcs:
+    - wss://sys.ibp.network/coretime-kusama
+    - wss://coretime-kusama-rpc.dwellir.com
+    - wss://coretime-kusama.dotters.network
+    - wss://rpc-coretime-kusama.luckyfriday.io
+    - wss://kusama-coretime-rpc.polkadot.io
+    - wss://ksm-rpc.stakeworld.io/coretime
+  relay: kusama
+- id: kusama-people
+  name: Kusama People
+  nativeCurrency:
+    coingeckoId: kusama
+    logo: ./assets/tokens/ksm.svg
+  blockExplorerUrls:
+    - https://people-kusama.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_metadata_1002006.apng
+  rpcs:
+    - wss://sys.ibp.network/people-kusama
+    - wss://people-kusama-rpc.dwellir.com
+    - wss://people-kusama.dotters.network
+    - wss://rpc-people-kusama.luckyfriday.io
+    - wss://kusama-people-rpc.polkadot.io
+    - wss://ksm-rpc.stakeworld.io/people
+  relay: kusama
+- id: kusari
+  name: Kusari
+  rpcs: []
+- id: kylin
+  name: Kylin
+  chainspecQrUrl: https://metadata.novasama.io/qr/kylin_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/kylin_metadata_latest.apng
+  rpcs: []
+  relay: polkadot
+- id: laos
+  name: LAOS
+  nativeCurrency:
+    coingeckoId: laos-network
+  oldPrefix: 42
+  rpcs:
+    - wss://rpc.laos.laosfoundation.io
+  relay: polkadot
+- id: liberland
+  name: Liberland
+  nativeCurrency:
+    coingeckoId: liberland-lld
+    logo: ./assets/tokens/coingecko/liberland-lld.webp
+  rpcs:
+    - wss://liberland-rpc.dwellir.com
+    - wss://mainnet.liberland.org
+- id: listen
+  name: Listen
+  rpcs: []
+  relay: kusama
+- id: litmus
+  name: Litmus
+  blockExplorerUrls:
+    - https://litmus.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/litmus-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/litmus-parachain_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: logion-polkadot
+  name: Logion
+  oldPrefix: 2021
+  rpcs:
+    - wss://para-rpc01.logion.network
+    - wss://para-rpc02.logion.network
+  relay: polkadot
+- id: loom-network
+  name: Loom
+  rpcs: []
+  relay: kusama
+- id: mangata
+  name: MangataX
+  nativeCurrency: {}
+  blockExplorerUrls:
+    - https://mangatax.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/mangata-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/mangata-parachain_metadata_latest.apng
+  rpcs:
+    - wss://kusama-archive.mangata.online
+    - wss://kusama-rpc.mangata.online
+  nativeTokenId: mangata:substrate-tokens:EQBmQ
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '"0"'
+        decimals: 18
+        symbol: MGX
+        coingeckoId: mangata-x
+        existentialDeposit: '0'
+- id: manta
+  name: Manta
+  nativeCurrency:
+    coingeckoId: manta-network
+  blockExplorerUrls:
+    - https://manta.subscan.io/
+  oldPrefix: 77
+  rpcs:
+    - wss://ws.manta.systems
+  relay: polkadot
+- id: mars
+  name: Mars
+  rpcs: []
+  relay: kusama
+- id: mathchain
+  name: MathChain
+  rpcs: []
+- id: minix
+  name: MiniX
+  rpcs: []
+- id: moonbeam
+  name: Moonbeam
+  nativeCurrency:
+    coingeckoId: moonbeam
+  blockExplorerUrls:
+    - https://moonbeam.subscan.io/
+  oldPrefix: 1284
+  rpcs:
+    - wss://moonbeam-rpc.n.dwellir.com
+    - wss://moonbeam.ibp.network
+    - wss://moonbeam.dotters.network
+    - wss://moonbeam-rpc.publicnode.com
+    - wss://wss.api.moonbeam.network
+    - wss://moonbeam.public.curie.radiumblock.co/ws
+    - wss://moonbeam.unitedbloc.com
+  relay: polkadot
+  tokens:
+    substrate-assets:
+      - assetId: '36282181791341254438422467838694599751'
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+      - assetId: '42259045809535163221576417993425387648'
+        symbol: DOT
+        coingeckoId: polkadot
+      - assetId: '64174511183114006009298114091987195453'
+        symbol: PINK
+      - assetId: '69606720909260275826784788104880799692'
+        symbol: HDX
+        coingeckoId: hydradx
+      - assetId: '166377000701797186346254371275954761085'
+        symbol: USDC
+        coingeckoId: usd-coin
+      - assetId: '178794693648360392906933130845919698647'
+        symbol: WETH
+        coingeckoId: weth
+      - assetId: '311091173110107856861649819128533077277'
+        symbol: USDT
+        coingeckoId: tether
+- id: moonriver
+  name: Moonriver
+  nativeCurrency:
+    coingeckoId: moonriver
+  blockExplorerUrls:
+    - https://moonriver.subscan.io/
+  rpcs:
+    - wss://moonriver-rpc.dwellir.com
+    - wss://wss.api.moonriver.moonbeam.network
+    - wss://moonriver.public.curie.radiumblock.co/ws
+    - wss://moonriver.unitedbloc.com
+  relay: kusama
+- id: moonsama
+  name: Moonsama
+  nativeCurrency:
+    coingeckoId: exosama-network
+  rpcs: []
+  relay: polkadot
+- id: myriad
+  name: Myriad
+  nativeCurrency:
+    coingeckoId: myriad-social
+  chainspecQrUrl: https://metadata.novasama.io/qr/appchain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/appchain_metadata_latest.apng
+  rpcs: []
+- id: mythos
+  name: Mythos
+  nativeCurrency:
+    coingeckoId: mythos
+  blockExplorerUrls:
+    - https://mythos.subscan.io/
+  oldPrefix: 42
+  rpcs:
+    - wss://rpc.helikon.io/mythos
+    - wss://mythos.ibp.network
+    - wss://mythos.dotters.network
+    - wss://polkadot-mythos-rpc.polkadot.io
+  relay: polkadot
+- id: neatcoin
+  name: Neatcoin
+  nativeCurrency:
+    coingeckoId: neat
+  rpcs: []
+- id: neuroweb
+  name: NeuroWeb
+  blockExplorerUrls:
+    - https://neuroweb.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/origintrail-parachain_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/origintrail-parachain_metadata_latest.apng
+  oldPrefix: 101
+  rpcs:
+    - wss://parachain-rpc.origin-trail.network
+  relay: polkadot
+  tokens:
+    substrate-assets:
+      - assetId: '1'
+        symbol: TRAC
+        coingeckoId: origintrail
+- id: neuroweb-polkadot-2
+  name: NeuroWeb
+  rpcs: []
+  relay: polkadot
+- id: nftmart
+  name: NFTMart
+  nativeCurrency:
+    coingeckoId: nftmart-token
+  rpcs: []
+- id: nodle-polkadot
+  name: Nodle
+  nativeCurrency:
+    coingeckoId: nodle-network
+  blockExplorerUrls:
+    - https://nodle.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/nodle-para_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/nodle-para_metadata_latest.apng
+  oldPrefix: 37
+  rpcs:
+    - wss://nodle-rpc.dwellir.com
+  relay: polkadot
+- id: nodle-standalone
+  name: Nodle Standalone
+  rpcs: []
+- id: oak
+  name: Oak
+  rpcs: []
+  relay: polkadot
+- id: odyssey
+  name: Ares Odyssey
+  rpcs: []
+  relay: polkadot
+- id: omnibtc
+  name: OmniBTC
+  rpcs: []
+  relay: polkadot
+- id: parallel
+  name: Parallel
+  rpcs:
+    - wss://parallel.gatotech.network
+  relay: polkadot
+- id: peaq
+  name: Peaq
+  nativeCurrency:
+    coingeckoId: peaq-2
+  blockExplorerUrls:
+    - https://peaq.subscan.io/
+  oldPrefix: 42
+  rpcs:
+    - wss://peaq-rpc.dwellir.com
+    - wss://peaq-rpc.publicnode.com
+  relay: polkadot
+- id: pendulum
+  name: Pendulum
+  nativeCurrency:
+    coingeckoId: pendulum-chain
+  blockExplorerUrls:
+    - https://pendulum.subscan.io/
+  oldPrefix: 56
+  rpcs:
+    - wss://rpc-pendulum.prd.pendulumchain.tech
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"XCM","value":0}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":1}'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":2}'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":6}'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"StellarNative"}}'
+        decimals: 12
+        symbol: XLM
+        coingeckoId: stellar
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:TZS","issuer":"hex:0x34c94b2a4ba9e8b57b22547dcbb30f443c4cb02da3829a89aa1bd4780e4466ba"}}}'
+        decimals: 12
+        symbol: TZS.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:BRL","issuer":"hex:0xeaac68d4d0e37b4c24c2536916e830735f032d0d6b2a1c8fca3bc5a25e083e3a"}}}'
+        decimals: 12
+        symbol: BRL.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:USDC","issuer":"hex:0x3b9911380efe988ba0a8900eb1cfe44f366f7dbe946bed077240f7f624df15c5"}}}'
+        decimals: 12
+        symbol: USDC.s
+        coingeckoId: usd-coin
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:AUDD","issuer":"hex:0xc5fbe9979e240552860221f4fe2f2219f35e40458b8b58fc32da520a154a561d"}}}'
+        decimals: 12
+        symbol: AUDD.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0x2112ee863867e4e219fe254c0918b00bc9ea400775bfc3ab4430971ce505877c"}}}'
+        decimals: 12
+        symbol: EURC.s
+        coingeckoId: eurc
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:EURC","issuer":"hex:0xcf4f5a26e2090bb3adcf02c7a9d73dbfe6659cc690461475b86437fa49c71136"}}}'
+        decimals: 12
+        symbol: EURC.s
+        coingeckoId: eurc
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"Stellar","value":{"type":"AlphaNum4","value":{"code":"bin:NGNC","issuer":"hex:0x241afadf31883f79972545fc64f3b5b0c95704c6fb4917474e42b0057841606b"}}}'
+        decimals: 12
+        symbol: NGNC.s
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":4}'
+        decimals: 18
+        symbol: BRZ
+        coingeckoId: brazilian-digital-token
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":7}'
+        decimals: 10
+        symbol: PINK
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":8}'
+        decimals: 12
+        symbol: HDX
+        coingeckoId: hydration
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":9}'
+        decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        existentialDeposit: '1000'
+      - onChainId: '{"type":"XCM","value":10}'
+        decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        existentialDeposit: '1000000'
+      - onChainId: '{"type":"XCM","value":11}'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '10000000000'
+      - onChainId: '{"type":"XCM","value":12}'
+        decimals: 6
+        symbol: USDC.axl
+        coingeckoId: axelar-bridged-usdc
+        existentialDeposit: '1000'
+- id: phala
+  name: Phala
+  nativeCurrency:
+    coingeckoId: pha
+  blockExplorerUrls:
+    - https://phala.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/phala_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/phala_metadata_latest.apng
+  oldPrefix: 30
+  rpcs:
+    - wss://phala-rpc.dwellir.com
+    - wss://phala.public.curie.radiumblock.co/ws
+    - wss://api.phala.network/ws
+  relay: polkadot
+- id: picasso
+  name: Picasso
+  nativeCurrency:
+    coingeckoId: picasso
+  blockExplorerUrls:
+    - https://picasso.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/picasso_specs.png
+  rpcs:
+    - wss://picasso-rpc.dwellir.com
+    - wss://rpc.composablenodes.tech
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '"bigint:1"'
+        decimals: 12
+        symbol: PICA
+        coingeckoId: picasso
+        existentialDeposit: '0'
+      - onChainId: '"bigint:4"'
+        decimals: 12
+        symbol: KSM
+        coingeckoId: kusama
+        existentialDeposit: '0'
+      - onChainId: '"bigint:6"'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '0'
+      - onChainId: '"bigint:7"'
+        decimals: 6
+        symbol: ATOM
+        coingeckoId: cosmos
+        existentialDeposit: '2500'
+      - onChainId: '"bigint:8"'
+        decimals: 6
+        symbol: OSMO
+        coingeckoId: osmosis
+        existentialDeposit: '40000'
+      - onChainId: '"bigint:9"'
+        decimals: 6
+        symbol: STRD
+        coingeckoId: stride
+        existentialDeposit: '20000'
+      - onChainId: '"bigint:10"'
+        decimals: 6
+        symbol: stATOM
+        coingeckoId: stride-staked-atom
+        existentialDeposit: '2000'
+      - onChainId: '"bigint:11"'
+        decimals: 6
+        symbol: STARS
+        coingeckoId: stargaze
+        existentialDeposit: '2000000'
+      - onChainId: '"bigint:12"'
+        decimals: 6
+        symbol: NTRN
+        coingeckoId: neutron
+        existentialDeposit: '60000'
+      - onChainId: '"bigint:13"'
+        decimals: 6
+        symbol: CRE
+        coingeckoId: crescent-network
+        existentialDeposit: '1000000'
+      - onChainId: '"bigint:14"'
+        decimals: 6
+        symbol: bCRE
+        coingeckoId: liquid-staking-crescent
+        existentialDeposit: '1000000'
+      - onChainId: '"bigint:15"'
+        decimals: 6
+        symbol: SCRT
+        coingeckoId: secret
+        existentialDeposit: '70000'
+      - onChainId: '"bigint:17"'
+        decimals: 6
+        symbol: UMEE
+        coingeckoId: umee
+        existentialDeposit: '1000000'
+      - onChainId: '"bigint:18"'
+        decimals: 6
+        symbol: BLD
+        coingeckoId: agoric
+        existentialDeposit: '120000'
+      - onChainId: '"bigint:31"'
+        decimals: 12
+        symbol: BNC KSM
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '11000000000'
+      - onChainId: '"bigint:32"'
+        decimals: 12
+        symbol: vKSM
+        coingeckoId: voucher-ksm
+        existentialDeposit: '0'
+      - onChainId: '"bigint:33"'
+        decimals: 10
+        symbol: BNC DOT
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '100000000'
+      - onChainId: '"bigint:34"'
+        decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        existentialDeposit: '100000000'
+      - onChainId: '"bigint:101"'
+        decimals: 12
+        symbol: KAR
+        coingeckoId: karura
+        existentialDeposit: '0'
+      - onChainId: '"bigint:102"'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '0'
+      - onChainId: '"bigint:103"'
+        decimals: 12
+        symbol: vKSM
+        coingeckoId: voucher-ksm
+        existentialDeposit: '100000000'
+      - onChainId: '"bigint:104"'
+        decimals: 18
+        symbol: MOVR
+        coingeckoId: moonriver
+        existentialDeposit: '0'
+      - onChainId: '"bigint:127"'
+        decimals: 9
+        symbol: EQD
+        existentialDeposit: '200000'
+      - onChainId: '"bigint:129"'
+        decimals: 12
+        symbol: aSEED
+        coingeckoId: ausd-seed-karura
+        existentialDeposit: '0'
+      - onChainId: '"bigint:130"'
+        decimals: 6
+        symbol: USDT
+        coingeckoId: tether
+        existentialDeposit: '0'
+      - onChainId: '"bigint:131"'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '0'
+      - onChainId: '"bigint:132"'
+        decimals: 8
+        symbol: WBTC
+        coingeckoId: wrapped-bitcoin
+        existentialDeposit: '0'
+      - onChainId: '"bigint:133"'
+        decimals: 18
+        symbol: WETH
+        coingeckoId: weth
+        existentialDeposit: '0'
+      - onChainId: '"bigint:212"'
+        decimals: 12
+        symbol: TNKR
+        coingeckoId: tinkernet
+        existentialDeposit: '13500000000'
+      - onChainId: '"bigint:420"'
+        decimals: 6
+        symbol: HUAHUA
+        coingeckoId: chihuahua-token
+        existentialDeposit: '1000000'
+      - onChainId: '"bigint:2006"'
+        decimals: 18
+        symbol: ASTR
+        coingeckoId: astar
+        existentialDeposit: '4700000000000000'
+      - onChainId: '"bigint:2007"'
+        decimals: 18
+        symbol: SDN
+        coingeckoId: shiden
+        existentialDeposit: '1000000000000000'
+      - onChainId: '"bigint:2011"'
+        decimals: 9
+        symbol: EQ
+        coingeckoId: equilibrium-token
+        existentialDeposit: '700000000'
+- id: pichiu
+  name: Pichiu
+  chainspecQrUrl: https://metadata.novasama.io/qr/pichiu_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/pichiu_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: polimec
+  name: Polimec
+  nativeCurrency:
+    coingeckoId: polimec
+  chainspecQrUrl: https://metadata.novasama.io/qr/polkadot-polimec-mainnet_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/polkadot-polimec-mainnet_metadata_latest.apng
+  oldPrefix: 41
+  rpcs:
+    - wss://polimec.ibp.network
+    - wss://polimec.dotters.network
+    - wss://polimec.rpc.amforc.com
+    - wss://rpc.helikon.io/polimec
+    - wss://rpc.polimec.org
+  relay: polkadot
+  tokens:
+    substrate-foreignassets:
+      - onChainId: '{"parents":1,"interior":{"type":"X3","value":[{"type":"Parachain","value":1000},{"type":"PalletInstance","value":50},{"type":"GeneralIndex","value":"bigint:1337"}]}}'
+        symbol: USDC
+        coingeckoId: usd-coin
+      - onChainId: '{"parents":1,"interior":{"type":"X3","value":[{"type":"Parachain","value":1000},{"type":"PalletInstance","value":50},{"type":"GeneralIndex","value":"bigint:1984"}]}}'
+        symbol: USDT
+        coingeckoId: tether
+      - onChainId: '{"parents":1,"interior":{"type":"Here"}}'
+        symbol: DOT
+        coingeckoId: polkadot
+- id: polkadex-polkadot
+  name: Polkadex
+  nativeCurrency:
+    coingeckoId: polkadex
+  rpcs: []
+  relay: polkadot
+- id: polkadex-polkadot-2
+  name: Polkadex
+  nativeCurrency:
+    coingeckoId: polkadex
+  blockExplorerUrls:
+    - https://polkadex-parachain.subscan.io/
+  oldPrefix: 89
+  rpcs:
+    - wss://polkadex-parachain-rpc.dwellir.com
+    - wss://polkadex-parachain.public.curie.radiumblock.co/ws
+  relay: polkadot
+- id: polkadex-standalone
+  name: Polkadex Standalone
+  nativeCurrency:
+    coingeckoId: polkadex
+  blockExplorerUrls:
+    - https://polkadex.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/node_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/node_metadata_latest.apng
+  rpcs:
+    - wss://polkadex-mainnet-rpc.dwellir.com
+    - wss://polkadex.public.curie.radiumblock.co/ws
+- id: polkadot-asset-hub
+  name: Polkadot Asset Hub
+  nativeCurrency:
+    coingeckoId: polkadot
+    logo: ./assets/tokens/dot.svg
+  blockExplorerUrls:
+    - https://assethub-polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-statemint_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-statemint_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/statemint
+    - wss://sys.dotters.network/statemint
+    - wss://sys.ibp.network/asset-hub-polkadot
+    - wss://asset-hub-polkadot-rpc.dwellir.com
+    - wss://statemint-rpc-tn.dwellir.com
+    - wss://polkadot-assethub-rpc.blockops.network/ws
+    - wss://asset-hub-polkadot.dotters.network
+    - wss://rpc-asset-hub-polkadot.luckyfriday.io
+    - wss://polkadot-asset-hub-rpc.polkadot.io
+    - wss://dot-rpc.stakeworld.io/assethub
+    - wss://statemint.public.curie.radiumblock.co/ws
+  relay: polkadot
+  tokens:
+    substrate-assets:
+      - assetId: '1337'
+        symbol: USDC
+        coingeckoId: usd-coin
+      - assetId: '1984'
+        symbol: USDT
+        coingeckoId: tether
+      - assetId: '18'
+        symbol: DOTA
+      - assetId: '23'
+        symbol: PINK
+      - assetId: '30'
+        symbol: DED
+        coingeckoId: dot-is-ded
+      - assetId: '17'
+        symbol: WIFD
+        logo: ./assets/tokens/wifd.svg
+      - assetId: '555'
+        symbol: GAME
+        logo: ./assets/tokens/game.svg
+      - assetId: '690'
+        symbol: BORK
+        logo: ./assets/tokens/bork.svg
+      - assetId: '31337'
+        symbol: WUD
+        logo: ./assets/tokens/wud.webp
+        coingeckoId: gavun-wud
+    substrate-foreignassets:
+      - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2011}}}'
+        symbol: EQ
+        coingeckoId: equilibrium-token
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc0"}}]}}'
+        symbol: WETH.e
+        coingeckoId: weth
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x6982508145454ce325ddbe47a25d4ec3d2311933"}}]}}'
+        symbol: PEPE.e
+        coingeckoId: pepe
+      - onChainId: '{"parents":2,"interior":{"type":"X1","value":{"type":"GlobalConsensus","value":{"type":"Kusama"}}}}'
+        symbol: KSM
+        coingeckoId: kusama
+      - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2030},{"type":"GeneralKey","value":{"length":2,"data":"hex:0x0001000000000000000000000000000000000000000000000000000000000000"}}]}}'
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"}}]}}'
+        symbol: USDC.e
+        coingeckoId: usd-coin
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xba41ddf06b7ffd89d1267b5a93bfef2424eb2003"}}]}}'
+        symbol: MYTH.e
+        coingeckoId: mythos
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x18084fba666a33d37592fa2633fd49a74dd93a88"}}]}}'
+        symbol: tBTC.e
+        coingeckoId: tbtc
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"}}]}}'
+        symbol: wstETH.e
+        coingeckoId: wrapped-steth
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x582d872a1b094fc48f5de31d3b73f2d9be47def1"}}]}}'
+        symbol: TONCOIN.e
+        coingeckoId: the-open-network
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x6b175474e89094c44da98b954eedeac495271d0f"}}]}}'
+        symbol: DAI.e
+        coingeckoId: dai
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"}}]}}'
+        symbol: SHIB.e
+        coingeckoId: shiba-inu
+      - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2011},{"type":"GeneralKey","value":{"length":3,"data":"hex:0x6571640000000000000000000000000000000000000000000000000000000000"}}]}}'
+        symbol: EQD
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"}}]}}'
+        symbol: WBTC.e
+        coingeckoId: wrapped-bitcoin
+      - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2004},{"type":"PalletInstance","value":10}]}}'
+        symbol: GLMR
+        coingeckoId: moonbeam
+      - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":3369}}}'
+        symbol: MYTH
+        coingeckoId: mythos
+      - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2030},{"type":"GeneralKey","value":{"length":2,"data":"hex:0x0900000000000000000000000000000000000000000000000000000000000000"}}]}}'
+        symbol: vDOT
+        coingeckoId: voucher-dot
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0x8daebade922df735c38c80c7ebd708af50815faa"}}]}}'
+        symbol: tBTC.e
+      - onChainId: '{"parents":1,"interior":{"type":"X2","value":[{"type":"Parachain","value":2034},{"type":"GeneralIndex","value":"bigint:0"}]}}'
+        symbol: HDX
+        coingeckoId: hydradx
+      - onChainId: '{"parents":2,"interior":{"type":"X2","value":[{"type":"GlobalConsensus","value":{"type":"Ethereum","value":{"chain_id":"bigint:1"}}},{"type":"AccountKey20","value":{"key":"hex:0xdac17f958d2ee523a2206206994597c13d831ec7"}}]}}'
+        symbol: USDT.e
+        coingeckoId: tether
+      - onChainId: '{"parents":1,"interior":{"type":"X1","value":{"type":"Parachain","value":2051}}}'
+        symbol: AJUN
+        coingeckoId: ajuna-network-2
+- id: polkadot-bridge-hub
+  name: Polkadot Bridge Hub
+  nativeCurrency:
+    coingeckoId: polkadot
+  blockExplorerUrls:
+    - https://bridgehub-polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/bridgehub-polkadot
+    - wss://bridge-hub-polkadot-rpc.dwellir.com
+    - wss://polkadot-bridge-hub-rpc-tn.dwellir.com
+    - wss://bridge-hub-polkadot.dotters.network
+    - wss://rpc-bridge-hub-polkadot.luckyfriday.io
+    - wss://polkadot-bridge-hub-rpc.polkadot.io
+    - wss://dot-rpc.stakeworld.io/bridgehub
+    - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
+  relay: polkadot
+- id: polkadot-collectives
+  name: Polkadot Collectives
+  nativeCurrency:
+    coingeckoId: polkadot
+  blockExplorerUrls:
+    - https://collectives-polkadot.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/polkadot-collectives_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-collectives_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/collectives-polkadot
+    - wss://collectives-polkadot-rpc.dwellir.com
+    - wss://polkadot-collectives-rpc-tn.dwellir.com
+    - wss://collectives-polkadot.dotters.network
+    - wss://rpc-collectives-polkadot.luckyfriday.io
+    - wss://polkadot-collectives-rpc.polkadot.io
+    - wss://dot-rpc.stakeworld.io/collectives
+    - wss://collectives.public.curie.radiumblock.co/ws
+  relay: polkadot
+- id: polkadot-coretime
+  name: Polkadot Coretime
+  blockExplorerUrls:
+    - https://coretime-polkadot.subscan.io/
+  rpcs:
+    - wss://sys.ibp.network/coretime-polkadot
+    - wss://coretime-polkadot.dotters.network
+    - wss://polkadot-coretime-rpc.polkadot.io
+  relay: polkadot
+- id: polkadot-people
+  name: Polkadot People
+  blockExplorerUrls:
+    - https://people-polkadot.subscan.io/
+  rpcs:
+    - wss://sys.ibp.network/people-polkadot
+    - wss://people-polkadot.dotters.network
+    - wss://rpc-people-polkadot.luckyfriday.io
+    - wss://polkadot-people-rpc.polkadot.io
+    - wss://people-polkadot.public.curie.radiumblock.co/ws
+  relay: polkadot
+- id: polkasmith
+  name: PolkaSmith
+  rpcs: []
+  relay: kusama
+- id: polymesh
+  name: Polymesh
+  nativeCurrency:
+    coingeckoId: polymesh
+    logo: ./assets/chains/polymesh.svg
+  blockExplorerUrls:
+    - https://polymesh.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/polymesh_mainnet_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/polymesh_mainnet_metadata_latest.apng
+  rpcs:
+    - wss://mainnet-rpc.polymesh.network
+- id: qpn
+  name: Quantum Portal
+  rpcs: []
+  relay: kusama
+- id: quartz
+  name: Quartz
+  nativeCurrency:
+    coingeckoId: quartz
+  blockExplorerUrls:
+    - https://quartz.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/quartz_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/quartz_metadata_latest.apng
+  rpcs:
+    - wss://quartz-rpc.dwellir.com
+    - wss://ws-quartz.unique.network
+    - wss://us-ws-quartz.unique.network
+    - wss://asia-ws-quartz.unique.network
+    - wss://eu-ws-quartz.unique.network
+  relay: kusama
+- id: riochain
+  name: RioChain
+  rpcs: []
+- id: riodefi
+  name: RioDeFi
+  rpcs: []
+  relay: kusama
+- id: robonomics-kusama
+  name: Robonomics Kusama
+  nativeCurrency:
+    coingeckoId: robonomics-network
+  blockExplorerUrls:
+    - https://robonomics.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/robonomics_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/robonomics_metadata_latest.apng
+  rpcs:
+    - wss://kusama.rpc.robonomics.network/
+  relay: kusama
+- id: robonomics-polkadot
+  name: Robonomics Polkadot
+  blockExplorerUrls:
+    - https://robonomics.subscan.io/
+  oldPrefix: 32
+  rpcs:
+    - wss://polkadot.rpc.robonomics.network/
+  relay: polkadot
+- id: sakura
+  name: Sakura
+  blockExplorerUrls:
+    - https://sakura.subscan.io/
+  rpcs: []
+  relay: kusama
+- id: shadow-kusama
+  name: Crust Shadow
+  nativeCurrency:
+    coingeckoId: crust-storage-market
+  blockExplorerUrls:
+    - https://shadow.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/crust-collator_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/crust-collator_metadata_latest.apng
+  rpcs:
+    - wss://rpc-shadow.crust.network/
+    - wss://rpc-shadow.crustnetwork.app
+    - wss://rpc-shadow.crustnetwork.cc
+    - wss://rpc-shadow.crustnetwork.xyz
+  relay: kusama
+- id: shadow-kusama-2
+  name: Crust Shadow
+  rpcs: []
+  relay: kusama
+- id: sherpax
+  name: SherpaX
+  rpcs: []
+- id: shiden-kusama
+  name: Shiden
+  nativeCurrency:
+    coingeckoId: shiden
+  blockExplorerUrls:
+    - https://shiden.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/shiden_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/shiden_metadata_latest.apng
+  rpcs:
+    - wss://shiden-rpc.dwellir.com
+    - wss://shiden.public.curie.radiumblock.co/ws
+    - wss://rpc.shiden.astar.network
+  relay: kusama
+- id: shiden-kusama-2
+  name: Shiden
+  rpcs: []
+  relay: kusama
+- id: snow
+  name: Snow
+  chainspecQrUrl: https://metadata.novasama.io/qr/snow_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/snow_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: sora-kusama
+  name: Sora
+  nativeCurrency:
+    coingeckoId: sora
+  rpcs:
+    - wss://ws.parachain-collator-2.c2.sora2.soramitsu.co.jp
+  relay: kusama
+- id: sora-polkadot
+  name: Sora
+  nativeCurrency:
+    coingeckoId: sora
+  oldPrefix: 81
+  rpcs:
+    - wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp
+  relay: polkadot
+- id: sora-standalone
+  name: Sora Standalone
+  nativeCurrency:
+    coingeckoId: sora
+  blockExplorerUrls:
+    - https://sora.subscan.io/
+  rpcs:
+    - wss://ws.mof.sora.org
+    - wss://mof2.sora.org
+    - wss://mof3.sora.org
+- id: spanner
+  name: Spanner
+  rpcs: []
+- id: stafi
+  name: Stafi
+  nativeCurrency:
+    coingeckoId: stafi
+  blockExplorerUrls:
+    - https://stafi.subscan.io/
+  rpcs: []
+- id: subdao
+  name: SubDAO
+  rpcs: []
+  relay: polkadot
+- id: subgame-kusama
+  name: SubGame Gamma Kusama
+  rpcs: []
+  relay: kusama
+- id: subgame-polkadot
+  name: SubGame Gamma Polkadot
+  rpcs: []
+  relay: polkadot
+- id: subgame-standalone
+  name: SubGame
+  nativeCurrency:
+    coingeckoId: subgame
+  blockExplorerUrls:
+    - https://subgame.subscan.io/
+  rpcs: []
+- id: subsocial-polkadot
+  name: Subsocial
+  nativeCurrency:
+    coingeckoId: subsocial
+  oldPrefix: 28
+  rpcs:
+    - wss://subsocial-rpc.dwellir.com
+    - wss://para.subsocial.network
+  relay: polkadot
+- id: subsocial-standalone
+  name: Subsocial Standalone
+  rpcs: []
+- id: subsocial-x
+  name: SubsocialX
+  chainspecQrUrl: https://metadata.novasama.io/qr/subsocial-parachain_specs.png
+  rpcs: []
+  relay: kusama
+- id: swapdex
+  name: Swapdex
+  nativeCurrency:
+    coingeckoId: swapdex
+  rpcs: []
+- id: t-1-rn
+  name: t1rn
+  rpcs: []
+  relay: kusama
+- id: t-3-rn
+  name: t3rn
+  oldPrefix: 9935
+  rpcs: []
+  relay: polkadot
+- id: tanganika
+  name: Tanganika
+  blockExplorerUrls:
+    - https://datahighway.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/datahighway-parachain_specs.png
+  rpcs: []
+  relay: kusama
+- id: tangle
+  name: Tangle
+  nativeCurrency:
+    coingeckoId: tangle-network
+  rpcs:
+    - wss://tangle-mainnet-rpc.dwellir.com
+    - wss://rpc.tangle.tools
+- id: tanssi
+  name: Tanssi
+  blockExplorerUrls:
+    - https://tanssi.subscan.io/
+  rpcs:
+    - wss://tanssi.tanssi-mainnet.network
+- id: ternoa
+  name: Ternoa
+  nativeCurrency:
+    coingeckoId: coin-capsule
+  chainspecQrUrl: https://metadata.novasama.io/qr/mainnet_specs.png
+  rpcs:
+    - wss://mainnet.ternoa.network
+- id: thebifrost-mainnet
+  name: The Bifrost
+  nativeCurrency:
+    coingeckoId: bifrost
+  rpcs: []
+- id: tinker
+  name: InvArch Tinkernet
+  nativeCurrency:
+    coingeckoId: tinkernet
+  chainspecQrUrl: https://metadata.novasama.io/qr/tinkernet_node_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/tinkernet_node_metadata_latest.apng
+  rpcs: []
+  relay: kusama
+- id: torus
+  name: Torus
+  rpcs:
+    - wss://api.torus.network
+- id: trustbase
+  name: TrustBase
+  rpcs: []
+  relay: kusama
+- id: turing
+  name: Turing
+  nativeCurrency:
+    coingeckoId: turing-network
+  blockExplorerUrls:
+    - https://turing.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/turing_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/turing_metadata_latest.apng
+  rpcs:
+    - wss://turing-rpc.dwellir.com
+  relay: kusama
+- id: uniarts
+  name: UniArts
+  blockExplorerUrls:
+    - https://uniarts.subscan.io/
+  rpcs: []
+- id: unique
+  name: Unique
+  nativeCurrency:
+    coingeckoId: unique-network
+  blockExplorerUrls:
+    - https://unique.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/unique_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/unique_metadata_latest.apng
+  oldPrefix: 7391
+  rpcs:
+    - wss://unique-rpc.dwellir.com
+    - wss://unique.ibp.network
+    - wss://unique.dotters.network
+    - wss://ws.unique.network
+    - wss://us-ws.unique.network
+    - wss://asia-ws.unique.network
+    - wss://eu-ws.unique.network
+  relay: polkadot
+- id: unitnetwork
+  name: UnitNetwork
+  rpcs: []
+- id: unorthodox
+  name: Unorthodox
+  rpcs: []
+  relay: kusama
+- id: vara
+  name: Vara
+  nativeCurrency:
+    coingeckoId: vara-network
+  blockExplorerUrls:
+    - https://vara.subscan.io/
+  rpcs:
+    - wss://rpc.vara.network
+- id: vtb
+  name: Vtb
+  rpcs:
+    - wss://substratenode.vtbcfoundation.org/explorer
+- id: watr
+  name: Watr
+  rpcs: []
+  relay: polkadot
+- id: westlake
+  name: Westlake
+  rpcs: []
+- id: xode
+  name: Xode
+  rpcs:
+    - wss://rpcnodea01.xode.net/n7yoxCmcIrCF6VziCcDmYTwL8R03a/rpc
+  relay: kusama
+  tokens:
+    substrate-assets:
+      - assetId: '1'
+        symbol: XGM
+      - assetId: '2'
+        symbol: XAV
+      - assetId: '3'
+        symbol: AZK
+      - assetId: '4'
+        symbol: IXON
+      - assetId: '5'
+        symbol: IXAV
+      - assetId: '6'
+        symbol: IDON
+      - assetId: '7'
+        symbol: MPC
+      - assetId: '8'
+        symbol: IMPC
+      - assetId: '9'
+        symbol: DON
+        logo: ./assets/tokens/xode-substrate-assets-9-don.svg
+- id: xxnetwork
+  name: XX Network
+  nativeCurrency:
+    coingeckoId: xxcoin
+  chainspecQrUrl: https://metadata.novasama.io/qr/xxnetwork_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng
+  rpcs:
+    - wss://rpc.xx.network/
+    - wss://xxnetwork-rpc.dwellir.com/
+- id: yerba
+  name: Yerba
+  rpcs: []
+  relay: kusama
+- id: zeitgeist
+  name: Zeitgeist
+  nativeCurrency:
+    coingeckoId: zeitgeist
+  blockExplorerUrls:
+    - https://zeitgeist.subscan.io/
+  chainspecQrUrl: https://metadata.novasama.io/qr/zeitgeist_specs.png
+  latestMetadataQrUrl: https://metadata.novasama.io/qr/zeitgeist_metadata_latest.apng
+  oldPrefix: 73
+  rpcs:
+    - wss://zeitgeist.api.onfinality.io/public-ws
+  relay: polkadot
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"ForeignAsset","value":0}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '10000000'
+      - onChainId: '{"type":"ForeignAsset","value":1}'
+        decimals: 6
+        symbol: USDC
+        coingeckoId: usd-coin
+        existentialDeposit: '100000000'
+      - onChainId: '{"type":"ForeignAsset","value":3}'
+        decimals: 18
+        symbol: GLMR
+        coingeckoId: moonbeam
+        existentialDeposit: '233481200'
+      - onChainId: '{"type":"ForeignAsset","value":6}'
+        decimals: 12
+        symbol: HDX
+        coingeckoId: hydration
+        existentialDeposit: '15830299193'
+      - onChainId: '{"type":"ForeignAsset","value":7}'
+        decimals: 10
+        symbol: INTR
+        coingeckoId: interlay
+        existentialDeposit: '8403361345'
+      - onChainId: '{"type":"ForeignAsset","value":8}'
+        decimals: 12
+        symbol: BNC
+        coingeckoId: bifrost-native-coin
+        existentialDeposit: '466853408'
+      - onChainId: '{"type":"ForeignAsset","value":9}'
+        decimals: 10
+        symbol: vDOT
+        coingeckoId: voucher-dot
+        existentialDeposit: '15748031'
+      - onChainId: '{"type":"ForeignAsset","value":10}'
+        decimals: 18
+        symbol: vGLMR
+        coingeckoId: voucher-glmr
+        existentialDeposit: '515729758'
+      - onChainId: '{"type":"ForeignAsset","value":11}'
+        decimals: 18
+        symbol: vASTR
+        coingeckoId: bifrost-voucher-astr
+        existentialDeposit: '1295001295'
+- id: zero
+  name: ZERO
+  rpcs: []
+  relay: kusama
+  tokens:
+    substrate-tokens:
+      - onChainId: '{"type":"Token","value":{"type":"DOT"}}'
+        decimals: 10
+        symbol: DOT
+        coingeckoId: polkadot
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"GAME"}}'
+        decimals: 10
+        symbol: GAME
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"PLAY"}}'
+        decimals: 10
+        symbol: PLAY
+        existentialDeposit: '0'
+      - onChainId: '{"type":"Token","value":{"type":"ZERO"}}'
+        decimals: 18
+        symbol: ZERO
+        existentialDeposit: '0'
+- id: westend-testnet
+  isTestnet: true
+  name: Westend
+  blockExplorerUrls:
+    - https://westend.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/westend_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/westend_metadata_latest.apng
+  rpcs:
+    - wss://rpc.ibp.network/westend
+    - wss://westend-rpc.dwellir.com
+    - wss://westend-rpc-tn.dwellir.com
+    - wss://westend.dotters.network
+    - wss://westend-rpc.polkadot.io
+    - wss://westend.public.curie.radiumblock.co/ws
+- id: 3-dpass-testnet
+  isTestnet: true
+  name: 3DPass Testnet
+  rpcs: []
+- id: ajuna-testnet
+  isTestnet: true
+  name: Ajuna Testnet
+  rpcs: []
+- id: aleph-zero-testnet
+  isTestnet: true
+  name: Aleph Zero Testnet
+  blockExplorerUrls:
+    - https://alephzero-testnet.subscan.io/
+  rpcs:
+    - wss://aleph-zero-testnet-rpc.dwellir.com
+    - wss://ws.test.azero.dev
+- id: allfeat-testnet
+  isTestnet: true
+  name: Melodie | Allfeat Testnet
+  nativeCurrency:
+    decimals: 12
+    symbol: MEL
+  themeColor: '#ff4a5f'
+  rpcs:
+    - wss://melodie-rpc.allfeat.io
+- id: analog-testnet
+  isTestnet: true
+  name: Analog Testnet
+  nativeCurrency:
+    decimals: 12
+    symbol: TANLOG
+    logo: ./assets/tokens/tanlog.svg
+  themeColor: '#5C3FF7'
+  chainspecQrUrl: https://metadata.analog.one/qr/analog-testnet_specs.png
+  latestMetadataQrUrl: https://metadata.analog.one/qr/analog-testnet_metadata_latest.apng
+  rpcs:
+    - wss://rpc.testnet.analog.one
+- id: arctic-testnet-rococo
+  isTestnet: true
+  name: Arctic
+  rpcs: []
+  relay: rococo-testnet
+- id: arctic-testnet-standalone
+  isTestnet: true
+  name: Arctic
+  blockExplorerUrls:
+    - https://arctic.subscan.io/
+  rpcs: []
+- id: ares-gladios-testnet
+  isTestnet: true
+  name: Ares Gladios
+  rpcs: []
+- id: argon-testnet
+  isTestnet: true
+  name: Argon
+  rpcs:
+    - wss://rpc.testnet.argonprotocol.org
+- id: autonomys-taurus-evm-testnet
+  isTestnet: true
+  name: Autonomys Taurus EVM
+  rpcs:
+    - wss://auto-evm.taurus.autonomys.xyz/ws
+- id: autonomys-taurus-testnet
+  isTestnet: true
+  name: Autonomys Taurus Testnet
+  nativeCurrency:
+    decimals: 18
+    symbol: tAI3
+  rpcs:
+    - wss://rpc-0.taurus.subspace.network/ws
+    - wss://rpc-1.taurus.subspace.network/ws
+- id: avail-turing-testnet
+  isTestnet: true
+  name: Avail Turing Testnet
+  blockExplorerUrls:
+    - https://avail-turing.subscan.io/
+  rpcs:
+    - wss://turing-rpc.avail.so/ws
+  registryTypes:
+    AppId: Compact<u32>
+    DataLookupItem:
+      appId: AppId
+      start: Compact<u32>
+    CompactDataLookup:
+      size: Compact<u32>
+      index: Vec<DataLookupItem>
+    KateCommitment:
+      rows: Compact<u16>
+      cols: Compact<u16>
+      commitment: Vec<u8>
+      dataRoot: H256
+    V3HeaderExtension:
+      appLookup: CompactDataLookup
+      commitment: KateCommitment
+    HeaderExtension:
+      _enum:
+        V1: null
+        V2: null
+        V3: V3HeaderExtension
+    DaHeader:
+      parentHash: Hash
+      number: Compact<BlockNumber>
+      stateRoot: Hash
+      extrinsicsRoot: Hash
+      digest: Digest
+      extension: HeaderExtension
+    Header: DaHeader
+    CheckAppIdExtra:
+      appId: AppId
+    CheckAppIdTypes: {}
+    CheckAppId:
+      extra: CheckAppIdExtra
+      types: CheckAppIdTypes
+    BlockLengthColumns: Compact<u32>
+    BlockLengthRows: Compact<u32>
+    BlockLength:
+      max: PerDispatchClass
+      cols: BlockLengthColumns
+      rows: BlockLengthRows
+      chunkSize: Compact<u32>
+    PerDispatchClass:
+      normal: u32
+      operational: u32
+      mandatory: u32
+    DataProof:
+      roots: TxDataRoots
+      proof: Vec<H256>
+      numberOfLeaves: Compact<u32>
+      leafIndex: Compact<u32>
+      leaf: H256
+    TxDataRoots:
+      dataRoot: H256
+      blobRoot: H256
+      bridgeRoot: H256
+    ProofResponse:
+      dataProof: DataProof
+      message: Option<AddressedMessage>
+    AddressedMessage:
+      message: Message
+      from: H256
+      to: H256
+      originDomain: u32
+      destinationDomain: u32
+      data: Vec<u8>
+      id: u64
+    Message:
+      _enum:
+        ArbitraryMessage: ArbitraryMessage
+        FungibleToken: FungibleToken
+    MessageType:
+      _enum:
+        - ArbitraryMessage
+        - FungibleToken
+    FungibleToken:
+      assetId: H256
+      amount: String
+    BoundedData: Vec<u8>
+    ArbitraryMessage: BoundedData
+    Cell:
+      row: u32
+      col: u32
+  signedExtensions:
+    CheckAppId:
+      extrinsic:
+        appId: AvailCoreAppId
+      payload: {}
+- id: bifrost-testnet
+  isTestnet: true
+  name: Bifrost Testnet
+  blockExplorerUrls:
+    - https://bifrost-testnet.subscan.io/
+  rpcs: []
+- id: bitcountry-testnet
+  isTestnet: true
+  name: Tewai
+  rpcs: []
+- id: bittensor-testnet
+  isTestnet: true
+  name: Bittensor Testnet
+  rpcs:
+    - wss://test.chain.opentensor.ai:443
+- id: brainstorm-testnet
+  isTestnet: true
+  name: InvArch Brainstorm
+  rpcs: []
+- id: cere-testnet
+  isTestnet: true
+  name: Cere Testnet
+  rpcs: []
+- id: cess-testnet
+  isTestnet: true
+  name: Cess
+  rpcs: []
+- id: chainflip-testnet
+  isTestnet: true
+  name: Chainflip Testnet
+  rpcs:
+    - wss://archive.perseverance.chainflip.io
+- id: chainoli-testnet
+  isTestnet: true
+  name: Oli
+  rpcs: []
+  relay: rococo-testnet
+- id: charcoal-testnet
+  isTestnet: true
+  name: Charcoal
+  rpcs: []
+  relay: westend-testnet
+- id: clover-testnet
+  isTestnet: true
+  name: Clover Testnet
+  blockExplorerUrls:
+    - https://clover-testnet.subscan.io/
+  rpcs: []
+- id: creditcoin-classic-testnet
+  isTestnet: true
+  name: CC Enterprise Testnet
+  blockExplorerUrls:
+    - https://cc-enterprise-testnet.subscan.io/
+  rpcs:
+    - wss://rpc.testnet.creditcoin.network/ws
+- id: creditcoin-testnet
+  isTestnet: true
+  name: Creditcoin Testnet
+  blockExplorerUrls:
+    - https://creditcoin3-testnet.subscan.io/
+  rpcs:
+    - wss://rpc.cc3-testnet.creditcoin.network/ws
+- id: crust-maxwell-testnet
+  isTestnet: true
+  name: Crust Maxwell
+  rpcs: []
+- id: curio-testnet
+  isTestnet: true
+  name: Curio Testnet
+  rpcs: []
+- id: dancebox
+  isTestnet: true
+  name: Dancebox
+  rpcs: []
+- id: dancelight-testnet
+  isTestnet: true
+  name: Dancelight
+  blockExplorerUrls:
+    - https://dancelight.subscan.io/
+  rpcs:
+    - wss://dancelight.tanssi-api.network
+- id: datahighway-testnet
+  isTestnet: true
+  name: Spreehafen
+  rpcs: []
+- id: debio-testnet
+  isTestnet: true
+  name: DeBio Testnet
+  rpcs: []
+- id: dock-testnet
+  isTestnet: true
+  name: Dock Testnet
+  rpcs: []
+- id: dolphin-testnet
+  isTestnet: true
+  name: Dolphin
+  blockExplorerUrls:
+    - https://dolphin.subscan.io/
+  rpcs: []
+- id: dotmog-testnet
+  isTestnet: true
+  name: DOTMog
+  rpcs: []
+- id: edgeware-testnet
+  isTestnet: true
+  name: Beresheet
+  rpcs:
+    - wss://beresheet.jelliedowl.net
+- id: encointer-testnet
+  isTestnet: true
+  name: Encointer Gesell
+  rpcs: []
+- id: encointer-testnet-standalone
+  isTestnet: true
+  name: Encointer Gesell
+  rpcs:
+    - wss://gesell.encointer.org
+- id: enjin-matrixchain-testnet
+  isTestnet: true
+  name: Enjin Matrix Canary
+  blockExplorerUrls:
+    - https://canary-matrix.subscan.io/
+  rpcs:
+    - wss://rpc.matrix.canary.enjin.io
+  relay: enjin-relay
+- id: enjin-relay-testnet
+  isTestnet: true
+  name: Enjin Canary
+  blockExplorerUrls:
+    - https://canary.subscan.io/
+  rpcs:
+    - wss://rpc.relay.canary.enjin.io
+- id: fantour-testnet
+  isTestnet: true
+  name: Fantour
+  rpcs: []
+- id: ferrum-testnet
+  isTestnet: true
+  name: Ferrum
+  rpcs: []
+- id: fragnova-testnet
+  isTestnet: true
+  name: Fragnova Testnet
+  rpcs: []
+- id: galital-testnet
+  isTestnet: true
+  name: Galital PC2
+  rpcs: []
+- id: galois-testnet
+  isTestnet: true
+  name: Galois
+  rpcs: []
+- id: gamepower-testnet
+  isTestnet: true
+  name: GamePower
+  rpcs: []
+- id: geek-testnet
+  isTestnet: true
+  name: GeekCash
+  rpcs: []
+- id: giant-testnet
+  isTestnet: true
+  name: Giant
+  rpcs: []
+  relay: rococo-testnet
+- id: halongbay-testnet
+  isTestnet: true
+  name: Halongbay
+  rpcs: []
+- id: helixstreet-testnet
+  isTestnet: true
+  name: Helixstreet
+  rpcs: []
+  relay: rococo-testnet
+- id: integritee-testnet
+  isTestnet: true
+  name: Integritee Testnet
+  rpcs: []
+  relay: westend-testnet
+- id: interlay-testnet-standalone
+  isTestnet: true
+  name: Interlay Testnet
+  rpcs: []
+- id: interlay-testnet-westend
+  isTestnet: true
+  name: Interlay Testnet
+  rpcs: []
+  relay: westend-testnet
+- id: ipse-testnet
+  isTestnet: true
+  name: Ipse
+  rpcs: []
+- id: jaz-testnet
+  isTestnet: true
+  name: Artio
+  rpcs: []
+- id: jupiter-testnet
+  isTestnet: true
+  name: Jupiter
+  rpcs: []
+- id: jur-testnet
+  isTestnet: true
+  name: Jur Testnet
+  rpcs: []
+- id: karmachain-testnet
+  isTestnet: true
+  name: Karmachain
+  rpcs: []
+- id: karura-testnet
+  isTestnet: true
+  name: Wendala
+  themeColor: '#f93d43'
+  rpcs: []
+  relay: westend-testnet
+- id: khala-testnet
+  isTestnet: true
+  name: Khala Testnet
+  rpcs: []
+- id: kilt-testnet-standalone
+  isTestnet: true
+  name: KILT Mashnet
+  rpcs: []
+- id: kilt-testnet-standalone-2
+  isTestnet: true
+  name: KILT Peregrine
+  blockExplorerUrls:
+    - https://kilt-testnet.subscan.io/
+  rpcs:
+    - wss://peregrine.kilt.io/parachain-public-ws/
+- id: kintsugi-testnet
+  isTestnet: true
+  name: Kintsugi Testnet
+  rpcs:
+    - wss://api-dev-kintsugi.interlay.io/parachain
+- id: klugdossier-testnet
+  isTestnet: true
+  name: Klug Dossier
+  rpcs: []
+- id: kylin-testnet
+  isTestnet: true
+  name: Kylin Testnet
+  rpcs: []
+- id: laminar-testnet
+  isTestnet: true
+  name: Turbulence
+  rpcs: []
+- id: laos-testnet
+  isTestnet: true
+  name: Laos Sigma
+  rpcs:
+    - wss://rpc.laossigma.laosfoundation.io
+- id: liberland-testnet
+  isTestnet: true
+  name: Liberland Testnet
+  rpcs:
+    - wss://testchain.liberland.org
+- id: heima-testnet
+  isTestnet: true
+  name: Heima Testnet
+  rpcs:
+    - wss://rpc.paseo-parachain.heima.network
+- id: logion-testnet
+  isTestnet: true
+  name: Logion Testnet
+  rpcs:
+    - wss://test-para-rpc01.logion.network
+- id: mandala-testnet
+  isTestnet: true
+  name: Mandala
+  blockExplorerUrls:
+    - https://acala-testnet.subscan.io/
+  rpcs: []
+- id: manta-testnet
+  isTestnet: true
+  name: Manta Testnet
+  rpcs: []
+- id: melodie-testnet
+  isTestnet: true
+  name: Melodie | Allfeat
+  rpcs:
+    - wss://melodie-rpc.allfeat.io
+- id: minix-testnet
+  isTestnet: true
+  name: MiniX Testnet
+  rpcs: []
+- id: moonbase-alpha-testnet
+  isTestnet: true
+  name: Moonbase Alpha
+  blockExplorerUrls:
+    - https://moonbase.subscan.io/
+  rpcs:
+    - wss://moonbase-rpc.dwellir.com
+    - wss://wss.api.moonbase.moonbeam.network
+    - wss://moonbase.public.curie.radiumblock.co/ws
+    - wss://moonbase.unitedbloc.com
+- id: moonshadow-testnet
+  isTestnet: true
+  name: Moonshadow
+  rpcs: []
+  relay: westend-testnet
+- id: mybank-testnet
+  isTestnet: true
+  name: mybank.network
+  rpcs: []
+- id: myriad-testnet
+  isTestnet: true
+  name: Myriad Testnet
+  rpcs: []
+- id: nftmart-testnet
+  isTestnet: true
+  name: NFTMart Testnet
+  rpcs: []
+- id: nodle-testnet
+  isTestnet: true
+  name: Arcadia
+  rpcs: []
+- id: opal-testnet
+  isTestnet: true
+  name: Opal
+  blockExplorerUrls:
+    - https://opal.subscan.io/
+  rpcs:
+    - wss://ws-opal.unique.network
+    - wss://us-ws-opal.unique.network
+    - wss://asia-ws-opal.unique.network
+    - wss://eu-ws-opal.unique.network
+- id: opportunity-testnet
+  isTestnet: true
+  name: Opportunity
+  rpcs: []
+- id: pangoro-testnet
+  isTestnet: true
+  name: Pangoro2
+  rpcs: []
+- id: paseo-asset-hub
+  isTestnet: true
+  name: Paseo Asset Hub
+  blockExplorerUrls:
+    - https://assethub-paseo.subscan.io/
+  rpcs:
+    - wss://asset-hub-paseo-rpc.dwellir.com
+    - wss://sys.ibp.network/asset-hub-paseo
+    - wss://asset-hub-paseo.dotters.network
+    - wss://pas-rpc.stakeworld.io/assethub
+    - wss://sys.turboflakes.io/asset-hub-paseo
+- id: paseo-frequency-testnet
+  isTestnet: true
+  name: Frequency Testnet
+  rpcs: []
+  relay: paseo-testnet
+- id: paseo-testnet
+  isTestnet: true
+  name: Paseo
+  blockExplorerUrls:
+    - https://paseo.subscan.io/
+  rpcs:
+    - wss://paseo-rpc.dwellir.com
+    - wss://paseo.rpc.amforc.com
+    - wss://rpc.ibp.network/paseo
+    - wss://paseo.dotters.network
+    - wss://pas-rpc.stakeworld.io
+    - wss://api2.zondax.ch/pas/node/rpc
+- id: phala-testnet
+  isTestnet: true
+  name: Phala Testnet
+  rpcs:
+    - wss://poc6.phala.network/ws
+- id: phoenix-testnet
+  isTestnet: true
+  name: Phoenix Mashnet
+  rpcs: []
+- id: phyken-network-testnet
+  isTestnet: true
+  name: Phyken
+  rpcs: []
+- id: phyken-testnet
+  isTestnet: true
+  name: Phyken Testnet
+  rpcs: []
+- id: pichiu-testnet
+  isTestnet: true
+  name: Pichiu Testnet
+  rpcs: []
+- id: polkadex-testnet
+  isTestnet: true
+  name: Polkadex Testnet
+  rpcs: []
+- id: polymesh-testnet
+  isTestnet: true
+  name: Polymesh Testnet
+  blockExplorerUrls:
+    - https://polymesh-testnet.subscan.io/
+  rpcs:
+    - wss://testnet-rpc.polymesh.live
+- id: pontem-testnet
+  isTestnet: true
+  name: Pontem
+  rpcs: []
+- id: prism-testnet
+  isTestnet: true
+  name: Prism
+  rpcs: []
+- id: realis-testnet
+  isTestnet: true
+  name: Realis.Network
+  rpcs: []
+- id: regionx-cocos-testnet
+  isTestnet: true
+  name: RegionX Cocos
+  rpcs: []
+  relay: rococo-testnet
+- id: riochain-testnet
+  isTestnet: true
+  name: RioChain Testnet
+  rpcs: []
+- id: robonomics-testnet
+  isTestnet: true
+  name: Robonomics Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rocfinity-testnet
+  isTestnet: true
+  name: Rocfinity
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-amplitude-testnet
+  isTestnet: true
+  name: Amplitude Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-aventus-testnet
+  isTestnet: true
+  name: Aventus Testnet
+  rpcs:
+    - wss://public-rpc.testnet.aventus.network
+  relay: rococo-testnet
+- id: rococo-basilisk-testnet
+  isTestnet: true
+  name: Basilisk Testnet
+  rpcs:
+    - wss://basilisk-rococo-rpc.play.hydration.cloud
+  relay: rococo-testnet
+- id: rococo-bifrost-testnet
+  isTestnet: true
+  name: Bifrost Testnet
+  rpcs:
+    - wss://bifrost-rpc.rococo.liebi.com/ws
+  relay: rococo-testnet
+- id: rococo-bitgreen-testnet
+  isTestnet: true
+  name: Bitgreen Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-catalyst-testnet
+  isTestnet: true
+  name: Catalyst
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-confti-testnet
+  isTestnet: true
+  name: Confti
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-crust-testnet
+  isTestnet: true
+  name: Crust Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-curio-testnet
+  isTestnet: true
+  name: Curio Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-dolphin-testnet
+  isTestnet: true
+  name: Dolphin
+  blockExplorerUrls:
+    - https://dolphin.subscan.io/
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-ethos-testnet
+  isTestnet: true
+  name: Ethos
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-ewx-testnet
+  isTestnet: true
+  name: Rex
+  rpcs:
+    - wss://public-rpc.testnet.energywebx.com/
+  relay: rococo-testnet
+- id: rococo-genshiro-testnet
+  isTestnet: true
+  name: Genshiro Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-hyperbridge-testnet
+  isTestnet: true
+  name: Hyperbridge Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-idiyanale-testnet
+  isTestnet: true
+  name: Idiyanale
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-imbue-testnet
+  isTestnet: true
+  name: Imbue Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-integritee-testnet
+  isTestnet: true
+  name: Integritee Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-invo-testnet
+  isTestnet: true
+  name: Invo
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-kabocha-testnet
+  isTestnet: true
+  name: Kabocha Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-kaizen-testnet
+  isTestnet: true
+  name: Kaizen
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-kinera-testnet
+  isTestnet: true
+  name: Kinera
+  rpcs:
+    - wss://node.kinera.network
+  relay: rococo-testnet
+- id: rococo-mangata-testnet
+  isTestnet: true
+  name: MangataX Testnet
+  blockExplorerUrls:
+    - https://mangata-testnet.subscan.io/
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-md-5-testnet
+  isTestnet: true
+  name: MD5
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-moonsama-testnet
+  isTestnet: true
+  name: Moonsama Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-neuro-web-testnet
+  isTestnet: true
+  name: NeuroWeb Testnet
+  rpcs:
+    - wss://parachain-testnet-rpc.origin-trail.network/
+  relay: rococo-testnet
+- id: rococo-nodle-testnet
+  isTestnet: true
+  name: Nodle Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-open-zeppelin-testnet
+  isTestnet: true
+  name: OpenZeppelin Runtime Template
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-phala-testnet
+  isTestnet: true
+  name: Rhala
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-picasso-testnet
+  isTestnet: true
+  name: Picasso Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-societal-testnet
+  isTestnet: true
+  name: Societal
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-sora-testnet
+  isTestnet: true
+  name: Sora Testnet
+  rpcs:
+    - wss://ws.parachain-collator-1.c1.stg1.sora2.soramitsu.co.jp
+  relay: rococo-testnet
+- id: rococo-spreehafen-testnet
+  isTestnet: true
+  name: Spreehafen
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-subsocial-testnet
+  isTestnet: true
+  name: SoonsocialX
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-subzero-testnet
+  isTestnet: true
+  name: Subzero Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-tinkernet-testnet
+  isTestnet: true
+  name: Tinkernet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-unit-network-testnet
+  isTestnet: true
+  name: Unit
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-virto-testnet
+  isTestnet: true
+  name: Virto
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-watr-testnet
+  isTestnet: true
+  name: Watr Testnet
+  rpcs:
+    - wss://rpc.dev.watr.org
+  relay: rococo-testnet
+- id: rococo-yerba-testnet
+  isTestnet: true
+  name: Yerba Testnet
+  rpcs: []
+  relay: rococo-testnet
+- id: rococo-zeitgeist-testnet
+  isTestnet: true
+  name: Zeitgeist Battery Station
+  rpcs:
+    - wss://bsr.zeitgeist.pm
+  relay: rococo-testnet
+- id: sherpax-testnet
+  isTestnet: true
+  name: Sherpax
+  rpcs: []
+- id: shibuya-testnet
+  isTestnet: true
+  name: Shibuya
+  blockExplorerUrls:
+    - https://shibuya.subscan.io/
+  rpcs:
+    - wss://shibuya-rpc.dwellir.com
+    - wss://rpc.shibuya.astar.network
+- id: skyekiwi-testnet
+  isTestnet: true
+  name: SkyeKiwi
+  rpcs: []
+- id: snowbridge-asset-hub-testnet
+  isTestnet: true
+  name: Snowbridge Asset Hub
+  rpcs: []
+  relay: rococo-testnet
+- id: snowbridge-bridge-hub-testnet
+  isTestnet: true
+  name: Snowbridge Bridge Hub
+  rpcs: []
+  relay: rococo-testnet
+- id: sora-substrate-testnet
+  isTestnet: true
+  name: Sora Testnet
+  rpcs:
+    - wss://ws.framenode-7.s4.stg1.sora2.soramitsu.co.jp
+    - wss://ws.framenode-8.s5.stg1.sora2.soramitsu.co.jp
+- id: stagex-testnet
+  isTestnet: true
+  name: Stagex
+  rpcs: []
+  relay: rococo-testnet
+- id: subdao-testnet
+  isTestnet: true
+  name: SubDAO Testnet
+  rpcs: []
+- id: subgame-testnet
+  isTestnet: true
+  name: SubGame Testnet
+  rpcs: []
+- id: subspace-farmnet-testnet
+  isTestnet: true
+  name: Subspace Farmnet
+  rpcs: []
+- id: subspace-gemini-1-testnet
+  isTestnet: true
+  name: Subspace Gemini
+  rpcs:
+    - wss://eu.gemini-1b.subspace.network/ws
+- id: subspace-gemini-2-a-testnet
+  isTestnet: true
+  name: Subspace Gemini 2a
+  rpcs:
+    - wss://eu-0.gemini-2a.subspace.network/ws
+- id: subspace-gemini-3-f-testnet
+  isTestnet: true
+  name: Subspace Gemini 3f
+  rpcs:
+    - wss://rpc-1.gemini-3f.subspace.network/ws
+- id: subspace-gemini-3-g-nova-testnet
+  isTestnet: true
+  name: Subspace Gemini 3g Nova
+  rpcs: []
+- id: subspace-gemini-3-g-testnet
+  isTestnet: true
+  name: Subspace Gemini 3g
+  rpcs: []
+- id: subspace-gemini-3-h-nova-testnet
+  isTestnet: true
+  name: Subspace Gemini 3h Nova
+  rpcs: []
+- id: subspace-gemini-3-h-testnet
+  isTestnet: true
+  name: Subspace Gemini 3h
+  rpcs: []
+- id: subspace-testnet
+  isTestnet: true
+  name: Subspace
+  rpcs: []
+- id: substrate-testnet
+  isTestnet: true
+  name: Flaming Fir
+  rpcs: []
+- id: sumi-testnet
+  isTestnet: true
+  name: Sumi Testnet
+  rpcs: []
+- id: tangle-testnet
+  isTestnet: true
+  name: Tangle Testnet
+  rpcs: []
+- id: ternoa-alphanet-testnet
+  isTestnet: true
+  name: Ternoa Alphanet
+  rpcs:
+    - wss://alphanet.ternoa.com
+- id: ternoa-testnet
+  isTestnet: true
+  name: Ternoa Testnet
+  rpcs: []
+- id: thebifrost-testnet
+  isTestnet: true
+  name: The Bifrost Testnet
+  rpcs: []
+- id: uniarts-testnet
+  isTestnet: true
+  name: UniArts Testnet
+  rpcs: []
+- id: unique-testnet
+  isTestnet: true
+  name: Unique Testnet
+  rpcs: []
+- id: unitv-testnet
+  isTestnet: true
+  name: Unit
+  rpcs: []
+- id: vara-testnet
+  isTestnet: true
+  name: Vara Testnet
+  rpcs:
+    - wss://testnet.vara.network
+- id: vodka-testnet
+  isTestnet: true
+  name: Vodka
+  rpcs: []
+- id: web-3-games-testnet
+  isTestnet: true
+  name: Web3Games
+  rpcs: []
+- id: westend-asset-hub-testnet
+  isTestnet: true
+  name: Westend Asset Hub
+  blockExplorerUrls:
+    - https://assethub-westend.subscan.io/
+  chainspecQrUrl: https://metadata.parity.io/qr/westend-westmint_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/asset-hub-westend
+    - wss://asset-hub-westend-rpc.dwellir.com
+    - wss://westmint-rpc-tn.dwellir.com
+    - wss://asset-hub-westend.dotters.network
+    - wss://westend-asset-hub-rpc.polkadot.io
+    - wss://asset-hub-westend.rpc.permanence.io
+  relay: westend-testnet
+- id: westend-bridge-hub-testnet
+  isTestnet: true
+  name: Westend Bridge Hub
+  blockExplorerUrls:
+    - https://bridgehub-westend.subscan.io/
+  rpcs:
+    - wss://sys.ibp.network/bridgehub-westend
+    - wss://bridge-hub-westend-rpc.dwellir.com
+    - wss://westend-bridge-hub-rpc-tn.dwellir.com
+    - wss://bridge-hub-westend.dotters.network
+    - wss://westend-bridge-hub-rpc.polkadot.io
+  relay: westend-testnet
+- id: westend-collectives-testnet
+  isTestnet: true
+  name: Collectives Testnet
+  chainspecQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_specs.png
+  latestMetadataQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_metadata_latest.apng
+  rpcs:
+    - wss://sys.ibp.network/collectives-westend
+    - wss://collectives-westend-rpc.dwellir.com
+    - wss://westend-collectives-rpc-tn.dwellir.com
+    - wss://collectives-westend.dotters.network
+    - wss://westend-collectives-rpc.polkadot.io
+  relay: westend-testnet
+- id: westend-coretime-testnet
+  isTestnet: true
+  name: Coretime Testnet
+  blockExplorerUrls:
+    - https://coretime-westend.subscan.io/
+  rpcs:
+    - wss://sys.ibp.network/coretime-westend
+    - wss://coretime-westend-rpc.dwellir.com
+    - wss://coretime-westend.dotters.network
+    - wss://westend-coretime-rpc.polkadot.io
+  relay: westend-testnet
+- id: westend-penpal-testnet
+  isTestnet: true
+  name: Penpal
+  rpcs:
+    - wss://westend-penpal-rpc.polkadot.io
+  relay: westend-testnet
+- id: westend-people-testnet
+  isTestnet: true
+  name: People Testnet
+  rpcs:
+    - wss://sys.ibp.network/people-westend
+    - wss://people-westend-rpc.dwellir.com
+    - wss://people-westend.dotters.network
+    - wss://westend-people-rpc.polkadot.io
+  relay: westend-testnet
+- id: westend-pichiu-testnet
+  isTestnet: true
+  name: Pichiu Testnet
+  rpcs: []
+  relay: westend-testnet
+- id: westend-standard-testnet
+  isTestnet: true
+  name: Standard
+  rpcs: []
+  relay: westend-testnet
+- id: whala-testnet
+  isTestnet: true
+  name: Whala
+  rpcs: []
+  relay: westend-testnet
+- id: z-cloak-testnet
+  isTestnet: true
+  name: zCloak
+  rpcs: []
+- id: zero-alphaville-testnet
+  isTestnet: true
+  name: ZERO Alphaville
+  rpcs: []
+- id: zero-testnet
+  isTestnet: true
+  name: Zero Alphaville
+  rpcs: []
+- id: zk-verify-testnet
+  isTestnet: true
+  name: zkVerify
+  rpcs:
+    - wss://testnet-rpc.zkverify.io
+- id: zkverify-volta-testnet
+  isTestnet: true
+  name: zkVerify Volta Testnet
+  rpcs:
+    - wss://volta-rpc.zkverify.io

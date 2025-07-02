@@ -1,35 +1,52 @@
 import 'dotenv/config'
 
+import { execSync } from 'child_process'
 import { readFileSync } from 'fs'
 
+import pkgBalances from '@talismn/balances/package.json'
+
+export const BALANCES_LIB_VERSION = pkgBalances.version
+
 export const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? ''
-export const GITHUB_API = 'https://api.github.com/graphql'
 export const GITHUB_CDN = 'https://raw.githubusercontent.com'
 export const GITHUB_ORG = 'TalismanSociety'
 export const GITHUB_REPO = 'chaindata'
-export const GITHUB_BRANCH = 'main'
+
+// yup, it was that easy :)
+export const GITHUB_BRANCH = execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
-export const DIR_OUTPUT = 'pub/v3'
+export const DIR_OUTPUT = 'pub/v4'
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
 
-export const FILE_CHAINDATA = 'data/chaindata.json'
-export const FILE_TESTNETS_CHAINDATA = 'data/testnets-chaindata.json'
-export const FILE_CHAINS_EXTRAS_CACHE = 'data/cache/chains-extras-cache.json'
+export const FILE_INPUT_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
+export const FILE_INPUT_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
+export const FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/ethereum-known-networks-overrides.yaml'
+export const FILE_INPUT_COINGECKO_OVERRIDES = 'data/coingecko-overrides.yaml'
+
+export const FILE_OUTPUT_TOKENS_POLKADOT = DIR_OUTPUT + '/tokens-polkadot.json'
+export const FILE_OUTPUT_TOKENS_ETHEREUM = DIR_OUTPUT + '/tokens-ethereum.json'
+export const FILE_OUTPUT_TOKENS_ALL = DIR_OUTPUT + '/tokens.json'
+export const FILE_OUTPUT_NETWORKS_POLKADOT = DIR_OUTPUT + '/networks-polkadot.json'
+export const FILE_OUTPUT_NETWORKS_ETHEREUM = DIR_OUTPUT + '/networks-ethereum.json'
+export const FILE_OUTPUT_NETWORKS_ALL = DIR_OUTPUT + '/networks.json'
+export const FILE_OUTPUT_MINI_METADATAS = DIR_OUTPUT + '/mini-metadatas.json'
+export const FILE_OUTPUT_CHAINDATA = DIR_OUTPUT + '/chaindata.json'
+export const FILE_OUTPUT_CHAINDATA_MINIFIED = DIR_OUTPUT + '/chaindata.min.json'
+
+export const FILE_RPC_HEALTH_POLKADOT = 'data/generated/rpc-health-polkadot.json'
+export const FILE_RPC_HEALTH_ETHEREUM = 'data/generated/rpc-health-ethereum.json'
+export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
+export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'
 export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-portal-urls.json'
-
-export const FILE_DEAD_CHAINS = 'data/cache/dead-chains.json'
-export const FILE_RPC_HEALTH_WEBSOCKET = 'data/generated/rpc-health-websocket.json'
-
-export const FILE_EVM_NETWORKS = 'data/evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
-export const FILE_KNOWN_EVM_NETWORKS_OVERRIDES = 'data/known-evm-networks-overrides.json'
-export const FILE_KNOWN_EVM_ERC20_TOKENS_CACHE = 'data/cache/known-evm-erc20-tokens-cache.json'
+export const FILE_EVM_ERC20_TOKENS_CACHE = 'data/cache/evm-erc20-tokens-cache.json'
 export const FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE = 'data/cache/known-evm-uniswapv2-tokens-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE = 'data/cache/known-evm-networks-rpcs-cache.json'
+export const FILE_DOT_TOKENS_CACHE = 'data/cache/polkadot-tokens-cache.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

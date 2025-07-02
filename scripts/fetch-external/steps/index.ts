@@ -1,31 +1,35 @@
-import { checkWsRpcs } from './checkWsRpcs'
-import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchCoingeckoEvmNetworksLogos'
+import { checkEthereumRpcs } from './checkEthereumRpcs'
+import { checkPolkadotRpcs } from './checkPolkadotRpcs'
 import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
-import { fetchErc20TokenSymbols } from './fetchErc20TokenSymbols'
+import { fetchDotNetworksMetadataExtracts } from './fetchDotNetworksMetadataExtracts'
+import { fetchDotNetworksSpecs } from './fetchDotNetworksSpecs'
+import { fetchDotTokens } from './fetchDotTokens'
+import { fetchErc20TokenDetails } from './fetchErc20TokenDetails'
 import { fetchKnownEvmNetworks } from './fetchKnownEvmNetworks'
+import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchKnownEvmNetworksCoingeckoLogos'
 import { fetchKnownEvmNetworksLogos } from './fetchKnownEvmNetworksLogos'
 import { fetchKnownEvmTokens } from './fetchKnownEvmTokens'
 import { fetchNovasamaMetadataPortalUrls } from './fetchNovasamaMetadataPortalUrls'
 import { fetchUniswapv2TokenExtras } from './fetchUniswapv2TokenExtras'
-import { updateChainsExtrasCache } from './updateChainsExtrasCache'
 import { updateKnownEvmErc20TokensFromCache } from './updateKnownEvmErc20TokensFromCache'
+import { validateConfigFiles } from './validateConfigFiles'
 
-export const fetchExternalSteps: Array<() => Promise<void>> = [
-  checkWsRpcs,
-
+export const fetchExternalSteps: Array<() => Promise<void> | void> = [
+  validateConfigFiles,
   fetchKnownEvmNetworks,
+  checkPolkadotRpcs,
+  checkEthereumRpcs,
   fetchKnownEvmNetworksCoingeckoLogos,
-
   fetchKnownEvmTokens,
-  fetchErc20TokenSymbols,
+  fetchErc20TokenDetails,
   updateKnownEvmErc20TokensFromCache,
-
   // NOTE: Put after the ERC20 steps, this one needs up-to-date erc20 coingeckoIds
   // It extracts them from known-evm-networks.json & known-evm-networks-overrides.json!
   fetchUniswapv2TokenExtras,
-
   fetchKnownEvmNetworksLogos,
   fetchCoingeckoTokensLogos,
   fetchNovasamaMetadataPortalUrls,
-  updateChainsExtrasCache,
+  fetchDotNetworksSpecs,
+  fetchDotNetworksMetadataExtracts,
+  fetchDotTokens,
 ]

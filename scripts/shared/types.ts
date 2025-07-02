@@ -4,10 +4,7 @@ import type {
   EvmUniswapV2ModuleConfig,
   MiniMetadata,
 } from '@talismn/balances'
-import { Chain, EvmNetwork, Token } from '@talismn/chaindata-provider'
-
-export type ChainId = string
-export type EvmNetworkId = string
+import { LegacyChain, LegacyEvmNetwork, Token } from '@talismn/chaindata-provider'
 
 /** Represents a Chain from `chaindata.json` or `testnets-chaindata.json` */
 export type ConfigChain = {
@@ -54,28 +51,9 @@ export type ConfigEvmNetwork = {
     'evm-uniswapv2'?: EvmUniswapV2ModuleConfig
   }
   icon?: string
-  feeType?: EvmNetwork['feeType']
-  l2FeeType?: EvmNetwork['l2FeeType']
-  erc20aggregator?: EvmNetwork['erc20aggregator']
-}
-
-export type ChainExtrasCache = {
-  // These are all copied directly into each chain
-  id: string
-  account: string
-  genesisHash: string
-  prefix: number
-  chainName: string
-  chainType: Chain['chainType']
-  implName: string
-  specName: string
-  specVersion: string
-  cacheBalancesConfigHash: string
-  hasCheckMetadataHash: boolean
-
-  // These are separated into their own build files, `tokens/all.json` and `miniMetadatas/all.json`
-  miniMetadatas: Record<string, MiniMetadata>
-  tokens: Record<string, Token>
+  feeType?: LegacyEvmNetwork['feeType']
+  l2FeeType?: LegacyEvmNetwork['l2FeeType']
+  erc20aggregator?: LegacyEvmNetwork['erc20aggregator']
 }
 
 export type MetadataPortalUrls = Array<{
@@ -90,15 +68,6 @@ export type MetadataPortalUrls = Array<{
     latestMetadataQrUrl: string
   }
 }>
-
-export type EvmNetworkRpcStatus = 'unknown' | 'valid' | 'invalid'
-
-export type EvmNetworkRpcCache = {
-  chainId: string
-  rpcUrl: string
-  status: EvmNetworkRpcStatus
-  timestamp: number
-}
 
 export type EthereumListsChain = {
   name: string
@@ -118,6 +87,7 @@ export type Erc20TokenCache = {
   contractAddress: string
   symbol: string
   decimals: number
+  name: string
 }
 
 export type Uniswapv2TokenCache = {
@@ -133,49 +103,3 @@ export type Uniswapv2TokenCache = {
   coingeckoId0?: string
   coingeckoId1?: string
 }
-
-export type EvmNetworkIconCache = {
-  icon: string
-  etag: string
-  path: string
-}
-
-export type CoingeckoAssetPlatform = {
-  id: string
-  chain_identifier: number | null
-  name: string
-  shortname: string
-  native_coin_id: string | null
-  image: {
-    thumb: string | null
-    small: string | null
-    large: string | null
-  }
-}
-
-export type CoingeckoCoin = {
-  id: string
-  symbol: string
-  name: string
-  platforms: Record<string, string>
-}
-
-export type CoingeckoCoinDetails = CoingeckoCoin & {
-  id: string
-  symbol: string
-  name: string
-  platforms: Record<string, string>
-  image: Record<'thumb' | 'small' | 'large', string>
-  last_updated: string | null
-  market_cap_rank: number | null
-}
-
-// Some handy types from https://www.typescriptlang.org/docs/handbook/advanced-types.html#distributive-conditional-types
-export type FunctionPropertyNames<T> = {
-  [K in keyof T]: T[K] extends Function ? K : never
-}[keyof T]
-export type FunctionProperties<T> = Pick<T, FunctionPropertyNames<T>>
-export type NonFunctionPropertyNames<T> = {
-  [K in keyof T]: T[K] extends Function ? never : K
-}[keyof T]
-export type NonFunctionProperties<T> = Pick<T, NonFunctionPropertyNames<T>>

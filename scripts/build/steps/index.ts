@@ -1,34 +1,29 @@
-import { cleanupOutputDir } from '../../shared/util'
-import { addChains } from './addChains'
-import { addEvmNetworks } from './addEvmNetworks'
-import { addNovasamaMetadataPortalUrls } from './addNovasamaMetadataPortalUrls'
+import { cleanupOutputDir } from '../../shared/steps/cleanupOutputDir'
 import { addThemeColors } from './addThemeColors'
-import { applyNativeTokenOverrides } from './applyNativeTokenOverrides'
-import { fixChainEvmNetworkRelations } from './fixChainsEvmNetworkRelations'
-import { loadConfig } from './loadConfig'
-import { mergeChainsExtras } from './mergeChainsExtras'
-import { removeInvalidErc20Tokens } from './removeInvalidErc20Tokens'
-import { setTokenLogos } from './setTokenLogos'
-import { updateSortIndexes } from './updateSortIndexes'
-import { writeChaindataIndex } from './writeChaindataIndex'
+import { buildConsolidatedData } from './buildConsolidatedData'
+import { buildEthereumNetworks } from './buildEthereumNetworks'
+import { buildEthereumTokens } from './buildEthereumTokens'
+import { buildPolkadotMiniMetadatas } from './buildPolkadotMiniMetadatas'
+import { buildPolkadotNetworks } from './buildPolkadotNetworks'
+import { buildPolkadotTokens } from './buildPolkadotTokens'
+import { checkOrphans } from './checkOrphans'
+import { cleanupOutputs } from './cleanupOutputs'
 
-export const buildSteps: Array<() => Promise<void>> = [
+export const buildSteps: Array<() => Promise<void> | void> = [
   cleanupOutputDir,
-  loadConfig,
 
-  addChains,
-  mergeChainsExtras,
-  addNovasamaMetadataPortalUrls,
+  buildPolkadotNetworks,
+  buildPolkadotTokens,
+  buildPolkadotMiniMetadatas,
 
-  addEvmNetworks,
-  removeInvalidErc20Tokens,
-  fixChainEvmNetworkRelations,
+  buildEthereumNetworks,
+  buildEthereumTokens,
 
-  updateSortIndexes,
-
-  applyNativeTokenOverrides,
-  setTokenLogos,
   addThemeColors,
+  buildConsolidatedData,
 
-  writeChaindataIndex,
+  checkOrphans,
+
+  // PRO TIP: comment this one while debugging outputs
+  cleanupOutputs,
 ]

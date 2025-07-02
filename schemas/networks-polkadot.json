@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "isTestnet": {
+        "type": "boolean"
+      },
+      "isDefault": {
+        "type": "boolean"
+      },
+      "forceScan": {
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "logo": {
+        "type": "string",
+        "minLength": 1
+      },
+      "nativeCurrency": {
+        "type": "object",
+        "properties": {
+          "decimals": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "symbol": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "coingeckoId": {
+            "type": "string"
+          },
+          "mirrorOf": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "themeColor": {
+        "type": "string",
+        "minLength": 1
+      },
+      "blockExplorerUrls": {
+        "default": [],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "chainName": {
+        "type": "string"
+      },
+      "chainspecQrUrl": {
+        "type": "string",
+        "minLength": 1
+      },
+      "latestMetadataQrUrl": {
+        "type": "string",
+        "minLength": 1
+      },
+      "oldPrefix": {
+        "type": "number"
+      },
+      "rpcs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "registryTypes": {},
+      "signedExtensions": {},
+      "hasCheckMetadataHash": {
+        "type": "boolean"
+      },
+      "hasExtrinsicSignatureTypePrefix": {
+        "type": "boolean"
+      },
+      "isUnknownFeeToken": {
+        "type": "boolean"
+      },
+      "balancesConfig": {
+        "type": "object",
+        "properties": {
+          "substrate-native": {
+            "type": "object",
+            "properties": {
+              "disable": {
+                "type": "boolean"
+              }
+            }
+          },
+          "substrate-assets": {
+            "type": "null"
+          },
+          "substrate-psp22": {
+            "type": "null"
+          },
+          "substrate-tokens": {
+            "type": "object",
+            "properties": {
+              "palletId": {
+                "type": "string"
+              }
+            }
+          },
+          "substrate-foreignassets": {
+            "type": "null"
+          }
+        },
+        "additionalProperties": false
+      },
+      "nativeTokenId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "relay": {
+        "type": "string",
+        "minLength": 1
+      },
+      "tokens": {
+        "type": "object",
+        "properties": {
+          "substrate-assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "assetId": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 4294967295
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                }
+              },
+              "required": ["assetId"],
+              "additionalProperties": false
+            }
+          },
+          "substrate-psp22": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "contractAddress": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                }
+              },
+              "required": ["contractAddress"],
+              "additionalProperties": false
+            }
+          },
+          "substrate-foreignassets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "onChainId": {
+                  "type": "string"
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                }
+              },
+              "required": ["onChainId"],
+              "additionalProperties": false
+            }
+          },
+          "substrate-tokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "onChainId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                },
+                "existentialDeposit": {
+                  "type": "string"
+                }
+              },
+              "required": ["onChainId"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required": ["id", "rpcs"],
+    "additionalProperties": false
+  }
+}

@@ -1,48 +1,33 @@
-import { readFile, writeFile } from 'node:fs/promises'
-
-import mergeWith from 'lodash/mergeWith'
-import prettier from 'prettier'
 import { BaseError, erc20Abi, TimeoutError } from 'viem'
 
-import {
-  FILE_EVM_NETWORKS,
-  FILE_KNOWN_EVM_NETWORKS,
-  FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
-  FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
-  PRETTIER_CONFIG,
-} from '../../shared/constants'
-import { ConfigEvmNetwork, Uniswapv2TokenCache } from '../../shared/types'
-import { networkMergeCustomizer } from '../../shared/util'
-import { getEvmNetworkClient } from '../getEvmNetworkClient'
-import { uniswapV2PairAbi } from '../uniswapV2PairAbi'
+import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE } from '../../shared/constants'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { getEvmNetworkClient } from '../../shared/getEvmNetworkClient'
+import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
+import { EthNetworkConfig, EthNetworksConfigFileSchema } from '../../shared/schemas'
+import { Uniswapv2TokenCache } from '../../shared/types'
+import { uniswapV2PairAbi } from '../../shared/uniswapV2PairAbi'
+import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchUniswapv2TokenExtras = async () => {
-  const evmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8'))
-  const tokensCache: Uniswapv2TokenCache[] = JSON.parse(await readFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, 'utf-8'))
-
-  const _knownEvmNetworks: ConfigEvmNetwork[] = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8'))
-  const knownEvmNetworksOverrides: ConfigEvmNetwork[] = JSON.parse(
-    await readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES, 'utf-8'),
-  )
-  const knownEvmNetworks = _knownEvmNetworks.map((knownEvmNetwork) => {
-    const overrides = knownEvmNetworksOverrides.find((ov) => ov.id === knownEvmNetwork.id)
-    return overrides ? mergeWith(knownEvmNetwork, overrides, networkMergeCustomizer) : knownEvmNetwork
-  })
+  const evmNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const tokensCache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
+  const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   const networksById = Object.fromEntries(evmNetworks.map((n) => [n.id, n]))
-  const knownNetworksById = Object.fromEntries(knownEvmNetworks.map((n) => [n.id, n]))
+  const knownNetworksById = Object.fromEntries(knownEthNetworks.map((n) => [n.id, n]))
 
   // need to dedupe tokens that are registered in both knownEvmTokens and evmTokens
   const tokenDefs = new Set<string>()
   const erc20CoingeckoIdsByNetwork = new Map<string, Map<string, string>>()
-  for (const network of evmNetworks.concat(knownEvmNetworks)) {
-    ;(network.balancesConfig?.['evm-uniswapv2']?.pools ?? []).forEach((token) =>
+  for (const network of evmNetworks.concat(knownEthNetworks)) {
+    ;(network.tokens?.['evm-uniswapv2'] ?? []).forEach((token) =>
       tokenDefs.add(`${network.id}||${token.contractAddress?.toLowerCase?.()}`),
     )
 
     if (!erc20CoingeckoIdsByNetwork.has(network.id)) erc20CoingeckoIdsByNetwork.set(network.id, new Map())
     const erc20CoingeckoIds = erc20CoingeckoIdsByNetwork.get(network.id)!
-    ;(network.balancesConfig?.['evm-erc20']?.tokens ?? []).forEach((token) => {
+    ;(network.tokens?.['evm-erc20'] ?? []).forEach((token) => {
       if (!token.contractAddress) return
       if (!token.coingeckoId) return
       if (erc20CoingeckoIds.has(token.contractAddress.toLowerCase())) return
@@ -70,13 +55,7 @@ export const fetchUniswapv2TokenExtras = async () => {
     return a.contractAddress.localeCompare(b.contractAddress)
   })
 
-  await writeFile(
-    FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
-    await prettier.format(JSON.stringify(tokensCache, null, 2), {
-      ...PRETTIER_CONFIG,
-      parser: 'json',
-    }),
-  )
+  await writeJsonFile(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE, tokensCache)
 }
 
 const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, contractAddress: string) =>
@@ -84,7 +63,7 @@ const isCached = (tokenCache: Uniswapv2TokenCache[], chainId: string, contractAd
 
 const updateTokenCache = async (
   tokenCache: Uniswapv2TokenCache[],
-  evmNetwork: ConfigEvmNetwork,
+  evmNetwork: EthNetworkConfig,
   erc20CoingeckoIds: Map<string, string>,
   contractAddress: string,
 ) => {

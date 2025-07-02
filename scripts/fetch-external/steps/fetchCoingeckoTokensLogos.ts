@@ -1,20 +1,26 @@
 import { PathLike } from 'node:fs'
-import { readFile, stat, writeFile } from 'node:fs/promises'
+import { stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 import { PromisePool } from '@supercharge/promise-pool'
 import sharp from 'sharp'
 
+import { fetchCoinDetails } from '../../shared/coingecko'
 import {
   COINGECKO_LOGO_DOWNLOAD_LIMIT,
-  FILE_CHAINDATA,
-  FILE_EVM_NETWORKS,
-  FILE_KNOWN_EVM_NETWORKS,
-  FILE_KNOWN_EVM_NETWORKS_OVERRIDES,
+  FILE_INPUT_NETWORKS_ETHEREUM,
+  FILE_INPUT_NETWORKS_POLKADOT,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
-import { ConfigChain, ConfigEvmNetwork } from '../../shared/types'
-import { fetchCoinDetails } from '../coingecko'
+import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { parseYamlFile } from '../../shared/parseFile'
+import {
+  DotNetworkConfig,
+  DotNetworksConfigFileSchema,
+  EthNetworkConfig,
+  EthNetworksConfigFileSchema,
+  KnownEthNetworkConfig,
+} from '../../shared/schemas'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
   'baoeth-eth-stablepool',
@@ -155,6 +161,7 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'eurc',
   'hydration',
   'axelar-bridged-usdc',
+  '-8',
 ]
 
 type BalanceModuleConfig = {
@@ -162,19 +169,17 @@ type BalanceModuleConfig = {
   tokens?: { coingeckoId?: string }[]
 }
 
-const getAllCoingeckoIds = (
-  chains: ConfigChain[],
-  knownEvmNetworks: ConfigEvmNetwork[],
-  knownEvmNetworksOverrides: ConfigEvmNetwork[],
-  defaultEvmNetworks: ConfigEvmNetwork[],
-) => {
+const getAllCoingeckoIds = (...networks: (EthNetworkConfig | DotNetworkConfig | KnownEthNetworkConfig)[]) => {
   const coingeckoIds = new Set<string>()
 
-  for (const chain of [...chains, ...knownEvmNetworks, ...knownEvmNetworksOverrides, ...defaultEvmNetworks]) {
-    if (!chain.balancesConfig) continue
+  for (const network of networks) {
+    if (network.nativeCurrency?.coingeckoId) coingeckoIds.add(network.nativeCurrency.coingeckoId)
 
-    for (const moduleKey in chain.balancesConfig) {
-      const moduleConfig = chain.balancesConfig[moduleKey] as BalanceModuleConfig
+    if (!network.balancesConfig) continue
+
+    const balancesConfig = network.balancesConfig as Record<string, BalanceModuleConfig>
+    for (const moduleKey in balancesConfig) {
+      const moduleConfig = balancesConfig[moduleKey] as BalanceModuleConfig
       if (moduleConfig.coingeckoId) coingeckoIds.add(moduleConfig.coingeckoId)
       if (moduleConfig.tokens)
         for (const token of moduleConfig.tokens) if (token.coingeckoId) coingeckoIds.add(token.coingeckoId)
@@ -185,14 +190,11 @@ const getAllCoingeckoIds = (
 }
 
 export const fetchCoingeckoTokensLogos = async () => {
-  const defaultEvmNetworks = JSON.parse(await readFile(FILE_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
-  const knownEvmNetworks = JSON.parse(await readFile(FILE_KNOWN_EVM_NETWORKS, 'utf-8')) as ConfigEvmNetwork[]
-  const knownEvmNetworksOverrides = JSON.parse(
-    await readFile(FILE_KNOWN_EVM_NETWORKS_OVERRIDES, 'utf-8'),
-  ) as ConfigEvmNetwork[]
-  const chains = JSON.parse(await readFile(FILE_CHAINDATA, 'utf-8')) as ConfigChain[]
+  const ethNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const knownEthNetworks = getConsolidatedKnownEthNetworks()
+  const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
 
-  const allCoingeckoIds = getAllCoingeckoIds(chains, knownEvmNetworks, knownEvmNetworksOverrides, defaultEvmNetworks)
+  const allCoingeckoIds = getAllCoingeckoIds(...ethNetworks, ...knownEthNetworks, ...dotNetworks)
   const validCoingeckoIds = allCoingeckoIds.filter((coingeckoId) => !INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId))
 
   const logoFilepaths = new Map(
@@ -241,6 +243,7 @@ export const fetchCoingeckoTokensLogos = async () => {
         if (!width || !height || width > 256 || height > 256) img.resize(256, 256, { fit: 'contain' })
 
         const webpBuffer = await img.webp().toBuffer()
+        // @ts-ignore-next-line
         await writeFile(logoFilepaths.get(coingeckoId)!, Buffer.from(webpBuffer))
       } catch (error) {
         console.log('Failed to download coingecko image for %s', coingeckoId, error)

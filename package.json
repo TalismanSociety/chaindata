@@ -1,6 +1,6 @@
 {
-  "name": "@talismn/chaindata",
-  "version": "0.0.1",
+  "name": "chaindata",
+  "private": true,
   "type": "module",
   "description": "A community controlled index of relay/parachain assets to suppliment on-chain data, allowing developers to easily leverage the latest parachain information when building within the polkadot ecosystem.",
   "repository": "https://github.com/TalismanSociety/chaindata.git",
@@ -11,13 +11,11 @@
     "url": "https://github.com/TalismanSociety/chaindata/issues"
   },
   "homepage": "https://talisman.community",
-  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
   "scripts": {
     "prepare": "husky",
-    "validate-json": "prettier --write *.json",
-    "validate-schema-chains": "ajv --spec=draft2020 --allow-union-types -s schemas/json/chaindata.json -d data/chaindata.json -d data/testnets-chaindata.json",
-    "validate-schema-evm-networks": "ajv --spec=draft2020 --allow-union-types -s schemas/json/evm-networks.json -d data/evm-networks.json",
-    "validate-schema": "pnpm run validate-schema-chains && pnpm run validate-schema-evm-networks",
+    "validate-json": "prettier --write data/*.{json,yaml}",
+    "validate-schema": "pnpm tsx scripts/validate-schema.ts",
     "validate": "pnpm run validate-json && pnpm run validate-schema",
     "find-missing-coingeckoIds": "tsx scripts/find-missing-coingeckoIds.ts",
     "find-pah-foreign-assets": "tsx scripts/find-pah-foreign-assets.ts",
@@ -27,13 +25,17 @@
     "update-rpcs": "pnpm run update-pjs && pnpm run import-pjs-config",
     "report-erc20-aggregator": "pnpm tsx scripts/report-erc20-aggregator.ts",
     "report-metadata-versions": "pnpm tsx scripts/report-metadata-versions.ts",
+    "convert-v3-to-v4": "pnpm tsx scripts/convert-v3-to-v4.ts",
     "typecheck": "tsc --noEmit",
+    "generate-schemas": "tsx scripts/generate-schemas.ts",
     "fetch-external": "tsx scripts/fetch-external.ts",
     "build": "pnpm run validate && tsx scripts/build.ts",
-    "clean": "rm -rf pub"
+    "build:dev": "tsx scripts/build.ts",
+    "clean": "rm -rf pub",
+    "postinstall": "pnpm generate-schemas"
   },
   "dependencies": {
-    "@polkadot-api/descriptors": "file:.papi/descriptors",
+    "@polkadot-api/descriptors": "workspace:*",
     "@polkadot-api/substrate-bindings": "^0.14.0",
     "@polkadot/api": "^16.1.2",
     "@polkadot/rpc-provider": "^16.1.2",
@@ -41,15 +43,18 @@
     "@polkadot/util": "^13.5.1",
     "@polkadot/util-crypto": "^13.5.1",
     "@supercharge/promise-pool": "^3.1.0",
-    "@talismn/balances": "0.0.0-pr2039-20250612015517",
-    "@talismn/chain-connector": "0.0.0-pr2039-20250612015517",
-    "@talismn/chain-connector-evm": "0.0.0-pr2039-20250612015517",
-    "@talismn/chaindata-provider": "0.0.0-pr2039-20250612015517",
+    "@talismn/balances": "0.0.0-pr2043-20250629070023",
+    "@talismn/chain-connector": "0.0.0-pr2043-20250629070023",
+    "@talismn/chain-connector-evm": "0.0.0-pr2043-20250629070023",
+    "@talismn/chaindata-provider": "0.0.0-pr2043-20250629070023",
+    "@talismn/crypto": "^0.1.5",
+    "@talismn/sapi": "0.0.0-pr2043-20250629070023",
     "@talismn/scale": "0.1.2",
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "extract-colors": "^4.2.0",
     "lodash": "^4.17.21",
+    "p-queue": "^8.1.0",
     "polkadot-api": "^1.13.1",
     "rxjs": "^7.8.1",
     "scale-ts": "^1.6.1",
@@ -58,7 +63,9 @@
     "toml": "^3.0.0",
     "url-join": "^5.0.0",
     "viem": "^2.31.0",
-    "ws": "^8.18.2"
+    "ws": "^8.18.2",
+    "yaml": "^2.8.0",
+    "zod": "^3.25.62"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
@@ -68,7 +75,6 @@
     "@types/node": "^20.10.0",
     "@types/tinycolor2": "^1.4.6",
     "@types/ws": "^8.18.1",
-    "ajv-cli": "^5.0.0",
     "anylogger": "^1.0.11",
     "anylogger-loglevel": "^1.0.0",
     "bun-types": "^1.2.15",
@@ -99,6 +105,6 @@
     "importOrderTypeScriptVersion": "5.3.2"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,md,html}": "prettier --write"
+    "*.{ts,tsx,js,jsx,json,md,html,yaml}": "prettier --write"
   }
 }

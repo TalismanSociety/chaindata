@@ -1,17 +1,18 @@
-import { readFileSync } from 'node:fs'
+import { Network, Token } from '@talismn/chaindata-provider'
 
-import { EvmNetwork } from '@talismn/chaindata-provider'
+import { DIR_OUTPUT } from './shared/constants'
+import { parseJsonFile } from './shared/parseFile'
 
-const json = readFileSync('./pub/v2/evmNetworks/all.json', 'utf-8')
-const evmNetworks = JSON.parse(json) as EvmNetwork[]
+const evmNetworks = parseJsonFile<Network[]>(`${DIR_OUTPUT}/networks.json`).filter((n) => n.platform === 'ethereum')
+const erc20Tokens = parseJsonFile<Token[]>(`${DIR_OUTPUT}/tokens.json`).filter((n) => n.type === 'evm-erc20')
 
 console.log('%d networks', evmNetworks.length)
 
 const results = evmNetworks
-  .map((evmNetwork) => {
-    const { id, name, erc20aggregator, balancesConfig, isDefault, forceScan } = evmNetwork
-    const erc20Module = balancesConfig.find((m) => m.moduleType === 'evm-erc20') as any
-    const tokens = erc20Module?.moduleConfig?.tokens.length ?? 0
+  .map((network) => {
+    const { id, name, isDefault, forceScan } = network
+    const tokens = erc20Tokens.filter((t) => t.networkId === id).length
+    const erc20Aggregator = network.contracts?.Erc20Aggregator
 
     // if default or forcescan, need an aggregator because of Asset Discovery in the wallet
     const needed = isDefault || forceScan ? 'YES' : ''
@@ -20,7 +21,7 @@ const results = evmNetworks
       id,
       name,
       tokens,
-      erc20aggregator,
+      erc20Aggregator,
       needed,
     }
   })
