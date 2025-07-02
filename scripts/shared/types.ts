@@ -14,6 +14,7 @@ export type ConfigChain = {
   name?: string
   themeColor?: string
   account?: string
+  blockExplorerUrls?: string[]
   subscanUrl?: string
   chainspecQrUrl?: string
   latestMetadataQrUrl?: string

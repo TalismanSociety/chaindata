@@ -1,7 +1,7 @@
 {
   "id": "50",
   "isTestnet": false,
-  "sortIndex": 1167,
+  "sortIndex": 1175,
   "name": "XDC Network",
   "themeColor": "#f9feff",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/50.webp",
@@ -10,7 +10,10 @@
   "explorerUrl": "https://xdcscan.com",
   "rpcs": [
     {
-      "url": "https://rpc1.xinfin.network"
+      "url": "https://rpc.xdcrpc.com"
+    },
+    {
+      "url": "https://erpc.xdcrpc.com"
     },
     {
       "url": "https://rpc.ankr.com/xdc"
@@ -25,10 +28,7 @@
       "url": "https://rpc.xinfin.network"
     },
     {
-      "url": "https://rpc.xdcrpc.com"
-    },
-    {
-      "url": "https://erpc.xdcrpc.com"
+      "url": "https://rpc1.xinfin.network"
     }
   ],
   "substrateChain": null,
@@ -103,12 +103,36 @@
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/prime-staked-xdc.webp"
           },
           {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-xdc",
+            "contractAddress": "0xcc0587aebda397146cc828b445db130a94486e74",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stargate-bridged-usdc-xdc.webp"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "stargate-bridged-usdt-xdc",
+            "contractAddress": "0xcda5b77e2e2268d9e09c874c1b9a4c3f07b37555",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
             "symbol": "WXDC",
             "coingeckoId": "wrapped-xdc",
             "contractAddress": "0x951857744785e80e2de051c32ee7b25f9c458c42",
             "decimals": 18,
             "isDefault": false,
             "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-xdc.webp"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "xdc-bridged-weth-xdc",
+            "contractAddress": "0xa7348290de5cf01772479c48d50dec791c3fc212",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xdc-bridged-weth-xdc.webp"
           }
         ]
       }

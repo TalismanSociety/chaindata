@@ -1,7 +1,7 @@
 {
   "id": "50104",
   "isTestnet": false,
-  "sortIndex": 998,
+  "sortIndex": 1003,
   "name": "Sophon",
   "themeColor": "#505050",
   "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -27,7 +27,32 @@
     {
       "moduleType": "evm-erc20",
       "moduleConfig": {
-        "tokens": []
+        "tokens": [
+          {
+            "symbol": "USDC",
+            "coingeckoId": "sophon-bridged-usdc-sophon",
+            "contractAddress": "0x9aa0f72392b5784ad86c6f3e899bcc053d00db4f",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdc.svg"
+          },
+          {
+            "symbol": "USDT",
+            "coingeckoId": "sophon-bridged-usdt-sophon",
+            "contractAddress": "0x6386da73545ae4e2b2e0393688fa8b65bb9a7169",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg"
+          },
+          {
+            "symbol": "WSOPH",
+            "coingeckoId": "wrapped-soph",
+            "contractAddress": "0x2b1a859de6a55c553520d7780bc5805712b128f9",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-soph.webp"
+          }
+        ]
       }
     }
   ],
