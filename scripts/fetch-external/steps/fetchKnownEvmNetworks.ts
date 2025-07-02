@@ -76,10 +76,14 @@ export const fetchKnownEvmNetworks = async () => {
         name: chain.nativeCurrency.name,
       }
 
+      const lowerName = chain.name.toLocaleLowerCase()
+
       if (
         chain.faucets.length ||
-        chain.name.toLocaleLowerCase().includes('testnet') ||
-        chain.rpc.some((rpc) => rpc.includes('testnet'))
+        lowerName.includes('testnet') ||
+        lowerName.includes('goerli') ||
+        lowerName.includes('sepolia') ||
+        chain.rpc.some((rpc) => rpc.includes('testnet') || rpc.includes('goerli') || rpc.includes('sepolia'))
       )
         evmNetwork.isTestnet = true
 

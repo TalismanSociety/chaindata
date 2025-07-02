@@ -73,6 +73,8 @@ export const getNetworkLogoUrl = (
       if (existsSync(symbolPath)) return getAssetUrlFromPath(symbolPath)
     }
 
-  // use native token logo if available
-  return getTokenLogoUrl(nativeToken.logo, nativeToken.coingeckoId, nativeToken.symbol)
+  // unless it's ETH, then we use the native token logo
+  return nativeToken.symbol !== 'ETH'
+    ? getTokenLogoUrl(nativeToken.logo, nativeToken.coingeckoId, undefined)
+    : undefined
 }
