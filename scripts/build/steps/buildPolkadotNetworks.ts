@@ -108,7 +108,7 @@ const consolidateDotNetwork = (
     isDefault: config.isDefault || !config.isTestnet || undefined,
     forceScan: config.forceScan || undefined,
     themeColor: config.themeColor || undefined,
-    logo: getNetworkLogoUrl(config.logo, config.nativeCurrency?.coingeckoId, nativeCurrency), // getAssetUrlFromPath(logoRelativePath),
+    logo: getNetworkLogoUrl(config.logo, config.id, nativeCurrency),
     blockExplorerUrls: config.blockExplorerUrls?.length ? config.blockExplorerUrls : (undefined as unknown as string[]), // zod will default to empty array
     chainspecQrUrl: config.chainspecQrUrl || metadataPortalUrls?.urls.chainspecQrUrl || undefined,
     latestMetadataQrUrl: config.latestMetadataQrUrl || metadataPortalUrls?.urls.latestMetadataQrUrl || undefined,

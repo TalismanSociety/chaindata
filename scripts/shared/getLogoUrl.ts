@@ -53,7 +53,7 @@ const getCoingeckoTokenAssetPath = (coingeckoId: string | undefined) => {
 
 export const getNetworkLogoUrl = (
   logo: string | undefined,
-  id: string | undefined,
+  networkId: string | undefined,
   nativeToken: {
     logo?: string
     symbol?: string
@@ -67,9 +67,9 @@ export const getNetworkLogoUrl = (
   if (logo && logo.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
 
   // try to find a match in /assets/chains/ folder
-  if (id)
+  if (networkId)
     for (const ext of ['svg', 'webp', 'png']) {
-      const symbolPath = `./assets/chains/${id}.${ext}`
+      const symbolPath = `./assets/chains/${networkId}.${ext}`
       if (existsSync(symbolPath)) return getAssetUrlFromPath(symbolPath)
     }
 
