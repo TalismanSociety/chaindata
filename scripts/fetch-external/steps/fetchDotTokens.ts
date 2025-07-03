@@ -1,6 +1,7 @@
 import { PromisePool } from '@supercharge/promise-pool'
 import { defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
-import { ChaindataProvider, DotToken } from '@talismn/chaindata-provider'
+import { ChaindataProvider, DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
+import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
 import values from 'lodash/values'
 
@@ -80,13 +81,14 @@ export const fetchDotTokens = async () => {
     result.errors.length,
   )
 
-  // keep previous tokens to prevent some from disappearing because of rpc issues, and override them with the new ones
-  const newTokenList = result.results.reduce(
-    (allTokens, networkTokens) => Object.assign(allTokens, networkTokens),
-    keyBy(prevDotTokens, 'id'),
-  )
+  const tokensByNetwork = groupBy(prevDotTokens, (t) => t.networkId)
 
-  const data = values(newTokenList).sort((a, b) => a.id.localeCompare(b.id))
+  // override tokens only for networks that succeeded
+  for (const [networkId, tokens] of result.results) tokensByNetwork[networkId] = tokens
+
+  const data = values(tokensByNetwork)
+    .flat()
+    .sort((a, b) => a.id.localeCompare(b.id))
 
   await writeJsonFile(FILE_DOT_TOKENS_CACHE, data, {
     schema: DotTokensCacheFileSchema,
@@ -105,7 +107,7 @@ const fetchDotNetworkTokens = async ({
   specs,
   rpcs,
   miniMetadatas,
-}: FetchDotNetworkTokensArgs): Promise<Record<string, DotToken>> => {
+}: FetchDotNetworkTokensArgs): Promise<[NetworkId, Token[]]> => {
   console.log('Fetching tokens for network %s', network.id)
 
   const provider = getRpcProvider(rpcs)
@@ -134,10 +136,8 @@ const fetchDotNetworkTokens = async ({
 
       const miniMetadata = miniMetadatas[miniMetadataId]
 
-      if (!miniMetadata) {
-        console.warn('MiniMetadata not found for network %s and module %s, skipping fetchDotTokens', network.id, source)
-        continue
-      }
+      if (!miniMetadata)
+        throw new Error(`Up to date MiniMetadata not found for network ${chainId} and module ${source}`)
 
       const chainMeta = {
         miniMetadata: miniMetadata.data,
@@ -150,14 +150,15 @@ const fetchDotNetworkTokens = async ({
         network.balancesConfig?.[source],
         network.tokens?.[source],
       )
+
       Object.assign(tokens, moduleTokens)
     }
 
-    return tokens
+    return [network.id, Object.values(tokens)]
   } catch (cause) {
     // decAnyMetadata throws null if metadata version is unsupported
     if (cause === null) console.warn('Unsupported metadata version on network', network.id)
-    throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}`, { cause })
+    throw new Error(`Failed to fetch dot tokens for ${network.id}: ${cause}`, { cause })
   } finally {
     await provider.disconnect()
   }
