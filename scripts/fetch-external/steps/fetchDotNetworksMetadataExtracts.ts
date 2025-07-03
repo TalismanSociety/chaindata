@@ -148,7 +148,7 @@ const fetchMetadataExtract = async ({
       {
         id: network.id,
         specVersion: specs.runtimeVersion.specVersion,
-        minimetadataVersion: MINIMETADATA_VERSION,
+        minimetadataVersion: MINIMETADATA_VERSION!,
         account,
         ss58Prefix,
         hasCheckMetadataHash,
@@ -200,13 +200,12 @@ export const fetchMiniMetadatas = async (
         source,
         chainId,
         specVersion,
-        version: MINIMETADATA_VERSION,
       }),
       source,
       chainId,
       specVersion,
 
-      version: MINIMETADATA_VERSION,
+      version: MINIMETADATA_VERSION!,
       data: chainMeta?.miniMetadata ?? null,
       extra: chainMeta?.extra ?? null,
     }

@@ -130,7 +130,6 @@ const fetchDotNetworkTokens = async ({
         source,
         chainId,
         specVersion,
-        version: MINIMETADATA_VERSION,
       })
 
       const miniMetadata = miniMetadatas[miniMetadataId]
