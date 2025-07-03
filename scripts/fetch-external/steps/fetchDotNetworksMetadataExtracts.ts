@@ -1,13 +1,12 @@
 import { WsProvider } from '@polkadot/rpc-provider'
 import { PromisePool } from '@supercharge/promise-pool'
-import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata } from '@talismn/balances'
+import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
 import { ChaindataProvider } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
 import { decAnyMetadata, getDynamicBuilder, getLookupFn, UnifiedMetadata, unifyMetadata } from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
 
 import {
-  BALANCES_LIB_VERSION,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
@@ -67,7 +66,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
       if (metadataExtract.specVersion !== specs.runtimeVersion.specVersion) return true
 
       // balances config hash changed, miniMetadatas need to be updated
-      if (metadataExtract.balancesLibVersion !== BALANCES_LIB_VERSION) return true
+      if (metadataExtract.minimetadataVersion !== MINIMETADATA_VERSION) return true
 
       return false // no changes, no need to update
     })
@@ -149,7 +148,7 @@ const fetchMetadataExtract = async ({
       {
         id: network.id,
         specVersion: specs.runtimeVersion.specVersion,
-        balancesLibVersion: BALANCES_LIB_VERSION,
+        minimetadataVersion: MINIMETADATA_VERSION,
         account,
         ss58Prefix,
         hasCheckMetadataHash,
@@ -167,8 +166,6 @@ const fetchMetadataExtract = async ({
     await provider.disconnect()
   }
 }
-
-const libVersion = BALANCES_LIB_VERSION
 
 export const fetchMiniMetadatas = async (
   network: DotNetworkConfig,
@@ -203,13 +200,13 @@ export const fetchMiniMetadatas = async (
         source,
         chainId,
         specVersion,
-        libVersion,
+        version: MINIMETADATA_VERSION,
       }),
       source,
       chainId,
-      specVersion, // this should be a number!
+      specVersion,
 
-      libVersion,
+      version: MINIMETADATA_VERSION,
       data: chainMeta?.miniMetadata ?? null,
       extra: chainMeta?.extra ?? null,
     }

@@ -1,12 +1,11 @@
 import { PromisePool } from '@supercharge/promise-pool'
-import { defaultBalanceModules, deriveMiniMetadataId } from '@talismn/balances'
+import { defaultBalanceModules, deriveMiniMetadataId, MINIMETADATA_VERSION } from '@talismn/balances'
 import { ChaindataProvider, DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
 import values from 'lodash/values'
 
 import {
-  BALANCES_LIB_VERSION,
   FILE_DOT_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
@@ -131,7 +130,7 @@ const fetchDotNetworkTokens = async ({
         source,
         chainId,
         specVersion,
-        libVersion: BALANCES_LIB_VERSION,
+        version: MINIMETADATA_VERSION,
       })
 
       const miniMetadata = miniMetadatas[miniMetadataId]

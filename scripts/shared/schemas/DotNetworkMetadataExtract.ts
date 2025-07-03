@@ -5,7 +5,7 @@ export const DotNetworkMetadataExtractSchema = z.strictObject({
   id: z.string().nonempty(),
   account: z.enum(['secp256k1', '*25519']),
   specVersion: z.uint32(),
-  balancesLibVersion: z.string().nonempty(),
+  minimetadataVersion: z.uint32(),
   ss58Prefix: z.uint32(),
   hasCheckMetadataHash: z.boolean(),
   topology: DotNetworkTopologySchema,

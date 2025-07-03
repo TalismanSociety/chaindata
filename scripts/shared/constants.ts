@@ -3,10 +3,6 @@ import 'dotenv/config'
 import { execSync } from 'child_process'
 import { readFileSync } from 'fs'
 
-import pkgBalances from '@talismn/balances/package.json'
-
-export const BALANCES_LIB_VERSION = pkgBalances.version
-
 export const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? ''
 export const GITHUB_CDN = 'https://raw.githubusercontent.com'
 export const GITHUB_ORG = 'TalismanSociety'
