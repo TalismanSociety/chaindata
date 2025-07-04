@@ -19237,13 +19237,6 @@
           "coingeckoId": "mexican-peso-tether"
         },
         {
-          "contractAddress": "0xdd468a1ddc392dcdbef6db6e34e89aa338f9f186",
-          "decimals": 18,
-          "symbol": "MUSD",
-          "name": "Mezo USD",
-          "coingeckoId": "mezo-usd"
-        },
-        {
           "contractAddress": "0xad913dcd987fe54ce823e4b755f90598cd62bb15",
           "decimals": 18,
           "coingeckoId": "mfers"
@@ -52695,6 +52688,13 @@
           "coingeckoId": "privasea-ai"
         },
         {
+          "contractAddress": "0x33a64943a0eaecc2b06b10f89686b797ba75ffad",
+          "decimals": 6,
+          "symbol": "PGPT",
+          "name": "PrivateAI.com",
+          "coingeckoId": "privateai"
+        },
+        {
           "contractAddress": "0xb10be3f4c7e1f870d86ed6cfd412fed6615feb6f",
           "decimals": 18,
           "symbol": "PRI",
@@ -69619,6 +69619,31 @@
     },
     "blockExplorerUrls": ["https://redbelly.routescan.io"],
     "rpcs": ["https://governors.mainnet.redbelly.network", "https://governors.mainnet.redbelly.network"],
+    "tokens": {
+      "evm-erc20": [
+        {
+          "contractAddress": "0x8201c02d4ab2214471e8c3ad6475c8b0cd9f2d06",
+          "decimals": 6,
+          "symbol": "USDC.e",
+          "name": "Bridged USDC",
+          "coingeckoId": "redbelly-bridged-usdc-redbelly"
+        },
+        {
+          "contractAddress": "0x8c4acd74ff4385f3b7911432fa6787aa14406f8b",
+          "decimals": 6,
+          "symbol": "USDT",
+          "name": "Tether USD",
+          "coingeckoId": "redbelly-bridged-usdt-redbelly"
+        },
+        {
+          "contractAddress": "0x6ed1f491e2d31536d6561f6bdb2adc8f092a6076",
+          "decimals": 18,
+          "symbol": "WRBNT",
+          "name": "Wrapped RBNT",
+          "coingeckoId": "wrapped-rbnt"
+        }
+      ]
+    },
     "icon": "redbelly",
     "shortName": "rbn"
   },
@@ -86264,10 +86289,12 @@
   {
     "id": "3637",
     "name": "Botanix Mainnet",
+    "logo": "./assets/chains/known/3637.webp",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "BTC",
-      "name": "Botanix"
+      "name": "Botanix",
+      "coingeckoId": "wrapped-bitcoin"
     },
     "blockExplorerUrls": ["https://botanixscan.io"],
     "rpcs": ["https://rpc.botanixlabs.com"],
@@ -90136,6 +90163,34 @@
     "rpcs": ["https://rpc.meversemainnet.io", "https://rpc.meversemainnet.io"],
     "icon": "meverse",
     "shortName": "MEV"
+  },
+  {
+    "id": "7531",
+    "isTestnet": true,
+    "name": "Rome Mainnet 0 Palatine",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RSOL",
+      "name": "RSOL"
+    },
+    "blockExplorerUrls": ["https://romescout-palatine-i.mainnet-0.romeprotocol.xyz"],
+    "rpcs": ["https://palatine-i.mainnet-0.romeprotocol.xyz"],
+    "icon": "rome",
+    "shortName": "rome-mainnet-0-palatine"
+  },
+  {
+    "id": "7532",
+    "isTestnet": true,
+    "name": "Rome Mainnet 0 Aventine",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RSOL",
+      "name": "RSOL"
+    },
+    "blockExplorerUrls": ["https://romescout-aventine-i.mainnet-0.romeprotocol.xyz"],
+    "rpcs": ["https://aventine-i.mainnet-0.romeprotocol.xyz"],
+    "icon": "rome",
+    "shortName": "rome-mainnet-0-aventine"
   },
   {
     "id": "7560",
@@ -107627,10 +107682,12 @@
   {
     "id": "31612",
     "name": "Mezo",
+    "logo": "./assets/chains/known/31612.webp",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "BTC",
-      "name": "Bitcoin"
+      "name": "Bitcoin",
+      "coingeckoId": "wrapped-bitcoin"
     },
     "blockExplorerUrls": ["https://explorer.mezo.org"],
     "rpcs": [
@@ -107639,6 +107696,17 @@
       "https://mainnet.mezo.public.validationcloud.io",
       "https://rpc-internal.mezo.org"
     ],
+    "tokens": {
+      "evm-erc20": [
+        {
+          "contractAddress": "0xdd468a1ddc392dcdbef6db6e34e89aa338f9f186",
+          "decimals": 18,
+          "symbol": "MUSD",
+          "name": "Mezo USD",
+          "coingeckoId": "mezo-usd"
+        }
+      ]
+    },
     "icon": "mezo",
     "shortName": "mezo"
   },
@@ -126407,6 +126475,62 @@
     "rpcs": ["https://rpc.testnet.chain.metadap.io"],
     "icon": "metadap",
     "shortName": "MetaDAP-T"
+  },
+  {
+    "id": "121212",
+    "isTestnet": true,
+    "name": "Rome Devnet Esquiline",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RSOL",
+      "name": "RSOL"
+    },
+    "blockExplorerUrls": ["https://romescout-esquiline-i.devnet.romeprotocol.xyz"],
+    "rpcs": ["https://esquiline-i.devnet.romeprotocol.xyz"],
+    "icon": "rome",
+    "shortName": "rome-devnet-esquiline"
+  },
+  {
+    "id": "121213",
+    "isTestnet": true,
+    "name": "Rome Devnet Subura",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RSOL",
+      "name": "RSOL"
+    },
+    "blockExplorerUrls": ["https://romescout-subura-i.devnet.romeprotocol.xyz"],
+    "rpcs": ["https://subura-i.devnet.romeprotocol.xyz"],
+    "icon": "rome",
+    "shortName": "rome-devnet-subura"
+  },
+  {
+    "id": "121214",
+    "isTestnet": true,
+    "name": "Rome Testnet Martius",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RSOL",
+      "name": "RSOL"
+    },
+    "blockExplorerUrls": ["https://romescout-martius-i.testnet.romeprotocol.xyz"],
+    "rpcs": ["https://martius-i.testnet.romeprotocol.xyz"],
+    "icon": "rome",
+    "shortName": "rome-testnet-martius"
+  },
+  {
+    "id": "121215",
+    "isTestnet": true,
+    "name": "Rome Testnet Caelian",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RSOL",
+      "name": "RSOL"
+    },
+    "blockExplorerUrls": ["https://romescout-caelian-i.testnet.romeprotocol.xyz"],
+    "rpcs": ["https://caelian-i.testnet.romeprotocol.xyz"],
+    "icon": "rome",
+    "shortName": "rome-testnet-caelian"
   },
   {
     "id": "121224",
