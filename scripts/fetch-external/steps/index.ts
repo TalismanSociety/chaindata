@@ -19,7 +19,7 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   // validateConfigFiles,
   // fetchKnownEvmNetworks,
   // checkPolkadotRpcs,
-  // checkEthereumRpcs,
+  checkEthereumRpcs,
   // fetchKnownEvmNetworksCoingeckoLogos,
   // fetchKnownEvmTokens,
   // fetchErc20TokenDetails,

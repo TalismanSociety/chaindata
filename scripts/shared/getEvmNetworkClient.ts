@@ -48,13 +48,13 @@ export const getEvmNetworkClient = (evmNetwork: EthNetworkConfig): PublicClient 
 
   if (!CLIENT_CACHE[chainId]) {
     const rpcs = getRpcsByStatus(evmNetwork.id, 'ethereum', 'OK')
-    const transport = chain.contracts?.multicall3
-      ? http()
-      : fallback((rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
+    // const transport = chain.contracts?.multicall3
+    //   ? http()
+    //   : fallback((rpcs ?? []).map((rpc) => http(rpc, { batch: { wait: 25 } })))
 
     const batch = chain.contracts?.multicall3 ? { multicall: { wait: 25 } } : undefined
 
-    CLIENT_CACHE[chainId] = createPublicClient({ chain, transport, batch })
+    CLIENT_CACHE[chainId] = createPublicClient({ chain, transport: http(), batch })
   }
 
   return CLIENT_CACHE[chainId]

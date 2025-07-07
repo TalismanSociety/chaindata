@@ -97,9 +97,6 @@ export const fetchEthTokens = async () => {
       }
       return true // all gud!
     })
-  //.slice(0, 10)
-
-  console.log(networksToUpdate.map((n) => ({ id: n.networkId, name: n.configNetwork?.name ?? n.knownNetwork?.name })))
 
   const result = await PromisePool.withConcurrency(4)
     .for(networksToUpdate)
@@ -109,7 +106,7 @@ export const fetchEthTokens = async () => {
       ) =>
         withTimeout(
           () => fetchEthNetworkTokens(network),
-          20_000,
+          60_000,
           'Failed to fetch metadata extract for ' + network.networkId,
         ),
     )
