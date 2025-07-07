@@ -1,6 +1,13 @@
 import { WsProvider } from '@polkadot/rpc-provider'
 import { PromisePool } from '@supercharge/promise-pool'
-import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
+import {
+  BALANCE_MODULES,
+  defaultBalanceModules,
+  deriveMiniMetadataId,
+  MiniMetadata,
+  MINIMETADATA_VERSION,
+} from '@talismn/balances'
+import { ChainConnector } from '@talismn/chain-connector'
 import { ChaindataProvider } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
 import { decAnyMetadata, getDynamicBuilder, getLookupFn, UnifiedMetadata, unifyMetadata } from '@talismn/scale'
@@ -73,7 +80,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
     .filter((network) => !DEV_CHAIN_ID || network.network.id === DEV_CHAIN_ID)
 
   console.log(
-    'fetchDotNetworkMetadataExtracts processing %s networks (total:%s invalid:%s)',
+    'fetchDotNetworkMetadataExtracts processing %s networks (total:%s excluded:%s)',
     networksToUpdate.length,
     dotNetworks.length,
     dotNetworks.length - networksToUpdate.length,
@@ -182,33 +189,43 @@ export const fetchMiniMetadatas = async (
   //
   // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
   // implementation, it will throw an error. This is fine.
-  const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(network, provider)
+  //const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(network, provider)
+
+  const { specVersion } = networkSpecs.runtimeVersion
 
   const miniMetadatas: Record<string, MiniMetadata> = {}
-  for (const mod of defaultBalanceModules
-    .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
-    .filter((mod) => mod.type.startsWith('substrate-'))) {
-    const source = mod.type as keyof DotNetworkConfig['balancesConfig']
-    const chainId = network.id
+  //.map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
+  //  .filter((mod) => mod.type.startsWith('substrate-'))
+  for (const mod of BALANCE_MODULES.filter((m) => m.platform === 'polkadot')) {
+    // const source = mod.type
+    // const chainId = network.id
 
-    const { specVersion } = networkSpecs.runtimeVersion
+    // @ts-ignore
+    const config = network.balancesConfig?.[mod.type] as any
 
-    const chainMeta = await mod.fetchSubstrateChainMeta(network.id, network.balancesConfig?.[source], metadataRpc)
-
-    const miniMetadata: MiniMetadata = {
-      id: deriveMiniMetadataId({
-        source,
-        chainId,
-        specVersion,
-      }),
-      source,
-      chainId,
+    const miniMetadata = mod.getMiniMetadata({
+      networkId: network.id,
       specVersion,
+      metadataRpc,
+      config,
+    })
 
-      version: MINIMETADATA_VERSION!,
-      data: chainMeta?.miniMetadata ?? null,
-      extra: chainMeta?.extra ?? null,
-    }
+    // const chainMeta = await mod.fetchSubstrateChainMeta(network.id, network.balancesConfig?.[source], metadataRpc)
+
+    // const miniMetadata: MiniMetadata = {
+    //   id: deriveMiniMetadataId({
+    //     source,
+    //     chainId,
+    //     specVersion,
+    //   }),
+    //   source,
+    //   chainId,
+    //   specVersion,
+
+    //   version: MINIMETADATA_VERSION!,
+    //   data: chainMeta?.miniMetadata ?? null,
+    //   extra: chainMeta?.extra ?? null,
+    // }
 
     miniMetadatas[miniMetadata.id] = miniMetadata
   }

@@ -3,7 +3,7 @@ import { z } from 'zod/v4'
 
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
-  FILE_DOT_TOKENS_CACHE,
+  FILE_DOT_TOKENS_PREBUILD,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_TOKENS_POLKADOT,
@@ -11,13 +11,13 @@ import {
 import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
-import { DotTokensCacheFileSchema } from '../../shared/schemas/DotTokensCache'
+import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildPolkadotTokens = async () => {
   const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const dotNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, z.array(DotNetworkSchema))
-  const dotTokensCache = parseJsonFile(FILE_DOT_TOKENS_CACHE, DotTokensCacheFileSchema)
+  const dotTokensCache = parseJsonFile(FILE_DOT_TOKENS_PREBUILD, DotTokensPreBuildFileSchema)
 
   const dotTokens: Token[] = dotNetworks
     .flatMap((network) => dotTokensCache.filter((t) => t.networkId === network.id))
