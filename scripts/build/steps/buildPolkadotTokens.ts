@@ -15,9 +15,9 @@ import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBu
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildPolkadotTokens = async () => {
+  const dotTokensCache = parseJsonFile(FILE_DOT_TOKENS_PREBUILD, DotTokensPreBuildFileSchema)
   const dotNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const dotNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, z.array(DotNetworkSchema))
-  const dotTokensCache = parseJsonFile(FILE_DOT_TOKENS_PREBUILD, DotTokensPreBuildFileSchema)
 
   const dotTokens: Token[] = dotNetworks
     .flatMap((network) => dotTokensCache.filter((t) => t.networkId === network.id))
@@ -56,6 +56,8 @@ const findTokenConfigByTokenId = (tokenId: TokenId, network: DotNetworkConfig) =
       return network.tokens?.['substrate-tokens']?.find((t) => t.onChainId === parsed.onChainId)
     case 'substrate-foreignassets':
       return network.tokens?.['substrate-foreignassets']?.find((t) => t.onChainId === parsed.onChainId)
+    case 'substrate-hydration':
+      return network.tokens?.['substrate-hydration']?.find((t) => t.onChainId === parsed.onChainId)
     default:
       throw new Error(`Unknown token type: ${parsed.type} for tokenId: ${tokenId}`)
   }

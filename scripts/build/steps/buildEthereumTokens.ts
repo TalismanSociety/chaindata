@@ -1,4 +1,5 @@
 import type { Dictionary } from 'lodash'
+import { evm } from '@polkadot/types/interfaces/definitions'
 import { EvmErc20TokenConfig, EvmUniswapV2TokenConfig } from '@talismn/balances'
 import {
   EthNetwork,
@@ -24,9 +25,10 @@ import { z } from 'zod/v4'
 
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
-  FILE_EVM_ERC20_TOKENS_CACHE,
+  FILE_ETH_TOKENS_PREBUILD,
+  // FILE_EVM_ERC20_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_ETHEREUM,
-  FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
+  // FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_TOKENS_ETHEREUM,
 } from '../../shared/constants'
@@ -34,29 +36,30 @@ import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEth
 import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
-import { Erc20TokenCache, Uniswapv2TokenCache } from '../../shared/types'
+import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 import { validateDebug } from '../../shared/validate'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildEthereumTokens = async () => {
   const ethNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, z.array(EthNetworkSchema))
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
-  const uniswapV2Cache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
-  const erc20sCache = parseJsonFile<Erc20TokenCache[]>(FILE_EVM_ERC20_TOKENS_CACHE)
+  const ethTokensCache = parseJsonFile<Token[]>(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
+  // const uniswapV2Cache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
+  // const erc20sCache = parseJsonFile<Erc20TokenCache[]>(FILE_EVM_ERC20_TOKENS_CACHE)
 
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   const ethNetworkConfigById = keyBy(ethNetworksConfig, (c) => String(c.id))
   const knownEthNetworkById = keyBy(knownEthNetworks, (c) => String(c.id))
-  const dicErc20Cache = keyBy(erc20sCache, (c) => `${c.chainId}:${c.contractAddress.toLowerCase()}`)
-  const dicUniv2Cache = keyBy(uniswapV2Cache, (c) => `${c.chainId}:${c.contractAddress.toLowerCase()}`)
+  const dicTokenCache = keyBy(ethTokensCache, (c) => c.id)
+  //const dicUniv2Cache = keyBy(uniswapV2Cache, (c) => `${c.chainId}:${c.contractAddress.toLowerCase()}`)
 
   const ethTokens: Token[] = ethNetworks
     .flatMap((network) => {
       const config = ethNetworkConfigById[network.id]
       const knownEvmNetwork = knownEthNetworkById[network.id]
 
-      return getNetworkTokens(network, config, knownEvmNetwork, dicErc20Cache, dicUniv2Cache)
+      return getNetworkTokens(network, config, knownEvmNetwork, dicTokenCache)
     })
     .map((token) => ({
       ...token,
@@ -76,8 +79,8 @@ const getNetworkTokens = (
   network: EthNetwork,
   networkConfig: EthNetworkConfig | undefined,
   knownEthNetwork: KnownEthNetworkConfig | undefined,
-  dicErc20Cache: Dictionary<Erc20TokenCache>,
-  dicUniv2Cache: Dictionary<Uniswapv2TokenCache>,
+  dicTokenCache: Dictionary<Token>,
+  // dicUniv2Cache: Dictionary<Uniswapv2TokenCache>,
 ): Token[] => {
   const knownErc20s = (knownEthNetwork?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenConfig[]
   const knownUniswapV2 = (knownEthNetwork?.tokens?.['evm-uniswapv2'] ?? []) as EvmUniswapV2TokenConfig[]
@@ -100,7 +103,7 @@ const getNetworkTokens = (
   const nativeToken = getNativeToken(network)
 
   const uniswapV2s = uniswapV2Configs.map((uniswapV2Config): EthToken | null => {
-    const pool = dicUniv2Cache[`${networkId}:${uniswapV2Config.contractAddress.toLowerCase()}`]
+    const pool = dicTokenCache[evmUniswapV2TokenId(networkId, uniswapV2Config.contractAddress)] as EvmUniswapV2Token
     if (!pool) {
       console.log('UniswapV2 pool not found in cache for', networkId, uniswapV2Config.contractAddress)
       return null
@@ -148,9 +151,9 @@ const getNetworkTokens = (
   })
 
   const erc20s = erc20Configs.map((erc20Config): EthToken | null => {
-    const erc20 = dicErc20Cache[`${networkId}:${erc20Config.contractAddress.toLowerCase()}`]
+    const erc20 = dicTokenCache[evmErc20TokenId(networkId, erc20Config.contractAddress)] as EvmErc20Token | undefined
 
-    const symbol = erc20?.symbol ?? erc20Config.symbol
+    const symbol = erc20?.symbol ?? (erc20Config.symbol as string)
     const token: EvmErc20Token = {
       type: 'evm-erc20',
       id: evmErc20TokenId(networkId, erc20Config.contractAddress as `0x${string}`),

@@ -1,10 +1,4 @@
-import type {
-  EvmErc20ModuleConfig,
-  EvmNativeModuleConfig,
-  EvmUniswapV2ModuleConfig,
-  MiniMetadata,
-} from '@talismn/balances'
-import { LegacyChain, LegacyEvmNetwork, Token } from '@talismn/chaindata-provider'
+import { LegacyEvmNetwork } from '@talismn/chaindata-provider'
 
 /** Represents a Chain from `chaindata.json` or `testnets-chaindata.json` */
 export type ConfigChain = {
@@ -45,11 +39,6 @@ export type ConfigEvmNetwork = {
   isTestnet?: boolean
   explorerUrl?: string
   rpcs?: string[]
-  balancesConfig?: Record<string, Record<string, unknown>> & {
-    'evm-native'?: EvmNativeModuleConfig
-    'evm-erc20'?: EvmErc20ModuleConfig
-    'evm-uniswapv2'?: EvmUniswapV2ModuleConfig
-  }
   icon?: string
   feeType?: LegacyEvmNetwork['feeType']
   l2FeeType?: LegacyEvmNetwork['l2FeeType']
@@ -82,24 +71,24 @@ export type EthereumListsChain = {
   icon?: string
 }
 
-export type Erc20TokenCache = {
-  chainId: number
-  contractAddress: string
-  symbol: string
-  decimals: number
-  name: string
-}
+// export type Erc20TokenCache = {
+//   chainId: number
+//   contractAddress: string
+//   symbol: string
+//   decimals: number
+//   name: string
+// }
 
-export type Uniswapv2TokenCache = {
-  chainId: string
-  contractAddress: string
-  decimals: number
-  symbol0: string
-  symbol1: string
-  decimals0: number
-  decimals1: number
-  tokenAddress0: string
-  tokenAddress1: string
-  coingeckoId0?: string
-  coingeckoId1?: string
-}
+// export type Uniswapv2TokenCache = {
+//   chainId: string
+//   contractAddress: string
+//   decimals: number
+//   symbol0: string
+//   symbol1: string
+//   decimals0: number
+//   decimals1: number
+//   tokenAddress0: string
+//   tokenAddress1: string
+//   coingeckoId0?: string
+//   coingeckoId1?: string
+// }

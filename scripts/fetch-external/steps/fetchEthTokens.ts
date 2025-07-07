@@ -57,11 +57,14 @@ type TokenCache = Partial<Record<TokenType, Record<TokenId, CacheEntry>>>
 
 export const fetchEthTokens = async () => {
   const prevEthTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
+
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   const moduleCacheErc20 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_ERC20)
   const moduleCacheUniswapV2 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_UNISWAPV2)
+
+  console.log('erc20cache:%s uniswapv2cache:%s', moduleCacheErc20.length, moduleCacheUniswapV2.length)
 
   const caches: TokenCache = {
     'evm-erc20': keyBy(moduleCacheErc20, (t) => t.id),
@@ -106,7 +109,7 @@ export const fetchEthTokens = async () => {
       ) =>
         withTimeout(
           () => fetchEthNetworkTokens(network),
-          60_000,
+          500_000,
           'Failed to fetch metadata extract for ' + network.networkId,
         ),
     )
