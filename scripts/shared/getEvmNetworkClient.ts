@@ -53,6 +53,7 @@ export const getEvmNetworkClient = (evmNetwork: EthNetworkConfig): PublicClient 
 
     CLIENT_CACHE[chainId] = createPublicClient({
       chain,
+      // for chaindata its better to use a fallback transport, helps a lot dodging rate limits
       transport: fallback((rpcs ?? []).map((rpc) => http(rpc))),
       batch,
     })

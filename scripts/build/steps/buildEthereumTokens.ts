@@ -26,9 +26,7 @@ import { z } from 'zod/v4'
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_ETH_TOKENS_PREBUILD,
-  // FILE_EVM_ERC20_TOKENS_CACHE,
   FILE_INPUT_NETWORKS_ETHEREUM,
-  // FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_TOKENS_ETHEREUM,
 } from '../../shared/constants'
@@ -44,15 +42,12 @@ export const buildEthereumTokens = async () => {
   const ethNetworks = parseJsonFile(FILE_OUTPUT_NETWORKS_ETHEREUM, z.array(EthNetworkSchema))
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const ethTokensCache = parseJsonFile<Token[]>(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
-  // const uniswapV2Cache = parseJsonFile<Uniswapv2TokenCache[]>(FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE)
-  // const erc20sCache = parseJsonFile<Erc20TokenCache[]>(FILE_EVM_ERC20_TOKENS_CACHE)
 
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
   const ethNetworkConfigById = keyBy(ethNetworksConfig, (c) => String(c.id))
   const knownEthNetworkById = keyBy(knownEthNetworks, (c) => String(c.id))
   const dicTokenCache = keyBy(ethTokensCache, (c) => c.id)
-  //const dicUniv2Cache = keyBy(uniswapV2Cache, (c) => `${c.chainId}:${c.contractAddress.toLowerCase()}`)
 
   const ethTokens: Token[] = ethNetworks
     .flatMap((network) => {
@@ -80,7 +75,6 @@ const getNetworkTokens = (
   networkConfig: EthNetworkConfig | undefined,
   knownEthNetwork: KnownEthNetworkConfig | undefined,
   dicTokenCache: Dictionary<Token>,
-  // dicUniv2Cache: Dictionary<Uniswapv2TokenCache>,
 ): Token[] => {
   const knownErc20s = (knownEthNetwork?.tokens?.['evm-erc20'] ?? []) as EvmErc20TokenConfig[]
   const knownUniswapV2 = (knownEthNetwork?.tokens?.['evm-uniswapv2'] ?? []) as EvmUniswapV2TokenConfig[]

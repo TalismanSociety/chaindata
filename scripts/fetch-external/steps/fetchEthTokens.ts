@@ -1,53 +1,22 @@
 import { PromisePool } from '@supercharge/promise-pool'
-import { BALANCE_MODULES, defaultBalanceModules, deriveMiniMetadataId, MINIMETADATA_VERSION } from '@talismn/balances'
-import {
-  ChaindataProvider,
-  DotToken,
-  EthToken,
-  EvmErc20Token,
-  EvmUniswapV2Token,
-  NetworkId,
-  Token,
-  TokenId,
-  TokenSchema,
-  TokenType,
-} from '@talismn/chaindata-provider'
+import { BALANCE_MODULES } from '@talismn/balances'
+import { EthToken, NetworkId, Token, TokenId, TokenSchema, TokenType } from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
 import values from 'lodash/values'
 
 import {
-  FILE_DOT_TOKENS_PREBUILD,
   FILE_ETH_TOKENS_PREBUILD,
-  FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES,
   FILE_INPUT_NETWORKS_ETHEREUM,
-  FILE_INPUT_NETWORKS_POLKADOT,
   FILE_MODULE_CACHE_ERC20,
   FILE_MODULE_CACHE_UNISWAPV2,
-  FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
-  FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
-import { getChainConnectorStub } from '../../shared/getChainConnector'
 import { getChainConnectorEvm } from '../../shared/getChainConnectorEvm'
 import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
-import { getHackedBalanceModuleDeps } from '../../shared/getHackedBalanceModuleDeps'
-import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
-import {
-  DotNetworkConfig,
-  DotNetworksConfigFileSchema,
-  DotNetworkSpecs,
-  DotNetworkSpecsFileSchema,
-  EthNetworkConfig,
-  EthNetworksConfigFileSchema,
-} from '../../shared/schemas'
-import {
-  DotNetworkMetadataExtract,
-  DotNetworkMetadataExtractsFileSchema,
-} from '../../shared/schemas/DotNetworkMetadataExtract'
-import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
+import { DotNetworkConfig, EthNetworkConfig, EthNetworksConfigFileSchema } from '../../shared/schemas'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 import { withTimeout } from '../../shared/withTimeout'
 import { writeJsonFile } from '../../shared/writeFile'
@@ -63,8 +32,6 @@ export const fetchEthTokens = async () => {
 
   const moduleCacheErc20 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_ERC20)
   const moduleCacheUniswapV2 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_UNISWAPV2)
-
-  console.log('erc20cache:%s uniswapv2cache:%s', moduleCacheErc20.length, moduleCacheUniswapV2.length)
 
   const caches: TokenCache = {
     'evm-erc20': keyBy(moduleCacheErc20, (t) => t.id),
@@ -160,8 +127,6 @@ const fetchEthNetworkTokens = async ({
   prevTokens,
   caches,
 }: FetchEthNetworkTokensArgs): Promise<[NetworkId, Token[]]> => {
-  // console.log('Fetching tokens for network %s', networkId)
-
   try {
     const connector = getChainConnectorEvm(assign({}, knownNetwork, configNetwork, { rpcs }))
 
@@ -171,7 +136,6 @@ const fetchEthNetworkTokens = async ({
       try {
         const source = mod.type as keyof DotNetworkConfig['balancesConfig']
 
-        // const start = performance.now()
         const moduleTokens: Token[] = await mod.fetchTokens({
           networkId,
           tokens: (mod.type === 'evm-native'
@@ -182,15 +146,6 @@ const fetchEthNetworkTokens = async ({
         })
 
         const validTokens = moduleTokens.filter((t) => TokenSchema.safeParse(t).success)
-
-        // console.log(
-        //   'Network %s module %s fetched %s tokens (%s total): %sms',
-        //   networkId,
-        //   mod.type,
-        //   validTokens.length,
-        //   moduleTokens.length,
-        //   (performance.now() - start).toFixed(2),
-        // )
 
         Object.assign(
           newTokens,

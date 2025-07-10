@@ -70,25 +70,3 @@ export type EthereumListsChain = {
   explorers?: Array<{ name: string; url: string; standard?: string }>
   icon?: string
 }
-
-// export type Erc20TokenCache = {
-//   chainId: number
-//   contractAddress: string
-//   symbol: string
-//   decimals: number
-//   name: string
-// }
-
-// export type Uniswapv2TokenCache = {
-//   chainId: string
-//   contractAddress: string
-//   decimals: number
-//   symbol0: string
-//   symbol1: string
-//   decimals0: number
-//   decimals1: number
-//   tokenAddress0: string
-//   tokenAddress1: string
-//   coingeckoId0?: string
-//   coingeckoId1?: string
-// }
