@@ -1,6 +1,7 @@
 import {
   AnyMiniMetadataSchema,
   ChaindataFileSchema,
+  isNativeToken,
   Network,
   NetworkSchema,
   Token,
@@ -67,6 +68,12 @@ export const buildConsolidatedData = async () => {
     }
     return true
   })
+
+  // for native tokens without logo, use network logo if available
+  for (const token of tokens.filter((t) => isNativeToken(t) && !t.logo)) {
+    const network = networksById[token.networkId]
+    if (network) token.logo = network.logo
+  }
 
   const chaindata = {
     networks,
