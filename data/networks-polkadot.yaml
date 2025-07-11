@@ -1493,6 +1493,9 @@
       - onChainId: 1000796
         symbol: LDO
         coingeckoId: lido-dao
+      - onChainId: 420
+        # coingecko references GETH with contract address instead of registry id, we can't match it automatically
+        coingeckoId: gigaeth
 - id: hyperbridge-polkadot
   name: Hyperbridge
   nativeCurrency:
