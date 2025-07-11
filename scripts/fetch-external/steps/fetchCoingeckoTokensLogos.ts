@@ -3,198 +3,80 @@ import { stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 import { PromisePool } from '@supercharge/promise-pool'
+import uniq from 'lodash/uniq'
 import sharp from 'sharp'
 
 import { fetchCoinDetails } from '../../shared/coingecko'
 import {
   COINGECKO_LOGO_DOWNLOAD_LIMIT,
-  FILE_INPUT_NETWORKS_ETHEREUM,
-  FILE_INPUT_NETWORKS_POLKADOT,
+  FILE_DOT_TOKENS_PREBUILD,
+  FILE_ETH_TOKENS_PREBUILD,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
-import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
-import { parseYamlFile } from '../../shared/parseFile'
-import {
-  DotNetworkConfig,
-  DotNetworksConfigFileSchema,
-  EthNetworkConfig,
-  EthNetworksConfigFileSchema,
-  KnownEthNetworkConfig,
-} from '../../shared/schemas'
+import { parseJsonFile } from '../../shared/parseFile'
+import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
+import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
+  'vibingcattoken',
   'baoeth-eth-stablepool',
-  'baousd-lusd-stablepool',
-  'bifinance-exchange',
-  'cellframe',
-  'epiko',
-  'fake-market-cap',
-  'fight-out',
-  'future-t-i-m-e-dividend',
-  'g',
-  'hiveterminal',
-  'nobi',
-  'style-protocol',
+  'goofy-inu',
+  'fefe',
+  'metastreet-v2-mwsteth-wpunks-20',
   'taxa-token',
-  'the-real-calcium',
-  'vmpx-erc20',
+  'thunderhead-staked-flip',
   'yieldeth-sommelier',
-  'baby-yooshiape',
-  'bovineverse-bvt',
-  'crypto-news-flash-ai',
-  'dungeon-token',
-  'football-at-alphaverse',
-  'helper-coin',
-  'pink-vote',
-  'rambox',
-  'to-the-moon-token',
-  'wagmi-token',
-  'heco-peg-bnb',
-  'heco-peg-xrp',
+  'bridged-busd',
+  'multichain-bridged-busd-moonriver',
+  'harmony-horizen-bridged-busd-harmony',
+  'seamans-token',
+  'bridged-matic-manta-pacific',
+  'exactly-wbtc',
+  'bridged-binance-peg-ethereum-opbnb',
+  'celer-bridged-busd-zksync',
+  'balancer-80-rdnt-20-weth',
   'pacman-native-token',
-  'firepot-finance',
-  'bridged-sommelier-axelar',
-  'adv3nture-xyz-gemstone',
+  'mantle-usd',
+  'dungeon-token',
+  'going-to-the-moon',
+  'realvirm',
+  'grok-queen',
+  'utility-nexusmind',
+  'iotex-bridged-busd-iotex',
+  'sword-and-magic-world',
+  'all-time-high-degen',
+  'fortunafi-tokenized-short-term-u-s-treasury-bills-for-non-us-residents',
+  'zora-bridged-weth-zora-network',
   'tapio-protocol',
+  'axelar-bridged-usdc',
   'liquid-crowdloan-dot',
   'acala-dollar',
-  'bit',
+  'neutron',
+  'taiga',
+  'hydration',
+  'brazilian-digital-token',
+  'polkaex',
   'composable-finance-layr',
   'darwinia-crab-network',
-  'imbue-network',
-  'taiga',
-  'neutron',
-  'subgame',
-  'aicore',
-  'aventis-metaverse',
-  'balancer-usdc-usdbc-axlusdc',
-  'basepal',
-  'bridged-binance-peg-ethereum-opbnb',
-  'dollar-on-chain',
-  'earntv',
-  'gmlp',
-  'gold-utility-token',
-  'goofy-inu',
-  'hermionegrangerclintonamberamyrose9inu',
-  'horizon-protocol-zbnb',
-  'hottel',
-  'hygt',
-  'karen-pepe',
-  'larace',
-  'rand',
-  'strix',
-  'sword-and-magic-world',
-  'thunderhead-staked-flip',
-  'titanx',
-  'trumatic-matic-stable-pool',
-  'wrapped-eeth',
-  'zhaodavinci',
-  'ivendpay',
-  'metahub-finance',
-  'polkaex',
-  '3space-art',
-  'bitstable-finance',
-  'bridged-wrapped-ether-voltage-finance',
-  'game-tournament-trophy',
-  'grok-x-ai',
-  'holy-spirit',
-  'logic',
-  'mantle-usd',
-  'mini-grok',
-  'wrapped-fuse',
-  'fortunafi-tokenized-short-term-u-s-treasury-bills-for-non-us-residents',
-  'patriot-pay',
-  'vibingcattoken',
-  'basic-dog-meme',
-  'exactly-wbtc',
-  '0xgasless-2',
-  'osschain',
-  'mevai',
-  'grok-queen',
-  'grok-queen',
-  'whatbot',
-  'barsik',
-  'three-hundred-ai',
-  'edge-matrix-computing',
-  'balancer-80-rdnt-20-weth',
-  'redlight-chain',
-  'hoo-token',
-  'jongro-boutique',
-  'lexa-ai',
-  'realvirm',
-  'dragon-3',
-  'ghost',
-  'utility-nexusmind',
-  'zora-bridged-weth-zora-network',
-  'pnear',
-  'multichain-bridged-busd-moonriver',
-  'brightpool',
-  'bridged-matic-manta-pacific',
-  'multichain-bridged-busd-okt-chain',
-  'polygon-bridged-busd-polygon',
-  'nyan-cat-on-base',
-  'seamans-token',
-  'thundercore-bridged-busd-thundercore',
-  'zebradao',
-  'lua-balancing-token',
-  'bridged-weeth-manta-pacific',
-  'metastreet-v2-mwsteth-wpunks-20',
-  'dexnet',
-  'going-to-the-moon',
-  'bridged-unieth-manta-pacific',
-  'bridged-busd',
-  'celer-bridged-busd-zksync',
-  'harmony-horizen-bridged-busd-harmony',
-  'blast-old',
-  'proof-of-memes-pomchain',
-  'bridged-usdc-x-layer',
-  'humanity-protocol-dply',
-  'dook',
-  'iotex-bridged-busd-iotex',
-  'butter-bridged-solvbtc-map-protocol',
-  'frax-doge',
-  'wienerai',
-  'all-time-high-degen',
-  'fefe',
-  'brazilian-digital-token',
-  'jur',
   'eurc',
-  'hydration',
-  'axelar-bridged-usdc',
   '-8',
+  'blai',
+  'basetard',
+  'bitball-2',
+  'america-party-4',
+  'tinkernet',
+  'doll-fantasy-token',
 ]
 
-type BalanceModuleConfig = {
-  coingeckoId?: string
-  tokens?: { coingeckoId?: string }[]
-}
-
-const getAllCoingeckoIds = (...networks: (EthNetworkConfig | DotNetworkConfig | KnownEthNetworkConfig)[]) => {
-  const coingeckoIds = new Set<string>()
-
-  for (const network of networks) {
-    if (network.nativeCurrency?.coingeckoId) coingeckoIds.add(network.nativeCurrency.coingeckoId)
-
-    if (!network.balancesConfig) continue
-
-    const balancesConfig = network.balancesConfig as Record<string, BalanceModuleConfig>
-    for (const moduleKey in balancesConfig) {
-      const moduleConfig = balancesConfig[moduleKey] as BalanceModuleConfig
-      if (moduleConfig.coingeckoId) coingeckoIds.add(moduleConfig.coingeckoId)
-      if (moduleConfig.tokens)
-        for (const token of moduleConfig.tokens) if (token.coingeckoId) coingeckoIds.add(token.coingeckoId)
-    }
-  }
-
-  return [...coingeckoIds].sort()
-}
-
 export const fetchCoingeckoTokensLogos = async () => {
-  const ethNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
-  const knownEthNetworks = getConsolidatedKnownEthNetworks()
-  const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const dotTokens = parseJsonFile(FILE_DOT_TOKENS_PREBUILD, DotTokensPreBuildFileSchema)
+  const ethTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
 
-  const allCoingeckoIds = getAllCoingeckoIds(...ethNetworks, ...knownEthNetworks, ...dotNetworks)
+  const allCoingeckoIds = uniq([
+    ...dotTokens.map((token) => token.coingeckoId).filter((id): id is string => !!id),
+    ...ethTokens.map((token) => token.coingeckoId).filter((id): id is string => !!id),
+  ])
+
   const validCoingeckoIds = allCoingeckoIds.filter((coingeckoId) => !INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId))
 
   const logoFilepaths = new Map(
@@ -226,6 +108,8 @@ export const fetchCoingeckoTokensLogos = async () => {
 
   console.log(`fetching logos for ${fetchCoingeckoIds.length} tokens`)
 
+  const newInvalidCoingeckoIds: string[] = []
+
   await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
     .for(fetchCoingeckoIds)
     .process(async (coingeckoId) => {
@@ -233,7 +117,10 @@ export const fetchCoingeckoTokensLogos = async () => {
         const coin = await fetchCoinDetails(coingeckoId, { retryAfter60s: true })
         console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
-        if (!coin.image.large.startsWith('https://')) return console.warn('missing image, skipping...')
+        if (!coin.image.large.startsWith('https://')) {
+          newInvalidCoingeckoIds.push(coingeckoId)
+          return console.warn('missing image, skipping...')
+        }
 
         const responseImg = await fetch(coin.image.large)
         const responseBuffer = await responseImg.arrayBuffer()
@@ -247,8 +134,15 @@ export const fetchCoingeckoTokensLogos = async () => {
         await writeFile(logoFilepaths.get(coingeckoId)!, Buffer.from(webpBuffer))
       } catch (error) {
         console.log('Failed to download coingecko image for %s', coingeckoId, error)
+        newInvalidCoingeckoIds.push(coingeckoId)
       }
     })
+
+  if (newInvalidCoingeckoIds.length) {
+    console.warn('The following Coingecko IDs were invalid or had no image:')
+    console.log(newInvalidCoingeckoIds)
+    console.warn('Please add them to the INVALID_IMAGE_COINGECKO_IDS array in fetchCoingeckoTokensLogos.ts')
+  }
 }
 
 const exists = (path: PathLike) =>

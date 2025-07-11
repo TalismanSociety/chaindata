@@ -20,10 +20,10 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   fetchKnownEvmNetworksCoingeckoLogos,
   fetchKnownEvmTokens,
   fetchKnownEvmNetworksLogos,
-  fetchCoingeckoTokensLogos,
   fetchNovasamaMetadataPortalUrls,
   fetchDotNetworksSpecs,
   fetchDotNetworksMetadataExtracts,
   fetchDotTokens,
   fetchEthTokens,
+  fetchCoingeckoTokensLogos,
 ]

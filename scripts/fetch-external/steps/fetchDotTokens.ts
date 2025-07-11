@@ -1,10 +1,12 @@
 import { PromisePool } from '@supercharge/promise-pool'
-import { BALANCE_MODULES, defaultBalanceModules, deriveMiniMetadataId, MINIMETADATA_VERSION } from '@talismn/balances'
-import { ChaindataProvider, DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
+import { BALANCE_MODULES, deriveMiniMetadataId } from '@talismn/balances'
+import { DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
+import toPairs from 'lodash/toPairs'
 import values from 'lodash/values'
 
+import { CoingeckoCoin, fetchCoins } from '../../shared/coingecko'
 import {
   FILE_DOT_TOKENS_PREBUILD,
   FILE_INPUT_NETWORKS_POLKADOT,
@@ -12,7 +14,6 @@ import {
   FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
 import { getChainConnectorStub } from '../../shared/getChainConnector'
-import { getHackedBalanceModuleDeps } from '../../shared/getHackedBalanceModuleDeps'
 import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
@@ -35,6 +36,7 @@ export const fetchDotTokens = async () => {
   const metadataExtracts = parseJsonFile(FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT, DotNetworkMetadataExtractsFileSchema)
   const dotNetworkSpecs = parseJsonFile(FILE_NETWORKS_SPECS_POLKADOT, DotNetworkSpecsFileSchema)
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
+  const coins = await fetchCoins()
 
   const metadataExtractsById = keyBy(metadataExtracts, 'id')
   const specsById = keyBy(dotNetworkSpecs, 'id')
@@ -47,6 +49,7 @@ export const fetchDotTokens = async () => {
       rpcs: getRpcsByStatus(network.id, 'polkadot', 'OK'),
       specs: specsById[network.id] as DotNetworkSpecs | undefined,
       tokens: tokensByNetwork[network.id] ?? [],
+      coins,
     }))
     .filter((args): args is FetchDotNetworkTokensArgs => {
       const { rpcs, specs, miniMetadatas } = args
@@ -101,6 +104,7 @@ type FetchDotNetworkTokensArgs = {
   specs: DotNetworkSpecs
   miniMetadatas: DotNetworkMetadataExtract['miniMetadatas']
   tokens: DotToken[]
+  coins: CoingeckoCoin[]
 }
 
 const fetchDotNetworkTokens = async ({
@@ -109,6 +113,7 @@ const fetchDotNetworkTokens = async ({
   rpcs,
   miniMetadatas,
   tokens: prevTokens,
+  coins,
 }: FetchDotNetworkTokensArgs): Promise<[NetworkId, Token[]]> => {
   console.log('Fetching tokens for network %s', network.id)
 
@@ -138,6 +143,28 @@ const fetchDotNetworkTokens = async ({
 
         if (!miniMetadata)
           throw new Error(`Up to date MiniMetadata not found for network ${chainId} and module ${source}`)
+
+        const tokens = (
+          mod.type === 'substrate-native' ? [network.nativeCurrency ?? {}] : (network.tokens?.[source] ?? [])
+        ) as any[]
+
+        if (network.id === 'hydradx' && mod.type === 'substrate-hydration') {
+          const hydrationCoingeckoIds = getHydrationCoingeckoIdsByAssetId(coins)
+          for (const [strOnChainId, coingeckoId] of toPairs(hydrationCoingeckoIds)) {
+            const onChainId = Number(strOnChainId)
+            const existingToken = tokens.find((t) => t.onChainId === onChainId)
+            if (existingToken) {
+              // if token already exists, just update its coingeckoId
+              existingToken.coingeckoId = coingeckoId
+            } else {
+              // otherwise create a new token with the coingeckoId
+              tokens.push({
+                onChainId,
+                coingeckoId,
+              })
+            }
+          }
+        }
 
         const moduleTokens: Token[] = await mod.fetchTokens({
           networkId: network.id,
@@ -179,4 +206,24 @@ const fetchDotNetworkTokens = async ({
   } finally {
     await provider.disconnect()
   }
+}
+
+const getHydrationCoingeckoIdsByAssetId = (coins: CoingeckoCoin[]): Record<string, string> => {
+  const prefix = 'asset_registry%2F'
+
+  return coins.reduce((acc, coin) => {
+    const hydrationId = coin.platforms?.['hydration']
+
+    if (hydrationId?.startsWith(prefix)) {
+      try {
+        // check that we get a valid number
+        const assetId = Number(hydrationId.substring(prefix.length).trim())
+        if (isNaN(assetId)) throw new Error('Invalid assetId')
+
+        return { ...acc, [assetId]: coin.id }
+      } catch {}
+    }
+
+    return acc
+  }, {})
 }

@@ -81,11 +81,10 @@ export const checkPlatformRpcsHealth = async (
 
   const keysToRecheck = sortBy(values(existingRpcHealthsByKey), 'timestamp').slice(0, rechecks).map(getRpcHealthKey)
 
-  const checks = uniq([...newKeys, ...keysToRecheck])
-    .map(getRpcHealthSpecsFromKey)
-    .slice(0, maxchecks)
+  const allRpcs = uniq([...newKeys, ...keysToRecheck])
+  const checks = allRpcs.map(getRpcHealthSpecsFromKey).slice(0, maxchecks)
 
-  console.log('Checking', checks.length, 'RPCs')
+  console.log('Checking', checks.length, 'RPCs out of', allRpcs.length)
 
   // v8 can only do 2 requests at once but the speed increment is worth the false positives
   // concurrency 4: 99 sec (7 actual timeouts)
