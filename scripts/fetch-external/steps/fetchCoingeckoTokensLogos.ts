@@ -60,6 +60,7 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'darwinia-crab-network',
   'eurc',
   '-8',
+  '-9',
   'blai',
   'basetard',
   'bitball-2',
