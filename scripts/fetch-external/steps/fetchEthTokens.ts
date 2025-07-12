@@ -46,27 +46,26 @@ export const fetchEthTokens = async () => {
 
   const tokensByNetwork = groupBy(prevEthTokens, (t) => t.networkId)
 
-  const networksToUpdate = allEthNetworkIds
-    .map(
-      (networkId): FetchEthNetworkTokensArgs => ({
-        networkId,
-        configNetwork: ethNetworkConfigById[networkId] as EthNetworkConfig,
-        knownNetwork: knownEthNetworkById[networkId] as EthNetworkConfig,
-        rpcs: getRpcsByStatus(networkId, 'ethereum', 'OK').filter(
-          (r) => !r.includes('thirdweb') && !r.includes('ankr'),
-        ),
-        prevTokens: (tokensByNetwork[networkId] as EthToken[]) ?? [],
-        caches,
-      }),
-    )
-    .filter((args) => {
-      const { rpcs } = args
-      if (!rpcs || !rpcs.length) {
-        // console.warn('No rpcs available for network %s, skipping fetchDotTokens', args.network.id)
-        return false // no rpcs available for this network - cant be updated
-      }
-      return true // all gud!
-    })
+  console.log('Include 5', allEthNetworkIds.includes('5'))
+
+  const networksToUpdate = allEthNetworkIds.map(
+    (networkId): FetchEthNetworkTokensArgs => ({
+      networkId,
+      configNetwork: ethNetworkConfigById[networkId] as EthNetworkConfig,
+      knownNetwork: knownEthNetworkById[networkId] as EthNetworkConfig,
+      rpcs: getRpcsByStatus(networkId, 'ethereum', 'OK'),
+      prevTokens: (tokensByNetwork[networkId] as EthToken[]) ?? [],
+      caches,
+    }),
+  )
+  // .filter((args) => {
+  //   const { rpcs } = args
+  //   if (!rpcs || !rpcs.length) {
+  //     // console.warn('No rpcs available for network %s, skipping fetchDotTokens', args.network.id)
+  //     return false // no rpcs available for this network - cant be updated
+  //   }
+  //   return true // all gud!
+  // })
 
   const result = await PromisePool.withConcurrency(4)
     .for(networksToUpdate)
@@ -168,6 +167,11 @@ const fetchEthNetworkTokens = async ({
         )
       }
     }
+
+    if (networkId === '5')
+      console.log({
+        newTokens,
+      })
 
     return [networkId, Object.values(newTokens)]
   } catch (cause) {

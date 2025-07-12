@@ -501,6 +501,7 @@
     symbol: ACA
     coingeckoId: acala
     mirrorOf: acala:substrate-native
+  logo: ./assets/chains/acala.svg
   blockExplorerUrls:
     - https://blockscout.acala.network
   substrateChainId: acala
@@ -534,42 +535,47 @@
   tokens:
     evm-erc20:
       - contractAddress: '0x65b09ef8c5A096C5Fd3A80f1F7369E56eB932412'
-        symbol: BEANS
-        coingeckoId: moonbeans
+        # symbol: BEANS
+        # coingeckoId: moonbeans
       - contractAddress: '0x8f552a71EFE5eeFc207Bf75485b356A0b3f01eC9'
+        name: USDC (Nomad)
         symbol: madUSDC
-        coingeckoId: usd-coin
+        # coingeckoId: usd-coin
       - contractAddress: '0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b'
-        symbol: multiUSDC
-        coingeckoId: usd-coin
+        # symbol: USDC
+        # coingeckoId: usd-coin
+        name: USD Coin (Multichain)
       - contractAddress: '0x931715fee2d06333043d11f658c8ce934ac61d0c'
-        symbol: whUSDC
+        # symbol: USDC
+        name: USD Coin (Wormhole)
         coingeckoId: usd-coin
-      - contractAddress: '0xFfFFfFff1FcaCBd218EDc0EbA20Fc2308C778080'
-        symbol: xcDOT
-        coingeckoId: polkadot
-        mirrorOf: moonbeam-substrate-assets-42259045809535163221576417993425387648-dot
+      - contractAddress: '0xffffffff1fcacbd218edc0eba20fc2308c778080'
+        symbol: DOT
+      #       coingeckoId: polkadot
+      #       # mirrorOf: moonbeam-substrate-assets-42259045809535163221576417993425387648-dot
       - contractAddress: '0xffffFFffa922Fef94566104a6e5A35a4fCDDAA9f'
-        symbol: xcACA
+        symbol: ACA
         coingeckoId: acala
       - contractAddress: '0xFfFfFFff99dABE1a8De0EA22bAa6FD48fdE96F6c'
         symbol: xcvGLMR
+        name: Bifrost Voucher GLMR
       - contractAddress: '0xfFfFFfFf30478fAFBE935e466da114E14fB3563d'
-        symbol: xcPINK
+        symbol: PINK
         logo: ./assets/tokens/pink.svg
-        mirrorOf: moonbeam-substrate-assets-64174511183114006009298114091987195453-pink
+      #       # mirrorOf: moonbeam-substrate-assets-64174511183114006009298114091987195453-pink
       - contractAddress: '0xfFffFFFf5da2d7214D268375cf8fb1715705FdC6'
-        symbol: xcDED
+        symbol: DED
         logo: ./assets/tokens/ded.svg
         coingeckoId: dot-is-ded
       - contractAddress: '0xFFfffffF7D2B0B761Af01Ca8e25242976ac0aD7D'
-        symbol: xcUSDC
+        symbol: USDC
         coingeckoId: usd-coin
-        mirrorOf: moonbeam-substrate-assets-166377000701797186346254371275954761085-usdc
+        name: xcUSDC - USD Coin (Asset Hub)
+        # mirrorOf: moonbeam-substrate-assets-166377000701797186346254371275954761085-usdc
       - contractAddress: '0xffffffffea09fb06d082fd1275cd48b191cbcd1d'
-        symbol: xcUSDT
-        coingeckoId: tether
-        mirrorOf: moonbeam-substrate-assets-311091173110107856861649819128533077277-usdt
+        symbol: USDT
+  #       coingeckoId: tether
+  #       mirrorOf: moonbeam-substrate-assets-311091173110107856861649819128533077277-usdt
 - id: '1285'
   name: Moonriver
   logo: ./assets/chains/moonriver.svg
