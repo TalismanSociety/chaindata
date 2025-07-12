@@ -1,15 +1,5 @@
 import { EvmErc20TokenConfig, EvmUniswapV2TokenConfig } from '@talismn/balances'
-import {
-  EthNetwork,
-  EthNetworkSchema,
-  EvmNativeToken,
-  evmNativeTokenId,
-  EvmNativeTokenSchema,
-  isTokenEth,
-  NetworkId,
-  Token,
-  TokenSchema,
-} from '@talismn/chaindata-provider'
+import { EthNetwork, EthNetworkSchema, isTokenEth, NetworkId, Token, TokenSchema } from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
@@ -26,7 +16,6 @@ import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
-import { validateDebug } from '../../shared/validate'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildEthereumTokens = async () => {
@@ -78,7 +67,6 @@ const getNetworkTokens = (
   const dicConfigUniswapV2 = keyBy(configUniswapV2, (c) => c.contractAddress.toLowerCase())
 
   const networkId = String(network.id) as NetworkId
-  const nativeToken = getNativeToken(network)
 
   return tokenCache
     .filter(isTokenEth)
@@ -86,7 +74,7 @@ const getNetworkTokens = (
     .map((token) => {
       switch (token.type) {
         case 'evm-native':
-          return assign({}, token, nativeToken, knownEthNetwork?.nativeCurrency, networkConfig?.nativeCurrency)
+          return assign({}, token, knownEthNetwork?.nativeCurrency, networkConfig?.nativeCurrency)
         case 'evm-erc20':
           return assign(
             {},
@@ -103,31 +91,4 @@ const getNetworkTokens = (
           )
       }
     })
-}
-
-const getNativeToken = (network: EthNetwork): EvmNativeToken => {
-  const token: EvmNativeToken = {
-    type: 'evm-native',
-    id: evmNativeTokenId(network.id),
-    platform: 'ethereum',
-    networkId: network.id,
-    symbol: network.nativeCurrency.symbol,
-    name: network.nativeCurrency.name,
-    decimals: network.nativeCurrency.decimals ?? 18,
-    logo: getTokenLogoUrl(
-      network.nativeCurrency.logo,
-      network.nativeCurrency.coingeckoId,
-      network.nativeCurrency.symbol,
-    ),
-    isDefault: true,
-    coingeckoId: network.nativeCurrency.coingeckoId,
-    mirrorOf: network.nativeCurrency.mirrorOf,
-  }
-
-  try {
-    return validateDebug(token, EvmNativeTokenSchema, 'native token')
-  } catch (err) {
-    console.log('PROBLEM', token)
-    throw err
-  }
 }
