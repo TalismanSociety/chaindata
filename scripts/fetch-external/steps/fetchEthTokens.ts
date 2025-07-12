@@ -48,6 +48,7 @@ export const fetchEthTokens = async () => {
 
   console.log('Include 5', allEthNetworkIds.includes('5'))
 
+  // Need to process all networks even if they don't have an RPC, or native token wouldnt be generated
   const networksToUpdate = allEthNetworkIds.map(
     (networkId): FetchEthNetworkTokensArgs => ({
       networkId,
@@ -58,14 +59,6 @@ export const fetchEthTokens = async () => {
       caches,
     }),
   )
-  // .filter((args) => {
-  //   const { rpcs } = args
-  //   if (!rpcs || !rpcs.length) {
-  //     // console.warn('No rpcs available for network %s, skipping fetchDotTokens', args.network.id)
-  //     return false // no rpcs available for this network - cant be updated
-  //   }
-  //   return true // all gud!
-  // })
 
   const result = await PromisePool.withConcurrency(4)
     .for(networksToUpdate)
@@ -82,7 +75,7 @@ export const fetchEthTokens = async () => {
 
   for (const error of result.errors) console.warn(error.message)
   console.log(
-    'fetchDotTokens processed %s networks (success:%s errors:%s)',
+    'fetchEthTokens processed %s networks (success:%s errors:%s)',
     networksToUpdate.length,
     result.results.length,
     result.errors.length,
