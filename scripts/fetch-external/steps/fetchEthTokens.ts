@@ -62,15 +62,12 @@ export const fetchEthTokens = async () => {
 
   const result = await PromisePool.withConcurrency(4)
     .for(networksToUpdate)
-    .process(
-      (
-        network, // fetchEthNetworkTokens(network),
-      ) =>
-        withTimeout(
-          () => fetchEthNetworkTokens(network),
-          500_000,
-          'Failed to fetch metadata extract for ' + network.networkId,
-        ),
+    .process((network) =>
+      withTimeout(
+        () => fetchEthNetworkTokens(network),
+        500_000,
+        'Failed to fetch metadata extract for ' + network.networkId,
+      ),
     )
 
   for (const error of result.errors) console.warn(error.message)
@@ -160,11 +157,6 @@ const fetchEthNetworkTokens = async ({
         )
       }
     }
-
-    if (networkId === '5')
-      console.log({
-        newTokens,
-      })
 
     return [networkId, Object.values(newTokens)]
   } catch (cause) {
