@@ -1,5 +1,6 @@
 import { checkEthereumRpcs } from './checkEthereumRpcs'
 import { checkPolkadotRpcs } from './checkPolkadotRpcs'
+import { fetchCoingeckoTokenNames } from './fetchCoingeckoTokenNames'
 import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
 import { fetchDotNetworksMetadataExtracts } from './fetchDotNetworksMetadataExtracts'
 import { fetchDotNetworksSpecs } from './fetchDotNetworksSpecs'
@@ -10,7 +11,6 @@ import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchKnownEvmNetworksCoin
 import { fetchKnownEvmNetworksLogos } from './fetchKnownEvmNetworksLogos'
 import { fetchKnownEvmTokens } from './fetchKnownEvmTokens'
 import { fetchNovasamaMetadataPortalUrls } from './fetchNovasamaMetadataPortalUrls'
-import { fetchTokenNames } from './fetchTokenNames'
 import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Promise<void> | void> = [
@@ -27,5 +27,5 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   fetchDotTokens,
   fetchEthTokens,
   fetchCoingeckoTokensLogos,
-  fetchTokenNames,
+  fetchCoingeckoTokenNames,
 ]

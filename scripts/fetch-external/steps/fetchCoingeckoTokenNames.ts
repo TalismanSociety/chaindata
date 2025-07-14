@@ -7,7 +7,7 @@ import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBu
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 import { writeJsonFile } from '../../shared/writeFile'
 
-export const fetchTokenNames = async () => {
+export const fetchCoingeckoTokenNames = async () => {
   const dotTokens = parseJsonFile(FILE_DOT_TOKENS_PREBUILD, DotTokensPreBuildFileSchema)
   const ethTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
 
