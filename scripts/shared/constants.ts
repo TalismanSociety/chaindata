@@ -38,11 +38,12 @@ export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.j
 export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'
 export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-portal-urls.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
-export const FILE_EVM_ERC20_TOKENS_CACHE = 'data/cache/evm-erc20-tokens-cache.json'
-export const FILE_KNOWN_EVM_UNISWAPV2_TOKENS_CACHE = 'data/cache/known-evm-uniswapv2-tokens-cache.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
-export const FILE_KNOWN_EVM_NETWORKS_RPCS_CACHE = 'data/cache/known-evm-networks-rpcs-cache.json'
-export const FILE_DOT_TOKENS_CACHE = 'data/cache/polkadot-tokens-cache.json'
+export const FILE_DOT_TOKENS_PREBUILD = 'data/cache/polkadot-tokens-prebuild.json'
+export const FILE_ETH_TOKENS_PREBUILD = 'data/cache/ethereum-tokens-prebuild.json'
+
+export const FILE_MODULE_CACHE_ERC20 = 'data/cache/module-cache-evm-erc20.json'
+export const FILE_MODULE_CACHE_UNISWAPV2 = 'data/cache/module-cache-evm-uniswapv2.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

@@ -124,6 +124,9 @@
           },
           "substrate-foreignassets": {
             "type": "null"
+          },
+          "substrate-hydration": {
+            "type": "null"
           }
         },
         "additionalProperties": false
@@ -300,9 +303,7 @@
                   "type": "boolean"
                 },
                 "decimals": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 9007199254740991
+                  "type": "number"
                 },
                 "symbol": {
                   "type": "string",
@@ -324,6 +325,52 @@
                   "type": "string"
                 },
                 "existentialDeposit": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": ["onChainId", "decimals", "symbol", "existentialDeposit"],
+              "additionalProperties": false
+            }
+          },
+          "substrate-hydration": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "onChainId": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4294967295
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
                   "type": "string"
                 }
               },

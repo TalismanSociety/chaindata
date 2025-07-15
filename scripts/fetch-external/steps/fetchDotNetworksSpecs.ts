@@ -79,7 +79,6 @@ const fetchNetworkSpecs = async (network: { id: string; rpcs: string[] }) => {
       'network specs ' + network.id,
     )
   } catch (cause) {
-    // console.log('Failed to fetch network info for %s: %s', network.id, err)
     throw new Error(`Failed to fetch network info for ${network.id}`, { cause })
   } finally {
     await provider.disconnect()

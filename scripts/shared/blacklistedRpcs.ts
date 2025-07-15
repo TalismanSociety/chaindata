@@ -94,6 +94,8 @@ const BLACKLISTED_RPC_URLS = [
   'https://test.doschain.com/jsonrpc',
   'https://rpc.dexilla.com',
   'https://rpc.xerom.org',
+  'https://rpc.hydradx.cloud',
+  'wss://rpc.hydradx.cloud',
 ].map((url) => url.replace(/\/$/, ''))
 
 const BLACKLISTED_HOSTS = BLACKLISTED_RPC_URLS.map((url) => new URL(url).host)

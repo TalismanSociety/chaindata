@@ -6,7 +6,6 @@ import { buildEthereumTokens } from './buildEthereumTokens'
 import { buildPolkadotMiniMetadatas } from './buildPolkadotMiniMetadatas'
 import { buildPolkadotNetworks } from './buildPolkadotNetworks'
 import { buildPolkadotTokens } from './buildPolkadotTokens'
-import { checkOrphans } from './checkOrphans'
 import { cleanupOutputs } from './cleanupOutputs'
 
 export const buildSteps: Array<() => Promise<void> | void> = [
@@ -21,8 +20,6 @@ export const buildSteps: Array<() => Promise<void> | void> = [
 
   addThemeColors,
   buildConsolidatedData,
-
-  checkOrphans,
 
   // PRO TIP: comment this one while debugging outputs
   cleanupOutputs,

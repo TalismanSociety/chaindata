@@ -1,6 +1,7 @@
 import {
   SubAssetsTokenConfigSchema,
   SubForeignAssetsTokenConfigSchema,
+  SubHydrationTokenConfigSchema,
   SubPsp22TokenConfigSchema,
   SubTokensTokenConfigSchema,
 } from '@talismn/balances'
@@ -12,6 +13,7 @@ const DotTokensConfigSchema = z.strictObject({
   'substrate-psp22': z.array(SubPsp22TokenConfigSchema).optional(),
   'substrate-foreignassets': z.array(SubForeignAssetsTokenConfigSchema).optional(),
   'substrate-tokens': z.array(SubTokensTokenConfigSchema).optional(),
+  'substrate-hydration': z.array(SubHydrationTokenConfigSchema).optional(),
 })
 
 export const DotNetworkConfigSchema = z.strictObject({

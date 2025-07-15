@@ -1,7 +1,7 @@
 import { WsProvider } from '@polkadot/rpc-provider'
 import { PromisePool } from '@supercharge/promise-pool'
-import { defaultBalanceModules, deriveMiniMetadataId, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
-import { ChaindataProvider } from '@talismn/chaindata-provider'
+import { BALANCE_MODULES, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
+import { TokenType } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
 import { decAnyMetadata, getDynamicBuilder, getLookupFn, UnifiedMetadata, unifyMetadata } from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
@@ -11,7 +11,6 @@ import {
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
-import { getHackedBalanceModuleDeps } from '../../shared/getHackedBalanceModuleDeps'
 import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
@@ -73,7 +72,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
     .filter((network) => !DEV_CHAIN_ID || network.network.id === DEV_CHAIN_ID)
 
   console.log(
-    'fetchDotNetworkMetadataExtracts processing %s networks (total:%s invalid:%s)',
+    'fetchDotNetworkMetadataExtracts processing %s networks (total:%s excluded:%s)',
     networksToUpdate.length,
     dotNetworks.length,
     dotNetworks.length - networksToUpdate.length,
@@ -140,7 +139,7 @@ const fetchMetadataExtract = async ({
 
     const account = getAccountType(metadata)
 
-    const miniMetadatas = await fetchMiniMetadatas(network, specs, provider, metadataRpc)
+    const miniMetadatas = await getMiniMetadatas(network, specs, metadataRpc)
 
     const topology = await getTopology(metadata, provider, network)
 
@@ -167,48 +166,23 @@ const fetchMetadataExtract = async ({
   }
 }
 
-export const fetchMiniMetadatas = async (
+const getMiniMetadatas = async (
   network: DotNetworkConfig,
   networkSpecs: DotNetworkSpecs,
-  provider: WsProvider,
   metadataRpc: `0x${string}`,
 ) => {
-  // TODO: Remove this hack
-  //
-  // We don't actually have the derived `Chain` at this point, only the `ConfigChain`.
-  // But the module only needs access to the `isTestnet` value of the `Chain`, which we do already have.
-  //
-  // So, we will provide the `isTestnet` value using a hacked together `ChaindataProvider` interface.
-  //
-  // But if the balance module tries to access any other `ChaindataProvider` features with our hacked-together
-  // implementation, it will throw an error. This is fine.
-  const { chainConnectors, stubChaindataProvider } = getHackedBalanceModuleDeps(network, provider)
+  const { specVersion } = networkSpecs.runtimeVersion
 
   const miniMetadatas: Record<string, MiniMetadata> = {}
-  for (const mod of defaultBalanceModules
-    .map((mod) => mod({ chainConnectors, chaindataProvider: stubChaindataProvider as unknown as ChaindataProvider }))
-    .filter((mod) => mod.type.startsWith('substrate-'))) {
-    const source = mod.type as keyof DotNetworkConfig['balancesConfig']
-    const chainId = network.id
+  for (const mod of BALANCE_MODULES.filter((m) => m.platform === 'polkadot')) {
+    const config = network.balancesConfig?.[mod.type as keyof typeof network.balancesConfig]
 
-    const { specVersion } = networkSpecs.runtimeVersion
-
-    const chainMeta = await mod.fetchSubstrateChainMeta(network.id, network.balancesConfig?.[source], metadataRpc)
-
-    const miniMetadata: MiniMetadata = {
-      id: deriveMiniMetadataId({
-        source,
-        chainId,
-        specVersion,
-      }),
-      source,
-      chainId,
+    const miniMetadata = mod.getMiniMetadata({
+      networkId: network.id,
       specVersion,
-
-      version: MINIMETADATA_VERSION!,
-      data: chainMeta?.miniMetadata ?? null,
-      extra: chainMeta?.extra ?? null,
-    }
+      metadataRpc,
+      config,
+    })
 
     miniMetadatas[miniMetadata.id] = miniMetadata
   }

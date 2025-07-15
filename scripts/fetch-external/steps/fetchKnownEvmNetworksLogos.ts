@@ -46,6 +46,10 @@ const KNOWN_UNAVAILABLE_IPFS_HASHES: string[] = [
   'bafybeic234jzphpt7pg2jjosi3zohllbjhz6e5gc2snda4uzrmv6cwfbvi',
   'QmaNKnYTZRGnhzFyRYeBKwXbPQz6uDPK7PPuPGCMXSNFYW',
   'QmVAQiumxDxuEW7HdeRW8NiRKVpXVnQumwSW44Uq6py1k7',
+  'bafkreienf63hqo2stiq2wqiprvhowrv3cvhjeko2u3h5vcvjby5ix6ud7a',
+  'bafkreibm26mwdgzt4e3c5wr5sfee644cnjsye2mgkajhfzsyu3wglrecd4',
+  'QmcLm4CYi4bEmz6C6yxNxDomXNyR9umE5P71YB7QMFkz9G',
+  'QmYmx1KEFtAuCpA8VDq5B7WvbDVYGvXkZjBkmZTSQMsYCX',
 ]
 
 // @dev: temporarily uncomment this to force check etag and redownload if changed
