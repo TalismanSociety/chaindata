@@ -46,8 +46,6 @@ export const fetchEthTokens = async () => {
 
   const tokensByNetwork = groupBy(prevEthTokens, (t) => t.networkId)
 
-  console.log('Include 5', allEthNetworkIds.includes('5'))
-
   // Need to process all networks even if they don't have an RPC, or native token wouldnt be generated
   const networksToUpdate = allEthNetworkIds.map(
     (networkId): FetchEthNetworkTokensArgs => ({
