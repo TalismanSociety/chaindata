@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 94 94">
+    <defs>
+        <linearGradient id="b" x1="10.493%" x2="92.253%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#091f2f"/>
+            <stop offset="100%" stop-color="#073c42"/>
+        </linearGradient>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#fff" stop-opacity=".15"/>
+            <stop offset="99.639%" stop-color="#fff" stop-opacity=".05"/>
+        </linearGradient>
+        <linearGradient id="c" x1="10.493%" x2="92.253%" y1="4.88%" y2="95.12%">
+            <stop offset="0%" stop-color="#0093ed"/>
+            <stop offset="100%" stop-color="#00f3ab"/>
+        </linearGradient>
+        <filter id="e" width="103.5%" height="103.6%" x="-1.7%" y="-1.8%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation=".5"/>
+            <feOffset dx="1" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+        </filter>
+        <path id="d" d="M49.85 61.972q6.155.428 11.539 2.457 2.818 1.46 5.637 2.091l-1.56 8.09a.48.48 0 0 1-.472.39H53.937a.24.24 0 0 1-.23-.171Zm-5.617-.063-3.862 12.92a.24.24 0 0 1-.23.171H29.084a.48.48 0 0 1-.471-.388l-1.579-8.125a15.2 15.2 0 0 0 4.577-2.058q5.854-2.207 12.622-2.52M29.061 20a.24.24 0 0 1 .237.201l5.223 31.892a22.4 22.4 0 0 0-2.91 2.05q-3.162 1.944-6.506 2.418l-7.05-36.275a.24.24 0 0 1 .236-.286Zm46.648 0a.24.24 0 0 1 .236.285l-6.993 36.253q-3.444-.498-7.563-2.395a23 23 0 0 0-1.956-1.453l5.322-32.489a.24.24 0 0 1 .237-.201ZM50.132 32.196a.48.48 0 0 1 .458.336l5.824 18.49Q51.944 49 46.5 49q-4.723 0-8.71 1.52l5.646-17.988a.48.48 0 0 1 .458-.336Z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="93" height="93" x=".5" y=".5" fill="url(#b)" stroke="url(#a)" rx="24"/>
+        <g fill-rule="nonzero">
+            <use xlink:href="#d" fill="url(#c)"/>
+            <use xlink:href="#d" fill="#000" filter="url(#e)"/>
+        </g>
+    </g>
+</svg>
