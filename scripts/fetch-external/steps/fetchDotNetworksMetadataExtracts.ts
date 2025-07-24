@@ -3,7 +3,14 @@ import { PromisePool } from '@supercharge/promise-pool'
 import { BALANCE_MODULES, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
 import { TokenType } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
-import { decAnyMetadata, getDynamicBuilder, getLookupFn, UnifiedMetadata, unifyMetadata } from '@talismn/scale'
+import {
+  decAnyMetadata,
+  getDynamicBuilder,
+  getLookupFn,
+  getMetadataVersion,
+  UnifiedMetadata,
+  unifyMetadata,
+} from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
 
 import {
@@ -121,6 +128,9 @@ const fetchMetadataExtract = async ({
 
   const provider = getRpcProvider(rpcs)
 
+  // used for debug logging if decAnyMetadata fails
+  let debug_metadata_version = null
+
   try {
     await provider.isReady
 
@@ -128,6 +138,11 @@ const fetchMetadataExtract = async ({
       (method, params) => provider.send(method, params),
       false, // do not allow fallback, though it will fallback if RPC responds that Metadata runtime api doesn't exist
     )
+
+    try {
+      // used for debug logging if decAnyMetadata fails
+      debug_metadata_version = getMetadataVersion(metadataRpc)
+    } catch {}
 
     const metadata = unifyMetadata(decAnyMetadata(metadataRpc))
 
@@ -159,8 +174,11 @@ const fetchMetadataExtract = async ({
     )
   } catch (cause) {
     // decAnyMetadata throws null if metadata version is unsupported
-    if (cause === null) console.warn('Unsupported metadata version on network', network.id)
-    throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}`, { cause })
+    if (cause === null) {
+      const version = debug_metadata_version ?? 'FAILED TO DECODE'
+      console.warn(`Unsupported metadata version (${version}) on network`, network.id)
+    }
+    throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}: ${(cause as any)?.cause}`, { cause })
   } finally {
     await provider.disconnect()
   }
