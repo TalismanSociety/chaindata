@@ -6,6 +6,8 @@ import { buildEthereumTokens } from './buildEthereumTokens'
 import { buildPolkadotMiniMetadatas } from './buildPolkadotMiniMetadatas'
 import { buildPolkadotNetworks } from './buildPolkadotNetworks'
 import { buildPolkadotTokens } from './buildPolkadotTokens'
+import { buildSolanaNetworks } from './buildSolanaNetworks'
+import { buildSolanaTokens } from './buildSolanaTokens'
 import { cleanupOutputs } from './cleanupOutputs'
 
 export const buildSteps: Array<() => Promise<void> | void> = [
@@ -17,6 +19,9 @@ export const buildSteps: Array<() => Promise<void> | void> = [
 
   buildEthereumNetworks,
   buildEthereumTokens,
+
+  buildSolanaNetworks,
+  buildSolanaTokens,
 
   addThemeColors,
   buildConsolidatedData,

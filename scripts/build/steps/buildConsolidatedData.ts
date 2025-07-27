@@ -17,9 +17,11 @@ import {
   FILE_OUTPUT_NETWORKS_ALL,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_NETWORKS_POLKADOT,
+  FILE_OUTPUT_NETWORKS_SOLANA,
   FILE_OUTPUT_TOKENS_ALL,
   FILE_OUTPUT_TOKENS_ETHEREUM,
   FILE_OUTPUT_TOKENS_POLKADOT,
+  FILE_OUTPUT_TOKENS_SOLANA,
 } from '../../shared/constants'
 import { parseJsonFile } from '../../shared/parseFile'
 import { writeJsonFile } from '../../shared/writeFile'
@@ -29,12 +31,14 @@ const MiniMetadatasFileSchema = z.array(AnyMiniMetadataSchema)
 export const buildConsolidatedData = async () => {
   const ethTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_ETHEREUM)
   const dotTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_POLKADOT)
-  const allTokens = ethTokens.concat(...dotTokens)
+  const solTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_SOLANA)
+  const allTokens = [...ethTokens, ...dotTokens, ...solTokens]
   await writeJsonFile(FILE_OUTPUT_TOKENS_ALL, allTokens, { schema: z.array(TokenSchema) })
 
   const ethNetworks = parseJsonFile<Network[]>(FILE_OUTPUT_NETWORKS_ETHEREUM)
   const dotNetworks = parseJsonFile<Network[]>(FILE_OUTPUT_NETWORKS_POLKADOT)
-  const allNetworks = ethNetworks.concat(...dotNetworks)
+  const solNetworks = parseJsonFile<Network[]>(FILE_OUTPUT_NETWORKS_SOLANA)
+  const allNetworks = [...ethNetworks, ...dotNetworks, ...solNetworks]
   await writeJsonFile(FILE_OUTPUT_NETWORKS_ALL, allNetworks, { schema: z.array(NetworkSchema) })
 
   const networksById = keyBy(allNetworks, (n) => n.id)
