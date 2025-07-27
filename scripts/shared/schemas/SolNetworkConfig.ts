@@ -1,5 +1,5 @@
-import { EvmErc20TokenConfigSchema, EvmUniswapV2TokenConfigSchema, SolSplTokenConfigSchema } from '@talismn/balances'
-import { EthNetworkSchema, NetworkBaseSchema, SolNetworkSchema } from '@talismn/chaindata-provider'
+import { SolSplTokenConfigSchema } from '@talismn/balances'
+import { NetworkBaseSchema, SolNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 const SolTokensConfigSchema = z.strictObject({

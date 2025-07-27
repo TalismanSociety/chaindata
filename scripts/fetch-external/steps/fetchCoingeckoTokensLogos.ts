@@ -11,11 +11,13 @@ import {
   COINGECKO_LOGO_DOWNLOAD_LIMIT,
   FILE_DOT_TOKENS_PREBUILD,
   FILE_ETH_TOKENS_PREBUILD,
+  FILE_SOL_TOKENS_PREBUILD,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import { parseJsonFile } from '../../shared/parseFile'
 import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
+import { SolTokensPreBuildFileSchema } from '../../shared/schemas/SolTokensPreBuild'
 
 const INVALID_IMAGE_COINGECKO_IDS = [
   'vibingcattoken',
@@ -73,15 +75,33 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'proof-of-memes-pomchain',
   'rice-2',
   'moo',
+  'nostalgia',
+  'clippy',
+  'war-of-meme',
+  'nutflex',
+  'gnom',
+  'pepe-sora-ai',
+  'solanapepe',
+  'pepetopia',
+  'moonke',
+  'paje-etdev-company',
+  'bonk-of-america',
+  'bios-2',
+  'mr-beast-dog',
+  'myre-the-dog',
+  '-7',
+  'lantern-staked-sol',
 ]
 
 export const fetchCoingeckoTokensLogos = async () => {
   const dotTokens = parseJsonFile(FILE_DOT_TOKENS_PREBUILD, DotTokensPreBuildFileSchema)
   const ethTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
+  const solTokens = parseJsonFile(FILE_SOL_TOKENS_PREBUILD, SolTokensPreBuildFileSchema)
 
   const allCoingeckoIds = uniq([
     ...dotTokens.map((token) => token.coingeckoId).filter((id): id is string => !!id),
     ...ethTokens.map((token) => token.coingeckoId).filter((id): id is string => !!id),
+    ...solTokens.map((token) => token.coingeckoId).filter((id): id is string => !!id),
   ])
 
   const validCoingeckoIds = allCoingeckoIds.filter((coingeckoId) => !INVALID_IMAGE_COINGECKO_IDS.includes(coingeckoId))

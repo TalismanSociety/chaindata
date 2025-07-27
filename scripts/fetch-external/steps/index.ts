@@ -11,6 +11,7 @@ import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchKnownEvmNetworksCoin
 import { fetchKnownEvmNetworksLogos } from './fetchKnownEvmNetworksLogos'
 import { fetchKnownEvmTokens } from './fetchKnownEvmTokens'
 import { fetchNovasamaMetadataPortalUrls } from './fetchNovasamaMetadataPortalUrls'
+import { fetchSolTokens } from './fetchSolTokens'
 import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Promise<void> | void> = [
@@ -26,6 +27,7 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   fetchDotNetworksMetadataExtracts,
   fetchDotTokens,
   fetchEthTokens,
+  fetchSolTokens,
   fetchCoingeckoTokensLogos,
   fetchCoingeckoTokenNames,
 ]

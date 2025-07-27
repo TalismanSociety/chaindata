@@ -42,9 +42,11 @@ export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
 export const FILE_DOT_TOKENS_PREBUILD = 'data/cache/polkadot-tokens-prebuild.json'
 export const FILE_ETH_TOKENS_PREBUILD = 'data/cache/ethereum-tokens-prebuild.json'
+export const FILE_SOL_TOKENS_PREBUILD = 'data/cache/solana-tokens-prebuild.json'
 
-export const FILE_MODULE_CACHE_ERC20 = 'data/cache/module-cache-evm-erc20.json'
-export const FILE_MODULE_CACHE_UNISWAPV2 = 'data/cache/module-cache-evm-uniswapv2.json'
+export const FILE_MODULE_CACHE_EVM_ERC20 = 'data/cache/module-cache-evm-erc20.json'
+export const FILE_MODULE_CACHE_EVM_UNISWAPV2 = 'data/cache/module-cache-evm-uniswapv2.json'
+export const FILE_MODULE_CACHE_SOL_SPL = 'data/cache/module-cache-sol-spl.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds
