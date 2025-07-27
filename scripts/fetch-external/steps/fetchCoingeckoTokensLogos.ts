@@ -67,6 +67,12 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'america-party-4',
   'tinkernet',
   'doll-fantasy-token',
+  'redlight-chain',
+  'hoo-token',
+  'empire-capital-token',
+  'proof-of-memes-pomchain',
+  'rice-2',
+  'moo',
 ]
 
 export const fetchCoingeckoTokensLogos = async () => {
