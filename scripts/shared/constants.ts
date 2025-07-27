@@ -17,6 +17,7 @@ export const DIR_OUTPUT = 'pub/v4'
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
 
+export const FILE_INPUT_NETWORKS_SOLANA = 'data/networks-solana.yaml'
 export const FILE_INPUT_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
 export const FILE_INPUT_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
 export const FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/ethereum-known-networks-overrides.yaml'
