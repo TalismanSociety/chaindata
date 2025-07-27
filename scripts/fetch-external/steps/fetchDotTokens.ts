@@ -1,6 +1,7 @@
 import { PromisePool } from '@supercharge/promise-pool'
 import { BALANCE_MODULES, deriveMiniMetadataId } from '@talismn/balances'
-import { DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
+import { ChainConnectorDotStub, IChainConnectorDot } from '@talismn/chain-connectors'
+import { DotNetwork, DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
 import toPairs from 'lodash/toPairs'
@@ -13,7 +14,6 @@ import {
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
-import { getChainConnectorStub } from '../../shared/getChainConnector'
 import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
@@ -122,7 +122,7 @@ const fetchDotNetworkTokens = async ({
   try {
     await provider.isReady
 
-    const connector = getChainConnectorStub(provider)
+    const connector = new ChainConnectorDotStub(network as DotNetwork)
 
     const newTokens: Record<string, any> = {}
 
