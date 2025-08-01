@@ -44,7 +44,6 @@ export const buildSolanaNetworks = async () => {
         return false
       }
       return true
-      //  return SolNetworkSchema.safeParse(network).success
     })
 
   await writeJsonFile(FILE_OUTPUT_NETWORKS_SOLANA, solNetworks, {
