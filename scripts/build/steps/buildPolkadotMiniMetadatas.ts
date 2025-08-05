@@ -13,6 +13,7 @@ export const buildPolkadotMiniMetadatas = async () => {
 
   const miniMetadatas = metadataExtracts
     .flatMap((extract) => values(extract.miniMetadatas))
+    .filter((miniMetadata) => !!miniMetadata)
     .sort((a, b) => a.id.localeCompare(b.id))
 
   checkDuplicates(miniMetadatas)
