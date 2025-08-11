@@ -1,10 +1,10 @@
 {
   "id": "239",
   "isTestnet": false,
-  "sortIndex": 1044,
+  "sortIndex": 1049,
   "name": "TAC Mainnet",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#904f92",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/239.webp",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://explorer.tac.build",
@@ -20,7 +20,55 @@
       "moduleConfig": {
         "symbol": "TAC",
         "decimals": 18,
+        "coingeckoId": "tac",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "LBTC",
+            "coingeckoId": "lombard-staked-btc",
+            "contractAddress": "0xecac9c5f704e954931349da37f60e39f515c11c1",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lombard-staked-btc.webp"
+          },
+          {
+            "symbol": "TON",
+            "coingeckoId": "tac-bridged-ton-tac",
+            "contractAddress": "0xb76d91340f5ce3577f0a056d29f6e3eb4e88b140",
+            "decimals": 9,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "USD₮",
+            "coingeckoId": "tac-bridged-usdt-tac",
+            "contractAddress": "0xaf988c3f7cb2aceabb15f96b19388a259b6c438f",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "WETH",
+            "coingeckoId": "tac-bridged-weth-tac",
+            "contractAddress": "0x61d66bc21fed820938021b06e9b2291f3fb91945",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "WTAC",
+            "coingeckoId": "wrapped-tac",
+            "contractAddress": "0xb63b9f0eb4a6e6f191529d71d4d88cc8900df2c9",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
       }
     }
   ],

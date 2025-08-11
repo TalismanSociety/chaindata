@@ -1,10 +1,10 @@
 {
   "id": "31612",
   "isTestnet": false,
-  "sortIndex": 681,
+  "sortIndex": 684,
   "name": "Mezo",
   "themeColor": "#ff004d",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/mezo.webp",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/31612.webp",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://explorer.mezo.org",
@@ -29,7 +29,23 @@
       "moduleConfig": {
         "symbol": "BTC",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "wrapped-bitcoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-bitcoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "MUSD",
+            "coingeckoId": "mezo-usd",
+            "contractAddress": "0xdd468a1ddc392dcdbef6db6e34e89aa338f9f186",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mezo-usd.webp"
+          }
+        ]
       }
     }
   ],

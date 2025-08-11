@@ -1,10 +1,10 @@
 {
   "id": "1300",
   "isTestnet": false,
-  "sortIndex": 450,
+  "sortIndex": 452,
   "name": "Glue Mainnet",
-  "themeColor": "#05db4a",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/glue.svg",
+  "themeColor": "#ffffff",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/1300.webp",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://explorer.glue.net",
@@ -20,7 +20,39 @@
       "moduleConfig": {
         "symbol": "GLUE",
         "decimals": 18,
+        "coingeckoId": "glue-2",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "WGLUE",
+            "coingeckoId": "glue",
+            "contractAddress": "0x9a1691d500c54e1d79df2347d170987aa3e527ac",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/glue.webp"
+          },
+          {
+            "symbol": "HOSICO",
+            "coingeckoId": "hosico-cat",
+            "contractAddress": "0x8f799534708044e27ec8f834edca4e90a81a527d",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-glue",
+            "contractAddress": "0xee45ed3f6c675f319bb9de62991c1e78b484e0b8",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
       }
     }
   ],
