@@ -221,7 +221,7 @@ export const addEvmNetworks = async () => {
         moduleConfig,
       })),
       balancesMetadata: [],
-      isDefault: false,
+      isDefault: knownEvmNetwork.isDefault ?? false,
       forceScan: knownEvmNetwork.forceScan ?? false,
       preserveGasEstimate: knownEvmNetwork.preserveGasEstimate ?? false,
     }
