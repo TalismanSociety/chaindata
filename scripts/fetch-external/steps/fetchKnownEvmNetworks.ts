@@ -1,10 +1,9 @@
-import keyBy from 'lodash/keyBy'
-import * as viemChains from 'viem/chains'
 import { z } from 'zod/v4'
 
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { KnownEthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { EthereumListsChain } from '../../shared/types'
+import { VIEM_CHAINS } from '../../shared/viemChains'
 import { writeJsonFile } from '../../shared/writeFile'
 
 const IGNORED_CHAINS = [
@@ -15,7 +14,7 @@ const IGNORED_CHAINS = [
   31337, // GoChain testnet - same ID as Anvil and Hardhat, which are both here to stay.
 
   128, // Huobi ECO Chain Mainnet - public RPCS are not working
-  999, // Zora Goerli - public RPCS are not working
+  999, // This is currently used by Hyperliquid, but viem think its Zora goerli and ethereum-lists thinks its WanChain Testnet
 ]
 
 const isValidRpcUrl = (rpcUrl: string) => {
@@ -47,8 +46,6 @@ export const fetchKnownEvmNetworks = async () => {
   const response = await fetch('https://chainid.network/chains.json')
   const chainsList = (await response.json()) as Array<EthereumListsChain>
 
-  const viemChainById = keyBy(viemChains, (c) => String(c.id)) as Record<string, viemChains.Chain>
-
   const knownEvmNetworks = chainsList
     .filter((chain) => !!chain.chainId)
     .filter(isAllowedChain)
@@ -56,7 +53,7 @@ export const fetchKnownEvmNetworks = async () => {
     .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
     .map((chain) => {
       const id = chain.chainId.toString()
-      const viemChain = viemChainById[id]
+      const viemChain = VIEM_CHAINS[id]
       const viemRpcs = viemChain?.rpcUrls?.default?.http ?? []
 
       const evmNetwork: Partial<KnownEthNetworkConfig> & { id: string } = {

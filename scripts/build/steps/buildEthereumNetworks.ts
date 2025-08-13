@@ -3,7 +3,7 @@ import { type Dictionary } from 'lodash'
 import fromPairs from 'lodash/fromPairs'
 import keyBy from 'lodash/keyBy'
 import uniq from 'lodash/uniq'
-import * as viemChains from 'viem/chains'
+import { Chain } from 'viem'
 import { z } from 'zod/v4'
 
 import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
@@ -20,6 +20,7 @@ import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
 import { KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import { validateDebug } from '../../shared/validate'
+import { VIEM_CHAINS } from '../../shared/viemChains'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildEthereumNetworks = async () => {
@@ -30,13 +31,12 @@ export const buildEthereumNetworks = async () => {
 
   const ethNetworkConfigById = keyBy(ethNetworksConfig, (c) => String(c.id))
   const knownEthNetworkById = keyBy(knownEthNetworks, (c) => String(c.id))
-  const viemChainById = keyBy(viemChains, (c) => String(c.id))
 
   const allEthNetworkIds = [
     ...new Set([
       ...Object.keys(ethNetworkConfigById),
       ...Object.keys(knownEthNetworkById),
-      ...Object.keys(viemChainById),
+      ...Object.keys(VIEM_CHAINS),
     ]),
   ].sort((a, b) => Number(a) - Number(b))
 
@@ -44,7 +44,7 @@ export const buildEthereumNetworks = async () => {
     .map((id) => {
       const config = ethNetworkConfigById[id]
       const knownEvmNetwork = knownEthNetworkById[id]
-      const viemChain = viemChainById[id]
+      const viemChain = VIEM_CHAINS[id]
 
       return consolidateEthNetwork(config, knownEvmNetwork, viemChain, dicKnownEthNetworksIcons)
     })
@@ -60,7 +60,7 @@ export const buildEthereumNetworks = async () => {
 const consolidateEthNetwork = (
   config: EthNetworkConfig | undefined,
   knownEvmNetwork: KnownEthNetworkConfig | undefined,
-  viemChain: viemChains.Chain | undefined,
+  viemChain: Chain | undefined,
   dicIcons: Dictionary<string>,
 ): EthNetwork | null => {
   if (!config && !knownEvmNetwork && !viemChain) return null
@@ -121,6 +121,8 @@ const consolidateEthNetwork = (
     id,
     nativeCurrency,
   )
+
+  if (id === '999') console.log({ config, knownEvmNetwork, viemChain })
 
   const network: EthNetwork = {
     id,
