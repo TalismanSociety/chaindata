@@ -12,6 +12,7 @@ import { getAssetPathFromUrl } from '../../shared/assetUrl'
 import {
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_NETWORKS_POLKADOT,
+  FILE_OUTPUT_NETWORKS_SOLANA,
   PROCESS_CONCURRENCY,
 } from '../../shared/constants'
 import { parseJsonFile } from '../../shared/parseFile'
@@ -22,6 +23,7 @@ const DEFAULT_THEME_COLOR = '#505050'
 export const addThemeColors = async () => {
   await updateNetworksFile(FILE_OUTPUT_NETWORKS_POLKADOT)
   await updateNetworksFile(FILE_OUTPUT_NETWORKS_ETHEREUM)
+  await updateNetworksFile(FILE_OUTPUT_NETWORKS_SOLANA)
 }
 
 const NetworksFileSchema = z.array(NetworkSchema)

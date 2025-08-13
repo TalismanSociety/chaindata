@@ -12,11 +12,12 @@ export const GITHUB_REPO = 'chaindata'
 export const GITHUB_BRANCH = execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
-export const DIR_OUTPUT = 'pub/v4'
+export const DIR_OUTPUT = 'pub/v5'
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
 
+export const FILE_INPUT_NETWORKS_SOLANA = 'data/networks-solana.yaml'
 export const FILE_INPUT_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
 export const FILE_INPUT_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
 export const FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES = 'data/ethereum-known-networks-overrides.yaml'
@@ -24,8 +25,10 @@ export const FILE_INPUT_COINGECKO_OVERRIDES = 'data/coingecko-overrides.yaml'
 
 export const FILE_OUTPUT_TOKENS_POLKADOT = DIR_OUTPUT + '/tokens-polkadot.json'
 export const FILE_OUTPUT_TOKENS_ETHEREUM = DIR_OUTPUT + '/tokens-ethereum.json'
+export const FILE_OUTPUT_TOKENS_SOLANA = DIR_OUTPUT + '/tokens-solana.json'
 export const FILE_OUTPUT_TOKENS_ALL = DIR_OUTPUT + '/tokens.json'
 export const FILE_OUTPUT_NETWORKS_POLKADOT = DIR_OUTPUT + '/networks-polkadot.json'
+export const FILE_OUTPUT_NETWORKS_SOLANA = DIR_OUTPUT + '/networks-solana.json'
 export const FILE_OUTPUT_NETWORKS_ETHEREUM = DIR_OUTPUT + '/networks-ethereum.json'
 export const FILE_OUTPUT_NETWORKS_ALL = DIR_OUTPUT + '/networks.json'
 export const FILE_OUTPUT_MINI_METADATAS = DIR_OUTPUT + '/mini-metadatas.json'
@@ -35,15 +38,18 @@ export const FILE_OUTPUT_CHAINDATA_MINIFIED = DIR_OUTPUT + '/chaindata.min.json'
 export const FILE_RPC_HEALTH_POLKADOT = 'data/generated/rpc-health-polkadot.json'
 export const FILE_RPC_HEALTH_ETHEREUM = 'data/generated/rpc-health-ethereum.json'
 export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
+export const FILE_NETWORKS_SPECS_SOLANA = 'data/cache/solana-network-specs.json'
 export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'
 export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-portal-urls.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
 export const FILE_DOT_TOKENS_PREBUILD = 'data/cache/polkadot-tokens-prebuild.json'
 export const FILE_ETH_TOKENS_PREBUILD = 'data/cache/ethereum-tokens-prebuild.json'
+export const FILE_SOL_TOKENS_PREBUILD = 'data/cache/solana-tokens-prebuild.json'
 
-export const FILE_MODULE_CACHE_ERC20 = 'data/cache/module-cache-evm-erc20.json'
-export const FILE_MODULE_CACHE_UNISWAPV2 = 'data/cache/module-cache-evm-uniswapv2.json'
+export const FILE_MODULE_CACHE_EVM_ERC20 = 'data/cache/module-cache-evm-erc20.json'
+export const FILE_MODULE_CACHE_EVM_UNISWAPV2 = 'data/cache/module-cache-evm-uniswapv2.json'
+export const FILE_MODULE_CACHE_SOL_SPL = 'data/cache/module-cache-sol-spl.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

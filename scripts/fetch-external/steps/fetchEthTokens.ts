@@ -1,6 +1,7 @@
 import { PromisePool } from '@supercharge/promise-pool'
 import { BALANCE_MODULES } from '@talismn/balances'
-import { EthToken, NetworkId, Token, TokenId, TokenSchema, TokenType } from '@talismn/chaindata-provider'
+import { ChainConnectorEthStub } from '@talismn/chain-connectors'
+import { EthNetwork, EthToken, NetworkId, Token, TokenId, TokenSchema, TokenType } from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
@@ -9,10 +10,9 @@ import values from 'lodash/values'
 import {
   FILE_ETH_TOKENS_PREBUILD,
   FILE_INPUT_NETWORKS_ETHEREUM,
-  FILE_MODULE_CACHE_ERC20,
-  FILE_MODULE_CACHE_UNISWAPV2,
+  FILE_MODULE_CACHE_EVM_ERC20,
+  FILE_MODULE_CACHE_EVM_UNISWAPV2,
 } from '../../shared/constants'
-import { getChainConnectorEvm } from '../../shared/getChainConnectorEvm'
 import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
@@ -30,8 +30,8 @@ export const fetchEthTokens = async () => {
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const knownEthNetworks = getConsolidatedKnownEthNetworks()
 
-  const moduleCacheErc20 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_ERC20)
-  const moduleCacheUniswapV2 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_UNISWAPV2)
+  const moduleCacheErc20 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_EVM_ERC20)
+  const moduleCacheUniswapV2 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_EVM_UNISWAPV2)
 
   const caches: TokenCache = {
     'evm-erc20': keyBy(moduleCacheErc20, (t) => t.id),
@@ -88,11 +88,11 @@ export const fetchEthTokens = async () => {
   })
 
   await writeJsonFile(
-    FILE_MODULE_CACHE_ERC20,
+    FILE_MODULE_CACHE_EVM_ERC20,
     values(caches['evm-erc20']).sort((a, b) => a.id.localeCompare(b.id)),
   )
   await writeJsonFile(
-    FILE_MODULE_CACHE_UNISWAPV2,
+    FILE_MODULE_CACHE_EVM_UNISWAPV2,
     values(caches['evm-uniswapv2']).sort((a, b) => a.id.localeCompare(b.id)),
   )
 }
@@ -115,7 +115,8 @@ const fetchEthNetworkTokens = async ({
   caches,
 }: FetchEthNetworkTokensArgs): Promise<[NetworkId, Token[]]> => {
   try {
-    const connector = getChainConnectorEvm(assign({}, knownNetwork, configNetwork, { rpcs }))
+    const network = assign({}, knownNetwork, configNetwork, { rpcs }) as EthNetwork
+    const connector = new ChainConnectorEthStub(network)
 
     const newTokens: Record<string, any> = {}
 
