@@ -1,19 +1,16 @@
 {
   "id": "747474",
   "isTestnet": false,
-  "sortIndex": 577,
+  "sortIndex": 580,
   "name": "katana",
-  "themeColor": "#505050",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+  "themeColor": "#fafc13",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/747474.webp",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://explorer.katanarpc.com",
   "rpcs": [
     {
       "url": "https://rpc.katana.network"
-    },
-    {
-      "url": "https://rpc.katanarpc.com"
     }
   ],
   "substrateChain": null,
@@ -23,7 +20,111 @@
       "moduleConfig": {
         "symbol": "ETH",
         "decimals": 18,
+        "coingeckoId": "weth",
         "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "AUSD",
+            "coingeckoId": "agora-dollar",
+            "contractAddress": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/agora-dollar.webp"
+          },
+          {
+            "symbol": "POL",
+            "coingeckoId": "katana-bridged-pol-katana",
+            "contractAddress": "0xb24e3035d1fcbc0e43cf3143c3fd92e53df2009b",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "KITSU",
+            "coingeckoId": "kitsu",
+            "contractAddress": "0xfba805659e5050544e185cccdf592fd77f8c7210",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "LBTC",
+            "coingeckoId": "lombard-staked-btc",
+            "contractAddress": "0xecac9c5f704e954931349da37f60e39f515c11c1",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lombard-staked-btc.webp"
+          },
+          {
+            "symbol": "rUSD",
+            "coingeckoId": "reservoir-rusd",
+            "contractAddress": "0x09d4214c03d01f49544c0448dbe3a27f768f2b34",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/reservoir-rusd.webp"
+          },
+          {
+            "symbol": "vbETH",
+            "coingeckoId": "vaultbridge-bridged-eth-katana",
+            "contractAddress": "0xee7d8bcfb72bc1880d0cf19822eb0a2e6577ab62",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "vbUSDC",
+            "coingeckoId": "vaultbridge-bridged-usdc-katana",
+            "contractAddress": "0x203a662b0bd271a6ed5a60edfbd04bfce608fd36",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "vbUSDT",
+            "coingeckoId": "vaultbridge-bridged-usdt-katana",
+            "contractAddress": "0x2dca96907fde857dd3d816880a0df407eeb2d2f2",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "vbWBTC",
+            "coingeckoId": "vaultbridge-bridged-wbtc-katana",
+            "contractAddress": "0x0913da6da4b42f538b445599b46bb4622342cf52",
+            "decimals": 8,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          },
+          {
+            "symbol": "wsrUSD",
+            "coingeckoId": "wrapped-savings-rusd",
+            "contractAddress": "0x4809010926aec940b550d34a46a52739f996d75d",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-savings-rusd.webp"
+          },
+          {
+            "symbol": "uSOL",
+            "coingeckoId": "wrapped-solana-universal",
+            "contractAddress": "0x9b8df6e244526ab5f6e6400d331db28c8fdddb55",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-solana-universal.webp"
+          },
+          {
+            "symbol": "yUSD",
+            "coingeckoId": "yieldfi-ytoken",
+            "contractAddress": "0x4772d2e014f9fc3a820c444e3313968e9a5c8121",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yieldfi-ytoken.webp"
+          }
+        ]
       }
     }
   ],

@@ -4,7 +4,7 @@
   "sortIndex": 161,
   "name": "Botanix Mainnet",
   "themeColor": "#ffffff",
-  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/botanix.webp",
+  "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/3637.webp",
   "nativeToken": null,
   "tokens": [],
   "explorerUrl": "https://botanixscan.io",
@@ -20,7 +20,39 @@
       "moduleConfig": {
         "symbol": "BTC",
         "decimals": 18,
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+        "coingeckoId": "wrapped-bitcoin",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-bitcoin.webp"
+      }
+    },
+    {
+      "moduleType": "evm-erc20",
+      "moduleConfig": {
+        "tokens": [
+          {
+            "symbol": "pBTC",
+            "coingeckoId": "botanix-pegged-bitcoin",
+            "contractAddress": "0x0d2437f93fed6ea64ef01ccde385fb1263910c56",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/botanix-pegged-bitcoin.webp"
+          },
+          {
+            "symbol": "stBTC",
+            "coingeckoId": "botanix-staked-bitcoin",
+            "contractAddress": "0xf4586028ffda7eca636864f80f8a3f2589e33795",
+            "decimals": 18,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/botanix-staked-bitcoin.webp"
+          },
+          {
+            "symbol": "USDC.e",
+            "coingeckoId": "stargate-bridged-usdc-botanix",
+            "contractAddress": "0x29ee6138dd4c9815f46d34a4a1ed48f46758a402",
+            "decimals": 6,
+            "isDefault": false,
+            "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/unknown.svg"
+          }
+        ]
       }
     }
   ],

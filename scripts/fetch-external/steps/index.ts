@@ -13,6 +13,7 @@ import { fetchKnownEvmTokens } from './fetchKnownEvmTokens'
 import { fetchNovasamaMetadataPortalUrls } from './fetchNovasamaMetadataPortalUrls'
 import { fetchSolNetworksSpecs } from './fetchSolNetworkSpecs'
 import { fetchSolTokens } from './fetchSolTokens'
+import { fixForeignAssets } from './fixForeignAssets'
 import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Promise<void> | void> = [
@@ -30,6 +31,7 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   fetchDotTokens,
   fetchEthTokens,
   fetchSolTokens,
+  fixForeignAssets,
   fetchCoingeckoTokensLogos,
   fetchCoingeckoTokenNames,
 ]
