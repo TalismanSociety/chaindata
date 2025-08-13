@@ -1,7 +1,13 @@
 import { z } from 'zod/v4'
 
-import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
-import { KnownEthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { parseYamlFile } from '../../shared/parseFile'
+import {
+  EthNetworksConfigFileSchema,
+  KnownEthNetworkConfig,
+  KnownEthNetworkConfigSchema,
+  KnownEthNetworksFileSchema,
+} from '../../shared/schemas'
 import { EthereumListsChain } from '../../shared/types'
 import { VIEM_CHAINS } from '../../shared/viemChains'
 import { writeJsonFile } from '../../shared/writeFile'
@@ -88,6 +94,28 @@ export const fetchKnownEvmNetworks = async () => {
 
       return evmNetwork
     })
+
+  // add missing networks (hyperliquid) from manual config file
+  const manualEvmNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
+  const knownNetworkIds = knownEvmNetworks.map((network) => network.id)
+  for (const network of manualEvmNetworks.filter((n) => !knownNetworkIds.includes(n.id))) {
+    const parsed = KnownEthNetworkConfigSchema.safeParse({
+      id: network.id,
+      name: network.name,
+      isTestnet: network.isTestnet,
+      isDefault: network.isDefault,
+      nativeCurrency: network.nativeCurrency,
+      rpcs: network.rpcs,
+    })
+    if (parsed.success) {
+      console.log(
+        'Adding known network %s - %s from manual config (missing in chainlist)',
+        parsed.data.id,
+        parsed.data.name,
+      )
+      knownEvmNetworks.push(parsed.data)
+    } else console.warn('Failed to parse network', network.id, parsed.error)
+  }
 
   const validNetworks = knownEvmNetworks.sort((a, b) => Number(a.id) - Number(b.id))
 
