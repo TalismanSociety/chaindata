@@ -13,12 +13,14 @@ import { fetchKnownEvmTokens } from './fetchKnownEvmTokens'
 import { fetchNovasamaMetadataPortalUrls } from './fetchNovasamaMetadataPortalUrls'
 import { fetchSolNetworksSpecs } from './fetchSolNetworkSpecs'
 import { fetchSolTokens } from './fetchSolTokens'
+import { fetchVanaVrc20Tokens } from './fetchVanaVrc20Tokens'
 import { fixForeignAssets } from './fixForeignAssets'
 import { validateConfigFiles } from './validateConfigFiles'
 
 export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   validateConfigFiles,
   fetchKnownEvmNetworks,
+  fetchVanaVrc20Tokens,
   checkPolkadotRpcs,
   checkEthereumRpcs,
   fetchKnownEvmNetworksCoingeckoLogos,

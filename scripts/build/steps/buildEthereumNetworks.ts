@@ -122,8 +122,6 @@ const consolidateEthNetwork = (
     nativeCurrency,
   )
 
-  if (id === '999') console.log({ config, knownEvmNetwork, viemChain })
-
   const network: EthNetwork = {
     id,
     platform: 'ethereum',
