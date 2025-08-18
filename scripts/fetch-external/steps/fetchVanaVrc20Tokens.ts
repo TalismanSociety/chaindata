@@ -1,7 +1,11 @@
+import { access, writeFile } from 'fs/promises'
+import path from 'path'
+
 import { EvmErc20TokenConfig } from '@talismn/balances'
+import { toHex, Twox128 } from '@talismn/scale'
 import { z } from 'zod/v4'
 
-import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { DIR_ASSETS_TOKENS, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { gql } from '../../shared/gql'
 import { parseJsonFile } from '../../shared/parseFile'
 import { EthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
@@ -34,6 +38,33 @@ export const fetchVanaVrc20Tokens = async () => {
   const knownEvmNetworks = parseJsonFile<EthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
   const vanaIndex = knownEvmNetworks.findIndex(({ id }) => id === '1480')
   if (!vanaIndex) return void console.warn('Unable to find Vana with id 1480')
+
+  // cache token logos locally
+  for (const token of tokens) {
+    if (!token.logo) continue
+
+    const id = toHex(Twox128(new TextEncoder().encode(token.logo))).slice(0, 7)
+    const filetype = token.logo.slice(token.logo.lastIndexOf('.') + 1)
+    const filename = `${id}.${filetype}`
+    const filepath = path.join(DIR_ASSETS_TOKENS, 'vana', filename)
+
+    if (!(await exists(filepath))) {
+      try {
+        const response = await fetch(token.logo)
+        if (!response.ok) throw new Error()
+        const stream = response.body
+        if (!stream) throw new Error()
+        writeFile(filepath, stream)
+      } catch {}
+    }
+
+    if (!(await exists(filepath))) {
+      token.logo = undefined
+      continue
+    }
+
+    token.logo = `./${filepath}`
+  }
 
   const vana = knownEvmNetworks[vanaIndex]
   if (!vana.tokens) vana.tokens = {}
@@ -76,5 +107,14 @@ const validateNetwork = (network: { id: string }, networkSchema: z.ZodType<any>)
   if (!parsable.success) {
     console.error(parsable.error.message, { issues: parsable.error.issues, network })
     throw new Error(`Failed to parse network "${network.id}"`)
+  }
+}
+
+const exists = async (path: string) => {
+  try {
+    await access(path)
+    return true
+  } catch {
+    return false
   }
 }
