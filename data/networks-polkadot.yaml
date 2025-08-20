@@ -4378,16 +4378,17 @@
   isTestnet: true
   name: Zero Alphaville
   rpcs: []
-- id: zk-verify-testnet
-  isTestnet: true
-  name: zkVerify
-  rpcs:
-    - wss://testnet-rpc.zkverify.io
 - id: zkverify-volta-testnet
   isTestnet: true
   name: zkVerify Volta Testnet
   rpcs:
-    - wss://volta-rpc.zkverify.io
+    - wss://zkverify-volta-rpc.zkverify.io
+- id: vflow-volta-testnet
+  isTestnet: true
+  name: VFlow Volta Testnet
+  rpcs:
+    - wss://vflow-volta-rpc.zkverify.io
+  relay: zkverify-volta-testnet
 - id: regionx-kusama
   name: RegionX
   rpcs:
