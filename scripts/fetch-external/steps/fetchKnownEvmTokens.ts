@@ -7,8 +7,16 @@ import { KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchKnownEvmTokens = async () => {
-  const assetPlatforms = await fetchAssetPlatforms()
-  const coins = await fetchCoins()
+  try {
+    var assetPlatforms = await fetchAssetPlatforms()
+  } catch (cause) {
+    throw new Error('Failed to fetch coingecko asset platforms', { cause })
+  }
+  try {
+    var coins = await fetchCoins()
+  } catch (cause) {
+    throw new Error('Failed to fetch coingecko coins', { cause })
+  }
 
   const knownEvmNetworks = parseJsonFile(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
@@ -64,7 +72,11 @@ export const fetchKnownEvmTokens = async () => {
     }
   }
 
-  await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, {
-    schema: KnownEthNetworksFileSchema,
-  })
+  try {
+    await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, knownEvmNetworks, {
+      schema: KnownEthNetworksFileSchema,
+    })
+  } catch (cause) {
+    throw new Error(`Failed to write ${FILE_KNOWN_EVM_NETWORKS}`, { cause })
+  }
 }
