@@ -3849,6 +3849,9 @@
   rpcs: []
 - id: paseo-asset-hub
   isTestnet: true
+  # override to fix UnknownTransaction::CannotLookup error when signing TXs on this chain
+  # https://talismanwallet.notion.site/troubleshooting-the-checkmetadatahash-signed-extension
+  hasCheckMetadataHash: false
   name: Paseo Asset Hub
   blockExplorerUrls:
     - https://assethub-paseo.subscan.io/
