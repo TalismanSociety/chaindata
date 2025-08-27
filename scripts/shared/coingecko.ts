@@ -45,15 +45,28 @@ export const fetchAssetPlatforms = async () => {
 let COINS: CoingeckoCoin[] | null = null
 
 export const fetchCoins = async () => {
-  if (!COINS) {
-    const urlParams = new URLSearchParams()
-    urlParams.set('include_platform', 'true')
+  if (COINS) return COINS
 
-    const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams)
-    COINS = (await resCoins.json()) as CoingeckoCoin[]
+  let error = null
+  for (const attempt of [1, 2, 3, 4]) {
+    try {
+      const urlParams = new URLSearchParams()
+      urlParams.set('include_platform', 'true')
+
+      const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams)
+      COINS = (await resCoins.json()) as CoingeckoCoin[]
+      return COINS
+    } catch (cause) {
+      error = cause
+      const wait = { 1: 3_000, 2: 5_000, 3: 10_000 }[attempt]
+      if (wait) {
+        console.warn(`Failed to fetch coingecko coins (attempt ${attempt}): retrying in ${wait / 1000}s`)
+        await new Promise((resolve) => setTimeout(resolve, 3_000))
+      }
+    }
   }
 
-  return COINS
+  throw error
 }
 
 export const fetchCoinDetails = async (
