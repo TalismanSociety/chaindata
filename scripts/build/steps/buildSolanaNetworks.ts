@@ -20,6 +20,7 @@ export const buildSolanaNetworks = async () => {
   const specsById = keyBy(solNetworksSpecs, (n) => n.id)
 
   const solNetworks: SolNetwork[] = solNetworksConfig
+    .map(({ tokens, ...config }) => config) // remove tokens field
     .map((config) => {
       const nativeCurrency = assign(config.nativeCurrency, {
         logo: getTokenLogoUrl(
