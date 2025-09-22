@@ -3348,6 +3348,23 @@
         decimals: 18
         symbol: ZERO
         existentialDeposit: '0'
+- id: zkverify
+  name: zkVerify
+  nativeCurrency:
+    coingeckoId: zkverify
+  rpcs:
+    - wss://zkverify-rpc.zkverify.io
+  blockExplorerUrls:
+    - https://zkverify.subscan.io/
+- id: vflow
+  name: VFlow
+  nativeCurrency:
+    coingeckoId: zkverify
+  rpcs:
+    - wss://vflow-rpc.zkverify.io
+  blockExplorerUrls:
+    - https://vflow.subscan.io/
+  relay: zkverify
 - id: westend-testnet
   isTestnet: true
   name: Westend
@@ -4400,13 +4417,21 @@
 - id: zkverify-volta-testnet
   isTestnet: true
   name: zkVerify Volta Testnet
+  nativeCurrency:
+    name: tVFY
   rpcs:
     - wss://zkverify-volta-rpc.zkverify.io
+  blockExplorerUrls:
+    - https://zkverify-testnet.subscan.io/
 - id: vflow-volta-testnet
   isTestnet: true
   name: VFlow Volta Testnet
+  nativeCurrency:
+    name: tVFY
   rpcs:
     - wss://vflow-volta-rpc.zkverify.io
+  blockExplorerUrls:
+    - https://vflow-testnet.subscan.io/
   relay: zkverify-volta-testnet
 - id: regionx-kusama
   name: RegionX
