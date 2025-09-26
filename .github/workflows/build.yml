@@ -1,8 +1,10 @@
 name: Chaindata Build
 
 on:
-  # runs after each push to current branch
+  # runs after each push to main branch
   push:
+    branches:
+      - main
   # can be run manually from the `Actions` tab
   workflow_dispatch:
 
@@ -18,21 +20,8 @@ concurrency:
 
 jobs:
   build-main:
-    name: 'Build main'
+    name: "Build main"
     uses: ./.github/workflows/build-jobs.yml
-    if: github.ref_name == 'main'
-    secrets: inherit
-    # Sets permissions of the GITHUB_TOKEN to allow pushing commits
-    permissions:
-      contents: write
-      id-token: write
-
-  build-pr:
-    name: 'Build PR'
-    uses: ./.github/workflows/build-jobs.yml
-    if: github.ref_name != 'main'
-    with:
-      environment: 'pr-builds'
     secrets: inherit
     # Sets permissions of the GITHUB_TOKEN to allow pushing commits
     permissions:
