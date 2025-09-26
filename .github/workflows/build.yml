@@ -22,6 +22,19 @@ jobs:
   build-main:
     name: "Build main"
     uses: ./.github/workflows/build-jobs.yml
+    if: github.ref_name == 'main'
+    secrets: inherit
+    # Sets permissions of the GITHUB_TOKEN to allow pushing commits
+    permissions:
+      contents: write
+      id-token: write
+
+  build-pr:
+    name: "Build PR"
+    uses: ./.github/workflows/build-jobs.yml
+    if: github.ref_name != 'main'
+    with:
+      environment: "pr-builds"
     secrets: inherit
     # Sets permissions of the GITHUB_TOKEN to allow pushing commits
     permissions:
