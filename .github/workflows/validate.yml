@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   validate:
-    name: "Validate chaindata JSON format & schema"
+    name: "Validate chaindata YAML format & schema"
     timeout-minutes: 15
     runs-on: ubuntu-latest
 
@@ -28,7 +28,5 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Validate JSON format & schema
-        # prettier will exit with a non-zero status code if the JSON format is not valid
-        # ajv will exit with a non-zero status code if the JSON schema is not valid
+      - name: Validate YAML format & schema
         run: pnpm validate
