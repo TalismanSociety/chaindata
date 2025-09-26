@@ -644,6 +644,30 @@
   rpcs:
     - https://rpc.api.moonbase.moonbeam.network
     - https://moonbeam-alpha.api.onfinality.io/public
+- id: '1408'
+  name: VFlow
+  isDefault: false
+  nativeCurrency:
+    decimals: 18
+    symbol: VFY
+    name: zkVerify
+    coingeckoId: zkverify
+    mirrorOf: vflow:substrate-native
+  substrateChainId: vflow
+  rpcs:
+    - https://vflow-rpc.zkverify.io
+- id: '1409'
+  isTestnet: true
+  isDefault: false
+  name: VFlow Volta Testnet
+  nativeCurrency:
+    decimals: 18
+    symbol: tVFY
+    name: zkVerify Testnet
+    mirrorOf: vflow-volta-testnet:substrate-native
+  substrateChainId: vflow-volta-testnet
+  rpcs:
+    - https://vflow-volta-rpc.zkverify.io
 - id: '2021'
   name: Edgeware
   nativeCurrency:
