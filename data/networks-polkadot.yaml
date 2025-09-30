@@ -3228,6 +3228,8 @@
         coingeckoId: polkadot
       - assetId: '1984'
         coingeckoId: tether
+  # override to fix UnknownTransaction::CannotLookup error when signing TXs on this chain
+  # https://talismanwallet.notion.site/troubleshooting-the-checkmetadatahash-signed-extension
   hasCheckMetadataHash: false
 - id: xode
   name: Xode (Kusama)
@@ -3557,6 +3559,8 @@
   rpcs: []
 - id: bittensor-testnet
   isTestnet: true
+  # override to fix UnknownTransaction::CannotLookup error when signing TXs on this chain
+  # https://talismanwallet.notion.site/troubleshooting-the-checkmetadatahash-signed-extension
   hasCheckMetadataHash: false
   name: Bittensor Testnet
   rpcs:
@@ -3886,9 +3890,6 @@
   rpcs: []
 - id: paseo-asset-hub
   isTestnet: true
-  # override to fix UnknownTransaction::CannotLookup error when signing TXs on this chain
-  # https://talismanwallet.notion.site/troubleshooting-the-checkmetadatahash-signed-extension
-  hasCheckMetadataHash: false
   name: Paseo Asset Hub
   blockExplorerUrls:
     - https://assethub-paseo.subscan.io/
