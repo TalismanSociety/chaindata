@@ -1,5 +1,6 @@
 import {
   SubAssetsTokenConfigSchema,
+  SubDTaoTokenConfigSchema,
   SubForeignAssetsTokenConfigSchema,
   SubHydrationTokenConfigSchema,
   SubPsp22TokenConfigSchema,
@@ -14,6 +15,7 @@ const DotTokensConfigSchema = z.strictObject({
   'substrate-foreignassets': z.array(SubForeignAssetsTokenConfigSchema).optional(),
   'substrate-tokens': z.array(SubTokensTokenConfigSchema).optional(),
   'substrate-hydration': z.array(SubHydrationTokenConfigSchema).optional(),
+  'substrate-dtao': z.array(SubDTaoTokenConfigSchema).optional(),
 })
 
 export const DotNetworkConfigSchema = z.strictObject({
