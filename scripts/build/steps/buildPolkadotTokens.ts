@@ -59,7 +59,8 @@ const findTokenConfigByTokenId = (tokenId: TokenId, network: DotNetworkConfig) =
     case 'substrate-hydration':
       return network.tokens?.['substrate-hydration']?.find((t) => t.onChainId === parsed.onChainId)
     case 'substrate-dtao':
-      return network.tokens?.['substrate-dtao']?.find((t) => t.subnetId === parsed.subnetId)
+      // TODO remove any on next dep update
+      return network.tokens?.['substrate-dtao']?.find((t) => t.netuid === parsed.netuid)
     default:
       throw new Error(`Unknown token type: ${parsed.type} for tokenId: ${tokenId}`)
   }
