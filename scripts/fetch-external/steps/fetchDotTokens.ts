@@ -43,6 +43,7 @@ export const fetchDotTokens = async () => {
   const tokensByNetwork = groupBy(prevDotTokens, (t) => t.networkId)
 
   const networksToUpdate = dotNetworks
+    // .filter((n) => n.id === 'bittensor')
     .map((network) => ({
       network,
       miniMetadatas: metadataExtractsById[network.id]?.miniMetadatas,
@@ -166,6 +167,24 @@ const fetchDotNetworkTokens = async ({
           }
         }
 
+        if (network.id === 'bittensor' && mod.type === 'substrate-dtao') {
+          const bittensorCoingeckoIds = getBittensorCoingeckoIdsByAssetId(coins)
+          for (const [strNetuid, coingeckoId] of toPairs(bittensorCoingeckoIds)) {
+            const netuid = Number(strNetuid)
+            const existingToken = tokens.find((t) => t.netuid === netuid)
+            if (existingToken) {
+              // if token already exists, just update its coingeckoId
+              existingToken.coingeckoId = coingeckoId
+            } else {
+              // otherwise create a new token with the coingeckoId
+              tokens.push({
+                netuid,
+                coingeckoId,
+              })
+            }
+          }
+        }
+
         const moduleTokens: Token[] = await mod.fetchTokens({
           networkId: network.id,
           tokens: (mod.type === 'substrate-native'
@@ -221,6 +240,24 @@ const getHydrationCoingeckoIdsByAssetId = (coins: CoingeckoCoin[]): Record<strin
         if (isNaN(assetId)) throw new Error('Invalid assetId')
 
         return { ...acc, [assetId]: coin.id }
+      } catch {}
+    }
+
+    return acc
+  }, {})
+}
+
+const getBittensorCoingeckoIdsByAssetId = (coins: CoingeckoCoin[]): Record<string, string> => {
+  return coins.reduce((acc, coin) => {
+    const bittensorId = coin.platforms?.['bittensor']
+
+    if (bittensorId) {
+      try {
+        // check that we get a valid number
+        const netuid = Number(bittensorId.trim())
+        if (isNaN(netuid)) throw new Error('Invalid netuid')
+
+        return { ...acc, [netuid]: coin.id }
       } catch {}
     }
 
