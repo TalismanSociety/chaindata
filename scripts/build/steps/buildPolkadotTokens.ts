@@ -29,11 +29,27 @@ export const buildPolkadotTokens = async () => {
 
       return Object.assign({}, token, tokenConfig)
     })
-    .map((token) => ({
-      ...token,
+    // .map((token) => {
+    //   // fix logo
+    //   // if we have a coingeckoId, then ignore the default logo
+    //   const defaultLogo = token.type === 'substrate-dtao' && token.coingeckoId ? undefined : token.logo
+    //   const logo = getTokenLogoUrl(defaultLogo, token.coingeckoId, token.symbol) ?? token.logo
+
+    //   return { ...token, logo }
+    // })
+    .map((token) => {
       // fix logo
-      logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol),
-    }))
+      return { ...token, logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol) }
+    })
+    .map((token) => {
+      // force a default logo for dtao tokens that dont have a logo from coingecko
+      return !token.logo && token.type === 'substrate-dtao'
+        ? {
+            ...token,
+            logo: getTokenLogoUrl('./assets/tokens/dtao.svg', token.coingeckoId, token.symbol),
+          }
+        : token
+    })
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
   checkDuplicates(dotTokens)
