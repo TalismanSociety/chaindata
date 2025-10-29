@@ -29,14 +29,6 @@ export const buildPolkadotTokens = async () => {
 
       return Object.assign({}, token, tokenConfig)
     })
-    // .map((token) => {
-    //   // fix logo
-    //   // if we have a coingeckoId, then ignore the default logo
-    //   const defaultLogo = token.type === 'substrate-dtao' && token.coingeckoId ? undefined : token.logo
-    //   const logo = getTokenLogoUrl(defaultLogo, token.coingeckoId, token.symbol) ?? token.logo
-
-    //   return { ...token, logo }
-    // })
     .map((token) => {
       // fix logo
       return { ...token, logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol) }
