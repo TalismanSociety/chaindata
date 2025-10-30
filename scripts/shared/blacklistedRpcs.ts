@@ -96,6 +96,7 @@ const BLACKLISTED_RPC_URLS = [
   'https://rpc.xerom.org',
   'https://rpc.hydradx.cloud',
   'wss://rpc.hydradx.cloud',
+  'https://mainnet.base.org', // rate limited
 ].map((url) => url.replace(/\/$/, ''))
 
 const BLACKLISTED_HOSTS = BLACKLISTED_RPC_URLS.map((url) => new URL(url).host)
