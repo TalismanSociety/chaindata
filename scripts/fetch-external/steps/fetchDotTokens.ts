@@ -43,7 +43,6 @@ export const fetchDotTokens = async () => {
   const tokensByNetwork = groupBy(prevDotTokens, (t) => t.networkId)
 
   const networksToUpdate = dotNetworks
-    // .filter((n) => n.id === 'bittensor')
     .map((network) => ({
       network,
       miniMetadatas: metadataExtractsById[network.id]?.miniMetadatas,
