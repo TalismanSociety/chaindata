@@ -109,10 +109,14 @@
             }
           },
           "substrate-assets": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           },
           "substrate-psp22": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           },
           "substrate-tokens": {
             "type": "object",
@@ -123,10 +127,19 @@
             }
           },
           "substrate-foreignassets": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           },
           "substrate-hydration": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "substrate-dtao": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -375,6 +388,51 @@
                 }
               },
               "required": ["onChainId"],
+              "additionalProperties": false
+            }
+          },
+          "substrate-dtao": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "netuid": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                }
+              },
+              "required": ["netuid"],
               "additionalProperties": false
             }
           }

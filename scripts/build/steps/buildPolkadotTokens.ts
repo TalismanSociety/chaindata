@@ -29,11 +29,19 @@ export const buildPolkadotTokens = async () => {
 
       return Object.assign({}, token, tokenConfig)
     })
-    .map((token) => ({
-      ...token,
+    .map((token) => {
       // fix logo
-      logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol),
-    }))
+      return { ...token, logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol) }
+    })
+    .map((token) => {
+      // force a default logo for dtao tokens that dont have a logo from coingecko
+      return !token.logo && token.type === 'substrate-dtao'
+        ? {
+            ...token,
+            logo: getTokenLogoUrl('./assets/tokens/dtao.svg', token.coingeckoId, token.symbol),
+          }
+        : token
+    })
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
   checkDuplicates(dotTokens)
@@ -58,6 +66,9 @@ const findTokenConfigByTokenId = (tokenId: TokenId, network: DotNetworkConfig) =
       return network.tokens?.['substrate-foreignassets']?.find((t) => t.onChainId === parsed.onChainId)
     case 'substrate-hydration':
       return network.tokens?.['substrate-hydration']?.find((t) => t.onChainId === parsed.onChainId)
+    case 'substrate-dtao':
+      // TODO remove any on next dep update
+      return network.tokens?.['substrate-dtao']?.find((t) => t.netuid === parsed.netuid)
     default:
       throw new Error(`Unknown token type: ${parsed.type} for tokenId: ${tokenId}`)
   }

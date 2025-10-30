@@ -122,33 +122,35 @@
       },
       "contracts": {
         "type": "object",
-        "propertyNames": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": ["Erc20Aggregator", "Multicall3"]
-            },
-            {
-              "not": {}
-            }
-          ]
+        "properties": {
+          "Erc20Aggregator": {
+            "type": "string",
+            "pattern": "^0x[a-fA-F0-9]{40}$"
+          },
+          "Multicall3": {
+            "type": "string",
+            "pattern": "^0x[a-fA-F0-9]{40}$"
+          }
         },
-        "additionalProperties": {
-          "type": "string",
-          "pattern": "^0x[a-fA-F0-9]{40}$"
-        }
+        "additionalProperties": false
       },
       "balancesConfig": {
         "type": "object",
         "properties": {
           "evm-native": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           },
           "evm-erc20": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           },
           "evm-uniswapv2": {
-            "type": "null"
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
