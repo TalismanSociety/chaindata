@@ -48819,6 +48819,19 @@
     "shortName": "grvt-sepolia"
   },
   {
+    "id": "329",
+    "name": "VirBiCoin",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "VBC",
+      "name": "VBC"
+    },
+    "blockExplorerUrls": ["https://explorer.digitalregion.jp"],
+    "rpcs": ["https://rpc.digitalregion.jp"],
+    "icon": "vbc",
+    "shortName": "virbicoin"
+  },
+  {
     "id": "331",
     "isTestnet": true,
     "name": "Telos zkEVM Testnet",
@@ -49564,6 +49577,19 @@
     "shortName": "tCNT"
   },
   {
+    "id": "375",
+    "name": "zkXPLA Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ETH",
+      "name": "Ether"
+    },
+    "blockExplorerUrls": ["https://explorer.zkxpla.io"],
+    "rpcs": ["https://rpc.zkxpla.io"],
+    "icon": "xpla",
+    "shortName": "zkxpla"
+  },
+  {
     "id": "380",
     "isTestnet": true,
     "name": "ZKAmoeba Testnet",
@@ -50054,6 +50080,20 @@
     "rpcs": ["https://rpc.appchain.xyz/http"],
     "icon": "appchain",
     "shortName": "appchain"
+  },
+  {
+    "id": "475",
+    "isTestnet": true,
+    "name": "zkXPLA Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ETH",
+      "name": "Ether"
+    },
+    "blockExplorerUrls": ["https://testnet-explorer.zkxpla.io"],
+    "rpcs": ["https://testnet-rpc.zkxpla.io"],
+    "icon": "xpla",
+    "shortName": "zkxpla-testnet"
   },
   {
     "id": "478",
@@ -51667,7 +51707,12 @@
       "name": "Daily"
     },
     "blockExplorerUrls": ["https://explorer.mainnet.dailycrypto.net"],
-    "rpcs": ["https://rpc.mainnet.dailycrypto.net", "https://rpc.mainnet.dailycrypto.net"],
+    "rpcs": [
+      "https://rpc.mainnet.dailycrypto.net",
+      "https://rpc-2.mainnet.dailycrypto.net",
+      "https://rpc-3.mainnet.dailycrypto.net",
+      "https://rpc.mainnet.dailycrypto.net"
+    ],
     "icon": "daily",
     "shortName": "dly"
   },
@@ -51681,7 +51726,12 @@
       "name": "Daily"
     },
     "blockExplorerUrls": ["https://explorer.testnet.dailycrypto.net"],
-    "rpcs": ["https://rpc.testnet.dailycrypto.net", "https://rpc.testnet.dailycrypto.net"],
+    "rpcs": [
+      "https://rpc.testnet.dailycrypto.net",
+      "https://rpc-2.testnet.dailycrypto.net",
+      "https://rpc-3.testnet.dailycrypto.net",
+      "https://rpc.testnet.dailycrypto.net"
+    ],
     "icon": "daily",
     "shortName": "tdly"
   },
@@ -63578,7 +63628,7 @@
       "name": "Zeta",
       "coingeckoId": "zetachain"
     },
-    "blockExplorerUrls": ["https://explorer.zetachain.com"],
+    "blockExplorerUrls": ["https://zetascan.com"],
     "rpcs": [
       "https://zetachain-evm.blockpi.network/v1/rpc/public",
       "https://zetachain-mainnet.g.allthatnode.com/archive/evm",
@@ -63695,7 +63745,7 @@
       "symbol": "ZETA",
       "name": "Zeta"
     },
-    "blockExplorerUrls": ["https://athens.explorer.zetachain.com"],
+    "blockExplorerUrls": ["https://testnet.zetascan.com"],
     "rpcs": [
       "https://zetachain-athens-evm.blockpi.network/v1/rpc/public",
       "https://zetachain-testnet.public.blastapi.io",
@@ -74637,6 +74687,20 @@
     "rpcs": ["https://rpc-testnet.qubetics.work/"],
     "icon": "qubetics",
     "shortName": "Qubetics"
+  },
+  {
+    "id": "9030",
+    "isTestnet": true,
+    "name": "Qubetics Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "TICS",
+      "name": "Qubetics"
+    },
+    "blockExplorerUrls": ["https://ticsscan.com"],
+    "rpcs": ["https://rpc.qubetics.com", "https://evm-rpc-arch.qubetics.com", "https://evm-ws-arch.qubetics.com"],
+    "icon": "qubetics",
+    "shortName": "QubeticsMainnet"
   },
   {
     "id": "9069",
@@ -87691,6 +87755,33 @@
     "shortName": "FlammaMainnet"
   },
   {
+    "id": "55930",
+    "name": "DataHaven Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "HAVE",
+      "name": "HAVE"
+    },
+    "blockExplorerUrls": ["https://dhscan.io"],
+    "rpcs": ["https://services.datahaven-mainnet.network/mainnet"],
+    "icon": "datahaven",
+    "shortName": "datahaven"
+  },
+  {
+    "id": "55931",
+    "isTestnet": true,
+    "name": "DataHaven Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MOCK",
+      "name": "MOCK"
+    },
+    "blockExplorerUrls": ["https://testnet.dhscan.io"],
+    "rpcs": ["https://services.datahaven-testnet.network/testnet"],
+    "icon": "datahaven-testnet",
+    "shortName": "datahaven-testnet"
+  },
+  {
     "id": "56026",
     "name": "Lambda Chain Mainnet",
     "nativeCurrency": {
@@ -89834,6 +89925,19 @@
     "rpcs": ["https://mainnet-rpc.nordekscan.com"],
     "icon": "nordek",
     "shortName": "nordek"
+  },
+  {
+    "id": "81224",
+    "name": "Codex",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ETH",
+      "name": "Ether"
+    },
+    "blockExplorerUrls": ["https://explorer.codex.xyz"],
+    "rpcs": ["https://rpc.codex.xyz"],
+    "icon": "codex",
+    "shortName": "codex"
   },
   {
     "id": "81457",
@@ -92989,6 +93093,20 @@
     "shortName": "Blockfit"
   },
   {
+    "id": "202599",
+    "isTestnet": true,
+    "name": "JuChain Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "JU",
+      "name": "JU Testnet Token"
+    },
+    "blockExplorerUrls": ["https://testnet.juscan.io"],
+    "rpcs": ["https://testnet-rpc.juchain.org"],
+    "icon": "ju-test",
+    "shortName": "ju-test"
+  },
+  {
     "id": "202624",
     "name": "Jellie",
     "nativeCurrency": {
@@ -93027,6 +93145,19 @@
     "rpcs": ["https://auroria.rpc.stratisevm.com", "https://auroria.rpc.stratisevm.com"],
     "icon": "auroria",
     "shortName": "auroria"
+  },
+  {
+    "id": "210000",
+    "name": "JuChain Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "JU",
+      "name": "JU"
+    },
+    "blockExplorerUrls": ["https://juscan.io"],
+    "rpcs": ["https://rpc.juchain.org"],
+    "icon": "ju",
+    "shortName": "ju"
   },
   {
     "id": "210049",
@@ -94656,15 +94787,14 @@
   },
   {
     "id": "560000",
-    "isTestnet": true,
-    "name": "Hetu Testnet",
+    "name": "Hetu Mainnet",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "tETH",
-      "name": "tETH"
+      "symbol": "HETU",
+      "name": "HETU"
     },
-    "blockExplorerUrls": ["https://testchainv1.hetuscan.com"],
-    "rpcs": ["https://rpc.testchainv1.hetuscan.com"],
+    "blockExplorerUrls": ["https://scan.v1.hetu.org"],
+    "rpcs": ["https://rpc.va.hetu.org"],
     "shortName": "HETU"
   },
   {
@@ -95428,6 +95558,20 @@
     "rpcs": ["https://goerli.rpc.zklink.io"],
     "icon": "zklink-nova",
     "shortName": "zklink-nova-goerli"
+  },
+  {
+    "id": "812242",
+    "isTestnet": true,
+    "name": "Codex Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ETH",
+      "name": "Sepolia Ether"
+    },
+    "blockExplorerUrls": ["https://explorer.codex-stg.xyz"],
+    "rpcs": ["https://rpc.codex-stg.xyz"],
+    "icon": "codex-testnet",
+    "shortName": "codex-testnet"
   },
   {
     "id": "812397",
