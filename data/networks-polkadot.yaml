@@ -364,6 +364,7 @@
     - wss://astar-rpc.dwellir.com
     - wss://rpc.astar.network
     - wss://astar.public.curie.radiumblock.co/ws
+    - wss://astar.api.onfinality.io/public-ws
   relay: polkadot
   tokens:
     substrate-assets:
@@ -441,6 +442,7 @@
     - wss://avail.rpc.bountyblok.io
     - wss://avail-mainnet.public.blastapi.io/
     - wss://mainnet.avail-rpc.com/
+    - wss://avail.api.onfinality.io/public-ws
   registryTypes:
     AppId: Compact<u32>
     DataLookupItem:
@@ -887,12 +889,6 @@
         symbol: BIT
         coingeckoId: bit
         existentialDeposit: '0'
-- id: bitgreen
-  name: Bitgreen
-  oldPrefix: 42
-  rpcs:
-    - wss://mainnet.bitgreen.org
-  relay: polkadot
 - id: bittensor
   name: Bittensor
   nativeCurrency:
@@ -995,13 +991,14 @@
   name: Coinversation
   rpcs: []
   relay: polkadot
-- id: communeai
-  name: Commune AI
-  nativeCurrency:
-    symbol: COMAI
-    coingeckoId: commune-ai
-  rpcs:
-    - wss://commune-api-node-1.communeai.net
+# looks ded ?
+# - id: communeai
+#   name: Commune AI
+#   nativeCurrency:
+#     symbol: COMAI
+#     coingeckoId: commune-ai
+#   rpcs:
+#     - wss://commune-api-node-1.communeai.net
 - id: competitors-club
   name: Competitors Club
   rpcs: []
@@ -1176,6 +1173,7 @@
     - wss://rpc.crustnetwork.app
     - wss://rpc.crustnetwork.cc
     - wss://rpc.crustnetwork.xyz
+    - wss://crust.api.onfinality.io/public-ws
 - id: crust-parachain
   name: Crust
   nativeCurrency:
@@ -1308,6 +1306,7 @@
     - wss://frequency-rpc.dwellir.com
     - wss://0.rpc.frequency.xyz
     - wss://1.rpc.frequency.xyz
+    - wss://frequency-polkadot.api.onfinality.io/public-ws
   relay: polkadot
   blockExplorerUrls:
     - https://frequency.statescan.io/
@@ -2097,6 +2096,7 @@
   rpcs:
     - wss://wss-krest.peaq.network/
     - wss://krest.unitedbloc.com/
+    - wss://krest.api.onfinality.io/public-ws
   relay: kusama
 - id: kulupu
   name: Kulupu
@@ -2121,6 +2121,7 @@
     - wss://kusama-asset-hub-rpc.polkadot.io
     - wss://statemine.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/assethub
+    - wss://assethub-kusama.api.onfinality.io/public-ws
   relay: kusama
   tokens:
     substrate-assets:
@@ -2152,6 +2153,7 @@
     - wss://kusama-bridge-hub-rpc.polkadot.io
     - wss://bridgehub-kusama.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/bridgehub
+    - wss://bridgehub-kusama.api.onfinality.io/public-ws
   relay: kusama
 - id: kusama-coretime
   name: Kusama Coretime
@@ -2169,6 +2171,7 @@
     - wss://rpc-coretime-kusama.luckyfriday.io
     - wss://kusama-coretime-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/coretime
+    - wss://coretime-kusama.api.onfinality.io/public-ws
   relay: kusama
 - id: kusama-people
   name: Kusama People
@@ -2186,6 +2189,7 @@
     - wss://rpc-people-kusama.luckyfriday.io
     - wss://kusama-people-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/people
+    - wss://people-kusama.api.onfinality.io/public-ws
   relay: kusama
 - id: kusari
   name: Kusari
@@ -2294,6 +2298,7 @@
     - wss://wss.api.moonbeam.network
     - wss://moonbeam.public.curie.radiumblock.co/ws
     - wss://moonbeam.unitedbloc.com
+    - wss://moonbeam.api.onfinality.io/public-ws
   relay: polkadot
 - id: moonriver
   name: Moonriver
@@ -2306,6 +2311,7 @@
     - wss://wss.api.moonriver.moonbeam.network
     - wss://moonriver.public.curie.radiumblock.co/ws
     - wss://moonriver.unitedbloc.com
+    - wss://moonriver.api.onfinality.io/public-ws
   relay: kusama
 - id: moonsama
   name: Moonsama
@@ -2406,6 +2412,7 @@
   rpcs:
     - wss://peaq-rpc.dwellir.com
     - wss://peaq-rpc.publicnode.com
+    - wss://peaq.api.onfinality.io/public-ws
   relay: polkadot
 - id: pendulum
   name: Pendulum
@@ -2781,6 +2788,7 @@
     - wss://polkadot-asset-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/assethub
     - wss://statemint.public.curie.radiumblock.co/ws
+    - wss://statemint.api.onfinality.io/public-ws
   relay: polkadot
   tokens:
     substrate-assets:
@@ -2892,6 +2900,7 @@
     - wss://polkadot-bridge-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/bridgehub
     - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
+    - wss://bridgehub-polkadot.api.onfinality.io/public-ws
   relay: polkadot
 - id: polkadot-collectives
   name: Polkadot Collectives
@@ -2910,6 +2919,7 @@
     - wss://polkadot-collectives-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/collectives
     - wss://collectives.public.curie.radiumblock.co/ws
+    - wss://collectives.api.onfinality.io/public-ws
   relay: polkadot
 - id: polkadot-coretime
   name: Polkadot Coretime
@@ -2921,6 +2931,7 @@
     - wss://sys.ibp.network/coretime-polkadot
     - wss://coretime-polkadot.dotters.network
     - wss://polkadot-coretime-rpc.polkadot.io
+    - wss://coretime-polkadot.api.onfinality.io/public-ws
   relay: polkadot
 - id: polkadot-people
   name: Polkadot People
@@ -2934,6 +2945,7 @@
     - wss://rpc-people-polkadot.luckyfriday.io
     - wss://polkadot-people-rpc.polkadot.io
     - wss://people-polkadot.public.curie.radiumblock.co/ws
+    - wss://people-polkadot.api.onfinality.io/public-ws
   relay: polkadot
 - id: polkasmith
   name: PolkaSmith
@@ -3070,6 +3082,7 @@
     - wss://ws.mof.sora.org
     - wss://mof2.sora.org
     - wss://mof3.sora.org
+    - wss://sora.api.onfinality.io/public-ws
 - id: spanner
   name: Spanner
   rpcs: []
@@ -3412,6 +3425,7 @@
     - wss://westend.dotters.network
     - wss://westend-rpc.polkadot.io
     - wss://westend.public.curie.radiumblock.co/ws
+    - wss://westend.api.onfinality.io/public-ws
 - id: 3-dpass-testnet
   isTestnet: true
   name: 3DPass Testnet

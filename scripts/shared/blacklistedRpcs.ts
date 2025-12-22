@@ -97,6 +97,7 @@ const BLACKLISTED_RPC_URLS = [
   'https://rpc.hydradx.cloud',
   'wss://rpc.hydradx.cloud',
   'https://mainnet.base.org', // rate limited
+  'https://krest.unitedbloc.com', // flagged by some antivirus
 ].map((url) => url.replace(/\/$/, ''))
 
 const BLACKLISTED_HOSTS = BLACKLISTED_RPC_URLS.map((url) => new URL(url).host)
