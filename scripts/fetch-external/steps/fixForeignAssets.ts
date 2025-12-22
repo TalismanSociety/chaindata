@@ -15,31 +15,35 @@ export const fixForeignAssets = async () => {
   const ethTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
 
   for (const token of dotTokens.filter(isTokenSubForeignAssets)) {
-    const onChainId = papiParse<MultiLocation>(token.onChainId)
+    try {
+      const onChainId = papiParse<MultiLocation>(token.onChainId)
 
-    // Most foreign assets are registered without any metadata, making it so we default to 0 decimals.
-    // => lookup the target token and replicate its metadata.
-    if (
-      onChainId.interior.type === 'X2' &&
-      onChainId.interior.value[0].type === 'GlobalConsensus' &&
-      onChainId.interior.value[0].value.type === 'Ethereum' &&
-      onChainId.interior.value[1].type === 'AccountKey20'
-    ) {
-      const networkId = String(onChainId.interior.value[0].value.value.chain_id)
-      const contractAddress = onChainId.interior.value[1].value.key.asHex()
-      const targetToken = ethTokens
-        .filter(isTokenEvmErc20)
-        .find((t) => t.networkId === networkId && t.contractAddress === contractAddress)
+      // Most foreign assets are registered without any metadata, making it so we default to 0 decimals.
+      // => lookup the target token and replicate its metadata.
+      if (
+        onChainId.interior.type === 'X2' &&
+        onChainId.interior.value[0].type === 'GlobalConsensus' &&
+        onChainId.interior.value[0].value.type === 'Ethereum' &&
+        onChainId.interior.value[1].type === 'AccountKey20'
+      ) {
+        const networkId = String(onChainId.interior.value[0].value.value.chain_id)
+        const contractAddress = onChainId.interior.value[1].value.key.asHex()
+        const targetToken = ethTokens
+          .filter(isTokenEvmErc20)
+          .find((t) => t.networkId === networkId && t.contractAddress === contractAddress)
 
-      if (targetToken) {
-        // copy relevant fields from the target token, but keep symbol as is (we usually suffix with .e manually)
-        token.decimals = targetToken.decimals
-        token.coingeckoId = targetToken.coingeckoId
-        token.logo = targetToken.logo
+        if (targetToken) {
+          // copy relevant fields from the target token, but keep symbol as is (we usually suffix with .e manually)
+          token.decimals = targetToken.decimals
+          token.coingeckoId = targetToken.coingeckoId
+          token.logo = targetToken.logo
 
-        // if name has been set, keep it
-        if (!token.name) token.name = targetToken.name
+          // if name has been set, keep it
+          if (!token.name) token.name = targetToken.name
+        }
       }
+    } catch (err) {
+      console.error(`Error processing token ${token.symbol}:`, { err, token })
     }
 
     // TODO: do the same for non erc20 tokens, same problem most likely exists for them as well
