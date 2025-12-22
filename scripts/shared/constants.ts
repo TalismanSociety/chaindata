@@ -13,7 +13,7 @@ export const GITHUB_BRANCH = execSync('git rev-parse --abbrev-ref HEAD').toStrin
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
 export const DIR_ASSETS_TOKENS = 'assets/tokens'
-export const DIR_OUTPUT = 'pub/v7'
+export const DIR_OUTPUT = 'pub/v8'
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
