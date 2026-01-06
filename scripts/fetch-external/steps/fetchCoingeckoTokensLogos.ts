@@ -91,6 +91,15 @@ const INVALID_IMAGE_COINGECKO_IDS = [
   'myre-the-dog',
   '-7',
   'lantern-staked-sol',
+  'j-p-morgan-deposit-token',
+  'spotlight',
+  'recruit',
+  'grif_gg',
+  'solholder',
+  'crypto-guy',
+  'snackmoney',
+  'aneri',
+  'nokki',
 ]
 
 export const fetchCoingeckoTokensLogos = async () => {
