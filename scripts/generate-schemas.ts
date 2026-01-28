@@ -4,7 +4,6 @@ import {
   CoingeckoOverridesFileSchema,
   DotNetworksConfigFileSchema,
   EthNetworksConfigFileSchema,
-  KnownEthNetworksOverridesFileSchema,
   SolNetworksConfigFileSchema,
 } from './shared/schemas'
 import { writeJsonFile } from './shared/writeFile'
@@ -27,5 +26,4 @@ const tryUpdateSchema = async (filePath: string, schema: z4.ZodTypeAny) => {
 await tryUpdateSchema('./schemas/networks-polkadot.json', DotNetworksConfigFileSchema)
 await tryUpdateSchema('./schemas/networks-solana.json', SolNetworksConfigFileSchema)
 await tryUpdateSchema('./schemas/networks-ethereum.json', EthNetworksConfigFileSchema)
-await tryUpdateSchema('./schemas/known-networks-ethereum-overrides.json', KnownEthNetworksOverridesFileSchema)
 await tryUpdateSchema('./schemas/coingecko-overrides.json', CoingeckoOverridesFileSchema)

@@ -1,6 +1,5 @@
 import {
   FILE_INPUT_COINGECKO_OVERRIDES,
-  FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES,
   FILE_INPUT_NETWORKS_ETHEREUM,
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_INPUT_NETWORKS_SOLANA,
@@ -10,7 +9,6 @@ import {
   CoingeckoOverridesFileSchema,
   DotNetworksConfigFileSchema,
   EthNetworksConfigFileSchema,
-  KnownEthNetworksOverridesFileSchema,
   SolNetworksConfigFileSchema,
 } from './shared/schemas'
 
@@ -22,9 +20,6 @@ console.log(`${FILE_INPUT_NETWORKS_POLKADOT} schema validation completed success
 
 parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
 console.log(`${FILE_INPUT_NETWORKS_ETHEREUM} schema validation completed successfully.`)
-
-parseYamlFile(FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES, KnownEthNetworksOverridesFileSchema)
-console.log(`${FILE_INPUT_KNOWN_NETWORKS_ETHEREUM_OVERRIDES} schema validation completed successfully.`)
 
 parseYamlFile(FILE_INPUT_COINGECKO_OVERRIDES, CoingeckoOverridesFileSchema)
 console.log(`${FILE_INPUT_COINGECKO_OVERRIDES} schema validation completed successfully.`)

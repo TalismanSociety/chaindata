@@ -10,13 +10,19 @@ import values from 'lodash/values'
 import {
   FILE_ETH_TOKENS_PREBUILD,
   FILE_INPUT_NETWORKS_ETHEREUM,
+  FILE_KNOWN_EVM_NETWORKS,
   FILE_MODULE_CACHE_EVM_ERC20,
   FILE_MODULE_CACHE_EVM_UNISWAPV2,
 } from '../../shared/constants'
-import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
-import { DotNetworkConfig, EthNetworkConfig, EthNetworksConfigFileSchema } from '../../shared/schemas'
+import {
+  DotNetworkConfig,
+  EthNetworkConfig,
+  EthNetworksConfigFileSchema,
+  KnownEthNetworkConfig,
+  KnownEthNetworksFileSchema,
+} from '../../shared/schemas'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 import { withTimeout } from '../../shared/withTimeout'
 import { writeJsonFile } from '../../shared/writeFile'
@@ -28,7 +34,7 @@ export const fetchEthTokens = async () => {
   const prevEthTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
 
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
-  const knownEthNetworks = getConsolidatedKnownEthNetworks()
+  const knownEthNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   const moduleCacheErc20 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_EVM_ERC20)
   const moduleCacheUniswapV2 = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_EVM_UNISWAPV2)

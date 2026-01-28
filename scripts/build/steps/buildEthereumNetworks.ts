@@ -10,14 +10,19 @@ import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
+  FILE_KNOWN_EVM_NETWORKS,
   FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
-import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
-import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
+import {
+  EthNetworkConfig,
+  EthNetworksConfigFileSchema,
+  KnownEthNetworkConfig,
+  KnownEthNetworksFileSchema,
+} from '../../shared/schemas'
 import { KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import { validateDebug } from '../../shared/validate'
 import { VIEM_CHAINS } from '../../shared/viemChains'
@@ -25,7 +30,7 @@ import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildEthereumNetworks = async () => {
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
-  const knownEthNetworks = getConsolidatedKnownEthNetworks()
+  const knownEthNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
   const knownEthNetworksIconCache = parseJsonFile(FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE, KnownEthNetworkIconsFileSchema)
   const dicKnownEthNetworksIcons = fromPairs(knownEthNetworksIconCache.map(({ icon, path }) => [icon, path]))
 

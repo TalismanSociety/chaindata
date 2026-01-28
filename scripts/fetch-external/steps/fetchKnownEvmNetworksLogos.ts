@@ -3,202 +3,86 @@ import path from 'node:path'
 
 import sharp from 'sharp'
 
-import { FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
-import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
+import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
 import { parseJsonFile } from '../../shared/parseFile'
+import { KnownEthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { KnownEthNetworkIcon, KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import { writeJsonFile } from '../../shared/writeFile'
 
-// IPFS hashes that cant be found on github
-const KNOWN_UNAVAILABLE_IPFS_HASHES: string[] = [
-  'QmbU86AmMYhDTwDzJWLtrLAURqepXinJbVhXUJq5BaWqCp',
-  'bafkreifpbnvzcnl3badp6uig64fxxnf5tquw2ujyxqa5r2r36wuwd3yo5m',
-  'bafkreiehdja4bvfvcagywn32zj6rvc5eicnwsdtvrsgwil52y4palgtnrq',
-  'bafkreib5kb73tb5fdvikhxe7nlnf4mmlfcfpsslalaplqfihypcmudlal4',
-  'QmW46cmj2fRUbfy3Fz9kyhm33BpXnNXZ4KW3vmK1z4Mg19',
-  'bafkreibiwnnehj2j3tbla2yvvama6p7tfxvjfeqymw6ptoecoxb66glhkm',
-  'QmVwYkRWgXgoYDPgBFntxWYFquKusuMMVc8TG5hrEVnXLV',
-  'bafkreidgb2du22hxgj23jhyi2gipiovejn75cp6agmrklhxclu63v5pjxu',
-  'bafkreifrqrkoeenmx6wja2rj5o6sj3mtn5veyvx7dis6mba4bycd7yziba',
-  'bafkreid7wspejxmvsqkycru3lnfppgqre6zavkyw4vklnzrhoiycqsjzpa',
-  'Qmegd2hkWhyKjyUuQQ2vMauaj3N5J89kEPqN6YNT6s64zT',
-  'Qmb7FZMjv6k25vDjNwfpksjsriwrLh7PVsT93eBWzC5pCY',
-  'QmTDaiJnZdwDhxLUjtx1qaNJ5VmKdK9xJoqGr7ubV1EXWW',
-  'QmSxps298BQUSGihkHy3sF5k8FRX7DqgfCJfJnZgjQs7bf',
-  'QmQFqkzi97UKJqmC8KRcFieCuC7KXk4G42j7j5PSF4ByWg',
-  'QmYofWFKyp1ewqn1oZgU9csyfxv1D742kMqNkysx7yRzEm',
-  'QmXTzkZKgRHrkxJyP9FZwHTgmk2ovC9b1vrsfhHc6jvjzF',
-  'QmexytQkcC8yXzEjv3mbaZyxcy7v8vEEPmii2JZQAyGjqM',
-  'QmatZHCTvWWvgLJRphDGuCUv49mWLB3VM5gzGY4uRkzZbe',
-  'QmWCg8qEUtUBWvk7UMJZ7kkqg9SMs63k5Np6hfguZ7btob',
-  'QmQqicvzrLaPyDzLCm4mJofTbcdH7xKJrnZYF5ptCyAoTE',
-  'QmVHCbprTiCen4496EnAKedtJPxYLZXBE1gDusVa23y8kg',
-  'bafkreigor7jjj7q4pczpz5wsj2fhdmkmx7o3r7yp35tcrz2verfkgucymi',
-  'bafkreicy275qnnvxzjocl33blzw26orv3rkygqbb4sqwtx5bc2m3hazmre',
-  'QmV14XgxgayF2Chw3HUGPNQ2iLzh9jAUxNL1LAECpZohVp',
-  'Qmay8Z3yhJR4st6iAVmqTdM6nFc9zYSPq4tucDaiPheAjE',
-  'bafybeigpqflfjdeovryzeqcw42chsqtoed6ommcilepi7hnarqf34rat7i',
-  'bafkreiawfldsm6h56ug2md3hp6xeos3xoyqt6gnw4mepz2f6lzi6xcygli',
-  'QmceqNgqPdKXQqGBs8JGLUNUTeKEi69jmQNjXjTd6zfjHP',
-  'bafkreigvlt7py3h7ehy75x3w2ksmncfj57xt6giyfkhoue2vlrnfokezse',
-  'QmZsXYnR5C25v99xZs7Zzk5UUwiCidpGwSzejb21M66fuT',
-  'QmV34vcJ1sDpUyDJkskLv77H99Nxn8qRf6TvscJcywYwG6',
-  'bafybeic234jzphpt7pg2jjosi3zohllbjhz6e5gc2snda4uzrmv6cwfbvi',
-  'QmaNKnYTZRGnhzFyRYeBKwXbPQz6uDPK7PPuPGCMXSNFYW',
-  'QmVAQiumxDxuEW7HdeRW8NiRKVpXVnQumwSW44Uq6py1k7',
-  'bafkreienf63hqo2stiq2wqiprvhowrv3cvhjeko2u3h5vcvjby5ix6ud7a',
-  'bafkreibm26mwdgzt4e3c5wr5sfee644cnjsye2mgkajhfzsyu3wglrecd4',
-  'QmcLm4CYi4bEmz6C6yxNxDomXNyR9umE5P71YB7QMFkz9G',
-  'QmYmx1KEFtAuCpA8VDq5B7WvbDVYGvXkZjBkmZTSQMsYCX',
-  'QmdhqHQnPHhuhowh3ifncxw2SNzjMRCy2jQY8aMScpjUpd',
-  'bafkreicaucnt5aqvwq6pw2fzvotzonkeaf7cj5yqt3m2wyhtusblroi4se',
-  'bafkreiftgt747chqsw67a3jyklr52op5rozqmi3qnp4edwjcf2gxabwdnu',
-  'bafkreicgr636cvsomnqj3ikgdpixfv7eh2nr2u3k7v423raav2lrpsvfwy',
-  'bafkreid7xn7bs3l66axinbq25gl7ypdlwbinnbit4bz3qcy36fia4icrgm',
-  'bafkreiaa7ku47xm2736wexq53pihf7rfzeec7vwgvkhakd3sitogv4mi6m',
-  'bafkreicc5esbtgqwrptmyvp75hdefsmgzgozlrjx4d7zonxkwuh5fpne5m',
-  'bafkreif3xfpoojvgf23cf6kxx7q3pgbeqtkiiv3lro23i4lemb3wiodmq4',
-  'QmVfJBGe7JpKJhG8hrSMU42RxhCSQ3ga3NSArA9vEFqF4C',
-  'bafybeiee2qhggsx77ssjqhz5m4lnfpvtzsqlygrgtfxdpefxwrrhg52mr4',
-  'bafkreihl6c22tj2cmo3ngsswaa42y2pnbhqwvo4pb4ktia6dasl6sldosi',
-  'bafkreih5ws7esaru5k4crjekr3d27jbjmikjtxwswu7r34yofyzqywiadi',
-  'bafkreih5hekf3lfvpbjcjlswylc6r3a4nbkogeesrf2pdtrhrwuy4a76cm',
-  'bafkreie3xhbmcwv5qqopq7ak5n5wmqncy6ewnxgi772vytmssmqrubngbm',
-  'bafkreiglhsp6p2jthyaballkavwmpxwgenktcid6zy5cusd5bg6qafw7wy',
-  'Qmd49EoSchLo4LbHvdmAx6cFcL4gLgo7hzDyUjB1hPrTTP',
-  'bafkreihwi6alsxnjlox2tu3yg2ahbn3dqaltktgwip7fg73vr6yujvdy5y',
-  'bafkreic6jo3sppdb653avcqbptpkqsnvhwyblc4kebkn45l5vbhgpxgtl4',
-  'bafkreiegvgr6qwavexa5koda4wfqdqomn7h44niwufhgw4nkof5yugizvi',
-  'bafkreiehobxmonxuwg3wukea4ixbixap7imzk4yuiidyejzpvgdylok4ua',
-  'bafkreigdhkoqdntev2f4ixapfrcku74x4mjsgvebvlzdrjv5oadafrlpzm',
-  'bafkreihesy252ozceffnjmgv5pw72yddwnn2zmnmh627xwxnvxb6wfyekm',
-  'bafybeiemkxy4mvhfzsxccoqx5ebbe5sdudae4vclnppbc26qann4z6fkiu',
-  'QmdZMYDb12zN4ErNoSob7yotqqQBMobCDbhumMY3DV1kG1',
-  'bafkreidaujskyg6vjv2vx33ad7iu2wyvpriigdqatishh6ubkhzbyiyjyi',
-  'bafkreihy2skjw4kedeokhsqlyipgy2gm63hfsxmenfyldejad5au4wdrjy',
-  'QmSFDZ7UvHHr6BFfggAUNfibzKRHW7vaTHgoE326uUDgXj',
-  'bafkreia6szwv32h5g5nmdk6dusypjvgo5cjochtulrg3zfwqd2bwyctevi',
-  'bafkreib23xfvla3cgtykjuqtg7hngnvz6rhpigraomzvepcnhttdkaqmyy',
-  'bafkreieaev7npoq4zzd3kn352nkbqw3jsh22rf6wqypovpljyx6pb2meom',
-  'bafkreih2fivik6aij5gvnasutu7zo5y6la4az7qqcpwto5v56qrfywcvbq',
-  'bafkreiejezmamcywe5jigzopxlpxdp5uvofx3h2jfo5xp34bphf43i4ega',
-  'bafkreiby5lsr4ogkcqftubqmju3cphoret5sqt4xrcuothgmbsh2awdgdm',
-  'bafkreidfkhqgkkmkhoalf5quh7hzfgtthp6rzn25rbnilghhzhdiotpqne',
-  'bafkreididbxq2gx64fctdjfdyu727hmjauoqpqqtdbwqg5ge4yu2mcrw7a',
-  'bafkreihip3cdp4p2ggts3djq3wzyb2danm6oi6vdavdat2na4t46qmwsia',
-  'QmcGpSkBgL2jwyAVHTY4Ai3ij8QvyEaoL6uVF5d2XiXkXW',
-  'QmX5MTCNX4wKb7B9pK6UH7oHGcWj5m8XywhzXqLA7gtVAJ',
-  'bafkreicz6422v574rrwrbmvllvrts6nyv4cwcpxxrrokrsr6ekjuky3c6i',
-  'QmTYAGtxSChGszStYeGM3knudcXB1JH4rPwMjhz3yvSXkW',
-  'bafkreicngi3vnsauqgncupwitkkq2733nuwmqvczkiodynbsaxjmu2brna',
-  'QmP9ehCr7SYf2e2kGhX7DX3WePUFyu8ACGZycPnKFBQeGs',
-  'bafybeiddgoql2bcngs3bcuxobz5hkjjbhvwxvqrdagqytdnfmmawnmfhta',
-  'bafkreic24eqab5wwryzfolpfaalnuzhf4aol5ikbc5g2snvvryl4mqlzvq',
-]
+/** Chainlist icons are available at this CDN using the chainSlug */
+const CHAINLIST_ICONS_CDN = 'https://icons.llamao.fi/icons/chains/rsz_'
+const CHAINLIST_ICONS_SIZE = '?w=256'
 
 // @dev: temporarily uncomment this to force check etag and redownload if changed
-// by default, we dont want to check because it takes about 5 minutes alone
+// by default, we dont want to check because it takes a while
 const FORCE_CACHE_CHECK = false
 
 export const fetchKnownEvmNetworksLogos = async () => {
-  const knownEthNetworks = getConsolidatedKnownEthNetworks()
+  const knownEthNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
   const evmNetworksIconsCache = parseJsonFile<KnownEthNetworkIcon[]>(
     FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE,
     KnownEthNetworkIconsFileSchema,
   )
 
   const processedIcons = new Set<string>()
+  const failedNetworks: Array<{ id: string; name: string; reason: string }> = []
 
-  const unavailableHashes = new Set<string>()
-
-  for (const evmNetwork of knownEthNetworks.filter((n) => n.icon && !n.logo)) {
-    if (processedIcons.has(evmNetwork.icon!)) continue
+  for (const evmNetwork of knownEthNetworks.filter((n: KnownEthNetworkConfig) => n.chainSlug && !n.logo)) {
+    const chainSlug = evmNetwork.chainSlug!
+    if (processedIcons.has(chainSlug)) continue
 
     try {
-      const icon = evmNetwork.icon as string
-      processedIcons.add(icon)
+      processedIcons.add(chainSlug)
 
-      let cache: Partial<KnownEthNetworkIcon> | undefined = evmNetworksIconsCache.find((c) => c.icon === icon) // ?? ({ icon } as EvmNetworkIconCache)
+      let cache: Partial<KnownEthNetworkIcon> | undefined = evmNetworksIconsCache.find((c) => c.icon === chainSlug)
       if (!FORCE_CACHE_CHECK && cache) continue
 
       // create empty cache entry
-      cache = { icon }
+      cache = { icon: chainSlug }
 
-      // Download icon definition (json with ipfs url and size)
-      const responseIconJson = await fetch(
-        `https://raw.githubusercontent.com/ethereum-lists/chains/master/_data/icons/${evmNetwork.icon}.json`,
-        // return 304 if etag is the same, so we don't download the same file again
-        { headers: cache?.etag ? { 'If-None-Match': cache.etag } : undefined },
-      )
-      if (!responseIconJson.ok) {
-        //only 304 is expected, warn for others
-        if (responseIconJson.status !== 304)
-          console.warn('Failed to fetch icon json for', evmNetwork.name, evmNetwork.id, responseIconJson.status)
+      // Chainlist icons are available via llamao.fi CDN
+      const iconUrl = `${CHAINLIST_ICONS_CDN}${chainSlug}.jpg${CHAINLIST_ICONS_SIZE}`
+
+      // Fetch the icon with conditional request if we have an etag
+      const response = await fetch(iconUrl, {
+        headers: cache?.etag ? { 'If-None-Match': cache.etag } : undefined,
+      })
+
+      if (!response.ok) {
+        if (response.status !== 304) {
+          failedNetworks.push({
+            id: evmNetwork.id,
+            name: evmNetwork.name ?? chainSlug,
+            reason: `${response.status}`,
+          })
+        }
         continue
       }
 
-      const etag = responseIconJson.headers.get('etag')
-      const iconJson = await responseIconJson.json()
-
+      const etag = response.headers.get('etag')
       if (!etag) {
         console.log('Skipping icon because etag is missing for', evmNetwork.name, evmNetwork.id)
         continue
       }
       cache.etag = etag
 
-      const fileDesc =
-        Array.isArray(iconJson) && (iconJson[0] as { url: string; width: number; height: number; format: string })
-      if (!fileDesc) {
-        console.log(
-          'Skipping icon because fileDesc is not an array or has no valid entries for',
-          evmNetwork.name,
-          evmNetwork.id,
-        )
-        continue
+      const buffer = await response.arrayBuffer()
+
+      // Convert to webp and resize if needed
+      const img = sharp(Buffer.from(buffer))
+      const metadata = await img.metadata()
+      if ((metadata.height ?? 0) > 256 || (metadata.width ?? 0) > 256) {
+        img.resize(256, 256, { fit: 'contain' })
       }
+      const webpBuffer = await img.webp().toBuffer()
 
-      if (!fileDesc.url.startsWith('ipfs://')) throw new Error('URL is not the expected format : ' + fileDesc.url)
+      const filename = `${chainSlug}.webp`
+      const relativePath = `./assets/chains/known/${filename}`
+      const destination = path.resolve(relativePath)
 
-      // Download the image
-      const ipfsHash = fileDesc.url.substring('ipfs://'.length)
-
-      if (KNOWN_UNAVAILABLE_IPFS_HASHES.includes(ipfsHash)) {
-        continue
-      } else {
-        let downloadUrl = `https://raw.githubusercontent.com/ethereum-lists/chains/master/_data/iconsDownload/${ipfsHash}`
-
-        // @dev: if consistent error, copy the hash from the url and add it to KNOWN_UNAVAILABLE_IPFS_HASHES
-        console.log('downloading', downloadUrl)
-
-        const responseIconImage: Response | null = await fetch(downloadUrl)
-
-        if (!responseIconImage.ok || !responseIconImage.body) {
-          console.warn(
-            `Failed to download icon for ${evmNetwork.name} (${evmNetwork.id})`,
-            downloadUrl,
-            responseIconImage.status,
-          )
-          unavailableHashes.add(ipfsHash)
-          continue
-        }
-
-        let buffer: any = await responseIconImage.arrayBuffer()
-
-        if (fileDesc.format !== 'svg') {
-          const img = sharp(buffer)
-          // most images are huge, resize them to 256x256 which should be sufficient for the wallet
-          if (fileDesc.height > 256 || fileDesc.width > 256) img.resize(256, 256, { fit: 'contain' })
-          buffer = await img.webp().toBuffer()
-        }
-
-        const filename = `${icon}.${fileDesc.format === 'svg' ? 'svg' : 'webp'}`
-        const relativePath = `./assets/chains/known/${filename}`
-        const destination = path.resolve(relativePath)
-
-        console.log('writing icon to', destination)
-        await writeFile(destination, new Uint8Array(buffer))
-        cache.path = relativePath
-      }
+      console.log('writing icon to', destination)
+      await writeFile(destination, new Uint8Array(webpBuffer))
+      cache.path = relativePath
 
       // if it worked, then add the entry to the cache file
       if (!evmNetworksIconsCache.includes(cache as Required<KnownEthNetworkIcon>))
@@ -211,15 +95,18 @@ export const fetchKnownEvmNetworksLogos = async () => {
         schema: KnownEthNetworkIconsFileSchema,
       })
     } catch (err) {
-      console.error(
-        `Failed to update icon cache for ${evmNetwork.name} (${evmNetwork.id})`,
-        (err as any).message ?? err,
-      )
+      failedNetworks.push({
+        id: evmNetwork.id,
+        name: evmNetwork.name ?? chainSlug,
+        reason: (err as Error).message ?? String(err),
+      })
     }
   }
 
-  if (unavailableHashes.size) {
-    console.log('Unavailable IPFS hashes (plz update in fetchKnownEvmNetworksLogos.ts):')
-    console.log(Array.from(unavailableHashes))
+  if (failedNetworks.length) {
+    console.log(`Failed to fetch icon for ${failedNetworks.length} networks:`)
+    for (const { id, name, reason } of failedNetworks) {
+      console.log(`Failed to fetch icon for ${name} ${id} ${reason}`)
+    }
   }
 }

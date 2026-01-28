@@ -22,7 +22,7 @@ export const checkEthereumRpcs = async () => {
   const knownNetworks = parseJsonFile(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   const configNetworkKeys = configNetworks.flatMap((network) =>
-    network.rpcs.map((rpc) => getRpcHealthKey({ networkId: network.id, rpc })),
+    (network.rpcs ?? []).map((rpc) => getRpcHealthKey({ networkId: network.id, rpc })),
   )
   const knownNetworkKeys = knownNetworks.flatMap((network) =>
     network.rpcs.map((rpc) => getRpcHealthKey({ networkId: network.id, rpc })),

@@ -92,12 +92,11 @@ Only YAML files may be edited manually, JSON files are generated automatically a
 
 The table below describes the purpose of each editable file.
 
-| File name                                    | Purpose                                                                         |
-| -------------------------------------------- | ------------------------------------------------------------------------------- |
-| `data/networks-polkadot.yaml`                | A list of all parachains and relay chains in the Polkadot ecosystem             |
-| `data/networks-ethereum.json`                | List of Ethereum networks that are marked `isDefault: true` in Talisman         |
-| `data/ethereum-known-networks-overrides.yaml | Overrides to [ethereum-lists](https://github.com/ethereum-lists), matched by id |
-| `data/coingecko-overrides.yaml`              | Overrides logos of some coingecko tokens                                        |
+| File name                       | Purpose                                                                                  |
+| ------------------------------- | ---------------------------------------------------------------------------------------- |
+| `data/networks-polkadot.yaml`   | A list of all parachains and relay chains in the Polkadot ecosystem                      |
+| `data/networks-ethereum.yaml`   | EVM network configs with overrides for [chainlist](https://chainlist.org), matched by id |
+| `data/coingecko-overrides.yaml` | Overrides logos of some coingecko tokens                                                 |
 
 ## Dev Resources
 

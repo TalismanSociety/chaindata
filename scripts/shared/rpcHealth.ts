@@ -79,12 +79,17 @@ export const checkPlatformRpcsHealth = async (
   const newKeys = listedRpcHealthsKeys.filter((key) => !existingRpcHealthsByKey[key])
   console.log('Found', newKeys.length, 'new RPCs to check')
 
-  const keysToRecheck = sortBy(values(existingRpcHealthsByKey), 'timestamp').slice(0, rechecks).map(getRpcHealthKey)
+  // Limit rechecks based on maxchecks, but ALWAYS check all new RPCs
+  // This ensures new networks are never skipped due to rate limiting
+  const recheckBudget = Math.max(0, maxchecks - newKeys.length)
+  const keysToRecheck = sortBy(values(existingRpcHealthsByKey), 'timestamp')
+    .slice(0, Math.min(rechecks, recheckBudget))
+    .map(getRpcHealthKey)
 
-  const allRpcs = uniq([...newKeys, ...keysToRecheck])
-  const checks = allRpcs.map(getRpcHealthSpecsFromKey).slice(0, maxchecks)
+  // All new RPCs must be checked (no slicing), rechecks are limited
+  const checks = uniq([...newKeys, ...keysToRecheck]).map(getRpcHealthSpecsFromKey)
 
-  console.log('Checking', checks.length, 'RPCs out of', allRpcs.length)
+  console.log('Checking', checks.length, 'RPCs (', newKeys.length, 'new +', keysToRecheck.length, 'rechecks)')
 
   // v8 can only do 2 requests at once but the speed increment is worth the false positives
   // concurrency 4: 99 sec (7 actual timeouts)
