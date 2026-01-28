@@ -83,7 +83,9 @@ const consolidateEthNetwork = (
 
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
-  ]).filter(isNotBlacklistedRpcUrl)
+  ])
+    .filter(isNotBlacklistedRpcUrl)
+    .slice(0, 5)
 
   if (!rpcs.length) return null
 
