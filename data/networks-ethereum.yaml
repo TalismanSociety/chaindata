@@ -1,5 +1,6 @@
 - id: '1'
   name: Ethereum Mainnet
+  isDefault: true
   nativeCurrency:
     coingeckoId: ethereum
   logo: ./assets/chains/1.svg
@@ -178,6 +179,7 @@
     coingeckoId: ubiq
 - id: '10'
   name: OP Mainnet
+  isDefault: true
   nativeCurrency:
     coingeckoId: ethereum
   blockExplorerUrls:
@@ -278,6 +280,7 @@
     coingeckoId: zyx
 - id: '56'
   name: Binance Smart Chain
+  isDefault: true
   nativeCurrency:
     decimals: 18
     symbol: BNB
@@ -414,6 +417,7 @@
     - https://uniscan.xyz
 - id: '137'
   name: Polygon
+  isDefault: true
   nativeCurrency:
     decimals: 18
     symbol: POL
@@ -967,6 +971,7 @@
     coingeckoId: halo-network
 - id: '1284'
   name: Moonbeam
+  isDefault: true
   logo: ./assets/chains/moonbeam.svg
   nativeCurrency:
     decimals: 18
@@ -1263,6 +1268,7 @@
     coingeckoId: blockton
 - id: '8453'
   name: Base
+  isDefault: true
   logo: ./assets/chains/known/base.webp
   nativeCurrency:
     coingeckoId: ethereum
@@ -1653,6 +1659,7 @@
     coingeckoId: oho-blockchain
 - id: '42161'
   name: Arbitrum One
+  isDefault: true
   logo: ./assets/chains/42161.svg
   nativeCurrency:
     coingeckoId: ethereum
@@ -1913,18 +1920,7 @@
 - id: '333000333'
   nativeCurrency:
     coingeckoId: meld-2
-- id: '420420418'
-  preserveGasEstimate: true
-- id: '420420419'
-  preserveGasEstimate: true
-- id: '420420421'
-  blockExplorerUrls:
-    - https://blockscout-asset-hub.parity-chains-scw.parity.io
-  preserveGasEstimate: true
-- id: '420420422'
-  blockExplorerUrls:
-    - https://blockscout-passet-hub.parity-testnet.parity.io
-  preserveGasEstimate: true
+
 - id: '1313161554'
   nativeCurrency:
     coingeckoId: ethereum
@@ -1946,3 +1942,35 @@
 - id: '1666600000'
   nativeCurrency:
     coingeckoId: harmony
+- id: '420420419'
+  preserveGasEstimate: true
+  nativeCurrency:
+    coingeckoId: polkadot
+  blockExplorerUrls:
+    - https://https://blockscout.polkadot.io/
+- id: '420420418'
+  preserveGasEstimate: true
+  nativeCurrency:
+    coingeckoId: kusama
+  rpcs:
+    - https://kusama-asset-hub-eth-rpc.polkadot.io
+  blockExplorerUrls:
+    - https://blockscout-kusama-asset-hub.parity-chains-scw.parity.io/
+- id: '420420417'
+  preserveGasEstimate: true
+  nativeCurrency:
+    decimals: 18
+    name: Paseo
+    symbol: PAS
+  rpcs:
+    - https://services.polkadothub-rpc.com/testnet
+  blockExplorerUrls:
+    - https://blockscout-testnet.polkadot.io/
+- id: '420420421'
+  blockExplorerUrls:
+    - https://blockscout-asset-hub.parity-chains-scw.parity.io
+  preserveGasEstimate: true
+- id: '420420422'
+  blockExplorerUrls:
+    - https://blockscout-passet-hub.parity-testnet.parity.io
+  preserveGasEstimate: true
