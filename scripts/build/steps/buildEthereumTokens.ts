@@ -8,13 +8,18 @@ import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_ETH_TOKENS_PREBUILD,
   FILE_INPUT_NETWORKS_ETHEREUM,
+  FILE_KNOWN_EVM_NETWORKS,
   FILE_OUTPUT_NETWORKS_ETHEREUM,
   FILE_OUTPUT_TOKENS_ETHEREUM,
 } from '../../shared/constants'
-import { getConsolidatedKnownEthNetworks } from '../../shared/getConsolidatedEthNetworksOverrides'
 import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import { EthNetworkConfig, EthNetworksConfigFileSchema, KnownEthNetworkConfig } from '../../shared/schemas'
+import {
+  EthNetworkConfig,
+  EthNetworksConfigFileSchema,
+  KnownEthNetworkConfig,
+  KnownEthNetworksFileSchema,
+} from '../../shared/schemas'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 import { writeJsonFile } from '../../shared/writeFile'
 
@@ -23,7 +28,7 @@ export const buildEthereumTokens = async () => {
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const ethTokensCache = parseJsonFile<Token[]>(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
 
-  const knownEthNetworks = getConsolidatedKnownEthNetworks()
+  const knownEthNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   const ethNetworkConfigById = keyBy(ethNetworksConfig, (c) => String(c.id))
   const knownEthNetworkById = keyBy(knownEthNetworks, (c) => String(c.id))

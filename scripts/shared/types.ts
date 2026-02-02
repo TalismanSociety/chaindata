@@ -11,15 +11,25 @@ export type MetadataPortalUrls = Array<{
   }
 }>
 
-export type EthereumListsChain = {
+export type ChainlistRpc = string | { url: string; tracking?: 'none' | 'limited' | 'yes'; trackingDetails?: string }
+
+export type ChainlistChain = {
   name: string
   chainId: number
+  networkId?: number
   shortName: string
+  chain: string
   nativeCurrency: { name: string; symbol: string; decimals: number }
-  rpc: Array<string>
+  rpc: Array<ChainlistRpc>
   faucets: Array<string>
   infoURL: string
   status?: 'active' | 'incubating' | 'deprecated'
-  explorers?: Array<{ name: string; url: string; standard?: string }>
+  explorers?: Array<{ name: string; url: string; standard?: string; icon?: string }>
   icon?: string
+  features?: Array<{ name: string }>
+  parent?: { type: string; chain: string; bridges?: Array<{ url: string }> }
+  slip44?: number
+  tvl?: number
+  chainSlug?: string
+  isTestnet?: boolean
 }

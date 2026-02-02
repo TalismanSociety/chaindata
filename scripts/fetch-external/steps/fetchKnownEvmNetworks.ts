@@ -1,6 +1,6 @@
 import { z } from 'zod/v4'
 
-import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
+import { CHAINLIST_API_URL, FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { parseYamlFile } from '../../shared/parseFile'
 import {
   EthNetworksConfigFileSchema,
@@ -8,7 +8,7 @@ import {
   KnownEthNetworkConfigSchema,
   KnownEthNetworksFileSchema,
 } from '../../shared/schemas'
-import { EthereumListsChain } from '../../shared/types'
+import { ChainlistChain, ChainlistRpc } from '../../shared/types'
 import { VIEM_CHAINS } from '../../shared/viemChains'
 import { writeJsonFile } from '../../shared/writeFile'
 
@@ -20,7 +20,7 @@ const IGNORED_CHAINS = [
   31337, // GoChain testnet - same ID as Anvil and Hardhat, which are both here to stay.
 
   128, // Huobi ECO Chain Mainnet - public RPCS are not working
-  999, // This is currently used by Hyperliquid, but viem think its Zora goerli and ethereum-lists thinks its WanChain Testnet
+  999, // This is currently used by Hyperliquid, but viem thinks its Zora goerli and chainlist thinks its WanChain Testnet
 ]
 
 const isValidRpcUrl = (rpcUrl: string) => {
@@ -37,8 +37,9 @@ const isValidRpcUrl = (rpcUrl: string) => {
     return false
   }
 }
-const isActiveChain = (chain: EthereumListsChain) => !chain.status || chain.status !== 'deprecated'
-const isAllowedChain = (chain: EthereumListsChain) => !IGNORED_CHAINS.includes(chain.chainId)
+
+const isActiveChain = (chain: ChainlistChain) => !chain.status || chain.status !== 'deprecated'
+const isAllowedChain = (chain: ChainlistChain) => !IGNORED_CHAINS.includes(chain.chainId)
 
 const validateNetwork = (network: { id: string }, networkSchema: z.ZodType<any>) => {
   const parsable = networkSchema.safeParse(network)
@@ -48,30 +49,81 @@ const validateNetwork = (network: { id: string }, networkSchema: z.ZodType<any>)
   }
 }
 
+/** Extract URL from chainlist RPC entry (can be string or object with url property) */
+const getRpcUrl = (rpc: ChainlistRpc): string => (typeof rpc === 'string' ? rpc : rpc.url)
+
+/** Get tracking level from chainlist RPC entry (default to undefined if not specified) */
+const getRpcTracking = (rpc: ChainlistRpc): 'none' | 'limited' | 'yes' | undefined =>
+  typeof rpc === 'string' ? undefined : rpc.tracking
+
+/** Sort RPCs by privacy: none > limited > yes > unspecified */
+const sortRpcsByPrivacy = (rpcs: ChainlistRpc[]): string[] => {
+  const trackingOrder = { none: 0, limited: 1, yes: 2, undefined: 3 }
+
+  return rpcs
+    .filter((rpc) => isValidRpcUrl(getRpcUrl(rpc)))
+    .sort((a, b) => {
+      const trackingA = getRpcTracking(a)
+      const trackingB = getRpcTracking(b)
+      return (trackingOrder[trackingA ?? 'undefined'] ?? 3) - (trackingOrder[trackingB ?? 'undefined'] ?? 3)
+    })
+    .map(getRpcUrl)
+}
+
+/** Determine if chain is a testnet using chainlist's isTestnet flag with heuristic fallback */
+const isTestnetChain = (chain: ChainlistChain): boolean => {
+  // Use chainlist's explicit flag if available
+  if (chain.isTestnet !== undefined) return chain.isTestnet
+
+  // Fallback to heuristics
+  const lowerName = chain.name.toLocaleLowerCase()
+  if (chain.faucets?.length) return true
+  if (lowerName.includes('testnet') || lowerName.includes('goerli') || lowerName.includes('sepolia')) return true
+
+  const rpcUrls = chain.rpc.map(getRpcUrl)
+  if (rpcUrls.some((rpc) => rpc.includes('testnet') || rpc.includes('goerli') || rpc.includes('sepolia'))) return true
+
+  return false
+}
+
 export const fetchKnownEvmNetworks = async () => {
-  const response = await fetch('https://chainid.network/chains.json')
-  const chainsList = (await response.json()) as Array<EthereumListsChain>
+  console.log('Fetching EVM networks from chainlist...')
+  const response = await fetch(CHAINLIST_API_URL)
+  const chainsList = (await response.json()) as Array<ChainlistChain>
+  console.log(`Fetched ${chainsList.length} chains from chainlist`)
 
   const knownEvmNetworks = chainsList
     .filter((chain) => !!chain.chainId)
     .filter(isAllowedChain)
     .filter(isActiveChain)
-    .filter((chain) => chain.rpc.filter(isValidRpcUrl).length)
+    .filter((chain) => chain.rpc.some((rpc) => isValidRpcUrl(getRpcUrl(rpc))))
     .map((chain) => {
       const id = chain.chainId.toString()
       const viemChain = VIEM_CHAINS[id]
       const viemRpcs = viemChain?.rpcUrls?.default?.http ?? []
 
+      // Sort chainlist RPCs by privacy, then append viem RPCs
+      const chainlistRpcs = sortRpcsByPrivacy(chain.rpc)
+      const allRpcs = [...new Set([...chainlistRpcs, ...viemRpcs.filter(isValidRpcUrl)])]
+
+      // Icon can be a string name or an object with url - only use string names
+      const icon = typeof chain.icon === 'string' ? chain.icon : undefined
+
       const evmNetwork: Partial<KnownEthNetworkConfig> & { id: string } = {
-        id: chain.chainId.toString(),
+        id,
         name: chain.name,
-        rpcs: chain.rpc.concat(...viemRpcs).filter(isValidRpcUrl),
+        rpcs: allRpcs,
         shortName: chain.shortName,
-        icon: chain.icon,
+        icon,
+        chainSlug: chain.chainSlug,
       }
 
       const explorerUrl = chain.explorers?.[0]?.url
-      if (explorerUrl) evmNetwork.blockExplorerUrls = [explorerUrl]
+      if (explorerUrl) {
+        // Ensure the URL has a protocol prefix
+        const normalizedUrl = explorerUrl.startsWith('http') ? explorerUrl : `https://${explorerUrl}`
+        evmNetwork.blockExplorerUrls = [normalizedUrl]
+      }
 
       evmNetwork.nativeCurrency = {
         symbol: chain.nativeCurrency.symbol,
@@ -79,26 +131,24 @@ export const fetchKnownEvmNetworks = async () => {
         name: chain.nativeCurrency.name,
       }
 
-      const lowerName = chain.name.toLocaleLowerCase()
-
-      if (
-        chain.faucets.length ||
-        lowerName.includes('testnet') ||
-        lowerName.includes('goerli') ||
-        lowerName.includes('sepolia') ||
-        chain.rpc.some((rpc) => rpc.includes('testnet') || rpc.includes('goerli') || rpc.includes('sepolia'))
-      )
-        evmNetwork.isTestnet = true
+      if (isTestnetChain(chain)) evmNetwork.isTestnet = true
 
       validateNetwork(evmNetwork, KnownEthNetworkConfigSchema)
 
       return evmNetwork
     })
 
-  // add missing networks (hyperliquid) from manual config file
+  // Add networks from manual config that are missing in chainlist (e.g. hyperliquid)
+  // YAML entries without full definitions (rpcs, nativeCurrency) are just overrides for chainlist data
+  // If the network isn't in chainlist, those override-only entries can be discarded
   const manualEvmNetworks = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const knownNetworkIds = knownEvmNetworks.map((network) => network.id)
   for (const network of manualEvmNetworks.filter((n) => !knownNetworkIds.includes(n.id))) {
+    // Skip override-only entries (no rpcs or incomplete nativeCurrency)
+    if (!network.rpcs?.length || !network.nativeCurrency?.symbol || !network.nativeCurrency?.decimals) {
+      continue
+    }
+
     const parsed = KnownEthNetworkConfigSchema.safeParse({
       id: network.id,
       name: network.name,
@@ -118,6 +168,7 @@ export const fetchKnownEvmNetworks = async () => {
   }
 
   const validNetworks = knownEvmNetworks.sort((a, b) => Number(a.id) - Number(b.id))
+  console.log(`Writing ${validNetworks.length} known EVM networks`)
 
   await writeJsonFile(FILE_KNOWN_EVM_NETWORKS, validNetworks, {
     schema: KnownEthNetworksFileSchema,

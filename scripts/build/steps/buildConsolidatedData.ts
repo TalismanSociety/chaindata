@@ -67,7 +67,8 @@ export const buildConsolidatedData = async () => {
   const miniMetadatas = allMiniMetadatas.filter((m) => {
     const network = networksById[m.chainId]
     if (!network) {
-      console.warn(`Ignoring miniMetadata ${m.id}: no network ${m.chainId} found`)
+      // this is becoming very verbose, disable for now
+      // console.warn(`Ignoring miniMetadata ${m.id}: no network ${m.chainId} found`)
       return false
     }
     return true

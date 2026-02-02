@@ -75,7 +75,9 @@ const consolidateDotNetwork = (
     ...config.rpcs?.filter((url) => !allRpcs.includes(url)), // new rpcs, assume better than MEH - there should not be any though
     ...config.rpcs?.filter((url) => mehRpcs.includes(url)),
     // ignore NOK ones
-  ]).filter(isNotBlacklistedRpcUrl)
+  ])
+    .filter(isNotBlacklistedRpcUrl)
+    .slice(0, 5)
 
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated
 
