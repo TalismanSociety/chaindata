@@ -44,7 +44,7 @@ export const buildSolanaTokens = async () => {
       const tokenConfig = findTokenConfigByTokenId(token.id, networkConfig)
       if (!tokenConfig) return token
 
-      return Object.assign({}, token, tokenConfig)
+      return Object.assign({}, token, { isDefault: true }, tokenConfig)
     })
     .map((token) => ({
       ...token,

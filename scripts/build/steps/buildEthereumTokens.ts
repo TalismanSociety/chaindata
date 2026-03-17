@@ -80,13 +80,17 @@ const getNetworkTokens = (
       switch (token.type) {
         case 'evm-native':
           return assign({}, token, knownEthNetwork?.nativeCurrency, networkConfig?.nativeCurrency)
-        case 'evm-erc20':
+        case 'evm-erc20': {
+          const configToken = dicConfigErc20s[token.contractAddress.toLowerCase()]
           return assign(
             {},
             token,
             dicKnownErc20s[token.contractAddress.toLowerCase()],
             dicConfigErc20s[token.contractAddress.toLowerCase()],
+            configToken && { isDefault: true },
+            configToken, // in case `isDefault: false` in config
           )
+        }
         case 'evm-uniswapv2':
           return assign(
             {},
