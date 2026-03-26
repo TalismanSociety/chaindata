@@ -12,6 +12,7 @@ import {
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   FILE_OUTPUT_NETWORKS_POLKADOT,
 } from '../../shared/constants'
+import { FORCE_OK_RPCS } from '../../shared/forceOkRpcs'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
@@ -71,9 +72,11 @@ const consolidateDotNetwork = (
   const allRpcs = getRpcsByStatus(config.id, 'polkadot', 'all')
 
   const rpcs = uniq([
-    ...config.rpcs?.filter((url) => okRpcs.includes(url)),
-    ...config.rpcs?.filter((url) => !allRpcs.includes(url)), // new rpcs, assume better than MEH - there should not be any though
-    ...config.rpcs?.filter((url) => mehRpcs.includes(url)),
+    // RPCs that are forced OK (e.g. origin-filtered RPCs that fail in CI but work in browsers)
+    ...config.rpcs?.filter((url) => FORCE_OK_RPCS.includes(url)),
+    ...config.rpcs?.filter((url) => okRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
+    ...config.rpcs?.filter((url) => !allRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)), // new rpcs, assume better than MEH - there should not be any though
+    ...config.rpcs?.filter((url) => mehRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
     // ignore NOK ones
   ])
     .filter(isNotBlacklistedRpcUrl)
