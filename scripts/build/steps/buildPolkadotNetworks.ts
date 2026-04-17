@@ -110,7 +110,7 @@ const consolidateDotNetwork = (
     nativeTokenId: config.nativeTokenId ?? subNativeTokenId(config.id),
     nativeCurrency,
     isTestnet,
-    isDefault: config.isDefault || !config.isTestnet || undefined,
+    isDefault: config.isDefault ?? (!isTestnet || undefined),
     forceScan: config.forceScan || undefined,
     themeColor: config.themeColor || undefined,
     logo: getNetworkLogoUrl(config.logo, config.id, nativeCurrency),
