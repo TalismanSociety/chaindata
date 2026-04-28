@@ -20,6 +20,10 @@
     - wss://polkadot.public.curie.radiumblock.co/ws
     - wss://polkadot.rpc.subquery.network/public/ws
     - wss://polkadot.api.onfinality.io/public-ws
+    - wss://polkadot-rpc.n.dwellir.com
+    - wss://polkadot.ibp.network
+    - wss://spectrum-03.simplystaking.xyz/cG9sa2Fkb3QtMDMtOTFkMmYwZGYtcG9sa2Fkb3Q/LjwBJpV3dIKyWQ/polkadot/mainnet
+    - wss://rpc-polkadot.stakeworld.io
 - id: kusama
   name: Kusama
   isDefault: false
@@ -40,6 +44,7 @@
     - wss://ksm-rpc.stakeworld.io
     - wss://kusama.public.curie.radiumblock.co/ws
     - wss://kusama.api.onfinality.io/public-ws
+    - wss://kusama-rpc.n.dwellir.com
 - id: 3-dpass
   name: 3DPass
   isDefault: false
@@ -70,6 +75,7 @@
     - wss://acala-rpc-3.aca-api.network/ws
     - wss://acala.ibp.network
     - wss://acala.dotters.network
+    - wss://acala-rpc.n.dwellir.com
   relay: polkadot
   tokens:
     substrate-tokens:
@@ -287,6 +293,7 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/altair_metadata_latest.apng
   rpcs:
     - wss://fullnode.altair.centrifuge.io
+    - wss://altair.api.onfinality.io/public-ws
   relay: kusama
 - id: amplitude
   name: Amplitude
@@ -369,6 +376,7 @@
     - wss://rpc.astar.network
     - wss://astar.public.curie.radiumblock.co/ws
     - wss://astar.api.onfinality.io/public-ws
+    - wss://astar-rpc.n.dwellir.com
   relay: polkadot
   tokens:
     substrate-assets:
@@ -540,7 +548,8 @@
   nativeCurrency:
     coingeckoId: aventus
   oldPrefix: 42
-  rpcs: []
+  rpcs:
+    - wss://avn-parachain.mainnet.aventus.io
   relay: polkadot
 - id: bajun
   name: Bajun
@@ -752,6 +761,7 @@
     - wss://bifrost-polkadot.ibp.network
     - wss://bifrost-polkadot.dotters.network
     - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
+    - wss://hk.p.bifrost-rpc.liebi.com/ws
   relay: polkadot
   tokens:
     substrate-tokens:
@@ -931,6 +941,7 @@
   rpcs:
     - wss://fullnode.centrifuge.io
     - wss://rpc-centrifuge.luckyfriday.io
+    - wss://centrifuge-parachain.api.onfinality.io/public-ws
   balancesConfig:
     substrate-tokens:
       palletId: OrmlTokens
@@ -1276,6 +1287,8 @@
     - wss://sys.ibp.network/encointer-kusama
     - wss://kusama.api.encointer.org
     - wss://encointer-kusama.dotters.network
+    - wss://encointer-kusama-rpc.n.dwellir.com
+    - wss://rpc-encointer-kusama.luckyfriday.io
   relay: kusama
 - id: enjin-matrixchain
   name: Enjin Matrix
@@ -1374,6 +1387,8 @@
     coingeckoId: heima
   rpcs:
     - wss://rpc.heima-parachain.heima.network
+    - wss://heima-rpc.n.dwellir.com
+    - wss://rpc.litentry-parachain.litentry.io
   relay: polkadot
   blockExplorerUrls:
     - https://heima.statescan.io/
@@ -1748,6 +1763,7 @@
     - wss://karura-rpc-1.aca-api.network
     - wss://karura-rpc-2.aca-api.network/ws
     - wss://karura-rpc-3.aca-api.network/ws
+    - wss://karura-rpc.n.dwellir.com
   relay: kusama
   tokens:
     substrate-tokens:
@@ -2029,6 +2045,7 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kintsugi-parachain_metadata_latest.apng
   rpcs:
     - wss://api-kusama.interlay.io/parachain
+    - wss://kintsugi.api.onfinality.io/public-ws
   nativeTokenId: kintsugi:substrate-tokens:N4IgLgngDgpiBcIAqB7A1jAdiANCAbgIYA2ArnPKJLAiANICSAckiAL5tA
   relay: kusama
   balancesConfig:
@@ -2151,6 +2168,8 @@
     - wss://statemine.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/assethub
     - wss://assethub-kusama.api.onfinality.io/public-ws
+    - wss://asset-hub-kusama-rpc.n.dwellir.com
+    - wss://sys.ibp.network/statemine
   relay: kusama
   tokens:
     substrate-assets:
@@ -2182,6 +2201,7 @@
     - wss://bridgehub-kusama.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/bridgehub
     - wss://bridgehub-kusama.api.onfinality.io/public-ws
+    - wss://bridge-hub-kusama-rpc.n.dwellir.com
   relay: kusama
 - id: kusama-coretime
   name: Kusama Coretime
@@ -2200,6 +2220,7 @@
     - wss://kusama-coretime-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/coretime
     - wss://coretime-kusama.api.onfinality.io/public-ws
+    - wss://coretime-kusama-rpc.n.dwellir.com
   relay: kusama
 - id: kusama-people
   name: Kusama People
@@ -2218,6 +2239,8 @@
     - wss://kusama-people-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/people
     - wss://people-kusama.api.onfinality.io/public-ws
+    - wss://people-kusama-rpc.n.dwellir.com
+    - wss://rpc-people-kusama.helixstreet.io
   relay: kusama
 - id: kusari
   name: Kusari
@@ -2825,6 +2848,7 @@
     - wss://dot-rpc.stakeworld.io/assethub
     - wss://statemint.public.curie.radiumblock.co/ws
     - wss://sys.ibp.network/statemint
+    - wss://asset-hub-polkadot-rpc.n.dwellir.com
   relay: polkadot
   tokens:
     substrate-assets:
@@ -2936,6 +2960,7 @@
     - wss://dot-rpc.stakeworld.io/bridgehub
     - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
     - wss://bridgehub-polkadot.api.onfinality.io/public-ws
+    - wss://bridge-hub-polkadot-rpc.n.dwellir.com
   relay: polkadot
 - id: polkadot-collectives
   name: Polkadot Collectives
@@ -2954,6 +2979,7 @@
     - wss://dot-rpc.stakeworld.io/collectives
     - wss://collectives.public.curie.radiumblock.co/ws
     - wss://collectives.api.onfinality.io/public-ws
+    - wss://collectives-polkadot-rpc.n.dwellir.com
   relay: polkadot
 - id: polkadot-coretime
   name: Polkadot Coretime
@@ -2967,6 +2993,9 @@
     - wss://coretime-polkadot.dotters.network
     - wss://polkadot-coretime-rpc.polkadot.io
     - wss://coretime-polkadot.api.onfinality.io/public-ws
+    - wss://coretime-polkadot-rpc.n.dwellir.com
+    - wss://coretime-polkadot.ibp.network
+    - wss://rpc-coretime-polkadot.luckyfriday.io
   relay: polkadot
 - id: polkadot-people
   name: Polkadot People
@@ -2981,6 +3010,7 @@
     - wss://rpc-people-polkadot.luckyfriday.io
     - wss://polkadot-people-rpc.polkadot.io
     - wss://people-polkadot.api.onfinality.io/public-ws
+    - wss://people-polkadot-rpc.n.dwellir.com
   relay: polkadot
 - id: polkasmith
   name: PolkaSmith
@@ -3091,6 +3121,8 @@
   rpcs:
     - wss://shiden.public.curie.radiumblock.co/ws
     - wss://rpc.shiden.astar.network
+    - wss://shiden-rpc.n.dwellir.com
+    - wss://shiden.api.onfinality.io/public-ws
   relay: kusama
 - id: shiden-kusama-2
   name: Shiden
@@ -3499,6 +3531,8 @@
     - wss://westend-rpc.polkadot.io
     - wss://westend.public.curie.radiumblock.co/ws
     - wss://westend.api.onfinality.io/public-ws
+    - wss://westend-rpc.n.dwellir.com
+    - wss://rpc.ibp.network/westend
 - id: 3-dpass-testnet
   isTestnet: true
   name: 3DPass Testnet
@@ -4092,6 +4126,7 @@
     - wss://asset-hub-paseo.dotters.network
     - wss://pas-rpc.stakeworld.io/assethub
     - wss://sys.turboflakes.io/asset-hub-paseo
+    - wss://asset-hub-paseo-rpc.n.dwellir.com
   relay: paseo-testnet
 - id: paseo-frequency-testnet
   isTestnet: true
@@ -4110,6 +4145,7 @@
     - wss://rpc.ibp.network/paseo
     - wss://paseo.dotters.network
     - wss://pas-rpc.stakeworld.io
+    - wss://paseo-rpc.n.dwellir.com
 - id: phala-testnet
   isTestnet: true
   name: Phala Testnet
@@ -4209,7 +4245,9 @@
   isTestnet: true
   name: Bifrost Testnet
   isDefault: false
-  rpcs: []
+  rpcs:
+    - wss://bifrost-rpc.paseo.liebi.com/ws
+    - wss://bifrost-rpc.paseo2.liebi.com/ws
   relay: rococo-testnet
 - id: rococo-bitgreen-testnet
   isTestnet: true
@@ -4431,7 +4469,8 @@
   isTestnet: true
   name: Zeitgeist Battery Station
   isDefault: false
-  rpcs: []
+  rpcs:
+    - wss://bsr.zeitgeist.pm
   relay: rococo-testnet
 - id: sherpax-testnet
   isTestnet: true
@@ -4601,6 +4640,8 @@
   latestMetadataQrUrl: https://metadata.parity.io/qr/westend-westmint_metadata_latest.apng
   rpcs:
     - wss://westend-asset-hub-rpc.polkadot.io
+    - wss://asset-hub-westend-rpc.n.dwellir.com
+    - wss://sys.ibp.network/westmint
   relay: westend-testnet
 - id: westend-bridge-hub-testnet
   isTestnet: true
@@ -4610,6 +4651,7 @@
     - https://bridgehub-westend.subscan.io/
   rpcs:
     - wss://westend-bridge-hub-rpc.polkadot.io
+    - wss://bridge-hub-westend-rpc.n.dwellir.com
   relay: westend-testnet
 - id: westend-collectives-testnet
   isTestnet: true
@@ -4619,6 +4661,7 @@
   latestMetadataQrUrl: https://metadata.parity.io/qr/westend-collectives-westend_metadata_latest.apng
   rpcs:
     - wss://westend-collectives-rpc.polkadot.io
+    - wss://collectives-westend-rpc.n.dwellir.com
   relay: westend-testnet
 - id: westend-coretime-testnet
   isTestnet: true
@@ -4628,6 +4671,7 @@
     - https://coretime-westend.subscan.io/
   rpcs:
     - wss://westend-coretime-rpc.polkadot.io
+    - wss://coretime-westend-rpc.n.dwellir.com
   relay: westend-testnet
 - id: westend-penpal-testnet
   isTestnet: true
@@ -4642,6 +4686,8 @@
   isDefault: false
   rpcs:
     - wss://westend-people-rpc.polkadot.io
+    - wss://people-westend-rpc.n.dwellir.com
+    - wss://sys.ibp.network/people-westend
   relay: westend-testnet
 - id: westend-pichiu-testnet
   isTestnet: true
@@ -4713,3 +4759,86 @@
     - wss://passet-hub-paseo.dotters.network
     - wss://passet-hub-paseo.ibp.network
     - wss://testnet-passet-hub.polkadot.io
+- id: westend-bulletin
+  name: Bulletin (Westend)
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://westend-bulletin-rpc.polkadot.io
+  relay: westend-testnet
+- id: paseo-bridge-hub
+  name: Paseo BridgeHub
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://bridge-hub-paseo.ibp.network
+    - wss://bridge-hub-paseo.dotters.network
+  relay: paseo-testnet
+- id: paseo-collectives
+  name: Collectives
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://collectives-paseo.ibp.network
+    - wss://collectives-paseo.dotters.network
+  relay: paseo-testnet
+- id: paseo-coretime
+  name: Paseo Coretime
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://coretime-paseo.ibp.network
+    - wss://coretime-paseo.dotters.network
+    - wss://paseo-coretime.paranodes.io
+  relay: paseo-testnet
+- id: paseo-people-chain
+  name: Paseo People
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://people-paseo.rpc.amforc.com
+    - wss://people-paseo.ibp.network
+    - wss://people-paseo.dotters.network
+  relay: paseo-testnet
+- id: paseo-aventus
+  name: Aventus
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://avn-parachain.testnet.aventus.io
+  relay: paseo-testnet
+- id: paseo-bulletin
+  name: Bulletin (Paseo)
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://paseo-bulletin-rpc.polkadot.io
+  relay: paseo-testnet
+- id: paseo-frequency
+  name: Frequency(Paseo)
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://0.rpc.testnet.amplica.io
+  relay: paseo-testnet
+- id: paseo-rococo-hydra-dx
+  name: Hydration (Paseo)
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://paseo-rpc.play.hydration.cloud
+  relay: paseo-testnet
+- id: paseo-muse
+  name: Muse network
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://paseo-muse-rpc.polkadot.io
+  relay: paseo-testnet
+- id: paseo-xcavate
+  name: Xcavate
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://xcavate-paseo.api.onfinality.io/public-ws
+  relay: paseo-testnet
