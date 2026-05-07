@@ -148,9 +148,8 @@ const fetchMetadataExtract = async ({
 
     const ss58Prefix = getSs58Prefix(metadata, network.id)
 
-    const hasCheckMetadataHash = metadata.extrinsic.signedExtensions.some(
-      ({ identifier }) => identifier === 'CheckMetadataHash',
-    )
+    const signedExtensions = Object.values(metadata.extrinsic.signedExtensions).flat()
+    const hasCheckMetadataHash = signedExtensions.some(({ identifier }) => identifier === 'CheckMetadataHash')
 
     const account = getAccountType(metadata)
 

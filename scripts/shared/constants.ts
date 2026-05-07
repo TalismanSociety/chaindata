@@ -52,6 +52,8 @@ export const FILE_SOL_TOKENS_PREBUILD = 'data/cache/solana-tokens-prebuild.json'
 export const FILE_MODULE_CACHE_EVM_ERC20 = 'data/cache/module-cache-evm-erc20.json'
 export const FILE_MODULE_CACHE_EVM_UNISWAPV2 = 'data/cache/module-cache-evm-uniswapv2.json'
 export const FILE_MODULE_CACHE_SOL_SPL = 'data/cache/module-cache-sol-spl.json'
+export const FILE_MODULE_CACHE_SOL_TOKEN2022 = 'data/cache/module-cache-sol-token2022.json'
+export const FILE_SOL_MINT_PROGRAM_OWNERS_CACHE = 'data/cache/solana-mint-program-owners.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

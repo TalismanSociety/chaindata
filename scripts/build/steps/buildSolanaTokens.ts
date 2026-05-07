@@ -54,6 +54,7 @@ export const buildSolanaTokens = async () => {
     .sort((t1, t2) => t1.id.localeCompare(t2.id))
 
   checkDuplicates(solTokens)
+  checkDuplicateSolanaMintTokens(solTokens)
 
   await writeJsonFile(FILE_OUTPUT_TOKENS_SOLANA, solTokens, {
     schema: z.array(TokenSchema),
@@ -67,7 +68,26 @@ const findTokenConfigByTokenId = (tokenId: TokenId, network: SolNetworkConfig) =
       return network.nativeCurrency
     case 'sol-spl':
       return network.tokens?.['sol-spl']?.find((t) => t.mintAddress === parsed.mintAddress)
+    case 'sol-token2022':
+      return network.tokens?.['sol-token2022']?.find((t) => t.mintAddress === parsed.mintAddress)
     default:
       throw new Error(`Unknown token type: ${parsed.type} for tokenId: ${tokenId}`)
+  }
+}
+
+const checkDuplicateSolanaMintTokens = (tokens: Token[]) => {
+  const tokensByNetworkAndMint = new Map<string, Token>()
+
+  for (const token of tokens) {
+    if (token.type !== 'sol-spl' && token.type !== 'sol-token2022') continue
+
+    const key = `${token.networkId}:${token.mintAddress}`
+    const previousToken = tokensByNetworkAndMint.get(key)
+    if (previousToken) {
+      throw new Error(
+        `Duplicate Solana mint ${token.mintAddress} on ${token.networkId} as ${previousToken.type} and ${token.type}`,
+      )
+    }
+    tokensByNetworkAndMint.set(key, token)
   }
 }
