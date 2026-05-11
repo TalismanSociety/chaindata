@@ -95,6 +95,11 @@
             "type": "object",
             "properties": {},
             "additionalProperties": false
+          },
+          "sol-token2022": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -103,6 +108,50 @@
         "type": "object",
         "properties": {
           "sol-spl": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "mintAddress": {
+                  "type": "string",
+                  "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$"
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                }
+              },
+              "required": ["mintAddress"],
+              "additionalProperties": false
+            }
+          },
+          "sol-token2022": {
             "type": "array",
             "items": {
               "type": "object",

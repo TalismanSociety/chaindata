@@ -1,9 +1,10 @@
-import { SolSplTokenConfigSchema } from '@talismn/balances'
+import { SolSplTokenConfigSchema, SolToken2022TokenConfigSchema } from '@talismn/balances'
 import { NetworkBaseSchema, SolNetworkSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 const SolTokensConfigSchema = z.strictObject({
   'sol-spl': z.array(SolSplTokenConfigSchema).optional(),
+  'sol-token2022': z.array(SolToken2022TokenConfigSchema).optional(),
 })
 
 export const SolNetworkConfigSchema = z.strictObject({
