@@ -11,7 +11,7 @@
     },
     "blockExplorerUrls": ["https://etherscan.io"],
     "rpcs": [
-      "https://eth.llamarpc.com",
+      "https://rpc.nodeflare.app/eth/public",
       "https://go.getblock.io/aefd01aa907c4805ba3c00a9e5b48c6b",
       "https://ethereum-rpc.publicnode.com",
       "https://1rpc.io/eth",
@@ -72,6 +72,7 @@
       "https://ethereum-mainnet.gateway.tatum.io",
       "https://public-eth.nownodes.io",
       "https://eth1.lava.build",
+      "https://gw-aql.tomo.services/v1/ethereum/aql_live_2dba7f55b5cf0f356538a727da2079fe",
       "https://api.securerpc.com/v1",
       "https://mainnet.eth.cloud.ava.do",
       "https://ethereumnodelight.app.runonflux.io",
@@ -19228,6 +19229,7 @@
     },
     "blockExplorerUrls": ["https://optimistic.etherscan.io"],
     "rpcs": [
+      "https://rpc.nodeflare.app/op/public",
       "https://1rpc.io/op",
       "https://optimism-rpc.publicnode.com",
       "https://optimism.meowrpc.com",
@@ -21851,7 +21853,7 @@
     },
     "blockExplorerUrls": ["https://bscscan.com"],
     "rpcs": [
-      "https://binance.llamarpc.com",
+      "https://rpc.nodeflare.app/bnb/public",
       "https://1rpc.io/bnb",
       "https://bsc-rpc.publicnode.com",
       "https://bsc.meowrpc.com",
@@ -21883,6 +21885,7 @@
       "https://services.tokenview.io/vipapi/nodeservice/bsc?apikey=gVFJX5OyPdc2kHH7youg",
       "https://bsc-mainnet.gateway.tatum.io",
       "https://public-bsc.nownodes.io",
+      "https://gw-aql.tomo.services/v1/bnbchain/aql_live_2dba7f55b5cf0f356538a727da2079fe",
       "https://bsc-dataseed.bnbchain.org",
       "https://bsc-dataseed1.defibit.io",
       "https://bsc-dataseed1.ninicoin.io",
@@ -35454,7 +35457,12 @@
       "coingeckoId": "tomochain"
     },
     "blockExplorerUrls": [],
-    "rpcs": ["https://viction.drpc.org", "https://viction.blockpi.network/v1/rpc/public", "https://rpc.viction.xyz"],
+    "rpcs": [
+      "https://rpc.nodeflare.app/vic/public",
+      "https://viction.drpc.org",
+      "https://viction.blockpi.network/v1/rpc/public",
+      "https://rpc.viction.xyz"
+    ],
     "tokens": {
       "evm-erc20": [
         {
@@ -37058,6 +37066,7 @@
       "https://polygon.meowrpc.com",
       "https://endpoints.omniatech.io/v1/matic/mainnet/public",
       "https://poly.api.pocket.network",
+      "https://rpc.satelink.network/rpc/polygon",
       "https://rpc.ankr.com/polygon",
       "https://polygon-public.nodies.app",
       "https://polygon-mainnet.public.blastapi.io",
@@ -37083,8 +37092,7 @@
       "https://polygon.lava.build",
       "https://api-polygon-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://polygon-rpc.com",
-      "https://polygon-mainnet.rpcfast.com/?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
-      "https://rpc.satelink.network/rpc/polygon"
+      "https://polygon-mainnet.rpcfast.com/?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf"
     ],
     "tokens": {
       "evm-erc20": [
@@ -42346,8 +42354,6 @@
       "https://rpc.ankr.com/xlayer",
       "https://xlayer-mainnet.rpc.sentio.xyz",
       "https://xlayer.rpc.blxrbdn.com",
-      "https://okx-xlayer.rpc.blxrbdn.com",
-      "https://flap-xlayer.rpc.blxrbdn.com",
       "https://rpc.xlayer.tech",
       "https://xlayerrpc.okx.com"
     ],
@@ -43104,6 +43110,19 @@
     "rpcs": ["https://testnet.deamchain.com"],
     "icon": "deam",
     "shortName": "deamtest"
+  },
+  {
+    "id": "237",
+    "name": "AEREDIUM",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "AER",
+      "name": "AER"
+    },
+    "blockExplorerUrls": ["https://explorer.aeredium.io"],
+    "rpcs": ["https://rpc.aeredium.io"],
+    "icon": "aeredium",
+    "shortName": "aer"
   },
   {
     "id": "238",
@@ -46240,6 +46259,19 @@
     "chainSlug": "cronos zkevm"
   },
   {
+    "id": "389",
+    "name": "LunaroChain Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "LNR",
+      "name": "Lunaro"
+    },
+    "blockExplorerUrls": ["https://scan.lunaro.network"],
+    "rpcs": ["https://rpc.lunaro.network"],
+    "icon": "lunaro",
+    "shortName": "lnr"
+  },
+  {
     "id": "395",
     "isTestnet": true,
     "name": "CamDL Testnet",
@@ -47243,6 +47275,19 @@
     "blockExplorerUrls": ["https://test.netxscan.io"],
     "rpcs": ["https://test-rpc.netxscan.io"],
     "shortName": "netx-testnet"
+  },
+  {
+    "id": "589",
+    "name": "LadyChain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "LADY",
+      "name": "Lady"
+    },
+    "blockExplorerUrls": ["https://ladyscan.us"],
+    "rpcs": ["https://ladyrpc.us/rpc"],
+    "icon": "lady",
+    "shortName": "lady"
   },
   {
     "id": "592",
@@ -50096,6 +50141,23 @@
     "blockExplorerUrls": [],
     "rpcs": ["https://global.rpc.mainnet.newtonproject.org"],
     "shortName": "new"
+  },
+  {
+    "id": "1019",
+    "name": "MAI Chain Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MAI",
+      "name": "MAI Chain Native Token"
+    },
+    "blockExplorerUrls": ["https://maiscan.org"],
+    "rpcs": [
+      "https://mainnet-node-0.maichain.org",
+      "https://mainnet-node-1.maichain.org",
+      "https://mainnet-node-2.maichain.org"
+    ],
+    "icon": "mai",
+    "shortName": "mai"
   },
   {
     "id": "1024",
@@ -52963,6 +53025,20 @@
     "rpcs": ["https://rpc.vitruveo.xyz"],
     "icon": "vitruveo",
     "shortName": "vitruveo"
+  },
+  {
+    "id": "1492",
+    "name": "ROON Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ROON",
+      "name": "ROON"
+    },
+    "blockExplorerUrls": ["https://browser.roonchain.com"],
+    "rpcs": ["https://rpc.roonchain.com"],
+    "icon": "roonchain",
+    "shortName": "roonchain",
+    "chainSlug": "roonchain"
   },
   {
     "id": "1499",
@@ -57641,13 +57717,13 @@
   },
   {
     "id": "2828",
-    "name": "Candy Chain",
+    "name": "CandyChain",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "CANDY",
       "name": "CANDY"
     },
-    "blockExplorerUrls": ["https://explorer.candychain.io"],
+    "blockExplorerUrls": ["https://streams.candychain.io"],
     "rpcs": ["https://publicrpc.candychain.io"],
     "shortName": "candy"
   },
@@ -60256,6 +60332,18 @@
     "shortName": "wcsep"
   },
   {
+    "id": "4848",
+    "name": "BlockSurety",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "BSURE",
+      "name": "BSURE"
+    },
+    "blockExplorerUrls": ["https://blocksurety.net"],
+    "rpcs": ["https://rpc.blocksurety.net"],
+    "shortName": "BSURE"
+  },
+  {
     "id": "4888",
     "isTestnet": true,
     "name": "BlackFort Exchange Network Testnet",
@@ -61492,6 +61580,18 @@
     "shortName": "taaqo"
   },
   {
+    "id": "5570",
+    "name": "Treasurenet Aurora",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "UNIT",
+      "name": "UNIT"
+    },
+    "blockExplorerUrls": ["https://scan.treasurenet.io"],
+    "rpcs": ["https://rpc.treasurenet.io"],
+    "shortName": "treasurenet"
+  },
+  {
     "id": "5577",
     "name": "MSC Blockchain",
     "nativeCurrency": {
@@ -61723,15 +61823,15 @@
   },
   {
     "id": "5888",
-    "name": "MANTRACHAIN Mainnet",
+    "name": "MANTRA Chain",
     "logo": "./assets/chains/known/5888.webp",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "OM",
-      "name": "OM",
+      "symbol": "MANTRA",
+      "name": "MANTRA",
       "coingeckoId": "mantra"
     },
-    "blockExplorerUrls": ["http://mantrascan.io"],
+    "blockExplorerUrls": ["https://blockscout.mantrascan.io"],
     "rpcs": ["https://evm.mantrachain.io"],
     "tokens": {
       "evm-erc20": [
@@ -61750,7 +61850,7 @@
       ]
     },
     "icon": "om",
-    "shortName": "mantrachain"
+    "shortName": "mantra"
   },
   {
     "id": "6000",
@@ -61895,6 +61995,18 @@
     "rpcs": ["https://node-api.uptn.io/v1/ext/rpc"],
     "icon": "uptn",
     "shortName": "UPTN"
+  },
+  {
+    "id": "6122",
+    "name": "Tea Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "TEA",
+      "name": "Tea"
+    },
+    "blockExplorerUrls": ["https://explorer.tea.xyz"],
+    "rpcs": ["https://rpc.tea.xyz"],
+    "shortName": "tea"
   },
   {
     "id": "6163",
@@ -64333,7 +64445,7 @@
     },
     "blockExplorerUrls": ["https://basescan.org"],
     "rpcs": [
-      "https://base.llamarpc.com",
+      "https://rpc.nodeflare.app/base/public",
       "https://1rpc.io/base",
       "https://base.meowrpc.com",
       "https://base-rpc.publicnode.com",
@@ -64365,6 +64477,7 @@
       "https://developer-access-mainnet.base.org",
       "https://li-fi-base.intustechno.workers.dev/rpc",
       "https://rpc.notadegen.com/base",
+      "https://rpc.baseazul.dev",
       "https://mainnet-preconf.base.org"
     ],
     "tokens": {
@@ -73911,7 +74024,6 @@
     },
     "blockExplorerUrls": ["https://ebcscan.net"],
     "rpcs": ["https://rpc.ebcscan.net"],
-    "icon": "ebc",
     "shortName": "ebc"
   },
   {
@@ -76842,6 +76954,19 @@
     "shortName": "SPS"
   },
   {
+    "id": "13113",
+    "name": "RANNTA X-Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RNTX",
+      "name": "RANNTA Core X"
+    },
+    "blockExplorerUrls": ["https://explorer.rannta.com"],
+    "rpcs": ["https://rpc.rannta.com"],
+    "icon": "rannta",
+    "shortName": "rntx"
+  },
+  {
     "id": "13188",
     "isTestnet": true,
     "name": "BeeChain Testnet",
@@ -77325,6 +77450,19 @@
     "rpcs": ["https://mainnet-rpc.kymaticscan.online"],
     "icon": "kymtc",
     "shortName": "KYMTC"
+  },
+  {
+    "id": "15526",
+    "name": "NirmalX Smart Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "NRXN",
+      "name": "NirmalX Smart Chain"
+    },
+    "blockExplorerUrls": ["https://nirmalxscan.com"],
+    "rpcs": ["https://rpc.nirmalxscan.com"],
+    "shortName": "nrxn",
+    "chainSlug": "nrxn"
   },
   {
     "id": "15551",
@@ -78463,14 +78601,14 @@
   },
   {
     "id": "21133",
-    "name": "All About Healthy",
+    "name": "All About Health",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "AAH",
       "name": "AAH"
     },
-    "blockExplorerUrls": ["https://exp.c4ex.net"],
-    "rpcs": ["https://rpc.c4ex.net"],
+    "blockExplorerUrls": ["https://exp.aah.name"],
+    "rpcs": ["https://rpc.aah.name"],
     "shortName": "aah"
   },
   {
@@ -79565,7 +79703,7 @@
     "rpcs": [
       "https://mezo.drpc.org",
       "https://rpc_evm-mezo.imperator.co",
-      "https://rpc-http.mezo.boar.network",
+      "https://mezo-mainnet.boar.network",
       "https://mainnet.mezo.public.validationcloud.io",
       "https://rpc-internal.mezo.org"
     ],
@@ -80211,7 +80349,7 @@
       "name": "POP"
     },
     "blockExplorerUrls": ["https://testnet-app.popdex.xyz/explorer"],
-    "rpcs": ["https://testnet-api.popdex.xyz"],
+    "rpcs": ["https://testnet-api.popdex.xyz/api/v1/web3/rpc"],
     "shortName": "popdex-testnet"
   },
   {
@@ -81083,6 +81221,7 @@
     },
     "blockExplorerUrls": ["https://arbiscan.io"],
     "rpcs": [
+      "https://rpc.nodeflare.app/arb/public",
       "https://1rpc.io/arb",
       "https://arbitrum-one-rpc.publicnode.com",
       "https://arbitrum.meowrpc.com",
@@ -85290,6 +85429,7 @@
     },
     "blockExplorerUrls": ["https://snowscan.xyz"],
     "rpcs": [
+      "https://rpc.nodeflare.app/avax/public",
       "https://avalanche-c-chain-rpc.publicnode.com",
       "https://1rpc.io/avax/c",
       "https://endpoints.omniatech.io/v1/avax/mainnet/public",
@@ -87641,6 +87781,19 @@
     "blockExplorerUrls": [],
     "rpcs": ["https://rpc.oracle.liveplex.io"],
     "shortName": "LOE"
+  },
+  {
+    "id": "50002",
+    "isTestnet": true,
+    "name": "Mantle Hoodi Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MNT",
+      "name": "Hoodi Mantle"
+    },
+    "blockExplorerUrls": ["https://explorer.hoodi.mantle.xyz"],
+    "rpcs": ["https://rpc.hoodi.mantle.xyz"],
+    "shortName": "mnt-hoodi"
   },
   {
     "id": "50005",
@@ -90098,6 +90251,18 @@
     "shortName": "sdc"
   },
   {
+    "id": "77888",
+    "name": "BSOS Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "BSOS",
+      "name": "BSOS"
+    },
+    "blockExplorerUrls": ["https://explorer.one.bsos.co"],
+    "rpcs": ["https://rpc.one.bsos.co"],
+    "shortName": "bsos"
+  },
+  {
     "id": "78110",
     "isTestnet": true,
     "name": "Firenze test network",
@@ -92098,6 +92263,19 @@
     "shortName": "camp"
   },
   {
+    "id": "90909",
+    "name": "QuantumBit",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "QB",
+      "name": "QuantumBit"
+    },
+    "blockExplorerUrls": ["https://quantumbit.foo"],
+    "rpcs": ["https://quantumbit.foo/rpc"],
+    "icon": "quantumbit",
+    "shortName": "qb"
+  },
+  {
     "id": "91002",
     "isTestnet": true,
     "name": "Nautilus Trition Chain",
@@ -93639,6 +93817,19 @@
     "shortName": "mitosis-testnet"
   },
   {
+    "id": "127001",
+    "name": "Gravity",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "G",
+      "name": "Gravity"
+    },
+    "blockExplorerUrls": ["https://mainnet-explorer.gravity.xyz"],
+    "rpcs": ["https://mainnet-rpc.gravity.xyz"],
+    "icon": "gravity",
+    "shortName": "grav"
+  },
+  {
     "id": "127823",
     "isTestnet": true,
     "name": "Etherlink Shadownet Testnet",
@@ -94469,7 +94660,7 @@
     "name": "FONChain Mainnet",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "FSC",
+      "symbol": "FON",
       "name": "FON"
     },
     "blockExplorerUrls": ["https://fonscan.io"],
@@ -94477,7 +94668,7 @@
       "https://fsc-dataseed1.fonscan.io",
       "https://fsc-dataseed2.fonscan.io",
       "https://fsc-dataseed3.fonscan.io",
-      "https://fsc-dataseed5.fonscan.io"
+      "https://fsc-dataseed4.fonscan.io"
     ],
     "icon": "fonchain",
     "shortName": "fsc"
@@ -95111,6 +95302,18 @@
     "shortName": "Orange-Chain-Testnet"
   },
   {
+    "id": "240884",
+    "name": "HIPERCAPITAL FINANCE Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "HIP",
+      "name": "HIPERCAPITAL FINANCE Token"
+    },
+    "blockExplorerUrls": ["https://explorer.hipercapitalfinance.com"],
+    "rpcs": ["https://rpc.hipercapitalfinance.com"],
+    "shortName": "hipcf"
+  },
+  {
     "id": "241120",
     "isTestnet": true,
     "name": "Anomaly Andromeda Testnet",
@@ -95255,6 +95458,18 @@
     "rpcs": ["https://kublayer2.testnet.kubchain.io"],
     "icon": "kub",
     "shortName": "kub"
+  },
+  {
+    "id": "262144",
+    "name": "MPCQ Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MPCQ",
+      "name": "MPCQ"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://rpc.moneypoolscash.com"],
+    "shortName": "mpcq"
   },
   {
     "id": "262371",
@@ -95437,6 +95652,19 @@
     "rpcs": ["https://rpc.testnet.t1protocol.com"],
     "icon": "t1",
     "shortName": "t1t"
+  },
+  {
+    "id": "303030",
+    "name": "AXION Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "AXION",
+      "name": "AXION"
+    },
+    "blockExplorerUrls": ["https://axscan.axiondefi.com"],
+    "rpcs": ["https://rpc.axiondefi.com"],
+    "icon": "axion",
+    "shortName": "axion"
   },
   {
     "id": "309075",
@@ -95874,6 +96102,19 @@
     "rpcs": ["https://mainnet-rpc.tipboxcoin.net"],
     "icon": "tipboxcoinIcon",
     "shortName": "TPBXm"
+  },
+  {
+    "id": "411994",
+    "name": "PLN Network",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "PLN",
+      "name": "PLN"
+    },
+    "blockExplorerUrls": ["https://plnscan.com"],
+    "rpcs": ["https://oneagent.uk/rpc"],
+    "icon": "pln",
+    "shortName": "pln"
   },
   {
     "id": "413413",
@@ -97023,6 +97264,19 @@
     "shortName": "goldpn"
   },
   {
+    "id": "704851",
+    "name": "Mars Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MarsC",
+      "name": "Mars Coin"
+    },
+    "blockExplorerUrls": ["https://explorer.mars-chain.io/"],
+    "rpcs": ["https://rpc.mars-scan.io"],
+    "icon": "https://ipfs.io/ipfs/bafkreiahnorlibpuklbzedc3x3lw6mqry2kjmaqh3rtkdlw2ydpom2gs7y",
+    "shortName": "marschain"
+  },
+  {
     "id": "704852",
     "isTestnet": true,
     "name": "Mars Chain Testnet",
@@ -98006,6 +98260,18 @@
     "blockExplorerUrls": ["https://explorer.avicoin.org"],
     "rpcs": ["https://rpc.avicoin.org"],
     "shortName": "avi"
+  },
+  {
+    "id": "970803",
+    "name": "Primox Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "PXT",
+      "name": "Primox Token"
+    },
+    "blockExplorerUrls": ["https://scan.primox.online/"],
+    "rpcs": ["https://rpc.primox.online"],
+    "shortName": "primox"
   },
   {
     "id": "978658",
@@ -99159,14 +99425,17 @@
   },
   {
     "id": "7771777",
-    "name": "VALYGO Smart Contract",
+    "name": "VALYGO Smartchain",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "VYO",
       "name": "VYO"
     },
     "blockExplorerUrls": ["https://vyoscan.com"],
-    "rpcs": ["https://rpc-gw-1.vyoscan.com/ext/bc/2t51dXsuxUvd9teY9TKEJmgxmxMk3CRF88UYTA4HQgjeYZqzSX/rpc"],
+    "rpcs": [
+      "https://rpc-gw-1.vyoscan.com/ext/bc/2t51dXsuxUvd9teY9TKEJmgxmxMk3CRF88UYTA4HQgjeYZqzSX/rpc",
+      "https://rpc-gw-2.vyoscan.com/ext/bc/2t51dXsuxUvd9teY9TKEJmgxmxMk3CRF88UYTA4HQgjeYZqzSX/rpc"
+    ],
     "icon": "valygo",
     "shortName": "vyo"
   },
@@ -99179,7 +99448,10 @@
       "name": "VYO"
     },
     "blockExplorerUrls": ["https://nft.vyoscan.com"],
-    "rpcs": ["https://rpc-gw-1.vyoscan.com/ext/bc/2RyzsmGypNQZPby1miwMMV8spTvhgd9qd2peNRzU1mErUQqSSw/rpc"],
+    "rpcs": [
+      "https://rpc-gw-1.vyoscan.com/ext/bc/2RyzsmGypNQZPby1miwMMV8spTvhgd9qd2peNRzU1mErUQqSSw/rpc",
+      "https://rpc-gw-2.vyoscan.com/ext/bc/2RyzsmGypNQZPby1miwMMV8spTvhgd9qd2peNRzU1mErUQqSSw/rpc"
+    ],
     "icon": "valygo",
     "shortName": "vyonft"
   },
@@ -99788,6 +100060,19 @@
     "blockExplorerUrls": [],
     "rpcs": ["https://net.iolite.io"],
     "shortName": "ilt"
+  },
+  {
+    "id": "18896214",
+    "name": "Crynux on Base",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "CNX",
+      "name": "Crynux"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://json-rpc.base.crynux.io"],
+    "icon": "crynux",
+    "shortName": "crynux-base"
   },
   {
     "id": "19850818",
@@ -100730,6 +101015,20 @@
     ],
     "icon": "blast",
     "shortName": "blastsepolia"
+  },
+  {
+    "id": "188962142",
+    "isTestnet": true,
+    "name": "Crynux on Base Sepolia",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "CNX",
+      "name": "Sepolia Crynux"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://json-rpc.base-sepolia.crynux.io"],
+    "icon": "crynux",
+    "shortName": "crynux-base-sepolia"
   },
   {
     "id": "192837465",
@@ -102717,6 +103016,18 @@
     "rpcs": ["https://rpc.flame.dawn-1.astria.org"],
     "icon": "flame",
     "shortName": "flame-testnet"
+  },
+  {
+    "id": "123354377739506",
+    "name": "Strato",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "USDST",
+      "name": "Strato USDST"
+    },
+    "blockExplorerUrls": ["https://stratoscan.strato.nexus/"],
+    "rpcs": ["https://noderpc.strato.nexus/rpc"],
+    "shortName": "strato"
   },
   {
     "id": "428962654539583",
