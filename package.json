@@ -33,6 +33,7 @@
     "build": "pnpm run validate && tsx scripts/build.ts",
     "build:dev": "tsx scripts/build.ts",
     "clean": "rm -rf pub",
+    "prepare-pr-merge": "git fetch origin main && git restore --source=origin/main --staged --worktree data",
     "postinstall": "pnpm generate-schemas"
   },
   "dependencies": {
