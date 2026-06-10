@@ -36,14 +36,14 @@ importers:
         specifier: ^3.1.0
         version: 3.2.0
       '@talismn/balances':
-        specifier: 0.0.0-pr2410-20260507054816
-        version: 0.0.0-pr2410-20260507054816(@polkadot/api-contract@12.4.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/types@16.2.1)(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@substrate/txwrapper-core@7.5.1(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(postcss@8.4.49)(tsx@4.19.4)(typescript@5.8.3)(utf-8-validate@5.0.10)(yaml@2.8.0)
+        specifier: 0.0.0-pr2428-20260610062904
+        version: 0.0.0-pr2428-20260610062904(@polkadot/api-contract@12.4.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/types@16.2.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@substrate/txwrapper-core@7.5.1(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(postcss@8.4.49)(tsx@4.19.4)(typescript@5.8.3)(utf-8-validate@5.0.10)(yaml@2.8.0)
       '@talismn/chain-connectors':
-        specifier: 0.0.0-pr2410-20260507054816
-        version: 0.0.0-pr2410-20260507054816(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/util@13.5.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)
+        specifier: 0.0.0-pr2428-20260610062904
+        version: 0.0.0-pr2428-20260610062904(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)
       '@talismn/chaindata-provider':
-        specifier: 0.0.0-pr2410-20260507054816
-        version: 0.0.0-pr2410-20260507054816
+        specifier: 0.0.0-pr2428-20260610062904
+        version: 0.0.0-pr2428-20260610062904
       '@talismn/crypto':
         specifier: 0.3.4
         version: 0.3.4
@@ -2439,31 +2439,28 @@ packages:
   '@swc/helpers@0.5.17':
     resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
 
-  '@talismn/balances@0.0.0-pr2410-20260507054816':
-    resolution: {integrity: sha512-Nwh3t6ZLzaqpd1TfrrHlbHIDpCzWhfBJW/dai1+7UIrScjbnKWJshZXKGabXo+1cxHNz6DvQgwYMFRFBr4fraQ==}
+  '@talismn/balances@0.0.0-pr2428-20260610062904':
+    resolution: {integrity: sha512-a5PKFwMtnc+EPNuVCM72ykVDmWglPz6U59r/YRhCqXIxNZSuvPZrjkuSQGJduKd7OSb+sbiV0OEO44V7K8y1Zw==}
     engines: {node: '>=20'}
     peerDependencies:
       '@polkadot/api-contract': '*'
       '@polkadot/types': '*'
-      '@polkadot/util': '*'
-      '@polkadot/util-crypto': '*'
       '@substrate/txwrapper-core': '*'
 
-  '@talismn/chain-connectors@0.0.0-pr2410-20260507054816':
-    resolution: {integrity: sha512-v38AGObaw0mWvwOhvQydJdsUaC39MMyS97eahx8es5Lx5OkId1rH6W7w0LrsSPVCODooPaYFjijuR0SUDA5xqw==}
+  '@talismn/chain-connectors@0.0.0-pr2428-20260610062904':
+    resolution: {integrity: sha512-4QsyxBuc2mQVg9Fp1TlkzYFQc/tVaZZF1a7DB8gu2RxotABzkk0S/PPVQsU/T/2SZ5NZMk/5MU9uB89gdOTSiw==}
     engines: {node: '>=20'}
     peerDependencies:
       '@polkadot/rpc-provider': '*'
-      '@polkadot/util': '*'
       '@polkadot/x-global': '*'
       '@polkadot/x-ws': '*'
 
-  '@talismn/chaindata-provider@0.0.0-pr2410-20260507054816':
-    resolution: {integrity: sha512-129mheJRSnbV8UufqvOgjWv2H5u4oIlkbq+OmNwuQ0rW7iOTX2yVoss8E1oGIX1x3yKH8rl5P+BbHzAz3ri7DQ==}
+  '@talismn/chaindata-provider@0.0.0-pr2428-20260610062904':
+    resolution: {integrity: sha512-hMhPb5PITYVQS/N1iWENJNAR5Cr0y4PQeooQ0zb4lVLbdCPErmrd6lv6H4aTj8YmXJMZmoIAihRyVIPJNxBUKw==}
     engines: {node: '>=20'}
 
-  '@talismn/connection-meta@0.0.0-pr2410-20260507054816':
-    resolution: {integrity: sha512-1j/Q+YRgvX9TnW+zMJ/Mo8jVYacx1Rko39wKlorKLFgwgKhj+BJ+ZLagJrBK0IutJ0+ETQycaVSbcu5221/Ksw==}
+  '@talismn/connection-meta@0.0.0-pr2428-20260610062904':
+    resolution: {integrity: sha512-6aw3gtIXMZkVWEg6XRHpmeTtFH5Cobh3lsSSaTY9ZOS+GqH/WTjceh7aOGnpxmnoO7O3CVhu5Mc+FZyS5tsDig==}
     engines: {node: '>=20'}
 
   '@talismn/crypto@0.3.4':
@@ -2474,12 +2471,16 @@ packages:
     resolution: {integrity: sha512-9WEbol7+92tEWenBGi6XZa3xpHQDTKcA6befWypbgLUZxuD1OIf5WgYWGBJbV35vMcQgJRJHarh1Gh47oZsPkw==}
     engines: {node: '>=20'}
 
+  '@talismn/sapi@0.1.6':
+    resolution: {integrity: sha512-k3LXahYH27u2ris/0jUpL37+xrZmozXiGMV508Q8KI+++3Dgi8WT5C68WOZp7C++kUhi7NvDegdDhay4PUz/RQ==}
+    engines: {node: '>=20'}
+
   '@talismn/scale@0.3.4':
     resolution: {integrity: sha512-m4fprfo6DavETBQwaaLJK4zi//qKFnLAQWBWljL6/UbN1PgSvbHmAnvsAmfNugOiOfYCjyLmfNR/01LzatKMaw==}
     engines: {node: '>=20'}
 
-  '@talismn/token-rates@0.0.0-pr2410-20260507054816':
-    resolution: {integrity: sha512-ZM40fwVmRlO1vNARi5TxtxvhBb3AiCdP9vVACqByWrsv2RSWlUCjQg/A6D0RZsVBsJWzlmxOg3R1DbrfggbUkA==}
+  '@talismn/token-rates@0.0.0-pr2428-20260610062904':
+    resolution: {integrity: sha512-eW+dwVkyt9UIL7WE6WqMfGebiui4ezpG58DheVbpBnHiJREOWP37kR2A/zxiGCGkOJ+EuFDkLPwec9NQrWO1gw==}
     engines: {node: '>=20'}
 
   '@talismn/util@1.0.1':
@@ -8402,24 +8403,22 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@talismn/balances@0.0.0-pr2410-20260507054816(@polkadot/api-contract@12.4.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/types@16.2.1)(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@substrate/txwrapper-core@7.5.1(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(postcss@8.4.49)(tsx@4.19.4)(typescript@5.8.3)(utf-8-validate@5.0.10)(yaml@2.8.0)':
+  '@talismn/balances@0.0.0-pr2428-20260610062904(@polkadot/api-contract@12.4.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/types@16.2.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@substrate/txwrapper-core@7.5.1(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(postcss@8.4.49)(tsx@4.19.4)(typescript@5.8.3)(utf-8-validate@5.0.10)(yaml@2.8.0)':
     dependencies:
       '@metaplex-foundation/mpl-token-metadata': 3.4.0(@metaplex-foundation/umi@1.2.0)
       '@metaplex-foundation/umi': 1.2.0
       '@polkadot-api/utils': 0.2.0
       '@polkadot/api-contract': 12.4.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@polkadot/types': 16.2.1
-      '@polkadot/util': 13.5.1
-      '@polkadot/util-crypto': 13.5.1(@polkadot/util@13.5.1)
       '@solana/spl-token': 0.4.13(@solana/web3.js@1.98.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@solana/web3.js': 1.98.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@substrate/txwrapper-core': 7.5.1(@polkadot/util-crypto@13.5.1(@polkadot/util@13.5.1))(@polkadot/util@13.5.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      '@talismn/chain-connectors': 0.0.0-pr2410-20260507054816(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/util@13.5.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)
-      '@talismn/chaindata-provider': 0.0.0-pr2410-20260507054816
+      '@talismn/chain-connectors': 0.0.0-pr2428-20260610062904(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)
+      '@talismn/chaindata-provider': 0.0.0-pr2428-20260610062904
       '@talismn/crypto': 0.3.4
-      '@talismn/sapi': 0.1.5(bufferutil@4.0.9)(postcss@8.4.49)(rxjs@7.8.2)(tsx@4.19.4)(utf-8-validate@5.0.10)(yaml@2.8.0)
+      '@talismn/sapi': 0.1.6(bufferutil@4.0.9)(postcss@8.4.49)(rxjs@7.8.2)(tsx@4.19.4)(utf-8-validate@5.0.10)(yaml@2.8.0)
       '@talismn/scale': 0.3.4
-      '@talismn/token-rates': 0.0.0-pr2410-20260507054816
+      '@talismn/token-rates': 0.0.0-pr2428-20260610062904
       '@talismn/util': 1.0.1(rxjs@7.8.2)
       anylogger: 1.0.11
       bignumber.js: 9.3.0
@@ -8447,15 +8446,14 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@talismn/chain-connectors@0.0.0-pr2410-20260507054816(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/util@13.5.1)(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)':
+  '@talismn/chain-connectors@0.0.0-pr2428-20260610062904(@polkadot/rpc-provider@16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@polkadot/x-global@14.0.3)(@polkadot/x-ws@14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(rxjs@7.8.2)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.76)':
     dependencies:
       '@polkadot/rpc-provider': 16.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      '@polkadot/util': 13.5.1
       '@polkadot/x-global': 14.0.3
       '@polkadot/x-ws': 14.0.3(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@solana/web3.js': 1.98.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
-      '@talismn/chaindata-provider': 0.0.0-pr2410-20260507054816
-      '@talismn/connection-meta': 0.0.0-pr2410-20260507054816
+      '@talismn/chaindata-provider': 0.0.0-pr2428-20260610062904
+      '@talismn/connection-meta': 0.0.0-pr2428-20260610062904
       '@talismn/util': 1.0.1(rxjs@7.8.2)
       anylogger: 1.0.11
       eventemitter3: 5.0.1
@@ -8469,7 +8467,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@talismn/chaindata-provider@0.0.0-pr2410-20260507054816':
+  '@talismn/chaindata-provider@0.0.0-pr2428-20260610062904':
     dependencies:
       '@talismn/util': 1.0.1(rxjs@7.8.2)
       anylogger: 1.0.11
@@ -8479,9 +8477,9 @@ snapshots:
       rxjs: 7.8.2
       zod: 3.25.76
 
-  '@talismn/connection-meta@0.0.0-pr2410-20260507054816':
+  '@talismn/connection-meta@0.0.0-pr2428-20260610062904':
     dependencies:
-      '@talismn/chaindata-provider': 0.0.0-pr2410-20260507054816
+      '@talismn/chaindata-provider': 0.0.0-pr2428-20260610062904
       dexie: 4.0.11
 
   '@talismn/crypto@0.3.4':
@@ -8523,6 +8521,30 @@ snapshots:
       - utf-8-validate
       - yaml
 
+  '@talismn/sapi@0.1.6(bufferutil@4.0.9)(postcss@8.4.49)(rxjs@7.8.2)(tsx@4.19.4)(utf-8-validate@5.0.10)(yaml@2.8.0)':
+    dependencies:
+      '@polkadot-api/merkleize-metadata': 1.1.29
+      '@polkadot-api/metadata-builders': 0.13.9
+      '@polkadot-api/substrate-bindings': 0.17.0
+      '@polkadot-api/utils': 0.2.0
+      '@polkadot/types': 16.1.2
+      '@polkadot/types-codec': 16.1.2
+      '@talismn/scale': 0.3.4
+      anylogger: 1.0.11
+      polkadot-api: 1.23.3(bufferutil@4.0.9)(postcss@8.4.49)(rxjs@7.8.2)(tsx@4.19.4)(utf-8-validate@5.0.10)(yaml@2.8.0)
+      scale-ts: 1.6.1
+    transitivePeerDependencies:
+      - '@microsoft/api-extractor'
+      - '@swc/core'
+      - bufferutil
+      - jiti
+      - postcss
+      - rxjs
+      - supports-color
+      - tsx
+      - utf-8-validate
+      - yaml
+
   '@talismn/scale@0.3.4':
     dependencies:
       '@polkadot-api/metadata-builders': 0.13.9
@@ -8531,9 +8553,9 @@ snapshots:
       anylogger: 1.0.11
       scale-ts: 1.6.1
 
-  '@talismn/token-rates@0.0.0-pr2410-20260507054816':
+  '@talismn/token-rates@0.0.0-pr2428-20260610062904':
     dependencies:
-      '@talismn/chaindata-provider': 0.0.0-pr2410-20260507054816
+      '@talismn/chaindata-provider': 0.0.0-pr2428-20260610062904
 
   '@talismn/util@1.0.1(rxjs@7.8.2)':
     dependencies:
