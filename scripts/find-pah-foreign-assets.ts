@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises'
 import { pah } from '@polkadot-api/descriptors'
 import omit from 'lodash/omit'
 import { Binary, createClient } from 'polkadot-api'
-import { getWsProvider } from 'polkadot-api/ws-provider/node'
+import { getWsProvider } from 'polkadot-api/ws'
 
 const wsUrl = 'wss://asset-hub-polkadot-rpc.dwellir.com'
 
@@ -31,7 +31,7 @@ const main = async () => {
         JSON.stringify(
           {
             onChainId: key,
-            symbol: metadata.symbol.asText(),
+            symbol: Binary.toText(metadata.symbol),
             ...omit(existing ?? {}, ['onChainId', 'symbol']),
           },
           null,
@@ -70,7 +70,7 @@ const papiStringify = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const replacer = (_key: string, value: any) => {
     if (typeof value === 'bigint') return `bigint:${String(value)}`
-    if (value instanceof Binary) return `hex:${value.asHex()}`
+    if (value instanceof Uint8Array) return `hex:${Binary.toHex(value)}`
     return value
   }
 

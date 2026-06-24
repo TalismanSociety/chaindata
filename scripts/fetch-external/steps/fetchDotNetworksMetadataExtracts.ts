@@ -126,7 +126,10 @@ const fetchMetadataExtract = async ({
 }: FetchMetadataExtractArgs): Promise<DotNetworkMetadataExtract> => {
   console.log('Fetching metadata extract for network %s', network.id)
 
-  const provider = getRpcProvider(rpcs)
+  // 20s request timeout (default is 5s): large v2 metadata (e.g. asset-hubs, ~600KB+) can't
+  // download within 5s over flaky public RPCs, leaving those networks stuck on an old
+  // minimetadata version. The outer step budget (withTimeout below) is 30s.
+  const provider = getRpcProvider(rpcs, 5_000, 20_000)
 
   // used for debug logging if decAnyMetadata fails
   let debug_metadata_version = null

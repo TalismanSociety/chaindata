@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 
 import kebabCase from 'lodash/kebabCase'
 import { createClient } from 'polkadot-api'
-import { getWsProvider } from 'polkadot-api/ws-provider/node'
+import { getWsProvider } from 'polkadot-api/ws'
 import prettier from 'prettier'
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml'
 
