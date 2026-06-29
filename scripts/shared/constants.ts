@@ -3,6 +3,8 @@ import 'dotenv/config'
 import { execSync } from 'child_process'
 import { readFileSync } from 'fs'
 
+import { MINIMETADATA_VERSION } from '@talismn/chaindata-provider'
+
 export const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? ''
 export const GITHUB_CDN = 'https://raw.githubusercontent.com'
 export const GITHUB_ORG = 'TalismanSociety'
@@ -13,7 +15,7 @@ export const GITHUB_BRANCH = execSync('git rev-parse --abbrev-ref HEAD').toStrin
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
 export const DIR_ASSETS_TOKENS = 'assets/tokens'
-export const DIR_OUTPUT = 'pub/v12'
+export const DIR_OUTPUT = `pub/${MINIMETADATA_VERSION}`
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
   'https://raw.githubusercontent.com/novasamatech/metadata-portal/master/config.toml'
@@ -68,5 +70,7 @@ export const COINGECKO_LOGO_DOWNLOAD_LIMIT = process.env.COINGECKO_LOGO_DOWNLOAD
   : 100
 
 export const PRETTIER_CONFIG = JSON.parse(
-  readFileSync(new URL('../../package.json', import.meta.url), { encoding: 'utf8' }),
+  readFileSync(new URL('../../package.json', import.meta.url), {
+    encoding: 'utf8',
+  }),
 ).prettier
