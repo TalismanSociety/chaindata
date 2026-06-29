@@ -27,7 +27,8 @@ export const fixForeignAssets = async () => {
         onChainId.interior.value[1].type === 'AccountKey20'
       ) {
         const networkId = String(onChainId.interior.value[0].value.value.chain_id)
-        const contractAddress = onChainId.interior.value[1].value.key.asHex()
+        // polkadot-api v2 decodes the fixed-size AccountKey20 key as a hex string
+        const contractAddress = onChainId.interior.value[1].value.key
         const targetToken = ethTokens
           .filter(isTokenEvmErc20)
           .find((t) => t.networkId === networkId && t.contractAddress === contractAddress)

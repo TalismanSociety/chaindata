@@ -31,7 +31,9 @@ type CacheEntry = { id: string } & Record<string, unknown>
 type TokenCache = Partial<Record<TokenType, Record<TokenId, CacheEntry>>>
 
 export const fetchEthTokens = async () => {
-  const prevEthTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema)
+  // cast to the chaindata-provider Token type: the zod-inferred schema type is structurally
+  // equivalent but distinct, which clashes with the fetcher's Token[] return type below
+  const prevEthTokens = parseJsonFile(FILE_ETH_TOKENS_PREBUILD, EthTokensPreBuildFileSchema) as Token[]
 
   const ethNetworksConfig = parseYamlFile(FILE_INPUT_NETWORKS_ETHEREUM, EthNetworksConfigFileSchema)
   const knownEthNetworks = parseJsonFile<KnownEthNetworkConfig[]>(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
