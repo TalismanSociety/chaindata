@@ -61,7 +61,11 @@ export const checkPlatformRpcsHealth = async (
   options?: Partial<CheckRpcsHealthOptions>,
 ) => {
   const cacheFilePath = FILEPATH_BY_PLATFORM[platform]
-  const { rechecks, maxchecks }: CheckRpcsHealthOptions = Object.assign({}, DEFAULT_OPTIONS, options)
+  const { maxchecks, ...rest }: CheckRpcsHealthOptions = Object.assign({}, DEFAULT_OPTIONS, options)
+
+  // `--skip-rechecks` forces rechecks to 0: new RPCs are still always checked (newKeys is never sliced),
+  // but existing/cached RPCs are not re-validated. Useful for fast local runs.
+  const rechecks = process.argv.includes('--skip-rechecks') ? 0 : rest.rechecks
 
   const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema).filter(({ rpc }) =>
     isNotBlacklistedRpcUrl(rpc),
@@ -78,6 +82,8 @@ export const checkPlatformRpcsHealth = async (
 
   const newKeys = listedRpcHealthsKeys.filter((key) => !existingRpcHealthsByKey[key])
   console.log('Found', newKeys.length, 'new RPCs to check')
+  if (rechecks === 0 && process.argv.includes('--skip-rechecks'))
+    console.log('--skip-rechecks: skipping rechecks of cached RPCs')
 
   // Limit rechecks based on maxchecks, but ALWAYS check all new RPCs
   // This ensures new networks are never skipped due to rate limiting

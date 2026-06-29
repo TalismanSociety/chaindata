@@ -1,4 +1,4 @@
-import { WsProvider } from '@polkadot/rpc-provider'
+import { createClient } from '@polkadot-api/substrate-client'
 import { PromisePool } from '@supercharge/promise-pool'
 import { BALANCE_MODULES, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
 import { TokenType } from '@talismn/chaindata-provider'
@@ -12,13 +12,13 @@ import {
   unifyMetadata,
 } from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
+import { getWsProvider } from 'polkadot-api/ws'
 
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
-import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
@@ -119,6 +119,67 @@ type FetchMetadataExtractArgs = {
   specs: DotNetworkSpecs
 }
 
+type DotClient = ReturnType<typeof createClient>
+
+// @polkadot/rpc-provider's WsProvider connects to a single endpoint, does NOT fail over to another
+// rpc on a *request* timeout (only on disconnect), AND auto-reconnects forever while logging every
+// failure ("API-WS: disconnected ... 1002"). Large metadata (asset-hubs ~600KB+) can't download
+// within the timeout on a slow endpoint (e.g. astar: dwellir 34s vs onfinality 3s), so a single
+// slow/dead rpc both blocks the fetch and spams the console indefinitely.
+//
+// polkadot-api's ws provider avoids both: its logger defaults to a no-op (no console spam) and
+// client.destroy() tears the connection down cleanly. We use the low-level @polkadot-api/substrate-client
+// (raw request/response) rather than polkadot-api's high-level createClient on purpose: the latter
+// eagerly runs a chainHead_follow subscription whose background promise rejects (DisjointError /
+// "Not connected") when we destroy the client mid-follow, surfacing as an unhandled rejection that
+// crashes the process. Race every rpc behind a hard per-rpc timeout (so a dead rpc can't hang the
+// race and leak a reconnecting socket), keep the fastest client that returns metadata for the
+// topology read below, and always destroy the rest.
+const connectFastestWithMetadata = async (
+  rpcs: string[],
+  perRpcTimeoutMs = 20_000,
+): Promise<{ client: DotClient; metadataRpc: `0x${string}` }> => {
+  const clients = rpcs.map((rpc) => ({ rpc, client: createClient(getWsProvider(rpc)) }))
+  const errors: string[] = []
+
+  try {
+    const winner = await new Promise<{ client: DotClient; metadataRpc: `0x${string}` }>((resolve, reject) => {
+      let pending = clients.length
+      let resolved = false
+      for (const { rpc, client } of clients) {
+        void (async () => {
+          try {
+            const metadataRpc = await withTimeout(
+              () =>
+                fetchBestMetadata(
+                  (method, params) => client.request(method, params),
+                  false, // do not allow fallback, though it will fallback if RPC responds that Metadata runtime api doesn't exist
+                ),
+              perRpcTimeoutMs,
+              `metadata fetch timed out for ${rpc}`,
+            )
+            if (!resolved) {
+              resolved = true
+              resolve({ client, metadataRpc })
+            }
+          } catch (cause) {
+            errors.push(`${rpc}: ${(cause as Error)?.message ?? cause}`)
+            if (--pending === 0 && !resolved)
+              reject(new Error(`all ${clients.length} rpc(s) failed: ${errors.join(' | ')}`))
+          }
+        })()
+      }
+    })
+
+    // keep the winner for subsequent storage reads (topology), destroy the losers
+    for (const { client } of clients) if (client !== winner.client) client.destroy()
+    return winner
+  } catch (cause) {
+    for (const { client } of clients) client.destroy()
+    throw cause
+  }
+}
+
 const fetchMetadataExtract = async ({
   network,
   specs,
@@ -126,22 +187,12 @@ const fetchMetadataExtract = async ({
 }: FetchMetadataExtractArgs): Promise<DotNetworkMetadataExtract> => {
   console.log('Fetching metadata extract for network %s', network.id)
 
-  // 20s request timeout (default is 5s): large v2 metadata (e.g. asset-hubs, ~600KB+) can't
-  // download within 5s over flaky public RPCs, leaving those networks stuck on an old
-  // minimetadata version. The outer step budget (withTimeout below) is 30s.
-  const provider = getRpcProvider(rpcs, 5_000, 20_000)
+  const { client, metadataRpc } = await connectFastestWithMetadata(rpcs)
 
   // used for debug logging if decAnyMetadata fails
   let debug_metadata_version = null
 
   try {
-    await provider.isReady
-
-    const metadataRpc = await fetchBestMetadata(
-      (method, params) => provider.send(method, params),
-      false, // do not allow fallback, though it will fallback if RPC responds that Metadata runtime api doesn't exist
-    )
-
     try {
       // used for debug logging if decAnyMetadata fails
       debug_metadata_version = getMetadataVersion(metadataRpc)
@@ -158,7 +209,7 @@ const fetchMetadataExtract = async ({
 
     const miniMetadatas = await getMiniMetadatas(network, specs, metadataRpc)
 
-    const topology = await getTopology(metadata, provider, network)
+    const topology = await getTopology(metadata, client, network)
 
     return validateDebug(
       {
@@ -182,7 +233,7 @@ const fetchMetadataExtract = async ({
     }
     throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}: ${(cause as any)?.cause}`, { cause })
   } finally {
-    await provider.disconnect()
+    client.destroy()
   }
 }
 
@@ -253,7 +304,7 @@ const getSs58Prefix = (metadata: UnifiedMetadata, networkId: string) => {
 
 const getTopology = async (
   metadata: UnifiedMetadata,
-  provider: WsProvider,
+  client: DotClient,
   network: DotNetworkConfig,
 ): Promise<DotNetworkMetadataExtract['topology']> => {
   if (metadata.pallets.some((p) => p.name === 'Paras')) {
@@ -274,7 +325,7 @@ const getTopology = async (
       const builder = getDynamicBuilder(getLookupFn(metadata))
       const codec = builder.buildStorage('ParachainInfo', 'ParachainId')
       const stateKey = codec.keys.enc()
-      const hexValue = await provider.send<`0x${string}`>('state_getStorage', [stateKey])
+      const hexValue = await client.request<`0x${string}`>('state_getStorage', [stateKey])
       const paraId = codec.value.dec(hexValue) as number
 
       return {

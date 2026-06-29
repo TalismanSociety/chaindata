@@ -1,7 +1,8 @@
+import { createClient } from '@polkadot-api/substrate-client'
 import { PromisePool } from '@supercharge/promise-pool'
+import { getWsProvider } from 'polkadot-api/ws'
 
 import { FILE_INPUT_NETWORKS_POLKADOT, FILE_NETWORKS_SPECS_POLKADOT } from '../../shared/constants'
-import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { DotNetworksConfigFileSchema, DotNetworkSpecsFileSchema, DotNetworkSpecsSchema } from '../../shared/schemas'
@@ -53,17 +54,20 @@ export const fetchDotNetworksSpecs = async () => {
 }
 
 const fetchNetworkSpecs = async (network: { id: string; rpcs: string[] }) => {
-  const provider = getRpcProvider(network.rpcs)
+  // polkadot-api's ws provider replaces @polkadot/rpc-provider's WsProvider: it accepts the rpc array
+  // for native failover, its logger defaults to a no-op (no "API-WS: disconnected ... 1002" spam) and
+  // client.destroy() tears the connection down cleanly. We use the low-level @polkadot-api/substrate-client
+  // (raw request/response) rather than polkadot-api's high-level createClient to avoid the eager
+  // chainHead_follow subscription that rejects on destroy and crashes the process.
+  const client = createClient(getWsProvider(network.rpcs))
 
   try {
-    await provider.isReady
-
     const [name, chainType, genesisHash, runtimeVersion, properties] = await Promise.all([
-      provider.send('system_chain', []),
-      provider.send<string | { Custom: string }>('system_chainType', []),
-      provider.send('chain_getBlockHash', [0]),
-      provider.send('state_getRuntimeVersion', []),
-      provider.send('system_properties', []),
+      client.request<any>('system_chain', []),
+      client.request<string | { Custom: string }>('system_chainType', []),
+      client.request<any>('chain_getBlockHash', [0]),
+      client.request<any>('state_getRuntimeVersion', []),
+      client.request<any>('system_properties', []),
     ])
 
     return validateDebug(
@@ -81,6 +85,6 @@ const fetchNetworkSpecs = async (network: { id: string; rpcs: string[] }) => {
   } catch (cause) {
     throw new Error(`Failed to fetch network info for ${network.id}`, { cause })
   } finally {
-    await provider.disconnect()
+    client.destroy()
   }
 }

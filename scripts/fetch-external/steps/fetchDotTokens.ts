@@ -14,7 +14,6 @@ import {
   FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT,
   FILE_NETWORKS_SPECS_POLKADOT,
 } from '../../shared/constants'
-import { getRpcProvider } from '../../shared/getRpcProvider'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
@@ -119,13 +118,16 @@ const fetchDotNetworkTokens = async ({
 }: FetchDotNetworkTokensArgs): Promise<[NetworkId, Token[]]> => {
   console.log('Fetching tokens for network %s', network.id)
 
-  const provider = getRpcProvider(rpcs)
+  // ChainConnectorDotStub opens its own auto-reconnecting WsProvider internally and never exposes a
+  // disconnect, so reuse that single connection (rather than opening a second redundant one) and make
+  // sure we tear it down in the finally below. Otherwise it keeps reconnecting and spamming "API-WS:
+  // disconnected ... 1002" long after token fetching has finished.
+  // pass only the healthy (OK) rpcs so the connector's WsProvider doesn't churn through dead
+  // endpoints (each emitting an "API-WS: disconnected ... 1002" log) before finding a live one
+  const connector = new ChainConnectorDotStub({ ...network, rpcs } as DotNetwork)
+  const provider = connector.asProvider()
 
   try {
-    await provider.isReady
-
-    const connector = new ChainConnectorDotStub(network as DotNetwork)
-
     const newTokens: Record<string, any> = {}
 
     for (const mod of BALANCE_MODULES.filter((mod) => mod.platform === 'polkadot')) {
