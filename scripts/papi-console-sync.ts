@@ -11,7 +11,6 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 
 import kebabCase from 'lodash/kebabCase'
-import { createClient } from 'polkadot-api'
 import { getWsProvider } from 'polkadot-api/ws'
 import prettier from 'prettier'
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml'
@@ -99,27 +98,44 @@ const fetchPapiFile = async (url: string): Promise<PapiNetwork[]> => {
   return response.json() as Promise<PapiNetwork[]>
 }
 
+// Fetch the genesis hash via a single raw JSON-RPC request over the ws provider.
+// We deliberately avoid createClient(), which eagerly starts a chainHead follow: on
+// dead/unreachable RPCs that follow schedules background reconnect timers which fire
+// after teardown and throw uncaught "Not connected" errors, crashing the process.
+const requestGenesisHash = (rpc: string): Promise<string | null> =>
+  new Promise((resolve) => {
+    const provider = getWsProvider(rpc)
+    let connection: ReturnType<typeof provider> | undefined
+    let settled = false
+
+    const finish = (result: string | null) => {
+      if (settled) return
+      settled = true
+      clearTimeout(timer)
+      try {
+        connection?.disconnect()
+      } catch {
+        /* ignore teardown errors */
+      }
+      resolve(result)
+    }
+
+    const timer = setTimeout(() => finish(null), GENESIS_FETCH_TIMEOUT_MS)
+
+    connection = provider((msg) => {
+      if ('id' in msg && msg.id === 1) {
+        finish('result' in msg && typeof msg.result === 'string' ? msg.result : null)
+      }
+    })
+
+    connection.send({ jsonrpc: '2.0', id: 1, method: 'chainSpec_v1_genesisHash', params: [] })
+  })
+
 const fetchGenesisHash = async (rpcs: string[]): Promise<string | null> => {
   for (const rpc of rpcs) {
-    let client: ReturnType<typeof createClient> | undefined
-    let timer: ReturnType<typeof setTimeout> | undefined
-    try {
-      const provider = getWsProvider(rpc)
-      client = createClient(provider)
-      const result = await Promise.race([
-        client.getChainSpecData().then((spec) => spec.genesisHash),
-        new Promise<never>((_, reject) => {
-          timer = setTimeout(() => reject(new Error('timeout')), GENESIS_FETCH_TIMEOUT_MS)
-        }),
-      ])
-      clearTimeout(timer)
-      return result
-    } catch {
-      console.warn(`  Failed to fetch genesis hash from ${rpc}`)
-    } finally {
-      clearTimeout(timer)
-      client?.destroy()
-    }
+    const genesisHash = await requestGenesisHash(rpc)
+    if (genesisHash) return genesisHash
+    console.warn(`  Failed to fetch genesis hash from ${rpc}`)
   }
   return null
 }

@@ -24,6 +24,7 @@
     - wss://polkadot.ibp.network
     - wss://spectrum-03.simplystaking.xyz/cG9sa2Fkb3QtMDMtOTFkMmYwZGYtcG9sa2Fkb3Q/LjwBJpV3dIKyWQ/polkadot/mainnet
     - wss://rpc-polkadot.stakeworld.io
+    - wss://polkadot.gatotech.network
 - id: kusama
   name: Kusama
   isDefault: false
@@ -45,6 +46,7 @@
     - wss://kusama.public.curie.radiumblock.co/ws
     - wss://kusama.api.onfinality.io/public-ws
     - wss://kusama-rpc.n.dwellir.com
+    - wss://kusama.gatotech.network
 - id: 3-dpass
   name: 3DPass
   isDefault: false
@@ -1420,6 +1422,15 @@
     - wss://hydration.ibp.network
     - wss://hydration.dotters.network
     - wss://rpc.helikon.io/hydradx
+    - wss://hydration.rotko.net
+    - wss://subway.sin.hydration.cloud
+    - wss://subway.coke.hydration.cloud
+    - wss://rpc.kril.hydration.cloud
+    - wss://subway.shellfish.hydration.cloud
+    - wss://rpc-catfish-1.catfish.hydration.cloud
+    - wss://rpc-catfish-2.catfish.hydration.cloud
+    - wss://rpc-catfish-3.catfish.hydration.cloud
+    - wss://rpc-catfish-4.catfish.hydration.cloud
   isUnknownFeeToken: true
   relay: polkadot
   tokens:
@@ -2140,6 +2151,7 @@
   rpcs:
     - wss://kreivo.kippu.rocks/
     - wss://kreivo.io/
+    - wss://rpc.kreivo.bloque.sh
   relay: kusama
 - id: krest
   name: Krest
@@ -2859,6 +2871,8 @@
     - wss://statemint.public.curie.radiumblock.co/ws
     - wss://sys.ibp.network/statemint
     - wss://asset-hub-polkadot-rpc.n.dwellir.com
+    - wss://asset-hub-polkadot.gatotech.network
+    - wss://rpc-asset-hub-polkadot.stakeworld.io
   relay: polkadot
   tokens:
     substrate-assets:
@@ -2971,6 +2985,7 @@
     - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
     - wss://bridgehub-polkadot.api.onfinality.io/public-ws
     - wss://bridge-hub-polkadot-rpc.n.dwellir.com
+    - wss://rpc-bridge-hub-polkadot.stakeworld.io
   relay: polkadot
 - id: polkadot-collectives
   name: Polkadot Collectives
@@ -3021,6 +3036,7 @@
     - wss://polkadot-people-rpc.polkadot.io
     - wss://people-polkadot.api.onfinality.io/public-ws
     - wss://people-polkadot-rpc.n.dwellir.com
+    - wss://rpc-people-polkadot.stakeworld.io
   relay: polkadot
 - id: polkasmith
   name: PolkaSmith
@@ -4157,6 +4173,7 @@
     - wss://paseo.dotters.network
     - wss://pas-rpc.stakeworld.io
     - wss://paseo-rpc.n.dwellir.com
+    - wss://rpc-paseo.stakeworld.io
 - id: phala-testnet
   isTestnet: true
   name: Phala Testnet
@@ -4852,4 +4869,18 @@
   isTestnet: true
   rpcs:
     - wss://xcavate-paseo.api.onfinality.io/public-ws
+  relay: paseo-testnet
+- id: polkadot-bulletin
+  name: Bulletin
+  isDefault: false
+  rpcs:
+    - wss://bulletin-rpc.polkadot.io
+    - wss://spectrum-03.simplystaking.xyz/cG9sa2Fkb3QtMDMtOTFkMmYwZGYtcG9sa2Fkb3Q/9QbAeudedsupNA/polkadotbulletin/mainnet
+  relay: polkadot
+- id: paseo-niskala
+  name: Niskala(Paseo)
+  isDefault: false
+  isTestnet: true
+  rpcs:
+    - wss://mlg2.mandalachain.io
   relay: paseo-testnet
