@@ -6,13 +6,15 @@ const DotNetworkRuntimeVersionSchema = z.object({
   specVersion: z.uint32(),
 })
 
+// some nodes (e.g. the reset Paseo relay) serialize numbers as strings in system_properties
+// (tokenDecimals: "10"), so coerce rather than require a JSON number.
 const DotNetworkPropertiesSimple = z.object({
-  tokenDecimals: z.number().optional().default(0),
+  tokenDecimals: z.coerce.number().optional().default(0),
   tokenSymbol: z.string().optional().default('Unit'),
 })
 
 const DotNetworkPropertiesArray = z.object({
-  tokenDecimals: z.array(z.number()).nonempty(),
+  tokenDecimals: z.array(z.coerce.number()).nonempty(),
   tokenSymbol: z.array(z.string()).nonempty(),
 })
 
