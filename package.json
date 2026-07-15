@@ -79,7 +79,7 @@
 		"singleQuote": true
 	},
 	"lint-staged": {
-		"*.{ts,tsx,js,jsx,json}": "biome check --write --no-errors-on-unmatched",
+		"*.{ts,tsx,js,jsx,json}": "biome check --write --no-errors-on-unmatched --error-on-warnings",
 		"*.{md,html,yaml}": "prettier --write"
 	}
 }
