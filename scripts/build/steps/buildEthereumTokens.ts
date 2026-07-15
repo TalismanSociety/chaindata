@@ -1,5 +1,12 @@
-import { EvmErc20TokenConfig, EvmUniswapV2TokenConfig } from '@talismn/balances'
-import { EthNetwork, EthNetworkSchema, isTokenEth, NetworkId, Token, TokenSchema } from '@talismn/chaindata-provider'
+import type { EvmErc20TokenConfig, EvmUniswapV2TokenConfig } from '@talismn/balances'
+import {
+  type EthNetwork,
+  EthNetworkSchema,
+  isTokenEth,
+  type NetworkId,
+  type Token,
+  TokenSchema,
+} from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
@@ -15,9 +22,9 @@ import {
 import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import {
-  EthNetworkConfig,
+  type EthNetworkConfig,
   EthNetworksConfigFileSchema,
-  KnownEthNetworkConfig,
+  type KnownEthNetworkConfig,
   KnownEthNetworksFileSchema,
 } from '../../shared/schemas'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
@@ -98,6 +105,8 @@ const getNetworkTokens = (
             dicKnownUniswapV2[token.contractAddress.toLowerCase()],
             dicConfigUniswapV2[token.contractAddress.toLowerCase()],
           )
+        default:
+          return token
       }
     })
 }
