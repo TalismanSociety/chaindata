@@ -18,9 +18,9 @@ import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
   DotNetworkConfig,
-  DotNetworksConfigFileSchema,
   DotNetworkSpecs,
   DotNetworkSpecsFileSchema,
+  DotNetworksConfigFileSchema,
 } from '../../shared/schemas'
 import {
   DotNetworkMetadataExtract,

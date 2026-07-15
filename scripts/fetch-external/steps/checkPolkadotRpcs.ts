@@ -3,7 +3,7 @@ import WebSocket from 'ws'
 import { FILE_INPUT_NETWORKS_POLKADOT, FILE_NETWORKS_SPECS_POLKADOT } from '../../shared/constants'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { checkPlatformRpcsHealth, RpcHealthSpec } from '../../shared/rpcHealth'
-import { DotNetworksConfigFileSchema, DotNetworkSpecsFileSchema } from '../../shared/schemas'
+import { DotNetworkSpecsFileSchema, DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
 
 const RECHECKS_PER_RUN = 100

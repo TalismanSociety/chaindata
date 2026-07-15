@@ -2,7 +2,7 @@ import { access, writeFile } from 'fs/promises'
 import path from 'path'
 
 import { EvmErc20TokenConfig } from '@talismn/balances'
-import { toHex, Twox128 } from '@talismn/scale'
+import { Twox128, toHex } from '@talismn/scale'
 import { z } from 'zod/v4'
 
 import { DIR_ASSETS_TOKENS, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'

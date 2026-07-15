@@ -1,4 +1,4 @@
-import { solNativeTokenId, SolNetwork, SolNetworkSchema } from '@talismn/chaindata-provider'
+import { SolNetwork, SolNetworkSchema, solNativeTokenId } from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'
@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import { SolNetworksConfigFileSchema, SolNetworkSpecsFileSchema } from '../../shared/schemas'
+import { SolNetworkSpecsFileSchema, SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const buildSolanaNetworks = async () => {

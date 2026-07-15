@@ -4,7 +4,7 @@ import values from 'lodash/values'
 
 import { FILE_INPUT_NETWORKS_SOLANA, FILE_NETWORKS_SPECS_SOLANA } from '../../shared/constants'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import { SolNetworksConfigFileSchema, SolNetworkSpecsFileSchema } from '../../shared/schemas'
+import { SolNetworkSpecsFileSchema, SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchSolNetworksSpecs = async () => {

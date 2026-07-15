@@ -1,6 +1,6 @@
 import { createClient } from '@polkadot-api/substrate-client'
 import { PromisePool } from '@supercharge/promise-pool'
-import { BALANCE_MODULES, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
+import { BALANCE_MODULES, MINIMETADATA_VERSION, MiniMetadata } from '@talismn/balances'
 import { TokenType } from '@talismn/chaindata-provider'
 import { fetchBestMetadata } from '@talismn/sapi'
 import {
@@ -23,9 +23,9 @@ import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
   DotNetworkConfig,
-  DotNetworksConfigFileSchema,
   DotNetworkSpecs,
   DotNetworkSpecsFileSchema,
+  DotNetworksConfigFileSchema,
 } from '../../shared/schemas'
 import {
   DotNetworkMetadataExtract,
