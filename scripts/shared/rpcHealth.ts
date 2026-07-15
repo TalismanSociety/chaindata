@@ -24,7 +24,7 @@ const READ_CACHE: Record<Platform, NetworkRpcHealthCache | null> = {
 
 export type RpcHealthSpec = { rpc: string; networkId: string }
 
-export const getTimeoutSignal = (ms: number) => {
+export const getTimeoutSignal = (ms: number): AbortSignal => {
   const controller = new AbortController()
   setTimeout(() => controller.abort(), ms)
   return controller.signal

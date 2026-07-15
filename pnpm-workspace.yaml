@@ -1,9 +1,2 @@
 packages:
   - '.papi/descriptors'
-
-# @polkadot-api/json-rpc-provider-proxy@0.4.0 imports @polkadot-api/json-rpc-provider
-# at runtime but only declares it as a devDependency, so co-locate it explicitly.
-packageExtensions:
-  '@polkadot-api/json-rpc-provider-proxy':
-    dependencies:
-      '@polkadot-api/json-rpc-provider': 0.2.0
