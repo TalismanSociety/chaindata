@@ -1,7 +1,8 @@
 import { u32, Vector } from '@polkadot-api/substrate-bindings'
-import { WsProvider } from '@polkadot/rpc-provider'
+import { createClient, SubstrateClient } from '@polkadot-api/substrate-client'
 import { DotNetwork, Network } from '@talismn/chaindata-provider'
 import { decAnyMetadata } from '@talismn/scale'
+import { getWsProvider } from 'polkadot-api/ws'
 
 import { DIR_OUTPUT } from './shared/constants'
 import { parseJsonFile } from './shared/parseFile'
@@ -15,16 +16,18 @@ const results: Result[] = []
 
 console.log('%d networks', chains.length)
 
-const getProviderVersions = async (chain: DotNetwork, provider: WsProvider): Promise<number[]> => {
+const getProviderVersions = async (chain: DotNetwork, client: SubstrateClient): Promise<number[]> => {
   const timeout = setTimeout(() => {
-    provider.disconnect()
+    try {
+      client.destroy()
+    } catch {
+      // ignore destroy errors
+    }
   }, 11_000)
 
   try {
-    await provider.isReady
-
     try {
-      const resVersions = await provider.send('state_call', ['Metadata_metadata_versions', '0x'], true)
+      const resVersions = await client.request<string>('state_call', ['Metadata_metadata_versions', '0x'])
       const versions = Vector(u32).dec(resVersions)
       return versions.filter((v) => v < 100) // ignore 4294967295 - JAM?
     } catch (error) {
@@ -33,7 +36,7 @@ const getProviderVersions = async (chain: DotNetwork, provider: WsProvider): Pro
     }
 
     try {
-      const resDefaultMetadata = await provider.send('state_getMetadata', [])
+      const resDefaultMetadata = await client.request<string>('state_getMetadata', [])
       const metadata = decAnyMetadata(resDefaultMetadata)
       const version = Number(metadata.metadata.tag.slice(1))
       return [version]
@@ -41,7 +44,11 @@ const getProviderVersions = async (chain: DotNetwork, provider: WsProvider): Pro
       console.warn('error getting default metadata for chain', chain.id, chain.name, (error as any)?.message)
     }
   } finally {
-    provider.disconnect()
+    try {
+      client.destroy()
+    } catch {
+      // ignore destroy errors
+    }
   }
 
   clearTimeout(timeout)
@@ -54,17 +61,10 @@ const getChainVersions = async (chain: DotNetwork): Promise<number[] | 'timeout'
     return []
   }
 
-  const provider = new WsProvider(
-    chain.rpcs,
-    2_000,
-    {
-      Origin: 'chrome-extension://abpofhpcakjhnpklgodncneklaobppdc',
-    },
-    5_000,
-  )
+  const client = createClient(getWsProvider(chain.rpcs))
 
   return await Promise.race([
-    getProviderVersions(chain, provider),
+    getProviderVersions(chain, client),
     new Promise<number[] | 'timeout'>((resolve) => {
       setTimeout(() => {
         resolve('timeout')

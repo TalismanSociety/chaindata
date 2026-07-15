@@ -1,6 +1,5 @@
 import 'anylogger-loglevel'
 
-import { cryptoWaitReady } from '@polkadot/util-crypto'
 import startCase from 'lodash/startCase'
 import loglevel from 'loglevel'
 
@@ -23,9 +22,6 @@ if (stepsArg) {
 }
 
 const stop = logDuration('fetch-external')
-
-// TODO check if this is still necessary
-await cryptoWaitReady()
 
 for (const [index, executeStep] of fetchExternalSteps.entries()) {
   // Skip steps if --steps filter is provided and this step doesn't match

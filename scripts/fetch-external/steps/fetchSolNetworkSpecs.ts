@@ -1,4 +1,4 @@
-import { Connection } from '@solana/web3.js'
+import { getSolRpc } from '@talismn/chain-connectors'
 import keyBy from 'lodash/keyBy'
 import values from 'lodash/values'
 
@@ -15,8 +15,8 @@ export const fetchSolNetworksSpecs = async () => {
 
   for (const network of solNetworks) {
     try {
-      const connection = new Connection(network.rpcs[0], 'confirmed')
-      const genesisHash = await connection.getGenesisHash()
+      const rpc = getSolRpc(network.id, network.rpcs)
+      const genesisHash = await rpc.getGenesisHash().send()
       networksSpecsById[network.id] = {
         id: network.id,
         genesisHash,

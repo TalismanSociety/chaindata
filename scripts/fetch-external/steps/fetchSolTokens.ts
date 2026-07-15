@@ -1,4 +1,5 @@
-import { PublicKey } from '@solana/web3.js'
+import type { Address } from '@solana/kit'
+import { address } from '@solana/kit'
 import { BALANCE_MODULES, SolSplTokenConfig, SolToken2022TokenConfig } from '@talismn/balances'
 import { ChainConnectorSolStub } from '@talismn/chain-connectors'
 import { SolNetwork, Token, TokenId } from '@talismn/chaindata-provider'
@@ -29,8 +30,8 @@ type CoingeckoSolTokenConfig = {
   coingeckoId: string
 }
 
-const SOL_TOKEN_PROGRAM_ID = new PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA')
-const SOL_TOKEN_2022_PROGRAM_ID = new PublicKey('TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb')
+const SOL_TOKEN_PROGRAM_ID = address('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA')
+const SOL_TOKEN_2022_PROGRAM_ID = address('TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb')
 const MINT_PROGRAM_OWNER_LOOKUP_BATCH_SIZE = 100
 
 export const fetchSolTokens = async () => {
@@ -196,7 +197,7 @@ const filterTokenConfigsByProgramOwner = async <T extends SolMintTokenConfig>({
   networkId: string
   tokenConfigs: T[]
   mintProgramOwnersCache: MintProgramOwnerCache
-  programId: PublicKey
+  programId: Address
 }): Promise<T[]> => {
   if (!tokenConfigs.length) return tokenConfigs
 
@@ -206,33 +207,30 @@ const filterTokenConfigsByProgramOwner = async <T extends SolMintTokenConfig>({
   )
 
   if (unknownMintAddresses.length) {
-    const connection = await connector.getConnection()
-    if (!connection) throw new Error(`No connection found for network ${networkId}`)
+    const rpc = await connector.getRpc()
 
-    const mintPublicKeys: Array<{ mintAddress: string; publicKey: PublicKey }> = []
+    const mintAddressesToFetch: Address[] = []
     for (const mintAddress of unknownMintAddresses) {
       try {
-        mintPublicKeys.push({ mintAddress, publicKey: new PublicKey(mintAddress) })
+        mintAddressesToFetch.push(address(mintAddress))
       } catch (cause) {
         console.warn('Invalid Solana mint address %s: %s', mintAddress, (cause as Error).message)
         mintProgramOwnersCache[getMintProgramOwnerCacheKey(networkId, mintAddress)] = null
       }
     }
 
-    console.log('Fetching program owners for %s Solana mint accounts on %s', mintPublicKeys.length, networkId)
-    for (const chunk of chunks(mintPublicKeys, MINT_PROGRAM_OWNER_LOOKUP_BATCH_SIZE)) {
-      const accounts = await connection.getMultipleAccountsInfo(chunk.map(({ publicKey }) => publicKey))
+    console.log('Fetching program owners for %s Solana mint accounts on %s', mintAddressesToFetch.length, networkId)
+    for (const chunk of chunks(mintAddressesToFetch, MINT_PROGRAM_OWNER_LOOKUP_BATCH_SIZE)) {
+      const { value: accounts } = await rpc.getMultipleAccounts(chunk, { encoding: 'base64' }).send()
       accounts.forEach((account, index) => {
-        mintProgramOwnersCache[getMintProgramOwnerCacheKey(networkId, chunk[index].mintAddress)] =
-          account?.owner.toBase58() ?? null
+        mintProgramOwnersCache[getMintProgramOwnerCacheKey(networkId, chunk[index])] = account?.owner ?? null
       })
     }
   }
 
-  const programIdString = programId.toBase58()
   return tokenConfigs.filter(
     (tokenConfig) =>
-      mintProgramOwnersCache[getMintProgramOwnerCacheKey(networkId, tokenConfig.mintAddress)] === programIdString,
+      mintProgramOwnersCache[getMintProgramOwnerCacheKey(networkId, tokenConfig.mintAddress)] === programId,
   )
 }
 

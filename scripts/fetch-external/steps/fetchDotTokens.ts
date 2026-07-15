@@ -118,14 +118,9 @@ const fetchDotNetworkTokens = async ({
 }: FetchDotNetworkTokensArgs): Promise<[NetworkId, Token[]]> => {
   console.log('Fetching tokens for network %s', network.id)
 
-  // ChainConnectorDotStub opens its own auto-reconnecting WsProvider internally and never exposes a
-  // disconnect, so reuse that single connection (rather than opening a second redundant one) and make
-  // sure we tear it down in the finally below. Otherwise it keeps reconnecting and spamming "API-WS:
-  // disconnected ... 1002" long after token fetching has finished.
-  // pass only the healthy (OK) rpcs so the connector's WsProvider doesn't churn through dead
-  // endpoints (each emitting an "API-WS: disconnected ... 1002" log) before finding a live one
+  // pass only the healthy (OK) rpcs so the connector's ws provider doesn't churn through dead
+  // endpoints before finding a live one; tear the connection down in the finally below
   const connector = new ChainConnectorDotStub({ ...network, rpcs } as DotNetwork)
-  const provider = connector.asProvider()
 
   try {
     const newTokens: Record<string, any> = {}
@@ -226,7 +221,7 @@ const fetchDotNetworkTokens = async ({
     if (cause === null) console.warn('Unsupported metadata version on network', network.id)
     throw new Error(`Failed to fetch dot tokens for ${network.id}: ${cause}`, { cause })
   } finally {
-    await provider.disconnect()
+    connector.destroy()
   }
 }
 

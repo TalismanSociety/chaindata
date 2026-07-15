@@ -2,14 +2,15 @@
  * Script to remove dead RPCs from networks-ethereum.yaml and networks-polkadot.yaml
  *
  * - For Ethereum RPCs: uses viem/fetch to query eth_blockNumber
- * - For Polkadot RPCs: uses @polkadot/rpc-provider WsProvider to query block number
+ * - For Polkadot RPCs: uses polkadot-api's ws provider to query block number
  * - If block number can't be fetched within 5 seconds, the RPC is removed
  */
 
 import { readFileSync, writeFileSync } from 'node:fs'
 
-import { WsProvider } from '@polkadot/rpc-provider'
+import { createClient } from '@polkadot-api/substrate-client'
 import { PromisePool } from '@supercharge/promise-pool'
+import { getWsProvider } from 'polkadot-api/ws'
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml'
 
 import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_INPUT_NETWORKS_POLKADOT } from './shared/constants'
@@ -74,13 +75,12 @@ const checkEthereumRpc = async (rpc: string, networkId: string): Promise<RpcChec
 // ============ Polkadot RPC Check ============
 
 const checkPolkadotRpc = async (rpc: string, networkId: string): Promise<RpcCheckResult> => {
-  const provider = new WsProvider(rpc, 2_000, undefined, TIMEOUT_MS)
+  const client = createClient(getWsProvider(rpc))
 
   try {
     const result = await Promise.race([
       (async () => {
-        await provider.isReady
-        const header = (await provider.send('chain_getHeader', [])) as { number?: string }
+        const header = await client.request<{ number?: string }>('chain_getHeader', [])
         const blockNumber = header?.number ? parseInt(header.number, 16) : undefined
         return { rpc, networkId, success: true, blockNumber }
       })(),
@@ -89,13 +89,13 @@ const checkPolkadotRpc = async (rpc: string, networkId: string): Promise<RpcChec
       ),
     ])
 
-    await provider.disconnect()
+    client.destroy()
     return result
   } catch (err) {
     try {
-      await provider.disconnect()
+      client.destroy()
     } catch {
-      // ignore disconnect errors
+      // ignore destroy errors
     }
     const error = err instanceof Error ? err.message : String(err)
     return { rpc, networkId, success: false, error }
@@ -269,7 +269,7 @@ const main = async () => {
     console.log(`  Polkadot: ${dotStats.removed}/${dotStats.total} RPCs removed`)
   }
 
-  // Force exit because WsProvider keeps the process open
+  // Force exit in case a ws connection keeps the process open
   process.exit(0)
 }
 
