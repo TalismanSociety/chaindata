@@ -9,20 +9,13 @@
   chainspecQrUrl: https://metadata.parity.io/qr/polkadot_specs.png
   latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot_metadata_latest.apng
   rpcs:
-    - wss://rpc.ibp.network/polkadot
     - wss://polkadot-rpc.publicnode.com
-    - wss://polkadot-public-rpc.blockops.network/ws
     - wss://rpc-polkadot.helixstreet.io
-    - wss://polkadot.dotters.network
     - wss://rpc-polkadot.luckyfriday.io
     - wss://rockx-dot.w3node.com/polka-public-dot/ws
     - wss://dot-rpc.stakeworld.io
-    - wss://polkadot.public.curie.radiumblock.co/ws
-    - wss://polkadot.rpc.subquery.network/public/ws
     - wss://polkadot.api.onfinality.io/public-ws
     - wss://polkadot-rpc.n.dwellir.com
-    - wss://polkadot.ibp.network
-    - wss://spectrum-03.simplystaking.xyz/cG9sa2Fkb3QtMDMtOTFkMmYwZGYtcG9sa2Fkb3Q/LjwBJpV3dIKyWQ/polkadot/mainnet
     - wss://rpc-polkadot.stakeworld.io
     - wss://polkadot.gatotech.network
 - id: kusama
@@ -36,14 +29,11 @@
   chainspecQrUrl: https://metadata.parity.io/qr/kusama_specs.png
   latestMetadataQrUrl: https://metadata.parity.io/qr/kusama_metadata_latest.apng
   rpcs:
-    - wss://rpc.ibp.network/kusama
     - wss://kusama-rpc.publicnode.com
     - wss://rpc-kusama.helixstreet.io
-    - wss://kusama.dotters.network
     - wss://rpc-kusama.luckyfriday.io
     - wss://rockx-ksm.w3node.com/polka-public-ksm/ws
     - wss://ksm-rpc.stakeworld.io
-    - wss://kusama.public.curie.radiumblock.co/ws
     - wss://kusama.api.onfinality.io/public-ws
     - wss://kusama-rpc.n.dwellir.com
     - wss://kusama.gatotech.network
@@ -75,8 +65,6 @@
     - wss://acala-rpc-0.aca-api.network
     - wss://acala-rpc-1.aca-api.network
     - wss://acala-rpc-3.aca-api.network/ws
-    - wss://acala.ibp.network
-    - wss://acala.dotters.network
     - wss://acala-rpc.n.dwellir.com
   relay: polkadot
   tokens:
@@ -217,7 +205,6 @@
     - wss://public-archive.mainnet.acurast.com
     - wss://rpc-mainnet-acurast.5elementsnodes.com
     - wss://rpc-acurast.ultraops.dev
-    - wss://acurast-rpc.faradaynodes.com
     - wss://acurast-rpc.paradoxxllc.com
   relay: polkadot
 - id: acurast
@@ -235,8 +222,6 @@
     - https://ajuna.statescan.io/
   oldPrefix: 1328
   rpcs:
-    - wss://ajuna.ibp.network
-    - wss://ajuna.dotters.network
     - wss://rpc-para.ajuna.network
   relay: polkadot
 - id: aleph-zero
@@ -304,8 +289,7 @@
   isDefault: false
   chainspecQrUrl: https://metadata.novasama.io/qr/amplitude_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/amplitude_metadata_latest.apng
-  rpcs:
-    - wss://rpc-amplitude.pendulumchain.tech
+  rpcs: []
   relay: kusama
   tokens:
     substrate-tokens:
@@ -379,7 +363,6 @@
   oldPrefix: 5
   rpcs:
     - wss://rpc.astar.network
-    - wss://astar.public.curie.radiumblock.co/ws
     - wss://astar.api.onfinality.io/public-ws
     - wss://astar-rpc.n.dwellir.com
   relay: polkadot
@@ -764,10 +747,7 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/bifrost_polkadot_metadata_latest.apng
   oldPrefix: 6
   rpcs:
-    - wss://bifrost-polkadot.ibp.network
-    - wss://bifrost-polkadot.dotters.network
     - wss://eu.bifrost-polkadot-rpc.liebi.com/ws
-    - wss://hk.p.bifrost-rpc.liebi.com/ws
   relay: polkadot
   tokens:
     substrate-tokens:
@@ -914,7 +894,6 @@
   nativeCurrency:
     coingeckoId: bittensor
   rpcs:
-    - wss://bittensor-finney.api.onfinality.io/ws?apikey=15b864be-512b-4391-aea6-d7a583a9a7e1
     - wss://lite.sub.latent.to:443
     - wss://entrypoint-finney.opentensor.ai:443
     - wss://lite.chain.opentensor.ai
@@ -1003,8 +982,7 @@
     coingeckoId: chainx
   blockExplorerUrls:
     - https://chainx.subscan.io/
-  rpcs:
-    - wss://mainnet.chainx.org/ws
+  rpcs: []
 - id: clover
   name: Clover
   isDefault: false
@@ -1208,9 +1186,6 @@
   oldPrefix: 88
   rpcs:
     - wss://crust-parachain.crustapps.net
-    - wss://crust-parachain.crustnetwork.app
-    - wss://crust-parachain.crustnetwork.cc
-    - wss://crust-parachain.crustnetwork.xyz
   relay: polkadot
 - id: curio
   name: Curio
@@ -1228,7 +1203,6 @@
   oldPrefix: 18
   rpcs:
     - wss://rpc.darwinia.network
-    - wss://darwinia.rpc.subquery.network/public/ws
   relay: polkadot
 - id: debio
   name: DeBio
@@ -1260,8 +1234,7 @@
     - https://edgeware.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/edgeware_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/edgeware_metadata_latest.apng
-  rpcs:
-    - wss://edgeware-rpc3.jelliedowl.net
+  rpcs: []
 - id: efinity-polkadot
   name: Efinity
   isDefault: false
@@ -1292,9 +1265,6 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/encointer-parachain_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/encointer-parachain_metadata_latest.apng
   rpcs:
-    - wss://sys.ibp.network/encointer-kusama
-    - wss://kusama.api.encointer.org
-    - wss://encointer-kusama.dotters.network
     - wss://encointer-kusama-rpc.n.dwellir.com
     - wss://rpc-encointer-kusama.luckyfriday.io
   relay: kusama
@@ -1420,9 +1390,6 @@
   oldPrefix: 63
   rpcs:
     - wss://hydration-rpc.n.dwellir.com
-    - wss://hydration.ibp.network
-    - wss://hydration.dotters.network
-    - wss://rpc.helikon.io/hydradx
     - wss://hydration.rotko.net
     - wss://subway.sin.hydration.cloud
     - wss://subway.coke.hydration.cloud
@@ -1584,9 +1551,6 @@
   oldPrefix: 42
   rpcs:
     - wss://nexus.rpc.polytope.technology
-    - wss://hyperbridge-nexus-rpc.blockops.network
-    - wss://nexus.ibp.network
-    - wss://nexus.dotters.network
   relay: polkadot
   blockExplorerUrls:
     - https://nexus.statescan.io/
@@ -1727,8 +1691,7 @@
   isDefault: false
   chainspecQrUrl: https://metadata.novasama.io/qr/ipci_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/ipci_metadata_latest.apng
-  rpcs:
-    - wss://ipci.rpc.robonomics.network
+  rpcs: []
   relay: kusama
 - id: jamton
   name: Jamton
@@ -1743,9 +1706,7 @@
     coingeckoId: joystream
   blockExplorerUrls:
     - https://joystream.subscan.io/
-  rpcs:
-    - wss://rpc.joyutils.org
-    - wss://rpc.joystream.org
+  rpcs: []
 - id: jur
   name: Jur
   isDefault: false
@@ -2049,9 +2010,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/kilt-spiritnet_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kilt-spiritnet_metadata_latest.apng
   oldPrefix: 38
-  rpcs:
-    - wss://kilt.ibp.network
-    - wss://kilt.dotters.network
+  rpcs: []
   relay: polkadot
 - id: kintsugi
   name: Kintsugi
@@ -2064,7 +2023,6 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kintsugi-parachain_metadata_latest.apng
   rpcs:
     - wss://api-kusama.interlay.io/parachain
-    - wss://kintsugi.api.onfinality.io/public-ws
   nativeTokenId: kintsugi:substrate-tokens:N4IgLgngDgpiBcIAqB7A1jAdiANCAbgIYA2ArnPKJLAiANICSAckiAL5tA
   relay: kusama
   balancesConfig:
@@ -2161,9 +2119,7 @@
     coingeckoId: krest
   blockExplorerUrls:
     - https://krest.subscan.io/
-  rpcs:
-    - wss://wss-krest.peaq.network/
-    - wss://krest.api.onfinality.io/public-ws
+  rpcs: []
   relay: kusama
 - id: kulupu
   name: Kulupu
@@ -2182,15 +2138,11 @@
   chainspecQrUrl: https://metadata.parity.io/qr/kusama-statemine_specs.png
   latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-statemine_metadata_latest.apng
   rpcs:
-    - wss://sys.ibp.network/asset-hub-kusama
-    - wss://asset-hub-kusama.dotters.network
     - wss://rpc-asset-hub-kusama.luckyfriday.io
     - wss://kusama-asset-hub-rpc.polkadot.io
-    - wss://statemine.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/assethub
     - wss://assethub-kusama.api.onfinality.io/public-ws
     - wss://asset-hub-kusama-rpc.n.dwellir.com
-    - wss://sys.ibp.network/statemine
   relay: kusama
   tokens:
     substrate-assets:
@@ -2215,11 +2167,8 @@
   chainspecQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_specs.png
   latestMetadataQrUrl: https://metadata.parity.io/qr/kusama-bridge-hub-kusama_metadata_latest.apng
   rpcs:
-    - wss://sys.ibp.network/bridgehub-kusama
-    - wss://bridge-hub-kusama.dotters.network
     - wss://rpc-bridge-hub-kusama.luckyfriday.io
     - wss://kusama-bridge-hub-rpc.polkadot.io
-    - wss://bridgehub-kusama.public.curie.radiumblock.co/ws
     - wss://ksm-rpc.stakeworld.io/bridgehub
     - wss://bridgehub-kusama.api.onfinality.io/public-ws
     - wss://bridge-hub-kusama-rpc.n.dwellir.com
@@ -2235,8 +2184,6 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-coretime-kusama_metadata_1002005.apng
   rpcs:
-    - wss://sys.ibp.network/coretime-kusama
-    - wss://coretime-kusama.dotters.network
     - wss://rpc-coretime-kusama.luckyfriday.io
     - wss://kusama-coretime-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/coretime
@@ -2254,14 +2201,11 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/kusama-people-kusama_metadata_1002006.apng
   rpcs:
-    - wss://sys.ibp.network/people-kusama
-    - wss://people-kusama.dotters.network
     - wss://rpc-people-kusama.luckyfriday.io
     - wss://kusama-people-rpc.polkadot.io
     - wss://ksm-rpc.stakeworld.io/people
     - wss://people-kusama.api.onfinality.io/public-ws
     - wss://people-kusama-rpc.n.dwellir.com
-    - wss://rpc-people-kusama.helixstreet.io
   relay: kusama
 - id: kusari
   name: Kusari
@@ -2280,8 +2224,7 @@
   nativeCurrency:
     coingeckoId: laos-network
   oldPrefix: 42
-  rpcs:
-    - wss://rpc.laos.laosfoundation.io
+  rpcs: []
   relay: polkadot
   blockExplorerUrls:
     - https://laos.statescan.io/
@@ -2373,11 +2316,8 @@
     - https://moonbeam.subscan.io/
   oldPrefix: 1284
   rpcs:
-    - wss://moonbeam.ibp.network
-    - wss://moonbeam.dotters.network
     - wss://moonbeam-rpc.publicnode.com
     - wss://wss.api.moonbeam.network
-    - wss://moonbeam.public.curie.radiumblock.co/ws
     - wss://moonbeam.unitedbloc.com
     - wss://moonbeam.api.onfinality.io/public-ws
   relay: polkadot
@@ -2390,7 +2330,6 @@
     - https://moonriver.subscan.io/
   rpcs:
     - wss://wss.api.moonriver.moonbeam.network
-    - wss://moonriver.public.curie.radiumblock.co/ws
     - wss://moonriver.unitedbloc.com
     - wss://moonriver.api.onfinality.io/public-ws
   relay: kusama
@@ -2419,7 +2358,6 @@
   oldPrefix: 42
   rpcs:
     - wss://mythos-rpc.dmarket.com/
-    - wss://polkadot-mythos-rpc.polkadot.io
   relay: polkadot
 - id: neatcoin
   name: Neatcoin
@@ -2617,9 +2555,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/phala_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/phala_metadata_latest.apng
   oldPrefix: 30
-  rpcs:
-    - wss://phala.public.curie.radiumblock.co/ws
-    - wss://api.phala.network/ws
+  rpcs: []
   relay: polkadot
 - id: picasso
   name: Picasso
@@ -2863,14 +2799,7 @@
   latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-statemint_metadata_latest.apng
   rpcs:
     - wss://statemint.api.onfinality.io/public-ws
-    - wss://sys.dotters.network/statemint
-    - wss://sys.ibp.network/asset-hub-polkadot
-    - wss://asset-hub-polkadot.dotters.network
-    - wss://rpc-asset-hub-polkadot.luckyfriday.io
-    - wss://polkadot-asset-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/assethub
-    - wss://statemint.public.curie.radiumblock.co/ws
-    - wss://sys.ibp.network/statemint
     - wss://asset-hub-polkadot-rpc.n.dwellir.com
     - wss://asset-hub-polkadot.gatotech.network
     - wss://rpc-asset-hub-polkadot.stakeworld.io
@@ -2978,12 +2907,9 @@
   chainspecQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_specs.png
   latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-bridge-hub-polkadot_metadata_latest.apng
   rpcs:
-    - wss://sys.ibp.network/bridgehub-polkadot
-    - wss://bridge-hub-polkadot.dotters.network
     - wss://rpc-bridge-hub-polkadot.luckyfriday.io
     - wss://polkadot-bridge-hub-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/bridgehub
-    - wss://bridgehub-polkadot.public.curie.radiumblock.co/ws
     - wss://bridgehub-polkadot.api.onfinality.io/public-ws
     - wss://bridge-hub-polkadot-rpc.n.dwellir.com
     - wss://rpc-bridge-hub-polkadot.stakeworld.io
@@ -2998,12 +2924,9 @@
   chainspecQrUrl: https://metadata.parity.io/qr/polkadot-collectives_specs.png
   latestMetadataQrUrl: https://metadata.parity.io/qr/polkadot-collectives_metadata_latest.apng
   rpcs:
-    - wss://sys.ibp.network/collectives-polkadot
-    - wss://collectives-polkadot.dotters.network
     - wss://rpc-collectives-polkadot.luckyfriday.io
     - wss://polkadot-collectives-rpc.polkadot.io
     - wss://dot-rpc.stakeworld.io/collectives
-    - wss://collectives.public.curie.radiumblock.co/ws
     - wss://collectives.api.onfinality.io/public-ws
     - wss://collectives-polkadot-rpc.n.dwellir.com
   relay: polkadot
@@ -3015,12 +2938,9 @@
   blockExplorerUrls:
     - https://coretime-polkadot.subscan.io/
   rpcs:
-    - wss://sys.ibp.network/coretime-polkadot
-    - wss://coretime-polkadot.dotters.network
     - wss://polkadot-coretime-rpc.polkadot.io
     - wss://coretime-polkadot.api.onfinality.io/public-ws
     - wss://coretime-polkadot-rpc.n.dwellir.com
-    - wss://coretime-polkadot.ibp.network
     - wss://rpc-coretime-polkadot.luckyfriday.io
   relay: polkadot
 - id: polkadot-people
@@ -3031,8 +2951,6 @@
   blockExplorerUrls:
     - https://people-polkadot.subscan.io/
   rpcs:
-    - wss://sys.ibp.network/people-polkadot
-    - wss://people-polkadot.dotters.network
     - wss://rpc-people-polkadot.luckyfriday.io
     - wss://polkadot-people-rpc.polkadot.io
     - wss://people-polkadot.api.onfinality.io/public-ws
@@ -3070,10 +2988,7 @@
     - https://quartz.subscan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/quartz_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/quartz_metadata_latest.apng
-  rpcs:
-    - wss://ws-quartz.unique.network
-    - wss://us-ws-quartz.unique.network
-    - wss://eu-ws-quartz.unique.network
+  rpcs: []
   relay: kusama
 - id: riochain
   name: RioChain
@@ -3121,11 +3036,7 @@
     - https://shadow.statescan.io/
   chainspecQrUrl: https://metadata.novasama.io/qr/crust-collator_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/crust-collator_metadata_latest.apng
-  rpcs:
-    - wss://rpc-shadow.crust.network/
-    - wss://rpc-shadow.crustnetwork.app
-    - wss://rpc-shadow.crustnetwork.cc
-    - wss://rpc-shadow.crustnetwork.xyz
+  rpcs: []
   relay: kusama
 - id: shadow-kusama-2
   name: Crust Shadow
@@ -3146,8 +3057,6 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/shiden_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/shiden_metadata_latest.apng
   rpcs:
-    - wss://shiden.public.curie.radiumblock.co/ws
-    - wss://rpc.shiden.astar.network
     - wss://shiden-rpc.n.dwellir.com
     - wss://shiden.api.onfinality.io/public-ws
   relay: kusama
@@ -3168,8 +3077,7 @@
   isDefault: false
   nativeCurrency:
     coingeckoId: sora
-  rpcs:
-    - wss://ws.parachain-collator-2.c2.sora2.soramitsu.co.jp
+  rpcs: []
   relay: kusama
 - id: sora-polkadot
   name: Sora
@@ -3177,8 +3085,7 @@
   nativeCurrency:
     coingeckoId: sora
   oldPrefix: 81
-  rpcs:
-    - wss://ws.parachain-collator-3.pc3.sora2.soramitsu.co.jp
+  rpcs: []
   relay: polkadot
 - id: sora-standalone
   name: Sora Standalone
@@ -3190,7 +3097,6 @@
   rpcs:
     - wss://ws.mof.sora.org
     - wss://mof2.sora.org
-    - wss://mof3.sora.org
 - id: spanner
   name: Spanner
   isDefault: false
@@ -3203,8 +3109,7 @@
     logo: ./assets/chains/stafi.svg
   blockExplorerUrls:
     - https://stafi.subscan.io/
-  rpcs:
-    - wss://mainnet-rpc.stafi.io
+  rpcs: []
 - id: subdao
   name: SubDAO
   isDefault: false
@@ -3276,15 +3181,13 @@
   isDefault: false
   nativeCurrency:
     coingeckoId: tangle-network
-  rpcs:
-    - wss://rpc.tangle.tools
+  rpcs: []
 - id: tanssi
   name: Tanssi
   isDefault: false
   blockExplorerUrls:
     - https://tanssi.subscan.io/
-  rpcs:
-    - wss://services.tanssi-mainnet.network/tanssi
+  rpcs: []
 - id: ternoa
   name: Ternoa
   isDefault: false
@@ -3346,8 +3249,6 @@
   latestMetadataQrUrl: https://metadata.novasama.io/qr/unique_metadata_latest.apng
   oldPrefix: 7391
   rpcs:
-    - wss://unique.ibp.network
-    - wss://unique.dotters.network
     - wss://ws.unique.network
     - wss://us-ws.unique.network
     - wss://asia-ws.unique.network
@@ -3437,8 +3338,7 @@
     coingeckoId: xxcoin
   chainspecQrUrl: https://metadata.novasama.io/qr/xxnetwork_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/xxnetwork_metadata_latest.apng
-  rpcs:
-    - wss://rpc.xx.network/
+  rpcs: []
 - id: yerba
   name: Yerba
   isDefault: false
@@ -3454,8 +3354,7 @@
   chainspecQrUrl: https://metadata.novasama.io/qr/zeitgeist_specs.png
   latestMetadataQrUrl: https://metadata.novasama.io/qr/zeitgeist_metadata_latest.apng
   oldPrefix: 73
-  rpcs:
-    - wss://zeitgeist.api.onfinality.io/public-ws
+  rpcs: []
   relay: polkadot
   tokens:
     substrate-tokens:
@@ -3557,10 +3456,8 @@
   latestMetadataQrUrl: https://metadata.parity.io/qr/westend_metadata_latest.apng
   rpcs:
     - wss://westend-rpc.polkadot.io
-    - wss://westend.public.curie.radiumblock.co/ws
     - wss://westend.api.onfinality.io/public-ws
     - wss://westend-rpc.n.dwellir.com
-    - wss://rpc.ibp.network/westend
 - id: 3-dpass-testnet
   isTestnet: true
   name: 3DPass Testnet
@@ -3609,8 +3506,7 @@
   themeColor: '#5C3FF7'
   chainspecQrUrl: https://metadata.analog.one/qr/analog-testnet_specs.png
   latestMetadataQrUrl: https://metadata.analog.one/qr/analog-testnet_metadata_latest.apng
-  rpcs:
-    - wss://rpc.testnet.analog.one
+  rpcs: []
 - id: arctic-testnet-rococo
   isTestnet: true
   name: Arctic
@@ -3838,8 +3734,7 @@
   isDefault: false
   blockExplorerUrls:
     - https://dancelight.subscan.io/
-  rpcs:
-    - wss://services.tanssi-testnet.network/dancelight
+  rpcs: []
 - id: datahighway-testnet
   isTestnet: true
   name: Spreehafen
@@ -3881,8 +3776,7 @@
   isTestnet: true
   name: Encointer Gesell
   isDefault: false
-  rpcs:
-    - wss://gesell.encointer.org
+  rpcs: []
 - id: enjin-matrixchain-testnet
   isTestnet: true
   name: Enjin Matrix Canary
@@ -4095,7 +3989,6 @@
     - https://moonbase.subscan.io/
   rpcs:
     - wss://wss.api.moonbase.moonbeam.network
-    - wss://moonbase.public.curie.radiumblock.co/ws
     - wss://moonbase.unitedbloc.com
 - id: moonshadow-testnet
   isTestnet: true
@@ -4150,8 +4043,6 @@
   blockExplorerUrls:
     - https://assethub-paseo.subscan.io/
   rpcs:
-    - wss://sys.ibp.network/asset-hub-paseo
-    - wss://asset-hub-paseo.dotters.network
     - wss://pas-rpc.stakeworld.io/assethub
     - wss://sys.turboflakes.io/asset-hub-paseo
     - wss://asset-hub-paseo-rpc.n.dwellir.com
@@ -4169,10 +4060,6 @@
   blockExplorerUrls:
     - https://paseo.subscan.io/
   rpcs:
-    - wss://paseo.rpc.amforc.com
-    - wss://rpc.ibp.network/paseo
-    - wss://paseo.dotters.network
-    - wss://pas-rpc.stakeworld.io
     - wss://paseo-rpc.n.dwellir.com
     - wss://rpc-paseo.stakeworld.io
 - id: phala-testnet
@@ -4267,16 +4154,13 @@
   isTestnet: true
   name: Basilisk Testnet
   isDefault: false
-  rpcs:
-    - wss://basilisk-rococo-rpc.play.hydration.cloud
+  rpcs: []
   relay: rococo-testnet
 - id: rococo-bifrost-testnet
   isTestnet: true
   name: Bifrost Testnet
   isDefault: false
-  rpcs:
-    - wss://bifrost-rpc.paseo.liebi.com/ws
-    - wss://bifrost-rpc.paseo2.liebi.com/ws
+  rpcs: []
   relay: rococo-testnet
 - id: rococo-bitgreen-testnet
   isTestnet: true
@@ -4498,8 +4382,7 @@
   isTestnet: true
   name: Zeitgeist Battery Station
   isDefault: false
-  rpcs:
-    - wss://bsr.zeitgeist.pm
+  rpcs: []
   relay: rococo-testnet
 - id: sherpax-testnet
   isTestnet: true
@@ -4512,8 +4395,7 @@
   isDefault: false
   blockExplorerUrls:
     - https://shibuya.subscan.io/
-  rpcs:
-    - wss://rpc.shibuya.astar.network
+  rpcs: []
 - id: skyekiwi-testnet
   isTestnet: true
   name: SkyeKiwi
@@ -4571,8 +4453,7 @@
   isTestnet: true
   name: Subspace Gemini 3f
   isDefault: false
-  rpcs:
-    - wss://rpc-1.gemini-3f.subspace.network/ws
+  rpcs: []
 - id: subspace-gemini-3-g-nova-testnet
   isTestnet: true
   name: Subspace Gemini 3g Nova
@@ -4670,7 +4551,6 @@
   rpcs:
     - wss://westend-asset-hub-rpc.polkadot.io
     - wss://asset-hub-westend-rpc.n.dwellir.com
-    - wss://sys.ibp.network/westmint
   relay: westend-testnet
 - id: westend-bridge-hub-testnet
   isTestnet: true
@@ -4716,7 +4596,6 @@
   rpcs:
     - wss://westend-people-rpc.polkadot.io
     - wss://people-westend-rpc.n.dwellir.com
-    - wss://sys.ibp.network/people-westend
   relay: westend-testnet
 - id: westend-pichiu-testnet
   isTestnet: true
@@ -4791,8 +4670,6 @@
   isDefault: false
   isTestnet: true
   rpcs:
-    - wss://bridge-hub-paseo.ibp.network
-    - wss://bridge-hub-paseo.dotters.network
     - wss://pas-rpc.stakeworld.io/bridgehub
   relay: paseo-testnet
 - id: paseo-collectives
@@ -4800,8 +4677,6 @@
   isDefault: false
   isTestnet: true
   rpcs:
-    - wss://collectives-paseo.ibp.network
-    - wss://collectives-paseo.dotters.network
     - wss://pas-rpc.stakeworld.io/collectives
   relay: paseo-testnet
 - id: paseo-coretime
@@ -4809,9 +4684,6 @@
   isDefault: false
   isTestnet: true
   rpcs:
-    - wss://coretime-paseo.ibp.network
-    - wss://coretime-paseo.dotters.network
-    - wss://paseo-coretime.paranodes.io
     - wss://pas-rpc.stakeworld.io/coretime
   relay: paseo-testnet
 - id: paseo-people-chain
@@ -4819,9 +4691,6 @@
   isDefault: false
   isTestnet: true
   rpcs:
-    - wss://people-paseo.rpc.amforc.com
-    - wss://people-paseo.ibp.network
-    - wss://people-paseo.dotters.network
     - wss://pas-rpc.stakeworld.io/people
   relay: paseo-testnet
 - id: paseo-aventus
@@ -4835,8 +4704,7 @@
   name: Bulletin (Paseo)
   isDefault: false
   isTestnet: true
-  rpcs:
-    - wss://paseo-bulletin-rpc.polkadot.io
+  rpcs: []
   relay: paseo-testnet
 - id: paseo-frequency
   name: Frequency(Paseo)
@@ -4856,22 +4724,19 @@
   name: Muse network
   isDefault: false
   isTestnet: true
-  rpcs:
-    - wss://paseo-muse-rpc.polkadot.io
+  rpcs: []
   relay: paseo-testnet
 - id: paseo-xcavate
   name: Xcavate
   isDefault: false
   isTestnet: true
-  rpcs:
-    - wss://xcavate-paseo.api.onfinality.io/public-ws
+  rpcs: []
   relay: paseo-testnet
 - id: polkadot-bulletin
   name: Bulletin
   isDefault: false
   rpcs:
     - wss://bulletin-rpc.polkadot.io
-    - wss://spectrum-03.simplystaking.xyz/cG9sa2Fkb3QtMDMtOTFkMmYwZGYtcG9sa2Fkb3Q/9QbAeudedsupNA/polkadotbulletin/mainnet
   relay: polkadot
 - id: paseo-niskala
   name: Niskala(Paseo)
