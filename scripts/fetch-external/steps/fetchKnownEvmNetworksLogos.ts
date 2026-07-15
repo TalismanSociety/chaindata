@@ -5,8 +5,8 @@ import sharp from 'sharp'
 
 import { FILE_KNOWN_EVM_NETWORKS, FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE } from '../../shared/constants'
 import { parseJsonFile } from '../../shared/parseFile'
-import { KnownEthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
-import { KnownEthNetworkIcon, KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
+import { type KnownEthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { type KnownEthNetworkIcon, KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'
 import { writeJsonFile } from '../../shared/writeFile'
 
 /** Chainlist icons are available at this CDN using the chainSlug */
@@ -28,8 +28,8 @@ export const fetchKnownEvmNetworksLogos = async () => {
   const failedNetworks: Array<{ id: string; name: string; reason: string }> = []
 
   for (const evmNetwork of knownEthNetworks.filter((n: KnownEthNetworkConfig) => n.chainSlug && !n.logo)) {
-    const chainSlug = evmNetwork.chainSlug!
-    if (processedIcons.has(chainSlug)) continue
+    const chainSlug = evmNetwork.chainSlug
+    if (!chainSlug || processedIcons.has(chainSlug)) continue
 
     try {
       processedIcons.add(chainSlug)

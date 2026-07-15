@@ -1,8 +1,8 @@
 import { writeFileSync } from 'node:fs'
 import { dirname } from 'node:path'
 
+import type z from 'zod/v4'
 import { stringify as yamlify } from 'yaml'
-import z from 'zod/v4'
 
 import { mkdirRecursive } from './mkdirRecursive'
 import { prettifyJson, prettifyYaml } from './prettify'

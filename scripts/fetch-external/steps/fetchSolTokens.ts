@@ -1,8 +1,8 @@
 import type { Address } from '@solana/kit'
+import type { SolNetwork, Token } from '@talismn/chaindata-provider'
 import { address } from '@solana/kit'
-import { BALANCE_MODULES, SolSplTokenConfig, SolToken2022TokenConfig } from '@talismn/balances'
+import { BALANCE_MODULES, type SolSplTokenConfig, type SolToken2022TokenConfig } from '@talismn/balances'
 import { ChainConnectorSolStub } from '@talismn/chain-connectors'
-import { SolNetwork, Token, TokenId } from '@talismn/chaindata-provider'
 import { isSolanaAddress } from '@talismn/crypto'
 import assign from 'lodash/assign'
 import keyBy from 'lodash/keyBy'
@@ -140,7 +140,6 @@ export const fetchSolTokens = async () => {
           network.id,
           (cause as Error).message,
         )
-        continue // if it fails we want to skip this module and continue with the next one
       }
     }
   }

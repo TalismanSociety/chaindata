@@ -16,7 +16,7 @@ export const getTokenLogoUrl = (
   if (logo && !logo.startsWith(assetPathPrefix)) return logo
 
   // if logo is relative and exists, perfect
-  if (logo && logo.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
+  if (logo?.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
 
   // fallback to coingeckoId if provided
   const cgPath = getCoingeckoTokenAssetPath(coingeckoId)
@@ -64,7 +64,7 @@ export const getNetworkLogoUrl = (
   if (logo && !logo.startsWith(assetPathPrefix)) return logo
 
   // if logo is relative and exists, perfect
-  if (logo && logo.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
+  if (logo?.startsWith(assetPathPrefix) && existsSync(logo)) return getAssetUrlFromPath(logo)
 
   // try to find a match in /assets/chains/ folder
   if (networkId)

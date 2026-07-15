@@ -7,7 +7,7 @@ import sharp from 'sharp'
 import { fetchAssetPlatforms } from '../../shared/coingecko'
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { parseJsonFile } from '../../shared/parseFile'
-import { EthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { type EthNetworkConfig, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
 /**

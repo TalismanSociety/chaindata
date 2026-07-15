@@ -1,7 +1,15 @@
 import { PromisePool } from '@supercharge/promise-pool'
 import { BALANCE_MODULES } from '@talismn/balances'
 import { ChainConnectorEthStub } from '@talismn/chain-connectors'
-import { EthNetwork, EthToken, NetworkId, Token, TokenId, TokenSchema, TokenType } from '@talismn/chaindata-provider'
+import {
+  type EthNetwork,
+  type EthToken,
+  type NetworkId,
+  type Token,
+  type TokenId,
+  TokenSchema,
+  type TokenType,
+} from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
@@ -17,15 +25,18 @@ import {
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
-  DotNetworkConfig,
-  EthNetworkConfig,
+  type DotNetworkConfig,
+  type EthNetworkConfig,
   EthNetworksConfigFileSchema,
-  KnownEthNetworkConfig,
+  type KnownEthNetworkConfig,
   KnownEthNetworksFileSchema,
 } from '../../shared/schemas'
 import { EthTokensPreBuildFileSchema } from '../../shared/schemas/EthTokensPreBuild'
 import { withTimeout } from '../../shared/withTimeout'
 import { writeJsonFile } from '../../shared/writeFile'
+
+// biome-ignore lint/suspicious/noExplicitAny: token config shape depends on the balance module
+type TokenConfig = any
 
 type CacheEntry = { id: string } & Record<string, unknown>
 type TokenCache = Partial<Record<TokenType, Record<TokenId, CacheEntry>>>
@@ -72,7 +83,7 @@ export const fetchEthTokens = async () => {
       withTimeout(
         () => fetchEthNetworkTokens(network),
         500_000,
-        'Failed to fetch metadata extract for ' + network.networkId,
+        `Failed to fetch metadata extract for ${network.networkId}`,
       ),
     )
 
@@ -126,7 +137,7 @@ const fetchEthNetworkTokens = async ({
     const network = assign({}, knownNetwork, configNetwork, { rpcs }) as EthNetwork
     const connector = new ChainConnectorEthStub(network)
 
-    const newTokens: Record<string, any> = {}
+    const newTokens: Record<string, Token> = {}
 
     for (const mod of BALANCE_MODULES.filter((mod) => mod.platform === 'ethereum')) {
       try {
@@ -136,7 +147,7 @@ const fetchEthNetworkTokens = async ({
           networkId,
           tokens: (mod.type === 'evm-native'
             ? [assign({}, configNetwork?.nativeCurrency, knownNetwork?.nativeCurrency)]
-            : [...(configNetwork?.tokens?.[source] ?? []), ...(knownNetwork?.tokens?.[source] ?? [])]) as any[],
+            : [...(configNetwork?.tokens?.[source] ?? []), ...(knownNetwork?.tokens?.[source] ?? [])]) as TokenConfig[],
           connector,
           cache: caches[mod.type] ?? {},
         })

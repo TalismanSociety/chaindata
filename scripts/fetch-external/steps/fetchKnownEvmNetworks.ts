@@ -1,14 +1,14 @@
-import { z } from 'zod/v4'
+import type { z } from 'zod/v4'
 
+import type { ChainlistChain, ChainlistRpc } from '../../shared/types'
 import { CHAINLIST_API_URL, FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { parseYamlFile } from '../../shared/parseFile'
 import {
   EthNetworksConfigFileSchema,
-  KnownEthNetworkConfig,
+  type KnownEthNetworkConfig,
   KnownEthNetworkConfigSchema,
   KnownEthNetworksFileSchema,
 } from '../../shared/schemas'
-import { ChainlistChain, ChainlistRpc } from '../../shared/types'
 import { VIEM_CHAINS } from '../../shared/viemChains'
 import { writeJsonFile } from '../../shared/writeFile'
 
@@ -41,7 +41,7 @@ const isValidRpcUrl = (rpcUrl: string) => {
 const isActiveChain = (chain: ChainlistChain) => !chain.status || chain.status !== 'deprecated'
 const isAllowedChain = (chain: ChainlistChain) => !IGNORED_CHAINS.includes(chain.chainId)
 
-const validateNetwork = (network: { id: string }, networkSchema: z.ZodType<any>) => {
+const validateNetwork = (network: { id: string }, networkSchema: z.ZodType) => {
   const parsable = networkSchema.safeParse(network)
   if (!parsable.success) {
     console.error(parsable.error.message, { issues: parsable.error.issues, network })

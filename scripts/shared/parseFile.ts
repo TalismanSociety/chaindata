@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 
+import type z from 'zod/v4'
 import { parse as parseYaml } from 'yaml'
-import z from 'zod/v4'
 
 import { validate } from './validate'
 

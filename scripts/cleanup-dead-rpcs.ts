@@ -144,10 +144,9 @@ const processEthereumYaml = async () => {
   const deadRpcsByNetwork = new Map<string, Set<string>>()
   for (const result of results) {
     if (!result.success) {
-      if (!deadRpcsByNetwork.has(result.networkId)) {
-        deadRpcsByNetwork.set(result.networkId, new Set())
-      }
-      deadRpcsByNetwork.get(result.networkId)!.add(result.rpc)
+      const deadRpcs = deadRpcsByNetwork.get(result.networkId) ?? new Set()
+      deadRpcsByNetwork.set(result.networkId, deadRpcs)
+      deadRpcs.add(result.rpc)
     }
   }
 
@@ -210,10 +209,9 @@ const processPolkadotYaml = async () => {
   const deadRpcsByNetwork = new Map<string, Set<string>>()
   for (const result of results) {
     if (!result.success) {
-      if (!deadRpcsByNetwork.has(result.networkId)) {
-        deadRpcsByNetwork.set(result.networkId, new Set())
-      }
-      deadRpcsByNetwork.get(result.networkId)!.add(result.rpc)
+      const deadRpcs = deadRpcsByNetwork.get(result.networkId) ?? new Set()
+      deadRpcsByNetwork.set(result.networkId, deadRpcs)
+      deadRpcs.add(result.rpc)
     }
   }
 

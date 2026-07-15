@@ -1,7 +1,7 @@
 import 'dotenv/config'
 
-import { execSync } from 'child_process'
-import { readFileSync } from 'fs'
+import { execSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 
 import { MINIMETADATA_VERSION } from '@talismn/chaindata-provider'
 
@@ -27,17 +27,17 @@ export const FILE_INPUT_NETWORKS_POLKADOT = 'data/networks-polkadot.yaml'
 export const FILE_INPUT_NETWORKS_ETHEREUM = 'data/networks-ethereum.yaml'
 export const FILE_INPUT_COINGECKO_OVERRIDES = 'data/coingecko-overrides.yaml'
 
-export const FILE_OUTPUT_TOKENS_POLKADOT = DIR_OUTPUT + '/tokens-polkadot.json'
-export const FILE_OUTPUT_TOKENS_ETHEREUM = DIR_OUTPUT + '/tokens-ethereum.json'
-export const FILE_OUTPUT_TOKENS_SOLANA = DIR_OUTPUT + '/tokens-solana.json'
-export const FILE_OUTPUT_TOKENS_ALL = DIR_OUTPUT + '/tokens.json'
-export const FILE_OUTPUT_NETWORKS_POLKADOT = DIR_OUTPUT + '/networks-polkadot.json'
-export const FILE_OUTPUT_NETWORKS_SOLANA = DIR_OUTPUT + '/networks-solana.json'
-export const FILE_OUTPUT_NETWORKS_ETHEREUM = DIR_OUTPUT + '/networks-ethereum.json'
-export const FILE_OUTPUT_NETWORKS_ALL = DIR_OUTPUT + '/networks.json'
-export const FILE_OUTPUT_MINI_METADATAS = DIR_OUTPUT + '/mini-metadatas.json'
-export const FILE_OUTPUT_CHAINDATA = DIR_OUTPUT + '/chaindata.json'
-export const FILE_OUTPUT_CHAINDATA_MINIFIED = DIR_OUTPUT + '/chaindata.min.json'
+export const FILE_OUTPUT_TOKENS_POLKADOT = `${DIR_OUTPUT}/tokens-polkadot.json`
+export const FILE_OUTPUT_TOKENS_ETHEREUM = `${DIR_OUTPUT}/tokens-ethereum.json`
+export const FILE_OUTPUT_TOKENS_SOLANA = `${DIR_OUTPUT}/tokens-solana.json`
+export const FILE_OUTPUT_TOKENS_ALL = `${DIR_OUTPUT}/tokens.json`
+export const FILE_OUTPUT_NETWORKS_POLKADOT = `${DIR_OUTPUT}/networks-polkadot.json`
+export const FILE_OUTPUT_NETWORKS_SOLANA = `${DIR_OUTPUT}/networks-solana.json`
+export const FILE_OUTPUT_NETWORKS_ETHEREUM = `${DIR_OUTPUT}/networks-ethereum.json`
+export const FILE_OUTPUT_NETWORKS_ALL = `${DIR_OUTPUT}/networks.json`
+export const FILE_OUTPUT_MINI_METADATAS = `${DIR_OUTPUT}/mini-metadatas.json`
+export const FILE_OUTPUT_CHAINDATA = `${DIR_OUTPUT}/chaindata.json`
+export const FILE_OUTPUT_CHAINDATA_MINIFIED = `${DIR_OUTPUT}/chaindata.min.json`
 
 export const FILE_RPC_HEALTH_POLKADOT = 'data/generated/rpc-health-polkadot.json'
 export const FILE_RPC_HEALTH_ETHEREUM = 'data/generated/rpc-health-ethereum.json'

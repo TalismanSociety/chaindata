@@ -1,4 +1,4 @@
-import { SolNetwork, SolNetworkSchema, solNativeTokenId } from '@talismn/chaindata-provider'
+import { type SolNetwork, SolNetworkSchema, solNativeTokenId } from '@talismn/chaindata-provider'
 import assign from 'lodash/assign'
 import keyBy from 'lodash/keyBy'
 import { z } from 'zod/v4'

@@ -1,4 +1,4 @@
-import { PathLike } from 'node:fs'
+import type { PathLike } from 'node:fs'
 import { stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
@@ -134,7 +134,7 @@ export const fetchCoingeckoTokensLogos = async () => {
           if (await exists(filepath)) return
           return coingeckoId
         } catch (error) {
-          console.error(`Failed to check if logo for coingeckoId ${coingeckoId} exists at filepath ${filepath}`)
+          console.error(`Failed to check if logo for coingeckoId ${coingeckoId} exists at filepath ${filepath}`, error)
         }
       })
   ).results.flatMap((coingeckoId) => coingeckoId ?? [])
@@ -150,6 +150,9 @@ export const fetchCoingeckoTokensLogos = async () => {
     .for(fetchCoingeckoIds)
     .process(async (coingeckoId) => {
       try {
+        const filepath = logoFilepaths.get(coingeckoId)
+        if (!filepath) return
+
         const coin = await fetchCoinDetails(coingeckoId, { retryAfter60s: true })
         console.log('downloading icon for %s : %s', coin.id, coin.image.large)
 
@@ -166,8 +169,7 @@ export const fetchCoingeckoTokensLogos = async () => {
         if (!width || !height || width > 256 || height > 256) img.resize(256, 256, { fit: 'contain' })
 
         const webpBuffer = await img.webp().toBuffer()
-        // @ts-ignore-next-line
-        await writeFile(logoFilepaths.get(coingeckoId)!, Buffer.from(webpBuffer))
+        await writeFile(filepath, Buffer.from(webpBuffer))
       } catch (error) {
         console.log('Failed to download coingecko image for %s', coingeckoId, error)
         newInvalidCoingeckoIds.push(coingeckoId)

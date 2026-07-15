@@ -1,6 +1,6 @@
+import type { DotNetwork, Network } from '@talismn/chaindata-provider'
 import { u32, Vector } from '@polkadot-api/substrate-bindings'
-import { createClient, SubstrateClient } from '@polkadot-api/substrate-client'
-import { DotNetwork, Network } from '@talismn/chaindata-provider'
+import { createClient, type SubstrateClient } from '@polkadot-api/substrate-client'
 import { decAnyMetadata } from '@talismn/scale'
 import { getWsProvider } from 'polkadot-api/ws'
 
@@ -31,7 +31,7 @@ const getProviderVersions = async (chain: DotNetwork, client: SubstrateClient): 
       const versions = Vector(u32).dec(resVersions)
       return versions.filter((v) => v < 100) // ignore 4294967295 - JAM?
     } catch (error) {
-      console.log('Metadata_metadata_versions is not available on', chain.id, chain.name, (error as any)?.message)
+      console.log('Metadata_metadata_versions is not available on', chain.id, chain.name, (error as Error)?.message)
       // ignore
     }
 
@@ -41,7 +41,7 @@ const getProviderVersions = async (chain: DotNetwork, client: SubstrateClient): 
       const version = Number(metadata.metadata.tag.slice(1))
       return [version]
     } catch (error) {
-      console.warn('error getting default metadata for chain', chain.id, chain.name, (error as any)?.message)
+      console.warn('error getting default metadata for chain', chain.id, chain.name, (error as Error)?.message)
     }
   } finally {
     try {

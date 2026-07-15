@@ -1,4 +1,4 @@
-import { DotNetworkSchema, parseTokenId, Token, TokenId, TokenSchema } from '@talismn/chaindata-provider'
+import { DotNetworkSchema, parseTokenId, type Token, type TokenId, TokenSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import { checkDuplicates } from '../../shared/checkDuplicates'
@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants'
 import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import { DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
+import { type DotNetworkConfig, DotNetworksConfigFileSchema } from '../../shared/schemas'
 import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
 import { writeJsonFile } from '../../shared/writeFile'
 

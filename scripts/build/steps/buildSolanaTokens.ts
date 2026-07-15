@@ -1,33 +1,16 @@
-import {
-  DotNetworkSchema,
-  parseTokenId,
-  SolNetworkSchema,
-  Token,
-  TokenId,
-  TokenSchema,
-} from '@talismn/chaindata-provider'
+import { parseTokenId, SolNetworkSchema, type Token, type TokenId, TokenSchema } from '@talismn/chaindata-provider'
 import { z } from 'zod/v4'
 
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
-  FILE_DOT_TOKENS_PREBUILD,
-  FILE_INPUT_NETWORKS_POLKADOT,
   FILE_INPUT_NETWORKS_SOLANA,
-  FILE_OUTPUT_NETWORKS_POLKADOT,
   FILE_OUTPUT_NETWORKS_SOLANA,
-  FILE_OUTPUT_TOKENS_POLKADOT,
   FILE_OUTPUT_TOKENS_SOLANA,
   FILE_SOL_TOKENS_PREBUILD,
 } from '../../shared/constants'
 import { getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import {
-  DotNetworkConfig,
-  DotNetworksConfigFileSchema,
-  SolNetworkConfig,
-  SolNetworksConfigFileSchema,
-} from '../../shared/schemas'
-import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
+import { type SolNetworkConfig, SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { SolTokensPreBuildFileSchema } from '../../shared/schemas/SolTokensPreBuild'
 import { writeJsonFile } from '../../shared/writeFile'
 

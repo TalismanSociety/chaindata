@@ -33,7 +33,7 @@ const updateNetworksFile = async (filepath: string) => {
 
   const results = await PromisePool.withConcurrency(PROCESS_CONCURRENCY)
     .for(networks)
-    .process(async (network, index) => {
+    .process(async (network) => {
       if (network.themeColor) return false
 
       try {

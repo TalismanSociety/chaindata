@@ -10,10 +10,10 @@ import { isNotBlacklistedRpcUrl } from './blacklistedRpcs'
 import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
 import { parseJsonFile } from './parseFile'
 import {
-  NetworkRpcHealth,
-  NetworkRpcHealthCache,
+  type NetworkRpcHealth,
+  type NetworkRpcHealthCache,
   NetworkRpcHealthFileSchema,
-  RpcHealth,
+  type RpcHealth,
 } from './schemas/NetworkRpcHealth'
 import { writeJsonFile } from './writeFile'
 

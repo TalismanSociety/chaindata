@@ -32,7 +32,7 @@ export const fetchDotNetworksSpecs = async () => {
   const result = await PromisePool.withConcurrency(4)
     .for(networksToUpdate)
     .process((network) =>
-      withTimeout(() => fetchNetworkSpecs(network), 30_000, 'Failed to fetch network specs for ' + network.id),
+      withTimeout(() => fetchNetworkSpecs(network), 30_000, `Failed to fetch network specs for ${network.id}`),
     )
 
   for (const error of result.errors) console.warn(error.message)
@@ -63,11 +63,11 @@ const fetchNetworkSpecs = async (network: { id: string; rpcs: string[] }) => {
 
   try {
     const [name, chainType, genesisHash, runtimeVersion, properties] = await Promise.all([
-      client.request<any>('system_chain', []),
+      client.request<string>('system_chain', []),
       client.request<string | { Custom: string }>('system_chainType', []),
-      client.request<any>('chain_getBlockHash', [0]),
-      client.request<any>('state_getRuntimeVersion', []),
-      client.request<any>('system_properties', []),
+      client.request<`0x${string}`>('chain_getBlockHash', [0]),
+      client.request<{ specName: string; specVersion: number }>('state_getRuntimeVersion', []),
+      client.request<{ tokenDecimals: number; tokenSymbol: string }>('system_properties', []),
     ])
 
     return validateDebug(
@@ -80,7 +80,7 @@ const fetchNetworkSpecs = async (network: { id: string; rpcs: string[] }) => {
         properties,
       },
       DotNetworkSpecsSchema,
-      'network specs ' + network.id,
+      `network specs ${network.id}`,
     )
   } catch (cause) {
     throw new Error(`Failed to fetch network info for ${network.id}`, { cause })

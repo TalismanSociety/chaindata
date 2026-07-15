@@ -1,4 +1,4 @@
-import { XcmV3Junctions } from '@polkadot-api/descriptors'
+import type { XcmV3Junctions } from '@polkadot-api/descriptors'
 import { isTokenEvmErc20, isTokenSubForeignAssets } from '@talismn/chaindata-provider'
 import { papiParse } from '@talismn/scale'
 

@@ -53,7 +53,7 @@ export const fetchCoins = async () => {
       const urlParams = new URLSearchParams()
       urlParams.set('include_platform', 'true')
 
-      const resCoins = await fetchFromCoingecko('/api/v3/coins/list?' + urlParams)
+      const resCoins = await fetchFromCoingecko(`/api/v3/coins/list?${urlParams}`)
       COINS = (await resCoins.json()) as CoingeckoCoin[]
       return COINS
     } catch (cause) {
@@ -85,7 +85,7 @@ export const fetchCoinDetails = async (
 
   if (resCoins.status === 429 && retryAfter60s) {
     const retryAfter = resCoins.headers.get('retry-after')
-    const timeout = retryAfter ? parseInt(retryAfter) * 1000 : 60_000
+    const timeout = retryAfter ? parseInt(retryAfter, 10) * 1000 : 60_000
     console.log('429 - Too many requests - waiting %d seconds', Math.round(timeout / 1000))
     await new Promise((resolve) => setTimeout(resolve, 60_000))
     return fetchCoinDetails(coingeckoId)

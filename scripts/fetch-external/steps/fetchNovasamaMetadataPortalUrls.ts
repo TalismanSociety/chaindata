@@ -1,6 +1,7 @@
 import { PromisePool } from '@supercharge/promise-pool'
 import TOML from 'toml'
 
+import type { MetadataPortalUrls } from '../../shared/types'
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
@@ -8,7 +9,6 @@ import {
 } from '../../shared/constants'
 import { parseYamlFile } from '../../shared/parseFile'
 import { DotNetworksConfigFileSchema } from '../../shared/schemas'
-import { MetadataPortalUrls } from '../../shared/types'
 import { writeJsonFile } from '../../shared/writeFile'
 
 const novasamaNameToTalismanChainId: Record<string, string | undefined> = {
@@ -104,38 +104,40 @@ export const fetchNovasamaMetadataPortalUrls = async () => {
   const dotNetworks = parseYamlFile(FILE_INPUT_NETWORKS_POLKADOT, DotNetworksConfigFileSchema)
   const config = TOML.parse(await (await fetch(NOVASAMA_METADATA_PORTAL_CONFIG)).text())
 
-  const portalUrls: MetadataPortalUrls = config?.chains?.flatMap((chain: any) => {
-    const name = chain?.name?.toLowerCase()
-    const title = chain?.title
-    const relayName = chain?.relay_chain
-    const isTestnet = chain?.testnet === true
+  const portalUrls: MetadataPortalUrls = config?.chains?.flatMap(
+    (chain: { name?: string; title?: string; relay_chain?: string; testnet?: boolean }) => {
+      const name = chain?.name?.toLowerCase() ?? ''
+      const title = chain?.title
+      const relayName = chain?.relay_chain
+      const isTestnet = chain?.testnet === true
 
-    let talismanId = novasamaNameToTalismanChainId[name]
-    if (!talismanId && dotNetworks.some((c) => c.id === name)) talismanId = name
+      let talismanId = novasamaNameToTalismanChainId[name]
+      if (!talismanId && dotNetworks.some((c) => c.id === name)) talismanId = name
 
-    if (!talismanId) {
-      console.warn(`Missing novasamaNameToTalismanChainId map for '${name}'`)
-      return []
-    }
+      if (!talismanId) {
+        console.warn(`Missing novasamaNameToTalismanChainId map for '${name}'`)
+        return []
+      }
 
-    const urlId = [relayName, name].filter(Boolean).join('-').toLowerCase()
+      const urlId = [relayName, name].filter(Boolean).join('-').toLowerCase()
 
-    const chainspecQrUrl = `https://metadata.novasama.io/qr/${encodeURIComponent(urlId)}_specs.png`
-    const latestMetadataQrUrl = `https://metadata.novasama.io/qr/${encodeURIComponent(urlId)}_metadata_latest.apng`
+      const chainspecQrUrl = `https://metadata.novasama.io/qr/${encodeURIComponent(urlId)}_specs.png`
+      const latestMetadataQrUrl = `https://metadata.novasama.io/qr/${encodeURIComponent(urlId)}_metadata_latest.apng`
 
-    return {
-      id: talismanId,
-      isTestnet,
-      meta: {
-        name,
-        title,
-      },
-      urls: {
-        chainspecQrUrl,
-        latestMetadataQrUrl,
-      },
-    }
-  })
+      return {
+        id: talismanId,
+        isTestnet,
+        meta: {
+          name,
+          title,
+        },
+        urls: {
+          chainspecQrUrl,
+          latestMetadataQrUrl,
+        },
+      }
+    },
+  )
 
   const validPortalUrls = (
     await PromisePool.withConcurrency(4)
@@ -155,7 +157,7 @@ export const fetchNovasamaMetadataPortalUrls = async () => {
         return chain
       })
   ).results
-    .flatMap((chain) => chain)
+    .flat()
     .sort((a, b) => a.id.localeCompare(b.id))
 
   await writeJsonFile(FILE_NOVASAMA_METADATA_PORTAL_URLS, validPortalUrls, { format: true })

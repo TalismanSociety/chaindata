@@ -2,7 +2,7 @@ import z from 'zod/v4'
 
 const DateSchema = z.union([z.string(), z.date()]).transform((val, ctx) => {
   const date = new Date(val)
-  if (isNaN(date.getTime())) {
+  if (Number.isNaN(date.getTime())) {
     ctx.addIssue({
       code: 'custom',
       message: 'Invalid date string',
