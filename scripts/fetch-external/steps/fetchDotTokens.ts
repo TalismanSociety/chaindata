@@ -1,13 +1,13 @@
+import type { DotNetwork, DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
 import { PromisePool } from '@supercharge/promise-pool'
 import { BALANCE_MODULES, deriveMiniMetadataId } from '@talismn/balances'
-import { ChainConnectorDotStub, IChainConnectorDot } from '@talismn/chain-connectors'
-import { DotNetwork, DotToken, NetworkId, Token } from '@talismn/chaindata-provider'
+import { ChainConnectorDotStub } from '@talismn/chain-connectors'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
 import toPairs from 'lodash/toPairs'
 import values from 'lodash/values'
 
-import { CoingeckoCoin, fetchCoins } from '../../shared/coingecko'
+import { type CoingeckoCoin, fetchCoins } from '../../shared/coingecko'
 import {
   FILE_DOT_TOKENS_PREBUILD,
   FILE_INPUT_NETWORKS_POLKADOT,
@@ -17,18 +17,21 @@ import {
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
-  DotNetworkConfig,
-  DotNetworksConfigFileSchema,
-  DotNetworkSpecs,
+  type DotNetworkConfig,
+  type DotNetworkSpecs,
   DotNetworkSpecsFileSchema,
+  DotNetworksConfigFileSchema,
 } from '../../shared/schemas'
 import {
-  DotNetworkMetadataExtract,
+  type DotNetworkMetadataExtract,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
 import { DotTokensPreBuildFileSchema } from '../../shared/schemas/DotTokensPreBuild'
 import { withTimeout } from '../../shared/withTimeout'
 import { writeJsonFile } from '../../shared/writeFile'
+
+// biome-ignore lint/suspicious/noExplicitAny: token config shape depends on the balance module
+type TokenConfig = any
 
 export const fetchDotTokens = async () => {
   // cast to the chaindata-provider Token type: the zod-inferred schema type is structurally
@@ -54,7 +57,7 @@ export const fetchDotTokens = async () => {
     }))
     .filter((args): args is FetchDotNetworkTokensArgs => {
       const { rpcs, specs, miniMetadatas } = args
-      if (!rpcs || !rpcs.length) {
+      if (!rpcs?.length) {
         // console.warn('No rpcs available for network %s, skipping fetchDotTokens', args.network.id)
         return false // no rpcs available for this network - cant be updated
       }
@@ -75,7 +78,7 @@ export const fetchDotTokens = async () => {
       withTimeout(
         () => fetchDotNetworkTokens(network),
         30_000,
-        'Failed to fetch metadata extract for ' + network.network.id,
+        `Failed to fetch metadata extract for ${network.network.id}`,
       ),
     )
 
@@ -123,7 +126,7 @@ const fetchDotNetworkTokens = async ({
   const connector = new ChainConnectorDotStub({ ...network, rpcs } as DotNetwork)
 
   try {
-    const newTokens: Record<string, any> = {}
+    const newTokens: Record<string, Token> = {}
 
     for (const mod of BALANCE_MODULES.filter((mod) => mod.platform === 'polkadot')) {
       try {
@@ -145,7 +148,7 @@ const fetchDotNetworkTokens = async ({
 
         const tokens = (
           mod.type === 'substrate-native' ? [network.nativeCurrency ?? {}] : (network.tokens?.[source] ?? [])
-        ) as any[]
+        ) as TokenConfig[]
 
         if (network.id === 'hydradx' && mod.type === 'substrate-hydration') {
           const hydrationCoingeckoIds = getHydrationCoingeckoIdsByAssetId(coins)
@@ -187,7 +190,7 @@ const fetchDotNetworkTokens = async ({
           networkId: network.id,
           tokens: (mod.type === 'substrate-native'
             ? [network.nativeCurrency ?? {}]
-            : (network.tokens?.[source] ?? [])) as any[],
+            : (network.tokens?.[source] ?? [])) as TokenConfig[],
           miniMetadata,
           connector,
           cache: {},
@@ -228,16 +231,16 @@ const fetchDotNetworkTokens = async ({
 const getHydrationCoingeckoIdsByAssetId = (coins: CoingeckoCoin[]): Record<string, string> => {
   const prefix = 'asset_registry%2F'
 
-  return coins.reduce((acc, coin) => {
-    const hydrationId = coin.platforms?.['hydration']
+  return coins.reduce<Record<string, string>>((acc, coin) => {
+    const hydrationId = coin.platforms?.hydration
 
     if (hydrationId?.startsWith(prefix)) {
       try {
         // check that we get a valid number
         const assetId = Number(hydrationId.substring(prefix.length).trim())
-        if (isNaN(assetId)) throw new Error('Invalid assetId')
+        if (Number.isNaN(assetId)) throw new Error('Invalid assetId')
 
-        return { ...acc, [assetId]: coin.id }
+        acc[assetId] = coin.id
       } catch {}
     }
 
@@ -246,16 +249,16 @@ const getHydrationCoingeckoIdsByAssetId = (coins: CoingeckoCoin[]): Record<strin
 }
 
 const getBittensorCoingeckoIdsByAssetId = (coins: CoingeckoCoin[]): Record<string, string> => {
-  return coins.reduce((acc, coin) => {
-    const bittensorId = coin.platforms?.['bittensor']
+  return coins.reduce<Record<string, string>>((acc, coin) => {
+    const bittensorId = coin.platforms?.bittensor
 
     if (bittensorId) {
       try {
         // check that we get a valid number
         const netuid = Number(bittensorId.trim())
-        if (isNaN(netuid)) throw new Error('Invalid netuid')
+        if (Number.isNaN(netuid)) throw new Error('Invalid netuid')
 
-        return { ...acc, [netuid]: coin.id }
+        acc[netuid] = coin.id
       } catch {}
     }
 

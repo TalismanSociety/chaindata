@@ -1,14 +1,14 @@
-import { access, writeFile } from 'fs/promises'
-import path from 'path'
+import { access, writeFile } from 'node:fs/promises'
+import path from 'node:path'
 
-import { EvmErc20TokenConfig } from '@talismn/balances'
-import { toHex, Twox128 } from '@talismn/scale'
-import { z } from 'zod/v4'
+import type { EvmErc20TokenConfig } from '@talismn/balances'
+import type { z } from 'zod/v4'
+import { Twox128, toHex } from '@talismn/scale'
 
 import { DIR_ASSETS_TOKENS, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { gql } from '../../shared/gql'
 import { parseJsonFile } from '../../shared/parseFile'
-import { EthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
+import { type EthNetworkConfig, KnownEthNetworkConfigSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
 const VANA_SUBGRAPH_URL = 'https://api.goldsky.com/api/public/project_cm168cz887zva010j39il7a6p/subgraphs/vana/main/gn'
@@ -88,7 +88,7 @@ export const fetchVanaVrc20Tokens = async () => {
 const gqlFetch = async <T>(url: string, query: string) =>
   (
     (await (
-      await fetch(VANA_SUBGRAPH_URL, {
+      await fetch(url, {
         method: 'POST',
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
@@ -102,7 +102,7 @@ const validTokenUrl = (tokenUrl?: string | null): tokenUrl is string =>
 const validAddress = (address?: string | null): address is `0x${string}` =>
   typeof address === 'string' && address.startsWith('0x')
 
-const validateNetwork = (network: { id: string }, networkSchema: z.ZodType<any>) => {
+const validateNetwork = (network: { id: string }, networkSchema: z.ZodType) => {
   const parsable = networkSchema.safeParse(network)
   if (!parsable.success) {
     console.error(parsable.error.message, { issues: parsable.error.issues, network })

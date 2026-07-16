@@ -8,11 +8,14 @@ import { getWsProvider } from 'polkadot-api/ws'
 const wsUrl = 'wss://asset-hub-polkadot-rpc.dwellir.com'
 
 const main = async () => {
-  const chaindata = JSON.parse(await readFile('data/chaindata.json', { encoding: 'utf8' }))
+  const chaindata: {
+    id: string
+    balancesConfig?: Record<string, { tokens?: { onChainId?: string }[] }>
+  }[] = JSON.parse(await readFile('data/chaindata.json', { encoding: 'utf8' }))
   const polkadotAssetHubForeignAssets =
-    chaindata.find((chain: any) => chain.id === 'polkadot-asset-hub')?.balancesConfig?.['substrate-foreignassets']
-      ?.tokens ?? []
-  const getExisting = (key: string) => polkadotAssetHubForeignAssets.find((token: any) => token.onChainId === key)
+    chaindata.find((chain) => chain.id === 'polkadot-asset-hub')?.balancesConfig?.['substrate-foreignassets']?.tokens ??
+    []
+  const getExisting = (key: string) => polkadotAssetHubForeignAssets.find((token) => token.onChainId === key)
 
   const client = createClient(getWsProvider(wsUrl))
   const api = client.getTypedApi(pah)
@@ -28,7 +31,7 @@ const main = async () => {
     const metadata = metadatas.get(key)
     if (metadata) {
       console.log(
-        JSON.stringify(
+        `${JSON.stringify(
           {
             onChainId: key,
             symbol: Binary.toText(metadata.symbol),
@@ -36,14 +39,14 @@ const main = async () => {
           },
           null,
           2,
-        ) + ',',
+        )},`,
       )
 
       continue
     }
 
     console.log(
-      JSON.stringify(
+      `${JSON.stringify(
         {
           onChainId: key,
           symbol: 'NO_METADATA',
@@ -51,7 +54,7 @@ const main = async () => {
         },
         null,
         2,
-      ) + ',',
+      )},`,
     )
   }
 }
@@ -63,12 +66,8 @@ main()
     process.exit(1)
   })
 
-const papiStringify = (
-  value: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-  space?: string | number,
-): string => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const replacer = (_key: string, value: any) => {
+const papiStringify = (value: unknown, space?: string | number): string => {
+  const replacer = (_key: string, value: unknown) => {
     if (typeof value === 'bigint') return `bigint:${String(value)}`
     if (value instanceof Uint8Array) return `hex:${Binary.toHex(value)}`
     return value

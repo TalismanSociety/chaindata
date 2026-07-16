@@ -1,4 +1,4 @@
-import { EvmErc20TokenConfig, EvmErc20TokenConfigSchema } from '@talismn/balances'
+import { type EvmErc20TokenConfig, EvmErc20TokenConfigSchema } from '@talismn/balances'
 
 import { fetchAssetPlatforms, fetchCoins } from '../../shared/coingecko'
 import { FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
@@ -7,21 +7,17 @@ import { KnownEthNetworksFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
 export const fetchKnownEvmTokens = async () => {
-  try {
-    var assetPlatforms = await fetchAssetPlatforms()
-  } catch (cause) {
+  const assetPlatforms = await fetchAssetPlatforms().catch((cause) => {
     throw new Error('Failed to fetch coingecko asset platforms', { cause })
-  }
-  try {
-    var coins = await fetchCoins()
-  } catch (cause) {
+  })
+  const coins = await fetchCoins().catch((cause) => {
     throw new Error('Failed to fetch coingecko coins', { cause })
-  }
+  })
 
   const knownEvmNetworks = parseJsonFile(FILE_KNOWN_EVM_NETWORKS, KnownEthNetworksFileSchema)
 
   for (const assetPlatform of assetPlatforms)
-    if (!!assetPlatform.native_coin_id) {
+    if (assetPlatform.native_coin_id) {
       const evmNetwork = knownEvmNetworks.find(
         (evmNetwork) => evmNetwork.id === assetPlatform.chain_identifier?.toString(),
       )

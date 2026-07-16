@@ -2,9 +2,9 @@ import {
   AnyMiniMetadataSchema,
   ChaindataFileSchema,
   isNativeToken,
-  Network,
+  type Network,
   NetworkSchema,
-  Token,
+  type Token,
   TokenSchema,
 } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'

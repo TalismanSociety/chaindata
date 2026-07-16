@@ -1,8 +1,9 @@
-import { DotNetwork, DotNetworkSchema, isNetworkDot, subNativeTokenId } from '@talismn/chaindata-provider'
+import { type DotNetwork, DotNetworkSchema, isNetworkDot, subNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
 import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
+import type { MetadataPortalUrls } from '../../shared/types'
 import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
@@ -17,16 +18,15 @@ import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
-  DotNetworkConfig,
-  DotNetworksConfigFileSchema,
-  DotNetworkSpecs,
+  type DotNetworkConfig,
+  type DotNetworkSpecs,
   DotNetworkSpecsFileSchema,
+  DotNetworksConfigFileSchema,
 } from '../../shared/schemas'
 import {
-  DotNetworkMetadataExtract,
+  type DotNetworkMetadataExtract,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
-import { MetadataPortalUrls } from '../../shared/types'
 import { validateDebug } from '../../shared/validate'
 import { writeJsonFile } from '../../shared/writeFile'
 
@@ -71,12 +71,14 @@ const consolidateDotNetwork = (
   const mehRpcs = getRpcsByStatus(config.id, 'polkadot', 'MEH')
   const allRpcs = getRpcsByStatus(config.id, 'polkadot', 'all')
 
+  const configRpcs = config.rpcs ?? []
+
   const rpcs = uniq([
     // RPCs that are forced OK (e.g. origin-filtered RPCs that fail in CI but work in browsers)
-    ...config.rpcs?.filter((url) => FORCE_OK_RPCS.includes(url)),
-    ...config.rpcs?.filter((url) => okRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
-    ...config.rpcs?.filter((url) => !allRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)), // new rpcs, assume better than MEH - there should not be any though
-    ...config.rpcs?.filter((url) => mehRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
+    ...configRpcs.filter((url) => FORCE_OK_RPCS.includes(url)),
+    ...configRpcs.filter((url) => okRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
+    ...configRpcs.filter((url) => !allRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)), // new rpcs, assume better than MEH - there should not be any though
+    ...configRpcs.filter((url) => mehRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
     // ignore NOK ones
   ])
     .filter(isNotBlacklistedRpcUrl)

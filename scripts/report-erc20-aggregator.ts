@@ -1,4 +1,4 @@
-import { Network, Token } from '@talismn/chaindata-provider'
+import type { Network, Token } from '@talismn/chaindata-provider'
 
 import { DIR_OUTPUT } from './shared/constants'
 import { parseJsonFile } from './shared/parseFile'

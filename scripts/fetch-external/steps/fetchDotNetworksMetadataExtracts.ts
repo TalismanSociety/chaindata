@@ -1,14 +1,13 @@
 import { createClient } from '@polkadot-api/substrate-client'
 import { PromisePool } from '@supercharge/promise-pool'
-import { BALANCE_MODULES, MiniMetadata, MINIMETADATA_VERSION } from '@talismn/balances'
-import { TokenType } from '@talismn/chaindata-provider'
+import { BALANCE_MODULES, MINIMETADATA_VERSION, type MiniMetadata } from '@talismn/balances'
 import { fetchBestMetadata } from '@talismn/sapi'
 import {
   decAnyMetadata,
   getDynamicBuilder,
   getLookupFn,
   getMetadataVersion,
-  UnifiedMetadata,
+  type UnifiedMetadata,
   unifyMetadata,
 } from '@talismn/scale'
 import keyBy from 'lodash/keyBy'
@@ -22,13 +21,13 @@ import {
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
-  DotNetworkConfig,
-  DotNetworksConfigFileSchema,
-  DotNetworkSpecs,
+  type DotNetworkConfig,
+  type DotNetworkSpecs,
   DotNetworkSpecsFileSchema,
+  DotNetworksConfigFileSchema,
 } from '../../shared/schemas'
 import {
-  DotNetworkMetadataExtract,
+  type DotNetworkMetadataExtract,
   DotNetworkMetadataExtractSchema,
   DotNetworkMetadataExtractsFileSchema,
 } from '../../shared/schemas/DotNetworkMetadataExtract'
@@ -91,7 +90,7 @@ export const fetchDotNetworksMetadataExtracts = async () => {
       withTimeout(
         () => fetchMetadataExtract(network),
         30_000,
-        'Failed to fetch metadata extract for ' + network.network.id,
+        `Failed to fetch metadata extract for ${network.network.id}`,
       ),
     )
 
@@ -215,7 +214,7 @@ const fetchMetadataExtract = async ({
       {
         id: network.id,
         specVersion: specs.runtimeVersion.specVersion,
-        minimetadataVersion: MINIMETADATA_VERSION!,
+        minimetadataVersion: MINIMETADATA_VERSION,
         account,
         ss58Prefix,
         hasCheckMetadataHash,
@@ -223,7 +222,7 @@ const fetchMetadataExtract = async ({
         topology,
       },
       DotNetworkMetadataExtractSchema,
-      'network metadata extract ' + network.id,
+      `network metadata extract ${network.id}`,
     )
   } catch (cause) {
     // decAnyMetadata throws null if metadata version is unsupported
@@ -231,7 +230,9 @@ const fetchMetadataExtract = async ({
       const version = debug_metadata_version ?? 'FAILED TO DECODE'
       console.warn(`Unsupported metadata version (${version}) on network`, network.id)
     }
-    throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}: ${(cause as any)?.cause}`, { cause })
+    throw new Error(`Failed to fetch metadata extract for ${network.id}: ${cause}: ${(cause as Error | null)?.cause}`, {
+      cause,
+    })
   } finally {
     client.destroy()
   }
@@ -280,7 +281,7 @@ const getAccountType = (metadata: UnifiedMetadata) => {
     case 'AccountId20':
       return 'secp256k1'
     default:
-      throw new Error('Unsupported account type: ' + accountType)
+      throw new Error(`Unsupported account type: ${accountType}`)
   }
 }
 

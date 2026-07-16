@@ -1,9 +1,9 @@
-import { EthNetwork, EthNetworkSchema, evmNativeTokenId } from '@talismn/chaindata-provider'
-import { type Dictionary } from 'lodash'
+import type { Dictionary } from 'lodash'
+import type { Chain } from 'viem'
+import { type EthNetwork, EthNetworkSchema, evmNativeTokenId } from '@talismn/chaindata-provider'
 import fromPairs from 'lodash/fromPairs'
 import keyBy from 'lodash/keyBy'
 import uniq from 'lodash/uniq'
-import { Chain } from 'viem'
 import { z } from 'zod/v4'
 
 import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
@@ -18,9 +18,9 @@ import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
-  EthNetworkConfig,
+  type EthNetworkConfig,
   EthNetworksConfigFileSchema,
-  KnownEthNetworkConfig,
+  type KnownEthNetworkConfig,
   KnownEthNetworksFileSchema,
 } from '../../shared/schemas'
 import { KnownEthNetworkIconsFileSchema } from '../../shared/schemas/KnownEthNetworkIconCache'

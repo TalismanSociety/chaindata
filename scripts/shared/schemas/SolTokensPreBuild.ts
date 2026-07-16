@@ -1,4 +1,4 @@
-import { DotToken, isTokenOfPlatform, TokenOfPlatform, TokenSchema } from '@talismn/chaindata-provider'
+import { isTokenOfPlatform, type TokenOfPlatform, TokenSchema } from '@talismn/chaindata-provider'
 import z from 'zod/v4'
 
 // TODO use SolToken type from chaindata-provider when available

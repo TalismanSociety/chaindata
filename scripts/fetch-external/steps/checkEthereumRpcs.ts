@@ -1,17 +1,17 @@
 import uniq from 'lodash/uniq'
-import { Hex, hexToNumber } from 'viem'
+import { type Hex, hexToNumber } from 'viem'
 
-import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS, FILE_RPC_HEALTH_ETHEREUM } from '../../shared/constants'
+import type { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
+import { FILE_INPUT_NETWORKS_ETHEREUM, FILE_KNOWN_EVM_NETWORKS } from '../../shared/constants'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import {
   checkPlatformRpcsHealth,
   getRpcHealthKey,
   getRpcHealthSpecsFromKey,
   getTimeoutSignal,
-  RpcHealthSpec,
+  type RpcHealthSpec,
 } from '../../shared/rpcHealth'
 import { EthNetworksConfigFileSchema, KnownEthNetworksFileSchema } from '../../shared/schemas'
-import { RpcHealth } from '../../shared/schemas/NetworkRpcHealth'
 
 const RPC_TIMEOUT = 4_000 // 4 seconds
 const RECHECKS_PER_RUN = 100
@@ -97,14 +97,12 @@ const getRpcHealth = async ({ rpc, networkId }: RpcHealthSpec): Promise<RpcHealt
 
           case 500: // internal server error, consider it's temporary
           case 403: // access denied, probably blocking github
-          case 403: // access denied, probably blocking github
           case 522: // timeout, maybe the RPC is ignoring requests from our IP
           case 521: // web server down, maybe temporary downtime
           case 502: // bad gateway, consider host is blocking github
           case 503: // service unavailable, consider host is blocking github or temporary downtime
           case 429: // too many requests
-          case 404: // service unavailable, consider host is blocking github or temporary downtime
-          case 405: {
+          case 404: {
             return { status: 'MEH', error }
           }
 
@@ -145,7 +143,7 @@ const getRpcHealth = async ({ rpc, networkId }: RpcHealthSpec): Promise<RpcHealt
         return { status: 'NOK', error: `Unexpected DOMException: ${err.message}` }
       } else if (err instanceof Error) {
         if (err.cause) {
-          const cause = err.cause as any
+          const cause = err.cause as { code?: string }
           switch (cause.code ?? '') {
             // unreachable or certificate errors
             case 'ENOTFOUND':
@@ -177,9 +175,9 @@ const getRpcHealth = async ({ rpc, networkId }: RpcHealthSpec): Promise<RpcHealt
             }
           }
         }
-        const anyError = err as any
+        const anyError = err as Error & { code?: string }
         return { status: 'MEH', error: `Unknown error: ${anyError.code ?? anyError.message}` }
-      } else return { status: 'MEH', error: `Unknown error: ${(err as any)?.toString()}` }
+      } else return { status: 'MEH', error: `Unknown error: ${String(err)}` }
     }
   }
 

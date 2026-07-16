@@ -1,4 +1,5 @@
-import z, { ZodError } from 'zod/v4'
+import type z from 'zod/v4'
+import type { ZodError } from 'zod/v4'
 
 export const validate = <T>(data: unknown, schema: z.ZodType<T>, label: string): T => {
   const result = schema.safeParse(data)
