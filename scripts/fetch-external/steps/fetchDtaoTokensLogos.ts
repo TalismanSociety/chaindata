@@ -29,6 +29,8 @@ const DTAO_LOGO_NETWORK_IDS = ['bittensor']
 
 const LOGO_SIZE = 256
 const MAX_LOGO_BYTES = 5_000_000
+const MAX_LOGO_PIXELS = 50_000_000
+const MAX_REDIRECTS = 5
 const DOWNLOAD_TIMEOUT = 15_000
 
 /** github html pages arent images, the raw host serves the actual file */
@@ -72,26 +74,33 @@ export const fetchDtaoTokensLogos = async () => {
         `Failed to fetch subnet identities for ${networkId}`,
       )
 
-      const { results, errors } = await PromisePool.withConcurrency(8)
-        .for(subnetLogoUrls)
-        .process(({ netuid, url }) =>
-          fetchSubnetLogo(
-            networkId,
-            netuid,
-            url,
-            prevNetworkLogos.find((logo) => logo.netuid === netuid),
-          ),
-        )
+      const failuresBefore = failures.length
 
-      logos.push(...results)
-      for (const { item, message } of errors) failures.push(`sn${item.netuid} ${item.url} : ${message}`)
+      const { results } = await PromisePool.withConcurrency(8)
+        .for(subnetLogoUrls)
+        .process(async ({ netuid, url }) => {
+          const prev = prevNetworkLogos.find((logo) => logo.netuid === netuid)
+
+          try {
+            return await fetchSubnetLogo(networkId, netuid, url, prev)
+          } catch (cause) {
+            failures.push(`sn${netuid} ${url} : ${(cause as Error).message}`)
+
+            // a rate limit or a flaky host must not drop a logo that was downloaded successfully before
+            return prev && existsSync(prev.path) ? prev : undefined
+          }
+        })
+
+      const networkLogos = results.filter((logo): logo is DtaoTokenLogo => !!logo)
+
+      logos.push(...networkLogos)
 
       await deleteStaleLogos(
         networkId,
-        results.map((logo) => logo.path),
+        networkLogos.map((logo) => logo.path),
       )
 
-      const downloads = results.filter(
+      const downloads = networkLogos.filter(
         (logo) => !prevNetworkLogos.some((prev) => prev.netuid === logo.netuid && prev.hash === logo.hash),
       ).length
 
@@ -100,8 +109,8 @@ export const fetchDtaoTokensLogos = async () => {
         networkId,
         subnetLogoUrls.length,
         downloads,
-        results.length - downloads,
-        errors.length,
+        networkLogos.length - downloads,
+        failures.length - failuresBefore,
       )
     } catch (cause) {
       // keep the previous logos rather than wiping this network's assets on a transient failure
@@ -156,13 +165,77 @@ const normalizeLogoUrl = (bytes: Uint8Array | undefined) => {
 
   const url = value.replace(GITHUB_BLOB_URL, 'https://raw.githubusercontent.com/$1/$2/$3')
 
+  return isPublicHttpsUrl(url) ? url : undefined
+}
+
+/** subnet owners control these urls, they must not be able to aim the runner at its own network */
+const isPublicHttpsUrl = (value: string) => {
   try {
-    if (new URL(url).protocol !== 'https:') return undefined
+    const { protocol, hostname } = new URL(value)
+    return protocol === 'https:' && !isPrivateHost(hostname)
   } catch {
-    return undefined
+    return false
+  }
+}
+
+const isPrivateHost = (hostname: string) => {
+  const host = hostname.replace(/^\[|\]$/g, '').toLowerCase()
+
+  if (host === 'localhost' || host.endsWith('.localhost')) return true
+  if (host === '::1' || /^(fc|fd|fe80:)/.test(host)) return true
+
+  const ipv4 = host.match(/^(\d+)\.(\d+)\.\d+\.\d+$/)
+  if (!ipv4) return false
+
+  const [a, b] = ipv4.slice(1).map(Number)
+  return (
+    a === 0 ||
+    a === 10 ||
+    a === 127 ||
+    (a === 169 && b === 254) ||
+    (a === 172 && b >= 16 && b <= 31) ||
+    (a === 192 && b === 168)
+  )
+}
+
+/** redirects are followed manually so every hop goes through the same public https check */
+const fetchLogo = async (url: string, headers: Record<string, string>) => {
+  let target = url
+
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const response = await fetch(target, {
+      headers,
+      redirect: 'manual',
+      signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT),
+    })
+
+    if (![301, 302, 303, 307, 308].includes(response.status)) return response
+
+    const location = response.headers.get('location')
+    if (!location) throw new Error(`HTTP ${response.status} without a location header`)
+
+    target = new URL(location, target).href
+    if (!isPublicHttpsUrl(target)) throw new Error(`Redirected to a non public https url (${target})`)
   }
 
-  return url
+  throw new Error('Too many redirects')
+}
+
+const readCappedBody = async (response: Response) => {
+  const contentLength = Number(response.headers.get('content-length'))
+  if (contentLength > MAX_LOGO_BYTES) throw new Error(`Image is too large (${contentLength} bytes)`)
+
+  const chunks: Uint8Array[] = []
+  let size = 0
+
+  // the announced content length is not trustworthy, count the bytes as they arrive
+  for await (const chunk of response.body ?? []) {
+    size += chunk.byteLength
+    if (size > MAX_LOGO_BYTES) throw new Error(`Image is too large (over ${MAX_LOGO_BYTES} bytes)`)
+    chunks.push(chunk)
+  }
+
+  return Buffer.concat(chunks)
 }
 
 const fetchSubnetLogo = async (
@@ -177,7 +250,7 @@ const fetchSubnetLogo = async (
   if (revalidate && prev.etag) headers['If-None-Match'] = prev.etag
   if (revalidate && prev.lastModified) headers['If-Modified-Since'] = prev.lastModified
 
-  const response = await fetch(url, { headers, signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT) })
+  const response = await fetchLogo(url, headers)
 
   if (response.status === 304 && revalidate) return prev
 
@@ -186,10 +259,7 @@ const fetchSubnetLogo = async (
   const contentType = response.headers.get('content-type') ?? ''
   if (contentType.startsWith('text/')) throw new Error(`Not an image (${contentType})`)
 
-  const buffer = Buffer.from(await response.arrayBuffer())
-  if (buffer.byteLength > MAX_LOGO_BYTES) throw new Error(`Image is too large (${buffer.byteLength} bytes)`)
-
-  const webp = await toWebp(buffer)
+  const webp = await toWebp(await readCappedBody(response))
 
   // content hash in the filename busts the raw.githubusercontent cache when a subnet changes its logo
   const hash = createHash('sha256').update(webp).digest('hex').slice(0, 8)
@@ -209,7 +279,7 @@ const fetchSubnetLogo = async (
 }
 
 const toWebp = async (buffer: Buffer) => {
-  const img = sharp(buffer)
+  const img = sharp(buffer, { limitInputPixels: MAX_LOGO_PIXELS })
   const metadata = await img.metadata()
 
   if ((metadata.height ?? 0) > LOGO_SIZE || (metadata.width ?? 0) > LOGO_SIZE)
