@@ -267,6 +267,9 @@ const fetchSubnetLogo = async (
 
   if (!existsSync(filePath)) await writeFile(filePath, new Uint8Array(webp))
 
+  // some hosts regenerate their etag or last-modified on every request, keep the cache stable when the image is not
+  if (revalidate && prev.hash === hash) return prev
+
   return {
     networkId,
     netuid,
