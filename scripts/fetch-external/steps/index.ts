@@ -5,6 +5,7 @@ import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
 import { fetchDotNetworksMetadataExtracts } from './fetchDotNetworksMetadataExtracts'
 import { fetchDotNetworksSpecs } from './fetchDotNetworksSpecs'
 import { fetchDotTokens } from './fetchDotTokens'
+import { fetchDtaoTokensLogos } from './fetchDtaoTokensLogos'
 import { fetchEthTokens } from './fetchEthTokens'
 import { fetchKnownEvmNetworks } from './fetchKnownEvmNetworks'
 import { fetchKnownEvmNetworksCoingeckoLogos } from './fetchKnownEvmNetworksCoingeckoLogos'
@@ -31,6 +32,7 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   fetchDotNetworksMetadataExtracts,
   fetchSolNetworksSpecs,
   fetchDotTokens,
+  fetchDtaoTokensLogos,
   fetchEthTokens,
   fetchSolTokens,
   fixForeignAssets,

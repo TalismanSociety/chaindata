@@ -902,6 +902,12 @@
     substrate-dtao:
       - netuid: 0
         coingeckoId: bittensor
+      # alpharidge.ai serves html instead of the logo_url published on chain
+      - netuid: 45
+        logo: ./assets/tokens/dtao/alpharidge.png
+      # ridges.ai rate limits the logo_url published on chain
+      - netuid: 62
+        logo: ./assets/tokens/dtao/ridges.png
   blockExplorerUrls:
     - https://taostats.io
 - id: calamari

@@ -75,6 +75,13 @@ To make a contribution, please fork this repo and make your changes in your fork
 1. Add your logo (in `svg` format) to `assets/tokens/${symbol}.svg`
 1. In `networks-polkadot.yaml` find the logo entry and set the `logo` property with the relative path of the token.
 
+#### Bittensor subnet (dtao) token logos
+
+Subnet logos are mirrored automatically from the `logo_url` published on chain in each subnet identity
+(`SubnetInfoRuntimeApi.get_all_dynamic_info`), converted to webp and stored in `assets/tokens/dtao/`.
+They take precedence over coingecko logos. To override one, set the `logo` property of the subnet entry
+in `networks-polkadot.yaml`.
+
 ### To build the pub directory locally:
 
 1. Install `pnpm` via [corepack](https://nodejs.org/api/corepack.html) by running `corepack enable` on the command line

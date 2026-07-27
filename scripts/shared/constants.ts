@@ -15,6 +15,7 @@ export const GITHUB_BRANCH = execSync('git rev-parse --abbrev-ref HEAD').toStrin
 
 export const DIR_ASSETS_CHAINS = 'assets/chains'
 export const DIR_ASSETS_TOKENS = 'assets/tokens'
+export const DIR_ASSETS_TOKENS_DTAO = 'assets/tokens/dtao'
 export const DIR_OUTPUT = `pub/${MINIMETADATA_VERSION}`
 
 export const NOVASAMA_METADATA_PORTAL_CONFIG =
@@ -47,6 +48,7 @@ export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-met
 export const FILE_NOVASAMA_METADATA_PORTAL_URLS = 'data/cache/novasama-metadata-portal-urls.json'
 export const FILE_KNOWN_EVM_NETWORKS = 'data/generated/known-evm-networks.json'
 export const FILE_KNOWN_EVM_NETWORKS_ICONS_CACHE = 'data/cache/known-evm-networks-icons-cache.json'
+export const FILE_DTAO_TOKEN_LOGOS_CACHE = 'data/cache/dtao-token-logos-cache.json'
 export const FILE_DOT_TOKENS_PREBUILD = 'data/cache/polkadot-tokens-prebuild.json'
 export const FILE_ETH_TOKENS_PREBUILD = 'data/cache/ethereum-tokens-prebuild.json'
 export const FILE_SOL_TOKENS_PREBUILD = 'data/cache/solana-tokens-prebuild.json'
