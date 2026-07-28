@@ -33251,6 +33251,10 @@
           "coingeckoId": "singularry"
         },
         {
+          "contractAddress": "0x4581ddc7617a32bf1e97646adb0537f01423868d",
+          "coingeckoId": "sino-2"
+        },
+        {
           "contractAddress": "0x94498055eaf906aacdf939c53bfad73ea1a57edf",
           "coingeckoId": "sir"
         },
@@ -38241,7 +38245,6 @@
       "https://rpc.owlracle.info/poly/70d38ce1826c4a60bb2a8e05a6c8b20f",
       "https://polygon.therpc.io",
       "https://rpc.poolz.finance/polygon",
-      "https://rpc.sentio.xyz/matic",
       "https://rpc.swiftnodes.io/rpc/polygon",
       "https://rpc.private.mev-x.com/polygon",
       "https://matic.rpc.sentio.xyz",
@@ -42840,6 +42843,19 @@
     "shortName": "omni_omega"
   },
   {
+    "id": "165",
+    "name": "Farm Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "FMC",
+      "name": "Farm Coin"
+    },
+    "blockExplorerUrls": ["https://fmcscan.com"],
+    "rpcs": ["https://rpc.fmcscan.com"],
+    "icon": "farmchain",
+    "shortName": "Farm"
+  },
+  {
     "id": "166",
     "name": "Nomina Mainnet",
     "nativeCurrency": {
@@ -42895,6 +42911,7 @@
       "https://1rpc.io/manta",
       "https://manta-pacific.drpc.org",
       "https://endpoints.omniatech.io/v1/manta-pacific/mainnet/public",
+      "https://manta-pacific-mainnet.rpc.sentio.xyz",
       "https://pacific-rpc.manta.network/http",
       "https://manta-pacific-gascap.calderachain.xyz/http",
       "https://www.tencentcloud-rpc.com/v2/manta/manta-rpc",
@@ -44008,6 +44025,7 @@
     },
     "blockExplorerUrls": ["https://explorer.bsquared.network"],
     "rpcs": [
+      "https://b2-mainnet.rpc.sentio.xyz",
       "https://rpc.bsquared.network",
       "https://b2-mainnet.alt.technology",
       "https://b2-mainnet-public.s.chainbase.com",
@@ -45007,6 +45025,7 @@
       "https://node.histori.xyz/fraxtal-mainnet/8ry9f6t9dct1se2hlagxnd9n2a",
       "https://fraxtal.api.pocket.network",
       "https://rpc.swiftnodes.io/rpc/fraxtal",
+      "https://frax-mainnet.rpc.sentio.xyz",
       "https://fraxtal.gateway.tenderly.co",
       "https://rpc.frax.com",
       "https://fraxtal-rpc.publicnode.com"
@@ -47931,10 +47950,11 @@
       "symbol": "DOTO",
       "name": "Doto"
     },
-    "blockExplorerUrls": ["https://explorer.dotone.network"],
-    "rpcs": ["https://rpc.dotone.network"],
-    "icon": "doto",
-    "shortName": "doto"
+    "blockExplorerUrls": ["https://dotscan.one"],
+    "rpcs": ["https://rpc.dotone.online"],
+    "icon": "dotone",
+    "shortName": "doto",
+    "chainSlug": "dotone"
   },
   {
     "id": "509",
@@ -49291,6 +49311,19 @@
     "blockExplorerUrls": [],
     "rpcs": ["https://node.cheapeth.org/rpc"],
     "shortName": "cth"
+  },
+  {
+    "id": "784",
+    "name": "Ritual Network",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "RITUAL",
+      "name": "Ritual"
+    },
+    "blockExplorerUrls": ["https://explorer.ritualfoundation.org"],
+    "rpcs": ["https://rpc.ritualfoundation.org"],
+    "icon": "ritual",
+    "shortName": "ritual"
   },
   {
     "id": "785",
@@ -51748,7 +51781,6 @@
       "https://polygon-zkevm.api.pocket.network",
       "https://polygon-zkevm-mainnet.public.blastapi.io",
       "https://polygon-zkevm-public.nodies.app",
-      "https://polygon-zkevm.rpc.sentio.xyz",
       "https://rpc.polygon-zkevm.gateway.fm",
       "https://zkevm-rpc.com"
     ],
@@ -53886,6 +53918,19 @@
     "shortName": "mun"
   },
   {
+    "id": "1404",
+    "name": "BlockDAG Network",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "BDAG",
+      "name": "BlockDAG"
+    },
+    "blockExplorerUrls": ["https://bdagscan.com/"],
+    "rpcs": ["https://rpc.kenny-us-pool.com"],
+    "icon": "BDAG",
+    "shortName": "bdag"
+  },
+  {
     "id": "1408",
     "name": "VFlow",
     "nativeCurrency": {
@@ -55647,6 +55692,19 @@
     "shortName": "swellchain-sep"
   },
   {
+    "id": "1925",
+    "name": "Tipschain Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "TPC",
+      "name": "Tipscoin"
+    },
+    "blockExplorerUrls": ["https://tipschain.online"],
+    "rpcs": ["https://rpc.tipschain.org"],
+    "icon": "TPC",
+    "shortName": "tpc"
+  },
+  {
     "id": "1927",
     "isTestnet": true,
     "name": "Arvix Testnet",
@@ -57149,15 +57207,15 @@
   },
   {
     "id": "2184",
-    "name": "PopDEX Mainnet",
+    "name": "Morph Tachyon",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "POP",
-      "name": "POP"
+      "symbol": "BGB",
+      "name": "BGB"
     },
     "blockExplorerUrls": ["https://app.popdex.xyz/explorer"],
-    "rpcs": ["https://rpc.popdex.xyz"],
-    "shortName": "popdex"
+    "rpcs": ["https://api.popdex.xyz/api/v1/web3/rpc"],
+    "shortName": "morphtachyon"
   },
   {
     "id": "2187",
@@ -60516,18 +60574,17 @@
   },
   {
     "id": "4162",
-    "name": "SX Rollup",
+    "name": "SX Network",
     "logo": "./assets/chains/known/4162.webp",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "SX",
-      "name": "SX Network",
+      "name": "SX Token",
       "coingeckoId": "sx-network-2"
     },
-    "blockExplorerUrls": ["https://explorerl2.sx.technology"],
-    "rpcs": ["https://rpc.sx-rollup.gelato.digital"],
-    "icon": "SX",
-    "shortName": "SXR"
+    "blockExplorerUrls": ["https://explorer.sx.technology"],
+    "rpcs": ["https://rpc.sx-rollup.gelato.digital", "https://rpc-rollup.sx.technology"],
+    "shortName": "sx-mainnet"
   },
   {
     "id": "4181",
@@ -60836,6 +60893,7 @@
     "rpcs": [
       "https://megaeth.drpc.org",
       "https://rpc-megaeth-mainnet.globalstake.io",
+      "https://megaeth.rpc.sentio.xyz",
       "https://mainnet.megaeth.com/rpc"
     ],
     "tokens": {
@@ -61225,6 +61283,19 @@
     "shortName": "TRUMPCHAIN"
   },
   {
+    "id": "4599",
+    "name": "GTBS Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "GTBS",
+      "name": "GTBS"
+    },
+    "blockExplorerUrls": ["https://gtbsblockchain.com"],
+    "rpcs": ["https://mainnet-rpc.gtbsblockchain.com"],
+    "icon": "gtbs",
+    "shortName": "gtbs"
+  },
+  {
     "id": "4613",
     "name": "VERY Mainnet",
     "nativeCurrency": {
@@ -61288,7 +61359,11 @@
       "coingeckoId": "ethereum"
     },
     "blockExplorerUrls": ["https://robinhoodchain.blockscout.com"],
-    "rpcs": ["https://robinhood.rpc.blxrbdn.com", "https://rpc.mainnet.chain.robinhood.com"],
+    "rpcs": [
+      "https://robinhood-rpc.publicnode.com",
+      "https://robinhood.rpc.blxrbdn.com",
+      "https://rpc.mainnet.chain.robinhood.com"
+    ],
     "tokens": {
       "evm-erc20": [
         {
@@ -81423,6 +81498,18 @@
     "shortName": "goldx-testnet"
   },
   {
+    "id": "22540",
+    "name": "LXS",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "LXS",
+      "name": "LXS"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://lxsnetwork.duckdns.org"],
+    "shortName": "lxs"
+  },
+  {
     "id": "22776",
     "name": "MAP Protocol",
     "logo": "./assets/chains/known/22776.webp",
@@ -82978,15 +83065,15 @@
   {
     "id": "34952",
     "isTestnet": true,
-    "name": "PopDEX Testnet",
+    "name": "Morph Tachyon Testnet",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "POP",
-      "name": "POP"
+      "symbol": "BGB",
+      "name": "BGB"
     },
     "blockExplorerUrls": ["https://testnet-app.popdex.xyz/explorer"],
     "rpcs": ["https://testnet-api.popdex.xyz/api/v1/web3/rpc"],
-    "shortName": "popdex-testnet"
+    "shortName": "morphtachyon testnet"
   },
   {
     "id": "35011",
@@ -90124,7 +90211,11 @@
       "name": "Ether"
     },
     "blockExplorerUrls": ["https://explorer.testnet.chain.robinhood.com"],
-    "rpcs": ["https://robinhood-testnet.drpc.org", "https://rpc.testnet.chain.robinhood.com"],
+    "rpcs": [
+      "https://robinhood-testnet.drpc.org",
+      "https://robinhood-sepolia-rpc.publicnode.com",
+      "https://rpc.testnet.chain.robinhood.com"
+    ],
     "icon": "https://cdn.robinhood.com/assets/generated_assets/hoodchain_docsite/rh_favicon_120.png",
     "shortName": "robinhoodchaintestnet"
   },
@@ -92666,6 +92757,18 @@
     "rpcs": ["https://nebula-chain.com/rpc"],
     "icon": "nebula",
     "shortName": "nebula"
+  },
+  {
+    "id": "73571",
+    "name": "SELEMAN Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "SMN",
+      "name": "SELEMAN"
+    },
+    "blockExplorerUrls": ["https://seleman.monarcaproject.com"],
+    "rpcs": ["https://seleman.monarcaproject.com/rpc", "https://seleman-edge.mineriafjs.workers.dev/rpc"],
+    "shortName": "seleman"
   },
   {
     "id": "73790",
@@ -96710,6 +96813,7 @@
       "https://taiko-mainnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
       "https://taiko.therpc.io",
       "https://rpc.swiftnodes.io/rpc/taiko",
+      "https://taiko.rpc.sentio.xyz",
       "https://taiko-mainnet.gateway.tenderly.co",
       "https://rpc.taiko.xyz",
       "https://rpc.mainnet.taiko.xyz",
@@ -99209,6 +99313,7 @@
       "https://scroll.therpc.io",
       "https://api-scroll-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://rpc.swiftnodes.io/rpc/scroll",
+      "https://scroll.rpc.sentio.xyz",
       "https://rpc.scroll.io",
       "https://rpc-scroll.icecreamswap.com",
       "https://scroll-mainnet.chainstacklabs.com",
@@ -100042,6 +100147,7 @@
     "rpcs": [
       "https://katana.drpc.org",
       "https://rpc.swiftnodes.io/rpc/katana",
+      "https://katana.rpc.sentio.xyz",
       "https://rpc.katana.network",
       "https://katana.gateway.tenderly.co",
       "https://rpc.katanarpc.com"
@@ -103542,16 +103648,15 @@
   },
   {
     "id": "79479957",
-    "name": "SX Toronto Rollup",
+    "name": "SX Toronto Network",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "SX",
-      "name": "SX Network"
+      "name": "SX Token"
     },
-    "blockExplorerUrls": ["https://explorerl2.toronto.sx.technology"],
-    "rpcs": ["https://rpc.sx-rollup-testnet.t.raas.gelato.cloud"],
-    "icon": "SX",
-    "shortName": "SXR-Testnet"
+    "blockExplorerUrls": ["https://explorerl2.toronto.sx.technology/"],
+    "rpcs": ["https://rpc.sx-rollup-testnet.t.raas.gelato.cloud", "https://rpc-rollup.toronto.sx.technology"],
+    "shortName": "sx-toronto"
   },
   {
     "id": "88558801",
