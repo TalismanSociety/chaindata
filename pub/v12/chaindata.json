@@ -126,8 +126,8 @@
         "https://mainnet.optimism.io",
         "https://optimism.gateway.tenderly.co",
         "https://optimism.publicnode.com",
-        "https://optimism-rpc.publicnode.com",
-        "https://optimism.drpc.org"
+        "https://1rpc.io/op",
+        "https://optimism-rpc.publicnode.com"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -368,10 +368,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://cronos-evm-rpc.publicnode.com",
+        "https://1rpc.io/cro",
         "https://cronos.drpc.org",
         "https://cronos.rpc.sentio.xyz",
-        "https://evm.cronos.org",
-        "https://rpc.vvs.finance"
+        "https://evm.cronos.org"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -503,9 +503,9 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://1rpc.io/telos/evm",
         "https://telos.drpc.org",
         "https://rpc.telos.net",
-        "https://1rpc.io/telos/evm",
         "https://rpc.ankr.com/telos"
       ],
       "contracts": {
@@ -544,9 +544,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://42.rpc.thirdweb.com",
+        "https://public-lukso.nownodes.io",
         "https://rpc.mainnet.lukso.network",
-        "https://rpc.lukso.sigmacore.io",
-        "https://public-lukso.nownodes.io"
+        "https://rpc.lukso.sigmacore.io"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -591,10 +591,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://rpc.ankr.com/xdc",
-        "https://api-xdc-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
         "https://rpc.xdcrpc.com",
         "https://erpc.xdcrpc.com",
-        "https://rpc.xdc.org"
+        "https://rpc.xdc.org",
+        "https://api-xdc-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
       ],
       "contracts": {
         "Multicall3": "0x0B1795ccA8E4eC4df02346a082df54D437F8D9aF"
@@ -26414,7 +26414,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com", "wss://astar.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -26470,7 +26470,7 @@
       "specVersion": 10,
       "account": "*25519",
       "prefix": 6094,
-      "rpcs": ["wss://rpc.chronos.autonomys.xyz/ws", "wss://rpc-0.chronos.autonomys.xyz/ws"],
+      "rpcs": ["wss://rpc.chronos.autonomys.xyz/ws"],
       "topology": {
         "type": "standalone"
       }
@@ -26632,7 +26632,7 @@
       "specVersion": 52,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://avail-turing.api.onfinality.io/public-ws", "wss://turing-testnet.avail-rpc.com"],
+      "rpcs": ["wss://turing-testnet.avail-rpc.com"],
       "registryTypes": {
         "AppId": "Compact<u32>",
         "DataLookupItem": {
@@ -26899,7 +26899,6 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/node-subtensor_metadata_latest.apng",
       "prefix": 42,
       "rpcs": [
-        "wss://lite.sub.latent.to:443",
         "wss://entrypoint-finney.opentensor.ai:443",
         "wss://lite.chain.opentensor.ai",
         "wss://rpc.blockmachine.io"
@@ -26959,7 +26958,11 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/centrifuge_metadata_latest.apng",
       "prefix": 36,
       "oldPrefix": 36,
-      "rpcs": ["wss://fullnode.centrifuge.io", "wss://rpc-centrifuge.luckyfriday.io"],
+      "rpcs": [
+        "wss://fullnode.centrifuge.io",
+        "wss://rpc-centrifuge.luckyfriday.io",
+        "wss://centrifuge-parachain.api.onfinality.io/public-ws"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -28912,6 +28915,7 @@
       "rpcs": [
         "wss://rpc-people-polkadot.luckyfriday.io",
         "wss://polkadot-people-rpc.polkadot.io",
+        "wss://people-polkadot.api.onfinality.io/public-ws",
         "wss://people-polkadot-rpc.n.dwellir.com",
         "wss://rpc-people-polkadot.stakeworld.io"
       ],
@@ -155825,6 +155829,18 @@
       "contractAddress": "0x17bb0c898254406b1ea2e8e99b0c263e26c9e4a4"
     },
     {
+      "id": "4663:evm-erc20:0x19f862c0cf83a9f65b19c37fd1f4fd5bacb097ae",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "COOPER",
+      "decimals": 18,
+      "name": "Cooper",
+      "coingeckoId": "cooper-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cooper-2.webp",
+      "contractAddress": "0x19f862c0cf83a9f65b19c37fd1f4fd5bacb097ae"
+    },
+    {
       "id": "4663:evm-erc20:0x1abf16f660ccbaa22ce8646deb1b63635d582228",
       "platform": "ethereum",
       "networkId": "4663",
@@ -156651,6 +156667,18 @@
       "coingeckoId": "costco-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/costco-robinhood-tokenized-stock.webp",
       "contractAddress": "0x4ea005168d7f09a7a0ba9d1def21a479950e44c2"
+    },
+    {
+      "id": "4663:evm-erc20:0x4f0d7ea112547af5dad59959d98b6a8ee3355bcc",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CryingCat",
+      "decimals": 18,
+      "name": "Crying Cat",
+      "coingeckoId": "crying-cat-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/crying-cat-2.webp",
+      "contractAddress": "0x4f0d7ea112547af5dad59959d98b6a8ee3355bcc"
     },
     {
       "id": "4663:evm-erc20:0x4f298b7b07abcb81e4c097c28dfe68d49f17c0de",
@@ -158513,6 +158541,18 @@
       "contractAddress": "0xb90a19ff0af67f7779aff50a882a9cff42446400"
     },
     {
+      "id": "4663:evm-erc20:0xbbb8ef3181661512ceab66e0b213c29211b24b6c",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "USDUC",
+      "decimals": 6,
+      "name": "unstable coin",
+      "coingeckoId": "unstable-coin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unstable-coin.webp",
+      "contractAddress": "0xbbb8ef3181661512ceab66e0b213c29211b24b6c"
+    },
+    {
       "id": "4663:evm-erc20:0xbd433ecab074ae6a740959fb5e7bf1d02f6f57f6",
       "platform": "ethereum",
       "networkId": "4663",
@@ -158787,6 +158827,18 @@
       "coingeckoId": "cleanspark-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cleanspark-robinhood-tokenized-stock.webp",
       "contractAddress": "0xcbb95bbf36099d34da091dc6fa6f49efa257cee3"
+    },
+    {
+      "id": "4663:evm-erc20:0xcc9c1ec224c3824ae5ea699ec72ef5fad4165e49",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "FORAI",
+      "decimals": 18,
+      "name": "Forecast AI",
+      "coingeckoId": "forecast-ai",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/forecast-ai.webp",
+      "contractAddress": "0xcc9c1ec224c3824ae5ea699ec72ef5fad4165e49"
     },
     {
       "id": "4663:evm-erc20:0xcdd50d73b45085d71cb05e2ca238d12c3bd7bebd",
@@ -235581,6 +235633,18 @@
       "contractAddress": "0xbbcb0356bb9e6b3faa5cbf9e5f36185d53403ac9"
     },
     {
+      "id": "8453:evm-erc20:0xbbd27c575fb0e113219d610cc787b02eeff71d42",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "HALO",
+      "decimals": 18,
+      "name": "Halo",
+      "coingeckoId": "halo-4",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/halo-4.webp",
+      "contractAddress": "0xbbd27c575fb0e113219d610cc787b02eeff71d42"
+    },
+    {
       "id": "8453:evm-erc20:0xbbe6693a1825270886fa53167359caa32ff87c5e",
       "platform": "ethereum",
       "networkId": "8453",
@@ -260650,6 +260714,20 @@
       "isTransferable": true
     },
     {
+      "id": "bittensor-testnet:substrate-dtao:541",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN541 | gbase testnet Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 541,
+      "subnetName": "gbase testnet",
+      "isTransferable": true
+    },
+    {
       "id": "bittensor-testnet:substrate-dtao:55",
       "platform": "polkadot",
       "networkId": "bittensor-testnet",
@@ -278993,6 +279071,18 @@
       "coingeckoId": "america-is-back",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/america-is-back.webp",
       "mintAddress": "5GfXzzdxUZ4QEwwa5hhBMEazFSp9EhtYvm8RFLxrgyVc"
+    },
+    {
+      "id": "solana-mainnet:sol-spl:5GgY77Uti2d6VSAT2WW27d7UA2yBC7PMm2iepjmtJuwv",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "HUMBIT",
+      "decimals": 6,
+      "name": "Hummingbird Bitcoin",
+      "coingeckoId": "hummingbird-bitcoin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hummingbird-bitcoin.webp",
+      "mintAddress": "5GgY77Uti2d6VSAT2WW27d7UA2yBC7PMm2iepjmtJuwv"
     },
     {
       "id": "solana-mainnet:sol-spl:5gsDMgG3p1xZR7qvbS88EjNSDesBdJjYH7PGemUgpump",
@@ -322430,6 +322520,18 @@
       "coingeckoId": "testicle",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/testicle.webp",
       "mintAddress": "4TyZGqRLG3VcHTGMcLBoPUmqYitMVojXinAmkL8xpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:4tzmsD8EpQVPqHDdzSXWNHJnBLL3fNUFbLv3nufjpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "MIDTERMS",
+      "decimals": 6,
+      "name": "Midterm Elections",
+      "coingeckoId": "midterm-elections",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/midterm-elections.webp",
+      "mintAddress": "4tzmsD8EpQVPqHDdzSXWNHJnBLL3fNUFbLv3nufjpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:4u4w3Ey8ewYw7pZWyUH6kaGf7pUx97KYLp3tnFcEpump",
