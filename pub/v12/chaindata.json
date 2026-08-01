@@ -26989,7 +26989,11 @@
       "specVersion": 440,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://test.chain.opentensor.ai:443"],
+      "rpcs": [
+        "wss://test.chain.opentensor.ai:443",
+        "wss://test.finney.opentensor.ai",
+        "wss://archive.dev.opentensor.ai"
+      ],
       "topology": {
         "type": "standalone"
       }
@@ -29338,7 +29342,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/vara_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/vara_metadata_latest.apng",
       "prefix": 137,
-      "rpcs": ["wss://rpc.vara.network"],
+      "rpcs": ["wss://rpc.vara.network", "wss://rpc.vara-network.io", "wss://archive-rpc.vara.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
