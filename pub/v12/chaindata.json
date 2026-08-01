@@ -13858,7 +13858,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://ticsscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.qubetics.com", "https://evm.qubenode.space", "https://evm.qubeticstralbo.eu"]
+      "rpcs": ["https://rpc.qubetics.com", "https://evm.qubenode.space"]
     },
     {
       "id": "9069",
@@ -14387,7 +14387,7 @@
         "https://monad-testnet.drpc.org",
         "https://rpc.ankr.com/monad_testnet",
         "https://monad-testnet-rpc.huginn.tech",
-        "https://monad-testnet.api.onfinality.io/public"
+        "https://testnet-rpc.monad.xyz"
       ],
       "contracts": {
         "Erc20Aggregator": "0x951d5f07Afc1704CeAc760Fa632801674469845f",
@@ -14855,6 +14855,21 @@
       "blockExplorerUrls": ["https://explorer.rannta.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.rannta.com"]
+    },
+    {
+      "id": "13188",
+      "isTestnet": true,
+      "name": "BeeChain Testnet",
+      "nativeTokenId": "13188:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BKC",
+        "name": "BeeChain"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://scantest.beechain.ai"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpctest.beechain.ai"]
     },
     {
       "id": "13337",
@@ -27667,8 +27682,8 @@
         "wss://hydration-rpc.n.dwellir.com",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
-        "wss://rpc-catfish-1.catfish.hydration.cloud",
-        "wss://rpc-catfish-2.catfish.hydration.cloud"
+        "wss://rpc.kril.hydration.cloud",
+        "wss://rpc-catfish-1.catfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -28294,8 +28309,8 @@
       "prefix": 1285,
       "rpcs": [
         "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.unitedbloc.com",
-        "wss://moonriver.api.onfinality.io/public-ws"
+        "wss://moonriver.api.onfinality.io/public-ws",
+        "wss://moonriver.unitedbloc.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -28763,10 +28778,10 @@
       "prefix": 0,
       "rpcs": [
         "wss://polkadot-rpc.publicnode.com",
-        "wss://rpc-polkadot.helixstreet.io",
         "wss://rpc-polkadot.luckyfriday.io",
         "wss://rockx-dot.w3node.com/polka-public-dot/ws",
-        "wss://dot-rpc.stakeworld.io"
+        "wss://dot-rpc.stakeworld.io",
+        "wss://polkadot.api.onfinality.io/public-ws"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -102812,6 +102827,16 @@
       "isDefault": true
     },
     {
+      "id": "13188:evm-native",
+      "platform": "ethereum",
+      "networkId": "13188",
+      "type": "evm-native",
+      "symbol": "BKC",
+      "decimals": 18,
+      "name": "BeeChain",
+      "isDefault": true
+    },
+    {
       "id": "1319:evm-native",
       "platform": "ethereum",
       "networkId": "1319",
@@ -165194,6 +165219,18 @@
       "coingeckoId": "yorozu",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/yorozu.webp",
       "contractAddress": "0x64abfc878dc340bbf33bae4aaf39ed33fb1828c0"
+    },
+    {
+      "id": "4663:evm-erc20:0x6543b7746ca744c4bb2198191e71f40ff04c41b9",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "DERP",
+      "decimals": 18,
+      "name": "DERP",
+      "coingeckoId": "derp-5",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/derp-5.webp",
+      "contractAddress": "0x6543b7746ca744c4bb2198191e71f40ff04c41b9"
     },
     {
       "id": "4663:evm-erc20:0x65b445518b1ad0d9c597731494f5bd2991b7ec08",
@@ -275242,6 +275279,34 @@
       "existentialDeposit": "17540000"
     },
     {
+      "id": "hydradx:substrate-hydration:55",
+      "platform": "polkadot",
+      "networkId": "hydradx",
+      "type": "substrate-hydration",
+      "symbol": "BIL",
+      "decimals": 18,
+      "name": "BIL",
+      "isDefault": true,
+      "onChainId": 55,
+      "assetType": "Erc20",
+      "isSufficient": true,
+      "existentialDeposit": "20000000000000000"
+    },
+    {
+      "id": "hydradx:substrate-hydration:550",
+      "platform": "polkadot",
+      "networkId": "hydradx",
+      "type": "substrate-hydration",
+      "symbol": "uBIL",
+      "decimals": 18,
+      "name": "uBIL",
+      "isDefault": true,
+      "onChainId": 550,
+      "assetType": "Erc20",
+      "isSufficient": true,
+      "existentialDeposit": "20000000000000000"
+    },
+    {
       "id": "hydradx:substrate-hydration:6",
       "platform": "polkadot",
       "networkId": "hydradx",
@@ -331730,6 +331795,18 @@
       "mintAddress": "3xc1DRne6diAqgcRB4rBXRFVY7KBpQv9zPMLhfsYpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:3XEe11RMNqNTka33ik2yEmr3siUWmFQWSESP9Ejepump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "wiwiwi",
+      "decimals": 6,
+      "name": "wiwiwi",
+      "coingeckoId": "wiwiwi",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wiwiwi.webp",
+      "mintAddress": "3XEe11RMNqNTka33ik2yEmr3siUWmFQWSESP9Ejepump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:3XwDQHMKcner1GhXRqLKojrWWwNdMaruQs7g7riDpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -333000,6 +333077,18 @@
       "coingeckoId": "the-rousseauian-deer",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-rousseauian-deer.webp",
       "mintAddress": "5exGpveFdn2Dcr9o7Pyj35DoYj588rEfkNLcZqHxpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:5FUTTMiN9KqZkPsk4q9Kpp6kmweRKTrJrdhhv5DKpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "CUH",
+      "decimals": 6,
+      "name": "Cuh",
+      "coingeckoId": "cuh",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cuh.webp",
+      "mintAddress": "5FUTTMiN9KqZkPsk4q9Kpp6kmweRKTrJrdhhv5DKpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:5gdkymiHDBetTnCBjr1YAeqMCeGJKVFRkumrAAgmpump",
@@ -343044,6 +343133,18 @@
       "coingeckoId": "penguin-solutions-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/penguin-solutions-ondo-tokenized.webp",
       "mintAddress": "dWFwjcUKdc7bPH9GEebpJVmEmUjvQTgEWGVR9WYondo"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:DWQJRoA5hQBGafXCbbtNPNnNh8FfL4S9hiVabrK6pump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "TRENCH",
+      "decimals": 6,
+      "name": "PlayTrenches",
+      "coingeckoId": "playtrenches",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/playtrenches.webp",
+      "mintAddress": "DWQJRoA5hQBGafXCbbtNPNnNh8FfL4S9hiVabrK6pump"
     },
     {
       "id": "solana-mainnet:sol-token2022:DwRtkbsaQMGAS3oMeEGYh6M5vH4X9WECsQgqHjAondo",
