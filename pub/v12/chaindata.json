@@ -12647,23 +12647,6 @@
       "rpcs": ["https://rpc.pruv.network"]
     },
     {
-      "id": "7341",
-      "name": "Shyft Mainnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-      "nativeTokenId": "7341:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "SHYFT",
-        "name": "Shyft",
-        "coingeckoId": "shyft-network-2",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shyft-network-2.webp"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.shyft.network"]
-    },
-    {
       "id": "7368",
       "name": "Rarimo",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/rarimo.svg",
@@ -13035,6 +13018,21 @@
       "blockExplorerUrls": ["https://explorer.kinto.xyz"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.ankr.com/kinto", "https://rpc.kinto.xyz/http"]
+    },
+    {
+      "id": "7924",
+      "name": "MO Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/mo.webp",
+      "nativeTokenId": "7924:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "MO",
+        "name": "MO"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://moscan.app"],
+      "platform": "ethereum",
+      "rpcs": ["https://mainnet-rpc.mochain.app"]
     },
     {
       "id": "7979",
@@ -26334,7 +26332,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
       "prefix": 42,
-      "rpcs": ["wss://mainnet.azero.fans", "wss://ws.azero.dev"],
+      "rpcs": ["wss://ws.azero.dev", "wss://mainnet.azero.fans"],
       "topology": {
         "type": "standalone"
       }
@@ -26989,11 +26987,7 @@
       "specVersion": 440,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": [
-        "wss://test.chain.opentensor.ai:443",
-        "wss://test.finney.opentensor.ai",
-        "wss://archive.dev.opentensor.ai"
-      ],
+      "rpcs": ["wss://test.chain.opentensor.ai:443", "wss://test.finney.opentensor.ai"],
       "topology": {
         "type": "standalone"
       }
@@ -217641,18 +217635,6 @@
       "isDefault": true
     },
     {
-      "id": "7341:evm-native",
-      "platform": "ethereum",
-      "networkId": "7341",
-      "type": "evm-native",
-      "symbol": "SHYFT",
-      "decimals": 18,
-      "name": "Shyft",
-      "coingeckoId": "shyft-network-2",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shyft-network-2.webp",
-      "isDefault": true
-    },
-    {
       "id": "73571:evm-native",
       "platform": "ethereum",
       "networkId": "73571",
@@ -219147,6 +219129,17 @@
       "name": "Ethereum",
       "coingeckoId": "ethereum",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
+      "id": "7924:evm-native",
+      "platform": "ethereum",
+      "networkId": "7924",
+      "type": "evm-native",
+      "symbol": "MO",
+      "decimals": 18,
+      "name": "MO",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/mo.webp",
       "isDefault": true
     },
     {
@@ -282106,18 +282099,6 @@
       "coingeckoId": "minimini",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/minimini.webp",
       "mintAddress": "2JcXacFwt9mVAwBQ5nZkYwCyXQkRcdsYrDXn6hj22SbP"
-    },
-    {
-      "id": "solana-mainnet:sol-spl:2Je72EPqUXuyNGrM95D9RczAPjEarAgrKHQMu2xxrF5D",
-      "platform": "solana",
-      "networkId": "solana-mainnet",
-      "type": "sol-spl",
-      "symbol": "SNR",
-      "decimals": 2,
-      "name": "StableNaira",
-      "coingeckoId": "stablenaira",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stablenaira.webp",
-      "mintAddress": "2Je72EPqUXuyNGrM95D9RczAPjEarAgrKHQMu2xxrF5D"
     },
     {
       "id": "solana-mainnet:sol-spl:2jUSPvEuxSxJ6nGpUHyXVAcNxyhugPC1iBeNjhTXzAUy",
