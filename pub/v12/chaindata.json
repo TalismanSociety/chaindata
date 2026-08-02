@@ -18219,22 +18219,6 @@
       "rpcs": ["https://rpc.dustproject.org"]
     },
     {
-      "id": "56026",
-      "name": "Lambda Chain Mainnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/lambda-chain.webp",
-      "nativeTokenId": "56026:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "ETH",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#f9b234",
-      "blockExplorerUrls": ["https://scan.lambda.im"],
-      "platform": "ethereum",
-      "rpcs": ["https://nrpc.lambda.im"]
-    },
-    {
       "id": "56789",
       "name": "VELO Labs Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/novachain.webp",
@@ -22527,8 +22511,8 @@
         "https://1rpc.io/scroll",
         "https://scroll.drpc.org",
         "https://scroll.api.pocket.network",
-        "https://scroll.api.onfinality.io/public",
-        "https://scroll-public.nodies.app"
+        "https://scroll-public.nodies.app",
+        "https://scroll.rpc.sentio.xyz"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -22863,7 +22847,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://atlantic.pharosscan.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://atlantic.dplabs-internal.com", "https://rpc.evm.pharos.testnet.cosmostation.io"]
+      "rpcs": ["https://atlantic.dplabs-internal.com"]
     },
     {
       "id": "704851",
@@ -28302,7 +28286,7 @@
       "specVersion": 4302,
       "account": "secp256k1",
       "prefix": 1287,
-      "rpcs": ["wss://moonbase.unitedbloc.com"],
+      "rpcs": ["wss://moonbase.unitedbloc.com", "wss://wss.api.moonbase.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
@@ -167580,6 +167564,18 @@
       "contractAddress": "0xec51b6e5d99487ac5646f3311c109714b54f6ed8"
     },
     {
+      "id": "4663:evm-erc20:0xedc62851ef24928d934024f69bb073a305090663",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "IMAGINE",
+      "decimals": 18,
+      "name": "Imagine",
+      "coingeckoId": "imagine-3",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/imagine-3.webp",
+      "contractAddress": "0xedc62851ef24928d934024f69bb073a305090663"
+    },
+    {
       "id": "4663:evm-erc20:0xf0568863195770965a6d8abb0aa87f4314b80320",
       "platform": "ethereum",
       "networkId": "4663",
@@ -213207,17 +213203,6 @@
       "symbol": "ETH",
       "decimals": 18,
       "name": "Hoodi Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
-      "id": "56026:evm-native",
-      "platform": "ethereum",
-      "networkId": "56026",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "ETH",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
@@ -330972,6 +330957,18 @@
       "mintAddress": "2zrHZZGwouwFtsh7KrGe2p9gi97Wb2ANtPKJbf4Wpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:2ZvFgTyLMrgyLmoPHtD5KsTyALh14ffzxJoni4oPpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BOGE",
+      "decimals": 6,
+      "name": "Bogecoin",
+      "coingeckoId": "bogecoin-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bogecoin-2.webp",
+      "mintAddress": "2ZvFgTyLMrgyLmoPHtD5KsTyALh14ffzxJoni4oPpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:31989YsfUahV66TGiMvdSyTj1AQNvcdT327Uiu9mpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -335206,6 +335203,18 @@
       "coingeckoId": "gremlin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gremlin.webp",
       "mintAddress": "7jgMswYd8WDF3eveAaFcS91Pg1ZT3id4MaBpAKuLpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:7K4jGRV7PY1EymiY3jx75JSfi1jjzG7Gh5XHqF2Upump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "3place",
+      "decimals": 6,
+      "name": "3place",
+      "coingeckoId": "3place",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/3place.webp",
+      "mintAddress": "7K4jGRV7PY1EymiY3jx75JSfi1jjzG7Gh5XHqF2Upump"
     },
     {
       "id": "solana-mainnet:sol-token2022:7kAux1bLGB68VzisQaaXiNKg3sjP89uDDotpuKmTpump",
@@ -341002,6 +341011,18 @@
       "coingeckoId": "agentx402",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/agentx402.webp",
       "mintAddress": "cEVB54GaMohQf8GwE79ckFbSMSZvWPL27Z2nj7apump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:CF7JzBmY5sbGWbFw27Rfpja5BqpZVJ9pY1G4vXjJpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "lemonbob",
+      "decimals": 6,
+      "name": "lemonbob",
+      "coingeckoId": "lemonbob",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lemonbob.webp",
+      "mintAddress": "CF7JzBmY5sbGWbFw27Rfpja5BqpZVJ9pY1G4vXjJpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:cFDP5SsUBeKrV1RkKHdaofHBSfRW8cBd7DiaPTSLAon",
