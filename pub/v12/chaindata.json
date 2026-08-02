@@ -19312,8 +19312,8 @@
         "https://polygon-amoy.drpc.org",
         "https://api.zan.top/polygon-amoy",
         "https://polygon-amoy-public.nodies.app",
-        "https://polygon-amoy.api.onfinality.io/public",
-        "https://polygon-amoy.gateway.tenderly.co"
+        "https://polygon-amoy.gateway.tenderly.co",
+        "https://polygon-amoy-bor-rpc.publicnode.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -21178,6 +21178,20 @@
       "blockExplorerUrls": ["https://r0arscan.io"],
       "platform": "ethereum",
       "rpcs": ["https://rpc-r0ar.io"]
+    },
+    {
+      "id": "198724",
+      "name": "EADX Network",
+      "nativeTokenId": "198724:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "EDX",
+        "name": "EADX"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.eadx.network"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.eadx.network"]
     },
     {
       "id": "198989",
@@ -28356,11 +28370,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": [
-        "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://moonriver.unitedbloc.com"
-      ],
+      "rpcs": ["wss://wss.api.moonriver.moonbeam.network", "wss://moonriver.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -122176,6 +122186,16 @@
       "isDefault": true
     },
     {
+      "id": "198724:evm-native",
+      "platform": "ethereum",
+      "networkId": "198724",
+      "type": "evm-native",
+      "symbol": "EDX",
+      "decimals": 18,
+      "name": "EADX",
+      "isDefault": true
+    },
+    {
       "id": "19880818:evm-native",
       "platform": "ethereum",
       "networkId": "19880818",
@@ -144259,6 +144279,18 @@
       "coingeckoId": "aave-v3-wsteth",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aave-v3-wsteth.webp",
       "contractAddress": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff"
+    },
+    {
+      "id": "42161:evm-erc20:0x5181b7dd097b42d7787ee78efab86f43d4e12f44",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "rSPCX",
+      "decimals": 18,
+      "name": "SpaceX (Reality Tokenized)",
+      "coingeckoId": "spacex-reality-protocol",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spacex-reality-protocol.webp",
+      "contractAddress": "0x5181b7dd097b42d7787ee78efab86f43d4e12f44"
     },
     {
       "id": "42161:evm-erc20:0x519062155b0591627c8a0c0958110a8c5639dca6",
