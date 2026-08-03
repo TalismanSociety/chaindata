@@ -21,7 +21,7 @@
         "https://eth.merkle.io",
         "https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://one.valve.city/rpc/vk_demo/evm/1",
-        "https://rpc.mevblocker.io"
+        "https://public.1rpc.io/eth"
       ],
       "feeType": "eip-1559",
       "contracts": {
@@ -126,7 +126,7 @@
         "https://mainnet.optimism.io",
         "https://optimism.gateway.tenderly.co",
         "https://optimism.publicnode.com",
-        "https://1rpc.io/op",
+        "https://public.1rpc.io/op",
         "https://optimism-rpc.publicnode.com"
       ],
       "feeType": "eip-1559",
@@ -368,7 +368,7 @@
       "platform": "ethereum",
       "rpcs": [
         "https://cronos-evm-rpc.publicnode.com",
-        "https://1rpc.io/cro",
+        "https://public.1rpc.io/cro",
         "https://cronos.drpc.org",
         "https://cronos.rpc.sentio.xyz",
         "https://evm.cronos.org"
@@ -389,7 +389,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.genesisl1.org"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.genesisl1.org"]
+      "rpcs": ["https://rpc.genesisl1.org", "https://evm.gl1infra.online"]
     },
     {
       "id": "30",
@@ -503,7 +503,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/telos/evm",
+        "https://public.1rpc.io/telos/evm",
         "https://telos.drpc.org",
         "https://rpc.telos.net",
         "https://rpc.ankr.com/telos"
@@ -668,7 +668,7 @@
         "https://bsc-dataseed2.binance.org",
         "https://bsc-dataseed3.binance.org",
         "https://bsc-dataseed4.binance.org",
-        "https://1rpc.io/bnb"
+        "https://public.1rpc.io/bnb"
       ],
       "contracts": {
         "Erc20Aggregator": "0x21741D68121db79Fd1e9eA34028D3B2e87056DBd",
@@ -815,7 +815,7 @@
       "blockExplorerUrls": ["https://www.oklink.com/en/okc"],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/oktc",
+        "https://public.1rpc.io/oktc",
         "https://oktc.drpc.org",
         "https://exchainrpc.okex.org",
         "https://oktc-mainnet.public.blastapi.io",
@@ -1155,7 +1155,7 @@
         "https://rpc.gnosischain.com/",
         "https://gnosis.drpc.org",
         "https://gnosis-rpc.publicnode.com",
-        "https://1rpc.io/gnosis",
+        "https://public.1rpc.io/gnosis",
         "https://gnosis.api.pocket.network"
       ],
       "contracts": {
@@ -1499,7 +1499,7 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mempool.merkle.io/rpc/polygon/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
-        "https://1rpc.io/matic",
+        "https://public.1rpc.io/matic",
         "https://polygon-bor-rpc.publicnode.com",
         "https://polygon.drpc.org",
         "https://poly.api.pocket.network"
@@ -1757,7 +1757,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/manta",
+        "https://public.1rpc.io/manta",
         "https://manta-pacific.drpc.org",
         "https://manta-pacific-mainnet.rpc.sentio.xyz",
         "https://pacific-rpc.manta.network/http",
@@ -2073,9 +2073,9 @@
       "rpcs": [
         "https://opbnb.drpc.org",
         "https://opbnb-rpc.publicnode.com",
-        "https://1rpc.io/opbnb",
         "https://opbnb.api.pocket.network",
-        "https://opbnb-mainnet-rpc.bnbchain.org"
+        "https://opbnb-mainnet-rpc.bnbchain.org",
+        "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -2438,7 +2438,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/ftm",
+        "https://public.1rpc.io/ftm",
         "https://fantom.drpc.org",
         "https://fantom.api.pocket.network",
         "https://fantom.api.onfinality.io/public",
@@ -2644,7 +2644,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/boba/eth",
+        "https://public.1rpc.io/boba/eth",
         "https://boba-eth.drpc.org",
         "https://boba-ethereum.gateway.tenderly.co",
         "https://gateway.tenderly.co/public/boba-ethereum",
@@ -2812,6 +2812,20 @@
       "rpcs": ["https://mainapi.omaxray.com", "https://mainapi.omaxscan.com"]
     },
     {
+      "id": "313",
+      "name": "Neurochain Mainnet",
+      "nativeTokenId": "313:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "NCN",
+        "name": "Neurochain"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://ncnscan.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://nc-rpc-prd1.neurochain.io", "https://nc-rpc-prd2.neurochain.io"]
+    },
+    {
       "id": "314",
       "name": "Filecoin - Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/314.webp",
@@ -2910,7 +2924,7 @@
       "platform": "ethereum",
       "rpcs": [
         "https://zksync.drpc.org",
-        "https://1rpc.io/zksync2-era",
+        "https://public.1rpc.io/zksync2-era",
         "https://rpc.ankr.com/zksync_era",
         "https://zksync-era.api.pocket.network",
         "https://api.zan.top/zksync-mainnet"
@@ -3012,9 +3026,9 @@
       "platform": "ethereum",
       "substrateChainId": "shiden-kusama",
       "rpcs": [
-        "https://shiden.api.onfinality.io/public",
         "https://shiden.public.curie.radiumblock.co/http",
         "https://shiden.public.curie.radiumblock.co/ws",
+        "https://shiden.api.onfinality.io/public",
         "https://rpc.shiden.astar.network:8545"
       ]
     },
@@ -3123,11 +3137,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://rpc.degenprotocol.io",
         "https://one.valve.city/rpc/vk_demo/evm/369",
         "https://pulsechain-rpc.publicnode.com",
         "https://rpc.pulsechainrpc.com",
-        "https://rpc.pulsechainstats.com",
-        "https://rpc.pulsechain.com"
+        "https://rpc.pulsechainstats.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -3842,7 +3856,7 @@
       "rpcs": [
         "https://evm.astar.network",
         "https://astar.api.onfinality.io/public",
-        "https://1rpc.io/astr",
+        "https://public.1rpc.io/astr",
         "https://astar.public.curie.radiumblock.co/http",
         "https://astar.public.curie.radiumblock.co/ws"
       ],
@@ -5244,6 +5258,20 @@
       "rpcs": ["https://relay.awakening.bdagscan.com"]
     },
     {
+      "id": "1050",
+      "name": "DIA Lasernet Mainnet",
+      "nativeTokenId": "1050:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "DIA",
+        "name": "DIA Token"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.diadata.org"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.diadata.org"]
+    },
+    {
       "id": "1071",
       "name": "OpenGPU Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/1071.webp",
@@ -5410,8 +5438,8 @@
         "https://polygon-zkevm.drpc.org",
         "https://zkevm-rpc.com",
         "https://endpoints.omniatech.io/v1/polygon-zkevm/mainnet/public",
-        "https://polygon-zkevm-mainnet.public.blastapi.io",
-        "https://polygon-zkevm-public.nodies.app"
+        "https://poly-zkevm.api.pocket.network",
+        "https://polygon-zkevm-mainnet.public.blastapi.io"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -5551,8 +5579,7 @@
         "https://core.drpc.org",
         "https://rpc.ankr.com/core",
         "https://api.zan.top/core-mainnet",
-        "https://rpc.coredao.org",
-        "https://1rpc.io/core"
+        "https://rpc.coredao.org"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -6026,8 +6053,8 @@
         "https://rpc.api.moonbeam.network",
         "https://moonbeam-rpc.publicnode.com",
         "https://moonbeam.api.onfinality.io/public",
-        "https://moonbeam.drpc.org",
-        "https://moonbeam.api.pocket.network"
+        "https://public.1rpc.io/glmr",
+        "https://moonbeam.drpc.org"
       ],
       "contracts": {
         "Erc20Aggregator": "0x294063B3727d6eE918100693e76fdADee90c8B51",
@@ -6549,6 +6576,20 @@
       "blockExplorerUrls": ["https://explorer.zkbase.app"],
       "platform": "ethereum",
       "rpcs": ["https://mainnet-rpc.zkbase.app"]
+    },
+    {
+      "id": "1475",
+      "name": "CRYMAD Chain Mainnet Network",
+      "nativeTokenId": "1475:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CMX-R",
+        "name": "CRYMADX REAL"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.cmxofficial.com/"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.cmxofficial.com"]
     },
     {
       "id": "1480",
@@ -9957,7 +9998,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.inri.life"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.inri.life", "https://rpc-chain.inri.life"]
+      "rpcs": ["https://rpc-chain.inri.life"]
     },
     {
       "id": "3797",
@@ -10840,6 +10881,7 @@
       "platform": "ethereum",
       "rpcs": [
         "https://robinhood-rpc.publicnode.com",
+        "https://robinhood.api.pocket.network",
         "https://robinhood.rpc.blxrbdn.com",
         "https://rpc.mainnet.chain.robinhood.com"
       ]
@@ -11023,7 +11065,7 @@
       "rpcs": [
         "https://mantle-rpc.publicnode.com",
         "https://mantle.drpc.org",
-        "https://1rpc.io/mantle",
+        "https://public.1rpc.io/mantle",
         "https://mantle.api.pocket.network",
         "https://mantle-public.nodies.app"
       ],
@@ -12110,7 +12152,7 @@
         "name": "MIZU"
       },
       "themeColor": "#505050",
-      "blockExplorerUrls": ["https://blockscout.mizuhiki.io"],
+      "blockExplorerUrls": ["https://mizuhiki.blockscout.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.mizuhiki.io"]
     },
@@ -12663,6 +12705,20 @@
       "rpcs": ["https://l2.rarimo.com"]
     },
     {
+      "id": "7373",
+      "name": "CRYMAD Chain Mainnet L2 Network",
+      "nativeTokenId": "7373:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CMX-U",
+        "name": "CRYMADX UTILITY"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": ["https://rpcl2.cmxofficial.com"]
+    },
+    {
       "id": "7447",
       "name": "TokClaw Blockchain",
       "nativeTokenId": "7447:evm-native",
@@ -13188,7 +13244,7 @@
       "platform": "ethereum",
       "rpcs": [
         "https://kaia.api.pocket.network",
-        "https://1rpc.io/klay",
+        "https://public.1rpc.io/klay",
         "https://klaytn.drpc.org",
         "https://rpc.ankr.com/kaia",
         "https://public-en.node.kaia.io"
@@ -13300,7 +13356,7 @@
         "https://mempool.merkle.io/rpc/base/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://base.publicnode.com",
         "https://developer-access-mainnet.base.org/",
-        "https://1rpc.io/base",
+        "https://public.1rpc.io/base",
         "https://base.meowrpc.com"
       ],
       "feeType": "eip-1559",
@@ -16177,7 +16233,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.oasis.io/mainnet/sapphire"],
       "platform": "ethereum",
-      "rpcs": ["https://1rpc.io/oasis/sapphire", "https://sapphire.oasis.io"],
+      "rpcs": ["https://public.1rpc.io/oasis/sapphire", "https://sapphire.oasis.io"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -16927,7 +16983,7 @@
       "blockExplorerUrls": ["https://explorer.mode.network"],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/mode",
+        "https://public.1rpc.io/mode",
         "https://mode.drpc.org",
         "https://mode-mainnet.rpc.sentio.xyz",
         "https://mainnet.mode.network"
@@ -17306,7 +17362,7 @@
       "rpcs": [
         "https://mempool.merkle.io/rpc/arbitrum/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://arb1.arbitrum.io/rpc",
-        "https://1rpc.io/arb",
+        "https://public.1rpc.io/arb",
         "https://arbitrum-one-rpc.publicnode.com",
         "https://arbitrum.meowrpc.com"
       ],
@@ -17398,7 +17454,11 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.oasis.io/mainnet/emerald"],
       "platform": "ethereum",
-      "rpcs": ["https://1rpc.io/oasis/emerald", "https://emerald.oasis.io", "https://oasis-mainnet.gateway.tatum.io"]
+      "rpcs": [
+        "https://public.1rpc.io/oasis/emerald",
+        "https://emerald.oasis.io",
+        "https://oasis-mainnet.gateway.tatum.io"
+      ]
     },
     {
       "id": "42355",
@@ -17576,7 +17636,7 @@
       "platform": "ethereum",
       "rpcs": [
         "https://avalanche-c-chain-rpc.publicnode.com",
-        "https://1rpc.io/avax/c",
+        "https://public.1rpc.io/avax/c",
         "https://avalanche.drpc.org",
         "https://avax.api.pocket.network",
         "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
@@ -18334,7 +18394,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/linea",
+        "https://public.1rpc.io/linea",
         "https://linea.drpc.org",
         "https://linea.api.pocket.network",
         "https://linea-rpc.publicnode.com",
@@ -19265,10 +19325,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://polygon-amoy.drpc.org",
+        "https://poly-amoy-testnet.api.pocket.network",
         "https://api.zan.top/polygon-amoy",
         "https://polygon-amoy-public.nodies.app",
-        "https://polygon-amoy.gateway.tenderly.co",
-        "https://polygon-amoy-bor-rpc.publicnode.com"
+        "https://polygon-amoy.gateway.tenderly.co"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -19312,8 +19372,8 @@
         "https://berachain-rpc.publicnode.com",
         "https://berachain.drpc.org",
         "https://rpc.berachain-apis.com",
-        "https://berachain.rpc.sentio.xyz",
-        "https://rpc.berachain.com"
+        "https://bera.api.pocket.network",
+        "https://berachain.rpc.sentio.xyz"
       ],
       "contracts": {
         "Erc20Aggregator": "0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4",
@@ -19607,6 +19667,20 @@
       "blockExplorerUrls": ["https://proteus.nautscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://api.proteus.nautchain.xyz/solana"]
+    },
+    {
+      "id": "88008",
+      "name": "OmniCoin",
+      "nativeTokenId": "88008:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XOM",
+        "name": "OmniCoin"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.omnicoin.net"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.omnicoin.net"]
     },
     {
       "id": "88088",
@@ -21843,6 +21917,20 @@
       "rpcs": ["https://mainnet.valuechain.xyz"]
     },
     {
+      "id": "290783",
+      "name": "BetaXChain Mainnet",
+      "nativeTokenId": "290783:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "PBX",
+        "name": "PBX"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.betaxchain.org"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.betaxchain.org"]
+    },
+    {
       "id": "303030",
       "name": "AXION Mainnet",
       "nativeTokenId": "303030:evm-native",
@@ -22479,7 +22567,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/scroll",
+        "https://public.1rpc.io/scroll",
         "https://scroll.drpc.org",
         "https://scroll.api.pocket.network",
         "https://scroll-public.nodies.app",
@@ -23290,6 +23378,21 @@
       "blockExplorerUrls": ["https://scan.primox.online/"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.primox.online"]
+    },
+    {
+      "id": "974621",
+      "isTestnet": true,
+      "name": "QanTera Testnet",
+      "nativeTokenId": "974621:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "QTER",
+        "name": "QanTera"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.qantera.network"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc1.qantera.network", "https://rpc2.qantera.network"]
     },
     {
       "id": "984122",
@@ -24320,10 +24423,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://ethereum-sepolia-rpc.publicnode.com",
+        "https://public.1rpc.io/sepolia",
         "https://0xrpc.io/sep",
         "https://eth-sepolia-testnet.api.pocket.network",
-        "https://api.zan.top/eth-sepolia",
-        "https://ethereum-sepolia-public.nodies.app"
+        "https://api.zan.top/eth-sepolia"
       ],
       "contracts": {
         "Erc20Aggregator": "0x060999f53B88e1967558D8B9eBde876c8876b60d",
@@ -24345,11 +24448,11 @@
       "blockExplorerUrls": ["https://sepolia-optimism.etherscan.io"],
       "platform": "ethereum",
       "rpcs": [
+        "https://op-sepolia-testnet.api.pocket.network",
         "https://api.zan.top/opt-sepolia",
         "https://optimism-sepolia-public.nodies.app",
         "https://optimism-sepolia.gateway.tenderly.co",
-        "https://sepolia.optimism.io",
-        "https://optimism-sepolia.drpc.org"
+        "https://sepolia.optimism.io"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -25583,7 +25686,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/aurora",
+        "https://public.1rpc.io/aurora",
         "https://aurora.drpc.org",
         "https://mainnet.aurora.dev",
         "https://endpoints.omniatech.io/v1/aurora/mainnet/public",
@@ -25788,7 +25891,7 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://1rpc.io/one",
+        "https://public.1rpc.io/one",
         "https://harmony-0.drpc.org",
         "https://api.harmony.one",
         "https://a.api.s0.t.hmny.io",
@@ -97676,6 +97779,16 @@
       "isDefault": true
     },
     {
+      "id": "1050:evm-native",
+      "platform": "ethereum",
+      "networkId": "1050",
+      "type": "evm-native",
+      "symbol": "DIA",
+      "decimals": 18,
+      "name": "DIA Token",
+      "isDefault": true
+    },
+    {
       "id": "10507:evm-native",
       "platform": "ethereum",
       "networkId": "10507",
@@ -116962,6 +117075,16 @@
       "isDefault": true
     },
     {
+      "id": "1475:evm-native",
+      "platform": "ethereum",
+      "networkId": "1475",
+      "type": "evm-native",
+      "symbol": "CMX-R",
+      "decimals": 18,
+      "name": "CRYMADX REAL",
+      "isDefault": true
+    },
+    {
       "id": "148:evm-erc20:0x1074010000000000000000000000000000000000",
       "platform": "ethereum",
       "networkId": "148",
@@ -131431,6 +131554,16 @@
       "isDefault": true
     },
     {
+      "id": "290783:evm-native",
+      "platform": "ethereum",
+      "networkId": "290783",
+      "type": "evm-native",
+      "symbol": "PBX",
+      "decimals": 18,
+      "name": "PBX",
+      "isDefault": true
+    },
+    {
       "id": "291:evm-native",
       "platform": "ethereum",
       "networkId": "291",
@@ -132445,6 +132578,16 @@
       "name": "OLT",
       "coingeckoId": "one-ledger",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/one-ledger.webp",
+      "isDefault": true
+    },
+    {
+      "id": "313:evm-native",
+      "platform": "ethereum",
+      "networkId": "313",
+      "type": "evm-native",
+      "symbol": "NCN",
+      "decimals": 18,
+      "name": "Neurochain",
       "isDefault": true
     },
     {
@@ -217740,6 +217883,16 @@
       "isDefault": true
     },
     {
+      "id": "7373:evm-native",
+      "platform": "ethereum",
+      "networkId": "7373",
+      "type": "evm-native",
+      "symbol": "CMX-U",
+      "decimals": 18,
+      "name": "CRYMADX UTILITY",
+      "isDefault": true
+    },
+    {
       "id": "737373:evm-native",
       "platform": "ethereum",
       "networkId": "737373",
@@ -255349,6 +255502,16 @@
       "isDefault": true
     },
     {
+      "id": "88008:evm-native",
+      "platform": "ethereum",
+      "networkId": "88008",
+      "type": "evm-native",
+      "symbol": "XOM",
+      "decimals": 18,
+      "name": "OmniCoin",
+      "isDefault": true
+    },
+    {
       "id": "8801:evm-native",
       "platform": "ethereum",
       "networkId": "8801",
@@ -258377,6 +258540,16 @@
       "symbol": "XPL",
       "decimals": 18,
       "name": "Plasma",
+      "isDefault": true
+    },
+    {
+      "id": "974621:evm-native",
+      "platform": "ethereum",
+      "networkId": "974621",
+      "type": "evm-native",
+      "symbol": "QTER",
+      "decimals": 18,
+      "name": "QanTera",
       "isDefault": true
     },
     {
@@ -271580,12 +271753,12 @@
       "type": "substrate-dtao",
       "symbol": "Ա",
       "decimals": 9,
-      "name": "SN103 | Djinn Ա",
+      "name": "SN103 | Subnet 103 Ա",
       "coingeckoId": "happyai-2",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn103-9748e3b3.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/happyai-2.webp",
       "isDefault": true,
       "netuid": 103,
-      "subnetName": "Djinn",
+      "subnetName": "Subnet 103",
       "isTransferable": true
     },
     {
@@ -272044,12 +272217,12 @@
       "type": "substrate-dtao",
       "symbol": "π",
       "decimals": 9,
-      "name": "SN16 | Fast Thinker π",
+      "name": "SN16 | TC π",
       "coingeckoId": "bitads",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn16-d447e733.webp",
       "isDefault": true,
       "netuid": 16,
-      "subnetName": "Fast Thinker",
+      "subnetName": "TC",
       "isTransferable": true
     },
     {
@@ -297490,6 +297663,18 @@
       "coingeckoId": "war",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/war.webp",
       "mintAddress": "8opvqaWysX1oYbXuTL8PHaoaTiXD69VFYAX4smPebonk"
+    },
+    {
+      "id": "solana-mainnet:sol-spl:8opwitz1u9ArvM5k8o6PTximNeNk8yMzqWyjJfCotRtd",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "RUSK",
+      "decimals": 8,
+      "name": "RUSK (Wormhole)",
+      "coingeckoId": "rusk-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rusk-token.webp",
+      "mintAddress": "8opwitz1u9ArvM5k8o6PTximNeNk8yMzqWyjJfCotRtd"
     },
     {
       "id": "solana-mainnet:sol-spl:8oQEW25mcVzeWvcjkGup9ob3KafVMNdzAi8XXmmWpump",
