@@ -1,10 +1,11 @@
-import type { Network, Token } from '@talismn/chaindata-provider'
+import type { Chaindata } from '@talismn/chaindata-provider'
 
-import { DIR_OUTPUT } from './shared/constants'
+import { FILE_OUTPUT_CHAINDATA } from './shared/constants'
 import { parseJsonFile } from './shared/parseFile'
 
-const evmNetworks = parseJsonFile<Network[]>(`${DIR_OUTPUT}/networks.json`).filter((n) => n.platform === 'ethereum')
-const erc20Tokens = parseJsonFile<Token[]>(`${DIR_OUTPUT}/tokens.json`).filter((n) => n.type === 'evm-erc20')
+const chaindata = parseJsonFile<Chaindata>(FILE_OUTPUT_CHAINDATA)
+const evmNetworks = chaindata.networks.filter((n) => n.platform === 'ethereum')
+const erc20Tokens = chaindata.tokens.filter((n) => n.type === 'evm-erc20')
 
 console.log('%d networks', evmNetworks.length)
 
