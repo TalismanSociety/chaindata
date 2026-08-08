@@ -1636,8 +1636,8 @@
         "https://monad-mainnet.drpc.org",
         "https://infra.originstake.com/monad/evm",
         "https://monad-rpc.huginn.tech",
-        "https://gm.monad.at.htw.tech",
-        "https://monad-mainnet.api.onfinality.io/public"
+        "https://monad-mainnet.api.onfinality.io/public",
+        "https://monad-mainnet.rpc.sentio.xyz"
       ],
       "contracts": {
         "Erc20Aggregator": "0x951d5f07Afc1704CeAc760Fa632801674469845f"
@@ -19866,7 +19866,7 @@
       "themeColor": "#f4faff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.mtv.ac", "https://rpc-eu.mtv.ac", "https://lb.routeme.sh/rpc/evm/62621"]
+      "rpcs": ["https://rpc.mtv.ac", "https://lb.routeme.sh/rpc/evm/62621", "https://rpc-eu.mtv.ac"]
     },
     {
       "id": "62850",
@@ -20220,7 +20220,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://v1.gwscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://v1.mainnet.godwoken.io/rpc", "https://lb.routeme.sh/rpc/evm/71402"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/71402", "https://v1.mainnet.godwoken.io/rpc"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -20405,7 +20405,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://testnet-explorer.applayer.com"],
       "platform": "ethereum",
-      "rpcs": ["https://testnet-api.applayer.com", "https://lb.routeme.sh/rpc/evm/75338"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/75338", "https://testnet-api.applayer.com"]
     },
     {
       "id": "75512",
@@ -21868,7 +21868,7 @@
       "themeColor": "#41eefa",
       "blockExplorerUrls": ["https://stability.blockscout.com"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/101010", "https://gtn.stabilityprotocol.com"]
+      "rpcs": ["https://gtn.stabilityprotocol.com", "https://lb.routeme.sh/rpc/evm/101010"]
     },
     {
       "id": "102030",
@@ -58941,6 +58941,18 @@
       "coingeckoId": "valentine",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/valentine.webp",
       "contractAddress": "0x6dcc10db1b1a7f7a49f6cd3669114aff053295fc"
+    },
+    {
+      "id": "1:evm-erc20:0x6dd0e17ec6fe56c5f58a0fe2bb813b9b5cc25990",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "NODL",
+      "decimals": 18,
+      "name": "Nodle Token",
+      "coingeckoId": "nodle-network",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nodle-network.webp",
+      "contractAddress": "0x6dd0e17ec6fe56c5f58a0fe2bb813b9b5cc25990"
     },
     {
       "id": "1:evm-erc20:0x6de037ef9ad2725eb40118bb1702ebb27e4aeb24",
@@ -277164,6 +277176,7 @@
       "symbol": "න",
       "decimals": 9,
       "name": "SN128 | ByteLeap න",
+      "coingeckoId": "byteleap",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn128-42285234.webp",
       "isDefault": true,
       "netuid": 128,
@@ -288196,6 +288209,18 @@
       "coingeckoId": "solberg",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solberg.webp",
       "mintAddress": "2uRFEWRBQLEKpLmF8mohFZGDcFQmrkQEEZmHQvMUBvY7"
+    },
+    {
+      "id": "solana-mainnet:sol-spl:2uxaYT1fVrp6Fg2BrxQcyKSW91hefM6dG9krpbeDiirT",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "reUSD",
+      "decimals": 9,
+      "name": "Re Protocol reUSD",
+      "coingeckoId": "re-protocol-reusd",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/re-protocol-reusd.webp",
+      "mintAddress": "2uxaYT1fVrp6Fg2BrxQcyKSW91hefM6dG9krpbeDiirT"
     },
     {
       "id": "solana-mainnet:sol-spl:2uZzU9nxXjyy8BR5Mcdah8hTezh7ftqgpXx8agAqdCPo",
@@ -352225,6 +352250,18 @@
       "coingeckoId": "never-give-up",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/never-give-up.webp",
       "mintAddress": "Gka1TQEevBbVw4W9K15ER96ZzKByMTb6TBMQzWFEpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:GKaYkXHF6n5mKQ9htxWjN1SaXw7nTXQT4Y8S8vMYpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "LONGCAT",
+      "decimals": 6,
+      "name": "LONGCAT",
+      "coingeckoId": "longcat-4",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/longcat-4.webp",
+      "mintAddress": "GKaYkXHF6n5mKQ9htxWjN1SaXw7nTXQT4Y8S8vMYpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:gKkrSgVjRjdQX4LFErBka1izQhoW2VHXFcCS5Vbondo",
