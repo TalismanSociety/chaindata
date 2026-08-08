@@ -20,8 +20,8 @@
         "https://ethereum-rpc.publicnode.com",
         "https://eth.merkle.io",
         "https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
-        "https://one.valve.city/rpc/vk_demo/evm/1",
-        "https://public.1rpc.io/eth"
+        "https://public.1rpc.io/eth",
+        "https://rpc.mevblocker.io"
       ],
       "feeType": "eip-1559",
       "contracts": {
@@ -679,7 +679,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://app.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/53"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/53", "https://api-mainnet.plato.xyz"]
     },
     {
       "id": "56",
@@ -813,7 +813,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://app.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://www.ethercluster.com/morden"]
+      "rpcs": ["https://www.ethercluster.com/morden", "https://api-testnet.plato.xyz"]
     },
     {
       "id": "63",
@@ -907,7 +907,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://dev.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://evmtestnet.confluxrpc.com", "https://lb.routeme.sh/rpc/evm/71"],
+      "rpcs": ["https://evmtestnet.confluxrpc.com", "https://lb.routeme.sh/rpc/evm/71", "https://api-devnet.plato.xyz"],
       "contracts": {
         "Multicall3": "0xEFf0078910f638cd81996cc117bccD3eDf2B072F"
       }
@@ -3328,10 +3328,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://rpc.degenprotocol.io",
-        "https://one.valve.city/rpc/vk_demo/evm/369",
         "https://pulsechain-rpc.publicnode.com",
         "https://rpc.pulsechainrpc.com",
-        "https://rpc.pulsechainstats.com"
+        "https://rpc.pulsechainstats.com",
+        "https://sophia-rpc.mijk.pro"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -15246,9 +15246,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://rpc-msc.mindchain.info",
-        "https://seednode.mindchain.info",
         "https://archive.mindchain.info",
         "https://lb.routeme.sh/rpc/evm/9996",
+        "https://seednode.mindchain.info",
         "https://mind-smart-chain.rpc.thirdweb.com"
       ]
     },
@@ -19356,8 +19356,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://haqq-testnet.drpc.org",
-        "https://lb.routeme.sh/rpc/evm/54211",
-        "https://rpc.eth.testedge2.haqq.network"
+        "https://rpc.eth.testedge2.haqq.network",
+        "https://lb.routeme.sh/rpc/evm/54211"
       ]
     },
     {
@@ -30605,6 +30605,7 @@
       "rpcs": [
         "wss://moonbeam-rpc.publicnode.com",
         "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com",
         "wss://moonbeam.api.onfinality.io/public-ws"
       ],
       "hasCheckMetadataHash": true,
@@ -167516,6 +167517,18 @@
       "contractAddress": "0x218eec7d0c6a26ba119063b3228b8d04085545d3"
     },
     {
+      "id": "4663:evm-erc20:0x21ed792de0ebfa85c2f55ff45b2241c576727f7b",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "222",
+      "decimals": 18,
+      "name": "divinely protected",
+      "coingeckoId": "divinely-protected-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/divinely-protected-2.webp",
+      "contractAddress": "0x21ed792de0ebfa85c2f55ff45b2241c576727f7b"
+    },
+    {
       "id": "4663:evm-erc20:0x230442c8133a9efb4c278b3723043444749ca08b",
       "platform": "ethereum",
       "networkId": "4663",
@@ -169280,6 +169293,18 @@
       "contractAddress": "0x75c8258eaa6d0f94b82951194191ca3efb0bcbe2"
     },
     {
+      "id": "4663:evm-erc20:0x75ecb5f2bfde7f8c3258511dc0996f10d5c88b8b",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "HORN",
+      "decimals": 18,
+      "name": "the horn stays on",
+      "coingeckoId": "horn",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/horn.webp",
+      "contractAddress": "0x75ecb5f2bfde7f8c3258511dc0996f10d5c88b8b"
+    },
+    {
       "id": "4663:evm-erc20:0x76761d4aee1e7d6b2b8dedbd13925d6c220b0725",
       "platform": "ethereum",
       "networkId": "4663",
@@ -170070,6 +170095,18 @@
       "coingeckoId": "penguin-solutions-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/penguin-solutions-robinhood-tokenized-stock.webp",
       "contractAddress": "0x9b23573b156b52565012f5ce02cdf60afbaa70be"
+    },
+    {
+      "id": "4663:evm-erc20:0x9ca1cc0c90d97b4f36c5e2232d4fbd705a73c65d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "TA",
+      "decimals": 18,
+      "name": "TA FUND",
+      "coingeckoId": "ta-fund",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ta-fund.webp",
+      "contractAddress": "0x9ca1cc0c90d97b4f36c5e2232d4fbd705a73c65d"
     },
     {
       "id": "4663:evm-erc20:0x9d783133a3ff9ba27fa1605547368cf9a316341e",
@@ -341534,6 +341571,18 @@
       "mintAddress": "8ggbc72zhyA57NdToPZ3DikcXxkS8hnJfdfZVtwLpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:8goERtSRyTf1DPNQZcrb9Q2uriqCi6Ui6UqtaH1Fpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "PIPER",
+      "decimals": 6,
+      "name": "Piper",
+      "coingeckoId": "piper",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/piper.webp",
+      "mintAddress": "8goERtSRyTf1DPNQZcrb9Q2uriqCi6Ui6UqtaH1Fpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:8Gw5ERAe6hxMKyYWVXVhok6jhcvQkAfKH1bFBeQepump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -350892,6 +350941,18 @@
       "coingeckoId": "vertex-pharmaceuticals-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vertex-pharmaceuticals-ondo-tokenized.webp",
       "mintAddress": "FL7QzUq58pvkDxkftJm7RqRWgqYEFZwXuvAMsUnondo"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:FLq6s9GwF1TQ8xZLz7EmDJnDMKPoMUXaEayHbtZUpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "Sherman",
+      "decimals": 6,
+      "name": "Sherman the Groundhog",
+      "coingeckoId": "sherman-the-groundhog",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sherman-the-groundhog.webp",
+      "mintAddress": "FLq6s9GwF1TQ8xZLz7EmDJnDMKPoMUXaEayHbtZUpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:FLqH2jB2DZPJP5nnVFAakRKaNTcDZtq71Pnpp6Aondo",
