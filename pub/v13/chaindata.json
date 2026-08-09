@@ -23322,9 +23322,9 @@
       "blockExplorerUrls": ["https://studio-scan.com"],
       "platform": "ethereum",
       "rpcs": [
-        "https://mainnet.studio-blockchain.com",
         "https://mainnet.studio-scan.com",
         "https://mainnet2.studio-scan.com",
+        "https://mainnet.studio-blockchain.com",
         "https://mainnet2.studio-blockchain.com",
         "https://mainnet3.studio-blockchain.com"
       ]
@@ -24467,8 +24467,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://brnkc-mainnet.bearnetwork.net",
-        "https://lb.routeme.sh/rpc/evm/641230",
-        "https://brnkc-mainnet1.bearnetwork.net"
+        "https://brnkc-mainnet1.bearnetwork.net",
+        "https://lb.routeme.sh/rpc/evm/641230"
       ]
     },
     {
@@ -25387,7 +25387,7 @@
       "themeColor": "#981a45",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.ethoprotocol.com", "https://lb.routeme.sh/rpc/evm/1313114"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1313114", "https://rpc.ethoprotocol.com"]
     },
     {
       "id": "1314520",
@@ -26138,37 +26138,6 @@
       "rpcs": ["https://jsonrpc.hap.land"]
     },
     {
-      "id": "9322252",
-      "name": "XCAP",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xcap.webp",
-      "nativeTokenId": "9322252:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "GAS",
-        "name": "Gas"
-      },
-      "themeColor": "#7c8393",
-      "blockExplorerUrls": ["https://xcap-mainnet.explorer.xcap.network"],
-      "platform": "ethereum",
-      "rpcs": ["https://xcap-mainnet.relay.xcap.network/znzvh2ueyvm2yts5fv5gnul395jbkfb2/rpc1"]
-    },
-    {
-      "id": "9322253",
-      "isTestnet": true,
-      "name": "Milvine",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xcap.webp",
-      "nativeTokenId": "9322253:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "GAS",
-        "name": "Gas"
-      },
-      "themeColor": "#7c8393",
-      "blockExplorerUrls": ["https://xcap-milvine.explorer.xcap.network"],
-      "platform": "ethereum",
-      "rpcs": ["https://xcap-milvine.relay.xcap.network/zj5l55ftsgi027kz4nf14vs8d89inego/rpc1"]
-    },
-    {
       "id": "9999999",
       "name": "Fluence",
       "nativeTokenId": "9999999:evm-native",
@@ -26912,20 +26881,6 @@
       "blockExplorerUrls": ["https://scanv2-testnet.ancient8.gg"],
       "platform": "ethereum",
       "rpcs": ["https://rpcv2-testnet.ancient8.gg", "https://lb.routeme.sh/rpc/evm/28122024"]
-    },
-    {
-      "id": "34949059",
-      "name": "citronus-citro",
-      "nativeTokenId": "34949059:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "CITRO",
-        "name": "Citronus"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://test.citronus.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.citro-testnet.t.raas.gelato.cloud"]
     },
     {
       "id": "37084624",
@@ -30634,7 +30589,8 @@
       "rpcs": [
         "wss://moonbeam-rpc.publicnode.com",
         "wss://wss.api.moonbeam.network",
-        "wss://moonbeam.api.onfinality.io/public-ws"
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://moonbeam.unitedbloc.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -30667,7 +30623,11 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": ["wss://wss.api.moonriver.moonbeam.network", "wss://moonriver.api.onfinality.io/public-ws"],
+      "rpcs": [
+        "wss://wss.api.moonriver.moonbeam.network",
+        "wss://moonriver.unitedbloc.com",
+        "wss://moonriver.api.onfinality.io/public-ws"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -33522,18 +33482,6 @@
       "coingeckoId": "enigma-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/enigma-2.webp",
       "contractAddress": "0x0511df77e420c9c37b065ddb7973d0f81430a092"
-    },
-    {
-      "id": "1:evm-erc20:0x051fb509e4a775fabd257611eea1efaed8f91359",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "CATE",
-      "decimals": 9,
-      "name": "CateCoin",
-      "coingeckoId": "catecoin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/catecoin.webp",
-      "contractAddress": "0x051fb509e4a775fabd257611eea1efaed8f91359"
     },
     {
       "id": "1:evm-erc20:0x0520930f21b14cafac7a27b102487bee7138a017",
@@ -138614,16 +138562,6 @@
       "isDefault": true
     },
     {
-      "id": "34949059:evm-native",
-      "platform": "ethereum",
-      "networkId": "34949059",
-      "type": "evm-native",
-      "symbol": "CITRO",
-      "decimals": 18,
-      "name": "Citronus",
-      "isDefault": true
-    },
-    {
       "id": "3500:evm-native",
       "platform": "ethereum",
       "networkId": "3500",
@@ -169269,6 +169207,18 @@
       "contractAddress": "0x6e3dfd9f7e1649baa14d25cac18c94d62db10a54"
     },
     {
+      "id": "4663:evm-erc20:0x6e7e0db14d23144ef3e78d3294aa408ac38427b8",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "BLEP",
+      "decimals": 18,
+      "name": "BLEEEP by Virtuals",
+      "coingeckoId": "bleeep-by-virtuals",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bleeep-by-virtuals.webp",
+      "contractAddress": "0x6e7e0db14d23144ef3e78d3294aa408ac38427b8"
+    },
+    {
       "id": "4663:evm-erc20:0x6e9acbfbdd8b57649ffeacea4d26a81ae1395367",
       "platform": "ethereum",
       "networkId": "4663",
@@ -171223,6 +171173,18 @@
       "coingeckoId": "hoodie",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hoodie.webp",
       "contractAddress": "0xc72c01aab5f5678dc1d6f5c6d2b417d91d402ba3"
+    },
+    {
+      "id": "4663:evm-erc20:0xc72f232a6869e6cf34dc06129affd07f8a2a246a",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "MANCER",
+      "decimals": 18,
+      "name": "Mancer",
+      "coingeckoId": "mancer",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mancer.webp",
+      "contractAddress": "0xc72f232a6869e6cf34dc06129affd07f8a2a246a"
     },
     {
       "id": "4663:evm-erc20:0xc79d46d716b33b463b3a6574d6ee26009abf4e9a",
@@ -228130,18 +228092,6 @@
       "contractAddress": "0x0512a6afd4368d0a89d8473d032e7fb6e3c4b968"
     },
     {
-      "id": "8453:evm-erc20:0x051fb509e4a775fabd257611eea1efaed8f91359",
-      "platform": "ethereum",
-      "networkId": "8453",
-      "type": "evm-erc20",
-      "symbol": "CATE",
-      "decimals": 9,
-      "name": "CateCoin",
-      "coingeckoId": "catecoin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/catecoin.webp",
-      "contractAddress": "0x051fb509e4a775fabd257611eea1efaed8f91359"
-    },
-    {
       "id": "8453:evm-erc20:0x052addc637c97650acfe43781e75a01bdf8c7ba3",
       "platform": "ethereum",
       "networkId": "8453",
@@ -262456,28 +262406,6 @@
       "symbol": "GNET",
       "decimals": 18,
       "name": "Galactica Reticulum",
-      "isDefault": true
-    },
-    {
-      "id": "9322252:evm-native",
-      "platform": "ethereum",
-      "networkId": "9322252",
-      "type": "evm-native",
-      "symbol": "GAS",
-      "decimals": 18,
-      "name": "Gas",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xcap.webp",
-      "isDefault": true
-    },
-    {
-      "id": "9322253:evm-native",
-      "platform": "ethereum",
-      "networkId": "9322253",
-      "type": "evm-native",
-      "symbol": "GAS",
-      "decimals": 18,
-      "name": "Gas",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xcap.webp",
       "isDefault": true
     },
     {
@@ -337585,6 +337513,18 @@
       "mintAddress": "44dEptH88VeRTLPPuYCYYzBfR4AkYAX1HKszVWY7pump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:46amR3aeQE7MJ9QDrgNRqBP3FcsJ9QNYV71L2vVSpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "claudius",
+      "decimals": 6,
+      "name": "claudius",
+      "coingeckoId": "claudius",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/claudius.webp",
+      "mintAddress": "46amR3aeQE7MJ9QDrgNRqBP3FcsJ9QNYV71L2vVSpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:48kvjZzEpsJCNfd3jWWYKKY4pNhhiHdSuvYW6tzTpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -345637,6 +345577,18 @@
       "mintAddress": "BPiECaSntw8LVGYimofpNcU5eKrjrSvKz5VY7mr9pump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:BPjiqnko1sooBvhrTnDxV4bKf7V5Qws9MbYRWDw8pump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BID",
+      "decimals": 6,
+      "name": "BIDit",
+      "coingeckoId": "bidit",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bidit.webp",
+      "mintAddress": "BPjiqnko1sooBvhrTnDxV4bKf7V5Qws9MbYRWDw8pump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:BPJivqTmLmLDjfSn71gp8XaFYDXxNUuM85pMEWAcpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -352943,6 +352895,18 @@
       "coingeckoId": "excubia-labs",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/excubia-labs.webp",
       "mintAddress": "GVa4jr163EaBG1fv5hKFQbePKPojsoawuxdozcMSpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:GvUCjmWSXA5hrTh9smmNA1AU55YCtP9mDLQcrKA1pump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "WSOLP",
+      "decimals": 6,
+      "name": "WSOP Fantasy Poker",
+      "coingeckoId": "wsop-fantasy-poker",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wsop-fantasy-poker.webp",
+      "mintAddress": "GvUCjmWSXA5hrTh9smmNA1AU55YCtP9mDLQcrKA1pump"
     },
     {
       "id": "solana-mainnet:sol-token2022:GWcAPiF2cBf5de8E1eSERcnVdH411NqT2peG7zDJpump",
