@@ -633,10 +633,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://xdc-testnet.drpc.org",
-        "https://erpc.apothem.network",
         "https://rpc.ankr.com/xdc_testnet",
         "https://earpc.apothem.network",
-        "https://rpc.apothem.network"
+        "https://rpc.apothem.network",
+        "https://erpc.apothem.network"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -17545,7 +17545,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer-testnet.ducatusx.com"],
       "platform": "ethereum",
-      "rpcs": ["https://ducx-testnet-node1.rocknblock.io", "https://ducx-testnet-node2.rocknblock.io"]
+      "rpcs": ["https://ducx-testnet-node2.rocknblock.io", "https://ducx-testnet-node1.rocknblock.io"]
     },
     {
       "id": "26483",
@@ -17615,23 +17615,6 @@
       "rpcs": ["https://sepolia-rpc.nanon.network"]
     },
     {
-      "id": "28516",
-      "isTestnet": true,
-      "name": "Vizing Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-      "nativeTokenId": "28516:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://explorer-sepolia.vizing.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-sepolia.vizing.com"]
-    },
-    {
       "id": "28518",
       "name": "Vizing Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
@@ -17645,7 +17628,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.vizing.com"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/28518", "https://rpc.vizing.com"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/28518"]
     },
     {
       "id": "28802",
@@ -29966,10 +29949,10 @@
       "oldPrefix": 63,
       "rpcs": [
         "wss://hydration-rpc.n.dwellir.com",
-        "wss://hydration.rotko.net",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
-        "wss://rpc.kril.hydration.cloud"
+        "wss://rpc.kril.hydration.cloud",
+        "wss://rpc-catfish-1.catfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -30558,8 +30541,8 @@
       "oldPrefix": 1284,
       "rpcs": [
         "wss://moonbeam-rpc.publicnode.com",
-        "wss://moonbeam.api.onfinality.io/public-ws",
-        "wss://moonbeam.unitedbloc.com"
+        "wss://moonbeam.unitedbloc.com",
+        "wss://moonbeam.api.onfinality.io/public-ws"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -30593,9 +30576,9 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
       "rpcs": [
-        "wss://wss.api.moonriver.moonbeam.network",
         "wss://moonriver.unitedbloc.com",
-        "wss://moonriver.api.onfinality.io/public-ws"
+        "wss://moonriver.api.onfinality.io/public-ws",
+        "wss://wss.api.moonriver.moonbeam.network"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -66163,7 +66146,7 @@
       "type": "evm-erc20",
       "symbol": "VANRY",
       "decimals": 18,
-      "name": "Vanar Chain",
+      "name": "Vanar Chain [OLD]",
       "coingeckoId": "vanar-chain",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vanar-chain.webp",
       "contractAddress": "0x8de5b80a0c1b02fe4976851d030b36122dbb8624"
@@ -112138,7 +112121,7 @@
       "type": "evm-erc20",
       "symbol": "VANRY",
       "decimals": 18,
-      "name": "Vanar Chain",
+      "name": "Vanar Chain [OLD]",
       "coingeckoId": "vanar-chain",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vanar-chain.webp",
       "contractAddress": "0x8de5b80a0c1b02fe4976851d030b36122dbb8624"
@@ -134395,17 +134378,6 @@
       "symbol": "CANDY",
       "decimals": 18,
       "name": "CANDY",
-      "isDefault": true
-    },
-    {
-      "id": "28516:evm-native",
-      "platform": "ethereum",
-      "networkId": "28516",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -167020,6 +166992,30 @@
       "contractAddress": "0x03dfbbe0ac4e7bcdafd08ed41a400326b77d8c80"
     },
     {
+      "id": "4663:evm-erc20:0x0594134df3f171a354d9c85ebd65b7a6148f6d09",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "VTI",
+      "decimals": 18,
+      "name": "Vanguard Morningstar Total Stock Market ETF • Robinhood Token",
+      "coingeckoId": "vanguard-morningstar-total-stock-market-etf-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vanguard-morningstar-total-stock-market-etf-robinhood-token.webp",
+      "contractAddress": "0x0594134df3f171a354d9c85ebd65b7a6148f6d09"
+    },
+    {
+      "id": "4663:evm-erc20:0x05a3d1cd21d0c88145e82600e62e7e496e0f222b",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "AMC",
+      "decimals": 18,
+      "name": "AMC Entertainment • Robinhood Token",
+      "coingeckoId": "amc-entertainment-holdings-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/amc-entertainment-holdings-inc-robinhood-token.webp",
+      "contractAddress": "0x05a3d1cd21d0c88145e82600e62e7e496e0f222b"
+    },
+    {
       "id": "4663:evm-erc20:0x05b37fb53a299a1b874a619e1c4c404d52c36f4c",
       "platform": "ethereum",
       "networkId": "4663",
@@ -167066,6 +167062,18 @@
       "coingeckoId": "pension",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pension.webp",
       "contractAddress": "0x0684e19528ccfd570fb00f0ca626dac4bdab17cf"
+    },
+    {
+      "id": "4663:evm-erc20:0x072f979c2cac8e1391b0162a87fee094bf8744a0",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SMH",
+      "decimals": 18,
+      "name": "VanEck Semiconductor ETF • Robinhood Token",
+      "coingeckoId": "vaneck-semiconductor-etf-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vaneck-semiconductor-etf-robinhood-token.webp",
+      "contractAddress": "0x072f979c2cac8e1391b0162a87fee094bf8744a0"
     },
     {
       "id": "4663:evm-erc20:0x0762c1708f0d23f86b29d6b857121ff7df357506",
@@ -167248,6 +167256,18 @@
       "contractAddress": "0x10dc3d3719b507e6bf3fc90c3d327d8590827777"
     },
     {
+      "id": "4663:evm-erc20:0x116f00968269b7bfbad4109ce591d6e74c0601d4",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "NET",
+      "decimals": 18,
+      "name": "Cloudflare • Robinhood Token",
+      "coingeckoId": "cloudflare-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cloudflare-inc-robinhood-token.webp",
+      "contractAddress": "0x116f00968269b7bfbad4109ce591d6e74c0601d4"
+    },
+    {
       "id": "4663:evm-erc20:0x117cc2133c37b721f49de2a7a74833232b3b4c0c",
       "platform": "ethereum",
       "networkId": "4663",
@@ -167258,6 +167278,18 @@
       "coingeckoId": "spdr-s-p-500-etf-trust-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spdr-s-p-500-etf-trust-robinhood-tokenized-stock.webp",
       "contractAddress": "0x117cc2133c37b721f49de2a7a74833232b3b4c0c"
+    },
+    {
+      "id": "4663:evm-erc20:0x12e3c047bf9aecaf9ddc98c05c31bfd1dd043993",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "KSS",
+      "decimals": 18,
+      "name": "Kohls Corporation • Robinhood Token",
+      "coingeckoId": "kohl-s-corporation-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kohl-s-corporation-robinhood-token.webp",
+      "contractAddress": "0x12e3c047bf9aecaf9ddc98c05c31bfd1dd043993"
     },
     {
       "id": "4663:evm-erc20:0x12f190a9f9d7d37a250758b26824b97ce941bf54",
@@ -167416,6 +167448,18 @@
       "contractAddress": "0x1b0e319c6a659f002271b69db8a7df2f911c153e"
     },
     {
+      "id": "4663:evm-erc20:0x1c690498150252222c275a5ced69d3a6b1f52d5e",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "EWT",
+      "decimals": 18,
+      "name": "iShares MSCI Taiwan Capped ETF • Robinhood Token",
+      "coingeckoId": "ishares-msci-taiwan-etf-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ishares-msci-taiwan-etf-robinhood-token.webp",
+      "contractAddress": "0x1c690498150252222c275a5ced69d3a6b1f52d5e"
+    },
+    {
       "id": "4663:evm-erc20:0x1cdad396db64bda184d5182a97dd9b3c62100b7d",
       "platform": "ethereum",
       "networkId": "4663",
@@ -167426,6 +167470,18 @@
       "coingeckoId": "everpure-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/everpure-robinhood-tokenized-stock.webp",
       "contractAddress": "0x1cdad396db64bda184d5182a97dd9b3c62100b7d"
+    },
+    {
+      "id": "4663:evm-erc20:0x1d11f0496982706c5e14a514d4e79f2e6bde4516",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "DJT",
+      "decimals": 18,
+      "name": "Trump Media & Technology Group • Robinhood Token",
+      "coingeckoId": "trump-media-technology-group-corp-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/trump-media-technology-group-corp-robinhood-token.webp",
+      "contractAddress": "0x1d11f0496982706c5e14a514d4e79f2e6bde4516"
     },
     {
       "id": "4663:evm-erc20:0x1dae71a215ee5c696cb644f030597ae4f32831c0",
@@ -167594,6 +167650,18 @@
       "coingeckoId": "vibing-cat-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vibing-cat-2.webp",
       "contractAddress": "0x2355431b83b1a8e40172d099d90243d8d666b56b"
+    },
+    {
+      "id": "4663:evm-erc20:0x237c16d66590f67b886d978acd362eaead8b18c7",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "POWL",
+      "decimals": 18,
+      "name": "Powell Industries • Robinhood Token",
+      "coingeckoId": "powell-industries-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/powell-industries-inc-robinhood-token.webp",
+      "contractAddress": "0x237c16d66590f67b886d978acd362eaead8b18c7"
     },
     {
       "id": "4663:evm-erc20:0x23f88eda2b24a0d45d4c3e2ad05edff30f860697",
@@ -167860,6 +167928,18 @@
       "contractAddress": "0x2ea05472e1b7289004e5a1f6d959f6f2f3a6fecb"
     },
     {
+      "id": "4663:evm-erc20:0x2f62fc9fabb470c690f141c28340ed832bb27020",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "BND",
+      "decimals": 18,
+      "name": "Vanguard Total Bond Market ETF • Robinhood Token",
+      "coingeckoId": "vanguard-total-bond-market-etf-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vanguard-total-bond-market-etf-robinhood-token.webp",
+      "contractAddress": "0x2f62fc9fabb470c690f141c28340ed832bb27020"
+    },
+    {
       "id": "4663:evm-erc20:0x3018e275da8d1acd16e7b803e74fca9c251fd60f",
       "platform": "ethereum",
       "networkId": "4663",
@@ -167882,6 +167962,18 @@
       "coingeckoId": "hooderscan",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hooderscan.webp",
       "contractAddress": "0x30c9c51e06faa8cc71e4c101a69a9ed8d01ee91a"
+    },
+    {
+      "id": "4663:evm-erc20:0x3139d77ace0cbaa5bdfd38bd1f1911a794af0b0e",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "ABCL",
+      "decimals": 18,
+      "name": "Abcellera Biologics • Robinhood Token",
+      "coingeckoId": "abcellera-biologics-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/abcellera-biologics-inc-robinhood-token.webp",
+      "contractAddress": "0x3139d77ace0cbaa5bdfd38bd1f1911a794af0b0e"
     },
     {
       "id": "4663:evm-erc20:0x319b6aef5191b5a8fed772f2d1482831fabb1a58",
@@ -169166,6 +169258,18 @@
       "coingeckoId": "vladhood-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vladhood-2.webp",
       "contractAddress": "0x601fda468bdd8096067dfc1c86654ce2d8d7ab03"
+    },
+    {
+      "id": "4663:evm-erc20:0x62200915e7deab1ec7f79fb246dadbb80eacddd0",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CLOV",
+      "decimals": 18,
+      "name": "Clover Health Investments • Robinhood Token",
+      "coingeckoId": "clover-health-investments-corp-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/clover-health-investments-corp-robinhood-token.webp",
+      "contractAddress": "0x62200915e7deab1ec7f79fb246dadbb80eacddd0"
     },
     {
       "id": "4663:evm-erc20:0x6245e67affa44a23077f0ea7f981a8dc743a0c47",
@@ -170476,6 +170580,30 @@
       "contractAddress": "0x99b1887e985a985ecb23ac248421eac96cb92492"
     },
     {
+      "id": "4663:evm-erc20:0x99d9d8663545151603863c5acbd6fc3218899009",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "AMBA",
+      "decimals": 18,
+      "name": "Ambarella • Robinhood Token",
+      "coingeckoId": "ambarella-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ambarella-inc-robinhood-token.webp",
+      "contractAddress": "0x99d9d8663545151603863c5acbd6fc3218899009"
+    },
+    {
+      "id": "4663:evm-erc20:0x9ab02ead789b6903c3c44d0ed32f9c707cdf12fd",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "PWR",
+      "decimals": 18,
+      "name": "Quanta • Robinhood Token",
+      "coingeckoId": "quanta-services-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/quanta-services-inc-robinhood-token.webp",
+      "contractAddress": "0x9ab02ead789b6903c3c44d0ed32f9c707cdf12fd"
+    },
+    {
       "id": "4663:evm-erc20:0x9b09c435bc5da088722be47e97989fb1e3ed4eb9",
       "platform": "ethereum",
       "networkId": "4663",
@@ -170714,6 +170842,18 @@
       "coingeckoId": "pepewifhood",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pepewifhood.webp",
       "contractAddress": "0xa4bd8def4b887fd1851defe10acdcf7a84437a88"
+    },
+    {
+      "id": "4663:evm-erc20:0xa4f319104089fe321dc8093c6e707d4fe190a988",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CVNA",
+      "decimals": 18,
+      "name": "Carvana • Robinhood Token",
+      "coingeckoId": "carvana-co-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/carvana-co-robinhood-token.webp",
+      "contractAddress": "0xa4f319104089fe321dc8093c6e707d4fe190a988"
     },
     {
       "id": "4663:evm-erc20:0xa56605e4c65e702f72830bf6880e821588bab836",
@@ -170978,6 +171118,18 @@
       "coingeckoId": "wojak-6",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wojak-6.webp",
       "contractAddress": "0xace55fe98bab14366dd49ab5aa5df76aa11a3c6f"
+    },
+    {
+      "id": "4663:evm-erc20:0xacef2e09adb47ad6abebad9ff06689e60615c2b6",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "INDA",
+      "decimals": 18,
+      "name": "iShares MSCI India ETF • Robinhood Token",
+      "coingeckoId": "ishares-msci-india-etf-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ishares-msci-india-etf-robinhood-token.webp",
+      "contractAddress": "0xacef2e09adb47ad6abebad9ff06689e60615c2b6"
     },
     {
       "id": "4663:evm-erc20:0xad0c4e4acc1ba90ad5b28ccdc6f8e7ee35db7777",
@@ -171580,6 +171732,18 @@
       "contractAddress": "0xc6911796042b15d7fa4f6cde69e245ddcd3d9c31"
     },
     {
+      "id": "4663:evm-erc20:0xc6cbad1016b38b797610c25e1dc7d95988b1f362",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "MOD",
+      "decimals": 18,
+      "name": "Modine • Robinhood Token",
+      "coingeckoId": "modine-manufacturing-co-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/modine-manufacturing-co-robinhood-token.webp",
+      "contractAddress": "0xc6cbad1016b38b797610c25e1dc7d95988b1f362"
+    },
+    {
       "id": "4663:evm-erc20:0xc72b96e0e48ecd4dc75e1e45396e26300bc39681",
       "platform": "ethereum",
       "networkId": "4663",
@@ -171638,6 +171802,18 @@
       "coingeckoId": "macom-technology-solutions-holdings-inc-robinhood-token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/macom-technology-solutions-holdings-inc-robinhood-token.webp",
       "contractAddress": "0xc93f4d80e268ab922e871bd169156c3cc41894e6"
+    },
+    {
+      "id": "4663:evm-erc20:0xc9a981fee1f9dec688bb123ccdecc63d0debfc4e",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "GLD",
+      "decimals": 18,
+      "name": "SPDR Gold Trust • Robinhood Token",
+      "coingeckoId": "spdr-gold-shares-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/spdr-gold-shares-robinhood-token.webp",
+      "contractAddress": "0xc9a981fee1f9dec688bb123ccdecc63d0debfc4e"
     },
     {
       "id": "4663:evm-erc20:0xc9e7c34fa156a235e8b8601171a543bc9c84a1b9",
@@ -171772,6 +171948,18 @@
       "contractAddress": "0xcef9027c7d6985b85f0ba431125073529a947a68"
     },
     {
+      "id": "4663:evm-erc20:0xcf364ea52787e289de6f32077834056e3e70d6a8",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "UNH",
+      "decimals": 18,
+      "name": "UnitedHealth • Robinhood Token",
+      "coingeckoId": "unitedhealth-group-incorporated-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/unitedhealth-group-incorporated-robinhood-token.webp",
+      "contractAddress": "0xcf364ea52787e289de6f32077834056e3e70d6a8"
+    },
+    {
       "id": "4663:evm-erc20:0xcf6b2d875361be807eafa57458c80f28521f9333",
       "platform": "ethereum",
       "networkId": "4663",
@@ -171878,6 +172066,18 @@
       "coingeckoId": "invesco-qqq-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/invesco-qqq-robinhood-tokenized-stock.webp",
       "contractAddress": "0xd5f3879160bc7c32ebb4dc785f8a4f505888de68"
+    },
+    {
+      "id": "4663:evm-erc20:0xd63abb2c13d7a8421a8017a712802053568e3c1d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SCHD",
+      "decimals": 18,
+      "name": "Schwab US Dividend Equity ETF • Robinhood Token",
+      "coingeckoId": "schwab-us-dividend-equity-etf-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/schwab-us-dividend-equity-etf-robinhood-token.webp",
+      "contractAddress": "0xd63abb2c13d7a8421a8017a712802053568e3c1d"
     },
     {
       "id": "4663:evm-erc20:0xd69845e0589c8d59de25e7a885f9dcecaec95b69",
@@ -172034,6 +172234,18 @@
       "coingeckoId": "amkor-technology-inc-robinhood-token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/amkor-technology-inc-robinhood-token.webp",
       "contractAddress": "0xdd356aa38f40a7b7076755ac854b6fbb1f0d305b"
+    },
+    {
+      "id": "4663:evm-erc20:0xddec0170ceb4426ea05f2fbd485dffa4fafa6615",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CCC",
+      "decimals": 18,
+      "name": "Cashcat Chain",
+      "coingeckoId": "cashcat-chain",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cashcat-chain.webp",
+      "contractAddress": "0xddec0170ceb4426ea05f2fbd485dffa4fafa6615"
     },
     {
       "id": "4663:evm-erc20:0xddf2266b79abf0b48898959b0ed6e6adf512be74",
@@ -172720,6 +172932,18 @@
       "contractAddress": "0xfa78c12e6488814a0262e4e802749a4a737d5fb7"
     },
     {
+      "id": "4663:evm-erc20:0xfaf9cb261b5fcc1f404bb10cd39c5c6c1974e612",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "AEIS",
+      "decimals": 18,
+      "name": "Advanced Energy • Robinhood Token",
+      "coingeckoId": "advanced-energy-industries-inc-robinhood-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/advanced-energy-industries-inc-robinhood-token.webp",
+      "contractAddress": "0xfaf9cb261b5fcc1f404bb10cd39c5c6c1974e612"
+    },
+    {
       "id": "4663:evm-erc20:0xfb1bcb6817f7b8fa86896d3253b16aeb7bd6a5a8",
       "platform": "ethereum",
       "networkId": "4663",
@@ -172862,6 +173086,18 @@
       "coingeckoId": "micron-technology-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/micron-technology-robinhood-tokenized-stock.webp",
       "contractAddress": "0xff080c8ce2e5feadaca0da81314ae59d232d4afd"
+    },
+    {
+      "id": "4663:evm-erc20:0xff23d2eab1e714949afa26851855a0a70e51bff3",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SWIRL",
+      "decimals": 18,
+      "name": "Swirl Chat",
+      "coingeckoId": "swirl-chat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/swirl-chat.webp",
+      "contractAddress": "0xff23d2eab1e714949afa26851855a0a70e51bff3"
     },
     {
       "id": "4663:evm-native",
@@ -228949,6 +229185,18 @@
       "contractAddress": "0x077a32fdef94dbb0bdcf917450a9cacf68ed236f"
     },
     {
+      "id": "8453:evm-erc20:0x07848a7b542a9cd856122c6c4ab9ec87c44f8b63",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "VANRY",
+      "decimals": 18,
+      "name": "Vanar",
+      "coingeckoId": "vanar-chain-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vanar-chain-2.webp",
+      "contractAddress": "0x07848a7b542a9cd856122c6c4ab9ec87c44f8b63"
+    },
+    {
       "id": "8453:evm-erc20:0x07a4e518e93e88409675db2a5ece5fdfbcaf549b",
       "platform": "ethereum",
       "networkId": "8453",
@@ -254727,6 +254975,18 @@
       "coingeckoId": "pfizer-dinari-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pfizer-dinari-tokenized-stock.webp",
       "contractAddress": "0xdddfb67063b57a834257e0db3b9aab39329fd4bd"
+    },
+    {
+      "id": "8453:evm-erc20:0xdddff4be1a90cd6f05ce1e977c674ff3aa556c97",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "exaUSD",
+      "decimals": 18,
+      "name": "Institutional USD Yield Vault",
+      "coingeckoId": "institutional-usd-yield-vault",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/institutional-usd-yield-vault.webp",
+      "contractAddress": "0xdddff4be1a90cd6f05ce1e977c674ff3aa556c97"
     },
     {
       "id": "8453:evm-erc20:0xddf98aad8180c3e368467782cd07ae2e3e8d36a5",
@@ -334795,6 +335055,18 @@
       "mintAddress": "XSTuo1fV7HHMhs4BYiwtrWSLsMCJNrooH2AssWTYZqP"
     },
     {
+      "id": "solana-mainnet:sol-spl:XTAL9rJpwoPokY1p2KqGcuBULuKJ1BXiQYDNXEq7KoX",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "XTAL",
+      "decimals": 6,
+      "name": "XTAL",
+      "coingeckoId": "xtal-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xtal-2.webp",
+      "mintAddress": "XTAL9rJpwoPokY1p2KqGcuBULuKJ1BXiQYDNXEq7KoX"
+    },
+    {
       "id": "solana-mainnet:sol-spl:xxxxa1sKNGwFtw2kFn8XauW9xq8hBZ5kVtcSesTT9fW",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -335765,6 +336037,18 @@
       "coingeckoId": "the-duck",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-duck.webp",
       "mintAddress": "236ziZWiNPWeNk8aNB7abJpv4A6vHNP2XpxHH9VUpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:23e4CNuJxvBQ7RjNLc8Bh3yN3pQq6jeiTbyzJGXYPgme",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "Remus",
+      "decimals": 6,
+      "name": "Official Fomo Mascot",
+      "coingeckoId": "official-fomo-mascot",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/official-fomo-mascot.webp",
+      "mintAddress": "23e4CNuJxvBQ7RjNLc8Bh3yN3pQq6jeiTbyzJGXYPgme"
     },
     {
       "id": "solana-mainnet:sol-token2022:23xZrAXQTRLsuH5KXyv3CiEHmWLL2vKbG6C9PpGHARVY",
@@ -343975,6 +344259,18 @@
       "mintAddress": "9ZtbETDNjnST9Y2zs82FZYy49xUMPgqXRh46YjjRpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:A13oRB9FFaiUjfi6LdCg6p9ka1u8SfGkUFs4SKvPpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "TOAD",
+      "decimals": 6,
+      "name": "The Toad Pepe",
+      "coingeckoId": "the-toad-pepe",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-toad-pepe.webp",
+      "mintAddress": "A13oRB9FFaiUjfi6LdCg6p9ka1u8SfGkUFs4SKvPpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:a2cXfonVgQ6cKB4Lm8YZsPry39VZSA562bwmRSiondo",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -348955,6 +349251,18 @@
       "mintAddress": "dKGNHXGsZL4GZ4UBTCjpPbaMerqe1EdZ7aFdCxHondo"
     },
     {
+      "id": "solana-mainnet:sol-token2022:DKxHTQCvDKUke1WpsHgbfueuRiTMqdzXrWeFHPvzpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "奶蛙",
+      "decimals": 6,
+      "name": "奶蛙",
+      "coingeckoId": "naiwa",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/naiwa.webp",
+      "mintAddress": "DKxHTQCvDKUke1WpsHgbfueuRiTMqdzXrWeFHPvzpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:DLMmRN9rbZspAAC3a1HgDHMC893Y2Ca9GjoNh9StwnYG",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -349625,6 +349933,18 @@
       "coingeckoId": "agant-gbp",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/agant-gbp.webp",
       "mintAddress": "DYoCmA91VE8REbWNw3kM736PN7vv97qc2jr5wmUbuNtZ"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:Dz2iVSLXFp7dXowD1nybWyCXuUcpV7cBZu68YPV5pump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "Sheep",
+      "decimals": 6,
+      "name": "Sheepcoin",
+      "coingeckoId": "sheepcoin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sheepcoin.webp",
+      "mintAddress": "Dz2iVSLXFp7dXowD1nybWyCXuUcpV7cBZu68YPV5pump"
     },
     {
       "id": "solana-mainnet:sol-token2022:Dz4bX3snTDxqdKyZwdUgKoDvSjyvmoA23E6j5odZpump",
@@ -358013,6 +358333,18 @@
       "coingeckoId": "plug-power-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/plug-power-ondo-tokenized.webp",
       "mintAddress": "TnfswqdE1jAJ8sfnf5J7kSVLEH1cfpAYZ8MWmKfondo"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:tpg7sWJPSKijHqPqtpHY2BWBEUq1RwGxmJpD8Tppump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "PUMPGUY",
+      "decimals": 6,
+      "name": "Pump Guy",
+      "coingeckoId": "pump-guy",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pump-guy.webp",
+      "mintAddress": "tpg7sWJPSKijHqPqtpHY2BWBEUq1RwGxmJpD8Tppump"
     },
     {
       "id": "solana-mainnet:sol-token2022:Tqj8yFmagrg7oorpQkVGYR52r96RFTamvWfth9bpump",
