@@ -608,7 +608,7 @@
         "https://rpc.xdcrpc.com",
         "https://erpc.xdcrpc.com",
         "https://rpc.xdc.org",
-        "https://lb.routeme.sh/rpc/evm/50"
+        "https://rpc.xdc.network"
       ],
       "contracts": {
         "Multicall3": "0x0B1795ccA8E4eC4df02346a082df54D437F8D9aF"
@@ -1592,10 +1592,10 @@
       "blockExplorerUrls": ["https://explorer.d-bis.org"],
       "platform": "ethereum",
       "rpcs": [
+        "https://rpc.defi-oracle.io",
         "https://rpc-http-pub.d-bis.org",
         "https://rpc.d-bis.org",
-        "https://rpc2.d-bis.org",
-        "https://rpc.defi-oracle.io"
+        "https://rpc2.d-bis.org"
       ]
     },
     {
@@ -29974,10 +29974,10 @@
       "oldPrefix": 63,
       "rpcs": [
         "wss://hydration-rpc.n.dwellir.com",
+        "wss://hydration.rotko.net",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
-        "wss://rpc.kril.hydration.cloud",
-        "wss://rpc-catfish-1.catfish.hydration.cloud"
+        "wss://rpc.kril.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -30566,8 +30566,8 @@
       "oldPrefix": 1284,
       "rpcs": [
         "wss://moonbeam-rpc.publicnode.com",
-        "wss://moonbeam.unitedbloc.com",
-        "wss://moonbeam.api.onfinality.io/public-ws"
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://moonbeam.unitedbloc.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -30600,11 +30600,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": [
-        "wss://moonriver.unitedbloc.com",
-        "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network"
-      ],
+      "rpcs": ["wss://moonriver.unitedbloc.com", "wss://moonriver.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -166919,6 +166915,18 @@
       "name": "Ether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
+    },
+    {
+      "id": "4663:evm-erc20:0x00000000043c1117dafa3a3d0c7148eb48b30130",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "flETH",
+      "decimals": 18,
+      "name": "flETH",
+      "coingeckoId": "fleth",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fleth.webp",
+      "contractAddress": "0x00000000043c1117dafa3a3d0c7148eb48b30130"
     },
     {
       "id": "4663:evm-erc20:0x01397109534e47d3742e794d3a610fa1c3158888",
@@ -343323,6 +343331,18 @@
       "coingeckoId": "deepnets",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/deepnets.webp",
       "mintAddress": "93VXFhKsGXsraivwdwAwoVXHKd4U1TFL64oQYpVjpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:94Sm8joZMSRzpQmcNVn5zZpgnRLN2DBesJYDXwuNpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "omo",
+      "decimals": 6,
+      "name": "omo",
+      "coingeckoId": "omo",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/omo.webp",
+      "mintAddress": "94Sm8joZMSRzpQmcNVn5zZpgnRLN2DBesJYDXwuNpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:94vr3oJHfgXAR1CVk3mgMVPfr6Mm5xDxGur6ijZ8pump",
