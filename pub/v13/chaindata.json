@@ -3310,8 +3310,8 @@
         "https://rpc.degenprotocol.io",
         "https://pulsechain-rpc.publicnode.com",
         "https://rpc.pulsechainrpc.com",
-        "https://rpc.pulsechainstats.com",
-        "https://sophia-rpc.mijk.pro"
+        "https://rpc.hairylabs.io",
+        "https://rpc.pulsechainstats.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -6424,8 +6424,8 @@
         "https://rpc.api.moonbeam.network",
         "https://moonbeam-rpc.publicnode.com",
         "https://moonbeam.api.onfinality.io/public",
-        "https://public.1rpc.io/glmr",
-        "https://moonbeam.drpc.org"
+        "https://moonbeam.drpc.org",
+        "https://moonbeam.api.pocket.network"
       ],
       "contracts": {
         "Erc20Aggregator": "0x294063B3727d6eE918100693e76fdADee90c8B51",
@@ -15005,21 +15005,6 @@
       "blockExplorerUrls": ["https://explorer.nexus.testnet.apexfusion.org"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.nexus.testnet.apexfusion.org"]
-    },
-    {
-      "id": "9194",
-      "isTestnet": true,
-      "name": "Xyberchain Testnet",
-      "nativeTokenId": "9194:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "XYB",
-        "name": "XYB"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://xyberchainexplorer.xyz/"],
-      "platform": "ethereum",
-      "rpcs": ["https://xyberchain-rpc.xyz"]
     },
     {
       "id": "9200",
@@ -25162,21 +25147,6 @@
       "rpcs": ["https://rpc.primox.online"]
     },
     {
-      "id": "974621",
-      "isTestnet": true,
-      "name": "QanTera Testnet",
-      "nativeTokenId": "974621:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "QTER",
-        "name": "QanTera"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer.qantera.network"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc1.qantera.network", "https://rpc2.qantera.network"]
-    },
-    {
       "id": "984122",
       "name": "Forma",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/forma.webp",
@@ -26280,10 +26250,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://ethereum-sepolia-rpc.publicnode.com",
-        "https://public.1rpc.io/sepolia",
         "https://0xrpc.io/sep",
         "https://eth-sepolia-testnet.api.pocket.network",
-        "https://api.zan.top/eth-sepolia"
+        "https://api.zan.top/eth-sepolia",
+        "https://ethereum-sepolia-public.nodies.app"
       ],
       "contracts": {
         "Erc20Aggregator": "0x060999f53B88e1967558D8B9eBde876c8876b60d",
@@ -28003,11 +27973,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://public.1rpc.io/one",
         "https://harmony-0.drpc.org",
         "https://api.harmony.one",
         "https://a.api.s0.t.hmny.io",
-        "https://api.s0.t.hmny.io"
+        "https://api.s0.t.hmny.io",
+        "https://1666600000.rpc.thirdweb.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -30690,11 +30660,7 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": [
-        "wss://moonriver.unitedbloc.com",
-        "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network"
-      ],
+      "rpcs": ["wss://moonriver.unitedbloc.com", "wss://moonriver.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -168360,6 +168326,18 @@
       "contractAddress": "0x3b14c39e89d60d627b42a1a4ca45b5bb45fc12e2"
     },
     {
+      "id": "4663:evm-erc20:0x3bbfdbc9c6dcb95577fee16eed10f0bc2856a03d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "PR",
+      "decimals": 18,
+      "name": "Primer",
+      "coingeckoId": "kilt-protocol-3",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kilt-protocol-3.webp",
+      "contractAddress": "0x3bbfdbc9c6dcb95577fee16eed10f0bc2856a03d"
+    },
+    {
       "id": "4663:evm-erc20:0x3d0a2e4763eee58a7c631acf7ff13ad6398a5141",
       "platform": "ethereum",
       "networkId": "4663",
@@ -233230,18 +233208,6 @@
       "contractAddress": "0x2349b839f9395af7feeda3444a4c9b3137784330"
     },
     {
-      "id": "8453:evm-erc20:0x2357110f5f0c5344eef75966500c75116a4aa153",
-      "platform": "ethereum",
-      "networkId": "8453",
-      "type": "evm-erc20",
-      "symbol": "PR",
-      "decimals": 18,
-      "name": "Primer",
-      "coingeckoId": "kilt-protocol-3",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kilt-protocol-3.webp",
-      "contractAddress": "0x2357110f5f0c5344eef75966500c75116a4aa153"
-    },
-    {
       "id": "8453:evm-erc20:0x236aa50979d5f3de3bd1eeb40e81137f22ab794b",
       "platform": "ethereum",
       "networkId": "8453",
@@ -263671,16 +263637,6 @@
       "isDefault": true
     },
     {
-      "id": "9194:evm-native",
-      "platform": "ethereum",
-      "networkId": "9194",
-      "type": "evm-native",
-      "symbol": "XYB",
-      "decimals": 18,
-      "name": "XYB",
-      "isDefault": true
-    },
-    {
       "id": "920:evm-native",
       "platform": "ethereum",
       "networkId": "920",
@@ -264895,16 +264851,6 @@
       "symbol": "XPL",
       "decimals": 18,
       "name": "Plasma",
-      "isDefault": true
-    },
-    {
-      "id": "974621:evm-native",
-      "platform": "ethereum",
-      "networkId": "974621",
-      "type": "evm-native",
-      "symbol": "QTER",
-      "decimals": 18,
-      "name": "QanTera",
       "isDefault": true
     },
     {
@@ -279839,7 +279785,7 @@
       "decimals": 9,
       "name": "SN81 | Reliquary ᚠ",
       "coingeckoId": "patrol-tao-com",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn81-cecbff25.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn81-37433c80.webp",
       "isDefault": true,
       "netuid": 81,
       "subnetName": "Reliquary",
@@ -341689,6 +341635,18 @@
       "mintAddress": "6ZaQ5yKKbUbNpocw9XaTQUzvsucTcDekofsqAvFRpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:6zjLjqd483pWwrowtKdyhie8tqEvkWwRcrR4btkVpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "expensive",
+      "decimals": 6,
+      "name": "You can’t afford this coin",
+      "coingeckoId": "you-can-t-afford-this-coin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/you-can-t-afford-this-coin.webp",
+      "mintAddress": "6zjLjqd483pWwrowtKdyhie8tqEvkWwRcrR4btkVpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:71mfKdePwyWXtiF1mqu2aaCdMKnKuN664z2vEM2Xpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -352993,6 +352951,18 @@
       "mintAddress": "FMTG5DSNYSS6Wv6d6bWG8MnK9ncdgVnkUFRj3ksdpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:FmysnoAQ7ifx3La6C7D9cM5tcpoTxEnakbnZPhrC2pJi",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "FLOCK",
+      "decimals": 9,
+      "name": "FLock.io",
+      "coingeckoId": "flock-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/flock-2.webp",
+      "mintAddress": "FmysnoAQ7ifx3La6C7D9cM5tcpoTxEnakbnZPhrC2pJi"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:Fn8UCBRMAAuK9ivmUv3Fzpxz4McnuqS8CKS15jQrpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -354587,6 +354557,18 @@
       "coingeckoId": "the-norman",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-norman.webp",
       "mintAddress": "GRzrGzVmsx42j8o1TDmQ5uNAf76TQYb24HgvKaNwpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:GS2jgH6874i1txo8CUnudz7N1gAuA9CtRHLXN1Npump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "CASHELON",
+      "decimals": 6,
+      "name": "Cash Elon",
+      "coingeckoId": "cash-elon",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cash-elon.webp",
+      "mintAddress": "GS2jgH6874i1txo8CUnudz7N1gAuA9CtRHLXN1Npump"
     },
     {
       "id": "solana-mainnet:sol-token2022:GSp4qePZUHBtt5f4gE6AsRC9JUUqeZEJLeN2JZxLpump",
