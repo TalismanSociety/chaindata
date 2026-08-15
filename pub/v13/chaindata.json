@@ -629,10 +629,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://xdc-testnet.drpc.org",
+        "https://apothem.xdcrpc.com",
         "https://rpc.ankr.com/xdc_testnet",
         "https://earpc.apothem.network",
-        "https://rpc.apothem.network",
-        "https://erpc.apothem.network"
+        "https://rpc.apothem.network"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -1390,7 +1390,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://evmscan.nuls.io"],
       "platform": "ethereum",
-      "rpcs": ["https://evmapi.nuls.io", "https://evmapi2.nuls.io"]
+      "rpcs": ["https://evmapi2.nuls.io"]
     },
     {
       "id": "120",
@@ -1552,10 +1552,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mempool.merkle.io/rpc/polygon/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
-        "https://public.1rpc.io/matic",
         "https://polygon-bor-rpc.publicnode.com",
         "https://polygon.drpc.org",
-        "https://poly.api.pocket.network"
+        "https://poly.api.pocket.network",
+        "https://rpc-polygon.blockmachine.io"
       ],
       "contracts": {
         "Erc20Aggregator": "0xb1EFd1407104Cf00F7b9983C1Fa474A2702B5874",
@@ -28461,6 +28461,20 @@
       "blockExplorerUrls": ["https://zeniqscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://api.zeniq.network"]
+    },
+    {
+      "id": "420420420420",
+      "name": "Galaxy Chain",
+      "nativeTokenId": "420420420420:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "STAR",
+        "name": "Star"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://scan.galaxychain.co"],
+      "platform": "ethereum",
+      "rpcs": ["https://archive.galaxychain.co"]
     },
     {
       "id": "6022140761023",
@@ -143176,6 +143190,16 @@
       "name": "DOT",
       "coingeckoId": "polkadot",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg",
+      "isDefault": true
+    },
+    {
+      "id": "420420420420:evm-native",
+      "platform": "ethereum",
+      "networkId": "420420420420",
+      "type": "evm-native",
+      "symbol": "STAR",
+      "decimals": 18,
+      "name": "Star",
       "isDefault": true
     },
     {
@@ -278272,7 +278296,7 @@
       "decimals": 9,
       "name": "SN103 | Capcomp Ա",
       "coingeckoId": "happyai-2",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/happyai-2.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn103-06662e38.webp",
       "isDefault": true,
       "netuid": 103,
       "subnetName": "Capcomp",
