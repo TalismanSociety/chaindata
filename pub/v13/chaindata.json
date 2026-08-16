@@ -2224,7 +2224,7 @@
       "themeColor": "#4772bc",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.bitnetmoney.com", "https://rpc.btn-network.org"]
+      "rpcs": ["https://rpc.bitnetmoney.com"]
     },
     {
       "id": "212",
@@ -3305,6 +3305,21 @@
       "rpcs": ["https://rpc-testnet.theconsta.com"]
     },
     {
+      "id": "381",
+      "name": "ZKAmoeba Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zkamoeba-micro.webp",
+      "nativeTokenId": "381:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "FIL",
+        "name": "filecoin"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://explorer.zkamoeba.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.mainnet.zkamoeba.com/rpc"]
+    },
+    {
       "id": "388",
       "name": "Cronos zkEVM Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/388.webp",
@@ -3375,6 +3390,22 @@
       "blockExplorerUrls": ["https://eth-explorer-testnet.near.org"],
       "platform": "ethereum",
       "rpcs": ["https://eth-rpc.testnet.near.org"]
+    },
+    {
+      "id": "400",
+      "isTestnet": true,
+      "name": "HyperonChain TestNet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/hyperonchain.webp",
+      "nativeTokenId": "400:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "HPN",
+        "name": "HyperonChain"
+      },
+      "themeColor": "#2a5dee",
+      "blockExplorerUrls": ["https://testnet.hyperonchain.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://testnet-rpc.hyperonchain.com"]
     },
     {
       "id": "401",
@@ -30517,9 +30548,9 @@
       "prefix": 1284,
       "oldPrefix": 1284,
       "rpcs": [
+        "wss://moonbeam.unitedbloc.com",
         "wss://moonbeam.api.onfinality.io/public-ws",
-        "wss://moonbeam-rpc.publicnode.com",
-        "wss://moonbeam.unitedbloc.com"
+        "wss://moonbeam-rpc.publicnode.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -30550,7 +30581,7 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": ["wss://moonriver.unitedbloc.com", "wss://moonriver.api.onfinality.io/public-ws"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://moonriver.unitedbloc.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -30668,7 +30699,7 @@
       "specVersion": 9,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://rpc-2.testnet.orbinum.io", "wss://rpc-1.testnet.orbinum.io"],
+      "rpcs": ["wss://rpc-1.testnet.orbinum.io", "wss://rpc-2.testnet.orbinum.io"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
@@ -121814,6 +121845,18 @@
       "isDefault": true
     },
     {
+      "id": "1672:evm-erc20:0x4b01436d82dff601281f7ebdf44e73a47d77ee3d",
+      "platform": "ethereum",
+      "networkId": "1672",
+      "type": "evm-erc20",
+      "symbol": "BTCVC",
+      "decimals": 8,
+      "name": "BTCvc",
+      "coingeckoId": "btcvc",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/btcvc.webp",
+      "contractAddress": "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d"
+    },
+    {
       "id": "1672:evm-erc20:0x51e2a24742db77604b881d6781ee16b5b8fcbe29",
       "platform": "ethereum",
       "networkId": "1672",
@@ -140417,6 +140460,17 @@
       "isDefault": true
     },
     {
+      "id": "381:evm-native",
+      "platform": "ethereum",
+      "networkId": "381",
+      "type": "evm-native",
+      "symbol": "FIL",
+      "decimals": 18,
+      "name": "filecoin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zkamoeba-micro.webp",
+      "isDefault": true
+    },
+    {
       "id": "381931:evm-native",
       "platform": "ethereum",
       "networkId": "381931",
@@ -142140,6 +142194,17 @@
       "name": "Telos",
       "coingeckoId": "telos",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/telos.webp",
+      "isDefault": true
+    },
+    {
+      "id": "400:evm-native",
+      "platform": "ethereum",
+      "networkId": "400",
+      "type": "evm-native",
+      "symbol": "HPN",
+      "decimals": 18,
+      "name": "HyperonChain",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/hyperonchain.webp",
       "isDefault": true
     },
     {
@@ -171710,6 +171775,18 @@
       "contractAddress": "0xbe274710bf3d9567e1b290ef6a5f9f90ca016fd8"
     },
     {
+      "id": "4663:evm-erc20:0xbe2fbd6916c5899901eb9319e67c8d1525ce1000",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CUBE",
+      "decimals": 18,
+      "name": "Cube",
+      "coingeckoId": "cube-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cube-2.webp",
+      "contractAddress": "0xbe2fbd6916c5899901eb9319e67c8d1525ce1000"
+    },
+    {
       "id": "4663:evm-erc20:0xbe6702d7b70315376dc48a3293f24f0982f86386",
       "platform": "ethereum",
       "networkId": "4663",
@@ -181898,6 +181975,18 @@
       "coingeckoId": "athene-network-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/athene-network-2.webp",
       "contractAddress": "0x1c6fded596069ebda2ec079891f10efba2c111aa"
+    },
+    {
+      "id": "56:evm-erc20:0x1c7cb7d5e12a813a0051cf930b55aabd2369b45e",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "BRX",
+      "decimals": 18,
+      "name": "BRICA",
+      "coingeckoId": "brica",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/brica.webp",
+      "contractAddress": "0x1c7cb7d5e12a813a0051cf930b55aabd2369b45e"
     },
     {
       "id": "56:evm-erc20:0x1ca5f369eac57cb54aa54136b9552f59a0a4050f",
@@ -341554,6 +341643,18 @@
       "mintAddress": "6wQDzAZT17HYABu7rNXBDUSgNzDeGUUUzY2cS8wpEGAc"
     },
     {
+      "id": "solana-mainnet:sol-token2022:6WS1NsTCjB1VFvVL8CjqUkB4VtK4fQ3sMPrN5e7rpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "FROG",
+      "decimals": 6,
+      "name": "Jab Jabich",
+      "coingeckoId": "jab-jabich",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/jab-jabich.webp",
+      "mintAddress": "6WS1NsTCjB1VFvVL8CjqUkB4VtK4fQ3sMPrN5e7rpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:6xHEyem9hmkGtVq6XGCiQUGpPsHBaoYuYdFNZa5ondo",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -346772,6 +346873,18 @@
       "coingeckoId": "the-mini-horse",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-mini-horse.webp",
       "mintAddress": "BERrTba2FLMEzxzgcu3XiuZ9XopVdPKmDmEnmZUfB6B7"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:BF9sqerhJ1KwuUPGVwL8SQyBXmGZih2jfJqKJEFTpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BULLGEN",
+      "decimals": 6,
+      "name": "BULLGEN",
+      "coingeckoId": "bullgen",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bullgen.webp",
+      "mintAddress": "BF9sqerhJ1KwuUPGVwL8SQyBXmGZih2jfJqKJEFTpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:BfbbiwubeghyQbnosCbj9LM9A56yV4K8vYiGdEtqpump",
