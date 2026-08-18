@@ -469,7 +469,7 @@
       "themeColor": "#fe0095",
       "blockExplorerUrls": ["https://explorer.securechain.ai"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/34", "https://mainnet-rpc.scai.network"]
+      "rpcs": ["https://mainnet-rpc.scai.network", "https://lb.routeme.sh/rpc/evm/34"]
     },
     {
       "id": "37",
@@ -2318,11 +2318,11 @@
       "blockExplorerUrls": ["https://explorer.bsquared.network"],
       "platform": "ethereum",
       "rpcs": [
+        "https://lb.routeme.sh/rpc/evm/223",
         "https://b2-mainnet.rpc.sentio.xyz",
         "https://rpc.bsquared.network",
         "https://b2-mainnet.alt.technology",
-        "https://mainnet.b2-rpc.com",
-        "https://rpc.ankr.com/b2"
+        "https://mainnet.b2-rpc.com"
       ]
     },
     {
@@ -2836,7 +2836,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://hashscan.io/previewnet"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/297", "https://previewnet.hashio.io/api"]
+      "rpcs": ["https://previewnet.hashio.io/api", "https://lb.routeme.sh/rpc/evm/297"]
     },
     {
       "id": "300",
@@ -3244,7 +3244,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://testnet-explorer.thetatoken.org"],
       "platform": "ethereum",
-      "rpcs": ["https://eth-rpc-api-testnet.thetatoken.org/rpc", "https://lb.routeme.sh/rpc/evm/365"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/365", "https://eth-rpc-api-testnet.thetatoken.org/rpc"]
     },
     {
       "id": "369",
@@ -4913,8 +4913,8 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://gwan-ssl.wandevs.org:56891",
         "https://lb.routeme.sh/rpc/evm/888",
+        "https://gwan-ssl.wandevs.org:56891",
         "https://gwan2-ssl.wandevs.org"
       ],
       "contracts": {
@@ -5420,7 +5420,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc1.newchain.newtonproject.org", "https://lb.routeme.sh/rpc/evm/1007"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1007", "https://rpc1.newchain.newtonproject.org"]
     },
     {
       "id": "1009",
@@ -5736,10 +5736,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://polygon-zkevm.drpc.org",
+        "https://lb.routeme.sh/rpc/evm/1101",
         "https://zkevm-rpc.com",
         "https://endpoints.omniatech.io/v1/polygon-zkevm/mainnet/public",
-        "https://poly-zkevm.api.pocket.network",
-        "https://lb.routeme.sh/rpc/evm/1101"
+        "https://poly-zkevm.api.pocket.network"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -30661,7 +30661,7 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://moonriver.unitedbloc.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -79026,6 +79026,18 @@
       "coingeckoId": "adappter-token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/adappter-token.webp",
       "contractAddress": "0xc314b0e758d5ff74f63e307a86ebfe183c95767b"
+    },
+    {
+      "id": "1:evm-erc20:0xc31cebf8f9e825d1d1244d73d0a65e44bd5210db",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "CRYN",
+      "decimals": 8,
+      "name": "CRYNcoin",
+      "coingeckoId": "cryn",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cryn.webp",
+      "contractAddress": "0xc31cebf8f9e825d1d1244d73d0a65e44bd5210db"
     },
     {
       "id": "1:evm-erc20:0xc3260a0e1dd1f7ac6508ae29cb00f4fa4b544ba7",
@@ -279764,12 +279776,12 @@
       "type": "substrate-dtao",
       "symbol": "ص",
       "decimals": 9,
-      "name": "SN65 | TAO Private Network ص",
+      "name": "SN65 | True Performance Network ص",
       "coingeckoId": "tao-private-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn65-0349f409.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn65-ca704625.webp",
       "isDefault": true,
       "netuid": 65,
-      "subnetName": "TAO Private Network",
+      "subnetName": "True Performance Network",
       "isTransferable": true
     },
     {
