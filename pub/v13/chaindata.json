@@ -7532,9 +7532,9 @@
       "blockExplorerUrls": ["https://ethereum-pocr.github.io/explorer/kerleano"],
       "platform": "ethereum",
       "rpcs": [
-        "https://rpc1.kerleano.ca-dag.work",
         "https://rpc2.kerleano.ca-dag.work",
-        "https://lb.routeme.sh/rpc/evm/1804"
+        "https://lb.routeme.sh/rpc/evm/1804",
+        "https://rpc1.kerleano.ca-dag.work"
       ]
     },
     {
@@ -8269,21 +8269,6 @@
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
-    },
-    {
-      "id": "1998",
-      "isTestnet": true,
-      "name": "Kyoto Testnet",
-      "nativeTokenId": "1998:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "KYOTO",
-        "name": "Kyoto"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://testnet.kyotoscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.testnet.kyotoprotocol.io:8545"]
     },
     {
       "id": "1999",
@@ -25356,9 +25341,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://rpc.testnet.1money.network",
-        "https://rpc1.testnet.1money.network",
         "https://rpc2.testnet.1money.network",
-        "https://rpc3.testnet.1money.network"
+        "https://rpc3.testnet.1money.network",
+        "https://rpc1.testnet.1money.network"
       ]
     },
     {
@@ -28289,23 +28274,6 @@
       "rpcs": ["https://rpc.mekong.ethpandaops.io"]
     },
     {
-      "id": "7088110746",
-      "isTestnet": true,
-      "name": "pectra-devnet-5",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ethereum.webp",
-      "nativeTokenId": "7088110746:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Testnet ETH",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://explorer.pectra-devnet-5.ethpandaops.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.pectra-devnet-5.ethpandaops.io"]
-    },
-    {
       "id": "11297108099",
       "isTestnet": true,
       "name": "Palm Testnet",
@@ -28445,22 +28413,6 @@
       }
     },
     {
-      "id": "123420000586",
-      "isTestnet": true,
-      "name": "sivo-defi-testnet",
-      "nativeTokenId": "123420000586:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://sivo-defi-testnet.cloud.blockscout.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.sivo-defi-testnet.t.raas.gelato.cloud"]
-    },
-    {
       "id": "123420001114",
       "isTestnet": true,
       "name": "Basecamp",
@@ -28535,20 +28487,6 @@
       "blockExplorerUrls": ["https://scan.galaxychain.co"],
       "platform": "ethereum",
       "rpcs": ["https://archive.galaxychain.co"]
-    },
-    {
-      "id": "6022140761023",
-      "name": "Molereum Network",
-      "nativeTokenId": "6022140761023:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MOLE",
-        "name": "Molereum Ether"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://molereum.jdubedition.com"]
     },
     {
       "id": "123354377739506",
@@ -28824,7 +28762,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
       "prefix": 42,
-      "rpcs": ["wss://mainnet.azero.fans", "wss://ws.azero.dev"],
+      "rpcs": ["wss://ws.azero.dev", "wss://mainnet.azero.fans"],
       "topology": {
         "type": "standalone"
       }
@@ -103485,17 +103423,6 @@
       "isDefault": true
     },
     {
-      "id": "123420000586:evm-native",
-      "platform": "ethereum",
-      "networkId": "123420000586",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
       "id": "123420001114:evm-native",
       "platform": "ethereum",
       "networkId": "123420001114",
@@ -125386,16 +125313,6 @@
       "symbol": "EATB",
       "decimals": 18,
       "name": "ATRNXOS",
-      "isDefault": true
-    },
-    {
-      "id": "1998:evm-native",
-      "platform": "ethereum",
-      "networkId": "1998",
-      "type": "evm-native",
-      "symbol": "KYOTO",
-      "decimals": 18,
-      "name": "Kyoto",
       "isDefault": true
     },
     {
@@ -221915,16 +221832,6 @@
       "isDefault": true
     },
     {
-      "id": "6022140761023:evm-native",
-      "platform": "ethereum",
-      "networkId": "6022140761023",
-      "type": "evm-native",
-      "symbol": "MOLE",
-      "decimals": 18,
-      "name": "Molereum Ether",
-      "isDefault": true
-    },
-    {
       "id": "6060:evm-native",
       "platform": "ethereum",
       "networkId": "6060",
@@ -224062,17 +223969,6 @@
       "decimals": 18,
       "name": "COTI",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/coti.webp",
-      "isDefault": true
-    },
-    {
-      "id": "7088110746:evm-native",
-      "platform": "ethereum",
-      "networkId": "7088110746",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Testnet ETH",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
