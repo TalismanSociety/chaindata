@@ -20574,15 +20574,22 @@
   },
   {
     "id": "8",
-    "name": "Ubiq",
+    "name": "c8ntinuum",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "UBQ",
-      "name": "Ubiq Ether"
+      "symbol": "CTM",
+      "name": "c8ntinuum"
     },
-    "blockExplorerUrls": ["https://ubiqscan.io"],
-    "rpcs": ["https://rpc.octano.dev", "https://pyrus2.ubiqscan.io"],
-    "shortName": "ubq",
+    "blockExplorerUrls": ["https://ctmscan.io"],
+    "rpcs": [
+      "https://rpc.octano.dev",
+      "https://rpc.c8ntinuum.com",
+      "https://rpc.c8ntinuum.io",
+      "https://rpc.c8ntinuum.link",
+      "https://pyrus2.ubiqscan.io"
+    ],
+    "icon": "c8ntinuum",
+    "shortName": "ctm",
     "chainSlug": "ubiq"
   },
   {
@@ -22554,7 +22561,8 @@
       "https://api.lcserve.net",
       "https://api.lcserve.org",
       "https://genesisl1.evm.utsa.tech",
-      "https://evm.vicky.gl1infra.online"
+      "https://evm.vicky.gl1infra.online",
+      "https://evm.genesisl1.firsttensor.com"
     ],
     "shortName": "L1"
   },
@@ -23248,6 +23256,7 @@
       "https://bsc.api.pocket.network",
       "https://public-bsc-mainnet.fastnode.io",
       "https://bsc-rpc.keccak.io",
+      "https://rpc-bsc.blockmachine.io",
       "https://lb.routeme.sh/rpc/evm/56",
       "https://rpc-bsc.48.club",
       "https://0.48.club",
@@ -33695,6 +33704,10 @@
         {
           "contractAddress": "0xb5761f36fdfe2892f1b54bc8ee8babb2a1b698d3",
           "coingeckoId": "rice-ai"
+        },
+        {
+          "contractAddress": "0x4e739dbc37f8b46dbb23c72f523cfb989ea85bf4",
+          "coingeckoId": "richcoin-2"
         },
         {
           "contractAddress": "0xd74b782e05aa25c50e7330af541d46e18f36661c",
@@ -50649,6 +50662,18 @@
     "shortName": "eden"
   },
   {
+    "id": "717",
+    "name": "L7C",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "L7C",
+      "name": "L7C"
+    },
+    "blockExplorerUrls": ["https://l7c.ai"],
+    "rpcs": ["https://l7c.ai/rpc"],
+    "shortName": "l7c"
+  },
+  {
     "id": "718",
     "name": "UXLINK ONE Mainnet",
     "nativeCurrency": {
@@ -63398,6 +63423,7 @@
       "https://robinhood-rpc.publicnode.com",
       "https://robinhood.api.pocket.network",
       "https://rpc.nodeflare.app/robinhood/public",
+      "https://rpc-robinhood.blockmachine.io",
       "https://lb.routeme.sh/rpc/evm/88",
       "https://robinhood.rpc.blxrbdn.com",
       "https://rpc.mainnet.chain.robinhood.com"
@@ -64445,6 +64471,10 @@
           "coingeckoId": "mancer"
         },
         {
+          "contractAddress": "0x00eb2583f442d35473bed8801efb01c82d84c149",
+          "coingeckoId": "maneki-neko-3"
+        },
+        {
           "contractAddress": "0xfb97e1ca99378ea348eb794cbed099408ca74d1c",
           "coingeckoId": "market-cat"
         },
@@ -64595,6 +64625,10 @@
         {
           "contractAddress": "0xb2a9a1d670155deffdff950985b5b4a587a9b583",
           "coingeckoId": "nocturn"
+        },
+        {
+          "contractAddress": "0xfd036176739e03bab9e5ea881069ca2845e5c0de",
+          "coingeckoId": "nomore"
         },
         {
           "contractAddress": "0x241f3caad03db31137f641bef005a32176530024",
@@ -64995,6 +65029,10 @@
         {
           "contractAddress": "0x3b14c39e89d60d627b42a1a4ca45b5bb45fc12e2",
           "coingeckoId": "rocket-lab-corporation-robinhood-tokenized-stock"
+        },
+        {
+          "contractAddress": "0xc1172b98c4bc2e85cd7b0c60a4ec55abfffb036b",
+          "coingeckoId": "runebroker-gp"
         },
         {
           "contractAddress": "0x516c0878acca15e7eb2f6a401b5b6cd2a0f9f455",
@@ -65683,6 +65721,19 @@
     "chainSlug": "robinhood"
   },
   {
+    "id": "4683",
+    "name": "Intertrain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MNA",
+      "name": "MANNA"
+    },
+    "blockExplorerUrls": ["https://explorer.intertrain.online"],
+    "rpcs": ["https://rpc.intertrain.online/rpc"],
+    "icon": "intertrain",
+    "shortName": "inte"
+  },
+  {
     "id": "4689",
     "name": "IoTeX Network Mainnet",
     "logo": "./assets/chains/known/4689.webp",
@@ -65960,6 +66011,7 @@
       "https://public.1rpc.io/mantle",
       "https://endpoints.omniatech.io/v1/mantle/mainnet/public",
       "https://mantle.api.pocket.network",
+      "https://rpc-mantle.blockmachine.io",
       "https://lb.routeme.sh/rpc/evm/5000",
       "https://mantle-mainnet.public.blastapi.io",
       "https://mantle-public.nodies.app",
@@ -80977,16 +81029,17 @@
   },
   {
     "id": "8888",
-    "name": "c8ntinuum",
+    "isTestnet": true,
+    "name": "c8ntinuum Testnet",
     "nativeCurrency": {
       "decimals": 18,
       "symbol": "CTM",
       "name": "c8ntinuum"
     },
-    "blockExplorerUrls": ["https://ctmscan.io"],
-    "rpcs": ["https://rpc.c8ntinuum.com", "https://rpc.c8ntinuum.io", "https://rpc.c8ntinuum.link"],
+    "blockExplorerUrls": ["https://testnet.ctmscan.io"],
+    "rpcs": ["https://rpc-testnet.c8ntinuum.com", "https://rpc-testnet.c8ntinuum.link"],
     "icon": "c8ntinuum",
-    "shortName": "ctm"
+    "shortName": "tctm"
   },
   {
     "id": "8889",
@@ -93042,6 +93095,7 @@
       "https://avalanche.drpc.org",
       "https://avax.api.pocket.network",
       "https://avax-rpc.keccak.io",
+      "https://rpc-avalanche.blockmachine.io",
       "https://lb.routeme.sh/rpc/evm/43114",
       "https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc",
       "https://avalanche-public.nodies.app/ext/bc/C/rpc",
@@ -101828,19 +101882,6 @@
     "shortName": "stabilityprotocol"
   },
   {
-    "id": "101088",
-    "name": "Xitcoin",
-    "nativeCurrency": {
-      "decimals": 18,
-      "symbol": "XTC",
-      "name": "Xitcoin"
-    },
-    "blockExplorerUrls": [],
-    "rpcs": ["https://network.xitcoin.org"],
-    "icon": "xitcoin",
-    "shortName": "Xitcoin"
-  },
-  {
     "id": "101089",
     "isTestnet": true,
     "name": "Xitcoin Testnet",
@@ -102904,6 +102945,7 @@
     },
     "blockExplorerUrls": [],
     "rpcs": ["https://rpc.mfenx.com"],
+    "icon": "mfenx",
     "shortName": "mfenx"
   },
   {
@@ -105221,6 +105263,7 @@
       "https://scroll.api.pocket.network",
       "https://endpoints.omniatech.io/v1/scroll/mainnet/public",
       "https://rpc.ankr.com/scroll",
+      "https://rpc-scroll.blockmachine.io",
       "https://lb.routeme.sh/rpc/evm/534352",
       "https://scroll-mainnet.public.blastapi.io",
       "https://scroll-mainnet-public.unifra.io",
@@ -109665,6 +109708,19 @@
     "rpcs": ["https://rpc.testnet.frame.xyz/http"],
     "icon": "frameTestnet",
     "shortName": "frametest"
+  },
+  {
+    "id": "73829164",
+    "isTestnet": true,
+    "name": "Kryvora Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ETH",
+      "name": "Ether"
+    },
+    "blockExplorerUrls": ["https://explorer-testnet.kryvora.network"],
+    "rpcs": ["https://rpc-testnet.kryvora.network"],
+    "shortName": "kryvora"
   },
   {
     "id": "77777777",
