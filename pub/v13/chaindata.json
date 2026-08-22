@@ -89,6 +89,23 @@
       }
     },
     {
+      "id": "8",
+      "name": "c8ntinuum",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ubiq.webp",
+      "nativeTokenId": "8:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CTM",
+        "name": "c8ntinuum",
+        "coingeckoId": "ubiq",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ubiq.webp"
+      },
+      "themeColor": "#00f08e",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.c8ntinuum.com", "https://rpc.c8ntinuum.io", "https://rpc.c8ntinuum.link"]
+    },
+    {
       "id": "9",
       "isTestnet": true,
       "name": "Quai Mainnet",
@@ -4423,6 +4440,20 @@
       "blockExplorerUrls": ["https://eden.blockscout.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.eden.gateway.fm"]
+    },
+    {
+      "id": "717",
+      "name": "L7C",
+      "nativeTokenId": "717:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "L7C",
+        "name": "L7C"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://l7c.ai"],
+      "platform": "ethereum",
+      "rpcs": ["https://l7c.ai/rpc"]
     },
     {
       "id": "719",
@@ -11520,13 +11551,27 @@
       "rpcs": [
         "https://robinhood-rpc.publicnode.com",
         "https://robinhood.api.pocket.network",
+        "https://rpc-robinhood.blockmachine.io",
         "https://robinhood.rpc.blxrbdn.com",
-        "https://rpc.mainnet.chain.robinhood.com",
-        "https://rpc.nodeflare.app/robinhood/public"
+        "https://rpc.mainnet.chain.robinhood.com"
       ],
       "contracts": {
         "Erc20Aggregator": "0x951d5f07Afc1704CeAc760Fa632801674469845f"
       }
+    },
+    {
+      "id": "4683",
+      "name": "Intertrain",
+      "nativeTokenId": "4683:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "MNA",
+        "name": "MANNA"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.intertrain.online"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.intertrain.online/rpc"]
     },
     {
       "id": "4689",
@@ -11710,7 +11755,7 @@
         "https://mantle.drpc.org",
         "https://public.1rpc.io/mantle",
         "https://mantle.api.pocket.network",
-        "https://mantle-public.nodies.app"
+        "https://rpc-mantle.blockmachine.io"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -14486,7 +14531,8 @@
     },
     {
       "id": "8888",
-      "name": "c8ntinuum",
+      "isTestnet": true,
+      "name": "c8ntinuum Testnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xana.webp",
       "nativeTokenId": "8888:evm-native",
       "nativeCurrency": {
@@ -14499,7 +14545,7 @@
       "themeColor": "#ff26ff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.c8ntinuum.com", "https://rpc.c8ntinuum.io", "https://rpc.c8ntinuum.link"]
+      "rpcs": ["https://rpc-testnet.c8ntinuum.com", "https://rpc-testnet.c8ntinuum.link"]
     },
     {
       "id": "8889",
@@ -18676,7 +18722,7 @@
         "https://public.1rpc.io/avax/c",
         "https://avalanche.drpc.org",
         "https://avax.api.pocket.network",
-        "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
+        "https://rpc-avalanche.blockmachine.io"
       ],
       "contracts": {
         "Erc20Aggregator": "0xe6af6D72372Aee70523a52Ece60F26329C0dEBDA",
@@ -22180,6 +22226,22 @@
       }
     },
     {
+      "id": "111451",
+      "isTestnet": true,
+      "name": "eGold Chain Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/egoldchain.webp",
+      "nativeTokenId": "111451:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XAU",
+        "name": "Aurum"
+      },
+      "themeColor": "#f3b548",
+      "blockExplorerUrls": ["http://testnet.egoldscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-testnet.egoldchain.com"]
+    },
+    {
       "id": "112358",
       "name": "Metachain One Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/metao.webp",
@@ -22942,8 +23004,8 @@
         "https://rpc.ankr.com/bitlayer",
         "https://rpc.bitlayer.org",
         "https://rpc.bitlayer-rpc.com",
-        "https://lb.routeme.sh/rpc/evm/200901",
-        "https://rpc-bitlayer.rockx.com"
+        "https://rpc-bitlayer.rockx.com",
+        "https://lb.routeme.sh/rpc/evm/200901"
       ]
     },
     {
@@ -24008,8 +24070,7 @@
       "rpcs": [
         "https://arbitrum-goerli-rpc.publicnode.com",
         "https://arbitrum-goerli.public.blastapi.io",
-        "https://goerli-rollup.arbitrum.io/rpc",
-        "https://arbitrum-goerli.publicnode.com"
+        "https://goerli-rollup.arbitrum.io/rpc"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -24213,9 +24274,9 @@
       "rpcs": [
         "https://scroll-sepolia.drpc.org",
         "https://scroll-sepolia-public.nodies.app",
-        "https://sepolia-rpc.scroll.io",
         "https://scroll-sepolia-rpc.publicnode.com",
-        "https://endpoints.omniatech.io/v1/scroll/sepolia/public"
+        "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
+        "https://rpc.ankr.com/scroll_sepolia_testnet"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -24245,8 +24306,8 @@
         "https://public.1rpc.io/scroll",
         "https://scroll.drpc.org",
         "https://scroll.api.pocket.network",
-        "https://scroll-public.nodies.app",
-        "https://scroll.rpc.sentio.xyz"
+        "https://rpc-scroll.blockmachine.io",
+        "https://scroll-public.nodies.app"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -27094,6 +27155,22 @@
       "blockExplorerUrls": ["https://explorer.testnet.frame.xyz"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.testnet.frame.xyz/http"]
+    },
+    {
+      "id": "73829164",
+      "isTestnet": true,
+      "name": "Kryvora Testnet",
+      "nativeTokenId": "73829164:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer-testnet.kryvora.network"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-testnet.kryvora.network"]
     },
     {
       "id": "77777777",
@@ -32069,6 +32146,34 @@
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "relay"
+      }
+    },
+    {
+      "id": "xode-polkadot",
+      "isDefault": false,
+      "name": "Xode",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/xode.svg",
+      "nativeTokenId": "xode-polkadot:substrate-native",
+      "nativeCurrency": {
+        "decimals": 12,
+        "symbol": "XON",
+        "name": "Xode",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/xode.svg"
+      },
+      "themeColor": "#ed1f7a",
+      "blockExplorerUrls": [],
+      "genesisHash": "0xb2985e778bb748c70e450dcc084cc7da79fe742cc23d3b040abd7028187de69c",
+      "platform": "polkadot",
+      "chainName": "Xode",
+      "specName": "xode-runtime",
+      "specVersion": 13,
+      "account": "*25519",
+      "prefix": 280,
+      "rpcs": ["wss://polkadot-rpcnode.xode.net"],
+      "topology": {
+        "type": "parachain",
+        "relayId": "polkadot",
+        "paraId": 3417
       }
     },
     {
@@ -101806,6 +101911,17 @@
       "isDefault": true
     },
     {
+      "id": "111451:evm-native",
+      "platform": "ethereum",
+      "networkId": "111451",
+      "type": "evm-native",
+      "symbol": "XAU",
+      "decimals": 18,
+      "name": "Aurum",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/egoldchain.webp",
+      "isDefault": true
+    },
+    {
       "id": "11145513:evm-native",
       "platform": "ethereum",
       "networkId": "11145513",
@@ -168149,6 +168265,18 @@
       "contractAddress": "0x00006916819880adfda57e4329ab8db487c6773a"
     },
     {
+      "id": "4663:evm-erc20:0x00eb2583f442d35473bed8801efb01c82d84c149",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "MANEKI",
+      "decimals": 18,
+      "name": "Maneki Neko",
+      "coingeckoId": "maneki-neko-3",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/maneki-neko-3.webp",
+      "contractAddress": "0x00eb2583f442d35473bed8801efb01c82d84c149"
+    },
+    {
       "id": "4663:evm-erc20:0x01397109534e47d3742e794d3a610fa1c3158888",
       "platform": "ethereum",
       "networkId": "4663",
@@ -173357,6 +173485,18 @@
       "contractAddress": "0xc0d6457c16cc70d6790dd43521c899c87ce02f35"
     },
     {
+      "id": "4663:evm-erc20:0xc1172b98c4bc2e85cd7b0c60a4ec55abfffb036b",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "GP",
+      "decimals": 18,
+      "name": "RUNEBROKER GP",
+      "coingeckoId": "runebroker-gp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/runebroker-gp.webp",
+      "contractAddress": "0xc1172b98c4bc2e85cd7b0c60a4ec55abfffb036b"
+    },
+    {
       "id": "4663:evm-erc20:0xc23d7218512c672ba6e87b7f8bcce53355f55931",
       "platform": "ethereum",
       "networkId": "4663",
@@ -174857,6 +174997,18 @@
       "contractAddress": "0xfc39e99e78524d7c891669f70d5aa92ab1041eb6"
     },
     {
+      "id": "4663:evm-erc20:0xfd036176739e03bab9e5ea881069ca2845e5c0de",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "NOMO",
+      "decimals": 18,
+      "name": "NoMore",
+      "coingeckoId": "nomore",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nomore.webp",
+      "contractAddress": "0xfd036176739e03bab9e5ea881069ca2845e5c0de"
+    },
+    {
       "id": "4663:evm-erc20:0xfd181632e1f2335dab74535e6dd29082d3191bb2",
       "platform": "ethereum",
       "networkId": "4663",
@@ -174971,6 +175123,16 @@
       "symbol": "GNOD",
       "decimals": 18,
       "name": "Gnodi",
+      "isDefault": true
+    },
+    {
+      "id": "4683:evm-native",
+      "platform": "ethereum",
+      "networkId": "4683",
+      "type": "evm-native",
+      "symbol": "MNA",
+      "decimals": 18,
+      "name": "MANNA",
       "isDefault": true
     },
     {
@@ -191774,6 +191936,18 @@
       "coingeckoId": "refinable",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/refinable.webp",
       "contractAddress": "0x4e6415a5727ea08aae4580057187923aec331227"
+    },
+    {
+      "id": "56:evm-erc20:0x4e739dbc37f8b46dbb23c72f523cfb989ea85bf4",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "RIC",
+      "decimals": 18,
+      "name": "RichCoin",
+      "coingeckoId": "richcoin-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/richcoin-2.webp",
+      "contractAddress": "0x4e739dbc37f8b46dbb23c72f523cfb989ea85bf4"
     },
     {
       "id": "56:evm-erc20:0x4e7f408be2d4e9d60f49a64b89bb619c84c7c6f5",
@@ -225349,6 +225523,16 @@
       "isDefault": true
     },
     {
+      "id": "717:evm-native",
+      "platform": "ethereum",
+      "networkId": "717",
+      "type": "evm-native",
+      "symbol": "L7C",
+      "decimals": 18,
+      "name": "L7C",
+      "isDefault": true
+    },
+    {
       "id": "7171:evm-native",
       "platform": "ethereum",
       "networkId": "7171",
@@ -225684,6 +225868,17 @@
       "symbol": "TAU",
       "decimals": 18,
       "name": "TAU",
+      "isDefault": true
+    },
+    {
+      "id": "73829164:evm-native",
+      "platform": "ethereum",
+      "networkId": "73829164",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -227235,6 +227430,18 @@
       "decimals": 18,
       "name": "Standard in Gold",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/standTestnet.webp",
+      "isDefault": true
+    },
+    {
+      "id": "8:evm-native",
+      "platform": "ethereum",
+      "networkId": "8",
+      "type": "evm-native",
+      "symbol": "CTM",
+      "decimals": 18,
+      "name": "c8ntinuum",
+      "coingeckoId": "ubiq",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ubiq.webp",
       "isDefault": true
     },
     {
@@ -289521,6 +289728,65 @@
       "existentialDeposit": "10000000000"
     },
     {
+      "id": "xode-polkadot:substrate-assets:100000000",
+      "platform": "polkadot",
+      "networkId": "xode-polkadot",
+      "type": "substrate-assets",
+      "symbol": "DOT",
+      "decimals": 10,
+      "name": "Polkadot",
+      "coingeckoId": "polkadot",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg",
+      "isDefault": true,
+      "assetId": "100000000",
+      "isFrozen": false,
+      "isSufficient": true,
+      "existentialDeposit": "10000000000"
+    },
+    {
+      "id": "xode-polkadot:substrate-assets:1000000004",
+      "platform": "polkadot",
+      "networkId": "xode-polkadot",
+      "type": "substrate-assets",
+      "symbol": "XAV",
+      "decimals": 12,
+      "name": "Xaver",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/xav.svg",
+      "isDefault": true,
+      "assetId": "1000000004",
+      "isFrozen": false,
+      "isSufficient": true,
+      "existentialDeposit": "0"
+    },
+    {
+      "id": "xode-polkadot:substrate-assets:1984",
+      "platform": "polkadot",
+      "networkId": "xode-polkadot",
+      "type": "substrate-assets",
+      "symbol": "USDT",
+      "decimals": 6,
+      "name": "Tether USD",
+      "coingeckoId": "tether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tether.webp",
+      "isDefault": true,
+      "assetId": "1984",
+      "isFrozen": false,
+      "isSufficient": true,
+      "existentialDeposit": "10000"
+    },
+    {
+      "id": "xode-polkadot:substrate-native",
+      "platform": "polkadot",
+      "networkId": "xode-polkadot",
+      "type": "substrate-native",
+      "symbol": "XON",
+      "decimals": 12,
+      "name": "Xode",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/xode.svg",
+      "isDefault": true,
+      "existentialDeposit": "1000000000"
+    },
+    {
       "id": "xxnetwork:substrate-native",
       "platform": "polkadot",
       "networkId": "xxnetwork",
@@ -320814,6 +321080,18 @@
       "coingeckoId": "dean-s-list",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dean-s-list.webp",
       "mintAddress": "Ds52CDgqdWbTWsua1hgT3AuSSy4FNx2Ezge1br3jQ14a"
+    },
+    {
+      "id": "solana-mainnet:sol-spl:DShht9B8wCRe5t3oqdPB77PnjJbKxbYaZyuWpZQjbonk",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "CONK",
+      "decimals": 6,
+      "name": "CONK",
+      "coingeckoId": "conk",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/conk.webp",
+      "mintAddress": "DShht9B8wCRe5t3oqdPB77PnjJbKxbYaZyuWpZQjbonk"
     },
     {
       "id": "solana-mainnet:sol-spl:Dso1bDeDjCQxTrWHqUUi63oBvV7Mdm6WaobLbQ7gnPQ",
@@ -358158,6 +358436,18 @@
       "mintAddress": "HiTD4kFXbMHcEuqsr8XYEUR9FMeVAJWKqYWCNehiYQbL"
     },
     {
+      "id": "solana-mainnet:sol-token2022:HiY4qx8j5QuVh5UFnKyFq1DvzzDNgFkgyyhEeDXhpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "KEKODYSSEUS",
+      "decimals": 6,
+      "name": "Kekius Odysseus",
+      "coingeckoId": "kekius-odysseus",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kekius-odysseus.webp",
+      "mintAddress": "HiY4qx8j5QuVh5UFnKyFq1DvzzDNgFkgyyhEeDXhpump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:HjrN6ChZK2QRL6hMXayjGPLFvxhgjwKEy135VRjondo",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -365176,6 +365466,15 @@
       }
     },
     {
+      "id": "16c48cf39c3d853a2a01b063395ecf6a",
+      "source": "substrate-hydration",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
+      "version": "v13",
+      "data": null,
+      "extra": null
+    },
+    {
       "id": "16cd9b593a63aa54199020c78022b76a",
       "source": "substrate-psp22",
       "chainId": "darwinia",
@@ -365464,6 +365763,15 @@
       }
     },
     {
+      "id": "1f99dc3f35bdfa75c7208456ed7ff5de",
+      "source": "substrate-foreignassets",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
+      "version": "v13",
+      "data": "0x6d6574610f94000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c0000040000100000020800140000031400000008001800000506001c0000050500200000061c00240000030400000008002800000618002c000006300030000005070034000005000038100c78636d087633206a756e6374696f6e18426f6479496400012810556e69740000001c4d6f6e696b6572040024011c5b75383b20345d00010014496e646578040020010c7533320002002445786563757469766500030024546563686e6963616c0004002c4c656769736c6174697665000500204a7564696369616c0006001c446566656e73650007003841646d696e697374726174696f6e000800205472656173757279000900003c100c78636d087633206a756e6374696f6e20426f64795061727400011414566f6963650000001c4d656d62657273040114636f756e7420010c753332000100204672616374696f6e08010c6e6f6d20010c75333200011464656e6f6d20010c7533320002004441744c6561737450726f706f7274696f6e08010c6e6f6d20010c75333200011464656e6f6d20010c753332000300484d6f72655468616e50726f706f7274696f6e08010c6e6f6d20010c75333200011464656e6f6d20010c7533320004000040102c73746167696e675f78636d087635206c6f636174696f6e204c6f636174696f6e000008011c706172656e74730801087538000120696e746572696f724401244a756e6374696f6e73000044102c73746167696e675f78636d087635246a756e6374696f6e73244a756e6374696f6e73000124104865726500000008583104004801484172633c5b4a756e6374696f6e3b20315d3e00010008583204005801484172633c5b4a756e6374696f6e3b20325d3e00020008583304005c01484172633c5b4a756e6374696f6e3b20335d3e00030008583404006001484172633c5b4a756e6374696f6e3b20345d3e00040008583504006401484172633c5b4a756e6374696f6e3b20355d3e00050008583604006801484172633c5b4a756e6374696f6e3b20365d3e00060008583704006c01484172633c5b4a756e6374696f6e3b20375d3e00070008583804007001484172633c5b4a756e6374696f6e3b20385d3e0008000048000003010000004c004c102c73746167696e675f78636d087635206a756e6374696f6e204a756e6374696f6e0001282450617261636861696e040020010c7533320000002c4163636f756e744964333208011c6e6574776f726b5001444f7074696f6e3c4e6574776f726b49643e00010869640401205b75383b2033325d000100384163636f756e74496e646578363408011c6e6574776f726b5001444f7074696f6e3c4e6574776f726b49643e000114696e64657828010c753634000200304163636f756e744b6579323008011c6e6574776f726b5001444f7074696f6e3c4e6574776f726b49643e00010c6b65791401205b75383b2032305d0003003850616c6c6574496e7374616e6365040008010875380004003047656e6572616c496e64657804002c0110753132380005002847656e6572616c4b65790801186c656e6774680801087538000110646174610401205b75383b2033325d000600244f6e6c794368696c6400070024506c7572616c6974790801086964380118426f64794964000110706172743c0120426f6479506172740008003c476c6f62616c436f6e73656e73757304005401244e6574776f726b4964000900005004184f7074696f6e04045401540108104e6f6e6500000010536f6d65040054000001000054102c73746167696e675f78636d087635206a756e6374696f6e244e6574776f726b496400012024427947656e6573697304000401205b75383b2033325d000000184279466f726b080130626c6f636b5f6e756d62657218010c753634000128626c6f636b5f686173680401205b75383b2033325d00010020506f6c6b61646f74000200184b7573616d6100030020457468657265756d040120636861696e5f696428010c7536340007002c426974636f696e436f72650008002c426974636f696e4361736800090040506f6c6b61646f7442756c6c6574696e000a000058000003020000004c005c000003030000004c0060000003040000004c0064000003050000004c0068000003060000004c006c000003070000004c0070000003080000004c00740c3470616c6c65745f61737365747314747970657330417373657444657461696c730c1c42616c616e63650130244163636f756e7449640100384465706f73697442616c616e63650130003001146f776e65720001244163636f756e7449640001186973737565720001244163636f756e74496400011461646d696e0001244163636f756e74496400011c667265657a65720001244163636f756e744964000118737570706c7930011c42616c616e636500011c6465706f7369743001384465706f73697442616c616e636500012c6d696e5f62616c616e636530011c42616c616e636500013469735f73756666696369656e74340110626f6f6c0001206163636f756e74731c010c75333200012c73756666696369656e74731c010c753332000124617070726f76616c731c010c75333200011873746174757378012c41737365745374617475730000780c3470616c6c65745f6173736574731474797065732c417373657453746174757300010c104c6976650000001846726f7a656e0001002844657374726f79696e67000200007c0c3470616c6c65745f6173736574731474797065733041737365744163636f756e74101c42616c616e63650130384465706f73697442616c616e63650130144578747261010c244163636f756e74496401000010011c62616c616e636530011c42616c616e63650001187374617475738001344163636f756e74537461747573000118726561736f6e8401a84578697374656e6365526561736f6e3c4465706f73697442616c616e63652c204163636f756e7449643e00011465787472610c011445787472610000800c3470616c6c65745f617373657473147479706573344163636f756e7453746174757300010c184c69717569640000001846726f7a656e0001001c426c6f636b656400020000840c3470616c6c65745f6173736574731474797065733c4578697374656e6365526561736f6e081c42616c616e63650130244163636f756e7449640100011420436f6e73756d65720000002853756666696369656e740001002c4465706f73697448656c64040030011c42616c616e63650002003c4465706f736974526566756e6465640003002c4465706f73697446726f6d08000001244163636f756e744964000030011c42616c616e63650004000088000004084000008c0c3470616c6c65745f6173736574731474797065733441737365744d6574616461746108384465706f73697442616c616e6365013034426f756e646564537472696e6701900014011c6465706f7369743001384465706f73697442616c616e63650001106e616d65900134426f756e646564537472696e6700011873796d626f6c900134426f756e646564537472696e67000120646563696d616c73080108753800012469735f66726f7a656e340110626f6f6c0000900c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401080453000004001001185665633c543e00000434466f726569676e4173736574730134466f726569676e4173736574730c144173736574000104024074040004542044657461696c73206f6620616e2061737365742e1c4163636f756e740001080202887c040004e42054686520686f6c64696e6773206f662061207370656369666963206163636f756e7420666f7220612073706563696669632061737365742e204d6574616461746101010402408c5000000000000000000000000000000000000000000458204d65746164617461206f6620616e2061737365742e0000000065000400000000007d030000000000",
+      "extra": null
+    },
+    {
       "id": "1fb126c239b82f1b360733214c95b266",
       "source": "substrate-hydration",
       "chainId": "frequency",
@@ -365642,6 +365950,17 @@
       "version": "v13",
       "data": null,
       "extra": null
+    },
+    {
+      "id": "26a6335bd3ffe0cdd8f6e8f9f9a4eb86",
+      "source": "substrate-tokens",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
+      "version": "v13",
+      "data": null,
+      "extra": {
+        "palletId": "Tokens"
+      }
     },
     {
       "id": "26efd53db279183d8e300bca2c781427",
@@ -366040,6 +366359,15 @@
       "specVersion": 1024001,
       "version": "v13",
       "data": null,
+      "extra": null
+    },
+    {
+      "id": "37bd27733d9cba86a0132fc22aaacd9c",
+      "source": "substrate-assets",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
+      "version": "v13",
+      "data": "0x6d6574610f40000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c00000400001000000208001400000505001800000507001c0000050000200c3470616c6c65745f61737365747314747970657330417373657444657461696c730c1c42616c616e63650118244163636f756e7449640100384465706f73697442616c616e63650118003001146f776e65720001244163636f756e7449640001186973737565720001244163636f756e74496400011461646d696e0001244163636f756e74496400011c667265657a65720001244163636f756e744964000118737570706c7918011c42616c616e636500011c6465706f7369741801384465706f73697442616c616e636500012c6d696e5f62616c616e636518011c42616c616e636500013469735f73756666696369656e741c0110626f6f6c0001206163636f756e747314010c75333200012c73756666696369656e747314010c753332000124617070726f76616c7314010c75333200011873746174757324012c41737365745374617475730000240c3470616c6c65745f6173736574731474797065732c417373657453746174757300010c104c6976650000001846726f7a656e0001002844657374726f79696e670002000028000004081400002c0c3470616c6c65745f6173736574731474797065733041737365744163636f756e74101c42616c616e63650118384465706f73697442616c616e63650118144578747261010c244163636f756e74496401000010011c62616c616e636518011c42616c616e63650001187374617475733001344163636f756e74537461747573000118726561736f6e3401a84578697374656e6365526561736f6e3c4465706f73697442616c616e63652c204163636f756e7449643e00011465787472610c011445787472610000300c3470616c6c65745f617373657473147479706573344163636f756e7453746174757300010c184c69717569640000001846726f7a656e0001001c426c6f636b656400020000340c3470616c6c65745f6173736574731474797065733c4578697374656e6365526561736f6e081c42616c616e63650118244163636f756e7449640100011420436f6e73756d65720000002853756666696369656e740001002c4465706f73697448656c64040018011c42616c616e63650002003c4465706f736974526566756e6465640003002c4465706f73697446726f6d08000001244163636f756e744964000018011c42616c616e636500040000380c3470616c6c65745f6173736574731474797065733441737365744d6574616461746108384465706f73697442616c616e6365011834426f756e646564537472696e67013c0014011c6465706f7369741801384465706f73697442616c616e63650001106e616d653c0134426f756e646564537472696e6700011873796d626f6c3c0134426f756e646564537472696e67000120646563696d616c73080108753800012469735f66726f7a656e1c0110626f6f6c00003c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401080453000004001001185665633c543e0000041841737365747301184173736574730c144173736574000104021420040004542044657461696c73206f6620616e2061737365742e1c4163636f756e740001080202282c040004e42054686520686f6c64696e6773206f662061207370656369666963206163636f756e7420666f7220612073706563696669632061737365742e204d657461646174610101040214385000000000000000000000000000000000000000000458204d65746164617461206f6620616e2061737365742e0000000032000400000000007d030000000000",
       "extra": null
     },
     {
@@ -368144,6 +368472,18 @@
       "extra": null
     },
     {
+      "id": "7d4183caa17b5084c834ffcea2445f4b",
+      "source": "substrate-native",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
+      "version": "v13",
+      "data": "0x6d6574610f98000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c0000050500100000050700140000030800000008001800000504001c08306672616d655f73797374656d2c4163636f756e74496e666f08144e6f6e6365010c2c4163636f756e74446174610120001401146e6f6e63650c01144e6f6e6365000124636f6e73756d6572730c0120526566436f756e7400012470726f7669646572730c0120526566436f756e7400012c73756666696369656e74730c0120526566436f756e740001106461746120012c4163636f756e74446174610000200c3c70616c6c65745f62616c616e6365731474797065732c4163636f756e7444617461041c42616c616e63650110001001106672656510011c42616c616e6365000120726573657276656410011c42616c616e636500011866726f7a656e10011c42616c616e6365000114666c6167732401284578747261466c6167730000240c3c70616c6c65745f62616c616e636573147479706573284578747261466c61677300000400100110753132380000280830786f64655f72756e74696d654452756e74696d65486f6c64526561736f6e00011c1c53657373696f6e04002c016870616c6c65745f73657373696f6e3a3a486f6c64526561736f6e0016002c506f6c6b61646f7458636d040030015870616c6c65745f78636d3a3a486f6c64526561736f6e001f0024436f6e747261637473040034017070616c6c65745f636f6e7472616374733a3a486f6c64526561736f6e00330048546563686e6963616c436f6d6d697474656504003801ec70616c6c65745f636f6c6c6563746976653a3a486f6c64526561736f6e3c70616c6c65745f636f6c6c6563746976653a3a496e7374616e6365313e0037003c5472656173757279436f756e63696c04003c01ec70616c6c65745f636f6c6c6563746976653a3a486f6c64526561736f6e3c70616c6c65745f636f6c6c6563746976653a3a496e7374616e6365323e00390020507265696d616765040040016c70616c6c65745f707265696d6167653a3a486f6c64526561736f6e003b0018526576697665040044016470616c6c65745f7265766976653a3a486f6c64526561736f6e005a00002c0c3870616c6c65745f73657373696f6e1870616c6c657428486f6c64526561736f6e000104104b65797300000000300c2870616c6c65745f78636d1870616c6c657428486f6c64526561736f6e00010438417574686f72697a65416c69617300000000340c4070616c6c65745f636f6e7472616374731870616c6c657428486f6c64526561736f6e00010860436f646555706c6f61644465706f736974526573657276650000005453746f726167654465706f7369745265736572766500010000380c4470616c6c65745f636f6c6c6563746976651870616c6c657428486f6c64526561736f6e0404490001044850726f706f73616c5375626d697373696f6e000000003c0c4470616c6c65745f636f6c6c6563746976651870616c6c657428486f6c64526561736f6e0404490001044850726f706f73616c5375626d697373696f6e00000000400c3c70616c6c65745f707265696d6167651870616c6c657428486f6c64526561736f6e00010420507265696d61676500000000440c3470616c6c65745f7265766976651870616c6c657428486f6c64526561736f6e00010c60436f646555706c6f61644465706f736974526573657276650000005453746f726167654465706f7369745265736572766500010038416464726573734d617070696e670002000048040c436f77040454014c0004004c0000004c000005020050082873705f76657273696f6e3852756e74696d6556657273696f6e0000200124737065635f6e616d65480144436f773c277374617469632c207374723e000124696d706c5f6e616d65480144436f773c277374617469632c207374723e000144617574686f72696e675f76657273696f6e0c010c753332000130737065635f76657273696f6e0c010c753332000130696d706c5f76657273696f6e0c010c7533320001106170697354011c4170697356656300014c7472616e73616374696f6e5f76657273696f6e0c010c75333200013873797374656d5f76657273696f6e0801087538000054040c436f77040454015800040058000000580000025c005c00000408140c00600c4c626f756e6465645f636f6c6c656374696f6e73407765616b5f626f756e6465645f766563385765616b426f756e64656456656308045401640453000004006c01185665633c543e0000640c3c70616c6c65745f62616c616e6365731474797065732c42616c616e63654c6f636b041c42616c616e63650110000c010869641401384c6f636b4964656e746966696572000118616d6f756e7410011c42616c616e636500011c726561736f6e7368011c526561736f6e730000680c3c70616c6c65745f62616c616e6365731474797065731c526561736f6e7300010c0c466565000000104d6973630001000c416c6c000200006c0000026400700c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401740453000004007801185665633c543e0000740c3c70616c6c65745f62616c616e6365731474797065732c52657365727665446174610844526573657276654964656e74696669657201141c42616c616e63650110000801086964140144526573657276654964656e746966696572000118616d6f756e7410011c42616c616e636500007800000274007c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401800453000004008401185665633c543e00008014346672616d655f737570706f72741874726169747318746f6b656e73106d697363204964416d6f756e740808496401281c42616c616e636501100008010869642801084964000118616d6f756e7410011c42616c616e63650000840000028000880c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e646564566563080454018c0453000004009401185665633c543e00008c14346672616d655f737570706f72741874726169747318746f6b656e73106d697363204964416d6f756e740808496401901c42616c616e636501100008010869649001084964000118616d6f756e7410011c42616c616e63650000900830786f64655f72756e74696d654c52756e74696d65467265657a65526561736f6e00010000940000028c00081853797374656d011853797374656d041c4163636f756e7401010402001c4101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008004e8205468652066756c6c206163636f756e7420696e666f726d6174696f6e20666f72206120706172746963756c6172206163636f756e742049442e0000081c56657273696f6e50410430786f64652d72756e74696d6530786f64652d72756e74696d65010000000d000000000000004cdd718d5cc53262d401000000d7bdd8a272ca0d6502000000df6acb689907609b0500000037e397fc7c91f5e40200000040fe3ad401f8959a06000000d2bc9897eed08f1503000000f78b278be53f454c02000000ab3c0572291feb8b01000000bc9d89904f5b923f0100000037c8bb1350a9a2a804000000f3ff14d5ab527059030000008a8047a53a8277ec01000000ea93e3f16f3d69620300000068b66ba122c93fa702000000fbc577b9d747efd6010000006ff52ee858e6c5bd0200000091b1c8b16328eb92020000009ffb505aa738d69c010000008c403e5c4a9fd4420100000001000000010484204765742074686520636861696e277320696e2d636f64652076657273696f6e2e28535335385072656669781808180114a8205468652064657369676e61746564205353353820707265666978206f66207468697320636861696e2e0039012054686973207265706c6163657320746865202273733538466f726d6174222070726f7065727479206465636c6172656420696e2074686520636861696e20737065632e20526561736f6e20697331012074686174207468652072756e74696d652073686f756c64206b6e6f772061626f7574207468652070726566697820696e206f7264657220746f206d616b6520757365206f662069742061737020616e206964656e746966696572206f662074686520636861696e2e0000002042616c616e636573012042616c616e63657310144c6f636b73010104020060040010b820416e79206c6971756964697479206c6f636b73206f6e20736f6d65206163636f756e742062616c616e6365732e2501204e4f54453a2053686f756c64206f6e6c79206265206163636573736564207768656e2073657474696e672c206368616e67696e6720616e642066726565696e672061206c6f636b2e00ad0120557365206f66206c6f636b73206973206465707265636174656420696e206661766f7572206f6620667265657a65732e20536565206068747470733a2f2f6769746875622e636f6d2f706172697479746563682f7375627374726174652f70756c6c2f31323935312f6020526573657276657301010402007004000ca4204e616d6564207265736572766573206f6e20736f6d65206163636f756e742062616c616e6365732e00b10120557365206f66207265736572766573206973206465707265636174656420696e206661766f7572206f6620686f6c64732e20536565206068747470733a2f2f6769746875622e636f6d2f706172697479746563682f7375627374726174652f70756c6c2f31323935312f6014486f6c647301010402007c0400046c20486f6c6473206f6e206163636f756e742062616c616e6365732e1c467265657a65730101040200880400048820467265657a65206c6f636b73206f6e206163636f756e742062616c616e6365732e000000000a000400000000007d030000000000",
+      "extra": {
+        "useLegacyTransferableCalculation": false,
+        "existentialDeposit": "1000000000"
+      }
+    },
+    {
       "id": "7d6a1c132d8dc9cf02dafe815be8f18d",
       "source": "substrate-hydration",
       "chainId": "polymesh-testnet",
@@ -368774,6 +369114,15 @@
         "existentialDeposit": "500",
         "nominationPoolsPalletId": "creditco"
       }
+    },
+    {
+      "id": "92c425662b3a2a76d07202e430c71041",
+      "source": "substrate-dtao",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
+      "version": "v13",
+      "data": null,
+      "extra": null
     },
     {
       "id": "932c6317beb0b705bfb2f36d0f8d909f",
@@ -370746,6 +371095,15 @@
       "source": "substrate-psp22",
       "chainId": "vflow-volta-testnet",
       "specVersion": 2000000,
+      "version": "v13",
+      "data": null,
+      "extra": null
+    },
+    {
+      "id": "d3133561e2105b6d207c9d67d1888a67",
+      "source": "substrate-psp22",
+      "chainId": "xode-polkadot",
+      "specVersion": 13,
       "version": "v13",
       "data": null,
       "extra": null
