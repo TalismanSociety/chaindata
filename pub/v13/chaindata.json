@@ -14157,20 +14157,6 @@
       "rpcs": ["https://rpc-forknet.t.conduit.xyz"]
     },
     {
-      "id": "8379",
-      "name": "Bery",
-      "nativeTokenId": "8379:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "BRY",
-        "name": "BRY"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://bery.in/explorer"],
-      "platform": "ethereum",
-      "rpcs": ["https://bery.in/rpc"]
-    },
-    {
       "id": "8387",
       "name": "Dracones Financial Services",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/dracones.webp",
@@ -23190,6 +23176,20 @@
       ]
     },
     {
+      "id": "210000",
+      "name": "JuChain Mainnet",
+      "nativeTokenId": "210000:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "JU",
+        "name": "JUcoin"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://juscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.juchain.org"]
+    },
+    {
       "id": "210425",
       "name": "PlatON Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/210425.webp",
@@ -30743,7 +30743,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://moonbeam.unitedbloc.com"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -30773,7 +30777,11 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": ["wss://moonriver.unitedbloc.com", "wss://moonriver.api.onfinality.io/public-ws"],
+      "rpcs": [
+        "wss://moonriver.unitedbloc.com",
+        "wss://moonriver.api.onfinality.io/public-ws",
+        "wss://wss.api.moonriver.moonbeam.network"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -32399,6 +32407,18 @@
       "coingeckoId": "boundless",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/boundless.webp",
       "contractAddress": "0x000006c2a22ff4a44ff1f5d0f2ed65f781f55555"
+    },
+    {
+      "id": "1:evm-erc20:0x000025b3816630ad283267d4eb3a5fc8b0200000",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "MTX",
+      "decimals": 6,
+      "name": "Matrix",
+      "coingeckoId": "matrix-6",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/matrix-6.webp",
+      "contractAddress": "0x000025b3816630ad283267d4eb3a5fc8b0200000"
     },
     {
       "id": "1:evm-erc20:0x00007ac313f4f4c1ad809e8a4ca42bc613aa0000",
@@ -128526,6 +128546,16 @@
       "isDefault": true
     },
     {
+      "id": "210000:evm-native",
+      "platform": "ethereum",
+      "networkId": "210000",
+      "type": "evm-native",
+      "symbol": "JU",
+      "decimals": 18,
+      "name": "JUcoin",
+      "isDefault": true
+    },
+    {
       "id": "21000000:evm-erc20:0x44f49ff0da2498bcb1d3dc7c0f999578f67fd8c6",
       "platform": "ethereum",
       "networkId": "21000000",
@@ -172298,6 +172328,18 @@
       "coingeckoId": "hoodclaw-by-virtuals",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hoodclaw-by-virtuals.webp",
       "contractAddress": "0x97e39393a9afc4f21b1e74209ee0522e91ef028c"
+    },
+    {
+      "id": "4663:evm-erc20:0x97f68328cf8ad42edc771355bdedac657f4949b9",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "NEUT",
+      "decimals": 18,
+      "name": "NEUTON",
+      "coingeckoId": "neuton",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neuton.webp",
+      "contractAddress": "0x97f68328cf8ad42edc771355bdedac657f4949b9"
     },
     {
       "id": "4663:evm-erc20:0x980dcf6766fa79f5cf0c4aadb3ab477ff15a9619",
@@ -230436,16 +230478,6 @@
       "isDefault": true
     },
     {
-      "id": "8379:evm-native",
-      "platform": "ethereum",
-      "networkId": "8379",
-      "type": "evm-native",
-      "symbol": "BRY",
-      "decimals": 18,
-      "name": "BRY",
-      "isDefault": true
-    },
-    {
       "id": "8387:evm-native",
       "platform": "ethereum",
       "networkId": "8387",
@@ -270009,6 +270041,18 @@
       "coingeckoId": "united-states-oil-fund-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/united-states-oil-fund-ondo-tokenized.webp",
       "contractAddress": "0xa4db50bb345151f3649539300523e83a8b8a6bc7"
+    },
+    {
+      "id": "999:evm-erc20:0xa51dc81944a15623874981181a99d6c56b20ed56",
+      "platform": "ethereum",
+      "networkId": "999",
+      "type": "evm-erc20",
+      "symbol": "STABLE",
+      "decimals": 18,
+      "name": "​​Stable",
+      "coingeckoId": "stable-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stable-2.webp",
+      "contractAddress": "0xa51dc81944a15623874981181a99d6c56b20ed56"
     },
     {
       "id": "999:evm-erc20:0xa79e5fd378f0f70fbfdbc1306a652a25d82772d3",
@@ -334627,6 +334671,18 @@
       "mintAddress": "LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp"
     },
     {
+      "id": "solana-mainnet:sol-spl:LTXH7nCGXz5TBZ57H8oZu7YwmDSVfSqWViW4B28yg8X",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "LTX",
+      "decimals": 8,
+      "name": "Tanox",
+      "coingeckoId": "tanox",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tanox.webp",
+      "mintAddress": "LTXH7nCGXz5TBZ57H8oZu7YwmDSVfSqWViW4B28yg8X"
+    },
+    {
       "id": "solana-mainnet:sol-spl:LVCQ1YmeK6DECKqcwmscyDRxUYJpiGth9ppGKtopump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -341730,6 +341786,18 @@
       "coingeckoId": "washed",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/washed.webp",
       "mintAddress": "4cCyEZoBVPepCK3MUR1PahCgehF9n9dUDHPJenW4pump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:4cvZwC17oMiUA7peKX5GhbaUWv4U5Lwrd8118xnFpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "CATALORIAN",
+      "decimals": 6,
+      "name": "Elon's Space Cat",
+      "coingeckoId": "elon-s-space-cat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/elon-s-space-cat.webp",
+      "mintAddress": "4cvZwC17oMiUA7peKX5GhbaUWv4U5Lwrd8118xnFpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:4D8qUHm334fxqeTauPvF8gQ7fYgrD4Mpmb1Wy6ftUSWR",
