@@ -1570,10 +1570,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mempool.merkle.io/rpc/polygon/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
+        "https://public.1rpc.io/matic",
         "https://polygon-bor-rpc.publicnode.com",
         "https://polygon.drpc.org",
-        "https://poly.api.pocket.network",
-        "https://rpc-polygon.blockmachine.io"
+        "https://poly.api.pocket.network"
       ],
       "contracts": {
         "Erc20Aggregator": "0xb1EFd1407104Cf00F7b9983C1Fa474A2702B5874",
@@ -2183,9 +2183,9 @@
       "rpcs": [
         "https://opbnb.drpc.org",
         "https://opbnb-rpc.publicnode.com",
+        "https://public.1rpc.io/opbnb",
         "https://opbnb.api.pocket.network",
-        "https://opbnb-mainnet-rpc.bnbchain.org",
-        "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3"
+        "https://opbnb-mainnet-rpc.bnbchain.org"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -2970,7 +2970,7 @@
       "themeColor": "#f48301",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://mainapi.omaxray.com", "https://lb.routeme.sh/rpc/evm/311", "https://mainapi.omaxscan.com"]
+      "rpcs": ["https://mainapi.omaxray.com", "https://mainapi.omaxscan.com", "https://lb.routeme.sh/rpc/evm/311"]
     },
     {
       "id": "313",
@@ -26424,10 +26424,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://ethereum-sepolia-rpc.publicnode.com",
+        "https://public.1rpc.io/sepolia",
         "https://0xrpc.io/sep",
         "https://eth-sepolia-testnet.api.pocket.network",
-        "https://api.zan.top/eth-sepolia",
-        "https://ethereum-sepolia-public.nodies.app"
+        "https://api.zan.top/eth-sepolia"
       ],
       "contracts": {
         "Erc20Aggregator": "0x060999f53B88e1967558D8B9eBde876c8876b60d",
@@ -26602,23 +26602,6 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": ["https://rpc.anduschain.io/rpc"]
-    },
-    {
-      "id": "17000920",
-      "isTestnet": true,
-      "name": "Lambda Chain Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/lambda-chain.webp",
-      "nativeTokenId": "17000920:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "ETH",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#f9b234",
-      "blockExplorerUrls": ["https://testscan.lambda.im"],
-      "platform": "ethereum",
-      "rpcs": ["https://testnrpc.lambda.im"]
     },
     {
       "id": "17081945",
@@ -28157,11 +28140,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://public.1rpc.io/one",
         "https://harmony-0.drpc.org",
         "https://api.harmony.one",
         "https://a.api.s0.t.hmny.io",
-        "https://api.s0.t.hmny.io",
-        "https://1rpc.io/one"
+        "https://api.s0.t.hmny.io"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -28885,7 +28868,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/aleph-node_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/aleph-node_metadata_latest.apng",
       "prefix": 42,
-      "rpcs": ["wss://mainnet.azero.fans", "wss://ws.azero.dev"],
+      "rpcs": ["wss://ws.azero.dev", "wss://mainnet.azero.fans"],
       "topology": {
         "type": "standalone"
       }
@@ -30788,9 +30771,9 @@
       "account": "secp256k1",
       "prefix": 1285,
       "rpcs": [
+        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.unitedbloc.com"
+        "wss://wss.api.moonriver.moonbeam.network"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -101321,6 +101304,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -101380,6 +101364,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -101535,6 +101520,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -113582,6 +113568,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -113605,6 +113592,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -113628,6 +113616,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -139252,17 +139241,6 @@
       "isDefault": true
     },
     {
-      "id": "17000920:evm-native",
-      "platform": "ethereum",
-      "networkId": "17000920",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "ETH",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
       "id": "17069:evm-native",
       "platform": "ethereum",
       "networkId": "17069",
@@ -149150,6 +149128,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -149161,6 +149140,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -149172,6 +149152,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -187928,6 +187909,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -187939,6 +187921,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -188010,6 +187993,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -200323,6 +200307,7 @@
       "decimals": 18,
       "name": "Greenwood",
       "coingeckoId": "greenwood",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/greenwood.webp",
       "contractAddress": "0x24d8657e10af588b12de3e102a116f77b9e35ee8"
     },
     {
@@ -200598,6 +200583,7 @@
       "decimals": 18,
       "name": "Swole Cat",
       "coingeckoId": "swole-cat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/swole-cat.webp",
       "contractAddress": "0x2f36ba966bf29f702bb290245406a5b0e3e1a66e"
     },
     {
@@ -200657,6 +200643,7 @@
       "decimals": 18,
       "name": "Copper Pot of Wealth",
       "coingeckoId": "copper-pot-of-wealth-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/copper-pot-of-wealth-2.webp",
       "contractAddress": "0x315a404872ae8d4fad6939461a4ab0b691817777"
     },
     {
@@ -200788,6 +200775,7 @@
       "decimals": 18,
       "name": "Goose Token",
       "coingeckoId": "goose-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/goose-token.webp",
       "contractAddress": "0x348cc963411fb82cd6e0b64345714fec94f242cb"
     },
     {
@@ -201195,6 +201183,7 @@
       "decimals": 18,
       "name": "Longbow",
       "coingeckoId": "longbow-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/longbow-2.webp",
       "contractAddress": "0x451b42a15100c340ca12f7c66de06fac5ea2d751"
     },
     {
@@ -202322,6 +202311,7 @@
       "decimals": 18,
       "name": "Zedkr",
       "coingeckoId": "zedkr",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zedkr.webp",
       "contractAddress": "0x6662060b16b61ba3f83bca6ccc796eb3acdf7777"
     },
     {
@@ -202669,6 +202659,7 @@
       "decimals": 18,
       "name": "RobinVault",
       "coingeckoId": "robinvault",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/robinvault.webp",
       "contractAddress": "0x77061b45c5e4d440bd681b5f72bd0f4231a6fc04"
     },
     {
@@ -203124,6 +203115,7 @@
       "decimals": 18,
       "name": "WrapStocks",
       "coingeckoId": "wrapstocks",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapstocks.webp",
       "contractAddress": "0x89f0d6ce0be6b9dbffa5fcd1b163bb8215154acc"
     },
     {
@@ -204515,6 +204507,7 @@
       "decimals": 18,
       "name": "Hopium Machines",
       "coingeckoId": "hopium-machines",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hopium-machines.webp",
       "contractAddress": "0xb6ce51925c2e397ebf1a443b343d19267b3d4225"
     },
     {
@@ -205246,6 +205239,7 @@
       "decimals": 18,
       "name": "clan.tech",
       "coingeckoId": "clan-tech",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/clan-tech.webp",
       "contractAddress": "0xcebc0cfbc5dd0893a9e3b9d0f75b211ddf5934a0"
     },
     {
@@ -216083,6 +216077,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -216106,6 +216101,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -216117,6 +216113,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -234807,6 +234804,7 @@
       "decimals": 18,
       "name": "Stock Wars",
       "coingeckoId": "stock-wars",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/stock-wars.webp",
       "contractAddress": "0x566b76a5a7ebea2e9fa52c6fa320685e89057777"
     },
     {
@@ -246344,6 +246342,7 @@
       "decimals": 18,
       "name": "牛市",
       "coingeckoId": "niu-shi",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/niu-shi.webp",
       "contractAddress": "0x92ef5e9e7f80c071ac871691af1d4059dd4d7777"
     },
     {
@@ -256892,6 +256891,7 @@
       "decimals": 18,
       "name": "ShopinX Token",
       "coingeckoId": "shopinx",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shopinx.webp",
       "contractAddress": "0xca56094722450016f280c4fd6a333e5c36903827"
     },
     {
@@ -261304,6 +261304,7 @@
       "decimals": 9,
       "name": "alien",
       "coingeckoId": "alien-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/alien-2.webp",
       "contractAddress": "0xe10833de865ec804e29499278457b3a620dc6666"
     },
     {
@@ -266832,6 +266833,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -266879,6 +266881,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -267022,6 +267025,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -275337,6 +275341,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -275348,6 +275353,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -275359,6 +275365,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -278371,7 +278378,7 @@
       "decimals": 6,
       "name": "Bridged USDT",
       "coingeckoId": "anubis-bridged-usdt-anubis",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/usdt.svg",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/anubis-bridged-usdt-anubis.webp",
       "contractAddress": "0xdfb6a28bc6dc51fed17c27c880f2c66cdd040a3e"
     },
     {
@@ -295968,6 +295975,7 @@
       "decimals": 18,
       "name": "The Stonks Exchange",
       "coingeckoId": "the-stonks-exchange",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-stonks-exchange.webp",
       "contractAddress": "0x5ab000ff9b9ffe0349ce5ffa5fd86f217c3680f5"
     },
     {
@@ -305101,6 +305109,7 @@
       "decimals": 18,
       "name": "AntSeed",
       "coingeckoId": "antseed",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/antseed.webp",
       "contractAddress": "0xa87ee81b2c0bc659307ca2d9ffdc38514dd85263"
     },
     {
@@ -310431,6 +310440,7 @@
       "decimals": 18,
       "name": "QUDO",
       "coingeckoId": "qudo",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/qudo.webp",
       "contractAddress": "0xcdc7b9c54c66ebdcd791ec128d2dcdaa960daf66"
     },
     {
@@ -330435,6 +330445,7 @@
       "decimals": 18,
       "name": "PerpMe",
       "coingeckoId": "perpme",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/perpme.webp",
       "contractAddress": "0xcc643a9b6cb14e7d5ff9bd81abcd5103eceb0999"
     },
     {
@@ -332529,6 +332540,7 @@
       "decimals": 18,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "contractAddress": "0xfe1b0ea3111e4fc3a0eb89034c7cea1482f95c62"
     },
     {
@@ -332540,6 +332552,7 @@
       "decimals": 18,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "contractAddress": "0xfe7b11d43cfd9fd6010f1b3f9cc86e5bcdb2bc78"
     },
     {
@@ -332551,6 +332564,7 @@
       "decimals": 18,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "contractAddress": "0xff0b421a304fac14f9cc1d8837e4c7f5d0792710"
     },
     {
@@ -344211,7 +344225,7 @@
       "decimals": 9,
       "name": "SN90 | KubeTEE テ",
       "coingeckoId": "brain",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/brain.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn90-b7c73835.webp",
       "isDefault": true,
       "netuid": 90,
       "subnetName": "KubeTEE",
@@ -377721,6 +377735,7 @@
       "decimals": 6,
       "name": "Peace 4 Children",
       "coingeckoId": "peace-4-children",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/peace-4-children.webp",
       "mintAddress": "BTbudhowbmkPNrrbu8P12cTWccCkgdPUbiZh9fqQaray"
     },
     {
@@ -401574,6 +401589,7 @@
       "decimals": 6,
       "name": "Astro Markets",
       "coingeckoId": "astro-markets",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/astro-markets.webp",
       "mintAddress": "2f2vJQzG1TXCDJ45r8ALGYXvBkQSsow1X4XPUL21pump"
     },
     {
@@ -402137,6 +402153,7 @@
       "decimals": 6,
       "name": "Meat Proxy Official",
       "coingeckoId": "meat-proxy-official",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/meat-proxy-official.webp",
       "mintAddress": "2TvUVvuQeVcUwVFp6WVy61wwpnSMG6kNzYpdvEkMpump"
     },
     {
@@ -403312,6 +403329,7 @@
       "decimals": 6,
       "name": "Official Tesla Dog",
       "coingeckoId": "official-tesla-dog",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/official-tesla-dog.webp",
       "mintAddress": "3vSD9xyKCfRBpP3uDEUJaPyWGNWZDFkv4C4qHbjLpump"
     },
     {
@@ -414087,6 +414105,7 @@
       "decimals": 6,
       "name": "apeonfone",
       "coingeckoId": "apeonfone",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/apeonfone.webp",
       "mintAddress": "CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump"
     },
     {
@@ -415202,6 +415221,7 @@
       "decimals": 6,
       "name": "Poet Toads",
       "coingeckoId": "poet-toads",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/poet-toads.webp",
       "mintAddress": "DMXBsVBwfuzc5axa2vz6Ba2BzAxcUmn6V7ZtsJFEpump"
     },
     {
@@ -417049,6 +417069,7 @@
       "decimals": 6,
       "name": "Official Tesla Cat",
       "coingeckoId": "official-tesla-cat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/official-tesla-cat.webp",
       "mintAddress": "EtquDNisHSiFkD1xFoN2Wp9HgG1iNRS8u9NHNKxUpump"
     },
     {
@@ -419160,6 +419181,7 @@
       "decimals": 6,
       "name": "GASSPAS",
       "coingeckoId": "gasspas-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gasspas-2.webp",
       "mintAddress": "GCr352ouzNZkNQd3KZqs6jFuQb8LiYnWsEJSUpSfpump"
     },
     {
@@ -420383,6 +420405,7 @@
       "decimals": 6,
       "name": "Beaglecoin",
       "coingeckoId": "beaglecoin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/beaglecoin.webp",
       "mintAddress": "HavpAp4PqYUfiwyFpd9qcCKWrEVi52Z7CYJuXfQqpump"
     },
     {
@@ -424906,6 +424929,7 @@
       "decimals": 6,
       "name": "Breaking",
       "coingeckoId": "breaking",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/breaking.webp",
       "mintAddress": "VJdpSDDLof7HuZiNmsRUSL4YCncsk1FGiVoHyAJpump"
     },
     {
@@ -428924,6 +428948,7 @@
       "decimals": 8,
       "name": "CF Industries xStock",
       "coingeckoId": "cf-industries-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cf-industries-xstock.webp",
       "mintAddress": "XsH9yfX7GuRbCDnNvD4A7x8gvMc8sc8Htz1fQd7VYWw"
     },
     {
@@ -429317,6 +429342,7 @@
       "decimals": 8,
       "name": "Lattice Semiconductor xStock",
       "coingeckoId": "lattice-semiconductor-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lattice-semiconductor-xstock.webp",
       "mintAddress": "XsjaZAWtPNA1ZWqbPZxaDWtx1h9L23ucmRquwuSHQuf"
     },
     {
@@ -429604,6 +429630,7 @@
       "decimals": 8,
       "name": "Global X DAX Germany xStock",
       "coingeckoId": "global-x-dax-germany-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/global-x-dax-germany-xstock.webp",
       "mintAddress": "XsKbKZ6e1BtERDn2cF11WkpVwvzSWCrf83AMafgnMQT"
     },
     {
