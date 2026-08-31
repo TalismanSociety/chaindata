@@ -14694,7 +14694,7 @@
         "https://evmos-testnet-json.qubelabs.io",
         "https://alphab.ai/rpc/eth/evmos_testnet",
         "https://t-evmos-jsonrpc.kalia.network",
-        "https://evmos-testnet.lava.build"
+        "https://eth.bd.evmos.dev:8545"
       ]
     },
     {
@@ -16770,6 +16770,20 @@
       "blockExplorerUrls": ["https://testnet.stcexplorer.io"],
       "platform": "ethereum",
       "rpcs": ["https://testnet-rpc.stcexplorer.io"]
+    },
+    {
+      "id": "19518",
+      "name": "Smart Technology Chain",
+      "nativeTokenId": "19518:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "SEP",
+        "name": "SEP"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://stcexplorer.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.stcexplorer.io"]
     },
     {
       "id": "19527",
@@ -28677,20 +28691,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/2716446429837000"]
     },
     {
-      "id": "2716446429837001",
-      "name": "DuckFourFourChain",
-      "nativeTokenId": "2716446429837001:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "DFFC",
-        "name": "DuckFourFourCoin"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://main-duckchain.zeninhost.xyz"]
-    },
-    {
       "id": "3-dpass",
       "isDefault": false,
       "name": "3DPass",
@@ -29403,6 +29403,7 @@
       "specVersion": 25004,
       "account": "*25519",
       "chainspecQrUrl": "https://metadata.novasama.io/qr/bifrost_specs.png",
+      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-bifrost_metadata_latest.apng",
       "prefix": 0,
       "rpcs": ["wss://bifrost-rpc.liebi.com/ws", "wss://us.bifrost-rpc.liebi.com/ws"],
       "hasCheckMetadataHash": true,
@@ -29808,6 +29809,8 @@
       "specName": "Darwinia2",
       "specVersion": 7030,
       "account": "secp256k1",
+      "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-darwinia2_specs.png",
+      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-darwinia2_metadata_latest.apng",
       "prefix": 18,
       "oldPrefix": 18,
       "rpcs": ["wss://rpc.darwinia.network"],
@@ -30141,6 +30144,8 @@
       "specName": "humanode",
       "specVersion": 131,
       "account": "*25519",
+      "chainspecQrUrl": "https://metadata.novasama.io/qr/humanode_specs.png",
+      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/humanode_metadata_latest.apng",
       "prefix": 5234,
       "rpcs": ["wss://explorer-rpc-ws.mainnet.stages.humanode.io"],
       "topology": {
@@ -141070,6 +141075,16 @@
       "isDefault": true
     },
     {
+      "id": "19518:evm-native",
+      "platform": "ethereum",
+      "networkId": "19518",
+      "type": "evm-native",
+      "symbol": "SEP",
+      "decimals": 18,
+      "name": "SEP",
+      "isDefault": true
+    },
+    {
       "id": "1952:evm-native",
       "platform": "ethereum",
       "networkId": "1952",
@@ -157663,16 +157678,6 @@
       "decimals": 18,
       "name": "Ether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
-      "id": "2716446429837001:evm-native",
-      "platform": "ethereum",
-      "networkId": "2716446429837001",
-      "type": "evm-native",
-      "symbol": "DFFC",
-      "decimals": 18,
-      "name": "DuckFourFourCoin",
       "isDefault": true
     },
     {
@@ -201439,6 +201444,18 @@
       "coingeckoId": "liluni",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/liluni.webp",
       "contractAddress": "0x4a6eec8a30b49d289b9fc865fd374b4d61eab8fb"
+    },
+    {
+      "id": "4663:evm-erc20:0x4a88cf518ea6b7d1184184d6eab78df7252a74f1",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "NINJACAT",
+      "decimals": 18,
+      "name": "NinjaCat",
+      "coingeckoId": "ninjacat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ninjacat.webp",
+      "contractAddress": "0x4a88cf518ea6b7d1184184d6eab78df7252a74f1"
     },
     {
       "id": "4663:evm-erc20:0x4c9d9527c4e3cf9faf70f0df8429d2cced157492",
