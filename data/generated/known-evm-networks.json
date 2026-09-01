@@ -17709,10 +17709,6 @@
           "coingeckoId": "settled-ethxy-token"
         },
         {
-          "contractAddress": "0xd71ecff9342a5ced620049e616c5035f1db98620",
-          "coingeckoId": "seur"
-        },
-        {
           "contractAddress": "0xea50f402653c41cadbafd1f788341db7b7f37816",
           "coingeckoId": "sgyd"
         },
@@ -45601,7 +45597,7 @@
       "coingeckoId": "tomochain"
     },
     "blockExplorerUrls": [],
-    "rpcs": ["https://viction.drpc.org", "https://rpc.viction.xyz"],
+    "rpcs": ["https://viction.drpc.org", "https://lb.routeme.sh/rpc/evm/88", "https://rpc.viction.xyz"],
     "tokens": {
       "evm-erc20": [
         {
@@ -58567,6 +58563,7 @@
       "https://pulsechain-rpc.publicnode.com",
       "https://rpc.pulsechainrpc.com",
       "https://rpc.hairylabs.io",
+      "https://rpc.pulseheartbeat.com",
       "https://lb.routeme.sh/rpc/evm/369",
       "https://rpc.owlracle.info/pulse/70d38ce1826c4a60bb2a8e05a6c8b20f",
       "https://rpc.pulsechainstats.com",
@@ -62409,6 +62406,20 @@
     "rpcs": ["https://rpc.eliberty.ngo"],
     "icon": "eLiberty",
     "shortName": "ELm"
+  },
+  {
+    "id": "993",
+    "isTestnet": true,
+    "name": "Banteng Chain Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "tBTG",
+      "name": "Banteng Coin"
+    },
+    "blockExplorerUrls": ["https://explorer.banteng.asia"],
+    "rpcs": ["https://rpc1.banteng.asia", "https://rpc2.banteng.asia", "https://rpc3.banteng.asia"],
+    "icon": "banteng",
+    "shortName": "banteng"
   },
   {
     "id": "995",
@@ -76141,7 +76152,7 @@
       "https://robinhood.api.pocket.network",
       "https://rpc.nodeflare.app/robinhood/public",
       "https://rpc-robinhood.blockmachine.io",
-      "https://lb.routeme.sh/rpc/evm/88",
+      "https://lb.routeme.sh/rpc/evm/4663",
       "https://robinhood.rpc.blxrbdn.com",
       "https://rpc.mainnet.chain.robinhood.com"
     ],
@@ -78787,11 +78798,11 @@
   },
   {
     "id": "4683",
-    "name": "Intertrain",
+    "name": "Intertrain Mainnet",
     "nativeCurrency": {
       "decimals": 18,
-      "symbol": "MNA",
-      "name": "MANNA"
+      "symbol": "USDW",
+      "name": "WorldStreet USD"
     },
     "blockExplorerUrls": ["https://explorer.intertrain.online"],
     "rpcs": ["https://rpc.intertrain.online/rpc"],
@@ -82990,7 +83001,7 @@
         }
       ]
     },
-    "icon": "om",
+    "icon": "mantra",
     "shortName": "mantra"
   },
   {
@@ -84685,6 +84696,19 @@
     "rpcs": ["https://rpc.drawchain.org"],
     "icon": "drawchain",
     "shortName": "drw"
+  },
+  {
+    "id": "7789",
+    "name": "WCAHT",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "WCAHT",
+      "name": "WCAHT"
+    },
+    "blockExplorerUrls": ["https://denvion.com/explorer"],
+    "rpcs": ["https://denvion.com/eth"],
+    "icon": "wcaht",
+    "shortName": "wcaht"
   },
   {
     "id": "7791",
@@ -97506,6 +97530,19 @@
     "shortName": "DOGSt"
   },
   {
+    "id": "9350",
+    "isTestnet": true,
+    "name": "Zano Execution Layer Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ZEL",
+      "name": "Zel"
+    },
+    "blockExplorerUrls": ["https://explorer.testnet.zano.org/"],
+    "rpcs": ["https://eth-rpc.node1.testnet.zano.org"],
+    "shortName": "zel"
+  },
+  {
     "id": "9369",
     "name": "Z Chain",
     "nativeCurrency": {
@@ -101261,6 +101298,18 @@
     "rpcs": ["https://xusd.live"],
     "icon": "xusd",
     "shortName": "xusd"
+  },
+  {
+    "id": "20678",
+    "name": "Final Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "vETH",
+      "name": "vETH"
+    },
+    "blockExplorerUrls": ["https://explorer.final-de.fi"],
+    "rpcs": ["https://chain.final-de.fi"],
+    "shortName": "final"
   },
   {
     "id": "20729",
@@ -114992,6 +115041,19 @@
     "chainSlug": "rei"
   },
   {
+    "id": "48359",
+    "isTestnet": true,
+    "name": "Final Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "vETH",
+      "name": "Testnet vETH"
+    },
+    "blockExplorerUrls": ["https://test-explorer.final-de.fi"],
+    "rpcs": ["https://test-chain.final-de.fi"],
+    "shortName": "final-test"
+  },
+  {
     "id": "48795",
     "isTestnet": true,
     "name": "Space Subnet Testnet",
@@ -120110,6 +120172,19 @@
     ],
     "icon": "bora",
     "shortName": "BORAchain"
+  },
+  {
+    "id": "77077",
+    "isTestnet": true,
+    "name": "Autyon Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "AUT",
+      "name": "Autyon"
+    },
+    "blockExplorerUrls": ["https://autscan.io"],
+    "rpcs": ["https://rpc.autyon.io"],
+    "shortName": "autyon"
   },
   {
     "id": "77238",
@@ -125324,6 +125399,32 @@
     "shortName": "datachain"
   },
   {
+    "id": "271831",
+    "name": "MBTX Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "MBTX",
+      "name": "MBTX"
+    },
+    "blockExplorerUrls": ["https://mbtux.uxi.rocks/mbtx"],
+    "rpcs": ["https://candied-undecided-straggler.ngrok-free.dev/l1"],
+    "icon": "https://mbtux.uxi.rocks/static/photo_mainnet.jpg",
+    "shortName": "mbtx"
+  },
+  {
+    "id": "271832",
+    "name": "MBTX Nexus",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "ETH",
+      "name": "Ether"
+    },
+    "blockExplorerUrls": ["https://mbtux.uxi.rocks/mbtx/"],
+    "rpcs": ["https://candied-undecided-straggler.ngrok-free.dev/l2"],
+    "icon": "https://mbtux.uxi.rocks/static/photo_mbtxnexus.png",
+    "shortName": "mbtxl2"
+  },
+  {
     "id": "272247",
     "name": "Nxy Area 51",
     "nativeCurrency": {
@@ -125525,6 +125626,18 @@
     ],
     "icon": "filecoin",
     "shortName": "filecoin-calibration"
+  },
+  {
+    "id": "314169",
+    "name": "VCR Chain",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "CCR",
+      "name": "CCR"
+    },
+    "blockExplorerUrls": ["https://scan.vcrchain.com"],
+    "rpcs": ["https://rpc.vcrchain.com"],
+    "shortName": "vcr"
   },
   {
     "id": "322202",
@@ -132119,6 +132232,19 @@
     "blockExplorerUrls": ["https://explorer.testnet.torium.network"],
     "rpcs": ["https://rpc.testnet.torium.network"],
     "shortName": "torium-testnet"
+  },
+  {
+    "id": "1415006552",
+    "name": "TWIX Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "TWIX",
+      "name": "TWIX"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://evm.twixchain.com"],
+    "icon": "twix",
+    "shortName": "twix"
   },
   {
     "id": "1417429182",
