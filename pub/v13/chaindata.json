@@ -4254,20 +4254,6 @@
       }
     },
     {
-      "id": "343",
-      "name": "Capital Exchange",
-      "nativeTokenId": "343:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "BOURSE",
-        "name": "Bourse"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://bourse.capitalexchange.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.capitalexchange.com"]
-    },
-    {
       "id": "345",
       "name": "TSC Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/netx.webp",
@@ -12718,6 +12704,22 @@
       "rpcs": ["https://rpc.aere.network", "https://2800.rpc.thirdweb.com"]
     },
     {
+      "id": "2810",
+      "isTestnet": true,
+      "name": "Morph Holesky",
+      "nativeTokenId": "2810:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer-holesky.morphl2.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-quicknode-holesky.morphl2.io", "https://rpc-holesky.morphl2.io"]
+    },
+    {
       "id": "2818",
       "name": "Morph",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/2818.webp",
@@ -13804,7 +13806,7 @@
       "themeColor": "#d59b14",
       "blockExplorerUrls": ["https://testnet.kalyscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://testnetrpc.kalychain.io/rpc", "https://lb.routeme.sh/rpc/evm/3889"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/3889"]
     },
     {
       "id": "3912",
@@ -20156,6 +20158,20 @@
       "rpcs": ["https://testnet-rpc.sardisnetwork.com"]
     },
     {
+      "id": "11811",
+      "name": "ARK Mainnet",
+      "nativeTokenId": "11811:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ARK",
+        "name": "ARK Token"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://arkscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.ark.io"]
+    },
+    {
       "id": "11820",
       "name": "Artela Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/11820.webp",
@@ -23474,20 +23490,6 @@
       "blockExplorerUrls": ["https://explorer.citrate.ai"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.citrate.ai"]
-    },
-    {
-      "id": "41443",
-      "name": "Nesa",
-      "nativeTokenId": "41443:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "NES",
-        "name": "Nesa"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer-evm.nesa.ai"],
-      "platform": "ethereum",
-      "rpcs": ["https://erpc.nesa.ai"]
     },
     {
       "id": "41455",
@@ -36932,8 +36934,6 @@
       "specName": "enjin",
       "specVersion": 1070,
       "account": "*25519",
-      "chainspecQrUrl": "https://metadata.novasama.io/qr/enjin_specs.png",
-      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/enjin_metadata_latest.apng",
       "prefix": 2135,
       "rpcs": ["wss://rpc.relay.blockchain.enjin.io"],
       "hasCheckMetadataHash": true,
@@ -126004,6 +126004,16 @@
       "isDefault": true
     },
     {
+      "id": "11811:evm-native",
+      "platform": "ethereum",
+      "networkId": "11811",
+      "type": "evm-native",
+      "symbol": "ARK",
+      "decimals": 18,
+      "name": "ARK Token",
+      "isDefault": true
+    },
+    {
       "id": "11820:evm-native",
       "platform": "ethereum",
       "networkId": "11820",
@@ -167677,6 +167687,17 @@
       "isDefault": true
     },
     {
+      "id": "2810:evm-native",
+      "platform": "ethereum",
+      "networkId": "2810",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
       "id": "281121:evm-native",
       "platform": "ethereum",
       "networkId": "281121",
@@ -171923,16 +171944,6 @@
       "decimals": 18,
       "name": "Evolve",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/evolveIcon.webp",
-      "isDefault": true
-    },
-    {
-      "id": "343:evm-native",
-      "platform": "ethereum",
-      "networkId": "343",
-      "type": "evm-native",
-      "symbol": "BOURSE",
-      "decimals": 18,
-      "name": "Bourse",
       "isDefault": true
     },
     {
@@ -176715,16 +176726,6 @@
       "decimals": 18,
       "name": "HEART",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/humans-dark.webp",
-      "isDefault": true
-    },
-    {
-      "id": "41443:evm-native",
-      "platform": "ethereum",
-      "networkId": "41443",
-      "type": "evm-native",
-      "symbol": "NES",
-      "decimals": 18,
-      "name": "Nesa",
       "isDefault": true
     },
     {
@@ -296065,6 +296066,18 @@
       "contractAddress": "0x000804047791c8e0fbd04f1a9f4567114130b9a7"
     },
     {
+      "id": "8453:evm-erc20:0x001aad84c21a5cd4d696c56d44866e9703c43f77",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "CP",
+      "decimals": 18,
+      "name": "Cluster Protocol",
+      "coingeckoId": "cluster-protocol",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cluster-protocol.webp",
+      "contractAddress": "0x001aad84c21a5cd4d696c56d44866e9703c43f77"
+    },
+    {
       "id": "8453:evm-erc20:0x0028e1e60167b48a938b785aa5292917e7eaca8b",
       "platform": "ethereum",
       "networkId": "8453",
@@ -386675,6 +386688,18 @@
       "mintAddress": "AMp6nNmvohjGYEnfDZ635nykM1msQTRAhmquUnHBpump"
     },
     {
+      "id": "solana-mainnet:sol-spl:AMUgSjmdFsS8Y3JeL32u7A45Fpt8YF9xKaiwW5uGHdXk",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "CMNS",
+      "decimals": 6,
+      "name": "Commons by Virtuals",
+      "coingeckoId": "commons",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/commons.webp",
+      "mintAddress": "AMUgSjmdFsS8Y3JeL32u7A45Fpt8YF9xKaiwW5uGHdXk"
+    },
+    {
       "id": "solana-mainnet:sol-spl:ANAuiz2JjRvNtyW8cd7UsQ4LRWB1PTGhyrgMWPxtpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -433087,6 +433112,18 @@
       "coingeckoId": "huntington-ingalls-industries-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/huntington-ingalls-industries-ondo-tokenized.webp",
       "mintAddress": "h73FNVBDq95fqGBy5eunHm2FVfu2jWZNkeXHDieondo"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:H76u9jTTbMtEF5JGmqXM2wW6xqMXpvTdVyer4RvKpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "Pumpooor",
+      "decimals": 6,
+      "name": "Pumpooor",
+      "coingeckoId": "pumpooor",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pumpooor.webp",
+      "mintAddress": "H76u9jTTbMtEF5JGmqXM2wW6xqMXpvTdVyer4RvKpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:h7uGTw6tzhkF2UUgMaBDq8CXmfkEiSvAG1GHQA5pump",
