@@ -1082,6 +1082,23 @@
 - id: '1907'
   nativeCurrency:
     coingeckoId: bitcicoin
+- id: '1943'
+  name: Vitreus
+  isDefault: false
+  nativeCurrency:
+    decimals: 18
+    symbol: VNRG
+    mirrorOf: vitreus:substrate-assets:0
+  blockExplorerUrls:
+    - https://explorer.vtrs.io
+  substrateChainId: vitreus
+  rpcs:
+    - https://rpc-mainnet.vtrs.io
+  tokens:
+    evm-erc20:
+      - contractAddress: '0x0000000000000000000000000000000000000800'
+        coingeckoId: vitreus
+        mirrorOf: vitreus:substrate-native
 - id: '1975'
   nativeCurrency:
     coingeckoId: onus
