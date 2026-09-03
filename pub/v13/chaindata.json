@@ -173,8 +173,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mainnet.optimism.io",
-        "https://optimism.publicnode.com",
         "https://optimism.gateway.tenderly.co",
+        "https://optimism.publicnode.com",
         "https://public.1rpc.io/op",
         "https://optimism-rpc.publicnode.com"
       ],
@@ -11459,6 +11459,22 @@
       "rpcs": ["https://2137.rpc.thirdweb.com"]
     },
     {
+      "id": "2138",
+      "isTestnet": true,
+      "name": "Defi Oracle Meta Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/defioraclemeta.webp",
+      "nativeTokenId": "2138:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "tETH",
+        "name": "testEther"
+      },
+      "themeColor": "#682ef8",
+      "blockExplorerUrls": ["https://public-2138.defi-oracle.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.public-2138.defi-oracle.io"]
+    },
+    {
       "id": "2140",
       "name": "Oneness Network",
       "nativeTokenId": "2140:evm-native",
@@ -14319,8 +14335,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://lisk-sepolia.drpc.org",
-        "https://rpc.sepolia-api.lisk.com",
-        "https://lb.routeme.sh/rpc/evm/4202"
+        "https://lb.routeme.sh/rpc/evm/4202",
+        "https://rpc.sepolia-api.lisk.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -22698,21 +22714,6 @@
       "blockExplorerUrls": ["https://explorer.movementlabs.xyz"],
       "platform": "ethereum",
       "rpcs": ["https://30731.rpc.thirdweb.com"]
-    },
-    {
-      "id": "30939",
-      "isTestnet": true,
-      "name": "Dilithium3 Testnet",
-      "nativeTokenId": "30939:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "DLT",
-        "name": "Dilithium3"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer-testnet.dilithium3.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.dilithium3.com"]
     },
     {
       "id": "31102",
@@ -37715,7 +37716,7 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://moonbeam.unitedbloc.com"],
+      "rpcs": ["wss://moonbeam.unitedbloc.com", "wss://moonbeam.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -55016,6 +55017,18 @@
       "contractAddress": "0x3a16af9ef328d087cc781053a2a2a27549ae6768"
     },
     {
+      "id": "1:evm-erc20:0x3a54e9b53f32fd3441a87e1a95c853e595c8326f",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "DHN",
+      "decimals": 18,
+      "name": "Dohrnii",
+      "coingeckoId": "dohrnii-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dohrnii-2.webp",
+      "contractAddress": "0x3a54e9b53f32fd3441a87e1a95c853e595c8326f"
+    },
+    {
       "id": "1:evm-erc20:0x3a62b4259e5c2e2314e254b2c79ebaf5e57e8cf3",
       "platform": "ethereum",
       "networkId": "1",
@@ -66066,18 +66079,6 @@
       "contractAddress": "0x633748335ee5b33dea9fc25c9ecc6f92270c713f"
     },
     {
-      "id": "1:evm-erc20:0x633821b8e003344e5223509277f2084ea809a452",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "jrDOLA",
-      "decimals": 18,
-      "name": "Junior Dola",
-      "coingeckoId": "junior-dola",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/junior-dola.webp",
-      "contractAddress": "0x633821b8e003344e5223509277f2084ea809a452"
-    },
-    {
       "id": "1:evm-erc20:0x6362767df5bf9d9b6c945d1ff5e2bf96188a1df1",
       "platform": "ethereum",
       "networkId": "1",
@@ -69953,6 +69954,18 @@
       "coingeckoId": "silo-finance",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/silo-finance.webp",
       "contractAddress": "0x6f80310ca7f2c654691d1383149fa1a57d8ab1f8"
+    },
+    {
+      "id": "1:evm-erc20:0x6f80a22a57c7f0257094ea8d426af3f747defbc7",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "jrDOLA",
+      "decimals": 18,
+      "name": "Junior Dola",
+      "coingeckoId": "junior-dola",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/junior-dola.webp",
+      "contractAddress": "0x6f80a22a57c7f0257094ea8d426af3f747defbc7"
     },
     {
       "id": "1:evm-erc20:0x6f87d756daf0503d08eb8993686c7fc01dc44fb1",
@@ -160627,6 +160640,17 @@
       "isDefault": true
     },
     {
+      "id": "2138:evm-native",
+      "platform": "ethereum",
+      "networkId": "2138",
+      "type": "evm-native",
+      "symbol": "tETH",
+      "decimals": 18,
+      "name": "testEther",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/defioraclemeta.webp",
+      "isDefault": true
+    },
+    {
       "id": "214:evm-native",
       "platform": "ethereum",
       "networkId": "214",
@@ -169258,16 +169282,6 @@
       "isDefault": true
     },
     {
-      "id": "30939:evm-native",
-      "platform": "ethereum",
-      "networkId": "30939",
-      "type": "evm-native",
-      "symbol": "DLT",
-      "decimals": 18,
-      "name": "Dilithium3",
-      "isDefault": true
-    },
-    {
       "id": "31:evm-native",
       "platform": "ethereum",
       "networkId": "31",
@@ -171498,6 +171512,18 @@
       "decimals": 18,
       "name": "tOONE",
       "isDefault": true
+    },
+    {
+      "id": "3338:evm-erc20:0x0000000000000000000000000000000000000809",
+      "platform": "ethereum",
+      "networkId": "3338",
+      "type": "evm-erc20",
+      "symbol": "PEAQ",
+      "decimals": 18,
+      "name": "peaq token",
+      "coingeckoId": "peaq-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/peaq-2.webp",
+      "contractAddress": "0x0000000000000000000000000000000000000809"
     },
     {
       "id": "3338:evm-erc20:0x1190fb50226b54958e284bd674eff346936af885",
@@ -210576,6 +210602,18 @@
       "contractAddress": "0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3"
     },
     {
+      "id": "4663:evm-erc20:0x2e8c31162b855a2ffa90f6f8634643ad6f111e18",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "AI",
+      "decimals": 18,
+      "name": "Artificial Inu",
+      "coingeckoId": "artificial-inu-3",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/artificial-inu-3.webp",
+      "contractAddress": "0x2e8c31162b855a2ffa90f6f8634643ad6f111e18"
+    },
+    {
       "id": "4663:evm-erc20:0x2e9c3b1c6e7703d1784b2b8f80ef4e99d76b3e56",
       "platform": "ethereum",
       "networkId": "4663",
@@ -214894,6 +214932,18 @@
       "coingeckoId": "prologue",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/prologue.webp",
       "contractAddress": "0xb9972ca7188e511174947e3936a5315ac7073277"
+    },
+    {
+      "id": "4663:evm-erc20:0xb9ce619b168f325b4eb8c2e8e073501838c7a407",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "TINY",
+      "decimals": 18,
+      "name": "Tiny Humans AI",
+      "coingeckoId": "tiny-humans-ai",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tiny-humans-ai.webp",
+      "contractAddress": "0xb9ce619b168f325b4eb8c2e8e073501838c7a407"
     },
     {
       "id": "4663:evm-erc20:0xb9f89a5a075cc280362c5167c5e95723bb2c8cad",
@@ -284891,6 +284941,18 @@
       "coingeckoId": "morgan-stanley-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/morgan-stanley-xstock.webp",
       "contractAddress": "0xd8cd1c1ff337b2d4dc61b70aa8006e0eba401f58"
+    },
+    {
+      "id": "57073:evm-erc20:0xd95b9a5fa7c2708fd4fe0e07e59bde1ef35b194a",
+      "platform": "ethereum",
+      "networkId": "57073",
+      "type": "evm-erc20",
+      "symbol": "BEAST",
+      "decimals": 18,
+      "name": "Kraken Mascot",
+      "coingeckoId": "beast",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/beast.webp",
+      "contractAddress": "0xd95b9a5fa7c2708fd4fe0e07e59bde1ef35b194a"
     },
     {
       "id": "57073:evm-erc20:0xd98fb2a0c8ddf4ec072fc0ba3bda4d38363f55c5",
@@ -356337,7 +356399,7 @@
       "decimals": 9,
       "name": "SN67 | Harnyx ط",
       "coingeckoId": "tenex",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn67-59f5772a.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn67-a0aa8fb9.webp",
       "isDefault": true,
       "netuid": 67,
       "subnetName": "Harnyx",
@@ -388380,6 +388442,18 @@
       "mintAddress": "B9u8h65uM1oifqmP82VyUDb68iG2fKfZiyubmNMtu3h7"
     },
     {
+      "id": "solana-mainnet:sol-spl:B9Vhg6XrNswZvLdKgpKhZ9Fj9yV7j2RxQKUaq5fmuphv",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "NLS",
+      "decimals": 6,
+      "name": "Nolus",
+      "coingeckoId": "nolus",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nolus.webp",
+      "mintAddress": "B9Vhg6XrNswZvLdKgpKhZ9Fj9yV7j2RxQKUaq5fmuphv"
+    },
+    {
       "id": "solana-mainnet:sol-spl:B9zze29or7CJs1nBrigSCWSibfxvkmieFXcGg5cxbonk",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -410299,6 +410373,18 @@
       "coingeckoId": "ai-crystal-node",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ai-crystal-node.webp",
       "mintAddress": "PD11M8MB8qQUAiWzyEK4JwfS8rt7Set6av6a5JYpump"
+    },
+    {
+      "id": "solana-mainnet:sol-spl:PEAQjk7SRS6rXHVFFmpRr7zrC4g5ZuEebpwTxvaLr3b",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "PEAQ",
+      "decimals": 9,
+      "name": "peaq",
+      "coingeckoId": "peaq-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/peaq-2.webp",
+      "mintAddress": "PEAQjk7SRS6rXHVFFmpRr7zrC4g5ZuEebpwTxvaLr3b"
     },
     {
       "id": "solana-mainnet:sol-spl:peen77qWZw4XQkvxW1QF6MUJyKNLbqvMzqhkKpB1aVo",
