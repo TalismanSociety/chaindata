@@ -1,0 +1,56 @@
+name: Chaindata Fetch TAO Hotkey Logos
+
+on:
+  # runs at `30 minutes past the hour, every 6 hours`, starting at 00:30 UTC
+  schedule:
+    - cron: "30 0/6 * * *"
+  # can be run manually from the `Actions` tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow pushing commits
+permissions:
+  contents: write
+
+concurrency:
+  # only run 1 job per branch at a time
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  publish:
+    name: "Fetch TAO hotkey logos and push changes to repo"
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    # Only run on main branch
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          # don't persist the default GITHUB_TOKEN auth, the commit step
+          # pushes with CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN instead
+          persist-credentials: false
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Fetch TAO hotkey logos
+        run: pnpm fetch-tao-hotkey-logos
+      - name: Commit changes
+        env:
+          CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN: ${{ secrets.CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN}@github.com/TalismanSociety/chaindata
+          git config user.name "chaindata-ci-superuser[bot]"
+          git config user.email "146698419+chaindata-ci-superuser[bot]@users.noreply.github.com"
+          if [[ "$(git status --porcelain=v2 -- assets/bittensor/hotkeys)" != "" ]]; then
+            git add assets/bittensor/hotkeys
+            git commit -m 'chore: updated tao hotkey logos'
+            git pull --rebase origin main
+            git push
+          fi

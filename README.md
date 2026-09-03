@@ -82,6 +82,14 @@ Subnet logos are mirrored automatically from the `logo_url` published on chain i
 They take precedence over coingecko logos. To override one, set the `logo` property of the subnet entry
 in `networks-polkadot.yaml`.
 
+#### Bittensor validator (hotkey) logos
+
+Validator logos are mirrored automatically from the `image` published on chain in each coldkey identity
+(`SubtensorModule.IdentitiesV2`), converted to webp and stored in `assets/bittensor/hotkeys/`.
+`assets/bittensor/hotkeys/logos.json` maps each delegate hotkey to its logo file name. The folder is fully
+managed by the `Chaindata Fetch TAO Hotkey Logos` workflow (`pnpm fetch-tao-hotkey-logos`), manual changes
+get overwritten.
+
 ### To build the pub directory locally:
 
 1. Install `pnpm` via [corepack](https://nodejs.org/api/corepack.html) by running `corepack enable` on the command line
