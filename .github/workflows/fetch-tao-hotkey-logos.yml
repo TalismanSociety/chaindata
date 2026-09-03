@@ -10,12 +10,10 @@ on:
 # Sets permissions of the GITHUB_TOKEN to allow pushing commits
 permissions:
   contents: write
-  id-token: write
 
 concurrency:
-  # only run 1 job per branch/pr/etc at a time
+  # only run 1 job per branch at a time
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   publish:
@@ -53,5 +51,6 @@ jobs:
           if [[ "$(git status --porcelain=v2 -- assets/bittensor/hotkeys)" != "" ]]; then
             git add assets/bittensor/hotkeys
             git commit -m 'chore: updated tao hotkey logos'
+            git pull --rebase origin main
             git push
           fi

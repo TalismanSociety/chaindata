@@ -35,6 +35,7 @@ const logoFilename = (coldkey: string) => `${coldkey}.webp`
 const logoPath = (filename: string) => path.join(DIR_ASSETS_BITTENSOR_HOTKEYS, filename)
 const sha256 = (buffer: Buffer) => createHash('sha256').update(buffer).digest('hex')
 
+/** stops on an empty page rather than a short one, some rpcs cap the page size below the requested count */
 const getAllKeys = async (client: DotClient, prefix: string) => {
   const keys: string[] = []
   let page: string[]
@@ -42,7 +43,7 @@ const getAllKeys = async (client: DotClient, prefix: string) => {
   do {
     page = await client.request<string[]>('state_getKeysPaged', [prefix, KEYS_PAGE_SIZE, keys.at(-1) ?? null])
     keys.push(...page)
-  } while (page.length === KEYS_PAGE_SIZE)
+  } while (page.length > 0)
 
   return keys
 }
@@ -55,16 +56,18 @@ const queryStorage = async (client: DotClient, keys: string[]) => {
     const [changeSet] = await client.request<StorageChangeSet[]>('state_queryStorageAt', [
       keys.slice(i, i + STORAGE_BATCH_SIZE),
     ])
-    for (const [key, value] of changeSet?.changes ?? []) if (value) entries.push([key, value])
+    // an empty response would read as "no values" and get every mirrored logo deleted
+    if (!changeSet) throw new Error('Empty state_queryStorageAt response')
+    for (const [key, value] of changeSet.changes) if (value) entries.push([key, value])
   }
 
   return entries
 }
 
 /** file names are built from the decoded addresses, a change of ss58 prefix would rename every logo */
-const assertSs58Prefix42 = (address: string | undefined) => {
-  const info = address ? getSs58AddressInfo(address) : undefined
-  if (!info?.isValid || info.ss58Format !== 42) throw new Error(`Unexpected hotkey encoding (${address})`)
+const assertSs58Prefix42 = (address: string) => {
+  const info = getSs58AddressInfo(address)
+  if (!info.isValid || info.ss58Format !== 42) throw new Error(`Unexpected hotkey encoding (${address})`)
 }
 
 const scanDelegateLogos = async (): Promise<DelegateLogos> => {
@@ -80,6 +83,7 @@ const scanDelegateLogos = async (): Promise<DelegateLogos> => {
     const identities = builder.buildStorage('SubtensorModule', 'IdentitiesV2')
 
     const hotkeys = (await getAllKeys(client, delegates.keys.enc())).map((key) => delegates.keys.dec(key)[0] as string)
+    if (!hotkeys.length) throw new Error('No delegates found')
     assertSs58Prefix42(hotkeys[0])
 
     const ownerEntries = await queryStorage(
@@ -112,7 +116,8 @@ const scanDelegateLogos = async (): Promise<DelegateLogos> => {
 
 /** undici hides the network error (dns, tls, reset) behind a generic "fetch failed" */
 const describeError = (cause: unknown) => {
-  const { message, cause: inner } = cause as Error & { cause?: Error }
+  const { message, cause: inner } = cause as Partial<Error & { cause?: Partial<Error> }>
+  if (!message) return String(cause)
   return inner?.message ? `${message} (${inner.message})` : message
 }
 
