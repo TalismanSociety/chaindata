@@ -1544,7 +1544,7 @@
         "https://bsc-testnet.drpc.org",
         "https://api.zan.top/bsc-testnet",
         "https://bsc-testnet.rpc.sentio.xyz",
-        "https://bsc-rpc-public.chainpulse.cc/testnet"
+        "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -6639,9 +6639,9 @@
       "blockExplorerUrls": ["https://scan.v4.testnet.pulsechain.com"],
       "platform": "ethereum",
       "rpcs": [
-        "https://one.valve.city/rpc/vk_demo/evm/943",
         "https://pulsechain-testnet-rpc.publicnode.com",
         "https://rpc-testnet-pulsechain.g4mm4.io",
+        "https://one.valve.city/rpc/vk_demo/evm/943",
         "https://lb.routeme.sh/rpc/evm/943",
         "https://rpc.v4.testnet.pulsechain.com"
       ],
@@ -17830,7 +17830,7 @@
       "themeColor": "#58e7a2",
       "blockExplorerUrls": ["https://testnet-qng.qitmeer.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/8131", "https://testnet.meerlabs.com"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/8131"]
     },
     {
       "id": "8132",
@@ -19391,11 +19391,11 @@
       "blockExplorerUrls": ["https://mainnet.mindscan.info"],
       "platform": "ethereum",
       "rpcs": [
-        "https://mind-smart-chain.rpc.thirdweb.com",
         "https://rpc-msc.mindchain.info",
-        "https://seednode.mindchain.info",
         "https://archive.mindchain.info",
-        "https://lb.routeme.sh/rpc/evm/9996"
+        "https://lb.routeme.sh/rpc/evm/9996",
+        "https://mind-smart-chain.rpc.thirdweb.com",
+        "https://seednode.mindchain.info"
       ]
     },
     {
@@ -22923,7 +22923,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.entangle.fi"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/33033", "https://33033.rpc.thirdweb.com", "https://json-rpc.entangle.fi"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/33033", "https://33033.rpc.thirdweb.com"]
     },
     {
       "id": "33101",
@@ -24182,7 +24182,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.rei.network", "https://lb.routeme.sh/rpc/evm/47805", "https://47805.rpc.thirdweb.com"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/47805", "https://47805.rpc.thirdweb.com"]
     },
     {
       "id": "48359",
@@ -24809,7 +24809,7 @@
       "themeColor": "#a21648",
       "blockExplorerUrls": ["https://novascan.velo.org"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/56789", "https://56789.rpc.thirdweb.com", "https://nova.velo.org"]
+      "rpcs": ["https://nova.velo.org", "https://lb.routeme.sh/rpc/evm/56789", "https://56789.rpc.thirdweb.com"]
     },
     {
       "id": "57054",
@@ -26805,20 +26805,6 @@
       "blockExplorerUrls": ["https://explorer.omnicoin.net"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.omnicoin.net"]
-    },
-    {
-      "id": "88088",
-      "name": "PLUS Mainnet",
-      "nativeTokenId": "88088:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "PLUS",
-        "name": "PLUS Coin"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://plusmain.net/scan"],
-      "platform": "ethereum",
-      "rpcs": ["https://plusmain.net/api/rpc"]
     },
     {
       "id": "88118",
@@ -36900,6 +36886,8 @@
       "specName": "enjin",
       "specVersion": 1070,
       "account": "*25519",
+      "chainspecQrUrl": "https://metadata.novasama.io/qr/enjin_specs.png",
+      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/enjin_metadata_latest.apng",
       "prefix": 2135,
       "rpcs": ["wss://rpc.relay.blockchain.enjin.io"],
       "hasCheckMetadataHash": true,
@@ -37681,7 +37669,7 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://moonbeam.unitedbloc.com"],
+      "rpcs": ["wss://moonbeam.unitedbloc.com", "wss://moonbeam.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -37711,7 +37699,7 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://moonriver.unitedbloc.com"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -44543,18 +44531,6 @@
       "coingeckoId": "restake-finance",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/restake-finance.webp",
       "contractAddress": "0x12ef10a4fc6e1ea44b4ca9508760ff51c647bb71"
-    },
-    {
-      "id": "1:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
     },
     {
       "id": "1:evm-erc20:0x131157c6760f78f7ddf877c0019eba175ba4b6f6",
@@ -54850,18 +54826,6 @@
       "contractAddress": "0x399ef659fdead53b3e7f97e9491e727925667945"
     },
     {
-      "id": "1:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "1:evm-erc20:0x39aa39c021dfbae8fac545936693ac917d5e7563",
       "platform": "ethereum",
       "networkId": "1",
@@ -56240,18 +56204,6 @@
       "coingeckoId": "republic-protocol",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/republic-protocol.webp",
       "contractAddress": "0x408e41876cccdc0f92210600ef50372656052a38"
-    },
-    {
-      "id": "1:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "1:evm-erc20:0x40a2df5b363baa9087e1ec779801a70389209a52",
@@ -111076,18 +111028,6 @@
       "contractAddress": "0x12e714e27ab36fc439971d2d66f641342eb33f4e"
     },
     {
-      "id": "10:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "10",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "10:evm-erc20:0x13326eadd0f8323dddf0522f4a71993bf21b0d05",
       "platform": "ethereum",
       "networkId": "10",
@@ -112608,18 +112548,6 @@
       "contractAddress": "0x395ae52bb17aef68c2888d941736a71dc6d4e125"
     },
     {
-      "id": "10:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "10",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "10:evm-erc20:0x39c31fc6038490ea4bf8a21ca18cd18f33b8d3fb",
       "platform": "ethereum",
       "networkId": "10",
@@ -112750,18 +112678,6 @@
       "coingeckoId": "entergy-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/entergy-xstock.webp",
       "contractAddress": "0x408c30d5a587dc631af87245a01427d30860bed5"
-    },
-    {
-      "id": "10:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "10",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "10:evm-erc20:0x40bf69f64ee34a535568be85e80e126c4282ecf3",
@@ -149936,18 +149852,6 @@
       "contractAddress": "0x12e714e27ab36fc439971d2d66f641342eb33f4e"
     },
     {
-      "id": "196:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "196",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "196:evm-erc20:0x13326eadd0f8323dddf0522f4a71993bf21b0d05",
       "platform": "ethereum",
       "networkId": "196",
@@ -151120,18 +151024,6 @@
       "contractAddress": "0x391470973adbbbab50ec69be24918ce6b84399d8"
     },
     {
-      "id": "196:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "196",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "196:evm-erc20:0x39c31fc6038490ea4bf8a21ca18cd18f33b8d3fb",
       "platform": "ethereum",
       "networkId": "196",
@@ -151214,18 +151106,6 @@
       "coingeckoId": "entergy-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/entergy-xstock.webp",
       "contractAddress": "0x408c30d5a587dc631af87245a01427d30860bed5"
-    },
-    {
-      "id": "196:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "196",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "196:evm-erc20:0x40bf69f64ee34a535568be85e80e126c4282ecf3",
@@ -174383,6 +174263,18 @@
       "isDefault": true
     },
     {
+      "id": "36900:evm-erc20:0x76a443768a5e3b8d1aed0105fc250877841deb40",
+      "platform": "ethereum",
+      "networkId": "36900",
+      "type": "evm-erc20",
+      "symbol": "LINK",
+      "decimals": 18,
+      "name": "ChainLink Token",
+      "coingeckoId": "chainlink",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/chainlink.webp",
+      "contractAddress": "0x76a443768a5e3b8d1aed0105fc250877841deb40"
+    },
+    {
       "id": "36900:evm-native",
       "platform": "ethereum",
       "networkId": "36900",
@@ -178992,18 +178884,6 @@
       "contractAddress": "0x12e714e27ab36fc439971d2d66f641342eb33f4e"
     },
     {
-      "id": "42161:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "42161",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "42161:evm-erc20:0x13278cd824d33a7adb9f0a9a84aca7c0d2deebf7",
       "platform": "ethereum",
       "networkId": "42161",
@@ -182228,18 +182108,6 @@
       "contractAddress": "0x3946b92f71adecf855ee11aba14a243c1d006d79"
     },
     {
-      "id": "42161:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "42161",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "42161:evm-erc20:0x39bce681d72720f80424914800a78c63fdfaf645",
       "platform": "ethereum",
       "networkId": "42161",
@@ -182622,18 +182490,6 @@
       "coingeckoId": "ipath-series-b-s-p-500-vix-short-term-futures-etn-dinari-tokenized-etf",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ipath-series-b-s-p-500-vix-short-term-futures-etn-dinari-tokenized-etf.webp",
       "contractAddress": "0x40914f6007da3fcee3c8a6db211b5797848f8882"
-    },
-    {
-      "id": "42161:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "42161",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "42161:evm-erc20:0x40bd670a58238e6e230c430bbb5ce6ec0d40df48",
@@ -209991,6 +209847,18 @@
       "contractAddress": "0x15cd20759ce7f3285c29a319de2d1a2e098c6f43"
     },
     {
+      "id": "4663:evm-erc20:0x15d36b6a28d8327abc7afabf0f106ae2c9af5c4d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "PARE",
+      "decimals": 18,
+      "name": "Pare",
+      "coingeckoId": "pare",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pare.webp",
+      "contractAddress": "0x15d36b6a28d8327abc7afabf0f106ae2c9af5c4d"
+    },
+    {
       "id": "4663:evm-erc20:0x15ed9ae7f55b832988df1b6745afe209f380b5ff",
       "platform": "ethereum",
       "networkId": "4663",
@@ -210313,6 +210181,18 @@
       "coingeckoId": "divinely-protected-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/divinely-protected-2.webp",
       "contractAddress": "0x21ed792de0ebfa85c2f55ff45b2241c576727f7b"
+    },
+    {
+      "id": "4663:evm-erc20:0x223e93b1bed7de244445db2dea4c7900e8045acc",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "9TO5",
+      "decimals": 18,
+      "name": "9TO5",
+      "coingeckoId": "9to5",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/9to5.webp",
+      "contractAddress": "0x223e93b1bed7de244445db2dea4c7900e8045acc"
     },
     {
       "id": "4663:evm-erc20:0x230442c8133a9efb4c278b3723043444749ca08b",
@@ -210687,6 +210567,18 @@
       "contractAddress": "0x2d427692e928fa156ec22acfabafa0447c5805b7"
     },
     {
+      "id": "4663:evm-erc20:0x2d8d6f4a93acd7a916a5a654ec8b690ba3b3eadd",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "STATICS",
+      "decimals": 18,
+      "name": "Statics",
+      "coingeckoId": "statics-protocol",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/statics-protocol.webp",
+      "contractAddress": "0x2d8d6f4a93acd7a916a5a654ec8b690ba3b3eadd"
+    },
+    {
       "id": "4663:evm-erc20:0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3",
       "platform": "ethereum",
       "networkId": "4663",
@@ -210841,6 +210733,18 @@
       "coingeckoId": "flowr",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/flowr.webp",
       "contractAddress": "0x31ef2f4e678b3640a380c5882ae1a73763d138e9"
+    },
+    {
+      "id": "4663:evm-erc20:0x3207d891ddd0db2981a6976b58b22e27c0699b4b",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CASHCOW",
+      "decimals": 18,
+      "name": "cash cow",
+      "coingeckoId": "cash-cow-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cash-cow-2.webp",
+      "contractAddress": "0x3207d891ddd0db2981a6976b58b22e27c0699b4b"
     },
     {
       "id": "4663:evm-erc20:0x322f0929c4625ed5bad873c95208d54e1c003b2d",
@@ -211033,6 +210937,18 @@
       "coingeckoId": "pools-trade",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pools-trade.webp",
       "contractAddress": "0x385b36ff682ab4c76e7c37a66b96aabc466471d5"
+    },
+    {
+      "id": "4663:evm-erc20:0x385f4f8ae47651ce5f58f5265395a669f8281e18",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "MEME",
+      "decimals": 18,
+      "name": "A Meme Coin",
+      "coingeckoId": "a-meme-coin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/a-meme-coin.webp",
+      "contractAddress": "0x385f4f8ae47651ce5f58f5265395a669f8281e18"
     },
     {
       "id": "4663:evm-erc20:0x38a22a55fe0bb97428d1f145bc8bd0e2d4f12e2c",
@@ -212223,6 +212139,18 @@
       "contractAddress": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34"
     },
     {
+      "id": "4663:evm-erc20:0x5d6ef090a1461b11c9427ac319260122d1c61e18",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "ICOIN",
+      "decimals": 18,
+      "name": "iCoin",
+      "coingeckoId": "icoin-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/icoin-2.webp",
+      "contractAddress": "0x5d6ef090a1461b11c9427ac319260122d1c61e18"
+    },
+    {
       "id": "4663:evm-erc20:0x5d6fa71583e40d6a40ab09cd071f24f6603b0970",
       "platform": "ethereum",
       "networkId": "4663",
@@ -213027,6 +212955,18 @@
       "contractAddress": "0x776650808dda2ae08653dc70cdac45a9ce39e025"
     },
     {
+      "id": "4663:evm-erc20:0x77a719b0f3e7072fc80ed5d67f9aaa580b245462",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SHELLR",
+      "decimals": 18,
+      "name": "Shellr Packs",
+      "coingeckoId": "shellr-packs",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shellr-packs.webp",
+      "contractAddress": "0x77a719b0f3e7072fc80ed5d67f9aaa580b245462"
+    },
+    {
       "id": "4663:evm-erc20:0x77b0aa38451ccdc1b42587e2f80b9879a7f82356",
       "platform": "ethereum",
       "networkId": "4663",
@@ -213291,6 +213231,18 @@
       "contractAddress": "0x811624d7a62e5079052a9b4f8ec0a139ef389283"
     },
     {
+      "id": "4663:evm-erc20:0x812486eaea648819853f8e372dc9f1516c7868bd",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "UBIK",
+      "decimals": 18,
+      "name": "ubik",
+      "coingeckoId": "ubik",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ubik.webp",
+      "contractAddress": "0x812486eaea648819853f8e372dc9f1516c7868bd"
+    },
+    {
       "id": "4663:evm-erc20:0x822cc93ffd030293e9842c30bbd678f530701867",
       "platform": "ethereum",
       "networkId": "4663",
@@ -213505,6 +213457,18 @@
       "coingeckoId": "novara",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/novara.webp",
       "contractAddress": "0x880b852316d430741c5b693aa53f22871e42ee77"
+    },
+    {
+      "id": "4663:evm-erc20:0x89314dd83f307d7d9bc19ff261888027fa531658",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "PIXELCAT",
+      "decimals": 18,
+      "name": "Robinhood Pixel Cat",
+      "coingeckoId": "robinhood-pixel-cat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/robinhood-pixel-cat.webp",
+      "contractAddress": "0x89314dd83f307d7d9bc19ff261888027fa531658"
     },
     {
       "id": "4663:evm-erc20:0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a",
@@ -213733,6 +213697,18 @@
       "coingeckoId": "apecoin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/apecoin.webp",
       "contractAddress": "0x8f86a15ec17cb3369d8b3e666dadbc11daa82b79"
+    },
+    {
+      "id": "4663:evm-erc20:0x8fcf98e1348d3ddee46cdd15a5c7d9a8d423077d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "LEGS",
+      "decimals": 18,
+      "name": "legs.fun",
+      "coingeckoId": "legs-fun",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/legs-fun.webp",
+      "contractAddress": "0x8fcf98e1348d3ddee46cdd15a5c7d9a8d423077d"
     },
     {
       "id": "4663:evm-erc20:0x8fde2c15d44eb7cc1a889bc74633e226f91d3295",
@@ -214071,6 +214047,18 @@
       "contractAddress": "0x98e75885157c80992a8d41b696d8c9c6fb30a926"
     },
     {
+      "id": "4663:evm-erc20:0x9936403a9cc72cf306063e3496ea387428a3aecd",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CINEMA",
+      "decimals": 18,
+      "name": "ABSOLUTE CINEMA",
+      "coingeckoId": "absolute-cinema",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/absolute-cinema.webp",
+      "contractAddress": "0x9936403a9cc72cf306063e3496ea387428a3aecd"
+    },
+    {
       "id": "4663:evm-erc20:0x99b1887e985a985ecb23ac248421eac96cb92492",
       "platform": "ethereum",
       "networkId": "4663",
@@ -214263,6 +214251,18 @@
       "contractAddress": "0x9fbe210007ddd8389f98d0253018e65cc48b9d24"
     },
     {
+      "id": "4663:evm-erc20:0xa01bc586cd5f4f253bfab4e44400c52dbc18bc50",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "VOXEL",
+      "decimals": 18,
+      "name": "Voxelithic Protocol",
+      "coingeckoId": "voxelithic-protocol",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/voxelithic-protocol.webp",
+      "contractAddress": "0xa01bc586cd5f4f253bfab4e44400c52dbc18bc50"
+    },
+    {
       "id": "4663:evm-erc20:0xa0e67be79118704a35e7d4b20c3ec4df36ef6e10",
       "platform": "ethereum",
       "networkId": "4663",
@@ -214297,6 +214297,18 @@
       "coingeckoId": "applovin-corporation-robinhood-token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/applovin-corporation-robinhood-token.webp",
       "contractAddress": "0xa249baf1063af884807c1e1400aef7784836917e"
+    },
+    {
+      "id": "4663:evm-erc20:0xa26992c4268a8a78a4d872fe4bdad2ed03ac287d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "MANY",
+      "decimals": 18,
+      "name": "Manyways Inference",
+      "coingeckoId": "manyways-inference",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/manyways-inference.webp",
+      "contractAddress": "0xa26992c4268a8a78a4d872fe4bdad2ed03ac287d"
     },
     {
       "id": "4663:evm-erc20:0xa2718f80f1fe0cdec69c9023ee006807dd487a8c",
@@ -214345,6 +214357,18 @@
       "coingeckoId": "united-states-oil-fund-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/united-states-oil-fund-robinhood-tokenized-stock.webp",
       "contractAddress": "0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344"
+    },
+    {
+      "id": "4663:evm-erc20:0xa3b6aee90017b72c0812dc1e013de70eb2917ba3",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "EARN",
+      "decimals": 18,
+      "name": "EARN",
+      "coingeckoId": "earn",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/earn.webp",
+      "contractAddress": "0xa3b6aee90017b72c0812dc1e013de70eb2917ba3"
     },
     {
       "id": "4663:evm-erc20:0xa3b9120593c93169e36a0cdea1324584b745e03f",
@@ -214465,6 +214489,18 @@
       "coingeckoId": "intuitive-machines-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/intuitive-machines-robinhood-tokenized-stock.webp",
       "contractAddress": "0xa5d4968421ba94814be3b136b15cf422101ac1a3"
+    },
+    {
+      "id": "4663:evm-erc20:0xa65d0267c8637fcc46ff91e48de766721c750fe3",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "FUNI",
+      "decimals": 18,
+      "name": "Farting Unicorn",
+      "coingeckoId": "farting-unicorn-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/farting-unicorn-2.webp",
+      "contractAddress": "0xa65d0267c8637fcc46ff91e48de766721c750fe3"
     },
     {
       "id": "4663:evm-erc20:0xa68a46db0baa6e23a024c90741ace041b588c3ae",
@@ -214597,6 +214633,18 @@
       "coingeckoId": "doggie-mode",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/doggie-mode.webp",
       "contractAddress": "0xa9efe2fc94de79734c03051515f48f254ce61e18"
+    },
+    {
+      "id": "4663:evm-erc20:0xa9fcd15f315f5ffa918d3a767a980ee3dc019667",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "BABYAI",
+      "decimals": 18,
+      "name": "Baby Artificial Inu",
+      "coingeckoId": "baby-artificial-inu",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/baby-artificial-inu.webp",
+      "contractAddress": "0xa9fcd15f315f5ffa918d3a767a980ee3dc019667"
     },
     {
       "id": "4663:evm-erc20:0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3",
@@ -214945,6 +214993,18 @@
       "coingeckoId": "lemon-protocol",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lemon-protocol.webp",
       "contractAddress": "0xb1d46eff0e3d1a4169a4d4159b46c5783b4f7a05"
+    },
+    {
+      "id": "4663:evm-erc20:0xb1e9b822b81bbbdab375f7f4d86e44fa04d12b07",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "PONSBOT",
+      "decimals": 18,
+      "name": "Pons Bot",
+      "coingeckoId": "pons-bot",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pons-bot.webp",
+      "contractAddress": "0xb1e9b822b81bbbdab375f7f4d86e44fa04d12b07"
     },
     {
       "id": "4663:evm-erc20:0xb245a0e4bcf6f7961b68785d54ccdf51eac906c1",
@@ -215679,6 +215739,18 @@
       "contractAddress": "0xca9c78dd337a67f6e0077f65f5e9218719d30edf"
     },
     {
+      "id": "4663:evm-erc20:0xcacb0e9caccee63ec4d82952e561a291c68bcb68",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "GG",
+      "decimals": 18,
+      "name": "Golden Goose",
+      "coingeckoId": "golden-goose-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/golden-goose-2.webp",
+      "contractAddress": "0xcacb0e9caccee63ec4d82952e561a291c68bcb68"
+    },
+    {
       "id": "4663:evm-erc20:0xcb5566e73bee5390c75df834d4727dcecc65fc87",
       "platform": "ethereum",
       "networkId": "4663",
@@ -216267,6 +216339,18 @@
       "contractAddress": "0xdd356aa38f40a7b7076755ac854b6fbb1f0d305b"
     },
     {
+      "id": "4663:evm-erc20:0xdd90bfa4adc7f4401e611abac692d939f9f4cb07",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "0xZAPS",
+      "decimals": 18,
+      "name": "OpenZaps",
+      "coingeckoId": "openzaps",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openzaps.webp",
+      "contractAddress": "0xdd90bfa4adc7f4401e611abac692d939f9f4cb07"
+    },
+    {
       "id": "4663:evm-erc20:0xddec0170ceb4426ea05f2fbd485dffa4fafa6615",
       "platform": "ethereum",
       "networkId": "4663",
@@ -216591,6 +216675,18 @@
       "contractAddress": "0xe8fb470e0685437d7739bd2aacba60b228800335"
     },
     {
+      "id": "4663:evm-erc20:0xe8ffd7e24187f72afb08d75b1bb13088a989a791",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "DELTA",
+      "decimals": 18,
+      "name": "Delta",
+      "coingeckoId": "delta",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/delta.webp",
+      "contractAddress": "0xe8ffd7e24187f72afb08d75b1bb13088a989a791"
+    },
+    {
       "id": "4663:evm-erc20:0xe93237c50d904957cf27e7b1133b510c669c2e74",
       "platform": "ethereum",
       "networkId": "4663",
@@ -216711,6 +216807,18 @@
       "contractAddress": "0xec51b6e5d99487ac5646f3311c109714b54f6ed8"
     },
     {
+      "id": "4663:evm-erc20:0xedaee44320107caa714baaec486261a87f27022d",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "PONGO",
+      "decimals": 18,
+      "name": "PONGO",
+      "coingeckoId": "pongo-3",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pongo-3.webp",
+      "contractAddress": "0xedaee44320107caa714baaec486261a87f27022d"
+    },
+    {
       "id": "4663:evm-erc20:0xedc62851ef24928d934024f69bb073a305090663",
       "platform": "ethereum",
       "networkId": "4663",
@@ -216793,6 +216901,18 @@
       "coingeckoId": "roblox-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/roblox-robinhood-tokenized-stock.webp",
       "contractAddress": "0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8"
+    },
+    {
+      "id": "4663:evm-erc20:0xf0dbd85e85bd6704b00eedb7c2590559ca12b871",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "RADIO",
+      "decimals": 18,
+      "name": "Radio",
+      "coingeckoId": "radio",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/radio.webp",
+      "contractAddress": "0xf0dbd85e85bd6704b00eedb7c2590559ca12b871"
     },
     {
       "id": "4663:evm-erc20:0xf0e17e54239cd945cd7bea471a3a2ca6a8c7f7a3",
@@ -216889,6 +217009,18 @@
       "coingeckoId": "arrow-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/arrow-2.webp",
       "contractAddress": "0xf2915d1e3c1b0c769d0c756ec43f1c1f6c99cd03"
+    },
+    {
+      "id": "4663:evm-erc20:0xf3081494b87e8d5fb7960f066e931d1d0e6e3d67",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "TAO",
+      "decimals": 18,
+      "name": "Bittensor",
+      "coingeckoId": "bittensor",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bittensor.webp",
+      "contractAddress": "0xf3081494b87e8d5fb7960f066e931d1d0e6e3d67"
     },
     {
       "id": "4663:evm-erc20:0xf314aedeaadcb02f33a13eae471fe06d13aa7777",
@@ -219179,18 +219311,6 @@
       "contractAddress": "0x12e714e27ab36fc439971d2d66f641342eb33f4e"
     },
     {
-      "id": "5000:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "5000",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "5000:evm-erc20:0x13326eadd0f8323dddf0522f4a71993bf21b0d05",
       "platform": "ethereum",
       "networkId": "5000",
@@ -220435,18 +220555,6 @@
       "contractAddress": "0x391470973adbbbab50ec69be24918ce6b84399d8"
     },
     {
-      "id": "5000:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "5000",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "5000:evm-erc20:0x39c31fc6038490ea4bf8a21ca18cd18f33b8d3fb",
       "platform": "ethereum",
       "networkId": "5000",
@@ -220541,18 +220649,6 @@
       "coingeckoId": "entergy-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/entergy-xstock.webp",
       "contractAddress": "0x408c30d5a587dc631af87245a01427d30860bed5"
-    },
-    {
-      "id": "5000:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "5000",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "5000:evm-erc20:0x40bf69f64ee34a535568be85e80e126c4282ecf3",
@@ -232482,18 +232578,6 @@
       "contractAddress": "0x12fc07081fab7de60987cad8e8dc407b606fb2f8"
     },
     {
-      "id": "56:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "56",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "56:evm-erc20:0x13096669fba1c6d10c57debac021ac053468c8bd",
       "platform": "ethereum",
       "networkId": "56",
@@ -239785,18 +239869,6 @@
       "contractAddress": "0x398ae5b33505f121c359f22b300fbcfa81db79ae"
     },
     {
-      "id": "56:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "56",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "56:evm-erc20:0x39ae8eefb05138f418bb27659c21632dc1ddab10",
       "platform": "ethereum",
       "networkId": "56",
@@ -240947,18 +241019,6 @@
       "coingeckoId": "entergy-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/entergy-xstock.webp",
       "contractAddress": "0x408c30d5a587dc631af87245a01427d30860bed5"
-    },
-    {
-      "id": "56:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "56",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "56:evm-erc20:0x40af3827f39d0eacbf4a168f8d4ee67c121d11c9",
@@ -279245,18 +279305,6 @@
       "contractAddress": "0x12e714e27ab36fc439971d2d66f641342eb33f4e"
     },
     {
-      "id": "57073:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "57073",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "57073:evm-erc20:0x13326eadd0f8323dddf0522f4a71993bf21b0d05",
       "platform": "ethereum",
       "networkId": "57073",
@@ -280381,18 +280429,6 @@
       "contractAddress": "0x391470973adbbbab50ec69be24918ce6b84399d8"
     },
     {
-      "id": "57073:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "57073",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "57073:evm-erc20:0x39c31fc6038490ea4bf8a21ca18cd18f33b8d3fb",
       "platform": "ethereum",
       "networkId": "57073",
@@ -280475,18 +280511,6 @@
       "coingeckoId": "entergy-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/entergy-xstock.webp",
       "contractAddress": "0x408c30d5a587dc631af87245a01427d30860bed5"
-    },
-    {
-      "id": "57073:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "57073",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "57073:evm-erc20:0x40bf69f64ee34a535568be85e80e126c4282ecf3",
@@ -330950,16 +330974,6 @@
       "isDefault": true
     },
     {
-      "id": "88088:evm-native",
-      "platform": "ethereum",
-      "networkId": "88088",
-      "type": "evm-native",
-      "symbol": "PLUS",
-      "decimals": 18,
-      "name": "PLUS Coin",
-      "isDefault": true
-    },
-    {
       "id": "881:evm-native",
       "platform": "ethereum",
       "networkId": "881",
@@ -336612,18 +336626,6 @@
       "contractAddress": "0x12e714e27ab36fc439971d2d66f641342eb33f4e"
     },
     {
-      "id": "999:evm-erc20:0x130032f4475e95b68958994c696992ddaaab65c4",
-      "platform": "ethereum",
-      "networkId": "999",
-      "type": "evm-erc20",
-      "symbol": "EQRx",
-      "decimals": 18,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "contractAddress": "0x130032f4475e95b68958994c696992ddaaab65c4"
-    },
-    {
       "id": "999:evm-erc20:0x13326eadd0f8323dddf0522f4a71993bf21b0d05",
       "platform": "ethereum",
       "networkId": "999",
@@ -337988,18 +337990,6 @@
       "contractAddress": "0x391470973adbbbab50ec69be24918ce6b84399d8"
     },
     {
-      "id": "999:evm-erc20:0x39a5f238fbafa97261eecb683551db70f8d82888",
-      "platform": "ethereum",
-      "networkId": "999",
-      "type": "evm-erc20",
-      "symbol": "WBSx",
-      "decimals": 18,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "contractAddress": "0x39a5f238fbafa97261eecb683551db70f8d82888"
-    },
-    {
       "id": "999:evm-erc20:0x3a02c5276e33cda437e8e8e8b6473620125c9607",
       "platform": "ethereum",
       "networkId": "999",
@@ -338106,18 +338096,6 @@
       "coingeckoId": "entergy-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/entergy-xstock.webp",
       "contractAddress": "0x408c30d5a587dc631af87245a01427d30860bed5"
-    },
-    {
-      "id": "999:evm-erc20:0x409de3004a6f1bd0c37cddee8efd86b13b058435",
-      "platform": "ethereum",
-      "networkId": "999",
-      "type": "evm-erc20",
-      "symbol": "EAx",
-      "decimals": 18,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "contractAddress": "0x409de3004a6f1bd0c37cddee8efd86b13b058435"
     },
     {
       "id": "999:evm-erc20:0x40bf69f64ee34a535568be85e80e126c4282ecf3",
@@ -356843,12 +356821,12 @@
       "type": "substrate-dtao",
       "symbol": "و",
       "decimals": 9,
-      "name": "SN78 | Vocence و",
+      "name": "SN78 | Umi و",
       "coingeckoId": "loosh",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn78-f08538dd.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn78-964e2dd5.webp",
       "isDefault": true,
       "netuid": 78,
-      "subnetName": "Vocence",
+      "subnetName": "Umi",
       "isTransferable": true
     },
     {
@@ -439164,18 +439142,6 @@
       "mintAddress": "Xs4BPW5YU7RsXMmCt6CyDphWH3YLtyaXDXEzZDmj33G"
     },
     {
-      "id": "solana-mainnet:sol-token2022:Xs4ERnk8jMHVg8urBDqnWCzeBBk9uajwCgK8k9Yeq1s",
-      "platform": "solana",
-      "networkId": "solana-mainnet",
-      "type": "sol-token2022",
-      "symbol": "EQRx",
-      "decimals": 8,
-      "name": "Equity Residential xStock",
-      "coingeckoId": "equity-residential-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/equity-residential-xstock.webp",
-      "mintAddress": "Xs4ERnk8jMHVg8urBDqnWCzeBBk9uajwCgK8k9Yeq1s"
-    },
-    {
       "id": "solana-mainnet:sol-token2022:Xs4f5EbxL1bB89N7ADF7smF8fXxifJa3t6SexZufBWA",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -446998,30 +446964,6 @@
       "name": "VeriSign xStock",
       "coingeckoId": "verisign-xstock",
       "mintAddress": "Xsy4NX4cCf4YjN6iwypnQ8crXtNkyA2K3jypAX5NfQ6"
-    },
-    {
-      "id": "solana-mainnet:sol-token2022:Xsy5witQdPJgFWG7N9USB6EhRkAuG49rvCWkTYntRcj",
-      "platform": "solana",
-      "networkId": "solana-mainnet",
-      "type": "sol-token2022",
-      "symbol": "EAx",
-      "decimals": 8,
-      "name": "Electronic Arts xStock",
-      "coingeckoId": "electronic-arts-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/electronic-arts-xstock.webp",
-      "mintAddress": "Xsy5witQdPJgFWG7N9USB6EhRkAuG49rvCWkTYntRcj"
-    },
-    {
-      "id": "solana-mainnet:sol-token2022:Xsy66wss7g59sgVeeCGvC1fDujEZcHgFMQxXPWgaDhF",
-      "platform": "solana",
-      "networkId": "solana-mainnet",
-      "type": "sol-token2022",
-      "symbol": "WBSx",
-      "decimals": 8,
-      "name": "Webster Financial xStock",
-      "coingeckoId": "webster-financial-xstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webster-financial-xstock.webp",
-      "mintAddress": "Xsy66wss7g59sgVeeCGvC1fDujEZcHgFMQxXPWgaDhF"
     },
     {
       "id": "solana-mainnet:sol-token2022:Xsy9RdWC26fp8c84BB2SD4eE74vG1478YKjxAwjRRQY",
