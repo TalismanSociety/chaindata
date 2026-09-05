@@ -21706,20 +21706,6 @@
       "rpcs": ["https://20041.rpc.thirdweb.com"]
     },
     {
-      "id": "20261",
-      "name": "MACos Chain",
-      "nativeTokenId": "20261:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MCOS",
-        "name": "MACos Coin"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://macosscan.codeupp.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc1.codeupp.xyz"]
-    },
-    {
       "id": "20310",
       "isTestnet": true,
       "name": "Alpen Testnet III",
@@ -29785,9 +29771,9 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://mainnet-rpc.tscscan.com",
         "https://lb.routeme.sh/rpc/evm/330844",
-        "https://330844.rpc.thirdweb.com",
-        "https://mainnet-rpc.tscscan.com"
+        "https://330844.rpc.thirdweb.com"
       ]
     },
     {
@@ -29819,21 +29805,6 @@
       "blockExplorerUrls": ["https://testnet.oonescan.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.testnet.oonechain.com"]
-    },
-    {
-      "id": "333777",
-      "isTestnet": true,
-      "name": "Oone Chain Devnet",
-      "nativeTokenId": "333777:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tOONE",
-        "name": "tOONE"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://dev.oonescan.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.dev.oonechain.com"]
     },
     {
       "id": "336666",
@@ -30605,9 +30576,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://brnkc-mainnet.bearnetwork.net",
-        "https://brnkc-mainnet1.bearnetwork.net",
         "https://lb.routeme.sh/rpc/evm/641230",
-        "https://641230.rpc.thirdweb.com"
+        "https://641230.rpc.thirdweb.com",
+        "https://brnkc-mainnet1.bearnetwork.net"
       ]
     },
     {
@@ -31732,9 +31703,9 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://rpc.ethoprotocol.com",
         "https://lb.routeme.sh/rpc/evm/1313114",
-        "https://1313114.rpc.thirdweb.com",
-        "https://rpc.ethoprotocol.com"
+        "https://1313114.rpc.thirdweb.com"
       ]
     },
     {
@@ -32566,22 +32537,6 @@
       }
     },
     {
-      "id": "7849306",
-      "isTestnet": true,
-      "name": "Ozean Poseidon Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ozean.webp",
-      "nativeTokenId": "7849306:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "USDX",
-        "name": "USDX"
-      },
-      "themeColor": "#fdffff",
-      "blockExplorerUrls": ["https://ozean-testnet.explorer.caldera.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://ozean-testnet.rpc.caldera.xyz/http"]
-    },
-    {
       "id": "8000800",
       "isTestnet": true,
       "name": "JMDT Testnet",
@@ -33228,11 +33183,7 @@
       "themeColor": "#ff9e00",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": [
-        "https://lb.routeme.sh/rpc/evm/20201022",
-        "https://20201022.rpc.thirdweb.com",
-        "https://node3.pegorpc.com"
-      ]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/20201022", "https://20201022.rpc.thirdweb.com"]
     },
     {
       "id": "20221001",
@@ -159374,16 +159325,6 @@
       "isDefault": true
     },
     {
-      "id": "20261:evm-native",
-      "platform": "ethereum",
-      "networkId": "20261",
-      "type": "evm-native",
-      "symbol": "MCOS",
-      "decimals": 18,
-      "name": "MACos Coin",
-      "isDefault": true
-    },
-    {
       "id": "2028:evm-native",
       "platform": "ethereum",
       "networkId": "2028",
@@ -171243,16 +171184,6 @@
       "id": "333666:evm-native",
       "platform": "ethereum",
       "networkId": "333666",
-      "type": "evm-native",
-      "symbol": "tOONE",
-      "decimals": 18,
-      "name": "tOONE",
-      "isDefault": true
-    },
-    {
-      "id": "333777:evm-native",
-      "platform": "ethereum",
-      "networkId": "333777",
       "type": "evm-native",
       "symbol": "tOONE",
       "decimals": 18,
@@ -209582,6 +209513,18 @@
       "contractAddress": "0x0f17206447090e464c277571124dd2688e48aea9"
     },
     {
+      "id": "4663:evm-erc20:0x0f421d05e67b9e25d754e8e685af91b37bff6cef",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SIZE",
+      "decimals": 18,
+      "name": "size it",
+      "coingeckoId": "size-it",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/size-it.webp",
+      "contractAddress": "0x0f421d05e67b9e25d754e8e685af91b37bff6cef"
+    },
+    {
       "id": "4663:evm-erc20:0x0f68bee9880a41cdf9713c24358ffdb4756d53c2",
       "platform": "ethereum",
       "networkId": "4663",
@@ -213074,6 +213017,18 @@
       "contractAddress": "0x7cd7073a71eaf5f6e4febfa98460ee66cd97deb1"
     },
     {
+      "id": "4663:evm-erc20:0x7dbf38976f6d3b9c529e7d9484a71898b409ee6a",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "ZZZ",
+      "decimals": 18,
+      "name": "ZZZ",
+      "coingeckoId": "zzz-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zzz-2.webp",
+      "contractAddress": "0x7dbf38976f6d3b9c529e7d9484a71898b409ee6a"
+    },
+    {
       "id": "4663:evm-erc20:0x7dc013eb55e436f30d7ed1afe4e36d6e45e3c3f7",
       "platform": "ethereum",
       "networkId": "4663",
@@ -213564,6 +213519,18 @@
       "coingeckoId": "kitsu-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kitsu-2.webp",
       "contractAddress": "0x8d4dfaaa4198b6486e0293fec914c2b6a821d4dc"
+    },
+    {
+      "id": "4663:evm-erc20:0x8d8f709357203b4933af3ac410cc521c5680611f",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "MONEYDOG",
+      "decimals": 18,
+      "name": "Money Dog",
+      "coingeckoId": "money-dog",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/money-dog.webp",
+      "contractAddress": "0x8d8f709357203b4933af3ac410cc521c5680611f"
     },
     {
       "id": "4663:evm-erc20:0x8e08a4f781bb12abdc350f70bc8033364eee0b32",
@@ -216110,6 +216077,18 @@
       "contractAddress": "0xd4dc6b48ad73ec51e71d9b8f65568f88609b92c1"
     },
     {
+      "id": "4663:evm-erc20:0xd51fdf3d83d4c17c802df06040ab51e66a923e95",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "LILLY",
+      "decimals": 6,
+      "name": "Lilly",
+      "coingeckoId": "lilly",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lilly.webp",
+      "contractAddress": "0xd51fdf3d83d4c17c802df06040ab51e66a923e95"
+    },
+    {
       "id": "4663:evm-erc20:0xd554e75f85cb1fcb5b6640b55779d566ac60de9f",
       "platform": "ethereum",
       "networkId": "4663",
@@ -217298,6 +217277,18 @@
       "contractAddress": "0xfa78c12e6488814a0262e4e802749a4a737d5fb7"
     },
     {
+      "id": "4663:evm-erc20:0xfa89ed9d12bf74add8253ddfaa426c4d8a0fa603",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SLINK",
+      "decimals": 18,
+      "name": "Shivolink",
+      "coingeckoId": "shivolink",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shivolink.webp",
+      "contractAddress": "0xfa89ed9d12bf74add8253ddfaa426c4d8a0fa603"
+    },
+    {
       "id": "4663:evm-erc20:0xfaf9cb261b5fcc1f404bb10cd39c5c6c1974e612",
       "platform": "ethereum",
       "networkId": "4663",
@@ -217416,6 +217407,18 @@
       "coingeckoId": "rflix",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rflix.webp",
       "contractAddress": "0xfd181632e1f2335dab74535e6dd29082d3191bb2"
+    },
+    {
+      "id": "4663:evm-erc20:0xfd82d8db539b6ace0d50815845133767e24f1e18",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "ASTEROID",
+      "decimals": 18,
+      "name": "ASTEROID",
+      "coingeckoId": "asteroid-3",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/asteroid-3.webp",
+      "contractAddress": "0xfd82d8db539b6ace0d50815845133767e24f1e18"
     },
     {
       "id": "4663:evm-erc20:0xfde6b5d9bb419b10c23268c74e369abff39c0460",
@@ -265435,6 +265438,7 @@
       "decimals": 18,
       "name": "孙小圣 (Little Sage)",
       "coingeckoId": "little-sage",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/little-sage.webp",
       "contractAddress": "0xbb87378b58894338f0937b9691a5a6dc3a5a7777"
     },
     {
@@ -292723,17 +292727,6 @@
       "isDefault": true
     },
     {
-      "id": "7849306:evm-native",
-      "platform": "ethereum",
-      "networkId": "7849306",
-      "type": "evm-native",
-      "symbol": "USDX",
-      "decimals": 18,
-      "name": "USDX",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ozean.webp",
-      "isDefault": true
-    },
-    {
       "id": "785:evm-native",
       "platform": "ethereum",
       "networkId": "785",
@@ -318593,6 +318586,18 @@
       "coingeckoId": "apple-coinbase-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/apple-coinbase-tokenized-stock.webp",
       "contractAddress": "0xb200000000000000000000c2e324d24d7eecd1fb"
+    },
+    {
+      "id": "8453:evm-erc20:0xb200000000000000000000cfbdf64a8706a94a01",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "BLUECHIP",
+      "decimals": 18,
+      "name": "BLUE CHIP",
+      "coingeckoId": "blue-chip-4",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/blue-chip-4.webp",
+      "contractAddress": "0xb200000000000000000000cfbdf64a8706a94a01"
     },
     {
       "id": "8453:evm-erc20:0xb200000000000000000000dfea18f58cd9adbc01",
