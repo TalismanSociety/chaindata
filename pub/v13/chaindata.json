@@ -1008,11 +1008,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://etc.rivet.link",
         "https://0xrpc.io/etc",
         "https://ethereum-classic-mainnet.gateway.tatum.io",
         "https://lb.routeme.sh/rpc/evm/61",
-        "https://rpc.swiftnodes.io/rpc/etc"
+        "https://rpc.swiftnodes.io/rpc/etc",
+        "https://61.rpc.thirdweb.com"
       ]
     },
     {
@@ -7025,8 +7025,8 @@
       "rpcs": [
         "https://rpc.hyperliquid.xyz/evm",
         "https://hyperliquid.drpc.org",
-        "https://rpc.hyperlend.finance",
-        "https://rpc.hypurrscan.io"
+        "https://rpc.hypurrscan.io",
+        "https://rpc.hyperlend.finance"
       ],
       "contracts": {
         "Erc20Aggregator": "0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4",
@@ -20355,20 +20355,6 @@
       "rpcs": ["https://api.elastos.io/eco"]
     },
     {
-      "id": "12369",
-      "name": "Calyra",
-      "nativeTokenId": "12369:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "CLY",
-        "name": "Calyra"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://calyrascan.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://mainnet.calyra.cloud/evm"]
-    },
-    {
       "id": "12553",
       "name": "RSS3 VSL Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/12553.webp",
@@ -26580,7 +26566,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://ktnscan.katronai.com"],
       "platform": "ethereum",
-      "rpcs": ["https://blockchain-rpc1.katronai.com"]
+      "rpcs": ["https://blockchain-rpc1.katronai.com", "https://blockchain-rpc2.katronai.com"]
     },
     {
       "id": "83872",
@@ -34524,6 +34510,20 @@
       "rpcs": ["https://rpc.evm.mirasmanda.uz"]
     },
     {
+      "id": "1229800785",
+      "name": "iTani Network Chain",
+      "nativeTokenId": "1229800785:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ITANI",
+        "name": "iTani"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.itaninetworkchain.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.itaninetworkchain.com/jsonrpc"]
+    },
+    {
       "id": "1273227453",
       "name": "HUMAN Protocol",
       "nativeTokenId": "1273227453:evm-native",
@@ -37556,7 +37556,7 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://moonbeam.unitedbloc.com"],
+      "rpcs": ["wss://moonbeam.unitedbloc.com", "wss://moonbeam.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -126477,6 +126477,16 @@
       "isDefault": true
     },
     {
+      "id": "1229800785:evm-native",
+      "platform": "ethereum",
+      "networkId": "1229800785",
+      "type": "evm-native",
+      "symbol": "ITANI",
+      "decimals": 18,
+      "name": "iTani",
+      "isDefault": true
+    },
+    {
       "id": "123:evm-native",
       "platform": "ethereum",
       "networkId": "123",
@@ -126730,16 +126740,6 @@
       "symbol": "BAK",
       "decimals": 18,
       "name": "BrainArk",
-      "isDefault": true
-    },
-    {
-      "id": "12369:evm-native",
-      "platform": "ethereum",
-      "networkId": "12369",
-      "type": "evm-native",
-      "symbol": "CLY",
-      "decimals": 18,
-      "name": "Calyra",
       "isDefault": true
     },
     {
@@ -217335,6 +217335,18 @@
       "contractAddress": "0xef0a84b16902efcd41fa001bd6473c64876b93b0"
     },
     {
+      "id": "4663:evm-erc20:0xef67e3064bef1a27e81925ec7132f23e533bd5f6",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "GME",
+      "decimals": 18,
+      "name": "Greatest Meme Ever",
+      "coingeckoId": "greatest-meme-ever",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/greatest-meme-ever.webp",
+      "contractAddress": "0xef67e3064bef1a27e81925ec7132f23e533bd5f6"
+    },
+    {
       "id": "4663:evm-erc20:0xefab538cf3c29237a47c6afb145d50ddf204a0a3",
       "platform": "ethereum",
       "networkId": "4663",
@@ -241667,18 +241679,6 @@
       "coingeckoId": "vellora",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vellora.webp",
       "contractAddress": "0x40f4100b47189c4b41b5ae3d3156d304b3f753f2"
-    },
-    {
-      "id": "56:evm-erc20:0x40f85d6040df96ea14cd41142bcd244e14cf76f6",
-      "platform": "ethereum",
-      "networkId": "56",
-      "type": "evm-erc20",
-      "symbol": "USDC.z",
-      "decimals": 18,
-      "name": "USD Coin Bridged ZED20",
-      "coingeckoId": "usd-coin-bridged-zed20",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin-bridged-zed20.webp",
-      "contractAddress": "0x40f85d6040df96ea14cd41142bcd244e14cf76f6"
     },
     {
       "id": "56:evm-erc20:0x40fed5691e547885cabd7a2990de719dcc8497fc",
@@ -296769,18 +296769,6 @@
       "contractAddress": "0x5b0f21f60116b9463210c00c7a1a6a46e26bfa33"
     },
     {
-      "id": "83872:evm-erc20:0xfe5f4fa42e7a3027475a3eb54f7ee16c332298f1",
-      "platform": "ethereum",
-      "networkId": "83872",
-      "type": "evm-erc20",
-      "symbol": "USDC.z",
-      "decimals": 18,
-      "name": "USD Coin Bridged ZED20 from BNB",
-      "coingeckoId": "usd-coin-bridged-zed20",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin-bridged-zed20.webp",
-      "contractAddress": "0xfe5f4fa42e7a3027475a3eb54f7ee16c332298f1"
-    },
-    {
       "id": "83872:evm-native",
       "platform": "ethereum",
       "networkId": "83872",
@@ -317984,18 +317972,6 @@
       "coingeckoId": "mypal4life",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mypal4life.webp",
       "contractAddress": "0xaad5de835931e9546359b546c20c2a4c37aeef7d"
-    },
-    {
-      "id": "8453:evm-erc20:0xaadd98ad4660008c917c6fe7286bc54b2eef894d",
-      "platform": "ethereum",
-      "networkId": "8453",
-      "type": "evm-erc20",
-      "symbol": "CLONES",
-      "decimals": 18,
-      "name": "CLONES",
-      "coingeckoId": "clones",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/clones.webp",
-      "contractAddress": "0xaadd98ad4660008c917c6fe7286bc54b2eef894d"
     },
     {
       "id": "8453:evm-erc20:0xaaded2b650b542212df90baabb784435d9fcb1ae",
@@ -357671,7 +357647,7 @@
       "decimals": 9,
       "name": "SN93 | Bitcast ᚃ",
       "coingeckoId": "bitcast",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn93-440c8a65.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn93-f2a27907.webp",
       "isDefault": true,
       "netuid": 93,
       "subnetName": "Bitcast",
@@ -403031,18 +403007,6 @@
       "coingeckoId": "suby",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/suby.webp",
       "mintAddress": "G2pMCBjRQHHCkE79r9KAESvdhUCieWPZvX5GRFa3jCLg"
-    },
-    {
-      "id": "solana-mainnet:sol-spl:G2ygAeUVpYUhpNsmrpvd2BHTWazyDV72kRpsQSEcbonk",
-      "platform": "solana",
-      "networkId": "solana-mainnet",
-      "type": "sol-spl",
-      "symbol": "QX",
-      "decimals": 6,
-      "name": "Quantum Execution Token",
-      "coingeckoId": "quantu-execution-token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/quantu-execution-token.webp",
-      "mintAddress": "G2ygAeUVpYUhpNsmrpvd2BHTWazyDV72kRpsQSEcbonk"
     },
     {
       "id": "solana-mainnet:sol-spl:G2zYxmCbGqmJPA2w5jitxthuFSj1kvpa5D1CJoembonk",
