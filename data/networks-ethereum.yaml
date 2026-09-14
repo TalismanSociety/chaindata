@@ -1860,6 +1860,26 @@
 - id: '2099156'
   nativeCurrency:
     coingeckoId: pchain
+- id: '5042002'
+  isTestnet: true
+  name: Arc Testnet
+  nativeCurrency:
+    decimals: 18
+    symbol: USDC
+    name: USDC
+  blockExplorerUrls:
+    - https://testnet.arcscan.app
+  rpcs:
+    - https://rpc.testnet.arc.io
+    - https://rpc.blockdaemon.testnet.arc.io
+    - https://rpc.drpc.testnet.arc.io
+  feeType: eip-1559
+  tokens:
+    evm-erc20:
+      - contractAddress: '0x3600000000000000000000000000000000000000'
+        symbol: USDC
+        noDiscovery: true
+        mirrorOf: 5042002-evm-native
 - id: '7777777'
   l2FeeType:
     type: op-stack
