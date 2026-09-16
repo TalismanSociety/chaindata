@@ -5,6 +5,7 @@ import { z } from 'zod/v4'
 
 import type { MetadataPortalUrls } from '../../shared/types'
 import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
+import { checkDuplicateGenesisHashes } from '../../shared/checkDuplicateGenesisHashes'
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_INPUT_NETWORKS_POLKADOT,
@@ -53,6 +54,7 @@ export const buildPolkadotNetworks = async () => {
     .sort((a, b) => a.id.localeCompare(b.id))
 
   checkDuplicates(dotNetworks)
+  checkDuplicateGenesisHashes(dotNetworks)
 
   await writeJsonFile(FILE_OUTPUT_NETWORKS_POLKADOT, dotNetworks, {
     schema: z.array(DotNetworkSchema),
