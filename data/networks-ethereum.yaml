@@ -1209,6 +1209,30 @@
 - id: '5000'
   nativeCurrency:
     coingeckoId: mantle
+- id: '5042'
+  name: Arc
+  nativeCurrency:
+    decimals: 18
+    symbol: USDC
+    name: USDC
+    coingeckoId: usd-coin
+  blockExplorerUrls:
+    - https://explorer.arc.io
+  rpcs:
+    - https://rpc.mainnet.arc.io
+    - https://rpc.blockdaemon.mainnet.arc.io
+    - https://rpc.drpc.mainnet.arc.io
+    - https://rpc.quicknode.mainnet.arc.io
+  feeType: eip-1559
+  contracts:
+    Multicall3: '0xcA11bde05977b3631167028862bE2a173976CA11'
+  tokens:
+    evm-erc20:
+      - contractAddress: '0x3600000000000000000000000000000000000000'
+        symbol: USDC
+        coingeckoId: usd-coin
+        noDiscovery: true
+        mirrorOf: 5042:evm-native
 - id: '5234'
   nativeCurrency:
     coingeckoId: humanode
