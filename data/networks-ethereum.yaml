@@ -423,7 +423,7 @@
         symbol: POL
         coingeckoId: polygon-ecosystem-token
         noDiscovery: true
-        mirrorOf: 137-evm-native
+        mirrorOf: 137:evm-native
       - contractAddress: '0x58ea2Bb193B1429Cb90D24195E6ac4Ccb0B27a12'
         logo: ./assets/tokens/vtao.png
         name: Virtual TAO
@@ -815,11 +815,12 @@
   name: Bittensor EVM
   forceScan: true
   logo: ./assets/chains/bittensor.svg
+  blockExplorerUrls:
+    - https://evm.taostats.io
   rpcs:
     - https://lite.chain.opentensor.ai
     - https://entrypoint-finney.opentensor.ai
     - https://lite.sub.latent.to
-    - https://bittensor-lite-public.nodies.app
     - https://rpc.blockmachine.io
   nativeCurrency:
     coingeckoId: bittensor
@@ -944,7 +945,7 @@
     coingeckoId: halo-network
 - id: '1284'
   name: Moonbeam
-  isDefault: true
+  isDefault: false
   logo: ./assets/chains/moonbeam.svg
   nativeCurrency:
     decimals: 18
@@ -1198,6 +1199,10 @@
   forceScan: true
   contracts:
     Erc20Aggregator: '0x951d5f07Afc1704CeAc760Fa632801674469845f'
+  tokens:
+    evm-erc20:
+      - contractAddress: '0xf3081494b87e8d5fb7960f066e931d1d0e6e3d67'
+        coingeckoId: bittensor
 - id: '4689'
   nativeCurrency:
     coingeckoId: iotex
@@ -1226,7 +1231,7 @@
     decimals: 18
     symbol: LAOS
     coingeckoId: laos-network
-    mirrorOf: laos-substrate-native
+    mirrorOf: laos:substrate-native
     logo: ./assets/chains/laos.svg
   substrateChainId: laos
 - id: '6626'
@@ -1285,6 +1290,8 @@
         name: Virtual TAO
         coingeckoId: bittensor
       - contractAddress: '0xb99FBE68c8A0cC14bE8c1AF73DD4DfEA8a76aDD7'
+        coingeckoId: bittensor
+      - contractAddress: '0xf3081494b87e8d5fb7960f066e931d1d0e6e3d67'
         coingeckoId: bittensor
       - contractAddress: '0x96C3A43918d30a7ca4fc195c7E93A959016a7c26'
         coingeckoId: targon
@@ -1870,6 +1877,26 @@
 - id: '2099156'
   nativeCurrency:
     coingeckoId: pchain
+- id: '5042002'
+  isTestnet: true
+  name: Arc Testnet
+  nativeCurrency:
+    decimals: 18
+    symbol: USDC
+    name: USDC
+  blockExplorerUrls:
+    - https://testnet.arcscan.app
+  rpcs:
+    - https://rpc.testnet.arc.io
+    - https://rpc.blockdaemon.testnet.arc.io
+    - https://rpc.drpc.testnet.arc.io
+  feeType: eip-1559
+  tokens:
+    evm-erc20:
+      - contractAddress: '0x3600000000000000000000000000000000000000'
+        symbol: USDC
+        noDiscovery: true
+        mirrorOf: 5042002:evm-native
 - id: '7777777'
   l2FeeType:
     type: op-stack

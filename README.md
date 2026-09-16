@@ -2,139 +2,181 @@
 
 <img src="assets/talisman.svg" alt="Talisman" width="15%" align="right" />
 
-[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fpub%2Fv1%2Findex.txt)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v1/index.txt)
+[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fpub%2Fv13%2Fchaindata.min.json)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v13/chaindata.min.json)
 [![discord-link](https://img.shields.io/discord/858891448271634473?logo=discord&logoColor=white&style=flat-square)](https://discord.gg/talisman)
 
-A **community controlled** repository of [relay](https://wiki.polkadot.network/docs/learn-architecture#relay-chain) and [parachain](https://wiki.polkadot.network/docs/learn-architecture#parachain-and-parathread-slots) information in the [Polkadot ecosystem](https://polkadot.network/).
+A **community controlled** index of networks, tokens and assets for the [Polkadot](https://polkadot.network/), Ethereum and Solana ecosystems.
 
 The goals of this repo are:
 
-1. Provide a community-managed index of Polkadot parachains and their connection information (rpcs, chainspecs)
-1. Provide a source of chain and token assets across the ecosystem
-1. Enable developers to retrieve this information via an API suitable to their project (json/rest, npm [**soon™**](https://github.com/TalismanSociety/chaindata/issues/35))
-1. Move towards a decentralised model
+1. Provide a community-managed index of networks and their connection information (RPCs, genesis hashes, metadata)
+1. Provide a source of network and token logos across the ecosystem
+1. Publish this information as JSON files that any project can consume
 
 ## Usage
 
-The files in this repo, `data/chaindata.json`, `data/testnets-chaindata.json` and `data/evm-networks.json` are used to configure a GitHub workflow which scrapes information from each chain and publishes it as a collection of JSON files in the `pub` directory of this repo.
+The published files are consolidated JSON documents containing every network, token and Substrate miniMetadata:
 
-The published files can be downloaded at these URLs:
+- `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.json`
+- `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.min.json`
 
-- https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v4/chaindata.json
-- https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v4/chaindata.min.json
+`<version>` is the current `pub` version, `v13` at the time of writing.
+It changes whenever the format of the published files breaks, see [Chaindata `pub` versions](#chaindata-pub-versions) below for the version list and how to find the latest one.
 
-They are used by Talisman products via the `@talismn/chaindata-provider` library, which provides a `ChaindataProvider` that automatically synchronizes with these files to expose chains and tokens, alongside with typings and utilities.
+Their shape is `{ networks: Network[], tokens: Token[], miniMetadatas: MiniMetadata[] }`.
+Types and Zod schemas for each object are exported by the `@talismn/chaindata-provider` package.
 
-For an example of a more advanced use-case, you can check out the source code for [Talisman Wallet](https://github.com/TalismanSociety/talisman).  
-The wallet uses our `ChaindataProvider` for features like account balance subscriptions and sending funds.
+Talisman products consume these files through `@talismn/chaindata-provider`, which exposes a `ChaindataProvider` that keeps itself in sync with the published files.
+For a real-world example, see the [Talisman Wallet](https://github.com/TalismanSociety/talisman) source code, where the provider powers balance subscriptions and sending funds.
+
+Logos are also served straight from this repo, e.g. https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dot.svg
 
 ## Chaindata `pub` versions
 
-When breaking changes are made to the format of the built chaindata files, we increment the `pub` directory version.
+Each `pub/vN` directory corresponds to a breaking change in the format of the published files.
+The version number is not stored in this repo: the build reads `MINIMETADATA_VERSION` from `@talismn/chaindata-provider`, so bumping that dependency is what moves the output to a new folder.
+The latest version is the highest `pub/vN` folder in this repo, or the `MINIMETADATA_VERSION` constant of the `@talismn/chaindata-provider` release you depend on.
 
-Old directories are generally not kept up-to-date, but they are also not deleted.
+Old directories are no longer rebuilt, but they are also never deleted.
+Wallet releases pinned to an older `@talismn/chaindata-provider` keep working with the last data built for their version.
 
-The effect of this is that newer `@talismn/balances` releases will target the newer `pub` version, while older releases will continue to operate with the most up-to-date chaindata before the breaking change occurred.
+| Version   | Since   | Notes                                                                           |
+| --------- | ------- | ------------------------------------------------------------------------------- |
+| `v1`-`v3` | 2024-25 | Legacy layout: one JSON file per chain/token/miniMetadata plus an `index.txt`   |
+| `v4`      | 2025-07 | Single `chaindata.json`, refactored network and token objects, YAML input files |
+| `v5`      | 2025-08 | Solana networks and SPL tokens                                                  |
+| `v6`-`v9` | 2025-26 | Incremental breaking changes to network, token and miniMetadata shapes          |
+| `v10`     | 2026-05 |                                                                                 |
+| `v11`     | 2026-06 |                                                                                 |
+| `v12`     | 2026-06 |                                                                                 |
+| `v13`     | 2026-08 | Current at the time of writing                                                  |
 
-A brief rundown of the changes introduced by each `pub` version:
+## How it works
 
-- **`dist` -> `pub/v1`**  
-  The miniMetadatas for the `substrate-native` balance module now include types for `Balances::Holds` and `Balances::Locks`.  
-  Without upgrading `@talismn/balances`, these new types cause `PortableRegistry` to throw on construction of a `new Metadata(miniMetadata)`.
+Only the YAML files in `data/` are edited by hand.
+Everything else is produced by three GitHub workflows that commit their output back to `main`:
 
-- **`pub/v1` -> `pub/v2`**  
-  All miniMetadatas have been upgraded from metadata format v14 to v15.  
-  Without upgrading `@talismn/balances`, the new format causes the library to throw.
+| Workflow                           | Trigger                | Command                       | Output                                                      |
+| ---------------------------------- | ---------------------- | ----------------------------- | ----------------------------------------------------------- |
+| `Chaindata Validate`               | every push and PR      | `pnpm validate`               | Fails the PR if YAML formatting or schema validation fails  |
+| `Chaindata Fetch External`         | every 6 hours, on main | `pnpm fetch-external`         | `data/cache`, `data/generated`, mirrored logos in `assets/` |
+| `Chaindata Build`                  | every push to main     | `pnpm build`                  | `pub/vN/chaindata.json` and `chaindata.min.json`            |
+| `Chaindata Fetch TAO Hotkey Logos` | every 6 hours, on main | `pnpm fetch-tao-hotkey-logos` | `assets/bittensor/hotkeys/`                                 |
 
-- **`pub/v2` -> `pub/v3`**  
-  Changed how some token ids are generated.
+### Fetch external
 
-- **`pub/v4` -> `pub/v4`**  
-  Refactored network and token objects.
-  YAML input files.
+Pulls everything that needs network access or third-party data and caches it in the repo so that the build itself stays deterministic:
+
+- Known EVM networks from [chainlist](https://chainlist.org), merged with `data/networks-ethereum.yaml` overrides
+- RPC health checks for Polkadot and Ethereum networks (`data/generated/rpc-health-*.json`)
+- Polkadot network specs (genesis hash, ss58 prefix, token decimals) and metadata extracts
+- Solana network specs
+- Token lists for each platform, resolved from on-chain data and the token configs in the YAML files
+- Novasama metadata portal URLs, Vana VRC20 tokens, foreign assets fixes
+- Coingecko token names and logos (`assets/tokens/coingecko/`), known EVM network logos (`assets/chains/known/`), Bittensor subnet logos (`assets/tokens/dtao/`)
+
+Run a subset of steps with `pnpm fetch-external --steps=checkPolkadotRpcs,fetchDotTokens` (matching is case-insensitive and partial).
+
+### Build
+
+Assembles the published files from the YAML configs and the cached external data, without hitting any RPC:
+
+1. Networks for each platform
+1. Tokens for each platform
+1. Substrate miniMetadatas
+1. Theme colors extracted from logos
+1. Consolidated `chaindata.json` and `chaindata.min.json`, validated against the `@talismn/chaindata-provider` schemas
+
+## File structure
+
+| Path                            | Purpose                                                                                                        |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `data/networks-polkadot.yaml`   | Relay chains, parachains and other Substrate networks, with their tokens                                       |
+| `data/networks-ethereum.yaml`   | EVM networks, matched by id with [chainlist](https://chainlist.org); every field overrides the chainlist value |
+| `data/networks-solana.yaml`     | Solana networks and SPL tokens                                                                                 |
+| `data/coingecko-overrides.yaml` | Overrides logos of some coingecko tokens                                                                       |
+| `data/cache/`                   | Generated by fetch-external, consumed by the build. Do not edit                                                |
+| `data/generated/`               | Generated by fetch-external, kept for reference (rpc health, known EVM networks). Do not edit                  |
+| `schemas/`                      | JSON schemas for the YAML files, generated from the Zod schemas in `scripts/shared/schemas` on `pnpm install`  |
+| `assets/chains/`                | Network logos, named after the network id                                                                      |
+| `assets/chains/known/`          | EVM network logos mirrored from chainlist. Do not edit                                                         |
+| `assets/tokens/`                | Token logos                                                                                                    |
+| `assets/tokens/coingecko/`      | Token logos mirrored from coingecko. Do not edit                                                               |
+| `assets/tokens/dtao/`           | Bittensor subnet logos mirrored from chain. Do not edit                                                        |
+| `assets/bittensor/hotkeys/`     | Bittensor validator logos mirrored from chain. Do not edit                                                     |
+| `assets/promo/`                 | Banner and card images used by Talisman products                                                               |
+| `pub/`                          | Published output, one folder per format version                                                                |
+| `scripts/`                      | Build, fetch-external and maintenance scripts                                                                  |
+| `.papi/`                        | polkadot-api descriptors used by the scripts                                                                   |
 
 ## Contributing
 
-To make a contribution, please fork this repo and make your changes in your fork, then open a PR to merge your changes back into this repo.
+Fork this repo, make your changes in your fork, then open a PR.
+Only edit the YAML files and the non-generated `assets/` folders: JSON files and mirrored logos are regenerated by the CI and any manual change will be overwritten.
 
-### To add chain or token logos:
+### Add or update a Substrate network
 
-#### Substrate chain logos
+Add an entry to `data/networks-polkadot.yaml`.
+Only `id` and `rpcs` are required, everything else (genesis hash, ss58 prefix, decimals, symbol) is fetched from the chain.
 
-1. Identify the chain `id` from `networks-polkadot.yaml`
-1. Add your logo (in `svg` format) to `assets/chains/${id}.svg`
+```yaml
+- id: my-network
+  name: My Network
+  isDefault: true
+  nativeCurrency:
+    coingeckoId: my-token
+    logo: ./assets/tokens/my-token.svg
+  logo: ./assets/chains/my-network.svg
+  blockExplorerUrls:
+    - https://my-network.subscan.io/
+  rpcs:
+    - wss://rpc.my-network.io
+```
 
-#### EVM chain logos
+`isDefault` controls whether the network is enabled by default in Talisman Wallet.
 
-1. Identify the chain `id` from https://chainlist.org  
-   **Use the base-10 id** (e.g. `1`, or `137`), **not** the base-16 id (e.g. `0x1`, or `0x89`)
-1. Add your logo (in `svg` format) to `assets/chains/${id}.svg`
+### Add or update an EVM network
 
-#### Token logos
+Networks listed on [chainlist](https://chainlist.org) are imported automatically.
+Add an entry to `data/networks-ethereum.yaml` only to enable a network by default, or to override chainlist data (name, RPCs, logo, explorer, fee type).
+Use the **base-10** chain id (e.g. `1`, or `137`), **not** the base-16 id (e.g. `0x1`, or `0x89`).
 
-1. Add your logo (in `svg` format) to `assets/tokens/${symbol}.svg`
-1. In `networks-polkadot.yaml` find the logo entry and set the `logo` property with the relative path of the token.
+### Add or update a Solana network
 
-#### Bittensor subnet (dtao) token logos
+Add an entry to `data/networks-solana.yaml`. Only `id` and `rpcs` are required, see the existing entries for the other fields.
 
-Subnet logos are mirrored automatically from the `logo_url` published on chain in each subnet identity
-(`SubnetInfoRuntimeApi.get_all_dynamic_info`), converted to webp and stored in `assets/tokens/dtao/`.
-They take precedence over coingecko logos. To override one, set the `logo` property of the subnet entry
-in `networks-polkadot.yaml`.
+### Add tokens
 
-### To build the pub directory locally:
+Tokens are declared under the `tokens` key of their network, grouped by balance module:
 
-1. Install `pnpm` via [corepack](https://nodejs.org/api/corepack.html) by running `corepack enable` on the command line
-1. Clone the repo with  
-   `git clone git@github.com:TalismanSociety/chaindata.git`
-1. Install the dependencies with  
-   `pnpm install`
+| Platform | Modules                                                                                                                                           |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Polkadot | `substrate-native`, `substrate-assets`, `substrate-foreignassets`, `substrate-tokens`, `substrate-psp22`, `substrate-hydration`, `substrate-dtao` |
+| Ethereum | `evm-erc20`, `evm-uniswapv2`                                                                                                                      |
+| Solana   | `sol-spl`                                                                                                                                         |
+
+Symbol, decimals and name are fetched from chain where possible, so most entries only need the on-chain identifier (asset id, contract address, mint address) and optionally a `coingeckoId` and a `logo`.
+Check existing entries in the YAML file for the fields expected by each module, or the JSON schemas in `schemas/`.
+
+### Add logos
+
+- Network logos go in `assets/chains/${id}.svg`, where `id` is the network id from the YAML file (base-10 chain id for EVM networks)
+- Token logos go in `assets/tokens/${symbol}.svg`, then set the `logo` property of the token entry to the relative path, e.g. `./assets/tokens/dot.svg`
+- Bittensor subnet logos are mirrored from the `logo_url` published on chain in each subnet identity (`SubnetInfoRuntimeApi.get_all_dynamic_info`) and take precedence over coingecko logos. To override one, set the `logo` property of the subnet entry in `data/networks-polkadot.yaml`
+- Bittensor validator logos are mirrored from the `image` of each coldkey identity (`SubtensorModule.IdentitiesV2`). `assets/bittensor/hotkeys/logos.json` maps each delegate hotkey to its file
+
+SVG is preferred, PNG and WebP are accepted.
+
+## Running locally
+
+1. Enable `pnpm` via [corepack](https://nodejs.org/api/corepack.html) with `corepack enable`
+1. Clone the repo: `git clone git@github.com:TalismanSociety/chaindata.git`
+1. Install the dependencies: `pnpm install` (this also generates the JSON schemas)
 1. Copy `.env.sample` to `.env` and fill in the variables
-1. Run the build with  
-   `pnpm build`
+1. Validate your changes: `pnpm validate`
+1. Build the published files: `pnpm build`
 
-### File structure
+The build embeds the current git branch name in logo URLs, so do not commit a `pub/` folder built from a feature branch.
+The CI rebuilds `pub/` after your PR is merged.
 
-Only YAML files may be edited manually, JSON files are generated automatically as part of the CI.
-
-The table below describes the purpose of each editable file.
-
-| File name                       | Purpose                                                                                  |
-| ------------------------------- | ---------------------------------------------------------------------------------------- |
-| `data/networks-polkadot.yaml`   | A list of all parachains and relay chains in the Polkadot ecosystem                      |
-| `data/networks-ethereum.yaml`   | EVM network configs with overrides for [chainlist](https://chainlist.org), matched by id |
-| `data/coingecko-overrides.yaml` | Overrides logos of some coingecko tokens                                                 |
-
-## Dev Resources
-
-#### Sections needing improvement
-
-There are a few sections in this repo which could do with a tidy up.  
-Here is a list of some of them, feel free to add more!
-
-- The code for merging `known-evm-networks.json` with `data/networks-ethereum.json` is complex, stateful, full of side-effects and therefore difficult to re-use between the build stage and the fetch-external stage.  
-  It is currently co-located inside of `scripts/build/steps/addEvmNetworks.ts`.  
-  We should decide on a simpler mechanism for merging these two files, and extract the implementation of that into a util file.  
-  An example of where this currently fails is in `scripts/fetch-external/steps/fetchErc20TokenSymbols.ts`.  
-  In here we append the two files like so `const allNetworks = knownEvmNetworks.concat(evmNetworks)`, which results in duplicate networks in the `allNetworks` list.  
-  This makes it difficult to e.g. extract a coingeckoId for a given erc20 contract address on a given network, since the code using `allNetworks` needs to account for duplicate networks with potentially conflicting information.
-
-- Currently all of the EVM tokens are hydrated from known-tokens, while all substrate tokens are hydrated from tokens.json.  
-  This is counter-intuitive, and so it leads to questions like "Why can I only see substrate tokens on chaindata? Are the EVM tokens missing / broken?"  
-  We should either consolidate the two lists of tokens in one place, or change the naming used to clarify that not _all_ tokens can be found in one place.
-
-#### Query the top 100 (by TVL) Uniswap V2 pool addresses
-
-```shell
-curl 'https://interface.gateway.uniswap.org/v1/graphql' \
--X 'POST' \
--H 'Content-Type: application/json' \
--H 'Origin: https://app.uniswap.org' \
---data-binary '{"operationName":"TopV2Pairs","variables":{"first":100,"chain":"ETHEREUM"},"query":"query TopV2Pairs($chain: Chain!, $first: Int!, $cursor: Float, $tokenAddress: String) {\n  topV2Pairs(\n    first: $first\n    chain: $chain\n    tokenFilter: $tokenAddress\n    tvlCursor: $cursor\n  ) {\n    protocolVersion\n    address\n  }\n}"}'
-```
-
-Possible values for `chain` when this was written:
-
-```
-ARBITRUM, AVALANCHE, ETHEREUM, ETHEREUM_GOERLI, ETHEREUM_SEPOLIA, OPTIMISM, POLYGON, CELO, BNB, BASE, BLAST
-```
+`pnpm build:dev` skips validation, and `pnpm fetch-external` refreshes the cached external data.

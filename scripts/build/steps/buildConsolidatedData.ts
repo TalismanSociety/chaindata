@@ -33,12 +33,21 @@ export const buildConsolidatedData = async () => {
   const dotTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_POLKADOT)
   const solTokens = parseJsonFile<Token[]>(FILE_OUTPUT_TOKENS_SOLANA)
   const allTokens = [...ethTokens, ...dotTokens, ...solTokens]
-  await writeJsonFile(FILE_OUTPUT_TOKENS_ALL, allTokens, { schema: z.array(TokenSchema) })
 
   const ethNetworks = parseJsonFile<Network[]>(FILE_OUTPUT_NETWORKS_ETHEREUM)
   const dotNetworks = parseJsonFile<Network[]>(FILE_OUTPUT_NETWORKS_POLKADOT)
   const solNetworks = parseJsonFile<Network[]>(FILE_OUTPUT_NETWORKS_SOLANA)
   const allNetworks = [...ethNetworks, ...dotNetworks, ...solNetworks]
+
+  const testnetNetworks = allNetworks.filter((network) => network.isTestnet)
+  const testnetNetworkIds = new Set(testnetNetworks.map((network) => network.id))
+
+  for (const network of testnetNetworks) delete network.nativeCurrency.coingeckoId
+  for (const token of allTokens) {
+    if (testnetNetworkIds.has(token.networkId)) delete token.coingeckoId
+  }
+
+  await writeJsonFile(FILE_OUTPUT_TOKENS_ALL, allTokens, { schema: z.array(TokenSchema) })
   await writeJsonFile(FILE_OUTPUT_NETWORKS_ALL, allNetworks, { schema: z.array(NetworkSchema) })
 
   const networksById = keyBy(allNetworks, (n) => n.id)
