@@ -4,7 +4,7 @@ import { parse } from 'node:path'
 import { PromisePool } from '@supercharge/promise-pool'
 import { NetworkSchema } from '@talismn/chaindata-provider'
 import { extractColors } from 'extract-colors'
-import sharp from 'sharp'
+import sharp, { type OutputInfo } from 'sharp'
 import tinycolor from 'tinycolor2'
 import { z } from 'zod/v4'
 
@@ -62,7 +62,7 @@ const extractDominantLogoColor = async (logoUrl: string | undefined) => {
   // const { pixels, width, height } = resvg.render()
   // const rawData = new Uint8ClampedArray(pixels)
 
-  const [rawData, { width, height }] = await new Promise<[Uint8ClampedArray, sharp.OutputInfo]>((resolve, reject) =>
+  const [rawData, { width, height }] = await new Promise<[Uint8ClampedArray, OutputInfo]>((resolve, reject) =>
     sharp(buffer)
       .toFormat('raw')
       .toBuffer((error, data, info) => {
