@@ -14635,7 +14635,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://scan.oxinchain.io"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.oxinchain.io"]
+      "rpcs": ["https://rpc.oxinchain.io", "https://rpc1.oxinchain.io", "https://rpc2.oxinchain.io"]
     },
     {
       "id": "4460",
@@ -15766,9 +15766,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://5566.rpc.thirdweb.com",
+        "https://rpc.taaqo.com",
         "https://rpc2.taaqo.com",
-        "https://rpc3.taaqo.com",
-        "https://rpc.taaqo.com"
+        "https://rpc3.taaqo.com"
       ]
     },
     {
@@ -15890,9 +15890,9 @@
       "rpcs": [
         "https://rpc.tburn.io",
         "https://rpc2.tburn.io",
-        "https://rpc5.tburn.io",
         "https://rpc3.tburn.io",
-        "https://rpc4.tburn.io"
+        "https://rpc4.tburn.io",
+        "https://rpc5.tburn.io"
       ]
     },
     {
@@ -25117,7 +25117,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.kaichain.net"],
       "platform": "ethereum",
-      "rpcs": ["https://61406.rpc.thirdweb.com"]
+      "rpcs": ["https://61406.rpc.thirdweb.com", "https://mainnet-rpc.kaichain.net"]
     },
     {
       "id": "61564",
@@ -27986,7 +27986,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://devnet.quarkchain.io/0"],
       "platform": "ethereum",
-      "rpcs": ["https://devnet-s0-ethapi.quarkchain.io", "https://110001.rpc.thirdweb.com"]
+      "rpcs": ["https://110001.rpc.thirdweb.com", "https://devnet-s0-ethapi.quarkchain.io"]
     },
     {
       "id": "110002",
@@ -28016,7 +28016,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://devnet.quarkchain.io/2"],
       "platform": "ethereum",
-      "rpcs": ["https://devnet-s2-ethapi.quarkchain.io", "https://110003.rpc.thirdweb.com"]
+      "rpcs": ["https://110003.rpc.thirdweb.com", "https://devnet-s2-ethapi.quarkchain.io"]
     },
     {
       "id": "110004",
@@ -28905,6 +28905,21 @@
       "rpcs": ["https://rpc-devnet-cardano-evm.c1.milkomeda.com"]
     },
     {
+      "id": "200200",
+      "name": "Zoo Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zoo.webp",
+      "nativeTokenId": "200200:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ZOO",
+        "name": "Zoo"
+      },
+      "themeColor": "#00a653",
+      "blockExplorerUrls": ["https://explore.zoo.network"],
+      "platform": "ethereum",
+      "rpcs": ["https://api.zoo.network"]
+    },
+    {
       "id": "200625",
       "name": "Akroma",
       "nativeTokenId": "200625:evm-native",
@@ -28957,7 +28972,8 @@
         "https://rpc.bitlayer.org",
         "https://rpc.ankr.com/bitlayer",
         "https://lb.routeme.sh/rpc/evm/200901",
-        "https://200901.rpc.thirdweb.com"
+        "https://200901.rpc.thirdweb.com",
+        "https://rpc-bitlayer.rockx.com"
       ]
     },
     {
@@ -29286,10 +29302,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://hydration-rpc.n.dwellir.com",
-        "https://rpc.sin.hydration.cloud",
         "https://rpc.coke.hydration.cloud",
         "https://lb.routeme.sh/rpc/evm/222222",
-        "https://222222.rpc.thirdweb.com"
+        "https://222222.rpc.thirdweb.com",
+        "https://hydration.dotters.network"
       ]
     },
     {
@@ -29448,6 +29464,21 @@
       "blockExplorerUrls": ["https://explorer.hipercapitalfinance.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.hipercapitalfinance.com"]
+    },
+    {
+      "id": "241120",
+      "isTestnet": true,
+      "name": "Anomaly Andromeda Testnet",
+      "nativeTokenId": "241120:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "tNOM",
+        "name": "TestNom"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://andromeda.anomalyscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.anomaly-andromeda.anomalygames.io"]
     },
     {
       "id": "246529",
@@ -37802,7 +37833,7 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://moonbeam.unitedbloc.com"],
+      "rpcs": ["wss://moonbeam.unitedbloc.com", "wss://moonbeam.api.onfinality.io/public-ws"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -135034,18 +135065,6 @@
       "contractAddress": "0x62a872d9977db171d9e213a5dc2b782e72ca0033"
     },
     {
-      "id": "137:evm-erc20:0x62f594339830b90ae4c084ae7d223ffafd9658a7",
-      "platform": "ethereum",
-      "networkId": "137",
-      "type": "evm-erc20",
-      "symbol": "SPHERE",
-      "decimals": 18,
-      "name": "Sphere Finance",
-      "coingeckoId": "sphere-finance",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sphere-finance.webp",
-      "contractAddress": "0x62f594339830b90ae4c084ae7d223ffafd9658a7"
-    },
-    {
       "id": "137:evm-erc20:0x63334cf286580f5075900c34988858658685e76f",
       "platform": "ethereum",
       "networkId": "137",
@@ -159919,6 +159938,17 @@
       "isDefault": true
     },
     {
+      "id": "200200:evm-native",
+      "platform": "ethereum",
+      "networkId": "200200",
+      "type": "evm-native",
+      "symbol": "ZOO",
+      "decimals": 18,
+      "name": "Zoo",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zoo.webp",
+      "isDefault": true
+    },
+    {
       "id": "20033:evm-native",
       "platform": "ethereum",
       "networkId": "20033",
@@ -163764,6 +163794,16 @@
       "symbol": "CENT",
       "decimals": 18,
       "name": "CENT",
+      "isDefault": true
+    },
+    {
+      "id": "241120:evm-native",
+      "platform": "ethereum",
+      "networkId": "241120",
+      "type": "evm-native",
+      "symbol": "tNOM",
+      "decimals": 18,
+      "name": "TestNom",
       "isDefault": true
     },
     {
@@ -249293,6 +249333,18 @@
       "coingeckoId": "genedx-holdings-corp-astock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/genedx-holdings-corp-astock.webp",
       "contractAddress": "0xd13163b837a3736c0ac4da9239b108fe0e04dbae"
+    },
+    {
+      "id": "4663:evm-erc20:0xd17c81cb01d44cc6e822936e8f098960001b47d2",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "HOODCATS",
+      "decimals": 18,
+      "name": "Hood Cats",
+      "coingeckoId": "hoodcats",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hoodcats.webp",
+      "contractAddress": "0xd17c81cb01d44cc6e822936e8f098960001b47d2"
     },
     {
       "id": "4663:evm-erc20:0xd1d4bbe54fdeafc83693420c5ade4a2abe6a90da",
@@ -392667,6 +392719,20 @@
       "isTransferable": true
     },
     {
+      "id": "bittensor-testnet:substrate-dtao:572",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN572 | Subnet 572 Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 572,
+      "subnetName": "Subnet 572",
+      "isTransferable": true
+    },
+    {
       "id": "bittensor-testnet:substrate-dtao:58",
       "platform": "polkadot",
       "networkId": "bittensor-testnet",
@@ -395140,12 +395206,12 @@
       "type": "substrate-dtao",
       "symbol": "ᚂ",
       "decimals": 9,
-      "name": "SN92 | MicroTensor ᚂ",
+      "name": "SN92 | Available ᚂ",
       "coingeckoId": "reinforced-ai",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn92-f7e12288.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/reinforced-ai.webp",
       "isDefault": true,
       "netuid": 92,
-      "subnetName": "MicroTensor",
+      "subnetName": "Available",
       "isTransferable": true
     },
     {
