@@ -20515,6 +20515,20 @@
       }
     },
     {
+      "id": "13390",
+      "name": "MeeChain Network",
+      "nativeTokenId": "13390:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "MEE",
+        "name": "Mee"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://scan.meechain.live"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.meechain.live/rpc"]
+    },
+    {
       "id": "13396",
       "name": "Masa",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/masa.webp",
@@ -37804,7 +37818,7 @@
       "specVersion": 4302,
       "account": "secp256k1",
       "prefix": 1287,
-      "rpcs": ["wss://moonbase.unitedbloc.com"],
+      "rpcs": ["wss://wss.api.moonbase.moonbeam.network", "wss://moonbase.unitedbloc.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
@@ -37833,7 +37847,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.unitedbloc.com", "wss://moonbeam.api.onfinality.io/public-ws"],
+      "rpcs": [
+        "wss://moonbeam.unitedbloc.com",
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -37863,7 +37881,11 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://moonriver.unitedbloc.com"],
+      "rpcs": [
+        "wss://moonriver.api.onfinality.io/public-ws",
+        "wss://wss.api.moonriver.moonbeam.network",
+        "wss://moonriver.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -38313,10 +38335,10 @@
       "prefix": 0,
       "rpcs": [
         "wss://polkadot-rpc.publicnode.com",
+        "wss://rpc-polkadot.helixstreet.io",
         "wss://rpc-polkadot.luckyfriday.io",
         "wss://rockx-dot.w3node.com/polka-public-dot/ws",
-        "wss://dot-rpc.stakeworld.io",
-        "wss://polkadot.api.onfinality.io/public-ws"
+        "wss://dot-rpc.stakeworld.io"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -130776,6 +130798,16 @@
       "name": "PYR",
       "coingeckoId": "lava",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lava.webp",
+      "isDefault": true
+    },
+    {
+      "id": "13390:evm-native",
+      "platform": "ethereum",
+      "networkId": "13390",
+      "type": "evm-native",
+      "symbol": "MEE",
+      "decimals": 18,
+      "name": "Mee",
       "isDefault": true
     },
     {
@@ -241068,6 +241100,18 @@
       "contractAddress": "0x329fcaceb9ad6f9580dd5f643fed0646900d043c"
     },
     {
+      "id": "4663:evm-erc20:0x32a47bcfae323fcaa0d5b22cd0c67ca434ae4100",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "$LAUNCHPOST",
+      "decimals": 18,
+      "name": "launchpost",
+      "coingeckoId": "launchpost",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/launchpost.webp",
+      "contractAddress": "0x32a47bcfae323fcaa0d5b22cd0c67ca434ae4100"
+    },
+    {
       "id": "4663:evm-erc20:0x32c85eb5e0686d5a8fa1bd9eeb1a432c3facbd50",
       "platform": "ethereum",
       "networkId": "4663",
@@ -243384,6 +243428,18 @@
       "contractAddress": "0x5e8907a3f45d7b30be6addbab0312e46e5061614"
     },
     {
+      "id": "4663:evm-erc20:0x5ec27c931fb49911128dddf7d914c1754da9f49f",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "SPROUT",
+      "decimals": 18,
+      "name": "Sprout",
+      "coingeckoId": "sprout",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sprout.webp",
+      "contractAddress": "0x5ec27c931fb49911128dddf7d914c1754da9f49f"
+    },
+    {
       "id": "4663:evm-erc20:0x5edb417509a869b1d8222dea05257b8c8ba00361",
       "platform": "ethereum",
       "networkId": "4663",
@@ -243586,6 +243642,18 @@
       "coingeckoId": "clover-health-investments-corp-robinhood-token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/clover-health-investments-corp-robinhood-token.webp",
       "contractAddress": "0x62200915e7deab1ec7f79fb246dadbb80eacddd0"
+    },
+    {
+      "id": "4663:evm-erc20:0x623ede6b702721e2014d9a420c759abfe0f1e3f3",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "RDUBS",
+      "decimals": 18,
+      "name": "Dubs the Cat",
+      "coingeckoId": "dubs-the-cat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dubs-the-cat.webp",
+      "contractAddress": "0x623ede6b702721e2014d9a420c759abfe0f1e3f3"
     },
     {
       "id": "4663:evm-erc20:0x6245db7f52379bd9757c9ddce6519768ffab3a4f",
@@ -261523,6 +261591,30 @@
       "coingeckoId": "long-supply",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/long-supply.webp",
       "contractAddress": "0x2164bb17a2d38c1b5170e987b2c0416df1efc752"
+    },
+    {
+      "id": "5042:evm-erc20:0x258bbb25fb1bc34c87212f8dab34838854ef2d5d",
+      "platform": "ethereum",
+      "networkId": "5042",
+      "type": "evm-erc20",
+      "symbol": "BCAT",
+      "decimals": 18,
+      "name": "Beancat",
+      "coingeckoId": "beancat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/beancat.webp",
+      "contractAddress": "0x258bbb25fb1bc34c87212f8dab34838854ef2d5d"
+    },
+    {
+      "id": "5042:evm-erc20:0x31ed8f16f7d625ca1cfaca65f00e6fdb76052fff",
+      "platform": "ethereum",
+      "networkId": "5042",
+      "type": "evm-erc20",
+      "symbol": "ORIXIANS",
+      "decimals": 18,
+      "name": "ORIXIANS",
+      "coingeckoId": "orixians",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/orixians.webp",
+      "contractAddress": "0x31ed8f16f7d625ca1cfaca65f00e6fdb76052fff"
     },
     {
       "id": "5042:evm-erc20:0x3600000000000000000000000000000000000000",
@@ -356882,6 +356974,18 @@
       "contractAddress": "0xb7b4e8406673528e7dc3d787f3a42eb1ebc01cf6"
     },
     {
+      "id": "8453:evm-erc20:0xb7c10146ba1b618956a38605ab6496523d450871",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "ESHARE",
+      "decimals": 18,
+      "name": "ESHARE",
+      "coingeckoId": "eshare",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/eshare.webp",
+      "contractAddress": "0xb7c10146ba1b618956a38605ab6496523d450871"
+    },
+    {
       "id": "8453:evm-erc20:0xb8147ce9b0dac5f8165785dec6494e57748e4b78",
       "platform": "ethereum",
       "networkId": "8453",
@@ -392733,6 +392837,20 @@
       "isTransferable": true
     },
     {
+      "id": "bittensor-testnet:substrate-dtao:573",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN573 | medilink Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 573,
+      "subnetName": "medilink",
+      "isTransferable": true
+    },
+    {
       "id": "bittensor-testnet:substrate-dtao:58",
       "platform": "polkadot",
       "networkId": "bittensor-testnet",
@@ -393558,12 +393676,12 @@
       "type": "substrate-dtao",
       "symbol": "Զ",
       "decimals": 9,
-      "name": "SN108 | Prometheon Զ",
+      "name": "SN108 | Subnet 108 Զ",
       "coingeckoId": "internet-of-intelligence",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn108-3d94c7f8.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/internet-of-intelligence.webp",
       "isDefault": true,
       "netuid": 108,
-      "subnetName": "Prometheon",
+      "subnetName": "Subnet 108",
       "isTransferable": true
     },
     {
@@ -463272,6 +463390,18 @@
       "mintAddress": "AyLn7YdHqh3pGSNC1YrdEtEdSCVjG7BxQedxBvkTpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:AyYNfPtftg2zDP4ZbgcoQMggQtwLh4zpfVVmUJs2thto",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "Tilcayo",
+      "decimals": 6,
+      "name": "Leopardus tilcayo",
+      "coingeckoId": "leopardus-tilcayo-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/leopardus-tilcayo-2.webp",
+      "mintAddress": "AyYNfPtftg2zDP4ZbgcoQMggQtwLh4zpfVVmUJs2thto"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:Az1sNBBe6H97oNVi4zXDosgFHN8hWnCf1QsDDJDjpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -465058,6 +465188,18 @@
       "coingeckoId": "ballerina-cappuccina-3",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ballerina-cappuccina-3.webp",
       "mintAddress": "C2T1CBTjajVGnHvVz5sFbw2JBq7ZtqUD63HGq4Cwpump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:C2WtD354XEvS9gzpJDLqzqkADq7wUtmJg1UzUdmL5a21",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "MCCAT",
+      "decimals": 6,
+      "name": "McCat",
+      "coingeckoId": "mccat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mccat.webp",
+      "mintAddress": "C2WtD354XEvS9gzpJDLqzqkADq7wUtmJg1UzUdmL5a21"
     },
     {
       "id": "solana-mainnet:sol-token2022:C3fawupKrXdn3X7KPTmmnkwzJQ9qycMNag55ZzQ8pump",
