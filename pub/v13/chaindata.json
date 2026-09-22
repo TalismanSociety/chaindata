@@ -19533,7 +19533,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.metanovaverse.com"],
       "platform": "ethereum",
-      "rpcs": ["https://10096.rpc.thirdweb.com", "https://web3.metanovaverse.com"]
+      "rpcs": ["https://10096.rpc.thirdweb.com"]
     },
     {
       "id": "10101",
@@ -20007,7 +20007,7 @@
       "themeColor": "#0d375b",
       "blockExplorerUrls": ["https://shinescan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://11221.rpc.thirdweb.com"]
+      "rpcs": ["https://11221.rpc.thirdweb.com", "https://rpc.shinescan.io"]
     },
     {
       "id": "11235",
@@ -20165,9 +20165,9 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://rpc.polygonsupernet.public.arianee.net",
         "https://lb.routeme.sh/rpc/evm/11891",
-        "https://11891.rpc.thirdweb.com"
+        "https://11891.rpc.thirdweb.com",
+        "https://rpc.polygonsupernet.public.arianee.net"
       ]
     },
     {
@@ -21135,8 +21135,6 @@
       "blockExplorerUrls": ["https://holesky.beaconcha.in"],
       "platform": "ethereum",
       "rpcs": [
-        "https://holesky.drpc.org",
-        "https://ethereum-holesky-rpc.publicnode.com",
         "https://endpoints.omniatech.io/v1/eth/holesky/public",
         "https://eth-holesky-testnet.api.pocket.network",
         "https://lb.routeme.sh/rpc/evm/17000"
@@ -21383,22 +21381,6 @@
       "rpcs": ["https://rpc.mxc.com", "https://lb.routeme.sh/rpc/evm/18686", "https://18686.rpc.thirdweb.com"]
     },
     {
-      "id": "18880",
-      "isTestnet": true,
-      "name": "EXPchain Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/expchain.webp",
-      "nativeTokenId": "18880:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tZKJ",
-        "name": "tZKJ"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://blockscout-testnet.expchain.ai"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc1-testnet.expchain.ai"]
-    },
-    {
       "id": "18881",
       "isTestnet": true,
       "name": "Ultra EVM Network Testnet",
@@ -21429,7 +21411,23 @@
       "themeColor": "#ff6820",
       "blockExplorerUrls": ["https://tkxscan.io/Titan"],
       "platform": "ethereum",
-      "rpcs": ["https://18888.rpc.thirdweb.com"]
+      "rpcs": ["https://18888.rpc.thirdweb.com", "https://titan-json-rpc-hongkong.titanlab.io"]
+    },
+    {
+      "id": "18889",
+      "isTestnet": true,
+      "name": "Titan (TKX) Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/titan_tkx.webp",
+      "nativeTokenId": "18889:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "TKX",
+        "name": "Titan tkx"
+      },
+      "themeColor": "#ff6820",
+      "blockExplorerUrls": ["https://titan-testnet-explorer-light.titanlab.io/Titan%20Testnet"],
+      "platform": "ethereum",
+      "rpcs": ["https://titan-testnet-json-rpc-1.titanlab.io", "https://titan-testnet-json-rpc-2.titanlab.io"]
     },
     {
       "id": "19011",
@@ -21991,7 +21989,7 @@
       "themeColor": "#d76179",
       "blockExplorerUrls": ["https://mainnet.dcpay.io"],
       "platform": "ethereum",
-      "rpcs": ["https://21223.rpc.thirdweb.com", "https://rpc.dcpay.io", "https://lb.routeme.sh/rpc/evm/21223"]
+      "rpcs": ["https://21223.rpc.thirdweb.com", "https://lb.routeme.sh/rpc/evm/21223", "https://rpc.dcpay.io"]
     },
     {
       "id": "21224",
@@ -22142,6 +22140,22 @@
       "blockExplorerUrls": ["https://explorer.kriptoaman.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.kriptoaman.com"]
+    },
+    {
+      "id": "22040",
+      "isTestnet": true,
+      "name": "AirDAO Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/airdao.webp",
+      "nativeTokenId": "22040:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "AMB",
+        "name": "Amber"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://testnet.airdao.io/explorer"],
+      "platform": "ethereum",
+      "rpcs": ["https://network.ambrosus-test.io"]
     },
     {
       "id": "22222",
@@ -24499,8 +24513,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://dream-rpc.somnia.network",
-        "https://api.infra.testnet.somnia.network",
-        "https://lb.routeme.sh/rpc/evm/50312"
+        "https://lb.routeme.sh/rpc/evm/50312",
+        "https://api.infra.testnet.somnia.network"
       ],
       "contracts": {
         "Multicall3": "0x841b8199E6d3Db3C6f264f6C2bd8848b3cA64223"
@@ -29421,7 +29435,7 @@
       "themeColor": "#ffb300",
       "blockExplorerUrls": ["https://ecoscan.tafchain.com"],
       "platform": "ethereum",
-      "rpcs": ["https://224168.rpc.thirdweb.com", "https://mainnet.tafchain.com/v1"]
+      "rpcs": ["https://224168.rpc.thirdweb.com"]
     },
     {
       "id": "224422",
@@ -35346,7 +35360,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://scope-sepolia.silicon.network"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc-sepolia.silicon.network"]
+      "rpcs": ["https://rpc-sepolia.silicon.network", "https://silicon-testnet.nodeinfra.com"]
     },
     {
       "id": "1802203764",
@@ -35542,6 +35556,22 @@
       "blockExplorerUrls": ["https://explorer.pectra-devnet-5.ethpandaops.io"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.pectra-devnet-5.ethpandaops.io"]
+    },
+    {
+      "id": "8691942025",
+      "isTestnet": true,
+      "name": "ONFA Chain Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/onfachain.webp",
+      "nativeTokenId": "8691942025:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "OFCT",
+        "name": "ONFA Coin"
+      },
+      "themeColor": "#53bb86",
+      "blockExplorerUrls": ["https://onfascan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.onfachain.com"]
     },
     {
       "id": "11297108099",
@@ -36753,8 +36783,8 @@
       "oldPrefix": 36,
       "rpcs": [
         "wss://fullnode.centrifuge.io",
-        "wss://centrifuge-parachain.api.onfinality.io/public-ws",
-        "wss://rpc-centrifuge.luckyfriday.io"
+        "wss://rpc-centrifuge.luckyfriday.io",
+        "wss://centrifuge-parachain.api.onfinality.io/public-ws"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -37583,7 +37613,7 @@
       "specVersion": 132,
       "account": "*25519",
       "prefix": 2,
-      "rpcs": ["wss://kreivo.kippu.rocks/", "wss://kreivo.io/"],
+      "rpcs": ["wss://rpc.kreivo.bloque.sh", "wss://kreivo.kippu.rocks/", "wss://kreivo.io/"],
       "topology": {
         "type": "parachain",
         "relayId": "kusama",
@@ -150093,17 +150123,6 @@
       "isDefault": true
     },
     {
-      "id": "18880:evm-native",
-      "platform": "ethereum",
-      "networkId": "18880",
-      "type": "evm-native",
-      "symbol": "tZKJ",
-      "decimals": 18,
-      "name": "tZKJ",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/expchain.webp",
-      "isDefault": true
-    },
-    {
       "id": "18881:evm-native",
       "platform": "ethereum",
       "networkId": "18881",
@@ -150124,6 +150143,17 @@
       "name": "Titan tkx",
       "coingeckoId": "tokenize-xchange",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tokenize-xchange.webp",
+      "isDefault": true
+    },
+    {
+      "id": "18889:evm-native",
+      "platform": "ethereum",
+      "networkId": "18889",
+      "type": "evm-native",
+      "symbol": "TKX",
+      "decimals": 18,
+      "name": "Titan tkx",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/titan_tkx.webp",
       "isDefault": true
     },
     {
@@ -162440,6 +162470,17 @@
       "symbol": "MAS",
       "decimals": 18,
       "name": "Master Bank",
+      "isDefault": true
+    },
+    {
+      "id": "22040:evm-native",
+      "platform": "ethereum",
+      "networkId": "22040",
+      "type": "evm-native",
+      "symbol": "AMB",
+      "decimals": 18,
+      "name": "Amber",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/airdao.webp",
       "isDefault": true
     },
     {
@@ -181858,18 +181899,6 @@
       "coingeckoId": "marriott-international-rstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/marriott-international-rstock.webp",
       "contractAddress": "0xfed9b65574f57c21a2120785f2a26b10f3e731fc"
-    },
-    {
-      "id": "2818:evm-erc20:0xff2a6216e862ca63749855fb6bb0c415099e9542",
-      "platform": "ethereum",
-      "networkId": "2818",
-      "type": "evm-erc20",
-      "symbol": "rPHG",
-      "decimals": 18,
-      "name": "F5, Inc. (Reality Tokenized)",
-      "coingeckoId": "f5-inc-rstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/f5-inc-rstock.webp",
-      "contractAddress": "0xff2a6216e862ca63749855fb6bb0c415099e9542"
     },
     {
       "id": "2818:evm-erc20:0xff3de747cda10584d3ec64b72df493e20a969214",
@@ -202343,18 +202372,6 @@
       "coingeckoId": "zijin-gold-international-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zijin-gold-international-xstock.webp",
       "contractAddress": "0x4e2c81fba553e60238c2f568d82ad30e1774069a"
-    },
-    {
-      "id": "42161:evm-erc20:0x4e3009f8e03e2278221d879b2b169bbe385e0db7",
-      "platform": "ethereum",
-      "networkId": "42161",
-      "type": "evm-erc20",
-      "symbol": "rPHG",
-      "decimals": 18,
-      "name": "F5, Inc. (Reality Tokenized)",
-      "coingeckoId": "f5-inc-rstock",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/f5-inc-rstock.webp",
-      "contractAddress": "0x4e3009f8e03e2278221d879b2b169bbe385e0db7"
     },
     {
       "id": "42161:evm-erc20:0x4e30b8a21d1e8a5581e3226d8e85ed03fc1c4732",
@@ -368628,6 +368645,17 @@
       "symbol": "WMTX",
       "decimals": 18,
       "name": "World Mobile Token",
+      "isDefault": true
+    },
+    {
+      "id": "8691942025:evm-native",
+      "platform": "ethereum",
+      "networkId": "8691942025",
+      "type": "evm-native",
+      "symbol": "OFCT",
+      "decimals": 18,
+      "name": "ONFA Coin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/onfachain.webp",
       "isDefault": true
     },
     {
