@@ -300,14 +300,7 @@
               "type": "object",
               "properties": {
                 "onChainId": {
-                  "anyOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    }
-                  ]
+                  "type": ["string", "number"]
                 },
                 "networkId": {
                   "type": "string"
