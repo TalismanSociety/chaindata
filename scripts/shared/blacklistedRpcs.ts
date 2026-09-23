@@ -1,4 +1,7 @@
-export const isBlacklistedRpcUrl = (url: string): boolean => BLACKLISTED_HOSTS.includes(new URL(url).host)
+export const isBlacklistedRpcUrl = (url: string): boolean => {
+  const parsedUrl = new URL(url)
+  return BLACKLISTED_HOSTS.includes(parsedUrl.host) || isKeylessMerkleRpcUrl(parsedUrl)
+}
 
 export const isNotBlacklistedRpcUrl = (url: string): boolean => !isBlacklistedRpcUrl(url)
 
@@ -101,3 +104,6 @@ const BLACKLISTED_RPC_URLS = [
 ].map((url) => url.replace(/\/$/, ''))
 
 const BLACKLISTED_HOSTS = BLACKLISTED_RPC_URLS.map((url) => new URL(url).host)
+
+const isKeylessMerkleRpcUrl = ({ hostname, pathname }: URL): boolean =>
+  (hostname === 'merkle.io' || hostname.endsWith('.merkle.io')) && !pathname.includes('/pk_')
