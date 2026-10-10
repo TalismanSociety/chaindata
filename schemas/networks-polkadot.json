@@ -97,6 +97,10 @@
       "isUnknownFeeToken": {
         "type": "boolean"
       },
+      "hasEvmMirrorWithdraw": {
+        "description": "pallet_evm uses HashedAddressMapping<BlakeTwo256> and a truncated WithdrawOrigin: a substrate account can EVM.withdraw the funds of its mirror account",
+        "type": "boolean"
+      },
       "balancesConfig": {
         "type": "object",
         "properties": {
