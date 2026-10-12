@@ -28987,11 +28987,7 @@
       "themeColor": "#0bbecf",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": [
-        "https://lb.routeme.sh/rpc/evm/131313",
-        "https://odyssey.nownodes.io",
-        "https://testnode.dioneprotocol.com/ext/bc/D/rpc"
-      ]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/131313", "https://testnode.dioneprotocol.com/ext/bc/D/rpc"]
     },
     {
       "id": "131419",
@@ -30996,11 +30992,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
-        "https://scroll-sepolia.drpc.org",
-        "https://scroll-sepolia-public.nodies.app",
         "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
         "https://rpc.ankr.com/scroll_sepolia_testnet",
-        "https://lb.routeme.sh/rpc/evm/534351"
+        "https://lb.routeme.sh/rpc/evm/534351",
+        "https://scroll-sepolia-public.nodies.app",
+        "https://scroll-sepolia.chainstacklabs.com"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -31292,20 +31288,6 @@
         "https://brnkc-mainnet1.bearnetwork.net",
         "https://lb.routeme.sh/rpc/evm/641230"
       ]
-    },
-    {
-      "id": "648529",
-      "name": "Modulax Mainnet",
-      "nativeTokenId": "648529:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MDX",
-        "name": "Modulax"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer.modulax.org"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.modulax.org"]
     },
     {
       "id": "651940",
@@ -38366,11 +38348,7 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": [
-        "wss://moonbeam.api.onfinality.io/public-ws",
-        "wss://wss.api.moonbeam.network",
-        "wss://moonbeam.unitedbloc.com"
-      ],
+      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -38854,10 +38832,10 @@
       "prefix": 0,
       "rpcs": [
         "wss://polkadot-rpc.publicnode.com",
-        "wss://rpc-polkadot.helixstreet.io",
         "wss://rpc-polkadot.luckyfriday.io",
         "wss://rockx-dot.w3node.com/polka-public-dot/ws",
-        "wss://dot-rpc.stakeworld.io"
+        "wss://dot-rpc.stakeworld.io",
+        "wss://polkadot.api.onfinality.io/public-ws"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -250091,6 +250069,18 @@
       "contractAddress": "0x43eea882b845a8493152ebc55cf30ae9281b02d5"
     },
     {
+      "id": "4663:evm-erc20:0x43fc3c8440d85d7df99ecfbc6a267de8327f923b",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "CLAUDIA",
+      "decimals": 18,
+      "name": "Claudia",
+      "coingeckoId": "claudia-4",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/claudia-4.webp",
+      "contractAddress": "0x43fc3c8440d85d7df99ecfbc6a267de8327f923b"
+    },
+    {
       "id": "4663:evm-erc20:0x440e339a46eaa3be8d723c2cbed2a30af74536d5",
       "platform": "ethereum",
       "networkId": "4663",
@@ -341587,16 +341577,6 @@
       "isDefault": true
     },
     {
-      "id": "648529:evm-native",
-      "platform": "ethereum",
-      "networkId": "648529",
-      "type": "evm-native",
-      "symbol": "MDX",
-      "decimals": 18,
-      "name": "Modulax",
-      "isDefault": true
-    },
-    {
       "id": "6497:evm-native",
       "platform": "ethereum",
       "networkId": "6497",
@@ -377959,6 +377939,18 @@
       "contractAddress": "0xd52333441c0553facb259600fa833a69186893a5"
     },
     {
+      "id": "8453:evm-erc20:0xd5390300c5db71f80d46f0fa9983fc72d4d1e3da",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "KAT",
+      "decimals": 18,
+      "name": "Katana",
+      "coingeckoId": "katana-network-token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/katana-network-token.webp",
+      "contractAddress": "0xd5390300c5db71f80d46f0fa9983fc72d4d1e3da"
+    },
+    {
       "id": "8453:evm-erc20:0xd53deb03d6de5f355c0b8de57b8f37179ff60b81",
       "platform": "ethereum",
       "networkId": "8453",
@@ -411427,6 +411419,20 @@
       "isTransferable": true
     },
     {
+      "id": "bittensor-testnet:substrate-dtao:589",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN589 | Subnet 589 Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 589,
+      "subnetName": "Subnet 589",
+      "isTransferable": true
+    },
+    {
       "id": "bittensor-testnet:substrate-dtao:59",
       "platform": "polkadot",
       "networkId": "bittensor-testnet",
@@ -421425,21 +421431,6 @@
       "existentialDeposit": "10"
     },
     {
-      "id": "xode-polkadot:substrate-assets:1000000004",
-      "platform": "polkadot",
-      "networkId": "xode-polkadot",
-      "type": "substrate-assets",
-      "symbol": "XAV",
-      "decimals": 12,
-      "name": "Xaver",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/xav.svg",
-      "isDefault": true,
-      "assetId": "1000000004",
-      "isFrozen": false,
-      "isSufficient": true,
-      "existentialDeposit": "0"
-    },
-    {
       "id": "xode-polkadot:substrate-assets:1984",
       "platform": "polkadot",
       "networkId": "xode-polkadot",
@@ -421469,7 +421460,7 @@
       "assetId": "50000103",
       "isFrozen": false,
       "isSufficient": false,
-      "existentialDeposit": "1000000000000"
+      "existentialDeposit": "100000"
     },
     {
       "id": "xode-polkadot:substrate-assets:50000111",
@@ -421484,7 +421475,7 @@
       "assetId": "50000111",
       "isFrozen": false,
       "isSufficient": false,
-      "existentialDeposit": "1000000000000"
+      "existentialDeposit": "100000"
     },
     {
       "id": "xode-polkadot:substrate-native",
@@ -479924,6 +479915,18 @@
       "mintAddress": "8P2fEWMK9mPaVQgsKTWiFRkN7vqsCENy3VW8cFHvpump"
     },
     {
+      "id": "solana-mainnet:sol-token2022:8PGyHCKvSUjezHkV7KLwMacnmSJLe1YbRM1zvDVApump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "SEAN",
+      "decimals": 6,
+      "name": "Sean Dynasty Prosper",
+      "coingeckoId": "sean-dynasty-prosper",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sean-dynasty-prosper.webp",
+      "mintAddress": "8PGyHCKvSUjezHkV7KLwMacnmSJLe1YbRM1zvDVApump"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:8QhSMvYfXome11VgxFMD75hNbGQXW5QTnjA8khENkY2c",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -483858,6 +483861,18 @@
       "coingeckoId": "nuscale-power-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nuscale-power-ondo-tokenized.webp",
       "mintAddress": "bGy2covWNf5qyzoNdV1pWXuLmFi6Dq927o7JXzWondo"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:BHdfzHB5NHU4wfF7P46cJkA4PogmHYfnp51ijLSgpHa4",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "ZSHIB",
+      "decimals": 6,
+      "name": "Anonymous Shiba",
+      "coingeckoId": "anonymous-shiba",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/anonymous-shiba.webp",
+      "mintAddress": "BHdfzHB5NHU4wfF7P46cJkA4PogmHYfnp51ijLSgpHa4"
     },
     {
       "id": "solana-mainnet:sol-token2022:BHS8LHW11NKxzxyCtqz9NJbTkh3h94WqeMVYgTY5pump",
