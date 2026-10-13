@@ -2220,11 +2220,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": [
-        "https://json-rpc.evm.shimmer.network",
-        "https://lb.routeme.sh/rpc/evm/148",
-        "https://148.rpc.thirdweb.com"
-      ]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/148", "https://148.rpc.thirdweb.com"]
     },
     {
       "id": "149",
@@ -2568,6 +2564,21 @@
       "blockExplorerUrls": ["https://scan-testnet.eniac.network"],
       "platform": "ethereum",
       "rpcs": ["https://rpc-testnet.eniac.network"]
+    },
+    {
+      "id": "175",
+      "name": "OTC",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/otc.webp",
+      "nativeTokenId": "175:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "OTC",
+        "name": "OTC"
+      },
+      "themeColor": "#98f94d",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.otc.run"]
     },
     {
       "id": "176",
@@ -3005,7 +3016,7 @@
       "themeColor": "#4772bc",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.bitnetmoney.com", "https://210.rpc.thirdweb.com"]
+      "rpcs": ["https://rpc.bitnetmoney.com", "https://210.rpc.thirdweb.com", "https://rpc.btnscan.com"]
     },
     {
       "id": "211",
@@ -38845,10 +38856,10 @@
       "prefix": 0,
       "rpcs": [
         "wss://polkadot-rpc.publicnode.com",
+        "wss://rpc-polkadot.helixstreet.io",
         "wss://rpc-polkadot.luckyfriday.io",
         "wss://rockx-dot.w3node.com/polka-public-dot/ws",
-        "wss://dot-rpc.stakeworld.io",
-        "wss://polkadot.api.onfinality.io/public-ws"
+        "wss://dot-rpc.stakeworld.io"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -153134,6 +153145,17 @@
       "decimals": 18,
       "name": "ETH",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
+      "id": "175:evm-native",
+      "platform": "ethereum",
+      "networkId": "175",
+      "type": "evm-native",
+      "symbol": "OTC",
+      "decimals": 18,
+      "name": "OTC",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/otc.webp",
       "isDefault": true
     },
     {
