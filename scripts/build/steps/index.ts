@@ -9,6 +9,7 @@ import { buildPolkadotTokens } from './buildPolkadotTokens'
 import { buildSolanaNetworks } from './buildSolanaNetworks'
 import { buildSolanaTokens } from './buildSolanaTokens'
 import { cleanupOutputs } from './cleanupOutputs'
+import { updatePreviousVersionsRpcs } from './updatePreviousVersionsRpcs'
 
 export const buildSteps: Array<() => Promise<void> | void> = [
   cleanupOutputDir,
@@ -28,4 +29,6 @@ export const buildSteps: Array<() => Promise<void> | void> = [
 
   // PRO TIP: comment this one while debugging outputs
   cleanupOutputs,
+
+  updatePreviousVersionsRpcs,
 ]
