@@ -38,7 +38,7 @@
 		"build": "pnpm run validate && tsx scripts/build.ts",
 		"build:dev": "tsx scripts/build.ts",
 		"clean": "rm -rf pub",
-		"prepare-pr-merge": "git fetch origin main && git restore --source=origin/main --staged --worktree data",
+		"prepare-pr-merge": "git fetch origin main && git restore --source=origin/main --staged --worktree data/cache data/generated assets/tokens/coingecko",
 		"postinstall": "pnpm generate-schemas"
 	},
 	"dependencies": {
@@ -47,9 +47,9 @@
 		"@polkadot-api/substrate-client": "0.7.0",
 		"@solana/kit": "6.10.0",
 		"@supercharge/promise-pool": "^3.1.0",
-		"@talismn/balances": "0.0.0-pr2571-20260922021108",
-		"@talismn/chain-connectors": "0.0.0-pr2571-20260922021108",
-		"@talismn/chaindata-provider": "0.0.0-pr2571-20260922021108",
+		"@talismn/balances": "0.0.0-pr2651-20261016005538",
+		"@talismn/chain-connectors": "0.0.0-pr2651-20261016005538",
+		"@talismn/chaindata-provider": "0.0.0-pr2651-20261016005538",
 		"@talismn/crypto": "1.1.0",
 		"@talismn/sapi": "2.0.1",
 		"@talismn/scale": "2.0.1",

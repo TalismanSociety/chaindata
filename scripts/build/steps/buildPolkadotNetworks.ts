@@ -123,6 +123,7 @@ const consolidateDotNetwork = (
     latestMetadataQrUrl: config.latestMetadataQrUrl || metadataPortalUrls?.urls.latestMetadataQrUrl || undefined,
     hasExtrinsicSignatureTypePrefix: config.hasCheckMetadataHash || undefined,
     isUnknownFeeToken: config.isUnknownFeeToken || undefined,
+    hasFrontierMirrorWithdraw: config.hasFrontierMirrorWithdraw || undefined,
     registryTypes: config.registryTypes || undefined,
     signedExtensions: config.signedExtensions || undefined,
     oldPrefix: config.oldPrefix,
