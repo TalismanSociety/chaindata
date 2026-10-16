@@ -1,3 +1,5 @@
+import { copyFileSync, existsSync } from 'node:fs'
+
 import { MINIMETADATA_VERSION, type Network } from '@talismn/chaindata-provider'
 import isEqual from 'lodash/isEqual'
 
@@ -21,7 +23,9 @@ export const updatePreviousVersionsRpcs = async () => {
 
   for (let version = FIRST_VERSION_WITH_CHAINDATA_FILE; version < currentVersion; version++) {
     const dir = `pub/v${version}`
-    const data = parseJsonFile<PreviousChaindataFile>(`${dir}/chaindata.json`)
+    const backupFile = `${dir}/chaindata.backup.json`
+    if (!existsSync(backupFile)) copyFileSync(`${dir}/chaindata.json`, backupFile)
+    const data = parseJsonFile<PreviousChaindataFile>(backupFile)
 
     let rpcsUpdated = 0
     const networks = data.networks.filter((network) => {
