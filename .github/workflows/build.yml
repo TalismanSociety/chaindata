@@ -12,7 +12,6 @@ on:
 # Sets permissions of the GITHUB_TOKEN to allow pushing commits
 permissions:
   contents: write
-  id-token: write
 
 concurrency:
   # only run 1 job per branch/pr/etc at a time
@@ -22,22 +21,22 @@ concurrency:
 jobs:
   build-main:
     name: "Build main"
-    uses: ./.github/workflows/build-jobs.yml
+    uses: ./.github/workflows/build-jobs.yml # zizmor: ignore[self-repository]
     if: github.ref_name == 'main'
-    secrets: inherit
+    secrets:
+      CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN: ${{ secrets.CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN }}
     # Sets permissions of the GITHUB_TOKEN to allow pushing commits
     permissions:
       contents: write
-      id-token: write
 
   build-pr:
     name: "Build PR"
-    uses: ./.github/workflows/build-jobs.yml
+    uses: ./.github/workflows/build-jobs.yml # zizmor: ignore[self-repository]
     if: github.ref_name != 'main'
     with:
       environment: "pr-builds"
-    secrets: inherit
+    secrets:
+      CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN: ${{ secrets.CHAINDATA_CI_SUPERUSER_ACCESS_TOKEN }}
     # Sets permissions of the GITHUB_TOKEN to allow pushing commits
     permissions:
       contents: write
-      id-token: write
