@@ -15633,7 +15633,7 @@
       "themeColor": "#fffffe",
       "blockExplorerUrls": ["https://bbscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://fullnode-mainnet.bouncebitapi.com", "https://6001.rpc.thirdweb.com"]
+      "rpcs": ["https://6001.rpc.thirdweb.com", "https://fullnode-mainnet.bouncebitapi.com"]
     },
     {
       "id": "6060",
@@ -16808,9 +16808,9 @@
       "blockExplorerUrls": ["https://explorer.rootnet.live"],
       "platform": "ethereum",
       "rpcs": [
-        "https://root.rootnet.live/archive",
         "https://lb.routeme.sh/rpc/evm/7668",
-        "https://7668.rpc.thirdweb.com"
+        "https://7668.rpc.thirdweb.com",
+        "https://root.rootnet.live/archive"
       ],
       "contracts": {
         "Multicall3": "0xc9C2E2429AeC354916c476B30d729deDdC94988d"
@@ -35185,7 +35185,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -36684,7 +36684,7 @@
         "wss://kusama-people-rpc.polkadot.io",
         "wss://people-kusama.api.onfinality.io/public-ws",
         "wss://people-kusama-rpc.n.dwellir.com",
-        "wss://ksm-rpc.stakeworld.io/people"
+        "wss://people-kusama.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -36831,7 +36831,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -37157,9 +37161,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
+        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo",
-        "wss://people-paseo.rotko.net"
+        "wss://rpc.interweb-it.com/people-paseo"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
