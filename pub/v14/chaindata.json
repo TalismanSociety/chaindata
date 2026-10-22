@@ -19,9 +19,9 @@
       "rpcs": [
         "https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://ethereum-rpc.publicnode.com",
-        "https://one.valve.city/rpc/vk_demo/evm/1",
         "https://rpc.mevblocker.io",
-        "https://rpc.flashbots.net"
+        "https://rpc.flashbots.net",
+        "https://eth.meowrpc.com"
       ],
       "feeType": "eip-1559",
       "contracts": {
@@ -833,7 +833,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://app.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/53"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/53", "https://api-mainnet.plato.xyz"]
     },
     {
       "id": "54",
@@ -999,7 +999,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://app.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://www.ethercluster.com/morden"]
+      "rpcs": ["https://www.ethercluster.com/morden", "https://api-testnet.plato.xyz"]
     },
     {
       "id": "63",
@@ -3031,7 +3031,7 @@
       "themeColor": "#4772bc",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.bitnetmoney.com", "https://rpc.bitnetmoney.org", "https://210.rpc.thirdweb.com"]
+      "rpcs": ["https://rpc.bitnetmoney.org", "https://rpc.bitnetmoney.com", "https://210.rpc.thirdweb.com"]
     },
     {
       "id": "211",
@@ -15822,7 +15822,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://scdoscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://scdoscan.io/rpc/0", "https://apeccapital.org/rpc/0"]
+      "rpcs": ["https://scdo.com.au/rpc/0", "https://apeccapital.org/rpc/0"]
     },
     {
       "id": "5700",
@@ -19398,8 +19398,8 @@
       "rpcs": [
         "https://lb.routeme.sh/rpc/evm/9996",
         "https://mind-smart-chain.rpc.thirdweb.com",
-        "https://rpc-msc.mindchain.info",
         "https://seednode.mindchain.info",
+        "https://rpc-msc.mindchain.info",
         "https://archive.mindchain.info"
       ]
     },
@@ -25179,7 +25179,7 @@
       "themeColor": "#a21648",
       "blockExplorerUrls": ["https://novascan.velo.org"],
       "platform": "ethereum",
-      "rpcs": ["https://56789.rpc.thirdweb.com", "https://nova.velo.org", "https://lb.routeme.sh/rpc/evm/56789"]
+      "rpcs": ["https://56789.rpc.thirdweb.com", "https://lb.routeme.sh/rpc/evm/56789", "https://nova.velo.org"]
     },
     {
       "id": "57054",
@@ -25513,7 +25513,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://scan.orangechain.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://61022.rpc.thirdweb.com", "https://rpc.orangechain.xyz"]
+      "rpcs": ["https://61022.rpc.thirdweb.com", "https://rpc.orangechain.xyz", "https://hk-rpc.orangechain.xyz"]
     },
     {
       "id": "61406",
@@ -33536,6 +33536,20 @@
       "rpcs": ["https://rpc.onfachain.com", "https://rpc.onfachain.net", "https://main.onfachain.net"]
     },
     {
+      "id": "12142816",
+      "name": "Winmar Chain Mainnet",
+      "nativeTokenId": "12142816:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "WMC",
+        "name": "Winmar Coin"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://scan.winmarchain.org"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.winmarchain.io"]
+    },
+    {
       "id": "12227332",
       "isTestnet": true,
       "name": "Neo X Testnet T4",
@@ -36669,7 +36683,7 @@
       "specVersion": 56,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://avail-turing.api.onfinality.io/public-ws", "wss://turing-testnet.avail-rpc.com"],
+      "rpcs": ["wss://turing-testnet.avail-rpc.com"],
       "registryTypes": {
         "AppId": "Compact<u32>",
         "DataLookupItem": {
@@ -36999,8 +37013,8 @@
       "oldPrefix": 36,
       "rpcs": [
         "wss://fullnode.centrifuge.io",
-        "wss://centrifuge-parachain.api.onfinality.io/public-ws",
-        "wss://rpc-centrifuge.luckyfriday.io"
+        "wss://rpc-centrifuge.luckyfriday.io",
+        "wss://centrifuge-parachain.api.onfinality.io/public-ws"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -131125,6 +131139,16 @@
       "decimals": 18,
       "name": "EnterCoin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/enter.webp",
+      "isDefault": true
+    },
+    {
+      "id": "12142816:evm-native",
+      "platform": "ethereum",
+      "networkId": "12142816",
+      "type": "evm-native",
+      "symbol": "WMC",
+      "decimals": 18,
+      "name": "Winmar Coin",
       "isDefault": true
     },
     {
