@@ -10201,6 +10201,22 @@
       "rpcs": ["https://evm.mantrachain.io"]
     },
     {
+      "id": "6000",
+      "isTestnet": true,
+      "name": "BounceBit Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bouncebit.webp",
+      "nativeTokenId": "6000:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BB",
+        "name": "BounceBit"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://bbscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://fullnode-testnet.bouncebitapi.com"]
+    },
+    {
       "id": "6001",
       "name": "BounceBit Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/6001.webp",
@@ -14672,7 +14688,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://exp.j2o.io"],
       "platform": "ethereum",
-      "rpcs": ["https://35011.rpc.thirdweb.com", "https://lb.routeme.sh/rpc/evm/35011", "https://rpc.j2o.io"]
+      "rpcs": ["https://35011.rpc.thirdweb.com", "https://lb.routeme.sh/rpc/evm/35011"]
     },
     {
       "id": "35441",
@@ -14735,7 +14751,7 @@
       "themeColor": "#fffbf7",
       "blockExplorerUrls": ["https://block-explorer.testnet.lens.dev"],
       "platform": "ethereum",
-      "rpcs": ["https://lens-testnet.drpc.org", "https://rpc.testnet.lens.dev", "https://lb.routeme.sh/rpc/evm/37111"]
+      "rpcs": ["https://lens-testnet.drpc.org", "https://lb.routeme.sh/rpc/evm/37111"]
     },
     {
       "id": "38400",
@@ -22549,7 +22565,7 @@
       "specVersion": 50,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://turing-testnet.avail-rpc.com"],
+      "rpcs": ["wss://avail-turing.api.onfinality.io/public-ws", "wss://turing-testnet.avail-rpc.com"],
       "registryTypes": {
         "AppId": "Compact<u32>",
         "DataLookupItem": {
@@ -207568,6 +207584,17 @@
       "name": "GoChain Ether",
       "coingeckoId": "gochain",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gochain.webp",
+      "isDefault": true
+    },
+    {
+      "id": "6000:evm-native",
+      "platform": "ethereum",
+      "networkId": "6000",
+      "type": "evm-native",
+      "symbol": "BB",
+      "decimals": 18,
+      "name": "BounceBit",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bouncebit.webp",
       "isDefault": true
     },
     {
