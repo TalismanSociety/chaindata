@@ -5,6 +5,7 @@ import {
   getDynamicBuilder,
   getLookupFn,
   getMetadataVersion,
+  hasSignedExtension,
   type UnifiedMetadata,
   unifyMetadata,
 } from '@talismn/scale'
@@ -138,8 +139,7 @@ const fetchMetadataExtract = async ({
 
     const ss58Prefix = getSs58Prefix(metadata, network.id)
 
-    const signedExtensions = Object.values(metadata.extrinsic.signedExtensions).flat()
-    const hasCheckMetadataHash = signedExtensions.some(({ identifier }) => identifier === 'CheckMetadataHash')
+    const hasCheckMetadataHash = hasSignedExtension(metadata, 'CheckMetadataHash')
 
     const account = getAccountType(metadata)
 
