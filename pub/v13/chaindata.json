@@ -27504,8 +27504,8 @@
       "blockExplorerUrls": ["https://blockscan.marscredit.xyz"],
       "platform": "ethereum",
       "rpcs": [
-        "https://110110.rpc.thirdweb.com",
         "https://rpc.marscredit.xyz",
+        "https://110110.rpc.thirdweb.com",
         "https://lb.routeme.sh/rpc/evm/110110",
         "https://rpc.marscredit.xyz:443"
       ]
@@ -27594,7 +27594,12 @@
       "themeColor": "#ff6062",
       "blockExplorerUrls": ["https://explorer.metachain.one"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/112358", "https://112358.rpc.thirdweb.com", "https://rpc2.metachain.one"]
+      "rpcs": [
+        "https://lb.routeme.sh/rpc/evm/112358",
+        "https://112358.rpc.thirdweb.com",
+        "https://rpc.metachain.one",
+        "https://rpc2.metachain.one"
+      ]
     },
     {
       "id": "114514",
@@ -33124,22 +33129,6 @@
       "rpcs": ["https://rpc.testnet.frame.xyz/http"]
     },
     {
-      "id": "73829164",
-      "isTestnet": true,
-      "name": "Kryvora Testnet",
-      "nativeTokenId": "73829164:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer-testnet.kryvora.network"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.kryvora.network"]
-    },
-    {
       "id": "77777777",
       "isTestnet": true,
       "name": "Cryptos Testnet Beta",
@@ -35172,7 +35161,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -36320,10 +36309,10 @@
       "oldPrefix": 63,
       "rpcs": [
         "wss://hydration-rpc.n.dwellir.com",
-        "wss://hydration.rotko.net",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
-        "wss://rpc.kril.hydration.cloud"
+        "wss://rpc.kril.hydration.cloud",
+        "wss://rpc-catfish-1.catfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -326663,17 +326652,6 @@
       "symbol": "TAU",
       "decimals": 18,
       "name": "TAU",
-      "isDefault": true
-    },
-    {
-      "id": "73829164:evm-native",
-      "platform": "ethereum",
-      "networkId": "73829164",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
