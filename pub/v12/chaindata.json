@@ -14856,8 +14856,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://gravity-alpha-sepolia.drpc.org",
-        "https://lb.routeme.sh/rpc/evm/13505",
-        "https://rpc-sepolia.gravity.xyz"
+        "https://rpc-sepolia.gravity.xyz",
+        "https://lb.routeme.sh/rpc/evm/13505"
       ]
     },
     {
@@ -14889,7 +14889,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://testnet.game7.io"],
       "platform": "ethereum",
-      "rpcs": ["https://testnet-rpc.game7.io", "https://testnet-rpc.game7.build"]
+      "rpcs": ["https://testnet-rpc.game7.build"]
     },
     {
       "id": "14149",
@@ -15277,6 +15277,7 @@
       "blockExplorerUrls": ["https://holesky.beaconcha.in"],
       "platform": "ethereum",
       "rpcs": [
+        "https://holesky.drpc.org",
         "https://public.1rpc.io/holesky",
         "https://endpoints.omniatech.io/v1/eth/holesky/public",
         "https://lb.routeme.sh/rpc/evm/17000"
@@ -15453,22 +15454,6 @@
       "rpcs": ["https://rpc.mxc.com", "https://lb.routeme.sh/rpc/evm/18686", "https://18686.rpc.thirdweb.com"]
     },
     {
-      "id": "18880",
-      "isTestnet": true,
-      "name": "EXPchain Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/expchain.webp",
-      "nativeTokenId": "18880:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tZKJ",
-        "name": "tZKJ"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://blockscout-testnet.expchain.ai"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc1-testnet.expchain.ai"]
-    },
-    {
       "id": "18881",
       "isTestnet": true,
       "name": "Ultra EVM Network Testnet",
@@ -15578,22 +15563,6 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": ["https://19527.rpc.thirdweb.com", "https://magnet-rpc.magport.io"]
-    },
-    {
-      "id": "19777",
-      "isTestnet": true,
-      "name": "Astra Sepolia",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/astrasepolia.webp",
-      "nativeTokenId": "19777:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ATX",
-        "name": "Astra"
-      },
-      "themeColor": "#b766d3",
-      "blockExplorerUrls": ["https://explorer-astra-9on2f72wzn.t.conduit.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-astra-9on2f72wzn.t.conduit.xyz"]
     },
     {
       "id": "19911",
@@ -21651,7 +21620,7 @@
       "themeColor": "#5dbdff",
       "blockExplorerUrls": ["https://explorer.bloomgenesis.com"],
       "platform": "ethereum",
-      "rpcs": ["https://333313.rpc.thirdweb.com", "https://mainnet-rpc.bloomgenesis.com"]
+      "rpcs": ["https://333313.rpc.thirdweb.com"]
     },
     {
       "id": "333666",
@@ -25561,24 +25530,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/88153591557", "https://rpc.arb-blueberry.gelato.digital"]
     },
     {
-      "id": "123420000220",
-      "isTestnet": true,
-      "name": "Fluence Stage",
-      "nativeTokenId": "123420000220:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tFLT",
-        "name": "tFLT"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://blockscout.stage.fluence.dev"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.stage.fluence.dev"],
-      "contracts": {
-        "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
-      }
-    },
-    {
       "id": "197710212030",
       "name": "Ntity Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ntity.webp",
@@ -26161,7 +26112,7 @@
       "specVersion": 52,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://turing-testnet.avail-rpc.com"],
+      "rpcs": ["wss://avail-turing.api.onfinality.io/public-ws", "wss://turing-testnet.avail-rpc.com"],
       "registryTypes": {
         "AppId": "Compact<u32>",
         "DataLookupItem": {
@@ -27656,9 +27607,9 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
       "rpcs": [
-        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network"
+        "wss://wss.api.moonriver.moonbeam.network",
+        "wss://moonriver.unitedbloc.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -99983,16 +99934,6 @@
       "isDefault": true
     },
     {
-      "id": "123420000220:evm-native",
-      "platform": "ethereum",
-      "networkId": "123420000220",
-      "type": "evm-native",
-      "symbol": "tFLT",
-      "decimals": 18,
-      "name": "tFLT",
-      "isDefault": true
-    },
-    {
       "id": "123420111:evm-native",
       "platform": "ethereum",
       "networkId": "123420111",
@@ -119776,17 +119717,6 @@
       "isDefault": true
     },
     {
-      "id": "18880:evm-native",
-      "platform": "ethereum",
-      "networkId": "18880",
-      "type": "evm-native",
-      "symbol": "tZKJ",
-      "decimals": 18,
-      "name": "tZKJ",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/expchain.webp",
-      "isDefault": true
-    },
-    {
       "id": "18881:evm-native",
       "platform": "ethereum",
       "networkId": "18881",
@@ -121052,17 +120982,6 @@
       "decimals": 18,
       "name": "Ntity Haradev",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/haradev.webp",
-      "isDefault": true
-    },
-    {
-      "id": "19777:evm-native",
-      "platform": "ethereum",
-      "networkId": "19777",
-      "type": "evm-native",
-      "symbol": "ATX",
-      "decimals": 18,
-      "name": "Astra",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/astrasepolia.webp",
       "isDefault": true
     },
     {
