@@ -11672,9 +11672,9 @@
       "rpcs": [
         "https://kava-evm-rpc.publicnode.com",
         "https://kava.drpc.org",
+        "https://kava.api.pocket.network",
         "https://kava-public.nodies.app",
-        "https://rpc.ankr.com/kava_evm",
-        "https://evm.kava-rpc.com"
+        "https://rpc.ankr.com/kava_evm"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -13077,20 +13077,6 @@
       "rpcs": ["https://rpc.goalpha.org"]
     },
     {
-      "id": "3188",
-      "name": "BeeChain Mainnet",
-      "nativeTokenId": "3188:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "BKC",
-        "name": "BeeChain"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://scan.beechain.ai"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.beechain.ai"]
-    },
-    {
       "id": "3210",
       "name": "AVI OS",
       "nativeTokenId": "3210:evm-native",
@@ -14054,7 +14040,11 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://testnet.ftmscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://endpoints.omniatech.io/v1/fantom/testnet/public", "https://lb.routeme.sh/rpc/evm/4002"],
+      "rpcs": [
+        "https://endpoints.omniatech.io/v1/fantom/testnet/public",
+        "https://lb.routeme.sh/rpc/evm/4002",
+        "https://fantom-testnet.therpc.io"
+      ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -15575,7 +15565,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.superseed.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://superseed.drpc.org", "https://5330.rpc.thirdweb.com", "https://lb.routeme.sh/rpc/evm/5330"],
+      "rpcs": ["https://5330.rpc.thirdweb.com", "https://lb.routeme.sh/rpc/evm/5330"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -79735,18 +79725,6 @@
       "contractAddress": "0x8ce34f749796f82a6990ffa2d80622ef75ca7ad5"
     },
     {
-      "id": "1:evm-erc20:0x8ce3cac9fe9436e6e4b6539e6853ac1b037dace4",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "PEPINA",
-      "decimals": 18,
-      "name": "Pepina",
-      "coingeckoId": "pepina-2",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pepina-2.webp",
-      "contractAddress": "0x8ce3cac9fe9436e6e4b6539e6853ac1b037dace4"
-    },
-    {
       "id": "1:evm-erc20:0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
       "platform": "ethereum",
       "networkId": "1",
@@ -108546,6 +108524,18 @@
       "coingeckoId": "matrix-win",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/matrix-win.webp",
       "contractAddress": "0xf2fc894381792ded27a7f08d9f0f246363cbe1ea"
+    },
+    {
+      "id": "1:evm-erc20:0xf2fe457d03302ea6c3b1f23038adeea88aeb0761",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "GINNAN",
+      "decimals": 18,
+      "name": "GinnanCoin",
+      "coingeckoId": "ginnancoin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ginnancoin.webp",
+      "contractAddress": "0xf2fe457d03302ea6c3b1f23038adeea88aeb0761"
     },
     {
       "id": "1:evm-erc20:0xf30f62963cce132f32306d7f18a8587958b30ea9",
@@ -188959,16 +188949,6 @@
       "name": "Bitcoin",
       "coingeckoId": "wrapped-bitcoin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-bitcoin.webp",
-      "isDefault": true
-    },
-    {
-      "id": "3188:evm-native",
-      "platform": "ethereum",
-      "networkId": "3188",
-      "type": "evm-native",
-      "symbol": "BKC",
-      "decimals": 18,
-      "name": "BeeChain",
       "isDefault": true
     },
     {
@@ -415474,7 +415454,7 @@
       "decimals": 9,
       "name": "SN34 | Yugos י",
       "coingeckoId": "bitmind",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bitmind.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn34-8f7efe59.webp",
       "isDefault": true,
       "netuid": 34,
       "subnetName": "Yugos",
@@ -415502,12 +415482,12 @@
       "type": "substrate-dtao",
       "symbol": "כ",
       "decimals": 9,
-      "name": "SN36 | Epago כ",
+      "name": "SN36 | Bittensor כ",
       "coingeckoId": "web-agents-autoppia",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn36-26dc747c.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/web-agents-autoppia.webp",
       "isDefault": true,
       "netuid": 36,
-      "subnetName": "Epago",
+      "subnetName": "Bittensor",
       "isTransferable": true
     },
     {
@@ -416116,12 +416096,12 @@
       "type": "substrate-dtao",
       "symbol": "ك",
       "decimals": 9,
-      "name": "SN73 | Parked ك",
+      "name": "SN73 | Elenost ك",
       "coingeckoId": "merit-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/merit-2.webp",
       "isDefault": true,
       "netuid": 73,
-      "subnetName": "Parked",
+      "subnetName": "Elenost",
       "isTransferable": true
     },
     {
@@ -486964,6 +486944,18 @@
       "mintAddress": "BBosJLw8ZzoATiEyywiifx7AgmrD2Cm3XjFWbhbRhChy"
     },
     {
+      "id": "solana-mainnet:sol-token2022:bBrSYBsz4GncqiyGzVL4aVrhbmWY3pFHdkxshTpondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BLKHIon",
+      "decimals": 9,
+      "name": "Ondo High Income Powered by BlackRock",
+      "coingeckoId": "ondo-high-income-powered-by-blackrock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-high-income-powered-by-blackrock.webp",
+      "mintAddress": "bBrSYBsz4GncqiyGzVL4aVrhbmWY3pFHdkxshTpondo"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:BCdwQBAn8dYB5YjTsoB6TdHAWokxv28k2oZUodERpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -489614,6 +489606,18 @@
       "coingeckoId": "openfacilitator",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/openfacilitator.webp",
       "mintAddress": "cpbqtLWH8DkwuVYvKeVVjV9JowkFd8kkpo1vjCSopen"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:CPcYDPoNoD42Yqvv2kKfB93RqL73vxnXEoRRgqqondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BRAINon",
+      "decimals": 9,
+      "name": "Ondo AI Leaders Portfolio",
+      "coingeckoId": "ondo-ai-leaders-portfolio",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-ai-leaders-portfolio.webp",
+      "mintAddress": "CPcYDPoNoD42Yqvv2kKfB93RqL73vxnXEoRRgqqondo"
     },
     {
       "id": "solana-mainnet:sol-token2022:CPWkMURVvcnX8hGjqCTb8i5LkzV3VSvyk7SeJi8ondo",
@@ -500236,6 +500240,18 @@
       "mintAddress": "LUV9GB51PNZNRyzzyYK3rtqFfvDvWtRiXZ34wVq2HrX"
     },
     {
+      "id": "solana-mainnet:sol-token2022:LZ6kyzBEniNHQ57cj8KAbkwtXxYbhQDKBQJo5npondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "YLD8on",
+      "decimals": 9,
+      "name": "Ondo 8 Targeted Income TR Portfolio",
+      "coingeckoId": "ondo-8-targeted-income-tr-portfolio",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-8-targeted-income-tr-portfolio.webp",
+      "mintAddress": "LZ6kyzBEniNHQ57cj8KAbkwtXxYbhQDKBQJo5npondo"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:LZddqAqKqJW9oMZSjTxCUmbmzBRQtv9gMkD9hZ3ondo",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -500474,6 +500490,18 @@
       "coingeckoId": "mgm-resorts-international-backpack-securities",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/mgm-resorts-international-backpack-securities.webp",
       "mintAddress": "MGMuubtUEirmkhfEQdmGUh4pr7HuUdMWcZXFtpPbVJD"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:MH63ApKFAH68mTP8M5ofkioN6AomPCV8Ar35dtRondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BLKDIGon",
+      "decimals": 9,
+      "name": "Ondo Diversified Growth Powered by BlackRock",
+      "coingeckoId": "ondo-diversified-growrth-powered-by-blackrock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-diversified-growrth-powered-by-blackrock.webp",
+      "mintAddress": "MH63ApKFAH68mTP8M5ofkioN6AomPCV8Ar35dtRondo"
     },
     {
       "id": "solana-mainnet:sol-token2022:mhZ69E1vDnAsQJXAwarLYSX5tmgeMajXBJ2rXAcondo",
@@ -501136,6 +501164,18 @@
       "mintAddress": "ocadaAXpD1haGy2JnjHbgUhczqtiMdYHzvnBihjJHg9"
     },
     {
+      "id": "solana-mainnet:sol-token2022:ofe6mC87qNGYgSr9Ps7wMVVSbUFvpcJDDxskPrqondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "YLD5on",
+      "decimals": 9,
+      "name": "Ondo 5 Targeted Income TR Portfolio",
+      "coingeckoId": "ondo-5-targeted-income-tr-portfolio",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-5-targeted-income-tr-portfolio.webp",
+      "mintAddress": "ofe6mC87qNGYgSr9Ps7wMVVSbUFvpcJDDxskPrqondo"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:onoyC1ZjHNtT2tShqvVSg5WEcQDbu5zht6sdU9Nwjrc",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -501580,6 +501620,18 @@
       "mintAddress": "PURRaGKXwD9rdZw851PnRDBMuDGopxrDGCM6GMHA9vh"
     },
     {
+      "id": "solana-mainnet:sol-token2022:pvC4ogQRN4QtVwEVEB4gW1WADLCFkcTNuxvYVixondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "MAG7Xon",
+      "decimals": 9,
+      "name": "Ondo Magnificent 7 and Crypto Portfolio",
+      "coingeckoId": "ondo-magnificent-7-and-crypto-portfolio",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-magnificent-7-and-crypto-portfolio.webp",
+      "mintAddress": "pvC4ogQRN4QtVwEVEB4gW1WADLCFkcTNuxvYVixondo"
+    },
+    {
       "id": "solana-mainnet:sol-token2022:Pz7zD359jya1s9jzp72inqfmKF13ziuJv6HzVfkpump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -501674,6 +501726,18 @@
       "coingeckoId": "invesco-qqq-trust-backpack-securities",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/invesco-qqq-trust-backpack-securities.webp",
       "mintAddress": "QQQvDYxG7g11Rr4rnaJqDddmP9ocH74YhE3mDaG37R9"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:qr13tSwtPWKTgYQqf6XM8YoT5LrbFgacpVUupfEondo",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "BLKGRWon",
+      "decimals": 9,
+      "name": "Ondo High Growth Powered by BlackRock",
+      "coingeckoId": "ondo-high-growth-powered-by-blackrock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ondo-high-growth-powered-by-blackrock.webp",
+      "mintAddress": "qr13tSwtPWKTgYQqf6XM8YoT5LrbFgacpVUupfEondo"
     },
     {
       "id": "solana-mainnet:sol-token2022:QUBTAD8C9bMU9LvmMNgKPhrmBGbHvxpu6vfWQtThxxw",
