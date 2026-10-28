@@ -19,9 +19,9 @@
       "rpcs": [
         "https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://ethereum-rpc.publicnode.com",
+        "https://xrpc.cl/eth",
         "https://rpc.mevblocker.io",
-        "https://rpc.flashbots.net",
-        "https://eth.meowrpc.com"
+        "https://rpc.flashbots.net"
       ],
       "feeType": "eip-1559",
       "contracts": {
@@ -154,8 +154,8 @@
         "https://mainnet.optimism.io",
         "https://optimism.gateway.tenderly.co",
         "https://optimism.publicnode.com",
-        "https://optimism-rpc.publicnode.com",
-        "https://optimism.drpc.org"
+        "https://xrpc.cl/optimism",
+        "https://optimism-rpc.publicnode.com"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -725,7 +725,7 @@
         "https://bsc-dataseed2.binance.org",
         "https://bsc-dataseed3.binance.org",
         "https://bsc-dataseed4.binance.org",
-        "https://bsc-rpc.publicnode.com"
+        "https://xrpc.cl/bsc"
       ],
       "contracts": {
         "Erc20Aggregator": "0x21741D68121db79Fd1e9eA34028D3B2e87056DBd",
@@ -12518,8 +12518,8 @@
         "https://mempool.merkle.io/rpc/base/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://base.publicnode.com",
         "https://developer-access-mainnet.base.org/",
-        "https://base.meowrpc.com",
-        "https://base-rpc.publicnode.com"
+        "https://xrpc.cl/base",
+        "https://base.meowrpc.com"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -16550,11 +16550,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://xrpc.cl/avalanche",
         "https://avalanche-c-chain-rpc.publicnode.com",
         "https://avalanche.drpc.org",
         "https://avax.api.pocket.network",
-        "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc",
-        "https://api.zan.top/avax-mainnet/ext/bc/C/rpc"
+        "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
       ],
       "contracts": {
         "Erc20Aggregator": "0xe6af6D72372Aee70523a52Ece60F26329C0dEBDA",
@@ -17133,7 +17133,11 @@
       "themeColor": "#fea94f",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/57054", "https://rpc.ankr.com/sonic_blaze_testnet"],
+      "rpcs": [
+        "https://lb.routeme.sh/rpc/evm/57054",
+        "https://rpc.ankr.com/sonic_blaze_testnet",
+        "https://sonic-blaze.therpc.io"
+      ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -17213,7 +17217,8 @@
         "https://linea-sepolia.drpc.org",
         "https://rpc.sepolia.linea.build",
         "https://linea-sepolia-rpc.publicnode.com",
-        "https://lb.routeme.sh/rpc/evm/59141"
+        "https://lb.routeme.sh/rpc/evm/59141",
+        "https://linea-sepolia.therpc.io"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -17689,9 +17694,9 @@
       "blockExplorerUrls": ["https://chain1.thinkiumscan.net"],
       "platform": "ethereum",
       "rpcs": [
+        "https://proxy1.thinkiumrpc.net",
         "https://lb.routeme.sh/rpc/evm/70001",
-        "https://70001.rpc.thirdweb.com",
-        "https://proxy1.thinkiumrpc.net"
+        "https://70001.rpc.thirdweb.com"
       ]
     },
     {
@@ -17707,9 +17712,9 @@
       "blockExplorerUrls": ["https://chain2.thinkiumscan.net"],
       "platform": "ethereum",
       "rpcs": [
+        "https://proxy2.thinkiumrpc.net",
         "https://lb.routeme.sh/rpc/evm/70002",
-        "https://70002.rpc.thirdweb.com",
-        "https://proxy2.thinkiumrpc.net"
+        "https://70002.rpc.thirdweb.com"
       ]
     },
     {
@@ -22641,11 +22646,11 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": [
+        "https://xrpc.cl/sepolia",
         "https://ethereum-sepolia-rpc.publicnode.com",
         "https://0xrpc.io/sep",
         "https://eth-sepolia-testnet.api.pocket.network",
-        "https://ethereum-sepolia-public.nodies.app",
-        "https://sepolia.rpc.sentio.xyz"
+        "https://ethereum-sepolia-public.nodies.app"
       ],
       "contracts": {
         "Erc20Aggregator": "0x060999f53B88e1967558D8B9eBde876c8876b60d",
@@ -26357,7 +26362,11 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-moonbeam_metadata_latest.apng",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
