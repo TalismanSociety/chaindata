@@ -6,8 +6,8 @@ import sortBy from 'lodash/sortBy'
 import uniq from 'lodash/uniq'
 import values from 'lodash/values'
 
-import { isNotBlacklistedRpcUrl } from './blacklistedRpcs'
 import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
+import { isNotIgnoredRpcUrl } from './ignoredRpcs'
 import { parseJsonFile } from './parseFile'
 import {
   type NetworkRpcHealth,
@@ -68,10 +68,10 @@ export const checkPlatformRpcsHealth = async (
   const rechecks = process.argv.includes('--skip-rechecks') ? 0 : rest.rechecks
 
   const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema).filter(({ rpc }) =>
-    isNotBlacklistedRpcUrl(rpc),
+    isNotIgnoredRpcUrl(rpc),
   )
   const existingRpcHealthsByKey = keyBy(existingRpcHealths, getRpcHealthKey)
-  const listedRpcHealthsKeys = listedRpcs.filter(({ rpc }) => isNotBlacklistedRpcUrl(rpc)).map(getRpcHealthKey)
+  const listedRpcHealthsKeys = listedRpcs.filter(({ rpc }) => isNotIgnoredRpcUrl(rpc)).map(getRpcHealthKey)
 
   // purge unlisted ones
   for (const key of keys(existingRpcHealthsByKey))

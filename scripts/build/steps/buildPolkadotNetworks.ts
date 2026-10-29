@@ -4,7 +4,6 @@ import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
 import type { MetadataPortalUrls } from '../../shared/types'
-import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
 import { checkDuplicateGenesisHashes } from '../../shared/checkDuplicateGenesisHashes'
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
@@ -16,6 +15,7 @@ import {
 } from '../../shared/constants'
 import { FORCE_OK_RPCS } from '../../shared/forceOkRpcs'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
+import { isNotIgnoredRpcUrl } from '../../shared/ignoredRpcs'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
@@ -83,7 +83,7 @@ const consolidateDotNetwork = (
     ...configRpcs.filter((url) => mehRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
     // ignore NOK ones
   ])
-    .filter(isNotBlacklistedRpcUrl)
+    .filter(isNotIgnoredRpcUrl)
     .slice(0, 5)
 
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated

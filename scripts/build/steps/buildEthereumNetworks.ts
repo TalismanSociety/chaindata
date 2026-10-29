@@ -6,7 +6,6 @@ import keyBy from 'lodash/keyBy'
 import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
-import { isNotBlacklistedRpcUrl } from '../../shared/blacklistedRpcs'
 import { checkDuplicates } from '../../shared/checkDuplicates'
 import {
   FILE_INPUT_NETWORKS_ETHEREUM,
@@ -15,6 +14,7 @@ import {
   FILE_OUTPUT_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
+import { isNotIgnoredRpcUrl } from '../../shared/ignoredRpcs'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
 import { getRpcsByStatus } from '../../shared/rpcHealth'
 import {
@@ -84,7 +84,7 @@ const consolidateEthNetwork = (
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
     ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
   ])
-    .filter(isNotBlacklistedRpcUrl)
+    .filter(isNotIgnoredRpcUrl)
     .slice(0, 5)
 
   if (!rpcs.length) return null
