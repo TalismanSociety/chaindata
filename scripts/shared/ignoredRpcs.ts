@@ -1,13 +1,13 @@
-export const isBlacklistedRpcUrl = (url: string): boolean => {
+export const isIgnoredRpcUrl = (url: string): boolean => {
   const parsedUrl = new URL(url)
-  return BLACKLISTED_HOSTS.includes(parsedUrl.host) || isKeylessMerkleRpcUrl(parsedUrl)
+  return IGNORED_HOSTS.includes(parsedUrl.host) || hasIgnoredHostSuffix(parsedUrl) || isKeylessMerkleRpcUrl(parsedUrl)
 }
 
-export const isNotBlacklistedRpcUrl = (url: string): boolean => !isBlacklistedRpcUrl(url)
+export const isNotIgnoredRpcUrl = (url: string): boolean => !isIgnoredRpcUrl(url)
 
 // fill with RPCs that are flagged by antiviruses, or that causes any other issue
 // works for both wss and http rpcs
-const BLACKLISTED_RPC_URLS = [
+const IGNORED_RPC_URLS = [
   'https://mainnet.openpiece.io',
   'https://rpc2.mix-blockchain.org:8647',
   'https://mainnet.openpiece.io/ ',
@@ -101,10 +101,15 @@ const BLACKLISTED_RPC_URLS = [
   'wss://rpc.hydradx.cloud',
   'https://mainnet.base.org', // rate limited
   'https://krest.unitedbloc.com', // flagged by some antivirus
-  'https://56.rpc.thirdweb.com', // CORS
 ].map((url) => url.replace(/\/$/, ''))
 
-const BLACKLISTED_HOSTS = BLACKLISTED_RPC_URLS.map((url) => new URL(url).host)
+const IGNORED_HOSTS = IGNORED_RPC_URLS.map((url) => new URL(url).host)
+
+// shared rate limits and batch size limits across all chains
+const IGNORED_HOST_SUFFIXES = ['drpc.org', 'thirdweb.com']
+
+const hasIgnoredHostSuffix = ({ hostname }: URL): boolean =>
+  IGNORED_HOST_SUFFIXES.some((suffix) => hostname === suffix || hostname.endsWith(`.${suffix}`))
 
 const isKeylessMerkleRpcUrl = ({ hostname, pathname }: URL): boolean =>
   (hostname === 'merkle.io' || hostname.endsWith('.merkle.io')) && !pathname.includes('/pk_')
