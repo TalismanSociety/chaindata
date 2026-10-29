@@ -106,7 +106,7 @@ const IGNORED_RPC_URLS = [
 const IGNORED_HOSTS = IGNORED_RPC_URLS.map((url) => new URL(url).host)
 
 // shared rate limits and batch size limits across all chains
-const IGNORED_HOST_SUFFIXES = ['drpc.org', 'thirdweb.com']
+const IGNORED_HOST_SUFFIXES = ['drpc.org', 'sentio.xyz', 'thirdweb.com']
 
 const hasIgnoredHostSuffix = ({ hostname }: URL): boolean =>
   IGNORED_HOST_SUFFIXES.some((suffix) => hostname === suffix || hostname.endsWith(`.${suffix}`))
