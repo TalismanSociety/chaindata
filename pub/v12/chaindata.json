@@ -915,20 +915,6 @@
       "rpcs": ["https://ethnode.primusmoney.com/mainnet", "https://lb.routeme.sh/rpc/evm/78"]
     },
     {
-      "id": "80",
-      "name": "GeneChain",
-      "nativeTokenId": "80:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "RNA",
-        "name": "RNA"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://scan.genechain.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.genechain.io"]
-    },
-    {
       "id": "81",
       "isTestnet": true,
       "name": "Shibuya",
@@ -2871,9 +2857,9 @@
       "rpcs": [
         "https://public.1rpc.io/zksync2-era",
         "https://zksync-era.api.pocket.network",
-        "https://rpc.hostdefi.com/api/rpc/zksync-era",
         "https://api.zan.top/zksync-mainnet",
-        "https://zksync.api.onfinality.io/public"
+        "https://zksync.api.onfinality.io/public",
+        "https://mainnet.era.zksync.io"
       ],
       "contracts": {
         "Multicall3": "0xF9cda624FBC7e059355ce98a31693d299FACd963"
@@ -4534,21 +4520,6 @@
       "blockExplorerUrls": ["https://explorer.advanceblockchain.io/"],
       "platform": "ethereum",
       "rpcs": ["https://rpc1.advanceblockchain.io", "https://rpc2.advanceblockchain.io"]
-    },
-    {
-      "id": "899",
-      "name": "MAXI Chain Mainnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/maxi.webp",
-      "nativeTokenId": "899:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MGAS",
-        "name": "MAXI GAS"
-      },
-      "themeColor": "#ffcb09",
-      "blockExplorerUrls": ["https://mainnet.maxi.network"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.maxi.network"]
     },
     {
       "id": "917",
@@ -14722,6 +14693,22 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/19191", "https://web3.blockxnet.com"]
     },
     {
+      "id": "19478",
+      "isTestnet": true,
+      "name": "Trustivon Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/trustivon.webp",
+      "nativeTokenId": "19478:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "TC",
+        "name": "Trustivon"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://scan.trustivon.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.trustivon.com"]
+    },
+    {
       "id": "19515",
       "isTestnet": true,
       "name": "SEC Testnet",
@@ -16857,7 +16844,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://ashchain.io/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://evm-rpc.ashchain.io", "https://evm-rpc2.ashchain.io"]
+      "rpcs": ["https://evm-rpc.ashchain.io"]
     },
     {
       "id": "51178",
@@ -20953,8 +20940,8 @@
         "https://public.1rpc.io/scroll",
         "https://scroll.api.pocket.network",
         "https://rpc-scroll.blockmachine.io",
-        "https://rpc.hostdefi.com/api/rpc/scroll",
-        "https://rpc.scroll.io"
+        "https://rpc.scroll.io",
+        "https://scroll-rpc.publicnode.com"
       ],
       "feeType": "eip-1559",
       "l2FeeType": {
@@ -118909,6 +118896,17 @@
       "isDefault": true
     },
     {
+      "id": "19478:evm-native",
+      "platform": "ethereum",
+      "networkId": "19478",
+      "type": "evm-native",
+      "symbol": "TC",
+      "decimals": 18,
+      "name": "Trustivon",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/trustivon.webp",
+      "isDefault": true
+    },
+    {
       "id": "1951:evm-native",
       "platform": "ethereum",
       "networkId": "1951",
@@ -215901,16 +215899,6 @@
       "isDefault": true
     },
     {
-      "id": "80:evm-native",
-      "platform": "ethereum",
-      "networkId": "80",
-      "type": "evm-native",
-      "symbol": "RNA",
-      "decimals": 18,
-      "name": "RNA",
-      "isDefault": true
-    },
-    {
       "id": "800001:evm-native",
       "platform": "ethereum",
       "networkId": "800001",
@@ -253309,17 +253297,6 @@
       "name": "Giant Mammoth Coin",
       "coingeckoId": "giant-mammoth",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/giant-mammoth.webp",
-      "isDefault": true
-    },
-    {
-      "id": "899:evm-native",
-      "platform": "ethereum",
-      "networkId": "899",
-      "type": "evm-native",
-      "symbol": "MGAS",
-      "decimals": 18,
-      "name": "MAXI GAS",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/maxi.webp",
       "isDefault": true
     },
     {
