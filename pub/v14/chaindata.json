@@ -9145,21 +9145,6 @@
       }
     },
     {
-      "id": "2443",
-      "isTestnet": true,
-      "name": "Haus Chain Testnet",
-      "nativeTokenId": "2443:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "HAUS",
-        "name": "Haus"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer-testnet.hausserver.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.hausserver.xyz"]
-    },
-    {
       "id": "2458",
       "isTestnet": true,
       "name": "Hybrid Chain Network Testnet",
@@ -15656,6 +15641,21 @@
       "blockExplorerUrls": ["https://explorer.aternoschain.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.aternoschain.com"]
+    },
+    {
+      "id": "12123",
+      "name": "BRC Chain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/brcchain.webp",
+      "nativeTokenId": "12123:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BRC",
+        "name": "BRC Chain mainnet native token"
+      },
+      "themeColor": "#5773f9",
+      "blockExplorerUrls": ["https://scan.brcchain.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.brcchain.io"]
     },
     {
       "id": "12216",
@@ -28277,20 +28277,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/2716446429837000"]
     },
     {
-      "id": "2716446429837001",
-      "name": "DuckFourFourChain",
-      "nativeTokenId": "2716446429837001:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "DFFC",
-        "name": "DuckFourFourCoin"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://main-duckchain.zeninhost.xyz"]
-    },
-    {
       "id": "3-dpass",
       "isDefault": false,
       "name": "3DPass",
@@ -30178,7 +30164,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -30504,9 +30494,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
-        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo"
+        "wss://rpc.interweb-it.com/people-paseo",
+        "wss://people-paseo.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -122613,6 +122603,17 @@
       "isDefault": true
     },
     {
+      "id": "12123:evm-native",
+      "platform": "ethereum",
+      "networkId": "12123",
+      "type": "evm-native",
+      "symbol": "BRC",
+      "decimals": 18,
+      "name": "BRC Chain mainnet native token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/brcchain.webp",
+      "isDefault": true
+    },
+    {
       "id": "1213:evm-native",
       "platform": "ethereum",
       "networkId": "1213",
@@ -159182,16 +159183,6 @@
       "isDefault": true
     },
     {
-      "id": "2443:evm-native",
-      "platform": "ethereum",
-      "networkId": "2443",
-      "type": "evm-native",
-      "symbol": "HAUS",
-      "decimals": 18,
-      "name": "Haus",
-      "isDefault": true
-    },
-    {
       "id": "2458:evm-native",
       "platform": "ethereum",
       "networkId": "2458",
@@ -163294,16 +163285,6 @@
       "decimals": 18,
       "name": "Ether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
-      "id": "2716446429837001:evm-native",
-      "platform": "ethereum",
-      "networkId": "2716446429837001",
-      "type": "evm-native",
-      "symbol": "DFFC",
-      "decimals": 18,
-      "name": "DuckFourFourCoin",
       "isDefault": true
     },
     {

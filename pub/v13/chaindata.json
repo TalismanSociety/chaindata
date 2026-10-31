@@ -5303,6 +5303,20 @@
       ]
     },
     {
+      "id": "1020",
+      "name": "Nura Chain",
+      "nativeTokenId": "1020:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "NURA",
+        "name": "Nura Coin"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.nurachain.net"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.nurachain.net"]
+    },
+    {
       "id": "1029",
       "name": "BitTorrent Chain Donau",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bttc.webp",
@@ -9000,21 +9014,6 @@
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
-    },
-    {
-      "id": "2443",
-      "isTestnet": true,
-      "name": "Haus Chain Testnet",
-      "nativeTokenId": "2443:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "HAUS",
-        "name": "Haus"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer-testnet.hausserver.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.hausserver.xyz"]
     },
     {
       "id": "2477",
@@ -15302,6 +15301,21 @@
       "rpcs": ["https://rpc.aternoschain.com"]
     },
     {
+      "id": "12123",
+      "name": "BRC Chain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/brcchain.webp",
+      "nativeTokenId": "12123:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BRC",
+        "name": "BRC Chain mainnet native token"
+      },
+      "themeColor": "#5773f9",
+      "blockExplorerUrls": ["https://scan.brcchain.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.brcchain.io"]
+    },
+    {
       "id": "12216",
       "name": "L2 Protocol Mainnet",
       "nativeTokenId": "12216:evm-native",
@@ -16934,6 +16948,20 @@
       "blockExplorerUrls": ["https://testnet.kubscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc-testnet.bitkubchain.io", "https://lb.routeme.sh/rpc/evm/25925"]
+    },
+    {
+      "id": "26262",
+      "name": "Coinbosa Chain",
+      "nativeTokenId": "26262:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BOSA",
+        "name": "Coinbosa"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.coinbosa.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://explorer.coinbosa.com/rpc"]
     },
     {
       "id": "26482",
@@ -29364,7 +29392,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -29690,9 +29722,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
-        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo"
+        "wss://rpc.interweb-it.com/people-paseo",
+        "wss://people-paseo.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -115294,6 +115326,16 @@
       "isDefault": true
     },
     {
+      "id": "1020:evm-native",
+      "platform": "ethereum",
+      "networkId": "1020",
+      "type": "evm-native",
+      "symbol": "NURA",
+      "decimals": 18,
+      "name": "Nura Coin",
+      "isDefault": true
+    },
+    {
       "id": "10200:evm-native",
       "platform": "ethereum",
       "networkId": "10200",
@@ -118320,6 +118362,17 @@
       "symbol": "FUMA",
       "decimals": 18,
       "name": "FUSHUMA",
+      "isDefault": true
+    },
+    {
+      "id": "12123:evm-native",
+      "platform": "ethereum",
+      "networkId": "12123",
+      "type": "evm-native",
+      "symbol": "BRC",
+      "decimals": 18,
+      "name": "BRC Chain mainnet native token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/brcchain.webp",
       "isDefault": true
     },
     {
@@ -153192,16 +153245,6 @@
       "isDefault": true
     },
     {
-      "id": "2443:evm-native",
-      "platform": "ethereum",
-      "networkId": "2443",
-      "type": "evm-native",
-      "symbol": "HAUS",
-      "decimals": 18,
-      "name": "Haus",
-      "isDefault": true
-    },
-    {
       "id": "246:evm-native",
       "platform": "ethereum",
       "networkId": "246",
@@ -157003,6 +157046,16 @@
       "decimals": 18,
       "name": "WhiteBIT Coin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/whitechain-testnet.webp",
+      "isDefault": true
+    },
+    {
+      "id": "26262:evm-native",
+      "platform": "ethereum",
+      "networkId": "26262",
+      "type": "evm-native",
+      "symbol": "BOSA",
+      "decimals": 18,
+      "name": "Coinbosa",
       "isDefault": true
     },
     {

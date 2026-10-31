@@ -5480,6 +5480,20 @@
       ]
     },
     {
+      "id": "1020",
+      "name": "Nura Chain",
+      "nativeTokenId": "1020:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "NURA",
+        "name": "Nura Coin"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.nurachain.net"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.nurachain.net"]
+    },
+    {
       "id": "1029",
       "name": "BitTorrent Chain Donau",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bttc.webp",
@@ -9264,21 +9278,6 @@
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
-    },
-    {
-      "id": "2443",
-      "isTestnet": true,
-      "name": "Haus Chain Testnet",
-      "nativeTokenId": "2443:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "HAUS",
-        "name": "Haus"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer-testnet.hausserver.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.hausserver.xyz"]
     },
     {
       "id": "2458",
@@ -16109,6 +16108,21 @@
       "rpcs": ["https://rpc.aternoschain.com"]
     },
     {
+      "id": "12123",
+      "name": "BRC Chain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/brcchain.webp",
+      "nativeTokenId": "12123:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BRC",
+        "name": "BRC Chain mainnet native token"
+      },
+      "themeColor": "#5773f9",
+      "blockExplorerUrls": ["https://scan.brcchain.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.brcchain.io"]
+    },
+    {
       "id": "12216",
       "name": "L2 Protocol Mainnet",
       "nativeTokenId": "12216:evm-native",
@@ -17906,6 +17920,20 @@
       "blockExplorerUrls": ["https://testnet.kubscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc-testnet.bitkubchain.io", "https://lb.routeme.sh/rpc/evm/25925"]
+    },
+    {
+      "id": "26262",
+      "name": "Coinbosa Chain",
+      "nativeTokenId": "26262:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BOSA",
+        "name": "Coinbosa"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.coinbosa.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://explorer.coinbosa.com/rpc"]
     },
     {
       "id": "26482",
@@ -29162,20 +29190,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/2716446429837000"]
     },
     {
-      "id": "2716446429837001",
-      "name": "DuckFourFourChain",
-      "nativeTokenId": "2716446429837001:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "DFFC",
-        "name": "DuckFourFourCoin"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://main-duckchain.zeninhost.xyz"]
-    },
-    {
       "id": "3-dpass",
       "isDefault": false,
       "name": "3DPass",
@@ -31094,7 +31108,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -31420,9 +31438,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
-        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo"
+        "wss://rpc.interweb-it.com/people-paseo",
+        "wss://people-paseo.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -31996,7 +32014,7 @@
       "blockExplorerUrls": ["https://sora.subscan.io/"],
       "genesisHash": "0x7e4e32d0feafd4f9c9414b0be86373f9a1efa904809b683453a9af6856d38ad5",
       "platform": "polkadot",
-      "chainName": "SORA",
+      "chainName": "SORA Nexus recovery at 28,191,817",
       "specName": "sora-substrate",
       "specVersion": 134,
       "account": "*25519",
@@ -41349,18 +41367,6 @@
       "coingeckoId": "x2y2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/x2y2.webp",
       "contractAddress": "0x1e4ede388cbc9f4b5c79681b7f94d36a11abebc9"
-    },
-    {
-      "id": "1:evm-erc20:0x1e635120fe4441702d826369114f0665c49ded5e",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "WOLFINA",
-      "decimals": 18,
-      "name": "Wolfina",
-      "coingeckoId": "wolfina",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wolfina.webp",
-      "contractAddress": "0x1e635120fe4441702d826369114f0665c49ded5e"
     },
     {
       "id": "1:evm-erc20:0x1e762e1fac176bbb341656035daf5601b1c69be5",
@@ -94264,18 +94270,6 @@
       "contractAddress": "0xd7c595a1c093bd21284e1acc036f37cdd429e536"
     },
     {
-      "id": "1:evm-erc20:0xd7c80dcce5b45b04d744ddbb0070374830dcab45",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "SIB",
-      "decimals": 18,
-      "name": "Super Intelligent Beauty",
-      "coingeckoId": "super-intelligent-beauty",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/super-intelligent-beauty.webp",
-      "contractAddress": "0xd7c80dcce5b45b04d744ddbb0070374830dcab45"
-    },
-    {
       "id": "1:evm-erc20:0xd7c9f42a35c8d13b71d4c0b024ae9eb0e77b9cff",
       "platform": "ethereum",
       "networkId": "1",
@@ -121003,6 +120997,16 @@
       "isDefault": true
     },
     {
+      "id": "1020:evm-native",
+      "platform": "ethereum",
+      "networkId": "1020",
+      "type": "evm-native",
+      "symbol": "NURA",
+      "decimals": 18,
+      "name": "Nura Coin",
+      "isDefault": true
+    },
+    {
       "id": "10200:evm-native",
       "platform": "ethereum",
       "networkId": "10200",
@@ -124038,6 +124042,17 @@
       "symbol": "FUMA",
       "decimals": 18,
       "name": "FUSHUMA",
+      "isDefault": true
+    },
+    {
+      "id": "12123:evm-native",
+      "platform": "ethereum",
+      "networkId": "12123",
+      "type": "evm-native",
+      "symbol": "BRC",
+      "decimals": 18,
+      "name": "BRC Chain mainnet native token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/brcchain.webp",
       "isDefault": true
     },
     {
@@ -160710,16 +160725,6 @@
       "isDefault": true
     },
     {
-      "id": "2443:evm-native",
-      "platform": "ethereum",
-      "networkId": "2443",
-      "type": "evm-native",
-      "symbol": "HAUS",
-      "decimals": 18,
-      "name": "Haus",
-      "isDefault": true
-    },
-    {
       "id": "2458:evm-native",
       "platform": "ethereum",
       "networkId": "2458",
@@ -164674,6 +164679,16 @@
       "isDefault": true
     },
     {
+      "id": "26262:evm-native",
+      "platform": "ethereum",
+      "networkId": "26262",
+      "type": "evm-native",
+      "symbol": "BOSA",
+      "decimals": 18,
+      "name": "Coinbosa",
+      "isDefault": true
+    },
+    {
       "id": "263:evm-native",
       "platform": "ethereum",
       "networkId": "263",
@@ -164898,16 +164913,6 @@
       "decimals": 18,
       "name": "Ether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
-      "id": "2716446429837001:evm-native",
-      "platform": "ethereum",
-      "networkId": "2716446429837001",
-      "type": "evm-native",
-      "symbol": "DFFC",
-      "decimals": 18,
-      "name": "DuckFourFourCoin",
       "isDefault": true
     },
     {
@@ -441973,6 +441978,18 @@
       "mintAddress": "C2omVhcvt3DDY77S2KZzawFJQeETZofgZ4eNWWkXpump"
     },
     {
+      "id": "solana-mainnet:sol-spl:C31uUcfLGPpQDHHieNtDkSWvp4PhNxeSs81cFQFdZVUQ",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "FLUKE",
+      "decimals": 6,
+      "name": "Fluke",
+      "coingeckoId": "fluke",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fluke.webp",
+      "mintAddress": "C31uUcfLGPpQDHHieNtDkSWvp4PhNxeSs81cFQFdZVUQ"
+    },
+    {
       "id": "solana-mainnet:sol-spl:C3DwDjT17gDvvCYC2nsdGHxDHVmQRdhKfpAdqQ29pump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -465489,6 +465506,18 @@
       "coingeckoId": "inverse",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/inverse.webp",
       "mintAddress": "2gLhk8p2KvUFeUXur2hiF4hxjdRM1vBcbgo9Q7DMZfiw"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:2gTbp2gwH46rqExzabSyrdR3294SLwCp2rSqWDS6Sim1",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "CATPAD",
+      "decimals": 6,
+      "name": "CATPAD",
+      "coingeckoId": "catpad",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/catpad.webp",
+      "mintAddress": "2gTbp2gwH46rqExzabSyrdR3294SLwCp2rSqWDS6Sim1"
     },
     {
       "id": "solana-mainnet:sol-token2022:2H5yWbfB3u2KZwZj4RsBrfTXL8KB2YNE8i2Yb7cvpump",
