@@ -6703,6 +6703,23 @@
       "rpcs": ["https://rpc.antofy.io"]
     },
     {
+      "id": "2213",
+      "name": "Evanesco Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/evanesco.webp",
+      "nativeTokenId": "2213:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "EVA",
+        "name": "EVA",
+        "coingeckoId": "evanesco-network",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/evanesco-network.webp"
+      },
+      "themeColor": "#ac0882",
+      "blockExplorerUrls": ["https://explorer.evanesco.org"],
+      "platform": "ethereum",
+      "rpcs": ["https://seed4.evanesco.org:8546"]
+    },
+    {
       "id": "2221",
       "isTestnet": true,
       "name": "Kava Testnet",
@@ -6829,6 +6846,7 @@
         "https://data-testnet-v1.somanetwork.io",
         "https://block-testnet-v1.somanetwork.io",
         "https://testnet-au-server-2.somanetwork.io",
+        "https://testnet-au-server-1.somanetwork.io",
         "https://testnet-sg-server-1.somanetwork.io"
       ]
     },
@@ -7809,6 +7827,26 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/3737"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
+      }
+    },
+    {
+      "id": "3776",
+      "name": "Astar zkEVM",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/3776.webp",
+      "nativeTokenId": "3776:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "coingeckoId": "weth",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://astar-zkevm.explorer.startale.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-zkevm.astar.network"],
+      "contracts": {
+        "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
     },
     {
@@ -21605,9 +21643,9 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
       "rpcs": [
+        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.unitedbloc.com"
+        "wss://wss.api.moonriver.moonbeam.network"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -121560,6 +121598,18 @@
       "isDefault": true
     },
     {
+      "id": "2213:evm-native",
+      "platform": "ethereum",
+      "networkId": "2213",
+      "type": "evm-native",
+      "symbol": "EVA",
+      "decimals": 18,
+      "name": "EVA",
+      "coingeckoId": "evanesco-network",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/evanesco-network.webp",
+      "isDefault": true
+    },
+    {
       "id": "2221:evm-native",
       "platform": "ethereum",
       "networkId": "2221",
@@ -134075,6 +134125,18 @@
       "symbol": "sXAI",
       "decimals": 18,
       "name": "sXai",
+      "isDefault": true
+    },
+    {
+      "id": "3776:evm-native",
+      "platform": "ethereum",
+      "networkId": "3776",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "coingeckoId": "weth",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/weth.webp",
       "isDefault": true
     },
     {
