@@ -30609,11 +30609,11 @@
       "prefix": 0,
       "oldPrefix": 63,
       "rpcs": [
+        "wss://hydration-rpc.n.dwellir.com",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
         "wss://rpc.kril.hydration.cloud",
-        "wss://rpc-catfish-1.catfish.hydration.cloud",
-        "wss://rpc-catfish-2.catfish.hydration.cloud"
+        "wss://rpc-catfish-1.catfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -30688,6 +30688,34 @@
         "substrate-native": {
           "disable": true
         }
+      }
+    },
+    {
+      "id": "jamton",
+      "isDefault": false,
+      "name": "Jamton",
+      "nativeTokenId": "jamton:substrate-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "DOTON",
+        "name": "DOTON"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": [],
+      "genesisHash": "0xbb9233e202ec014707f82ddb90e84ee9efece8fefee287ad4ad646d869a6c24a",
+      "platform": "polkadot",
+      "chainName": "JAMTON",
+      "specName": "jamton-runtime",
+      "specVersion": 1160230,
+      "account": "*25519",
+      "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-jamton-runtime_specs.png",
+      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-jamton-runtime_metadata_latest.apng",
+      "prefix": 5589,
+      "rpcs": ["wss://rpc.jamton.network"],
+      "topology": {
+        "type": "parachain",
+        "relayId": "polkadot",
+        "paraId": 3397
       }
     },
     {
@@ -31418,6 +31446,33 @@
       }
     },
     {
+      "id": "paseo-niskala",
+      "isTestnet": true,
+      "isDefault": false,
+      "name": "Niskala(Paseo)",
+      "nativeTokenId": "paseo-niskala:substrate-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "KPGT",
+        "name": "KPGT"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": [],
+      "genesisHash": "0x65c489fb7bfaf4a27f283faf694a64a8d7ae8fc0ed970fc4ebbf25d03095e4d0",
+      "platform": "polkadot",
+      "chainName": "Niskala",
+      "specName": "niskala-parachain",
+      "specVersion": 1,
+      "account": "secp256k1",
+      "prefix": 6629,
+      "rpcs": ["wss://mlg2.mandalachain.io"],
+      "topology": {
+        "type": "parachain",
+        "relayId": "paseo-testnet",
+        "paraId": 4022
+      }
+    },
+    {
       "id": "paseo-people-chain",
       "isTestnet": true,
       "isDefault": false,
@@ -32014,7 +32069,7 @@
       "blockExplorerUrls": ["https://sora.subscan.io/"],
       "genesisHash": "0x7e4e32d0feafd4f9c9414b0be86373f9a1efa904809b683453a9af6856d38ad5",
       "platform": "polkadot",
-      "chainName": "SORA Nexus recovery at 28,191,817",
+      "chainName": "SORA",
       "specName": "sora-substrate",
       "specVersion": 134,
       "account": "*25519",
@@ -46670,6 +46725,18 @@
       "contractAddress": "0x323c03c48660fe31186fa82c289b0766d331ce21"
     },
     {
+      "id": "1:evm-erc20:0x32401b9fb79065bc15949de0bd43927492f02f0c",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "fAUSDe",
+      "decimals": 18,
+      "name": "Flowdesk AUSD RWA Strategy",
+      "coingeckoId": "flowdesk-ausd-rwa-strategy",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/flowdesk-ausd-rwa-strategy.webp",
+      "contractAddress": "0x32401b9fb79065bc15949de0bd43927492f02f0c"
+    },
+    {
       "id": "1:evm-erc20:0x32462ba310e447ef34ff0d15bce8613aa8c4a244",
       "platform": "ethereum",
       "networkId": "1",
@@ -55310,6 +55377,18 @@
       "contractAddress": "0x4ff23cf2804e777c233890119b881cab7fd60652"
     },
     {
+      "id": "1:evm-erc20:0x500ae64100d7dbdb640531085c2f5d40cdc8930d",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "armUSDTs",
+      "decimals": 18,
+      "name": "Wintermute USDT Select",
+      "coingeckoId": "wintermute-usdt-select",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wintermute-usdt-select.webp",
+      "contractAddress": "0x500ae64100d7dbdb640531085c2f5d40cdc8930d"
+    },
+    {
       "id": "1:evm-erc20:0x5019fe1867d8ccfd76d8d5abd85db5efce548fba",
       "platform": "ethereum",
       "networkId": "1",
@@ -56808,6 +56887,18 @@
       "coingeckoId": "index-coop-coindesk-eth-trend-index",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/index-coop-coindesk-eth-trend-index.webp",
       "contractAddress": "0x55b2cfcfe99110c773f00b023560dd9ef6c8a13b"
+    },
+    {
+      "id": "1:evm-erc20:0x55c1b6e461a6334b567baf0feb5d728715446f05",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "pendleUSDC",
+      "decimals": 18,
+      "name": "Pendle Ecosystem USDC",
+      "coingeckoId": "pendle-ecosystem-usdc",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pendle-ecosystem-usdc.webp",
+      "contractAddress": "0x55c1b6e461a6334b567baf0feb5d728715446f05"
     },
     {
       "id": "1:evm-erc20:0x56015bbe3c01fe05bc30a8a9a9fd9a88917e7db3",
@@ -59014,6 +59105,18 @@
       "coingeckoId": "kpk-eth-yield",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/kpk-eth-yield.webp",
       "contractAddress": "0x5dbf760b4fd0cddde0366b33aeb338b2a6d77725"
+    },
+    {
+      "id": "1:evm-erc20:0x5dc53a23adc9f2bed98de6f59f7f309a7c71ff2b",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "armUSDCp",
+      "decimals": 18,
+      "name": "Wintermute USDC Prime",
+      "coingeckoId": "wintermute-usdc-prime",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wintermute-usdc-prime.webp",
+      "contractAddress": "0x5dc53a23adc9f2bed98de6f59f7f309a7c71ff2b"
     },
     {
       "id": "1:evm-erc20:0x5dc60c4d5e75d22588fa17ffeb90a63e535efce0",
@@ -78173,6 +78276,18 @@
       "contractAddress": "0x9f278dc799bbc61ecb8e5fb8035cbfa29803623b"
     },
     {
+      "id": "1:evm-erc20:0x9f293778c23da45eb7126dd4a8cb3923547e0c3d",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "ESGIN",
+      "decimals": 18,
+      "name": "ESGIN",
+      "coingeckoId": "esgin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/esgin.webp",
+      "contractAddress": "0x9f293778c23da45eb7126dd4a8cb3923547e0c3d"
+    },
+    {
       "id": "1:evm-erc20:0x9f2e3eb0160117c56b07652fe66a08a48b5bd7b5",
       "platform": "ethereum",
       "networkId": "1",
@@ -79348,6 +79463,18 @@
       "coingeckoId": "wrapped-beacon-eth",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-beacon-eth.webp",
       "contractAddress": "0xa2e3356610840701bdf5611a53974510ae27e2e1"
+    },
+    {
+      "id": "1:evm-erc20:0xa2eaad0d586cf9fd73bb2c09cf6a7e3e187d68cd",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "armUSDCs",
+      "decimals": 18,
+      "name": "Wintermute USDC Select",
+      "coingeckoId": "wintermute-usdc-select",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wintermute-usdc-select.webp",
+      "contractAddress": "0xa2eaad0d586cf9fd73bb2c09cf6a7e3e187d68cd"
     },
     {
       "id": "1:evm-erc20:0xa2ec76139028f279a1c790d323c57cc4158098d6",
@@ -87279,6 +87406,42 @@
       "contractAddress": "0xbeefd1c0c6c1f7c94dc6b989dba2e983a47a26a8"
     },
     {
+      "id": "1:evm-erc20:0xbeeff07d991c04cd640de9f15c08ba59c4fedeb7",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "bbqUSDT",
+      "decimals": 18,
+      "name": "Steakhouse High Yield USDT",
+      "coingeckoId": "steakhouse-high-yield-usdt",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/steakhouse-high-yield-usdt.webp",
+      "contractAddress": "0xbeeff07d991c04cd640de9f15c08ba59c4fedeb7"
+    },
+    {
+      "id": "1:evm-erc20:0xbeeff2c5bf38f90e3482a8b19f12e5a6d2fca757",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "bbqUSDC",
+      "decimals": 18,
+      "name": "Steakhouse High Yield USDC",
+      "coingeckoId": "steakhouse-high-yield-usdc",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/steakhouse-high-yield-usdc.webp",
+      "contractAddress": "0xbeeff2c5bf38f90e3482a8b19f12e5a6d2fca757"
+    },
+    {
+      "id": "1:evm-erc20:0xbeeffabcd0db09589dd21854aa760c52ab4bf04f",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "bbqTGBP",
+      "decimals": 18,
+      "name": "Steakhouse tGBP",
+      "coingeckoId": "steakhouse-tgbp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/steakhouse-tgbp.webp",
+      "contractAddress": "0xbeeffabcd0db09589dd21854aa760c52ab4bf04f"
+    },
+    {
       "id": "1:evm-erc20:0xbef26bd568e421d6708cca55ad6e35f8bfa0c406",
       "platform": "ethereum",
       "networkId": "1",
@@ -87301,6 +87464,18 @@
       "coingeckoId": "aelf",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aelf.webp",
       "contractAddress": "0xbf2179859fc6d5bee9bf9158632dc51678a4100e"
+    },
+    {
+      "id": "1:evm-erc20:0xbf29043164660c60a2a72cd15ffe2304e87b6838",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "armUSDTp",
+      "decimals": 18,
+      "name": "Wintermute USDT Prime",
+      "coingeckoId": "wintermute-usdt-prime",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wintermute-usdt-prime.webp",
+      "contractAddress": "0xbf29043164660c60a2a72cd15ffe2304e87b6838"
     },
     {
       "id": "1:evm-erc20:0xbf2e353f5db1a01e4e7f051222c666afc81b2574",
@@ -96790,6 +96965,18 @@
       "contractAddress": "0xe0151763455a8a021e64880c238ba1cff3787ff0"
     },
     {
+      "id": "1:evm-erc20:0xe0181090c22579b6a217f1522cbf8c9f1f0c1965",
+      "platform": "ethereum",
+      "networkId": "1",
+      "type": "evm-erc20",
+      "symbol": "roxUSDCy",
+      "decimals": 18,
+      "name": "RockawayX USDC Yield",
+      "coingeckoId": "rockawayx-usdc-yield",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rockawayx-usdc-yield.webp",
+      "contractAddress": "0xe0181090c22579b6a217f1522cbf8c9f1f0c1965"
+    },
+    {
       "id": "1:evm-erc20:0xe03b2642a5111ad0efc0cbce766498c2dd562ae9",
       "platform": "ethereum",
       "networkId": "1",
@@ -97975,18 +98162,6 @@
       "coingeckoId": "hummingbot",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hummingbot.webp",
       "contractAddress": "0xe5097d9baeafb89f9bcb78c9290d545db5f9e9cb"
-    },
-    {
-      "id": "1:evm-erc20:0xe51a1e57e3c1f037bfc0154918000419636fb1f0",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "EVMZONE",
-      "decimals": 18,
-      "name": "evmzone",
-      "coingeckoId": "evmzone",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/evmzone.webp",
-      "contractAddress": "0xe51a1e57e3c1f037bfc0154918000419636fb1f0"
     },
     {
       "id": "1:evm-erc20:0xe51ba774ebf6392c45bf1d9e6b334d07992460d3",
@@ -194031,6 +194206,18 @@
       "contractAddress": "0x29c6ce0c68b209250789af54d4b563a9c27d61d3"
     },
     {
+      "id": "42161:evm-erc20:0x29d5a40ac6316f74b83108d5a86ca7de4cefb842",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "XOMs",
+      "decimals": 18,
+      "name": "Exxon Mobil",
+      "coingeckoId": "exxon-mobil-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/exxon-mobil-stove-tokenized-stock.webp",
+      "contractAddress": "0x29d5a40ac6316f74b83108d5a86ca7de4cefb842"
+    },
+    {
       "id": "42161:evm-erc20:0x2a0130f1dad45590a0d70bf1b27f105c31ee0a33",
       "platform": "ethereum",
       "networkId": "42161",
@@ -196920,6 +197107,18 @@
       "contractAddress": "0x3ef11a28f69d7134c957bfe31995106d0e5c3255"
     },
     {
+      "id": "42161:evm-erc20:0x3ef4c8e22a3442a6d9870ab5eb89c0db027d74f2",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "MCHPs",
+      "decimals": 18,
+      "name": "Microchip Technology",
+      "coingeckoId": "microchip-technology-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/microchip-technology-stove-tokenized-stock.webp",
+      "contractAddress": "0x3ef4c8e22a3442a6d9870ab5eb89c0db027d74f2"
+    },
+    {
       "id": "42161:evm-erc20:0x3f29fda039ee80f7d30fa5eb4e3b40691329f020",
       "platform": "ethereum",
       "networkId": "42161",
@@ -199402,6 +199601,18 @@
       "coingeckoId": "fedex-rstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/fedex-rstock.webp",
       "contractAddress": "0x504de6997d283a9f7ed5c05e654eb10d672c251a"
+    },
+    {
+      "id": "42161:evm-erc20:0x5096a0f33d8c40bcb864f0cae9165ebbdbdf9de1",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "KHCs",
+      "decimals": 18,
+      "name": "The Kraft Heinz",
+      "coingeckoId": "the-kraft-heinz-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-kraft-heinz-stove-tokenized-stock.webp",
+      "contractAddress": "0x5096a0f33d8c40bcb864f0cae9165ebbdbdf9de1"
     },
     {
       "id": "42161:evm-erc20:0x50a1291f69d9d3853def8209cfb1af0b46927be1",
@@ -201970,6 +202181,18 @@
       "contractAddress": "0x61f157bd092adf9025d16ca32145f8256cca6b50"
     },
     {
+      "id": "42161:evm-erc20:0x61f88567d4e8f4408d2a91e39ae425f25891b7da",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "FCXs",
+      "decimals": 18,
+      "name": "Freeport-McMoRan",
+      "coingeckoId": "freeport-mcmoran-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/freeport-mcmoran-stove-tokenized-stock.webp",
+      "contractAddress": "0x61f88567d4e8f4408d2a91e39ae425f25891b7da"
+    },
+    {
       "id": "42161:evm-erc20:0x61fbe2f7e000f709e973bf35d1f3b0f14f23f426",
       "platform": "ethereum",
       "networkId": "42161",
@@ -204308,6 +204531,18 @@
       "contractAddress": "0x73510a6015aa3a96c8c11c55d1ca1ab5275d7041"
     },
     {
+      "id": "42161:evm-erc20:0x735c2c0c7ebb9bbf0ccee7b227f80a957b6e861c",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "BKNGs",
+      "decimals": 18,
+      "name": "Booking Holdings",
+      "coingeckoId": "booking-holdings-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/booking-holdings-stove-tokenized-stock.webp",
+      "contractAddress": "0x735c2c0c7ebb9bbf0ccee7b227f80a957b6e861c"
+    },
+    {
       "id": "42161:evm-erc20:0x7388ed3371407471d48637b4ad8445b8d4fc3f8f",
       "platform": "ethereum",
       "networkId": "42161",
@@ -204797,6 +205032,18 @@
       "coingeckoId": "empyreal",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/empyreal.webp",
       "contractAddress": "0x772598e9e62155d7fdfe65fdf01eb5a53a8465be"
+    },
+    {
+      "id": "42161:evm-erc20:0x772ff80bb64297de30f91ed0271c6bde7479cbd3",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "HPQs",
+      "decimals": 18,
+      "name": "HP Inc",
+      "coingeckoId": "hp-inc-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hp-inc-stove-tokenized-stock.webp",
+      "contractAddress": "0x772ff80bb64297de30f91ed0271c6bde7479cbd3"
     },
     {
       "id": "42161:evm-erc20:0x77308f8b63a99b24b262d930e0218ed2f49f8475",
@@ -217914,6 +218161,18 @@
       "contractAddress": "0xcd5f2800f5f8a95218a8416687577a98e74d1805"
     },
     {
+      "id": "42161:evm-erc20:0xcd6100aa9f282544dddc7d62886a62db76d65183",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "CPRTs",
+      "decimals": 18,
+      "name": "Copart",
+      "coingeckoId": "copart-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/copart-stove-tokenized-stock.webp",
+      "contractAddress": "0xcd6100aa9f282544dddc7d62886a62db76d65183"
+    },
+    {
       "id": "42161:evm-erc20:0xcd7ce6cadb83586d8c26fa23cb9b1838447f7a19",
       "platform": "ethereum",
       "networkId": "42161",
@@ -221032,6 +221291,18 @@
       "contractAddress": "0xdf7a6ce3b9087251f5859f42ca79ce34f4a88460"
     },
     {
+      "id": "42161:evm-erc20:0xdf8f2f065ba0ba16a2173dc3cf0f2e61541e39be",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "CSXs",
+      "decimals": 18,
+      "name": "CSX Corp",
+      "coingeckoId": "csx-corp-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/csx-corp-stove-tokenized-stock.webp",
+      "contractAddress": "0xdf8f2f065ba0ba16a2173dc3cf0f2e61541e39be"
+    },
+    {
       "id": "42161:evm-erc20:0xdf9c483b9142b2be2a417a32be586b16cd501ed2",
       "platform": "ethereum",
       "networkId": "42161",
@@ -223813,6 +224084,18 @@
       "contractAddress": "0xf365f22a34a5a0d88cf375a4015446f78fdb883f"
     },
     {
+      "id": "42161:evm-erc20:0xf38648867253359dac30e837fdfe489ef8da9077",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "ORLYs",
+      "decimals": 18,
+      "name": "O'Reilly Automotive",
+      "coingeckoId": "o-reilly-automotive-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/o-reilly-automotive-stove-tokenized-stock.webp",
+      "contractAddress": "0xf38648867253359dac30e837fdfe489ef8da9077"
+    },
+    {
       "id": "42161:evm-erc20:0xf38665a4a42a1e7eeb36a5f26d1757b788e64a4f",
       "platform": "ethereum",
       "networkId": "42161",
@@ -225142,6 +225425,18 @@
       "coingeckoId": "lennar-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/lennar-xstock.webp",
       "contractAddress": "0xfbb16f9b1d1de8a26220688dbca936c05f5a67c2"
+    },
+    {
+      "id": "42161:evm-erc20:0xfbb80703eefb6c98d3ee68f7c6439cbee23d0d15",
+      "platform": "ethereum",
+      "networkId": "42161",
+      "type": "evm-erc20",
+      "symbol": "NEEs",
+      "decimals": 18,
+      "name": "NextEra Energy",
+      "coingeckoId": "nextera-energy-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nextera-energy-stove-tokenized-stock.webp",
+      "contractAddress": "0xfbb80703eefb6c98d3ee68f7c6439cbee23d0d15"
     },
     {
       "id": "42161:evm-erc20:0xfbbbfd14d29b0abdf381033992a5d32f9213663f",
@@ -239913,6 +240208,18 @@
       "contractAddress": "0x28e3c0c404088f1a5d739221072ddf6ab4431022"
     },
     {
+      "id": "4663:evm-erc20:0x2932b2f5761cadca5cb3e09d940092ca723d9ee2",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "Hood",
+      "decimals": 18,
+      "name": "Hoodfellas",
+      "coingeckoId": "hoodfellas",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hoodfellas.webp",
+      "contractAddress": "0x2932b2f5761cadca5cb3e09d940092ca723d9ee2"
+    },
+    {
       "id": "4663:evm-erc20:0x294f40996134d067b56dcbacbf6a36396bbbea7a",
       "platform": "ethereum",
       "networkId": "4663",
@@ -245119,6 +245426,18 @@
       "coingeckoId": "robinhood-hat-strategy",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/robinhood-hat-strategy.webp",
       "contractAddress": "0x78b96280c3347e0f58a7147b73eb0ec5ffff025d"
+    },
+    {
+      "id": "4663:evm-erc20:0x78e80660e9a832f60dbfad1462ee7d9aa3c9bc34",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "TWIF",
+      "decimals": 18,
+      "name": "TaoWifHood",
+      "coingeckoId": "taowifhood",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/taowifhood.webp",
+      "contractAddress": "0x78e80660e9a832f60dbfad1462ee7d9aa3c9bc34"
     },
     {
       "id": "4663:evm-erc20:0x792ff19204ef6c756b4d8efe2441d050f5ece818",
@@ -252102,6 +252421,18 @@
       "coingeckoId": "netflix-robinhood-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/netflix-robinhood-tokenized-stock.webp",
       "contractAddress": "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8"
+    },
+    {
+      "id": "4663:evm-erc20:0xe08739259de3b3864417dcdea9f4aaeddb8eddb9",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "APE",
+      "decimals": 18,
+      "name": "Ape.fun",
+      "coingeckoId": "ape-fun",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ape-fun.webp",
+      "contractAddress": "0xe08739259de3b3864417dcdea9f4aaeddb8eddb9"
     },
     {
       "id": "4663:evm-erc20:0xe0cc2751249b797871b694ad3779755b7d4b1111",
@@ -276965,6 +277296,18 @@
       "contractAddress": "0x2ac895feba458b42884dcbcb47d57e44c3a303c8"
     },
     {
+      "id": "56:evm-erc20:0x2ae51f3d827078e558ac3f94f9364764b1be7cf5",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "HPQs",
+      "decimals": 18,
+      "name": "HP Inc",
+      "coingeckoId": "hp-inc-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hp-inc-stove-tokenized-stock.webp",
+      "contractAddress": "0x2ae51f3d827078e558ac3f94f9364764b1be7cf5"
+    },
+    {
       "id": "56:evm-erc20:0x2ae7e0a1d22daecabf5d80b37030c0ab25894444",
       "platform": "ethereum",
       "networkId": "56",
@@ -284067,6 +284410,18 @@
       "contractAddress": "0x4cbfa7b21a8373fda8e4fed343189329f50cfdb8"
     },
     {
+      "id": "56:evm-erc20:0x4cc6791a4e099ce6bc5d3469586c9f4156f71a87",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "MCHPs",
+      "decimals": 18,
+      "name": "Microchip Technology",
+      "coingeckoId": "microchip-technology-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/microchip-technology-stove-tokenized-stock.webp",
+      "contractAddress": "0x4cc6791a4e099ce6bc5d3469586c9f4156f71a87"
+    },
+    {
       "id": "56:evm-erc20:0x4cda4daad72340b28925ccd6fa78db631267d3c4",
       "platform": "ethereum",
       "networkId": "56",
@@ -286262,6 +286617,18 @@
       "contractAddress": "0x55600dfb3943a2db1a49b250e1e9114e4ad2174f"
     },
     {
+      "id": "56:evm-erc20:0x55645d12642a0857682e94780fa56464e1a39f23",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "XOMs",
+      "decimals": 18,
+      "name": "Exxon Mobil",
+      "coingeckoId": "exxon-mobil-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/exxon-mobil-stove-tokenized-stock.webp",
+      "contractAddress": "0x55645d12642a0857682e94780fa56464e1a39f23"
+    },
+    {
       "id": "56:evm-erc20:0x55671114d774ee99d653d6c12460c780a67f1d18",
       "platform": "ethereum",
       "networkId": "56",
@@ -286320,6 +286687,18 @@
       "coingeckoId": "cryptopia-world",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cryptopia-world.webp",
       "contractAddress": "0x557805bbe627ad81adecf4a94ef028141cebabdf"
+    },
+    {
+      "id": "56:evm-erc20:0x5585d6565b7757a882cb29f3d4a19d6bec2490c2",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "FCXs",
+      "decimals": 18,
+      "name": "Freeport-McMoRan",
+      "coingeckoId": "freeport-mcmoran-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/freeport-mcmoran-stove-tokenized-stock.webp",
+      "contractAddress": "0x5585d6565b7757a882cb29f3d4a19d6bec2490c2"
     },
     {
       "id": "56:evm-erc20:0x5590b5ade4ad486f929d05c4aecbc383d1210f55",
@@ -297033,6 +297412,18 @@
       "contractAddress": "0x8777b4870ebdd0ba90eeb165ae154d1398eae1fd"
     },
     {
+      "id": "56:evm-erc20:0x878616ffbbb0b1eb54bbb0a914333dc735763ed5",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "CSXs",
+      "decimals": 18,
+      "name": "CSX Corp",
+      "coingeckoId": "csx-corp-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/csx-corp-stove-tokenized-stock.webp",
+      "contractAddress": "0x878616ffbbb0b1eb54bbb0a914333dc735763ed5"
+    },
+    {
       "id": "56:evm-erc20:0x8789337a176e6e7223ff115f1cd85c993d42c25c",
       "platform": "ethereum",
       "networkId": "56",
@@ -306676,6 +307067,18 @@
       "contractAddress": "0xb44816216ad4057282e4f4b8a4983f8fb81615a7"
     },
     {
+      "id": "56:evm-erc20:0xb45a2afef9996e65210dda12c1f896c6011c7512",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "KHCs",
+      "decimals": 18,
+      "name": "The Kraft Heinz",
+      "coingeckoId": "the-kraft-heinz-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-kraft-heinz-stove-tokenized-stock.webp",
+      "contractAddress": "0xb45a2afef9996e65210dda12c1f896c6011c7512"
+    },
+    {
       "id": "56:evm-erc20:0xb4818bb69478730ef4e33cc068dd94278e2766cb",
       "platform": "ethereum",
       "networkId": "56",
@@ -307561,6 +307964,18 @@
       "coingeckoId": "hewlett-packard-enterprise-stove-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hewlett-packard-enterprise-stove-tokenized-stock.webp",
       "contractAddress": "0xb90619a9d0ef6f4833b74bd0523e35ab22ff18c8"
+    },
+    {
+      "id": "56:evm-erc20:0xb911d4fb72a97bf7afab20434ef72eaf9c878149",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "BKNGs",
+      "decimals": 18,
+      "name": "Booking Holdings",
+      "coingeckoId": "booking-holdings-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/booking-holdings-stove-tokenized-stock.webp",
+      "contractAddress": "0xb911d4fb72a97bf7afab20434ef72eaf9c878149"
     },
     {
       "id": "56:evm-erc20:0xb92c5e0135a510a4a3a8803f143d2cb085bbaf73",
@@ -311841,6 +312256,18 @@
       "contractAddress": "0xcde92f3b3ebab6c58cbbe18628033375ce0785f2"
     },
     {
+      "id": "56:evm-erc20:0xcdea030148a0c454670a0465011a50357e530ad0",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "ORLYs",
+      "decimals": 18,
+      "name": "O'Reilly Automotive",
+      "coingeckoId": "o-reilly-automotive-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/o-reilly-automotive-stove-tokenized-stock.webp",
+      "contractAddress": "0xcdea030148a0c454670a0465011a50357e530ad0"
+    },
+    {
       "id": "56:evm-erc20:0xcdf2f3e0fa43c47a6662a91c9e4a7c5f69762699",
       "platform": "ethereum",
       "networkId": "56",
@@ -315354,6 +315781,18 @@
       "contractAddress": "0xdd73ea766b80417c0607a3f08e34a0c415d89d56"
     },
     {
+      "id": "56:evm-erc20:0xdd806e436dda5588bf54061c11590c77ddc87777",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "SAFU",
+      "decimals": 18,
+      "name": "Funds Are Safu",
+      "coingeckoId": "funds-are-safu-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/funds-are-safu-2.webp",
+      "contractAddress": "0xdd806e436dda5588bf54061c11590c77ddc87777"
+    },
+    {
       "id": "56:evm-erc20:0xdd9a9feb64be689810fb2db010ba701bfe3aaf5d",
       "platform": "ethereum",
       "networkId": "56",
@@ -317355,6 +317794,18 @@
       "coingeckoId": "eden-3",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/eden-3.webp",
       "contractAddress": "0xe7875e08e3c85dd49d4ff52a7d4c3a9c75c8a6a1"
+    },
+    {
+      "id": "56:evm-erc20:0xe79599a689affd24fed53e8af2d1ad7c921a749d",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "CPRTs",
+      "decimals": 18,
+      "name": "Copart",
+      "coingeckoId": "copart-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/copart-stove-tokenized-stock.webp",
+      "contractAddress": "0xe79599a689affd24fed53e8af2d1ad7c921a749d"
     },
     {
       "id": "56:evm-erc20:0xe7bf59c402a50778e2f54626380abcc752fc7777",
@@ -322657,6 +323108,18 @@
       "coingeckoId": "webull-corp-astock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/webull-corp-astock.webp",
       "contractAddress": "0xff7fb9f9044523dfcab1f65f204ac79e6327a1cc"
+    },
+    {
+      "id": "56:evm-erc20:0xff97b9284a14c82d3e581f98a30614da652745fe",
+      "platform": "ethereum",
+      "networkId": "56",
+      "type": "evm-erc20",
+      "symbol": "NEEs",
+      "decimals": 18,
+      "name": "NextEra Energy",
+      "coingeckoId": "nextera-energy-stove-tokenized-stock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nextera-energy-stove-tokenized-stock.webp",
+      "contractAddress": "0xff97b9284a14c82d3e581f98a30614da652745fe"
     },
     {
       "id": "56:evm-erc20:0xffa188493c15dfaf2c206c97d8633377847b6a52",
@@ -407612,7 +408075,7 @@
       "type": "substrate-hydration",
       "symbol": "USDT",
       "decimals": 6,
-      "name": "Tether",
+      "name": "Tether (Polkadot)",
       "coingeckoId": "tether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tether.webp",
       "isDefault": true,
@@ -407943,7 +408406,7 @@
       "type": "substrate-hydration",
       "symbol": "USDC",
       "decimals": 6,
-      "name": "USDC (Ethereum native)",
+      "name": "USDC (Snowbridge)",
       "coingeckoId": "usd-coin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
       "isDefault": true,
@@ -407959,7 +408422,7 @@
       "type": "substrate-hydration",
       "symbol": "USDT",
       "decimals": 6,
-      "name": "Tether (Ethereum native)",
+      "name": "Tether (Snowbridge)",
       "coingeckoId": "tether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tether.webp",
       "isDefault": true,
@@ -408151,7 +408614,7 @@
       "type": "substrate-hydration",
       "symbol": "aUSDT",
       "decimals": 6,
-      "name": "aUSDT",
+      "name": "Supplied Tether (Polkadot)",
       "isDefault": true,
       "onChainId": 1002,
       "assetType": "Erc20",
@@ -408165,7 +408628,7 @@
       "type": "substrate-hydration",
       "symbol": "aUSDC",
       "decimals": 6,
-      "name": "aUSDC",
+      "name": "Supplied USDC (Polkadot)",
       "isDefault": true,
       "onChainId": 1003,
       "assetType": "Erc20",
@@ -408283,6 +408746,34 @@
       "assetType": "Erc20",
       "isSufficient": true,
       "existentialDeposit": "674"
+    },
+    {
+      "id": "hydradx:substrate-hydration:1021",
+      "platform": "polkadot",
+      "networkId": "hydradx",
+      "type": "substrate-hydration",
+      "symbol": "aUSDC",
+      "decimals": 6,
+      "name": "Supplied USDC (Wormhole)",
+      "isDefault": true,
+      "onChainId": 1021,
+      "assetType": "Erc20",
+      "isSufficient": true,
+      "existentialDeposit": "22409"
+    },
+    {
+      "id": "hydradx:substrate-hydration:1023",
+      "platform": "polkadot",
+      "networkId": "hydradx",
+      "type": "substrate-hydration",
+      "symbol": "aUSDT",
+      "decimals": 6,
+      "name": "Supplied Tether (Wormhole)",
+      "isDefault": true,
+      "onChainId": 1023,
+      "assetType": "Erc20",
+      "isSufficient": true,
+      "existentialDeposit": "22409"
     },
     {
       "id": "hydradx:substrate-hydration:1039",
@@ -408665,7 +409156,7 @@
       "type": "substrate-hydration",
       "symbol": "USDC",
       "decimals": 6,
-      "name": "USDC",
+      "name": "USDC (Polkadot)",
       "coingeckoId": "usd-coin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
       "isDefault": true,
@@ -409544,6 +410035,17 @@
       "isDefault": true,
       "onChainId": "{\"type\":\"ForeignAsset\",\"value\":13}",
       "existentialDeposit": "0"
+    },
+    {
+      "id": "jamton:substrate-native",
+      "platform": "polkadot",
+      "networkId": "jamton",
+      "type": "substrate-native",
+      "symbol": "DOTON",
+      "decimals": 18,
+      "name": "DOTON",
+      "isDefault": true,
+      "existentialDeposit": "1000000000000000"
     },
     {
       "id": "kabocha:substrate-native",
@@ -411586,6 +412088,17 @@
       "name": "XRQCY",
       "isDefault": true,
       "existentialDeposit": "1000000"
+    },
+    {
+      "id": "paseo-niskala:substrate-native",
+      "platform": "polkadot",
+      "networkId": "paseo-niskala",
+      "type": "substrate-native",
+      "symbol": "KPGT",
+      "decimals": 18,
+      "name": "KPGT",
+      "isDefault": true,
+      "existentialDeposit": "1000000000000000"
     },
     {
       "id": "paseo-people-chain:substrate-assets:[object Object]",
@@ -414713,6 +415226,18 @@
       "coingeckoId": "solana",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solana.webp",
       "isDefault": true
+    },
+    {
+      "id": "solana-mainnet:sol-spl:1226TMaWZiZYWdP7CBZBqfJGXoWXaKXJJiKf45e5xfun",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "XCAT",
+      "decimals": 9,
+      "name": "PUMPSTOP",
+      "coingeckoId": "pumpstop",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pumpstop.webp",
+      "mintAddress": "1226TMaWZiZYWdP7CBZBqfJGXoWXaKXJJiKf45e5xfun"
     },
     {
       "id": "solana-mainnet:sol-spl:125FKUxLgRuVUkiJZoTvcNSuXhDJ8Hsaw8HBoreaSPL2",
@@ -418795,6 +419320,18 @@
       "mintAddress": "3psH1Mj1f7yUfaD5gh6Zj7epE8hhrMkMETgv5TshQA4o"
     },
     {
+      "id": "solana-mainnet:sol-spl:3q4QK2LamNkMXULquJzHLqitMHyBHJ2ga52WSQ1nhpos",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "ETHEREUM",
+      "decimals": 6,
+      "name": "VoldemortTrumpShadow10Neko",
+      "coingeckoId": "voldemorttrumpshadow10neko",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/voldemorttrumpshadow10neko.webp",
+      "mintAddress": "3q4QK2LamNkMXULquJzHLqitMHyBHJ2ga52WSQ1nhpos"
+    },
+    {
       "id": "solana-mainnet:sol-spl:3QJzpi68a3CUVPGVUjYLWziGKCAvbNXmC5VFNy1ypump",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -419597,6 +420134,18 @@
       "coingeckoId": "opanarchy-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/opanarchy-2.webp",
       "mintAddress": "3Ydb2n8vAFdBJYpdiZEoDxRXLmiGDY1fuizVmMPMpump"
+    },
+    {
+      "id": "solana-mainnet:sol-spl:3yeWYPG3BvGBFrwjar9e28GBYZgYmHT79d7FBVS6xL1a",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "RTA",
+      "decimals": 9,
+      "name": "RROTA",
+      "coingeckoId": "rrota",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/rrota.webp",
+      "mintAddress": "3yeWYPG3BvGBFrwjar9e28GBYZgYmHT79d7FBVS6xL1a"
     },
     {
       "id": "solana-mainnet:sol-spl:3YHnXHivm9DiiUtbHNr49mkBctBFy4ksX3PAa3AApump",
@@ -463540,6 +464089,18 @@
       "mintAddress": "wo1zgt8rfrYpvdVi4nidoj1SYfcR4pQx69bmNv2JLhQ"
     },
     {
+      "id": "solana-mainnet:sol-spl:woonTsvfVDLMB5xXvtR446AwCgsRzBDDtya6USaNWUG",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "WOON",
+      "decimals": 6,
+      "name": "Woon",
+      "coingeckoId": "woon",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/woon.webp",
+      "mintAddress": "woonTsvfVDLMB5xXvtR446AwCgsRzBDDtya6USaNWUG"
+    },
+    {
       "id": "solana-mainnet:sol-spl:WskzsKqEW3ZsmrhPAevfVZb6PuuLzWov9mJWZsfDePC",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -479114,6 +479675,18 @@
       "coingeckoId": "nano-nuclear-energy-ondo-tokenized",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nano-nuclear-energy-ondo-tokenized.webp",
       "mintAddress": "bz2iUTXWkutnfwG32ziABcTzXoM91sdcgdiJJJdondo"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:Bz5N9wrcxDw2YTf8tQkG8PJzdbUW89ZNWLWbdqA2pump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "슈바오",
+      "decimals": 6,
+      "name": "Shǔ bǎo",
+      "coingeckoId": "shu-b-o",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/shu-b-o.webp",
+      "mintAddress": "Bz5N9wrcxDw2YTf8tQkG8PJzdbUW89ZNWLWbdqA2pump"
     },
     {
       "id": "solana-mainnet:sol-token2022:BZ8SLQP9zCK93zUdYj7XzUKHgVj71PCBXVYKtVSLpump",
@@ -505172,6 +505745,15 @@
       "extra": null
     },
     {
+      "id": "062b59ac38315f86ca3d6ccc54df2c9d",
+      "source": "substrate-hydration",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
+      "data": null,
+      "extra": null
+    },
+    {
       "id": "0740aca7971817bac949c8efb0e5b6e5",
       "source": "substrate-psp22",
       "chainId": "westend-bridge-hub-testnet",
@@ -505678,6 +506260,15 @@
       "chainId": "westend-testnet",
       "specVersion": 1025002,
       "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
+      "id": "1d0370db486f86d90499129f3a0e02e1",
+      "source": "substrate-psp22",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
       "data": null,
       "extra": null
     },
@@ -506829,6 +507420,15 @@
       "extra": null
     },
     {
+      "id": "43e112a08455a78f6a61bd05fb0e5178",
+      "source": "substrate-assets",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
+      "data": null,
+      "extra": null
+    },
+    {
       "id": "460a55740b7c0284b0c713f9e586af7f",
       "source": "substrate-tokens",
       "chainId": "autonomys-chronos-testnet",
@@ -507019,6 +507619,17 @@
       "version": "v15",
       "data": null,
       "extra": null
+    },
+    {
+      "id": "4c2a9b6001691f0abb8aba57536d1569",
+      "source": "substrate-tokens",
+      "chainId": "jamton",
+      "specVersion": 1160230,
+      "version": "v15",
+      "data": "0x6d6574610f24000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c00000505001000000507001410606a616d746f6e5f70617261636861696e5f72756e74696d651c636f6e666967732c63757272656e63795f69642843757272656e6379496400010c184e617469766504000c010c753332000000204465785368617265080018012044657853686172650000180120446578536861726500010030466f726569676e417373657404000c010c753332000200001810606a616d746f6e5f70617261636861696e5f72756e74696d651c636f6e666967732c63757272656e63795f6964204465785368617265000108184e617469766504000c010c75333200000030466f726569676e417373657404000c010c753332000100001c0000040800140020082c6f726d6c5f746f6b656e732c4163636f756e7444617461041c42616c616e63650110000c01106672656510011c42616c616e6365000120726573657276656410011c42616c616e636500011866726f7a656e10011c42616c616e636500000418546f6b656e730118546f6b656e7304204163636f756e747301010802051c20c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018b8205468652062616c616e6365206f66206120746f6b656e207479706520756e64657220616e206163636f756e742e00fc204e4f54453a2049662074686520746f74616c2069732065766572207a65726f2c206465637265617365206163636f756e7420726566206163636f756e742e001901204e4f54453a2054686973206973206f6e6c79207573656420696e20746865206361736520746861742074686973206d6f64756c65206973207573656420746f2073746f7265282062616c616e6365732e000000000c00040000000000e1080000000000",
+      "extra": {
+        "palletId": "Tokens"
+      }
     },
     {
       "id": "4c7901c671812e344d39c26e4821cdf9",
@@ -507530,6 +508141,15 @@
       "extra": null
     },
     {
+      "id": "5e63dad47d9a09d1788b00a4692d902f",
+      "source": "substrate-foreignassets",
+      "chainId": "jamton",
+      "specVersion": 1160230,
+      "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
       "id": "5e737079e60f316881b3ba74b651a2d7",
       "source": "substrate-dtao",
       "chainId": "manta",
@@ -507604,6 +508224,15 @@
       "extra": {
         "palletId": "Tokens"
       }
+    },
+    {
+      "id": "5ff5ae11c902a9828954ced0583ffc29",
+      "source": "substrate-dtao",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
+      "data": null,
+      "extra": null
     },
     {
       "id": "602a103fba5c77b2bc67940fba509df4",
@@ -508369,6 +508998,18 @@
       "extra": {
         "useLegacyTransferableCalculation": false,
         "existentialDeposit": "1000000000"
+      }
+    },
+    {
+      "id": "79a168146398d6f4155a76c536a9d089",
+      "source": "substrate-native",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
+      "data": "0x6d6574610f780008486d616e64616c615f7072696d6974697665732c4163636f756e7449643230000004000401205b75383b2032305d0000040000031400000008000800000503000c08306672616d655f73797374656d2c4163636f756e74496e666f08144e6f6e636501102c4163636f756e74446174610114001401146e6f6e63651001144e6f6e6365000124636f6e73756d657273100120526566436f756e7400012470726f766964657273100120526566436f756e7400012c73756666696369656e7473100120526566436f756e740001106461746114012c4163636f756e74446174610000100000050500140c3c70616c6c65745f62616c616e6365731474797065732c4163636f756e7444617461041c42616c616e63650118001001106672656518011c42616c616e6365000120726573657276656418011c42616c616e636500011866726f7a656e18011c42616c616e6365000114666c6167731c01284578747261466c61677300001800000507001c0c3c70616c6c65745f62616c616e636573147479706573284578747261466c61677300000400180110753132380000200000040000240000030800000008002800000502002c082873705f76657273696f6e3852756e74696d6556657273696f6e0000200124737065635f6e616d6528013452756e74696d65537472696e67000124696d706c5f6e616d6528013452756e74696d65537472696e67000144617574686f72696e675f76657273696f6e10010c753332000130737065635f76657273696f6e10010c753332000130696d706c5f76657273696f6e10010c7533320001106170697330011c4170697356656300014c7472616e73616374696f6e5f76657273696f6e10010c75333200013473746174655f76657273696f6e0801087538000030040c436f7704045401340004003400000034000002380038000004082410003c0000050400400c4c626f756e6465645f636f6c6c656374696f6e73407765616b5f626f756e6465645f766563385765616b426f756e64656456656308045401440453000004004c01185665633c543e0000440c3c70616c6c65745f62616c616e6365731474797065732c42616c616e63654c6f636b041c42616c616e63650118000c010869642401384c6f636b4964656e746966696572000118616d6f756e7418011c42616c616e636500011c726561736f6e7348011c526561736f6e730000480c3c70616c6c65745f62616c616e6365731474797065731c526561736f6e7300010c0c466565000000104d6973630001000c416c6c000200004c0000024400500c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401540453000004005801185665633c543e0000540c3c70616c6c65745f62616c616e6365731474797065732c52657365727665446174610844526573657276654964656e74696669657201241c42616c616e63650118000801086964240144526573657276654964656e746966696572000118616d6f756e7418011c42616c616e636500005800000254005c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401600453000004006801185665633c543e0000600c3c70616c6c65745f62616c616e636573147479706573204964416d6f756e740808496401641c42616c616e636501180008010869646401084964000118616d6f756e7418011c42616c616e6365000064083c6e69736b616c615f72756e74696d654452756e74696d65486f6c64526561736f6e000100006800000260006c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401700453000004007401185665633c543e0000700c3c70616c6c65745f62616c616e636573147479706573204964416d6f756e740808496401201c42616c616e636501180008010869642001084964000118616d6f756e7418011c42616c616e63650000740000027000081853797374656d011853797374656d041c4163636f756e7401010402000c4101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008004e8205468652066756c6c206163636f756e7420696e666f726d6174696f6e20666f72206120706172746963756c6172206163636f756e742049442e0000081c56657273696f6e2ca903446e69736b616c612d70617261636861696e446e69736b616c612d70617261636861696e0100000001000000000000003cd7bdd8a272ca0d6501000000582211f65bb14b8905000000e65b00e46cedd0aa02000000dd718d5cc53262d401000000df6acb689907609b0500000037e397fc7c91f5e40200000040fe3ad401f8959a06000000d2bc9897eed08f1503000000f78b278be53f454c02000000ab3c0572291feb8b01000000bc9d89904f5b923f0100000037c8bb1350a9a2a804000000f3ff14d5ab52705903000000ea93e3f16f3d696202000000fbc577b9d747efd60100000001000000010484204765742074686520636861696e277320696e2d636f64652076657273696f6e2e28535335385072656669783c08e51914a8205468652064657369676e61746564205353353820707265666978206f66207468697320636861696e2e0039012054686973207265706c6163657320746865202273733538466f726d6174222070726f7065727479206465636c6172656420696e2074686520636861696e20737065632e20526561736f6e20697331012074686174207468652072756e74696d652073686f756c64206b6e6f772061626f7574207468652070726566697820696e206f7264657220746f206d616b6520757365206f662069742061737020616e206964656e746966696572206f662074686520636861696e2e0000002042616c616e636573012042616c616e63657310144c6f636b73010104020040040010b820416e79206c6971756964697479206c6f636b73206f6e20736f6d65206163636f756e742062616c616e6365732e2501204e4f54453a2053686f756c64206f6e6c79206265206163636573736564207768656e2073657474696e672c206368616e67696e6720616e642066726565696e672061206c6f636b2e00ad0120557365206f66206c6f636b73206973206465707265636174656420696e206661766f7572206f6620667265657a65732e20536565206068747470733a2f2f6769746875622e636f6d2f706172697479746563682f7375627374726174652f70756c6c2f31323935312f6020526573657276657301010402005004000ca4204e616d6564207265736572766573206f6e20736f6d65206163636f756e742062616c616e6365732e00b10120557365206f66207265736572766573206973206465707265636174656420696e206661766f7572206f6620686f6c64732e20536565206068747470733a2f2f6769746875622e636f6d2f706172697479746563682f7375627374726174652f70756c6c2f31323935312f6014486f6c647301010402005c0400046c20486f6c6473206f6e206163636f756e742062616c616e6365732e1c467265657a657301010402006c0400048820467265657a65206c6f636b73206f6e206163636f756e742062616c616e6365732e000000000a000400000000001d060000000000",
+      "extra": {
+        "useLegacyTransferableCalculation": false,
+        "existentialDeposit": "1000000000000000"
       }
     },
     {
@@ -509353,6 +509994,15 @@
       "extra": null
     },
     {
+      "id": "9e4583c1ae85537f1e97c065a3b2646f",
+      "source": "substrate-dtao",
+      "chainId": "jamton",
+      "specVersion": 1160230,
+      "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
       "id": "9e61ca9d03b9f7a108ad75f300d033b4",
       "source": "substrate-assets",
       "chainId": "paseo-asset-hub",
@@ -509613,6 +510263,15 @@
       "chainId": "enjin-matrixchain-testnet",
       "specVersion": 1042,
       "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
+      "id": "a9c9dd1997af653e99176c0acc147767",
+      "source": "substrate-foreignassets",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
       "data": null,
       "extra": null
     },
@@ -509899,6 +510558,17 @@
       "version": "v15",
       "data": null,
       "extra": null
+    },
+    {
+      "id": "b3f2a3b15d3dd482e3c44f7b807f8e0c",
+      "source": "substrate-tokens",
+      "chainId": "paseo-niskala",
+      "specVersion": 1,
+      "version": "v12",
+      "data": null,
+      "extra": {
+        "palletId": "Tokens"
+      }
     },
     {
       "id": "b48a0f753d0483e98ac1887774a1b481",
@@ -510528,6 +511198,15 @@
       "source": "substrate-dtao",
       "chainId": "peaq",
       "specVersion": 113,
+      "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
+      "id": "c9476f07f1cc60db1f2c3ad323832543",
+      "source": "substrate-hydration",
+      "chainId": "jamton",
+      "specVersion": 1160230,
       "version": "v15",
       "data": null,
       "extra": null
@@ -511507,6 +512186,15 @@
       "extra": null
     },
     {
+      "id": "eb80ecdc8f3caa9989360ca6897be45f",
+      "source": "substrate-assets",
+      "chainId": "jamton",
+      "specVersion": 1160230,
+      "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
       "id": "ebbadef33b1e6af4ae7c28b2b63be93a",
       "source": "substrate-native",
       "chainId": "ternoa",
@@ -511764,6 +512452,18 @@
       "extra": null
     },
     {
+      "id": "f40bb0bc8ba94ae8832fa6217cafa54e",
+      "source": "substrate-native",
+      "chainId": "jamton",
+      "specVersion": 1160230,
+      "version": "v15",
+      "data": "0x6d6574610f78000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c08306672616d655f73797374656d2c4163636f756e74496e666f08144e6f6e636501102c4163636f756e74446174610114001401146e6f6e63651001144e6f6e6365000124636f6e73756d657273100120526566436f756e7400012470726f766964657273100120526566436f756e7400012c73756666696369656e7473100120526566436f756e740001106461746114012c4163636f756e74446174610000100000050500140c3c70616c6c65745f62616c616e6365731474797065732c4163636f756e7444617461041c42616c616e63650118001001106672656518011c42616c616e6365000120726573657276656418011c42616c616e636500011866726f7a656e18011c42616c616e6365000114666c6167731c01284578747261466c61677300001800000507001c0c3c70616c6c65745f62616c616e636573147479706573284578747261466c61677300000400180110753132380000200000030800000008002400000400002800000502002c000005040030082873705f76657273696f6e3852756e74696d6556657273696f6e0000200124737065635f6e616d6528013452756e74696d65537472696e67000124696d706c5f6e616d6528013452756e74696d65537472696e67000144617574686f72696e675f76657273696f6e10010c753332000130737065635f76657273696f6e10010c753332000130696d706c5f76657273696f6e10010c7533320001106170697334011c4170697356656300014c7472616e73616374696f6e5f76657273696f6e10010c75333200013473746174655f76657273696f6e0801087538000034040c436f77040454013800040038000000380000023c003c00000408201000400c4c626f756e6465645f636f6c6c656374696f6e73407765616b5f626f756e6465645f766563385765616b426f756e64656456656308045401440453000004004c01185665633c543e0000440c3c70616c6c65745f62616c616e6365731474797065732c42616c616e63654c6f636b041c42616c616e63650118000c010869642001384c6f636b4964656e746966696572000118616d6f756e7418011c42616c616e636500011c726561736f6e7348011c526561736f6e730000480c3c70616c6c65745f62616c616e6365731474797065731c526561736f6e7300010c0c466565000000104d6973630001000c416c6c000200004c0000024400500c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401540453000004005801185665633c543e0000540c3c70616c6c65745f62616c616e6365731474797065732c52657365727665446174610844526573657276654964656e74696669657201201c42616c616e63650118000801086964200144526573657276654964656e746966696572000118616d6f756e7418011c42616c616e636500005800000254005c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401600453000004006801185665633c543e00006014346672616d655f737570706f72741874726169747318746f6b656e73106d697363204964416d6f756e740808496401641c42616c616e636501180008010869646401084964000118616d6f756e7418011c42616c616e636500006408606a616d746f6e5f70617261636861696e5f72756e74696d654452756e74696d65486f6c64526561736f6e000100006800000260006c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401700453000004007401185665633c543e00007014346672616d655f737570706f72741874726169747318746f6b656e73106d697363204964416d6f756e740808496401241c42616c616e636501180008010869642401084964000118616d6f756e7418011c42616c616e63650000740000027000081853797374656d011853797374656d041c4163636f756e7401010402000c4101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008004e8205468652066756c6c206163636f756e7420696e666f726d6174696f6e20666f72206120706172746963756c6172206163636f756e742049442e0000081c56657273696f6e307105386a616d746f6e2d72756e74696d65386a616d746f6e2d72756e74696d650100000026b411000000000064c46b34c8e34f21b001000000e6e38afaef5cebf801000000955e168e0cfb340901000000dd718d5cc53262d401000000d7bdd8a272ca0d6501000000df6acb689907609b0500000037e397fc7c91f5e40200000040fe3ad401f8959a06000000d2bc9897eed08f1503000000f78b278be53f454c02000000ab3c0572291feb8b01000000bc9d89904f5b923f0100000037c8bb1350a9a2a804000000f3ff14d5ab52705903000000b55f12ce35b1828001000000f5a07f6fac1c7b6b0100000024422f557dff03e201000000af0ccd676408b9b001000000ea93e3f16f3d6962020000006ff52ee858e6c5bd0100000091b1c8b16328eb9201000000582211f65bb14b8905000000e65b00e46cedd0aa02000000d551621e844b65a301000000fbc577b9d747efd60100000001000000010484204765742074686520636861696e277320696e2d636f64652076657273696f6e2e28535335385072656669782c08d51514a8205468652064657369676e61746564205353353820707265666978206f66207468697320636861696e2e0039012054686973207265706c6163657320746865202273733538466f726d6174222070726f7065727479206465636c6172656420696e2074686520636861696e20737065632e20526561736f6e20697331012074686174207468652072756e74696d652073686f756c64206b6e6f772061626f7574207468652070726566697820696e206f7264657220746f206d616b6520757365206f662069742061737020616e206964656e746966696572206f662074686520636861696e2e0000002042616c616e636573012042616c616e63657310144c6f636b73010104020040040010b820416e79206c6971756964697479206c6f636b73206f6e20736f6d65206163636f756e742062616c616e6365732e2501204e4f54453a2053686f756c64206f6e6c79206265206163636573736564207768656e2073657474696e672c206368616e67696e6720616e642066726565696e672061206c6f636b2e00ad0120557365206f66206c6f636b73206973206465707265636174656420696e206661766f7572206f6620667265657a65732e20536565206068747470733a2f2f6769746875622e636f6d2f706172697479746563682f7375627374726174652f70756c6c2f31323935312f6020526573657276657301010402005004000ca4204e616d6564207265736572766573206f6e20736f6d65206163636f756e742062616c616e6365732e00b10120557365206f66207265736572766573206973206465707265636174656420696e206661766f7572206f6620686f6c64732e20536565206068747470733a2f2f6769746875622e636f6d2f706172697479746563682f7375627374726174652f70756c6c2f31323935312f6014486f6c647301010402005c0400046c20486f6c6473206f6e206163636f756e742062616c616e6365732e1c467265657a657301010402006c0400048820467265657a65206c6f636b73206f6e206163636f756e742062616c616e6365732e000000000a00040000000000e1080000000000",
+      "extra": {
+        "useLegacyTransferableCalculation": false,
+        "existentialDeposit": "1000000000000000"
+      }
+    },
+    {
       "id": "f45d56ea50126c4739d23c19d975b2e1",
       "source": "substrate-foreignassets",
       "chainId": "ajuna",
@@ -511857,6 +512557,15 @@
       "source": "substrate-dtao",
       "chainId": "robonomics-kusama",
       "specVersion": 49,
+      "version": "v15",
+      "data": null,
+      "extra": null
+    },
+    {
+      "id": "f9681890c1f50b8ec3d367826e302154",
+      "source": "substrate-psp22",
+      "chainId": "jamton",
+      "specVersion": 1160230,
       "version": "v15",
       "data": null,
       "extra": null
