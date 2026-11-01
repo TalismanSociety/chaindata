@@ -13448,25 +13448,6 @@
       "rpcs": ["https://proscan.pro/chain/rydberg-rpc"]
     },
     {
-      "id": "8008",
-      "name": "Polynomial",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/polynomial.webp",
-      "nativeTokenId": "8008:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://polynomialscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/8008"],
-      "contracts": {
-        "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
-      }
-    },
-    {
       "id": "8017",
       "name": "iSunCoin Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/isuncoin.svg",
@@ -13726,7 +13707,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://mainnet-blockexplorer.helachain.com"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/8668", "https://mainnet-rpc.helachain.com"]
+      "rpcs": ["https://mainnet-rpc.helachain.com", "https://lb.routeme.sh/rpc/evm/8668"]
     },
     {
       "id": "8700",
@@ -14662,10 +14643,10 @@
       "blockExplorerUrls": ["https://mainnet.mindscan.info"],
       "platform": "ethereum",
       "rpcs": [
-        "https://lb.routeme.sh/rpc/evm/9996",
         "https://rpc-msc.mindchain.info",
         "https://seednode.mindchain.info",
-        "https://archive.mindchain.info"
+        "https://archive.mindchain.info",
+        "https://lb.routeme.sh/rpc/evm/9996"
       ]
     },
     {
@@ -29208,7 +29189,7 @@
         "wss://kusama-people-rpc.polkadot.io",
         "wss://people-kusama.api.onfinality.io/public-ws",
         "wss://people-kusama-rpc.n.dwellir.com",
-        "wss://ksm-rpc.stakeworld.io/people"
+        "wss://people-kusama.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -29355,7 +29336,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -29681,9 +29666,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
+        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo",
-        "wss://people-paseo.rotko.net"
+        "wss://rpc.interweb-it.com/people-paseo"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -317066,17 +317051,6 @@
       "decimals": 18,
       "name": "Testnet BERA Token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/berachain.webp",
-      "isDefault": true
-    },
-    {
-      "id": "8008:evm-native",
-      "platform": "ethereum",
-      "networkId": "8008",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
