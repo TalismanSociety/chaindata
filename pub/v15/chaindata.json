@@ -19244,6 +19244,21 @@
       "rpcs": ["https://endpoints.omniatech.io/v1/zkfair/testnet/public", "https://testnet-rpc.zkfair.io"]
     },
     {
+      "id": "44445",
+      "name": "Quantum Network",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/quantum.webp",
+      "nativeTokenId": "44445:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "QTM",
+        "name": "Quantum"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://qtm.avescoin.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpcqtm.avescoin.io"]
+    },
+    {
       "id": "45454",
       "name": "Swamps L2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/swamps.webp",
@@ -30585,11 +30600,11 @@
       "prefix": 0,
       "oldPrefix": 63,
       "rpcs": [
-        "wss://hydration-rpc.n.dwellir.com",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
         "wss://rpc.kril.hydration.cloud",
-        "wss://rpc-catfish-1.catfish.hydration.cloud"
+        "wss://rpc-catfish-1.catfish.hydration.cloud",
+        "wss://rpc-catfish-2.catfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -237222,6 +237237,17 @@
       "isDefault": true
     },
     {
+      "id": "44445:evm-native",
+      "platform": "ethereum",
+      "networkId": "44445",
+      "type": "evm-native",
+      "symbol": "QTM",
+      "decimals": 18,
+      "name": "Quantum",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/quantum.webp",
+      "isDefault": true
+    },
+    {
       "id": "4457:evm-native",
       "platform": "ethereum",
       "networkId": "4457",
@@ -242432,6 +242458,18 @@
       "contractAddress": "0x4db7374e966097be94c6680d49156d580f097bbf"
     },
     {
+      "id": "4663:evm-erc20:0x4dc9da81fa378181e113d7c67f77adc5cd857602",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "NASDANQ",
+      "decimals": 18,
+      "name": "NASDANQ",
+      "coingeckoId": "nasdanq",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nasdanq.webp",
+      "contractAddress": "0x4dc9da81fa378181e113d7c67f77adc5cd857602"
+    },
+    {
       "id": "4663:evm-erc20:0x4dfbcd033662bc41de8996886e751613c2b8e8e5",
       "platform": "ethereum",
       "networkId": "4663",
@@ -242742,18 +242780,6 @@
       "coingeckoId": "purgy-pengoon",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/purgy-pengoon.webp",
       "contractAddress": "0x51e7bf39c6cf1a7f53ddfaa5db346c69994511f2"
-    },
-    {
-      "id": "4663:evm-erc20:0x51fb76be80ab6daaa345d818f4e06441816b4fea",
-      "platform": "ethereum",
-      "networkId": "4663",
-      "type": "evm-erc20",
-      "symbol": "NASDANQ",
-      "decimals": 18,
-      "name": "NASDANQ",
-      "coingeckoId": "nasdanq",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nasdanq.webp",
-      "contractAddress": "0x51fb76be80ab6daaa345d818f4e06441816b4fea"
     },
     {
       "id": "4663:evm-erc20:0x521cf887e6531c6f667b5bc4d896e5d9bfe8eb2e",
@@ -250951,6 +250977,18 @@
       "contractAddress": "0xc7db9a7034d061feca50f0a25636bcc83ca717d9"
     },
     {
+      "id": "4663:evm-erc20:0xc80333bf7f4078e14ce5b6e223af607adca44418",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "BRAIN",
+      "decimals": 18,
+      "name": "BrainChain",
+      "coingeckoId": "brainchain",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/brainchain.webp",
+      "contractAddress": "0xc80333bf7f4078e14ce5b6e223af607adca44418"
+    },
+    {
       "id": "4663:evm-erc20:0xc839a88a05b231515a82c71ee97b4f18973c1340",
       "platform": "ethereum",
       "networkId": "4663",
@@ -252845,6 +252883,18 @@
       "coingeckoId": "vortano",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/vortano.webp",
       "contractAddress": "0xe81dc008231035c91f09633c541394b9ddf53673"
+    },
+    {
+      "id": "4663:evm-erc20:0xe83c85e1ead16fcfe85401e2b337fb4fb5b5cc96",
+      "platform": "ethereum",
+      "networkId": "4663",
+      "type": "evm-erc20",
+      "symbol": "AUTONOMO",
+      "decimals": 18,
+      "name": "Autonomopad",
+      "coingeckoId": "autonomopad",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/autonomopad.webp",
+      "contractAddress": "0xe83c85e1ead16fcfe85401e2b337fb4fb5b5cc96"
     },
     {
       "id": "4663:evm-erc20:0xe8729dc9dca85167e06b7e9c66a58b22457c5f30",
@@ -350338,6 +350388,18 @@
       "contractAddress": "0x3dc6c3231f3ab298430b02357a6f0a1e370a54c6"
     },
     {
+      "id": "8453:evm-erc20:0x3dcce9e05fc9c30a6a4e9fc1c0ec1ff15c16e0b5",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "GRO",
+      "decimals": 18,
+      "name": "GromaCoin",
+      "coingeckoId": "gromacoin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/gromacoin.webp",
+      "contractAddress": "0x3dcce9e05fc9c30a6a4e9fc1c0ec1ff15c16e0b5"
+    },
+    {
       "id": "8453:evm-erc20:0x3e04dee527a90ddfa1fe6f9e12a4d62677d00071",
       "platform": "ethereum",
       "networkId": "8453",
@@ -351848,6 +351910,18 @@
       "coingeckoId": "sentysis",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sentysis.webp",
       "contractAddress": "0x4a63776249a2c02dba269139e5d05d94ee3f5ba3"
+    },
+    {
+      "id": "8453:evm-erc20:0x4a7634d050cefe28748f03f6f47e157506a1d0ef",
+      "platform": "ethereum",
+      "networkId": "8453",
+      "type": "evm-erc20",
+      "symbol": "BUCKET",
+      "decimals": 18,
+      "name": "Bucket Shop",
+      "coingeckoId": "bucket-shop",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bucket-shop.webp",
+      "contractAddress": "0x4a7634d050cefe28748f03f6f47e157506a1d0ef"
     },
     {
       "id": "8453:evm-erc20:0x4a9f3ed92892c0168dc194ec3867f8316288b32a",
@@ -357010,18 +357084,6 @@
       "coingeckoId": "dackieswap-2",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/dackieswap-2.webp",
       "contractAddress": "0x73326b4d0225c429bed050c11c4422d91470aaf4"
-    },
-    {
-      "id": "8453:evm-erc20:0x734f85d78babbfb6030193f13f60b5bc34288bc1",
-      "platform": "ethereum",
-      "networkId": "8453",
-      "type": "evm-erc20",
-      "symbol": "BUCKET",
-      "decimals": 18,
-      "name": "Bucket Shop",
-      "coingeckoId": "bucket-shop",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/bucket-shop.webp",
-      "contractAddress": "0x734f85d78babbfb6030193f13f60b5bc34288bc1"
     },
     {
       "id": "8453:evm-erc20:0x73582df1cad3187cd0746b7a473d65c06386837e",
@@ -405105,6 +405167,34 @@
       "isDefault": true,
       "netuid": 606,
       "subnetName": "taunet",
+      "isTransferable": true
+    },
+    {
+      "id": "bittensor-testnet:substrate-dtao:607",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN607 | Subnet 607 Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 607,
+      "subnetName": "Subnet 607",
+      "isTransferable": true
+    },
+    {
+      "id": "bittensor-testnet:substrate-dtao:608",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN608 | Subnet 608 Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 608,
+      "subnetName": "Subnet 608",
       "isTransferable": true
     },
     {
