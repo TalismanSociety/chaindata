@@ -34,6 +34,7 @@ export const buildSolanaNetworks = async () => {
         ...config,
         ...specsById[config.id],
         platform: 'solana',
+        isDefault: config.isDefault ?? false,
         nativeTokenId: solNativeTokenId(config.id),
         logo: getNetworkLogoUrl(config.logo, config.id, nativeCurrency),
       } as SolNetwork

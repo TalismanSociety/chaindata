@@ -137,7 +137,7 @@ const consolidateEthNetwork = (
     nativeTokenId: evmNativeTokenId(id),
     nativeCurrency,
     isTestnet: (config?.isTestnet ?? knownEvmNetwork?.isTestnet ?? viemChain?.testnet) || undefined,
-    isDefault: config?.isDefault || knownEvmNetwork?.isDefault || undefined,
+    isDefault: config?.isDefault ?? false,
     forceScan: config?.forceScan || knownEvmNetwork?.forceScan || undefined,
     themeColor: config?.themeColor || knownEvmNetwork?.themeColor || undefined,
     logo,
