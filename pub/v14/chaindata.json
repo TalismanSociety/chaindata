@@ -5472,20 +5472,6 @@
       "rpcs": ["https://rpc.diadata.org"]
     },
     {
-      "id": "1062",
-      "name": "Bighive Mainnet",
-      "nativeTokenId": "1062:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "BEETS",
-        "name": "Beets"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://bdbs.bighive-beets.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.bighive-beets.io/osc"]
-    },
-    {
       "id": "1071",
       "name": "OpenGPU Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/1071.webp",
@@ -8245,7 +8231,8 @@
       "rpcs": [
         "https://fullnode.centrifuge.io",
         "https://centrifuge-parachain.api.onfinality.io/public",
-        "https://lb.routeme.sh/rpc/evm/2031"
+        "https://lb.routeme.sh/rpc/evm/2031",
+        "https://rpc-centrifuge.luckyfriday.io"
       ]
     },
     {
@@ -20633,8 +20620,8 @@
         "https://berachain-rpc.publicnode.com",
         "https://rpc.berachain-apis.com",
         "https://bera.api.pocket.network",
-        "https://rpc.berachain.com",
-        "https://lb.routeme.sh/rpc/evm/80094"
+        "https://rpc.swiftnodes.io/rpc/berachain",
+        "https://rpc.berachain.com"
       ],
       "contracts": {
         "Erc20Aggregator": "0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4",
@@ -30188,7 +30175,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -30375,7 +30366,7 @@
       "specVersion": 19,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://rpc-2.testnet.orbinum.io", "wss://rpc-1.testnet.orbinum.io"],
+      "rpcs": ["wss://rpc-1.testnet.orbinum.io", "wss://rpc-2.testnet.orbinum.io"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
@@ -120124,16 +120115,6 @@
       "name": "Velas",
       "coingeckoId": "velas",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/velas.webp",
-      "isDefault": true
-    },
-    {
-      "id": "1062:evm-native",
-      "platform": "ethereum",
-      "networkId": "1062",
-      "type": "evm-native",
-      "symbol": "BEETS",
-      "decimals": 18,
-      "name": "Beets",
       "isDefault": true
     },
     {
