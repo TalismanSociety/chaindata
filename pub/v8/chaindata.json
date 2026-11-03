@@ -1475,7 +1475,7 @@
         "https://monad-rpc.huginn.tech",
         "https://gm.monad.at.htw.tech",
         "https://lb.routeme.sh/rpc/evm/143",
-        "https://rpc.swiftnodes.io/rpc/monad"
+        "https://monad-mainnet-rpc.spidernode.net"
       ]
     },
     {
@@ -7905,6 +7905,22 @@
       "blockExplorerUrls": ["https://muster-explorer.alt.technology"],
       "platform": "ethereum",
       "rpcs": ["https://lb.routeme.sh/rpc/evm/4078"]
+    },
+    {
+      "id": "4080",
+      "isTestnet": true,
+      "name": "Tobe Chain Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/tobe.webp",
+      "nativeTokenId": "4080:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "TOBE",
+        "name": "Tobe Coin"
+      },
+      "themeColor": "#00c398",
+      "blockExplorerUrls": ["https://testnet.tobescan.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-testnet.tobescan.com"]
     },
     {
       "id": "4102",
@@ -18233,7 +18249,7 @@
         "https://rpc1.qkiscan.cn",
         "https://rpc2.qkiscan.cn",
         "https://rpc3.qkiscan.cn",
-        "https://rpc1.qkirpc.org"
+        "https://lb.routeme.sh/rpc/evm/20181205"
       ]
     },
     {
@@ -21468,9 +21484,9 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
       "rpcs": [
+        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.unitedbloc.com"
+        "wss://wss.api.moonriver.moonbeam.network"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -134771,6 +134787,17 @@
       "decimals": 18,
       "name": "Ether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
+      "id": "4080:evm-native",
+      "platform": "ethereum",
+      "networkId": "4080",
+      "type": "evm-native",
+      "symbol": "TOBE",
+      "decimals": 18,
+      "name": "Tobe Coin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/tobe.webp",
       "isDefault": true
     },
     {
