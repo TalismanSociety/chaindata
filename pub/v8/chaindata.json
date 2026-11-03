@@ -6581,21 +6581,6 @@
       "rpcs": ["https://rpc.kanda.animechain.ai"]
     },
     {
-      "id": "2187",
-      "name": "Game7",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-      "nativeTokenId": "2187:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "G7",
-        "name": "G7"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://mainnet.game7.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://mainnet-rpc.game7.build"]
-    },
-    {
       "id": "2201",
       "isTestnet": true,
       "name": "Stable Testnet",
@@ -6825,7 +6810,7 @@
       "themeColor": "#91019b",
       "blockExplorerUrls": ["https://turin.explorer.tac.build"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.ankr.com/tac_turin", "https://lb.routeme.sh/rpc/evm/2390", "https://turin.rpc.tac.build"]
+      "rpcs": ["https://rpc.ankr.com/tac_turin", "https://lb.routeme.sh/rpc/evm/2390"]
     },
     {
       "id": "2391",
@@ -6841,7 +6826,7 @@
       "themeColor": "#91019b",
       "blockExplorerUrls": ["https://spb.explorer.tac.build"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc-public-spb.tac.build", "https://spb.rpc.tac.build", "https://lb.routeme.sh/rpc/evm/2391"],
+      "rpcs": ["https://rpc-public-spb.tac.build", "https://lb.routeme.sh/rpc/evm/2391"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -6878,6 +6863,21 @@
       "blockExplorerUrls": ["https://explorer.xo-dex.com"],
       "platform": "ethereum",
       "rpcs": ["https://mainnet.xo-dex.com/rpc", "https://xo-dex.io"]
+    },
+    {
+      "id": "2420",
+      "name": "Rufus",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/rufus.webp",
+      "nativeTokenId": "2420:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ELON",
+        "name": "Dogelon"
+      },
+      "themeColor": "#848482",
+      "blockExplorerUrls": ["https://rufus.calderaexplorer.xyz"],
+      "platform": "ethereum",
+      "rpcs": ["https://rufus.calderachain.xyz/http"]
     },
     {
       "id": "2440",
@@ -20924,11 +20924,11 @@
       "prefix": 0,
       "oldPrefix": 63,
       "rpcs": [
+        "wss://hydration-rpc.n.dwellir.com",
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
         "wss://rpc.kril.hydration.cloud",
-        "wss://rpc-catfish-1.catfish.hydration.cloud",
-        "wss://rpc-catfish-2.catfish.hydration.cloud"
+        "wss://rpc-catfish-1.catfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -120603,17 +120603,6 @@
       "isDefault": true
     },
     {
-      "id": "2187:evm-native",
-      "platform": "ethereum",
-      "networkId": "2187",
-      "type": "evm-native",
-      "symbol": "G7",
-      "decimals": 18,
-      "name": "G7",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
-      "isDefault": true
-    },
-    {
       "id": "2201:evm-native",
       "platform": "ethereum",
       "networkId": "2201",
@@ -121741,6 +121730,17 @@
       "name": "XODEX Native Token",
       "coingeckoId": "xodex",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/xodex.webp",
+      "isDefault": true
+    },
+    {
+      "id": "2420:evm-native",
+      "platform": "ethereum",
+      "networkId": "2420",
+      "type": "evm-native",
+      "symbol": "ELON",
+      "decimals": 18,
+      "name": "Dogelon",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/rufus.webp",
       "isDefault": true
     },
     {
