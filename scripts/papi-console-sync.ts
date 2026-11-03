@@ -250,7 +250,6 @@ const main = async () => {
       const newEntry: YamlNetwork = {
         id: newId,
         name: papiNet.display,
-        isDefault: false,
       }
 
       if (relayFile.isTestnet) {
