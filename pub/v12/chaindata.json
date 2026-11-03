@@ -120,8 +120,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mainnet.optimism.io",
-        "https://optimism.gateway.tenderly.co",
         "https://optimism.publicnode.com",
+        "https://optimism.gateway.tenderly.co",
         "https://xrpc.cl/optimism",
         "https://optimism-rpc.publicnode.com"
       ],
@@ -8130,7 +8130,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://scope.silicon.network"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.silicon.network", "https://silicon-mainnet.nodeinfra.com"]
+      "rpcs": ["https://silicon-mainnet.nodeinfra.com", "https://rpc.silicon.network"]
     },
     {
       "id": "2366",
@@ -9770,7 +9770,7 @@
       "themeColor": "#f8fafb",
       "blockExplorerUrls": ["https://sepolia-blockscout.lisk.com"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/4202", "https://rpc.sepolia-api.lisk.com"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/4202"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -10221,11 +10221,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://sepolia.worldscan.org"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://worldchain-sepolia.g.alchemy.com/public",
-        "https://worldchain-sepolia.gateway.tenderly.co",
-        "https://lb.routeme.sh/rpc/evm/4801"
-      ],
+      "rpcs": ["https://worldchain-sepolia.g.alchemy.com/public", "https://lb.routeme.sh/rpc/evm/4801"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -10259,21 +10255,6 @@
       "blockExplorerUrls": ["https://testnet.blackfortscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.blackfort.network/testnet/rpc"]
-    },
-    {
-      "id": "4919",
-      "name": "Venidium Mainnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/venidium.webp",
-      "nativeTokenId": "4919:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "XVM",
-        "name": "Venidium"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://evm.venidiumexplorer.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.venidium.io"]
     },
     {
       "id": "4936",
@@ -22103,7 +22084,8 @@
         "https://rpc.testnet.arc.io",
         "https://rpc.blockdaemon.testnet.arc.io",
         "https://rpc.drpc.testnet.arc.io",
-        "https://arc-testnet-rpc.publicnode.com"
+        "https://arc-testnet-rpc.publicnode.com",
+        "https://rpc.testnet.arc.network"
       ]
     },
     {
@@ -25703,7 +25685,7 @@
         "wss://subway.sin.hydration.cloud",
         "wss://subway.coke.hydration.cloud",
         "wss://rpc.kril.hydration.cloud",
-        "wss://rpc-catfish-1.catfish.hydration.cloud"
+        "wss://subway.shellfish.hydration.cloud"
       ],
       "hasCheckMetadataHash": true,
       "isUnknownFeeToken": true,
@@ -26079,7 +26061,7 @@
         "wss://kusama-people-rpc.polkadot.io",
         "wss://people-kusama.api.onfinality.io/public-ws",
         "wss://people-kusama-rpc.n.dwellir.com",
-        "wss://people-kusama.rotko.net"
+        "wss://ksm-rpc.stakeworld.io/people"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -26497,9 +26479,9 @@
       "account": "*25519",
       "prefix": 0,
       "rpcs": [
-        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo"
+        "wss://rpc.interweb-it.com/people-paseo",
+        "wss://people-paseo.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -27078,7 +27060,7 @@
       "specVersion": 130,
       "account": "*25519",
       "prefix": 69,
-      "rpcs": ["wss://ws.mof.sora.org", "wss://mof2.sora.org"],
+      "rpcs": ["wss://mof2.sora.org"],
       "topology": {
         "type": "standalone"
       }
@@ -165541,17 +165523,6 @@
       "decimals": 18,
       "name": "Bifrost",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bifrost.webp",
-      "isDefault": true
-    },
-    {
-      "id": "4919:evm-native",
-      "platform": "ethereum",
-      "networkId": "4919",
-      "type": "evm-native",
-      "symbol": "XVM",
-      "decimals": 18,
-      "name": "Venidium",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/venidium.webp",
       "isDefault": true
     },
     {
