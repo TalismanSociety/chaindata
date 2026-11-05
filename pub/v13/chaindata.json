@@ -20,8 +20,8 @@
         "https://mempool.merkle.io/rpc/eth/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://ethereum-rpc.publicnode.com",
         "https://xrpc.cl/eth",
-        "https://rpc.mevblocker.io",
-        "https://rpc.flashbots.net"
+        "https://one.valve.city/rpc/vk_demo/evm/1",
+        "https://rpc.mevblocker.io"
       ],
       "feeType": "eip-1559",
       "contracts": {
@@ -663,7 +663,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://app.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/53", "https://api-mainnet.plato.xyz"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/53"]
     },
     {
       "id": "56",
@@ -796,7 +796,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://app.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://www.ethercluster.com/morden", "https://api-testnet.plato.xyz"]
+      "rpcs": ["https://www.ethercluster.com/morden"]
     },
     {
       "id": "63",
@@ -18629,22 +18629,6 @@
       "rpcs": ["https://mainnet.lazai.network"]
     },
     {
-      "id": "53456",
-      "name": "BirdLayer",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/birdlayer.webp",
-      "nativeTokenId": "53456:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#c5d5d8",
-      "blockExplorerUrls": ["https://scan.birdlayer.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc1.birdlayer.xyz"]
-    },
-    {
       "id": "54170",
       "isTestnet": true,
       "name": "Graphite Testnet",
@@ -18787,7 +18771,7 @@
       "themeColor": "#a21648",
       "blockExplorerUrls": ["https://novascan.velo.org"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/56789", "https://nova.velo.org"]
+      "rpcs": ["https://nova.velo.org", "https://lb.routeme.sh/rpc/evm/56789"]
     },
     {
       "id": "57054",
@@ -19092,21 +19076,6 @@
       "blockExplorerUrls": ["https://scan.movachain.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.movachain.com"]
-    },
-    {
-      "id": "61916",
-      "name": "DoKEN Super Chain Mainnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/doken.webp",
-      "nativeTokenId": "61916:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "DKN",
-        "name": "DoKEN"
-      },
-      "themeColor": "#dd5b69",
-      "blockExplorerUrls": ["https://explore.doken.dev"],
-      "platform": "ethereum",
-      "rpcs": ["https://sgrpc.doken.dev", "https://nyrpc.doken.dev", "https://ukrpc.doken.dev"]
     },
     {
       "id": "62049",
@@ -29356,7 +29325,11 @@
       "account": "secp256k1",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
+      "rpcs": [
+        "wss://moonbeam.api.onfinality.io/public-ws",
+        "wss://wss.api.moonbeam.network",
+        "wss://moonbeam.unitedbloc.com"
+      ],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -29387,9 +29360,9 @@
       "account": "secp256k1",
       "prefix": 1285,
       "rpcs": [
-        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network"
+        "wss://wss.api.moonriver.moonbeam.network",
+        "wss://moonriver.unitedbloc.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -29682,9 +29655,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
-        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo"
+        "wss://rpc.interweb-it.com/people-paseo",
+        "wss://people-paseo.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -251092,17 +251065,6 @@
       "isDefault": true
     },
     {
-      "id": "53456:evm-native",
-      "platform": "ethereum",
-      "networkId": "53456",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
       "id": "5371:evm-native",
       "platform": "ethereum",
       "networkId": "5371",
@@ -313344,17 +313306,6 @@
       "symbol": "MOVA",
       "decimals": 18,
       "name": "MOVA Mainnet GasCoin",
-      "isDefault": true
-    },
-    {
-      "id": "61916:evm-native",
-      "platform": "ethereum",
-      "networkId": "61916",
-      "type": "evm-native",
-      "symbol": "DKN",
-      "decimals": 18,
-      "name": "DoKEN",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/doken.webp",
       "isDefault": true
     },
     {
