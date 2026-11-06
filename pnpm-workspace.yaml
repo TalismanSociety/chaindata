@@ -8,6 +8,5 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@talismn/*'
 overrides:
+  # GHSA-ggr8-5vv4-36mx: write-package still asks for deepmerge-ts ^7
   'write-package>deepmerge-ts': 8.0.0
-  'ws@>=8.0.0 <8.21.0': ^8.21.0
-  'lint-staged>yaml': ^2.8.3
