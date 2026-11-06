@@ -2,7 +2,7 @@
 
 <img src="assets/talisman.svg" alt="Talisman" width="15%" align="right" />
 
-[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fpub%2Fv13%2Fchaindata.min.json)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v13/chaindata.min.json)
+[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fpub%2Fv15%2Fchaindata.min.json)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v15/chaindata.min.json)
 [![discord-link](https://img.shields.io/discord/858891448271634473?logo=discord&logoColor=white&style=flat-square)](https://discord.gg/talisman)
 
 A **community controlled** index of networks, tokens and assets for the [Polkadot](https://polkadot.network/), Ethereum and Solana ecosystems.
@@ -20,7 +20,7 @@ The published files are consolidated JSON documents containing every network, to
 - `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.json`
 - `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.min.json`
 
-`<version>` is the current `pub` version, `v13` at the time of writing.
+`<version>` is the current `pub` version, `v15` at the time of writing.
 It changes whenever the format of the published files breaks, see [Chaindata `pub` versions](#chaindata-pub-versions) below for the version list and how to find the latest one.
 
 Their shape is `{ networks: Network[], tokens: Token[], miniMetadatas: MiniMetadata[] }`.
@@ -37,8 +37,9 @@ Each `pub/vN` directory corresponds to a breaking change in the format of the pu
 The version number is not stored in this repo: the build reads `MINIMETADATA_VERSION` from `@talismn/chaindata-provider`, so bumping that dependency is what moves the output to a new folder.
 The latest version is the highest `pub/vN` folder in this repo, or the `MINIMETADATA_VERSION` constant of the `@talismn/chaindata-provider` release you depend on.
 
-Old directories are no longer rebuilt, but they are also never deleted.
-Wallet releases pinned to an older `@talismn/chaindata-provider` keep working with the last data built for their version.
+Old directories are never deleted, and wallet releases pinned to an older `@talismn/chaindata-provider` keep reading them.
+Their content is frozen at the last build of their version, except for RPCs: every build copies the current RPC list of each network into `pub/v4` and later, and drops networks that no longer exist (with their tokens and miniMetadatas).
+The frozen original of each old version is kept next to it as `chaindata.backup.json`.
 
 | Version   | Since   | Notes                                                                           |
 | --------- | ------- | ------------------------------------------------------------------------------- |
@@ -46,15 +47,17 @@ Wallet releases pinned to an older `@talismn/chaindata-provider` keep working wi
 | `v4`      | 2025-07 | Single `chaindata.json`, refactored network and token objects, YAML input files |
 | `v5`      | 2025-08 | Solana networks and SPL tokens                                                  |
 | `v6`-`v9` | 2025-26 | Incremental breaking changes to network, token and miniMetadata shapes          |
-| `v10`     | 2026-05 |                                                                                 |
+| `v10`     | 2026-05 | Solana Token-2022 tokens                                                        |
 | `v11`     | 2026-06 |                                                                                 |
 | `v12`     | 2026-06 |                                                                                 |
-| `v13`     | 2026-08 | Current at the time of writing                                                  |
+| `v13`     | 2026-08 |                                                                                 |
+| `v14`     | 2026-09 |                                                                                 |
+| `v15`     | 2026-10 | `hasFrontierMirrorWithdraw` flag on Polkadot networks                           |
 
 ## How it works
 
 Only the YAML files in `data/` are edited by hand.
-Everything else is produced by three GitHub workflows that commit their output back to `main`:
+Everything else is produced by GitHub workflows that commit their output back to `main`:
 
 | Workflow                           | Trigger                | Command                       | Output                                                      |
 | ---------------------------------- | ---------------------- | ----------------------------- | ----------------------------------------------------------- |
@@ -62,6 +65,8 @@ Everything else is produced by three GitHub workflows that commit their output b
 | `Chaindata Fetch External`         | every 6 hours, on main | `pnpm fetch-external`         | `data/cache`, `data/generated`, mirrored logos in `assets/` |
 | `Chaindata Build`                  | every push to main     | `pnpm build`                  | `pub/vN/chaindata.json` and `chaindata.min.json`            |
 | `Chaindata Fetch TAO Hotkey Logos` | every 6 hours, on main | `pnpm fetch-tao-hotkey-logos` | `assets/bittensor/hotkeys/`                                 |
+
+`Chaindata Workflows Audit` also runs [zizmor](https://github.com/zizmorcore/zizmor) on the workflow files, on every change to them and weekly.
 
 ### Fetch external
 
@@ -86,6 +91,13 @@ Assembles the published files from the YAML configs and the cached external data
 1. Substrate miniMetadatas
 1. Theme colors extracted from logos
 1. Consolidated `chaindata.json` and `chaindata.min.json`, validated against the `@talismn/chaindata-provider` schemas
+1. RPC lists copied into the older `pub` versions
+
+The RPCs of each network are sorted by the health check results: healthy RPCs first, then the ones that returned a non-fatal error.
+RPCs that failed the check are dropped, and at most 5 are kept for each network.
+RPCs that pass the health check but should not be used (flagged by antiviruses, rate limited, unreliable providers) are excluded in `scripts/shared/ignoredRpcs.ts`.
+Polkadot RPCs that filter on the request origin, and so fail in CI but work in browsers, are listed in `scripts/shared/forceOkRpcs.ts` and always come first.
+The build fails if two networks resolve to the same genesis hash.
 
 ## File structure
 
@@ -133,7 +145,8 @@ Only `id` and `rpcs` are required, everything else (genesis hash, ss58 prefix, d
     - wss://rpc.my-network.io
 ```
 
-`isDefault` controls whether the network is enabled by default in Talisman Wallet.
+`isDefault` controls whether the network is enabled by default in Talisman Wallet, and defaults to `false`.
+A new network is published only after `Chaindata Fetch External` has fetched its specs and metadata, so it can take up to 6 hours after the merge to show up.
 
 ### Add or update an EVM network
 
@@ -153,7 +166,7 @@ Tokens are declared under the `tokens` key of their network, grouped by balance 
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Polkadot | `substrate-native`, `substrate-assets`, `substrate-foreignassets`, `substrate-tokens`, `substrate-psp22`, `substrate-hydration`, `substrate-dtao` |
 | Ethereum | `evm-erc20`, `evm-uniswapv2`                                                                                                                      |
-| Solana   | `sol-spl`                                                                                                                                         |
+| Solana   | `sol-spl`, `sol-token2022`                                                                                                                        |
 
 Symbol, decimals and name are fetched from chain where possible, so most entries only need the on-chain identifier (asset id, contract address, mint address) and optionally a `coingeckoId` and a `logo`.
 Check existing entries in the YAML file for the fields expected by each module, or the JSON schemas in `schemas/`.
@@ -172,11 +185,12 @@ SVG is preferred, PNG and WebP are accepted.
 1. Enable `pnpm` via [corepack](https://nodejs.org/api/corepack.html) with `corepack enable`
 1. Clone the repo: `git clone git@github.com:TalismanSociety/chaindata.git`
 1. Install the dependencies: `pnpm install` (this also generates the JSON schemas)
-1. Copy `.env.sample` to `.env` and fill in the variables
 1. Validate your changes: `pnpm validate`
 1. Build the published files: `pnpm build`
 
-The build embeds the current git branch name in logo URLs, so do not commit a `pub/` folder built from a feature branch.
+The build embeds the current git branch name in logo URLs and also rewrites the older `pub/vN` folders, so do not commit a `pub/` folder built from a feature branch.
 The CI rebuilds `pub/` after your PR is merged.
 
 `pnpm build:dev` skips validation, and `pnpm fetch-external` refreshes the cached external data.
+`fetch-external` queries coingecko: copy `.env.sample` to `.env` and set a coingecko API key to avoid rate limits.
+The build itself needs no environment variable.
