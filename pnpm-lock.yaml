@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  write-package>deepmerge-ts: 8.0.0
+  write-package>deepmerge-ts: ^8.0.0
 
 importers:
 
@@ -1928,9 +1928,9 @@ packages:
       supports-color:
         optional: true
 
-  deepmerge-ts@8.0.0:
-    resolution: {integrity: sha512-ICNjaP0ML+eSdEpJYQC46XiAn/UjAdwbEl0dE8p85ZTeNDinN4Kd4+9jS4OSAuH7st6eC7rQhsqTF5zIDaUm2g==}
-    engines: {node: '>=16.0.0'}
+  deepmerge-ts@8.0.2:
+    resolution: {integrity: sha512-uqbvqLUMrc6p0MO+WBRtTxY55hmyh94WRwI5a++PZe54X+bfVh59FSN7uWCBCW1CCVjzjnrwzfI8zidE2obMMw==}
+    engines: {node: '>=16.9.0'}
 
   detect-indent@7.0.1:
     resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
@@ -4410,7 +4410,7 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  deepmerge-ts@8.0.0: {}
+  deepmerge-ts@8.0.2: {}
 
   detect-indent@7.0.1: {}
 
@@ -4960,7 +4960,7 @@ snapshots:
 
   write-package@7.2.0:
     dependencies:
-      deepmerge-ts: 8.0.0
+      deepmerge-ts: 8.0.2
       read-pkg: 9.0.1
       sort-keys: 5.1.0
       type-fest: 4.41.0
