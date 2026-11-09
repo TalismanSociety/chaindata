@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  write-package>deepmerge-ts: 8.0.0
+  write-package>deepmerge-ts: ^8.0.0
 
 importers:
 
@@ -27,23 +27,23 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       '@talismn/balances':
-        specifier: 0.0.0-pr2672-20261022014450
-        version: 0.0.0-pr2672-20261022014450(@solana/sysvars@8.3.0(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4)
+        specifier: 3.1.2
+        version: 3.1.2(@solana/sysvars@8.3.0(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4)
       '@talismn/chain-connectors':
-        specifier: 0.0.0-pr2672-20261022014450
-        version: 0.0.0-pr2672-20261022014450(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
+        specifier: 1.1.2
+        version: 1.1.2(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
       '@talismn/chaindata-provider':
-        specifier: 0.0.0-pr2672-20261022014450
-        version: 0.0.0-pr2672-20261022014450
+        specifier: 2.3.2
+        version: 2.3.2
       '@talismn/crypto':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.2.0
+        version: 1.2.0
       '@talismn/sapi':
-        specifier: 0.0.0-pr2672-20261022014450
-        version: 0.0.0-pr2672-20261022014450(rxjs@7.8.2)
+        specifier: 3.0.0
+        version: 3.0.0(rxjs@7.8.2)
       '@talismn/scale':
-        specifier: 0.0.0-pr2672-20261022014450
-        version: 0.0.0-pr2672-20261022014450
+        specifier: 3.0.0
+        version: 3.0.0
       dotenv:
         specifier: ^18.0.9
         version: 18.0.9
@@ -75,8 +75,8 @@ importers:
         specifier: 2.56.8
         version: 2.56.8(bufferutil@4.0.9)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
       ws:
-        specifier: ^8.22.1
-        version: 8.22.1(bufferutil@4.0.9)(utf-8-validate@6.0.4)
+        specifier: ^8.22.2
+        version: 8.22.2(bufferutil@4.0.9)(utf-8-validate@6.0.4)
       yaml:
         specifier: ^2.9.1
         version: 2.9.1
@@ -85,8 +85,8 @@ importers:
         version: 4.6.7
     devDependencies:
       '@biomejs/biome':
-        specifier: 2.6.5
-        version: 2.6.5
+        specifier: 2.6.6
+        version: 2.6.6
       '@types/lodash':
         specifier: ^4.17.27
         version: 4.17.27
@@ -146,71 +146,71 @@ packages:
     resolution: {integrity: sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==}
     engines: {node: '>=6.9.0'}
 
-  '@biomejs/biome@2.6.5':
-    resolution: {integrity: sha512-n0sp74QbSVEkWXlH659TKv4oJNylwAvDeZ8K8vt/PbcF1xneuNWe57z/G0Bxfh00cufhWXF6DiStLM8+jcLUpg==}
+  '@biomejs/biome@2.6.6':
+    resolution: {integrity: sha512-NCgVJRyrU1+hsW1ILNaRqNAb9fRL4n49bwyef+wjVJQ488/bXbp0BfnNqTTExkiNQT3ugkgYKR1vK8NxsjlNSQ==}
     engines: {node: '>=14.21.3'}
     hasBin: true
 
-  '@biomejs/cli-android-arm64@2.6.5':
-    resolution: {integrity: sha512-fkLzc1WRU7wRIUNmAm7cxILb4dd6eESz/VycWvVFKVn6tXx0gFQKdUbPnwT42xys8AEvIJQpFGcK00kURwqorg==}
+  '@biomejs/cli-android-arm64@2.6.6':
+    resolution: {integrity: sha512-bicnqNNxEX7pjkDQaptYvPRIWDfgXJLl/Ok7iZjC+F1AhfReor3FSS7SgPYnOvUy/jf++5U/KYN4T8OKH5rrNA==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [android]
 
-  '@biomejs/cli-android-x64@2.6.5':
-    resolution: {integrity: sha512-fkZ9dPnDAzAcaPtPCiwqtkub5C9FQK/oGCGaU9sq+DysTaq13pE9FxBIMcEZ3ydn8/FfcMdXi/DDzKDP+qyn2Q==}
+  '@biomejs/cli-android-x64@2.6.6':
+    resolution: {integrity: sha512-N443kDSElF4kDMKjarsL+ymj/ewLA5R9VAdawA7fJ7pwgN3JVDZp0K+xhKBglH8EwsKi2+K8xC6WxXSkgziFfw==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [android]
 
-  '@biomejs/cli-darwin-arm64@2.6.5':
-    resolution: {integrity: sha512-bKd0EOREgnVjeZm4s9knQ+WdPOkWS3JHB+eWGHlx+Pq66bqQA1/KybwU0O+zuyAyXiphSCBcrLruZt3YtnJoaQ==}
+  '@biomejs/cli-darwin-arm64@2.6.6':
+    resolution: {integrity: sha512-/vSAqWx3by3p8w5ew+HVJDgguuaTK3U6Fb5gk/oDUH21iWOopm3gOlhT6tZfy5mTaM5R4CVc3uFWkxBtEDrKyw==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [darwin]
 
-  '@biomejs/cli-darwin-x64@2.6.5':
-    resolution: {integrity: sha512-UkT9BECNOXSiW6SGddjyaRACy362Sc9n3vDaTFkccL0bC2gW7JzM16i4+JKPbEaDn1Sa+oETHV8KungnI/y40Q==}
+  '@biomejs/cli-darwin-x64@2.6.6':
+    resolution: {integrity: sha512-lLdOAJKbrAoDs+3GvTyVmMW345D9IhrIE3GgoL2eeHwO1boN4VhrSlALtFYsP0p+Jy4udUp4bTguij0qjKrH8w==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [darwin]
 
-  '@biomejs/cli-linux-arm64-musl@2.6.5':
-    resolution: {integrity: sha512-kfc3AePW1a0/d/gUpcIz95nf3Ce8YY2/xL0Fk3fLqAhKsotqUi6PN6BaVWss4p6ijWbiuacZ9NQ4NiQtpjbYpw==}
+  '@biomejs/cli-linux-arm64-musl@2.6.6':
+    resolution: {integrity: sha512-rw2Vsoi/WZGDyRjMXx9KZH9zsHe79LIzkdWHkLqsIkeKZm6qiGxtiIApxn7cmJSoEPaSvHaH5pRj1FhTcyL/XA==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@biomejs/cli-linux-arm64@2.6.5':
-    resolution: {integrity: sha512-H9cVMWBqW/lkFK9NHJdt0bpM2q7PacUDEjQoff9+m0dCV09H/jmBykfTCkbDthHf8+jCuWDJWiQFJ7bDkiGOcA==}
+  '@biomejs/cli-linux-arm64@2.6.6':
+    resolution: {integrity: sha512-UzJdUCg9dbEGpZOuZRyehEPrnwKjx9z4Um7sWLG5x6txu7UjeWdJZuBXVGlyAdD39w2Hx0nZeK1jKC4NFUTCNQ==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@biomejs/cli-linux-x64-musl@2.6.5':
-    resolution: {integrity: sha512-0mHVpLNt7/FugfZ2VPugUIEIiooWIyHGGJUqU9StxamBln9hz+maXRFIECU50jaf5/ZB93veGIViN5VKgw2AEA==}
+  '@biomejs/cli-linux-x64-musl@2.6.6':
+    resolution: {integrity: sha512-DiKejs+GnFbOVQsBnukUpiB+T13tqUDFGwwjsTq51vatAsaflzFzVD0BOgjVUGRrqKgE0K0Xf+wNtkcmdN2chw==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@biomejs/cli-linux-x64@2.6.5':
-    resolution: {integrity: sha512-e6/WMSN/+FhH+ZOoBevps/euxFQmv6BXqYNuTn1+ITR6O4XYFjHF5PeVSNZnjkgSYmvhcDkfepSX5lXczMijGA==}
+  '@biomejs/cli-linux-x64@2.6.6':
+    resolution: {integrity: sha512-l8/aPXc1cz8VpUyd4hb5Pm5zx+X3voQBks4aLYbp5pC8KSchuHyvqDfY5xax39qCHomI/2xn6NKEot+zebG38g==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@biomejs/cli-win32-arm64@2.6.5':
-    resolution: {integrity: sha512-uBbfpdR/cH5up1iRJFGAPP97xKMzrgMs685CSrY7NM+Q4Unw7chY0o3JulEvJdmU6c6hGQxwqotMq7DDH0DzxA==}
+  '@biomejs/cli-win32-arm64@2.6.6':
+    resolution: {integrity: sha512-DjVXwQAQeHrO1JEZAEus54k40Tnh4glyU3VFLcDBKwoz0xnxCEnqw6TCMXoujcQMQynWd3AY8bLrbR1o0XNqow==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [win32]
 
-  '@biomejs/cli-win32-x64@2.6.5':
-    resolution: {integrity: sha512-07LaCeN9vvmbAAMOMsUjMfL5UbsCDkvVeyMJIgwNRc0xYqhizBGkjVzx05LYEwCXl2AiHcdzqVPR4IOYAsI1QQ==}
+  '@biomejs/cli-win32-x64@2.6.6':
+    resolution: {integrity: sha512-B7KMG26A4I9lAuxwBGMmiVcjMGAeJRoz+pzFt9brRvOAsIrgOu8ptJld5rUWui6tM1uiJwxeJhhDPuAiZtxXdw==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
@@ -1294,42 +1294,38 @@ packages:
     resolution: {integrity: sha512-qGzCltMN05ohRRQAXB8TPWt+0Coz9Va266gr9nYN1qc/f/EIaup3VRg7b59mtRaeKTRcxreF20l/udCM/gOqNg==}
     engines: {node: '>=8'}
 
-  '@talismn/balances@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-DZ0786ddh3lKkObaHGvHXARdGyckewMKsEAi1x7s8fes7p03tMoGKf+nmOUYMCsgf8Y/VZ3KWpV0QzZ1GIG8vA==}
+  '@talismn/balances@3.1.2':
+    resolution: {integrity: sha512-g1sqAD8num1XQqxULMRR7anHjcHH39tYmaFFoq7OrE8DY1negRQbLdtYv2wYIXea5gn/Zb52phWO+cuiNXzCxw==}
     engines: {node: '>=20'}
 
-  '@talismn/chain-connectors@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-J4vD1fIcx+k/NWQTsvt36e/kcXcGzzNzi1c96h8L1V3J98wyKGpO18fjIZy9l0nSTM7yOvUK00NW1Rla7IFtLg==}
+  '@talismn/chain-connectors@1.1.2':
+    resolution: {integrity: sha512-LkyR5xnpStgEoLg/JxdjtVEezKkB6CHVUKxqAaeTiZt9psCfsLNXCDjH+z0IRg4+D/prf51t1sqSImJTTPjtSg==}
     engines: {node: '>=20'}
 
-  '@talismn/chaindata-provider@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-O4AH+ijWkBef/PHRR42cqr5Km5y6inlN/nb8c1Ov88UDjpMJ0cIsTdB2pVC7sC27wtq0yy6PLaq7VAqnwb0Twg==}
+  '@talismn/chaindata-provider@2.3.2':
+    resolution: {integrity: sha512-5Uv0DEx905gnuNoqjNZmfmz/3KkJsosbE7rsle8jiVO2d4ha3rzs2sFP/pTquIPeZOVTT+y7D3pq7FEvuV7vpA==}
     engines: {node: '>=20'}
 
-  '@talismn/crypto@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-GnkuuTVt16Ofr8c76gvQCTopCWWcuRaU/7S+FnUWVZagDsy+8dvyoJgUahSdLBBEcVwBEvqwpxNjnkrtKitTsg==}
+  '@talismn/crypto@1.2.0':
+    resolution: {integrity: sha512-8SIqhpfau69UIJsBtL/SxjgM5+okpBQw9PhCW8lbdO3hj4eU/qCB05Ttl/vcEgNq29ilc1HTkAmh0ASEQBpA3w==}
     engines: {node: '>=20'}
 
-  '@talismn/crypto@1.1.0':
-    resolution: {integrity: sha512-8WLGltr/Z6ifmogff9OfBSPiZ4C46rnGac7v2C4708X6LpxiwVgMRAoP4sCoglSTLeYVRLC2gZTwQFLQCHQp5Q==}
-    engines: {node: '>=20'}
-
-  '@talismn/sapi@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-epPssCm/0FEcfWpQfeyvbHIfkJ54QzxONKqn6x4H67UCRK/g9PUc3+fzv/LBg3UGznX8D8ktvrrdTXDch0gFzQ==}
+  '@talismn/sapi@3.0.0':
+    resolution: {integrity: sha512-hS+NQt8CzCgXAzvXEedrUmQ5detHSpoZtvu/3z+JXVzQn7gFpUGBNV0AZZHCFGygjCpt0/s5WiRQYM/7IAXn2g==}
     engines: {node: '>=20'}
     peerDependencies:
       rxjs: '>=7.8.0'
 
-  '@talismn/scale@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-jbRqhs+BSEBt8Ou6jeLU1f+c6PYm+c2cs2f6+OJ9rhveKSiCDsK8gMD0RTAvey4xFDLdTf596PtQIflfFJ9nFg==}
+  '@talismn/scale@3.0.0':
+    resolution: {integrity: sha512-+3wbzXlHm1TzlnUahAfeN42D81E8/Cobqbm/h/uLWNTLgaRPqJnBPDB7fi8+7KFaK6UBFZdPLVyUq96oFiUrAA==}
     engines: {node: '>=20'}
 
-  '@talismn/token-rates@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-IqQSCnjgxWXu++a3OrHO3RKrO961pVogbgGdqs564XFcCBtRytJWdQ/d80RcSwhfyBQW0U9H2MbLBZ1n7Te9uA==}
+  '@talismn/token-rates@4.0.9':
+    resolution: {integrity: sha512-fKZA7qGNkRwuPTSf9K+wTtXm4MaGWboATRHxco5U5Ca9TlpVIvnG5jenEj0yojaAyqcW/H6j0X7eWRDRUgJvGg==}
     engines: {node: '>=20'}
 
-  '@talismn/util@0.0.0-pr2672-20261022014450':
-    resolution: {integrity: sha512-EQ3JY2t+i8bUJM40rCLWiXH0Ew9pJ3+GKx5iEDSLF6PHBdXGTubEqtCH3mbtubnWaBxd7De/NiLSYu+iOFcz+Q==}
+  '@talismn/util@2.1.1':
+    resolution: {integrity: sha512-4eYeu3fvwRLxtDBFWPw3GHXzJF9aWQlkmXMYoBCYYetsF6Ap7z/OHZzlVGdVC0pYT0M3UypMyw242hnZo+LJ6Q==}
     engines: {node: '>=20'}
 
   '@types/estree@1.0.9':
@@ -1541,9 +1537,9 @@ packages:
       supports-color:
         optional: true
 
-  deepmerge-ts@8.0.0:
-    resolution: {integrity: sha512-ICNjaP0ML+eSdEpJYQC46XiAn/UjAdwbEl0dE8p85ZTeNDinN4Kd4+9jS4OSAuH7st6eC7rQhsqTF5zIDaUm2g==}
-    engines: {node: '>=16.0.0'}
+  deepmerge-ts@8.0.2:
+    resolution: {integrity: sha512-uqbvqLUMrc6p0MO+WBRtTxY55hmyh94WRwI5a++PZe54X+bfVh59FSN7uWCBCW1CCVjzjnrwzfI8zidE2obMMw==}
+    engines: {node: '>=16.9.0'}
 
   detect-indent@7.0.1:
     resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
@@ -2117,8 +2113,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.22.1:
-    resolution: {integrity: sha512-oyL6OPYme/CmiFvNuGzeoxCJ4nOrZE2O1FwM9MWM1AsGri6nLXB2pg+lNA8aLeXMSav0J6eIVS1j6vUPzUtK9g==}
+  ws@8.22.2:
+    resolution: {integrity: sha512-/rEZ2ejown2N5gxVTHUu9bVVC7ttu0/Tgzf5hbTOixR3Fs7mbbXgn2DbdbcKgJOmpQMtrIUWivtYuVMnp/W/yA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -2153,47 +2149,47 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.27.1': {}
 
-  '@biomejs/biome@2.6.5':
+  '@biomejs/biome@2.6.6':
     optionalDependencies:
-      '@biomejs/cli-android-arm64': 2.6.5
-      '@biomejs/cli-android-x64': 2.6.5
-      '@biomejs/cli-darwin-arm64': 2.6.5
-      '@biomejs/cli-darwin-x64': 2.6.5
-      '@biomejs/cli-linux-arm64': 2.6.5
-      '@biomejs/cli-linux-arm64-musl': 2.6.5
-      '@biomejs/cli-linux-x64': 2.6.5
-      '@biomejs/cli-linux-x64-musl': 2.6.5
-      '@biomejs/cli-win32-arm64': 2.6.5
-      '@biomejs/cli-win32-x64': 2.6.5
+      '@biomejs/cli-android-arm64': 2.6.6
+      '@biomejs/cli-android-x64': 2.6.6
+      '@biomejs/cli-darwin-arm64': 2.6.6
+      '@biomejs/cli-darwin-x64': 2.6.6
+      '@biomejs/cli-linux-arm64': 2.6.6
+      '@biomejs/cli-linux-arm64-musl': 2.6.6
+      '@biomejs/cli-linux-x64': 2.6.6
+      '@biomejs/cli-linux-x64-musl': 2.6.6
+      '@biomejs/cli-win32-arm64': 2.6.6
+      '@biomejs/cli-win32-x64': 2.6.6
 
-  '@biomejs/cli-android-arm64@2.6.5':
+  '@biomejs/cli-android-arm64@2.6.6':
     optional: true
 
-  '@biomejs/cli-android-x64@2.6.5':
+  '@biomejs/cli-android-x64@2.6.6':
     optional: true
 
-  '@biomejs/cli-darwin-arm64@2.6.5':
+  '@biomejs/cli-darwin-arm64@2.6.6':
     optional: true
 
-  '@biomejs/cli-darwin-x64@2.6.5':
+  '@biomejs/cli-darwin-x64@2.6.6':
     optional: true
 
-  '@biomejs/cli-linux-arm64-musl@2.6.5':
+  '@biomejs/cli-linux-arm64-musl@2.6.6':
     optional: true
 
-  '@biomejs/cli-linux-arm64@2.6.5':
+  '@biomejs/cli-linux-arm64@2.6.6':
     optional: true
 
-  '@biomejs/cli-linux-x64-musl@2.6.5':
+  '@biomejs/cli-linux-x64-musl@2.6.6':
     optional: true
 
-  '@biomejs/cli-linux-x64@2.6.5':
+  '@biomejs/cli-linux-x64@2.6.6':
     optional: true
 
-  '@biomejs/cli-win32-arm64@2.6.5':
+  '@biomejs/cli-win32-arm64@2.6.6':
     optional: true
 
-  '@biomejs/cli-win32-x64@2.6.5':
+  '@biomejs/cli-win32-x64@2.6.6':
     optional: true
 
   '@commander-js/extra-typings@15.0.0(commander@15.0.0)':
@@ -3071,7 +3067,7 @@ snapshots:
       '@solana/functional': 8.3.0(typescript@7.0.2)
       '@solana/rpc-subscriptions-spec': 8.3.0(typescript@7.0.2)
       '@solana/subscribable': 8.3.0(typescript@7.0.2)
-      ws: 8.22.1(bufferutil@4.0.9)(utf-8-validate@6.0.4)
+      ws: 8.22.2(bufferutil@4.0.9)(utf-8-validate@6.0.4)
     optionalDependencies:
       typescript: 7.0.2
     transitivePeerDependencies:
@@ -3265,7 +3261,7 @@ snapshots:
 
   '@supercharge/promise-pool@3.3.0': {}
 
-  '@talismn/balances@0.0.0-pr2672-20261022014450(@solana/sysvars@8.3.0(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4)':
+  '@talismn/balances@3.1.2(@solana/sysvars@8.3.0(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4)':
     dependencies:
       '@metaplex-foundation/mpl-token-metadata': 3.4.0(@metaplex-foundation/umi@1.6.0)
       '@metaplex-foundation/umi': 1.6.0
@@ -3275,13 +3271,13 @@ snapshots:
       '@solana-program/token': 0.16.1(@solana/kit@8.3.0(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4))
       '@solana-program/token-2022': 0.16.1(@solana/kit@8.3.0(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4))(@solana/sysvars@8.3.0(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2))
       '@solana/kit': 8.3.0(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4)
-      '@talismn/chain-connectors': 0.0.0-pr2672-20261022014450(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
-      '@talismn/chaindata-provider': 0.0.0-pr2672-20261022014450
-      '@talismn/crypto': 0.0.0-pr2672-20261022014450
-      '@talismn/sapi': 0.0.0-pr2672-20261022014450(rxjs@7.8.2)
-      '@talismn/scale': 0.0.0-pr2672-20261022014450
-      '@talismn/token-rates': 0.0.0-pr2672-20261022014450(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
-      '@talismn/util': 0.0.0-pr2672-20261022014450
+      '@talismn/chain-connectors': 1.1.2(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
+      '@talismn/chaindata-provider': 2.3.2
+      '@talismn/crypto': 1.2.0
+      '@talismn/sapi': 3.0.0(rxjs@7.8.2)
+      '@talismn/scale': 3.0.0
+      '@talismn/token-rates': 4.0.9(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
+      '@talismn/util': 2.1.1
       anylogger: 1.0.11
       bignumber.js: 11.1.5
       lodash-es: 4.18.1
@@ -3298,13 +3294,13 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@talismn/chain-connectors@0.0.0-pr2672-20261022014450(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)':
+  '@talismn/chain-connectors@1.1.2(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)':
     dependencies:
       '@polkadot-api/substrate-client': 0.7.0
       '@polkadot-api/ws-provider': 0.9.2(rxjs@7.8.2)
       '@solana/kit': 8.3.0(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@7.0.2)(utf-8-validate@6.0.4)
-      '@talismn/chaindata-provider': 0.0.0-pr2672-20261022014450
-      '@talismn/util': 0.0.0-pr2672-20261022014450
+      '@talismn/chaindata-provider': 2.3.2
+      '@talismn/util': 2.1.1
       anylogger: 1.0.11
       lodash-es: 4.18.1
       viem: 2.56.8(bufferutil@4.0.9)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
@@ -3316,9 +3312,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@talismn/chaindata-provider@0.0.0-pr2672-20261022014450':
+  '@talismn/chaindata-provider@2.3.2':
     dependencies:
-      '@talismn/util': 0.0.0-pr2672-20261022014450
+      '@talismn/util': 2.1.1
       anylogger: 1.0.11
       dexie: 4.4.6
       lodash-es: 4.18.1
@@ -3326,7 +3322,7 @@ snapshots:
       rxjs: 7.8.2
       zod: 4.6.7
 
-  '@talismn/crypto@0.0.0-pr2672-20261022014450':
+  '@talismn/crypto@1.2.0':
     dependencies:
       '@noble/ciphers': 2.4.0
       '@noble/curves': 2.4.0
@@ -3340,21 +3336,7 @@ snapshots:
       mlkem: 2.7.0
       scale-ts: 1.6.1
 
-  '@talismn/crypto@1.1.0':
-    dependencies:
-      '@noble/ciphers': 2.4.0
-      '@noble/curves': 2.4.0
-      '@noble/hashes': 2.4.0
-      '@scure/base': 2.4.0
-      '@scure/bip32': 2.4.0
-      '@scure/bip39': 2.4.0
-      '@scure/sr25519': 2.4.0
-      bech32: 2.0.0
-      bs58check: 4.0.0
-      mlkem: 2.7.0
-      scale-ts: 1.6.1
-
-  '@talismn/sapi@0.0.0-pr2672-20261022014450(rxjs@7.8.2)':
+  '@talismn/sapi@3.0.0(rxjs@7.8.2)':
     dependencies:
       '@polkadot-api/merkleize-metadata': 1.3.2
       '@polkadot-api/metadata-builders': 0.15.2
@@ -3362,12 +3344,12 @@ snapshots:
       '@polkadot-api/substrate-bindings': 0.21.2
       '@polkadot-api/tx-utils': 0.6.2(rxjs@7.8.2)
       '@polkadot-api/utils': 0.4.0
-      '@talismn/scale': 0.0.0-pr2672-20261022014450
+      '@talismn/scale': 3.0.0
       anylogger: 1.0.11
       rxjs: 7.8.2
       scale-ts: 1.6.1
 
-  '@talismn/scale@0.0.0-pr2672-20261022014450':
+  '@talismn/scale@3.0.0':
     dependencies:
       '@polkadot-api/metadata-builders': 0.15.2
       '@polkadot-api/substrate-bindings': 0.21.2
@@ -3375,11 +3357,11 @@ snapshots:
       anylogger: 1.0.11
       scale-ts: 1.6.1
 
-  '@talismn/token-rates@0.0.0-pr2672-20261022014450(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)':
+  '@talismn/token-rates@4.0.9(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)':
     dependencies:
-      '@talismn/chain-connectors': 0.0.0-pr2672-20261022014450(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
-      '@talismn/chaindata-provider': 0.0.0-pr2672-20261022014450
-      '@talismn/util': 0.0.0-pr2672-20261022014450
+      '@talismn/chain-connectors': 1.1.2(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(rxjs@7.8.2)(typescript@7.0.2)(utf-8-validate@6.0.4)(zod@4.6.7)
+      '@talismn/chaindata-provider': 2.3.2
+      '@talismn/util': 2.1.1
       anylogger: 1.0.11
       scale-ts: 1.6.1
     transitivePeerDependencies:
@@ -3390,7 +3372,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@talismn/util@0.0.0-pr2672-20261022014450':
+  '@talismn/util@2.1.1':
     dependencies:
       bignumber.js: 11.1.5
       lodash-es: 4.18.1
@@ -3524,7 +3506,7 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  deepmerge-ts@8.0.0: {}
+  deepmerge-ts@8.0.2: {}
 
   detect-indent@7.0.1: {}
 
@@ -3891,7 +3873,7 @@ snapshots:
 
   smoldot@3.7.0(bufferutil@4.0.9)(utf-8-validate@6.0.4):
     dependencies:
-      ws: 8.22.1(bufferutil@4.0.9)(utf-8-validate@6.0.4)
+      ws: 8.22.2(bufferutil@4.0.9)(utf-8-validate@6.0.4)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -4042,7 +4024,7 @@ snapshots:
 
   write-package@7.2.0:
     dependencies:
-      deepmerge-ts: 8.0.0
+      deepmerge-ts: 8.0.2
       read-pkg: 9.0.1
       sort-keys: 5.1.0
       type-fest: 4.41.0
@@ -4053,7 +4035,7 @@ snapshots:
       bufferutil: 4.0.9
       utf-8-validate: 6.0.4
 
-  ws@8.22.1(bufferutil@4.0.9)(utf-8-validate@6.0.4):
+  ws@8.22.2(bufferutil@4.0.9)(utf-8-validate@6.0.4):
     optionalDependencies:
       bufferutil: 4.0.9
       utf-8-validate: 6.0.4
