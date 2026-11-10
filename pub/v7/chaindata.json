@@ -7449,6 +7449,20 @@
       "rpcs": ["https://rpc.goalpha.org"]
     },
     {
+      "id": "3230",
+      "name": "C9XChain",
+      "nativeTokenId": "3230:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CXC",
+        "name": "CXC"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://blockscan-tanssi.c9tech.com.br"],
+      "platform": "ethereum",
+      "rpcs": ["https://services.tanssi-mainnet.network/tanssi-2002"]
+    },
+    {
       "id": "3269",
       "name": "Dubxcoin network",
       "nativeTokenId": "3269:evm-native",
@@ -7793,7 +7807,7 @@
       "themeColor": "#fe031f",
       "blockExplorerUrls": ["https://xonescan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc-node-3.xone.org", "https://rpc-node-4.xone.org"]
+      "rpcs": ["https://rpc-node-2.xone.org", "https://rpc-node-3.xone.org", "https://rpc-node-4.xone.org"]
     },
     {
       "id": "3737",
@@ -15237,22 +15251,6 @@
       "rpcs": ["https://rpc.sriscan.com"]
     },
     {
-      "id": "96368",
-      "isTestnet": true,
-      "name": "Lux Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/lux.webp",
-      "nativeTokenId": "96368:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tLUX",
-        "name": "tLux"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://explore.lux.network"],
-      "platform": "ethereum",
-      "rpcs": ["https://api.lux-test.network"]
-    },
-    {
       "id": "96369",
       "isTestnet": true,
       "name": "Lux Mainnet",
@@ -21296,7 +21294,7 @@
         "wss://kusama-bridge-hub-rpc.polkadot.io",
         "wss://bridgehub-kusama.api.onfinality.io/public-ws",
         "wss://bridge-hub-kusama-rpc.n.dwellir.com",
-        "wss://bridge-hub-kusama.rotko.net"
+        "wss://ksm-rpc.stakeworld.io/bridgehub"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -21334,7 +21332,7 @@
         "wss://kusama-coretime-rpc.polkadot.io",
         "wss://coretime-kusama.api.onfinality.io/public-ws",
         "wss://coretime-kusama-rpc.n.dwellir.com",
-        "wss://coretime-kusama.rotko.net"
+        "wss://ksm-rpc.stakeworld.io/coretime"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -21372,7 +21370,7 @@
         "wss://kusama-people-rpc.polkadot.io",
         "wss://people-kusama.api.onfinality.io/public-ws",
         "wss://people-kusama-rpc.n.dwellir.com",
-        "wss://people-kusama.rotko.net"
+        "wss://ksm-rpc.stakeworld.io/people"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -21556,9 +21554,9 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
       "rpcs": [
+        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.unitedbloc.com"
+        "wss://wss.api.moonriver.moonbeam.network"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -129375,6 +129373,16 @@
       "name": "PAREX",
       "coingeckoId": "parex",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/parex.webp",
+      "isDefault": true
+    },
+    {
+      "id": "3230:evm-native",
+      "platform": "ethereum",
+      "networkId": "3230",
+      "type": "evm-native",
+      "symbol": "CXC",
+      "decimals": 18,
+      "name": "CXC",
       "isDefault": true
     },
     {
@@ -241108,17 +241116,6 @@
       "decimals": 18,
       "name": "BTCC",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/btc20.webp",
-      "isDefault": true
-    },
-    {
-      "id": "96368:evm-native",
-      "platform": "ethereum",
-      "networkId": "96368",
-      "type": "evm-native",
-      "symbol": "tLUX",
-      "decimals": 18,
-      "name": "tLux",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/lux.webp",
       "isDefault": true
     },
     {
