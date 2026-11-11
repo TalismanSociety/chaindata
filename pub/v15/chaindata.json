@@ -25764,8 +25764,8 @@
       "rpcs": [
         "https://api.calibration.node.glif.io/rpc/v1",
         "https://rpc.ankr.com/filecoin_testnet",
-        "https://calibration.filfox.info/rpc/v1",
-        "https://lb.routeme.sh/rpc/evm/314159"
+        "https://lb.routeme.sh/rpc/evm/314159",
+        "https://calibration.filfox.info/rpc/v1"
       ]
     },
     {
@@ -26010,7 +26010,7 @@
       "themeColor": "#d8b68b",
       "blockExplorerUrls": ["https://dgs-exp.digitsoul.co.th"],
       "platform": "ethereum",
-      "rpcs": ["https://dgs-rpc.digitsoul.co.th", "https://lb.routeme.sh/rpc/evm/363636"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/363636", "https://dgs-rpc.digitsoul.co.th"]
     },
     {
       "id": "369369",
@@ -26665,7 +26665,7 @@
       "themeColor": "#95978b",
       "blockExplorerUrls": ["https://alltra.global"],
       "platform": "ethereum",
-      "rpcs": ["https://mainnet-rpc.alltra.global", "https://lb.routeme.sh/rpc/evm/651940"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/651940", "https://mainnet-rpc.alltra.global"]
     },
     {
       "id": "656476",
@@ -27722,7 +27722,7 @@
       "themeColor": "#981a45",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/1313114", "https://rpc.ethoprotocol.com"]
+      "rpcs": ["https://rpc.ethoprotocol.com", "https://lb.routeme.sh/rpc/evm/1313114"]
     },
     {
       "id": "1314520",
@@ -28403,7 +28403,8 @@
       "rpcs": [
         "https://testnet.coti.io/rpc",
         "https://lb.routeme.sh/rpc/evm/7082400",
-        "https://testnet-magnus-validator.coti.io/rpc"
+        "https://testnet-magnus-validator.coti.io/rpc",
+        "https://testnet-minor-validator.coti.io/rpc"
       ]
     },
     {
@@ -29385,6 +29386,38 @@
       "blockExplorerUrls": ["https://scanv2-testnet.ancient8.gg"],
       "platform": "ethereum",
       "rpcs": ["https://lb.routeme.sh/rpc/evm/28122024"]
+    },
+    {
+      "id": "33772211",
+      "isTestnet": true,
+      "isDefault": false,
+      "name": "Xone Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xone_test.webp",
+      "nativeTokenId": "33772211:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XOC",
+        "name": "Xone Coin"
+      },
+      "themeColor": "#ff0520",
+      "blockExplorerUrls": ["https://testnet.xonescan.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-testnet.xone.org", "https://rpc-testnet.knight.center"]
+    },
+    {
+      "id": "34949059",
+      "isDefault": false,
+      "name": "citronus-citro",
+      "nativeTokenId": "34949059:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CITRO",
+        "name": "Citronus"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://test.citronus.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.citro-testnet.t.raas.gelato.cloud"]
     },
     {
       "id": "37084624",
@@ -32860,7 +32893,7 @@
         "wss://kusama-bridge-hub-rpc.polkadot.io",
         "wss://bridgehub-kusama.api.onfinality.io/public-ws",
         "wss://bridge-hub-kusama-rpc.n.dwellir.com",
-        "wss://ksm-rpc.stakeworld.io/bridgehub"
+        "wss://bridge-hub-kusama.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -32898,7 +32931,7 @@
         "wss://kusama-coretime-rpc.polkadot.io",
         "wss://coretime-kusama.api.onfinality.io/public-ws",
         "wss://coretime-kusama-rpc.n.dwellir.com",
-        "wss://ksm-rpc.stakeworld.io/coretime"
+        "wss://coretime-kusama.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -32936,7 +32969,7 @@
         "wss://kusama-people-rpc.polkadot.io",
         "wss://people-kusama.api.onfinality.io/public-ws",
         "wss://people-kusama-rpc.n.dwellir.com",
-        "wss://ksm-rpc.stakeworld.io/people"
+        "wss://people-kusama.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -33118,9 +33151,9 @@
       "account": "secp256k1",
       "prefix": 1285,
       "rpcs": [
-        "wss://moonriver.unitedbloc.com",
         "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network"
+        "wss://wss.api.moonriver.moonbeam.network",
+        "wss://moonriver.unitedbloc.com"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -99847,18 +99880,6 @@
       "contractAddress": "0xe5c6f5fef89b64f36bfccb063962820136bac42f"
     },
     {
-      "id": "1:evm-erc20:0xe5caef4af8780e59df925470b050fb23c43ca68c",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "FRM",
-      "decimals": 6,
-      "name": "Ferrum Network Token",
-      "coingeckoId": "ferrum-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ferrum-network.webp",
-      "contractAddress": "0xe5caef4af8780e59df925470b050fb23c43ca68c"
-    },
-    {
       "id": "1:evm-erc20:0xe5e0b73380181273abcfd88695f52c4d0c825661",
       "platform": "ethereum",
       "networkId": "1",
@@ -137395,18 +137416,6 @@
       "contractAddress": "0xd94a8f9caed25e63ecc90edfefaf3635ea1e182a"
     },
     {
-      "id": "137:evm-erc20:0xd99bafe5031cc8b345cb2e8c80135991f12d7130",
-      "platform": "ethereum",
-      "networkId": "137",
-      "type": "evm-erc20",
-      "symbol": "FRM",
-      "decimals": 18,
-      "name": "Ferrum Network Token",
-      "coingeckoId": "ferrum-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ferrum-network.webp",
-      "contractAddress": "0xd99bafe5031cc8b345cb2e8c80135991f12d7130"
-    },
-    {
       "id": "137:evm-erc20:0xd9a1070f832cc02ff9d839500eef6e8c64983726",
       "platform": "ethereum",
       "networkId": "137",
@@ -141349,6 +141358,18 @@
       "coingeckoId": "recursion-pharmaceuticals-inc-astock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/recursion-pharmaceuticals-inc-astock.webp",
       "contractAddress": "0xa886aaac8752548cbd9ffd7940b99b9b46eab219"
+    },
+    {
+      "id": "143:evm-erc20:0xa8ddb5cd96b5222afe198316e9a57caa642850d5",
+      "platform": "ethereum",
+      "networkId": "143",
+      "type": "evm-erc20",
+      "symbol": "wNVDAx",
+      "decimals": 18,
+      "name": "Wrapped NVIDIA xStock",
+      "coingeckoId": "wrapped-nvidia-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-nvidia-xstock.webp",
+      "contractAddress": "0xa8ddb5cd96b5222afe198316e9a57caa642850d5"
     },
     {
       "id": "143:evm-erc20:0xa9da3c77ec7cdc4dfaa1fe142af583543d1c540f",
@@ -155085,6 +155106,18 @@
       "coingeckoId": "the-hershey-xstock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-hershey-xstock.webp",
       "contractAddress": "0xc36c8893e54c9a0a1029fb981face1fc5613b4e9"
+    },
+    {
+      "id": "196:evm-erc20:0xc3a8d2e18d33e0800f84cb4ca6529d18fad225df",
+      "platform": "ethereum",
+      "networkId": "196",
+      "type": "evm-erc20",
+      "symbol": "wBRK.Bx",
+      "decimals": 18,
+      "name": "Wrapped Berkshire Hathaway xStock",
+      "coingeckoId": "wrapped-berkshire-hathaway-xstock",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/wrapped-berkshire-hathaway-xstock.webp",
+      "contractAddress": "0xc3a8d2e18d33e0800f84cb4ca6529d18fad225df"
     },
     {
       "id": "196:evm-erc20:0xc3fdbe3a68ee5de461d30415a8165cf9aefe1171",
@@ -183398,6 +183431,17 @@
       "isDefault": true
     },
     {
+      "id": "33772211:evm-native",
+      "platform": "ethereum",
+      "networkId": "33772211",
+      "type": "evm-native",
+      "symbol": "XOC",
+      "decimals": 18,
+      "name": "Xone Coin",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/xone_test.webp",
+      "isDefault": true
+    },
+    {
       "id": "338:evm-native",
       "platform": "ethereum",
       "networkId": "338",
@@ -183971,6 +184015,16 @@
       "decimals": 18,
       "name": "Bitcoin",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/layerEdge.svg",
+      "isDefault": true
+    },
+    {
+      "id": "34949059:evm-native",
+      "platform": "ethereum",
+      "networkId": "34949059",
+      "type": "evm-native",
+      "symbol": "CITRO",
+      "decimals": 18,
+      "name": "Citronus",
       "isDefault": true
     },
     {
@@ -187452,18 +187506,6 @@
       "coingeckoId": "polymath",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/polymath.webp",
       "contractAddress": "0xe99bbd3b25a014aac93127cf868d3de07386c4dd"
-    },
-    {
-      "id": "39797:evm-erc20:0xee0837e18f64ec6cf3bece2da75a1e5f679a6d84",
-      "platform": "ethereum",
-      "networkId": "39797",
-      "type": "evm-erc20",
-      "symbol": "FRM",
-      "decimals": 6,
-      "name": "Ferrum Network",
-      "coingeckoId": "ferrum-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ferrum-network.webp",
-      "contractAddress": "0xee0837e18f64ec6cf3bece2da75a1e5f679a6d84"
     },
     {
       "id": "39797:evm-erc20:0xf1bdcf2d4163adf9554111439dabdd6f18ff9ba7",
@@ -212953,18 +212995,6 @@
       "contractAddress": "0x9f4cf3f16389993df36c4064ac4e4bca6227d402"
     },
     {
-      "id": "42161:evm-erc20:0x9f6abbf0ba6b5bfa27f4deb6597cc6ec20573fda",
-      "platform": "ethereum",
-      "networkId": "42161",
-      "type": "evm-erc20",
-      "symbol": "FRM",
-      "decimals": 18,
-      "name": "Ferrum Network Token",
-      "coingeckoId": "ferrum-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ferrum-network.webp",
-      "contractAddress": "0x9f6abbf0ba6b5bfa27f4deb6597cc6ec20573fda"
-    },
-    {
       "id": "42161:evm-erc20:0x9fa5a66796b4b7dd5cf1be8e5d44739cda384d58",
       "platform": "ethereum",
       "networkId": "42161",
@@ -237668,18 +237698,6 @@
       "coingeckoId": "cypherpunk-technologies-dinari-tokenized-stock",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/cypherpunk-technologies-dinari-tokenized-stock.webp",
       "contractAddress": "0xe5b19b10d3cd669f8e743fee6a5328a2ad59f26e"
-    },
-    {
-      "id": "43114:evm-erc20:0xe5caef4af8780e59df925470b050fb23c43ca68c",
-      "platform": "ethereum",
-      "networkId": "43114",
-      "type": "evm-erc20",
-      "symbol": "FRM",
-      "decimals": 18,
-      "name": "Ferrum Network Token",
-      "coingeckoId": "ferrum-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ferrum-network.webp",
-      "contractAddress": "0xe5caef4af8780e59df925470b050fb23c43ca68c"
     },
     {
       "id": "43114:evm-erc20:0xe62fba58e9fa515cfd6610429d047cde596c9768",
@@ -306910,18 +306928,6 @@
       "coingeckoId": "griot",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/griot.webp",
       "contractAddress": "0xa6e3eacdf8e6a1ea02052693838f3653fa3bffff"
-    },
-    {
-      "id": "56:evm-erc20:0xa719b8ab7ea7af0ddb4358719a34631bb79d15dc",
-      "platform": "ethereum",
-      "networkId": "56",
-      "type": "evm-erc20",
-      "symbol": "FRM",
-      "decimals": 18,
-      "name": "Ferrum Network Token",
-      "coingeckoId": "ferrum-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ferrum-network.webp",
-      "contractAddress": "0xa719b8ab7ea7af0ddb4358719a34631bb79d15dc"
     },
     {
       "id": "56:evm-erc20:0xa73164db271931cf952cbaeff9e8f5817b42fa5c",
@@ -445538,6 +445544,18 @@
       "mintAddress": "BsTRFEVZhXbBuy5fhxbttuim8iwzXqMdRCfFftDAkkeu"
     },
     {
+      "id": "solana-mainnet:sol-spl:BSwp4GjLnejXKqvmjueJmPXC7UZhNoF6RuMQJRpSmeta",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-spl",
+      "symbol": "SAT",
+      "decimals": 6,
+      "name": "1609SAT",
+      "coingeckoId": "1609sat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/1609sat.webp",
+      "mintAddress": "BSwp4GjLnejXKqvmjueJmPXC7UZhNoF6RuMQJRpSmeta"
+    },
+    {
       "id": "solana-mainnet:sol-spl:BSXFKLVsyrYckSF4SGXu9DRfMb3Fos7tRF9zMXgRCUsP",
       "platform": "solana",
       "networkId": "solana-mainnet",
@@ -478810,6 +478828,18 @@
       "coingeckoId": "the-xrp-bull",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/the-xrp-bull.webp",
       "mintAddress": "8y8K7tR7G2WgYydqCyVfsNpHQ2pJ4B3e8ANXCtf5pump"
+    },
+    {
+      "id": "solana-mainnet:sol-token2022:8yLBuP74RnFmjSRS8BGFebvyoTo8uiEjPB71h3Zgpump",
+      "platform": "solana",
+      "networkId": "solana-mainnet",
+      "type": "sol-token2022",
+      "symbol": "NIHAO",
+      "decimals": 6,
+      "name": "nihao cat",
+      "coingeckoId": "nihao-cat",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/nihao-cat.webp",
+      "mintAddress": "8yLBuP74RnFmjSRS8BGFebvyoTo8uiEjPB71h3Zgpump"
     },
     {
       "id": "solana-mainnet:sol-token2022:8yRnzRAPtNwnupaSKBmBRwnUGBfu7u1JKLnsUdUzpump",
