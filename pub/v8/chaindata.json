@@ -79,7 +79,7 @@
       "themeColor": "#765221",
       "blockExplorerUrls": ["https://exp.thaichain.org"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.dome.cloud", "https://rpc.thaichain.org", "https://lb.routeme.sh/rpc/evm/7"],
+      "rpcs": ["https://rpc.thaichain.org", "https://lb.routeme.sh/rpc/evm/7", "https://rpc.dome.cloud"],
       "contracts": {
         "Multicall3": "0x0DaD6130e832c21719C5CE3bae93454E16A84826"
       }
@@ -11442,7 +11442,23 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer-sepolia.gravity.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc-sepolia.gravity.xyz", "https://lb.routeme.sh/rpc/evm/13505"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/13505", "https://rpc-sepolia.gravity.xyz"]
+    },
+    {
+      "id": "13746",
+      "isTestnet": true,
+      "name": "Game7 Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+      "nativeTokenId": "13746:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "TG7T",
+        "name": "TG7T"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://testnet.game7.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://testnet-rpc.game7.io"]
     },
     {
       "id": "14149",
@@ -19484,22 +19500,6 @@
       "rpcs": ["https://rpc.ntity.io", "https://lb.routeme.sh/rpc/evm/197710212030"]
     },
     {
-      "id": "197710212031",
-      "isTestnet": true,
-      "name": "Haradev Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/haradev.webp",
-      "nativeTokenId": "197710212031:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "NTTH",
-        "name": "Ntity Haradev"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://explorer.haradev.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://blockchain.haradev.com"]
-    },
-    {
       "id": "383414847825",
       "isTestnet": true,
       "name": "Zeniq",
@@ -21481,11 +21481,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-moonbeam_metadata_latest.apng",
       "prefix": 1284,
       "oldPrefix": 1284,
-      "rpcs": [
-        "wss://moonbeam.api.onfinality.io/public-ws",
-        "wss://wss.api.moonbeam.network",
-        "wss://moonbeam.unitedbloc.com"
-      ],
+      "rpcs": ["wss://moonbeam.api.onfinality.io/public-ws", "wss://wss.api.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -21517,11 +21513,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": [
-        "wss://moonriver.api.onfinality.io/public-ws",
-        "wss://wss.api.moonriver.moonbeam.network",
-        "wss://moonriver.unitedbloc.com"
-      ],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://wss.api.moonriver.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -110754,6 +110746,17 @@
       "isDefault": true
     },
     {
+      "id": "13746:evm-native",
+      "platform": "ethereum",
+      "networkId": "13746",
+      "type": "evm-native",
+      "symbol": "TG7T",
+      "decimals": 18,
+      "name": "TG7T",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+      "isDefault": true
+    },
+    {
       "id": "1380012617:evm-erc20:0x362fae9a75b27bbc550aac28a7c1f96c8d483120",
       "platform": "ethereum",
       "networkId": "1380012617",
@@ -118300,17 +118303,6 @@
       "decimals": 18,
       "name": "Ntity",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ntity.webp",
-      "isDefault": true
-    },
-    {
-      "id": "197710212031:evm-native",
-      "platform": "ethereum",
-      "networkId": "197710212031",
-      "type": "evm-native",
-      "symbol": "NTTH",
-      "decimals": 18,
-      "name": "Ntity Haradev",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/haradev.webp",
       "isDefault": true
     },
     {
