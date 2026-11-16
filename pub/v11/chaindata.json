@@ -1248,8 +1248,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://coston2-api.flare.network/ext/C/rpc",
-        "https://coston2.enosys.global/ext/C/rpc",
-        "https://lb.routeme.sh/rpc/evm/114"
+        "https://lb.routeme.sh/rpc/evm/114",
+        "https://coston2.enosys.global/ext/C/rpc"
       ]
     },
     {
@@ -1498,8 +1498,8 @@
       "blockExplorerUrls": ["https://explorer.soniclabs.com"],
       "platform": "ethereum",
       "rpcs": [
-        "https://rpc.soniclabs.com",
         "https://sonic-rpc.publicnode.com",
+        "https://rpc.soniclabs.com",
         "https://sonic-json-rpc.stakely.io",
         "https://sonic.api.pocket.network",
         "https://rpc.nodeflare.app/sonic/public"
@@ -1524,7 +1524,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/148", "https://json-rpc.evm.shimmer.network"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/148"]
     },
     {
       "id": "149",
@@ -2253,7 +2253,7 @@
       "themeColor": "#904f92",
       "blockExplorerUrls": ["https://explorer.tac.build"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.ankr.com/tac", "https://rpc.tac.build", "https://lb.routeme.sh/rpc/evm/239"],
+      "rpcs": ["https://rpc.tac.build", "https://rpc.ankr.com/tac", "https://lb.routeme.sh/rpc/evm/239"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -13883,6 +13883,20 @@
       "rpcs": ["https://testnet-rpc.ivarex.com", "https://lb.routeme.sh/rpc/evm/16888"]
     },
     {
+      "id": "16963",
+      "name": "BotCash Sovereign L2",
+      "nativeTokenId": "16963:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "BOTCY",
+        "name": "Bot Cash"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://scan.botcash.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.botcash.io"]
+    },
+    {
       "id": "17000",
       "isTestnet": true,
       "name": "Holesky",
@@ -23225,7 +23239,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.harmony.one/blocks/shard/1"],
       "platform": "ethereum",
-      "rpcs": ["https://s1.api.harmony.one", "https://lb.routeme.sh/rpc/evm/1666600001", "https://api.s1.t.hmny.io"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1666600001", "https://s1.api.harmony.one", "https://api.s1.t.hmny.io"]
     },
     {
       "id": "1666700000",
@@ -23820,7 +23834,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -113811,6 +113825,16 @@
       "name": "Ether",
       "coingeckoId": "ethereum",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
+      "id": "16963:evm-native",
+      "platform": "ethereum",
+      "networkId": "16963",
+      "type": "evm-native",
+      "symbol": "BOTCY",
+      "decimals": 18,
+      "name": "Bot Cash",
       "isDefault": true
     },
     {
