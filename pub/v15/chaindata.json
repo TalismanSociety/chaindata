@@ -4778,12 +4778,7 @@
       "themeColor": "#f08f42",
       "blockExplorerUrls": ["https://explorer.lycanchain.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://us-east.lycanchain.com",
-        "https://us-west.lycanchain.com",
-        "https://eu-north.lycanchain.com",
-        "https://eu-west.lycanchain.com"
-      ]
+      "rpcs": ["https://us-east.lycanchain.com", "https://us-west.lycanchain.com", "https://eu-west.lycanchain.com"]
     },
     {
       "id": "723",
@@ -5775,10 +5770,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://rpcpriv.jumbochain.org",
-        "https://rpc-datajumbo1.jumbochain.org",
         "https://rpc-datajumbo2.jumbochain.org",
         "https://rpc-datajumbo3.jumbochain.org",
-        "https://lb.routeme.sh/rpc/evm/1009"
+        "https://lb.routeme.sh/rpc/evm/1009",
+        "https://rpc-datajumbo1.jumbochain.org"
       ]
     },
     {
@@ -5986,9 +5981,9 @@
       "rpcs": [
         "https://metis.api.onfinality.io/public",
         "https://metis-public.nodies.app",
-        "https://metis-andromeda.gateway.tenderly.co",
         "https://andromeda.metis.io/?owner=1088",
-        "https://metis-rpc.publicnode.com"
+        "https://metis-rpc.publicnode.com",
+        "https://metis-pokt.nodies.app"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -6250,24 +6245,6 @@
       "rpcs": ["https://rpc.ankr.com/b2_testnet"]
     },
     {
-      "id": "1133",
-      "isTestnet": true,
-      "isDefault": false,
-      "name": "DeFiMetaChain Changi Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/defichain-network.svg",
-      "nativeTokenId": "1133:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "DFI",
-        "name": "DeFiChain Token",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/defichain.webp"
-      },
-      "themeColor": "#ff00af",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://testnet-dmc.mydefichain.com:20551"]
-    },
-    {
       "id": "1134",
       "isDefault": false,
       "name": "StateMesh",
@@ -6301,9 +6278,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://lisk.gateway.tenderly.co",
-        "https://rpc.api.lisk.com",
         "https://lb.routeme.sh/rpc/evm/1135",
-        "https://api-lisk-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
+        "https://api-lisk-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+        "https://rpc.api.lisk.com"
       ],
       "contracts": {
         "Multicall3": "0xA9d71E1dd7ca26F26e656E66d6AA81ed7f745bf0"
@@ -23420,21 +23397,6 @@
       "blockExplorerUrls": ["https://explorer.nillion.network"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.nillion.network"]
-    },
-    {
-      "id": "98964",
-      "isDefault": false,
-      "name": "Pay1 Network",
-      "nativeTokenId": "98964:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "Pay1",
-        "name": "Pay1"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://pay1scan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc0.pay1coin.com", "https://rpc1.pay1coin.com", "https://rpc2.pay1coin.com"]
     },
     {
       "id": "98985",
@@ -121707,17 +121669,6 @@
       "symbol": "Deh",
       "decimals": 18,
       "name": "Dehvo",
-      "isDefault": true
-    },
-    {
-      "id": "1133:evm-native",
-      "platform": "ethereum",
-      "networkId": "1133",
-      "type": "evm-native",
-      "symbol": "DFI",
-      "decimals": 18,
-      "name": "DeFiChain Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/defichain.webp",
       "isDefault": true
     },
     {
@@ -378902,16 +378853,6 @@
       "isDefault": true
     },
     {
-      "id": "98964:evm-native",
-      "platform": "ethereum",
-      "networkId": "98964",
-      "type": "evm-native",
-      "symbol": "Pay1",
-      "decimals": 18,
-      "name": "Pay1",
-      "isDefault": true
-    },
-    {
       "id": "9898:evm-native",
       "platform": "ethereum",
       "networkId": "9898",
@@ -400544,11 +400485,25 @@
       "type": "substrate-dtao",
       "symbol": "Τ",
       "decimals": 9,
-      "name": "SN624 | Subnet 624 Τ",
+      "name": "SN624 | Roa Τ",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
       "isDefault": true,
       "netuid": 624,
-      "subnetName": "Subnet 624",
+      "subnetName": "Roa",
+      "isTransferable": true
+    },
+    {
+      "id": "bittensor-testnet:substrate-dtao:625",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN625 | Roa Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 625,
+      "subnetName": "Roa",
       "isTransferable": true
     },
     {
