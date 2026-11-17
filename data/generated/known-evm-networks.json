@@ -44,6 +44,7 @@
       "https://api-ethereum-mainnet-reth.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://mainnet.rpc.sentio.xyz",
       "https://rpc.swiftnodes.io/rpc/eth",
+      "https://ethras.org/public/ethereum",
       "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
       "https://virginia.rpc.blxrbdn.com",
       "https://uk.rpc.blxrbdn.com",
@@ -27799,7 +27800,7 @@
       "name": "Cronos",
       "coingeckoId": "crypto-com-chain"
     },
-    "blockExplorerUrls": ["https://explorer.cronos.org"],
+    "blockExplorerUrls": ["https://explorer.cronos.com"],
     "rpcs": [
       "https://rpc.nodeflare.app/cronos/public",
       "https://cronos-evm-rpc.publicnode.com",
@@ -27818,6 +27819,7 @@
       "https://rpc.vvs.finance",
       "https://mmf-rpc.xstaking.sg",
       "https://rpc.nebkas.ro",
+      "https://evm.cronos.com",
       "https://cronos-rpc.blockreq.com/v1/rpc/public"
     ],
     "tokens": {
@@ -60811,12 +60813,13 @@
       "symbol": "TCRO",
       "name": "Cronos Test Coin"
     },
-    "blockExplorerUrls": ["https://explorer.cronos.org/testnet"],
+    "blockExplorerUrls": ["https://explorer.cronos.com/testnet"],
     "rpcs": [
       "https://endpoints.omniatech.io/v1/cronos/testnet/public",
       "https://lb.routeme.sh/rpc/evm/338",
       "https://cro-testnet.gateway.tatum.io",
       "https://evm-t3.cronos.org",
+      "https://evm-t3.cronos.com",
       "https://cronos-testnet.drpc.org"
     ],
     "shortName": "tcro"
@@ -64615,7 +64618,7 @@
       "symbol": "ZIG",
       "name": "ZIG"
     },
-    "blockExplorerUrls": [],
+    "blockExplorerUrls": ["https://zigscan.org"],
     "rpcs": ["https://public-zigchain-evm-rpc.numia.xyz"],
     "shortName": "zigchain"
   },
@@ -68971,6 +68974,19 @@
     "shortName": "new"
   },
   {
+    "id": "1015",
+    "name": "Phase Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "PHASE",
+      "name": "PHASE"
+    },
+    "blockExplorerUrls": ["https://explorer.phase.xyz"],
+    "rpcs": ["https://rpc-main.phase.xyz"],
+    "shortName": "phase",
+    "chainSlug": "phase"
+  },
+  {
     "id": "1019",
     "name": "MAI Chain Mainnet",
     "nativeCurrency": {
@@ -69176,8 +69192,8 @@
       "symbol": "BEETS",
       "name": "Beets"
     },
-    "blockExplorerUrls": ["https://bdbs.bighive-beets.io"],
-    "rpcs": ["https://rpc.bighive-beets.io/osc"],
+    "blockExplorerUrls": ["https://bdbs.bighive-beets.com"],
+    "rpcs": ["https://rpc.bighive-beets.com/osc"],
     "icon": "bighive",
     "shortName": "bighive"
   },
@@ -109549,6 +109565,18 @@
     "chainSlug": "iota evm"
   },
   {
+    "id": "8825",
+    "name": "QVTX",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "QVTX",
+      "name": "QVTX"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://rpc.qvtxaeon.io/_rpc/8825", "https://rpc.quantvestrix.io/_rpc/8825"],
+    "shortName": "qvtx"
+  },
+  {
     "id": "8844",
     "isTestnet": true,
     "name": "Hydra Chain Testnet",
@@ -114234,6 +114262,18 @@
     "shortName": "moli"
   },
   {
+    "id": "20232",
+    "name": "QVTX Aeon",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "QVTX",
+      "name": "QVTX"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://rpc.qvtxaeon.io/_rpc/20232", "https://rpc.quantvestrix.io/_rpc/20232"],
+    "shortName": "qvtx2"
+  },
+  {
     "id": "20250",
     "name": "CHEESE Blockchain",
     "nativeCurrency": {
@@ -115841,6 +115881,18 @@
     "rpcs": ["https://32382.rpc.thirdweb.com", "https://node.sanr.app"],
     "icon": "sanrchain",
     "shortName": "SANR"
+  },
+  {
+    "id": "32427",
+    "name": "DAGCore Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "DGCR",
+      "name": "DAGCore"
+    },
+    "blockExplorerUrls": [],
+    "rpcs": ["https://rpc.dgcr.dagcore.net"],
+    "shortName": "dgcr"
   },
   {
     "id": "32520",
@@ -133844,6 +133896,31 @@
     "shortName": "ZKFair-Testnet"
   },
   {
+    "id": "44001",
+    "name": "QDay Mainnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "QDAY",
+      "name": "QDay Token"
+    },
+    "blockExplorerUrls": ["https://explorer.qday.io"],
+    "rpcs": ["https://rpc.qday.io"],
+    "shortName": "qday"
+  },
+  {
+    "id": "44005",
+    "isTestnet": true,
+    "name": "QDAY Aevum Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "tQDAY",
+      "name": "QDAY Testnet Token"
+    },
+    "blockExplorerUrls": ["https://explorer-test.qday.info"],
+    "rpcs": ["https://rpc-test.qday.info"],
+    "shortName": "tqday"
+  },
+  {
     "id": "44444",
     "name": "Frenchain",
     "nativeCurrency": {
@@ -139946,6 +140023,7 @@
     },
     "blockExplorerUrls": ["https://explorer.sawasdeecoin.com"],
     "rpcs": ["https://rpc.sawasdeecoin.com"],
+    "icon": "zetaphy",
     "shortName": "zetaphy-testnet"
   },
   {
@@ -140143,6 +140221,31 @@
     "rpcs": ["https://rpc.testnet.nillion.network"],
     "icon": "nillion",
     "shortName": "nilsep"
+  },
+  {
+    "id": "78753",
+    "name": "Stapleport",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "USDSP",
+      "name": "Stapleport USD"
+    },
+    "blockExplorerUrls": ["https://blockscan.stapleport.com"],
+    "rpcs": ["https://rpc.stapleport.com"],
+    "shortName": "sp"
+  },
+  {
+    "id": "78756",
+    "isTestnet": true,
+    "name": "Stapleport Testnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "USDSP",
+      "name": "Stapleport USD"
+    },
+    "blockExplorerUrls": ["https://blockscan-test.stapleport.com"],
+    "rpcs": ["https://rpc-test.stapleport.com"],
+    "shortName": "spt"
   },
   {
     "id": "78901",
@@ -146970,6 +147073,20 @@
     "shortName": "BESC"
   },
   {
+    "id": "535600",
+    "isTestnet": true,
+    "name": "Supra Devnet",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "SUPRA",
+      "name": "Supra"
+    },
+    "blockExplorerUrls": ["https://devnet.suprascan.io"],
+    "rpcs": ["https://rpc-devnet.supra.com/rpc/v1/eth"],
+    "icon": "supra",
+    "shortName": "supra-devnet"
+  },
+  {
     "id": "541764",
     "isTestnet": true,
     "name": "OverProtocol Testnet",
@@ -149692,6 +149809,19 @@
     ],
     "icon": "electroneum",
     "shortName": "etn-testnet"
+  },
+  {
+    "id": "5261646",
+    "name": "Pinch",
+    "nativeCurrency": {
+      "decimals": 18,
+      "symbol": "PINCH",
+      "name": "Pinch"
+    },
+    "blockExplorerUrls": ["https://pinch.network/explorer"],
+    "rpcs": ["https://pinch.network/rpc"],
+    "icon": "pinch",
+    "shortName": "pinch"
   },
   {
     "id": "5318007",
@@ -153895,7 +154025,7 @@
       "name": "Ntity Haradev"
     },
     "blockExplorerUrls": ["https://explorer.haradev.com"],
-    "rpcs": ["https://blockchain.haradev.com"],
+    "rpcs": ["https://rpc.haradev.com"],
     "icon": "haradev",
     "shortName": "haradev"
   },
