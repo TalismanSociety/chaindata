@@ -9,6 +9,7 @@ import uniq from 'lodash/uniq'
 import values from 'lodash/values'
 
 import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT, FILE_RPC_HEALTH_SOLANA } from './constants'
+import { FORCE_OK_RPCS } from './forceOkRpcs'
 import { isNotIgnoredRpcUrl } from './ignoredRpcs'
 import { parseJsonFile } from './parseFile'
 import {
@@ -111,9 +112,10 @@ export const checkPlatformRpcsHealth = async (
   const res = await PromisePool.withConcurrency(4)
     .for(checks)
     .process(async ({ rpc, networkId }): Promise<NetworkRpcHealth> => {
+      const previous = existingRpcHealthsByKey[getRpcHealthKey({ rpc, networkId })]
       try {
         const health = await getRpcHealth({ rpc, networkId })
-        return { rpc, networkId, health, timestamp: new Date() }
+        return { rpc, networkId, health, timestamp: new Date(), lastOkAt: getLastOkAt(health, previous) }
       } catch (err) {
         console.log('isUnhealthy', rpc, 'ERROR', err)
         return { rpc, networkId, timestamp: new Date(), health: { status: 'NOK', error: String(err) } }
@@ -131,6 +133,12 @@ export const checkPlatformRpcsHealth = async (
   delete READ_CACHE[platform] // reset cache to force reload on next getRpcsByStatus call
 }
 
+// A MEH check carries over the time of the RPC's last pass: an OK check records it as `timestamp`, a NOK one clears it
+const getLastOkAt = (health: RpcHealth, previous: NetworkRpcHealth | undefined): Date | undefined => {
+  if (health.status !== 'MEH' || !previous) return undefined
+  return previous.health.status === 'OK' ? previous.timestamp : previous.lastOkAt
+}
+
 export const getRpcsByStatus = (
   networkId: string,
   platform: Platform,
@@ -143,4 +151,79 @@ export const getRpcsByStatus = (
       (rpcHealth) => rpcHealth.networkId === networkId && (status === 'all' || rpcHealth.health.status === status),
     ),
   ].map((rpcHealth) => rpcHealth.rpc)
+}
+
+// How long an RPC that stopped answering the check (MEH) stays verified after it last passed one.
+// At the current RPC count, checkEthereumRpcs rechecks each EVM RPC about every two weeks.
+const MEH_RPC_VERIFIED_FOR_MS = 30 * 24 * 60 * 60 * 1000
+
+export type NetworkRpcsSelection = {
+  rpcs: string[]
+  /** true when the network has no verified RPC, and `rpcs` are its unverified ones */
+  isUnverified: boolean
+}
+
+/**
+ * Picks the RPCs to publish for a network from `rpcs` (listed in order of preference). Verified RPCs come first:
+ * - RPCs in FORCE_OK_RPCS, then RPCs that passed their last check (OK)
+ * - then RPCs that didn't answer their last check (MEH) but passed one within MEH_RPC_VERIFIED_FOR_MS of the
+ *   latest check run
+ *
+ * RPCs that failed their last check (NOK) are never published. Unverified RPCs (other MEH ones, and ones not
+ * checked yet) are published only when the network has no verified RPC: CI can be blocked or rate limited by
+ * every RPC of a network, and the network would otherwise drop out of the feed.
+ */
+export const selectNetworkRpcs = (networkId: string, platform: Platform, rpcs: string[]): NetworkRpcsSelection => {
+  if (!READ_CACHE[platform]) READ_CACHE[platform] = readRpcHealthFile(platform)
+  const { latestCheck, byNetwork } = getRpcHealthIndex(READ_CACHE[platform])
+  const healthByRpc = byNetwork.get(networkId) ?? new Map<string, NetworkRpcHealth>()
+
+  const isOk = (rpc: string) => FORCE_OK_RPCS.includes(rpc) || healthByRpc.get(rpc)?.health.status === 'OK'
+  const isRecentMeh = (rpc: string) => {
+    const rpcHealth = healthByRpc.get(rpc)
+    if (rpcHealth?.health.status !== 'MEH' || !rpcHealth.lastOkAt) return false
+    return latestCheck - rpcHealth.lastOkAt.getTime() <= MEH_RPC_VERIFIED_FOR_MS
+  }
+
+  const candidates = uniq(rpcs).filter(isNotIgnoredRpcUrl)
+  const verified = uniq([
+    ...candidates.filter((rpc) => FORCE_OK_RPCS.includes(rpc)),
+    ...candidates.filter(isOk),
+    ...candidates.filter(isRecentMeh),
+  ])
+  if (verified.length) return { rpcs: verified, isUnverified: false }
+
+  const unverified = candidates.filter((rpc) => healthByRpc.get(rpc)?.health.status !== 'NOK')
+  return { rpcs: unverified, isUnverified: unverified.length > 0 }
+}
+
+type RpcHealthIndex = {
+  /** time of the most recent check in the file, so that a build's output doesn't depend on when it runs */
+  latestCheck: number
+  byNetwork: Map<string, Map<string, NetworkRpcHealth>>
+}
+
+const RPC_HEALTH_INDEXES = new WeakMap<NetworkRpcHealthCache, RpcHealthIndex>()
+
+const getRpcHealthIndex = (rpcHealths: NetworkRpcHealthCache): RpcHealthIndex => {
+  let index = RPC_HEALTH_INDEXES.get(rpcHealths)
+  if (!index) {
+    index = { latestCheck: 0, byNetwork: new Map() }
+    for (const rpcHealth of rpcHealths) {
+      index.latestCheck = Math.max(index.latestCheck, rpcHealth.timestamp.getTime())
+      const healthByRpc = index.byNetwork.get(rpcHealth.networkId) ?? new Map<string, NetworkRpcHealth>()
+      healthByRpc.set(rpcHealth.rpc, rpcHealth)
+      index.byNetwork.set(rpcHealth.networkId, healthByRpc)
+    }
+    RPC_HEALTH_INDEXES.set(rpcHealths, index)
+  }
+  return index
+}
+
+export const logUnverifiedNetworks = (platform: Platform, networkIds: string[]) => {
+  if (!networkIds.length) return
+  console.warn(
+    `${networkIds.length} ${platform} networks have no verified RPC, publishing their unverified RPCs:`,
+    networkIds.join(', '),
+  )
 }
