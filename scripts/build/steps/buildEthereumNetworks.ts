@@ -74,7 +74,7 @@ const consolidateEthNetwork = (
 
   const okRpcs = getRpcsByStatus(id, 'ethereum', 'OK')
   const mehRpcs = getRpcsByStatus(id, 'ethereum', 'MEH')
-  const allRpcs = getRpcsByStatus(id, 'polkadot', 'all')
+  const allRpcs = getRpcsByStatus(id, 'ethereum', 'all')
 
   const rpcs = uniq([
     ...(config?.rpcs?.filter((url) => okRpcs.includes(url)) ?? []),
