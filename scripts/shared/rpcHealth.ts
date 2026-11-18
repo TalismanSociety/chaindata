@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs'
+
 import { PromisePool } from '@supercharge/promise-pool'
 import assign from 'lodash/assign'
 import keyBy from 'lodash/keyBy'
@@ -6,7 +8,7 @@ import sortBy from 'lodash/sortBy'
 import uniq from 'lodash/uniq'
 import values from 'lodash/values'
 
-import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT } from './constants'
+import { FILE_RPC_HEALTH_ETHEREUM, FILE_RPC_HEALTH_POLKADOT, FILE_RPC_HEALTH_SOLANA } from './constants'
 import { isNotIgnoredRpcUrl } from './ignoredRpcs'
 import { parseJsonFile } from './parseFile'
 import {
@@ -20,6 +22,7 @@ import { writeJsonFile } from './writeFile'
 const READ_CACHE: Record<Platform, NetworkRpcHealthCache | null> = {
   polkadot: null,
   ethereum: null,
+  solana: null,
 }
 
 export type RpcHealthSpec = { rpc: string; networkId: string }
@@ -40,9 +43,16 @@ export const getRpcHealthSpecsFromKey = (key: string): RpcHealthSpec => {
 const FILEPATH_BY_PLATFORM = {
   polkadot: FILE_RPC_HEALTH_POLKADOT,
   ethereum: FILE_RPC_HEALTH_ETHEREUM,
+  solana: FILE_RPC_HEALTH_SOLANA,
 }
 
 type Platform = keyof typeof FILEPATH_BY_PLATFORM
+
+// a platform's file is created by its first check run, which a build can precede
+const readRpcHealthFile = (platform: Platform): NetworkRpcHealthCache => {
+  const filePath = FILEPATH_BY_PLATFORM[platform]
+  return existsSync(filePath) ? parseJsonFile(filePath, NetworkRpcHealthFileSchema) : []
+}
 
 type CheckRpcsHealthOptions = {
   rechecks: number
@@ -67,9 +77,7 @@ export const checkPlatformRpcsHealth = async (
   // but existing/cached RPCs are not re-validated. Useful for fast local runs.
   const rechecks = process.argv.includes('--skip-rechecks') ? 0 : rest.rechecks
 
-  const existingRpcHealths = parseJsonFile(cacheFilePath, NetworkRpcHealthFileSchema).filter(({ rpc }) =>
-    isNotIgnoredRpcUrl(rpc),
-  )
+  const existingRpcHealths = readRpcHealthFile(platform).filter(({ rpc }) => isNotIgnoredRpcUrl(rpc))
   const existingRpcHealthsByKey = keyBy(existingRpcHealths, getRpcHealthKey)
   const listedRpcHealthsKeys = listedRpcs.filter(({ rpc }) => isNotIgnoredRpcUrl(rpc)).map(getRpcHealthKey)
 
@@ -128,8 +136,7 @@ export const getRpcsByStatus = (
   platform: Platform,
   status: RpcHealth['status'] | 'all',
 ): string[] => {
-  if (!READ_CACHE[platform])
-    READ_CACHE[platform] = parseJsonFile(FILEPATH_BY_PLATFORM[platform], NetworkRpcHealthFileSchema)
+  if (!READ_CACHE[platform]) READ_CACHE[platform] = readRpcHealthFile(platform)
 
   return [
     ...READ_CACHE[platform].filter(

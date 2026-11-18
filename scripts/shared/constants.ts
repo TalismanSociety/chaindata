@@ -43,6 +43,7 @@ export const FILE_OUTPUT_CHAINDATA_MINIFIED = `${DIR_OUTPUT}/chaindata.min.json`
 
 export const FILE_RPC_HEALTH_POLKADOT = 'data/generated/rpc-health-polkadot.json'
 export const FILE_RPC_HEALTH_ETHEREUM = 'data/generated/rpc-health-ethereum.json'
+export const FILE_RPC_HEALTH_SOLANA = 'data/generated/rpc-health-solana.json'
 export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
 export const FILE_NETWORKS_SPECS_SOLANA = 'data/cache/solana-network-specs.json'
 export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'

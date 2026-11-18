@@ -17,6 +17,7 @@ import {
   FILE_SOL_TOKENS_PREBUILD,
 } from '../../shared/constants'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
+import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { SolTokensPreBuildFileSchema } from '../../shared/schemas/SolTokensPreBuild'
 import { writeJsonFile } from '../../shared/writeFile'
@@ -61,7 +62,13 @@ export const fetchSolTokens = async () => {
   let results: Token[] = prevSolTokens.slice()
 
   for (const network of solNetworks) {
-    const connector = new ChainConnectorSolStub(network as SolNetwork)
+    const rpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    if (!rpcs.length) {
+      console.warn('No healthy RPC for network %s, keeping its previous tokens', network.id)
+      continue
+    }
+
+    const connector = new ChainConnectorSolStub({ ...network, rpcs } as SolNetwork)
 
     for (const mod of BALANCE_MODULES.filter((mod) => mod.platform === 'solana')) {
       console.log(`Fetching tokens for module ${mod.type} on network ${network.id}`)

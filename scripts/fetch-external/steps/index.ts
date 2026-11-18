@@ -1,5 +1,6 @@
 import { checkEthereumRpcs } from './checkEthereumRpcs'
 import { checkPolkadotRpcs } from './checkPolkadotRpcs'
+import { checkSolanaRpcs } from './checkSolanaRpcs'
 import { fetchCoingeckoTokenNames } from './fetchCoingeckoTokenNames'
 import { fetchCoingeckoTokensLogos } from './fetchCoingeckoTokensLogos'
 import { fetchDotNetworksMetadataExtracts } from './fetchDotNetworksMetadataExtracts'
@@ -24,6 +25,7 @@ export const fetchExternalSteps: Array<() => Promise<void> | void> = [
   fetchVanaVrc20Tokens,
   checkPolkadotRpcs,
   checkEthereumRpcs,
+  checkSolanaRpcs,
   fetchKnownEvmNetworksCoingeckoLogos,
   fetchKnownEvmTokens,
   fetchKnownEvmNetworksLogos,

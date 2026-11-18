@@ -4,6 +4,7 @@ import values from 'lodash/values'
 
 import { FILE_INPUT_NETWORKS_SOLANA, FILE_NETWORKS_SPECS_SOLANA } from '../../shared/constants'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
+import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { SolNetworkSpecsFileSchema, SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
@@ -14,8 +15,15 @@ export const fetchSolNetworksSpecs = async () => {
   const networksSpecsById = keyBy(solNetworksSpecs, 'id')
 
   for (const network of solNetworks) {
+    // checkSolanaRpcs compares each RPC's genesis hash with this file: write it only from RPCs that passed the check
+    const rpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    if (!rpcs.length) {
+      console.warn(`No healthy RPC for network ${network.id}, keeping its previous specs`)
+      continue
+    }
+
     try {
-      const rpc = getSolRpc(network.id, network.rpcs)
+      const rpc = getSolRpc(network.id, rpcs)
       const genesisHash = await rpc.getGenesisHash().send()
       networksSpecsById[network.id] = {
         id: network.id,
