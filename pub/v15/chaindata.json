@@ -3740,21 +3740,6 @@
       "rpcs": ["https://rpc.twmcrypto.com"]
     },
     {
-      "id": "427",
-      "isDefault": false,
-      "name": "Zeeth Chain",
-      "nativeTokenId": "427:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ZTH",
-        "name": "Zeeth Token"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer.zeeth.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.zeeth.io"]
-    },
-    {
       "id": "428",
       "isDefault": false,
       "name": "Geso Verse",
@@ -5294,6 +5279,22 @@
       "blockExplorerUrls": ["https://rinia.firescan.io"],
       "platform": "ethereum",
       "rpcs": ["https://rpc-rinia.firestation.io"]
+    },
+    {
+      "id": "918",
+      "isDefault": false,
+      "name": "SlerfChain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
+      "nativeTokenId": "918:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "WSLERF",
+        "name": "WSLERF"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://scan.slerfchain.xyz"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.slerfchain.xyz"]
     },
     {
       "id": "919",
@@ -7658,6 +7659,22 @@
       "blockExplorerUrls": ["https://explorer.reya.network"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.reya.network", "https://lb.routeme.sh/rpc/evm/1729"]
+    },
+    {
+      "id": "1733",
+      "isTestnet": true,
+      "isDefault": false,
+      "name": "Fuga Testnet",
+      "nativeTokenId": "1733:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "FUGA",
+        "name": "FUGA"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc-testnet.fuga.blue"]
     },
     {
       "id": "1740",
@@ -22894,6 +22911,22 @@
       "rpcs": ["https://rpc.testnet.gdprchain.com"]
     },
     {
+      "id": "86608",
+      "isDefault": false,
+      "name": "CpChain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/cpchain.webp",
+      "nativeTokenId": "86608:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CP",
+        "name": "CP"
+      },
+      "themeColor": "#01ce7b",
+      "blockExplorerUrls": ["https://explorer.cpchain.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.cpchain.com"]
+    },
+    {
       "id": "88002",
       "isTestnet": true,
       "isDefault": false,
@@ -31474,7 +31507,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "hasFrontierMirrorWithdraw": true,
       "topology": {
@@ -33183,7 +33216,7 @@
       "specVersion": 4401,
       "account": "secp256k1",
       "prefix": 1285,
-      "rpcs": ["wss://wss.api.moonriver.moonbeam.network"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://wss.api.moonriver.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -142383,6 +142416,16 @@
       "isDefault": true
     },
     {
+      "id": "1733:evm-native",
+      "platform": "ethereum",
+      "networkId": "1733",
+      "type": "evm-native",
+      "symbol": "FUGA",
+      "decimals": 18,
+      "name": "FUGA",
+      "isDefault": true
+    },
+    {
       "id": "174:evm-native",
       "platform": "ethereum",
       "networkId": "174",
@@ -224258,16 +224301,6 @@
       "isDefault": true
     },
     {
-      "id": "427:evm-native",
-      "platform": "ethereum",
-      "networkId": "427",
-      "type": "evm-native",
-      "symbol": "ZTH",
-      "decimals": 18,
-      "name": "Zeeth Token",
-      "isDefault": true
-    },
-    {
       "id": "4270:evm-native",
       "platform": "ethereum",
       "networkId": "4270",
@@ -246703,18 +246736,6 @@
       "coingeckoId": "waddles",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/waddles.webp",
       "contractAddress": "0xbb6ee7aa6d56266ccef3b1c0706bccce2f9a0cdd"
-    },
-    {
-      "id": "4663:evm-erc20:0xbbb6c29bcc3a1028a2b54310df73f4f7a3bcb373",
-      "platform": "ethereum",
-      "networkId": "4663",
-      "type": "evm-erc20",
-      "symbol": "ANT",
-      "decimals": 18,
-      "name": "Anthropic, PBC Class A Common Stock • Robinhood Token",
-      "coingeckoId": "anthropic-pbc-robinhood-token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/anthropic-pbc-robinhood-token.webp",
-      "contractAddress": "0xbbb6c29bcc3a1028a2b54310df73f4f7a3bcb373"
     },
     {
       "id": "4663:evm-erc20:0xbbb8ef3181661512ceab66e0b213c29211b24b6c",
@@ -373766,6 +373787,17 @@
       "isDefault": true
     },
     {
+      "id": "86608:evm-native",
+      "platform": "ethereum",
+      "networkId": "86608",
+      "type": "evm-native",
+      "symbol": "CP",
+      "decimals": 18,
+      "name": "CP",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/cpchain.webp",
+      "isDefault": true
+    },
+    {
       "id": "8668:evm-erc20:0x3a035615e101373fa9ba21c5bea7fe4026fc40b4",
       "platform": "ethereum",
       "networkId": "8668",
@@ -376029,6 +376061,17 @@
       "decimals": 18,
       "name": "Firechain",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/rinia.webp",
+      "isDefault": true
+    },
+    {
+      "id": "918:evm-native",
+      "platform": "ethereum",
+      "networkId": "918",
+      "type": "evm-native",
+      "symbol": "WSLERF",
+      "decimals": 18,
+      "name": "WSLERF",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/unknown.svg",
       "isDefault": true
     },
     {
@@ -400181,6 +400224,20 @@
       "isTransferable": true
     },
     {
+      "id": "bittensor-testnet:substrate-dtao:626",
+      "platform": "polkadot",
+      "networkId": "bittensor-testnet",
+      "type": "substrate-dtao",
+      "symbol": "Τ",
+      "decimals": 9,
+      "name": "SN626 | Hyblis Τ",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao.svg",
+      "isDefault": true,
+      "netuid": 626,
+      "subnetName": "Hyblis",
+      "isTransferable": true
+    },
+    {
       "id": "bittensor-testnet:substrate-dtao:63",
       "platform": "polkadot",
       "networkId": "bittensor-testnet",
@@ -402675,12 +402732,12 @@
       "type": "substrate-dtao",
       "symbol": "გ",
       "decimals": 9,
-      "name": "SN99 | Subnet 99 გ",
+      "name": "SN99 | Axonry გ",
       "coingeckoId": "neza",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/neza.webp",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/dtao/bittensor-sn99-9d9e52b8.webp",
       "isDefault": true,
       "netuid": 99,
-      "subnetName": "Subnet 99",
+      "subnetName": "Axonry",
       "isTransferable": true
     },
     {

@@ -14855,6 +14855,20 @@
       "rpcs": ["https://rpc.testnet.gdprchain.com"]
     },
     {
+      "id": "86608",
+      "name": "CpChain",
+      "nativeTokenId": "86608:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "CP",
+        "name": "CpChain"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.cpchain.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.cpchain.com"]
+    },
+    {
       "id": "88800",
       "name": "ZKasino Mainnet",
       "nativeTokenId": "88800:evm-native",
@@ -19749,7 +19763,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -21448,7 +21462,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": ["wss://wss.api.moonriver.moonbeam.network"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://wss.api.moonriver.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -238213,6 +238227,16 @@
       "decimals": 18,
       "name": "WATER",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/waterfall.webp",
+      "isDefault": true
+    },
+    {
+      "id": "86608:evm-native",
+      "platform": "ethereum",
+      "networkId": "86608",
+      "type": "evm-native",
+      "symbol": "CP",
+      "decimals": 18,
+      "name": "CpChain",
       "isDefault": true
     },
     {
