@@ -4337,7 +4337,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://testnet.bttcscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://pre-rpc.bt.io", "https://lb.routeme.sh/rpc/evm/1029"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1029", "https://pre-rpc.bt.io"]
     },
     {
       "id": "1030",
@@ -4956,11 +4956,11 @@
       "blockExplorerUrls": ["https://aeneid.storyscan.xyz"],
       "platform": "ethereum",
       "rpcs": [
-        "https://story-testnet-evm.itrocket.net",
-        "https://rpc.ankr.com/story_aeneid_testnet",
         "https://aeneid.datarpc.io",
         "https://aeneid.storyrpc.io",
-        "https://aeneid-evm-rpc.krews.xyz"
+        "https://aeneid-evm-rpc.krews.xyz",
+        "https://rpc.ankr.com/story_aeneid_testnet",
+        "https://lb.routeme.sh/rpc/evm/1315"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -5113,6 +5113,22 @@
       ]
     },
     {
+      "id": "1424",
+      "name": "Perennial",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/perennial.svg",
+      "nativeTokenId": "1424:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://explorer.perennial.foundation"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1424"]
+    },
+    {
       "id": "1425",
       "isTestnet": true,
       "name": "ONINO Mainnet",
@@ -5195,8 +5211,8 @@
         "https://evm-rpc.story.mainnet.dteam.tech",
         "https://infra.originstake.com/story/evm",
         "https://story-mainnet-evm.itrocket.net",
-        "https://rpc.ankr.com/story_mainnet",
-        "https://story-json-rpc.stakely.io"
+        "https://story-json-rpc.stakely.io",
+        "https://lb.routeme.sh/rpc/evm/1514"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -5457,7 +5473,7 @@
       "themeColor": "#fa6459",
       "blockExplorerUrls": ["https://explorer.metall2.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.metall2.com", "https://lb.routeme.sh/rpc/evm/1750"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1750", "https://rpc.metall2.com"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -5527,7 +5543,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.playblock.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/1829", "https://rpc.playblock.io"]
+      "rpcs": ["https://rpc.playblock.io", "https://lb.routeme.sh/rpc/evm/1829"]
     },
     {
       "id": "1833",
@@ -6033,9 +6049,9 @@
       "blockExplorerUrls": ["https://app.roninchain.com"],
       "platform": "ethereum",
       "rpcs": [
+        "https://lb.routeme.sh/rpc/evm/2020",
         "https://ronin.gateway.tenderly.co",
         "https://api.roninchain.com/rpc",
-        "https://lb.routeme.sh/rpc/evm/2020",
         "https://api-ronin-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
         "https://ronin-mainnet.gateway.tatum.io"
       ],
@@ -6606,7 +6622,7 @@
       "themeColor": "#8a37d7",
       "blockExplorerUrls": ["https://cardona-zkevm.polygonscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.cardona.zkevm-rpc.com", "https://lb.routeme.sh/rpc/evm/2442"],
+      "rpcs": ["https://rpc.cardona.zkevm-rpc.com"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -20505,7 +20521,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://wss.api.moonriver.moonbeam.network"],
+      "rpcs": ["wss://wss.api.moonriver.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -108314,6 +108330,17 @@
       "decimals": 18,
       "name": "ZERO",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zephyr.webp",
+      "isDefault": true
+    },
+    {
+      "id": "1424:evm-native",
+      "platform": "ethereum",
+      "networkId": "1424",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
