@@ -141,8 +141,10 @@ const consolidateEthNetwork = (
     forceScan: config?.forceScan || knownEvmNetwork?.forceScan || undefined,
     themeColor: config?.themeColor || knownEvmNetwork?.themeColor || undefined,
     logo,
-    blockExplorerUrls:
-      config?.blockExplorerUrls ?? knownEvmNetwork?.blockExplorerUrls ?? (undefined as unknown as string[]), // zod will replace with empty array
+    // the config schema defaults the list to [], so only a non-empty override wins over chainlist
+    blockExplorerUrls: config?.blockExplorerUrls?.length
+      ? config.blockExplorerUrls
+      : (knownEvmNetwork?.blockExplorerUrls ?? (undefined as unknown as string[])), // zod will replace with empty array
     balancesConfig: config?.balancesConfig || knownEvmNetwork?.balancesConfig || undefined,
 
     contracts: Object.keys(contracts).length ? contracts : undefined,
