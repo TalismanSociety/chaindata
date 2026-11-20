@@ -13787,6 +13787,22 @@
       }
     },
     {
+      "id": "55555",
+      "isTestnet": true,
+      "name": "REI Chain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/reichain.svg",
+      "nativeTokenId": "55555:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "REI",
+        "name": "Rei"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://reiscan.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/55555"]
+    },
+    {
       "id": "56288",
       "name": "Boba BNB Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/56288.webp",
@@ -14291,7 +14307,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://chain1.thinkiumscan.net"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/70001", "https://proxy1.thinkiumrpc.net"]
+      "rpcs": ["https://proxy1.thinkiumrpc.net", "https://lb.routeme.sh/rpc/evm/70001"]
     },
     {
       "id": "70002",
@@ -14620,26 +14636,6 @@
       }
     },
     {
-      "id": "80008",
-      "isTestnet": true,
-      "name": "Polynomial Sepolia",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/polynomialSepolia.webp",
-      "nativeTokenId": "80008:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://sepolia.polynomialscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/80008"],
-      "contracts": {
-        "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
-      }
-    },
-    {
       "id": "80069",
       "isTestnet": true,
       "name": "Berachain Bepolia",
@@ -14944,7 +14940,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer-testnet.unit0.dev"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/88817", "https://rpc-testnet.unit0.dev"]
+      "rpcs": ["https://rpc-testnet.unit0.dev", "https://lb.routeme.sh/rpc/evm/88817"]
     },
     {
       "id": "88819",
@@ -15082,21 +15078,6 @@
       "blockExplorerUrls": ["https://explorer.lambda.top"],
       "platform": "ethereum",
       "rpcs": ["https://evm.lambda.top"]
-    },
-    {
-      "id": "92278",
-      "name": "Miracle Chain",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/miracle.webp",
-      "nativeTokenId": "92278:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MPT",
-        "name": "Miracle Play Token"
-      },
-      "themeColor": "#a3cdf1",
-      "blockExplorerUrls": ["https://explorer.miracleplay.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/92278"]
     },
     {
       "id": "96370",
@@ -21493,7 +21474,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": ["wss://wss.api.moonriver.moonbeam.network"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://wss.api.moonriver.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -159133,6 +159114,17 @@
       "isDefault": true
     },
     {
+      "id": "55555:evm-native",
+      "platform": "ethereum",
+      "networkId": "55555",
+      "type": "evm-native",
+      "symbol": "REI",
+      "decimals": 18,
+      "name": "Rei",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/reichain.svg",
+      "isDefault": true
+    },
+    {
       "id": "5555555:evm-native",
       "platform": "ethereum",
       "networkId": "5555555",
@@ -206021,17 +206013,6 @@
       "isDefault": true
     },
     {
-      "id": "80008:evm-native",
-      "platform": "ethereum",
-      "networkId": "80008",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
       "id": "80069:evm-native",
       "platform": "ethereum",
       "networkId": "80069",
@@ -239751,17 +239732,6 @@
       "decimals": 18,
       "name": "test-Lamb",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/lambda.webp",
-      "isDefault": true
-    },
-    {
-      "id": "92278:evm-native",
-      "platform": "ethereum",
-      "networkId": "92278",
-      "type": "evm-native",
-      "symbol": "MPT",
-      "decimals": 18,
-      "name": "Miracle Play Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/miracle.webp",
       "isDefault": true
     },
     {
