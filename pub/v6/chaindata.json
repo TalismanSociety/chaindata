@@ -6586,6 +6586,7 @@
         "https://testnet-rpc.atleta.network",
         "https://rpc.ankr.com/atleta_olympia",
         "https://lb.routeme.sh/rpc/evm/2340",
+        "https://public-atleta.nownodes.io",
         "https://testnet-rpc.atleta.network:9944"
       ],
       "contracts": {
@@ -6626,7 +6627,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://scope.silicon.network"],
       "platform": "ethereum",
-      "rpcs": ["https://silicon-mainnet.nodeinfra.com", "https://rpc.silicon.network"]
+      "rpcs": ["https://rpc.silicon.network", "https://silicon-mainnet.nodeinfra.com"]
     },
     {
       "id": "2368",
@@ -6709,7 +6710,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.karak.network"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.karak.network", "https://lb.routeme.sh/rpc/evm/2410"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/2410", "https://rpc.karak.network"]
     },
     {
       "id": "2415",
@@ -7495,6 +7496,7 @@
       "blockExplorerUrls": ["https://xscscan.com"],
       "platform": "ethereum",
       "rpcs": [
+        "https://rpc.xone.org",
         "https://rpc-node-1.xone.org",
         "https://rpc-node-2.xone.org",
         "https://rpc-node-3.xone.org",
@@ -7515,7 +7517,7 @@
       "themeColor": "#e7b75b",
       "blockExplorerUrls": ["https://scan.crossbell.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/3737"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/3737", "https://rpc.crossbell.io"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -7538,8 +7540,8 @@
       "rpcs": [
         "https://elves-core1.alvey.io",
         "https://elves-core2.alvey.io",
-        "https://elves-core3.alvey.io",
-        "https://lb.routeme.sh/rpc/evm/3797"
+        "https://lb.routeme.sh/rpc/evm/3797",
+        "https://elves-core3.alvey.io"
       ]
     },
     {
@@ -7743,6 +7745,21 @@
       "blockExplorerUrls": ["https://muster-explorer.alt.technology"],
       "platform": "ethereum",
       "rpcs": ["https://lb.routeme.sh/rpc/evm/4078"]
+    },
+    {
+      "id": "4088",
+      "name": "Zeroth Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zeroth.webp",
+      "nativeTokenId": "4088:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ZRH",
+        "name": "ZRH"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://scan.zeroth.run"],
+      "platform": "ethereum",
+      "rpcs": ["https://my.zeroth.run"]
     },
     {
       "id": "4102",
@@ -20629,7 +20646,7 @@
       "chainspecQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_specs.png",
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/kusama-moonriver_metadata_latest.apng",
       "prefix": 1285,
-      "rpcs": ["wss://wss.api.moonriver.moonbeam.network"],
+      "rpcs": ["wss://moonriver.api.onfinality.io/public-ws", "wss://wss.api.moonriver.moonbeam.network"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -136549,6 +136566,17 @@
       "decimals": 18,
       "name": "Ether",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
+      "id": "4088:evm-native",
+      "platform": "ethereum",
+      "networkId": "4088",
+      "type": "evm-native",
+      "symbol": "ZRH",
+      "decimals": 18,
+      "name": "ZRH",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zeroth.webp",
       "isDefault": true
     },
     {
