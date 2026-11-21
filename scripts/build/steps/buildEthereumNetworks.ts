@@ -3,7 +3,6 @@ import type { Chain } from 'viem'
 import { type EthNetwork, EthNetworkSchema, evmNativeTokenId } from '@talismn/chaindata-provider'
 import fromPairs from 'lodash/fromPairs'
 import keyBy from 'lodash/keyBy'
-import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
 import { checkDuplicates } from '../../shared/checkDuplicates'
@@ -14,9 +13,8 @@ import {
   FILE_OUTPUT_NETWORKS_ETHEREUM,
 } from '../../shared/constants'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
-import { isNotIgnoredRpcUrl } from '../../shared/ignoredRpcs'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import { getRpcsByStatus } from '../../shared/rpcHealth'
+import { logUnverifiedNetworks, selectNetworkRpcs } from '../../shared/rpcHealth'
 import {
   type EthNetworkConfig,
   EthNetworksConfigFileSchema,
@@ -45,15 +43,19 @@ export const buildEthereumNetworks = async () => {
     ]),
   ].sort((a, b) => Number(a) - Number(b))
 
+  const unverifiedNetworkIds: string[] = []
+
   const ethNetworks: EthNetwork[] = allEthNetworkIds
     .map((id) => {
       const config = ethNetworkConfigById[id]
       const knownEvmNetwork = knownEthNetworkById[id]
       const viemChain = VIEM_CHAINS[id]
 
-      return consolidateEthNetwork(config, knownEvmNetwork, viemChain, dicKnownEthNetworksIcons)
+      return consolidateEthNetwork(config, knownEvmNetwork, viemChain, dicKnownEthNetworksIcons, unverifiedNetworkIds)
     })
     .filter((n): n is EthNetwork => !!n)
+
+  logUnverifiedNetworks('ethereum', unverifiedNetworkIds)
 
   checkDuplicates(ethNetworks)
 
@@ -67,27 +69,18 @@ const consolidateEthNetwork = (
   knownEvmNetwork: KnownEthNetworkConfig | undefined,
   viemChain: Chain | undefined,
   dicIcons: Dictionary<string>,
+  unverifiedNetworkIds: string[],
 ): EthNetwork | null => {
   if (!config && !knownEvmNetwork && !viemChain) return null
 
   const id = String(config?.id ?? knownEvmNetwork?.id ?? viemChain?.id)
 
-  const okRpcs = getRpcsByStatus(id, 'ethereum', 'OK')
-  const mehRpcs = getRpcsByStatus(id, 'ethereum', 'MEH')
-  const allRpcs = getRpcsByStatus(id, 'polkadot', 'all')
-
-  const rpcs = uniq([
-    ...(config?.rpcs?.filter((url) => okRpcs.includes(url)) ?? []),
-    ...(config?.rpcs?.filter((url) => !allRpcs.includes(url)) ?? []), // new rpcs, assume better than MEH - there should not be any though
-    ...(config?.rpcs?.filter((url) => mehRpcs.includes(url)) ?? []),
-
-    ...(knownEvmNetwork?.rpcs ?? []).filter((url) => okRpcs.includes(url)),
-    ...(knownEvmNetwork?.rpcs ?? []).filter((url) => mehRpcs.includes(url)),
-  ])
-    .filter(isNotIgnoredRpcUrl)
-    .slice(0, 5)
+  // RPCs from networks-ethereum.yaml rank before the known ones within each tier of selectNetworkRpcs
+  const selection = selectNetworkRpcs(id, 'ethereum', [...(config?.rpcs ?? []), ...(knownEvmNetwork?.rpcs ?? [])])
+  const rpcs = selection.rpcs.slice(0, 5)
 
   if (!rpcs.length) return null
+  if (selection.isUnverified) unverifiedNetworkIds.push(id)
 
   const viemContracts: EthNetwork['contracts'] = viemChain?.contracts?.multicall3
     ? {

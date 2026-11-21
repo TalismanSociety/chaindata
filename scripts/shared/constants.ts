@@ -43,6 +43,7 @@ export const FILE_OUTPUT_CHAINDATA_MINIFIED = `${DIR_OUTPUT}/chaindata.min.json`
 
 export const FILE_RPC_HEALTH_POLKADOT = 'data/generated/rpc-health-polkadot.json'
 export const FILE_RPC_HEALTH_ETHEREUM = 'data/generated/rpc-health-ethereum.json'
+export const FILE_RPC_HEALTH_SOLANA = 'data/generated/rpc-health-solana.json'
 export const FILE_NETWORKS_SPECS_POLKADOT = 'data/cache/polkadot-network-specs.json'
 export const FILE_NETWORKS_SPECS_SOLANA = 'data/cache/solana-network-specs.json'
 export const FILE_NETWORKS_METADATA_EXTRACTS_POLKADOT = 'data/cache/polkadot-metadata-extracts.json'
@@ -60,6 +61,7 @@ export const FILE_MODULE_CACHE_EVM_UNISWAPV2 = 'data/cache/module-cache-evm-unis
 export const FILE_MODULE_CACHE_SOL_SPL = 'data/cache/module-cache-sol-spl.json'
 export const FILE_MODULE_CACHE_SOL_TOKEN2022 = 'data/cache/module-cache-sol-token2022.json'
 export const FILE_SOL_MINT_PROGRAM_OWNERS_CACHE = 'data/cache/solana-mint-program-owners.json'
+export const FILE_SOL_TOKEN2022_NON_TRANSFERABLE_CACHE = 'data/cache/solana-token2022-non-transferable.json'
 
 export const PROCESS_CONCURRENCY = 15
 export const RPC_REQUEST_TIMEOUT = 20_000 // 20_000 ms = 20 seconds

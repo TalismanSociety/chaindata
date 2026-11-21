@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs'
+
 import type { Address } from '@solana/kit'
 import type { SolNetwork, Token } from '@talismn/chaindata-provider'
 import { address } from '@solana/kit'
@@ -14,11 +16,14 @@ import {
   FILE_MODULE_CACHE_SOL_SPL,
   FILE_MODULE_CACHE_SOL_TOKEN2022,
   FILE_SOL_MINT_PROGRAM_OWNERS_CACHE,
+  FILE_SOL_TOKEN2022_NON_TRANSFERABLE_CACHE,
   FILE_SOL_TOKENS_PREBUILD,
 } from '../../shared/constants'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
+import { getRpcsByStatus } from '../../shared/rpcHealth'
 import { SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { SolTokensPreBuildFileSchema } from '../../shared/schemas/SolTokensPreBuild'
+import { getNonTransferableMints, type NonTransferableMintsCache } from '../../shared/solNonTransferableMints'
 import { writeJsonFile } from '../../shared/writeFile'
 
 type CacheEntry = { id: string } & Record<string, unknown>
@@ -43,6 +48,9 @@ export const fetchSolTokens = async () => {
   const arSolToken2022Cache = parseJsonFile<CacheEntry[]>(FILE_MODULE_CACHE_SOL_TOKEN2022)
   const token2022Cache = keyBy(arSolToken2022Cache, (t) => t.id)
   const mintProgramOwnersCache = parseJsonFile<MintProgramOwnerCache>(FILE_SOL_MINT_PROGRAM_OWNERS_CACHE)
+  const nonTransferableMintsCache = existsSync(FILE_SOL_TOKEN2022_NON_TRANSFERABLE_CACHE)
+    ? parseJsonFile<NonTransferableMintsCache>(FILE_SOL_TOKEN2022_NON_TRANSFERABLE_CACHE)
+    : {}
 
   const coins = await fetchCoins()
 
@@ -61,7 +69,13 @@ export const fetchSolTokens = async () => {
   let results: Token[] = prevSolTokens.slice()
 
   for (const network of solNetworks) {
-    const connector = new ChainConnectorSolStub(network as SolNetwork)
+    const rpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    if (!rpcs.length) {
+      console.warn('No healthy RPC for network %s, keeping its previous tokens', network.id)
+      continue
+    }
+
+    const connector = new ChainConnectorSolStub({ ...network, rpcs } as SolNetwork)
 
     for (const mod of BALANCE_MODULES.filter((mod) => mod.platform === 'solana')) {
       console.log(`Fetching tokens for module ${mod.type} on network ${network.id}`)
@@ -128,8 +142,21 @@ export const fetchSolTokens = async () => {
               connector,
             })
 
+            const nonTransferableMints = await getNonTransferableMints({
+              connector,
+              networkId: network.id,
+              mintAddresses: tokens.map((token) => token.mintAddress),
+              cache: nonTransferableMintsCache,
+            })
+
             // merge fetched tokens with previous ones
-            results = results.filter((t) => t.networkId !== network.id || t.type !== mod.type).concat(...tokens)
+            results = results
+              .filter((t) => t.networkId !== network.id || t.type !== mod.type)
+              .concat(
+                ...tokens.map((token) =>
+                  nonTransferableMints.has(token.mintAddress) ? { ...token, isTransferable: false } : token,
+                ),
+              )
             break
           }
         }
@@ -155,6 +182,10 @@ export const fetchSolTokens = async () => {
     values(token2022Cache).sort((a, b) => a.id.localeCompare(b.id)),
   )
   await writeJsonFile(FILE_SOL_MINT_PROGRAM_OWNERS_CACHE, getSortedMintProgramOwnersCache(mintProgramOwnersCache))
+  await writeJsonFile(
+    FILE_SOL_TOKEN2022_NON_TRANSFERABLE_CACHE,
+    Object.fromEntries(Object.entries(nonTransferableMintsCache).sort(([a], [b]) => a.localeCompare(b))),
+  )
 
   await writeJsonFile(
     FILE_SOL_TOKENS_PREBUILD,

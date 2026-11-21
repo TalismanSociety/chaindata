@@ -1,6 +1,5 @@
 import { type DotNetwork, DotNetworkSchema, isNetworkDot, subNativeTokenId } from '@talismn/chaindata-provider'
 import keyBy from 'lodash/keyBy'
-import uniq from 'lodash/uniq'
 import { z } from 'zod/v4'
 
 import type { MetadataPortalUrls } from '../../shared/types'
@@ -13,11 +12,9 @@ import {
   FILE_NOVASAMA_METADATA_PORTAL_URLS,
   FILE_OUTPUT_NETWORKS_POLKADOT,
 } from '../../shared/constants'
-import { FORCE_OK_RPCS } from '../../shared/forceOkRpcs'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
-import { isNotIgnoredRpcUrl } from '../../shared/ignoredRpcs'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
-import { getRpcsByStatus } from '../../shared/rpcHealth'
+import { logUnverifiedNetworks, selectNetworkRpcs } from '../../shared/rpcHealth'
 import {
   type DotNetworkConfig,
   type DotNetworkSpecs,
@@ -41,6 +38,8 @@ export const buildPolkadotNetworks = async () => {
   const dicMetadataExtracts = keyBy(metadataExtracts, 'id')
   const dicMetadataPortalUrls = keyBy(novaMetatadaPortalConfig, 'id')
 
+  const unverifiedNetworkIds: string[] = []
+
   const dotNetworks = dotNetworksConfig
     .map((config) =>
       consolidateDotNetwork(
@@ -48,10 +47,13 @@ export const buildPolkadotNetworks = async () => {
         dicSpecs[config.id],
         dicMetadataExtracts[config.id],
         dicMetadataPortalUrls[config.id],
+        unverifiedNetworkIds,
       ),
     )
     .filter(isNetworkDot)
     .sort((a, b) => a.id.localeCompare(b.id))
+
+  logUnverifiedNetworks('polkadot', unverifiedNetworkIds)
 
   checkDuplicates(dotNetworks)
   checkDuplicateGenesisHashes(dotNetworks)
@@ -66,27 +68,15 @@ const consolidateDotNetwork = (
   specs: DotNetworkSpecs,
   metadataExtracts: DotNetworkMetadataExtract,
   metadataPortalUrls: MetadataPortalUrls[number] | null,
+  unverifiedNetworkIds: string[],
 ): DotNetwork | null => {
   if (!specs || !metadataExtracts) return null
 
-  const okRpcs = getRpcsByStatus(config.id, 'polkadot', 'OK')
-  const mehRpcs = getRpcsByStatus(config.id, 'polkadot', 'MEH')
-  const allRpcs = getRpcsByStatus(config.id, 'polkadot', 'all')
-
-  const configRpcs = config.rpcs ?? []
-
-  const rpcs = uniq([
-    // RPCs that are forced OK (e.g. origin-filtered RPCs that fail in CI but work in browsers)
-    ...configRpcs.filter((url) => FORCE_OK_RPCS.includes(url)),
-    ...configRpcs.filter((url) => okRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
-    ...configRpcs.filter((url) => !allRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)), // new rpcs, assume better than MEH - there should not be any though
-    ...configRpcs.filter((url) => mehRpcs.includes(url) && !FORCE_OK_RPCS.includes(url)),
-    // ignore NOK ones
-  ])
-    .filter(isNotIgnoredRpcUrl)
-    .slice(0, 5)
+  const selection = selectNetworkRpcs(config.id, 'polkadot', config.rpcs ?? [])
+  const rpcs = selection.rpcs.slice(0, 5)
 
   if (!rpcs.length) return null // no rpcs available for this network - cant be updated
+  if (selection.isUnverified) unverifiedNetworkIds.push(config.id)
 
   const nativeCurrency = Object.assign(
     {
