@@ -4446,7 +4446,7 @@
         "https://jsonrpc.dymension.nodestake.org",
         "https://rollapp.jrpc.cumulo.com.es",
         "https://lb.routeme.sh/rpc/evm/1100",
-        "https://rpc.swiftnodes.io/rpc/dymension"
+        "https://dymension.liquify.com/json-rpc"
       ]
     },
     {
@@ -5594,8 +5594,7 @@
       "rpcs": [
         "https://rpc.soneium.org",
         "https://rpc.nodeflare.app/soneium/public",
-        "https://lb.routeme.sh/rpc/evm/1868",
-        "https://rpc.swiftnodes.io/rpc/soneium"
+        "https://lb.routeme.sh/rpc/evm/1868"
       ],
       "contracts": {
         "Erc20Aggregator": "0xeC74e245117407481F03bc661A8d71012f4fB7dA",
@@ -5940,6 +5939,23 @@
       }
     },
     {
+      "id": "1994",
+      "name": "Ekta",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ekta.webp",
+      "nativeTokenId": "1994:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "EKTA",
+        "name": "EKTA",
+        "coingeckoId": "ekta-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ekta-2.webp"
+      },
+      "themeColor": "#dd5f55",
+      "blockExplorerUrls": ["https://ektascan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://main.ekta.io"]
+    },
+    {
       "id": "2000",
       "name": "Dogechain Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/2000.webp",
@@ -6012,10 +6028,10 @@
       "platform": "ethereum",
       "rpcs": [
         "https://rpc.telcoin.network",
-        "https://adiri.tel",
         "https://node1.telcoin.network",
         "https://node2.telcoin.network",
-        "https://node3.telcoin.network"
+        "https://node3.telcoin.network",
+        "https://node4.telcoin.network"
       ]
     },
     {
@@ -6152,8 +6168,7 @@
       "rpcs": [
         "https://fullnode.centrifuge.io",
         "https://centrifuge-parachain.api.onfinality.io/public",
-        "https://lb.routeme.sh/rpc/evm/2031",
-        "https://rpc-centrifuge.luckyfriday.io"
+        "https://lb.routeme.sh/rpc/evm/2031"
       ]
     },
     {
@@ -14123,9 +14138,9 @@
       "rpcs": [
         "https://berachain-rpc.publicnode.com",
         "https://bera.api.pocket.network",
-        "https://rpc.swiftnodes.io/rpc/berachain",
         "https://rpc.berachain.com",
-        "https://rpc.berachain-apis.com"
+        "https://rpc.berachain-apis.com",
+        "https://lb.routeme.sh/rpc/evm/80094"
       ],
       "contracts": {
         "Erc20Aggregator": "0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4",
@@ -16319,12 +16334,7 @@
       "themeColor": "#fafc13",
       "blockExplorerUrls": ["https://explorer.katanarpc.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://lb.routeme.sh/rpc/evm/747474",
-        "https://rpc.katana.network",
-        "https://rpc.katanarpc.com",
-        "https://rpc.swiftnodes.io/rpc/katana"
-      ]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/747474", "https://rpc.katana.network", "https://rpc.katanarpc.com"]
     },
     {
       "id": "751230",
@@ -18876,7 +18886,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -114416,6 +114426,18 @@
       "decimals": 18,
       "name": "ETH",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
+      "id": "1994:evm-native",
+      "platform": "ethereum",
+      "networkId": "1994",
+      "type": "evm-native",
+      "symbol": "EKTA",
+      "decimals": 18,
+      "name": "EKTA",
+      "coingeckoId": "ekta-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ekta-2.webp",
       "isDefault": true
     },
     {
