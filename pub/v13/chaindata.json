@@ -136,8 +136,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mainnet.optimism.io",
-        "https://optimism.publicnode.com",
         "https://optimism.gateway.tenderly.co",
+        "https://optimism.publicnode.com",
         "https://xrpc.cl/optimism",
         "https://optimism-rpc.publicnode.com"
       ],
@@ -10604,7 +10604,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://edgenscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.layeredge.io", "https://rpc.layeredge.foundation"]
+      "rpcs": ["https://rpc.layeredge.foundation", "https://rpc.layeredge.io"]
     },
     {
       "id": "4217",
@@ -10737,22 +10737,6 @@
       "blockExplorerUrls": ["https://scan.ility.xyz"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.ility.xyz"]
-    },
-    {
-      "id": "4422",
-      "isTestnet": true,
-      "name": "Testnet Pika",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/testnetpsc.webp",
-      "nativeTokenId": "4422:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tPKA",
-        "name": "Testnet Pika"
-      },
-      "themeColor": "#888a89",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://testnet-rpc1.pikascan.com"]
     },
     {
       "id": "4441",
@@ -11092,6 +11076,21 @@
       "blockExplorerUrls": ["https://testnet.blackfortscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.blackfort.network/testnet/rpc"]
+    },
+    {
+      "id": "4919",
+      "name": "Venidium Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/venidium.webp",
+      "nativeTokenId": "4919:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XVM",
+        "name": "Venidium"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://evm.venidiumexplorer.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.venidium.io"]
     },
     {
       "id": "4936",
@@ -27308,7 +27307,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -29273,9 +29272,9 @@
       "account": "*25519",
       "prefix": 42,
       "rpcs": [
-        "wss://people-paseo.rotko.net",
         "wss://people-paseo.gatotech.network",
-        "wss://rpc.interweb-it.com/people-paseo"
+        "wss://rpc.interweb-it.com/people-paseo",
+        "wss://people-paseo.rotko.net"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -225870,17 +225869,6 @@
       "isDefault": true
     },
     {
-      "id": "4422:evm-native",
-      "platform": "ethereum",
-      "networkId": "4422",
-      "type": "evm-native",
-      "symbol": "tPKA",
-      "decimals": 18,
-      "name": "Testnet Pika",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/testnetpsc.webp",
-      "isDefault": true
-    },
-    {
       "id": "443:evm-native",
       "platform": "ethereum",
       "networkId": "443",
@@ -240249,6 +240237,17 @@
       "decimals": 18,
       "name": "Bifrost",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bifrost.webp",
+      "isDefault": true
+    },
+    {
+      "id": "4919:evm-native",
+      "platform": "ethereum",
+      "networkId": "4919",
+      "type": "evm-native",
+      "symbol": "XVM",
+      "decimals": 18,
+      "name": "Venidium",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/venidium.webp",
       "isDefault": true
     },
     {

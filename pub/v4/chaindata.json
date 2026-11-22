@@ -119,8 +119,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mainnet.optimism.io",
-        "https://optimism.publicnode.com",
         "https://optimism.gateway.tenderly.co",
+        "https://optimism.publicnode.com",
         "https://xrpc.cl/optimism",
         "https://optimism-rpc.publicnode.com"
       ],
@@ -7759,7 +7759,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://edgenscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.layeredge.io", "https://rpc.layeredge.foundation"]
+      "rpcs": ["https://rpc.layeredge.foundation", "https://rpc.layeredge.io"]
     },
     {
       "id": "4269",
@@ -8042,6 +8042,22 @@
       "blockExplorerUrls": ["https://testnet.blackfortscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.blackfort.network/testnet/rpc"]
+    },
+    {
+      "id": "4913",
+      "name": "OEV Network",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/oev-network.svg",
+      "nativeTokenId": "4913:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#6d6d75",
+      "blockExplorerUrls": ["https://oev.explorer.api3.org"],
+      "platform": "ethereum",
+      "rpcs": ["https://oev-network.calderachain.xyz/http"]
     },
     {
       "id": "5000",
@@ -18887,7 +18903,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -150853,6 +150869,17 @@
       "decimals": 18,
       "name": "Bifrost",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bifrost.webp",
+      "isDefault": true
+    },
+    {
+      "id": "4913:evm-native",
+      "platform": "ethereum",
+      "networkId": "4913",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
