@@ -1938,9 +1938,9 @@
       "rpcs": [
         "https://xlayerrpc.okx.com",
         "https://rpc.xlayer.tech",
+        "https://api.blockvectra.com/v1/xlayer_mainnet/public",
         "https://rpc.nodeflare.app/xlayer/public",
-        "https://endpoints.omniatech.io/v1/xlayer/mainnet/public",
-        "https://rpc.ankr.com/xlayer"
+        "https://endpoints.omniatech.io/v1/xlayer/mainnet/public"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -2022,7 +2022,7 @@
       "themeColor": "#4772bc",
       "blockExplorerUrls": ["https://btnscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.bitnetmoney.org", "https://rpc.bitnetmoney.com"]
+      "rpcs": ["https://rpc.bitnetmoney.org", "https://rpc.bitnetmoney.com", "https://rpc.bitnet-community.org"]
     },
     {
       "id": "212",
@@ -4718,12 +4718,7 @@
       "themeColor": "#fefefc",
       "blockExplorerUrls": ["https://blockscout.lisk.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://lisk.gateway.tenderly.co",
-        "https://lb.routeme.sh/rpc/evm/1135",
-        "https://api-lisk-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-        "https://rpc.api.lisk.com"
-      ],
+      "rpcs": ["https://lisk.gateway.tenderly.co", "https://lb.routeme.sh/rpc/evm/1135", "https://rpc.api.lisk.com"],
       "contracts": {
         "Multicall3": "0xA9d71E1dd7ca26F26e656E66d6AA81ed7f745bf0"
       }
@@ -5792,7 +5787,7 @@
       "themeColor": "#0066fe",
       "blockExplorerUrls": ["https://explorer.whitechain.io"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.whitechain.io", "https://lb.routeme.sh/rpc/evm/1875"],
+      "rpcs": ["https://rpc.whitechain.io", "https://rpc.ankr.com/whitechain", "https://lb.routeme.sh/rpc/evm/1875"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -6232,11 +6227,10 @@
       "blockExplorerUrls": ["https://telscan.io"],
       "platform": "ethereum",
       "rpcs": [
-        "https://rpc.telcoin.network",
-        "https://node1.telcoin.network",
-        "https://node2.telcoin.network",
-        "https://node3.telcoin.network",
-        "https://node4.telcoin.network"
+        "https://rpc.adiri.tel",
+        "https://rpc.adiri.telcoin.network",
+        "https://adiri.rpc.telcoin.network",
+        "https://rpc.telcoin.network"
       ]
     },
     {
@@ -7013,22 +7007,6 @@
         "https://lb.routeme.sh/rpc/evm/2606",
         "https://rpc1.pocrnet.ca-dag.work"
       ]
-    },
-    {
-      "id": "2625",
-      "isTestnet": true,
-      "name": "Whitechain Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/whitechain-testnet.webp",
-      "nativeTokenId": "2625:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "WBT",
-        "name": "WhiteBIT Coin"
-      },
-      "themeColor": "#0066fe",
-      "blockExplorerUrls": ["https://testnet.whitechain.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/2625", "https://rpc-testnet.whitechain.io"]
     },
     {
       "id": "2648",
@@ -14196,7 +14174,7 @@
       "themeColor": "#e8580b",
       "blockExplorerUrls": ["https://explorer.scolcoin.com"],
       "platform": "ethereum",
-      "rpcs": ["https://mainnet-rpc.scolcoin.com", "https://lb.routeme.sh/rpc/evm/65450"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/65450", "https://mainnet-rpc.scolcoin.com"]
     },
     {
       "id": "65535",
@@ -16804,8 +16782,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
-        "https://rpc.ankr.com/scroll_sepolia_testnet",
         "https://lb.routeme.sh/rpc/evm/534351",
+        "https://rpc.ankr.com/scroll_sepolia_testnet",
         "https://scroll-sepolia-public.nodies.app",
         "https://scroll-sepolia.therpc.io"
       ],
@@ -19090,7 +19068,7 @@
         "https://a.api.s0.t.hmny.io",
         "https://api.s0.t.hmny.io",
         "https://public.1rpc.io/one",
-        "https://endpoints.omniatech.io/v1/harmony/mainnet-0/public"
+        "https://lb.routeme.sh/rpc/evm/1666600000"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -125781,17 +125759,6 @@
       "decimals": 18,
       "name": "Eclat Testnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/eclat.webp",
-      "isDefault": true
-    },
-    {
-      "id": "2625:evm-native",
-      "platform": "ethereum",
-      "networkId": "2625",
-      "type": "evm-native",
-      "symbol": "WBT",
-      "decimals": 18,
-      "name": "WhiteBIT Coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/whitechain-testnet.webp",
       "isDefault": true
     },
     {
