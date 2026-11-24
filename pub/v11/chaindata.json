@@ -2830,20 +2830,6 @@
       }
     },
     {
-      "id": "327",
-      "name": "Goliath",
-      "nativeTokenId": "327:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "XCN",
-        "name": "XCN"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer.goliath.net"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.goliath.net"]
-    },
-    {
       "id": "329",
       "name": "VirBiCoin",
       "nativeTokenId": "329:evm-native",
@@ -17719,20 +17705,6 @@
       }
     },
     {
-      "id": "90002",
-      "name": "UBIT SMARTCHAIN MAINNET",
-      "nativeTokenId": "90002:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "USC",
-        "name": "USC"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://ubitscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.ubitscan.io"]
-    },
-    {
       "id": "90025",
       "name": "AIPaw Mainnet",
       "nativeTokenId": "90025:evm-native",
@@ -19061,12 +19033,7 @@
       "themeColor": "#fc9219",
       "blockExplorerUrls": ["https://www.btrscan.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://rpc.bitlayer.org",
-        "https://rpc.ankr.com/bitlayer",
-        "https://lb.routeme.sh/rpc/evm/200901",
-        "https://rpc-bitlayer.rockx.com"
-      ]
+      "rpcs": ["https://rpc.bitlayer.org", "https://rpc.ankr.com/bitlayer", "https://lb.routeme.sh/rpc/evm/200901"]
     },
     {
       "id": "201022",
@@ -19290,7 +19257,7 @@
       "themeColor": "#aefec3",
       "blockExplorerUrls": ["https://heima.statescan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/212013", "https://rpc.heima-parachain.heima.network"]
+      "rpcs": ["https://rpc.heima-parachain.heima.network", "https://lb.routeme.sh/rpc/evm/212013"]
     },
     {
       "id": "220312",
@@ -19321,9 +19288,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://hydration-rpc.n.dwellir.com",
+        "https://rpc.sin.hydration.cloud",
         "https://rpc.coke.hydration.cloud",
         "https://lb.routeme.sh/rpc/evm/222222",
-        "https://rpc.helikon.io/hydradx",
         "https://hydration.dotters.network"
       ]
     },
@@ -19387,22 +19354,6 @@
       "blockExplorerUrls": ["https://cancun.conet.network"],
       "platform": "ethereum",
       "rpcs": ["https://cancun-rpc.conet.network"]
-    },
-    {
-      "id": "240240",
-      "isTestnet": true,
-      "name": "Studio Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/studio.webp",
-      "nativeTokenId": "240240:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "STO",
-        "name": "Studio Token"
-      },
-      "themeColor": "#ff3815",
-      "blockExplorerUrls": ["https://studio-scan.com"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.studio-blockchain.com"]
     },
     {
       "id": "240241",
@@ -20008,8 +19959,8 @@
         "https://arbitrum-sepolia-testnet.api.pocket.network",
         "https://api.zan.top/arb-sepolia",
         "https://arbitrum-sepolia.gateway.tenderly.co",
-        "https://arbitrum-sepolia-rpc.publicnode.com",
-        "https://arbitrum-sepolia-rpc.blockreq.com/v1/rpc/public"
+        "https://sepolia-rollup.arbitrum.io/rpc",
+        "https://arbitrum-sepolia-rpc.publicnode.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -20386,7 +20337,11 @@
       "themeColor": "#01ecbf",
       "blockExplorerUrls": ["https://edu-chain-testnet.blockscout.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.testnet.educhain.xyz", "https://lb.routeme.sh/rpc/evm/656476"],
+      "rpcs": [
+        "https://rpc.testnet.educhain.xyz",
+        "https://lb.routeme.sh/rpc/evm/656476",
+        "https://rpc.open-campus-codex.gelato.digital"
+      ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -23800,7 +23755,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -119954,17 +119909,6 @@
       "isDefault": true
     },
     {
-      "id": "240240:evm-native",
-      "platform": "ethereum",
-      "networkId": "240240",
-      "type": "evm-native",
-      "symbol": "STO",
-      "decimals": 18,
-      "name": "Studio Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/studio.webp",
-      "isDefault": true
-    },
-    {
       "id": "240241:evm-native",
       "platform": "ethereum",
       "networkId": "240241",
@@ -127761,16 +127705,6 @@
       "symbol": "DUBX",
       "decimals": 18,
       "name": "Dubxcoin mainnet",
-      "isDefault": true
-    },
-    {
-      "id": "327:evm-native",
-      "platform": "ethereum",
-      "networkId": "327",
-      "type": "evm-native",
-      "symbol": "XCN",
-      "decimals": 18,
-      "name": "XCN",
       "isDefault": true
     },
     {
@@ -237857,16 +237791,6 @@
       "decimals": 18,
       "name": "test-Evmos",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/evmos.webp",
-      "isDefault": true
-    },
-    {
-      "id": "90002:evm-native",
-      "platform": "ethereum",
-      "networkId": "90002",
-      "type": "evm-native",
-      "symbol": "USC",
-      "decimals": 18,
-      "name": "USC",
       "isDefault": true
     },
     {
