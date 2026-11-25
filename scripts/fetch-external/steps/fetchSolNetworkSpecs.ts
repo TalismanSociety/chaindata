@@ -16,7 +16,8 @@ export const fetchSolNetworksSpecs = async () => {
 
   for (const network of solNetworks) {
     // checkSolanaRpcs compares each RPC's genesis hash with this file: write it only from RPCs that passed the check
-    const rpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    const okRpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    const rpcs = network.rpcs.filter((rpc) => okRpcs.includes(rpc)) // keep the order of preference from the yaml
     if (!rpcs.length) {
       console.warn(`No healthy RPC for network ${network.id}, keeping its previous specs`)
       continue

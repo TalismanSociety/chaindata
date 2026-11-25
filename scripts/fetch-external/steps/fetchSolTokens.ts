@@ -69,7 +69,8 @@ export const fetchSolTokens = async () => {
   let results: Token[] = prevSolTokens.slice()
 
   for (const network of solNetworks) {
-    const rpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    const okRpcs = getRpcsByStatus(network.id, 'solana', 'OK')
+    const rpcs = network.rpcs.filter((rpc) => okRpcs.includes(rpc)) // keep the order of preference from the yaml
     if (!rpcs.length) {
       console.warn('No healthy RPC for network %s, keeping its previous tokens', network.id)
       continue
