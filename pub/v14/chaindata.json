@@ -136,8 +136,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://mainnet.optimism.io",
-        "https://optimism.publicnode.com",
         "https://optimism.gateway.tenderly.co",
+        "https://optimism.publicnode.com",
         "https://xrpc.cl/optimism",
         "https://optimism-rpc.publicnode.com"
       ],
@@ -884,7 +884,7 @@
       "themeColor": "#2775ca",
       "blockExplorerUrls": ["https://dev.plato.xyz/explorer"],
       "platform": "ethereum",
-      "rpcs": ["https://evmtestnet.confluxrpc.com", "https://lb.routeme.sh/rpc/evm/71"],
+      "rpcs": ["https://evmtestnet.confluxrpc.com", "https://lb.routeme.sh/rpc/evm/71", "https://api-devnet.plato.xyz"],
       "contracts": {
         "Multicall3": "0xEFf0078910f638cd81996cc117bccD3eDf2B072F"
       }
@@ -2046,9 +2046,9 @@
       "rpcs": [
         "https://xlayerrpc.okx.com",
         "https://rpc.xlayer.tech",
+        "https://api.blockvectra.com/v1/xlayer_mainnet/public",
         "https://rpc.nodeflare.app/xlayer/public",
-        "https://endpoints.omniatech.io/v1/xlayer/mainnet/public",
-        "https://rpc.ankr.com/xlayer"
+        "https://endpoints.omniatech.io/v1/xlayer/mainnet/public"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -2174,7 +2174,7 @@
       "themeColor": "#4772bc",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.bitnetmoney.org", "https://rpc.bitnetmoney.com"]
+      "rpcs": ["https://rpc.bitnetmoney.org", "https://rpc.bitnetmoney.com", "https://rpc.bitnet-community.org"]
     },
     {
       "id": "212",
@@ -3021,20 +3021,6 @@
       "contracts": {
         "Multicall3": "0xF9cda624FBC7e059355ce98a31693d299FACd963"
       }
-    },
-    {
-      "id": "327",
-      "name": "Goliath",
-      "nativeTokenId": "327:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "XCN",
-        "name": "XCN"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer.goliath.net"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.goliath.net"]
     },
     {
       "id": "329",
@@ -5320,7 +5306,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://testnet.bttcscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://pre-rpc.bt.io", "https://lb.routeme.sh/rpc/evm/1029"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1029", "https://pre-rpc.bt.io"]
     },
     {
       "id": "1030",
@@ -5534,7 +5520,7 @@
         "https://jsonrpc.dymension.nodestake.org",
         "https://rollapp.jrpc.cumulo.com.es",
         "https://lb.routeme.sh/rpc/evm/1100",
-        "https://rpc.swiftnodes.io/rpc/dymension"
+        "https://dymension.liquify.com/json-rpc"
       ]
     },
     {
@@ -5734,12 +5720,7 @@
       "themeColor": "#fefefc",
       "blockExplorerUrls": ["https://blockscout.lisk.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://lisk.gateway.tenderly.co",
-        "https://lb.routeme.sh/rpc/evm/1135",
-        "https://api-lisk-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-        "https://rpc.api.lisk.com"
-      ],
+      "rpcs": ["https://lisk.gateway.tenderly.co", "https://lb.routeme.sh/rpc/evm/1135", "https://rpc.api.lisk.com"],
       "contracts": {
         "Multicall3": "0xA9d71E1dd7ca26F26e656E66d6AA81ed7f745bf0"
       }
@@ -6218,11 +6199,11 @@
       "blockExplorerUrls": ["https://aeneid.datanetscan.io"],
       "platform": "ethereum",
       "rpcs": [
-        "https://story-testnet-evm.itrocket.net",
-        "https://rpc.ankr.com/story_aeneid_testnet",
         "https://aeneid.datarpc.io",
         "https://aeneid.storyrpc.io",
-        "https://aeneid-evm-rpc.krews.xyz"
+        "https://aeneid-evm-rpc.krews.xyz",
+        "https://rpc.ankr.com/story_aeneid_testnet",
+        "https://lb.routeme.sh/rpc/evm/1315"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -6352,7 +6333,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://blockscout.atlantischain.network"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/1338"]
+      "rpcs": ["https://rpc-elysium-testnet.globalstake.io", "https://lb.routeme.sh/rpc/evm/1338"]
     },
     {
       "id": "1339",
@@ -6482,6 +6463,22 @@
       "blockExplorerUrls": ["https://scan.lrxmining.com"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.lrxmining.com"]
+    },
+    {
+      "id": "1424",
+      "name": "Perennial",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/perennial.svg",
+      "nativeTokenId": "1424:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://explorer.perennial.foundation"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1424"]
     },
     {
       "id": "1425",
@@ -6667,8 +6664,8 @@
         "https://evm-rpc.story.mainnet.dteam.tech",
         "https://infra.originstake.com/story/evm",
         "https://story-mainnet-evm.itrocket.net",
-        "https://rpc.ankr.com/story_mainnet",
-        "https://story-json-rpc.stakely.io"
+        "https://story-json-rpc.stakely.io",
+        "https://lb.routeme.sh/rpc/evm/1514"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -7061,7 +7058,7 @@
       "themeColor": "#fa6459",
       "blockExplorerUrls": ["https://explorer.metall2.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.metall2.com", "https://lb.routeme.sh/rpc/evm/1750"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1750", "https://rpc.metall2.com"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -7192,7 +7189,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.playblock.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/1829", "https://rpc.playblock.io"]
+      "rpcs": ["https://rpc.playblock.io", "https://lb.routeme.sh/rpc/evm/1829"]
     },
     {
       "id": "1833",
@@ -7242,8 +7239,7 @@
       "rpcs": [
         "https://rpc.soneium.org",
         "https://rpc.nodeflare.app/soneium/public",
-        "https://lb.routeme.sh/rpc/evm/1868",
-        "https://rpc.swiftnodes.io/rpc/soneium"
+        "https://lb.routeme.sh/rpc/evm/1868"
       ],
       "contracts": {
         "Erc20Aggregator": "0xeC74e245117407481F03bc661A8d71012f4fB7dA",
@@ -7283,7 +7279,7 @@
       "themeColor": "#0066fe",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.whitechain.io", "https://lb.routeme.sh/rpc/evm/1875"],
+      "rpcs": ["https://rpc.whitechain.io", "https://rpc.ankr.com/whitechain", "https://lb.routeme.sh/rpc/evm/1875"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -7850,6 +7846,23 @@
       }
     },
     {
+      "id": "1994",
+      "name": "Ekta",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ekta.webp",
+      "nativeTokenId": "1994:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "EKTA",
+        "name": "EKTA",
+        "coingeckoId": "ekta-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ekta-2.webp"
+      },
+      "themeColor": "#dd5f55",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": ["https://main.ekta.io"]
+    },
+    {
       "id": "1999",
       "isTestnet": true,
       "name": "STO Chain Testnet",
@@ -7951,11 +7964,10 @@
       "blockExplorerUrls": ["https://telscan.io"],
       "platform": "ethereum",
       "rpcs": [
-        "https://rpc.telcoin.network",
-        "https://adiri.tel",
-        "https://node1.telcoin.network",
-        "https://node2.telcoin.network",
-        "https://node3.telcoin.network"
+        "https://rpc.adiri.tel",
+        "https://rpc.adiri.telcoin.network",
+        "https://adiri.rpc.telcoin.network",
+        "https://rpc.telcoin.network"
       ]
     },
     {
@@ -7989,9 +8001,9 @@
       "blockExplorerUrls": ["https://explorer.roninchain.com/"],
       "platform": "ethereum",
       "rpcs": [
+        "https://lb.routeme.sh/rpc/evm/2020",
         "https://ronin.gateway.tenderly.co",
         "https://api.roninchain.com/rpc",
-        "https://lb.routeme.sh/rpc/evm/2020",
         "https://api-ronin-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
         "https://ronin-mainnet.gateway.tatum.io"
       ],
@@ -8105,8 +8117,7 @@
       "rpcs": [
         "https://fullnode.centrifuge.io",
         "https://centrifuge-parachain.api.onfinality.io/public",
-        "https://lb.routeme.sh/rpc/evm/2031",
-        "https://rpc-centrifuge.luckyfriday.io"
+        "https://lb.routeme.sh/rpc/evm/2031"
       ]
     },
     {
@@ -8121,7 +8132,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://fstscan.fenixst.io"],
       "platform": "ethereum",
-      "rpcs": ["https://mainnet.fenixst.io"]
+      "rpcs": ["https://mainnet.fenixst.io", "https://node2.fenixst.io"]
     },
     {
       "id": "2035",
@@ -8136,7 +8147,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/2035", "https://rpc.phala.network"]
+      "rpcs": ["https://rpc.phala.network", "https://lb.routeme.sh/rpc/evm/2035"]
     },
     {
       "id": "2039",
@@ -8522,7 +8533,7 @@
         "https://kava-public.nodies.app",
         "https://rpc.ankr.com/kava_evm",
         "https://evm.kava-rpc.com",
-        "https://evm.kava.io"
+        "https://lb.routeme.sh/rpc/evm/2222"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -8670,7 +8681,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://alt-exp.wattxchange.app"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.wattxchange.app"]
+      "rpcs": ["https://rpc.wattxchange.app", "https://alt-rpc.minethepla.net"]
     },
     {
       "id": "2332",
@@ -8711,6 +8722,7 @@
         "https://testnet-rpc.atleta.network",
         "https://rpc.ankr.com/atleta_olympia",
         "https://lb.routeme.sh/rpc/evm/2340",
+        "https://public-atleta.nownodes.io",
         "https://testnet-rpc.atleta.network:9944"
       ],
       "contracts": {
@@ -8751,7 +8763,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://scope.silicon.network"],
       "platform": "ethereum",
-      "rpcs": ["https://silicon-mainnet.nodeinfra.com", "https://rpc.silicon.network"]
+      "rpcs": ["https://rpc.silicon.network", "https://silicon-mainnet.nodeinfra.com"]
     },
     {
       "id": "2366",
@@ -8897,7 +8909,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer.karak.network"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.karak.network", "https://lb.routeme.sh/rpc/evm/2410"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/2410", "https://rpc.karak.network"]
     },
     {
       "id": "2415",
@@ -8966,7 +8978,7 @@
       "themeColor": "#8a37d7",
       "blockExplorerUrls": ["https://cardona-zkevm.polygonscan.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.cardona.zkevm-rpc.com", "https://lb.routeme.sh/rpc/evm/2442"],
+      "rpcs": ["https://rpc.cardona.zkevm-rpc.com"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -9180,22 +9192,6 @@
       ]
     },
     {
-      "id": "2625",
-      "isTestnet": true,
-      "name": "Whitechain Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/whitechain-testnet.webp",
-      "nativeTokenId": "2625:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "WBT",
-        "name": "WhiteBIT Coin"
-      },
-      "themeColor": "#0066fe",
-      "blockExplorerUrls": ["https://testnet.whitechain.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.whitechain.io", "https://lb.routeme.sh/rpc/evm/2625"]
-    },
-    {
       "id": "2648",
       "isTestnet": true,
       "name": "AILayer Testnet",
@@ -9224,7 +9220,7 @@
       "themeColor": "#f1f6ff",
       "blockExplorerUrls": ["https://mainnet-explorer.ailayer.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://mainnet-rpc.ailayer.xyz", "https://lb.routeme.sh/rpc/evm/2649"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/2649", "https://mainnet-rpc.ailayer.xyz"]
     },
     {
       "id": "2691",
@@ -9268,7 +9264,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.testnet.orbinum.network"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc-1.testnet.orbinum.io", "https://rpc-2.testnet.orbinum.io"]
+      "rpcs": ["https://rpc.testnet.orbinum.io"]
     },
     {
       "id": "2721",
@@ -9475,21 +9471,6 @@
         "https://node2.bityuan.com/eth",
         "https://lb.routeme.sh/rpc/evm/2999"
       ]
-    },
-    {
-      "id": "3001",
-      "name": "CENNZnet Nikau",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/cennz.svg",
-      "nativeTokenId": "3001:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "CPAY",
-        "name": "CPAY"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://www.uncoverexplorer.com/?network=Nikau"],
-      "platform": "ethereum",
-      "rpcs": ["https://nikau.centrality.me/public"]
     },
     {
       "id": "3003",
@@ -10050,22 +10031,6 @@
       "rpcs": ["https://eth-rpc-api.pandoproject.org/rpc", "https://lb.routeme.sh/rpc/evm/3601"]
     },
     {
-      "id": "3602",
-      "isTestnet": true,
-      "name": "PandoProject Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/pando.webp",
-      "nativeTokenId": "3602:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "PTX",
-        "name": "pando-token"
-      },
-      "themeColor": "#00f4ef",
-      "blockExplorerUrls": ["https://testnet.explorer.pandoproject.org"],
-      "platform": "ethereum",
-      "rpcs": ["https://testnet.ethrpc.pandoproject.org/rpc"]
-    },
-    {
       "id": "3630",
       "name": "Tycooncoin",
       "nativeTokenId": "3630:evm-native",
@@ -10142,6 +10107,7 @@
       "blockExplorerUrls": ["https://xonescan.com"],
       "platform": "ethereum",
       "rpcs": [
+        "https://rpc.xone.org",
         "https://rpc-node-1.xone.org",
         "https://rpc-node-2.xone.org",
         "https://rpc-node-3.xone.org",
@@ -10161,7 +10127,7 @@
       "themeColor": "#e7b75b",
       "blockExplorerUrls": ["https://scan.crossbell.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/3737"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/3737", "https://rpc.crossbell.io"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -10199,9 +10165,25 @@
       "rpcs": [
         "https://elves-core1.alvey.io",
         "https://elves-core2.alvey.io",
-        "https://elves-core3.alvey.io",
-        "https://lb.routeme.sh/rpc/evm/3797"
+        "https://lb.routeme.sh/rpc/evm/3797",
+        "https://elves-core3.alvey.io"
       ]
+    },
+    {
+      "id": "3799",
+      "isTestnet": true,
+      "name": "Tangle Testnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/tangle.webp",
+      "nativeTokenId": "3799:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "tTNT",
+        "name": "Testnet Tangle Network Token"
+      },
+      "themeColor": "#7c70fd",
+      "blockExplorerUrls": ["https://testnet-explorer.tangle.tools"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/3799"]
     },
     {
       "id": "3864",
@@ -10644,9 +10626,9 @@
       "blockExplorerUrls": ["https://scan.merlinchain.io"],
       "platform": "ethereum",
       "rpcs": [
-        "https://lb.routeme.sh/rpc/evm/4200",
         "https://rpc.merlinchain.io",
         "https://endpoints.omniatech.io/v1/merlin/mainnet/public",
+        "https://lb.routeme.sh/rpc/evm/4200",
         "https://merlin.blockpi.network/v1/rpc/public"
       ]
     },
@@ -10716,7 +10698,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://edgenscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.layeredge.io", "https://rpc.layeredge.foundation"]
+      "rpcs": ["https://rpc.layeredge.foundation", "https://rpc.layeredge.io"]
     },
     {
       "id": "4217",
@@ -10854,22 +10836,6 @@
       "rpcs": ["https://rpc.ility.xyz"]
     },
     {
-      "id": "4422",
-      "isTestnet": true,
-      "name": "Testnet Pika",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/testnetpsc.webp",
-      "nativeTokenId": "4422:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "tPKA",
-        "name": "Testnet Pika"
-      },
-      "themeColor": "#888a89",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://testnet-rpc1.pikascan.com"]
-    },
-    {
       "id": "4441",
       "isTestnet": true,
       "name": "LitVM Liteforge Testnet",
@@ -10930,7 +10896,7 @@
       "themeColor": "#8368aa",
       "blockExplorerUrls": ["https://testnet-explorer.orderly.org"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/4460", "https://testnet-rpc.orderly.org"]
+      "rpcs": ["https://testnet-rpc.orderly.org", "https://lb.routeme.sh/rpc/evm/4460"]
     },
     {
       "id": "4488",
@@ -11210,6 +11176,21 @@
       "rpcs": ["https://rpc.blackfort.network/testnet/rpc"]
     },
     {
+      "id": "4919",
+      "name": "Venidium Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/venidium.webp",
+      "nativeTokenId": "4919:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XVM",
+        "name": "Venidium"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://evm.venidiumexplorer.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.venidium.io"]
+    },
+    {
       "id": "4936",
       "name": "Prodao Mainnet",
       "nativeTokenId": "4936:evm-native",
@@ -11475,6 +11456,20 @@
         "https://rpc1.bahamut.io",
         "https://rpc2.bahamut.io"
       ]
+    },
+    {
+      "id": "5169",
+      "name": "Smart Layer Network",
+      "nativeTokenId": "5169:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "SU",
+        "name": "Service Unit Token"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://explorer.main.smartlayer.network"],
+      "platform": "ethereum",
+      "rpcs": ["https://rpc.main.smartlayer.network"]
     },
     {
       "id": "5232",
@@ -11758,11 +11753,11 @@
       "blockExplorerUrls": ["https://opbnb-testnet.bscscan.com"],
       "platform": "ethereum",
       "rpcs": [
-        "https://lb.routeme.sh/rpc/evm/5611",
         "https://opbnb-testnet-rpc.bnbchain.org",
         "https://opbnb-testnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
         "https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
-        "https://opbnb-testnet-rpc.publicnode.com"
+        "https://opbnb-testnet-rpc.publicnode.com",
+        "https://lb.routeme.sh/rpc/evm/5611"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -13349,6 +13344,25 @@
       "rpcs": ["https://proscan.pro/chain/rydberg-rpc"]
     },
     {
+      "id": "8008",
+      "name": "Polynomial",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/polynomial.webp",
+      "nativeTokenId": "8008:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://polynomialscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/8008"],
+      "contracts": {
+        "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
+      }
+    },
+    {
       "id": "8017",
       "name": "iSunCoin Mainnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/isuncoin.svg",
@@ -13857,7 +13871,7 @@
       "themeColor": "#ff26ff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc-testnet.c8ntinuum.com", "https://rpc-testnet.c8ntinuum.link"]
+      "rpcs": ["https://rpc-testnet.c8ntinuum.com"]
     },
     {
       "id": "8889",
@@ -13874,7 +13888,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/8889"]
+      "rpcs": ["https://vsc-dataseed.vyvo.org:8889", "https://lb.routeme.sh/rpc/evm/8889"]
     },
     {
       "id": "8899",
@@ -13925,7 +13939,7 @@
       "themeColor": "#64ff00",
       "blockExplorerUrls": ["https://scan.test.algen.network"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/8912", "https://rpc.test.algen.network"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/8912"]
     },
     {
       "id": "8921",
@@ -13956,7 +13970,7 @@
       "themeColor": "#64ff00",
       "blockExplorerUrls": ["https://scan.alg2-test.algen.network"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/8922", "https://rpc.alg2-test.algen.network"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/8922"]
     },
     {
       "id": "8989",
@@ -14342,11 +14356,10 @@
       "blockExplorerUrls": ["https://plasmascan.to"],
       "platform": "ethereum",
       "rpcs": [
-        "https://rpc.plasma.to",
         "https://lb.routeme.sh/rpc/evm/9745",
         "https://plasma.api.onfinality.io/public",
-        "https://rpc.swiftnodes.io/rpc/plasma",
-        "https://plasma-mainnet.gateway.tatum.io"
+        "https://plasma-mainnet.gateway.tatum.io",
+        "https://rpc.plasma.to"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -14955,7 +14968,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://sepolia.abscan.org"],
       "platform": "ethereum",
-      "rpcs": ["https://api.testnet.abs.xyz", "https://lb.routeme.sh/rpc/evm/11124"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/11124", "https://api.testnet.abs.xyz"],
       "contracts": {
         "Multicall3": "0xF9cda624FBC7e059355ce98a31693d299FACd963"
       }
@@ -15028,21 +15041,6 @@
       "blockExplorerUrls": ["https://blockscout-test.anq.world"],
       "platform": "ethereum",
       "rpcs": ["https://rpc-public-test.anq.world"]
-    },
-    {
-      "id": "11451",
-      "name": "eGold Chain",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/egoldchain.webp",
-      "nativeTokenId": "11451:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "XAU",
-        "name": "Aurum"
-      },
-      "themeColor": "#f3b548",
-      "blockExplorerUrls": ["https://egoldscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.egoldchain.com"]
     },
     {
       "id": "11501",
@@ -17472,7 +17470,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://otterscan.zq2-devnet.zilliqa.com"],
       "platform": "ethereum",
-      "rpcs": ["https://api.zq2-devnet.zilliqa.com", "https://lb.routeme.sh/rpc/evm/33469"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/33469", "https://api.zq2-devnet.zilliqa.com"]
     },
     {
       "id": "33979",
@@ -17791,7 +17789,7 @@
       "themeColor": "#7daa69",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://mainnet.oho.ai", "https://mainnet-rpc.ohoscan.com", "https://mainnet-rpc2.ohoscan.com"]
+      "rpcs": ["https://mainnet-rpc.ohoscan.com", "https://mainnet-rpc2.ohoscan.com", "https://mainnet.oho.ai"]
     },
     {
       "id": "40204",
@@ -17821,7 +17819,7 @@
       "themeColor": "#00ebc9",
       "blockExplorerUrls": ["https://evm-explorer.alephzero.org"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/41455"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/41455", "https://rpc.alephzero.raas.gelato.cloud"],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
       }
@@ -18053,7 +18051,7 @@
       "themeColor": "#0049e4",
       "blockExplorerUrls": ["https://scan-testnet.assetchain.org"],
       "platform": "ethereum",
-      "rpcs": ["https://enugu-rpc.assetchain.org", "https://lb.routeme.sh/rpc/evm/42421"],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/42421", "https://enugu-rpc.assetchain.org"],
       "contracts": {
         "Multicall3": "0x989F832D35988cb5e3eB001Fa2Fe789469EC31Ea"
       }
@@ -18397,9 +18395,9 @@
       "blockExplorerUrls": ["https://xexplorer.neo.org"],
       "platform": "ethereum",
       "rpcs": [
-        "https://mainnet-1.rpc.banelabs.org",
         "https://mainnet-2.rpc.banelabs.org",
-        "https://lb.routeme.sh/rpc/evm/47763"
+        "https://lb.routeme.sh/rpc/evm/47763",
+        "https://mainnet-1.rpc.banelabs.org"
       ]
     },
     {
@@ -18803,7 +18801,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.testedge2.haqq.network"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.eth.testedge2.haqq.network", "https://lb.routeme.sh/rpc/evm/54211"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/54211", "https://rpc.eth.testedge2.haqq.network"]
     },
     {
       "id": "55244",
@@ -18857,6 +18855,21 @@
       "rpcs": ["https://rpc.dustproject.org"]
     },
     {
+      "id": "55555",
+      "name": "REI Chain Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/reichain.svg",
+      "nativeTokenId": "55555:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "REI",
+        "name": "Rei"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://reiscan.com"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/55555"]
+    },
+    {
       "id": "55556",
       "isTestnet": true,
       "name": "REI Chain Testnet",
@@ -18871,6 +18884,20 @@
       "blockExplorerUrls": ["https://testnet.reiscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://lb.routeme.sh/rpc/evm/55556"]
+    },
+    {
+      "id": "55930",
+      "name": "DataHaven Mainnet",
+      "nativeTokenId": "55930:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "HAVE",
+        "name": "HAVE"
+      },
+      "themeColor": "#505050",
+      "blockExplorerUrls": ["https://dhscan.io"],
+      "platform": "ethereum",
+      "rpcs": ["https://services.datahaven-mainnet.network/mainnet"]
     },
     {
       "id": "56288",
@@ -19065,7 +19092,6 @@
       "platform": "ethereum",
       "rpcs": [
         "https://metis-sepolia-rpc.publicnode.com",
-        "https://metis-sepolia.gateway.tenderly.co",
         "https://sepolia.metisdevops.link",
         "https://lb.routeme.sh/rpc/evm/59902"
       ],
@@ -19145,7 +19171,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://scan.orangechain.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.orangechain.xyz", "https://hk-rpc.orangechain.xyz"]
+      "rpcs": ["https://rpc.orangechain.xyz"]
     },
     {
       "id": "61406",
@@ -19398,7 +19424,7 @@
       "themeColor": "#e8580b",
       "blockExplorerUrls": ["https://explorer.scolcoin.com"],
       "platform": "ethereum",
-      "rpcs": ["https://mainnet-rpc.scolcoin.com", "https://lb.routeme.sh/rpc/evm/65450"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/65450", "https://mainnet-rpc.scolcoin.com"]
     },
     {
       "id": "65535",
@@ -19583,7 +19609,7 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://chain1.thinkiumscan.net"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/70001", "https://proxy1.thinkiumrpc.net"]
+      "rpcs": ["https://proxy1.thinkiumrpc.net", "https://lb.routeme.sh/rpc/evm/70001"]
     },
     {
       "id": "70002",
@@ -20124,26 +20150,6 @@
       }
     },
     {
-      "id": "80008",
-      "isTestnet": true,
-      "name": "Polynomial Sepolia",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/polynomialSepolia.webp",
-      "nativeTokenId": "80008:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://sepolia.polynomialscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/80008"],
-      "contracts": {
-        "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
-      }
-    },
-    {
       "id": "80069",
       "isTestnet": true,
       "name": "Berachain Bepolia",
@@ -20184,9 +20190,9 @@
       "rpcs": [
         "https://berachain-rpc.publicnode.com",
         "https://bera.api.pocket.network",
-        "https://rpc.swiftnodes.io/rpc/berachain",
         "https://rpc.berachain.com",
-        "https://rpc.berachain-apis.com"
+        "https://rpc.berachain-apis.com",
+        "https://lb.routeme.sh/rpc/evm/80094"
       ],
       "contracts": {
         "Erc20Aggregator": "0x7ce86B8ef96baa695C5981a7418E23d534Ab41e4",
@@ -20273,9 +20279,9 @@
       "rpcs": [
         "https://blast.api.pocket.network",
         "https://rpc.driftguard.live/blast",
-        "https://rpc.blast.io",
         "https://blast-rpc.publicnode.com",
-        "https://lb.routeme.sh/rpc/evm/81457"
+        "https://lb.routeme.sh/rpc/evm/81457",
+        "https://rpc.ankr.com/blast"
       ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
@@ -20356,22 +20362,6 @@
       "blockExplorerUrls": ["https://zedscan.net"],
       "platform": "ethereum",
       "rpcs": ["https://lb.routeme.sh/rpc/evm/83872", "https://mainnet-rpc.zedscan.net"]
-    },
-    {
-      "id": "84257",
-      "isTestnet": true,
-      "name": "Ticko Testnet",
-      "nativeTokenId": "84257:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://testnet.ticko.xyz/explorer"],
-      "platform": "ethereum",
-      "rpcs": ["https://miner.testnet.ticko.xyz:4556"]
     },
     {
       "id": "84531",
@@ -20569,7 +20559,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": ["https://explorer-testnet.unit0.dev"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/88817", "https://rpc-testnet.unit0.dev"]
+      "rpcs": ["https://rpc-testnet.unit0.dev", "https://lb.routeme.sh/rpc/evm/88817"]
     },
     {
       "id": "88819",
@@ -20677,20 +20667,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/90001"]
     },
     {
-      "id": "90002",
-      "name": "UBIT SMARTCHAIN MAINNET",
-      "nativeTokenId": "90002:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "USC",
-        "name": "USC"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://ubitscan.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.ubitscan.io"]
-    },
-    {
       "id": "90025",
       "name": "AIPaw Mainnet",
       "nativeTokenId": "90025:evm-native",
@@ -20785,21 +20761,6 @@
       "rpcs": ["https://evm.lambda.top"]
     },
     {
-      "id": "92278",
-      "name": "Miracle Chain",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/miracle.webp",
-      "nativeTokenId": "92278:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MPT",
-        "name": "Miracle Play Token"
-      },
-      "themeColor": "#a3cdf1",
-      "blockExplorerUrls": ["https://explorer.miracleplay.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/92278"]
-    },
-    {
       "id": "92870",
       "isTestnet": true,
       "name": "Watr Testnet",
@@ -20859,7 +20820,7 @@
       "themeColor": "#8eb2fe",
       "blockExplorerUrls": ["https://explorer.testnet.wonderchain.org"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/96371", "https://rpc.testnet.wonderchain.org"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/96371"]
     },
     {
       "id": "96970",
@@ -21306,7 +21267,7 @@
       "themeColor": "#fb8d05",
       "blockExplorerUrls": ["https://evm-explorer-testnet.xitcoin.org"],
       "platform": "ethereum",
-      "rpcs": ["https://evm-rpc-testnet.xitcoin.org"]
+      "rpcs": ["https://evm-rpc-testnet.xitchain.com", "https://evm-rpc-testnet.xitcoin.org"]
     },
     {
       "id": "101101",
@@ -21397,7 +21358,7 @@
       "themeColor": "#816891",
       "blockExplorerUrls": ["https://explorer.xertra.com"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.xertra.com", "https://rpc.stratisevm.com", "https://lb.routeme.sh/rpc/evm/105105"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/105105", "https://rpc.xertra.com", "https://rpc.stratisevm.com"]
     },
     {
       "id": "110001",
@@ -22291,12 +22252,7 @@
       "themeColor": "#fc9219",
       "blockExplorerUrls": ["https://www.btrscan.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://rpc.bitlayer.org",
-        "https://rpc.ankr.com/bitlayer",
-        "https://lb.routeme.sh/rpc/evm/200901",
-        "https://rpc-bitlayer.rockx.com"
-      ]
+      "rpcs": ["https://rpc.bitlayer.org", "https://rpc.ankr.com/bitlayer", "https://lb.routeme.sh/rpc/evm/200901"]
     },
     {
       "id": "201022",
@@ -22508,7 +22464,7 @@
       "themeColor": "#aefec3",
       "blockExplorerUrls": ["https://heima.statescan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/212013", "https://rpc.heima-parachain.heima.network"]
+      "rpcs": ["https://rpc.heima-parachain.heima.network", "https://lb.routeme.sh/rpc/evm/212013"]
     },
     {
       "id": "221978",
@@ -22539,9 +22495,9 @@
       "platform": "ethereum",
       "rpcs": [
         "https://hydration-rpc.n.dwellir.com",
+        "https://rpc.sin.hydration.cloud",
         "https://rpc.coke.hydration.cloud",
         "https://lb.routeme.sh/rpc/evm/222222",
-        "https://rpc.helikon.io/hydradx",
         "https://hydration.dotters.network"
       ]
     },
@@ -23273,8 +23229,8 @@
         "https://arbitrum-sepolia-testnet.api.pocket.network",
         "https://api.zan.top/arb-sepolia",
         "https://arbitrum-sepolia.gateway.tenderly.co",
-        "https://arbitrum-sepolia-rpc.publicnode.com",
-        "https://arbitrum-sepolia-rpc.blockreq.com/v1/rpc/public"
+        "https://sepolia-rollup.arbitrum.io/rpc",
+        "https://arbitrum-sepolia-rpc.publicnode.com"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -23361,22 +23317,6 @@
       "rpcs": ["https://rpc.btcw.tech"]
     },
     {
-      "id": "486487",
-      "isTestnet": true,
-      "name": "Gobbl Testnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/gobbl.webp",
-      "nativeTokenId": "486487:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "GOBBL",
-        "name": "Gobbl Token"
-      },
-      "themeColor": "#fbf6fc",
-      "blockExplorerUrls": ["https://explorer.gobbl.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.gobbl.io"]
-    },
-    {
       "id": "510003",
       "name": "Syndicate Commons",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/syndicate.webp",
@@ -23455,8 +23395,8 @@
       "platform": "ethereum",
       "rpcs": [
         "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
-        "https://rpc.ankr.com/scroll_sepolia_testnet",
         "https://lb.routeme.sh/rpc/evm/534351",
+        "https://rpc.ankr.com/scroll_sepolia_testnet",
         "https://scroll-sepolia-public.nodies.app",
         "https://scroll-sepolia.therpc.io"
       ],
@@ -23530,7 +23470,7 @@
       "themeColor": "#fc7906",
       "blockExplorerUrls": ["https://testnet.oneworldchain.org"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/552981", "https://testnet-rpc.oneworldchain.org"]
+      "rpcs": ["https://testnet-rpc.oneworldchain.org", "https://lb.routeme.sh/rpc/evm/552981"]
     },
     {
       "id": "555666",
@@ -23728,7 +23668,7 @@
       "themeColor": "#95978b",
       "blockExplorerUrls": ["https://alltra.global"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/651940", "https://mainnet-rpc.alltra.global"]
+      "rpcs": ["https://mainnet-rpc.alltra.global", "https://lb.routeme.sh/rpc/evm/651940"]
     },
     {
       "id": "656476",
@@ -23743,7 +23683,11 @@
       "themeColor": "#505050",
       "blockExplorerUrls": ["https://explorer.testnet.educhain.xyz"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.testnet.educhain.xyz", "https://lb.routeme.sh/rpc/evm/656476"],
+      "rpcs": [
+        "https://rpc.testnet.educhain.xyz",
+        "https://lb.routeme.sh/rpc/evm/656476",
+        "https://rpc.open-campus-codex.gelato.digital"
+      ],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -23954,12 +23898,7 @@
       "themeColor": "#fafc13",
       "blockExplorerUrls": ["https://katanascan.com"],
       "platform": "ethereum",
-      "rpcs": [
-        "https://rpc.katana.network",
-        "https://rpc.katanarpc.com",
-        "https://lb.routeme.sh/rpc/evm/747474",
-        "https://rpc.swiftnodes.io/rpc/katana"
-      ],
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/747474", "https://rpc.katana.network", "https://rpc.katanarpc.com"],
       "contracts": {
         "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
       }
@@ -24679,7 +24618,7 @@
       "themeColor": "#981a45",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.ethoprotocol.com", "https://lb.routeme.sh/rpc/evm/1313114"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/1313114", "https://rpc.ethoprotocol.com"]
     },
     {
       "id": "1314520",
@@ -25276,8 +25215,7 @@
       "rpcs": [
         "https://testnet.coti.io/rpc",
         "https://lb.routeme.sh/rpc/evm/7082400",
-        "https://testnet-magnus-validator.coti.io/rpc",
-        "https://testnet-minor-validator.coti.io/rpc"
+        "https://testnet-magnus-validator.coti.io/rpc"
       ]
     },
     {
@@ -25639,7 +25577,7 @@
       "themeColor": "#53bb86",
       "blockExplorerUrls": ["https://onfascan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://rpc.onfachain.com", "https://rpc.onfachain.net", "https://main.onfachain.net"]
+      "rpcs": ["https://rpc.onfachain.net", "https://main.onfachain.net", "https://rpc.onfachain.com"]
     },
     {
       "id": "12142816",
@@ -25877,7 +25815,7 @@
         "https://rpc1.qkiscan.cn",
         "https://rpc2.qkiscan.cn",
         "https://rpc3.qkiscan.cn",
-        "https://lb.routeme.sh/rpc/evm/20181205"
+        "https://rpc1.qkirpc.org"
       ]
     },
     {
@@ -25896,23 +25834,6 @@
       "blockExplorerUrls": [],
       "platform": "ethereum",
       "rpcs": ["https://lb.routeme.sh/rpc/evm/20201022"]
-    },
-    {
-      "id": "20221001",
-      "isTestnet": true,
-      "name": "SoonChain Sepolia Devnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/soonchain.webp",
-      "nativeTokenId": "20221001:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Sepolia Ether",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#6263cd",
-      "blockExplorerUrls": ["https://sepolia.explorer.soonchain.ai"],
-      "platform": "ethereum",
-      "rpcs": ["https://sepolia.rpc.soonchain.ai"]
     },
     {
       "id": "20240603",
@@ -26757,7 +26678,7 @@
       "themeColor": "#ffffff",
       "blockExplorerUrls": [],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/666666666", "https://rpc.degen.tips"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/666666666"]
     },
     {
       "id": "737998412",
@@ -26773,6 +26694,23 @@
       "blockExplorerUrls": ["https://explorer.tau.gateway.fm"],
       "platform": "ethereum",
       "rpcs": ["https://rpc.tau.gateway.fm"]
+    },
+    {
+      "id": "888888888",
+      "name": "Ancient8",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/888888888.webp",
+      "nativeTokenId": "888888888:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "coingeckoId": "ethereum",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": ["https://scan.ancient8.gg"],
+      "platform": "ethereum",
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/888888888"]
     },
     {
       "id": "974399131",
@@ -27245,8 +27183,8 @@
         "https://api.harmony.one",
         "https://a.api.s0.t.hmny.io",
         "https://api.s0.t.hmny.io",
-        "https://public.1rpc.io/one",
-        "https://endpoints.omniatech.io/v1/harmony/mainnet-0/public"
+        "https://1rpc.io/one",
+        "https://public.1rpc.io/one"
       ],
       "contracts": {
         "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
@@ -27461,40 +27399,6 @@
       "rpcs": ["https://frankenstein-rpc.oneledger.network"]
     },
     {
-      "id": "7078815900",
-      "isTestnet": true,
-      "name": "Mekong",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ethereum.webp",
-      "nativeTokenId": "7078815900:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Testnet ETH",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://explorer.mekong.ethpandaops.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.mekong.ethpandaops.io"]
-    },
-    {
-      "id": "7088110746",
-      "isTestnet": true,
-      "name": "pectra-devnet-5",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ethereum.webp",
-      "nativeTokenId": "7088110746:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ETH",
-        "name": "Testnet ETH",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
-      },
-      "themeColor": "#ffffff",
-      "blockExplorerUrls": ["https://explorer.pectra-devnet-5.ethpandaops.io"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.pectra-devnet-5.ethpandaops.io"]
-    },
-    {
       "id": "11297108099",
       "isTestnet": true,
       "name": "Palm Testnet",
@@ -27582,21 +27486,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/88153591557", "https://rpc.arb-blueberry.gelato.digital"]
     },
     {
-      "id": "111222333444",
-      "name": "Alphabet Mainnet",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/alphabetnetwork.svg",
-      "nativeTokenId": "111222333444:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "ALT",
-        "name": "ALT"
-      },
-      "themeColor": "#7c828d",
-      "blockExplorerUrls": ["https://scan.alphabetnetwork.org"],
-      "platform": "ethereum",
-      "rpcs": ["https://main-rpc.com"]
-    },
-    {
       "id": "111551119090",
       "isTestnet": true,
       "name": "Thanos Sepolia",
@@ -27625,7 +27514,7 @@
       "themeColor": "#fe6d06",
       "blockExplorerUrls": ["https://basecamp.cloud.blockscout.com"],
       "platform": "ethereum",
-      "rpcs": ["https://lb.routeme.sh/rpc/evm/123420001114"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/123420001114", "https://rpc.basecamp.t.raas.gelato.cloud"]
     },
     {
       "id": "197710212030",
@@ -27672,20 +27561,6 @@
       "blockExplorerUrls": ["https://zeniqscan.com"],
       "platform": "ethereum",
       "rpcs": ["https://api.zeniq.network"]
-    },
-    {
-      "id": "6022140761023",
-      "name": "Molereum Network",
-      "nativeTokenId": "6022140761023:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "MOLE",
-        "name": "Molereum Ether"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": [],
-      "platform": "ethereum",
-      "rpcs": ["https://molereum.jdubedition.com"]
     },
     {
       "id": "123354377739506",
@@ -28047,7 +27922,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -28742,36 +28617,6 @@
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
-      }
-    },
-    {
-      "id": "crust-parachain",
-      "isDefault": false,
-      "name": "Crust",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/crust-parachain.svg",
-      "nativeTokenId": "crust-parachain:substrate-native",
-      "nativeCurrency": {
-        "decimals": 12,
-        "symbol": "CRU",
-        "name": "CRU",
-        "coingeckoId": "crust-network",
-        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/crust-network.webp"
-      },
-      "themeColor": "#f08727",
-      "blockExplorerUrls": ["https://crust-parachain.subscan.io/"],
-      "genesisHash": "0x4319cc49ee79495b57a1fec4d2bd43f59052dcc690276de566c2691d6df4f7b8",
-      "platform": "polkadot",
-      "chainName": "Crust",
-      "specName": "polkadot-crust-parachain",
-      "specVersion": 9,
-      "account": "*25519",
-      "prefix": 0,
-      "oldPrefix": 88,
-      "rpcs": ["wss://crust-parachain.crustapps.net"],
-      "topology": {
-        "type": "parachain",
-        "relayId": "polkadot",
-        "paraId": 2008
       }
     },
     {
@@ -29876,7 +29721,7 @@
       "specVersion": 19,
       "account": "*25519",
       "prefix": 42,
-      "rpcs": ["wss://rpc-1.testnet.orbinum.io", "wss://rpc-2.testnet.orbinum.io"],
+      "rpcs": ["wss://rpc.testnet.orbinum.io"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "standalone"
@@ -120876,17 +120721,6 @@
       "isDefault": true
     },
     {
-      "id": "111222333444:evm-native",
-      "platform": "ethereum",
-      "networkId": "111222333444",
-      "type": "evm-native",
-      "symbol": "ALT",
-      "decimals": 18,
-      "name": "ALT",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/alphabetnetwork.svg",
-      "isDefault": true
-    },
-    {
       "id": "11124:evm-native",
       "platform": "ethereum",
       "networkId": "11124",
@@ -121763,17 +121597,6 @@
       "symbol": "ION",
       "decimals": 4,
       "name": "ION",
-      "isDefault": true
-    },
-    {
-      "id": "11451:evm-native",
-      "platform": "ethereum",
-      "networkId": "11451",
-      "type": "evm-native",
-      "symbol": "XAU",
-      "decimals": 18,
-      "name": "Aurum",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/egoldchain.webp",
       "isDefault": true
     },
     {
@@ -136448,6 +136271,17 @@
       "decimals": 18,
       "name": "ZERO",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/zephyr.webp",
+      "isDefault": true
+    },
+    {
+      "id": "1424:evm-native",
+      "platform": "ethereum",
+      "networkId": "1424",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -154780,6 +154614,18 @@
       "isDefault": true
     },
     {
+      "id": "1994:evm-native",
+      "platform": "ethereum",
+      "networkId": "1994",
+      "type": "evm-native",
+      "symbol": "EKTA",
+      "decimals": 18,
+      "name": "EKTA",
+      "coingeckoId": "ekta-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ekta-2.webp",
+      "isDefault": true
+    },
+    {
       "id": "19966:evm-native",
       "platform": "ethereum",
       "networkId": "19966",
@@ -156047,17 +155893,6 @@
       "symbol": "BECX",
       "decimals": 18,
       "name": "Bethel",
-      "isDefault": true
-    },
-    {
-      "id": "20221001:evm-native",
-      "platform": "ethereum",
-      "networkId": "20221001",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Sepolia Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -162532,17 +162367,6 @@
       "decimals": 18,
       "name": "Eclat Testnet",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/eclat.webp",
-      "isDefault": true
-    },
-    {
-      "id": "2625:evm-native",
-      "platform": "ethereum",
-      "networkId": "2625",
-      "type": "evm-native",
-      "symbol": "WBT",
-      "decimals": 18,
-      "name": "WhiteBIT Coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/whitechain-testnet.webp",
       "isDefault": true
     },
     {
@@ -177176,17 +177000,6 @@
       "isDefault": true
     },
     {
-      "id": "3001:evm-native",
-      "platform": "ethereum",
-      "networkId": "3001",
-      "type": "evm-native",
-      "symbol": "CPAY",
-      "decimals": 18,
-      "name": "CPAY",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/cennz.svg",
-      "isDefault": true
-    },
-    {
       "id": "3003:evm-native",
       "platform": "ethereum",
       "networkId": "3003",
@@ -179015,16 +178828,6 @@
       "isDefault": true
     },
     {
-      "id": "327:evm-native",
-      "platform": "ethereum",
-      "networkId": "327",
-      "type": "evm-native",
-      "symbol": "XCN",
-      "decimals": 18,
-      "name": "XCN",
-      "isDefault": true
-    },
-    {
       "id": "327126:evm-native",
       "platform": "ethereum",
       "networkId": "327126",
@@ -180611,17 +180414,6 @@
       "name": "pando-token",
       "coingeckoId": "pando-token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/pando-token.webp",
-      "isDefault": true
-    },
-    {
-      "id": "3602:evm-native",
-      "platform": "ethereum",
-      "networkId": "3602",
-      "type": "evm-native",
-      "symbol": "PTX",
-      "decimals": 18,
-      "name": "pando-token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/pando.webp",
       "isDefault": true
     },
     {
@@ -182374,6 +182166,17 @@
       "name": "AlveyCoin",
       "coingeckoId": "alvey-chain",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/alvey-chain.webp",
+      "isDefault": true
+    },
+    {
+      "id": "3799:evm-native",
+      "platform": "ethereum",
+      "networkId": "3799",
+      "type": "evm-native",
+      "symbol": "tTNT",
+      "decimals": 18,
+      "name": "Testnet Tangle Network Token",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/tangle.webp",
       "isDefault": true
     },
     {
@@ -233961,17 +233764,6 @@
       "isDefault": true
     },
     {
-      "id": "4422:evm-native",
-      "platform": "ethereum",
-      "networkId": "4422",
-      "type": "evm-native",
-      "symbol": "tPKA",
-      "decimals": 18,
-      "name": "Testnet Pika",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/testnetpsc.webp",
-      "isDefault": true
-    },
-    {
       "id": "443:evm-native",
       "platform": "ethereum",
       "networkId": "443",
@@ -250999,17 +250791,6 @@
       "isDefault": true
     },
     {
-      "id": "486487:evm-native",
-      "platform": "ethereum",
-      "networkId": "486487",
-      "type": "evm-native",
-      "symbol": "GOBBL",
-      "decimals": 18,
-      "name": "Gobbl Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/gobbl.webp",
-      "isDefault": true
-    },
-    {
       "id": "488:evm-native",
       "platform": "ethereum",
       "networkId": "488",
@@ -251170,6 +250951,17 @@
       "decimals": 18,
       "name": "Bifrost",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/bifrost.webp",
+      "isDefault": true
+    },
+    {
+      "id": "4919:evm-native",
+      "platform": "ethereum",
+      "networkId": "4919",
+      "type": "evm-native",
+      "symbol": "XVM",
+      "decimals": 18,
+      "name": "Venidium",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/venidium.webp",
       "isDefault": true
     },
     {
@@ -262641,6 +262433,16 @@
       "isDefault": true
     },
     {
+      "id": "5169:evm-native",
+      "platform": "ethereum",
+      "networkId": "5169",
+      "type": "evm-native",
+      "symbol": "SU",
+      "decimals": 18,
+      "name": "Service Unit Token",
+      "isDefault": true
+    },
+    {
       "id": "51712:evm-native",
       "platform": "ethereum",
       "networkId": "51712",
@@ -263767,6 +263569,17 @@
       "isDefault": true
     },
     {
+      "id": "55555:evm-native",
+      "platform": "ethereum",
+      "networkId": "55555",
+      "type": "evm-native",
+      "symbol": "REI",
+      "decimals": 18,
+      "name": "Rei",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/reichain.svg",
+      "isDefault": true
+    },
+    {
       "id": "5555555:evm-native",
       "platform": "ethereum",
       "networkId": "5555555",
@@ -263848,6 +263661,16 @@
       "symbol": "DOTON",
       "decimals": 18,
       "name": "DOTON",
+      "isDefault": true
+    },
+    {
+      "id": "55930:evm-native",
+      "platform": "ethereum",
+      "networkId": "55930",
+      "type": "evm-native",
+      "symbol": "HAVE",
+      "decimals": 18,
+      "name": "HAVE",
       "isDefault": true
     },
     {
@@ -328752,16 +328575,6 @@
       "isDefault": true
     },
     {
-      "id": "6022140761023:evm-native",
-      "platform": "ethereum",
-      "networkId": "6022140761023",
-      "type": "evm-native",
-      "symbol": "MOLE",
-      "decimals": 18,
-      "name": "Molereum Ether",
-      "isDefault": true
-    },
-    {
       "id": "6060:evm-native",
       "platform": "ethereum",
       "networkId": "6060",
@@ -330791,17 +330604,6 @@
       "isDefault": true
     },
     {
-      "id": "7078815900:evm-native",
-      "platform": "ethereum",
-      "networkId": "7078815900",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Testnet ETH",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
       "id": "7080969:evm-native",
       "platform": "ethereum",
       "networkId": "7080969",
@@ -330830,17 +330632,6 @@
       "symbol": "GFIT",
       "decimals": 18,
       "name": "GFIT",
-      "isDefault": true
-    },
-    {
-      "id": "7088110746:evm-native",
-      "platform": "ethereum",
-      "networkId": "7088110746",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Testnet ETH",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -332882,17 +332673,6 @@
       "isDefault": true
     },
     {
-      "id": "80008:evm-native",
-      "platform": "ethereum",
-      "networkId": "80008",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
-      "isDefault": true
-    },
-    {
       "id": "8000800:evm-native",
       "platform": "ethereum",
       "networkId": "8000800",
@@ -332921,6 +332701,17 @@
       "decimals": 18,
       "name": "Testnet BERA Token",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/berachain.webp",
+      "isDefault": true
+    },
+    {
+      "id": "8008:evm-native",
+      "platform": "ethereum",
+      "networkId": "8008",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -335780,17 +335571,6 @@
       "decimals": 18,
       "name": "Tara",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/taraxa.webp",
-      "isDefault": true
-    },
-    {
-      "id": "84257:evm-native",
-      "platform": "ethereum",
-      "networkId": "84257",
-      "type": "evm-native",
-      "symbol": "ETH",
-      "decimals": 18,
-      "name": "Ether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
       "isDefault": true
     },
     {
@@ -374099,6 +373879,42 @@
       "isDefault": true
     },
     {
+      "id": "888888888:evm-erc20:0x38bb7b9b87bdfbed883aaf50a2f411d330fe32d6",
+      "platform": "ethereum",
+      "networkId": "888888888",
+      "type": "evm-erc20",
+      "symbol": "HAIRY",
+      "decimals": 18,
+      "name": "Hairy Cat",
+      "coingeckoId": "hairy-the-bene",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hairy-the-bene.webp",
+      "contractAddress": "0x38bb7b9b87bdfbed883aaf50a2f411d330fe32d6"
+    },
+    {
+      "id": "888888888:evm-erc20:0xd812d616a7c54ee1c8e9c9cd20d72090bdf0d424",
+      "platform": "ethereum",
+      "networkId": "888888888",
+      "type": "evm-erc20",
+      "symbol": "A8",
+      "decimals": 18,
+      "name": "Ancient8",
+      "coingeckoId": "ancient8",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/ancient8.webp",
+      "contractAddress": "0xd812d616a7c54ee1c8e9c9cd20d72090bdf0d424"
+    },
+    {
+      "id": "888888888:evm-native",
+      "platform": "ethereum",
+      "networkId": "888888888",
+      "type": "evm-native",
+      "symbol": "ETH",
+      "decimals": 18,
+      "name": "Ether",
+      "coingeckoId": "ethereum",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
+    },
+    {
       "id": "8889:evm-native",
       "platform": "ethereum",
       "networkId": "8889",
@@ -374280,16 +374096,6 @@
       "decimals": 18,
       "name": "Pundi AIFX",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/pundiai.webp",
-      "isDefault": true
-    },
-    {
-      "id": "90002:evm-native",
-      "platform": "ethereum",
-      "networkId": "90002",
-      "type": "evm-native",
-      "symbol": "USC",
-      "decimals": 18,
-      "name": "USC",
       "isDefault": true
     },
     {
@@ -374751,17 +374557,6 @@
       "decimals": 18,
       "name": "test-Lamb",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/lambda.webp",
-      "isDefault": true
-    },
-    {
-      "id": "92278:evm-native",
-      "platform": "ethereum",
-      "networkId": "92278",
-      "type": "evm-native",
-      "symbol": "MPT",
-      "decimals": 18,
-      "name": "Miracle Play Token",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/miracle.webp",
       "isDefault": true
     },
     {
@@ -400728,49 +400523,6 @@
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/creditcoin-2.webp",
       "isDefault": true,
       "existentialDeposit": "0"
-    },
-    {
-      "id": "crust-parachain:substrate-assets:187224307232923873519830480073807488153",
-      "platform": "polkadot",
-      "networkId": "crust-parachain",
-      "type": "substrate-assets",
-      "symbol": "EQD",
-      "decimals": 9,
-      "name": "Equilibrium USD",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eqd.svg",
-      "isDefault": true,
-      "assetId": "187224307232923873519830480073807488153",
-      "isFrozen": false,
-      "isSufficient": true,
-      "existentialDeposit": "1000"
-    },
-    {
-      "id": "crust-parachain:substrate-assets:64174511183114006009298114091987195453",
-      "platform": "polkadot",
-      "networkId": "crust-parachain",
-      "type": "substrate-assets",
-      "symbol": "PINK",
-      "decimals": 10,
-      "name": "PINK",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/pink.svg",
-      "isDefault": true,
-      "assetId": "64174511183114006009298114091987195453",
-      "isFrozen": false,
-      "isSufficient": true,
-      "existentialDeposit": "1"
-    },
-    {
-      "id": "crust-parachain:substrate-native",
-      "platform": "polkadot",
-      "networkId": "crust-parachain",
-      "type": "substrate-native",
-      "symbol": "CRU",
-      "decimals": 12,
-      "name": "Crust Network",
-      "coingeckoId": "crust-network",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/crust-network.webp",
-      "isDefault": true,
-      "existentialDeposit": "100000000"
     },
     {
       "id": "curio:substrate-native",
@@ -497303,18 +497055,6 @@
       "extra": null
     },
     {
-      "id": "0947d276bcf7a8108938cc5ca356707f",
-      "source": "substrate-native",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": "0x6d6574610f78000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c08306672616d655f73797374656d2c4163636f756e74496e666f08144e6f6e636501102c4163636f756e74446174610114001401146e6f6e63651001144e6f6e6365000124636f6e73756d657273100120526566436f756e7400012470726f766964657273100120526566436f756e7400012c73756666696369656e7473100120526566436f756e740001106461746114012c4163636f756e74446174610000100000050500140c3c70616c6c65745f62616c616e6365731474797065732c4163636f756e7444617461041c42616c616e63650118001001106672656518011c42616c616e6365000120726573657276656418011c42616c616e636500011866726f7a656e18011c42616c616e6365000114666c6167731c01284578747261466c61677300001800000507001c0c3c70616c6c65745f62616c616e636573147479706573284578747261466c61677300000400180110753132380000200000040000240000030800000008002800000504002c000005020030082873705f76657273696f6e3852756e74696d6556657273696f6e0000200124737065635f6e616d652c013452756e74696d65537472696e67000124696d706c5f6e616d652c013452756e74696d65537472696e67000144617574686f72696e675f76657273696f6e10010c753332000130737065635f76657273696f6e10010c753332000130696d706c5f76657273696f6e10010c7533320001106170697334011c4170697356656300014c7472616e73616374696f6e5f76657273696f6e10010c75333200013473746174655f76657273696f6e0801087538000034040c436f77040454013800040038000000380000023c003c00000408241000400c4c626f756e6465645f636f6c6c656374696f6e73407765616b5f626f756e6465645f766563385765616b426f756e64656456656308045401440453000004004c01185665633c543e0000440c3c70616c6c65745f62616c616e6365731474797065732c42616c616e63654c6f636b041c42616c616e63650118000c010869642401384c6f636b4964656e746966696572000118616d6f756e7418011c42616c616e636500011c726561736f6e7348011c526561736f6e730000480c3c70616c6c65745f62616c616e6365731474797065731c526561736f6e7300010c0c466565000000104d6973630001000c416c6c000200004c0000024400500c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401540453000004005801185665633c543e0000540c3c70616c6c65745f62616c616e6365731474797065732c52657365727665446174610844526573657276654964656e74696669657201241c42616c616e63650118000801086964240144526573657276654964656e746966696572000118616d6f756e7418011c42616c616e636500005800000254005c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401600453000004006801185665633c543e0000600c3c70616c6c65745f62616c616e636573147479706573204964416d6f756e740808496401641c42616c616e636501180008010869646401084964000118616d6f756e7418011c42616c616e6365000064085c63727573745f70617261636861696e5f72756e74696d654452756e74696d65486f6c64526561736f6e000100006800000260006c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401700453000004007401185665633c543e0000700c3c70616c6c65745f62616c616e636573147479706573204964416d6f756e740808496401201c42616c616e636501180008010869642001084964000118616d6f756e7418011c42616c616e63650000740000027000081853797374656d011853797374656d041c4163636f756e7401010402000c4101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008004e8205468652066756c6c206163636f756e7420696e666f726d6174696f6e20666f72206120706172746963756c6172206163636f756e742049442e0000081c56657273696f6e30210360706f6c6b61646f742d63727573742d70617261636861696e60706f6c6b61646f742d63727573742d70617261636861696e0100000009000000010000002cdf6acb689907609b0400000037e397fc7c91f5e40200000040fe3ad401f8959a06000000d2bc9897eed08f1503000000f78b278be53f454c02000000ab3c0572291feb8b01000000dd718d5cc53262d401000000ea93e3f16f3d69620200000037c8bb1350a9a2a804000000f3ff14d5ab52705903000000bc9d89904f5b923f0100000001000000000484204765742074686520636861696e27732063757272656e742076657273696f6e2e28535335385072656669782808000014a8205468652064657369676e61746564205353353820707265666978206f66207468697320636861696e2e0039012054686973207265706c6163657320746865202273733538466f726d6174222070726f7065727479206465636c6172656420696e2074686520636861696e20737065632e20526561736f6e20697331012074686174207468652072756e74696d652073686f756c64206b6e6f772061626f7574207468652070726566697820696e206f7264657220746f206d616b6520757365206f662069742061737020616e206964656e746966696572206f662074686520636861696e2e0000002042616c616e636573012042616c616e63657310144c6f636b73010104020040040008b820416e79206c6971756964697479206c6f636b73206f6e20736f6d65206163636f756e742062616c616e6365732e2501204e4f54453a2053686f756c64206f6e6c79206265206163636573736564207768656e2073657474696e672c206368616e67696e6720616e642066726565696e672061206c6f636b2e205265736572766573010104020050040004a4204e616d6564207265736572766573206f6e20736f6d65206163636f756e742062616c616e6365732e14486f6c647301010402005c0400046c20486f6c6473206f6e206163636f756e742062616c616e6365732e1c467265657a657301010402006c0400048820467265657a65206c6f636b73206f6e206163636f756e742062616c616e6365732e00000000020004000000000005080000000000",
-      "extra": {
-        "useLegacyTransferableCalculation": false,
-        "existentialDeposit": "100000000"
-      }
-    },
-    {
       "id": "0978eedb0246053668b03510fa871b58",
       "source": "substrate-psp22",
       "chainId": "neuroweb",
@@ -498143,17 +497883,6 @@
       "version": "v14",
       "data": null,
       "extra": null
-    },
-    {
-      "id": "289795cff14462cdf21f73b705c6f97c",
-      "source": "substrate-tokens",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": null,
-      "extra": {
-        "palletId": "Tokens"
-      }
     },
     {
       "id": "28c0d2ff6d1954c47f5e3d2dbe68c671",
@@ -499635,15 +499364,6 @@
       "extra": null
     },
     {
-      "id": "576f38bff9d903dc7f5adf8a75149c5a",
-      "source": "substrate-assets",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": "0x6d6574610f40000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c00000505001000000507001400000208001800000400001c0000050000200c3470616c6c65745f61737365747314747970657330417373657444657461696c730c1c42616c616e63650110244163636f756e7449640100384465706f73697442616c616e63650110003001146f776e65720001244163636f756e7449640001186973737565720001244163636f756e74496400011461646d696e0001244163636f756e74496400011c667265657a65720001244163636f756e744964000118737570706c7910011c42616c616e636500011c6465706f7369741001384465706f73697442616c616e636500012c6d696e5f62616c616e636510011c42616c616e636500013469735f73756666696369656e741c0110626f6f6c0001206163636f756e74730c010c75333200012c73756666696369656e74730c010c753332000124617070726f76616c730c010c75333200011873746174757324012c41737365745374617475730000240c3470616c6c65745f6173736574731474797065732c417373657453746174757300010c104c6976650000001846726f7a656e0001002844657374726f79696e670002000028000004081000002c0c3470616c6c65745f6173736574731474797065733041737365744163636f756e74101c42616c616e63650110384465706f73697442616c616e636501101445787472610118244163636f756e74496401000010011c62616c616e636510011c42616c616e63650001187374617475733001344163636f756e74537461747573000118726561736f6e3401a84578697374656e6365526561736f6e3c4465706f73697442616c616e63652c204163636f756e7449643e000114657874726118011445787472610000300c3470616c6c65745f617373657473147479706573344163636f756e7453746174757300010c184c69717569640000001846726f7a656e0001001c426c6f636b656400020000340c3470616c6c65745f6173736574731474797065733c4578697374656e6365526561736f6e081c42616c616e63650110244163636f756e7449640100011420436f6e73756d65720000002853756666696369656e740001002c4465706f73697448656c64040010011c42616c616e63650002003c4465706f736974526566756e6465640003002c4465706f73697446726f6d08000001244163636f756e744964000010011c42616c616e636500040000380c3470616c6c65745f6173736574731474797065733441737365744d6574616461746108384465706f73697442616c616e6365011034426f756e646564537472696e67013c0014011c6465706f7369741001384465706f73697442616c616e63650001106e616d653c0134426f756e646564537472696e6700011873796d626f6c3c0134426f756e646564537472696e67000120646563696d616c73080108753800012469735f66726f7a656e1c0110626f6f6c00003c0c4c626f756e6465645f636f6c6c656374696f6e732c626f756e6465645f76656328426f756e64656456656308045401080453000004001401185665633c543e0000041841737365747301184173736574730c144173736574000104021020040004542044657461696c73206f6620616e2061737365742e1c4163636f756e740001080202282c040004e42054686520686f6c64696e6773206f662061207370656369666963206163636f756e7420666f7220612073706563696669632061737365742e204d657461646174610101040210385000000000000000000000000000000000000000000458204d65746164617461206f6620616e2061737365742e000000007c0004000000000005080000000000",
-      "extra": null
-    },
-    {
       "id": "57cce6f049ce140dc7b0a5148c45f351",
       "source": "substrate-psp22",
       "chainId": "pendulum",
@@ -499843,15 +499563,6 @@
         "useLegacyTransferableCalculation": false,
         "existentialDeposit": "150000000000000000"
       }
-    },
-    {
-      "id": "602a103fba5c77b2bc67940fba509df4",
-      "source": "substrate-psp22",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": null,
-      "extra": null
     },
     {
       "id": "602ad2efe7b3beedccd87cfb977bc5ae",
@@ -502673,15 +502384,6 @@
       }
     },
     {
-      "id": "c6d86aed272c72fa2c40be218136202f",
-      "source": "substrate-hydration",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": null,
-      "extra": null
-    },
-    {
       "id": "c6fb7feb401163493ee28641c17a093c",
       "source": "substrate-psp22",
       "chainId": "avail",
@@ -503754,15 +503456,6 @@
       "extra": null
     },
     {
-      "id": "f3be976dd4e98465ac51f28a37a23ae3",
-      "source": "substrate-foreignassets",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": null,
-      "extra": null
-    },
-    {
       "id": "f46f68a56a29bd9b27fcfd1a996671f6",
       "source": "substrate-native",
       "chainId": "centrifuge-polkadot",
@@ -503959,15 +503652,6 @@
       "extra": {
         "palletId": "Tokens"
       }
-    },
-    {
-      "id": "fb865bc9969199370584779ebefc31db",
-      "source": "substrate-dtao",
-      "chainId": "crust-parachain",
-      "specVersion": 9,
-      "version": "v12",
-      "data": null,
-      "extra": null
     },
     {
       "id": "fcc8f61bbc0e5c39d9843852b387c6f5",
