@@ -10,6 +10,7 @@ import {
 } from '../../shared/constants'
 import { getNetworkLogoUrl, getTokenLogoUrl } from '../../shared/getLogoUrl'
 import { parseJsonFile, parseYamlFile } from '../../shared/parseFile'
+import { logUnverifiedNetworks, selectNetworkRpcs } from '../../shared/rpcHealth'
 import { SolNetworkSpecsFileSchema, SolNetworksConfigFileSchema } from '../../shared/schemas'
 import { writeJsonFile } from '../../shared/writeFile'
 
@@ -19,8 +20,16 @@ export const buildSolanaNetworks = async () => {
 
   const specsById = keyBy(solNetworksSpecs, (n) => n.id)
 
+  const unverifiedNetworkIds: string[] = []
+
   const solNetworks: SolNetwork[] = solNetworksConfig
     .map(({ tokens, ...config }) => config) // remove tokens field
+    .flatMap((config) => {
+      const selection = selectNetworkRpcs(config.id, 'solana', config.rpcs)
+      if (!selection.rpcs.length) return [] // no rpcs available for this network
+      if (selection.isUnverified) unverifiedNetworkIds.push(config.id)
+      return [{ ...config, rpcs: selection.rpcs }]
+    })
     .map((config) => {
       const nativeCurrency = assign(config.nativeCurrency, {
         logo: getTokenLogoUrl(
@@ -47,6 +56,8 @@ export const buildSolanaNetworks = async () => {
       }
       return true
     })
+
+  logUnverifiedNetworks('solana', unverifiedNetworkIds)
 
   await writeJsonFile(FILE_OUTPUT_NETWORKS_SOLANA, solNetworks, {
     schema: z.array(SolNetworkSchema),

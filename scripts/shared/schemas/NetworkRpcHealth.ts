@@ -25,6 +25,9 @@ export const NetworkRpcHealthSchema = z.strictObject({
   rpc: z.url(),
   health: RpcHealthSchema,
   timestamp: DateSchema,
+  // MEH entries only: when the RPC last passed its check, if it has passed one since it last failed (NOK).
+  // For OK entries that time is `timestamp`.
+  lastOkAt: DateSchema.optional(),
 })
 
 export type NetworkRpcHealth = z.infer<typeof NetworkRpcHealthSchema>
