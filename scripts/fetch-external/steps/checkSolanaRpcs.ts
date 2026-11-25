@@ -43,18 +43,20 @@ const fetchRpcHealth = async (spec: RpcHealthSpec, expectedGenesis: string | und
   const res = await postJsonRpc(spec, { id: 0, jsonrpc: '2.0', method: 'getGenesisHash' }, RPC_TIMEOUT)
   if ('health' in res) return res.health
 
+  // Only a genesis mismatch is NOK. A JSON-RPC error (rate limit, "Node is behind"), a non-JSON body or a body
+  // read that times out can all be temporary: MEH keeps the RPC published while its last pass is recent enough.
   try {
     const response = (await res.response.json()) as { result?: unknown; error?: { message?: string } }
 
     const genesisHash = response.result
     if (typeof genesisHash !== 'string')
-      return { status: 'NOK', error: `No genesis hash in response: ${response.error?.message ?? 'missing result'}` }
+      return { status: 'MEH', error: `No genesis hash in response: ${response.error?.message ?? 'missing result'}` }
 
     if (expectedGenesis && genesisHash !== expectedGenesis)
       return { status: 'NOK', error: `genesis mismatch (got ${genesisHash}, expected ${expectedGenesis})` }
 
     return { status: 'OK' }
   } catch (err) {
-    return { status: 'NOK', error: `Failed to fetch genesis hash: ${(err as Error).message}` }
+    return { status: 'MEH', error: `Failed to fetch genesis hash: ${(err as Error).message}` }
   }
 }
