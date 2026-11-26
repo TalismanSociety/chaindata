@@ -14253,21 +14253,6 @@
       "rpcs": ["https://lb.routeme.sh/rpc/evm/10508"]
     },
     {
-      "id": "10777",
-      "isTestnet": true,
-      "name": "Limonata Testnet",
-      "nativeTokenId": "10777:evm-native",
-      "nativeCurrency": {
-        "decimals": 18,
-        "symbol": "LIMO",
-        "name": "Limonata"
-      },
-      "themeColor": "#505050",
-      "blockExplorerUrls": ["https://explorer.limonata.xyz"],
-      "platform": "ethereum",
-      "rpcs": ["https://rpc.limonata.xyz"]
-    },
-    {
       "id": "10791",
       "name": "TrustBitcoin Mainnet",
       "nativeTokenId": "10791:evm-native",
@@ -15154,7 +15139,7 @@
       "themeColor": "#1873e1",
       "blockExplorerUrls": ["https://nyancat.iobscan.io"],
       "platform": "ethereum",
-      "rpcs": ["https://evmrpc.nyancat.irisnet.org"]
+      "rpcs": ["https://lb.routeme.sh/rpc/evm/16688"]
     },
     {
       "id": "16869",
@@ -26606,7 +26591,7 @@
       "latestMetadataQrUrl": "https://metadata.novasama.io/qr/astar_metadata_latest.apng",
       "prefix": 5,
       "oldPrefix": 5,
-      "rpcs": ["wss://rpc.astar.network", "wss://astar-rpc.n.dwellir.com"],
+      "rpcs": ["wss://rpc.astar.network", "wss://astar.api.onfinality.io/public-ws", "wss://astar-rpc.n.dwellir.com"],
       "hasCheckMetadataHash": true,
       "topology": {
         "type": "parachain",
@@ -28309,10 +28294,11 @@
       "account": "*25519",
       "prefix": 0,
       "rpcs": [
+        "wss://mainnet-explorer.mosaicchain.io/MosaicNode1/chain",
         "wss://mainnet-explorer.mosaicchain.io/MosaicNode2/chain",
         "wss://mainnet-explorer.mosaicchain.io/MosaicNode3/chain",
         "wss://mainnet-explorer.mosaicchain.io/MosaicNode4/chain",
-        "wss://mainnet-explorer.mosaicchain.io/MosaicNode6/chain"
+        "wss://mainnet-explorer.mosaicchain.io/MosaicNode5/chain"
       ],
       "hasCheckMetadataHash": true,
       "topology": {
@@ -114758,16 +114744,6 @@
       "decimals": 18,
       "name": "IOTA",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/iotaevm.webp",
-      "isDefault": true
-    },
-    {
-      "id": "10777:evm-native",
-      "platform": "ethereum",
-      "networkId": "10777",
-      "type": "evm-native",
-      "symbol": "LIMO",
-      "decimals": 18,
-      "name": "Limonata",
       "isDefault": true
     },
     {
