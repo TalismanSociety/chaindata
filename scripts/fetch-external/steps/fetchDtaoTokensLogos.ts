@@ -210,7 +210,7 @@ const updateDotTokensLogos = async (logos: DtaoTokenLogo[]) => {
   const logoByToken = new Map(logos.map((logo) => [`${logo.networkId}:${logo.netuid}`, logo.path]))
 
   for (const token of dotTokens) {
-    if (token.type !== 'substrate-dtao') continue
+    if (token.type !== 'substrate-dtao' && token.type !== 'substrate-gamma') continue
     if (!DTAO_LOGO_NETWORK_IDS.includes(token.networkId)) continue
 
     // a logo set from the yaml config always wins

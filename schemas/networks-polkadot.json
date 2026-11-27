@@ -144,6 +144,11 @@
             "type": "object",
             "properties": {},
             "additionalProperties": false
+          },
+          "substrate-gamma": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -396,6 +401,51 @@
                 "netuid": {
                   "type": "integer",
                   "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "networkId": {
+                  "type": "string"
+                },
+                "isDefault": {
+                  "type": "boolean"
+                },
+                "decimals": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "coingeckoId": {
+                  "type": "string"
+                },
+                "noDiscovery": {
+                  "type": "boolean"
+                },
+                "mirrorOf": {
+                  "type": "string"
+                }
+              },
+              "required": ["netuid"],
+              "additionalProperties": false
+            }
+          },
+          "substrate-gamma": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "netuid": {
+                  "type": "integer",
+                  "minimum": 0,
                   "maximum": 9007199254740991
                 },
                 "networkId": {
