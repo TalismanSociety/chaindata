@@ -34,8 +34,8 @@ export const buildPolkadotTokens = async () => {
       return { ...token, logo: getTokenLogoUrl(token.logo, token.coingeckoId, token.symbol) }
     })
     .map((token) => {
-      // force a default logo for dtao tokens that dont have a logo from coingecko
-      return !token.logo && token.type === 'substrate-dtao'
+      // force a default logo for subnet tokens that dont have a logo from coingecko
+      return !token.logo && (token.type === 'substrate-dtao' || token.type === 'substrate-gamma')
         ? {
             ...token,
             logo: getTokenLogoUrl('./assets/tokens/dtao.svg', token.coingeckoId, token.symbol),
@@ -69,6 +69,8 @@ const findTokenConfigByTokenId = (tokenId: TokenId, network: DotNetworkConfig) =
     case 'substrate-dtao':
       // TODO remove any on next dep update
       return network.tokens?.['substrate-dtao']?.find((t) => t.netuid === parsed.netuid)
+    case 'substrate-gamma':
+      return network.tokens?.['substrate-gamma']?.find((t) => t.netuid === parsed.netuid)
     default:
       throw new Error(`Unknown token type: ${parsed.type} for tokenId: ${tokenId}`)
   }

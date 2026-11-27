@@ -2,7 +2,7 @@
 
 <img src="assets/talisman.svg" alt="Talisman" width="15%" align="right" />
 
-[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fpub%2Fv15%2Fchaindata.min.json)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v15/chaindata.min.json)
+[![api-link](https://img.shields.io/website?label=api&logo=github&logoColor=white&style=flat-square&up_message=online&down_message=offline&url=https%3A%2F%2Fraw.githubusercontent.com%2FTalismanSociety%2Fchaindata%2Fmain%2Fpub%2Fv16%2Fchaindata.min.json)](https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v16/chaindata.min.json)
 [![discord-link](https://img.shields.io/discord/858891448271634473?logo=discord&logoColor=white&style=flat-square)](https://discord.gg/talisman)
 
 A **community controlled** index of networks, tokens and assets for the [Polkadot](https://polkadot.network/), Ethereum and Solana ecosystems.
@@ -20,7 +20,7 @@ The published files are consolidated JSON documents containing every network, to
 - `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.json`
 - `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.min.json`
 
-`<version>` is the current `pub` version, `v15` at the time of writing.
+`<version>` is the current `pub` version, `v16` at the time of writing.
 It changes whenever the format of the published files breaks, see [Chaindata `pub` versions](#chaindata-pub-versions) below for the version list and how to find the latest one.
 
 Their shape is `{ networks: Network[], tokens: Token[], miniMetadatas: MiniMetadata[] }`.
@@ -53,6 +53,7 @@ The frozen original of each old version is kept next to it as `chaindata.backup.
 | `v13`     | 2026-08 |                                                                                 |
 | `v14`     | 2026-09 |                                                                                 |
 | `v15`     | 2026-10 | `hasFrontierMirrorWithdraw` flag on Polkadot networks                           |
+| `v16`     | 2026-11 | `substrate-gamma` tokens for Bittensor gamma credits                            |
 
 ## How it works
 
@@ -162,11 +163,11 @@ Add an entry to `data/networks-solana.yaml`. Only `id` and `rpcs` are required, 
 
 Tokens are declared under the `tokens` key of their network, grouped by balance module:
 
-| Platform | Modules                                                                                                                                           |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Polkadot | `substrate-native`, `substrate-assets`, `substrate-foreignassets`, `substrate-tokens`, `substrate-psp22`, `substrate-hydration`, `substrate-dtao` |
-| Ethereum | `evm-erc20`, `evm-uniswapv2`                                                                                                                      |
-| Solana   | `sol-spl`, `sol-token2022`                                                                                                                        |
+| Platform | Modules                                                                                                                                                              |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Polkadot | `substrate-native`, `substrate-assets`, `substrate-foreignassets`, `substrate-tokens`, `substrate-psp22`, `substrate-hydration`, `substrate-dtao`, `substrate-gamma` |
+| Ethereum | `evm-erc20`, `evm-uniswapv2`                                                                                                                                         |
+| Solana   | `sol-spl`, `sol-token2022`                                                                                                                                           |
 
 Symbol, decimals and name are fetched from chain where possible, so most entries only need the on-chain identifier (asset id, contract address, mint address) and optionally a `coingeckoId` and a `logo`.
 Check existing entries in the YAML file for the fields expected by each module, or the JSON schemas in `schemas/`.
